@@ -111,11 +111,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void* GetBufferPointer()
+        public readonly unsafe nint* GetBufferPointer()
         {
             var @this = (IDxcBlob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            void* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcBlob*, void*>)@this->LpVtbl[3])(@this);
+            nint* ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcBlob*, nint*>)@this->LpVtbl[3])(@this);
             return ret;
         }
 

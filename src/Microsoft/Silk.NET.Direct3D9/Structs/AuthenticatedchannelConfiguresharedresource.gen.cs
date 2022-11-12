@@ -23,8 +23,8 @@ namespace Silk.NET.Direct3D9
         (
             AuthenticatedchannelConfigureInput? parameters = null,
             AuthenticatedchannelProcessidentifiertype? processIdentiferType = null,
-            void* processHandle = null,
-            int? allowAccess = null
+            nint* processHandle = null,
+            bool? allowAccess = null
         ) : this()
         {
             if (parameters is not null)
@@ -62,11 +62,11 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "ProcessHandle")]
-        public void* ProcessHandle;
+        public nint* ProcessHandle;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "AllowAccess")]
-        public int AllowAccess;
+        public bool AllowAccess;
     }
 }

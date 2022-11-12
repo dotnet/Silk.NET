@@ -21,7 +21,7 @@ namespace Silk.NET.DXVA
     {
         public HDStreamStateSourceRectData
         (
-            int? enable = null,
+            bool? enable = null,
             Silk.NET.Maths.Box2D<int>? sourceRect = null
         ) : this()
         {
@@ -40,7 +40,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Enable")]
-        public int Enable;
+        public bool Enable;
 
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]

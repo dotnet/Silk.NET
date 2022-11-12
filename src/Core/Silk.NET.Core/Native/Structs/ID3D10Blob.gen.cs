@@ -111,11 +111,11 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void* GetBufferPointer()
+        public readonly unsafe nint* GetBufferPointer()
         {
             var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            void* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D10Blob*, void*>)@this->LpVtbl[3])(@this);
+            nint* ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D10Blob*, nint*>)@this->LpVtbl[3])(@this);
             return ret;
         }
 

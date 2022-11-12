@@ -219,49 +219,49 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int RevokeInterfaceFromGlobal(uint dwCookie)
+        public readonly int RevokeInterfaceFromGlobal(int dwCookie)
         {
             var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, uint, int>)@this->LpVtbl[4])(@this, dwCookie);
+            ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, int, int>)@this->LpVtbl[4])(@this, dwCookie);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetInterfaceFromGlobal(uint dwCookie, Guid* riid, void** ppv)
+        public readonly unsafe int GetInterfaceFromGlobal(int dwCookie, Guid* riid, void** ppv)
         {
             var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, uint, Guid*, void**, int>)@this->LpVtbl[5])(@this, dwCookie, riid, ppv);
+            ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, int, Guid*, void**, int>)@this->LpVtbl[5])(@this, dwCookie, riid, ppv);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetInterfaceFromGlobal(uint dwCookie, Guid* riid, ref void* ppv)
+        public readonly unsafe int GetInterfaceFromGlobal(int dwCookie, Guid* riid, ref void* ppv)
         {
             var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void** ppvPtr = &ppv)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, uint, Guid*, void**, int>)@this->LpVtbl[5])(@this, dwCookie, riid, ppvPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, int, Guid*, void**, int>)@this->LpVtbl[5])(@this, dwCookie, riid, ppvPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetInterfaceFromGlobal(uint dwCookie, ref Guid riid, void** ppv)
+        public readonly unsafe int GetInterfaceFromGlobal(int dwCookie, ref Guid riid, void** ppv)
         {
             var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, uint, Guid*, void**, int>)@this->LpVtbl[5])(@this, dwCookie, riidPtr, ppv);
+                ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, int, Guid*, void**, int>)@this->LpVtbl[5])(@this, dwCookie, riidPtr, ppv);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetInterfaceFromGlobal(uint dwCookie, ref Guid riid, ref void* ppv)
+        public readonly unsafe int GetInterfaceFromGlobal(int dwCookie, ref Guid riid, ref void* ppv)
         {
             var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -269,7 +269,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void** ppvPtr = &ppv)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, uint, Guid*, void**, int>)@this->LpVtbl[5])(@this, dwCookie, riidPtr, ppvPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IGlobalInterfaceTable*, int, Guid*, void**, int>)@this->LpVtbl[5])(@this, dwCookie, riidPtr, ppvPtr);
                 }
             }
             return ret;
@@ -317,7 +317,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetInterfaceFromGlobal<TI0>(uint dwCookie, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int GetInterfaceFromGlobal<TI0>(int dwCookie, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -335,7 +335,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> GetInterfaceFromGlobal<TI0>(uint dwCookie) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> GetInterfaceFromGlobal<TI0>(int dwCookie) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IGlobalInterfaceTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader

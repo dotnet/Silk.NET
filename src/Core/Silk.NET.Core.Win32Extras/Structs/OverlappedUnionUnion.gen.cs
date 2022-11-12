@@ -21,8 +21,8 @@ namespace Silk.NET.Core.Win32Extras
     {
         public OverlappedUnionUnion
         (
-            uint? offset = null,
-            uint? offsetHigh = null
+            int? offset = null,
+            int? offsetHigh = null
         ) : this()
         {
             if (offset is not null)
@@ -40,11 +40,11 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Offset")]
-        public uint Offset;
+        public int Offset;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "OffsetHigh")]
-        public uint OffsetHigh;
+        public int OffsetHigh;
     }
 }

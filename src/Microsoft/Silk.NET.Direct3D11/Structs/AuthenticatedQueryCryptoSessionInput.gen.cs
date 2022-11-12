@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D11
         public AuthenticatedQueryCryptoSessionInput
         (
             AuthenticatedQueryInput? input = null,
-            void* decoderHandle = null
+            nint* decoderHandle = null
         ) : this()
         {
             if (input is not null)
@@ -45,6 +45,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "DecoderHandle")]
-        public void* DecoderHandle;
+        public nint* DecoderHandle;
     }
 }

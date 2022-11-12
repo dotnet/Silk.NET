@@ -103,7 +103,7 @@ public unsafe static class DxcCompilerArgsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddArguments(this ComPtr<IDxcCompilerArgs> thisVtbl, char** pArguments, uint argCount)
+    public static unsafe int AddArguments(this ComPtr<IDxcCompilerArgs> thisVtbl, [Flow(FlowDirection.In)] char** pArguments, uint argCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -112,7 +112,7 @@ public unsafe static class DxcCompilerArgsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddArguments(this ComPtr<IDxcCompilerArgs> thisVtbl, ref char* pArguments, uint argCount)
+    public static unsafe int AddArguments(this ComPtr<IDxcCompilerArgs> thisVtbl, [Flow(FlowDirection.In)] in char* pArguments, uint argCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -124,7 +124,7 @@ public unsafe static class DxcCompilerArgsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddArgumentsUTF8(this ComPtr<IDxcCompilerArgs> thisVtbl, byte** pArguments, uint argCount)
+    public static unsafe int AddArgumentsUTF8(this ComPtr<IDxcCompilerArgs> thisVtbl, [Flow(FlowDirection.In)] byte** pArguments, uint argCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -133,7 +133,7 @@ public unsafe static class DxcCompilerArgsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddArgumentsUTF8(this ComPtr<IDxcCompilerArgs> thisVtbl, ref byte* pArguments, uint argCount)
+    public static unsafe int AddArgumentsUTF8(this ComPtr<IDxcCompilerArgs> thisVtbl, [Flow(FlowDirection.In)] in byte* pArguments, uint argCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -191,7 +191,7 @@ public unsafe static class DxcCompilerArgsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddArguments(this ComPtr<IDxcCompilerArgs> thisVtbl, string[] pArgumentsSa, uint argCount)
+    public static int AddArguments(this ComPtr<IDxcCompilerArgs> thisVtbl, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader
@@ -203,7 +203,7 @@ public unsafe static class DxcCompilerArgsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddArgumentsUTF8(this ComPtr<IDxcCompilerArgs> thisVtbl, string[] pArgumentsSa, uint argCount)
+    public static int AddArgumentsUTF8(this ComPtr<IDxcCompilerArgs> thisVtbl, [Flow(FlowDirection.In)] string[] pArgumentsSa, uint argCount)
     {
         var @this = thisVtbl.Handle;
         // StringArrayOverloader

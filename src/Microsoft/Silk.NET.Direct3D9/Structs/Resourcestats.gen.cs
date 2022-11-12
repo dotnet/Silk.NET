@@ -21,17 +21,17 @@ namespace Silk.NET.Direct3D9
     {
         public Resourcestats
         (
-            int? bThrashing = null,
-            uint? approxBytesDownloaded = null,
-            uint? numEvicts = null,
-            uint? numVidCreates = null,
-            uint? lastPri = null,
-            uint? numUsed = null,
-            uint? numUsedInVidMem = null,
-            uint? workingSet = null,
-            uint? workingSetBytes = null,
-            uint? totalManaged = null,
-            uint? totalBytes = null
+            bool? bThrashing = null,
+            int? approxBytesDownloaded = null,
+            int? numEvicts = null,
+            int? numVidCreates = null,
+            int? lastPri = null,
+            int? numUsed = null,
+            int? numUsedInVidMem = null,
+            int? workingSet = null,
+            int? workingSetBytes = null,
+            int? totalManaged = null,
+            int? totalBytes = null
         ) : this()
         {
             if (bThrashing is not null)
@@ -94,56 +94,56 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "bThrashing")]
-        public int BThrashing;
+        public bool BThrashing;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "ApproxBytesDownloaded")]
-        public uint ApproxBytesDownloaded;
+        public int ApproxBytesDownloaded;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "NumEvicts")]
-        public uint NumEvicts;
+        public int NumEvicts;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "NumVidCreates")]
-        public uint NumVidCreates;
+        public int NumVidCreates;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "LastPri")]
-        public uint LastPri;
+        public int LastPri;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "NumUsed")]
-        public uint NumUsed;
+        public int NumUsed;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "NumUsedInVidMem")]
-        public uint NumUsedInVidMem;
+        public int NumUsedInVidMem;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "WorkingSet")]
-        public uint WorkingSet;
+        public int WorkingSet;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "WorkingSetBytes")]
-        public uint WorkingSetBytes;
+        public int WorkingSetBytes;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "TotalManaged")]
-        public uint TotalManaged;
+        public int TotalManaged;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "TotalBytes")]
-        public uint TotalBytes;
+        public int TotalBytes;
     }
 }

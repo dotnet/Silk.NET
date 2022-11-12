@@ -85,11 +85,11 @@ public unsafe static class SynchronizeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Wait(this ComPtr<ISynchronize> thisVtbl, uint dwFlags, uint dwMilliseconds)
+    public static int Wait(this ComPtr<ISynchronize> thisVtbl, int dwFlags, int dwMilliseconds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<ISynchronize*, uint, uint, int>)@this->LpVtbl[3])(@this, dwFlags, dwMilliseconds);
+        ret = ((delegate* unmanaged[Cdecl]<ISynchronize*, int, int, int>)@this->LpVtbl[3])(@this, dwFlags, dwMilliseconds);
         return ret;
     }
 

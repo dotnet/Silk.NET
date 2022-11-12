@@ -21,7 +21,7 @@ namespace Silk.NET.DXVA
     {
         public ProcAmpControlBlt
         (
-            uint? size = null,
+            int? size = null,
             Silk.NET.Maths.Box2D<int>? dstRect = null,
             Silk.NET.Maths.Box2D<int>? srcRect = null,
             float? alpha = null,
@@ -76,7 +76,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Size")]
-        public uint Size;
+        public int Size;
 
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]

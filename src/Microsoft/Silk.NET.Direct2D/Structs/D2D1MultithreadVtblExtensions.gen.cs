@@ -85,11 +85,11 @@ public unsafe static class D2D1MultithreadVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMultithreadProtected(this ComPtr<ID2D1Multithread> thisVtbl)
+    public static bool GetMultithreadProtected(this ComPtr<ID2D1Multithread> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1Multithread*, int>)@this->LpVtbl[3])(@this);
+        bool ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1Multithread*, bool>)@this->LpVtbl[3])(@this);
         return ret;
     }
 

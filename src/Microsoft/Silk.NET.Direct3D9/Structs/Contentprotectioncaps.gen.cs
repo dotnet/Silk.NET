@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D9
     {
         public Contentprotectioncaps
         (
-            uint? caps = null,
+            int? caps = null,
             Guid? keyExchangeType = null,
             uint? bufferAlignmentStart = null,
             uint? blockAlignmentSize = null,
@@ -58,7 +58,7 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Caps")]
-        public uint Caps;
+        public int Caps;
 
         [NativeName("Type", "GUID")]
         [NativeName("Type.Name", "GUID")]

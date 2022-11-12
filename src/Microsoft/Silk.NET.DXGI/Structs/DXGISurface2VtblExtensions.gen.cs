@@ -85,7 +85,7 @@ public unsafe static class DXGISurface2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDXGISurface2> thisVtbl, Guid* Name, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<IDXGISurface2> thisVtbl, Guid* Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -94,7 +94,7 @@ public unsafe static class DXGISurface2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGISurface2> thisVtbl, Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGISurface2> thisVtbl, Guid* Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -106,7 +106,7 @@ public unsafe static class DXGISurface2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDXGISurface2> thisVtbl, ref Guid Name, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<IDXGISurface2> thisVtbl, ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DXGISurface2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDXGISurface2> thisVtbl, ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDXGISurface2> thisVtbl, ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -436,22 +436,22 @@ public unsafe static class DXGISurface2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDC(this ComPtr<IDXGISurface2> thisVtbl, int Discard, nint* phdc)
+    public static unsafe int GetDC(this ComPtr<IDXGISurface2> thisVtbl, bool Discard, nint* phdc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, int, nint*, int>)@this->LpVtbl[11])(@this, Discard, phdc);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, bool, nint*, int>)@this->LpVtbl[11])(@this, Discard, phdc);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDC(this ComPtr<IDXGISurface2> thisVtbl, int Discard, ref nint phdc)
+    public static int GetDC(this ComPtr<IDXGISurface2> thisVtbl, bool Discard, ref nint phdc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (nint* phdcPtr = &phdc)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, int, nint*, int>)@this->LpVtbl[11])(@this, Discard, phdcPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, bool, nint*, int>)@this->LpVtbl[11])(@this, Discard, phdcPtr);
         }
         return ret;
     }
@@ -611,15 +611,15 @@ public unsafe static class DXGISurface2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGISurface2> thisVtbl, Guid* Name, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGISurface2> thisVtbl, Guid* Name, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(Name, DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(Name, DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDXGISurface2> thisVtbl, Span<Guid> Name, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<IDXGISurface2> thisVtbl, Span<Guid> Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -627,11 +627,11 @@ public unsafe static class DXGISurface2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDXGISurface2> thisVtbl, Span<Guid> Name, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDXGISurface2> thisVtbl, Span<Guid> Name, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -797,7 +797,7 @@ public unsafe static class DXGISurface2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDC(this ComPtr<IDXGISurface2> thisVtbl, int Discard, Span<nint> phdc)
+    public static int GetDC(this ComPtr<IDXGISurface2> thisVtbl, bool Discard, Span<nint> phdc)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

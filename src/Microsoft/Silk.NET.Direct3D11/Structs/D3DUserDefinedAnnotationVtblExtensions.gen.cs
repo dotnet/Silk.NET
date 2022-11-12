@@ -85,34 +85,23 @@ public unsafe static class D3DUserDefinedAnnotationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BeginEvent(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, char* Name)
+    public static unsafe int BeginEvent(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(FlowDirection.In)] nint* Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, int>)@this->LpVtbl[3])(@this, Name);
+        ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, nint*, int>)@this->LpVtbl[3])(@this, Name);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int BeginEvent(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, ref char Name)
+    public static int BeginEvent(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(FlowDirection.In)] in nint Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* NamePtr = &Name)
+        fixed (nint* NamePtr = &Name)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, int>)@this->LpVtbl[3])(@this, NamePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, nint*, int>)@this->LpVtbl[3])(@this, NamePtr);
         }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int BeginEvent(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
-        ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, byte*, int>)@this->LpVtbl[3])(@this, NamePtr);
-        SilkMarshal.Free((nint)NamePtr);
         return ret;
     }
 
@@ -126,37 +115,28 @@ public unsafe static class D3DUserDefinedAnnotationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetMarker(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, char* Name)
+    public static unsafe void SetMarker(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(FlowDirection.In)] nint* Name)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, void>)@this->LpVtbl[5])(@this, Name);
+        ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, nint*, void>)@this->LpVtbl[5])(@this, Name);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, ref char Name)
+    public static void SetMarker(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(FlowDirection.In)] in nint Name)
     {
         var @this = thisVtbl.Handle;
-        fixed (char* NamePtr = &Name)
+        fixed (nint* NamePtr = &Name)
         {
-            ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, char*, void>)@this->LpVtbl[5])(@this, NamePtr);
+            ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, nint*, void>)@this->LpVtbl[5])(@this, NamePtr);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+    public static bool GetStatus(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
-        ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, byte*, void>)@this->LpVtbl[5])(@this, NamePtr);
-        SilkMarshal.Free((nint)NamePtr);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetStatus(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, int>)@this->LpVtbl[6])(@this);
+        bool ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, bool>)@this->LpVtbl[6])(@this);
         return ret;
     }
 
@@ -186,19 +166,19 @@ public unsafe static class D3DUserDefinedAnnotationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int BeginEvent(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, Span<char> Name)
+    public static int BeginEvent(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->BeginEvent(ref Name.GetPinnableReference());
+        return @this->BeginEvent(in Name.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, Span<char> Name)
+    public static void SetMarker(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->SetMarker(ref Name.GetPinnableReference());
+        @this->SetMarker(in Name.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

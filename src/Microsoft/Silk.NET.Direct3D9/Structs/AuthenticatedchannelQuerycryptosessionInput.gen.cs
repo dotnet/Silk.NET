@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D9
         public AuthenticatedchannelQuerycryptosessionInput
         (
             AuthenticatedchannelQueryInput? input = null,
-            void* dXVA2DecodeHandle = null
+            nint* dXVA2DecodeHandle = null
         ) : this()
         {
             if (input is not null)
@@ -45,6 +45,6 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "DXVA2DecodeHandle")]
-        public void* DXVA2DecodeHandle;
+        public nint* DXVA2DecodeHandle;
     }
 }

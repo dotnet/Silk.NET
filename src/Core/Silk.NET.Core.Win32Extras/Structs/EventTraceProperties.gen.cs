@@ -36,7 +36,7 @@ namespace Silk.NET.Core.Win32Extras
             uint? buffersWritten = null,
             uint? logBuffersLost = null,
             uint? realTimeBuffersLost = null,
-            void* loggerThreadId = null,
+            nint* loggerThreadId = null,
             uint? logFileNameOffset = null,
             uint? loggerNameOffset = null,
             int? ageLimit = null,
@@ -223,7 +223,7 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "LoggerThreadId")]
-        public void* LoggerThreadId;
+        public nint* LoggerThreadId;
 
         [NativeName("Type", "ULONG")]
         [NativeName("Type.Name", "ULONG")]

@@ -21,12 +21,12 @@ namespace Silk.NET.Core.Win32Extras
     {
         public Createfile2ExtendedParameters
         (
-            uint? dwSize = null,
-            uint? dwFileAttributes = null,
-            uint? dwFileFlags = null,
-            uint? dwSecurityQosFlags = null,
+            int? dwSize = null,
+            int? dwFileAttributes = null,
+            int? dwFileFlags = null,
+            int? dwSecurityQosFlags = null,
             Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes = null,
-            void* hTemplateFile = null
+            nint* hTemplateFile = null
         ) : this()
         {
             if (dwSize is not null)
@@ -64,22 +64,22 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwSize")]
-        public uint DwSize;
+        public int DwSize;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwFileAttributes")]
-        public uint DwFileAttributes;
+        public int DwFileAttributes;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwFileFlags")]
-        public uint DwFileFlags;
+        public int DwFileFlags;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwSecurityQosFlags")]
-        public uint DwSecurityQosFlags;
+        public int DwSecurityQosFlags;
 
         [NativeName("Type", "LPSECURITY_ATTRIBUTES")]
         [NativeName("Type.Name", "LPSECURITY_ATTRIBUTES")]
@@ -89,6 +89,6 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "hTemplateFile")]
-        public void* HTemplateFile;
+        public nint* HTemplateFile;
     }
 }

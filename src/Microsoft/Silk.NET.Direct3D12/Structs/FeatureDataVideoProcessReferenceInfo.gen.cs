@@ -27,7 +27,7 @@ namespace Silk.NET.Direct3D12
             VideoProcessFeatureFlags? featureSupport = null,
             Silk.NET.DXGI.Rational? inputFrameRate = null,
             Silk.NET.DXGI.Rational? outputFrameRate = null,
-            int? enableAutoProcessing = null,
+            bool? enableAutoProcessing = null,
             uint? pastFrames = null,
             uint? futureFrames = null
         ) : this()
@@ -112,7 +112,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "EnableAutoProcessing")]
-        public int EnableAutoProcessing;
+        public bool EnableAutoProcessing;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

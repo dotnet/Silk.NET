@@ -157,11 +157,11 @@ public unsafe static class DStorageQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void* GetErrorEvent(this ComPtr<IDStorageQueue> thisVtbl)
+    public static unsafe nint* GetErrorEvent(this ComPtr<IDStorageQueue> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        void* ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDStorageQueue*, void*>)@this->LpVtbl[9])(@this);
+        nint* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDStorageQueue*, nint*>)@this->LpVtbl[9])(@this);
         return ret;
     }
 

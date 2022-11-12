@@ -28,21 +28,21 @@ namespace Silk.NET.Vulkan.Video
             byte? numExtraSliceHeaderBits = null,
             byte? numRefIdxL0DefaultActiveMinus1 = null,
             byte? numRefIdxL1DefaultActiveMinus1 = null,
-            byte? initQpMinus26 = null,
+            sbyte? initQpMinus26 = null,
             byte? diffCuQpDeltaDepth = null,
-            byte? ppsCbQpOffset = null,
-            byte? ppsCrQpOffset = null,
-            byte? ppsBetaOffsetDiv2 = null,
-            byte? ppsTcOffsetDiv2 = null,
+            sbyte? ppsCbQpOffset = null,
+            sbyte? ppsCrQpOffset = null,
+            sbyte? ppsBetaOffsetDiv2 = null,
+            sbyte? ppsTcOffsetDiv2 = null,
             byte? log2ParallelMergeLevelMinus2 = null,
             byte? log2MaxTransformSkipBlockSizeMinus2 = null,
             byte? diffCuChromaQpOffsetDepth = null,
             byte? chromaQpOffsetListLenMinus1 = null,
             byte? log2SaoOffsetScaleLuma = null,
             byte? log2SaoOffsetScaleChroma = null,
-            byte? ppsActYQpOffsetPlus5 = null,
-            byte? ppsActCbQpOffsetPlus5 = null,
-            byte? ppsActCrQpOffsetPlus3 = null,
+            sbyte? ppsActYQpOffsetPlus5 = null,
+            sbyte? ppsActCbQpOffsetPlus5 = null,
+            sbyte? ppsActCrQpOffsetPlus3 = null,
             byte? ppsNumPalettePredictorInitializers = null,
             byte? lumaBitDepthEntryMinus8 = null,
             byte? chromaBitDepthEntryMinus8 = null,
@@ -255,7 +255,7 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "init_qp_minus26")]
-        public byte InitQpMinus26;
+        public sbyte InitQpMinus26;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
@@ -265,22 +265,22 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "pps_cb_qp_offset")]
-        public byte PpsCbQpOffset;
+        public sbyte PpsCbQpOffset;
 
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "pps_cr_qp_offset")]
-        public byte PpsCrQpOffset;
+        public sbyte PpsCrQpOffset;
 
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "pps_beta_offset_div2")]
-        public byte PpsBetaOffsetDiv2;
+        public sbyte PpsBetaOffsetDiv2;
 
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "pps_tc_offset_div2")]
-        public byte PpsTcOffsetDiv2;
+        public sbyte PpsTcOffsetDiv2;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
@@ -323,17 +323,17 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "pps_act_y_qp_offset_plus5")]
-        public byte PpsActYQpOffsetPlus5;
+        public sbyte PpsActYQpOffsetPlus5;
 
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "pps_act_cb_qp_offset_plus5")]
-        public byte PpsActCbQpOffsetPlus5;
+        public sbyte PpsActCbQpOffsetPlus5;
 
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "pps_act_cr_qp_offset_plus3")]
-        public byte PpsActCrQpOffsetPlus3;
+        public sbyte PpsActCrQpOffsetPlus3;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]

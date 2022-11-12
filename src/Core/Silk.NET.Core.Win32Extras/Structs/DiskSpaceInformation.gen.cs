@@ -32,8 +32,8 @@ namespace Silk.NET.Core.Win32Extras
             ulong? volumeStorageReserveAllocationUnits = null,
             ulong? availableCommittedAllocationUnits = null,
             ulong? poolAvailableAllocationUnits = null,
-            uint? sectorsPerAllocationUnit = null,
-            uint? bytesPerSector = null
+            int? sectorsPerAllocationUnit = null,
+            int? bytesPerSector = null
         ) : this()
         {
             if (actualTotalAllocationUnits is not null)
@@ -161,11 +161,11 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "SectorsPerAllocationUnit")]
-        public uint SectorsPerAllocationUnit;
+        public int SectorsPerAllocationUnit;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "BytesPerSector")]
-        public uint BytesPerSector;
+        public int BytesPerSector;
     }
 }

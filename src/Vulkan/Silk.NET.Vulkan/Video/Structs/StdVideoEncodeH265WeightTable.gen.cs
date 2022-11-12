@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan.Video
         (
             StdVideoEncodeH265WeightTableFlags? flags = null,
             byte? lumaLog2WeightDenom = null,
-            byte? deltaChromaLog2WeightDenom = null
+            sbyte? deltaChromaLog2WeightDenom = null
         ) : this()
         {
             if (flags is not null)
@@ -56,7 +56,7 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "delta_chroma_log2_weight_denom")]
-        public byte DeltaChromaLog2WeightDenom;
+        public sbyte DeltaChromaLog2WeightDenom;
         [NativeName("Type", "int8_t [15]")]
         [NativeName("Type.Name", "int8_t [15]")]
         [NativeName("Name", "delta_luma_weight_l0")]

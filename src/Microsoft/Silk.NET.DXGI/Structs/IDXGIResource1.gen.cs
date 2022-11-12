@@ -120,7 +120,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(Guid* Name, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(Guid* Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (IDXGIResource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -129,7 +129,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIResource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -141,7 +141,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(ref Guid Name, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (IDXGIResource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -153,7 +153,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIResource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -513,92 +513,67 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, char* lpName, void** pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int dwAccess, [Flow(FlowDirection.In)] nint* lpName, void** pHandle)
         {
             var @this = (IDXGIResource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpName, pHandle);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpName, pHandle);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, char* lpName, ref void* pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int dwAccess, [Flow(FlowDirection.In)] nint* lpName, ref void* pHandle)
         {
             var @this = (IDXGIResource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void** pHandlePtr = &pHandle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpName, pHandlePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpName, pHandlePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, ref char lpName, void** pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int dwAccess, [Flow(FlowDirection.In)] in nint lpName, void** pHandle)
         {
             var @this = (IDXGIResource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (char* lpNamePtr = &lpName)
+            fixed (nint* lpNamePtr = &lpName)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandle);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandle);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, ref char lpName, ref void* pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int dwAccess, [Flow(FlowDirection.In)] in nint lpName, ref void* pHandle)
         {
             var @this = (IDXGIResource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (char* lpNamePtr = &lpName)
+            fixed (nint* lpNamePtr = &lpName)
             {
                 fixed (void** pHandlePtr = &pHandle)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandlePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandlePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, void** pHandle)
-        {
-            var @this = (IDXGIResource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            var lpNamePtr = (byte*) SilkMarshal.StringToPtr(lpName, NativeStringEncoding.LPWStr);
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandle);
-            SilkMarshal.Free((nint)lpNamePtr);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, ref void* pHandle)
-        {
-            var @this = (IDXGIResource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            var lpNamePtr = (byte*) SilkMarshal.StringToPtr(lpName, NativeStringEncoding.LPWStr);
-            fixed (void** pHandlePtr = &pHandle)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandlePtr);
-            }
-            SilkMarshal.Free((nint)lpNamePtr);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, char* lpName, void** pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int dwAccess, [Flow(FlowDirection.In)] nint* lpName, void** pHandle)
         {
             var @this = (IDXGIResource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpName, pHandle);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpName, pHandle);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, char* lpName, ref void* pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int dwAccess, [Flow(FlowDirection.In)] nint* lpName, ref void* pHandle)
         {
             var @this = (IDXGIResource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -606,72 +581,41 @@ namespace Silk.NET.DXGI
             {
                 fixed (void** pHandlePtr = &pHandle)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpName, pHandlePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpName, pHandlePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, ref char lpName, void** pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int dwAccess, [Flow(FlowDirection.In)] in nint lpName, void** pHandle)
         {
             var @this = (IDXGIResource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
             {
-                fixed (char* lpNamePtr = &lpName)
+                fixed (nint* lpNamePtr = &lpName)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandle);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandle);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, ref char lpName, ref void* pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int dwAccess, [Flow(FlowDirection.In)] in nint lpName, ref void* pHandle)
         {
             var @this = (IDXGIResource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
             {
-                fixed (char* lpNamePtr = &lpName)
+                fixed (nint* lpNamePtr = &lpName)
                 {
                     fixed (void** pHandlePtr = &pHandle)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandlePtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandlePtr);
                     }
                 }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, void** pHandle)
-        {
-            var @this = (IDXGIResource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
-            {
-            var lpNamePtr = (byte*) SilkMarshal.StringToPtr(lpName, NativeStringEncoding.LPWStr);
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandle);
-            SilkMarshal.Free((nint)lpNamePtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, ref void* pHandle)
-        {
-            var @this = (IDXGIResource1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
-            {
-            var lpNamePtr = (byte*) SilkMarshal.StringToPtr(lpName, NativeStringEncoding.LPWStr);
-                fixed (void** pHandlePtr = &pHandle)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandlePtr);
-                }
-            SilkMarshal.Free((nint)lpNamePtr);
             }
             return ret;
         }

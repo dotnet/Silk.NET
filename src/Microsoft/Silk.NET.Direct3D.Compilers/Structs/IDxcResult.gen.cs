@@ -177,11 +177,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int HasOutput(OutKind dxcOutKind)
+        public readonly bool HasOutput(OutKind dxcOutKind)
         {
             var @this = (IDxcResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, int>)@this->LpVtbl[6])(@this, dxcOutKind);
+            bool ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, bool>)@this->LpVtbl[6])(@this, dxcOutKind);
             return ret;
         }
 

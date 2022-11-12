@@ -111,75 +111,50 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadSource(char* pFilename, IDxcBlob** ppIncludeSource)
+        public readonly unsafe int LoadSource([Flow(FlowDirection.In)] nint* pFilename, IDxcBlob** ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcIncludeHandler*, char*, IDxcBlob**, int>)@this->LpVtbl[3])(@this, pFilename, ppIncludeSource);
+            ret = ((delegate* unmanaged[Stdcall]<IDxcIncludeHandler*, nint*, IDxcBlob**, int>)@this->LpVtbl[3])(@this, pFilename, ppIncludeSource);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadSource(char* pFilename, ref IDxcBlob* ppIncludeSource)
+        public readonly unsafe int LoadSource([Flow(FlowDirection.In)] nint* pFilename, ref IDxcBlob* ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDxcBlob** ppIncludeSourcePtr = &ppIncludeSource)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcIncludeHandler*, char*, IDxcBlob**, int>)@this->LpVtbl[3])(@this, pFilename, ppIncludeSourcePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcIncludeHandler*, nint*, IDxcBlob**, int>)@this->LpVtbl[3])(@this, pFilename, ppIncludeSourcePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadSource(ref char pFilename, IDxcBlob** ppIncludeSource)
+        public readonly unsafe int LoadSource([Flow(FlowDirection.In)] in nint pFilename, IDxcBlob** ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (char* pFilenamePtr = &pFilename)
+            fixed (nint* pFilenamePtr = &pFilename)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcIncludeHandler*, char*, IDxcBlob**, int>)@this->LpVtbl[3])(@this, pFilenamePtr, ppIncludeSource);
+                ret = ((delegate* unmanaged[Stdcall]<IDxcIncludeHandler*, nint*, IDxcBlob**, int>)@this->LpVtbl[3])(@this, pFilenamePtr, ppIncludeSource);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadSource(ref char pFilename, ref IDxcBlob* ppIncludeSource)
+        public readonly unsafe int LoadSource([Flow(FlowDirection.In)] in nint pFilename, ref IDxcBlob* ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (char* pFilenamePtr = &pFilename)
+            fixed (nint* pFilenamePtr = &pFilename)
             {
                 fixed (IDxcBlob** ppIncludeSourcePtr = &ppIncludeSource)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDxcIncludeHandler*, char*, IDxcBlob**, int>)@this->LpVtbl[3])(@this, pFilenamePtr, ppIncludeSourcePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDxcIncludeHandler*, nint*, IDxcBlob**, int>)@this->LpVtbl[3])(@this, pFilenamePtr, ppIncludeSourcePtr);
                 }
             }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadSource([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFilename, IDxcBlob** ppIncludeSource)
-        {
-            var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            var pFilenamePtr = (byte*) SilkMarshal.StringToPtr(pFilename, NativeStringEncoding.LPWStr);
-            ret = ((delegate* unmanaged[Stdcall]<IDxcIncludeHandler*, byte*, IDxcBlob**, int>)@this->LpVtbl[3])(@this, pFilenamePtr, ppIncludeSource);
-            SilkMarshal.Free((nint)pFilenamePtr);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadSource([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFilename, ref IDxcBlob* ppIncludeSource)
-        {
-            var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            var pFilenamePtr = (byte*) SilkMarshal.StringToPtr(pFilename, NativeStringEncoding.LPWStr);
-            fixed (IDxcBlob** ppIncludeSourcePtr = &ppIncludeSource)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDxcIncludeHandler*, byte*, IDxcBlob**, int>)@this->LpVtbl[3])(@this, pFilenamePtr, ppIncludeSourcePtr);
-            }
-            SilkMarshal.Free((nint)pFilenamePtr);
             return ret;
         }
 
@@ -193,7 +168,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadSource<TI0>(char* pFilename, ref ComPtr<TI0> ppIncludeSource) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        public readonly unsafe int LoadSource<TI0>([Flow(FlowDirection.In)] nint* pFilename, ref ComPtr<TI0> ppIncludeSource) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -201,19 +176,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LoadSource<TI0>(ref char pFilename, ref ComPtr<TI0> ppIncludeSource) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
+        public readonly int LoadSource<TI0>([Flow(FlowDirection.In)] in nint pFilename, ref ComPtr<TI0> ppIncludeSource) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->LoadSource(ref pFilename, (IDxcBlob**) ppIncludeSource.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int LoadSource<TI0>([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFilename, ref ComPtr<TI0> ppIncludeSource) where TI0 : unmanaged, IComVtbl<IDxcBlob>, IComVtbl<TI0>
-        {
-            var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->LoadSource(pFilename, (IDxcBlob**) ppIncludeSource.GetAddressOf());
+            return @this->LoadSource(in pFilename, (IDxcBlob**) ppIncludeSource.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>

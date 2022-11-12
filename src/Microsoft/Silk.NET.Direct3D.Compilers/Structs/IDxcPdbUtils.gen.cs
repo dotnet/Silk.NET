@@ -495,11 +495,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int IsFullPDB()
+        public readonly bool IsFullPDB()
         {
             var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcPdbUtils*, int>)@this->LpVtbl[20])(@this);
+            bool ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcPdbUtils*, bool>)@this->LpVtbl[20])(@this);
             return ret;
         }
 
@@ -609,7 +609,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int OverrideRootSignature(char* pRootSignature)
+        public readonly unsafe int OverrideRootSignature([Flow(FlowDirection.In)] char* pRootSignature)
         {
             var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -618,7 +618,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int OverrideRootSignature(ref char pRootSignature)
+        public readonly int OverrideRootSignature([Flow(FlowDirection.In)] in char pRootSignature)
         {
             var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -630,7 +630,7 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int OverrideRootSignature([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pRootSignature)
+        public readonly int OverrideRootSignature([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pRootSignature)
         {
             var @this = (IDxcPdbUtils*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

@@ -21,7 +21,7 @@ namespace Silk.NET.XInput
     {
         public State
         (
-            uint? dwPacketNumber = null,
+            int? dwPacketNumber = null,
             Gamepad? gamepad = null
         ) : this()
         {
@@ -40,7 +40,7 @@ namespace Silk.NET.XInput
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwPacketNumber")]
-        public uint DwPacketNumber;
+        public int DwPacketNumber;
 
         [NativeName("Type", "XINPUT_GAMEPAD")]
         [NativeName("Type.Name", "XINPUT_GAMEPAD")]

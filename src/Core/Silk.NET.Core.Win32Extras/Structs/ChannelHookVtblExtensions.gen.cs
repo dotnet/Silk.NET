@@ -385,83 +385,83 @@ public unsafe static class ChannelHookVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClientNotify(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Guid* riid, uint cbDataSize, void* pDataBuffer, uint lDataRep, int hrFault)
+    public static unsafe void ClientNotify(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Guid* riid, uint cbDataSize, void* pDataBuffer, int lDataRep, int hrFault)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtent, riid, cbDataSize, pDataBuffer, lDataRep, hrFault);
+        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, int, int, void>)@this->LpVtbl[5])(@this, uExtent, riid, cbDataSize, pDataBuffer, lDataRep, hrFault);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClientNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Guid* riid, uint cbDataSize, ref T0 pDataBuffer, uint lDataRep, int hrFault) where T0 : unmanaged
+    public static unsafe void ClientNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Guid* riid, uint cbDataSize, ref T0 pDataBuffer, int lDataRep, int hrFault) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pDataBufferPtr = &pDataBuffer)
         {
-            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtent, riid, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
+            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, int, int, void>)@this->LpVtbl[5])(@this, uExtent, riid, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClientNotify(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, ref Guid riid, uint cbDataSize, void* pDataBuffer, uint lDataRep, int hrFault)
+    public static unsafe void ClientNotify(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, ref Guid riid, uint cbDataSize, void* pDataBuffer, int lDataRep, int hrFault)
     {
         var @this = thisVtbl.Handle;
         fixed (Guid* riidPtr = &riid)
         {
-            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtent, riidPtr, cbDataSize, pDataBuffer, lDataRep, hrFault);
+            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, int, int, void>)@this->LpVtbl[5])(@this, uExtent, riidPtr, cbDataSize, pDataBuffer, lDataRep, hrFault);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClientNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, ref Guid riid, uint cbDataSize, ref T0 pDataBuffer, uint lDataRep, int hrFault) where T0 : unmanaged
+    public static unsafe void ClientNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, ref Guid riid, uint cbDataSize, ref T0 pDataBuffer, int lDataRep, int hrFault) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (Guid* riidPtr = &riid)
         {
             fixed (void* pDataBufferPtr = &pDataBuffer)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtent, riidPtr, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, int, int, void>)@this->LpVtbl[5])(@this, uExtent, riidPtr, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClientNotify(this ComPtr<IChannelHook> thisVtbl, ref Guid uExtent, Guid* riid, uint cbDataSize, void* pDataBuffer, uint lDataRep, int hrFault)
+    public static unsafe void ClientNotify(this ComPtr<IChannelHook> thisVtbl, ref Guid uExtent, Guid* riid, uint cbDataSize, void* pDataBuffer, int lDataRep, int hrFault)
     {
         var @this = thisVtbl.Handle;
         fixed (Guid* uExtentPtr = &uExtent)
         {
-            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtentPtr, riid, cbDataSize, pDataBuffer, lDataRep, hrFault);
+            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, int, int, void>)@this->LpVtbl[5])(@this, uExtentPtr, riid, cbDataSize, pDataBuffer, lDataRep, hrFault);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClientNotify<T0>(this ComPtr<IChannelHook> thisVtbl, ref Guid uExtent, Guid* riid, uint cbDataSize, ref T0 pDataBuffer, uint lDataRep, int hrFault) where T0 : unmanaged
+    public static unsafe void ClientNotify<T0>(this ComPtr<IChannelHook> thisVtbl, ref Guid uExtent, Guid* riid, uint cbDataSize, ref T0 pDataBuffer, int lDataRep, int hrFault) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (Guid* uExtentPtr = &uExtent)
         {
             fixed (void* pDataBufferPtr = &pDataBuffer)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtentPtr, riid, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, int, int, void>)@this->LpVtbl[5])(@this, uExtentPtr, riid, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClientNotify(this ComPtr<IChannelHook> thisVtbl, ref Guid uExtent, ref Guid riid, uint cbDataSize, void* pDataBuffer, uint lDataRep, int hrFault)
+    public static unsafe void ClientNotify(this ComPtr<IChannelHook> thisVtbl, ref Guid uExtent, ref Guid riid, uint cbDataSize, void* pDataBuffer, int lDataRep, int hrFault)
     {
         var @this = thisVtbl.Handle;
         fixed (Guid* uExtentPtr = &uExtent)
         {
             fixed (Guid* riidPtr = &riid)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtentPtr, riidPtr, cbDataSize, pDataBuffer, lDataRep, hrFault);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, int, int, void>)@this->LpVtbl[5])(@this, uExtentPtr, riidPtr, cbDataSize, pDataBuffer, lDataRep, hrFault);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClientNotify<T0>(this ComPtr<IChannelHook> thisVtbl, ref Guid uExtent, ref Guid riid, uint cbDataSize, ref T0 pDataBuffer, uint lDataRep, int hrFault) where T0 : unmanaged
+    public static void ClientNotify<T0>(this ComPtr<IChannelHook> thisVtbl, ref Guid uExtent, ref Guid riid, uint cbDataSize, ref T0 pDataBuffer, int lDataRep, int hrFault) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (Guid* uExtentPtr = &uExtent)
@@ -470,90 +470,90 @@ public unsafe static class ChannelHookVtblExtensions
             {
                 fixed (void* pDataBufferPtr = &pDataBuffer)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, int, void>)@this->LpVtbl[5])(@this, uExtentPtr, riidPtr, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, int, int, void>)@this->LpVtbl[5])(@this, uExtentPtr, riidPtr, cbDataSize, pDataBufferPtr, lDataRep, hrFault);
                 }
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ServerNotify(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Guid* riid, uint cbDataSize, void* pDataBuffer, uint lDataRep)
+    public static unsafe void ServerNotify(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Guid* riid, uint cbDataSize, void* pDataBuffer, int lDataRep)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtent, riid, cbDataSize, pDataBuffer, lDataRep);
+        ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, int, void>)@this->LpVtbl[6])(@this, uExtent, riid, cbDataSize, pDataBuffer, lDataRep);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ServerNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Guid* riid, uint cbDataSize, ref T0 pDataBuffer, uint lDataRep) where T0 : unmanaged
+    public static unsafe void ServerNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Guid* riid, uint cbDataSize, ref T0 pDataBuffer, int lDataRep) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pDataBufferPtr = &pDataBuffer)
         {
-            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtent, riid, cbDataSize, pDataBufferPtr, lDataRep);
+            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, int, void>)@this->LpVtbl[6])(@this, uExtent, riid, cbDataSize, pDataBufferPtr, lDataRep);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ServerNotify(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, ref Guid riid, uint cbDataSize, void* pDataBuffer, uint lDataRep)
+    public static unsafe void ServerNotify(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, ref Guid riid, uint cbDataSize, void* pDataBuffer, int lDataRep)
     {
         var @this = thisVtbl.Handle;
         fixed (Guid* riidPtr = &riid)
         {
-            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtent, riidPtr, cbDataSize, pDataBuffer, lDataRep);
+            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, int, void>)@this->LpVtbl[6])(@this, uExtent, riidPtr, cbDataSize, pDataBuffer, lDataRep);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ServerNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, ref Guid riid, uint cbDataSize, ref T0 pDataBuffer, uint lDataRep) where T0 : unmanaged
+    public static unsafe void ServerNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, ref Guid riid, uint cbDataSize, ref T0 pDataBuffer, int lDataRep) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (Guid* riidPtr = &riid)
         {
             fixed (void* pDataBufferPtr = &pDataBuffer)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtent, riidPtr, cbDataSize, pDataBufferPtr, lDataRep);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, int, void>)@this->LpVtbl[6])(@this, uExtent, riidPtr, cbDataSize, pDataBufferPtr, lDataRep);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ServerNotify(this ComPtr<IChannelHook> thisVtbl, ref Guid uExtent, Guid* riid, uint cbDataSize, void* pDataBuffer, uint lDataRep)
+    public static unsafe void ServerNotify(this ComPtr<IChannelHook> thisVtbl, ref Guid uExtent, Guid* riid, uint cbDataSize, void* pDataBuffer, int lDataRep)
     {
         var @this = thisVtbl.Handle;
         fixed (Guid* uExtentPtr = &uExtent)
         {
-            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtentPtr, riid, cbDataSize, pDataBuffer, lDataRep);
+            ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, int, void>)@this->LpVtbl[6])(@this, uExtentPtr, riid, cbDataSize, pDataBuffer, lDataRep);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ServerNotify<T0>(this ComPtr<IChannelHook> thisVtbl, ref Guid uExtent, Guid* riid, uint cbDataSize, ref T0 pDataBuffer, uint lDataRep) where T0 : unmanaged
+    public static unsafe void ServerNotify<T0>(this ComPtr<IChannelHook> thisVtbl, ref Guid uExtent, Guid* riid, uint cbDataSize, ref T0 pDataBuffer, int lDataRep) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (Guid* uExtentPtr = &uExtent)
         {
             fixed (void* pDataBufferPtr = &pDataBuffer)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtentPtr, riid, cbDataSize, pDataBufferPtr, lDataRep);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, int, void>)@this->LpVtbl[6])(@this, uExtentPtr, riid, cbDataSize, pDataBufferPtr, lDataRep);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ServerNotify(this ComPtr<IChannelHook> thisVtbl, ref Guid uExtent, ref Guid riid, uint cbDataSize, void* pDataBuffer, uint lDataRep)
+    public static unsafe void ServerNotify(this ComPtr<IChannelHook> thisVtbl, ref Guid uExtent, ref Guid riid, uint cbDataSize, void* pDataBuffer, int lDataRep)
     {
         var @this = thisVtbl.Handle;
         fixed (Guid* uExtentPtr = &uExtent)
         {
             fixed (Guid* riidPtr = &riid)
             {
-                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtentPtr, riidPtr, cbDataSize, pDataBuffer, lDataRep);
+                ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, int, void>)@this->LpVtbl[6])(@this, uExtentPtr, riidPtr, cbDataSize, pDataBuffer, lDataRep);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void ServerNotify<T0>(this ComPtr<IChannelHook> thisVtbl, ref Guid uExtent, ref Guid riid, uint cbDataSize, ref T0 pDataBuffer, uint lDataRep) where T0 : unmanaged
+    public static void ServerNotify<T0>(this ComPtr<IChannelHook> thisVtbl, ref Guid uExtent, ref Guid riid, uint cbDataSize, ref T0 pDataBuffer, int lDataRep) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (Guid* uExtentPtr = &uExtent)
@@ -562,7 +562,7 @@ public unsafe static class ChannelHookVtblExtensions
             {
                 fixed (void* pDataBufferPtr = &pDataBuffer)
                 {
-                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)@this->LpVtbl[6])(@this, uExtentPtr, riidPtr, cbDataSize, pDataBufferPtr, lDataRep);
+                    ((delegate* unmanaged[Cdecl]<IChannelHook*, Guid*, Guid*, uint, void*, int, void>)@this->LpVtbl[6])(@this, uExtentPtr, riidPtr, cbDataSize, pDataBufferPtr, lDataRep);
                 }
             }
         }
@@ -1070,7 +1070,7 @@ public unsafe static class ChannelHookVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClientNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Guid* riid, uint cbDataSize, Span<T0> pDataBuffer, uint lDataRep, int hrFault) where T0 : unmanaged
+    public static unsafe void ClientNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Guid* riid, uint cbDataSize, Span<T0> pDataBuffer, int lDataRep, int hrFault) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1078,7 +1078,7 @@ public unsafe static class ChannelHookVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClientNotify(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Span<Guid> riid, uint cbDataSize, void* pDataBuffer, uint lDataRep, int hrFault)
+    public static unsafe void ClientNotify(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Span<Guid> riid, uint cbDataSize, void* pDataBuffer, int lDataRep, int hrFault)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1086,7 +1086,7 @@ public unsafe static class ChannelHookVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClientNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Span<Guid> riid, uint cbDataSize, Span<T0> pDataBuffer, uint lDataRep, int hrFault) where T0 : unmanaged
+    public static unsafe void ClientNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Span<Guid> riid, uint cbDataSize, Span<T0> pDataBuffer, int lDataRep, int hrFault) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1094,7 +1094,7 @@ public unsafe static class ChannelHookVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClientNotify(this ComPtr<IChannelHook> thisVtbl, Span<Guid> uExtent, Guid* riid, uint cbDataSize, void* pDataBuffer, uint lDataRep, int hrFault)
+    public static unsafe void ClientNotify(this ComPtr<IChannelHook> thisVtbl, Span<Guid> uExtent, Guid* riid, uint cbDataSize, void* pDataBuffer, int lDataRep, int hrFault)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1102,7 +1102,7 @@ public unsafe static class ChannelHookVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClientNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Span<Guid> uExtent, Guid* riid, uint cbDataSize, Span<T0> pDataBuffer, uint lDataRep, int hrFault) where T0 : unmanaged
+    public static unsafe void ClientNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Span<Guid> uExtent, Guid* riid, uint cbDataSize, Span<T0> pDataBuffer, int lDataRep, int hrFault) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1110,7 +1110,7 @@ public unsafe static class ChannelHookVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClientNotify(this ComPtr<IChannelHook> thisVtbl, Span<Guid> uExtent, Span<Guid> riid, uint cbDataSize, void* pDataBuffer, uint lDataRep, int hrFault)
+    public static unsafe void ClientNotify(this ComPtr<IChannelHook> thisVtbl, Span<Guid> uExtent, Span<Guid> riid, uint cbDataSize, void* pDataBuffer, int lDataRep, int hrFault)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1118,7 +1118,7 @@ public unsafe static class ChannelHookVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClientNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Span<Guid> uExtent, Span<Guid> riid, uint cbDataSize, Span<T0> pDataBuffer, uint lDataRep, int hrFault) where T0 : unmanaged
+    public static void ClientNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Span<Guid> uExtent, Span<Guid> riid, uint cbDataSize, Span<T0> pDataBuffer, int lDataRep, int hrFault) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1126,7 +1126,7 @@ public unsafe static class ChannelHookVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ServerNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Guid* riid, uint cbDataSize, Span<T0> pDataBuffer, uint lDataRep) where T0 : unmanaged
+    public static unsafe void ServerNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Guid* riid, uint cbDataSize, Span<T0> pDataBuffer, int lDataRep) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1134,7 +1134,7 @@ public unsafe static class ChannelHookVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ServerNotify(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Span<Guid> riid, uint cbDataSize, void* pDataBuffer, uint lDataRep)
+    public static unsafe void ServerNotify(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Span<Guid> riid, uint cbDataSize, void* pDataBuffer, int lDataRep)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1142,7 +1142,7 @@ public unsafe static class ChannelHookVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ServerNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Span<Guid> riid, uint cbDataSize, Span<T0> pDataBuffer, uint lDataRep) where T0 : unmanaged
+    public static unsafe void ServerNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Guid* uExtent, Span<Guid> riid, uint cbDataSize, Span<T0> pDataBuffer, int lDataRep) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1150,7 +1150,7 @@ public unsafe static class ChannelHookVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ServerNotify(this ComPtr<IChannelHook> thisVtbl, Span<Guid> uExtent, Guid* riid, uint cbDataSize, void* pDataBuffer, uint lDataRep)
+    public static unsafe void ServerNotify(this ComPtr<IChannelHook> thisVtbl, Span<Guid> uExtent, Guid* riid, uint cbDataSize, void* pDataBuffer, int lDataRep)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1158,7 +1158,7 @@ public unsafe static class ChannelHookVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ServerNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Span<Guid> uExtent, Guid* riid, uint cbDataSize, Span<T0> pDataBuffer, uint lDataRep) where T0 : unmanaged
+    public static unsafe void ServerNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Span<Guid> uExtent, Guid* riid, uint cbDataSize, Span<T0> pDataBuffer, int lDataRep) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1166,7 +1166,7 @@ public unsafe static class ChannelHookVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ServerNotify(this ComPtr<IChannelHook> thisVtbl, Span<Guid> uExtent, Span<Guid> riid, uint cbDataSize, void* pDataBuffer, uint lDataRep)
+    public static unsafe void ServerNotify(this ComPtr<IChannelHook> thisVtbl, Span<Guid> uExtent, Span<Guid> riid, uint cbDataSize, void* pDataBuffer, int lDataRep)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1174,7 +1174,7 @@ public unsafe static class ChannelHookVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ServerNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Span<Guid> uExtent, Span<Guid> riid, uint cbDataSize, Span<T0> pDataBuffer, uint lDataRep) where T0 : unmanaged
+    public static void ServerNotify<T0>(this ComPtr<IChannelHook> thisVtbl, Span<Guid> uExtent, Span<Guid> riid, uint cbDataSize, Span<T0> pDataBuffer, int lDataRep) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

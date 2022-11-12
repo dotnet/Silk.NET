@@ -85,40 +85,40 @@ public unsafe static class StdMarshalInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetClassForHandler(this ComPtr<IStdMarshalInfo> thisVtbl, uint dwDestContext, void* pvDestContext, Guid* pClsid)
+    public static unsafe int GetClassForHandler(this ComPtr<IStdMarshalInfo> thisVtbl, int dwDestContext, void* pvDestContext, Guid* pClsid)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, uint, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContext, pClsid);
+        ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, int, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContext, pClsid);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetClassForHandler(this ComPtr<IStdMarshalInfo> thisVtbl, uint dwDestContext, void* pvDestContext, ref Guid pClsid)
+    public static unsafe int GetClassForHandler(this ComPtr<IStdMarshalInfo> thisVtbl, int dwDestContext, void* pvDestContext, ref Guid pClsid)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* pClsidPtr = &pClsid)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, uint, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContext, pClsidPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, int, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContext, pClsidPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetClassForHandler<T0>(this ComPtr<IStdMarshalInfo> thisVtbl, uint dwDestContext, ref T0 pvDestContext, Guid* pClsid) where T0 : unmanaged
+    public static unsafe int GetClassForHandler<T0>(this ComPtr<IStdMarshalInfo> thisVtbl, int dwDestContext, ref T0 pvDestContext, Guid* pClsid) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pvDestContextPtr = &pvDestContext)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, uint, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContextPtr, pClsid);
+            ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, int, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContextPtr, pClsid);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetClassForHandler<T0>(this ComPtr<IStdMarshalInfo> thisVtbl, uint dwDestContext, ref T0 pvDestContext, ref Guid pClsid) where T0 : unmanaged
+    public static int GetClassForHandler<T0>(this ComPtr<IStdMarshalInfo> thisVtbl, int dwDestContext, ref T0 pvDestContext, ref Guid pClsid) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -126,7 +126,7 @@ public unsafe static class StdMarshalInfoVtblExtensions
         {
             fixed (Guid* pClsidPtr = &pClsid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, uint, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContextPtr, pClsidPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, int, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContextPtr, pClsidPtr);
             }
         }
         return ret;
@@ -158,7 +158,7 @@ public unsafe static class StdMarshalInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetClassForHandler(this ComPtr<IStdMarshalInfo> thisVtbl, uint dwDestContext, void* pvDestContext, Span<Guid> pClsid)
+    public static unsafe int GetClassForHandler(this ComPtr<IStdMarshalInfo> thisVtbl, int dwDestContext, void* pvDestContext, Span<Guid> pClsid)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -166,7 +166,7 @@ public unsafe static class StdMarshalInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetClassForHandler<T0>(this ComPtr<IStdMarshalInfo> thisVtbl, uint dwDestContext, Span<T0> pvDestContext, Guid* pClsid) where T0 : unmanaged
+    public static unsafe int GetClassForHandler<T0>(this ComPtr<IStdMarshalInfo> thisVtbl, int dwDestContext, Span<T0> pvDestContext, Guid* pClsid) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -174,7 +174,7 @@ public unsafe static class StdMarshalInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetClassForHandler<T0>(this ComPtr<IStdMarshalInfo> thisVtbl, uint dwDestContext, Span<T0> pvDestContext, Span<Guid> pClsid) where T0 : unmanaged
+    public static int GetClassForHandler<T0>(this ComPtr<IStdMarshalInfo> thisVtbl, int dwDestContext, Span<T0> pvDestContext, Span<Guid> pClsid) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

@@ -135,21 +135,21 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetCached(int isCached)
+        public readonly void SetCached(bool isCached)
         {
             var @this = (ID2D1BlendTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, int, void>)@this->LpVtbl[5])(@this, isCached);
+            ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, bool, void>)@this->LpVtbl[5])(@this, isCached);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetDescription(BlendDescription* description)
+        public readonly unsafe void SetDescription([Flow(FlowDirection.In)] BlendDescription* description)
         {
             var @this = (ID2D1BlendTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, BlendDescription*, void>)@this->LpVtbl[6])(@this, description);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetDescription(ref BlendDescription description)
+        public readonly void SetDescription([Flow(FlowDirection.In)] in BlendDescription description)
         {
             var @this = (ID2D1BlendTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (BlendDescription* descriptionPtr = &description)

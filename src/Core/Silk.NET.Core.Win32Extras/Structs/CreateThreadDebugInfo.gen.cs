@@ -21,8 +21,8 @@ namespace Silk.NET.Core.Win32Extras
     {
         public CreateThreadDebugInfo
         (
-            void* hThread = null,
-            void* lpThreadLocalBase = null,
+            nint* hThread = null,
+            nint* lpThreadLocalBase = null,
             PfnPthreadStartRoutine? lpStartAddress = null
         ) : this()
         {
@@ -46,12 +46,12 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "hThread")]
-        public void* HThread;
+        public nint* HThread;
 
         [NativeName("Type", "LPVOID")]
         [NativeName("Type.Name", "LPVOID")]
         [NativeName("Name", "lpThreadLocalBase")]
-        public void* LpThreadLocalBase;
+        public nint* LpThreadLocalBase;
 
         [NativeName("Type", "LPTHREAD_START_ROUTINE")]
         [NativeName("Type.Name", "LPTHREAD_START_ROUTINE")]

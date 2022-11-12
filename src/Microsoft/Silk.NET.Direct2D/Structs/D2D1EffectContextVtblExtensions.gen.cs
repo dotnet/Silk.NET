@@ -173,7 +173,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMaximumSupportedFeatureLevel(this ComPtr<ID2D1EffectContext> thisVtbl, Silk.NET.Core.Native.D3DFeatureLevel* featureLevels, uint featureLevelsCount, Silk.NET.Core.Native.D3DFeatureLevel* maximumSupportedFeatureLevel)
+    public static unsafe int GetMaximumSupportedFeatureLevel(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* featureLevels, uint featureLevelsCount, Silk.NET.Core.Native.D3DFeatureLevel* maximumSupportedFeatureLevel)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -182,7 +182,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMaximumSupportedFeatureLevel(this ComPtr<ID2D1EffectContext> thisVtbl, Silk.NET.Core.Native.D3DFeatureLevel* featureLevels, uint featureLevelsCount, ref Silk.NET.Core.Native.D3DFeatureLevel maximumSupportedFeatureLevel)
+    public static unsafe int GetMaximumSupportedFeatureLevel(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* featureLevels, uint featureLevelsCount, ref Silk.NET.Core.Native.D3DFeatureLevel maximumSupportedFeatureLevel)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -194,7 +194,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMaximumSupportedFeatureLevel(this ComPtr<ID2D1EffectContext> thisVtbl, ref Silk.NET.Core.Native.D3DFeatureLevel featureLevels, uint featureLevelsCount, Silk.NET.Core.Native.D3DFeatureLevel* maximumSupportedFeatureLevel)
+    public static unsafe int GetMaximumSupportedFeatureLevel(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.D3DFeatureLevel featureLevels, uint featureLevelsCount, Silk.NET.Core.Native.D3DFeatureLevel* maximumSupportedFeatureLevel)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -206,7 +206,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMaximumSupportedFeatureLevel(this ComPtr<ID2D1EffectContext> thisVtbl, ref Silk.NET.Core.Native.D3DFeatureLevel featureLevels, uint featureLevelsCount, ref Silk.NET.Core.Native.D3DFeatureLevel maximumSupportedFeatureLevel)
+    public static int GetMaximumSupportedFeatureLevel(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.D3DFeatureLevel featureLevels, uint featureLevelsCount, ref Silk.NET.Core.Native.D3DFeatureLevel maximumSupportedFeatureLevel)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -269,7 +269,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlendTransform(this ComPtr<ID2D1EffectContext> thisVtbl, uint numInputs, BlendDescription* blendDescription, ID2D1BlendTransform** transform)
+    public static unsafe int CreateBlendTransform(this ComPtr<ID2D1EffectContext> thisVtbl, uint numInputs, [Flow(FlowDirection.In)] BlendDescription* blendDescription, ID2D1BlendTransform** transform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -278,7 +278,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlendTransform(this ComPtr<ID2D1EffectContext> thisVtbl, uint numInputs, BlendDescription* blendDescription, ref ID2D1BlendTransform* transform)
+    public static unsafe int CreateBlendTransform(this ComPtr<ID2D1EffectContext> thisVtbl, uint numInputs, [Flow(FlowDirection.In)] BlendDescription* blendDescription, ref ID2D1BlendTransform* transform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -290,7 +290,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlendTransform(this ComPtr<ID2D1EffectContext> thisVtbl, uint numInputs, ref BlendDescription blendDescription, ID2D1BlendTransform** transform)
+    public static unsafe int CreateBlendTransform(this ComPtr<ID2D1EffectContext> thisVtbl, uint numInputs, [Flow(FlowDirection.In)] in BlendDescription blendDescription, ID2D1BlendTransform** transform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -302,7 +302,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlendTransform(this ComPtr<ID2D1EffectContext> thisVtbl, uint numInputs, ref BlendDescription blendDescription, ref ID2D1BlendTransform* transform)
+    public static unsafe int CreateBlendTransform(this ComPtr<ID2D1EffectContext> thisVtbl, uint numInputs, [Flow(FlowDirection.In)] in BlendDescription blendDescription, ref ID2D1BlendTransform* transform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -359,7 +359,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBoundsAdjustmentTransform(this ComPtr<ID2D1EffectContext> thisVtbl, Silk.NET.Maths.Box2D<int>* outputRectangle, ID2D1BoundsAdjustmentTransform** transform)
+    public static unsafe int CreateBoundsAdjustmentTransform(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* outputRectangle, ID2D1BoundsAdjustmentTransform** transform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -368,7 +368,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBoundsAdjustmentTransform(this ComPtr<ID2D1EffectContext> thisVtbl, Silk.NET.Maths.Box2D<int>* outputRectangle, ref ID2D1BoundsAdjustmentTransform* transform)
+    public static unsafe int CreateBoundsAdjustmentTransform(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* outputRectangle, ref ID2D1BoundsAdjustmentTransform* transform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -380,7 +380,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBoundsAdjustmentTransform(this ComPtr<ID2D1EffectContext> thisVtbl, ref Silk.NET.Maths.Box2D<int> outputRectangle, ID2D1BoundsAdjustmentTransform** transform)
+    public static unsafe int CreateBoundsAdjustmentTransform(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> outputRectangle, ID2D1BoundsAdjustmentTransform** transform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -392,7 +392,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBoundsAdjustmentTransform(this ComPtr<ID2D1EffectContext> thisVtbl, ref Silk.NET.Maths.Box2D<int> outputRectangle, ref ID2D1BoundsAdjustmentTransform* transform)
+    public static unsafe int CreateBoundsAdjustmentTransform(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> outputRectangle, ref ID2D1BoundsAdjustmentTransform* transform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -407,7 +407,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* shaderId, byte* shaderBuffer, uint shaderBufferCount)
+    public static unsafe int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* shaderId, [Flow(FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -416,7 +416,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* shaderId, ref byte shaderBuffer, uint shaderBufferCount)
+    public static unsafe int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* shaderId, [Flow(FlowDirection.In)] in byte shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -428,7 +428,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* shaderId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
+    public static unsafe int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* shaderId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -439,7 +439,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid shaderId, byte* shaderBuffer, uint shaderBufferCount)
+    public static unsafe int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid shaderId, [Flow(FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -451,7 +451,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid shaderId, ref byte shaderBuffer, uint shaderBufferCount)
+    public static int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid shaderId, [Flow(FlowDirection.In)] in byte shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -466,7 +466,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid shaderId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
+    public static int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid shaderId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -480,7 +480,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, byte* shaderBuffer, uint shaderBufferCount)
+    public static unsafe int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, [Flow(FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -489,7 +489,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref byte shaderBuffer, uint shaderBufferCount)
+    public static unsafe int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, [Flow(FlowDirection.In)] in byte shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -501,7 +501,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
+    public static unsafe int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -512,7 +512,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, byte* shaderBuffer, uint shaderBufferCount)
+    public static unsafe int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, [Flow(FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -524,7 +524,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref byte shaderBuffer, uint shaderBufferCount)
+    public static int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, [Flow(FlowDirection.In)] in byte shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -539,7 +539,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
+    public static int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -553,7 +553,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, byte* shaderBuffer, uint shaderBufferCount)
+    public static unsafe int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, [Flow(FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -562,7 +562,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref byte shaderBuffer, uint shaderBufferCount)
+    public static unsafe int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, [Flow(FlowDirection.In)] in byte shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -574,7 +574,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
+    public static unsafe int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -585,7 +585,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, byte* shaderBuffer, uint shaderBufferCount)
+    public static unsafe int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, [Flow(FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -597,7 +597,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref byte shaderBuffer, uint shaderBufferCount)
+    public static int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, [Flow(FlowDirection.In)] in byte shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -612,7 +612,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
+    public static int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -626,28 +626,28 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsShaderLoaded(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* shaderId)
+    public static unsafe bool IsShaderLoaded(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* shaderId)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, Guid*, int>)@this->LpVtbl[14])(@this, shaderId);
+        bool ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, Guid*, bool>)@this->LpVtbl[14])(@this, shaderId);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsShaderLoaded(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid shaderId)
+    public static bool IsShaderLoaded(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid shaderId)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
+        bool ret = default;
         fixed (Guid* shaderIdPtr = &shaderId)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, Guid*, int>)@this->LpVtbl[14])(@this, shaderIdPtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, Guid*, bool>)@this->LpVtbl[14])(@this, shaderIdPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, byte* data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -656,7 +656,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, byte* data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -668,7 +668,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, byte* data, ref uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -680,7 +680,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, byte* data, ref uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -695,7 +695,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, ref byte data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -707,7 +707,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, ref byte data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -722,7 +722,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, ref byte data, ref uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -737,7 +737,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, ref byte data, ref uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -755,7 +755,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -766,7 +766,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -780,7 +780,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ref uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -794,7 +794,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ref uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -811,7 +811,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ResourceTextureProperties resourceTextureProperties, byte* data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -823,7 +823,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ResourceTextureProperties resourceTextureProperties, byte* data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -838,7 +838,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ResourceTextureProperties resourceTextureProperties, byte* data, ref uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -853,7 +853,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ResourceTextureProperties resourceTextureProperties, byte* data, ref uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -871,7 +871,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ResourceTextureProperties resourceTextureProperties, ref byte data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -886,7 +886,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ResourceTextureProperties resourceTextureProperties, ref byte data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -904,7 +904,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ResourceTextureProperties resourceTextureProperties, ref byte data, ref uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -922,7 +922,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ResourceTextureProperties resourceTextureProperties, ref byte data, ref uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -943,7 +943,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ResourceTextureProperties resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -957,7 +957,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ResourceTextureProperties resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -974,7 +974,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ResourceTextureProperties resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ref uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -991,7 +991,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ResourceTextureProperties resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ref uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1011,7 +1011,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ResourceTextureProperties* resourceTextureProperties, byte* data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1023,7 +1023,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ResourceTextureProperties* resourceTextureProperties, byte* data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1038,7 +1038,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ResourceTextureProperties* resourceTextureProperties, byte* data, ref uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1053,7 +1053,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ResourceTextureProperties* resourceTextureProperties, byte* data, ref uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1071,7 +1071,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ResourceTextureProperties* resourceTextureProperties, ref byte data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1086,7 +1086,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ResourceTextureProperties* resourceTextureProperties, ref byte data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1104,7 +1104,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ResourceTextureProperties* resourceTextureProperties, ref byte data, ref uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1122,7 +1122,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ResourceTextureProperties* resourceTextureProperties, ref byte data, ref uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1143,7 +1143,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ResourceTextureProperties* resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1157,7 +1157,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ResourceTextureProperties* resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1174,7 +1174,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ResourceTextureProperties* resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ref uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1191,7 +1191,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ResourceTextureProperties* resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ref uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1211,7 +1211,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ResourceTextureProperties resourceTextureProperties, byte* data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1226,7 +1226,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ResourceTextureProperties resourceTextureProperties, byte* data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1244,7 +1244,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ResourceTextureProperties resourceTextureProperties, byte* data, ref uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1262,7 +1262,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ResourceTextureProperties resourceTextureProperties, byte* data, ref uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1283,7 +1283,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ResourceTextureProperties resourceTextureProperties, ref byte data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1301,7 +1301,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ResourceTextureProperties resourceTextureProperties, ref byte data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1322,7 +1322,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ResourceTextureProperties resourceTextureProperties, ref byte data, ref uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1343,7 +1343,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ResourceTextureProperties resourceTextureProperties, ref byte data, ref uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1367,7 +1367,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ResourceTextureProperties resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1384,7 +1384,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ResourceTextureProperties resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1404,7 +1404,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ResourceTextureProperties resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ref uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1424,7 +1424,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ResourceTextureProperties resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ref uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1447,7 +1447,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int FindResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1456,7 +1456,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int FindResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1468,7 +1468,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int FindResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1480,7 +1480,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int FindResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1495,7 +1495,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, VertexBufferProperties* vertexBufferProperties, Guid* resourceId, CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1504,7 +1504,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, VertexBufferProperties* vertexBufferProperties, Guid* resourceId, CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1516,7 +1516,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, VertexBufferProperties* vertexBufferProperties, Guid* resourceId, ref CustomVertexBufferProperties customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ID2D1VertexBuffer** buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1528,7 +1528,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, VertexBufferProperties* vertexBufferProperties, Guid* resourceId, ref CustomVertexBufferProperties customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1543,7 +1543,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, VertexBufferProperties* vertexBufferProperties, ref Guid resourceId, CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1555,7 +1555,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, VertexBufferProperties* vertexBufferProperties, ref Guid resourceId, CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1570,7 +1570,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, VertexBufferProperties* vertexBufferProperties, ref Guid resourceId, ref CustomVertexBufferProperties customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ID2D1VertexBuffer** buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1585,7 +1585,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, VertexBufferProperties* vertexBufferProperties, ref Guid resourceId, ref CustomVertexBufferProperties customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1603,7 +1603,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, ref VertexBufferProperties vertexBufferProperties, Guid* resourceId, CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1615,7 +1615,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, ref VertexBufferProperties vertexBufferProperties, Guid* resourceId, CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1630,7 +1630,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, ref VertexBufferProperties vertexBufferProperties, Guid* resourceId, ref CustomVertexBufferProperties customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ID2D1VertexBuffer** buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1645,7 +1645,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, ref VertexBufferProperties vertexBufferProperties, Guid* resourceId, ref CustomVertexBufferProperties customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1663,7 +1663,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, ref VertexBufferProperties vertexBufferProperties, ref Guid resourceId, CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1678,7 +1678,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, ref VertexBufferProperties vertexBufferProperties, ref Guid resourceId, CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1696,7 +1696,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, ref VertexBufferProperties vertexBufferProperties, ref Guid resourceId, ref CustomVertexBufferProperties customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ID2D1VertexBuffer** buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1714,7 +1714,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, ref VertexBufferProperties vertexBufferProperties, ref Guid resourceId, ref CustomVertexBufferProperties customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1735,7 +1735,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ID2D1VertexBuffer** buffer)
+    public static unsafe int FindVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, ID2D1VertexBuffer** buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1744,7 +1744,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ID2D1VertexBuffer* buffer)
+    public static unsafe int FindVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, ref ID2D1VertexBuffer* buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1756,7 +1756,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ID2D1VertexBuffer** buffer)
+    public static unsafe int FindVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, ID2D1VertexBuffer** buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1768,7 +1768,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ID2D1VertexBuffer* buffer)
+    public static unsafe int FindVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, ref ID2D1VertexBuffer* buffer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1783,7 +1783,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, byte* profile, uint profileSize, ID2D1ColorContext** colorContext)
+    public static unsafe int CreateColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, [Flow(FlowDirection.In)] byte* profile, uint profileSize, ID2D1ColorContext** colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1792,7 +1792,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, byte* profile, uint profileSize, ref ID2D1ColorContext* colorContext)
+    public static unsafe int CreateColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, [Flow(FlowDirection.In)] byte* profile, uint profileSize, ref ID2D1ColorContext* colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1804,7 +1804,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, ref byte profile, uint profileSize, ID2D1ColorContext** colorContext)
+    public static unsafe int CreateColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, [Flow(FlowDirection.In)] in byte profile, uint profileSize, ID2D1ColorContext** colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1816,7 +1816,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, ref byte profile, uint profileSize, ref ID2D1ColorContext* colorContext)
+    public static unsafe int CreateColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, [Flow(FlowDirection.In)] in byte profile, uint profileSize, ref ID2D1ColorContext* colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1831,7 +1831,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ID2D1ColorContext** colorContext)
+    public static unsafe int CreateColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ID2D1ColorContext** colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1842,7 +1842,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ref ID2D1ColorContext* colorContext)
+    public static unsafe int CreateColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ref ID2D1ColorContext* colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1856,7 +1856,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1EffectContext> thisVtbl, char* filename, ID2D1ColorContext** colorContext)
+    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] char* filename, ID2D1ColorContext** colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1865,7 +1865,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1EffectContext> thisVtbl, char* filename, ref ID2D1ColorContext* colorContext)
+    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] char* filename, ref ID2D1ColorContext* colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1877,7 +1877,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1EffectContext> thisVtbl, ref char filename, ID2D1ColorContext** colorContext)
+    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in char filename, ID2D1ColorContext** colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1889,7 +1889,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1EffectContext> thisVtbl, ref char filename, ref ID2D1ColorContext* colorContext)
+    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in char filename, ref ID2D1ColorContext* colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1904,7 +1904,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1EffectContext> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ID2D1ColorContext** colorContext)
+    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ID2D1ColorContext** colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1915,7 +1915,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1EffectContext> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ref ID2D1ColorContext* colorContext)
+    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ref ID2D1ColorContext* colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1998,11 +1998,11 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsBufferPrecisionSupported(this ComPtr<ID2D1EffectContext> thisVtbl, BufferPrecision bufferPrecision)
+    public static bool IsBufferPrecisionSupported(this ComPtr<ID2D1EffectContext> thisVtbl, BufferPrecision bufferPrecision)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, BufferPrecision, int>)@this->LpVtbl[23])(@this, bufferPrecision);
+        bool ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, BufferPrecision, bool>)@this->LpVtbl[23])(@this, bufferPrecision);
         return ret;
     }
 
@@ -2089,7 +2089,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMaximumSupportedFeatureLevel(this ComPtr<ID2D1EffectContext> thisVtbl, Silk.NET.Core.Native.D3DFeatureLevel* featureLevels, uint featureLevelsCount, Span<Silk.NET.Core.Native.D3DFeatureLevel> maximumSupportedFeatureLevel)
+    public static unsafe int GetMaximumSupportedFeatureLevel(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.D3DFeatureLevel* featureLevels, uint featureLevelsCount, Span<Silk.NET.Core.Native.D3DFeatureLevel> maximumSupportedFeatureLevel)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2097,19 +2097,19 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetMaximumSupportedFeatureLevel(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Silk.NET.Core.Native.D3DFeatureLevel> featureLevels, uint featureLevelsCount, Silk.NET.Core.Native.D3DFeatureLevel* maximumSupportedFeatureLevel)
+    public static unsafe int GetMaximumSupportedFeatureLevel(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> featureLevels, uint featureLevelsCount, Silk.NET.Core.Native.D3DFeatureLevel* maximumSupportedFeatureLevel)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetMaximumSupportedFeatureLevel(ref featureLevels.GetPinnableReference(), featureLevelsCount, maximumSupportedFeatureLevel);
+        return @this->GetMaximumSupportedFeatureLevel(in featureLevels.GetPinnableReference(), featureLevelsCount, maximumSupportedFeatureLevel);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMaximumSupportedFeatureLevel(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Silk.NET.Core.Native.D3DFeatureLevel> featureLevels, uint featureLevelsCount, Span<Silk.NET.Core.Native.D3DFeatureLevel> maximumSupportedFeatureLevel)
+    public static int GetMaximumSupportedFeatureLevel(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.D3DFeatureLevel> featureLevels, uint featureLevelsCount, Span<Silk.NET.Core.Native.D3DFeatureLevel> maximumSupportedFeatureLevel)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetMaximumSupportedFeatureLevel(ref featureLevels.GetPinnableReference(), featureLevelsCount, ref maximumSupportedFeatureLevel.GetPinnableReference());
+        return @this->GetMaximumSupportedFeatureLevel(in featureLevels.GetPinnableReference(), featureLevelsCount, ref maximumSupportedFeatureLevel.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -2153,7 +2153,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlendTransform<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, uint numInputs, BlendDescription* blendDescription, ref ComPtr<TI0> transform) where TI0 : unmanaged, IComVtbl<ID2D1BlendTransform>, IComVtbl<TI0>
+    public static unsafe int CreateBlendTransform<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, uint numInputs, [Flow(FlowDirection.In)] BlendDescription* blendDescription, ref ComPtr<TI0> transform) where TI0 : unmanaged, IComVtbl<ID2D1BlendTransform>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2161,27 +2161,27 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlendTransform(this ComPtr<ID2D1EffectContext> thisVtbl, uint numInputs, Span<BlendDescription> blendDescription, ID2D1BlendTransform** transform)
+    public static unsafe int CreateBlendTransform(this ComPtr<ID2D1EffectContext> thisVtbl, uint numInputs, [Flow(FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, ID2D1BlendTransform** transform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBlendTransform(numInputs, ref blendDescription.GetPinnableReference(), transform);
+        return @this->CreateBlendTransform(numInputs, in blendDescription.GetPinnableReference(), transform);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBlendTransform<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, uint numInputs, ref BlendDescription blendDescription, ref ComPtr<TI0> transform) where TI0 : unmanaged, IComVtbl<ID2D1BlendTransform>, IComVtbl<TI0>
+    public static int CreateBlendTransform<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, uint numInputs, [Flow(FlowDirection.In)] in BlendDescription blendDescription, ref ComPtr<TI0> transform) where TI0 : unmanaged, IComVtbl<ID2D1BlendTransform>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBlendTransform(numInputs, ref blendDescription, (ID2D1BlendTransform**) transform.GetAddressOf());
+        return @this->CreateBlendTransform(numInputs, in blendDescription, (ID2D1BlendTransform**) transform.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBlendTransform(this ComPtr<ID2D1EffectContext> thisVtbl, uint numInputs, Span<BlendDescription> blendDescription, ref ID2D1BlendTransform* transform)
+    public static unsafe int CreateBlendTransform(this ComPtr<ID2D1EffectContext> thisVtbl, uint numInputs, [Flow(FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, ref ID2D1BlendTransform* transform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBlendTransform(numInputs, ref blendDescription.GetPinnableReference(), ref transform);
+        return @this->CreateBlendTransform(numInputs, in blendDescription.GetPinnableReference(), ref transform);
     }
 
     /// <summary>To be documented.</summary>
@@ -2201,7 +2201,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBoundsAdjustmentTransform<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, Silk.NET.Maths.Box2D<int>* outputRectangle, ref ComPtr<TI0> transform) where TI0 : unmanaged, IComVtbl<ID2D1BoundsAdjustmentTransform>, IComVtbl<TI0>
+    public static unsafe int CreateBoundsAdjustmentTransform<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* outputRectangle, ref ComPtr<TI0> transform) where TI0 : unmanaged, IComVtbl<ID2D1BoundsAdjustmentTransform>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2209,55 +2209,39 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBoundsAdjustmentTransform(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> outputRectangle, ID2D1BoundsAdjustmentTransform** transform)
+    public static unsafe int CreateBoundsAdjustmentTransform(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> outputRectangle, ID2D1BoundsAdjustmentTransform** transform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBoundsAdjustmentTransform(ref outputRectangle.GetPinnableReference(), transform);
+        return @this->CreateBoundsAdjustmentTransform(in outputRectangle.GetPinnableReference(), transform);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBoundsAdjustmentTransform<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref Silk.NET.Maths.Box2D<int> outputRectangle, ref ComPtr<TI0> transform) where TI0 : unmanaged, IComVtbl<ID2D1BoundsAdjustmentTransform>, IComVtbl<TI0>
+    public static int CreateBoundsAdjustmentTransform<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> outputRectangle, ref ComPtr<TI0> transform) where TI0 : unmanaged, IComVtbl<ID2D1BoundsAdjustmentTransform>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBoundsAdjustmentTransform(ref outputRectangle, (ID2D1BoundsAdjustmentTransform**) transform.GetAddressOf());
+        return @this->CreateBoundsAdjustmentTransform(in outputRectangle, (ID2D1BoundsAdjustmentTransform**) transform.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBoundsAdjustmentTransform(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> outputRectangle, ref ID2D1BoundsAdjustmentTransform* transform)
+    public static unsafe int CreateBoundsAdjustmentTransform(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> outputRectangle, ref ID2D1BoundsAdjustmentTransform* transform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBoundsAdjustmentTransform(ref outputRectangle.GetPinnableReference(), ref transform);
+        return @this->CreateBoundsAdjustmentTransform(in outputRectangle.GetPinnableReference(), ref transform);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* shaderId, Span<byte> shaderBuffer, uint shaderBufferCount)
+    public static unsafe int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* shaderId, [Flow(FlowDirection.In)] ReadOnlySpan<byte> shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadPixelShader(shaderId, ref shaderBuffer.GetPinnableReference(), shaderBufferCount);
+        return @this->LoadPixelShader(shaderId, in shaderBuffer.GetPinnableReference(), shaderBufferCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> shaderId, byte* shaderBuffer, uint shaderBufferCount)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->LoadPixelShader(ref shaderId.GetPinnableReference(), shaderBuffer, shaderBufferCount);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> shaderId, Span<byte> shaderBuffer, uint shaderBufferCount)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->LoadPixelShader(ref shaderId.GetPinnableReference(), ref shaderBuffer.GetPinnableReference(), shaderBufferCount);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> shaderId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
+    public static unsafe int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> shaderId, [Flow(FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2265,15 +2249,31 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, Span<byte> shaderBuffer, uint shaderBufferCount)
+    public static int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> shaderId, [Flow(FlowDirection.In)] ReadOnlySpan<byte> shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadVertexShader(resourceId, ref shaderBuffer.GetPinnableReference(), shaderBufferCount);
+        return @this->LoadPixelShader(ref shaderId.GetPinnableReference(), in shaderBuffer.GetPinnableReference(), shaderBufferCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, byte* shaderBuffer, uint shaderBufferCount)
+    public static int LoadPixelShader(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> shaderId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->LoadPixelShader(ref shaderId.GetPinnableReference(), shaderBuffer, shaderBufferCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<byte> shaderBuffer, uint shaderBufferCount)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->LoadVertexShader(resourceId, in shaderBuffer.GetPinnableReference(), shaderBufferCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, [Flow(FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2281,15 +2281,15 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, Span<byte> shaderBuffer, uint shaderBufferCount)
+    public static int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<byte> shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadVertexShader(ref resourceId.GetPinnableReference(), ref shaderBuffer.GetPinnableReference(), shaderBufferCount);
+        return @this->LoadVertexShader(ref resourceId.GetPinnableReference(), in shaderBuffer.GetPinnableReference(), shaderBufferCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
+    public static int LoadVertexShader(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2297,31 +2297,15 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, Span<byte> shaderBuffer, uint shaderBufferCount)
+    public static unsafe int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<byte> shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadComputeShader(resourceId, ref shaderBuffer.GetPinnableReference(), shaderBufferCount);
+        return @this->LoadComputeShader(resourceId, in shaderBuffer.GetPinnableReference(), shaderBufferCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, byte* shaderBuffer, uint shaderBufferCount)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->LoadComputeShader(ref resourceId.GetPinnableReference(), shaderBuffer, shaderBufferCount);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, Span<byte> shaderBuffer, uint shaderBufferCount)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->LoadComputeShader(ref resourceId.GetPinnableReference(), ref shaderBuffer.GetPinnableReference(), shaderBufferCount);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
+    public static unsafe int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, [Flow(FlowDirection.In)] byte* shaderBuffer, uint shaderBufferCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2329,7 +2313,23 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsShaderLoaded(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> shaderId)
+    public static int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<byte> shaderBuffer, uint shaderBufferCount)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->LoadComputeShader(ref resourceId.GetPinnableReference(), in shaderBuffer.GetPinnableReference(), shaderBufferCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int LoadComputeShader(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string shaderBuffer, uint shaderBufferCount)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->LoadComputeShader(ref resourceId.GetPinnableReference(), shaderBuffer, shaderBufferCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static bool IsShaderLoaded(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> shaderId)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2337,7 +2337,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, byte* data, uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2345,79 +2345,79 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, byte* data, Span<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, data, ref strides.GetPinnableReference(), dataSize, resourceTexture);
+        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, data, in strides.GetPinnableReference(), dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, byte* data, ref uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, data, ref strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, data, in strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, byte* data, Span<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, data, ref strides.GetPinnableReference(), dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, data, in strides.GetPinnableReference(), dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, Span<byte> data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, ref data.GetPinnableReference(), strides, dataSize, resourceTexture);
+        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, in data.GetPinnableReference(), strides, dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, ref byte data, uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, ref data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, in data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, Span<byte> data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, ref data.GetPinnableReference(), strides, dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, in data.GetPinnableReference(), strides, dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, Span<byte> data, Span<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, ref data.GetPinnableReference(), ref strides.GetPinnableReference(), dataSize, resourceTexture);
+        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, in data.GetPinnableReference(), in strides.GetPinnableReference(), dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, ref byte data, ref uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, ref data, ref strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, in data, in strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, Span<byte> data, Span<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, ref data.GetPinnableReference(), ref strides.GetPinnableReference(), dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, in data.GetPinnableReference(), in strides.GetPinnableReference(), dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2425,459 +2425,459 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, Span<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, data, ref strides.GetPinnableReference(), dataSize, resourceTexture);
+        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, data, in strides.GetPinnableReference(), dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ref uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, data, ref strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, data, in strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ResourceTextureProperties* resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, Span<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, data, ref strides.GetPinnableReference(), dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(resourceId, resourceTextureProperties, data, in strides.GetPinnableReference(), dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, Span<ResourceTextureProperties> resourceTextureProperties, byte* data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, ref resourceTextureProperties.GetPinnableReference(), data, strides, dataSize, resourceTexture);
+        return @this->CreateResourceTexture(resourceId, in resourceTextureProperties.GetPinnableReference(), data, strides, dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ResourceTextureProperties resourceTextureProperties, byte* data, uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(resourceId, ref resourceTextureProperties, data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(resourceId, in resourceTextureProperties, data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, Span<ResourceTextureProperties> resourceTextureProperties, byte* data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, ref resourceTextureProperties.GetPinnableReference(), data, strides, dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(resourceId, in resourceTextureProperties.GetPinnableReference(), data, strides, dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, Span<ResourceTextureProperties> resourceTextureProperties, byte* data, Span<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, ref resourceTextureProperties.GetPinnableReference(), data, ref strides.GetPinnableReference(), dataSize, resourceTexture);
+        return @this->CreateResourceTexture(resourceId, in resourceTextureProperties.GetPinnableReference(), data, in strides.GetPinnableReference(), dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ResourceTextureProperties resourceTextureProperties, byte* data, ref uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(resourceId, ref resourceTextureProperties, data, ref strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(resourceId, in resourceTextureProperties, data, in strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, Span<ResourceTextureProperties> resourceTextureProperties, byte* data, Span<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, ref resourceTextureProperties.GetPinnableReference(), data, ref strides.GetPinnableReference(), dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(resourceId, in resourceTextureProperties.GetPinnableReference(), data, in strides.GetPinnableReference(), dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, Span<ResourceTextureProperties> resourceTextureProperties, Span<byte> data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, ref resourceTextureProperties.GetPinnableReference(), ref data.GetPinnableReference(), strides, dataSize, resourceTexture);
+        return @this->CreateResourceTexture(resourceId, in resourceTextureProperties.GetPinnableReference(), in data.GetPinnableReference(), strides, dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ResourceTextureProperties resourceTextureProperties, ref byte data, uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(resourceId, ref resourceTextureProperties, ref data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(resourceId, in resourceTextureProperties, in data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, Span<ResourceTextureProperties> resourceTextureProperties, Span<byte> data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, ref resourceTextureProperties.GetPinnableReference(), ref data.GetPinnableReference(), strides, dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(resourceId, in resourceTextureProperties.GetPinnableReference(), in data.GetPinnableReference(), strides, dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, Span<ResourceTextureProperties> resourceTextureProperties, Span<byte> data, Span<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, ref resourceTextureProperties.GetPinnableReference(), ref data.GetPinnableReference(), ref strides.GetPinnableReference(), dataSize, resourceTexture);
+        return @this->CreateResourceTexture(resourceId, in resourceTextureProperties.GetPinnableReference(), in data.GetPinnableReference(), in strides.GetPinnableReference(), dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ResourceTextureProperties resourceTextureProperties, ref byte data, ref uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(resourceId, ref resourceTextureProperties, ref data, ref strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(resourceId, in resourceTextureProperties, in data, in strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, Span<ResourceTextureProperties> resourceTextureProperties, Span<byte> data, Span<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, ref resourceTextureProperties.GetPinnableReference(), ref data.GetPinnableReference(), ref strides.GetPinnableReference(), dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(resourceId, in resourceTextureProperties.GetPinnableReference(), in data.GetPinnableReference(), in strides.GetPinnableReference(), dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, Span<ResourceTextureProperties> resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, ref resourceTextureProperties.GetPinnableReference(), data, strides, dataSize, resourceTexture);
+        return @this->CreateResourceTexture(resourceId, in resourceTextureProperties.GetPinnableReference(), data, strides, dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ResourceTextureProperties resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(resourceId, ref resourceTextureProperties, data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(resourceId, in resourceTextureProperties, data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, Span<ResourceTextureProperties> resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, ref resourceTextureProperties.GetPinnableReference(), data, strides, dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(resourceId, in resourceTextureProperties.GetPinnableReference(), data, strides, dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, Span<ResourceTextureProperties> resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, Span<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, ref resourceTextureProperties.GetPinnableReference(), data, ref strides.GetPinnableReference(), dataSize, resourceTexture);
+        return @this->CreateResourceTexture(resourceId, in resourceTextureProperties.GetPinnableReference(), data, in strides.GetPinnableReference(), dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, ref ResourceTextureProperties resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ref uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(resourceId, ref resourceTextureProperties, data, ref strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(resourceId, in resourceTextureProperties, data, in strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* resourceId, Span<ResourceTextureProperties> resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, Span<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(resourceId, ref resourceTextureProperties.GetPinnableReference(), data, ref strides.GetPinnableReference(), dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(resourceId, in resourceTextureProperties.GetPinnableReference(), data, in strides.GetPinnableReference(), dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, ResourceTextureProperties* resourceTextureProperties, byte* data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), resourceTextureProperties, data, strides, dataSize, resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), resourceTextureProperties, data, strides, dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ResourceTextureProperties* resourceTextureProperties, byte* data, uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(ref resourceId, resourceTextureProperties, data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(in resourceId, resourceTextureProperties, data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, ResourceTextureProperties* resourceTextureProperties, byte* data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), resourceTextureProperties, data, strides, dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), resourceTextureProperties, data, strides, dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, ResourceTextureProperties* resourceTextureProperties, byte* data, Span<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), resourceTextureProperties, data, ref strides.GetPinnableReference(), dataSize, resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), resourceTextureProperties, data, in strides.GetPinnableReference(), dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ResourceTextureProperties* resourceTextureProperties, byte* data, ref uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(ref resourceId, resourceTextureProperties, data, ref strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(in resourceId, resourceTextureProperties, data, in strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, ResourceTextureProperties* resourceTextureProperties, byte* data, Span<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), resourceTextureProperties, data, ref strides.GetPinnableReference(), dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), resourceTextureProperties, data, in strides.GetPinnableReference(), dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, ResourceTextureProperties* resourceTextureProperties, Span<byte> data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), resourceTextureProperties, ref data.GetPinnableReference(), strides, dataSize, resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), resourceTextureProperties, in data.GetPinnableReference(), strides, dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ResourceTextureProperties* resourceTextureProperties, ref byte data, uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(ref resourceId, resourceTextureProperties, ref data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(in resourceId, resourceTextureProperties, in data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, ResourceTextureProperties* resourceTextureProperties, Span<byte> data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), resourceTextureProperties, ref data.GetPinnableReference(), strides, dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), resourceTextureProperties, in data.GetPinnableReference(), strides, dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, ResourceTextureProperties* resourceTextureProperties, Span<byte> data, Span<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), resourceTextureProperties, ref data.GetPinnableReference(), ref strides.GetPinnableReference(), dataSize, resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), resourceTextureProperties, in data.GetPinnableReference(), in strides.GetPinnableReference(), dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ResourceTextureProperties* resourceTextureProperties, ref byte data, ref uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(ref resourceId, resourceTextureProperties, ref data, ref strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(in resourceId, resourceTextureProperties, in data, in strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, ResourceTextureProperties* resourceTextureProperties, Span<byte> data, Span<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), resourceTextureProperties, ref data.GetPinnableReference(), ref strides.GetPinnableReference(), dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), resourceTextureProperties, in data.GetPinnableReference(), in strides.GetPinnableReference(), dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, ResourceTextureProperties* resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), resourceTextureProperties, data, strides, dataSize, resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), resourceTextureProperties, data, strides, dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ResourceTextureProperties* resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(ref resourceId, resourceTextureProperties, data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(in resourceId, resourceTextureProperties, data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, ResourceTextureProperties* resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), resourceTextureProperties, data, strides, dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), resourceTextureProperties, data, strides, dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, ResourceTextureProperties* resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, Span<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), resourceTextureProperties, data, ref strides.GetPinnableReference(), dataSize, resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), resourceTextureProperties, data, in strides.GetPinnableReference(), dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ResourceTextureProperties* resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ref uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(ref resourceId, resourceTextureProperties, data, ref strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(in resourceId, resourceTextureProperties, data, in strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, ResourceTextureProperties* resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, Span<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ResourceTextureProperties* resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), resourceTextureProperties, data, ref strides.GetPinnableReference(), dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), resourceTextureProperties, data, in strides.GetPinnableReference(), dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, Span<ResourceTextureProperties> resourceTextureProperties, byte* data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), ref resourceTextureProperties.GetPinnableReference(), data, strides, dataSize, resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), in resourceTextureProperties.GetPinnableReference(), data, strides, dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ResourceTextureProperties resourceTextureProperties, byte* data, uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(ref resourceId, ref resourceTextureProperties, data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(in resourceId, in resourceTextureProperties, data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, Span<ResourceTextureProperties> resourceTextureProperties, byte* data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), ref resourceTextureProperties.GetPinnableReference(), data, strides, dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), in resourceTextureProperties.GetPinnableReference(), data, strides, dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, Span<ResourceTextureProperties> resourceTextureProperties, byte* data, Span<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), ref resourceTextureProperties.GetPinnableReference(), data, ref strides.GetPinnableReference(), dataSize, resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), in resourceTextureProperties.GetPinnableReference(), data, in strides.GetPinnableReference(), dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ResourceTextureProperties resourceTextureProperties, byte* data, ref uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(ref resourceId, ref resourceTextureProperties, data, ref strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(in resourceId, in resourceTextureProperties, data, in strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, Span<ResourceTextureProperties> resourceTextureProperties, byte* data, Span<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In)] byte* data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), ref resourceTextureProperties.GetPinnableReference(), data, ref strides.GetPinnableReference(), dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), in resourceTextureProperties.GetPinnableReference(), data, in strides.GetPinnableReference(), dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, Span<ResourceTextureProperties> resourceTextureProperties, Span<byte> data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), ref resourceTextureProperties.GetPinnableReference(), ref data.GetPinnableReference(), strides, dataSize, resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), in resourceTextureProperties.GetPinnableReference(), in data.GetPinnableReference(), strides, dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ResourceTextureProperties resourceTextureProperties, ref byte data, uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(ref resourceId, ref resourceTextureProperties, ref data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(in resourceId, in resourceTextureProperties, in data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, Span<ResourceTextureProperties> resourceTextureProperties, Span<byte> data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), ref resourceTextureProperties.GetPinnableReference(), ref data.GetPinnableReference(), strides, dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), in resourceTextureProperties.GetPinnableReference(), in data.GetPinnableReference(), strides, dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, Span<ResourceTextureProperties> resourceTextureProperties, Span<byte> data, Span<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), ref resourceTextureProperties.GetPinnableReference(), ref data.GetPinnableReference(), ref strides.GetPinnableReference(), dataSize, resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), in resourceTextureProperties.GetPinnableReference(), in data.GetPinnableReference(), in strides.GetPinnableReference(), dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ResourceTextureProperties resourceTextureProperties, ref byte data, ref uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In)] in byte data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(ref resourceId, ref resourceTextureProperties, ref data, ref strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(in resourceId, in resourceTextureProperties, in data, in strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, Span<ResourceTextureProperties> resourceTextureProperties, Span<byte> data, Span<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), ref resourceTextureProperties.GetPinnableReference(), ref data.GetPinnableReference(), ref strides.GetPinnableReference(), dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), in resourceTextureProperties.GetPinnableReference(), in data.GetPinnableReference(), in strides.GetPinnableReference(), dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, Span<ResourceTextureProperties> resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), ref resourceTextureProperties.GetPinnableReference(), data, strides, dataSize, resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), in resourceTextureProperties.GetPinnableReference(), data, strides, dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ResourceTextureProperties resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static unsafe int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(ref resourceId, ref resourceTextureProperties, data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(in resourceId, in resourceTextureProperties, data, strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, Span<ResourceTextureProperties> resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] uint* strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), ref resourceTextureProperties.GetPinnableReference(), data, strides, dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), in resourceTextureProperties.GetPinnableReference(), data, strides, dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, Span<ResourceTextureProperties> resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, Span<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), ref resourceTextureProperties.GetPinnableReference(), data, ref strides.GetPinnableReference(), dataSize, resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), in resourceTextureProperties.GetPinnableReference(), data, in strides.GetPinnableReference(), dataSize, resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ResourceTextureProperties resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, ref uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static int CreateResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in ResourceTextureProperties resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] in uint strides, uint dataSize, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateResourceTexture(ref resourceId, ref resourceTextureProperties, data, ref strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->CreateResourceTexture(in resourceId, in resourceTextureProperties, data, in strides, dataSize, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, Span<ResourceTextureProperties> resourceTextureProperties, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, Span<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int CreateResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceTextureProperties> resourceTextureProperties, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dataSize, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateResourceTexture(ref resourceId.GetPinnableReference(), ref resourceTextureProperties.GetPinnableReference(), data, ref strides.GetPinnableReference(), dataSize, ref resourceTexture);
+        return @this->CreateResourceTexture(in resourceId.GetPinnableReference(), in resourceTextureProperties.GetPinnableReference(), data, in strides.GetPinnableReference(), dataSize, ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
@@ -2890,31 +2890,31 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, ID2D1ResourceTexture** resourceTexture)
+    public static unsafe int FindResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, ID2D1ResourceTexture** resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FindResourceTexture(ref resourceId.GetPinnableReference(), resourceTexture);
+        return @this->FindResourceTexture(in resourceId.GetPinnableReference(), resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static int FindResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
+    public static int FindResourceTexture<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, ref ComPtr<TI0> resourceTexture) where TI0 : unmanaged, IComVtbl<ID2D1ResourceTexture>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->FindResourceTexture(ref resourceId, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
+        return @this->FindResourceTexture(in resourceId, (ID2D1ResourceTexture**) resourceTexture.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, ref ID2D1ResourceTexture* resourceTexture)
+    public static unsafe int FindResourceTexture(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, ref ID2D1ResourceTexture* resourceTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FindResourceTexture(ref resourceId.GetPinnableReference(), ref resourceTexture);
+        return @this->FindResourceTexture(in resourceId.GetPinnableReference(), ref resourceTexture);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, VertexBufferProperties* vertexBufferProperties, Guid* resourceId, CustomVertexBufferProperties* customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int CreateVertexBuffer<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2922,171 +2922,171 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, VertexBufferProperties* vertexBufferProperties, Guid* resourceId, Span<CustomVertexBufferProperties> customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<CustomVertexBufferProperties> customVertexBufferProperties, ID2D1VertexBuffer** buffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVertexBuffer(vertexBufferProperties, resourceId, ref customVertexBufferProperties.GetPinnableReference(), buffer);
+        return @this->CreateVertexBuffer(vertexBufferProperties, resourceId, in customVertexBufferProperties.GetPinnableReference(), buffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, VertexBufferProperties* vertexBufferProperties, Guid* resourceId, ref CustomVertexBufferProperties customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int CreateVertexBuffer<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateVertexBuffer(vertexBufferProperties, resourceId, ref customVertexBufferProperties, (ID2D1VertexBuffer**) buffer.GetAddressOf());
+        return @this->CreateVertexBuffer(vertexBufferProperties, resourceId, in customVertexBufferProperties, (ID2D1VertexBuffer**) buffer.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, VertexBufferProperties* vertexBufferProperties, Guid* resourceId, Span<CustomVertexBufferProperties> customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<CustomVertexBufferProperties> customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVertexBuffer(vertexBufferProperties, resourceId, ref customVertexBufferProperties.GetPinnableReference(), ref buffer);
+        return @this->CreateVertexBuffer(vertexBufferProperties, resourceId, in customVertexBufferProperties.GetPinnableReference(), ref buffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, VertexBufferProperties* vertexBufferProperties, Span<Guid> resourceId, CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVertexBuffer(vertexBufferProperties, ref resourceId.GetPinnableReference(), customVertexBufferProperties, buffer);
+        return @this->CreateVertexBuffer(vertexBufferProperties, in resourceId.GetPinnableReference(), customVertexBufferProperties, buffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, VertexBufferProperties* vertexBufferProperties, ref Guid resourceId, CustomVertexBufferProperties* customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int CreateVertexBuffer<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateVertexBuffer(vertexBufferProperties, ref resourceId, customVertexBufferProperties, (ID2D1VertexBuffer**) buffer.GetAddressOf());
+        return @this->CreateVertexBuffer(vertexBufferProperties, in resourceId, customVertexBufferProperties, (ID2D1VertexBuffer**) buffer.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, VertexBufferProperties* vertexBufferProperties, Span<Guid> resourceId, CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVertexBuffer(vertexBufferProperties, ref resourceId.GetPinnableReference(), customVertexBufferProperties, ref buffer);
+        return @this->CreateVertexBuffer(vertexBufferProperties, in resourceId.GetPinnableReference(), customVertexBufferProperties, ref buffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, VertexBufferProperties* vertexBufferProperties, Span<Guid> resourceId, Span<CustomVertexBufferProperties> customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<CustomVertexBufferProperties> customVertexBufferProperties, ID2D1VertexBuffer** buffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVertexBuffer(vertexBufferProperties, ref resourceId.GetPinnableReference(), ref customVertexBufferProperties.GetPinnableReference(), buffer);
+        return @this->CreateVertexBuffer(vertexBufferProperties, in resourceId.GetPinnableReference(), in customVertexBufferProperties.GetPinnableReference(), buffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, VertexBufferProperties* vertexBufferProperties, ref Guid resourceId, ref CustomVertexBufferProperties customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int CreateVertexBuffer<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateVertexBuffer(vertexBufferProperties, ref resourceId, ref customVertexBufferProperties, (ID2D1VertexBuffer**) buffer.GetAddressOf());
+        return @this->CreateVertexBuffer(vertexBufferProperties, in resourceId, in customVertexBufferProperties, (ID2D1VertexBuffer**) buffer.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, VertexBufferProperties* vertexBufferProperties, Span<Guid> resourceId, Span<CustomVertexBufferProperties> customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] VertexBufferProperties* vertexBufferProperties, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<CustomVertexBufferProperties> customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVertexBuffer(vertexBufferProperties, ref resourceId.GetPinnableReference(), ref customVertexBufferProperties.GetPinnableReference(), ref buffer);
+        return @this->CreateVertexBuffer(vertexBufferProperties, in resourceId.GetPinnableReference(), in customVertexBufferProperties.GetPinnableReference(), ref buffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, Span<VertexBufferProperties> vertexBufferProperties, Guid* resourceId, CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VertexBufferProperties> vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVertexBuffer(ref vertexBufferProperties.GetPinnableReference(), resourceId, customVertexBufferProperties, buffer);
+        return @this->CreateVertexBuffer(in vertexBufferProperties.GetPinnableReference(), resourceId, customVertexBufferProperties, buffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref VertexBufferProperties vertexBufferProperties, Guid* resourceId, CustomVertexBufferProperties* customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int CreateVertexBuffer<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateVertexBuffer(ref vertexBufferProperties, resourceId, customVertexBufferProperties, (ID2D1VertexBuffer**) buffer.GetAddressOf());
+        return @this->CreateVertexBuffer(in vertexBufferProperties, resourceId, customVertexBufferProperties, (ID2D1VertexBuffer**) buffer.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, Span<VertexBufferProperties> vertexBufferProperties, Guid* resourceId, CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VertexBufferProperties> vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVertexBuffer(ref vertexBufferProperties.GetPinnableReference(), resourceId, customVertexBufferProperties, ref buffer);
+        return @this->CreateVertexBuffer(in vertexBufferProperties.GetPinnableReference(), resourceId, customVertexBufferProperties, ref buffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, Span<VertexBufferProperties> vertexBufferProperties, Guid* resourceId, Span<CustomVertexBufferProperties> customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VertexBufferProperties> vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<CustomVertexBufferProperties> customVertexBufferProperties, ID2D1VertexBuffer** buffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVertexBuffer(ref vertexBufferProperties.GetPinnableReference(), resourceId, ref customVertexBufferProperties.GetPinnableReference(), buffer);
+        return @this->CreateVertexBuffer(in vertexBufferProperties.GetPinnableReference(), resourceId, in customVertexBufferProperties.GetPinnableReference(), buffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref VertexBufferProperties vertexBufferProperties, Guid* resourceId, ref CustomVertexBufferProperties customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int CreateVertexBuffer<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateVertexBuffer(ref vertexBufferProperties, resourceId, ref customVertexBufferProperties, (ID2D1VertexBuffer**) buffer.GetAddressOf());
+        return @this->CreateVertexBuffer(in vertexBufferProperties, resourceId, in customVertexBufferProperties, (ID2D1VertexBuffer**) buffer.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, Span<VertexBufferProperties> vertexBufferProperties, Guid* resourceId, Span<CustomVertexBufferProperties> customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VertexBufferProperties> vertexBufferProperties, [Flow(FlowDirection.In)] Guid* resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<CustomVertexBufferProperties> customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVertexBuffer(ref vertexBufferProperties.GetPinnableReference(), resourceId, ref customVertexBufferProperties.GetPinnableReference(), ref buffer);
+        return @this->CreateVertexBuffer(in vertexBufferProperties.GetPinnableReference(), resourceId, in customVertexBufferProperties.GetPinnableReference(), ref buffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, Span<VertexBufferProperties> vertexBufferProperties, Span<Guid> resourceId, CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VertexBufferProperties> vertexBufferProperties, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ID2D1VertexBuffer** buffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVertexBuffer(ref vertexBufferProperties.GetPinnableReference(), ref resourceId.GetPinnableReference(), customVertexBufferProperties, buffer);
+        return @this->CreateVertexBuffer(in vertexBufferProperties.GetPinnableReference(), in resourceId.GetPinnableReference(), customVertexBufferProperties, buffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref VertexBufferProperties vertexBufferProperties, ref Guid resourceId, CustomVertexBufferProperties* customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int CreateVertexBuffer<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateVertexBuffer(ref vertexBufferProperties, ref resourceId, customVertexBufferProperties, (ID2D1VertexBuffer**) buffer.GetAddressOf());
+        return @this->CreateVertexBuffer(in vertexBufferProperties, in resourceId, customVertexBufferProperties, (ID2D1VertexBuffer**) buffer.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, Span<VertexBufferProperties> vertexBufferProperties, Span<Guid> resourceId, CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VertexBufferProperties> vertexBufferProperties, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] CustomVertexBufferProperties* customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVertexBuffer(ref vertexBufferProperties.GetPinnableReference(), ref resourceId.GetPinnableReference(), customVertexBufferProperties, ref buffer);
+        return @this->CreateVertexBuffer(in vertexBufferProperties.GetPinnableReference(), in resourceId.GetPinnableReference(), customVertexBufferProperties, ref buffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, Span<VertexBufferProperties> vertexBufferProperties, Span<Guid> resourceId, Span<CustomVertexBufferProperties> customVertexBufferProperties, ID2D1VertexBuffer** buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VertexBufferProperties> vertexBufferProperties, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<CustomVertexBufferProperties> customVertexBufferProperties, ID2D1VertexBuffer** buffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVertexBuffer(ref vertexBufferProperties.GetPinnableReference(), ref resourceId.GetPinnableReference(), ref customVertexBufferProperties.GetPinnableReference(), buffer);
+        return @this->CreateVertexBuffer(in vertexBufferProperties.GetPinnableReference(), in resourceId.GetPinnableReference(), in customVertexBufferProperties.GetPinnableReference(), buffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVertexBuffer<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref VertexBufferProperties vertexBufferProperties, ref Guid resourceId, ref CustomVertexBufferProperties customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static int CreateVertexBuffer<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in VertexBufferProperties vertexBufferProperties, [Flow(FlowDirection.In)] in Guid resourceId, [Flow(FlowDirection.In)] in CustomVertexBufferProperties customVertexBufferProperties, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateVertexBuffer(ref vertexBufferProperties, ref resourceId, ref customVertexBufferProperties, (ID2D1VertexBuffer**) buffer.GetAddressOf());
+        return @this->CreateVertexBuffer(in vertexBufferProperties, in resourceId, in customVertexBufferProperties, (ID2D1VertexBuffer**) buffer.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, Span<VertexBufferProperties> vertexBufferProperties, Span<Guid> resourceId, Span<CustomVertexBufferProperties> customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
+    public static unsafe int CreateVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VertexBufferProperties> vertexBufferProperties, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, [Flow(FlowDirection.In)] ReadOnlySpan<CustomVertexBufferProperties> customVertexBufferProperties, ref ID2D1VertexBuffer* buffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVertexBuffer(ref vertexBufferProperties.GetPinnableReference(), ref resourceId.GetPinnableReference(), ref customVertexBufferProperties.GetPinnableReference(), ref buffer);
+        return @this->CreateVertexBuffer(in vertexBufferProperties.GetPinnableReference(), in resourceId.GetPinnableReference(), in customVertexBufferProperties.GetPinnableReference(), ref buffer);
     }
 
     /// <summary>To be documented.</summary>
@@ -3099,63 +3099,31 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, ID2D1VertexBuffer** buffer)
+    public static unsafe int FindVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, ID2D1VertexBuffer** buffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FindVertexBuffer(ref resourceId.GetPinnableReference(), buffer);
+        return @this->FindVertexBuffer(in resourceId.GetPinnableReference(), buffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static int FindVertexBuffer<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid resourceId, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static int FindVertexBuffer<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in Guid resourceId, ref ComPtr<TI0> buffer) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->FindVertexBuffer(ref resourceId, (ID2D1VertexBuffer**) buffer.GetAddressOf());
+        return @this->FindVertexBuffer(in resourceId, (ID2D1VertexBuffer**) buffer.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> resourceId, ref ID2D1VertexBuffer* buffer)
+    public static unsafe int FindVertexBuffer(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> resourceId, ref ID2D1VertexBuffer* buffer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FindVertexBuffer(ref resourceId.GetPinnableReference(), ref buffer);
+        return @this->FindVertexBuffer(in resourceId.GetPinnableReference(), ref buffer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, byte* profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateColorContext(space, profile, profileSize, (ID2D1ColorContext**) colorContext.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, Span<byte> profile, uint profileSize, ID2D1ColorContext** colorContext)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateColorContext(space, ref profile.GetPinnableReference(), profileSize, colorContext);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int CreateColorContext<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, ref byte profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->CreateColorContext(space, ref profile, profileSize, (ID2D1ColorContext**) colorContext.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, Span<byte> profile, uint profileSize, ref ID2D1ColorContext* colorContext)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateColorContext(space, ref profile.GetPinnableReference(), profileSize, ref colorContext);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int CreateColorContext<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+    public static unsafe int CreateColorContext<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, [Flow(FlowDirection.In)] byte* profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3163,7 +3131,39 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, char* filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+    public static unsafe int CreateColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, [Flow(FlowDirection.In)] ReadOnlySpan<byte> profile, uint profileSize, ID2D1ColorContext** colorContext)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateColorContext(space, in profile.GetPinnableReference(), profileSize, colorContext);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateColorContext<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, [Flow(FlowDirection.In)] in byte profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateColorContext(space, in profile, profileSize, (ID2D1ColorContext**) colorContext.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateColorContext(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, [Flow(FlowDirection.In)] ReadOnlySpan<byte> profile, uint profileSize, ref ID2D1ColorContext* colorContext)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->CreateColorContext(space, in profile.GetPinnableReference(), profileSize, ref colorContext);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int CreateColorContext<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ColorSpace space, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+    {
+        var @this = thisVtbl.Handle;
+        // ComPtrOverloader
+        return @this->CreateColorContext(space, profile, profileSize, (ID2D1ColorContext**) colorContext.GetAddressOf());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int CreateColorContextFromFilename<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] char* filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -3171,31 +3171,31 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1EffectContext> thisVtbl, Span<char> filename, ID2D1ColorContext** colorContext)
+    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> filename, ID2D1ColorContext** colorContext)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateColorContextFromFilename(ref filename.GetPinnableReference(), colorContext);
+        return @this->CreateColorContextFromFilename(in filename.GetPinnableReference(), colorContext);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateColorContextFromFilename<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, ref char filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+    public static int CreateColorContextFromFilename<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] in char filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateColorContextFromFilename(ref filename, (ID2D1ColorContext**) colorContext.GetAddressOf());
+        return @this->CreateColorContextFromFilename(in filename, (ID2D1ColorContext**) colorContext.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1EffectContext> thisVtbl, Span<char> filename, ref ID2D1ColorContext* colorContext)
+    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> filename, ref ID2D1ColorContext* colorContext)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateColorContextFromFilename(ref filename.GetPinnableReference(), ref colorContext);
+        return @this->CreateColorContextFromFilename(in filename.GetPinnableReference(), ref colorContext);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateColorContextFromFilename<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+    public static int CreateColorContextFromFilename<TI0>(this ComPtr<ID2D1EffectContext> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

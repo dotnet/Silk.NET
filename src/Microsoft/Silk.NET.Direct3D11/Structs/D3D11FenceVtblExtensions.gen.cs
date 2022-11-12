@@ -210,7 +210,7 @@ public unsafe static class D3D11FenceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D11Fence> thisVtbl, Guid* guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D11Fence> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -219,7 +219,7 @@ public unsafe static class D3D11FenceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11Fence> thisVtbl, Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11Fence> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -231,7 +231,7 @@ public unsafe static class D3D11FenceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D11Fence> thisVtbl, ref Guid guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D11Fence> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -243,7 +243,7 @@ public unsafe static class D3D11FenceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D11Fence> thisVtbl, ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D11Fence> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -306,92 +306,67 @@ public unsafe static class D3D11FenceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, char* lpName, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int dwAccess, [Flow(FlowDirection.In)] nint* lpName, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[7])(@this, pAttributes, dwAccess, lpName, pHandle);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[7])(@this, pAttributes, dwAccess, lpName, pHandle);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, char* lpName, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int dwAccess, [Flow(FlowDirection.In)] nint* lpName, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** pHandlePtr = &pHandle)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[7])(@this, pAttributes, dwAccess, lpName, pHandlePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[7])(@this, pAttributes, dwAccess, lpName, pHandlePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, ref char lpName, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int dwAccess, [Flow(FlowDirection.In)] in nint lpName, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* lpNamePtr = &lpName)
+        fixed (nint* lpNamePtr = &lpName)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[7])(@this, pAttributes, dwAccess, lpNamePtr, pHandle);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[7])(@this, pAttributes, dwAccess, lpNamePtr, pHandle);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, ref char lpName, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int dwAccess, [Flow(FlowDirection.In)] in nint lpName, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* lpNamePtr = &lpName)
+        fixed (nint* lpNamePtr = &lpName)
         {
             fixed (void** pHandlePtr = &pHandle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[7])(@this, pAttributes, dwAccess, lpNamePtr, pHandlePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[7])(@this, pAttributes, dwAccess, lpNamePtr, pHandlePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, void** pHandle)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var lpNamePtr = (byte*) SilkMarshal.StringToPtr(lpName, NativeStringEncoding.LPWStr);
-        ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[7])(@this, pAttributes, dwAccess, lpNamePtr, pHandle);
-        SilkMarshal.Free((nint)lpNamePtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, ref void* pHandle)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var lpNamePtr = (byte*) SilkMarshal.StringToPtr(lpName, NativeStringEncoding.LPWStr);
-        fixed (void** pHandlePtr = &pHandle)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[7])(@this, pAttributes, dwAccess, lpNamePtr, pHandlePtr);
-        }
-        SilkMarshal.Free((nint)lpNamePtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, char* lpName, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int dwAccess, [Flow(FlowDirection.In)] nint* lpName, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[7])(@this, pAttributesPtr, dwAccess, lpName, pHandle);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[7])(@this, pAttributesPtr, dwAccess, lpName, pHandle);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, char* lpName, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int dwAccess, [Flow(FlowDirection.In)] nint* lpName, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -399,72 +374,41 @@ public unsafe static class D3D11FenceVtblExtensions
         {
             fixed (void** pHandlePtr = &pHandle)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[7])(@this, pAttributesPtr, dwAccess, lpName, pHandlePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[7])(@this, pAttributesPtr, dwAccess, lpName, pHandlePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, ref char lpName, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int dwAccess, [Flow(FlowDirection.In)] in nint lpName, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
         {
-            fixed (char* lpNamePtr = &lpName)
+            fixed (nint* lpNamePtr = &lpName)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[7])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandle);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[7])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandle);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, ref char lpName, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, int dwAccess, [Flow(FlowDirection.In)] in nint lpName, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
         {
-            fixed (char* lpNamePtr = &lpName)
+            fixed (nint* lpNamePtr = &lpName)
             {
                 fixed (void** pHandlePtr = &pHandle)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)@this->LpVtbl[7])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandlePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, int, nint*, void**, int>)@this->LpVtbl[7])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandlePtr);
                 }
             }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, void** pHandle)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
-        {
-        var lpNamePtr = (byte*) SilkMarshal.StringToPtr(lpName, NativeStringEncoding.LPWStr);
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[7])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandle);
-        SilkMarshal.Free((nint)lpNamePtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, ref void* pHandle)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
-        {
-        var lpNamePtr = (byte*) SilkMarshal.StringToPtr(lpName, NativeStringEncoding.LPWStr);
-            fixed (void** pHandlePtr = &pHandle)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)@this->LpVtbl[7])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandlePtr);
-            }
-        SilkMarshal.Free((nint)lpNamePtr);
         }
         return ret;
     }
@@ -479,22 +423,22 @@ public unsafe static class D3D11FenceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEventOnCompletion(this ComPtr<ID3D11Fence> thisVtbl, ulong Value, void* hEvent)
+    public static unsafe int SetEventOnCompletion(this ComPtr<ID3D11Fence> thisVtbl, ulong Value, nint* hEvent)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, ulong, void*, int>)@this->LpVtbl[9])(@this, Value, hEvent);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, ulong, nint*, int>)@this->LpVtbl[9])(@this, Value, hEvent);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetEventOnCompletion<T0>(this ComPtr<ID3D11Fence> thisVtbl, ulong Value, ref T0 hEvent) where T0 : unmanaged
+    public static int SetEventOnCompletion(this ComPtr<ID3D11Fence> thisVtbl, ulong Value, ref nint hEvent)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (void* hEventPtr = &hEvent)
+        fixed (nint* hEventPtr = &hEvent)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, ulong, void*, int>)@this->LpVtbl[9])(@this, Value, hEventPtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, ulong, nint*, int>)@this->LpVtbl[9])(@this, Value, hEventPtr);
         }
         return ret;
     }
@@ -589,15 +533,15 @@ public unsafe static class D3D11FenceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11Fence> thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11Fence> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(guid, DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(guid, DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D11Fence> thisVtbl, Span<Guid> guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D11Fence> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -605,11 +549,11 @@ public unsafe static class D3D11FenceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D11Fence> thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D11Fence> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -653,71 +597,55 @@ public unsafe static class D3D11FenceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, Span<char> lpName, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int dwAccess, [Flow(FlowDirection.In)] ReadOnlySpan<nint> lpName, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedHandle(pAttributes, dwAccess, ref lpName.GetPinnableReference(), pHandle);
+        return @this->CreateSharedHandle(pAttributes, dwAccess, in lpName.GetPinnableReference(), pHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, Span<char> lpName, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, int dwAccess, [Flow(FlowDirection.In)] ReadOnlySpan<nint> lpName, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedHandle(pAttributes, dwAccess, ref lpName.GetPinnableReference(), ref pHandle);
+        return @this->CreateSharedHandle(pAttributes, dwAccess, in lpName.GetPinnableReference(), ref pHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, Span<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint dwAccess, char* lpName, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, int dwAccess, [Flow(FlowDirection.In)] nint* lpName, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedHandle(ref pAttributes.GetPinnableReference(), dwAccess, lpName, pHandle);
+        return @this->CreateSharedHandle(in pAttributes.GetPinnableReference(), dwAccess, lpName, pHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, Span<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint dwAccess, char* lpName, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, int dwAccess, [Flow(FlowDirection.In)] nint* lpName, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedHandle(ref pAttributes.GetPinnableReference(), dwAccess, lpName, ref pHandle);
+        return @this->CreateSharedHandle(in pAttributes.GetPinnableReference(), dwAccess, lpName, ref pHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, Span<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint dwAccess, Span<char> lpName, void** pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, int dwAccess, [Flow(FlowDirection.In)] ReadOnlySpan<nint> lpName, void** pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedHandle(ref pAttributes.GetPinnableReference(), dwAccess, ref lpName.GetPinnableReference(), pHandle);
+        return @this->CreateSharedHandle(in pAttributes.GetPinnableReference(), dwAccess, in lpName.GetPinnableReference(), pHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, Span<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint dwAccess, Span<char> lpName, ref void* pHandle)
+    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Core.Native.SecurityAttributes> pAttributes, int dwAccess, [Flow(FlowDirection.In)] ReadOnlySpan<nint> lpName, ref void* pHandle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedHandle(ref pAttributes.GetPinnableReference(), dwAccess, ref lpName.GetPinnableReference(), ref pHandle);
+        return @this->CreateSharedHandle(in pAttributes.GetPinnableReference(), dwAccess, in lpName.GetPinnableReference(), ref pHandle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, Span<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint dwAccess, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, void** pHandle)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateSharedHandle(ref pAttributes.GetPinnableReference(), dwAccess, lpName, pHandle);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedHandle(this ComPtr<ID3D11Fence> thisVtbl, Span<Silk.NET.Core.Native.SecurityAttributes> pAttributes, uint dwAccess, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, ref void* pHandle)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateSharedHandle(ref pAttributes.GetPinnableReference(), dwAccess, lpName, ref pHandle);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetEventOnCompletion<T0>(this ComPtr<ID3D11Fence> thisVtbl, ulong Value, Span<T0> hEvent) where T0 : unmanaged
+    public static int SetEventOnCompletion(this ComPtr<ID3D11Fence> thisVtbl, ulong Value, Span<nint> hEvent)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

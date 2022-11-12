@@ -162,7 +162,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Write(void* pv, uint cb, uint* pcbWritten)
+        public readonly unsafe int Write([Flow(FlowDirection.In)] void* pv, uint cb, uint* pcbWritten)
         {
             var @this = (IStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -171,7 +171,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Write(void* pv, uint cb, ref uint pcbWritten)
+        public readonly unsafe int Write([Flow(FlowDirection.In)] void* pv, uint cb, ref uint pcbWritten)
         {
             var @this = (IStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -183,7 +183,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Write<T0>(ref T0 pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+        public readonly unsafe int Write<T0>([Flow(FlowDirection.In)] in T0 pv, uint cb, uint* pcbWritten) where T0 : unmanaged
         {
             var @this = (IStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -195,7 +195,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Write<T0>(ref T0 pv, uint cb, ref uint pcbWritten) where T0 : unmanaged
+        public readonly int Write<T0>([Flow(FlowDirection.In)] in T0 pv, uint cb, ref uint pcbWritten) where T0 : unmanaged
         {
             var @this = (IStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -210,22 +210,22 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Seek(long dlibMove, uint dwOrigin, ulong* plibNewPosition)
+        public readonly unsafe int Seek(long dlibMove, int dwOrigin, ulong* plibNewPosition)
         {
             var @this = (IStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IStream*, long, uint, ulong*, int>)@this->LpVtbl[5])(@this, dlibMove, dwOrigin, plibNewPosition);
+            ret = ((delegate* unmanaged[Cdecl]<IStream*, long, int, ulong*, int>)@this->LpVtbl[5])(@this, dlibMove, dwOrigin, plibNewPosition);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Seek(long dlibMove, uint dwOrigin, ref ulong plibNewPosition)
+        public readonly int Seek(long dlibMove, int dwOrigin, ref ulong plibNewPosition)
         {
             var @this = (IStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ulong* plibNewPositionPtr = &plibNewPosition)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IStream*, long, uint, ulong*, int>)@this->LpVtbl[5])(@this, dlibMove, dwOrigin, plibNewPositionPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IStream*, long, int, ulong*, int>)@this->LpVtbl[5])(@this, dlibMove, dwOrigin, plibNewPositionPtr);
             }
             return ret;
         }
@@ -348,11 +348,11 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Commit(uint grfCommitFlags)
+        public readonly int Commit(int grfCommitFlags)
         {
             var @this = (IStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IStream*, uint, int>)@this->LpVtbl[8])(@this, grfCommitFlags);
+            ret = ((delegate* unmanaged[Cdecl]<IStream*, int, int>)@this->LpVtbl[8])(@this, grfCommitFlags);
             return ret;
         }
 
@@ -366,40 +366,40 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LockRegion(ulong libOffset, ulong cb, uint dwLockType)
+        public readonly int LockRegion(ulong libOffset, ulong cb, int dwLockType)
         {
             var @this = (IStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IStream*, ulong, ulong, uint, int>)@this->LpVtbl[10])(@this, libOffset, cb, dwLockType);
+            ret = ((delegate* unmanaged[Cdecl]<IStream*, ulong, ulong, int, int>)@this->LpVtbl[10])(@this, libOffset, cb, dwLockType);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int UnlockRegion(ulong libOffset, ulong cb, uint dwLockType)
+        public readonly int UnlockRegion(ulong libOffset, ulong cb, int dwLockType)
         {
             var @this = (IStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IStream*, ulong, ulong, uint, int>)@this->LpVtbl[11])(@this, libOffset, cb, dwLockType);
+            ret = ((delegate* unmanaged[Cdecl]<IStream*, ulong, ulong, int, int>)@this->LpVtbl[11])(@this, libOffset, cb, dwLockType);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Stat(TagSTATSTG* pstatstg, uint grfStatFlag)
+        public readonly unsafe int Stat(TagSTATSTG* pstatstg, int grfStatFlag)
         {
             var @this = (IStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IStream*, TagSTATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstg, grfStatFlag);
+            ret = ((delegate* unmanaged[Cdecl]<IStream*, TagSTATSTG*, int, int>)@this->LpVtbl[12])(@this, pstatstg, grfStatFlag);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Stat(ref TagSTATSTG pstatstg, uint grfStatFlag)
+        public readonly int Stat(ref TagSTATSTG pstatstg, int grfStatFlag)
         {
             var @this = (IStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (TagSTATSTG* pstatstgPtr = &pstatstg)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IStream*, TagSTATSTG*, uint, int>)@this->LpVtbl[12])(@this, pstatstgPtr, grfStatFlag);
+                ret = ((delegate* unmanaged[Cdecl]<IStream*, TagSTATSTG*, int, int>)@this->LpVtbl[12])(@this, pstatstgPtr, grfStatFlag);
             }
             return ret;
         }

@@ -21,7 +21,7 @@ namespace Silk.NET.Core.Win32Extras
     {
         public ProcessHeapEntryUnionBlock
         (
-            void* hMem = null
+            nint* hMem = null
         ) : this()
         {
             if (hMem is not null)
@@ -34,7 +34,7 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "hMem")]
-        public void* HMem;
+        public nint* HMem;
         [NativeName("Type", "DWORD [3]")]
         [NativeName("Type.Name", "DWORD [3]")]
         [NativeName("Name", "dwReserved")]

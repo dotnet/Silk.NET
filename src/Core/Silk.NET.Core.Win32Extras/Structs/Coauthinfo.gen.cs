@@ -22,13 +22,13 @@ namespace Silk.NET.Core.Win32Extras
     {
         public Coauthinfo
         (
-            uint? dwAuthnSvc = null,
-            uint? dwAuthzSvc = null,
+            int? dwAuthnSvc = null,
+            int? dwAuthzSvc = null,
             char* pwszServerPrincName = null,
-            uint? dwAuthnLevel = null,
-            uint? dwImpersonationLevel = null,
+            int? dwAuthnLevel = null,
+            int? dwImpersonationLevel = null,
             Coauthidentity* pAuthIdentityData = null,
-            uint? dwCapabilities = null
+            int? dwCapabilities = null
         ) : this()
         {
             if (dwAuthnSvc is not null)
@@ -71,12 +71,12 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwAuthnSvc")]
-        public uint DwAuthnSvc;
+        public int DwAuthnSvc;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwAuthzSvc")]
-        public uint DwAuthzSvc;
+        public int DwAuthzSvc;
 
         [NativeName("Type", "LPWSTR")]
         [NativeName("Type.Name", "LPWSTR")]
@@ -86,12 +86,12 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwAuthnLevel")]
-        public uint DwAuthnLevel;
+        public int DwAuthnLevel;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwImpersonationLevel")]
-        public uint DwImpersonationLevel;
+        public int DwImpersonationLevel;
 
         [NativeName("Type", "COAUTHIDENTITY *")]
         [NativeName("Type.Name", "COAUTHIDENTITY *")]
@@ -101,6 +101,6 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwCapabilities")]
-        public uint DwCapabilities;
+        public int DwCapabilities;
     }
 }

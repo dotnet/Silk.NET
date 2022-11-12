@@ -85,11 +85,11 @@ public unsafe static class DxcBlobUtf16VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void* GetBufferPointer(this ComPtr<IDxcBlobUtf16> thisVtbl)
+    public static unsafe nint* GetBufferPointer(this ComPtr<IDxcBlobUtf16> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        void* ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDxcBlobUtf16*, void*>)@this->LpVtbl[3])(@this);
+        nint* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDxcBlobUtf16*, nint*>)@this->LpVtbl[3])(@this);
         return ret;
     }
 
@@ -151,21 +151,11 @@ public unsafe static class DxcBlobUtf16VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe char* GetStringPointer(this ComPtr<IDxcBlobUtf16> thisVtbl)
+    public static unsafe nint* GetStringPointer(this ComPtr<IDxcBlobUtf16> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        char* ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDxcBlobUtf16*, char*>)@this->LpVtbl[6])(@this);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)]
-    public static string GetStringPointerS(this ComPtr<IDxcBlobUtf16> thisVtbl)
-    {
-        var @this = thisVtbl.Handle;
-        string ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDxcBlobUtf16*, string>)@this->LpVtbl[6])(@this);
+        nint* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDxcBlobUtf16*, nint*>)@this->LpVtbl[6])(@this);
         return ret;
     }
 

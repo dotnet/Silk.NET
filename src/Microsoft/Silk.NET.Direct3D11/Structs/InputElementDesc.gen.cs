@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D11
     {
         public InputElementDesc
         (
-            byte* semanticName = null,
+            string* semanticName = null,
             uint? semanticIndex = null,
             Silk.NET.DXGI.Format? format = null,
             uint? inputSlot = null,
@@ -70,7 +70,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "LPCSTR")]
         [NativeName("Type.Name", "LPCSTR")]
         [NativeName("Name", "SemanticName")]
-        public byte* SemanticName;
+        public string* SemanticName;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

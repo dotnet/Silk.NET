@@ -85,7 +85,7 @@ public unsafe static class DXGIAdapter3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDXGIAdapter3> thisVtbl, Guid* Name, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<IDXGIAdapter3> thisVtbl, Guid* Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -94,7 +94,7 @@ public unsafe static class DXGIAdapter3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIAdapter3> thisVtbl, Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIAdapter3> thisVtbl, Guid* Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -106,7 +106,7 @@ public unsafe static class DXGIAdapter3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDXGIAdapter3> thisVtbl, ref Guid Name, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<IDXGIAdapter3> thisVtbl, ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DXGIAdapter3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDXGIAdapter3> thisVtbl, ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDXGIAdapter3> thisVtbl, ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -469,58 +469,58 @@ public unsafe static class DXGIAdapter3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterHardwareContentProtectionTeardownStatusEvent(this ComPtr<IDXGIAdapter3> thisVtbl, void* hEvent, uint* pdwCookie)
+    public static unsafe int RegisterHardwareContentProtectionTeardownStatusEvent(this ComPtr<IDXGIAdapter3> thisVtbl, nint* hEvent, uint* pdwCookie)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, void*, uint*, int>)@this->LpVtbl[12])(@this, hEvent, pdwCookie);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, nint*, uint*, int>)@this->LpVtbl[12])(@this, hEvent, pdwCookie);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterHardwareContentProtectionTeardownStatusEvent(this ComPtr<IDXGIAdapter3> thisVtbl, void* hEvent, ref uint pdwCookie)
+    public static unsafe int RegisterHardwareContentProtectionTeardownStatusEvent(this ComPtr<IDXGIAdapter3> thisVtbl, nint* hEvent, ref uint pdwCookie)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pdwCookiePtr = &pdwCookie)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, void*, uint*, int>)@this->LpVtbl[12])(@this, hEvent, pdwCookiePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, nint*, uint*, int>)@this->LpVtbl[12])(@this, hEvent, pdwCookiePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterHardwareContentProtectionTeardownStatusEvent<T0>(this ComPtr<IDXGIAdapter3> thisVtbl, ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
+    public static unsafe int RegisterHardwareContentProtectionTeardownStatusEvent(this ComPtr<IDXGIAdapter3> thisVtbl, ref nint hEvent, uint* pdwCookie)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (void* hEventPtr = &hEvent)
+        fixed (nint* hEventPtr = &hEvent)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, void*, uint*, int>)@this->LpVtbl[12])(@this, hEventPtr, pdwCookie);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, nint*, uint*, int>)@this->LpVtbl[12])(@this, hEventPtr, pdwCookie);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterHardwareContentProtectionTeardownStatusEvent<T0>(this ComPtr<IDXGIAdapter3> thisVtbl, ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
+    public static int RegisterHardwareContentProtectionTeardownStatusEvent(this ComPtr<IDXGIAdapter3> thisVtbl, ref nint hEvent, ref uint pdwCookie)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (void* hEventPtr = &hEvent)
+        fixed (nint* hEventPtr = &hEvent)
         {
             fixed (uint* pdwCookiePtr = &pdwCookie)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, void*, uint*, int>)@this->LpVtbl[12])(@this, hEventPtr, pdwCookiePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, nint*, uint*, int>)@this->LpVtbl[12])(@this, hEventPtr, pdwCookiePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static void UnregisterHardwareContentProtectionTeardownStatus(this ComPtr<IDXGIAdapter3> thisVtbl, uint dwCookie)
+    public static void UnregisterHardwareContentProtectionTeardownStatus(this ComPtr<IDXGIAdapter3> thisVtbl, int dwCookie)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, uint, void>)@this->LpVtbl[13])(@this, dwCookie);
+        ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, int, void>)@this->LpVtbl[13])(@this, dwCookie);
     }
 
     /// <summary>To be documented.</summary>
@@ -554,58 +554,58 @@ public unsafe static class DXGIAdapter3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent(this ComPtr<IDXGIAdapter3> thisVtbl, void* hEvent, uint* pdwCookie)
+    public static unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent(this ComPtr<IDXGIAdapter3> thisVtbl, nint* hEvent, uint* pdwCookie)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, void*, uint*, int>)@this->LpVtbl[16])(@this, hEvent, pdwCookie);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, nint*, uint*, int>)@this->LpVtbl[16])(@this, hEvent, pdwCookie);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent(this ComPtr<IDXGIAdapter3> thisVtbl, void* hEvent, ref uint pdwCookie)
+    public static unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent(this ComPtr<IDXGIAdapter3> thisVtbl, nint* hEvent, ref uint pdwCookie)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pdwCookiePtr = &pdwCookie)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, void*, uint*, int>)@this->LpVtbl[16])(@this, hEvent, pdwCookiePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, nint*, uint*, int>)@this->LpVtbl[16])(@this, hEvent, pdwCookiePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent<T0>(this ComPtr<IDXGIAdapter3> thisVtbl, ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
+    public static unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent(this ComPtr<IDXGIAdapter3> thisVtbl, ref nint hEvent, uint* pdwCookie)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (void* hEventPtr = &hEvent)
+        fixed (nint* hEventPtr = &hEvent)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, void*, uint*, int>)@this->LpVtbl[16])(@this, hEventPtr, pdwCookie);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, nint*, uint*, int>)@this->LpVtbl[16])(@this, hEventPtr, pdwCookie);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterVideoMemoryBudgetChangeNotificationEvent<T0>(this ComPtr<IDXGIAdapter3> thisVtbl, ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
+    public static int RegisterVideoMemoryBudgetChangeNotificationEvent(this ComPtr<IDXGIAdapter3> thisVtbl, ref nint hEvent, ref uint pdwCookie)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (void* hEventPtr = &hEvent)
+        fixed (nint* hEventPtr = &hEvent)
         {
             fixed (uint* pdwCookiePtr = &pdwCookie)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, void*, uint*, int>)@this->LpVtbl[16])(@this, hEventPtr, pdwCookiePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, nint*, uint*, int>)@this->LpVtbl[16])(@this, hEventPtr, pdwCookiePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static void UnregisterVideoMemoryBudgetChangeNotification(this ComPtr<IDXGIAdapter3> thisVtbl, uint dwCookie)
+    public static void UnregisterVideoMemoryBudgetChangeNotification(this ComPtr<IDXGIAdapter3> thisVtbl, int dwCookie)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, uint, void>)@this->LpVtbl[17])(@this, dwCookie);
+        ((delegate* unmanaged[Stdcall]<IDXGIAdapter3*, int, void>)@this->LpVtbl[17])(@this, dwCookie);
     }
 
     /// <summary>To be documented.</summary>
@@ -634,15 +634,15 @@ public unsafe static class DXGIAdapter3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIAdapter3> thisVtbl, Guid* Name, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIAdapter3> thisVtbl, Guid* Name, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(Name, DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(Name, DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDXGIAdapter3> thisVtbl, Span<Guid> Name, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<IDXGIAdapter3> thisVtbl, Span<Guid> Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -650,11 +650,11 @@ public unsafe static class DXGIAdapter3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDXGIAdapter3> thisVtbl, Span<Guid> Name, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDXGIAdapter3> thisVtbl, Span<Guid> Name, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -835,7 +835,7 @@ public unsafe static class DXGIAdapter3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterHardwareContentProtectionTeardownStatusEvent(this ComPtr<IDXGIAdapter3> thisVtbl, void* hEvent, Span<uint> pdwCookie)
+    public static unsafe int RegisterHardwareContentProtectionTeardownStatusEvent(this ComPtr<IDXGIAdapter3> thisVtbl, nint* hEvent, Span<uint> pdwCookie)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -843,7 +843,7 @@ public unsafe static class DXGIAdapter3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterHardwareContentProtectionTeardownStatusEvent<T0>(this ComPtr<IDXGIAdapter3> thisVtbl, Span<T0> hEvent, uint* pdwCookie) where T0 : unmanaged
+    public static unsafe int RegisterHardwareContentProtectionTeardownStatusEvent(this ComPtr<IDXGIAdapter3> thisVtbl, Span<nint> hEvent, uint* pdwCookie)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -851,7 +851,7 @@ public unsafe static class DXGIAdapter3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterHardwareContentProtectionTeardownStatusEvent<T0>(this ComPtr<IDXGIAdapter3> thisVtbl, Span<T0> hEvent, Span<uint> pdwCookie) where T0 : unmanaged
+    public static int RegisterHardwareContentProtectionTeardownStatusEvent(this ComPtr<IDXGIAdapter3> thisVtbl, Span<nint> hEvent, Span<uint> pdwCookie)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -867,7 +867,7 @@ public unsafe static class DXGIAdapter3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent(this ComPtr<IDXGIAdapter3> thisVtbl, void* hEvent, Span<uint> pdwCookie)
+    public static unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent(this ComPtr<IDXGIAdapter3> thisVtbl, nint* hEvent, Span<uint> pdwCookie)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -875,7 +875,7 @@ public unsafe static class DXGIAdapter3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent<T0>(this ComPtr<IDXGIAdapter3> thisVtbl, Span<T0> hEvent, uint* pdwCookie) where T0 : unmanaged
+    public static unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent(this ComPtr<IDXGIAdapter3> thisVtbl, Span<nint> hEvent, uint* pdwCookie)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -883,7 +883,7 @@ public unsafe static class DXGIAdapter3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterVideoMemoryBudgetChangeNotificationEvent<T0>(this ComPtr<IDXGIAdapter3> thisVtbl, Span<T0> hEvent, Span<uint> pdwCookie) where T0 : unmanaged
+    public static int RegisterVideoMemoryBudgetChangeNotificationEvent(this ComPtr<IDXGIAdapter3> thisVtbl, Span<nint> hEvent, Span<uint> pdwCookie)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

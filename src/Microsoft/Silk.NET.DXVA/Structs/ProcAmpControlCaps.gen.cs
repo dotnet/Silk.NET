@@ -21,11 +21,11 @@ namespace Silk.NET.DXVA
     {
         public ProcAmpControlCaps
         (
-            uint? size = null,
-            uint? inputPool = null,
+            int? size = null,
+            int? inputPool = null,
             Silk.NET.Direct3D9.Format? d3dOutputFormat = null,
-            uint? procAmpControlProps = null,
-            uint? videoProcessingCaps = null
+            int? procAmpControlProps = null,
+            int? videoProcessingCaps = null
         ) : this()
         {
             if (size is not null)
@@ -58,12 +58,12 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Size")]
-        public uint Size;
+        public int Size;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "InputPool")]
-        public uint InputPool;
+        public int InputPool;
 
         [NativeName("Type", "D3DFORMAT")]
         [NativeName("Type.Name", "D3DFORMAT")]
@@ -73,11 +73,11 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "ProcAmpControlProps")]
-        public uint ProcAmpControlProps;
+        public int ProcAmpControlProps;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "VideoProcessingCaps")]
-        public uint VideoProcessingCaps;
+        public int VideoProcessingCaps;
     }
 }

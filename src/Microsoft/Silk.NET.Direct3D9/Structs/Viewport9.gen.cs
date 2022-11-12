@@ -21,10 +21,10 @@ namespace Silk.NET.Direct3D9
     {
         public Viewport9
         (
-            uint? x = null,
-            uint? y = null,
-            uint? width = null,
-            uint? height = null,
+            int? x = null,
+            int? y = null,
+            int? width = null,
+            int? height = null,
             float? minZ = null,
             float? maxZ = null
         ) : this()
@@ -64,22 +64,22 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "X")]
-        public uint X;
+        public int X;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Y")]
-        public uint Y;
+        public int Y;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Width")]
-        public uint Width;
+        public int Width;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Height")]
-        public uint Height;
+        public int Height;
 
         [NativeName("Type", "float")]
         [NativeName("Type.Name", "float")]

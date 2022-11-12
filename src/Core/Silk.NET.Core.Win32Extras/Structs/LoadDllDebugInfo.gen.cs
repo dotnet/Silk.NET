@@ -21,11 +21,11 @@ namespace Silk.NET.Core.Win32Extras
     {
         public LoadDllDebugInfo
         (
-            void* hFile = null,
-            void* lpBaseOfDll = null,
-            uint? dwDebugInfoFileOffset = null,
-            uint? nDebugInfoSize = null,
-            void* lpImageName = null,
+            nint* hFile = null,
+            nint* lpBaseOfDll = null,
+            int? dwDebugInfoFileOffset = null,
+            int? nDebugInfoSize = null,
+            nint* lpImageName = null,
             ushort? fUnicode = null
         ) : this()
         {
@@ -64,27 +64,27 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "hFile")]
-        public void* HFile;
+        public nint* HFile;
 
         [NativeName("Type", "LPVOID")]
         [NativeName("Type.Name", "LPVOID")]
         [NativeName("Name", "lpBaseOfDll")]
-        public void* LpBaseOfDll;
+        public nint* LpBaseOfDll;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwDebugInfoFileOffset")]
-        public uint DwDebugInfoFileOffset;
+        public int DwDebugInfoFileOffset;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "nDebugInfoSize")]
-        public uint NDebugInfoSize;
+        public int NDebugInfoSize;
 
         [NativeName("Type", "LPVOID")]
         [NativeName("Type.Name", "LPVOID")]
         [NativeName("Name", "lpImageName")]
-        public void* LpImageName;
+        public nint* LpImageName;
 
         [NativeName("Type", "WORD")]
         [NativeName("Type.Name", "WORD")]

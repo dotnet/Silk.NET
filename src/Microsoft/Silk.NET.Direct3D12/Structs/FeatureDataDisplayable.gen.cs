@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataDisplayable
         (
-            int? displayableTexture = null,
+            bool? displayableTexture = null,
             SharedResourceCompatibilityTier? sharedResourceCompatibilityTier = null
         ) : this()
         {
@@ -40,7 +40,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DisplayableTexture")]
-        public int DisplayableTexture;
+        public bool DisplayableTexture;
 
         [NativeName("Type", "D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER")]
         [NativeName("Type.Name", "D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER")]

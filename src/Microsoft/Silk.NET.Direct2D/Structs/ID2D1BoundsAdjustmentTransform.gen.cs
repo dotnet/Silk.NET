@@ -123,14 +123,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetOutputBounds(Silk.NET.Maths.Box2D<int>* outputBounds)
+        public readonly unsafe void SetOutputBounds([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* outputBounds)
         {
             var @this = (ID2D1BoundsAdjustmentTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1BoundsAdjustmentTransform*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[4])(@this, outputBounds);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetOutputBounds(ref Silk.NET.Maths.Box2D<int> outputBounds)
+        public readonly void SetOutputBounds([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> outputBounds)
         {
             var @this = (ID2D1BoundsAdjustmentTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* outputBoundsPtr = &outputBounds)

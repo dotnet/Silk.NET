@@ -21,20 +21,20 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D11Options
         (
-            int? outputMergerLogicOp = null,
-            int? uAVOnlyRenderingForcedSampleCount = null,
-            int? discardAPIsSeenByDriver = null,
-            int? flagsForUpdateAndCopySeenByDriver = null,
-            int? clearView = null,
-            int? copyWithOverlap = null,
-            int? constantBufferPartialUpdate = null,
-            int? constantBufferOffsetting = null,
-            int? mapNoOverwriteOnDynamicConstantBuffer = null,
-            int? mapNoOverwriteOnDynamicBufferSRV = null,
-            int? multisampleRTVWithForcedSampleCountOne = null,
-            int? sAD4ShaderInstructions = null,
-            int? extendedDoublesShaderInstructions = null,
-            int? extendedResourceSharing = null
+            bool? outputMergerLogicOp = null,
+            bool? uAVOnlyRenderingForcedSampleCount = null,
+            bool? discardAPIsSeenByDriver = null,
+            bool? flagsForUpdateAndCopySeenByDriver = null,
+            bool? clearView = null,
+            bool? copyWithOverlap = null,
+            bool? constantBufferPartialUpdate = null,
+            bool? constantBufferOffsetting = null,
+            bool? mapNoOverwriteOnDynamicConstantBuffer = null,
+            bool? mapNoOverwriteOnDynamicBufferSRV = null,
+            bool? multisampleRTVWithForcedSampleCountOne = null,
+            bool? sAD4ShaderInstructions = null,
+            bool? extendedDoublesShaderInstructions = null,
+            bool? extendedResourceSharing = null
         ) : this()
         {
             if (outputMergerLogicOp is not null)
@@ -112,71 +112,71 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "OutputMergerLogicOp")]
-        public int OutputMergerLogicOp;
+        public bool OutputMergerLogicOp;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "UAVOnlyRenderingForcedSampleCount")]
-        public int UAVOnlyRenderingForcedSampleCount;
+        public bool UAVOnlyRenderingForcedSampleCount;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DiscardAPIsSeenByDriver")]
-        public int DiscardAPIsSeenByDriver;
+        public bool DiscardAPIsSeenByDriver;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "FlagsForUpdateAndCopySeenByDriver")]
-        public int FlagsForUpdateAndCopySeenByDriver;
+        public bool FlagsForUpdateAndCopySeenByDriver;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ClearView")]
-        public int ClearView;
+        public bool ClearView;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "CopyWithOverlap")]
-        public int CopyWithOverlap;
+        public bool CopyWithOverlap;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ConstantBufferPartialUpdate")]
-        public int ConstantBufferPartialUpdate;
+        public bool ConstantBufferPartialUpdate;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ConstantBufferOffsetting")]
-        public int ConstantBufferOffsetting;
+        public bool ConstantBufferOffsetting;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "MapNoOverwriteOnDynamicConstantBuffer")]
-        public int MapNoOverwriteOnDynamicConstantBuffer;
+        public bool MapNoOverwriteOnDynamicConstantBuffer;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "MapNoOverwriteOnDynamicBufferSRV")]
-        public int MapNoOverwriteOnDynamicBufferSRV;
+        public bool MapNoOverwriteOnDynamicBufferSRV;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "MultisampleRTVWithForcedSampleCountOne")]
-        public int MultisampleRTVWithForcedSampleCountOne;
+        public bool MultisampleRTVWithForcedSampleCountOne;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "SAD4ShaderInstructions")]
-        public int SAD4ShaderInstructions;
+        public bool SAD4ShaderInstructions;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ExtendedDoublesShaderInstructions")]
-        public int ExtendedDoublesShaderInstructions;
+        public bool ExtendedDoublesShaderInstructions;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ExtendedResourceSharing")]
-        public int ExtendedResourceSharing;
+        public bool ExtendedResourceSharing;
     }
 }

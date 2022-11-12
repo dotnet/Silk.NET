@@ -21,12 +21,12 @@ namespace Silk.NET.Core.Win32Extras
     {
         public Win32FileAttributeData
         (
-            uint? dwFileAttributes = null,
-            Filetime? ftCreationTime = null,
-            Filetime? ftLastAccessTime = null,
-            Filetime? ftLastWriteTime = null,
-            uint? nFileSizeHigh = null,
-            uint? nFileSizeLow = null
+            int? dwFileAttributes = null,
+            Silk.NET.Core.Win32Extras.Filetime? ftCreationTime = null,
+            Silk.NET.Core.Win32Extras.Filetime? ftLastAccessTime = null,
+            Silk.NET.Core.Win32Extras.Filetime? ftLastWriteTime = null,
+            int? nFileSizeHigh = null,
+            int? nFileSizeLow = null
         ) : this()
         {
             if (dwFileAttributes is not null)
@@ -64,31 +64,31 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwFileAttributes")]
-        public uint DwFileAttributes;
+        public int DwFileAttributes;
 
         [NativeName("Type", "FILETIME")]
         [NativeName("Type.Name", "FILETIME")]
         [NativeName("Name", "ftCreationTime")]
-        public Filetime FtCreationTime;
+        public Silk.NET.Core.Win32Extras.Filetime FtCreationTime;
 
         [NativeName("Type", "FILETIME")]
         [NativeName("Type.Name", "FILETIME")]
         [NativeName("Name", "ftLastAccessTime")]
-        public Filetime FtLastAccessTime;
+        public Silk.NET.Core.Win32Extras.Filetime FtLastAccessTime;
 
         [NativeName("Type", "FILETIME")]
         [NativeName("Type.Name", "FILETIME")]
         [NativeName("Name", "ftLastWriteTime")]
-        public Filetime FtLastWriteTime;
+        public Silk.NET.Core.Win32Extras.Filetime FtLastWriteTime;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "nFileSizeHigh")]
-        public uint NFileSizeHigh;
+        public int NFileSizeHigh;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "nFileSizeLow")]
-        public uint NFileSizeLow;
+        public int NFileSizeLow;
     }
 }

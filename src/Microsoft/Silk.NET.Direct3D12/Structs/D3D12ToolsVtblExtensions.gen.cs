@@ -85,18 +85,18 @@ public unsafe static class D3D12ToolsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void EnableShaderInstrumentation(this ComPtr<ID3D12Tools> thisVtbl, int bEnable)
+    public static void EnableShaderInstrumentation(this ComPtr<ID3D12Tools> thisVtbl, bool bEnable)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D12Tools*, int, void>)@this->LpVtbl[3])(@this, bEnable);
+        ((delegate* unmanaged[Stdcall]<ID3D12Tools*, bool, void>)@this->LpVtbl[3])(@this, bEnable);
     }
 
     /// <summary>To be documented.</summary>
-    public static int ShaderInstrumentationEnabled(this ComPtr<ID3D12Tools> thisVtbl)
+    public static bool ShaderInstrumentationEnabled(this ComPtr<ID3D12Tools> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12Tools*, int>)@this->LpVtbl[4])(@this);
+        bool ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Tools*, bool>)@this->LpVtbl[4])(@this);
         return ret;
     }
 

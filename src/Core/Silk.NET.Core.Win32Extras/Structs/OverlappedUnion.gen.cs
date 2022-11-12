@@ -24,8 +24,8 @@ namespace Silk.NET.Core.Win32Extras
         (
             OverlappedUnionUnion? anonymous = null,
             void* pointer = null,
-            uint? offset = null,
-            uint? offsetHigh = null
+            int? offset = null,
+            int? offsetHigh = null
         ) : this()
         {
             if (anonymous is not null)
@@ -62,13 +62,13 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Name", "Pointer")]
         public void* Pointer;
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
-        public ref uint Offset
+        public ref int Offset
         {
             [MethodImpl((MethodImplOptions) 768)]
             get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Offset;
         }
 #else
-        public uint Offset
+        public int Offset
         {
             get => Anonymous.Offset;
             set => Anonymous.Offset = value;
@@ -76,13 +76,13 @@ namespace Silk.NET.Core.Win32Extras
 #endif
 
 #if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
-        public ref uint OffsetHigh
+        public ref int OffsetHigh
         {
             [MethodImpl((MethodImplOptions) 768)]
             get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].OffsetHigh;
         }
 #else
-        public uint OffsetHigh
+        public int OffsetHigh
         {
             get => Anonymous.OffsetHigh;
             set => Anonymous.OffsetHigh = value;

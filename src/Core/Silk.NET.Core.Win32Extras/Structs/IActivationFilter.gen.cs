@@ -111,40 +111,40 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int HandleActivation(uint dwActivationType, Guid* rclsid, Guid* pReplacementClsId)
+        public readonly unsafe int HandleActivation(int dwActivationType, Guid* rclsid, Guid* pReplacementClsId)
         {
             var @this = (IActivationFilter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsid, pReplacementClsId);
+            ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, int, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsid, pReplacementClsId);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int HandleActivation(uint dwActivationType, Guid* rclsid, ref Guid pReplacementClsId)
+        public readonly unsafe int HandleActivation(int dwActivationType, Guid* rclsid, ref Guid pReplacementClsId)
         {
             var @this = (IActivationFilter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pReplacementClsIdPtr = &pReplacementClsId)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsid, pReplacementClsIdPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, int, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsid, pReplacementClsIdPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int HandleActivation(uint dwActivationType, ref Guid rclsid, Guid* pReplacementClsId)
+        public readonly unsafe int HandleActivation(int dwActivationType, ref Guid rclsid, Guid* pReplacementClsId)
         {
             var @this = (IActivationFilter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* rclsidPtr = &rclsid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsidPtr, pReplacementClsId);
+                ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, int, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsidPtr, pReplacementClsId);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int HandleActivation(uint dwActivationType, ref Guid rclsid, ref Guid pReplacementClsId)
+        public readonly int HandleActivation(int dwActivationType, ref Guid rclsid, ref Guid pReplacementClsId)
         {
             var @this = (IActivationFilter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -152,7 +152,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Guid* pReplacementClsIdPtr = &pReplacementClsId)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, uint, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsidPtr, pReplacementClsIdPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IActivationFilter*, int, Guid*, Guid*, int>)@this->LpVtbl[3])(@this, dwActivationType, rclsidPtr, pReplacementClsIdPtr);
                 }
             }
             return ret;

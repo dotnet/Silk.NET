@@ -29,7 +29,7 @@ namespace Silk.NET.DXVA
             uint? rTFourCC = null,
             uint? width = null,
             uint? height = null,
-            int? enter = null
+            bool? enter = null
         ) : this()
         {
             if (wmiHeader is not null)
@@ -112,6 +112,6 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Enter")]
-        public int Enter;
+        public bool Enter;
     }
 }

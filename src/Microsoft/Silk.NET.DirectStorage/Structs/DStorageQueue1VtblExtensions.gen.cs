@@ -157,11 +157,11 @@ public unsafe static class DStorageQueue1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void* GetErrorEvent(this ComPtr<IDStorageQueue1> thisVtbl)
+    public static unsafe nint* GetErrorEvent(this ComPtr<IDStorageQueue1> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        void* ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDStorageQueue1*, void*>)@this->LpVtbl[9])(@this);
+        nint* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDStorageQueue1*, nint*>)@this->LpVtbl[9])(@this);
         return ret;
     }
 
@@ -200,19 +200,19 @@ public unsafe static class DStorageQueue1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EnqueueSetEvent(this ComPtr<IDStorageQueue1> thisVtbl, void* handle)
+    public static unsafe void EnqueueSetEvent(this ComPtr<IDStorageQueue1> thisVtbl, nint* handle)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<IDStorageQueue1*, void*, void>)@this->LpVtbl[12])(@this, handle);
+        ((delegate* unmanaged[Stdcall]<IDStorageQueue1*, nint*, void>)@this->LpVtbl[12])(@this, handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static void EnqueueSetEvent<T0>(this ComPtr<IDStorageQueue1> thisVtbl, ref T0 handle) where T0 : unmanaged
+    public static void EnqueueSetEvent(this ComPtr<IDStorageQueue1> thisVtbl, ref nint handle)
     {
         var @this = thisVtbl.Handle;
-        fixed (void* handlePtr = &handle)
+        fixed (nint* handlePtr = &handle)
         {
-            ((delegate* unmanaged[Stdcall]<IDStorageQueue1*, void*, void>)@this->LpVtbl[12])(@this, handlePtr);
+            ((delegate* unmanaged[Stdcall]<IDStorageQueue1*, nint*, void>)@this->LpVtbl[12])(@this, handlePtr);
         }
     }
 
@@ -290,7 +290,7 @@ public unsafe static class DStorageQueue1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void EnqueueSetEvent<T0>(this ComPtr<IDStorageQueue1> thisVtbl, Span<T0> handle) where T0 : unmanaged
+    public static void EnqueueSetEvent(this ComPtr<IDStorageQueue1> thisVtbl, Span<nint> handle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

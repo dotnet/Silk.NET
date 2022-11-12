@@ -85,40 +85,40 @@ public unsafe static class ReleaseMarshalBuffersVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReleaseMarshalBuffer(this ComPtr<IReleaseMarshalBuffers> thisVtbl, TagRPCOLEMESSAGE* pMsg, uint dwFlags, Silk.NET.Core.Native.IUnknown* pChnl)
+    public static unsafe int ReleaseMarshalBuffer(this ComPtr<IReleaseMarshalBuffers> thisVtbl, TagRPCOLEMESSAGE* pMsg, int dwFlags, Silk.NET.Core.Native.IUnknown* pChnl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IReleaseMarshalBuffers*, TagRPCOLEMESSAGE*, uint, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pMsg, dwFlags, pChnl);
+        ret = ((delegate* unmanaged[Cdecl]<IReleaseMarshalBuffers*, TagRPCOLEMESSAGE*, int, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pMsg, dwFlags, pChnl);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReleaseMarshalBuffer(this ComPtr<IReleaseMarshalBuffers> thisVtbl, TagRPCOLEMESSAGE* pMsg, uint dwFlags, ref Silk.NET.Core.Native.IUnknown pChnl)
+    public static unsafe int ReleaseMarshalBuffer(this ComPtr<IReleaseMarshalBuffers> thisVtbl, TagRPCOLEMESSAGE* pMsg, int dwFlags, ref Silk.NET.Core.Native.IUnknown pChnl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.IUnknown* pChnlPtr = &pChnl)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IReleaseMarshalBuffers*, TagRPCOLEMESSAGE*, uint, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pMsg, dwFlags, pChnlPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IReleaseMarshalBuffers*, TagRPCOLEMESSAGE*, int, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pMsg, dwFlags, pChnlPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReleaseMarshalBuffer(this ComPtr<IReleaseMarshalBuffers> thisVtbl, ref TagRPCOLEMESSAGE pMsg, uint dwFlags, Silk.NET.Core.Native.IUnknown* pChnl)
+    public static unsafe int ReleaseMarshalBuffer(this ComPtr<IReleaseMarshalBuffers> thisVtbl, ref TagRPCOLEMESSAGE pMsg, int dwFlags, Silk.NET.Core.Native.IUnknown* pChnl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (TagRPCOLEMESSAGE* pMsgPtr = &pMsg)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IReleaseMarshalBuffers*, TagRPCOLEMESSAGE*, uint, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pMsgPtr, dwFlags, pChnl);
+            ret = ((delegate* unmanaged[Cdecl]<IReleaseMarshalBuffers*, TagRPCOLEMESSAGE*, int, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pMsgPtr, dwFlags, pChnl);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int ReleaseMarshalBuffer(this ComPtr<IReleaseMarshalBuffers> thisVtbl, ref TagRPCOLEMESSAGE pMsg, uint dwFlags, ref Silk.NET.Core.Native.IUnknown pChnl)
+    public static int ReleaseMarshalBuffer(this ComPtr<IReleaseMarshalBuffers> thisVtbl, ref TagRPCOLEMESSAGE pMsg, int dwFlags, ref Silk.NET.Core.Native.IUnknown pChnl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -126,7 +126,7 @@ public unsafe static class ReleaseMarshalBuffersVtblExtensions
         {
             fixed (Silk.NET.Core.Native.IUnknown* pChnlPtr = &pChnl)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IReleaseMarshalBuffers*, TagRPCOLEMESSAGE*, uint, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pMsgPtr, dwFlags, pChnlPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IReleaseMarshalBuffers*, TagRPCOLEMESSAGE*, int, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[3])(@this, pMsgPtr, dwFlags, pChnlPtr);
             }
         }
         return ret;
@@ -158,7 +158,7 @@ public unsafe static class ReleaseMarshalBuffersVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReleaseMarshalBuffer<TI0>(this ComPtr<IReleaseMarshalBuffers> thisVtbl, TagRPCOLEMESSAGE* pMsg, uint dwFlags, ComPtr<TI0> pChnl) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int ReleaseMarshalBuffer<TI0>(this ComPtr<IReleaseMarshalBuffers> thisVtbl, TagRPCOLEMESSAGE* pMsg, int dwFlags, ComPtr<TI0> pChnl) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -166,7 +166,7 @@ public unsafe static class ReleaseMarshalBuffersVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReleaseMarshalBuffer(this ComPtr<IReleaseMarshalBuffers> thisVtbl, TagRPCOLEMESSAGE* pMsg, uint dwFlags, Span<Silk.NET.Core.Native.IUnknown> pChnl)
+    public static unsafe int ReleaseMarshalBuffer(this ComPtr<IReleaseMarshalBuffers> thisVtbl, TagRPCOLEMESSAGE* pMsg, int dwFlags, Span<Silk.NET.Core.Native.IUnknown> pChnl)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -174,7 +174,7 @@ public unsafe static class ReleaseMarshalBuffersVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReleaseMarshalBuffer(this ComPtr<IReleaseMarshalBuffers> thisVtbl, Span<TagRPCOLEMESSAGE> pMsg, uint dwFlags, Silk.NET.Core.Native.IUnknown* pChnl)
+    public static unsafe int ReleaseMarshalBuffer(this ComPtr<IReleaseMarshalBuffers> thisVtbl, Span<TagRPCOLEMESSAGE> pMsg, int dwFlags, Silk.NET.Core.Native.IUnknown* pChnl)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -182,7 +182,7 @@ public unsafe static class ReleaseMarshalBuffersVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ReleaseMarshalBuffer<TI0>(this ComPtr<IReleaseMarshalBuffers> thisVtbl, ref TagRPCOLEMESSAGE pMsg, uint dwFlags, ComPtr<TI0> pChnl) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static int ReleaseMarshalBuffer<TI0>(this ComPtr<IReleaseMarshalBuffers> thisVtbl, ref TagRPCOLEMESSAGE pMsg, int dwFlags, ComPtr<TI0> pChnl) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -190,7 +190,7 @@ public unsafe static class ReleaseMarshalBuffersVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ReleaseMarshalBuffer(this ComPtr<IReleaseMarshalBuffers> thisVtbl, Span<TagRPCOLEMESSAGE> pMsg, uint dwFlags, Span<Silk.NET.Core.Native.IUnknown> pChnl)
+    public static int ReleaseMarshalBuffer(this ComPtr<IReleaseMarshalBuffers> thisVtbl, Span<TagRPCOLEMESSAGE> pMsg, int dwFlags, Span<Silk.NET.Core.Native.IUnknown> pChnl)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

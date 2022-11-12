@@ -409,7 +409,7 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, DXVA2VideoProcessBltParams* pBltParams, DXVA2VideoSample* pSamples, uint NumSamples, void** pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, void** pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -418,7 +418,7 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, DXVA2VideoProcessBltParams* pBltParams, DXVA2VideoSample* pSamples, uint NumSamples, ref void* pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, ref void* pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -430,7 +430,7 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, DXVA2VideoProcessBltParams* pBltParams, ref DXVA2VideoSample pSamples, uint NumSamples, void** pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(FlowDirection.In)] in DXVA2VideoSample pSamples, uint NumSamples, void** pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -442,7 +442,7 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, DXVA2VideoProcessBltParams* pBltParams, ref DXVA2VideoSample pSamples, uint NumSamples, ref void* pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(FlowDirection.In)] in DXVA2VideoSample pSamples, uint NumSamples, ref void* pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -457,7 +457,7 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, ref DXVA2VideoProcessBltParams pBltParams, DXVA2VideoSample* pSamples, uint NumSamples, void** pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(FlowDirection.In)] in DXVA2VideoProcessBltParams pBltParams, [Flow(FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, void** pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -469,7 +469,7 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, ref DXVA2VideoProcessBltParams pBltParams, DXVA2VideoSample* pSamples, uint NumSamples, ref void* pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(FlowDirection.In)] in DXVA2VideoProcessBltParams pBltParams, [Flow(FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, ref void* pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -484,7 +484,7 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, ref DXVA2VideoProcessBltParams pBltParams, ref DXVA2VideoSample pSamples, uint NumSamples, void** pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(FlowDirection.In)] in DXVA2VideoProcessBltParams pBltParams, [Flow(FlowDirection.In)] in DXVA2VideoSample pSamples, uint NumSamples, void** pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -499,7 +499,7 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, ref DXVA2VideoProcessBltParams pBltParams, ref DXVA2VideoSample pSamples, uint NumSamples, ref void* pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(FlowDirection.In)] in DXVA2VideoProcessBltParams pBltParams, [Flow(FlowDirection.In)] in DXVA2VideoSample pSamples, uint NumSamples, ref void* pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -517,7 +517,7 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, DXVA2VideoProcessBltParams* pBltParams, DXVA2VideoSample* pSamples, uint NumSamples, void** pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, void** pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -529,7 +529,7 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, DXVA2VideoProcessBltParams* pBltParams, DXVA2VideoSample* pSamples, uint NumSamples, ref void* pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, ref void* pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -544,7 +544,7 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, DXVA2VideoProcessBltParams* pBltParams, ref DXVA2VideoSample pSamples, uint NumSamples, void** pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(FlowDirection.In)] in DXVA2VideoSample pSamples, uint NumSamples, void** pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -559,7 +559,7 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, DXVA2VideoProcessBltParams* pBltParams, ref DXVA2VideoSample pSamples, uint NumSamples, ref void* pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(FlowDirection.In)] in DXVA2VideoSample pSamples, uint NumSamples, ref void* pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -577,7 +577,7 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, ref DXVA2VideoProcessBltParams pBltParams, DXVA2VideoSample* pSamples, uint NumSamples, void** pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(FlowDirection.In)] in DXVA2VideoProcessBltParams pBltParams, [Flow(FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, void** pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -592,7 +592,7 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, ref DXVA2VideoProcessBltParams pBltParams, DXVA2VideoSample* pSamples, uint NumSamples, ref void* pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(FlowDirection.In)] in DXVA2VideoProcessBltParams pBltParams, [Flow(FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, ref void* pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -610,7 +610,7 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, ref DXVA2VideoProcessBltParams pBltParams, ref DXVA2VideoSample pSamples, uint NumSamples, void** pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(FlowDirection.In)] in DXVA2VideoProcessBltParams pBltParams, [Flow(FlowDirection.In)] in DXVA2VideoSample pSamples, uint NumSamples, void** pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -628,7 +628,7 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, ref DXVA2VideoProcessBltParams pBltParams, ref DXVA2VideoSample pSamples, uint NumSamples, ref void* pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pRenderTarget, [Flow(FlowDirection.In)] in DXVA2VideoProcessBltParams pBltParams, [Flow(FlowDirection.In)] in DXVA2VideoSample pSamples, uint NumSamples, ref void* pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -826,55 +826,55 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, DXVA2VideoProcessBltParams* pBltParams, Span<DXVA2VideoSample> pSamples, uint NumSamples, void** pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoSample> pSamples, uint NumSamples, void** pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessBlt(pRenderTarget, pBltParams, ref pSamples.GetPinnableReference(), NumSamples, pHandleComplete);
+        return @this->VideoProcessBlt(pRenderTarget, pBltParams, in pSamples.GetPinnableReference(), NumSamples, pHandleComplete);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, DXVA2VideoProcessBltParams* pBltParams, Span<DXVA2VideoSample> pSamples, uint NumSamples, ref void* pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoSample> pSamples, uint NumSamples, ref void* pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessBlt(pRenderTarget, pBltParams, ref pSamples.GetPinnableReference(), NumSamples, ref pHandleComplete);
+        return @this->VideoProcessBlt(pRenderTarget, pBltParams, in pSamples.GetPinnableReference(), NumSamples, ref pHandleComplete);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, Span<DXVA2VideoProcessBltParams> pBltParams, DXVA2VideoSample* pSamples, uint NumSamples, void** pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoProcessBltParams> pBltParams, [Flow(FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, void** pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessBlt(pRenderTarget, ref pBltParams.GetPinnableReference(), pSamples, NumSamples, pHandleComplete);
+        return @this->VideoProcessBlt(pRenderTarget, in pBltParams.GetPinnableReference(), pSamples, NumSamples, pHandleComplete);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, Span<DXVA2VideoProcessBltParams> pBltParams, DXVA2VideoSample* pSamples, uint NumSamples, ref void* pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoProcessBltParams> pBltParams, [Flow(FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, ref void* pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessBlt(pRenderTarget, ref pBltParams.GetPinnableReference(), pSamples, NumSamples, ref pHandleComplete);
+        return @this->VideoProcessBlt(pRenderTarget, in pBltParams.GetPinnableReference(), pSamples, NumSamples, ref pHandleComplete);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, Span<DXVA2VideoProcessBltParams> pBltParams, Span<DXVA2VideoSample> pSamples, uint NumSamples, void** pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoProcessBltParams> pBltParams, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoSample> pSamples, uint NumSamples, void** pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessBlt(pRenderTarget, ref pBltParams.GetPinnableReference(), ref pSamples.GetPinnableReference(), NumSamples, pHandleComplete);
+        return @this->VideoProcessBlt(pRenderTarget, in pBltParams.GetPinnableReference(), in pSamples.GetPinnableReference(), NumSamples, pHandleComplete);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, Span<DXVA2VideoProcessBltParams> pBltParams, Span<DXVA2VideoSample> pSamples, uint NumSamples, ref void* pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pRenderTarget, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoProcessBltParams> pBltParams, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoSample> pSamples, uint NumSamples, ref void* pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessBlt(pRenderTarget, ref pBltParams.GetPinnableReference(), ref pSamples.GetPinnableReference(), NumSamples, ref pHandleComplete);
+        return @this->VideoProcessBlt(pRenderTarget, in pBltParams.GetPinnableReference(), in pSamples.GetPinnableReference(), NumSamples, ref pHandleComplete);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, DXVA2VideoProcessBltParams* pBltParams, DXVA2VideoSample* pSamples, uint NumSamples, void** pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, [Flow(FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, void** pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -882,7 +882,7 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, DXVA2VideoProcessBltParams* pBltParams, DXVA2VideoSample* pSamples, uint NumSamples, ref void* pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, [Flow(FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, ref void* pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -890,51 +890,51 @@ public unsafe static class DirectXVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, DXVA2VideoProcessBltParams* pBltParams, Span<DXVA2VideoSample> pSamples, uint NumSamples, void** pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, [Flow(FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoSample> pSamples, uint NumSamples, void** pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessBlt(ref pRenderTarget.GetPinnableReference(), pBltParams, ref pSamples.GetPinnableReference(), NumSamples, pHandleComplete);
+        return @this->VideoProcessBlt(ref pRenderTarget.GetPinnableReference(), pBltParams, in pSamples.GetPinnableReference(), NumSamples, pHandleComplete);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, DXVA2VideoProcessBltParams* pBltParams, Span<DXVA2VideoSample> pSamples, uint NumSamples, ref void* pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, [Flow(FlowDirection.In)] DXVA2VideoProcessBltParams* pBltParams, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoSample> pSamples, uint NumSamples, ref void* pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessBlt(ref pRenderTarget.GetPinnableReference(), pBltParams, ref pSamples.GetPinnableReference(), NumSamples, ref pHandleComplete);
+        return @this->VideoProcessBlt(ref pRenderTarget.GetPinnableReference(), pBltParams, in pSamples.GetPinnableReference(), NumSamples, ref pHandleComplete);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, Span<DXVA2VideoProcessBltParams> pBltParams, DXVA2VideoSample* pSamples, uint NumSamples, void** pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoProcessBltParams> pBltParams, [Flow(FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, void** pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessBlt(ref pRenderTarget.GetPinnableReference(), ref pBltParams.GetPinnableReference(), pSamples, NumSamples, pHandleComplete);
+        return @this->VideoProcessBlt(ref pRenderTarget.GetPinnableReference(), in pBltParams.GetPinnableReference(), pSamples, NumSamples, pHandleComplete);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, Span<DXVA2VideoProcessBltParams> pBltParams, DXVA2VideoSample* pSamples, uint NumSamples, ref void* pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoProcessBltParams> pBltParams, [Flow(FlowDirection.In)] DXVA2VideoSample* pSamples, uint NumSamples, ref void* pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessBlt(ref pRenderTarget.GetPinnableReference(), ref pBltParams.GetPinnableReference(), pSamples, NumSamples, ref pHandleComplete);
+        return @this->VideoProcessBlt(ref pRenderTarget.GetPinnableReference(), in pBltParams.GetPinnableReference(), pSamples, NumSamples, ref pHandleComplete);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, Span<DXVA2VideoProcessBltParams> pBltParams, Span<DXVA2VideoSample> pSamples, uint NumSamples, void** pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoProcessBltParams> pBltParams, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoSample> pSamples, uint NumSamples, void** pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessBlt(ref pRenderTarget.GetPinnableReference(), ref pBltParams.GetPinnableReference(), ref pSamples.GetPinnableReference(), NumSamples, pHandleComplete);
+        return @this->VideoProcessBlt(ref pRenderTarget.GetPinnableReference(), in pBltParams.GetPinnableReference(), in pSamples.GetPinnableReference(), NumSamples, pHandleComplete);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, Span<DXVA2VideoProcessBltParams> pBltParams, Span<DXVA2VideoSample> pSamples, uint NumSamples, ref void* pHandleComplete)
+    public static unsafe int VideoProcessBlt(this ComPtr<IDirectXVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pRenderTarget, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoProcessBltParams> pBltParams, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2VideoSample> pSamples, uint NumSamples, ref void* pHandleComplete)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessBlt(ref pRenderTarget.GetPinnableReference(), ref pBltParams.GetPinnableReference(), ref pSamples.GetPinnableReference(), NumSamples, ref pHandleComplete);
+        return @this->VideoProcessBlt(ref pRenderTarget.GetPinnableReference(), in pBltParams.GetPinnableReference(), in pSamples.GetPinnableReference(), NumSamples, ref pHandleComplete);
     }
 
     /// <summary>To be documented.</summary>

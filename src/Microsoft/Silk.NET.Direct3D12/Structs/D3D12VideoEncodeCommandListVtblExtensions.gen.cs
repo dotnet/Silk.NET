@@ -193,7 +193,7 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Guid* guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -214,7 +214,7 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ref Guid guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -289,34 +289,23 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetName(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, char* Name)
+    public static unsafe int SetName(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, [Flow(FlowDirection.In)] nint* Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList*, char*, int>)@this->LpVtbl[6])(@this, Name);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList*, nint*, int>)@this->LpVtbl[6])(@this, Name);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ref char Name)
+    public static int SetName(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, [Flow(FlowDirection.In)] in nint Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* NamePtr = &Name)
+        fixed (nint* NamePtr = &Name)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList*, char*, int>)@this->LpVtbl[6])(@this, NamePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList*, nint*, int>)@this->LpVtbl[6])(@this, NamePtr);
         }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList*, byte*, int>)@this->LpVtbl[6])(@this, NamePtr);
-        SilkMarshal.Free((nint)NamePtr);
         return ret;
     }
 
@@ -415,14 +404,14 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ResourceBarrier(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint NumBarriers, ResourceBarrier* pBarriers)
+    public static unsafe void ResourceBarrier(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint NumBarriers, [Flow(FlowDirection.In)] ResourceBarrier* pBarriers)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList*, uint, ResourceBarrier*, void>)@this->LpVtbl[12])(@this, NumBarriers, pBarriers);
     }
 
     /// <summary>To be documented.</summary>
-    public static void ResourceBarrier(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint NumBarriers, ref ResourceBarrier pBarriers)
+    public static void ResourceBarrier(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint NumBarriers, [Flow(FlowDirection.In)] in ResourceBarrier pBarriers)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceBarrier* pBarriersPtr = &pBarriers)
@@ -432,14 +421,14 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12Resource* pResource, DiscardRegion* pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[13])(@this, pResource, pRegion);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12Resource* pResource, ref DiscardRegion pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] in DiscardRegion pRegion)
     {
         var @this = thisVtbl.Handle;
         fixed (DiscardRegion* pRegionPtr = &pRegion)
@@ -449,7 +438,7 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ref ID3D12Resource pResource, DiscardRegion* pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ref ID3D12Resource pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -459,7 +448,7 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardResource(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ref ID3D12Resource pResource, ref DiscardRegion pRegion)
+    public static void DiscardResource(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ref ID3D12Resource pResource, [Flow(FlowDirection.In)] in DiscardRegion pRegion)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -563,14 +552,14 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetMarker(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Metadata, void* pData, uint Size)
+    public static unsafe void SetMarker(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] void* pData, uint Size)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList*, uint, void*, uint, void>)@this->LpVtbl[18])(@this, Metadata, pData, Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker<T0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Metadata, ref T0 pData, uint Size) where T0 : unmanaged
+    public static void SetMarker<T0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pDataPtr = &pData)
@@ -580,14 +569,14 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void BeginEvent(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Metadata, void* pData, uint Size)
+    public static unsafe void BeginEvent(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] void* pData, uint Size)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList*, uint, void*, uint, void>)@this->LpVtbl[19])(@this, Metadata, pData, Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginEvent<T0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Metadata, ref T0 pData, uint Size) where T0 : unmanaged
+    public static void BeginEvent<T0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pDataPtr = &pData)
@@ -604,14 +593,14 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12VideoMotionEstimator* pMotionEstimator, VideoMotionEstimatorOutput* pOutputArguments, VideoMotionEstimatorInput* pInputArguments)
+    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12VideoMotionEstimator* pMotionEstimator, [Flow(FlowDirection.In)] VideoMotionEstimatorOutput* pOutputArguments, [Flow(FlowDirection.In)] VideoMotionEstimatorInput* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList*, ID3D12VideoMotionEstimator*, VideoMotionEstimatorOutput*, VideoMotionEstimatorInput*, void>)@this->LpVtbl[21])(@this, pMotionEstimator, pOutputArguments, pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12VideoMotionEstimator* pMotionEstimator, VideoMotionEstimatorOutput* pOutputArguments, ref VideoMotionEstimatorInput pInputArguments)
+    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12VideoMotionEstimator* pMotionEstimator, [Flow(FlowDirection.In)] VideoMotionEstimatorOutput* pOutputArguments, [Flow(FlowDirection.In)] in VideoMotionEstimatorInput pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (VideoMotionEstimatorInput* pInputArgumentsPtr = &pInputArguments)
@@ -621,7 +610,7 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12VideoMotionEstimator* pMotionEstimator, ref VideoMotionEstimatorOutput pOutputArguments, VideoMotionEstimatorInput* pInputArguments)
+    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12VideoMotionEstimator* pMotionEstimator, [Flow(FlowDirection.In)] in VideoMotionEstimatorOutput pOutputArguments, [Flow(FlowDirection.In)] VideoMotionEstimatorInput* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (VideoMotionEstimatorOutput* pOutputArgumentsPtr = &pOutputArguments)
@@ -631,7 +620,7 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12VideoMotionEstimator* pMotionEstimator, ref VideoMotionEstimatorOutput pOutputArguments, ref VideoMotionEstimatorInput pInputArguments)
+    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12VideoMotionEstimator* pMotionEstimator, [Flow(FlowDirection.In)] in VideoMotionEstimatorOutput pOutputArguments, [Flow(FlowDirection.In)] in VideoMotionEstimatorInput pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (VideoMotionEstimatorOutput* pOutputArgumentsPtr = &pOutputArguments)
@@ -644,7 +633,7 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ref ID3D12VideoMotionEstimator pMotionEstimator, VideoMotionEstimatorOutput* pOutputArguments, VideoMotionEstimatorInput* pInputArguments)
+    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ref ID3D12VideoMotionEstimator pMotionEstimator, [Flow(FlowDirection.In)] VideoMotionEstimatorOutput* pOutputArguments, [Flow(FlowDirection.In)] VideoMotionEstimatorInput* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12VideoMotionEstimator* pMotionEstimatorPtr = &pMotionEstimator)
@@ -654,7 +643,7 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ref ID3D12VideoMotionEstimator pMotionEstimator, VideoMotionEstimatorOutput* pOutputArguments, ref VideoMotionEstimatorInput pInputArguments)
+    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ref ID3D12VideoMotionEstimator pMotionEstimator, [Flow(FlowDirection.In)] VideoMotionEstimatorOutput* pOutputArguments, [Flow(FlowDirection.In)] in VideoMotionEstimatorInput pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12VideoMotionEstimator* pMotionEstimatorPtr = &pMotionEstimator)
@@ -667,7 +656,7 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ref ID3D12VideoMotionEstimator pMotionEstimator, ref VideoMotionEstimatorOutput pOutputArguments, VideoMotionEstimatorInput* pInputArguments)
+    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ref ID3D12VideoMotionEstimator pMotionEstimator, [Flow(FlowDirection.In)] in VideoMotionEstimatorOutput pOutputArguments, [Flow(FlowDirection.In)] VideoMotionEstimatorInput* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12VideoMotionEstimator* pMotionEstimatorPtr = &pMotionEstimator)
@@ -680,7 +669,7 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ref ID3D12VideoMotionEstimator pMotionEstimator, ref VideoMotionEstimatorOutput pOutputArguments, ref VideoMotionEstimatorInput pInputArguments)
+    public static void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ref ID3D12VideoMotionEstimator pMotionEstimator, [Flow(FlowDirection.In)] in VideoMotionEstimatorOutput pOutputArguments, [Flow(FlowDirection.In)] in VideoMotionEstimatorInput pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12VideoMotionEstimator* pMotionEstimatorPtr = &pMotionEstimator)
@@ -696,14 +685,14 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ResolveMotionVectorHeap(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ResolveVideoMotionVectorHeapOutput* pOutputArguments, ResolveVideoMotionVectorHeapInput* pInputArguments)
+    public static unsafe void ResolveMotionVectorHeap(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, [Flow(FlowDirection.In)] ResolveVideoMotionVectorHeapOutput* pOutputArguments, [Flow(FlowDirection.In)] ResolveVideoMotionVectorHeapInput* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList*, ResolveVideoMotionVectorHeapOutput*, ResolveVideoMotionVectorHeapInput*, void>)@this->LpVtbl[22])(@this, pOutputArguments, pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ResolveMotionVectorHeap(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ResolveVideoMotionVectorHeapOutput* pOutputArguments, ref ResolveVideoMotionVectorHeapInput pInputArguments)
+    public static unsafe void ResolveMotionVectorHeap(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, [Flow(FlowDirection.In)] ResolveVideoMotionVectorHeapOutput* pOutputArguments, [Flow(FlowDirection.In)] in ResolveVideoMotionVectorHeapInput pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (ResolveVideoMotionVectorHeapInput* pInputArgumentsPtr = &pInputArguments)
@@ -713,7 +702,7 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ResolveMotionVectorHeap(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ref ResolveVideoMotionVectorHeapOutput pOutputArguments, ResolveVideoMotionVectorHeapInput* pInputArguments)
+    public static unsafe void ResolveMotionVectorHeap(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, [Flow(FlowDirection.In)] in ResolveVideoMotionVectorHeapOutput pOutputArguments, [Flow(FlowDirection.In)] ResolveVideoMotionVectorHeapInput* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (ResolveVideoMotionVectorHeapOutput* pOutputArgumentsPtr = &pOutputArguments)
@@ -723,7 +712,7 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ResolveMotionVectorHeap(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ref ResolveVideoMotionVectorHeapOutput pOutputArguments, ref ResolveVideoMotionVectorHeapInput pInputArguments)
+    public static void ResolveMotionVectorHeap(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, [Flow(FlowDirection.In)] in ResolveVideoMotionVectorHeapOutput pOutputArguments, [Flow(FlowDirection.In)] in ResolveVideoMotionVectorHeapInput pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (ResolveVideoMotionVectorHeapOutput* pOutputArgumentsPtr = &pOutputArguments)
@@ -736,14 +725,14 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Count, WritebufferimmediateParameter* pParams, WritebufferimmediateMode* pModes)
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Count, [Flow(FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(FlowDirection.In)] WritebufferimmediateMode* pModes)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoEncodeCommandList*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)@this->LpVtbl[23])(@this, Count, pParams, pModes);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Count, WritebufferimmediateParameter* pParams, ref WritebufferimmediateMode pModes)
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Count, [Flow(FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(FlowDirection.In)] in WritebufferimmediateMode pModes)
     {
         var @this = thisVtbl.Handle;
         fixed (WritebufferimmediateMode* pModesPtr = &pModes)
@@ -753,7 +742,7 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Count, ref WritebufferimmediateParameter pParams, WritebufferimmediateMode* pModes)
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Count, [Flow(FlowDirection.In)] in WritebufferimmediateParameter pParams, [Flow(FlowDirection.In)] WritebufferimmediateMode* pModes)
     {
         var @this = thisVtbl.Handle;
         fixed (WritebufferimmediateParameter* pParamsPtr = &pParams)
@@ -763,7 +752,7 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void WriteBufferImmediate(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Count, ref WritebufferimmediateParameter pParams, ref WritebufferimmediateMode pModes)
+    public static void WriteBufferImmediate(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Count, [Flow(FlowDirection.In)] in WritebufferimmediateParameter pParams, [Flow(FlowDirection.In)] in WritebufferimmediateMode pModes)
     {
         var @this = thisVtbl.Handle;
         fixed (WritebufferimmediateParameter* pParamsPtr = &pParams)
@@ -874,15 +863,15 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(guid, DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(guid, DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Span<Guid> guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -890,11 +879,11 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -938,11 +927,11 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Span<char> Name)
+    public static int SetName(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetName(ref Name.GetPinnableReference());
+        return @this->SetName(in Name.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -987,15 +976,15 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ResourceBarrier(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint NumBarriers, Span<ResourceBarrier> pBarriers)
+    public static void ResourceBarrier(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint NumBarriers, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceBarrier> pBarriers)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->ResourceBarrier(NumBarriers, ref pBarriers.GetPinnableReference());
+        @this->ResourceBarrier(NumBarriers, in pBarriers.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource<TI0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ComPtr<TI0> pResource, DiscardRegion* pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void DiscardResource<TI0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ComPtr<TI0> pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1003,23 +992,23 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12Resource* pResource, Span<DiscardRegion> pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] ReadOnlySpan<DiscardRegion> pRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DiscardResource(pResource, ref pRegion.GetPinnableReference());
+        @this->DiscardResource(pResource, in pRegion.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardResource<TI0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ComPtr<TI0> pResource, ref DiscardRegion pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void DiscardResource<TI0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ComPtr<TI0> pResource, [Flow(FlowDirection.In)] in DiscardRegion pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DiscardResource((ID3D12Resource*) pResource.Handle, ref pRegion);
+        @this->DiscardResource((ID3D12Resource*) pResource.Handle, in pRegion);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Span<ID3D12Resource> pResource, DiscardRegion* pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Span<ID3D12Resource> pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1027,11 +1016,11 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardResource(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Span<ID3D12Resource> pResource, Span<DiscardRegion> pRegion)
+    public static void DiscardResource(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Span<ID3D12Resource> pResource, [Flow(FlowDirection.In)] ReadOnlySpan<DiscardRegion> pRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DiscardResource(ref pResource.GetPinnableReference(), ref pRegion.GetPinnableReference());
+        @this->DiscardResource(ref pResource.GetPinnableReference(), in pRegion.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -1131,23 +1120,23 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker<T0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Metadata, Span<T0> pData, uint Size) where T0 : unmanaged
+    public static void SetMarker<T0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->SetMarker(Metadata, ref pData.GetPinnableReference(), Size);
+        @this->SetMarker(Metadata, in pData.GetPinnableReference(), Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginEvent<T0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Metadata, Span<T0> pData, uint Size) where T0 : unmanaged
+    public static void BeginEvent<T0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->BeginEvent(Metadata, ref pData.GetPinnableReference(), Size);
+        @this->BeginEvent(Metadata, in pData.GetPinnableReference(), Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EstimateMotion<TI0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ComPtr<TI0> pMotionEstimator, VideoMotionEstimatorOutput* pOutputArguments, VideoMotionEstimatorInput* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoMotionEstimator>, IComVtbl<TI0>
+    public static unsafe void EstimateMotion<TI0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ComPtr<TI0> pMotionEstimator, [Flow(FlowDirection.In)] VideoMotionEstimatorOutput* pOutputArguments, [Flow(FlowDirection.In)] VideoMotionEstimatorInput* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoMotionEstimator>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1155,55 +1144,55 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12VideoMotionEstimator* pMotionEstimator, VideoMotionEstimatorOutput* pOutputArguments, Span<VideoMotionEstimatorInput> pInputArguments)
+    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12VideoMotionEstimator* pMotionEstimator, [Flow(FlowDirection.In)] VideoMotionEstimatorOutput* pOutputArguments, [Flow(FlowDirection.In)] ReadOnlySpan<VideoMotionEstimatorInput> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->EstimateMotion(pMotionEstimator, pOutputArguments, ref pInputArguments.GetPinnableReference());
+        @this->EstimateMotion(pMotionEstimator, pOutputArguments, in pInputArguments.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EstimateMotion<TI0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ComPtr<TI0> pMotionEstimator, VideoMotionEstimatorOutput* pOutputArguments, ref VideoMotionEstimatorInput pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoMotionEstimator>, IComVtbl<TI0>
+    public static unsafe void EstimateMotion<TI0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ComPtr<TI0> pMotionEstimator, [Flow(FlowDirection.In)] VideoMotionEstimatorOutput* pOutputArguments, [Flow(FlowDirection.In)] in VideoMotionEstimatorInput pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoMotionEstimator>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->EstimateMotion((ID3D12VideoMotionEstimator*) pMotionEstimator.Handle, pOutputArguments, ref pInputArguments);
+        @this->EstimateMotion((ID3D12VideoMotionEstimator*) pMotionEstimator.Handle, pOutputArguments, in pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12VideoMotionEstimator* pMotionEstimator, Span<VideoMotionEstimatorOutput> pOutputArguments, VideoMotionEstimatorInput* pInputArguments)
+    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12VideoMotionEstimator* pMotionEstimator, [Flow(FlowDirection.In)] ReadOnlySpan<VideoMotionEstimatorOutput> pOutputArguments, [Flow(FlowDirection.In)] VideoMotionEstimatorInput* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->EstimateMotion(pMotionEstimator, ref pOutputArguments.GetPinnableReference(), pInputArguments);
+        @this->EstimateMotion(pMotionEstimator, in pOutputArguments.GetPinnableReference(), pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EstimateMotion<TI0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ComPtr<TI0> pMotionEstimator, ref VideoMotionEstimatorOutput pOutputArguments, VideoMotionEstimatorInput* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoMotionEstimator>, IComVtbl<TI0>
+    public static unsafe void EstimateMotion<TI0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ComPtr<TI0> pMotionEstimator, [Flow(FlowDirection.In)] in VideoMotionEstimatorOutput pOutputArguments, [Flow(FlowDirection.In)] VideoMotionEstimatorInput* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoMotionEstimator>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->EstimateMotion((ID3D12VideoMotionEstimator*) pMotionEstimator.Handle, ref pOutputArguments, pInputArguments);
+        @this->EstimateMotion((ID3D12VideoMotionEstimator*) pMotionEstimator.Handle, in pOutputArguments, pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12VideoMotionEstimator* pMotionEstimator, Span<VideoMotionEstimatorOutput> pOutputArguments, Span<VideoMotionEstimatorInput> pInputArguments)
+    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ID3D12VideoMotionEstimator* pMotionEstimator, [Flow(FlowDirection.In)] ReadOnlySpan<VideoMotionEstimatorOutput> pOutputArguments, [Flow(FlowDirection.In)] ReadOnlySpan<VideoMotionEstimatorInput> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->EstimateMotion(pMotionEstimator, ref pOutputArguments.GetPinnableReference(), ref pInputArguments.GetPinnableReference());
+        @this->EstimateMotion(pMotionEstimator, in pOutputArguments.GetPinnableReference(), in pInputArguments.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void EstimateMotion<TI0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ComPtr<TI0> pMotionEstimator, ref VideoMotionEstimatorOutput pOutputArguments, ref VideoMotionEstimatorInput pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoMotionEstimator>, IComVtbl<TI0>
+    public static void EstimateMotion<TI0>(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ComPtr<TI0> pMotionEstimator, [Flow(FlowDirection.In)] in VideoMotionEstimatorOutput pOutputArguments, [Flow(FlowDirection.In)] in VideoMotionEstimatorInput pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoMotionEstimator>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->EstimateMotion((ID3D12VideoMotionEstimator*) pMotionEstimator.Handle, ref pOutputArguments, ref pInputArguments);
+        @this->EstimateMotion((ID3D12VideoMotionEstimator*) pMotionEstimator.Handle, in pOutputArguments, in pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Span<ID3D12VideoMotionEstimator> pMotionEstimator, VideoMotionEstimatorOutput* pOutputArguments, VideoMotionEstimatorInput* pInputArguments)
+    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Span<ID3D12VideoMotionEstimator> pMotionEstimator, [Flow(FlowDirection.In)] VideoMotionEstimatorOutput* pOutputArguments, [Flow(FlowDirection.In)] VideoMotionEstimatorInput* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1211,75 +1200,75 @@ public unsafe static class D3D12VideoEncodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Span<ID3D12VideoMotionEstimator> pMotionEstimator, VideoMotionEstimatorOutput* pOutputArguments, Span<VideoMotionEstimatorInput> pInputArguments)
+    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Span<ID3D12VideoMotionEstimator> pMotionEstimator, [Flow(FlowDirection.In)] VideoMotionEstimatorOutput* pOutputArguments, [Flow(FlowDirection.In)] ReadOnlySpan<VideoMotionEstimatorInput> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->EstimateMotion(ref pMotionEstimator.GetPinnableReference(), pOutputArguments, ref pInputArguments.GetPinnableReference());
+        @this->EstimateMotion(ref pMotionEstimator.GetPinnableReference(), pOutputArguments, in pInputArguments.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Span<ID3D12VideoMotionEstimator> pMotionEstimator, Span<VideoMotionEstimatorOutput> pOutputArguments, VideoMotionEstimatorInput* pInputArguments)
+    public static unsafe void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Span<ID3D12VideoMotionEstimator> pMotionEstimator, [Flow(FlowDirection.In)] ReadOnlySpan<VideoMotionEstimatorOutput> pOutputArguments, [Flow(FlowDirection.In)] VideoMotionEstimatorInput* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->EstimateMotion(ref pMotionEstimator.GetPinnableReference(), ref pOutputArguments.GetPinnableReference(), pInputArguments);
+        @this->EstimateMotion(ref pMotionEstimator.GetPinnableReference(), in pOutputArguments.GetPinnableReference(), pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Span<ID3D12VideoMotionEstimator> pMotionEstimator, Span<VideoMotionEstimatorOutput> pOutputArguments, Span<VideoMotionEstimatorInput> pInputArguments)
+    public static void EstimateMotion(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Span<ID3D12VideoMotionEstimator> pMotionEstimator, [Flow(FlowDirection.In)] ReadOnlySpan<VideoMotionEstimatorOutput> pOutputArguments, [Flow(FlowDirection.In)] ReadOnlySpan<VideoMotionEstimatorInput> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->EstimateMotion(ref pMotionEstimator.GetPinnableReference(), ref pOutputArguments.GetPinnableReference(), ref pInputArguments.GetPinnableReference());
+        @this->EstimateMotion(ref pMotionEstimator.GetPinnableReference(), in pOutputArguments.GetPinnableReference(), in pInputArguments.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ResolveMotionVectorHeap(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, ResolveVideoMotionVectorHeapOutput* pOutputArguments, Span<ResolveVideoMotionVectorHeapInput> pInputArguments)
+    public static unsafe void ResolveMotionVectorHeap(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, [Flow(FlowDirection.In)] ResolveVideoMotionVectorHeapOutput* pOutputArguments, [Flow(FlowDirection.In)] ReadOnlySpan<ResolveVideoMotionVectorHeapInput> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->ResolveMotionVectorHeap(pOutputArguments, ref pInputArguments.GetPinnableReference());
+        @this->ResolveMotionVectorHeap(pOutputArguments, in pInputArguments.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ResolveMotionVectorHeap(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Span<ResolveVideoMotionVectorHeapOutput> pOutputArguments, ResolveVideoMotionVectorHeapInput* pInputArguments)
+    public static unsafe void ResolveMotionVectorHeap(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResolveVideoMotionVectorHeapOutput> pOutputArguments, [Flow(FlowDirection.In)] ResolveVideoMotionVectorHeapInput* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->ResolveMotionVectorHeap(ref pOutputArguments.GetPinnableReference(), pInputArguments);
+        @this->ResolveMotionVectorHeap(in pOutputArguments.GetPinnableReference(), pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static void ResolveMotionVectorHeap(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, Span<ResolveVideoMotionVectorHeapOutput> pOutputArguments, Span<ResolveVideoMotionVectorHeapInput> pInputArguments)
+    public static void ResolveMotionVectorHeap(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ResolveVideoMotionVectorHeapOutput> pOutputArguments, [Flow(FlowDirection.In)] ReadOnlySpan<ResolveVideoMotionVectorHeapInput> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->ResolveMotionVectorHeap(ref pOutputArguments.GetPinnableReference(), ref pInputArguments.GetPinnableReference());
+        @this->ResolveMotionVectorHeap(in pOutputArguments.GetPinnableReference(), in pInputArguments.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Count, WritebufferimmediateParameter* pParams, Span<WritebufferimmediateMode> pModes)
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Count, [Flow(FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(FlowDirection.In)] ReadOnlySpan<WritebufferimmediateMode> pModes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->WriteBufferImmediate(Count, pParams, ref pModes.GetPinnableReference());
+        @this->WriteBufferImmediate(Count, pParams, in pModes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Count, Span<WritebufferimmediateParameter> pParams, WritebufferimmediateMode* pModes)
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Count, [Flow(FlowDirection.In)] ReadOnlySpan<WritebufferimmediateParameter> pParams, [Flow(FlowDirection.In)] WritebufferimmediateMode* pModes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->WriteBufferImmediate(Count, ref pParams.GetPinnableReference(), pModes);
+        @this->WriteBufferImmediate(Count, in pParams.GetPinnableReference(), pModes);
     }
 
     /// <summary>To be documented.</summary>
-    public static void WriteBufferImmediate(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Count, Span<WritebufferimmediateParameter> pParams, Span<WritebufferimmediateMode> pModes)
+    public static void WriteBufferImmediate(this ComPtr<ID3D12VideoEncodeCommandList> thisVtbl, uint Count, [Flow(FlowDirection.In)] ReadOnlySpan<WritebufferimmediateParameter> pParams, [Flow(FlowDirection.In)] ReadOnlySpan<WritebufferimmediateMode> pModes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->WriteBufferImmediate(Count, ref pParams.GetPinnableReference(), ref pModes.GetPinnableReference());
+        @this->WriteBufferImmediate(Count, in pParams.GetPinnableReference(), in pModes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

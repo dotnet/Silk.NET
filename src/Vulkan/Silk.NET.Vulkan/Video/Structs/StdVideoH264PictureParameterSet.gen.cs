@@ -27,10 +27,10 @@ namespace Silk.NET.Vulkan.Video
             byte? numRefIdxL0DefaultActiveMinus1 = null,
             byte? numRefIdxL1DefaultActiveMinus1 = null,
             StdVideoH264WeightedBipredIdc? weightedBipredIdc = null,
-            byte? picInitQpMinus26 = null,
-            byte? picInitQsMinus26 = null,
-            byte? chromaQpIndexOffset = null,
-            byte? secondChromaQpIndexOffset = null,
+            sbyte? picInitQpMinus26 = null,
+            sbyte? picInitQsMinus26 = null,
+            sbyte? chromaQpIndexOffset = null,
+            sbyte? secondChromaQpIndexOffset = null,
             StdVideoH264ScalingLists* pScalingLists = null
         ) : this()
         {
@@ -124,22 +124,22 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "pic_init_qp_minus26")]
-        public byte PicInitQpMinus26;
+        public sbyte PicInitQpMinus26;
 
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "pic_init_qs_minus26")]
-        public byte PicInitQsMinus26;
+        public sbyte PicInitQsMinus26;
 
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "chroma_qp_index_offset")]
-        public byte ChromaQpIndexOffset;
+        public sbyte ChromaQpIndexOffset;
 
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "second_chroma_qp_index_offset")]
-        public byte SecondChromaQpIndexOffset;
+        public sbyte SecondChromaQpIndexOffset;
 
         [NativeName("Type", "const StdVideoH264ScalingLists *")]
         [NativeName("Type.Name", "const StdVideoH264ScalingLists *")]

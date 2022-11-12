@@ -153,151 +153,151 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CloseDeviceHandle(void* hDevice)
+        public readonly unsafe int CloseDeviceHandle(nint* hDevice)
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, int>)@this->LpVtbl[5])(@this, hDevice);
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, nint*, int>)@this->LpVtbl[5])(@this, hDevice);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CloseDeviceHandle<T0>(ref T0 hDevice) where T0 : unmanaged
+        public readonly int CloseDeviceHandle(ref nint hDevice)
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* hDevicePtr = &hDevice)
+            fixed (nint* hDevicePtr = &hDevice)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, int>)@this->LpVtbl[5])(@this, hDevicePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, nint*, int>)@this->LpVtbl[5])(@this, hDevicePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int TestDevice(void* hDevice)
+        public readonly unsafe int TestDevice(nint* hDevice)
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, int>)@this->LpVtbl[6])(@this, hDevice);
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, nint*, int>)@this->LpVtbl[6])(@this, hDevice);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int TestDevice<T0>(ref T0 hDevice) where T0 : unmanaged
+        public readonly int TestDevice(ref nint hDevice)
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* hDevicePtr = &hDevice)
+            fixed (nint* hDevicePtr = &hDevice)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, int>)@this->LpVtbl[6])(@this, hDevicePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, nint*, int>)@this->LpVtbl[6])(@this, hDevicePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LockDevice(void* hDevice, Silk.NET.Direct3D9.IDirect3DDevice9** ppDevice, int fBlock)
+        public readonly unsafe int LockDevice(nint* hDevice, Silk.NET.Direct3D9.IDirect3DDevice9** ppDevice, bool fBlock)
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)@this->LpVtbl[7])(@this, hDevice, ppDevice, fBlock);
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, nint*, Silk.NET.Direct3D9.IDirect3DDevice9**, bool, int>)@this->LpVtbl[7])(@this, hDevice, ppDevice, fBlock);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LockDevice(void* hDevice, ref Silk.NET.Direct3D9.IDirect3DDevice9* ppDevice, int fBlock)
+        public readonly unsafe int LockDevice(nint* hDevice, ref Silk.NET.Direct3D9.IDirect3DDevice9* ppDevice, bool fBlock)
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Direct3D9.IDirect3DDevice9** ppDevicePtr = &ppDevice)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)@this->LpVtbl[7])(@this, hDevice, ppDevicePtr, fBlock);
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, nint*, Silk.NET.Direct3D9.IDirect3DDevice9**, bool, int>)@this->LpVtbl[7])(@this, hDevice, ppDevicePtr, fBlock);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LockDevice<T0>(ref T0 hDevice, Silk.NET.Direct3D9.IDirect3DDevice9** ppDevice, int fBlock) where T0 : unmanaged
+        public readonly unsafe int LockDevice(ref nint hDevice, Silk.NET.Direct3D9.IDirect3DDevice9** ppDevice, bool fBlock)
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* hDevicePtr = &hDevice)
+            fixed (nint* hDevicePtr = &hDevice)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)@this->LpVtbl[7])(@this, hDevicePtr, ppDevice, fBlock);
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, nint*, Silk.NET.Direct3D9.IDirect3DDevice9**, bool, int>)@this->LpVtbl[7])(@this, hDevicePtr, ppDevice, fBlock);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LockDevice<T0>(ref T0 hDevice, ref Silk.NET.Direct3D9.IDirect3DDevice9* ppDevice, int fBlock) where T0 : unmanaged
+        public readonly unsafe int LockDevice(ref nint hDevice, ref Silk.NET.Direct3D9.IDirect3DDevice9* ppDevice, bool fBlock)
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* hDevicePtr = &hDevice)
+            fixed (nint* hDevicePtr = &hDevice)
             {
                 fixed (Silk.NET.Direct3D9.IDirect3DDevice9** ppDevicePtr = &ppDevice)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)@this->LpVtbl[7])(@this, hDevicePtr, ppDevicePtr, fBlock);
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, nint*, Silk.NET.Direct3D9.IDirect3DDevice9**, bool, int>)@this->LpVtbl[7])(@this, hDevicePtr, ppDevicePtr, fBlock);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnlockDevice(void* hDevice, int fSaveState)
+        public readonly unsafe int UnlockDevice(nint* hDevice, bool fSaveState)
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, int, int>)@this->LpVtbl[8])(@this, hDevice, fSaveState);
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, nint*, bool, int>)@this->LpVtbl[8])(@this, hDevice, fSaveState);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int UnlockDevice<T0>(ref T0 hDevice, int fSaveState) where T0 : unmanaged
+        public readonly int UnlockDevice(ref nint hDevice, bool fSaveState)
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* hDevicePtr = &hDevice)
+            fixed (nint* hDevicePtr = &hDevice)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, int, int>)@this->LpVtbl[8])(@this, hDevicePtr, fSaveState);
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, nint*, bool, int>)@this->LpVtbl[8])(@this, hDevicePtr, fSaveState);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoService(void* hDevice, Guid* riid, void** ppService)
+        public readonly unsafe int GetVideoService(nint* hDevice, Guid* riid, void** ppService)
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevice, riid, ppService);
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, nint*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevice, riid, ppService);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoService(void* hDevice, Guid* riid, ref void* ppService)
+        public readonly unsafe int GetVideoService(nint* hDevice, Guid* riid, ref void* ppService)
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void** ppServicePtr = &ppService)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevice, riid, ppServicePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, nint*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevice, riid, ppServicePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoService(void* hDevice, ref Guid riid, void** ppService)
+        public readonly unsafe int GetVideoService(nint* hDevice, ref Guid riid, void** ppService)
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevice, riidPtr, ppService);
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, nint*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevice, riidPtr, ppService);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoService(void* hDevice, ref Guid riid, ref void* ppService)
+        public readonly unsafe int GetVideoService(nint* hDevice, ref Guid riid, ref void* ppService)
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -305,66 +305,66 @@ namespace Silk.NET.DXVA
             {
                 fixed (void** ppServicePtr = &ppService)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevice, riidPtr, ppServicePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, nint*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevice, riidPtr, ppServicePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoService<T0>(ref T0 hDevice, Guid* riid, void** ppService) where T0 : unmanaged
+        public readonly unsafe int GetVideoService(ref nint hDevice, Guid* riid, void** ppService)
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* hDevicePtr = &hDevice)
+            fixed (nint* hDevicePtr = &hDevice)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevicePtr, riid, ppService);
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, nint*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevicePtr, riid, ppService);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoService<T0>(ref T0 hDevice, Guid* riid, ref void* ppService) where T0 : unmanaged
+        public readonly unsafe int GetVideoService(ref nint hDevice, Guid* riid, ref void* ppService)
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* hDevicePtr = &hDevice)
+            fixed (nint* hDevicePtr = &hDevice)
             {
                 fixed (void** ppServicePtr = &ppService)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevicePtr, riid, ppServicePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, nint*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevicePtr, riid, ppServicePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoService<T0>(ref T0 hDevice, ref Guid riid, void** ppService) where T0 : unmanaged
+        public readonly unsafe int GetVideoService(ref nint hDevice, ref Guid riid, void** ppService)
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* hDevicePtr = &hDevice)
+            fixed (nint* hDevicePtr = &hDevice)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevicePtr, riidPtr, ppService);
+                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, nint*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevicePtr, riidPtr, ppService);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoService<T0>(ref T0 hDevice, ref Guid riid, ref void* ppService) where T0 : unmanaged
+        public readonly unsafe int GetVideoService(ref nint hDevice, ref Guid riid, ref void* ppService)
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (void* hDevicePtr = &hDevice)
+            fixed (nint* hDevicePtr = &hDevice)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
                     fixed (void** ppServicePtr = &ppService)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevicePtr, riidPtr, ppServicePtr);
+                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, nint*, Guid*, void**, int>)@this->LpVtbl[9])(@this, hDevicePtr, riidPtr, ppServicePtr);
                     }
                 }
             }
@@ -381,7 +381,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoService<TI0>(void* hDevice, out ComPtr<TI0> ppService) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int GetVideoService<TI0>(nint* hDevice, out ComPtr<TI0> ppService) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -390,7 +390,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetVideoService<T0, TI0>(ref T0 hDevice, out ComPtr<TI0> ppService) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int GetVideoService<TI0>(ref nint hDevice, out ComPtr<TI0> ppService) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -408,7 +408,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> GetVideoService<TI0>(void* hDevice) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> GetVideoService<TI0>(nint* hDevice) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -417,7 +417,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> GetVideoService<T0, TI0>(ref T0 hDevice) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> GetVideoService<TI0>(ref nint hDevice) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IDirect3DDeviceManager9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader

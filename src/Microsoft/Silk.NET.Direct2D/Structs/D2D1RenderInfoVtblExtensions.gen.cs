@@ -103,10 +103,10 @@ public unsafe static class D2D1RenderInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetCached(this ComPtr<ID2D1RenderInfo> thisVtbl, int isCached)
+    public static void SetCached(this ComPtr<ID2D1RenderInfo> thisVtbl, bool isCached)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID2D1RenderInfo*, int, void>)@this->LpVtbl[5])(@this, isCached);
+        ((delegate* unmanaged[Stdcall]<ID2D1RenderInfo*, bool, void>)@this->LpVtbl[5])(@this, isCached);
     }
 
     /// <summary>To be documented.</summary>

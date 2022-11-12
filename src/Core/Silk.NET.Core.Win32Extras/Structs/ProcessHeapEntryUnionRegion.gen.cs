@@ -21,10 +21,10 @@ namespace Silk.NET.Core.Win32Extras
     {
         public ProcessHeapEntryUnionRegion
         (
-            uint? dwCommittedSize = null,
-            uint? dwUnCommittedSize = null,
-            void* lpFirstBlock = null,
-            void* lpLastBlock = null
+            int? dwCommittedSize = null,
+            int? dwUnCommittedSize = null,
+            nint* lpFirstBlock = null,
+            nint* lpLastBlock = null
         ) : this()
         {
             if (dwCommittedSize is not null)
@@ -52,21 +52,21 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwCommittedSize")]
-        public uint DwCommittedSize;
+        public int DwCommittedSize;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwUnCommittedSize")]
-        public uint DwUnCommittedSize;
+        public int DwUnCommittedSize;
 
         [NativeName("Type", "LPVOID")]
         [NativeName("Type.Name", "LPVOID")]
         [NativeName("Name", "lpFirstBlock")]
-        public void* LpFirstBlock;
+        public nint* LpFirstBlock;
 
         [NativeName("Type", "LPVOID")]
         [NativeName("Type.Name", "LPVOID")]
         [NativeName("Name", "lpLastBlock")]
-        public void* LpLastBlock;
+        public nint* LpLastBlock;
     }
 }

@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D12
     {
         public ShaderInputBindDesc
         (
-            byte* name = null,
+            string* name = null,
             Silk.NET.Core.Native.D3DShaderInputType? type = null,
             uint? bindPoint = null,
             uint? bindCount = null,
@@ -88,7 +88,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "LPCSTR")]
         [NativeName("Type.Name", "LPCSTR")]
         [NativeName("Name", "Name")]
-        public byte* Name;
+        public string* Name;
 
         [NativeName("Type", "D3D_SHADER_INPUT_TYPE")]
         [NativeName("Type.Name", "D3D_SHADER_INPUT_TYPE")]

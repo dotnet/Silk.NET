@@ -85,7 +85,7 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVideoProcessBltState(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, HDBltState State, uint DataSize, void* pData)
+    public static unsafe int SetVideoProcessBltState(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, HDBltState State, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -94,7 +94,7 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVideoProcessBltState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, HDBltState State, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int SetVideoProcessBltState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, HDBltState State, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -127,7 +127,7 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVideoProcessStreamState(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, uint StreamNumber, HDStreamState State, uint DataSize, void* pData)
+    public static unsafe int SetVideoProcessStreamState(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, uint StreamNumber, HDStreamState State, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -136,7 +136,7 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVideoProcessStreamState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, uint StreamNumber, HDStreamState State, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int SetVideoProcessStreamState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, uint StreamNumber, HDStreamState State, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -169,7 +169,7 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBltHD(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pOutputSurface, uint OutputFrame, uint StreamCount, HDStreamData* pStreams)
+    public static unsafe int VideoProcessBltHD(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pOutputSurface, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] HDStreamData* pStreams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -178,7 +178,7 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBltHD(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pOutputSurface, uint OutputFrame, uint StreamCount, ref HDStreamData pStreams)
+    public static unsafe int VideoProcessBltHD(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pOutputSurface, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] in HDStreamData pStreams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -190,7 +190,7 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBltHD(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pOutputSurface, uint OutputFrame, uint StreamCount, HDStreamData* pStreams)
+    public static unsafe int VideoProcessBltHD(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pOutputSurface, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] HDStreamData* pStreams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessBltHD(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pOutputSurface, uint OutputFrame, uint StreamCount, ref HDStreamData pStreams)
+    public static int VideoProcessBltHD(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, ref Silk.NET.Direct3D9.IDirect3DSurface9 pOutputSurface, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] in HDStreamData pStreams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -242,11 +242,11 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVideoProcessBltState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, HDBltState State, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int SetVideoProcessBltState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, HDBltState State, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVideoProcessBltState(State, DataSize, ref pData.GetPinnableReference());
+        return @this->SetVideoProcessBltState(State, DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -258,11 +258,11 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVideoProcessStreamState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, uint StreamNumber, HDStreamState State, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int SetVideoProcessStreamState<T0>(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, uint StreamNumber, HDStreamState State, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVideoProcessStreamState(StreamNumber, State, DataSize, ref pData.GetPinnableReference());
+        return @this->SetVideoProcessStreamState(StreamNumber, State, DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -274,15 +274,15 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBltHD(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pOutputSurface, uint OutputFrame, uint StreamCount, Span<HDStreamData> pStreams)
+    public static unsafe int VideoProcessBltHD(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, Silk.NET.Direct3D9.IDirect3DSurface9* pOutputSurface, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] ReadOnlySpan<HDStreamData> pStreams)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessBltHD(pOutputSurface, OutputFrame, StreamCount, ref pStreams.GetPinnableReference());
+        return @this->VideoProcessBltHD(pOutputSurface, OutputFrame, StreamCount, in pStreams.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessBltHD(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pOutputSurface, uint OutputFrame, uint StreamCount, HDStreamData* pStreams)
+    public static unsafe int VideoProcessBltHD(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pOutputSurface, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] HDStreamData* pStreams)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -290,11 +290,11 @@ public unsafe static class DXVAHDVideoProcessorVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessBltHD(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pOutputSurface, uint OutputFrame, uint StreamCount, Span<HDStreamData> pStreams)
+    public static int VideoProcessBltHD(this ComPtr<IDXVAHDVideoProcessor> thisVtbl, Span<Silk.NET.Direct3D9.IDirect3DSurface9> pOutputSurface, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] ReadOnlySpan<HDStreamData> pStreams)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessBltHD(ref pOutputSurface.GetPinnableReference(), OutputFrame, StreamCount, ref pStreams.GetPinnableReference());
+        return @this->VideoProcessBltHD(ref pOutputSurface.GetPinnableReference(), OutputFrame, StreamCount, in pStreams.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

@@ -111,11 +111,11 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ResetInitializerTimeout(uint dwSecondsRemaining)
+        public readonly int ResetInitializerTimeout(int dwSecondsRemaining)
         {
             var @this = (IProcessInitControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IProcessInitControl*, uint, int>)@this->LpVtbl[3])(@this, dwSecondsRemaining);
+            ret = ((delegate* unmanaged[Cdecl]<IProcessInitControl*, int, int>)@this->LpVtbl[3])(@this, dwSecondsRemaining);
             return ret;
         }
 

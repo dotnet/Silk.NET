@@ -102,14 +102,14 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetStartPoint(this ComPtr<ID2D1Ink> thisVtbl, InkPoint* startPoint)
+    public static unsafe void SetStartPoint(this ComPtr<ID2D1Ink> thisVtbl, [Flow(FlowDirection.In)] InkPoint* startPoint)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1Ink*, InkPoint*, void>)@this->LpVtbl[4])(@this, startPoint);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetStartPoint(this ComPtr<ID2D1Ink> thisVtbl, ref InkPoint startPoint)
+    public static void SetStartPoint(this ComPtr<ID2D1Ink> thisVtbl, [Flow(FlowDirection.In)] in InkPoint startPoint)
     {
         var @this = thisVtbl.Handle;
         fixed (InkPoint* startPointPtr = &startPoint)
@@ -128,7 +128,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSegments(this ComPtr<ID2D1Ink> thisVtbl, InkBezierSegment* segments, uint segmentsCount)
+    public static unsafe int AddSegments(this ComPtr<ID2D1Ink> thisVtbl, [Flow(FlowDirection.In)] InkBezierSegment* segments, uint segmentsCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -137,7 +137,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddSegments(this ComPtr<ID2D1Ink> thisVtbl, ref InkBezierSegment segments, uint segmentsCount)
+    public static int AddSegments(this ComPtr<ID2D1Ink> thisVtbl, [Flow(FlowDirection.In)] in InkBezierSegment segments, uint segmentsCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -158,7 +158,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSegments(this ComPtr<ID2D1Ink> thisVtbl, uint startSegment, InkBezierSegment* segments, uint segmentsCount)
+    public static unsafe int SetSegments(this ComPtr<ID2D1Ink> thisVtbl, uint startSegment, [Flow(FlowDirection.In)] InkBezierSegment* segments, uint segmentsCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -167,7 +167,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSegments(this ComPtr<ID2D1Ink> thisVtbl, uint startSegment, ref InkBezierSegment segments, uint segmentsCount)
+    public static int SetSegments(this ComPtr<ID2D1Ink> thisVtbl, uint startSegment, [Flow(FlowDirection.In)] in InkBezierSegment segments, uint segmentsCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -179,7 +179,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSegmentAtEnd(this ComPtr<ID2D1Ink> thisVtbl, InkBezierSegment* segment)
+    public static unsafe int SetSegmentAtEnd(this ComPtr<ID2D1Ink> thisVtbl, [Flow(FlowDirection.In)] InkBezierSegment* segment)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -188,7 +188,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSegmentAtEnd(this ComPtr<ID2D1Ink> thisVtbl, ref InkBezierSegment segment)
+    public static int SetSegmentAtEnd(this ComPtr<ID2D1Ink> thisVtbl, [Flow(FlowDirection.In)] in InkBezierSegment segment)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -230,7 +230,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -239,7 +239,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -251,7 +251,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -263,7 +263,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -278,7 +278,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -290,7 +290,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -305,7 +305,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -320,7 +320,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
+    public static int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -338,7 +338,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -347,7 +347,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -359,7 +359,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -371,7 +371,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -386,7 +386,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -398,7 +398,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -413,7 +413,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -428,7 +428,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
+    public static int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -479,35 +479,35 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetStartPoint(this ComPtr<ID2D1Ink> thisVtbl, Span<InkPoint> startPoint)
+    public static void SetStartPoint(this ComPtr<ID2D1Ink> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<InkPoint> startPoint)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->SetStartPoint(ref startPoint.GetPinnableReference());
+        @this->SetStartPoint(in startPoint.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddSegments(this ComPtr<ID2D1Ink> thisVtbl, Span<InkBezierSegment> segments, uint segmentsCount)
+    public static int AddSegments(this ComPtr<ID2D1Ink> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<InkBezierSegment> segments, uint segmentsCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddSegments(ref segments.GetPinnableReference(), segmentsCount);
+        return @this->AddSegments(in segments.GetPinnableReference(), segmentsCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSegments(this ComPtr<ID2D1Ink> thisVtbl, uint startSegment, Span<InkBezierSegment> segments, uint segmentsCount)
+    public static int SetSegments(this ComPtr<ID2D1Ink> thisVtbl, uint startSegment, [Flow(FlowDirection.In)] ReadOnlySpan<InkBezierSegment> segments, uint segmentsCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetSegments(startSegment, ref segments.GetPinnableReference(), segmentsCount);
+        return @this->SetSegments(startSegment, in segments.GetPinnableReference(), segmentsCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSegmentAtEnd(this ComPtr<ID2D1Ink> thisVtbl, Span<InkBezierSegment> segment)
+    public static int SetSegmentAtEnd(this ComPtr<ID2D1Ink> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<InkBezierSegment> segment)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetSegmentAtEnd(ref segment.GetPinnableReference());
+        return @this->SetSegmentAtEnd(in segment.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -519,7 +519,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StreamAsGeometry<TI0, TI1>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
+    public static unsafe int StreamAsGeometry<TI0, TI1>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -527,7 +527,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
+    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -535,7 +535,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StreamAsGeometry<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+    public static unsafe int StreamAsGeometry<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -543,39 +543,39 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, Span<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StreamAsGeometry(inkStyle, ref worldTransform.GetPinnableReference(), flatteningTolerance, geometrySink);
+        return @this->StreamAsGeometry(inkStyle, in worldTransform.GetPinnableReference(), flatteningTolerance, geometrySink);
     }
 
     /// <summary>To be documented.</summary>
-    public static int StreamAsGeometry<TI0, TI1>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
+    public static int StreamAsGeometry<TI0, TI1>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI1> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->StreamAsGeometry((ID2D1InkStyle*) inkStyle.Handle, ref worldTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
+        return @this->StreamAsGeometry((ID2D1InkStyle*) inkStyle.Handle, in worldTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, Span<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
+    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StreamAsGeometry(inkStyle, ref worldTransform.GetPinnableReference(), flatteningTolerance, ref geometrySink.GetPinnableReference());
+        return @this->StreamAsGeometry(inkStyle, in worldTransform.GetPinnableReference(), flatteningTolerance, ref geometrySink.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int StreamAsGeometry<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+    public static int StreamAsGeometry<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ref ID2D1SimplifiedGeometrySink geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->StreamAsGeometry((ID2D1InkStyle*) inkStyle.Handle, ref worldTransform, flatteningTolerance, ref geometrySink);
+        return @this->StreamAsGeometry((ID2D1InkStyle*) inkStyle.Handle, in worldTransform, flatteningTolerance, ref geometrySink);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, Span<ID2D1InkStyle> inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, Span<ID2D1InkStyle> inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -583,7 +583,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StreamAsGeometry<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+    public static unsafe int StreamAsGeometry<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -591,7 +591,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, Span<ID2D1InkStyle> inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
+    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, Span<ID2D1InkStyle> inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -599,31 +599,31 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, Span<ID2D1InkStyle> inkStyle, Span<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public static unsafe int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, Span<ID2D1InkStyle> inkStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StreamAsGeometry(ref inkStyle.GetPinnableReference(), ref worldTransform.GetPinnableReference(), flatteningTolerance, geometrySink);
+        return @this->StreamAsGeometry(ref inkStyle.GetPinnableReference(), in worldTransform.GetPinnableReference(), flatteningTolerance, geometrySink);
     }
 
     /// <summary>To be documented.</summary>
-    public static int StreamAsGeometry<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
+    public static int StreamAsGeometry<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ref ID2D1InkStyle inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, float flatteningTolerance, ComPtr<TI0> geometrySink) where TI0 : unmanaged, IComVtbl<ID2D1SimplifiedGeometrySink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->StreamAsGeometry(ref inkStyle, ref worldTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
+        return @this->StreamAsGeometry(ref inkStyle, in worldTransform, flatteningTolerance, (ID2D1SimplifiedGeometrySink*) geometrySink.Handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, Span<ID2D1InkStyle> inkStyle, Span<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
+    public static int StreamAsGeometry(this ComPtr<ID2D1Ink> thisVtbl, Span<ID2D1InkStyle> inkStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, float flatteningTolerance, Span<ID2D1SimplifiedGeometrySink> geometrySink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StreamAsGeometry(ref inkStyle.GetPinnableReference(), ref worldTransform.GetPinnableReference(), flatteningTolerance, ref geometrySink.GetPinnableReference());
+        return @this->StreamAsGeometry(ref inkStyle.GetPinnableReference(), in worldTransform.GetPinnableReference(), flatteningTolerance, ref geometrySink.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, Silk.NET.Maths.Box2D<float>* bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+    public static unsafe int GetBounds<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, Silk.NET.Maths.Box2D<float>* bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -631,7 +631,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, Span<Silk.NET.Maths.Box2D<float>> bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, Span<Silk.NET.Maths.Box2D<float>> bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -639,7 +639,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref Silk.NET.Maths.Box2D<float> bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+    public static unsafe int GetBounds<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, ref Silk.NET.Maths.Box2D<float> bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -647,39 +647,39 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, Span<Silk.NET.Maths.Matrix3X2<float>> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetBounds(inkStyle, ref worldTransform.GetPinnableReference(), bounds);
+        return @this->GetBounds(inkStyle, in worldTransform.GetPinnableReference(), bounds);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+    public static unsafe int GetBounds<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, Silk.NET.Maths.Box2D<float>* bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetBounds((ID2D1InkStyle*) inkStyle.Handle, ref worldTransform, bounds);
+        return @this->GetBounds((ID2D1InkStyle*) inkStyle.Handle, in worldTransform, bounds);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, Span<Silk.NET.Maths.Matrix3X2<float>> worldTransform, Span<Silk.NET.Maths.Box2D<float>> bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, ID2D1InkStyle* inkStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, Span<Silk.NET.Maths.Box2D<float>> bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetBounds(inkStyle, ref worldTransform.GetPinnableReference(), ref bounds.GetPinnableReference());
+        return @this->GetBounds(inkStyle, in worldTransform.GetPinnableReference(), ref bounds.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBounds<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, ref Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+    public static int GetBounds<TI0>(this ComPtr<ID2D1Ink> thisVtbl, ComPtr<TI0> inkStyle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> worldTransform, ref Silk.NET.Maths.Box2D<float> bounds) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetBounds((ID2D1InkStyle*) inkStyle.Handle, ref worldTransform, ref bounds);
+        return @this->GetBounds((ID2D1InkStyle*) inkStyle.Handle, in worldTransform, ref bounds);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, Span<ID2D1InkStyle> inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, Span<ID2D1InkStyle> inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -687,7 +687,7 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, Span<ID2D1InkStyle> inkStyle, Silk.NET.Maths.Matrix3X2<float>* worldTransform, Span<Silk.NET.Maths.Box2D<float>> bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, Span<ID2D1InkStyle> inkStyle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* worldTransform, Span<Silk.NET.Maths.Box2D<float>> bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -695,19 +695,19 @@ public unsafe static class D2D1InkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, Span<ID2D1InkStyle> inkStyle, Span<Silk.NET.Maths.Matrix3X2<float>> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, Span<ID2D1InkStyle> inkStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetBounds(ref inkStyle.GetPinnableReference(), ref worldTransform.GetPinnableReference(), bounds);
+        return @this->GetBounds(ref inkStyle.GetPinnableReference(), in worldTransform.GetPinnableReference(), bounds);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, Span<ID2D1InkStyle> inkStyle, Span<Silk.NET.Maths.Matrix3X2<float>> worldTransform, Span<Silk.NET.Maths.Box2D<float>> bounds)
+    public static int GetBounds(this ComPtr<ID2D1Ink> thisVtbl, Span<ID2D1InkStyle> inkStyle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> worldTransform, Span<Silk.NET.Maths.Box2D<float>> bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetBounds(ref inkStyle.GetPinnableReference(), ref worldTransform.GetPinnableReference(), ref bounds.GetPinnableReference());
+        return @this->GetBounds(ref inkStyle.GetPinnableReference(), in worldTransform.GetPinnableReference(), ref bounds.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

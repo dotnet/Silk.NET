@@ -85,22 +85,22 @@ public unsafe static class DirectXVideoMemoryConfigurationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAvailableSurfaceTypeByIndex(this ComPtr<IDirectXVideoMemoryConfiguration> thisVtbl, uint dwTypeIndex, MIDLMIDLItfDxva2api000000060001* pdwType)
+    public static unsafe int GetAvailableSurfaceTypeByIndex(this ComPtr<IDirectXVideoMemoryConfiguration> thisVtbl, int dwTypeIndex, MIDLMIDLItfDxva2api000000060001* pdwType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoMemoryConfiguration*, uint, MIDLMIDLItfDxva2api000000060001*, int>)@this->LpVtbl[3])(@this, dwTypeIndex, pdwType);
+        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoMemoryConfiguration*, int, MIDLMIDLItfDxva2api000000060001*, int>)@this->LpVtbl[3])(@this, dwTypeIndex, pdwType);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetAvailableSurfaceTypeByIndex(this ComPtr<IDirectXVideoMemoryConfiguration> thisVtbl, uint dwTypeIndex, ref MIDLMIDLItfDxva2api000000060001 pdwType)
+    public static int GetAvailableSurfaceTypeByIndex(this ComPtr<IDirectXVideoMemoryConfiguration> thisVtbl, int dwTypeIndex, ref MIDLMIDLItfDxva2api000000060001 pdwType)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (MIDLMIDLItfDxva2api000000060001* pdwTypePtr = &pdwType)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoMemoryConfiguration*, uint, MIDLMIDLItfDxva2api000000060001*, int>)@this->LpVtbl[3])(@this, dwTypeIndex, pdwTypePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoMemoryConfiguration*, int, MIDLMIDLItfDxva2api000000060001*, int>)@this->LpVtbl[3])(@this, dwTypeIndex, pdwTypePtr);
         }
         return ret;
     }
@@ -140,7 +140,7 @@ public unsafe static class DirectXVideoMemoryConfigurationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetAvailableSurfaceTypeByIndex(this ComPtr<IDirectXVideoMemoryConfiguration> thisVtbl, uint dwTypeIndex, Span<MIDLMIDLItfDxva2api000000060001> pdwType)
+    public static int GetAvailableSurfaceTypeByIndex(this ComPtr<IDirectXVideoMemoryConfiguration> thisVtbl, int dwTypeIndex, Span<MIDLMIDLItfDxva2api000000060001> pdwType)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

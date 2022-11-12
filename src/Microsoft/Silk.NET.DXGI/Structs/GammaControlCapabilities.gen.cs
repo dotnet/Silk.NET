@@ -21,7 +21,7 @@ namespace Silk.NET.DXGI
     {
         public GammaControlCapabilities
         (
-            int? scaleAndOffsetSupported = null,
+            bool? scaleAndOffsetSupported = null,
             float? maxConvertedValue = null,
             float? minConvertedValue = null,
             uint? numGammaControlPoints = null
@@ -52,7 +52,7 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ScaleAndOffsetSupported")]
-        public int ScaleAndOffsetSupported;
+        public bool ScaleAndOffsetSupported;
 
         [NativeName("Type", "float")]
         [NativeName("Type.Name", "float")]

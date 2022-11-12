@@ -22,7 +22,7 @@ namespace Silk.NET.Core.Win32Extras
         public ExceptionDebugInfo
         (
             ExceptionRecord? exceptionRecord = null,
-            uint? dwFirstChance = null
+            int? dwFirstChance = null
         ) : this()
         {
             if (exceptionRecord is not null)
@@ -45,6 +45,6 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwFirstChance")]
-        public uint DwFirstChance;
+        public int DwFirstChance;
     }
 }

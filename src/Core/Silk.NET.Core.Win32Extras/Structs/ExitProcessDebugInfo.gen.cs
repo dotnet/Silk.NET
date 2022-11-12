@@ -21,7 +21,7 @@ namespace Silk.NET.Core.Win32Extras
     {
         public ExitProcessDebugInfo
         (
-            uint? dwExitCode = null
+            int? dwExitCode = null
         ) : this()
         {
             if (dwExitCode is not null)
@@ -34,6 +34,6 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwExitCode")]
-        public uint DwExitCode;
+        public int DwExitCode;
     }
 }

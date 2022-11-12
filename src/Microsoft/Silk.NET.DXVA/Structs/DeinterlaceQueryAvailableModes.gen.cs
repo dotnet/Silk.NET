@@ -21,8 +21,8 @@ namespace Silk.NET.DXVA
     {
         public DeinterlaceQueryAvailableModes
         (
-            uint? size = null,
-            uint? numGuids = null
+            int? size = null,
+            int? numGuids = null
         ) : this()
         {
             if (size is not null)
@@ -40,12 +40,12 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Size")]
-        public uint Size;
+        public int Size;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "NumGuids")]
-        public uint NumGuids;
+        public int NumGuids;
         
         [NativeName("Type", "GUID [32]")]
         [NativeName("Type.Name", "GUID [32]")]

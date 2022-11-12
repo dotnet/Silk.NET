@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D12
     {
         public SignatureParameterDesc
         (
-            byte* semanticName = null,
+            string* semanticName = null,
             uint? semanticIndex = null,
             uint? register = null,
             Silk.NET.Core.Native.D3DName? systemValueType = null,
@@ -82,7 +82,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "LPCSTR")]
         [NativeName("Type.Name", "LPCSTR")]
         [NativeName("Name", "SemanticName")]
-        public byte* SemanticName;
+        public string* SemanticName;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

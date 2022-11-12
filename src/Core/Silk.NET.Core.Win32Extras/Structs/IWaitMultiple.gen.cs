@@ -111,22 +111,22 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WaitMultiple(uint timeout, ISynchronize** pSync)
+        public readonly unsafe int WaitMultiple(int timeout, ISynchronize** pSync)
         {
             var @this = (IWaitMultiple*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IWaitMultiple*, uint, ISynchronize**, int>)@this->LpVtbl[3])(@this, timeout, pSync);
+            ret = ((delegate* unmanaged[Cdecl]<IWaitMultiple*, int, ISynchronize**, int>)@this->LpVtbl[3])(@this, timeout, pSync);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int WaitMultiple(uint timeout, ref ISynchronize* pSync)
+        public readonly unsafe int WaitMultiple(int timeout, ref ISynchronize* pSync)
         {
             var @this = (IWaitMultiple*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ISynchronize** pSyncPtr = &pSync)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IWaitMultiple*, uint, ISynchronize**, int>)@this->LpVtbl[3])(@this, timeout, pSyncPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IWaitMultiple*, int, ISynchronize**, int>)@this->LpVtbl[3])(@this, timeout, pSyncPtr);
             }
             return ret;
         }
@@ -162,7 +162,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int WaitMultiple<TI0>(uint timeout, ref ComPtr<TI0> pSync) where TI0 : unmanaged, IComVtbl<ISynchronize>, IComVtbl<TI0>
+        public readonly int WaitMultiple<TI0>(int timeout, ref ComPtr<TI0> pSync) where TI0 : unmanaged, IComVtbl<ISynchronize>, IComVtbl<TI0>
         {
             var @this = (IWaitMultiple*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

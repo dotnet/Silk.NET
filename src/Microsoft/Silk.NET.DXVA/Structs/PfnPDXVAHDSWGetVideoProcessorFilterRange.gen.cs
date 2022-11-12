@@ -19,10 +19,10 @@ namespace Silk.NET.DXVA
     public unsafe readonly struct PfnPDXVAHDSWGetVideoProcessorFilterRange : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<void*, HDFilter, HDFilterRangeData*, int> Handle => (delegate* unmanaged[Cdecl]<void*, HDFilter, HDFilterRangeData*, int>) _handle;
+        public delegate* unmanaged[Cdecl]<nint*, HDFilter, HDFilterRangeData*, int> Handle => (delegate* unmanaged[Cdecl]<nint*, HDFilter, HDFilterRangeData*, int>) _handle;
         public PfnPDXVAHDSWGetVideoProcessorFilterRange
         (
-            delegate* unmanaged[Cdecl]<void*, HDFilter, HDFilterRangeData*, int> ptr
+            delegate* unmanaged[Cdecl]<nint*, HDFilter, HDFilterRangeData*, int> ptr
         ) => _handle = ptr;
 
         public PfnPDXVAHDSWGetVideoProcessorFilterRange
@@ -35,7 +35,7 @@ namespace Silk.NET.DXVA
 
         public static implicit operator nint(PfnPDXVAHDSWGetVideoProcessorFilterRange pfn) => (nint) pfn.Handle;
         public static explicit operator PfnPDXVAHDSWGetVideoProcessorFilterRange(nint pfn)
-            => new PfnPDXVAHDSWGetVideoProcessorFilterRange((delegate* unmanaged[Cdecl]<void*, HDFilter, HDFilterRangeData*, int>) pfn);
+            => new PfnPDXVAHDSWGetVideoProcessorFilterRange((delegate* unmanaged[Cdecl]<nint*, HDFilter, HDFilterRangeData*, int>) pfn);
 
         public static implicit operator PfnPDXVAHDSWGetVideoProcessorFilterRange(PDXVAHDSWGetVideoProcessorFilterRange proc)
             => new PfnPDXVAHDSWGetVideoProcessorFilterRange(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.DXVA
         public static explicit operator PDXVAHDSWGetVideoProcessorFilterRange(PfnPDXVAHDSWGetVideoProcessorFilterRange pfn)
             => SilkMarshal.PtrToDelegate<PDXVAHDSWGetVideoProcessorFilterRange>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<void*, HDFilter, HDFilterRangeData*, int>(PfnPDXVAHDSWGetVideoProcessorFilterRange pfn) => pfn.Handle;
-        public static implicit operator PfnPDXVAHDSWGetVideoProcessorFilterRange(delegate* unmanaged[Cdecl]<void*, HDFilter, HDFilterRangeData*, int> ptr) => new PfnPDXVAHDSWGetVideoProcessorFilterRange(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<nint*, HDFilter, HDFilterRangeData*, int>(PfnPDXVAHDSWGetVideoProcessorFilterRange pfn) => pfn.Handle;
+        public static implicit operator PfnPDXVAHDSWGetVideoProcessorFilterRange(delegate* unmanaged[Cdecl]<nint*, HDFilter, HDFilterRangeData*, int> ptr) => new PfnPDXVAHDSWGetVideoProcessorFilterRange(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate int PDXVAHDSWGetVideoProcessorFilterRange(void* arg0, HDFilter arg1, HDFilterRangeData* arg2);
+    public unsafe delegate int PDXVAHDSWGetVideoProcessorFilterRange(nint* arg0, HDFilter arg1, HDFilterRangeData* arg2);
 }
 

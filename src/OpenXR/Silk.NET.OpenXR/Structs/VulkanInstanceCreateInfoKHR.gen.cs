@@ -26,8 +26,8 @@ namespace Silk.NET.OpenXR
             ulong? systemId = null,
             VulkanInstanceCreateFlagsKHR? createFlags = null,
             PfnVoidFunction? pfnGetInstanceProcAddr = null,
-            void* vulkanCreateInfo = null,
-            void* vulkanAllocator = null
+            void** vulkanCreateInfo = null,
+            void** vulkanAllocator = null
         ) : this()
         {
             if (type is not null)
@@ -95,11 +95,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "VkInstanceCreateInfo*")]
         [NativeName("Type.Name", "VkInstanceCreateInfo")]
         [NativeName("Name", "vulkanCreateInfo")]
-        public void* VulkanCreateInfo;
+        public void** VulkanCreateInfo;
 /// <summary></summary>
         [NativeName("Type", "VkAllocationCallbacks*")]
         [NativeName("Type.Name", "VkAllocationCallbacks")]
         [NativeName("Name", "vulkanAllocator")]
-        public void* VulkanAllocator;
+        public void** VulkanAllocator;
     }
 }

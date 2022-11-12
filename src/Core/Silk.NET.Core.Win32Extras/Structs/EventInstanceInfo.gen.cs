@@ -21,7 +21,7 @@ namespace Silk.NET.Core.Win32Extras
     {
         public EventInstanceInfo
         (
-            void* regHandle = null,
+            nint* regHandle = null,
             uint? instanceId = null
         ) : this()
         {
@@ -40,7 +40,7 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "RegHandle")]
-        public void* RegHandle;
+        public nint* RegHandle;
 
         [NativeName("Type", "ULONG")]
         [NativeName("Type.Name", "ULONG")]

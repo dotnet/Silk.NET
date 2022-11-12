@@ -111,66 +111,44 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void* GetShaderIdentifier(char* pExportName)
+        public readonly unsafe void* GetShaderIdentifier([Flow(FlowDirection.In)] nint* pExportName)
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             void* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, char*, void*>)@this->LpVtbl[3])(@this, pExportName);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, nint*, void*>)@this->LpVtbl[3])(@this, pExportName);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void* GetShaderIdentifier(ref char pExportName)
+        public readonly unsafe void* GetShaderIdentifier([Flow(FlowDirection.In)] in nint pExportName)
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             void* ret = default;
-            fixed (char* pExportNamePtr = &pExportName)
+            fixed (nint* pExportNamePtr = &pExportName)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, char*, void*>)@this->LpVtbl[3])(@this, pExportNamePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, nint*, void*>)@this->LpVtbl[3])(@this, pExportNamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void* GetShaderIdentifier([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pExportName)
+        public readonly unsafe ulong GetShaderStackSize([Flow(FlowDirection.In)] nint* pExportName)
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            void* ret = default;
-            var pExportNamePtr = (byte*) SilkMarshal.StringToPtr(pExportName, NativeStringEncoding.LPWStr);
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, byte*, void*>)@this->LpVtbl[3])(@this, pExportNamePtr);
-            SilkMarshal.Free((nint)pExportNamePtr);
+            ulong ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, nint*, ulong>)@this->LpVtbl[4])(@this, pExportName);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ulong GetShaderStackSize(char* pExportName)
+        public readonly ulong GetShaderStackSize([Flow(FlowDirection.In)] in nint pExportName)
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, char*, ulong>)@this->LpVtbl[4])(@this, pExportName);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ulong GetShaderStackSize(ref char pExportName)
-        {
-            var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ulong ret = default;
-            fixed (char* pExportNamePtr = &pExportName)
+            fixed (nint* pExportNamePtr = &pExportName)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, char*, ulong>)@this->LpVtbl[4])(@this, pExportNamePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, nint*, ulong>)@this->LpVtbl[4])(@this, pExportNamePtr);
             }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly ulong GetShaderStackSize([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pExportName)
-        {
-            var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ulong ret = default;
-            var pExportNamePtr = (byte*) SilkMarshal.StringToPtr(pExportName, NativeStringEncoding.LPWStr);
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, byte*, ulong>)@this->LpVtbl[4])(@this, pExportNamePtr);
-            SilkMarshal.Free((nint)pExportNamePtr);
             return ret;
         }
 

@@ -102,7 +102,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -111,7 +111,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -123,7 +123,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -135,7 +135,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -150,7 +150,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -162,7 +162,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -177,7 +177,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -192,7 +192,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -210,7 +210,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -222,7 +222,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -237,7 +237,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -252,7 +252,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -270,7 +270,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -285,7 +285,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -303,7 +303,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -321,7 +321,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -342,7 +342,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -351,7 +351,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -363,7 +363,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -375,7 +375,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -390,7 +390,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -402,7 +402,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -417,7 +417,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -432,7 +432,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -450,7 +450,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -462,7 +462,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -477,7 +477,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -492,7 +492,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -510,7 +510,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -525,7 +525,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -543,7 +543,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -561,7 +561,7 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -871,243 +871,243 @@ public unsafe static class D2D1SpriteBatchVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Span<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddSprites(spriteCount, destinationRectangles, sourceRectangles, colors, ref transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->AddSprites(spriteCount, destinationRectangles, sourceRectangles, colors, in transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Span<Silk.NET.DXGI.D3Dcolorvalue> colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddSprites(spriteCount, destinationRectangles, sourceRectangles, ref colors.GetPinnableReference(), transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->AddSprites(spriteCount, destinationRectangles, sourceRectangles, in colors.GetPinnableReference(), transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Span<Silk.NET.DXGI.D3Dcolorvalue> colors, Span<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> colors, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddSprites(spriteCount, destinationRectangles, sourceRectangles, ref colors.GetPinnableReference(), ref transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->AddSprites(spriteCount, destinationRectangles, sourceRectangles, in colors.GetPinnableReference(), in transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Span<Silk.NET.Maths.Box2D<uint>> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddSprites(spriteCount, destinationRectangles, ref sourceRectangles.GetPinnableReference(), colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->AddSprites(spriteCount, destinationRectangles, in sourceRectangles.GetPinnableReference(), colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Span<Silk.NET.Maths.Box2D<uint>> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Span<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddSprites(spriteCount, destinationRectangles, ref sourceRectangles.GetPinnableReference(), colors, ref transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->AddSprites(spriteCount, destinationRectangles, in sourceRectangles.GetPinnableReference(), colors, in transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Span<Silk.NET.Maths.Box2D<uint>> sourceRectangles, Span<Silk.NET.DXGI.D3Dcolorvalue> colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> sourceRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddSprites(spriteCount, destinationRectangles, ref sourceRectangles.GetPinnableReference(), ref colors.GetPinnableReference(), transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->AddSprites(spriteCount, destinationRectangles, in sourceRectangles.GetPinnableReference(), in colors.GetPinnableReference(), transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Span<Silk.NET.Maths.Box2D<uint>> sourceRectangles, Span<Silk.NET.DXGI.D3Dcolorvalue> colors, Span<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> sourceRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> colors, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddSprites(spriteCount, destinationRectangles, ref sourceRectangles.GetPinnableReference(), ref colors.GetPinnableReference(), ref transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->AddSprites(spriteCount, destinationRectangles, in sourceRectangles.GetPinnableReference(), in colors.GetPinnableReference(), in transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Span<Silk.NET.Maths.Box2D<float>> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddSprites(spriteCount, ref destinationRectangles.GetPinnableReference(), sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->AddSprites(spriteCount, in destinationRectangles.GetPinnableReference(), sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Span<Silk.NET.Maths.Box2D<float>> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Span<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddSprites(spriteCount, ref destinationRectangles.GetPinnableReference(), sourceRectangles, colors, ref transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->AddSprites(spriteCount, in destinationRectangles.GetPinnableReference(), sourceRectangles, colors, in transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Span<Silk.NET.Maths.Box2D<float>> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Span<Silk.NET.DXGI.D3Dcolorvalue> colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddSprites(spriteCount, ref destinationRectangles.GetPinnableReference(), sourceRectangles, ref colors.GetPinnableReference(), transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->AddSprites(spriteCount, in destinationRectangles.GetPinnableReference(), sourceRectangles, in colors.GetPinnableReference(), transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Span<Silk.NET.Maths.Box2D<float>> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Span<Silk.NET.DXGI.D3Dcolorvalue> colors, Span<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> colors, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddSprites(spriteCount, ref destinationRectangles.GetPinnableReference(), sourceRectangles, ref colors.GetPinnableReference(), ref transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->AddSprites(spriteCount, in destinationRectangles.GetPinnableReference(), sourceRectangles, in colors.GetPinnableReference(), in transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Span<Silk.NET.Maths.Box2D<float>> destinationRectangles, Span<Silk.NET.Maths.Box2D<uint>> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddSprites(spriteCount, ref destinationRectangles.GetPinnableReference(), ref sourceRectangles.GetPinnableReference(), colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->AddSprites(spriteCount, in destinationRectangles.GetPinnableReference(), in sourceRectangles.GetPinnableReference(), colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Span<Silk.NET.Maths.Box2D<float>> destinationRectangles, Span<Silk.NET.Maths.Box2D<uint>> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Span<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddSprites(spriteCount, ref destinationRectangles.GetPinnableReference(), ref sourceRectangles.GetPinnableReference(), colors, ref transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->AddSprites(spriteCount, in destinationRectangles.GetPinnableReference(), in sourceRectangles.GetPinnableReference(), colors, in transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Span<Silk.NET.Maths.Box2D<float>> destinationRectangles, Span<Silk.NET.Maths.Box2D<uint>> sourceRectangles, Span<Silk.NET.DXGI.D3Dcolorvalue> colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> sourceRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddSprites(spriteCount, ref destinationRectangles.GetPinnableReference(), ref sourceRectangles.GetPinnableReference(), ref colors.GetPinnableReference(), transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->AddSprites(spriteCount, in destinationRectangles.GetPinnableReference(), in sourceRectangles.GetPinnableReference(), in colors.GetPinnableReference(), transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, Span<Silk.NET.Maths.Box2D<float>> destinationRectangles, Span<Silk.NET.Maths.Box2D<uint>> sourceRectangles, Span<Silk.NET.DXGI.D3Dcolorvalue> colors, Span<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static int AddSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint spriteCount, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> sourceRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> colors, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddSprites(spriteCount, ref destinationRectangles.GetPinnableReference(), ref sourceRectangles.GetPinnableReference(), ref colors.GetPinnableReference(), ref transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->AddSprites(spriteCount, in destinationRectangles.GetPinnableReference(), in sourceRectangles.GetPinnableReference(), in colors.GetPinnableReference(), in transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Span<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetSprites(startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, ref transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->SetSprites(startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, in transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Span<Silk.NET.DXGI.D3Dcolorvalue> colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetSprites(startIndex, spriteCount, destinationRectangles, sourceRectangles, ref colors.GetPinnableReference(), transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->SetSprites(startIndex, spriteCount, destinationRectangles, sourceRectangles, in colors.GetPinnableReference(), transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Span<Silk.NET.DXGI.D3Dcolorvalue> colors, Span<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> colors, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetSprites(startIndex, spriteCount, destinationRectangles, sourceRectangles, ref colors.GetPinnableReference(), ref transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->SetSprites(startIndex, spriteCount, destinationRectangles, sourceRectangles, in colors.GetPinnableReference(), in transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Span<Silk.NET.Maths.Box2D<uint>> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetSprites(startIndex, spriteCount, destinationRectangles, ref sourceRectangles.GetPinnableReference(), colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->SetSprites(startIndex, spriteCount, destinationRectangles, in sourceRectangles.GetPinnableReference(), colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Span<Silk.NET.Maths.Box2D<uint>> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Span<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetSprites(startIndex, spriteCount, destinationRectangles, ref sourceRectangles.GetPinnableReference(), colors, ref transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->SetSprites(startIndex, spriteCount, destinationRectangles, in sourceRectangles.GetPinnableReference(), colors, in transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Span<Silk.NET.Maths.Box2D<uint>> sourceRectangles, Span<Silk.NET.DXGI.D3Dcolorvalue> colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> sourceRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetSprites(startIndex, spriteCount, destinationRectangles, ref sourceRectangles.GetPinnableReference(), ref colors.GetPinnableReference(), transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->SetSprites(startIndex, spriteCount, destinationRectangles, in sourceRectangles.GetPinnableReference(), in colors.GetPinnableReference(), transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Span<Silk.NET.Maths.Box2D<uint>> sourceRectangles, Span<Silk.NET.DXGI.D3Dcolorvalue> colors, Span<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> sourceRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> colors, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetSprites(startIndex, spriteCount, destinationRectangles, ref sourceRectangles.GetPinnableReference(), ref colors.GetPinnableReference(), ref transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->SetSprites(startIndex, spriteCount, destinationRectangles, in sourceRectangles.GetPinnableReference(), in colors.GetPinnableReference(), in transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Span<Silk.NET.Maths.Box2D<float>> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetSprites(startIndex, spriteCount, ref destinationRectangles.GetPinnableReference(), sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->SetSprites(startIndex, spriteCount, in destinationRectangles.GetPinnableReference(), sourceRectangles, colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Span<Silk.NET.Maths.Box2D<float>> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Span<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetSprites(startIndex, spriteCount, ref destinationRectangles.GetPinnableReference(), sourceRectangles, colors, ref transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->SetSprites(startIndex, spriteCount, in destinationRectangles.GetPinnableReference(), sourceRectangles, colors, in transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Span<Silk.NET.Maths.Box2D<float>> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Span<Silk.NET.DXGI.D3Dcolorvalue> colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetSprites(startIndex, spriteCount, ref destinationRectangles.GetPinnableReference(), sourceRectangles, ref colors.GetPinnableReference(), transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->SetSprites(startIndex, spriteCount, in destinationRectangles.GetPinnableReference(), sourceRectangles, in colors.GetPinnableReference(), transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Span<Silk.NET.Maths.Box2D<float>> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Span<Silk.NET.DXGI.D3Dcolorvalue> colors, Span<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> colors, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetSprites(startIndex, spriteCount, ref destinationRectangles.GetPinnableReference(), sourceRectangles, ref colors.GetPinnableReference(), ref transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->SetSprites(startIndex, spriteCount, in destinationRectangles.GetPinnableReference(), sourceRectangles, in colors.GetPinnableReference(), in transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Span<Silk.NET.Maths.Box2D<float>> destinationRectangles, Span<Silk.NET.Maths.Box2D<uint>> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetSprites(startIndex, spriteCount, ref destinationRectangles.GetPinnableReference(), ref sourceRectangles.GetPinnableReference(), colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->SetSprites(startIndex, spriteCount, in destinationRectangles.GetPinnableReference(), in sourceRectangles.GetPinnableReference(), colors, transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Span<Silk.NET.Maths.Box2D<float>> destinationRectangles, Span<Silk.NET.Maths.Box2D<uint>> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Span<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetSprites(startIndex, spriteCount, ref destinationRectangles.GetPinnableReference(), ref sourceRectangles.GetPinnableReference(), colors, ref transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->SetSprites(startIndex, spriteCount, in destinationRectangles.GetPinnableReference(), in sourceRectangles.GetPinnableReference(), colors, in transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Span<Silk.NET.Maths.Box2D<float>> destinationRectangles, Span<Silk.NET.Maths.Box2D<uint>> sourceRectangles, Span<Silk.NET.DXGI.D3Dcolorvalue> colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static unsafe int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> sourceRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetSprites(startIndex, spriteCount, ref destinationRectangles.GetPinnableReference(), ref sourceRectangles.GetPinnableReference(), ref colors.GetPinnableReference(), transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->SetSprites(startIndex, spriteCount, in destinationRectangles.GetPinnableReference(), in sourceRectangles.GetPinnableReference(), in colors.GetPinnableReference(), transforms, destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, Span<Silk.NET.Maths.Box2D<float>> destinationRectangles, Span<Silk.NET.Maths.Box2D<uint>> sourceRectangles, Span<Silk.NET.DXGI.D3Dcolorvalue> colors, Span<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+    public static int SetSprites(this ComPtr<ID2D1SpriteBatch> thisVtbl, uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> sourceRectangles, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> colors, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetSprites(startIndex, spriteCount, ref destinationRectangles.GetPinnableReference(), ref sourceRectangles.GetPinnableReference(), ref colors.GetPinnableReference(), ref transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
+        return @this->SetSprites(startIndex, spriteCount, in destinationRectangles.GetPinnableReference(), in sourceRectangles.GetPinnableReference(), in colors.GetPinnableReference(), in transforms.GetPinnableReference(), destinationRectanglesStride, sourceRectanglesStride, colorsStride, transformsStride);
     }
 
     /// <summary>To be documented.</summary>

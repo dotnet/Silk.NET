@@ -17,27 +17,27 @@ namespace Silk.NET.Direct3D9
     public static class D3D9Overloads
     {
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 315, Column 12 in D:/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
-        public static unsafe int PERFBeginEvent(this D3D9 thisApi, uint col, Span<char> wszName)
+        [NativeName("Src", "Line 315, Column 12 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
+        public static unsafe int PERFBeginEvent(this D3D9 thisApi, uint col, [Flow(FlowDirection.In)] ReadOnlySpan<nint> wszName)
         {
             // SpanOverloader
-            return thisApi.PERFBeginEvent(col, ref wszName.GetPinnableReference());
+            return thisApi.PERFBeginEvent(col, in wszName.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 317, Column 13 in D:/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
-        public static unsafe void PERFSetMarker(this D3D9 thisApi, uint col, Span<char> wszName)
+        [NativeName("Src", "Line 317, Column 13 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
+        public static unsafe void PERFSetMarker(this D3D9 thisApi, uint col, [Flow(FlowDirection.In)] ReadOnlySpan<nint> wszName)
         {
             // SpanOverloader
-            thisApi.PERFSetMarker(col, ref wszName.GetPinnableReference());
+            thisApi.PERFSetMarker(col, in wszName.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 318, Column 13 in D:/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
-        public static unsafe void PERFSetRegion(this D3D9 thisApi, uint col, Span<char> wszName)
+        [NativeName("Src", "Line 318, Column 13 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
+        public static unsafe void PERFSetRegion(this D3D9 thisApi, uint col, [Flow(FlowDirection.In)] ReadOnlySpan<nint> wszName)
         {
             // SpanOverloader
-            thisApi.PERFSetRegion(col, ref wszName.GetPinnableReference());
+            thisApi.PERFSetRegion(col, in wszName.GetPinnableReference());
         }
 
     }

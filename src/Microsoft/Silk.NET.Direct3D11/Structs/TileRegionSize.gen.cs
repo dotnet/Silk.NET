@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D11
         public TileRegionSize
         (
             uint? numTiles = null,
-            int? bUseBox = null,
+            bool? bUseBox = null,
             uint? width = null,
             ushort? height = null,
             ushort? depth = null
@@ -63,7 +63,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "bUseBox")]
-        public int BUseBox;
+        public bool BUseBox;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

@@ -22,16 +22,16 @@ namespace Silk.NET.DXVA
     {
         public BufferDescription
         (
-            uint? dwTypeIndex = null,
-            uint? dwBufferIndex = null,
-            uint? dwDataOffset = null,
-            uint? dwDataSize = null,
-            uint? dwFirstMBaddress = null,
-            uint? dwNumMBsInBuffer = null,
-            uint? dwWidth = null,
-            uint? dwHeight = null,
-            uint? dwStride = null,
-            uint? dwReservedBits = null
+            int? dwTypeIndex = null,
+            int? dwBufferIndex = null,
+            int? dwDataOffset = null,
+            int? dwDataSize = null,
+            int? dwFirstMBaddress = null,
+            int? dwNumMBsInBuffer = null,
+            int? dwWidth = null,
+            int? dwHeight = null,
+            int? dwStride = null,
+            int? dwReservedBits = null
         ) : this()
         {
             if (dwTypeIndex is not null)
@@ -89,51 +89,51 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwTypeIndex")]
-        public uint DwTypeIndex;
+        public int DwTypeIndex;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwBufferIndex")]
-        public uint DwBufferIndex;
+        public int DwBufferIndex;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwDataOffset")]
-        public uint DwDataOffset;
+        public int DwDataOffset;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwDataSize")]
-        public uint DwDataSize;
+        public int DwDataSize;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwFirstMBaddress")]
-        public uint DwFirstMBaddress;
+        public int DwFirstMBaddress;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwNumMBsInBuffer")]
-        public uint DwNumMBsInBuffer;
+        public int DwNumMBsInBuffer;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwWidth")]
-        public uint DwWidth;
+        public int DwWidth;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwHeight")]
-        public uint DwHeight;
+        public int DwHeight;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwStride")]
-        public uint DwStride;
+        public int DwStride;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwReservedBits")]
-        public uint DwReservedBits;
+        public int DwReservedBits;
     }
 }

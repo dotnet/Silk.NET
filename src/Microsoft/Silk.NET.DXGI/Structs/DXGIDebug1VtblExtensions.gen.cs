@@ -108,11 +108,11 @@ public unsafe static class DXGIDebug1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsLeakTrackingEnabledForThread(this ComPtr<IDXGIDebug1> thisVtbl)
+    public static bool IsLeakTrackingEnabledForThread(this ComPtr<IDXGIDebug1> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIDebug1*, int>)@this->LpVtbl[6])(@this);
+        bool ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIDebug1*, bool>)@this->LpVtbl[6])(@this);
         return ret;
     }
 

@@ -21,7 +21,7 @@ namespace Silk.NET.DXVA
     {
         public HDStreamStateOutputRateData
         (
-            int? repeatFrame = null,
+            bool? repeatFrame = null,
             HDOutputRate? outputRate = null,
             HDRational? customRate = null
         ) : this()
@@ -46,7 +46,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "RepeatFrame")]
-        public int RepeatFrame;
+        public bool RepeatFrame;
 
         [NativeName("Type", "DXVAHD_OUTPUT_RATE")]
         [NativeName("Type.Name", "DXVAHD_OUTPUT_RATE")]

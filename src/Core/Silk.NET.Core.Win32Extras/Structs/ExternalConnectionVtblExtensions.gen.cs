@@ -85,20 +85,20 @@ public unsafe static class ExternalConnectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint AddConnection(this ComPtr<IExternalConnection> thisVtbl, uint extconn, uint reserved)
+    public static int AddConnection(this ComPtr<IExternalConnection> thisVtbl, int extconn, int reserved)
     {
         var @this = thisVtbl.Handle;
-        uint ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IExternalConnection*, uint, uint, uint>)@this->LpVtbl[3])(@this, extconn, reserved);
+        int ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IExternalConnection*, int, int, int>)@this->LpVtbl[3])(@this, extconn, reserved);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint ReleaseConnection(this ComPtr<IExternalConnection> thisVtbl, uint extconn, uint reserved, int fLastReleaseCloses)
+    public static int ReleaseConnection(this ComPtr<IExternalConnection> thisVtbl, int extconn, int reserved, bool fLastReleaseCloses)
     {
         var @this = thisVtbl.Handle;
-        uint ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IExternalConnection*, uint, uint, int, uint>)@this->LpVtbl[4])(@this, extconn, reserved, fLastReleaseCloses);
+        int ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IExternalConnection*, int, int, bool, int>)@this->LpVtbl[4])(@this, extconn, reserved, fLastReleaseCloses);
         return ret;
     }
 

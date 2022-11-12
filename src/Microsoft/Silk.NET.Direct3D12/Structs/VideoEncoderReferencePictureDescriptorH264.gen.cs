@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D12
         public VideoEncoderReferencePictureDescriptorH264
         (
             uint? reconstructedPictureResourceIndex = null,
-            int? isLongTermReference = null,
+            bool? isLongTermReference = null,
             uint? longTermPictureIdx = null,
             uint? pictureOrderCountNumber = null,
             uint? frameDecodingOrderNumber = null,
@@ -69,7 +69,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "IsLongTermReference")]
-        public int IsLongTermReference;
+        public bool IsLongTermReference;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

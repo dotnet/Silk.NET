@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D12
         public ShaderDesc
         (
             uint? version = null,
-            byte* creator = null,
+            string* creator = null,
             uint? flags = null,
             uint? constantBuffers = null,
             uint? boundResources = null,
@@ -261,7 +261,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "LPCSTR")]
         [NativeName("Type.Name", "LPCSTR")]
         [NativeName("Name", "Creator")]
-        public byte* Creator;
+        public string* Creator;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

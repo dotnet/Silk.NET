@@ -23,8 +23,8 @@ namespace Silk.NET.DXVA
         (
             long? rtStart = null,
             long? rtEnd = null,
-            uint? sampleFormat = null,
-            uint? sampleFlags = null,
+            int? sampleFormat = null,
+            int? sampleFlags = null,
             void* lpDDSSrcSurface = null,
             Silk.NET.Maths.Box2D<int>? rcSrc = null,
             Silk.NET.Maths.Box2D<int>? rcDst = null
@@ -80,12 +80,12 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "SampleFormat")]
-        public uint SampleFormat;
+        public int SampleFormat;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "SampleFlags")]
-        public uint SampleFlags;
+        public int SampleFlags;
 
         [NativeName("Type", "void *")]
         [NativeName("Type.Name", "void *")]

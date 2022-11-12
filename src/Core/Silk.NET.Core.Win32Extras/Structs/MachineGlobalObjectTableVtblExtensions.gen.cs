@@ -85,40 +85,40 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, char* identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] nint* identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifier, @object, token);
+        ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifier, @object, token);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, char* identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] nint* identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (MachineGlobalObjectTableRegistrationToken** tokenPtr = &token)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifier, @object, tokenPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifier, @object, tokenPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, char* identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] nint* identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.IUnknown* @objectPtr = &@object)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifier, @objectPtr, token);
+            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifier, @objectPtr, token);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, char* identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] nint* identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -126,66 +126,66 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
         {
             fixed (MachineGlobalObjectTableRegistrationToken** tokenPtr = &token)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifier, @objectPtr, tokenPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifier, @objectPtr, tokenPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, ref char identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] in nint identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* identifierPtr = &identifier)
+        fixed (nint* identifierPtr = &identifier)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifierPtr, @object, token);
+            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifierPtr, @object, token);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, ref char identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] in nint identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* identifierPtr = &identifier)
+        fixed (nint* identifierPtr = &identifier)
         {
             fixed (MachineGlobalObjectTableRegistrationToken** tokenPtr = &token)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifierPtr, @object, tokenPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifierPtr, @object, tokenPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, ref char identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] in nint identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* identifierPtr = &identifier)
+        fixed (nint* identifierPtr = &identifier)
         {
             fixed (Silk.NET.Core.Native.IUnknown* @objectPtr = &@object)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifierPtr, @objectPtr, token);
+                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifierPtr, @objectPtr, token);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, ref char identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] in nint identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* identifierPtr = &identifier)
+        fixed (nint* identifierPtr = &identifier)
         {
             fixed (Silk.NET.Core.Native.IUnknown* @objectPtr = &@object)
             {
                 fixed (MachineGlobalObjectTableRegistrationToken** tokenPtr = &token)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifierPtr, @objectPtr, tokenPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifierPtr, @objectPtr, tokenPtr);
                 }
             }
         }
@@ -193,75 +193,19 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var identifierPtr = (byte*) SilkMarshal.StringToPtr(identifier, NativeStringEncoding.LPWStr);
-        ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, byte*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifierPtr, @object, token);
-        SilkMarshal.Free((nint)identifierPtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var identifierPtr = (byte*) SilkMarshal.StringToPtr(identifier, NativeStringEncoding.LPWStr);
-        fixed (MachineGlobalObjectTableRegistrationToken** tokenPtr = &token)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, byte*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifierPtr, @object, tokenPtr);
-        }
-        SilkMarshal.Free((nint)identifierPtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var identifierPtr = (byte*) SilkMarshal.StringToPtr(identifier, NativeStringEncoding.LPWStr);
-        fixed (Silk.NET.Core.Native.IUnknown* @objectPtr = &@object)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, byte*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifierPtr, @objectPtr, token);
-        }
-        SilkMarshal.Free((nint)identifierPtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var identifierPtr = (byte*) SilkMarshal.StringToPtr(identifier, NativeStringEncoding.LPWStr);
-        fixed (Silk.NET.Core.Native.IUnknown* @objectPtr = &@object)
-        {
-            fixed (MachineGlobalObjectTableRegistrationToken** tokenPtr = &token)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, byte*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsid, identifierPtr, @objectPtr, tokenPtr);
-            }
-        }
-        SilkMarshal.Free((nint)identifierPtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, char* identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] nint* identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* clsidPtr = &clsid)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifier, @object, token);
+            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifier, @object, token);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, char* identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] nint* identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -269,14 +213,14 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
         {
             fixed (MachineGlobalObjectTableRegistrationToken** tokenPtr = &token)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifier, @object, tokenPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifier, @object, tokenPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, char* identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] nint* identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -284,14 +228,14 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
         {
             fixed (Silk.NET.Core.Native.IUnknown* @objectPtr = &@object)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifier, @objectPtr, token);
+                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifier, @objectPtr, token);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, char* identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] nint* identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -301,7 +245,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
             {
                 fixed (MachineGlobalObjectTableRegistrationToken** tokenPtr = &token)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifier, @objectPtr, tokenPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifier, @objectPtr, tokenPtr);
                 }
             }
         }
@@ -309,32 +253,32 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, ref char identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] in nint identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* clsidPtr = &clsid)
         {
-            fixed (char* identifierPtr = &identifier)
+            fixed (nint* identifierPtr = &identifier)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifierPtr, @object, token);
+                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifierPtr, @object, token);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, ref char identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] in nint identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* clsidPtr = &clsid)
         {
-            fixed (char* identifierPtr = &identifier)
+            fixed (nint* identifierPtr = &identifier)
             {
                 fixed (MachineGlobalObjectTableRegistrationToken** tokenPtr = &token)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifierPtr, @object, tokenPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifierPtr, @object, tokenPtr);
                 }
             }
         }
@@ -342,17 +286,17 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, ref char identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] in nint identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* clsidPtr = &clsid)
         {
-            fixed (char* identifierPtr = &identifier)
+            fixed (nint* identifierPtr = &identifier)
             {
                 fixed (Silk.NET.Core.Native.IUnknown* @objectPtr = &@object)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifierPtr, @objectPtr, token);
+                    ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifierPtr, @objectPtr, token);
                 }
             }
         }
@@ -360,19 +304,19 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, ref char identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] in nint identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* clsidPtr = &clsid)
         {
-            fixed (char* identifierPtr = &identifier)
+            fixed (nint* identifierPtr = &identifier)
             {
                 fixed (Silk.NET.Core.Native.IUnknown* @objectPtr = &@object)
                 {
                     fixed (MachineGlobalObjectTableRegistrationToken** tokenPtr = &token)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifierPtr, @objectPtr, tokenPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifierPtr, @objectPtr, tokenPtr);
                     }
                 }
             }
@@ -381,108 +325,40 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] nint* identifier, Guid* riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Guid* clsidPtr = &clsid)
-        {
-        var identifierPtr = (byte*) SilkMarshal.StringToPtr(identifier, NativeStringEncoding.LPWStr);
-            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, byte*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifierPtr, @object, token);
-        SilkMarshal.Free((nint)identifierPtr);
-        }
+        ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifier, riid, ppv);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* clsidPtr = &clsid)
-        {
-        var identifierPtr = (byte*) SilkMarshal.StringToPtr(identifier, NativeStringEncoding.LPWStr);
-            fixed (MachineGlobalObjectTableRegistrationToken** tokenPtr = &token)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, byte*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifierPtr, @object, tokenPtr);
-            }
-        SilkMarshal.Free((nint)identifierPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* clsidPtr = &clsid)
-        {
-        var identifierPtr = (byte*) SilkMarshal.StringToPtr(identifier, NativeStringEncoding.LPWStr);
-            fixed (Silk.NET.Core.Native.IUnknown* @objectPtr = &@object)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, byte*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifierPtr, @objectPtr, token);
-            }
-        SilkMarshal.Free((nint)identifierPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* clsidPtr = &clsid)
-        {
-        var identifierPtr = (byte*) SilkMarshal.StringToPtr(identifier, NativeStringEncoding.LPWStr);
-            fixed (Silk.NET.Core.Native.IUnknown* @objectPtr = &@object)
-            {
-                fixed (MachineGlobalObjectTableRegistrationToken** tokenPtr = &token)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, byte*, Silk.NET.Core.Native.IUnknown*, MachineGlobalObjectTableRegistrationToken**, int>)@this->LpVtbl[3])(@this, clsidPtr, identifierPtr, @objectPtr, tokenPtr);
-                }
-            }
-        SilkMarshal.Free((nint)identifierPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, char* identifier, Guid* riid, void** ppv)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifier, riid, ppv);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, char* identifier, Guid* riid, ref void* ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] nint* identifier, Guid* riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppvPtr = &ppv)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifier, riid, ppvPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifier, riid, ppvPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, char* identifier, ref Guid riid, void** ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] nint* identifier, ref Guid riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifier, riidPtr, ppv);
+            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifier, riidPtr, ppv);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, char* identifier, ref Guid riid, ref void* ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] nint* identifier, ref Guid riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -490,66 +366,66 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
         {
             fixed (void** ppvPtr = &ppv)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifier, riidPtr, ppvPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifier, riidPtr, ppvPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, ref char identifier, Guid* riid, void** ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] in nint identifier, Guid* riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* identifierPtr = &identifier)
+        fixed (nint* identifierPtr = &identifier)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifierPtr, riid, ppv);
+            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifierPtr, riid, ppv);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, ref char identifier, Guid* riid, ref void* ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] in nint identifier, Guid* riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* identifierPtr = &identifier)
+        fixed (nint* identifierPtr = &identifier)
         {
             fixed (void** ppvPtr = &ppv)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifierPtr, riid, ppvPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifierPtr, riid, ppvPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, ref char identifier, ref Guid riid, void** ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] in nint identifier, ref Guid riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* identifierPtr = &identifier)
+        fixed (nint* identifierPtr = &identifier)
         {
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifierPtr, riidPtr, ppv);
+                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifierPtr, riidPtr, ppv);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, ref char identifier, ref Guid riid, ref void* ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] in nint identifier, ref Guid riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* identifierPtr = &identifier)
+        fixed (nint* identifierPtr = &identifier)
         {
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvPtr = &ppv)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifierPtr, riidPtr, ppvPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifierPtr, riidPtr, ppvPtr);
                 }
             }
         }
@@ -557,75 +433,19 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Guid* riid, void** ppv)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var identifierPtr = (byte*) SilkMarshal.StringToPtr(identifier, NativeStringEncoding.LPWStr);
-        ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, byte*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifierPtr, riid, ppv);
-        SilkMarshal.Free((nint)identifierPtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Guid* riid, ref void* ppv)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var identifierPtr = (byte*) SilkMarshal.StringToPtr(identifier, NativeStringEncoding.LPWStr);
-        fixed (void** ppvPtr = &ppv)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, byte*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifierPtr, riid, ppvPtr);
-        }
-        SilkMarshal.Free((nint)identifierPtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Guid riid, void** ppv)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var identifierPtr = (byte*) SilkMarshal.StringToPtr(identifier, NativeStringEncoding.LPWStr);
-        fixed (Guid* riidPtr = &riid)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, byte*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifierPtr, riidPtr, ppv);
-        }
-        SilkMarshal.Free((nint)identifierPtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Guid riid, ref void* ppv)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var identifierPtr = (byte*) SilkMarshal.StringToPtr(identifier, NativeStringEncoding.LPWStr);
-        fixed (Guid* riidPtr = &riid)
-        {
-            fixed (void** ppvPtr = &ppv)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, byte*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsid, identifierPtr, riidPtr, ppvPtr);
-            }
-        }
-        SilkMarshal.Free((nint)identifierPtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, char* identifier, Guid* riid, void** ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] nint* identifier, Guid* riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* clsidPtr = &clsid)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifier, riid, ppv);
+            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifier, riid, ppv);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, char* identifier, Guid* riid, ref void* ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] nint* identifier, Guid* riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -633,14 +453,14 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
         {
             fixed (void** ppvPtr = &ppv)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifier, riid, ppvPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifier, riid, ppvPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, char* identifier, ref Guid riid, void** ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] nint* identifier, ref Guid riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -648,14 +468,14 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
         {
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifier, riidPtr, ppv);
+                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifier, riidPtr, ppv);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, char* identifier, ref Guid riid, ref void* ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] nint* identifier, ref Guid riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -665,7 +485,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
             {
                 fixed (void** ppvPtr = &ppv)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifier, riidPtr, ppvPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifier, riidPtr, ppvPtr);
                 }
             }
         }
@@ -673,32 +493,32 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, ref char identifier, Guid* riid, void** ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] in nint identifier, Guid* riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* clsidPtr = &clsid)
         {
-            fixed (char* identifierPtr = &identifier)
+            fixed (nint* identifierPtr = &identifier)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifierPtr, riid, ppv);
+                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifierPtr, riid, ppv);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, ref char identifier, Guid* riid, ref void* ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] in nint identifier, Guid* riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* clsidPtr = &clsid)
         {
-            fixed (char* identifierPtr = &identifier)
+            fixed (nint* identifierPtr = &identifier)
             {
                 fixed (void** ppvPtr = &ppv)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifierPtr, riid, ppvPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifierPtr, riid, ppvPtr);
                 }
             }
         }
@@ -706,17 +526,17 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, ref char identifier, ref Guid riid, void** ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] in nint identifier, ref Guid riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* clsidPtr = &clsid)
         {
-            fixed (char* identifierPtr = &identifier)
+            fixed (nint* identifierPtr = &identifier)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifierPtr, riidPtr, ppv);
+                    ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifierPtr, riidPtr, ppv);
                 }
             }
         }
@@ -724,90 +544,22 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, ref char identifier, ref Guid riid, ref void* ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] in nint identifier, ref Guid riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* clsidPtr = &clsid)
         {
-            fixed (char* identifierPtr = &identifier)
+            fixed (nint* identifierPtr = &identifier)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
                     fixed (void** ppvPtr = &ppv)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, char*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifierPtr, riidPtr, ppvPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, nint*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifierPtr, riidPtr, ppvPtr);
                     }
                 }
             }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Guid* riid, void** ppv)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* clsidPtr = &clsid)
-        {
-        var identifierPtr = (byte*) SilkMarshal.StringToPtr(identifier, NativeStringEncoding.LPWStr);
-            ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, byte*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifierPtr, riid, ppv);
-        SilkMarshal.Free((nint)identifierPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Guid* riid, ref void* ppv)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* clsidPtr = &clsid)
-        {
-        var identifierPtr = (byte*) SilkMarshal.StringToPtr(identifier, NativeStringEncoding.LPWStr);
-            fixed (void** ppvPtr = &ppv)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, byte*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifierPtr, riid, ppvPtr);
-            }
-        SilkMarshal.Free((nint)identifierPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Guid riid, void** ppv)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* clsidPtr = &clsid)
-        {
-        var identifierPtr = (byte*) SilkMarshal.StringToPtr(identifier, NativeStringEncoding.LPWStr);
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, byte*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifierPtr, riidPtr, ppv);
-            }
-        SilkMarshal.Free((nint)identifierPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Guid riid, ref void* ppv)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Guid* clsidPtr = &clsid)
-        {
-        var identifierPtr = (byte*) SilkMarshal.StringToPtr(identifier, NativeStringEncoding.LPWStr);
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvPtr = &ppv)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IMachineGlobalObjectTable*, Guid*, byte*, Guid*, void**, int>)@this->LpVtbl[4])(@this, clsidPtr, identifierPtr, riidPtr, ppvPtr);
-                }
-            }
-        SilkMarshal.Free((nint)identifierPtr);
         }
         return ret;
     }
@@ -859,7 +611,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, char* identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] nint* identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -867,7 +619,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, char* identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] nint* identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -875,7 +627,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, char* identifier, Span<Silk.NET.Core.Native.IUnknown> @object, MachineGlobalObjectTableRegistrationToken** token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] nint* identifier, Span<Silk.NET.Core.Native.IUnknown> @object, MachineGlobalObjectTableRegistrationToken** token)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -883,7 +635,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, char* identifier, Span<Silk.NET.Core.Native.IUnknown> @object, ref MachineGlobalObjectTableRegistrationToken* token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] nint* identifier, Span<Silk.NET.Core.Native.IUnknown> @object, ref MachineGlobalObjectTableRegistrationToken* token)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -891,87 +643,55 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, Span<char> identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] ReadOnlySpan<nint> identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterObject(clsid, ref identifier.GetPinnableReference(), @object, token);
+        return @this->RegisterObject(clsid, in identifier.GetPinnableReference(), @object, token);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, ref char identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] in nint identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->RegisterObject(clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
+        return @this->RegisterObject(clsid, in identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, Span<char> identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] ReadOnlySpan<nint> identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterObject(clsid, ref identifier.GetPinnableReference(), @object, ref token);
+        return @this->RegisterObject(clsid, in identifier.GetPinnableReference(), @object, ref token);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, ref char identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] in nint identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->RegisterObject(clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
+        return @this->RegisterObject(clsid, in identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, Span<char> identifier, Span<Silk.NET.Core.Native.IUnknown> @object, MachineGlobalObjectTableRegistrationToken** token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] ReadOnlySpan<nint> identifier, Span<Silk.NET.Core.Native.IUnknown> @object, MachineGlobalObjectTableRegistrationToken** token)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterObject(clsid, ref identifier.GetPinnableReference(), ref @object.GetPinnableReference(), token);
+        return @this->RegisterObject(clsid, in identifier.GetPinnableReference(), ref @object.GetPinnableReference(), token);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, Span<char> identifier, Span<Silk.NET.Core.Native.IUnknown> @object, ref MachineGlobalObjectTableRegistrationToken* token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] ReadOnlySpan<nint> identifier, Span<Silk.NET.Core.Native.IUnknown> @object, ref MachineGlobalObjectTableRegistrationToken* token)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterObject(clsid, ref identifier.GetPinnableReference(), ref @object.GetPinnableReference(), ref token);
+        return @this->RegisterObject(clsid, in identifier.GetPinnableReference(), ref @object.GetPinnableReference(), ref token);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->RegisterObject(clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->RegisterObject(clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Span<Silk.NET.Core.Native.IUnknown> @object, MachineGlobalObjectTableRegistrationToken** token)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->RegisterObject(clsid, identifier, ref @object.GetPinnableReference(), token);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Span<Silk.NET.Core.Native.IUnknown> @object, ref MachineGlobalObjectTableRegistrationToken* token)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->RegisterObject(clsid, identifier, ref @object.GetPinnableReference(), ref token);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, char* identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [Flow(FlowDirection.In)] nint* identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -979,7 +699,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, char* identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] nint* identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -987,7 +707,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, char* identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [Flow(FlowDirection.In)] nint* identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -995,7 +715,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, char* identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] nint* identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1003,7 +723,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, char* identifier, Span<Silk.NET.Core.Native.IUnknown> @object, MachineGlobalObjectTableRegistrationToken** token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [Flow(FlowDirection.In)] nint* identifier, Span<Silk.NET.Core.Native.IUnknown> @object, MachineGlobalObjectTableRegistrationToken** token)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1011,7 +731,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, char* identifier, Span<Silk.NET.Core.Native.IUnknown> @object, ref MachineGlobalObjectTableRegistrationToken* token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [Flow(FlowDirection.In)] nint* identifier, Span<Silk.NET.Core.Native.IUnknown> @object, ref MachineGlobalObjectTableRegistrationToken* token)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1019,103 +739,55 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, Span<char> identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [Flow(FlowDirection.In)] ReadOnlySpan<nint> identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterObject(ref clsid.GetPinnableReference(), ref identifier.GetPinnableReference(), @object, token);
+        return @this->RegisterObject(ref clsid.GetPinnableReference(), in identifier.GetPinnableReference(), @object, token);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, ref char identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] in nint identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->RegisterObject(ref clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
+        return @this->RegisterObject(ref clsid, in identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, Span<char> identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [Flow(FlowDirection.In)] ReadOnlySpan<nint> identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterObject(ref clsid.GetPinnableReference(), ref identifier.GetPinnableReference(), @object, ref token);
+        return @this->RegisterObject(ref clsid.GetPinnableReference(), in identifier.GetPinnableReference(), @object, ref token);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, ref char identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] in nint identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->RegisterObject(ref clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
+        return @this->RegisterObject(ref clsid, in identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, Span<char> identifier, Span<Silk.NET.Core.Native.IUnknown> @object, MachineGlobalObjectTableRegistrationToken** token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [Flow(FlowDirection.In)] ReadOnlySpan<nint> identifier, Span<Silk.NET.Core.Native.IUnknown> @object, MachineGlobalObjectTableRegistrationToken** token)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterObject(ref clsid.GetPinnableReference(), ref identifier.GetPinnableReference(), ref @object.GetPinnableReference(), token);
+        return @this->RegisterObject(ref clsid.GetPinnableReference(), in identifier.GetPinnableReference(), ref @object.GetPinnableReference(), token);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, Span<char> identifier, Span<Silk.NET.Core.Native.IUnknown> @object, ref MachineGlobalObjectTableRegistrationToken* token)
+    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [Flow(FlowDirection.In)] ReadOnlySpan<nint> identifier, Span<Silk.NET.Core.Native.IUnknown> @object, ref MachineGlobalObjectTableRegistrationToken* token)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterObject(ref clsid.GetPinnableReference(), ref identifier.GetPinnableReference(), ref @object.GetPinnableReference(), ref token);
+        return @this->RegisterObject(ref clsid.GetPinnableReference(), in identifier.GetPinnableReference(), ref @object.GetPinnableReference(), ref token);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->RegisterObject(ref clsid.GetPinnableReference(), identifier, @object, token);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->RegisterObject(ref clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->RegisterObject(ref clsid.GetPinnableReference(), identifier, @object, ref token);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->RegisterObject(ref clsid, identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Span<Silk.NET.Core.Native.IUnknown> @object, MachineGlobalObjectTableRegistrationToken** token)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->RegisterObject(ref clsid.GetPinnableReference(), identifier, ref @object.GetPinnableReference(), token);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int RegisterObject(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Span<Silk.NET.Core.Native.IUnknown> @object, ref MachineGlobalObjectTableRegistrationToken* token)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->RegisterObject(ref clsid.GetPinnableReference(), identifier, ref @object.GetPinnableReference(), ref token);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, char* identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] nint* identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1124,7 +796,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, char* identifier, Span<Guid> riid, void** ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] nint* identifier, Span<Guid> riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1132,7 +804,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, char* identifier, Span<Guid> riid, ref void* ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] nint* identifier, Span<Guid> riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1140,73 +812,48 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, Span<char> identifier, Guid* riid, void** ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] ReadOnlySpan<nint> identifier, Guid* riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetObjectA(clsid, ref identifier.GetPinnableReference(), riid, ppv);
+        return @this->GetObjectA(clsid, in identifier.GetPinnableReference(), riid, ppv);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, ref char identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] in nint identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppv = default;
-        return @this->GetObjectA(clsid, ref identifier, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
+        return @this->GetObjectA(clsid, in identifier, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, Span<char> identifier, Guid* riid, ref void* ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] ReadOnlySpan<nint> identifier, Guid* riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetObjectA(clsid, ref identifier.GetPinnableReference(), riid, ref ppv);
+        return @this->GetObjectA(clsid, in identifier.GetPinnableReference(), riid, ref ppv);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, Span<char> identifier, Span<Guid> riid, void** ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] ReadOnlySpan<nint> identifier, Span<Guid> riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetObjectA(clsid, ref identifier.GetPinnableReference(), ref riid.GetPinnableReference(), ppv);
+        return @this->GetObjectA(clsid, in identifier.GetPinnableReference(), ref riid.GetPinnableReference(), ppv);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, Span<char> identifier, Span<Guid> riid, ref void* ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] ReadOnlySpan<nint> identifier, Span<Guid> riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetObjectA(clsid, ref identifier.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppv);
+        return @this->GetObjectA(clsid, in identifier.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppv);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        ppv = default;
-        return @this->GetObjectA(clsid, identifier, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Span<Guid> riid, void** ppv)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetObjectA(clsid, identifier, ref riid.GetPinnableReference(), ppv);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Span<Guid> riid, ref void* ppv)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetObjectA(clsid, identifier, ref riid.GetPinnableReference(), ref ppv);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, char* identifier, Guid* riid, void** ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [Flow(FlowDirection.In)] nint* identifier, Guid* riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1214,7 +861,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, char* identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] nint* identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1223,7 +870,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, char* identifier, Guid* riid, ref void* ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [Flow(FlowDirection.In)] nint* identifier, Guid* riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1231,7 +878,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, char* identifier, Span<Guid> riid, void** ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [Flow(FlowDirection.In)] nint* identifier, Span<Guid> riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1239,7 +886,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, char* identifier, Span<Guid> riid, ref void* ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [Flow(FlowDirection.In)] nint* identifier, Span<Guid> riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1247,85 +894,44 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, Span<char> identifier, Guid* riid, void** ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [Flow(FlowDirection.In)] ReadOnlySpan<nint> identifier, Guid* riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetObjectA(ref clsid.GetPinnableReference(), ref identifier.GetPinnableReference(), riid, ppv);
+        return @this->GetObjectA(ref clsid.GetPinnableReference(), in identifier.GetPinnableReference(), riid, ppv);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, ref char identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] in nint identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppv = default;
-        return @this->GetObjectA(ref clsid, ref identifier, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
+        return @this->GetObjectA(ref clsid, in identifier, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, Span<char> identifier, Guid* riid, ref void* ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [Flow(FlowDirection.In)] ReadOnlySpan<nint> identifier, Guid* riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetObjectA(ref clsid.GetPinnableReference(), ref identifier.GetPinnableReference(), riid, ref ppv);
+        return @this->GetObjectA(ref clsid.GetPinnableReference(), in identifier.GetPinnableReference(), riid, ref ppv);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, Span<char> identifier, Span<Guid> riid, void** ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [Flow(FlowDirection.In)] ReadOnlySpan<nint> identifier, Span<Guid> riid, void** ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetObjectA(ref clsid.GetPinnableReference(), ref identifier.GetPinnableReference(), ref riid.GetPinnableReference(), ppv);
+        return @this->GetObjectA(ref clsid.GetPinnableReference(), in identifier.GetPinnableReference(), ref riid.GetPinnableReference(), ppv);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, Span<char> identifier, Span<Guid> riid, ref void* ppv)
+    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [Flow(FlowDirection.In)] ReadOnlySpan<nint> identifier, Span<Guid> riid, ref void* ppv)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetObjectA(ref clsid.GetPinnableReference(), ref identifier.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppv);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Guid* riid, void** ppv)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetObjectA(ref clsid.GetPinnableReference(), identifier, riid, ppv);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        ppv = default;
-        return @this->GetObjectA(ref clsid, identifier, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Guid* riid, ref void* ppv)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetObjectA(ref clsid.GetPinnableReference(), identifier, riid, ref ppv);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Span<Guid> riid, void** ppv)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetObjectA(ref clsid.GetPinnableReference(), identifier, ref riid.GetPinnableReference(), ppv);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetObjectA(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Span<Guid> clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Span<Guid> riid, ref void* ppv)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetObjectA(ref clsid.GetPinnableReference(), identifier, ref riid.GetPinnableReference(), ref ppv);
+        return @this->GetObjectA(ref clsid.GetPinnableReference(), in identifier.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppv);
     }
 
     /// <summary>To be documented.</summary>
@@ -1346,7 +952,7 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, char* identifier) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] nint* identifier) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -1355,25 +961,16 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, ref char identifier) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [Flow(FlowDirection.In)] in nint identifier) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->GetObjectA(clsid, ref identifier, out ComPtr<TI0> silkRet));
+        SilkMarshal.ThrowHResult(@this->GetObjectA(clsid, in identifier, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->GetObjectA(clsid, identifier, out ComPtr<TI0> silkRet));
-        return silkRet;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, char* identifier) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] nint* identifier) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -1382,20 +979,11 @@ public unsafe static class MachineGlobalObjectTableVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, ref char identifier) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [Flow(FlowDirection.In)] in nint identifier) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->GetObjectA(ref clsid, ref identifier, out ComPtr<TI0> silkRet));
-        return silkRet;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> GetObjectA<TI0>(this ComPtr<IMachineGlobalObjectTable> thisVtbl, ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->GetObjectA(ref clsid, identifier, out ComPtr<TI0> silkRet));
+        SilkMarshal.ThrowHResult(@this->GetObjectA(ref clsid, in identifier, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 

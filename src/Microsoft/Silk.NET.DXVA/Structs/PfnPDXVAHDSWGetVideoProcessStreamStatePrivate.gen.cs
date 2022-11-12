@@ -19,10 +19,10 @@ namespace Silk.NET.DXVA
     public unsafe readonly struct PfnPDXVAHDSWGetVideoProcessStreamStatePrivate : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<void*, uint, HDStreamStatePrivateData*, int> Handle => (delegate* unmanaged[Cdecl]<void*, uint, HDStreamStatePrivateData*, int>) _handle;
+        public delegate* unmanaged[Cdecl]<nint*, uint, HDStreamStatePrivateData*, int> Handle => (delegate* unmanaged[Cdecl]<nint*, uint, HDStreamStatePrivateData*, int>) _handle;
         public PfnPDXVAHDSWGetVideoProcessStreamStatePrivate
         (
-            delegate* unmanaged[Cdecl]<void*, uint, HDStreamStatePrivateData*, int> ptr
+            delegate* unmanaged[Cdecl]<nint*, uint, HDStreamStatePrivateData*, int> ptr
         ) => _handle = ptr;
 
         public PfnPDXVAHDSWGetVideoProcessStreamStatePrivate
@@ -35,7 +35,7 @@ namespace Silk.NET.DXVA
 
         public static implicit operator nint(PfnPDXVAHDSWGetVideoProcessStreamStatePrivate pfn) => (nint) pfn.Handle;
         public static explicit operator PfnPDXVAHDSWGetVideoProcessStreamStatePrivate(nint pfn)
-            => new PfnPDXVAHDSWGetVideoProcessStreamStatePrivate((delegate* unmanaged[Cdecl]<void*, uint, HDStreamStatePrivateData*, int>) pfn);
+            => new PfnPDXVAHDSWGetVideoProcessStreamStatePrivate((delegate* unmanaged[Cdecl]<nint*, uint, HDStreamStatePrivateData*, int>) pfn);
 
         public static implicit operator PfnPDXVAHDSWGetVideoProcessStreamStatePrivate(PDXVAHDSWGetVideoProcessStreamStatePrivate proc)
             => new PfnPDXVAHDSWGetVideoProcessStreamStatePrivate(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.DXVA
         public static explicit operator PDXVAHDSWGetVideoProcessStreamStatePrivate(PfnPDXVAHDSWGetVideoProcessStreamStatePrivate pfn)
             => SilkMarshal.PtrToDelegate<PDXVAHDSWGetVideoProcessStreamStatePrivate>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<void*, uint, HDStreamStatePrivateData*, int>(PfnPDXVAHDSWGetVideoProcessStreamStatePrivate pfn) => pfn.Handle;
-        public static implicit operator PfnPDXVAHDSWGetVideoProcessStreamStatePrivate(delegate* unmanaged[Cdecl]<void*, uint, HDStreamStatePrivateData*, int> ptr) => new PfnPDXVAHDSWGetVideoProcessStreamStatePrivate(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<nint*, uint, HDStreamStatePrivateData*, int>(PfnPDXVAHDSWGetVideoProcessStreamStatePrivate pfn) => pfn.Handle;
+        public static implicit operator PfnPDXVAHDSWGetVideoProcessStreamStatePrivate(delegate* unmanaged[Cdecl]<nint*, uint, HDStreamStatePrivateData*, int> ptr) => new PfnPDXVAHDSWGetVideoProcessStreamStatePrivate(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate int PDXVAHDSWGetVideoProcessStreamStatePrivate(void* arg0, uint arg1, HDStreamStatePrivateData* arg2);
+    public unsafe delegate int PDXVAHDSWGetVideoProcessStreamStatePrivate(nint* arg0, uint arg1, HDStreamStatePrivateData* arg2);
 }
 

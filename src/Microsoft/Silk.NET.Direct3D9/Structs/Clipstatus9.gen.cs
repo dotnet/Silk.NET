@@ -21,8 +21,8 @@ namespace Silk.NET.Direct3D9
     {
         public Clipstatus9
         (
-            uint? clipUnion = null,
-            uint? clipIntersection = null
+            int? clipUnion = null,
+            int? clipIntersection = null
         ) : this()
         {
             if (clipUnion is not null)
@@ -40,11 +40,11 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "ClipUnion")]
-        public uint ClipUnion;
+        public int ClipUnion;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "ClipIntersection")]
-        public uint ClipIntersection;
+        public int ClipIntersection;
     }
 }

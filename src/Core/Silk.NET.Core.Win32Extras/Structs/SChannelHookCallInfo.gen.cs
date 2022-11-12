@@ -22,10 +22,10 @@ namespace Silk.NET.Core.Win32Extras
         public SChannelHookCallInfo
         (
             Guid? iid = null,
-            uint? cbSize = null,
+            int? cbSize = null,
             Guid? uCausality = null,
-            uint? dwServerPid = null,
-            uint? iMethod = null,
+            int? dwServerPid = null,
+            int? iMethod = null,
             void* pObject = null
         ) : this()
         {
@@ -69,7 +69,7 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "cbSize")]
-        public uint CbSize;
+        public int CbSize;
 
         [NativeName("Type", "GUID")]
         [NativeName("Type.Name", "GUID")]
@@ -79,12 +79,12 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwServerPid")]
-        public uint DwServerPid;
+        public int DwServerPid;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "iMethod")]
-        public uint IMethod;
+        public int IMethod;
 
         [NativeName("Type", "void *")]
         [NativeName("Type.Name", "void *")]

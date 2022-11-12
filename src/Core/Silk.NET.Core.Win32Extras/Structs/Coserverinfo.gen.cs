@@ -22,10 +22,10 @@ namespace Silk.NET.Core.Win32Extras
     {
         public Coserverinfo
         (
-            uint? dwReserved1 = null,
+            int? dwReserved1 = null,
             char* pwszName = null,
             Coauthinfo* pAuthInfo = null,
-            uint? dwReserved2 = null
+            int? dwReserved2 = null
         ) : this()
         {
             if (dwReserved1 is not null)
@@ -53,7 +53,7 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwReserved1")]
-        public uint DwReserved1;
+        public int DwReserved1;
 
         [NativeName("Type", "LPWSTR")]
         [NativeName("Type.Name", "LPWSTR")]
@@ -68,6 +68,6 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwReserved2")]
-        public uint DwReserved2;
+        public int DwReserved2;
     }
 }

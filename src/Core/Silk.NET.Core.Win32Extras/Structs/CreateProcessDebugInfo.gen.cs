@@ -21,15 +21,15 @@ namespace Silk.NET.Core.Win32Extras
     {
         public CreateProcessDebugInfo
         (
-            void* hFile = null,
-            void* hProcess = null,
-            void* hThread = null,
-            void* lpBaseOfImage = null,
-            uint? dwDebugInfoFileOffset = null,
-            uint? nDebugInfoSize = null,
-            void* lpThreadLocalBase = null,
+            nint* hFile = null,
+            nint* hProcess = null,
+            nint* hThread = null,
+            nint* lpBaseOfImage = null,
+            int? dwDebugInfoFileOffset = null,
+            int? nDebugInfoSize = null,
+            nint* lpThreadLocalBase = null,
             PfnPthreadStartRoutine? lpStartAddress = null,
-            void* lpImageName = null,
+            nint* lpImageName = null,
             ushort? fUnicode = null
         ) : this()
         {
@@ -88,37 +88,37 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "hFile")]
-        public void* HFile;
+        public nint* HFile;
 
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "hProcess")]
-        public void* HProcess;
+        public nint* HProcess;
 
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "hThread")]
-        public void* HThread;
+        public nint* HThread;
 
         [NativeName("Type", "LPVOID")]
         [NativeName("Type.Name", "LPVOID")]
         [NativeName("Name", "lpBaseOfImage")]
-        public void* LpBaseOfImage;
+        public nint* LpBaseOfImage;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwDebugInfoFileOffset")]
-        public uint DwDebugInfoFileOffset;
+        public int DwDebugInfoFileOffset;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "nDebugInfoSize")]
-        public uint NDebugInfoSize;
+        public int NDebugInfoSize;
 
         [NativeName("Type", "LPVOID")]
         [NativeName("Type.Name", "LPVOID")]
         [NativeName("Name", "lpThreadLocalBase")]
-        public void* LpThreadLocalBase;
+        public nint* LpThreadLocalBase;
 
         [NativeName("Type", "LPTHREAD_START_ROUTINE")]
         [NativeName("Type.Name", "LPTHREAD_START_ROUTINE")]
@@ -128,7 +128,7 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "LPVOID")]
         [NativeName("Type.Name", "LPVOID")]
         [NativeName("Name", "lpImageName")]
-        public void* LpImageName;
+        public nint* LpImageName;
 
         [NativeName("Type", "WORD")]
         [NativeName("Type.Name", "WORD")]

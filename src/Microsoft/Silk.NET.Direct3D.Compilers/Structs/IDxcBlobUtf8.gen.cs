@@ -117,11 +117,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void* GetBufferPointer()
+        public readonly unsafe nint* GetBufferPointer()
         {
             var @this = (IDxcBlobUtf8*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            void* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcBlobUtf8*, void*>)@this->LpVtbl[3])(@this);
+            nint* ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcBlobUtf8*, nint*>)@this->LpVtbl[3])(@this);
             return ret;
         }
 
@@ -183,21 +183,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe byte* GetStringPointer()
+        public readonly unsafe string* GetStringPointer()
         {
             var @this = (IDxcBlobUtf8*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            byte* ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcBlobUtf8*, byte*>)@this->LpVtbl[6])(@this);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)]
-        public readonly string GetStringPointerS()
-        {
-            var @this = (IDxcBlobUtf8*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            string ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDxcBlobUtf8*, string>)@this->LpVtbl[6])(@this);
+            string* ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcBlobUtf8*, string*>)@this->LpVtbl[6])(@this);
             return ret;
         }
 

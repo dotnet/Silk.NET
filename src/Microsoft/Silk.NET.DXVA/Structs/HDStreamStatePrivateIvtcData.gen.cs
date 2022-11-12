@@ -21,7 +21,7 @@ namespace Silk.NET.DXVA
     {
         public HDStreamStatePrivateIvtcData
         (
-            int? enable = null,
+            bool? enable = null,
             uint? iTelecineFlags = null,
             uint? frames = null,
             uint? inputField = null
@@ -52,7 +52,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Enable")]
-        public int Enable;
+        public bool Enable;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

@@ -217,18 +217,18 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetCursorPosition(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int X, int Y, uint Flags)
+    public static void SetCursorPosition(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int X, int Y, int Flags)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, int, uint, void>)@this->LpVtbl[11])(@this, X, Y, Flags);
+        ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, int, int, void>)@this->LpVtbl[11])(@this, X, Y, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static int ShowCursor(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int bShow)
+    public static bool ShowCursor(this ComPtr<IDirect3DDevice9Ex> thisVtbl, bool bShow)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, int>)@this->LpVtbl[12])(@this, bShow);
+        bool ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, bool, bool>)@this->LpVtbl[12])(@this, bShow);
         return ret;
     }
 
@@ -332,7 +332,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Silk.NET.Maths.Box2D<int>* pSourceRect, Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion)
+    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -341,7 +341,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Silk.NET.Maths.Box2D<int>* pSourceRect, Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, ref RGNData pDirtyRegion)
+    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] in RGNData pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -353,7 +353,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Silk.NET.Maths.Box2D<int>* pSourceRect, ref Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion)
+    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -365,7 +365,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Silk.NET.Maths.Box2D<int>* pSourceRect, ref Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, ref RGNData pDirtyRegion)
+    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] in RGNData pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -380,7 +380,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref Silk.NET.Maths.Box2D<int> pSourceRect, Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion)
+    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -392,7 +392,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref Silk.NET.Maths.Box2D<int> pSourceRect, Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, ref RGNData pDirtyRegion)
+    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] in RGNData pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -407,7 +407,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref Silk.NET.Maths.Box2D<int> pSourceRect, ref Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion)
+    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -422,7 +422,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref Silk.NET.Maths.Box2D<int> pSourceRect, ref Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, ref RGNData pDirtyRegion)
+    public static int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] in RGNData pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -482,28 +482,28 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetDialogBoxMode(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int bEnableDialogs)
+    public static int SetDialogBoxMode(this ComPtr<IDirect3DDevice9Ex> thisVtbl, bool bEnableDialogs)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, int>)@this->LpVtbl[20])(@this, bEnableDialogs);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, bool, int>)@this->LpVtbl[20])(@this, bEnableDialogs);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetGammaRamp(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint iSwapChain, uint Flags, Gammaramp* pRamp)
+    public static unsafe void SetGammaRamp(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint iSwapChain, int Flags, [Flow(FlowDirection.In)] Gammaramp* pRamp)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Gammaramp*, void>)@this->LpVtbl[21])(@this, iSwapChain, Flags, pRamp);
+        ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, int, Gammaramp*, void>)@this->LpVtbl[21])(@this, iSwapChain, Flags, pRamp);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetGammaRamp(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint iSwapChain, uint Flags, ref Gammaramp pRamp)
+    public static void SetGammaRamp(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint iSwapChain, int Flags, [Flow(FlowDirection.In)] in Gammaramp pRamp)
     {
         var @this = thisVtbl.Handle;
         fixed (Gammaramp* pRampPtr = &pRamp)
         {
-            ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Gammaramp*, void>)@this->LpVtbl[21])(@this, iSwapChain, Flags, pRampPtr);
+            ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, int, Gammaramp*, void>)@this->LpVtbl[21])(@this, iSwapChain, Flags, pRampPtr);
         }
     }
 
@@ -525,40 +525,40 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Levels, uint Usage, Format Format, Pool Pool, IDirect3DTexture9** ppTexture, void** pSharedHandle)
+    public static unsafe int CreateTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Levels, int Usage, Format Format, Pool Pool, IDirect3DTexture9** ppTexture, void** pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, uint, Format, Pool, IDirect3DTexture9**, void**, int>)@this->LpVtbl[23])(@this, Width, Height, Levels, Usage, Format, Pool, ppTexture, pSharedHandle);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, int, Format, Pool, IDirect3DTexture9**, void**, int>)@this->LpVtbl[23])(@this, Width, Height, Levels, Usage, Format, Pool, ppTexture, pSharedHandle);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Levels, uint Usage, Format Format, Pool Pool, IDirect3DTexture9** ppTexture, ref void* pSharedHandle)
+    public static unsafe int CreateTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Levels, int Usage, Format Format, Pool Pool, IDirect3DTexture9** ppTexture, ref void* pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** pSharedHandlePtr = &pSharedHandle)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, uint, Format, Pool, IDirect3DTexture9**, void**, int>)@this->LpVtbl[23])(@this, Width, Height, Levels, Usage, Format, Pool, ppTexture, pSharedHandlePtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, int, Format, Pool, IDirect3DTexture9**, void**, int>)@this->LpVtbl[23])(@this, Width, Height, Levels, Usage, Format, Pool, ppTexture, pSharedHandlePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Levels, uint Usage, Format Format, Pool Pool, ref IDirect3DTexture9* ppTexture, void** pSharedHandle)
+    public static unsafe int CreateTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Levels, int Usage, Format Format, Pool Pool, ref IDirect3DTexture9* ppTexture, void** pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DTexture9** ppTexturePtr = &ppTexture)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, uint, Format, Pool, IDirect3DTexture9**, void**, int>)@this->LpVtbl[23])(@this, Width, Height, Levels, Usage, Format, Pool, ppTexturePtr, pSharedHandle);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, int, Format, Pool, IDirect3DTexture9**, void**, int>)@this->LpVtbl[23])(@this, Width, Height, Levels, Usage, Format, Pool, ppTexturePtr, pSharedHandle);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Levels, uint Usage, Format Format, Pool Pool, ref IDirect3DTexture9* ppTexture, ref void* pSharedHandle)
+    public static unsafe int CreateTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Levels, int Usage, Format Format, Pool Pool, ref IDirect3DTexture9* ppTexture, ref void* pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -566,47 +566,47 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         {
             fixed (void** pSharedHandlePtr = &pSharedHandle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, uint, Format, Pool, IDirect3DTexture9**, void**, int>)@this->LpVtbl[23])(@this, Width, Height, Levels, Usage, Format, Pool, ppTexturePtr, pSharedHandlePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, int, Format, Pool, IDirect3DTexture9**, void**, int>)@this->LpVtbl[23])(@this, Width, Height, Levels, Usage, Format, Pool, ppTexturePtr, pSharedHandlePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVolumeTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Depth, uint Levels, uint Usage, Format Format, Pool Pool, IDirect3DVolumeTexture9** ppVolumeTexture, void** pSharedHandle)
+    public static unsafe int CreateVolumeTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Depth, uint Levels, int Usage, Format Format, Pool Pool, IDirect3DVolumeTexture9** ppVolumeTexture, void** pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, uint, uint, Format, Pool, IDirect3DVolumeTexture9**, void**, int>)@this->LpVtbl[24])(@this, Width, Height, Depth, Levels, Usage, Format, Pool, ppVolumeTexture, pSharedHandle);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, uint, int, Format, Pool, IDirect3DVolumeTexture9**, void**, int>)@this->LpVtbl[24])(@this, Width, Height, Depth, Levels, Usage, Format, Pool, ppVolumeTexture, pSharedHandle);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVolumeTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Depth, uint Levels, uint Usage, Format Format, Pool Pool, IDirect3DVolumeTexture9** ppVolumeTexture, ref void* pSharedHandle)
+    public static unsafe int CreateVolumeTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Depth, uint Levels, int Usage, Format Format, Pool Pool, IDirect3DVolumeTexture9** ppVolumeTexture, ref void* pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** pSharedHandlePtr = &pSharedHandle)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, uint, uint, Format, Pool, IDirect3DVolumeTexture9**, void**, int>)@this->LpVtbl[24])(@this, Width, Height, Depth, Levels, Usage, Format, Pool, ppVolumeTexture, pSharedHandlePtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, uint, int, Format, Pool, IDirect3DVolumeTexture9**, void**, int>)@this->LpVtbl[24])(@this, Width, Height, Depth, Levels, Usage, Format, Pool, ppVolumeTexture, pSharedHandlePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVolumeTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Depth, uint Levels, uint Usage, Format Format, Pool Pool, ref IDirect3DVolumeTexture9* ppVolumeTexture, void** pSharedHandle)
+    public static unsafe int CreateVolumeTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Depth, uint Levels, int Usage, Format Format, Pool Pool, ref IDirect3DVolumeTexture9* ppVolumeTexture, void** pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DVolumeTexture9** ppVolumeTexturePtr = &ppVolumeTexture)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, uint, uint, Format, Pool, IDirect3DVolumeTexture9**, void**, int>)@this->LpVtbl[24])(@this, Width, Height, Depth, Levels, Usage, Format, Pool, ppVolumeTexturePtr, pSharedHandle);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, uint, int, Format, Pool, IDirect3DVolumeTexture9**, void**, int>)@this->LpVtbl[24])(@this, Width, Height, Depth, Levels, Usage, Format, Pool, ppVolumeTexturePtr, pSharedHandle);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVolumeTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Depth, uint Levels, uint Usage, Format Format, Pool Pool, ref IDirect3DVolumeTexture9* ppVolumeTexture, ref void* pSharedHandle)
+    public static unsafe int CreateVolumeTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Depth, uint Levels, int Usage, Format Format, Pool Pool, ref IDirect3DVolumeTexture9* ppVolumeTexture, ref void* pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -614,47 +614,47 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         {
             fixed (void** pSharedHandlePtr = &pSharedHandle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, uint, uint, Format, Pool, IDirect3DVolumeTexture9**, void**, int>)@this->LpVtbl[24])(@this, Width, Height, Depth, Levels, Usage, Format, Pool, ppVolumeTexturePtr, pSharedHandlePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, uint, int, Format, Pool, IDirect3DVolumeTexture9**, void**, int>)@this->LpVtbl[24])(@this, Width, Height, Depth, Levels, Usage, Format, Pool, ppVolumeTexturePtr, pSharedHandlePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCubeTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint EdgeLength, uint Levels, uint Usage, Format Format, Pool Pool, IDirect3DCubeTexture9** ppCubeTexture, void** pSharedHandle)
+    public static unsafe int CreateCubeTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint EdgeLength, uint Levels, int Usage, Format Format, Pool Pool, IDirect3DCubeTexture9** ppCubeTexture, void** pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, Format, Pool, IDirect3DCubeTexture9**, void**, int>)@this->LpVtbl[25])(@this, EdgeLength, Levels, Usage, Format, Pool, ppCubeTexture, pSharedHandle);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, int, Format, Pool, IDirect3DCubeTexture9**, void**, int>)@this->LpVtbl[25])(@this, EdgeLength, Levels, Usage, Format, Pool, ppCubeTexture, pSharedHandle);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCubeTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint EdgeLength, uint Levels, uint Usage, Format Format, Pool Pool, IDirect3DCubeTexture9** ppCubeTexture, ref void* pSharedHandle)
+    public static unsafe int CreateCubeTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint EdgeLength, uint Levels, int Usage, Format Format, Pool Pool, IDirect3DCubeTexture9** ppCubeTexture, ref void* pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** pSharedHandlePtr = &pSharedHandle)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, Format, Pool, IDirect3DCubeTexture9**, void**, int>)@this->LpVtbl[25])(@this, EdgeLength, Levels, Usage, Format, Pool, ppCubeTexture, pSharedHandlePtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, int, Format, Pool, IDirect3DCubeTexture9**, void**, int>)@this->LpVtbl[25])(@this, EdgeLength, Levels, Usage, Format, Pool, ppCubeTexture, pSharedHandlePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCubeTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint EdgeLength, uint Levels, uint Usage, Format Format, Pool Pool, ref IDirect3DCubeTexture9* ppCubeTexture, void** pSharedHandle)
+    public static unsafe int CreateCubeTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint EdgeLength, uint Levels, int Usage, Format Format, Pool Pool, ref IDirect3DCubeTexture9* ppCubeTexture, void** pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DCubeTexture9** ppCubeTexturePtr = &ppCubeTexture)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, Format, Pool, IDirect3DCubeTexture9**, void**, int>)@this->LpVtbl[25])(@this, EdgeLength, Levels, Usage, Format, Pool, ppCubeTexturePtr, pSharedHandle);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, int, Format, Pool, IDirect3DCubeTexture9**, void**, int>)@this->LpVtbl[25])(@this, EdgeLength, Levels, Usage, Format, Pool, ppCubeTexturePtr, pSharedHandle);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCubeTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint EdgeLength, uint Levels, uint Usage, Format Format, Pool Pool, ref IDirect3DCubeTexture9* ppCubeTexture, ref void* pSharedHandle)
+    public static unsafe int CreateCubeTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint EdgeLength, uint Levels, int Usage, Format Format, Pool Pool, ref IDirect3DCubeTexture9* ppCubeTexture, ref void* pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -662,47 +662,47 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         {
             fixed (void** pSharedHandlePtr = &pSharedHandle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, Format, Pool, IDirect3DCubeTexture9**, void**, int>)@this->LpVtbl[25])(@this, EdgeLength, Levels, Usage, Format, Pool, ppCubeTexturePtr, pSharedHandlePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, int, Format, Pool, IDirect3DCubeTexture9**, void**, int>)@this->LpVtbl[25])(@this, EdgeLength, Levels, Usage, Format, Pool, ppCubeTexturePtr, pSharedHandlePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, uint Usage, uint FVF, Pool Pool, IDirect3DVertexBuffer9** ppVertexBuffer, void** pSharedHandle)
+    public static unsafe int CreateVertexBuffer(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, int Usage, int FVF, Pool Pool, IDirect3DVertexBuffer9** ppVertexBuffer, void** pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, Pool, IDirect3DVertexBuffer9**, void**, int>)@this->LpVtbl[26])(@this, Length, Usage, FVF, Pool, ppVertexBuffer, pSharedHandle);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, int, int, Pool, IDirect3DVertexBuffer9**, void**, int>)@this->LpVtbl[26])(@this, Length, Usage, FVF, Pool, ppVertexBuffer, pSharedHandle);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, uint Usage, uint FVF, Pool Pool, IDirect3DVertexBuffer9** ppVertexBuffer, ref void* pSharedHandle)
+    public static unsafe int CreateVertexBuffer(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, int Usage, int FVF, Pool Pool, IDirect3DVertexBuffer9** ppVertexBuffer, ref void* pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** pSharedHandlePtr = &pSharedHandle)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, Pool, IDirect3DVertexBuffer9**, void**, int>)@this->LpVtbl[26])(@this, Length, Usage, FVF, Pool, ppVertexBuffer, pSharedHandlePtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, int, int, Pool, IDirect3DVertexBuffer9**, void**, int>)@this->LpVtbl[26])(@this, Length, Usage, FVF, Pool, ppVertexBuffer, pSharedHandlePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, uint Usage, uint FVF, Pool Pool, ref IDirect3DVertexBuffer9* ppVertexBuffer, void** pSharedHandle)
+    public static unsafe int CreateVertexBuffer(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, int Usage, int FVF, Pool Pool, ref IDirect3DVertexBuffer9* ppVertexBuffer, void** pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DVertexBuffer9** ppVertexBufferPtr = &ppVertexBuffer)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, Pool, IDirect3DVertexBuffer9**, void**, int>)@this->LpVtbl[26])(@this, Length, Usage, FVF, Pool, ppVertexBufferPtr, pSharedHandle);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, int, int, Pool, IDirect3DVertexBuffer9**, void**, int>)@this->LpVtbl[26])(@this, Length, Usage, FVF, Pool, ppVertexBufferPtr, pSharedHandle);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, uint Usage, uint FVF, Pool Pool, ref IDirect3DVertexBuffer9* ppVertexBuffer, ref void* pSharedHandle)
+    public static unsafe int CreateVertexBuffer(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, int Usage, int FVF, Pool Pool, ref IDirect3DVertexBuffer9* ppVertexBuffer, ref void* pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -710,47 +710,47 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         {
             fixed (void** pSharedHandlePtr = &pSharedHandle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, Pool, IDirect3DVertexBuffer9**, void**, int>)@this->LpVtbl[26])(@this, Length, Usage, FVF, Pool, ppVertexBufferPtr, pSharedHandlePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, int, int, Pool, IDirect3DVertexBuffer9**, void**, int>)@this->LpVtbl[26])(@this, Length, Usage, FVF, Pool, ppVertexBufferPtr, pSharedHandlePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateIndexBuffer(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, uint Usage, Format Format, Pool Pool, IDirect3DIndexBuffer9** ppIndexBuffer, void** pSharedHandle)
+    public static unsafe int CreateIndexBuffer(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, int Usage, Format Format, Pool Pool, IDirect3DIndexBuffer9** ppIndexBuffer, void** pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, Pool, IDirect3DIndexBuffer9**, void**, int>)@this->LpVtbl[27])(@this, Length, Usage, Format, Pool, ppIndexBuffer, pSharedHandle);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, int, Format, Pool, IDirect3DIndexBuffer9**, void**, int>)@this->LpVtbl[27])(@this, Length, Usage, Format, Pool, ppIndexBuffer, pSharedHandle);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateIndexBuffer(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, uint Usage, Format Format, Pool Pool, IDirect3DIndexBuffer9** ppIndexBuffer, ref void* pSharedHandle)
+    public static unsafe int CreateIndexBuffer(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, int Usage, Format Format, Pool Pool, IDirect3DIndexBuffer9** ppIndexBuffer, ref void* pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** pSharedHandlePtr = &pSharedHandle)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, Pool, IDirect3DIndexBuffer9**, void**, int>)@this->LpVtbl[27])(@this, Length, Usage, Format, Pool, ppIndexBuffer, pSharedHandlePtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, int, Format, Pool, IDirect3DIndexBuffer9**, void**, int>)@this->LpVtbl[27])(@this, Length, Usage, Format, Pool, ppIndexBuffer, pSharedHandlePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateIndexBuffer(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, uint Usage, Format Format, Pool Pool, ref IDirect3DIndexBuffer9* ppIndexBuffer, void** pSharedHandle)
+    public static unsafe int CreateIndexBuffer(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, int Usage, Format Format, Pool Pool, ref IDirect3DIndexBuffer9* ppIndexBuffer, void** pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DIndexBuffer9** ppIndexBufferPtr = &ppIndexBuffer)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, Pool, IDirect3DIndexBuffer9**, void**, int>)@this->LpVtbl[27])(@this, Length, Usage, Format, Pool, ppIndexBufferPtr, pSharedHandle);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, int, Format, Pool, IDirect3DIndexBuffer9**, void**, int>)@this->LpVtbl[27])(@this, Length, Usage, Format, Pool, ppIndexBufferPtr, pSharedHandle);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateIndexBuffer(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, uint Usage, Format Format, Pool Pool, ref IDirect3DIndexBuffer9* ppIndexBuffer, ref void* pSharedHandle)
+    public static unsafe int CreateIndexBuffer(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, int Usage, Format Format, Pool Pool, ref IDirect3DIndexBuffer9* ppIndexBuffer, ref void* pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -758,47 +758,47 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         {
             fixed (void** pSharedHandlePtr = &pSharedHandle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, Pool, IDirect3DIndexBuffer9**, void**, int>)@this->LpVtbl[27])(@this, Length, Usage, Format, Pool, ppIndexBufferPtr, pSharedHandlePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, int, Format, Pool, IDirect3DIndexBuffer9**, void**, int>)@this->LpVtbl[27])(@this, Length, Usage, Format, Pool, ppIndexBufferPtr, pSharedHandlePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRenderTarget(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, IDirect3DSurface9** ppSurface, void** pSharedHandle)
+    public static unsafe int CreateRenderTarget(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Lockable, IDirect3DSurface9** ppSurface, void** pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, int>)@this->LpVtbl[28])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurface, pSharedHandle);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, int, bool, IDirect3DSurface9**, void**, int>)@this->LpVtbl[28])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurface, pSharedHandle);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRenderTarget(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, IDirect3DSurface9** ppSurface, ref void* pSharedHandle)
+    public static unsafe int CreateRenderTarget(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Lockable, IDirect3DSurface9** ppSurface, ref void* pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** pSharedHandlePtr = &pSharedHandle)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, int>)@this->LpVtbl[28])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurface, pSharedHandlePtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, int, bool, IDirect3DSurface9**, void**, int>)@this->LpVtbl[28])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurface, pSharedHandlePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRenderTarget(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref IDirect3DSurface9* ppSurface, void** pSharedHandle)
+    public static unsafe int CreateRenderTarget(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Lockable, ref IDirect3DSurface9* ppSurface, void** pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DSurface9** ppSurfacePtr = &ppSurface)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, int>)@this->LpVtbl[28])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurfacePtr, pSharedHandle);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, int, bool, IDirect3DSurface9**, void**, int>)@this->LpVtbl[28])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurfacePtr, pSharedHandle);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRenderTarget(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref IDirect3DSurface9* ppSurface, ref void* pSharedHandle)
+    public static unsafe int CreateRenderTarget(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Lockable, ref IDirect3DSurface9* ppSurface, ref void* pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -806,47 +806,47 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         {
             fixed (void** pSharedHandlePtr = &pSharedHandle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, int>)@this->LpVtbl[28])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurfacePtr, pSharedHandlePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, int, bool, IDirect3DSurface9**, void**, int>)@this->LpVtbl[28])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurfacePtr, pSharedHandlePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDepthStencilSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, IDirect3DSurface9** ppSurface, void** pSharedHandle)
+    public static unsafe int CreateDepthStencilSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Discard, IDirect3DSurface9** ppSurface, void** pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, int>)@this->LpVtbl[29])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurface, pSharedHandle);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, int, bool, IDirect3DSurface9**, void**, int>)@this->LpVtbl[29])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurface, pSharedHandle);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDepthStencilSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, IDirect3DSurface9** ppSurface, ref void* pSharedHandle)
+    public static unsafe int CreateDepthStencilSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Discard, IDirect3DSurface9** ppSurface, ref void* pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** pSharedHandlePtr = &pSharedHandle)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, int>)@this->LpVtbl[29])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurface, pSharedHandlePtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, int, bool, IDirect3DSurface9**, void**, int>)@this->LpVtbl[29])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurface, pSharedHandlePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDepthStencilSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref IDirect3DSurface9* ppSurface, void** pSharedHandle)
+    public static unsafe int CreateDepthStencilSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Discard, ref IDirect3DSurface9* ppSurface, void** pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DSurface9** ppSurfacePtr = &ppSurface)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, int>)@this->LpVtbl[29])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurfacePtr, pSharedHandle);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, int, bool, IDirect3DSurface9**, void**, int>)@this->LpVtbl[29])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurfacePtr, pSharedHandle);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDepthStencilSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref IDirect3DSurface9* ppSurface, ref void* pSharedHandle)
+    public static unsafe int CreateDepthStencilSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Discard, ref IDirect3DSurface9* ppSurface, ref void* pSharedHandle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -854,14 +854,14 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         {
             fixed (void** pSharedHandlePtr = &pSharedHandle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, int>)@this->LpVtbl[29])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurfacePtr, pSharedHandlePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, int, bool, IDirect3DSurface9**, void**, int>)@this->LpVtbl[29])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurfacePtr, pSharedHandlePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -870,7 +870,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<int> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -882,7 +882,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -894,7 +894,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<int> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -909,7 +909,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -921,7 +921,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<int> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -936,7 +936,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -951,7 +951,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<int> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -969,7 +969,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -981,7 +981,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<int> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -996,7 +996,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1011,7 +1011,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<int> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1029,7 +1029,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1044,7 +1044,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<int> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1062,7 +1062,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1080,7 +1080,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint)
+    public static int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<int> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1218,7 +1218,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1227,7 +1227,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestSurface, ref Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1239,7 +1239,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1251,7 +1251,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, ref Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1266,7 +1266,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1278,7 +1278,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestSurface, ref Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1293,7 +1293,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1308,7 +1308,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, ref Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1326,7 +1326,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1338,7 +1338,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestSurface, ref Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1353,7 +1353,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1368,7 +1368,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, ref Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1386,7 +1386,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1401,7 +1401,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestSurface, ref Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1419,7 +1419,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1437,7 +1437,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, ref Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
+    public static int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1458,7 +1458,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ColorFill(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSurface, Silk.NET.Maths.Box2D<int>* pRect, uint color)
+    public static unsafe int ColorFill(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint color)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1467,7 +1467,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ColorFill(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSurface, ref Silk.NET.Maths.Box2D<int> pRect, uint color)
+    public static unsafe int ColorFill(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint color)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1479,7 +1479,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ColorFill(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSurface, Silk.NET.Maths.Box2D<int>* pRect, uint color)
+    public static unsafe int ColorFill(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint color)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1491,7 +1491,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ColorFill(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSurface, ref Silk.NET.Maths.Box2D<int> pRect, uint color)
+    public static int ColorFill(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint color)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1554,43 +1554,43 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetRenderTarget(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint RenderTargetIndex, IDirect3DSurface9* pRenderTarget)
+    public static unsafe int SetRenderTarget(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int RenderTargetIndex, IDirect3DSurface9* pRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, IDirect3DSurface9*, int>)@this->LpVtbl[37])(@this, RenderTargetIndex, pRenderTarget);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, IDirect3DSurface9*, int>)@this->LpVtbl[37])(@this, RenderTargetIndex, pRenderTarget);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetRenderTarget(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint RenderTargetIndex, ref IDirect3DSurface9 pRenderTarget)
+    public static int SetRenderTarget(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int RenderTargetIndex, ref IDirect3DSurface9 pRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DSurface9* pRenderTargetPtr = &pRenderTarget)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, IDirect3DSurface9*, int>)@this->LpVtbl[37])(@this, RenderTargetIndex, pRenderTargetPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, IDirect3DSurface9*, int>)@this->LpVtbl[37])(@this, RenderTargetIndex, pRenderTargetPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetRenderTarget(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint RenderTargetIndex, IDirect3DSurface9** ppRenderTarget)
+    public static unsafe int GetRenderTarget(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int RenderTargetIndex, IDirect3DSurface9** ppRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, IDirect3DSurface9**, int>)@this->LpVtbl[38])(@this, RenderTargetIndex, ppRenderTarget);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, IDirect3DSurface9**, int>)@this->LpVtbl[38])(@this, RenderTargetIndex, ppRenderTarget);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetRenderTarget(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint RenderTargetIndex, ref IDirect3DSurface9* ppRenderTarget)
+    public static unsafe int GetRenderTarget(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int RenderTargetIndex, ref IDirect3DSurface9* ppRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DSurface9** ppRenderTargetPtr = &ppRenderTarget)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, IDirect3DSurface9**, int>)@this->LpVtbl[38])(@this, RenderTargetIndex, ppRenderTargetPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, IDirect3DSurface9**, int>)@this->LpVtbl[38])(@this, RenderTargetIndex, ppRenderTargetPtr);
         }
         return ret;
     }
@@ -1656,28 +1656,28 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Clear(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Count, Rect* pRects, uint Flags, uint Color, float Z, uint Stencil)
+    public static unsafe int Clear(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Count, [Flow(FlowDirection.In)] Rect* pRects, int Flags, uint Color, float Z, int Stencil)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, Rect*, uint, uint, float, uint, int>)@this->LpVtbl[43])(@this, Count, pRects, Flags, Color, Z, Stencil);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, Rect*, int, uint, float, int, int>)@this->LpVtbl[43])(@this, Count, pRects, Flags, Color, Z, Stencil);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int Clear(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Count, ref Rect pRects, uint Flags, uint Color, float Z, uint Stencil)
+    public static int Clear(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Count, [Flow(FlowDirection.In)] in Rect pRects, int Flags, uint Color, float Z, int Stencil)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Rect* pRectsPtr = &pRects)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, Rect*, uint, uint, float, uint, int>)@this->LpVtbl[43])(@this, Count, pRectsPtr, Flags, Color, Z, Stencil);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, Rect*, int, uint, float, int, int>)@this->LpVtbl[43])(@this, Count, pRectsPtr, Flags, Color, Z, Stencil);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetTransform(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Transformstatetype State, System.Numerics.Matrix4x4* pMatrix)
+    public static unsafe int SetTransform(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Transformstatetype State, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* pMatrix)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1686,7 +1686,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTransform(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Transformstatetype State, ref System.Numerics.Matrix4x4 pMatrix)
+    public static int SetTransform(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Transformstatetype State, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 pMatrix)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1719,7 +1719,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MultiplyTransform(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Transformstatetype arg0, System.Numerics.Matrix4x4* arg1)
+    public static unsafe int MultiplyTransform(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Transformstatetype arg0, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* arg1)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1728,7 +1728,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int MultiplyTransform(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Transformstatetype arg0, ref System.Numerics.Matrix4x4 arg1)
+    public static int MultiplyTransform(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Transformstatetype arg0, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 arg1)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1740,7 +1740,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetViewport(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Viewport9* pViewport)
+    public static unsafe int SetViewport(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Viewport9* pViewport)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1749,7 +1749,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetViewport(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref Viewport9 pViewport)
+    public static int SetViewport(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in Viewport9 pViewport)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1782,7 +1782,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetMaterial(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Material9* pMaterial)
+    public static unsafe int SetMaterial(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Material9* pMaterial)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1791,7 +1791,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetMaterial(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref Material9 pMaterial)
+    public static int SetMaterial(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in Material9 pMaterial)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1824,125 +1824,125 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetLight(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Index, Light9* arg1)
+    public static unsafe int SetLight(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Index, [Flow(FlowDirection.In)] Light9* arg1)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, Light9*, int>)@this->LpVtbl[51])(@this, Index, arg1);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, Light9*, int>)@this->LpVtbl[51])(@this, Index, arg1);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetLight(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Index, ref Light9 arg1)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Light9* arg1Ptr = &arg1)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, Light9*, int>)@this->LpVtbl[51])(@this, Index, arg1Ptr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetLight(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Index, Light9* arg1)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, Light9*, int>)@this->LpVtbl[52])(@this, Index, arg1);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetLight(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Index, ref Light9 arg1)
+    public static int SetLight(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Index, [Flow(FlowDirection.In)] in Light9 arg1)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Light9* arg1Ptr = &arg1)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, Light9*, int>)@this->LpVtbl[52])(@this, Index, arg1Ptr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, Light9*, int>)@this->LpVtbl[51])(@this, Index, arg1Ptr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int LightEnable(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Index, int Enable)
+    public static unsafe int GetLight(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Index, Light9* arg1)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, int, int>)@this->LpVtbl[53])(@this, Index, Enable);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, Light9*, int>)@this->LpVtbl[52])(@this, Index, arg1);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetLightEnable(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Index, int* pEnable)
+    public static int GetLight(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Index, ref Light9 arg1)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, int*, int>)@this->LpVtbl[54])(@this, Index, pEnable);
+        fixed (Light9* arg1Ptr = &arg1)
+        {
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, Light9*, int>)@this->LpVtbl[52])(@this, Index, arg1Ptr);
+        }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetLightEnable(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Index, ref int pEnable)
+    public static int LightEnable(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Index, bool Enable)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, bool, int>)@this->LpVtbl[53])(@this, Index, Enable);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetLightEnable(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Index, int* pEnable)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, int*, int>)@this->LpVtbl[54])(@this, Index, pEnable);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetLightEnable(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Index, ref int pEnable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (int* pEnablePtr = &pEnable)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, int*, int>)@this->LpVtbl[54])(@this, Index, pEnablePtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, int*, int>)@this->LpVtbl[54])(@this, Index, pEnablePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetClipPlane(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Index, float* pPlane)
+    public static unsafe int SetClipPlane(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Index, [Flow(FlowDirection.In)] float* pPlane)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, float*, int>)@this->LpVtbl[55])(@this, Index, pPlane);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, float*, int>)@this->LpVtbl[55])(@this, Index, pPlane);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetClipPlane(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Index, ref float pPlane)
+    public static int SetClipPlane(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Index, [Flow(FlowDirection.In)] in float pPlane)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (float* pPlanePtr = &pPlane)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, float*, int>)@this->LpVtbl[55])(@this, Index, pPlanePtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, float*, int>)@this->LpVtbl[55])(@this, Index, pPlanePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetClipPlane(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Index, float* pPlane)
+    public static unsafe int GetClipPlane(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Index, float* pPlane)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, float*, int>)@this->LpVtbl[56])(@this, Index, pPlane);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, float*, int>)@this->LpVtbl[56])(@this, Index, pPlane);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetClipPlane(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Index, ref float pPlane)
+    public static int GetClipPlane(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Index, ref float pPlane)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (float* pPlanePtr = &pPlane)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, float*, int>)@this->LpVtbl[56])(@this, Index, pPlanePtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, float*, int>)@this->LpVtbl[56])(@this, Index, pPlanePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetRenderState(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Renderstatetype State, uint Value)
+    public static int SetRenderState(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Renderstatetype State, int Value)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Renderstatetype, uint, int>)@this->LpVtbl[57])(@this, State, Value);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Renderstatetype, int, int>)@this->LpVtbl[57])(@this, State, Value);
         return ret;
     }
 
@@ -2019,7 +2019,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetClipStatus(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Clipstatus9* pClipStatus)
+    public static unsafe int SetClipStatus(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Clipstatus9* pClipStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2028,7 +2028,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetClipStatus(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref Clipstatus9 pClipStatus)
+    public static int SetClipStatus(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in Clipstatus9 pClipStatus)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2061,104 +2061,104 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Stage, IDirect3DBaseTexture9** ppTexture)
+    public static unsafe int GetTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Stage, IDirect3DBaseTexture9** ppTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, IDirect3DBaseTexture9**, int>)@this->LpVtbl[64])(@this, Stage, ppTexture);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, IDirect3DBaseTexture9**, int>)@this->LpVtbl[64])(@this, Stage, ppTexture);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Stage, ref IDirect3DBaseTexture9* ppTexture)
+    public static unsafe int GetTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Stage, ref IDirect3DBaseTexture9* ppTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DBaseTexture9** ppTexturePtr = &ppTexture)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, IDirect3DBaseTexture9**, int>)@this->LpVtbl[64])(@this, Stage, ppTexturePtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, IDirect3DBaseTexture9**, int>)@this->LpVtbl[64])(@this, Stage, ppTexturePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Stage, IDirect3DBaseTexture9* pTexture)
+    public static unsafe int SetTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Stage, IDirect3DBaseTexture9* pTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, IDirect3DBaseTexture9*, int>)@this->LpVtbl[65])(@this, Stage, pTexture);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, IDirect3DBaseTexture9*, int>)@this->LpVtbl[65])(@this, Stage, pTexture);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Stage, ref IDirect3DBaseTexture9 pTexture)
+    public static int SetTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Stage, ref IDirect3DBaseTexture9 pTexture)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DBaseTexture9* pTexturePtr = &pTexture)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, IDirect3DBaseTexture9*, int>)@this->LpVtbl[65])(@this, Stage, pTexturePtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, IDirect3DBaseTexture9*, int>)@this->LpVtbl[65])(@this, Stage, pTexturePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetTextureStageState(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Stage, Texturestagestatetype Type, uint* pValue)
+    public static unsafe int GetTextureStageState(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Stage, Texturestagestatetype Type, uint* pValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, Texturestagestatetype, uint*, int>)@this->LpVtbl[66])(@this, Stage, Type, pValue);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, Texturestagestatetype, uint*, int>)@this->LpVtbl[66])(@this, Stage, Type, pValue);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetTextureStageState(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Stage, Texturestagestatetype Type, ref uint pValue)
+    public static int GetTextureStageState(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Stage, Texturestagestatetype Type, ref uint pValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pValuePtr = &pValue)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, Texturestagestatetype, uint*, int>)@this->LpVtbl[66])(@this, Stage, Type, pValuePtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, Texturestagestatetype, uint*, int>)@this->LpVtbl[66])(@this, Stage, Type, pValuePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTextureStageState(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Stage, Texturestagestatetype Type, uint Value)
+    public static int SetTextureStageState(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Stage, Texturestagestatetype Type, int Value)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, Texturestagestatetype, uint, int>)@this->LpVtbl[67])(@this, Stage, Type, Value);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, Texturestagestatetype, int, int>)@this->LpVtbl[67])(@this, Stage, Type, Value);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetSamplerState(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Sampler, Samplerstatetype Type, uint* pValue)
+    public static unsafe int GetSamplerState(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Sampler, Samplerstatetype Type, uint* pValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, Samplerstatetype, uint*, int>)@this->LpVtbl[68])(@this, Sampler, Type, pValue);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, Samplerstatetype, uint*, int>)@this->LpVtbl[68])(@this, Sampler, Type, pValue);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetSamplerState(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Sampler, Samplerstatetype Type, ref uint pValue)
+    public static int GetSamplerState(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Sampler, Samplerstatetype Type, ref uint pValue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pValuePtr = &pValue)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, Samplerstatetype, uint*, int>)@this->LpVtbl[68])(@this, Sampler, Type, pValuePtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, Samplerstatetype, uint*, int>)@this->LpVtbl[68])(@this, Sampler, Type, pValuePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSamplerState(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Sampler, Samplerstatetype Type, uint Value)
+    public static int SetSamplerState(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Sampler, Samplerstatetype Type, int Value)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, Samplerstatetype, uint, int>)@this->LpVtbl[69])(@this, Sampler, Type, Value);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, Samplerstatetype, int, int>)@this->LpVtbl[69])(@this, Sampler, Type, Value);
         return ret;
     }
 
@@ -2184,7 +2184,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPaletteEntries(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint PaletteNumber, Silk.NET.Maths.Vector4D<byte>* pEntries)
+    public static unsafe int SetPaletteEntries(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint PaletteNumber, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector4D<byte>* pEntries)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2193,7 +2193,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPaletteEntries(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint PaletteNumber, ref Silk.NET.Maths.Vector4D<byte> pEntries)
+    public static int SetPaletteEntries(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint PaletteNumber, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector4D<byte> pEntries)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2256,7 +2256,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetScissorRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe int SetScissorRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2265,7 +2265,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetScissorRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref Silk.NET.Maths.Box2D<int> pRect)
+    public static int SetScissorRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2298,20 +2298,20 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSoftwareVertexProcessing(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int bSoftware)
+    public static int SetSoftwareVertexProcessing(this ComPtr<IDirect3DDevice9Ex> thisVtbl, bool bSoftware)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, int>)@this->LpVtbl[77])(@this, bSoftware);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, bool, int>)@this->LpVtbl[77])(@this, bSoftware);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetSoftwareVertexProcessing(this ComPtr<IDirect3DDevice9Ex> thisVtbl)
+    public static bool GetSoftwareVertexProcessing(this ComPtr<IDirect3DDevice9Ex> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int>)@this->LpVtbl[78])(@this);
+        bool ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, bool>)@this->LpVtbl[78])(@this);
         return ret;
     }
 
@@ -2352,7 +2352,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawPrimitiveUP(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint PrimitiveCount, void* pVertexStreamZeroData, uint VertexStreamZeroStride)
+    public static unsafe int DrawPrimitiveUP(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint PrimitiveCount, [Flow(FlowDirection.In)] void* pVertexStreamZeroData, uint VertexStreamZeroStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2361,7 +2361,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint PrimitiveCount, ref T0 pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
+    public static int DrawPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint PrimitiveCount, [Flow(FlowDirection.In)] in T0 pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2373,7 +2373,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawIndexedPrimitiveUP(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, void* pIndexData, Format IndexDataFormat, void* pVertexStreamZeroData, uint VertexStreamZeroStride)
+    public static unsafe int DrawIndexedPrimitiveUP(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(FlowDirection.In)] void* pIndexData, Format IndexDataFormat, [Flow(FlowDirection.In)] void* pVertexStreamZeroData, uint VertexStreamZeroStride)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2382,7 +2382,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawIndexedPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, void* pIndexData, Format IndexDataFormat, ref T0 pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
+    public static unsafe int DrawIndexedPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(FlowDirection.In)] void* pIndexData, Format IndexDataFormat, [Flow(FlowDirection.In)] in T0 pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2394,7 +2394,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawIndexedPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, ref T0 pIndexData, Format IndexDataFormat, void* pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
+    public static unsafe int DrawIndexedPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(FlowDirection.In)] in T0 pIndexData, Format IndexDataFormat, [Flow(FlowDirection.In)] void* pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2406,7 +2406,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawIndexedPrimitiveUP<T0, T1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, ref T0 pIndexData, Format IndexDataFormat, ref T1 pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged where T1 : unmanaged
+    public static int DrawIndexedPrimitiveUP<T0, T1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(FlowDirection.In)] in T0 pIndexData, Format IndexDataFormat, [Flow(FlowDirection.In)] in T1 pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2421,40 +2421,40 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ProcessVertices(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, IDirect3DVertexBuffer9* pDestBuffer, IDirect3DVertexDeclaration9* pVertexDecl, uint Flags)
+    public static unsafe int ProcessVertices(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, IDirect3DVertexBuffer9* pDestBuffer, IDirect3DVertexDeclaration9* pVertexDecl, int Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, IDirect3DVertexBuffer9*, IDirect3DVertexDeclaration9*, uint, int>)@this->LpVtbl[85])(@this, SrcStartIndex, DestIndex, VertexCount, pDestBuffer, pVertexDecl, Flags);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, IDirect3DVertexBuffer9*, IDirect3DVertexDeclaration9*, int, int>)@this->LpVtbl[85])(@this, SrcStartIndex, DestIndex, VertexCount, pDestBuffer, pVertexDecl, Flags);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ProcessVertices(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, IDirect3DVertexBuffer9* pDestBuffer, ref IDirect3DVertexDeclaration9 pVertexDecl, uint Flags)
+    public static unsafe int ProcessVertices(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, IDirect3DVertexBuffer9* pDestBuffer, ref IDirect3DVertexDeclaration9 pVertexDecl, int Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DVertexDeclaration9* pVertexDeclPtr = &pVertexDecl)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, IDirect3DVertexBuffer9*, IDirect3DVertexDeclaration9*, uint, int>)@this->LpVtbl[85])(@this, SrcStartIndex, DestIndex, VertexCount, pDestBuffer, pVertexDeclPtr, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, IDirect3DVertexBuffer9*, IDirect3DVertexDeclaration9*, int, int>)@this->LpVtbl[85])(@this, SrcStartIndex, DestIndex, VertexCount, pDestBuffer, pVertexDeclPtr, Flags);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ProcessVertices(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, ref IDirect3DVertexBuffer9 pDestBuffer, IDirect3DVertexDeclaration9* pVertexDecl, uint Flags)
+    public static unsafe int ProcessVertices(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, ref IDirect3DVertexBuffer9 pDestBuffer, IDirect3DVertexDeclaration9* pVertexDecl, int Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DVertexBuffer9* pDestBufferPtr = &pDestBuffer)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, IDirect3DVertexBuffer9*, IDirect3DVertexDeclaration9*, uint, int>)@this->LpVtbl[85])(@this, SrcStartIndex, DestIndex, VertexCount, pDestBufferPtr, pVertexDecl, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, IDirect3DVertexBuffer9*, IDirect3DVertexDeclaration9*, int, int>)@this->LpVtbl[85])(@this, SrcStartIndex, DestIndex, VertexCount, pDestBufferPtr, pVertexDecl, Flags);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int ProcessVertices(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, ref IDirect3DVertexBuffer9 pDestBuffer, ref IDirect3DVertexDeclaration9 pVertexDecl, uint Flags)
+    public static int ProcessVertices(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, ref IDirect3DVertexBuffer9 pDestBuffer, ref IDirect3DVertexDeclaration9 pVertexDecl, int Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2462,14 +2462,14 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         {
             fixed (IDirect3DVertexDeclaration9* pVertexDeclPtr = &pVertexDecl)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, IDirect3DVertexBuffer9*, IDirect3DVertexDeclaration9*, uint, int>)@this->LpVtbl[85])(@this, SrcStartIndex, DestIndex, VertexCount, pDestBufferPtr, pVertexDeclPtr, Flags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, uint, IDirect3DVertexBuffer9*, IDirect3DVertexDeclaration9*, int, int>)@this->LpVtbl[85])(@this, SrcStartIndex, DestIndex, VertexCount, pDestBufferPtr, pVertexDeclPtr, Flags);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexDeclaration(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Vertexelement9* pVertexElements, IDirect3DVertexDeclaration9** ppDecl)
+    public static unsafe int CreateVertexDeclaration(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Vertexelement9* pVertexElements, IDirect3DVertexDeclaration9** ppDecl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2478,7 +2478,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexDeclaration(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Vertexelement9* pVertexElements, ref IDirect3DVertexDeclaration9* ppDecl)
+    public static unsafe int CreateVertexDeclaration(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Vertexelement9* pVertexElements, ref IDirect3DVertexDeclaration9* ppDecl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2490,7 +2490,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexDeclaration(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref Vertexelement9 pVertexElements, IDirect3DVertexDeclaration9** ppDecl)
+    public static unsafe int CreateVertexDeclaration(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in Vertexelement9 pVertexElements, IDirect3DVertexDeclaration9** ppDecl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2502,7 +2502,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexDeclaration(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref Vertexelement9 pVertexElements, ref IDirect3DVertexDeclaration9* ppDecl)
+    public static unsafe int CreateVertexDeclaration(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in Vertexelement9 pVertexElements, ref IDirect3DVertexDeclaration9* ppDecl)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2559,11 +2559,11 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetFVF(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint FVF)
+    public static int SetFVF(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int FVF)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, int>)@this->LpVtbl[89])(@this, FVF);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, int>)@this->LpVtbl[89])(@this, FVF);
         return ret;
     }
 
@@ -2589,7 +2589,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint* pFunction, IDirect3DVertexShader9** ppShader)
+    public static unsafe int CreateVertexShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] uint* pFunction, IDirect3DVertexShader9** ppShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2598,7 +2598,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint* pFunction, ref IDirect3DVertexShader9* ppShader)
+    public static unsafe int CreateVertexShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] uint* pFunction, ref IDirect3DVertexShader9* ppShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2610,7 +2610,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref uint pFunction, IDirect3DVertexShader9** ppShader)
+    public static unsafe int CreateVertexShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in uint pFunction, IDirect3DVertexShader9** ppShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2622,7 +2622,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref uint pFunction, ref IDirect3DVertexShader9* ppShader)
+    public static unsafe int CreateVertexShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in uint pFunction, ref IDirect3DVertexShader9* ppShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2679,7 +2679,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexShaderConstantF(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, float* pConstantData, uint Vector4fCount)
+    public static unsafe int SetVertexShaderConstantF(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, [Flow(FlowDirection.In)] float* pConstantData, uint Vector4fCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2688,7 +2688,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexShaderConstantF(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, ref float pConstantData, uint Vector4fCount)
+    public static int SetVertexShaderConstantF(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, [Flow(FlowDirection.In)] in float pConstantData, uint Vector4fCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2721,7 +2721,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexShaderConstantI(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, int* pConstantData, uint Vector4iCount)
+    public static unsafe int SetVertexShaderConstantI(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, [Flow(FlowDirection.In)] int* pConstantData, uint Vector4iCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2730,7 +2730,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexShaderConstantI(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, ref int pConstantData, uint Vector4iCount)
+    public static int SetVertexShaderConstantI(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, [Flow(FlowDirection.In)] in int pConstantData, uint Vector4iCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2763,7 +2763,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexShaderConstantB(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, int* pConstantData, uint BoolCount)
+    public static unsafe int SetVertexShaderConstantB(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, [Flow(FlowDirection.In)] int* pConstantData, uint BoolCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -2772,7 +2772,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexShaderConstantB(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, ref int pConstantData, uint BoolCount)
+    public static int SetVertexShaderConstantB(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, [Flow(FlowDirection.In)] in int pConstantData, uint BoolCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3006,7 +3006,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePixelShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint* pFunction, IDirect3DPixelShader9** ppShader)
+    public static unsafe int CreatePixelShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] uint* pFunction, IDirect3DPixelShader9** ppShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3015,7 +3015,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePixelShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint* pFunction, ref IDirect3DPixelShader9* ppShader)
+    public static unsafe int CreatePixelShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] uint* pFunction, ref IDirect3DPixelShader9* ppShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3027,7 +3027,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePixelShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref uint pFunction, IDirect3DPixelShader9** ppShader)
+    public static unsafe int CreatePixelShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in uint pFunction, IDirect3DPixelShader9** ppShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3039,7 +3039,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePixelShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref uint pFunction, ref IDirect3DPixelShader9* ppShader)
+    public static unsafe int CreatePixelShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in uint pFunction, ref IDirect3DPixelShader9* ppShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3096,7 +3096,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPixelShaderConstantF(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, float* pConstantData, uint Vector4fCount)
+    public static unsafe int SetPixelShaderConstantF(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, [Flow(FlowDirection.In)] float* pConstantData, uint Vector4fCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3105,7 +3105,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPixelShaderConstantF(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, ref float pConstantData, uint Vector4fCount)
+    public static int SetPixelShaderConstantF(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, [Flow(FlowDirection.In)] in float pConstantData, uint Vector4fCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3138,7 +3138,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPixelShaderConstantI(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, int* pConstantData, uint Vector4iCount)
+    public static unsafe int SetPixelShaderConstantI(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, [Flow(FlowDirection.In)] int* pConstantData, uint Vector4iCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3147,7 +3147,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPixelShaderConstantI(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, ref int pConstantData, uint Vector4iCount)
+    public static int SetPixelShaderConstantI(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, [Flow(FlowDirection.In)] in int pConstantData, uint Vector4iCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3180,7 +3180,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPixelShaderConstantB(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, int* pConstantData, uint BoolCount)
+    public static unsafe int SetPixelShaderConstantB(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, [Flow(FlowDirection.In)] int* pConstantData, uint BoolCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3189,7 +3189,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPixelShaderConstantB(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, ref int pConstantData, uint BoolCount)
+    public static int SetPixelShaderConstantB(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, [Flow(FlowDirection.In)] in int pConstantData, uint BoolCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3222,7 +3222,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, float* pNumSegs, RectpatchInfo* pRectPatchInfo)
+    public static unsafe int DrawRectPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, [Flow(FlowDirection.In)] float* pNumSegs, [Flow(FlowDirection.In)] RectpatchInfo* pRectPatchInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3231,7 +3231,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, float* pNumSegs, ref RectpatchInfo pRectPatchInfo)
+    public static unsafe int DrawRectPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, [Flow(FlowDirection.In)] float* pNumSegs, [Flow(FlowDirection.In)] in RectpatchInfo pRectPatchInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3243,7 +3243,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, ref float pNumSegs, RectpatchInfo* pRectPatchInfo)
+    public static unsafe int DrawRectPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, [Flow(FlowDirection.In)] in float pNumSegs, [Flow(FlowDirection.In)] RectpatchInfo* pRectPatchInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3255,7 +3255,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawRectPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, ref float pNumSegs, ref RectpatchInfo pRectPatchInfo)
+    public static int DrawRectPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, [Flow(FlowDirection.In)] in float pNumSegs, [Flow(FlowDirection.In)] in RectpatchInfo pRectPatchInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3270,7 +3270,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawTriPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, float* pNumSegs, TripatchInfo* pTriPatchInfo)
+    public static unsafe int DrawTriPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, [Flow(FlowDirection.In)] float* pNumSegs, [Flow(FlowDirection.In)] TripatchInfo* pTriPatchInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3279,7 +3279,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawTriPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, float* pNumSegs, ref TripatchInfo pTriPatchInfo)
+    public static unsafe int DrawTriPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, [Flow(FlowDirection.In)] float* pNumSegs, [Flow(FlowDirection.In)] in TripatchInfo pTriPatchInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3291,7 +3291,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawTriPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, ref float pNumSegs, TripatchInfo* pTriPatchInfo)
+    public static unsafe int DrawTriPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, [Flow(FlowDirection.In)] in float pNumSegs, [Flow(FlowDirection.In)] TripatchInfo* pTriPatchInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3303,7 +3303,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawTriPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, ref float pNumSegs, ref TripatchInfo pTriPatchInfo)
+    public static int DrawTriPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, [Flow(FlowDirection.In)] in float pNumSegs, [Flow(FlowDirection.In)] in TripatchInfo pTriPatchInfo)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3636,40 +3636,40 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Silk.NET.Maths.Box2D<int>* pSourceRect, Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, int dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[121])(@this, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegion, dwFlags);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, int, int>)@this->LpVtbl[121])(@this, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegion, dwFlags);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Silk.NET.Maths.Box2D<int>* pSourceRect, Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, ref RGNData pDirtyRegion, uint dwFlags)
+    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] in RGNData pDirtyRegion, int dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (RGNData* pDirtyRegionPtr = &pDirtyRegion)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[121])(@this, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegionPtr, dwFlags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, int, int>)@this->LpVtbl[121])(@this, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegionPtr, dwFlags);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Silk.NET.Maths.Box2D<int>* pSourceRect, ref Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, int dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Maths.Box2D<int>* pDestRectPtr = &pDestRect)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[121])(@this, pSourceRect, pDestRectPtr, hDestWindowOverride, pDirtyRegion, dwFlags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, int, int>)@this->LpVtbl[121])(@this, pSourceRect, pDestRectPtr, hDestWindowOverride, pDirtyRegion, dwFlags);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Silk.NET.Maths.Box2D<int>* pSourceRect, ref Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, ref RGNData pDirtyRegion, uint dwFlags)
+    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] in RGNData pDirtyRegion, int dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3677,26 +3677,26 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         {
             fixed (RGNData* pDirtyRegionPtr = &pDirtyRegion)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[121])(@this, pSourceRect, pDestRectPtr, hDestWindowOverride, pDirtyRegionPtr, dwFlags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, int, int>)@this->LpVtbl[121])(@this, pSourceRect, pDestRectPtr, hDestWindowOverride, pDirtyRegionPtr, dwFlags);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref Silk.NET.Maths.Box2D<int> pSourceRect, Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, int dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Maths.Box2D<int>* pSourceRectPtr = &pSourceRect)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[121])(@this, pSourceRectPtr, pDestRect, hDestWindowOverride, pDirtyRegion, dwFlags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, int, int>)@this->LpVtbl[121])(@this, pSourceRectPtr, pDestRect, hDestWindowOverride, pDirtyRegion, dwFlags);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref Silk.NET.Maths.Box2D<int> pSourceRect, Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, ref RGNData pDirtyRegion, uint dwFlags)
+    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] in RGNData pDirtyRegion, int dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3704,14 +3704,14 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         {
             fixed (RGNData* pDirtyRegionPtr = &pDirtyRegion)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[121])(@this, pSourceRectPtr, pDestRect, hDestWindowOverride, pDirtyRegionPtr, dwFlags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, int, int>)@this->LpVtbl[121])(@this, pSourceRectPtr, pDestRect, hDestWindowOverride, pDirtyRegionPtr, dwFlags);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref Silk.NET.Maths.Box2D<int> pSourceRect, ref Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, int dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3719,14 +3719,14 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         {
             fixed (Silk.NET.Maths.Box2D<int>* pDestRectPtr = &pDestRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[121])(@this, pSourceRectPtr, pDestRectPtr, hDestWindowOverride, pDirtyRegion, dwFlags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, int, int>)@this->LpVtbl[121])(@this, pSourceRectPtr, pDestRectPtr, hDestWindowOverride, pDirtyRegion, dwFlags);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref Silk.NET.Maths.Box2D<int> pSourceRect, ref Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, ref RGNData pDirtyRegion, uint dwFlags)
+    public static int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] in RGNData pDirtyRegion, int dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3736,7 +3736,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
             {
                 fixed (RGNData* pDirtyRegionPtr = &pDirtyRegion)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[121])(@this, pSourceRectPtr, pDestRectPtr, hDestWindowOverride, pDirtyRegionPtr, dwFlags);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, int, int>)@this->LpVtbl[121])(@this, pSourceRectPtr, pDestRectPtr, hDestWindowOverride, pDirtyRegionPtr, dwFlags);
                 }
             }
         }
@@ -3843,40 +3843,40 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRenderTargetEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, IDirect3DSurface9** ppSurface, void** pSharedHandle, uint Usage)
+    public static unsafe int CreateRenderTargetEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Lockable, IDirect3DSurface9** ppSurface, void** pSharedHandle, int Usage)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[129])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurface, pSharedHandle, Usage);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, int, bool, IDirect3DSurface9**, void**, int, int>)@this->LpVtbl[129])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurface, pSharedHandle, Usage);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRenderTargetEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, IDirect3DSurface9** ppSurface, ref void* pSharedHandle, uint Usage)
+    public static unsafe int CreateRenderTargetEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Lockable, IDirect3DSurface9** ppSurface, ref void* pSharedHandle, int Usage)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** pSharedHandlePtr = &pSharedHandle)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[129])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurface, pSharedHandlePtr, Usage);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, int, bool, IDirect3DSurface9**, void**, int, int>)@this->LpVtbl[129])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurface, pSharedHandlePtr, Usage);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRenderTargetEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref IDirect3DSurface9* ppSurface, void** pSharedHandle, uint Usage)
+    public static unsafe int CreateRenderTargetEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Lockable, ref IDirect3DSurface9* ppSurface, void** pSharedHandle, int Usage)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DSurface9** ppSurfacePtr = &ppSurface)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[129])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurfacePtr, pSharedHandle, Usage);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, int, bool, IDirect3DSurface9**, void**, int, int>)@this->LpVtbl[129])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurfacePtr, pSharedHandle, Usage);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRenderTargetEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref IDirect3DSurface9* ppSurface, ref void* pSharedHandle, uint Usage)
+    public static unsafe int CreateRenderTargetEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Lockable, ref IDirect3DSurface9* ppSurface, ref void* pSharedHandle, int Usage)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3884,47 +3884,47 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         {
             fixed (void** pSharedHandlePtr = &pSharedHandle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[129])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurfacePtr, pSharedHandlePtr, Usage);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, int, bool, IDirect3DSurface9**, void**, int, int>)@this->LpVtbl[129])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurfacePtr, pSharedHandlePtr, Usage);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateOffscreenPlainSurfaceEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, Pool Pool, IDirect3DSurface9** ppSurface, void** pSharedHandle, uint Usage)
+    public static unsafe int CreateOffscreenPlainSurfaceEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, Pool Pool, IDirect3DSurface9** ppSurface, void** pSharedHandle, int Usage)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, Pool, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[130])(@this, Width, Height, Format, Pool, ppSurface, pSharedHandle, Usage);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, Pool, IDirect3DSurface9**, void**, int, int>)@this->LpVtbl[130])(@this, Width, Height, Format, Pool, ppSurface, pSharedHandle, Usage);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateOffscreenPlainSurfaceEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, Pool Pool, IDirect3DSurface9** ppSurface, ref void* pSharedHandle, uint Usage)
+    public static unsafe int CreateOffscreenPlainSurfaceEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, Pool Pool, IDirect3DSurface9** ppSurface, ref void* pSharedHandle, int Usage)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** pSharedHandlePtr = &pSharedHandle)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, Pool, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[130])(@this, Width, Height, Format, Pool, ppSurface, pSharedHandlePtr, Usage);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, Pool, IDirect3DSurface9**, void**, int, int>)@this->LpVtbl[130])(@this, Width, Height, Format, Pool, ppSurface, pSharedHandlePtr, Usage);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateOffscreenPlainSurfaceEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, Pool Pool, ref IDirect3DSurface9* ppSurface, void** pSharedHandle, uint Usage)
+    public static unsafe int CreateOffscreenPlainSurfaceEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, Pool Pool, ref IDirect3DSurface9* ppSurface, void** pSharedHandle, int Usage)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DSurface9** ppSurfacePtr = &ppSurface)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, Pool, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[130])(@this, Width, Height, Format, Pool, ppSurfacePtr, pSharedHandle, Usage);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, Pool, IDirect3DSurface9**, void**, int, int>)@this->LpVtbl[130])(@this, Width, Height, Format, Pool, ppSurfacePtr, pSharedHandle, Usage);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateOffscreenPlainSurfaceEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, Pool Pool, ref IDirect3DSurface9* ppSurface, ref void* pSharedHandle, uint Usage)
+    public static unsafe int CreateOffscreenPlainSurfaceEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, Pool Pool, ref IDirect3DSurface9* ppSurface, ref void* pSharedHandle, int Usage)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3932,47 +3932,47 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         {
             fixed (void** pSharedHandlePtr = &pSharedHandle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, Pool, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[130])(@this, Width, Height, Format, Pool, ppSurfacePtr, pSharedHandlePtr, Usage);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, Pool, IDirect3DSurface9**, void**, int, int>)@this->LpVtbl[130])(@this, Width, Height, Format, Pool, ppSurfacePtr, pSharedHandlePtr, Usage);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDepthStencilSurfaceEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, IDirect3DSurface9** ppSurface, void** pSharedHandle, uint Usage)
+    public static unsafe int CreateDepthStencilSurfaceEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Discard, IDirect3DSurface9** ppSurface, void** pSharedHandle, int Usage)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[131])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurface, pSharedHandle, Usage);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, int, bool, IDirect3DSurface9**, void**, int, int>)@this->LpVtbl[131])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurface, pSharedHandle, Usage);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDepthStencilSurfaceEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, IDirect3DSurface9** ppSurface, ref void* pSharedHandle, uint Usage)
+    public static unsafe int CreateDepthStencilSurfaceEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Discard, IDirect3DSurface9** ppSurface, ref void* pSharedHandle, int Usage)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** pSharedHandlePtr = &pSharedHandle)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[131])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurface, pSharedHandlePtr, Usage);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, int, bool, IDirect3DSurface9**, void**, int, int>)@this->LpVtbl[131])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurface, pSharedHandlePtr, Usage);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDepthStencilSurfaceEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref IDirect3DSurface9* ppSurface, void** pSharedHandle, uint Usage)
+    public static unsafe int CreateDepthStencilSurfaceEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Discard, ref IDirect3DSurface9* ppSurface, void** pSharedHandle, int Usage)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDirect3DSurface9** ppSurfacePtr = &ppSurface)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[131])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurfacePtr, pSharedHandle, Usage);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, int, bool, IDirect3DSurface9**, void**, int, int>)@this->LpVtbl[131])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurfacePtr, pSharedHandle, Usage);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDepthStencilSurfaceEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref IDirect3DSurface9* ppSurface, ref void* pSharedHandle, uint Usage)
+    public static unsafe int CreateDepthStencilSurfaceEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Discard, ref IDirect3DSurface9* ppSurface, ref void* pSharedHandle, int Usage)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3980,7 +3980,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
         {
             fixed (void** pSharedHandlePtr = &pSharedHandle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[131])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurfacePtr, pSharedHandlePtr, Usage);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, int, bool, IDirect3DSurface9**, void**, int, int>)@this->LpVtbl[131])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurfacePtr, pSharedHandlePtr, Usage);
             }
         }
         return ret;
@@ -4204,59 +4204,59 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Silk.NET.Maths.Box2D<int>* pSourceRect, Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion)
+    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Present(pSourceRect, pDestRect, hDestWindowOverride, ref pDirtyRegion.GetPinnableReference());
+        return @this->Present(pSourceRect, pDestRect, hDestWindowOverride, in pDirtyRegion.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Silk.NET.Maths.Box2D<int>* pSourceRect, Span<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion)
+    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Present(pSourceRect, ref pDestRect.GetPinnableReference(), hDestWindowOverride, pDirtyRegion);
+        return @this->Present(pSourceRect, in pDestRect.GetPinnableReference(), hDestWindowOverride, pDirtyRegion);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Silk.NET.Maths.Box2D<int>* pSourceRect, Span<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion)
+    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Present(pSourceRect, ref pDestRect.GetPinnableReference(), hDestWindowOverride, ref pDirtyRegion.GetPinnableReference());
+        return @this->Present(pSourceRect, in pDestRect.GetPinnableReference(), hDestWindowOverride, in pDirtyRegion.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion)
+    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Present(ref pSourceRect.GetPinnableReference(), pDestRect, hDestWindowOverride, pDirtyRegion);
+        return @this->Present(in pSourceRect.GetPinnableReference(), pDestRect, hDestWindowOverride, pDirtyRegion);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion)
+    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Present(ref pSourceRect.GetPinnableReference(), pDestRect, hDestWindowOverride, ref pDirtyRegion.GetPinnableReference());
+        return @this->Present(in pSourceRect.GetPinnableReference(), pDestRect, hDestWindowOverride, in pDirtyRegion.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion)
+    public static unsafe int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Present(ref pSourceRect.GetPinnableReference(), ref pDestRect.GetPinnableReference(), hDestWindowOverride, pDirtyRegion);
+        return @this->Present(in pSourceRect.GetPinnableReference(), in pDestRect.GetPinnableReference(), hDestWindowOverride, pDirtyRegion);
     }
 
     /// <summary>To be documented.</summary>
-    public static int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion)
+    public static int Present(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Present(ref pSourceRect.GetPinnableReference(), ref pDestRect.GetPinnableReference(), hDestWindowOverride, ref pDirtyRegion.GetPinnableReference());
+        return @this->Present(in pSourceRect.GetPinnableReference(), in pDestRect.GetPinnableReference(), hDestWindowOverride, in pDirtyRegion.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -4276,11 +4276,11 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetGammaRamp(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint iSwapChain, uint Flags, Span<Gammaramp> pRamp)
+    public static void SetGammaRamp(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint iSwapChain, int Flags, [Flow(FlowDirection.In)] ReadOnlySpan<Gammaramp> pRamp)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->SetGammaRamp(iSwapChain, Flags, ref pRamp.GetPinnableReference());
+        @this->SetGammaRamp(iSwapChain, Flags, in pRamp.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -4292,7 +4292,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTexture<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Levels, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppTexture, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DTexture9>, IComVtbl<TI0>
+    public static unsafe int CreateTexture<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Levels, int Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppTexture, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DTexture9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4300,7 +4300,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTexture<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Levels, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppTexture, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DTexture9>, IComVtbl<TI0>
+    public static unsafe int CreateTexture<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Levels, int Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppTexture, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DTexture9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4308,7 +4308,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVolumeTexture<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Depth, uint Levels, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppVolumeTexture, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DVolumeTexture9>, IComVtbl<TI0>
+    public static unsafe int CreateVolumeTexture<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Depth, uint Levels, int Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppVolumeTexture, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DVolumeTexture9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4316,7 +4316,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVolumeTexture<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Depth, uint Levels, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppVolumeTexture, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DVolumeTexture9>, IComVtbl<TI0>
+    public static unsafe int CreateVolumeTexture<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, uint Depth, uint Levels, int Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppVolumeTexture, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DVolumeTexture9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4324,7 +4324,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCubeTexture<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint EdgeLength, uint Levels, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppCubeTexture, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCubeTexture9>, IComVtbl<TI0>
+    public static unsafe int CreateCubeTexture<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint EdgeLength, uint Levels, int Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppCubeTexture, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCubeTexture9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4332,7 +4332,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCubeTexture<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint EdgeLength, uint Levels, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppCubeTexture, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCubeTexture9>, IComVtbl<TI0>
+    public static unsafe int CreateCubeTexture<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint EdgeLength, uint Levels, int Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppCubeTexture, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCubeTexture9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4340,7 +4340,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, uint Usage, uint FVF, Pool Pool, ref ComPtr<TI0> ppVertexBuffer, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0>
+    public static unsafe int CreateVertexBuffer<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, int Usage, int FVF, Pool Pool, ref ComPtr<TI0> ppVertexBuffer, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4348,7 +4348,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexBuffer<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, uint Usage, uint FVF, Pool Pool, ref ComPtr<TI0> ppVertexBuffer, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0>
+    public static unsafe int CreateVertexBuffer<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, int Usage, int FVF, Pool Pool, ref ComPtr<TI0> ppVertexBuffer, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4356,7 +4356,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateIndexBuffer<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppIndexBuffer, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DIndexBuffer9>, IComVtbl<TI0>
+    public static unsafe int CreateIndexBuffer<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, int Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppIndexBuffer, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DIndexBuffer9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4364,7 +4364,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateIndexBuffer<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, uint Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppIndexBuffer, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DIndexBuffer9>, IComVtbl<TI0>
+    public static unsafe int CreateIndexBuffer<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Length, int Usage, Format Format, Pool Pool, ref ComPtr<TI0> ppIndexBuffer, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DIndexBuffer9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4372,7 +4372,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRenderTarget<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref ComPtr<TI0> ppSurface, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int CreateRenderTarget<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Lockable, ref ComPtr<TI0> ppSurface, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4380,7 +4380,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRenderTarget<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int CreateRenderTarget<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Lockable, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4388,7 +4388,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDepthStencilSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref ComPtr<TI0> ppSurface, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int CreateDepthStencilSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Discard, ref ComPtr<TI0> ppSurface, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4396,7 +4396,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDepthStencilSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int CreateDepthStencilSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Discard, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4404,7 +4404,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface<TI0, TI1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI1> pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+    public static unsafe int UpdateSurface<TI0, TI1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI1> pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4412,23 +4412,23 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, Span<Silk.NET.Maths.Vector2D<int>> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<int>> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->UpdateSurface(pSourceSurface, pSourceRect, pDestinationSurface, ref pDestPoint.GetPinnableReference());
+        return @this->UpdateSurface(pSourceSurface, pSourceRect, pDestinationSurface, in pDestPoint.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface<TI0, TI1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI1> pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+    public static unsafe int UpdateSurface<TI0, TI1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI1> pDestinationSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, ref pDestPoint);
+        return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, in pDestPoint);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4436,7 +4436,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4444,87 +4444,87 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, Span<Silk.NET.Maths.Vector2D<int>> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<int>> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->UpdateSurface(pSourceSurface, pSourceRect, ref pDestinationSurface.GetPinnableReference(), ref pDestPoint.GetPinnableReference());
+        return @this->UpdateSurface(pSourceSurface, pSourceRect, ref pDestinationSurface.GetPinnableReference(), in pDestPoint.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, pSourceRect, ref pDestinationSurface, ref pDestPoint);
+        return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, pSourceRect, ref pDestinationSurface, in pDestPoint);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, IDirect3DSurface9* pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->UpdateSurface(pSourceSurface, ref pSourceRect.GetPinnableReference(), pDestinationSurface, pDestPoint);
+        return @this->UpdateSurface(pSourceSurface, in pSourceRect.GetPinnableReference(), pDestinationSurface, pDestPoint);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface<TI0, TI1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI1> pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+    public static unsafe int UpdateSurface<TI0, TI1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI1> pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, ref pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, pDestPoint);
+        return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, in pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, pDestPoint);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, IDirect3DSurface9* pDestinationSurface, Span<Silk.NET.Maths.Vector2D<int>> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<int>> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->UpdateSurface(pSourceSurface, ref pSourceRect.GetPinnableReference(), pDestinationSurface, ref pDestPoint.GetPinnableReference());
+        return @this->UpdateSurface(pSourceSurface, in pSourceRect.GetPinnableReference(), pDestinationSurface, in pDestPoint.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateSurface<TI0, TI1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI1> pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+    public static int UpdateSurface<TI0, TI1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI1> pDestinationSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, ref pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, ref pDestPoint);
+        return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, in pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, in pDestPoint);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->UpdateSurface(pSourceSurface, ref pSourceRect.GetPinnableReference(), ref pDestinationSurface.GetPinnableReference(), pDestPoint);
+        return @this->UpdateSurface(pSourceSurface, in pSourceRect.GetPinnableReference(), ref pDestinationSurface.GetPinnableReference(), pDestPoint);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, ref pSourceRect, ref pDestinationSurface, pDestPoint);
+        return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, in pSourceRect, ref pDestinationSurface, pDestPoint);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, Span<Silk.NET.Maths.Vector2D<int>> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<int>> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->UpdateSurface(pSourceSurface, ref pSourceRect.GetPinnableReference(), ref pDestinationSurface.GetPinnableReference(), ref pDestPoint.GetPinnableReference());
+        return @this->UpdateSurface(pSourceSurface, in pSourceRect.GetPinnableReference(), ref pDestinationSurface.GetPinnableReference(), in pDestPoint.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestinationSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, ref pSourceRect, ref pDestinationSurface, ref pDestPoint);
+        return @this->UpdateSurface((IDirect3DSurface9*) pSourceSurface.Handle, in pSourceRect, ref pDestinationSurface, in pDestPoint);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4532,7 +4532,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI0> pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI0> pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4540,23 +4540,23 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, Span<Silk.NET.Maths.Vector2D<int>> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<int>> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), pSourceRect, pDestinationSurface, ref pDestPoint.GetPinnableReference());
+        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), pSourceRect, pDestinationSurface, in pDestPoint.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI0> pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI0> pDestinationSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->UpdateSurface(ref pSourceSurface, pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, ref pDestPoint);
+        return @this->UpdateSurface(ref pSourceSurface, pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, in pDestPoint);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4564,59 +4564,59 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, Span<Silk.NET.Maths.Vector2D<int>> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<int>> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), pSourceRect, ref pDestinationSurface.GetPinnableReference(), ref pDestPoint.GetPinnableReference());
+        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), pSourceRect, ref pDestinationSurface.GetPinnableReference(), in pDestPoint.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, IDirect3DSurface9* pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), ref pSourceRect.GetPinnableReference(), pDestinationSurface, pDestPoint);
+        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), in pSourceRect.GetPinnableReference(), pDestinationSurface, pDestPoint);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI0> pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI0> pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->UpdateSurface(ref pSourceSurface, ref pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, pDestPoint);
+        return @this->UpdateSurface(ref pSourceSurface, in pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, pDestPoint);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, IDirect3DSurface9* pDestinationSurface, Span<Silk.NET.Maths.Vector2D<int>> pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, IDirect3DSurface9* pDestinationSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<int>> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), ref pSourceRect.GetPinnableReference(), pDestinationSurface, ref pDestPoint.GetPinnableReference());
+        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), in pSourceRect.GetPinnableReference(), pDestinationSurface, in pDestPoint.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI0> pDestinationSurface, ref Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static int UpdateSurface<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI0> pDestinationSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<int> pDestPoint) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->UpdateSurface(ref pSourceSurface, ref pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, ref pDestPoint);
+        return @this->UpdateSurface(ref pSourceSurface, in pSourceRect, (IDirect3DSurface9*) pDestinationSurface.Handle, in pDestPoint);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, Silk.NET.Maths.Vector2D<int>* pDestPoint)
+    public static unsafe int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<int>* pDestPoint)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), ref pSourceRect.GetPinnableReference(), ref pDestinationSurface.GetPinnableReference(), pDestPoint);
+        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), in pSourceRect.GetPinnableReference(), ref pDestinationSurface.GetPinnableReference(), pDestPoint);
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, Span<Silk.NET.Maths.Vector2D<int>> pDestPoint)
+    public static int UpdateSurface(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<IDirect3DSurface9> pDestinationSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<int>> pDestPoint)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), ref pSourceRect.GetPinnableReference(), ref pDestinationSurface.GetPinnableReference(), ref pDestPoint.GetPinnableReference());
+        return @this->UpdateSurface(ref pSourceSurface.GetPinnableReference(), in pSourceRect.GetPinnableReference(), ref pDestinationSurface.GetPinnableReference(), in pDestPoint.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -4732,7 +4732,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect<TI0, TI1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI1> pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+    public static unsafe int StretchRect<TI0, TI1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI1> pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4740,23 +4740,23 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestSurface, Span<Silk.NET.Maths.Box2D<int>> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StretchRect(pSourceSurface, pSourceRect, pDestSurface, ref pDestRect.GetPinnableReference(), Filter);
+        return @this->StretchRect(pSourceSurface, pSourceRect, pDestSurface, in pDestRect.GetPinnableReference(), Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect<TI0, TI1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI1> pDestSurface, ref Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+    public static unsafe int StretchRect<TI0, TI1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI1> pDestSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, ref pDestRect, Filter);
+        return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, in pDestRect, Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, Span<IDirect3DSurface9> pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, Span<IDirect3DSurface9> pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4764,7 +4764,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4772,87 +4772,87 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, Span<IDirect3DSurface9> pDestSurface, Span<Silk.NET.Maths.Box2D<int>> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, Span<IDirect3DSurface9> pDestSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StretchRect(pSourceSurface, pSourceRect, ref pDestSurface.GetPinnableReference(), ref pDestRect.GetPinnableReference(), Filter);
+        return @this->StretchRect(pSourceSurface, pSourceRect, ref pDestSurface.GetPinnableReference(), in pDestRect.GetPinnableReference(), Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, ref Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, pSourceRect, ref pDestSurface, ref pDestRect, Filter);
+        return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, pSourceRect, ref pDestSurface, in pDestRect, Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, IDirect3DSurface9* pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StretchRect(pSourceSurface, ref pSourceRect.GetPinnableReference(), pDestSurface, pDestRect, Filter);
+        return @this->StretchRect(pSourceSurface, in pSourceRect.GetPinnableReference(), pDestSurface, pDestRect, Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect<TI0, TI1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI1> pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+    public static unsafe int StretchRect<TI0, TI1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI1> pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, ref pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, pDestRect, Filter);
+        return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, in pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, pDestRect, Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, IDirect3DSurface9* pDestSurface, Span<Silk.NET.Maths.Box2D<int>> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StretchRect(pSourceSurface, ref pSourceRect.GetPinnableReference(), pDestSurface, ref pDestRect.GetPinnableReference(), Filter);
+        return @this->StretchRect(pSourceSurface, in pSourceRect.GetPinnableReference(), pDestSurface, in pDestRect.GetPinnableReference(), Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static int StretchRect<TI0, TI1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI1> pDestSurface, ref Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+    public static int StretchRect<TI0, TI1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI1> pDestSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, ref pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, ref pDestRect, Filter);
+        return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, in pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, in pDestRect, Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<IDirect3DSurface9> pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<IDirect3DSurface9> pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StretchRect(pSourceSurface, ref pSourceRect.GetPinnableReference(), ref pDestSurface.GetPinnableReference(), pDestRect, Filter);
+        return @this->StretchRect(pSourceSurface, in pSourceRect.GetPinnableReference(), ref pDestSurface.GetPinnableReference(), pDestRect, Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, ref pSourceRect, ref pDestSurface, pDestRect, Filter);
+        return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, in pSourceRect, ref pDestSurface, pDestRect, Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<IDirect3DSurface9> pDestSurface, Span<Silk.NET.Maths.Box2D<int>> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSourceSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<IDirect3DSurface9> pDestSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StretchRect(pSourceSurface, ref pSourceRect.GetPinnableReference(), ref pDestSurface.GetPinnableReference(), ref pDestRect.GetPinnableReference(), Filter);
+        return @this->StretchRect(pSourceSurface, in pSourceRect.GetPinnableReference(), ref pDestSurface.GetPinnableReference(), in pDestRect.GetPinnableReference(), Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static int StretchRect<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, ref Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static int StretchRect<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ref IDirect3DSurface9 pDestSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, ref pSourceRect, ref pDestSurface, ref pDestRect, Filter);
+        return @this->StretchRect((IDirect3DSurface9*) pSourceSurface.Handle, in pSourceRect, ref pDestSurface, in pDestRect, Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4860,7 +4860,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI0> pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI0> pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4868,23 +4868,23 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestSurface, Span<Silk.NET.Maths.Box2D<int>> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), pSourceRect, pDestSurface, ref pDestRect.GetPinnableReference(), Filter);
+        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), pSourceRect, pDestSurface, in pDestRect.GetPinnableReference(), Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI0> pDestSurface, ref Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, ComPtr<TI0> pDestSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->StretchRect(ref pSourceSurface, pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, ref pDestRect, Filter);
+        return @this->StretchRect(ref pSourceSurface, pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, in pDestRect, Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, Span<IDirect3DSurface9> pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, Span<IDirect3DSurface9> pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4892,63 +4892,63 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Silk.NET.Maths.Box2D<int>* pSourceRect, Span<IDirect3DSurface9> pDestSurface, Span<Silk.NET.Maths.Box2D<int>> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, Span<IDirect3DSurface9> pDestSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), pSourceRect, ref pDestSurface.GetPinnableReference(), ref pDestRect.GetPinnableReference(), Filter);
+        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), pSourceRect, ref pDestSurface.GetPinnableReference(), in pDestRect.GetPinnableReference(), Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, IDirect3DSurface9* pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), ref pSourceRect.GetPinnableReference(), pDestSurface, pDestRect, Filter);
+        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), in pSourceRect.GetPinnableReference(), pDestSurface, pDestRect, Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI0> pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int StretchRect<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI0> pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->StretchRect(ref pSourceSurface, ref pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, pDestRect, Filter);
+        return @this->StretchRect(ref pSourceSurface, in pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, pDestRect, Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, IDirect3DSurface9* pDestSurface, Span<Silk.NET.Maths.Box2D<int>> pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, IDirect3DSurface9* pDestSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), ref pSourceRect.GetPinnableReference(), pDestSurface, ref pDestRect.GetPinnableReference(), Filter);
+        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), in pSourceRect.GetPinnableReference(), pDestSurface, in pDestRect.GetPinnableReference(), Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static int StretchRect<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, ref Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI0> pDestSurface, ref Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static int StretchRect<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref IDirect3DSurface9 pSourceSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, ComPtr<TI0> pDestSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, Texturefiltertype Filter) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->StretchRect(ref pSourceSurface, ref pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, ref pDestRect, Filter);
+        return @this->StretchRect(ref pSourceSurface, in pSourceRect, (IDirect3DSurface9*) pDestSurface.Handle, in pDestRect, Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<IDirect3DSurface9> pDestSurface, Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
+    public static unsafe int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<IDirect3DSurface9> pDestSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), ref pSourceRect.GetPinnableReference(), ref pDestSurface.GetPinnableReference(), pDestRect, Filter);
+        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), in pSourceRect.GetPinnableReference(), ref pDestSurface.GetPinnableReference(), pDestRect, Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<IDirect3DSurface9> pDestSurface, Span<Silk.NET.Maths.Box2D<int>> pDestRect, Texturefiltertype Filter)
+    public static int StretchRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSourceSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<IDirect3DSurface9> pDestSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, Texturefiltertype Filter)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), ref pSourceRect.GetPinnableReference(), ref pDestSurface.GetPinnableReference(), ref pDestRect.GetPinnableReference(), Filter);
+        return @this->StretchRect(ref pSourceSurface.GetPinnableReference(), in pSourceRect.GetPinnableReference(), ref pDestSurface.GetPinnableReference(), in pDestRect.GetPinnableReference(), Filter);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ColorFill<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSurface, Silk.NET.Maths.Box2D<int>* pRect, uint color) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int ColorFill<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint color) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -4956,23 +4956,23 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ColorFill(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSurface, Span<Silk.NET.Maths.Box2D<int>> pRect, uint color)
+    public static unsafe int ColorFill(this ComPtr<IDirect3DDevice9Ex> thisVtbl, IDirect3DSurface9* pSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect, uint color)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->ColorFill(pSurface, ref pRect.GetPinnableReference(), color);
+        return @this->ColorFill(pSurface, in pRect.GetPinnableReference(), color);
     }
 
     /// <summary>To be documented.</summary>
-    public static int ColorFill<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSurface, ref Silk.NET.Maths.Box2D<int> pRect, uint color) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static int ColorFill<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ComPtr<TI0> pSurface, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint color) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->ColorFill((IDirect3DSurface9*) pSurface.Handle, ref pRect, color);
+        return @this->ColorFill((IDirect3DSurface9*) pSurface.Handle, in pRect, color);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ColorFill(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSurface, Silk.NET.Maths.Box2D<int>* pRect, uint color)
+    public static unsafe int ColorFill(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSurface, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint color)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -4980,11 +4980,11 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ColorFill(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSurface, Span<Silk.NET.Maths.Box2D<int>> pRect, uint color)
+    public static int ColorFill(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<IDirect3DSurface9> pSurface, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect, uint color)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->ColorFill(ref pSurface.GetPinnableReference(), ref pRect.GetPinnableReference(), color);
+        return @this->ColorFill(ref pSurface.GetPinnableReference(), in pRect.GetPinnableReference(), color);
     }
 
     /// <summary>To be documented.</summary>
@@ -5004,7 +5004,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetRenderTarget<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint RenderTargetIndex, ComPtr<TI0> pRenderTarget) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static int SetRenderTarget<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int RenderTargetIndex, ComPtr<TI0> pRenderTarget) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5012,7 +5012,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetRenderTarget(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint RenderTargetIndex, Span<IDirect3DSurface9> pRenderTarget)
+    public static int SetRenderTarget(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int RenderTargetIndex, Span<IDirect3DSurface9> pRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5020,7 +5020,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetRenderTarget<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint RenderTargetIndex, ref ComPtr<TI0> ppRenderTarget) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static int GetRenderTarget<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int RenderTargetIndex, ref ComPtr<TI0> ppRenderTarget) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5052,19 +5052,19 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Clear(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Count, Span<Rect> pRects, uint Flags, uint Color, float Z, uint Stencil)
+    public static int Clear(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Count, [Flow(FlowDirection.In)] ReadOnlySpan<Rect> pRects, int Flags, uint Color, float Z, int Stencil)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Clear(Count, ref pRects.GetPinnableReference(), Flags, Color, Z, Stencil);
+        return @this->Clear(Count, in pRects.GetPinnableReference(), Flags, Color, Z, Stencil);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTransform(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Transformstatetype State, Span<System.Numerics.Matrix4x4> pMatrix)
+    public static int SetTransform(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Transformstatetype State, [Flow(FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> pMatrix)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetTransform(State, ref pMatrix.GetPinnableReference());
+        return @this->SetTransform(State, in pMatrix.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -5076,19 +5076,19 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int MultiplyTransform(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Transformstatetype arg0, Span<System.Numerics.Matrix4x4> arg1)
+    public static int MultiplyTransform(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Transformstatetype arg0, [Flow(FlowDirection.In)] ReadOnlySpan<System.Numerics.Matrix4x4> arg1)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->MultiplyTransform(arg0, ref arg1.GetPinnableReference());
+        return @this->MultiplyTransform(arg0, in arg1.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetViewport(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<Viewport9> pViewport)
+    public static int SetViewport(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Viewport9> pViewport)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetViewport(ref pViewport.GetPinnableReference());
+        return @this->SetViewport(in pViewport.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -5100,11 +5100,11 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetMaterial(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<Material9> pMaterial)
+    public static int SetMaterial(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Material9> pMaterial)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetMaterial(ref pMaterial.GetPinnableReference());
+        return @this->SetMaterial(in pMaterial.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -5116,15 +5116,15 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetLight(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Index, Span<Light9> arg1)
+    public static int SetLight(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Index, [Flow(FlowDirection.In)] ReadOnlySpan<Light9> arg1)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetLight(Index, ref arg1.GetPinnableReference());
+        return @this->SetLight(Index, in arg1.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetLight(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Index, Span<Light9> arg1)
+    public static int GetLight(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Index, Span<Light9> arg1)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5132,7 +5132,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetLightEnable(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Index, Span<int> pEnable)
+    public static int GetLightEnable(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Index, Span<int> pEnable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5140,15 +5140,15 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetClipPlane(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Index, Span<float> pPlane)
+    public static int SetClipPlane(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Index, [Flow(FlowDirection.In)] ReadOnlySpan<float> pPlane)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetClipPlane(Index, ref pPlane.GetPinnableReference());
+        return @this->SetClipPlane(Index, in pPlane.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetClipPlane(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Index, Span<float> pPlane)
+    public static int GetClipPlane(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Index, Span<float> pPlane)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5180,11 +5180,11 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetClipStatus(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<Clipstatus9> pClipStatus)
+    public static int SetClipStatus(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Clipstatus9> pClipStatus)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetClipStatus(ref pClipStatus.GetPinnableReference());
+        return @this->SetClipStatus(in pClipStatus.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -5196,7 +5196,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetTexture<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Stage, ref ComPtr<TI0> ppTexture) where TI0 : unmanaged, IComVtbl<IDirect3DBaseTexture9>, IComVtbl<TI0>
+    public static int GetTexture<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Stage, ref ComPtr<TI0> ppTexture) where TI0 : unmanaged, IComVtbl<IDirect3DBaseTexture9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5204,7 +5204,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTexture<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Stage, ComPtr<TI0> pTexture) where TI0 : unmanaged, IComVtbl<IDirect3DBaseTexture9>, IComVtbl<TI0>
+    public static int SetTexture<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Stage, ComPtr<TI0> pTexture) where TI0 : unmanaged, IComVtbl<IDirect3DBaseTexture9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5212,7 +5212,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Stage, Span<IDirect3DBaseTexture9> pTexture)
+    public static int SetTexture(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Stage, Span<IDirect3DBaseTexture9> pTexture)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5220,7 +5220,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetTextureStageState(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Stage, Texturestagestatetype Type, Span<uint> pValue)
+    public static int GetTextureStageState(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Stage, Texturestagestatetype Type, Span<uint> pValue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5228,7 +5228,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetSamplerState(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Sampler, Samplerstatetype Type, Span<uint> pValue)
+    public static int GetSamplerState(this ComPtr<IDirect3DDevice9Ex> thisVtbl, int Sampler, Samplerstatetype Type, Span<uint> pValue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5244,11 +5244,11 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPaletteEntries(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint PaletteNumber, Span<Silk.NET.Maths.Vector4D<byte>> pEntries)
+    public static int SetPaletteEntries(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint PaletteNumber, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector4D<byte>> pEntries)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPaletteEntries(PaletteNumber, ref pEntries.GetPinnableReference());
+        return @this->SetPaletteEntries(PaletteNumber, in pEntries.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -5268,11 +5268,11 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetScissorRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> pRect)
+    public static int SetScissorRect(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetScissorRect(ref pRect.GetPinnableReference());
+        return @this->SetScissorRect(in pRect.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -5284,39 +5284,39 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint PrimitiveCount, Span<T0> pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
+    public static int DrawPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint PrimitiveCount, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawPrimitiveUP(PrimitiveType, PrimitiveCount, ref pVertexStreamZeroData.GetPinnableReference(), VertexStreamZeroStride);
+        return @this->DrawPrimitiveUP(PrimitiveType, PrimitiveCount, in pVertexStreamZeroData.GetPinnableReference(), VertexStreamZeroStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawIndexedPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, void* pIndexData, Format IndexDataFormat, Span<T0> pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
+    public static unsafe int DrawIndexedPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(FlowDirection.In)] void* pIndexData, Format IndexDataFormat, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawIndexedPrimitiveUP(PrimitiveType, MinVertexIndex, NumVertices, PrimitiveCount, pIndexData, IndexDataFormat, ref pVertexStreamZeroData.GetPinnableReference(), VertexStreamZeroStride);
+        return @this->DrawIndexedPrimitiveUP(PrimitiveType, MinVertexIndex, NumVertices, PrimitiveCount, pIndexData, IndexDataFormat, in pVertexStreamZeroData.GetPinnableReference(), VertexStreamZeroStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawIndexedPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, Span<T0> pIndexData, Format IndexDataFormat, void* pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
+    public static unsafe int DrawIndexedPrimitiveUP<T0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pIndexData, Format IndexDataFormat, [Flow(FlowDirection.In)] void* pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawIndexedPrimitiveUP(PrimitiveType, MinVertexIndex, NumVertices, PrimitiveCount, ref pIndexData.GetPinnableReference(), IndexDataFormat, pVertexStreamZeroData, VertexStreamZeroStride);
+        return @this->DrawIndexedPrimitiveUP(PrimitiveType, MinVertexIndex, NumVertices, PrimitiveCount, in pIndexData.GetPinnableReference(), IndexDataFormat, pVertexStreamZeroData, VertexStreamZeroStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawIndexedPrimitiveUP<T0, T1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, Span<T0> pIndexData, Format IndexDataFormat, Span<T1> pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged where T1 : unmanaged
+    public static int DrawIndexedPrimitiveUP<T0, T1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Primitivetype PrimitiveType, uint MinVertexIndex, uint NumVertices, uint PrimitiveCount, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pIndexData, Format IndexDataFormat, [Flow(FlowDirection.In)] ReadOnlySpan<T1> pVertexStreamZeroData, uint VertexStreamZeroStride) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawIndexedPrimitiveUP(PrimitiveType, MinVertexIndex, NumVertices, PrimitiveCount, ref pIndexData.GetPinnableReference(), IndexDataFormat, ref pVertexStreamZeroData.GetPinnableReference(), VertexStreamZeroStride);
+        return @this->DrawIndexedPrimitiveUP(PrimitiveType, MinVertexIndex, NumVertices, PrimitiveCount, in pIndexData.GetPinnableReference(), IndexDataFormat, in pVertexStreamZeroData.GetPinnableReference(), VertexStreamZeroStride);
     }
 
     /// <summary>To be documented.</summary>
-    public static int ProcessVertices<TI0, TI1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, ComPtr<TI0> pDestBuffer, ComPtr<TI1> pVertexDecl, uint Flags) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI1>
+    public static int ProcessVertices<TI0, TI1>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, ComPtr<TI0> pDestBuffer, ComPtr<TI1> pVertexDecl, int Flags) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5324,7 +5324,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ProcessVertices(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, IDirect3DVertexBuffer9* pDestBuffer, Span<IDirect3DVertexDeclaration9> pVertexDecl, uint Flags)
+    public static unsafe int ProcessVertices(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, IDirect3DVertexBuffer9* pDestBuffer, Span<IDirect3DVertexDeclaration9> pVertexDecl, int Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5332,7 +5332,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ProcessVertices<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, ComPtr<TI0> pDestBuffer, ref IDirect3DVertexDeclaration9 pVertexDecl, uint Flags) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0>
+    public static int ProcessVertices<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, ComPtr<TI0> pDestBuffer, ref IDirect3DVertexDeclaration9 pVertexDecl, int Flags) where TI0 : unmanaged, IComVtbl<IDirect3DVertexBuffer9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5340,7 +5340,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ProcessVertices(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, Span<IDirect3DVertexBuffer9> pDestBuffer, IDirect3DVertexDeclaration9* pVertexDecl, uint Flags)
+    public static unsafe int ProcessVertices(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, Span<IDirect3DVertexBuffer9> pDestBuffer, IDirect3DVertexDeclaration9* pVertexDecl, int Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5348,7 +5348,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ProcessVertices<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, ref IDirect3DVertexBuffer9 pDestBuffer, ComPtr<TI0> pVertexDecl, uint Flags) where TI0 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI0>
+    public static int ProcessVertices<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, ref IDirect3DVertexBuffer9 pDestBuffer, ComPtr<TI0> pVertexDecl, int Flags) where TI0 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5356,7 +5356,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ProcessVertices(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, Span<IDirect3DVertexBuffer9> pDestBuffer, Span<IDirect3DVertexDeclaration9> pVertexDecl, uint Flags)
+    public static int ProcessVertices(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint SrcStartIndex, uint DestIndex, uint VertexCount, Span<IDirect3DVertexBuffer9> pDestBuffer, Span<IDirect3DVertexDeclaration9> pVertexDecl, int Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -5364,7 +5364,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexDeclaration<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Vertexelement9* pVertexElements, ref ComPtr<TI0> ppDecl) where TI0 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI0>
+    public static unsafe int CreateVertexDeclaration<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Vertexelement9* pVertexElements, ref ComPtr<TI0> ppDecl) where TI0 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5372,27 +5372,27 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexDeclaration(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<Vertexelement9> pVertexElements, IDirect3DVertexDeclaration9** ppDecl)
+    public static unsafe int CreateVertexDeclaration(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Vertexelement9> pVertexElements, IDirect3DVertexDeclaration9** ppDecl)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVertexDeclaration(ref pVertexElements.GetPinnableReference(), ppDecl);
+        return @this->CreateVertexDeclaration(in pVertexElements.GetPinnableReference(), ppDecl);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVertexDeclaration<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref Vertexelement9 pVertexElements, ref ComPtr<TI0> ppDecl) where TI0 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI0>
+    public static int CreateVertexDeclaration<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in Vertexelement9 pVertexElements, ref ComPtr<TI0> ppDecl) where TI0 : unmanaged, IComVtbl<IDirect3DVertexDeclaration9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateVertexDeclaration(ref pVertexElements, (IDirect3DVertexDeclaration9**) ppDecl.GetAddressOf());
+        return @this->CreateVertexDeclaration(in pVertexElements, (IDirect3DVertexDeclaration9**) ppDecl.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexDeclaration(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<Vertexelement9> pVertexElements, ref IDirect3DVertexDeclaration9* ppDecl)
+    public static unsafe int CreateVertexDeclaration(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Vertexelement9> pVertexElements, ref IDirect3DVertexDeclaration9* ppDecl)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVertexDeclaration(ref pVertexElements.GetPinnableReference(), ref ppDecl);
+        return @this->CreateVertexDeclaration(in pVertexElements.GetPinnableReference(), ref ppDecl);
     }
 
     /// <summary>To be documented.</summary>
@@ -5428,7 +5428,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexShader<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint* pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DVertexShader9>, IComVtbl<TI0>
+    public static unsafe int CreateVertexShader<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] uint* pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DVertexShader9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5436,27 +5436,27 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<uint> pFunction, IDirect3DVertexShader9** ppShader)
+    public static unsafe int CreateVertexShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pFunction, IDirect3DVertexShader9** ppShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVertexShader(ref pFunction.GetPinnableReference(), ppShader);
+        return @this->CreateVertexShader(in pFunction.GetPinnableReference(), ppShader);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVertexShader<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref uint pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DVertexShader9>, IComVtbl<TI0>
+    public static int CreateVertexShader<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in uint pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DVertexShader9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateVertexShader(ref pFunction, (IDirect3DVertexShader9**) ppShader.GetAddressOf());
+        return @this->CreateVertexShader(in pFunction, (IDirect3DVertexShader9**) ppShader.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVertexShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<uint> pFunction, ref IDirect3DVertexShader9* ppShader)
+    public static unsafe int CreateVertexShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pFunction, ref IDirect3DVertexShader9* ppShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVertexShader(ref pFunction.GetPinnableReference(), ref ppShader);
+        return @this->CreateVertexShader(in pFunction.GetPinnableReference(), ref ppShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -5484,11 +5484,11 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexShaderConstantF(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, Span<float> pConstantData, uint Vector4fCount)
+    public static int SetVertexShaderConstantF(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, [Flow(FlowDirection.In)] ReadOnlySpan<float> pConstantData, uint Vector4fCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVertexShaderConstantF(StartRegister, ref pConstantData.GetPinnableReference(), Vector4fCount);
+        return @this->SetVertexShaderConstantF(StartRegister, in pConstantData.GetPinnableReference(), Vector4fCount);
     }
 
     /// <summary>To be documented.</summary>
@@ -5500,11 +5500,11 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexShaderConstantI(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, Span<int> pConstantData, uint Vector4iCount)
+    public static int SetVertexShaderConstantI(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, [Flow(FlowDirection.In)] ReadOnlySpan<int> pConstantData, uint Vector4iCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVertexShaderConstantI(StartRegister, ref pConstantData.GetPinnableReference(), Vector4iCount);
+        return @this->SetVertexShaderConstantI(StartRegister, in pConstantData.GetPinnableReference(), Vector4iCount);
     }
 
     /// <summary>To be documented.</summary>
@@ -5516,11 +5516,11 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexShaderConstantB(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, Span<int> pConstantData, uint BoolCount)
+    public static int SetVertexShaderConstantB(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, [Flow(FlowDirection.In)] ReadOnlySpan<int> pConstantData, uint BoolCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVertexShaderConstantB(StartRegister, ref pConstantData.GetPinnableReference(), BoolCount);
+        return @this->SetVertexShaderConstantB(StartRegister, in pConstantData.GetPinnableReference(), BoolCount);
     }
 
     /// <summary>To be documented.</summary>
@@ -5660,7 +5660,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePixelShader<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint* pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DPixelShader9>, IComVtbl<TI0>
+    public static unsafe int CreatePixelShader<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] uint* pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DPixelShader9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5668,27 +5668,27 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePixelShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<uint> pFunction, IDirect3DPixelShader9** ppShader)
+    public static unsafe int CreatePixelShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pFunction, IDirect3DPixelShader9** ppShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreatePixelShader(ref pFunction.GetPinnableReference(), ppShader);
+        return @this->CreatePixelShader(in pFunction.GetPinnableReference(), ppShader);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreatePixelShader<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, ref uint pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DPixelShader9>, IComVtbl<TI0>
+    public static int CreatePixelShader<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] in uint pFunction, ref ComPtr<TI0> ppShader) where TI0 : unmanaged, IComVtbl<IDirect3DPixelShader9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreatePixelShader(ref pFunction, (IDirect3DPixelShader9**) ppShader.GetAddressOf());
+        return @this->CreatePixelShader(in pFunction, (IDirect3DPixelShader9**) ppShader.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreatePixelShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<uint> pFunction, ref IDirect3DPixelShader9* ppShader)
+    public static unsafe int CreatePixelShader(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pFunction, ref IDirect3DPixelShader9* ppShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreatePixelShader(ref pFunction.GetPinnableReference(), ref ppShader);
+        return @this->CreatePixelShader(in pFunction.GetPinnableReference(), ref ppShader);
     }
 
     /// <summary>To be documented.</summary>
@@ -5716,11 +5716,11 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPixelShaderConstantF(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, Span<float> pConstantData, uint Vector4fCount)
+    public static int SetPixelShaderConstantF(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, [Flow(FlowDirection.In)] ReadOnlySpan<float> pConstantData, uint Vector4fCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPixelShaderConstantF(StartRegister, ref pConstantData.GetPinnableReference(), Vector4fCount);
+        return @this->SetPixelShaderConstantF(StartRegister, in pConstantData.GetPinnableReference(), Vector4fCount);
     }
 
     /// <summary>To be documented.</summary>
@@ -5732,11 +5732,11 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPixelShaderConstantI(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, Span<int> pConstantData, uint Vector4iCount)
+    public static int SetPixelShaderConstantI(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, [Flow(FlowDirection.In)] ReadOnlySpan<int> pConstantData, uint Vector4iCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPixelShaderConstantI(StartRegister, ref pConstantData.GetPinnableReference(), Vector4iCount);
+        return @this->SetPixelShaderConstantI(StartRegister, in pConstantData.GetPinnableReference(), Vector4iCount);
     }
 
     /// <summary>To be documented.</summary>
@@ -5748,11 +5748,11 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPixelShaderConstantB(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, Span<int> pConstantData, uint BoolCount)
+    public static int SetPixelShaderConstantB(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint StartRegister, [Flow(FlowDirection.In)] ReadOnlySpan<int> pConstantData, uint BoolCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPixelShaderConstantB(StartRegister, ref pConstantData.GetPinnableReference(), BoolCount);
+        return @this->SetPixelShaderConstantB(StartRegister, in pConstantData.GetPinnableReference(), BoolCount);
     }
 
     /// <summary>To be documented.</summary>
@@ -5764,51 +5764,51 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, float* pNumSegs, Span<RectpatchInfo> pRectPatchInfo)
+    public static unsafe int DrawRectPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, [Flow(FlowDirection.In)] float* pNumSegs, [Flow(FlowDirection.In)] ReadOnlySpan<RectpatchInfo> pRectPatchInfo)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawRectPatch(Handle, pNumSegs, ref pRectPatchInfo.GetPinnableReference());
+        return @this->DrawRectPatch(Handle, pNumSegs, in pRectPatchInfo.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, Span<float> pNumSegs, RectpatchInfo* pRectPatchInfo)
+    public static unsafe int DrawRectPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, [Flow(FlowDirection.In)] ReadOnlySpan<float> pNumSegs, [Flow(FlowDirection.In)] RectpatchInfo* pRectPatchInfo)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawRectPatch(Handle, ref pNumSegs.GetPinnableReference(), pRectPatchInfo);
+        return @this->DrawRectPatch(Handle, in pNumSegs.GetPinnableReference(), pRectPatchInfo);
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawRectPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, Span<float> pNumSegs, Span<RectpatchInfo> pRectPatchInfo)
+    public static int DrawRectPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, [Flow(FlowDirection.In)] ReadOnlySpan<float> pNumSegs, [Flow(FlowDirection.In)] ReadOnlySpan<RectpatchInfo> pRectPatchInfo)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawRectPatch(Handle, ref pNumSegs.GetPinnableReference(), ref pRectPatchInfo.GetPinnableReference());
+        return @this->DrawRectPatch(Handle, in pNumSegs.GetPinnableReference(), in pRectPatchInfo.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawTriPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, float* pNumSegs, Span<TripatchInfo> pTriPatchInfo)
+    public static unsafe int DrawTriPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, [Flow(FlowDirection.In)] float* pNumSegs, [Flow(FlowDirection.In)] ReadOnlySpan<TripatchInfo> pTriPatchInfo)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawTriPatch(Handle, pNumSegs, ref pTriPatchInfo.GetPinnableReference());
+        return @this->DrawTriPatch(Handle, pNumSegs, in pTriPatchInfo.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawTriPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, Span<float> pNumSegs, TripatchInfo* pTriPatchInfo)
+    public static unsafe int DrawTriPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, [Flow(FlowDirection.In)] ReadOnlySpan<float> pNumSegs, [Flow(FlowDirection.In)] TripatchInfo* pTriPatchInfo)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawTriPatch(Handle, ref pNumSegs.GetPinnableReference(), pTriPatchInfo);
+        return @this->DrawTriPatch(Handle, in pNumSegs.GetPinnableReference(), pTriPatchInfo);
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawTriPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, Span<float> pNumSegs, Span<TripatchInfo> pTriPatchInfo)
+    public static int DrawTriPatch(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Handle, [Flow(FlowDirection.In)] ReadOnlySpan<float> pNumSegs, [Flow(FlowDirection.In)] ReadOnlySpan<TripatchInfo> pTriPatchInfo)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawTriPatch(Handle, ref pNumSegs.GetPinnableReference(), ref pTriPatchInfo.GetPinnableReference());
+        return @this->DrawTriPatch(Handle, in pNumSegs.GetPinnableReference(), in pTriPatchInfo.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -6084,59 +6084,59 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Silk.NET.Maths.Box2D<int>* pSourceRect, Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion, uint dwFlags)
+    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion, int dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->PresentEx(pSourceRect, pDestRect, hDestWindowOverride, ref pDirtyRegion.GetPinnableReference(), dwFlags);
+        return @this->PresentEx(pSourceRect, pDestRect, hDestWindowOverride, in pDirtyRegion.GetPinnableReference(), dwFlags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Silk.NET.Maths.Box2D<int>* pSourceRect, Span<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, int dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->PresentEx(pSourceRect, ref pDestRect.GetPinnableReference(), hDestWindowOverride, pDirtyRegion, dwFlags);
+        return @this->PresentEx(pSourceRect, in pDestRect.GetPinnableReference(), hDestWindowOverride, pDirtyRegion, dwFlags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Silk.NET.Maths.Box2D<int>* pSourceRect, Span<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion, uint dwFlags)
+    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion, int dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->PresentEx(pSourceRect, ref pDestRect.GetPinnableReference(), hDestWindowOverride, ref pDirtyRegion.GetPinnableReference(), dwFlags);
+        return @this->PresentEx(pSourceRect, in pDestRect.GetPinnableReference(), hDestWindowOverride, in pDirtyRegion.GetPinnableReference(), dwFlags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, int dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->PresentEx(ref pSourceRect.GetPinnableReference(), pDestRect, hDestWindowOverride, pDirtyRegion, dwFlags);
+        return @this->PresentEx(in pSourceRect.GetPinnableReference(), pDestRect, hDestWindowOverride, pDirtyRegion, dwFlags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion, uint dwFlags)
+    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion, int dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->PresentEx(ref pSourceRect.GetPinnableReference(), pDestRect, hDestWindowOverride, ref pDirtyRegion.GetPinnableReference(), dwFlags);
+        return @this->PresentEx(in pSourceRect.GetPinnableReference(), pDestRect, hDestWindowOverride, in pDirtyRegion.GetPinnableReference(), dwFlags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, int dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->PresentEx(ref pSourceRect.GetPinnableReference(), ref pDestRect.GetPinnableReference(), hDestWindowOverride, pDirtyRegion, dwFlags);
+        return @this->PresentEx(in pSourceRect.GetPinnableReference(), in pDestRect.GetPinnableReference(), hDestWindowOverride, pDirtyRegion, dwFlags);
     }
 
     /// <summary>To be documented.</summary>
-    public static int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> pSourceRect, Span<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion, uint dwFlags)
+    public static int PresentEx(this ComPtr<IDirect3DDevice9Ex> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion, int dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->PresentEx(ref pSourceRect.GetPinnableReference(), ref pDestRect.GetPinnableReference(), hDestWindowOverride, ref pDirtyRegion.GetPinnableReference(), dwFlags);
+        return @this->PresentEx(in pSourceRect.GetPinnableReference(), in pDestRect.GetPinnableReference(), hDestWindowOverride, in pDirtyRegion.GetPinnableReference(), dwFlags);
     }
 
     /// <summary>To be documented.</summary>
@@ -6164,7 +6164,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRenderTargetEx<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref ComPtr<TI0> ppSurface, void** pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int CreateRenderTargetEx<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Lockable, ref ComPtr<TI0> ppSurface, void** pSharedHandle, int Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6172,7 +6172,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRenderTargetEx<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int CreateRenderTargetEx<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Lockable, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle, int Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6180,7 +6180,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateOffscreenPlainSurfaceEx<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, Pool Pool, ref ComPtr<TI0> ppSurface, void** pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int CreateOffscreenPlainSurfaceEx<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, Pool Pool, ref ComPtr<TI0> ppSurface, void** pSharedHandle, int Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6188,7 +6188,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateOffscreenPlainSurfaceEx<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, Pool Pool, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int CreateOffscreenPlainSurfaceEx<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, Pool Pool, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle, int Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6196,7 +6196,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDepthStencilSurfaceEx<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref ComPtr<TI0> ppSurface, void** pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int CreateDepthStencilSurfaceEx<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Discard, ref ComPtr<TI0> ppSurface, void** pSharedHandle, int Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6204,7 +6204,7 @@ public unsafe static class Direct3DDevice9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDepthStencilSurfaceEx<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+    public static unsafe int CreateDepthStencilSurfaceEx<TI0>(this ComPtr<IDirect3DDevice9Ex> thisVtbl, uint Width, uint Height, Format Format, MultisampleType MultiSample, int MultisampleQuality, bool Discard, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle, int Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

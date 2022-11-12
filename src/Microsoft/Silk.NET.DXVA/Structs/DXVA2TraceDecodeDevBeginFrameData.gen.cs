@@ -25,7 +25,7 @@ namespace Silk.NET.DXVA
             Silk.NET.Core.Win32Extras.EventTraceHeader? wmiHeader = null,
             ulong? pObject = null,
             ulong? pRenderTarget = null,
-            int? enter = null
+            bool? enter = null
         ) : this()
         {
             if (wmiHeader is not null)
@@ -68,6 +68,6 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Enter")]
-        public int Enter;
+        public bool Enter;
     }
 }

@@ -494,28 +494,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMessage(MessageCategory Category, MessageSeverity Severity, MessageID ID, byte* pDescription)
-        {
-            var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageCategory, MessageSeverity, MessageID, byte*, int>)@this->LpVtbl[28])(@this, Category, Severity, ID, pDescription);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int AddMessage(MessageCategory Category, MessageSeverity Severity, MessageID ID, ref byte pDescription)
-        {
-            var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (byte* pDescriptionPtr = &pDescription)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageCategory, MessageSeverity, MessageID, byte*, int>)@this->LpVtbl[28])(@this, Category, Severity, ID, pDescriptionPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int AddMessage(MessageCategory Category, MessageSeverity Severity, MessageID ID, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
+        public readonly unsafe int AddMessage(MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(FlowDirection.In)] string* pDescription)
         {
             var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -526,28 +505,19 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddApplicationMessage(MessageSeverity Severity, byte* pDescription)
+        public readonly int AddMessage(MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(FlowDirection.In)] in string pDescription)
         {
             var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageSeverity, byte*, int>)@this->LpVtbl[29])(@this, Severity, pDescription);
+            var pDescriptionPtr = (byte*) SilkMarshal.StringToPtr(pDescription, NativeStringEncoding.LPStr);
+            var pDescriptionPp = &pDescriptionPtr;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageCategory, MessageSeverity, MessageID, byte**, int>)@this->LpVtbl[28])(@this, Category, Severity, ID, pDescriptionPp);
+            SilkMarshal.Free((nint)pDescriptionPtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddApplicationMessage(MessageSeverity Severity, ref byte pDescription)
-        {
-            var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (byte* pDescriptionPtr = &pDescription)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageSeverity, byte*, int>)@this->LpVtbl[29])(@this, Severity, pDescriptionPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int AddApplicationMessage(MessageSeverity Severity, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
+        public readonly unsafe int AddApplicationMessage(MessageSeverity Severity, [Flow(FlowDirection.In)] string* pDescription)
         {
             var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -558,72 +528,84 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBreakOnCategory(MessageCategory Category, int bEnable)
+        public readonly int AddApplicationMessage(MessageSeverity Severity, [Flow(FlowDirection.In)] in string pDescription)
         {
             var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageCategory, int, int>)@this->LpVtbl[30])(@this, Category, bEnable);
+            var pDescriptionPtr = (byte*) SilkMarshal.StringToPtr(pDescription, NativeStringEncoding.LPStr);
+            var pDescriptionPp = &pDescriptionPtr;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageSeverity, byte**, int>)@this->LpVtbl[29])(@this, Severity, pDescriptionPp);
+            SilkMarshal.Free((nint)pDescriptionPtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBreakOnSeverity(MessageSeverity Severity, int bEnable)
+        public readonly int SetBreakOnCategory(MessageCategory Category, bool bEnable)
         {
             var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageSeverity, int, int>)@this->LpVtbl[31])(@this, Severity, bEnable);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageCategory, bool, int>)@this->LpVtbl[30])(@this, Category, bEnable);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBreakOnID(MessageID ID, int bEnable)
+        public readonly int SetBreakOnSeverity(MessageSeverity Severity, bool bEnable)
         {
             var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageID, int, int>)@this->LpVtbl[32])(@this, ID, bEnable);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageSeverity, bool, int>)@this->LpVtbl[31])(@this, Severity, bEnable);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetBreakOnCategory(MessageCategory Category)
+        public readonly int SetBreakOnID(MessageID ID, bool bEnable)
         {
             var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageCategory, int>)@this->LpVtbl[33])(@this, Category);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageID, bool, int>)@this->LpVtbl[32])(@this, ID, bEnable);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetBreakOnSeverity(MessageSeverity Severity)
+        public readonly bool GetBreakOnCategory(MessageCategory Category)
         {
             var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageSeverity, int>)@this->LpVtbl[34])(@this, Severity);
+            bool ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageCategory, bool>)@this->LpVtbl[33])(@this, Category);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetBreakOnID(MessageID ID)
+        public readonly bool GetBreakOnSeverity(MessageSeverity Severity)
         {
             var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageID, int>)@this->LpVtbl[35])(@this, ID);
+            bool ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageSeverity, bool>)@this->LpVtbl[34])(@this, Severity);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetMuteDebugOutput(int bMute)
+        public readonly bool GetBreakOnID(MessageID ID)
         {
             var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, int, void>)@this->LpVtbl[36])(@this, bMute);
+            bool ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageID, bool>)@this->LpVtbl[35])(@this, ID);
+            return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetMuteDebugOutput()
+        public readonly void SetMuteDebugOutput(bool bMute)
         {
             var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, int>)@this->LpVtbl[37])(@this);
+            ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, bool, void>)@this->LpVtbl[36])(@this, bMute);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly bool GetMuteDebugOutput()
+        {
+            var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            bool ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, bool>)@this->LpVtbl[37])(@this);
             return ret;
         }
 
@@ -676,11 +658,11 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int UnregisterMessageCallback(uint CallbackCookie)
+        public readonly int UnregisterMessageCallback(int CallbackCookie)
         {
             var @this = (ID3D12InfoQueue1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, uint, int>)@this->LpVtbl[39])(@this, CallbackCookie);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, int, int>)@this->LpVtbl[39])(@this, CallbackCookie);
             return ret;
         }
 

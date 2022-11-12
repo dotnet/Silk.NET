@@ -21,8 +21,8 @@ namespace Silk.NET.Core.Native
     {
         public D3DShaderMacro
         (
-            byte* name = null,
-            byte* definition = null
+            string* name = null,
+            string* definition = null
         ) : this()
         {
             if (name is not null)
@@ -40,11 +40,11 @@ namespace Silk.NET.Core.Native
         [NativeName("Type", "LPCSTR")]
         [NativeName("Type.Name", "LPCSTR")]
         [NativeName("Name", "Name")]
-        public byte* Name;
+        public string* Name;
 
         [NativeName("Type", "LPCSTR")]
         [NativeName("Type.Name", "LPCSTR")]
         [NativeName("Name", "Definition")]
-        public byte* Definition;
+        public string* Definition;
     }
 }

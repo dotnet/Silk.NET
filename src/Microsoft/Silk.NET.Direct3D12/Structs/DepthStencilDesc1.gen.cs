@@ -21,15 +21,15 @@ namespace Silk.NET.Direct3D12
     {
         public DepthStencilDesc1
         (
-            int? depthEnable = null,
+            bool? depthEnable = null,
             DepthWriteMask? depthWriteMask = null,
             ComparisonFunc? depthFunc = null,
-            int? stencilEnable = null,
+            bool? stencilEnable = null,
             byte? stencilReadMask = null,
             byte? stencilWriteMask = null,
             DepthStencilopDesc? frontFace = null,
             DepthStencilopDesc? backFace = null,
-            int? depthBoundsTestEnable = null
+            bool? depthBoundsTestEnable = null
         ) : this()
         {
             if (depthEnable is not null)
@@ -82,7 +82,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DepthEnable")]
-        public int DepthEnable;
+        public bool DepthEnable;
 
         [NativeName("Type", "D3D12_DEPTH_WRITE_MASK")]
         [NativeName("Type.Name", "D3D12_DEPTH_WRITE_MASK")]
@@ -97,7 +97,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "StencilEnable")]
-        public int StencilEnable;
+        public bool StencilEnable;
 
         [NativeName("Type", "UINT8")]
         [NativeName("Type.Name", "UINT8")]
@@ -122,6 +122,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DepthBoundsTestEnable")]
-        public int DepthBoundsTestEnable;
+        public bool DepthBoundsTestEnable;
     }
 }

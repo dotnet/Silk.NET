@@ -21,7 +21,7 @@ namespace Silk.NET.DirectStorage
     {
         public ErrorParametersEvent
         (
-            void* handle = null
+            nint* handle = null
         ) : this()
         {
             if (handle is not null)
@@ -34,6 +34,6 @@ namespace Silk.NET.DirectStorage
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "Handle")]
-        public void* Handle;
+        public nint* Handle;
     }
 }

@@ -21,7 +21,7 @@ namespace Silk.NET.DXVA
     {
         public HDStreamStateAlphaData
         (
-            int? enable = null,
+            bool? enable = null,
             float? alpha = null
         ) : this()
         {
@@ -40,7 +40,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Enable")]
-        public int Enable;
+        public bool Enable;
 
         [NativeName("Type", "FLOAT")]
         [NativeName("Type.Name", "FLOAT")]

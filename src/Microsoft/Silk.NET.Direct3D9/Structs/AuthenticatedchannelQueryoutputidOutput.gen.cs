@@ -22,8 +22,8 @@ namespace Silk.NET.Direct3D9
         public AuthenticatedchannelQueryoutputidOutput
         (
             AuthenticatedchannelQueryOutput? output = null,
-            void* deviceHandle = null,
-            void* cryptoSessionHandle = null,
+            nint* deviceHandle = null,
+            nint* cryptoSessionHandle = null,
             uint? outputIDIndex = null,
             ulong? outputID = null
         ) : this()
@@ -63,12 +63,12 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "DeviceHandle")]
-        public void* DeviceHandle;
+        public nint* DeviceHandle;
 
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "CryptoSessionHandle")]
-        public void* CryptoSessionHandle;
+        public nint* CryptoSessionHandle;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

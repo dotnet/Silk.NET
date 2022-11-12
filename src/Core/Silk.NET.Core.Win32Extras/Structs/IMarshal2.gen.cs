@@ -114,40 +114,40 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetUnmarshalClass(Guid* riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags, Guid* pCid)
+        public readonly unsafe int GetUnmarshalClass(Guid* riid, void* pv, int dwDestContext, void* pvDestContext, int mshlflags, Guid* pCid)
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riid, pv, dwDestContext, pvDestContext, mshlflags, pCid);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, Guid*, int>)@this->LpVtbl[3])(@this, riid, pv, dwDestContext, pvDestContext, mshlflags, pCid);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetUnmarshalClass(Guid* riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags, ref Guid pCid)
+        public readonly unsafe int GetUnmarshalClass(Guid* riid, void* pv, int dwDestContext, void* pvDestContext, int mshlflags, ref Guid pCid)
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pCidPtr = &pCid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riid, pv, dwDestContext, pvDestContext, mshlflags, pCidPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, Guid*, int>)@this->LpVtbl[3])(@this, riid, pv, dwDestContext, pvDestContext, mshlflags, pCidPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetUnmarshalClass<T0>(Guid* riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags, Guid* pCid) where T0 : unmanaged
+        public readonly unsafe int GetUnmarshalClass<T0>(Guid* riid, void* pv, int dwDestContext, ref T0 pvDestContext, int mshlflags, Guid* pCid) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* pvDestContextPtr = &pvDestContext)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riid, pv, dwDestContext, pvDestContextPtr, mshlflags, pCid);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, Guid*, int>)@this->LpVtbl[3])(@this, riid, pv, dwDestContext, pvDestContextPtr, mshlflags, pCid);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetUnmarshalClass<T0>(Guid* riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags, ref Guid pCid) where T0 : unmanaged
+        public readonly unsafe int GetUnmarshalClass<T0>(Guid* riid, void* pv, int dwDestContext, ref T0 pvDestContext, int mshlflags, ref Guid pCid) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -155,26 +155,26 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Guid* pCidPtr = &pCid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riid, pv, dwDestContext, pvDestContextPtr, mshlflags, pCidPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, Guid*, int>)@this->LpVtbl[3])(@this, riid, pv, dwDestContext, pvDestContextPtr, mshlflags, pCidPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetUnmarshalClass<T0>(Guid* riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags, Guid* pCid) where T0 : unmanaged
+        public readonly unsafe int GetUnmarshalClass<T0>(Guid* riid, ref T0 pv, int dwDestContext, void* pvDestContext, int mshlflags, Guid* pCid) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* pvPtr = &pv)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riid, pvPtr, dwDestContext, pvDestContext, mshlflags, pCid);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, Guid*, int>)@this->LpVtbl[3])(@this, riid, pvPtr, dwDestContext, pvDestContext, mshlflags, pCid);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetUnmarshalClass<T0>(Guid* riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags, ref Guid pCid) where T0 : unmanaged
+        public readonly unsafe int GetUnmarshalClass<T0>(Guid* riid, ref T0 pv, int dwDestContext, void* pvDestContext, int mshlflags, ref Guid pCid) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -182,14 +182,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Guid* pCidPtr = &pCid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riid, pvPtr, dwDestContext, pvDestContext, mshlflags, pCidPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, Guid*, int>)@this->LpVtbl[3])(@this, riid, pvPtr, dwDestContext, pvDestContext, mshlflags, pCidPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetUnmarshalClass<T0, T1>(Guid* riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags, Guid* pCid) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int GetUnmarshalClass<T0, T1>(Guid* riid, ref T0 pv, int dwDestContext, ref T1 pvDestContext, int mshlflags, Guid* pCid) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -197,14 +197,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pvDestContextPtr = &pvDestContext)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riid, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pCid);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, Guid*, int>)@this->LpVtbl[3])(@this, riid, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pCid);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetUnmarshalClass<T0, T1>(Guid* riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags, ref Guid pCid) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int GetUnmarshalClass<T0, T1>(Guid* riid, ref T0 pv, int dwDestContext, ref T1 pvDestContext, int mshlflags, ref Guid pCid) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -214,7 +214,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (Guid* pCidPtr = &pCid)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riid, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pCidPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, Guid*, int>)@this->LpVtbl[3])(@this, riid, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pCidPtr);
                     }
                 }
             }
@@ -222,19 +222,19 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetUnmarshalClass(ref Guid riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags, Guid* pCid)
+        public readonly unsafe int GetUnmarshalClass(ref Guid riid, void* pv, int dwDestContext, void* pvDestContext, int mshlflags, Guid* pCid)
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pv, dwDestContext, pvDestContext, mshlflags, pCid);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pv, dwDestContext, pvDestContext, mshlflags, pCid);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetUnmarshalClass(ref Guid riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags, ref Guid pCid)
+        public readonly unsafe int GetUnmarshalClass(ref Guid riid, void* pv, int dwDestContext, void* pvDestContext, int mshlflags, ref Guid pCid)
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -242,14 +242,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Guid* pCidPtr = &pCid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pv, dwDestContext, pvDestContext, mshlflags, pCidPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pv, dwDestContext, pvDestContext, mshlflags, pCidPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetUnmarshalClass<T0>(ref Guid riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags, Guid* pCid) where T0 : unmanaged
+        public readonly unsafe int GetUnmarshalClass<T0>(ref Guid riid, void* pv, int dwDestContext, ref T0 pvDestContext, int mshlflags, Guid* pCid) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -257,14 +257,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pvDestContextPtr = &pvDestContext)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pv, dwDestContext, pvDestContextPtr, mshlflags, pCid);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pv, dwDestContext, pvDestContextPtr, mshlflags, pCid);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetUnmarshalClass<T0>(ref Guid riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags, ref Guid pCid) where T0 : unmanaged
+        public readonly unsafe int GetUnmarshalClass<T0>(ref Guid riid, void* pv, int dwDestContext, ref T0 pvDestContext, int mshlflags, ref Guid pCid) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -274,7 +274,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (Guid* pCidPtr = &pCid)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pv, dwDestContext, pvDestContextPtr, mshlflags, pCidPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pv, dwDestContext, pvDestContextPtr, mshlflags, pCidPtr);
                     }
                 }
             }
@@ -282,7 +282,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetUnmarshalClass<T0>(ref Guid riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags, Guid* pCid) where T0 : unmanaged
+        public readonly unsafe int GetUnmarshalClass<T0>(ref Guid riid, ref T0 pv, int dwDestContext, void* pvDestContext, int mshlflags, Guid* pCid) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -290,14 +290,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pvPtr = &pv)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pvPtr, dwDestContext, pvDestContext, mshlflags, pCid);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pvPtr, dwDestContext, pvDestContext, mshlflags, pCid);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetUnmarshalClass<T0>(ref Guid riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags, ref Guid pCid) where T0 : unmanaged
+        public readonly unsafe int GetUnmarshalClass<T0>(ref Guid riid, ref T0 pv, int dwDestContext, void* pvDestContext, int mshlflags, ref Guid pCid) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -307,7 +307,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (Guid* pCidPtr = &pCid)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pvPtr, dwDestContext, pvDestContext, mshlflags, pCidPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pvPtr, dwDestContext, pvDestContext, mshlflags, pCidPtr);
                     }
                 }
             }
@@ -315,7 +315,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetUnmarshalClass<T0, T1>(ref Guid riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags, Guid* pCid) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int GetUnmarshalClass<T0, T1>(ref Guid riid, ref T0 pv, int dwDestContext, ref T1 pvDestContext, int mshlflags, Guid* pCid) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -325,7 +325,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void* pvDestContextPtr = &pvDestContext)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pCid);
+                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pCid);
                     }
                 }
             }
@@ -333,7 +333,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetUnmarshalClass<T0, T1>(ref Guid riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags, ref Guid pCid) where T0 : unmanaged where T1 : unmanaged
+        public readonly int GetUnmarshalClass<T0, T1>(ref Guid riid, ref T0 pv, int dwDestContext, ref T1 pvDestContext, int mshlflags, ref Guid pCid) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -345,7 +345,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (Guid* pCidPtr = &pCid)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pCidPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, Guid*, int>)@this->LpVtbl[3])(@this, riidPtr, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pCidPtr);
                         }
                     }
                 }
@@ -354,40 +354,40 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMarshalSizeMax(Guid* riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags, uint* pSize)
+        public readonly unsafe int GetMarshalSizeMax(Guid* riid, void* pv, int dwDestContext, void* pvDestContext, int mshlflags, uint* pSize)
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riid, pv, dwDestContext, pvDestContext, mshlflags, pSize);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, uint*, int>)@this->LpVtbl[4])(@this, riid, pv, dwDestContext, pvDestContext, mshlflags, pSize);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMarshalSizeMax(Guid* riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags, ref uint pSize)
+        public readonly unsafe int GetMarshalSizeMax(Guid* riid, void* pv, int dwDestContext, void* pvDestContext, int mshlflags, ref uint pSize)
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pSizePtr = &pSize)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riid, pv, dwDestContext, pvDestContext, mshlflags, pSizePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, uint*, int>)@this->LpVtbl[4])(@this, riid, pv, dwDestContext, pvDestContext, mshlflags, pSizePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMarshalSizeMax<T0>(Guid* riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags, uint* pSize) where T0 : unmanaged
+        public readonly unsafe int GetMarshalSizeMax<T0>(Guid* riid, void* pv, int dwDestContext, ref T0 pvDestContext, int mshlflags, uint* pSize) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* pvDestContextPtr = &pvDestContext)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riid, pv, dwDestContext, pvDestContextPtr, mshlflags, pSize);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, uint*, int>)@this->LpVtbl[4])(@this, riid, pv, dwDestContext, pvDestContextPtr, mshlflags, pSize);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMarshalSizeMax<T0>(Guid* riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags, ref uint pSize) where T0 : unmanaged
+        public readonly unsafe int GetMarshalSizeMax<T0>(Guid* riid, void* pv, int dwDestContext, ref T0 pvDestContext, int mshlflags, ref uint pSize) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -395,26 +395,26 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pSizePtr = &pSize)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riid, pv, dwDestContext, pvDestContextPtr, mshlflags, pSizePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, uint*, int>)@this->LpVtbl[4])(@this, riid, pv, dwDestContext, pvDestContextPtr, mshlflags, pSizePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMarshalSizeMax<T0>(Guid* riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags, uint* pSize) where T0 : unmanaged
+        public readonly unsafe int GetMarshalSizeMax<T0>(Guid* riid, ref T0 pv, int dwDestContext, void* pvDestContext, int mshlflags, uint* pSize) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* pvPtr = &pv)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riid, pvPtr, dwDestContext, pvDestContext, mshlflags, pSize);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, uint*, int>)@this->LpVtbl[4])(@this, riid, pvPtr, dwDestContext, pvDestContext, mshlflags, pSize);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMarshalSizeMax<T0>(Guid* riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags, ref uint pSize) where T0 : unmanaged
+        public readonly unsafe int GetMarshalSizeMax<T0>(Guid* riid, ref T0 pv, int dwDestContext, void* pvDestContext, int mshlflags, ref uint pSize) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -422,14 +422,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pSizePtr = &pSize)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riid, pvPtr, dwDestContext, pvDestContext, mshlflags, pSizePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, uint*, int>)@this->LpVtbl[4])(@this, riid, pvPtr, dwDestContext, pvDestContext, mshlflags, pSizePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMarshalSizeMax<T0, T1>(Guid* riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags, uint* pSize) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int GetMarshalSizeMax<T0, T1>(Guid* riid, ref T0 pv, int dwDestContext, ref T1 pvDestContext, int mshlflags, uint* pSize) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -437,14 +437,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pvDestContextPtr = &pvDestContext)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riid, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pSize);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, uint*, int>)@this->LpVtbl[4])(@this, riid, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pSize);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMarshalSizeMax<T0, T1>(Guid* riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags, ref uint pSize) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int GetMarshalSizeMax<T0, T1>(Guid* riid, ref T0 pv, int dwDestContext, ref T1 pvDestContext, int mshlflags, ref uint pSize) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -454,7 +454,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pSizePtr = &pSize)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riid, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pSizePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, uint*, int>)@this->LpVtbl[4])(@this, riid, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pSizePtr);
                     }
                 }
             }
@@ -462,19 +462,19 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMarshalSizeMax(ref Guid riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags, uint* pSize)
+        public readonly unsafe int GetMarshalSizeMax(ref Guid riid, void* pv, int dwDestContext, void* pvDestContext, int mshlflags, uint* pSize)
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pv, dwDestContext, pvDestContext, mshlflags, pSize);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pv, dwDestContext, pvDestContext, mshlflags, pSize);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMarshalSizeMax(ref Guid riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags, ref uint pSize)
+        public readonly unsafe int GetMarshalSizeMax(ref Guid riid, void* pv, int dwDestContext, void* pvDestContext, int mshlflags, ref uint pSize)
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -482,14 +482,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (uint* pSizePtr = &pSize)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pv, dwDestContext, pvDestContext, mshlflags, pSizePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pv, dwDestContext, pvDestContext, mshlflags, pSizePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMarshalSizeMax<T0>(ref Guid riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags, uint* pSize) where T0 : unmanaged
+        public readonly unsafe int GetMarshalSizeMax<T0>(ref Guid riid, void* pv, int dwDestContext, ref T0 pvDestContext, int mshlflags, uint* pSize) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -497,14 +497,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pvDestContextPtr = &pvDestContext)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pv, dwDestContext, pvDestContextPtr, mshlflags, pSize);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pv, dwDestContext, pvDestContextPtr, mshlflags, pSize);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMarshalSizeMax<T0>(ref Guid riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags, ref uint pSize) where T0 : unmanaged
+        public readonly unsafe int GetMarshalSizeMax<T0>(ref Guid riid, void* pv, int dwDestContext, ref T0 pvDestContext, int mshlflags, ref uint pSize) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -514,7 +514,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pSizePtr = &pSize)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pv, dwDestContext, pvDestContextPtr, mshlflags, pSizePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pv, dwDestContext, pvDestContextPtr, mshlflags, pSizePtr);
                     }
                 }
             }
@@ -522,7 +522,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMarshalSizeMax<T0>(ref Guid riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags, uint* pSize) where T0 : unmanaged
+        public readonly unsafe int GetMarshalSizeMax<T0>(ref Guid riid, ref T0 pv, int dwDestContext, void* pvDestContext, int mshlflags, uint* pSize) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -530,14 +530,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pvPtr = &pv)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pvPtr, dwDestContext, pvDestContext, mshlflags, pSize);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pvPtr, dwDestContext, pvDestContext, mshlflags, pSize);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMarshalSizeMax<T0>(ref Guid riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags, ref uint pSize) where T0 : unmanaged
+        public readonly unsafe int GetMarshalSizeMax<T0>(ref Guid riid, ref T0 pv, int dwDestContext, void* pvDestContext, int mshlflags, ref uint pSize) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -547,7 +547,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (uint* pSizePtr = &pSize)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pvPtr, dwDestContext, pvDestContext, mshlflags, pSizePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pvPtr, dwDestContext, pvDestContext, mshlflags, pSizePtr);
                     }
                 }
             }
@@ -555,7 +555,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMarshalSizeMax<T0, T1>(ref Guid riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags, uint* pSize) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int GetMarshalSizeMax<T0, T1>(ref Guid riid, ref T0 pv, int dwDestContext, ref T1 pvDestContext, int mshlflags, uint* pSize) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -565,7 +565,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void* pvDestContextPtr = &pvDestContext)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pSize);
+                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pSize);
                     }
                 }
             }
@@ -573,7 +573,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetMarshalSizeMax<T0, T1>(ref Guid riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags, ref uint pSize) where T0 : unmanaged where T1 : unmanaged
+        public readonly int GetMarshalSizeMax<T0, T1>(ref Guid riid, ref T0 pv, int dwDestContext, ref T1 pvDestContext, int mshlflags, ref uint pSize) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -585,7 +585,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (uint* pSizePtr = &pSize)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, uint, void*, uint, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pSizePtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Guid*, void*, int, void*, int, uint*, int>)@this->LpVtbl[4])(@this, riidPtr, pvPtr, dwDestContext, pvDestContextPtr, mshlflags, pSizePtr);
                         }
                     }
                 }
@@ -594,40 +594,40 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface(Silk.NET.Core.Win32Extras.IStream* pStm, Guid* riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags)
+        public readonly unsafe int MarshalInterface(Silk.NET.Core.Win32Extras.IStream* pStm, Guid* riid, void* pv, int dwDestContext, void* pvDestContext, int mshlflags)
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStm, riid, pv, dwDestContext, pvDestContext, mshlflags);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, int, void*, int, int>)@this->LpVtbl[5])(@this, pStm, riid, pv, dwDestContext, pvDestContext, mshlflags);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface<T0>(Silk.NET.Core.Win32Extras.IStream* pStm, Guid* riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags) where T0 : unmanaged
+        public readonly unsafe int MarshalInterface<T0>(Silk.NET.Core.Win32Extras.IStream* pStm, Guid* riid, void* pv, int dwDestContext, ref T0 pvDestContext, int mshlflags) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* pvDestContextPtr = &pvDestContext)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStm, riid, pv, dwDestContext, pvDestContextPtr, mshlflags);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, int, void*, int, int>)@this->LpVtbl[5])(@this, pStm, riid, pv, dwDestContext, pvDestContextPtr, mshlflags);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface<T0>(Silk.NET.Core.Win32Extras.IStream* pStm, Guid* riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags) where T0 : unmanaged
+        public readonly unsafe int MarshalInterface<T0>(Silk.NET.Core.Win32Extras.IStream* pStm, Guid* riid, ref T0 pv, int dwDestContext, void* pvDestContext, int mshlflags) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* pvPtr = &pv)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStm, riid, pvPtr, dwDestContext, pvDestContext, mshlflags);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, int, void*, int, int>)@this->LpVtbl[5])(@this, pStm, riid, pvPtr, dwDestContext, pvDestContext, mshlflags);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface<T0, T1>(Silk.NET.Core.Win32Extras.IStream* pStm, Guid* riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int MarshalInterface<T0, T1>(Silk.NET.Core.Win32Extras.IStream* pStm, Guid* riid, ref T0 pv, int dwDestContext, ref T1 pvDestContext, int mshlflags) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -635,26 +635,26 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pvDestContextPtr = &pvDestContext)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStm, riid, pvPtr, dwDestContext, pvDestContextPtr, mshlflags);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, int, void*, int, int>)@this->LpVtbl[5])(@this, pStm, riid, pvPtr, dwDestContext, pvDestContextPtr, mshlflags);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface(Silk.NET.Core.Win32Extras.IStream* pStm, ref Guid riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags)
+        public readonly unsafe int MarshalInterface(Silk.NET.Core.Win32Extras.IStream* pStm, ref Guid riid, void* pv, int dwDestContext, void* pvDestContext, int mshlflags)
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStm, riidPtr, pv, dwDestContext, pvDestContext, mshlflags);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, int, void*, int, int>)@this->LpVtbl[5])(@this, pStm, riidPtr, pv, dwDestContext, pvDestContext, mshlflags);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface<T0>(Silk.NET.Core.Win32Extras.IStream* pStm, ref Guid riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags) where T0 : unmanaged
+        public readonly unsafe int MarshalInterface<T0>(Silk.NET.Core.Win32Extras.IStream* pStm, ref Guid riid, void* pv, int dwDestContext, ref T0 pvDestContext, int mshlflags) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -662,14 +662,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pvDestContextPtr = &pvDestContext)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStm, riidPtr, pv, dwDestContext, pvDestContextPtr, mshlflags);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, int, void*, int, int>)@this->LpVtbl[5])(@this, pStm, riidPtr, pv, dwDestContext, pvDestContextPtr, mshlflags);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface<T0>(Silk.NET.Core.Win32Extras.IStream* pStm, ref Guid riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags) where T0 : unmanaged
+        public readonly unsafe int MarshalInterface<T0>(Silk.NET.Core.Win32Extras.IStream* pStm, ref Guid riid, ref T0 pv, int dwDestContext, void* pvDestContext, int mshlflags) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -677,14 +677,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pvPtr = &pv)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStm, riidPtr, pvPtr, dwDestContext, pvDestContext, mshlflags);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, int, void*, int, int>)@this->LpVtbl[5])(@this, pStm, riidPtr, pvPtr, dwDestContext, pvDestContext, mshlflags);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface<T0, T1>(Silk.NET.Core.Win32Extras.IStream* pStm, ref Guid riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int MarshalInterface<T0, T1>(Silk.NET.Core.Win32Extras.IStream* pStm, ref Guid riid, ref T0 pv, int dwDestContext, ref T1 pvDestContext, int mshlflags) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -694,7 +694,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void* pvDestContextPtr = &pvDestContext)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStm, riidPtr, pvPtr, dwDestContext, pvDestContextPtr, mshlflags);
+                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, int, void*, int, int>)@this->LpVtbl[5])(@this, pStm, riidPtr, pvPtr, dwDestContext, pvDestContextPtr, mshlflags);
                     }
                 }
             }
@@ -702,19 +702,19 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface(ref Silk.NET.Core.Win32Extras.IStream pStm, Guid* riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags)
+        public readonly unsafe int MarshalInterface(ref Silk.NET.Core.Win32Extras.IStream pStm, Guid* riid, void* pv, int dwDestContext, void* pvDestContext, int mshlflags)
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Core.Win32Extras.IStream* pStmPtr = &pStm)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStmPtr, riid, pv, dwDestContext, pvDestContext, mshlflags);
+                ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, int, void*, int, int>)@this->LpVtbl[5])(@this, pStmPtr, riid, pv, dwDestContext, pvDestContext, mshlflags);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface<T0>(ref Silk.NET.Core.Win32Extras.IStream pStm, Guid* riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags) where T0 : unmanaged
+        public readonly unsafe int MarshalInterface<T0>(ref Silk.NET.Core.Win32Extras.IStream pStm, Guid* riid, void* pv, int dwDestContext, ref T0 pvDestContext, int mshlflags) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -722,14 +722,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pvDestContextPtr = &pvDestContext)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStmPtr, riid, pv, dwDestContext, pvDestContextPtr, mshlflags);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, int, void*, int, int>)@this->LpVtbl[5])(@this, pStmPtr, riid, pv, dwDestContext, pvDestContextPtr, mshlflags);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface<T0>(ref Silk.NET.Core.Win32Extras.IStream pStm, Guid* riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags) where T0 : unmanaged
+        public readonly unsafe int MarshalInterface<T0>(ref Silk.NET.Core.Win32Extras.IStream pStm, Guid* riid, ref T0 pv, int dwDestContext, void* pvDestContext, int mshlflags) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -737,14 +737,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (void* pvPtr = &pv)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStmPtr, riid, pvPtr, dwDestContext, pvDestContext, mshlflags);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, int, void*, int, int>)@this->LpVtbl[5])(@this, pStmPtr, riid, pvPtr, dwDestContext, pvDestContext, mshlflags);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface<T0, T1>(ref Silk.NET.Core.Win32Extras.IStream pStm, Guid* riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int MarshalInterface<T0, T1>(ref Silk.NET.Core.Win32Extras.IStream pStm, Guid* riid, ref T0 pv, int dwDestContext, ref T1 pvDestContext, int mshlflags) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -754,7 +754,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void* pvDestContextPtr = &pvDestContext)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStmPtr, riid, pvPtr, dwDestContext, pvDestContextPtr, mshlflags);
+                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, int, void*, int, int>)@this->LpVtbl[5])(@this, pStmPtr, riid, pvPtr, dwDestContext, pvDestContextPtr, mshlflags);
                     }
                 }
             }
@@ -762,7 +762,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface(ref Silk.NET.Core.Win32Extras.IStream pStm, ref Guid riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags)
+        public readonly unsafe int MarshalInterface(ref Silk.NET.Core.Win32Extras.IStream pStm, ref Guid riid, void* pv, int dwDestContext, void* pvDestContext, int mshlflags)
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -770,14 +770,14 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStmPtr, riidPtr, pv, dwDestContext, pvDestContext, mshlflags);
+                    ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, int, void*, int, int>)@this->LpVtbl[5])(@this, pStmPtr, riidPtr, pv, dwDestContext, pvDestContext, mshlflags);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface<T0>(ref Silk.NET.Core.Win32Extras.IStream pStm, ref Guid riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags) where T0 : unmanaged
+        public readonly unsafe int MarshalInterface<T0>(ref Silk.NET.Core.Win32Extras.IStream pStm, ref Guid riid, void* pv, int dwDestContext, ref T0 pvDestContext, int mshlflags) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -787,7 +787,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void* pvDestContextPtr = &pvDestContext)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStmPtr, riidPtr, pv, dwDestContext, pvDestContextPtr, mshlflags);
+                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, int, void*, int, int>)@this->LpVtbl[5])(@this, pStmPtr, riidPtr, pv, dwDestContext, pvDestContextPtr, mshlflags);
                     }
                 }
             }
@@ -795,7 +795,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface<T0>(ref Silk.NET.Core.Win32Extras.IStream pStm, ref Guid riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags) where T0 : unmanaged
+        public readonly unsafe int MarshalInterface<T0>(ref Silk.NET.Core.Win32Extras.IStream pStm, ref Guid riid, ref T0 pv, int dwDestContext, void* pvDestContext, int mshlflags) where T0 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -805,7 +805,7 @@ namespace Silk.NET.Core.Win32Extras
                 {
                     fixed (void* pvPtr = &pv)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStmPtr, riidPtr, pvPtr, dwDestContext, pvDestContext, mshlflags);
+                        ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, int, void*, int, int>)@this->LpVtbl[5])(@this, pStmPtr, riidPtr, pvPtr, dwDestContext, pvDestContext, mshlflags);
                     }
                 }
             }
@@ -813,7 +813,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MarshalInterface<T0, T1>(ref Silk.NET.Core.Win32Extras.IStream pStm, ref Guid riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags) where T0 : unmanaged where T1 : unmanaged
+        public readonly int MarshalInterface<T0, T1>(ref Silk.NET.Core.Win32Extras.IStream pStm, ref Guid riid, ref T0 pv, int dwDestContext, ref T1 pvDestContext, int mshlflags) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -825,7 +825,7 @@ namespace Silk.NET.Core.Win32Extras
                     {
                         fixed (void* pvDestContextPtr = &pvDestContext)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, uint, void*, uint, int>)@this->LpVtbl[5])(@this, pStmPtr, riidPtr, pvPtr, dwDestContext, pvDestContextPtr, mshlflags);
+                            ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, Silk.NET.Core.Win32Extras.IStream*, Guid*, void*, int, void*, int, int>)@this->LpVtbl[5])(@this, pStmPtr, riidPtr, pvPtr, dwDestContext, pvDestContextPtr, mshlflags);
                         }
                     }
                 }
@@ -963,11 +963,11 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DisconnectObject(uint dwReserved)
+        public readonly int DisconnectObject(int dwReserved)
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, uint, int>)@this->LpVtbl[8])(@this, dwReserved);
+            ret = ((delegate* unmanaged[Cdecl]<IMarshal2*, int, int>)@this->LpVtbl[8])(@this, dwReserved);
             return ret;
         }
 
@@ -981,7 +981,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface<TI0>(ComPtr<TI0> pStm, Guid* riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public readonly unsafe int MarshalInterface<TI0>(ComPtr<TI0> pStm, Guid* riid, void* pv, int dwDestContext, void* pvDestContext, int mshlflags) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -989,7 +989,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface<T0, TI0>(ComPtr<TI0> pStm, Guid* riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public readonly unsafe int MarshalInterface<T0, TI0>(ComPtr<TI0> pStm, Guid* riid, void* pv, int dwDestContext, ref T0 pvDestContext, int mshlflags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -997,7 +997,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface<T0, TI0>(ComPtr<TI0> pStm, Guid* riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public readonly unsafe int MarshalInterface<T0, TI0>(ComPtr<TI0> pStm, Guid* riid, ref T0 pv, int dwDestContext, void* pvDestContext, int mshlflags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1005,7 +1005,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface<T0, T1, TI0>(ComPtr<TI0> pStm, Guid* riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public readonly unsafe int MarshalInterface<T0, T1, TI0>(ComPtr<TI0> pStm, Guid* riid, ref T0 pv, int dwDestContext, ref T1 pvDestContext, int mshlflags) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1013,7 +1013,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface<TI0>(ComPtr<TI0> pStm, ref Guid riid, void* pv, uint dwDestContext, void* pvDestContext, uint mshlflags) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public readonly unsafe int MarshalInterface<TI0>(ComPtr<TI0> pStm, ref Guid riid, void* pv, int dwDestContext, void* pvDestContext, int mshlflags) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1021,7 +1021,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface<T0, TI0>(ComPtr<TI0> pStm, ref Guid riid, void* pv, uint dwDestContext, ref T0 pvDestContext, uint mshlflags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public readonly unsafe int MarshalInterface<T0, TI0>(ComPtr<TI0> pStm, ref Guid riid, void* pv, int dwDestContext, ref T0 pvDestContext, int mshlflags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1029,7 +1029,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MarshalInterface<T0, TI0>(ComPtr<TI0> pStm, ref Guid riid, ref T0 pv, uint dwDestContext, void* pvDestContext, uint mshlflags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public readonly unsafe int MarshalInterface<T0, TI0>(ComPtr<TI0> pStm, ref Guid riid, ref T0 pv, int dwDestContext, void* pvDestContext, int mshlflags) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1037,7 +1037,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MarshalInterface<T0, T1, TI0>(ComPtr<TI0> pStm, ref Guid riid, ref T0 pv, uint dwDestContext, ref T1 pvDestContext, uint mshlflags) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
+        public readonly int MarshalInterface<T0, T1, TI0>(ComPtr<TI0> pStm, ref Guid riid, ref T0 pv, int dwDestContext, ref T1 pvDestContext, int mshlflags) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Win32Extras.IStream>, IComVtbl<TI0>
         {
             var @this = (IMarshal2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

@@ -193,7 +193,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Guid* guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -214,7 +214,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref Guid guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -289,34 +289,23 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetName(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, char* Name)
+    public static unsafe int SetName(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] nint* Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, char*, int>)@this->LpVtbl[6])(@this, Name);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, nint*, int>)@this->LpVtbl[6])(@this, Name);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref char Name)
+    public static int SetName(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] in nint Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* NamePtr = &Name)
+        fixed (nint* NamePtr = &Name)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, char*, int>)@this->LpVtbl[6])(@this, NamePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, nint*, int>)@this->LpVtbl[6])(@this, NamePtr);
         }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, byte*, int>)@this->LpVtbl[6])(@this, NamePtr);
-        SilkMarshal.Free((nint)NamePtr);
         return ret;
     }
 
@@ -513,14 +502,14 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, TextureCopyLocation* pSrc, Box* pSrcBox)
+    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(FlowDirection.In)] Box* pSrcBox)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)@this->LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrc, pSrcBox);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, TextureCopyLocation* pSrc, ref Box pSrcBox)
+    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(FlowDirection.In)] in Box pSrcBox)
     {
         var @this = thisVtbl.Handle;
         fixed (Box* pSrcBoxPtr = &pSrcBox)
@@ -530,7 +519,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, ref TextureCopyLocation pSrc, Box* pSrcBox)
+    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] in TextureCopyLocation pSrc, [Flow(FlowDirection.In)] Box* pSrcBox)
     {
         var @this = thisVtbl.Handle;
         fixed (TextureCopyLocation* pSrcPtr = &pSrc)
@@ -540,7 +529,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, ref TextureCopyLocation pSrc, ref Box pSrcBox)
+    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] in TextureCopyLocation pSrc, [Flow(FlowDirection.In)] in Box pSrcBox)
     {
         var @this = thisVtbl.Handle;
         fixed (TextureCopyLocation* pSrcPtr = &pSrc)
@@ -553,7 +542,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, TextureCopyLocation* pSrc, Box* pSrcBox)
+    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(FlowDirection.In)] Box* pSrcBox)
     {
         var @this = thisVtbl.Handle;
         fixed (TextureCopyLocation* pDstPtr = &pDst)
@@ -563,7 +552,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, TextureCopyLocation* pSrc, ref Box pSrcBox)
+    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(FlowDirection.In)] in Box pSrcBox)
     {
         var @this = thisVtbl.Handle;
         fixed (TextureCopyLocation* pDstPtr = &pDst)
@@ -576,7 +565,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, ref TextureCopyLocation pSrc, Box* pSrcBox)
+    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] in TextureCopyLocation pSrc, [Flow(FlowDirection.In)] Box* pSrcBox)
     {
         var @this = thisVtbl.Handle;
         fixed (TextureCopyLocation* pDstPtr = &pDst)
@@ -589,7 +578,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, ref TextureCopyLocation pSrc, ref Box pSrcBox)
+    public static void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] in TextureCopyLocation pSrc, [Flow(FlowDirection.In)] in Box pSrcBox)
     {
         var @this = thisVtbl.Handle;
         fixed (TextureCopyLocation* pDstPtr = &pDst)
@@ -645,14 +634,14 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pBufferPtr = &pBuffer)
@@ -662,7 +651,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
@@ -672,7 +661,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
@@ -685,7 +674,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -695,7 +684,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -708,7 +697,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -721,7 +710,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -737,7 +726,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -747,7 +736,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -760,7 +749,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -773,7 +762,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -789,7 +778,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -802,7 +791,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -818,7 +807,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -834,7 +823,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -900,14 +889,14 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void RSSetViewports(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumViewports, Viewport* pViewports)
+    public static unsafe void RSSetViewports(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumViewports, [Flow(FlowDirection.In)] Viewport* pViewports)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, Viewport*, void>)@this->LpVtbl[21])(@this, NumViewports, pViewports);
     }
 
     /// <summary>To be documented.</summary>
-    public static void RSSetViewports(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumViewports, ref Viewport pViewports)
+    public static void RSSetViewports(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumViewports, [Flow(FlowDirection.In)] in Viewport pViewports)
     {
         var @this = thisVtbl.Handle;
         fixed (Viewport* pViewportsPtr = &pViewports)
@@ -917,14 +906,14 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void RSSetScissorRects(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
+    public static unsafe void RSSetScissorRects(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[22])(@this, NumRects, pRects);
     }
 
     /// <summary>To be documented.</summary>
-    public static void RSSetScissorRects(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects)
+    public static void RSSetScissorRects(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
@@ -975,14 +964,14 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ResourceBarrier(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumBarriers, ResourceBarrier* pBarriers)
+    public static unsafe void ResourceBarrier(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumBarriers, [Flow(FlowDirection.In)] ResourceBarrier* pBarriers)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ResourceBarrier*, void>)@this->LpVtbl[26])(@this, NumBarriers, pBarriers);
     }
 
     /// <summary>To be documented.</summary>
-    public static void ResourceBarrier(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumBarriers, ref ResourceBarrier pBarriers)
+    public static void ResourceBarrier(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumBarriers, [Flow(FlowDirection.In)] in ResourceBarrier pBarriers)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceBarrier* pBarriersPtr = &pBarriers)
@@ -1009,14 +998,14 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetDescriptorHeaps(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumDescriptorHeaps, ID3D12DescriptorHeap** ppDescriptorHeaps)
+    public static unsafe void SetDescriptorHeaps(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumDescriptorHeaps, [Flow(FlowDirection.In)] ID3D12DescriptorHeap** ppDescriptorHeaps)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ID3D12DescriptorHeap**, void>)@this->LpVtbl[28])(@this, NumDescriptorHeaps, ppDescriptorHeaps);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetDescriptorHeaps(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumDescriptorHeaps, ref ID3D12DescriptorHeap* ppDescriptorHeaps)
+    public static unsafe void SetDescriptorHeaps(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumDescriptorHeaps, [Flow(FlowDirection.In)] in ID3D12DescriptorHeap* ppDescriptorHeaps)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12DescriptorHeap** ppDescriptorHeapsPtr = &ppDescriptorHeaps)
@@ -1088,14 +1077,14 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetComputeRoot32BitConstants(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, void* pSrcData, uint DestOffsetIn32BitValues)
+    public static unsafe void SetComputeRoot32BitConstants(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] void* pSrcData, uint DestOffsetIn32BitValues)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, void*, uint, void>)@this->LpVtbl[35])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetComputeRoot32BitConstants<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, ref T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
+    public static void SetComputeRoot32BitConstants<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] in T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pSrcDataPtr = &pSrcData)
@@ -1105,14 +1094,14 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetGraphicsRoot32BitConstants(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, void* pSrcData, uint DestOffsetIn32BitValues)
+    public static unsafe void SetGraphicsRoot32BitConstants(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] void* pSrcData, uint DestOffsetIn32BitValues)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, void*, uint, void>)@this->LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetGraphicsRoot32BitConstants<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, ref T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
+    public static void SetGraphicsRoot32BitConstants<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] in T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pSrcDataPtr = &pSrcData)
@@ -1164,14 +1153,14 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void IASetIndexBuffer(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, IndexBufferView* pView)
+    public static unsafe void IASetIndexBuffer(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] IndexBufferView* pView)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, IndexBufferView*, void>)@this->LpVtbl[43])(@this, pView);
     }
 
     /// <summary>To be documented.</summary>
-    public static void IASetIndexBuffer(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref IndexBufferView pView)
+    public static void IASetIndexBuffer(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] in IndexBufferView pView)
     {
         var @this = thisVtbl.Handle;
         fixed (IndexBufferView* pViewPtr = &pView)
@@ -1181,14 +1170,14 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint StartSlot, uint NumViews, VertexBufferView* pViews)
+    public static unsafe void IASetVertexBuffers(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] VertexBufferView* pViews)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, VertexBufferView*, void>)@this->LpVtbl[44])(@this, StartSlot, NumViews, pViews);
     }
 
     /// <summary>To be documented.</summary>
-    public static void IASetVertexBuffers(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint StartSlot, uint NumViews, ref VertexBufferView pViews)
+    public static void IASetVertexBuffers(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] in VertexBufferView pViews)
     {
         var @this = thisVtbl.Handle;
         fixed (VertexBufferView* pViewsPtr = &pViews)
@@ -1198,14 +1187,14 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SOSetTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint StartSlot, uint NumViews, StreamOutputBufferView* pViews)
+    public static unsafe void SOSetTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] StreamOutputBufferView* pViews)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, StreamOutputBufferView*, void>)@this->LpVtbl[45])(@this, StartSlot, NumViews, pViews);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SOSetTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint StartSlot, uint NumViews, ref StreamOutputBufferView pViews)
+    public static void SOSetTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] in StreamOutputBufferView pViews)
     {
         var @this = thisVtbl.Handle;
         fixed (StreamOutputBufferView* pViewsPtr = &pViews)
@@ -1215,54 +1204,54 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRenderTargetDescriptors, CpuDescriptorHandle* pRenderTargetDescriptors, int RTsSingleHandleToDescriptorRange, CpuDescriptorHandle* pDepthStencilDescriptor)
+    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] CpuDescriptorHandle* pRenderTargetDescriptors, bool RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDepthStencilDescriptor)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
+        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, bool, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRenderTargetDescriptors, CpuDescriptorHandle* pRenderTargetDescriptors, int RTsSingleHandleToDescriptorRange, ref CpuDescriptorHandle pDepthStencilDescriptor)
+    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] CpuDescriptorHandle* pRenderTargetDescriptors, bool RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] in CpuDescriptorHandle pDepthStencilDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (CpuDescriptorHandle* pDepthStencilDescriptorPtr = &pDepthStencilDescriptor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, bool, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRenderTargetDescriptors, ref CpuDescriptorHandle pRenderTargetDescriptors, int RTsSingleHandleToDescriptorRange, CpuDescriptorHandle* pDepthStencilDescriptor)
+    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] in CpuDescriptorHandle pRenderTargetDescriptors, bool RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDepthStencilDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (CpuDescriptorHandle* pRenderTargetDescriptorsPtr = &pRenderTargetDescriptors)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, bool, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRenderTargetDescriptors, ref CpuDescriptorHandle pRenderTargetDescriptors, int RTsSingleHandleToDescriptorRange, ref CpuDescriptorHandle pDepthStencilDescriptor)
+    public static void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] in CpuDescriptorHandle pRenderTargetDescriptors, bool RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] in CpuDescriptorHandle pDepthStencilDescriptor)
     {
         var @this = thisVtbl.Handle;
         fixed (CpuDescriptorHandle* pRenderTargetDescriptorsPtr = &pRenderTargetDescriptors)
         {
             fixed (CpuDescriptorHandle* pDepthStencilDescriptorPtr = &pDepthStencilDescriptor)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, bool, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearDepthStencilView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
+    public static unsafe void ClearDepthStencilView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, ClearFlags, float, byte, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[47])(@this, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRects);
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearDepthStencilView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects)
+    public static void ClearDepthStencilView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
@@ -1272,14 +1261,14 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearRenderTargetView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
+    public static unsafe void ClearRenderTargetView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[48])(@this, RenderTargetView, ColorRGBA, NumRects, pRects);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearRenderTargetView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects)
+    public static unsafe void ClearRenderTargetView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
@@ -1289,7 +1278,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearRenderTargetView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] ref float ColorRGBA, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
+    public static unsafe void ClearRenderTargetView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] ref float ColorRGBA, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (float* ColorRGBAPtr = &ColorRGBA)
@@ -1299,7 +1288,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearRenderTargetView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] ref float ColorRGBA, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects)
+    public static void ClearRenderTargetView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] ref float ColorRGBA, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (float* ColorRGBAPtr = &ColorRGBA)
@@ -1312,14 +1301,14 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
+    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects)
+    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
@@ -1329,7 +1318,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref uint Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
+    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* ValuesPtr = &Values)
@@ -1339,7 +1328,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref uint Values, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects)
+    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* ValuesPtr = &Values)
@@ -1352,7 +1341,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] uint* Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
+    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1362,7 +1351,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] uint* Values, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects)
+    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1375,7 +1364,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref uint Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
+    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1388,7 +1377,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref uint Values, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects)
+    public static void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1404,14 +1393,14 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
+    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects)
+    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
@@ -1421,7 +1410,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref float Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
+    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (float* ValuesPtr = &Values)
@@ -1431,7 +1420,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref float Values, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects)
+    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (float* ValuesPtr = &Values)
@@ -1444,7 +1433,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] float* Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
+    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1454,7 +1443,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] float* Values, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects)
+    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1467,7 +1456,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref float Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
+    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1480,7 +1469,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref float Values, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects)
+    public static void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1496,14 +1485,14 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pResource, DiscardRegion* pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[51])(@this, pResource, pRegion);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pResource, ref DiscardRegion pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] in DiscardRegion pRegion)
     {
         var @this = thisVtbl.Handle;
         fixed (DiscardRegion* pRegionPtr = &pRegion)
@@ -1513,7 +1502,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pResource, DiscardRegion* pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1523,7 +1512,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardResource(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pResource, ref DiscardRegion pRegion)
+    public static void DiscardResource(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pResource, [Flow(FlowDirection.In)] in DiscardRegion pRegion)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -1627,14 +1616,14 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetMarker(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint Metadata, void* pData, uint Size)
+    public static unsafe void SetMarker(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] void* pData, uint Size)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, void*, uint, void>)@this->LpVtbl[56])(@this, Metadata, pData, Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint Metadata, ref T0 pData, uint Size) where T0 : unmanaged
+    public static void SetMarker<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pDataPtr = &pData)
@@ -1644,14 +1633,14 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void BeginEvent(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint Metadata, void* pData, uint Size)
+    public static unsafe void BeginEvent(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] void* pData, uint Size)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, void*, uint, void>)@this->LpVtbl[57])(@this, Metadata, pData, Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginEvent<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint Metadata, ref T0 pData, uint Size) where T0 : unmanaged
+    public static void BeginEvent<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pDataPtr = &pData)
@@ -1841,15 +1830,15 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(guid, DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(guid, DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<Guid> guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1857,11 +1846,11 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -1905,11 +1894,11 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<char> Name)
+    public static int SetName(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetName(ref Name.GetPinnableReference());
+        return @this->SetName(in Name.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -2050,59 +2039,59 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, TextureCopyLocation* pSrc, Span<Box> pSrcBox)
+    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pSrcBox)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->CopyTextureRegion(pDst, DstX, DstY, DstZ, pSrc, ref pSrcBox.GetPinnableReference());
+        @this->CopyTextureRegion(pDst, DstX, DstY, DstZ, pSrc, in pSrcBox.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, Span<TextureCopyLocation> pSrc, Box* pSrcBox)
+    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] ReadOnlySpan<TextureCopyLocation> pSrc, [Flow(FlowDirection.In)] Box* pSrcBox)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->CopyTextureRegion(pDst, DstX, DstY, DstZ, ref pSrc.GetPinnableReference(), pSrcBox);
+        @this->CopyTextureRegion(pDst, DstX, DstY, DstZ, in pSrc.GetPinnableReference(), pSrcBox);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, Span<TextureCopyLocation> pSrc, Span<Box> pSrcBox)
+    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] ReadOnlySpan<TextureCopyLocation> pSrc, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pSrcBox)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->CopyTextureRegion(pDst, DstX, DstY, DstZ, ref pSrc.GetPinnableReference(), ref pSrcBox.GetPinnableReference());
+        @this->CopyTextureRegion(pDst, DstX, DstY, DstZ, in pSrc.GetPinnableReference(), in pSrcBox.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<TextureCopyLocation> pDst, uint DstX, uint DstY, uint DstZ, TextureCopyLocation* pSrc, Box* pSrcBox)
+    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<TextureCopyLocation> pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(FlowDirection.In)] Box* pSrcBox)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->CopyTextureRegion(ref pDst.GetPinnableReference(), DstX, DstY, DstZ, pSrc, pSrcBox);
+        @this->CopyTextureRegion(in pDst.GetPinnableReference(), DstX, DstY, DstZ, pSrc, pSrcBox);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<TextureCopyLocation> pDst, uint DstX, uint DstY, uint DstZ, TextureCopyLocation* pSrc, Span<Box> pSrcBox)
+    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<TextureCopyLocation> pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pSrcBox)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->CopyTextureRegion(ref pDst.GetPinnableReference(), DstX, DstY, DstZ, pSrc, ref pSrcBox.GetPinnableReference());
+        @this->CopyTextureRegion(in pDst.GetPinnableReference(), DstX, DstY, DstZ, pSrc, in pSrcBox.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<TextureCopyLocation> pDst, uint DstX, uint DstY, uint DstZ, Span<TextureCopyLocation> pSrc, Box* pSrcBox)
+    public static unsafe void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<TextureCopyLocation> pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] ReadOnlySpan<TextureCopyLocation> pSrc, [Flow(FlowDirection.In)] Box* pSrcBox)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->CopyTextureRegion(ref pDst.GetPinnableReference(), DstX, DstY, DstZ, ref pSrc.GetPinnableReference(), pSrcBox);
+        @this->CopyTextureRegion(in pDst.GetPinnableReference(), DstX, DstY, DstZ, in pSrc.GetPinnableReference(), pSrcBox);
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<TextureCopyLocation> pDst, uint DstX, uint DstY, uint DstZ, Span<TextureCopyLocation> pSrc, Span<Box> pSrcBox)
+    public static void CopyTextureRegion(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<TextureCopyLocation> pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] ReadOnlySpan<TextureCopyLocation> pSrc, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pSrcBox)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->CopyTextureRegion(ref pDst.GetPinnableReference(), DstX, DstY, DstZ, ref pSrc.GetPinnableReference(), ref pSrcBox.GetPinnableReference());
+        @this->CopyTextureRegion(in pDst.GetPinnableReference(), DstX, DstY, DstZ, in pSrc.GetPinnableReference(), in pSrcBox.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -2154,7 +2143,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static unsafe void CopyTiles<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2162,7 +2151,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, Span<ID3D12Resource> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, Span<ID3D12Resource> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2170,7 +2159,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2178,103 +2167,103 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->CopyTiles(pTiledResource, pTileRegionStartCoordinate, ref pTileRegionSize.GetPinnableReference(), pBuffer, BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles(pTiledResource, pTileRegionStartCoordinate, in pTileRegionSize.GetPinnableReference(), pBuffer, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static unsafe void CopyTiles<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, pTileRegionStartCoordinate, ref pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, pTileRegionStartCoordinate, in pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, Span<ID3D12Resource> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pTileRegionSize, Span<ID3D12Resource> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->CopyTiles(pTiledResource, pTileRegionStartCoordinate, ref pTileRegionSize.GetPinnableReference(), ref pBuffer.GetPinnableReference(), BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles(pTiledResource, pTileRegionStartCoordinate, in pTileRegionSize.GetPinnableReference(), ref pBuffer.GetPinnableReference(), BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, pTileRegionStartCoordinate, ref pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, pTileRegionStartCoordinate, in pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, Span<TiledResourceCoordinate> pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->CopyTiles(pTiledResource, ref pTileRegionStartCoordinate.GetPinnableReference(), pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles(pTiledResource, in pTileRegionStartCoordinate.GetPinnableReference(), pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static unsafe void CopyTiles<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, ref pTileRegionStartCoordinate, pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, in pTileRegionStartCoordinate, pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, Span<TiledResourceCoordinate> pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, Span<ID3D12Resource> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, Span<ID3D12Resource> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->CopyTiles(pTiledResource, ref pTileRegionStartCoordinate.GetPinnableReference(), pTileRegionSize, ref pBuffer.GetPinnableReference(), BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles(pTiledResource, in pTileRegionStartCoordinate.GetPinnableReference(), pTileRegionSize, ref pBuffer.GetPinnableReference(), BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, ref pTileRegionStartCoordinate, pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, in pTileRegionStartCoordinate, pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, Span<TiledResourceCoordinate> pTileRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->CopyTiles(pTiledResource, ref pTileRegionStartCoordinate.GetPinnableReference(), ref pTileRegionSize.GetPinnableReference(), pBuffer, BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles(pTiledResource, in pTileRegionStartCoordinate.GetPinnableReference(), in pTileRegionSize.GetPinnableReference(), pBuffer, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTiles<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+    public static void CopyTiles<TI0, TI1>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, ref pTileRegionStartCoordinate, ref pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, in pTileRegionStartCoordinate, in pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, Span<TiledResourceCoordinate> pTileRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, Span<ID3D12Resource> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pTileRegionSize, Span<ID3D12Resource> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->CopyTiles(pTiledResource, ref pTileRegionStartCoordinate.GetPinnableReference(), ref pTileRegionSize.GetPinnableReference(), ref pBuffer.GetPinnableReference(), BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles(pTiledResource, in pTileRegionStartCoordinate.GetPinnableReference(), in pTileRegionSize.GetPinnableReference(), ref pBuffer.GetPinnableReference(), BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, ref pTileRegionStartCoordinate, ref pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, in pTileRegionStartCoordinate, in pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2282,7 +2271,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2290,7 +2279,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, Span<ID3D12Resource> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, Span<ID3D12Resource> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2298,75 +2287,75 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->CopyTiles(ref pTiledResource.GetPinnableReference(), pTileRegionStartCoordinate, ref pTileRegionSize.GetPinnableReference(), pBuffer, BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles(ref pTiledResource.GetPinnableReference(), pTileRegionStartCoordinate, in pTileRegionSize.GetPinnableReference(), pBuffer, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->CopyTiles(ref pTiledResource, pTileRegionStartCoordinate, ref pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles(ref pTiledResource, pTileRegionStartCoordinate, in pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, Span<ID3D12Resource> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pTileRegionSize, Span<ID3D12Resource> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->CopyTiles(ref pTiledResource.GetPinnableReference(), pTileRegionStartCoordinate, ref pTileRegionSize.GetPinnableReference(), ref pBuffer.GetPinnableReference(), BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles(ref pTiledResource.GetPinnableReference(), pTileRegionStartCoordinate, in pTileRegionSize.GetPinnableReference(), ref pBuffer.GetPinnableReference(), BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pTiledResource, Span<TiledResourceCoordinate> pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->CopyTiles(ref pTiledResource.GetPinnableReference(), ref pTileRegionStartCoordinate.GetPinnableReference(), pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles(ref pTiledResource.GetPinnableReference(), in pTileRegionStartCoordinate.GetPinnableReference(), pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->CopyTiles(ref pTiledResource, ref pTileRegionStartCoordinate, pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles(ref pTiledResource, in pTileRegionStartCoordinate, pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pTiledResource, Span<TiledResourceCoordinate> pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, Span<ID3D12Resource> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, Span<ID3D12Resource> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->CopyTiles(ref pTiledResource.GetPinnableReference(), ref pTileRegionStartCoordinate.GetPinnableReference(), pTileRegionSize, ref pBuffer.GetPinnableReference(), BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles(ref pTiledResource.GetPinnableReference(), in pTileRegionStartCoordinate.GetPinnableReference(), pTileRegionSize, ref pBuffer.GetPinnableReference(), BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pTiledResource, Span<TiledResourceCoordinate> pTileRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static unsafe void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->CopyTiles(ref pTiledResource.GetPinnableReference(), ref pTileRegionStartCoordinate.GetPinnableReference(), ref pTileRegionSize.GetPinnableReference(), pBuffer, BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles(ref pTiledResource.GetPinnableReference(), in pTileRegionStartCoordinate.GetPinnableReference(), in pTileRegionSize.GetPinnableReference(), pBuffer, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void CopyTiles<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->CopyTiles(ref pTiledResource, ref pTileRegionStartCoordinate, ref pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles(ref pTiledResource, in pTileRegionStartCoordinate, in pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pTiledResource, Span<TiledResourceCoordinate> pTileRegionStartCoordinate, Span<TileRegionSize> pTileRegionSize, Span<ID3D12Resource> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+    public static void CopyTiles(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pTiledResource, [Flow(FlowDirection.In)] ReadOnlySpan<TiledResourceCoordinate> pTileRegionStartCoordinate, [Flow(FlowDirection.In)] ReadOnlySpan<TileRegionSize> pTileRegionSize, Span<ID3D12Resource> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->CopyTiles(ref pTiledResource.GetPinnableReference(), ref pTileRegionStartCoordinate.GetPinnableReference(), ref pTileRegionSize.GetPinnableReference(), ref pBuffer.GetPinnableReference(), BufferStartOffsetInBytes, Flags);
+        @this->CopyTiles(ref pTiledResource.GetPinnableReference(), in pTileRegionStartCoordinate.GetPinnableReference(), in pTileRegionSize.GetPinnableReference(), ref pBuffer.GetPinnableReference(), BufferStartOffsetInBytes, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -2418,19 +2407,19 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void RSSetViewports(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumViewports, Span<Viewport> pViewports)
+    public static void RSSetViewports(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumViewports, [Flow(FlowDirection.In)] ReadOnlySpan<Viewport> pViewports)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->RSSetViewports(NumViewports, ref pViewports.GetPinnableReference());
+        @this->RSSetViewports(NumViewports, in pViewports.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void RSSetScissorRects(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRects, Span<Silk.NET.Maths.Box2D<int>> pRects)
+    public static void RSSetScissorRects(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->RSSetScissorRects(NumRects, ref pRects.GetPinnableReference());
+        @this->RSSetScissorRects(NumRects, in pRects.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -2458,11 +2447,11 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ResourceBarrier(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumBarriers, Span<ResourceBarrier> pBarriers)
+    public static void ResourceBarrier(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumBarriers, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceBarrier> pBarriers)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->ResourceBarrier(NumBarriers, ref pBarriers.GetPinnableReference());
+        @this->ResourceBarrier(NumBarriers, in pBarriers.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -2482,7 +2471,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetDescriptorHeaps<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumDescriptorHeaps, ref ComPtr<TI0> ppDescriptorHeaps) where TI0 : unmanaged, IComVtbl<ID3D12DescriptorHeap>, IComVtbl<TI0>
+    public static void SetDescriptorHeaps<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumDescriptorHeaps, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppDescriptorHeaps) where TI0 : unmanaged, IComVtbl<ID3D12DescriptorHeap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2522,87 +2511,87 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetComputeRoot32BitConstants<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, Span<T0> pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
+    public static void SetComputeRoot32BitConstants<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->SetComputeRoot32BitConstants(RootParameterIndex, Num32BitValuesToSet, ref pSrcData.GetPinnableReference(), DestOffsetIn32BitValues);
+        @this->SetComputeRoot32BitConstants(RootParameterIndex, Num32BitValuesToSet, in pSrcData.GetPinnableReference(), DestOffsetIn32BitValues);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetGraphicsRoot32BitConstants<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, Span<T0> pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
+    public static void SetGraphicsRoot32BitConstants<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->SetGraphicsRoot32BitConstants(RootParameterIndex, Num32BitValuesToSet, ref pSrcData.GetPinnableReference(), DestOffsetIn32BitValues);
+        @this->SetGraphicsRoot32BitConstants(RootParameterIndex, Num32BitValuesToSet, in pSrcData.GetPinnableReference(), DestOffsetIn32BitValues);
     }
 
     /// <summary>To be documented.</summary>
-    public static void IASetIndexBuffer(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<IndexBufferView> pView)
+    public static void IASetIndexBuffer(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<IndexBufferView> pView)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->IASetIndexBuffer(ref pView.GetPinnableReference());
+        @this->IASetIndexBuffer(in pView.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void IASetVertexBuffers(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint StartSlot, uint NumViews, Span<VertexBufferView> pViews)
+    public static void IASetVertexBuffers(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] ReadOnlySpan<VertexBufferView> pViews)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->IASetVertexBuffers(StartSlot, NumViews, ref pViews.GetPinnableReference());
+        @this->IASetVertexBuffers(StartSlot, NumViews, in pViews.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void SOSetTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint StartSlot, uint NumViews, Span<StreamOutputBufferView> pViews)
+    public static void SOSetTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] ReadOnlySpan<StreamOutputBufferView> pViews)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->SOSetTargets(StartSlot, NumViews, ref pViews.GetPinnableReference());
+        @this->SOSetTargets(StartSlot, NumViews, in pViews.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRenderTargetDescriptors, CpuDescriptorHandle* pRenderTargetDescriptors, int RTsSingleHandleToDescriptorRange, Span<CpuDescriptorHandle> pDepthStencilDescriptor)
+    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] CpuDescriptorHandle* pRenderTargetDescriptors, bool RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pDepthStencilDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->OMSetRenderTargets(NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, ref pDepthStencilDescriptor.GetPinnableReference());
+        @this->OMSetRenderTargets(NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, in pDepthStencilDescriptor.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRenderTargetDescriptors, Span<CpuDescriptorHandle> pRenderTargetDescriptors, int RTsSingleHandleToDescriptorRange, CpuDescriptorHandle* pDepthStencilDescriptor)
+    public static unsafe void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pRenderTargetDescriptors, bool RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDepthStencilDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->OMSetRenderTargets(NumRenderTargetDescriptors, ref pRenderTargetDescriptors.GetPinnableReference(), RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
+        @this->OMSetRenderTargets(NumRenderTargetDescriptors, in pRenderTargetDescriptors.GetPinnableReference(), RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
     }
 
     /// <summary>To be documented.</summary>
-    public static void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRenderTargetDescriptors, Span<CpuDescriptorHandle> pRenderTargetDescriptors, int RTsSingleHandleToDescriptorRange, Span<CpuDescriptorHandle> pDepthStencilDescriptor)
+    public static void OMSetRenderTargets(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pRenderTargetDescriptors, bool RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] ReadOnlySpan<CpuDescriptorHandle> pDepthStencilDescriptor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->OMSetRenderTargets(NumRenderTargetDescriptors, ref pRenderTargetDescriptors.GetPinnableReference(), RTsSingleHandleToDescriptorRange, ref pDepthStencilDescriptor.GetPinnableReference());
+        @this->OMSetRenderTargets(NumRenderTargetDescriptors, in pRenderTargetDescriptors.GetPinnableReference(), RTsSingleHandleToDescriptorRange, in pDepthStencilDescriptor.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearDepthStencilView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, Span<Silk.NET.Maths.Box2D<int>> pRects)
+    public static void ClearDepthStencilView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->ClearDepthStencilView(DepthStencilView, ClearFlags, Depth, Stencil, NumRects, ref pRects.GetPinnableReference());
+        @this->ClearDepthStencilView(DepthStencilView, ClearFlags, Depth, Stencil, NumRects, in pRects.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearRenderTargetView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, Span<Silk.NET.Maths.Box2D<int>> pRects)
+    public static unsafe void ClearRenderTargetView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->ClearRenderTargetView(RenderTargetView, ColorRGBA, NumRects, ref pRects.GetPinnableReference());
+        @this->ClearRenderTargetView(RenderTargetView, ColorRGBA, NumRects, in pRects.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearRenderTargetView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] Span<float> ColorRGBA, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
+    public static unsafe void ClearRenderTargetView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] Span<float> ColorRGBA, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2610,15 +2599,15 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearRenderTargetView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] Span<float> ColorRGBA, uint NumRects, Span<Silk.NET.Maths.Box2D<int>> pRects)
+    public static void ClearRenderTargetView(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] Span<float> ColorRGBA, uint NumRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->ClearRenderTargetView(RenderTargetView, ref ColorRGBA.GetPinnableReference(), NumRects, ref pRects.GetPinnableReference());
+        @this->ClearRenderTargetView(RenderTargetView, ref ColorRGBA.GetPinnableReference(), NumRects, in pRects.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] uint* Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void ClearUnorderedAccessViewUint<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2626,23 +2615,23 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, Span<Silk.NET.Maths.Box2D<int>> pRects)
+    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, ref pRects.GetPinnableReference());
+        @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, in pRects.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] uint* Values, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void ClearUnorderedAccessViewUint<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, Values, NumRects, ref pRects);
+        @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, Values, NumRects, in pRects);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] Span<uint> Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
+    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] Span<uint> Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2650,7 +2639,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref uint Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void ClearUnorderedAccessViewUint<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2658,23 +2647,23 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] Span<uint> Values, uint NumRects, Span<Silk.NET.Maths.Box2D<int>> pRects)
+    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] Span<uint> Values, uint NumRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ref Values.GetPinnableReference(), NumRects, ref pRects.GetPinnableReference());
+        @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ref Values.GetPinnableReference(), NumRects, in pRects.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearUnorderedAccessViewUint<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref uint Values, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void ClearUnorderedAccessViewUint<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, ref Values, NumRects, ref pRects);
+        @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, ref Values, NumRects, in pRects);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, Span<ID3D12Resource> pResource, [Count(Count = 4)] uint* Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
+    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, Span<ID3D12Resource> pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2682,15 +2671,15 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, Span<ID3D12Resource> pResource, [Count(Count = 4)] uint* Values, uint NumRects, Span<Silk.NET.Maths.Box2D<int>> pRects)
+    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, Span<ID3D12Resource> pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, ref pResource.GetPinnableReference(), Values, NumRects, ref pRects.GetPinnableReference());
+        @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, ref pResource.GetPinnableReference(), Values, NumRects, in pRects.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, Span<ID3D12Resource> pResource, [Count(Count = 4)] Span<uint> Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
+    public static unsafe void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, Span<ID3D12Resource> pResource, [Count(Count = 4)] Span<uint> Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2698,15 +2687,15 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, Span<ID3D12Resource> pResource, [Count(Count = 4)] Span<uint> Values, uint NumRects, Span<Silk.NET.Maths.Box2D<int>> pRects)
+    public static void ClearUnorderedAccessViewUint(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, Span<ID3D12Resource> pResource, [Count(Count = 4)] Span<uint> Values, uint NumRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, ref pResource.GetPinnableReference(), ref Values.GetPinnableReference(), NumRects, ref pRects.GetPinnableReference());
+        @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, ref pResource.GetPinnableReference(), ref Values.GetPinnableReference(), NumRects, in pRects.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] float* Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void ClearUnorderedAccessViewFloat<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2714,23 +2703,23 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, Span<Silk.NET.Maths.Box2D<int>> pRects)
+    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, ref pRects.GetPinnableReference());
+        @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, in pRects.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] float* Values, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void ClearUnorderedAccessViewFloat<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, Values, NumRects, ref pRects);
+        @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, Values, NumRects, in pRects);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] Span<float> Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
+    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] Span<float> Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2738,7 +2727,7 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref float Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void ClearUnorderedAccessViewFloat<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2746,23 +2735,23 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] Span<float> Values, uint NumRects, Span<Silk.NET.Maths.Box2D<int>> pRects)
+    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] Span<float> Values, uint NumRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ref Values.GetPinnableReference(), NumRects, ref pRects.GetPinnableReference());
+        @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ref Values.GetPinnableReference(), NumRects, in pRects.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearUnorderedAccessViewFloat<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref float Values, uint NumRects, ref Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void ClearUnorderedAccessViewFloat<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, ref Values, NumRects, ref pRects);
+        @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, ref Values, NumRects, in pRects);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, Span<ID3D12Resource> pResource, [Count(Count = 4)] float* Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
+    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, Span<ID3D12Resource> pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2770,15 +2759,15 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, Span<ID3D12Resource> pResource, [Count(Count = 4)] float* Values, uint NumRects, Span<Silk.NET.Maths.Box2D<int>> pRects)
+    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, Span<ID3D12Resource> pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, ref pResource.GetPinnableReference(), Values, NumRects, ref pRects.GetPinnableReference());
+        @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, ref pResource.GetPinnableReference(), Values, NumRects, in pRects.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, Span<ID3D12Resource> pResource, [Count(Count = 4)] Span<float> Values, uint NumRects, Silk.NET.Maths.Box2D<int>* pRects)
+    public static unsafe void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, Span<ID3D12Resource> pResource, [Count(Count = 4)] Span<float> Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2786,15 +2775,15 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, Span<ID3D12Resource> pResource, [Count(Count = 4)] Span<float> Values, uint NumRects, Span<Silk.NET.Maths.Box2D<int>> pRects)
+    public static void ClearUnorderedAccessViewFloat(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, Span<ID3D12Resource> pResource, [Count(Count = 4)] Span<float> Values, uint NumRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRects)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, ref pResource.GetPinnableReference(), ref Values.GetPinnableReference(), NumRects, ref pRects.GetPinnableReference());
+        @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, ref pResource.GetPinnableReference(), ref Values.GetPinnableReference(), NumRects, in pRects.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pResource, DiscardRegion* pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void DiscardResource<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2802,23 +2791,23 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pResource, Span<DiscardRegion> pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] ReadOnlySpan<DiscardRegion> pRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DiscardResource(pResource, ref pRegion.GetPinnableReference());
+        @this->DiscardResource(pResource, in pRegion.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardResource<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pResource, ref DiscardRegion pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void DiscardResource<TI0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, ComPtr<TI0> pResource, [Flow(FlowDirection.In)] in DiscardRegion pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DiscardResource((ID3D12Resource*) pResource.Handle, ref pRegion);
+        @this->DiscardResource((ID3D12Resource*) pResource.Handle, in pRegion);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pResource, DiscardRegion* pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2826,11 +2815,11 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardResource(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pResource, Span<DiscardRegion> pRegion)
+    public static void DiscardResource(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, Span<ID3D12Resource> pResource, [Flow(FlowDirection.In)] ReadOnlySpan<DiscardRegion> pRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DiscardResource(ref pResource.GetPinnableReference(), ref pRegion.GetPinnableReference());
+        @this->DiscardResource(ref pResource.GetPinnableReference(), in pRegion.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -2930,19 +2919,19 @@ public unsafe static class D3D12GraphicsCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint Metadata, Span<T0> pData, uint Size) where T0 : unmanaged
+    public static void SetMarker<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->SetMarker(Metadata, ref pData.GetPinnableReference(), Size);
+        @this->SetMarker(Metadata, in pData.GetPinnableReference(), Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginEvent<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint Metadata, Span<T0> pData, uint Size) where T0 : unmanaged
+    public static void BeginEvent<T0>(this ComPtr<ID3D12GraphicsCommandList> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->BeginEvent(Metadata, ref pData.GetPinnableReference(), Size);
+        @this->BeginEvent(Metadata, in pData.GetPinnableReference(), Size);
     }
 
     /// <summary>To be documented.</summary>

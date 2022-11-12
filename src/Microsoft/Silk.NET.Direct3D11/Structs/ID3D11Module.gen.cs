@@ -111,55 +111,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInstance(byte* pNamespace, ID3D11ModuleInstance** ppModuleInstance)
-        {
-            var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11Module*, byte*, ID3D11ModuleInstance**, int>)@this->LpVtbl[3])(@this, pNamespace, ppModuleInstance);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInstance(byte* pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
-        {
-            var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (ID3D11ModuleInstance** ppModuleInstancePtr = &ppModuleInstance)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Module*, byte*, ID3D11ModuleInstance**, int>)@this->LpVtbl[3])(@this, pNamespace, ppModuleInstancePtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInstance(ref byte pNamespace, ID3D11ModuleInstance** ppModuleInstance)
-        {
-            var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (byte* pNamespacePtr = &pNamespace)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Module*, byte*, ID3D11ModuleInstance**, int>)@this->LpVtbl[3])(@this, pNamespacePtr, ppModuleInstance);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInstance(ref byte pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
-        {
-            var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (byte* pNamespacePtr = &pNamespace)
-            {
-                fixed (ID3D11ModuleInstance** ppModuleInstancePtr = &ppModuleInstance)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Module*, byte*, ID3D11ModuleInstance**, int>)@this->LpVtbl[3])(@this, pNamespacePtr, ppModuleInstancePtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInstance([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pNamespace, ID3D11ModuleInstance** ppModuleInstance)
+        public readonly unsafe int CreateInstance([Flow(FlowDirection.In)] string* pNamespace, ID3D11ModuleInstance** ppModuleInstance)
         {
             var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -170,7 +122,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInstance([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
+        public readonly unsafe int CreateInstance([Flow(FlowDirection.In)] string* pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
         {
             var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -178,6 +130,33 @@ namespace Silk.NET.Direct3D11
             fixed (ID3D11ModuleInstance** ppModuleInstancePtr = &ppModuleInstance)
             {
                 ret = ((delegate* unmanaged[Stdcall]<ID3D11Module*, byte*, ID3D11ModuleInstance**, int>)@this->LpVtbl[3])(@this, pNamespacePtr, ppModuleInstancePtr);
+            }
+            SilkMarshal.Free((nint)pNamespacePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateInstance([Flow(FlowDirection.In)] in string pNamespace, ID3D11ModuleInstance** ppModuleInstance)
+        {
+            var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pNamespacePtr = (byte*) SilkMarshal.StringToPtr(pNamespace, NativeStringEncoding.LPStr);
+            var pNamespacePp = &pNamespacePtr;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Module*, byte**, ID3D11ModuleInstance**, int>)@this->LpVtbl[3])(@this, pNamespacePp, ppModuleInstance);
+            SilkMarshal.Free((nint)pNamespacePtr);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateInstance([Flow(FlowDirection.In)] in string pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
+        {
+            var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            var pNamespacePtr = (byte*) SilkMarshal.StringToPtr(pNamespace, NativeStringEncoding.LPStr);
+            var pNamespacePp = &pNamespacePtr;
+            fixed (ID3D11ModuleInstance** ppModuleInstancePtr = &ppModuleInstance)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Module*, byte**, ID3D11ModuleInstance**, int>)@this->LpVtbl[3])(@this, pNamespacePp, ppModuleInstancePtr);
             }
             SilkMarshal.Free((nint)pNamespacePtr);
             return ret;
@@ -193,7 +172,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInstance<TI0>(byte* pNamespace, ref ComPtr<TI0> ppModuleInstance) where TI0 : unmanaged, IComVtbl<ID3D11ModuleInstance>, IComVtbl<TI0>
+        public readonly unsafe int CreateInstance<TI0>([Flow(FlowDirection.In)] string* pNamespace, ref ComPtr<TI0> ppModuleInstance) where TI0 : unmanaged, IComVtbl<ID3D11ModuleInstance>, IComVtbl<TI0>
         {
             var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -201,19 +180,11 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateInstance<TI0>(ref byte pNamespace, ref ComPtr<TI0> ppModuleInstance) where TI0 : unmanaged, IComVtbl<ID3D11ModuleInstance>, IComVtbl<TI0>
+        public readonly int CreateInstance<TI0>([Flow(FlowDirection.In)] in string pNamespace, ref ComPtr<TI0> ppModuleInstance) where TI0 : unmanaged, IComVtbl<ID3D11ModuleInstance>, IComVtbl<TI0>
         {
             var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateInstance(ref pNamespace, (ID3D11ModuleInstance**) ppModuleInstance.GetAddressOf());
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int CreateInstance<TI0>([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pNamespace, ref ComPtr<TI0> ppModuleInstance) where TI0 : unmanaged, IComVtbl<ID3D11ModuleInstance>, IComVtbl<TI0>
-        {
-            var @this = (ID3D11Module*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            // ComPtrOverloader
-            return @this->CreateInstance(pNamespace, (ID3D11ModuleInstance**) ppModuleInstance.GetAddressOf());
+            return @this->CreateInstance(in pNamespace, (ID3D11ModuleInstance**) ppModuleInstance.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>

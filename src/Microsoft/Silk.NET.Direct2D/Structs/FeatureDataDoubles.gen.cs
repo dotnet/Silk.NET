@@ -21,7 +21,7 @@ namespace Silk.NET.Direct2D
     {
         public FeatureDataDoubles
         (
-            int? doublePrecisionFloatShaderOps = null
+            bool? doublePrecisionFloatShaderOps = null
         ) : this()
         {
             if (doublePrecisionFloatShaderOps is not null)
@@ -34,6 +34,6 @@ namespace Silk.NET.Direct2D
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "doublePrecisionFloatShaderOps")]
-        public int DoublePrecisionFloatShaderOps;
+        public bool DoublePrecisionFloatShaderOps;
     }
 }

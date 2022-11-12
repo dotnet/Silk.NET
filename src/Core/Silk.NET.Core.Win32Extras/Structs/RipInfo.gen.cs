@@ -21,8 +21,8 @@ namespace Silk.NET.Core.Win32Extras
     {
         public RipInfo
         (
-            uint? dwError = null,
-            uint? dwType = null
+            int? dwError = null,
+            int? dwType = null
         ) : this()
         {
             if (dwError is not null)
@@ -40,11 +40,11 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwError")]
-        public uint DwError;
+        public int DwError;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwType")]
-        public uint DwType;
+        public int DwType;
     }
 }

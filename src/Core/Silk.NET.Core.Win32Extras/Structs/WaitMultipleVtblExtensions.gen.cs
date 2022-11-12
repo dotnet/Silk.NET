@@ -85,22 +85,22 @@ public unsafe static class WaitMultipleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WaitMultiple(this ComPtr<IWaitMultiple> thisVtbl, uint timeout, ISynchronize** pSync)
+    public static unsafe int WaitMultiple(this ComPtr<IWaitMultiple> thisVtbl, int timeout, ISynchronize** pSync)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IWaitMultiple*, uint, ISynchronize**, int>)@this->LpVtbl[3])(@this, timeout, pSync);
+        ret = ((delegate* unmanaged[Cdecl]<IWaitMultiple*, int, ISynchronize**, int>)@this->LpVtbl[3])(@this, timeout, pSync);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WaitMultiple(this ComPtr<IWaitMultiple> thisVtbl, uint timeout, ref ISynchronize* pSync)
+    public static unsafe int WaitMultiple(this ComPtr<IWaitMultiple> thisVtbl, int timeout, ref ISynchronize* pSync)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ISynchronize** pSyncPtr = &pSync)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IWaitMultiple*, uint, ISynchronize**, int>)@this->LpVtbl[3])(@this, timeout, pSyncPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IWaitMultiple*, int, ISynchronize**, int>)@this->LpVtbl[3])(@this, timeout, pSyncPtr);
         }
         return ret;
     }
@@ -152,7 +152,7 @@ public unsafe static class WaitMultipleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int WaitMultiple<TI0>(this ComPtr<IWaitMultiple> thisVtbl, uint timeout, ref ComPtr<TI0> pSync) where TI0 : unmanaged, IComVtbl<ISynchronize>, IComVtbl<TI0>
+    public static int WaitMultiple<TI0>(this ComPtr<IWaitMultiple> thisVtbl, int timeout, ref ComPtr<TI0> pSync) where TI0 : unmanaged, IComVtbl<ISynchronize>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

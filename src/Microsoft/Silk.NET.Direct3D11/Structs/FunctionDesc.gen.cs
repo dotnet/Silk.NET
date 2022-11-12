@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D11
         public FunctionDesc
         (
             uint? version = null,
-            byte* creator = null,
+            string* creator = null,
             uint? flags = null,
             uint? constantBuffers = null,
             uint? boundResources = null,
@@ -49,11 +49,11 @@ namespace Silk.NET.Direct3D11
             uint? bitwiseInstructionCount = null,
             Silk.NET.Core.Native.D3DFeatureLevel? minFeatureLevel = null,
             ulong? requiredFeatureFlags = null,
-            byte* name = null,
+            string* name = null,
             int? functionParameterCount = null,
-            int? hasReturn = null,
-            int? has10Level9VertexShader = null,
-            int? has10Level9PixelShader = null
+            bool? hasReturn = null,
+            bool? has10Level9VertexShader = null,
+            bool? has10Level9PixelShader = null
         ) : this()
         {
             if (version is not null)
@@ -231,7 +231,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "LPCSTR")]
         [NativeName("Type.Name", "LPCSTR")]
         [NativeName("Name", "Creator")]
-        public byte* Creator;
+        public string* Creator;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]
@@ -366,7 +366,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "LPCSTR")]
         [NativeName("Type.Name", "LPCSTR")]
         [NativeName("Name", "Name")]
-        public byte* Name;
+        public string* Name;
 
         [NativeName("Type", "INT")]
         [NativeName("Type.Name", "INT")]
@@ -376,16 +376,16 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "HasReturn")]
-        public int HasReturn;
+        public bool HasReturn;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Has10Level9VertexShader")]
-        public int Has10Level9VertexShader;
+        public bool Has10Level9VertexShader;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Has10Level9PixelShader")]
-        public int Has10Level9PixelShader;
+        public bool Has10Level9PixelShader;
     }
 }

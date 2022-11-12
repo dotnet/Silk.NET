@@ -23,7 +23,7 @@ namespace Silk.NET.DXGI
         public OutputDesc
         (
             Silk.NET.Maths.Box2D<int>? desktopCoordinates = null,
-            int? attachedToDesktop = null,
+            bool? attachedToDesktop = null,
             ModeRotation? rotation = null,
             nint? monitor = null
         ) : this()
@@ -62,7 +62,7 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "AttachedToDesktop")]
-        public int AttachedToDesktop;
+        public bool AttachedToDesktop;
 
         [NativeName("Type", "DXGI_MODE_ROTATION")]
         [NativeName("Type.Name", "DXGI_MODE_ROTATION")]

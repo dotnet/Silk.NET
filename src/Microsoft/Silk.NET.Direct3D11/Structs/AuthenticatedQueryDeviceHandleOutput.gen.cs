@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D11
         public AuthenticatedQueryDeviceHandleOutput
         (
             AuthenticatedQueryOutput? output = null,
-            void* deviceHandle = null
+            nint* deviceHandle = null
         ) : this()
         {
             if (output is not null)
@@ -45,6 +45,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "DeviceHandle")]
-        public void* DeviceHandle;
+        public nint* DeviceHandle;
     }
 }

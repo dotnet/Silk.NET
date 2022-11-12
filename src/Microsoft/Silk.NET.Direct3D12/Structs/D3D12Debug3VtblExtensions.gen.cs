@@ -92,17 +92,17 @@ public unsafe static class D3D12Debug3VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetEnableGPUBasedValidation(this ComPtr<ID3D12Debug3> thisVtbl, int Enable)
+    public static void SetEnableGPUBasedValidation(this ComPtr<ID3D12Debug3> thisVtbl, bool Enable)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D12Debug3*, int, void>)@this->LpVtbl[4])(@this, Enable);
+        ((delegate* unmanaged[Stdcall]<ID3D12Debug3*, bool, void>)@this->LpVtbl[4])(@this, Enable);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetEnableSynchronizedCommandQueueValidation(this ComPtr<ID3D12Debug3> thisVtbl, int Enable)
+    public static void SetEnableSynchronizedCommandQueueValidation(this ComPtr<ID3D12Debug3> thisVtbl, bool Enable)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D12Debug3*, int, void>)@this->LpVtbl[5])(@this, Enable);
+        ((delegate* unmanaged[Stdcall]<ID3D12Debug3*, bool, void>)@this->LpVtbl[5])(@this, Enable);
     }
 
     /// <summary>To be documented.</summary>

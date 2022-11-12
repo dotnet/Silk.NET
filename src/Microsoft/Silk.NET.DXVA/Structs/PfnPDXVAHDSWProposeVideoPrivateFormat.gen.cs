@@ -19,10 +19,10 @@ namespace Silk.NET.DXVA
     public unsafe readonly struct PfnPDXVAHDSWProposeVideoPrivateFormat : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<void*, Silk.NET.Direct3D9.Format*, int> Handle => (delegate* unmanaged[Cdecl]<void*, Silk.NET.Direct3D9.Format*, int>) _handle;
+        public delegate* unmanaged[Cdecl]<nint*, Silk.NET.Direct3D9.Format*, int> Handle => (delegate* unmanaged[Cdecl]<nint*, Silk.NET.Direct3D9.Format*, int>) _handle;
         public PfnPDXVAHDSWProposeVideoPrivateFormat
         (
-            delegate* unmanaged[Cdecl]<void*, Silk.NET.Direct3D9.Format*, int> ptr
+            delegate* unmanaged[Cdecl]<nint*, Silk.NET.Direct3D9.Format*, int> ptr
         ) => _handle = ptr;
 
         public PfnPDXVAHDSWProposeVideoPrivateFormat
@@ -35,7 +35,7 @@ namespace Silk.NET.DXVA
 
         public static implicit operator nint(PfnPDXVAHDSWProposeVideoPrivateFormat pfn) => (nint) pfn.Handle;
         public static explicit operator PfnPDXVAHDSWProposeVideoPrivateFormat(nint pfn)
-            => new PfnPDXVAHDSWProposeVideoPrivateFormat((delegate* unmanaged[Cdecl]<void*, Silk.NET.Direct3D9.Format*, int>) pfn);
+            => new PfnPDXVAHDSWProposeVideoPrivateFormat((delegate* unmanaged[Cdecl]<nint*, Silk.NET.Direct3D9.Format*, int>) pfn);
 
         public static implicit operator PfnPDXVAHDSWProposeVideoPrivateFormat(PDXVAHDSWProposeVideoPrivateFormat proc)
             => new PfnPDXVAHDSWProposeVideoPrivateFormat(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.DXVA
         public static explicit operator PDXVAHDSWProposeVideoPrivateFormat(PfnPDXVAHDSWProposeVideoPrivateFormat pfn)
             => SilkMarshal.PtrToDelegate<PDXVAHDSWProposeVideoPrivateFormat>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<void*, Silk.NET.Direct3D9.Format*, int>(PfnPDXVAHDSWProposeVideoPrivateFormat pfn) => pfn.Handle;
-        public static implicit operator PfnPDXVAHDSWProposeVideoPrivateFormat(delegate* unmanaged[Cdecl]<void*, Silk.NET.Direct3D9.Format*, int> ptr) => new PfnPDXVAHDSWProposeVideoPrivateFormat(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<nint*, Silk.NET.Direct3D9.Format*, int>(PfnPDXVAHDSWProposeVideoPrivateFormat pfn) => pfn.Handle;
+        public static implicit operator PfnPDXVAHDSWProposeVideoPrivateFormat(delegate* unmanaged[Cdecl]<nint*, Silk.NET.Direct3D9.Format*, int> ptr) => new PfnPDXVAHDSWProposeVideoPrivateFormat(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate int PDXVAHDSWProposeVideoPrivateFormat(void* arg0, Silk.NET.Direct3D9.Format* arg1);
+    public unsafe delegate int PDXVAHDSWProposeVideoPrivateFormat(nint* arg0, Silk.NET.Direct3D9.Format* arg1);
 }
 

@@ -21,9 +21,9 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options4
         (
-            int? mSAA64KBAlignedTextureSupported = null,
+            bool? mSAA64KBAlignedTextureSupported = null,
             SharedResourceCompatibilityTier? sharedResourceCompatibilityTier = null,
-            int? native16BitShaderOpsSupported = null
+            bool? native16BitShaderOpsSupported = null
         ) : this()
         {
             if (mSAA64KBAlignedTextureSupported is not null)
@@ -46,7 +46,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "MSAA64KBAlignedTextureSupported")]
-        public int MSAA64KBAlignedTextureSupported;
+        public bool MSAA64KBAlignedTextureSupported;
 
         [NativeName("Type", "D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER")]
         [NativeName("Type.Name", "D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER")]
@@ -56,6 +56,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Native16BitShaderOpsSupported")]
-        public int Native16BitShaderOpsSupported;
+        public bool Native16BitShaderOpsSupported;
     }
 }

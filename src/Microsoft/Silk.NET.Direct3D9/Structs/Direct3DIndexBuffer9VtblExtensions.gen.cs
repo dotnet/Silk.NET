@@ -106,40 +106,40 @@ public unsafe static class Direct3DIndexBuffer9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, Guid* refguid, void* pData, uint SizeOfData, uint Flags)
+    public static unsafe int SetPrivateData(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, Guid* refguid, [Flow(FlowDirection.In)] void* pData, int SizeOfData, int Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, uint, uint, int>)@this->LpVtbl[4])(@this, refguid, pData, SizeOfData, Flags);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, int, int, int>)@this->LpVtbl[4])(@this, refguid, pData, SizeOfData, Flags);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, Guid* refguid, ref T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, Guid* refguid, [Flow(FlowDirection.In)] in T0 pData, int SizeOfData, int Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pDataPtr = &pData)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, uint, uint, int>)@this->LpVtbl[4])(@this, refguid, pDataPtr, SizeOfData, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, int, int, int>)@this->LpVtbl[4])(@this, refguid, pDataPtr, SizeOfData, Flags);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, ref Guid refguid, void* pData, uint SizeOfData, uint Flags)
+    public static unsafe int SetPrivateData(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, ref Guid refguid, [Flow(FlowDirection.In)] void* pData, int SizeOfData, int Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* refguidPtr = &refguid)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, uint, uint, int>)@this->LpVtbl[4])(@this, refguidPtr, pData, SizeOfData, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, int, int, int>)@this->LpVtbl[4])(@this, refguidPtr, pData, SizeOfData, Flags);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, ref Guid refguid, ref T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, ref Guid refguid, [Flow(FlowDirection.In)] in T0 pData, int SizeOfData, int Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -147,7 +147,7 @@ public unsafe static class Direct3DIndexBuffer9VtblExtensions
         {
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, uint, uint, int>)@this->LpVtbl[4])(@this, refguidPtr, pDataPtr, SizeOfData, Flags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, Guid*, void*, int, int, int>)@this->LpVtbl[4])(@this, refguidPtr, pDataPtr, SizeOfData, Flags);
             }
         }
         return ret;
@@ -283,20 +283,20 @@ public unsafe static class Direct3DIndexBuffer9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint SetPriority(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, uint PriorityNew)
+    public static int SetPriority(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, int PriorityNew)
     {
         var @this = thisVtbl.Handle;
-        uint ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, uint, uint>)@this->LpVtbl[7])(@this, PriorityNew);
+        int ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, int, int>)@this->LpVtbl[7])(@this, PriorityNew);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static uint GetPriority(this ComPtr<IDirect3DIndexBuffer9> thisVtbl)
+    public static int GetPriority(this ComPtr<IDirect3DIndexBuffer9> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        uint ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, uint>)@this->LpVtbl[8])(@this);
+        int ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, int>)@this->LpVtbl[8])(@this);
         return ret;
     }
 
@@ -317,22 +317,22 @@ public unsafe static class Direct3DIndexBuffer9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Lock(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, uint OffsetToLock, uint SizeToLock, void** ppbData, uint Flags)
+    public static unsafe int Lock(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, uint OffsetToLock, uint SizeToLock, void** ppbData, int Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, uint, uint, void**, uint, int>)@this->LpVtbl[11])(@this, OffsetToLock, SizeToLock, ppbData, Flags);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, uint, uint, void**, int, int>)@this->LpVtbl[11])(@this, OffsetToLock, SizeToLock, ppbData, Flags);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Lock(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, uint OffsetToLock, uint SizeToLock, ref void* ppbData, uint Flags)
+    public static unsafe int Lock(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, uint OffsetToLock, uint SizeToLock, ref void* ppbData, int Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppbDataPtr = &ppbData)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, uint, uint, void**, uint, int>)@this->LpVtbl[11])(@this, OffsetToLock, SizeToLock, ppbDataPtr, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DIndexBuffer9*, uint, uint, void**, int, int>)@this->LpVtbl[11])(@this, OffsetToLock, SizeToLock, ppbDataPtr, Flags);
         }
         return ret;
     }
@@ -401,15 +401,15 @@ public unsafe static class Direct3DIndexBuffer9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, Guid* refguid, Span<T0> pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, Guid* refguid, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, int SizeOfData, int Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(refguid, ref pData.GetPinnableReference(), SizeOfData, Flags);
+        return @this->SetPrivateData(refguid, in pData.GetPinnableReference(), SizeOfData, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, Span<Guid> refguid, void* pData, uint SizeOfData, uint Flags)
+    public static unsafe int SetPrivateData(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, Span<Guid> refguid, [Flow(FlowDirection.In)] void* pData, int SizeOfData, int Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -417,11 +417,11 @@ public unsafe static class Direct3DIndexBuffer9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, Span<Guid> refguid, Span<T0> pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDirect3DIndexBuffer9> thisVtbl, Span<Guid> refguid, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, int SizeOfData, int Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref refguid.GetPinnableReference(), ref pData.GetPinnableReference(), SizeOfData, Flags);
+        return @this->SetPrivateData(ref refguid.GetPinnableReference(), in pData.GetPinnableReference(), SizeOfData, Flags);
     }
 
     /// <summary>To be documented.</summary>

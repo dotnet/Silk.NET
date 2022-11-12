@@ -21,7 +21,7 @@ namespace Silk.NET.DXVA
     {
         public ProcAmpControlQueryRange
         (
-            uint? size = null,
+            int? size = null,
             ProcAmpControlProp? procAmpControlProp = null,
             VideoDesc? videoDesc = null
         ) : this()
@@ -46,7 +46,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Size")]
-        public uint Size;
+        public int Size;
 
         [NativeName("Type", "DXVA_ProcAmpControlProp")]
         [NativeName("Type.Name", "DXVA_ProcAmpControlProp")]

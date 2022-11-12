@@ -85,22 +85,22 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AssertResourceState(this ComPtr<ID3D12DebugCommandList2> thisVtbl, ID3D12Resource* pResource, uint Subresource, uint State)
+    public static unsafe bool AssertResourceState(this ComPtr<ID3D12DebugCommandList2> thisVtbl, ID3D12Resource* pResource, uint Subresource, uint State)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, ID3D12Resource*, uint, uint, int>)@this->LpVtbl[3])(@this, pResource, Subresource, State);
+        bool ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, ID3D12Resource*, uint, uint, bool>)@this->LpVtbl[3])(@this, pResource, Subresource, State);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int AssertResourceState(this ComPtr<ID3D12DebugCommandList2> thisVtbl, ref ID3D12Resource pResource, uint Subresource, uint State)
+    public static bool AssertResourceState(this ComPtr<ID3D12DebugCommandList2> thisVtbl, ref ID3D12Resource pResource, uint Subresource, uint State)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
+        bool ret = default;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, ID3D12Resource*, uint, uint, int>)@this->LpVtbl[3])(@this, pResourcePtr, Subresource, State);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12DebugCommandList2*, ID3D12Resource*, uint, uint, bool>)@this->LpVtbl[3])(@this, pResourcePtr, Subresource, State);
         }
         return ret;
     }
@@ -124,7 +124,7 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetDebugParameter(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, void* pData, uint DataSize)
+    public static unsafe int SetDebugParameter(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, [Flow(FlowDirection.In)] void* pData, uint DataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -133,7 +133,7 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetDebugParameter<T0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, ref T0 pData, uint DataSize) where T0 : unmanaged
+    public static int SetDebugParameter<T0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, [Flow(FlowDirection.In)] in T0 pData, uint DataSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -191,7 +191,7 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AssertResourceState<TI0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, ComPtr<TI0> pResource, uint Subresource, uint State) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static bool AssertResourceState<TI0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, ComPtr<TI0> pResource, uint Subresource, uint State) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -199,7 +199,7 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AssertResourceState(this ComPtr<ID3D12DebugCommandList2> thisVtbl, Span<ID3D12Resource> pResource, uint Subresource, uint State)
+    public static bool AssertResourceState(this ComPtr<ID3D12DebugCommandList2> thisVtbl, Span<ID3D12Resource> pResource, uint Subresource, uint State)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -207,11 +207,11 @@ public unsafe static class D3D12DebugCommandList2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetDebugParameter<T0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, Span<T0> pData, uint DataSize) where T0 : unmanaged
+    public static int SetDebugParameter<T0>(this ComPtr<ID3D12DebugCommandList2> thisVtbl, DebugCommandListParameterType Type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint DataSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetDebugParameter(Type, ref pData.GetPinnableReference(), DataSize);
+        return @this->SetDebugParameter(Type, in pData.GetPinnableReference(), DataSize);
     }
 
     /// <summary>To be documented.</summary>

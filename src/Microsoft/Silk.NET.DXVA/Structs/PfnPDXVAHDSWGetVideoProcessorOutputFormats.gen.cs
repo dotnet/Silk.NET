@@ -19,10 +19,10 @@ namespace Silk.NET.DXVA
     public unsafe readonly struct PfnPDXVAHDSWGetVideoProcessorOutputFormats : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<void*, HDContentDesc*, HDDeviceUsage, uint, Silk.NET.Direct3D9.Format*, int> Handle => (delegate* unmanaged[Cdecl]<void*, HDContentDesc*, HDDeviceUsage, uint, Silk.NET.Direct3D9.Format*, int>) _handle;
+        public delegate* unmanaged[Cdecl]<nint*, HDContentDesc*, HDDeviceUsage, uint, Silk.NET.Direct3D9.Format*, int> Handle => (delegate* unmanaged[Cdecl]<nint*, HDContentDesc*, HDDeviceUsage, uint, Silk.NET.Direct3D9.Format*, int>) _handle;
         public PfnPDXVAHDSWGetVideoProcessorOutputFormats
         (
-            delegate* unmanaged[Cdecl]<void*, HDContentDesc*, HDDeviceUsage, uint, Silk.NET.Direct3D9.Format*, int> ptr
+            delegate* unmanaged[Cdecl]<nint*, HDContentDesc*, HDDeviceUsage, uint, Silk.NET.Direct3D9.Format*, int> ptr
         ) => _handle = ptr;
 
         public PfnPDXVAHDSWGetVideoProcessorOutputFormats
@@ -35,7 +35,7 @@ namespace Silk.NET.DXVA
 
         public static implicit operator nint(PfnPDXVAHDSWGetVideoProcessorOutputFormats pfn) => (nint) pfn.Handle;
         public static explicit operator PfnPDXVAHDSWGetVideoProcessorOutputFormats(nint pfn)
-            => new PfnPDXVAHDSWGetVideoProcessorOutputFormats((delegate* unmanaged[Cdecl]<void*, HDContentDesc*, HDDeviceUsage, uint, Silk.NET.Direct3D9.Format*, int>) pfn);
+            => new PfnPDXVAHDSWGetVideoProcessorOutputFormats((delegate* unmanaged[Cdecl]<nint*, HDContentDesc*, HDDeviceUsage, uint, Silk.NET.Direct3D9.Format*, int>) pfn);
 
         public static implicit operator PfnPDXVAHDSWGetVideoProcessorOutputFormats(PDXVAHDSWGetVideoProcessorOutputFormats proc)
             => new PfnPDXVAHDSWGetVideoProcessorOutputFormats(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.DXVA
         public static explicit operator PDXVAHDSWGetVideoProcessorOutputFormats(PfnPDXVAHDSWGetVideoProcessorOutputFormats pfn)
             => SilkMarshal.PtrToDelegate<PDXVAHDSWGetVideoProcessorOutputFormats>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<void*, HDContentDesc*, HDDeviceUsage, uint, Silk.NET.Direct3D9.Format*, int>(PfnPDXVAHDSWGetVideoProcessorOutputFormats pfn) => pfn.Handle;
-        public static implicit operator PfnPDXVAHDSWGetVideoProcessorOutputFormats(delegate* unmanaged[Cdecl]<void*, HDContentDesc*, HDDeviceUsage, uint, Silk.NET.Direct3D9.Format*, int> ptr) => new PfnPDXVAHDSWGetVideoProcessorOutputFormats(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<nint*, HDContentDesc*, HDDeviceUsage, uint, Silk.NET.Direct3D9.Format*, int>(PfnPDXVAHDSWGetVideoProcessorOutputFormats pfn) => pfn.Handle;
+        public static implicit operator PfnPDXVAHDSWGetVideoProcessorOutputFormats(delegate* unmanaged[Cdecl]<nint*, HDContentDesc*, HDDeviceUsage, uint, Silk.NET.Direct3D9.Format*, int> ptr) => new PfnPDXVAHDSWGetVideoProcessorOutputFormats(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate int PDXVAHDSWGetVideoProcessorOutputFormats(void* arg0, HDContentDesc* arg1, HDDeviceUsage arg2, uint arg3, Silk.NET.Direct3D9.Format* arg4);
+    public unsafe delegate int PDXVAHDSWGetVideoProcessorOutputFormats(nint* arg0, HDContentDesc* arg1, HDDeviceUsage arg2, uint arg3, Silk.NET.Direct3D9.Format* arg4);
 }
 

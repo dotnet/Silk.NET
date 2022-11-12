@@ -28,7 +28,7 @@ namespace Silk.NET.Direct3D12
             uint? elements = null,
             uint? members = null,
             uint? offset = null,
-            byte* name = null
+            string* name = null
         ) : this()
         {
             if (@class is not null)
@@ -111,6 +111,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "LPCSTR")]
         [NativeName("Type.Name", "LPCSTR")]
         [NativeName("Name", "Name")]
-        public byte* Name;
+        public string* Name;
     }
 }

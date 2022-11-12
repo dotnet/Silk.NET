@@ -123,7 +123,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, VoiceSends* pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -132,7 +132,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, VoiceSends* pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -144,7 +144,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, ref VoiceSends pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -156,7 +156,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, ref VoiceSends pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -171,7 +171,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, VoiceSends* pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -183,7 +183,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, VoiceSends* pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -198,7 +198,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, ref VoiceSends pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -213,7 +213,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, ref VoiceSends pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -231,7 +231,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, ref WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, VoiceSends* pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -243,7 +243,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, ref WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, VoiceSends* pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -258,7 +258,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, ref WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, ref VoiceSends pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -273,7 +273,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, ref WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, ref VoiceSends pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -291,7 +291,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, ref WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, VoiceSends* pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -306,7 +306,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, ref WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, VoiceSends* pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -324,7 +324,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, ref WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, ref VoiceSends pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -342,7 +342,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, ref WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, ref VoiceSends pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -363,7 +363,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, VoiceSends* pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -375,7 +375,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, VoiceSends* pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -390,7 +390,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, ref VoiceSends pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -405,7 +405,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, ref VoiceSends pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -423,7 +423,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, VoiceSends* pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -438,7 +438,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, VoiceSends* pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -456,7 +456,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, ref VoiceSends pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -474,7 +474,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, ref VoiceSends pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -495,7 +495,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, ref WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, VoiceSends* pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -510,7 +510,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, ref WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, VoiceSends* pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -528,7 +528,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, ref WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, ref VoiceSends pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -546,7 +546,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, ref WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, ref VoiceSends pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -567,7 +567,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, ref WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, VoiceSends* pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -585,7 +585,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, ref WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, VoiceSends* pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -606,7 +606,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, ref WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, ref VoiceSends pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -627,7 +627,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, ref WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, ref VoiceSends pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] in WaveFormatEx pSourceFormat, uint Flags, float MaxFrequencyRatio, ref IXAudio2VoiceCallback pCallback, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -651,7 +651,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, VoiceSends* pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -660,7 +660,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, VoiceSends* pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -672,7 +672,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, ref VoiceSends pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -684,7 +684,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, ref VoiceSends pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -699,7 +699,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, VoiceSends* pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -711,7 +711,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, VoiceSends* pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -726,7 +726,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, ref VoiceSends pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -741,7 +741,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, ref VoiceSends pSendList, ref EffectChain pEffectChain)
+    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(FlowDirection.In)] in VoiceSends pSendList, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -759,92 +759,67 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, char* szDeviceId, EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] nint* szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, char*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChain, StreamCategory);
+        ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, nint*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChain, StreamCategory);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, char* szDeviceId, ref EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] nint* szDeviceId, [Flow(FlowDirection.In)] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (EffectChain* pEffectChainPtr = &pEffectChain)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, char*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChainPtr, StreamCategory);
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, nint*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChainPtr, StreamCategory);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, ref char szDeviceId, EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] in nint szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* szDeviceIdPtr = &szDeviceId)
+        fixed (nint* szDeviceIdPtr = &szDeviceId)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, char*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChain, StreamCategory);
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, nint*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChain, StreamCategory);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, ref char szDeviceId, ref EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] in nint szDeviceId, [Flow(FlowDirection.In)] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* szDeviceIdPtr = &szDeviceId)
+        fixed (nint* szDeviceIdPtr = &szDeviceId)
         {
             fixed (EffectChain* pEffectChainPtr = &pEffectChain)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, char*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChainPtr, StreamCategory);
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, nint*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChainPtr, StreamCategory);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var szDeviceIdPtr = (byte*) SilkMarshal.StringToPtr(szDeviceId, NativeStringEncoding.LPWStr);
-        ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, byte*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChain, StreamCategory);
-        SilkMarshal.Free((nint)szDeviceIdPtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, ref EffectChain pEffectChain, AudioStreamCategory StreamCategory)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var szDeviceIdPtr = (byte*) SilkMarshal.StringToPtr(szDeviceId, NativeStringEncoding.LPWStr);
-        fixed (EffectChain* pEffectChainPtr = &pEffectChain)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, byte*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChainPtr, StreamCategory);
-        }
-        SilkMarshal.Free((nint)szDeviceIdPtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, char* szDeviceId, EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] nint* szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IXAudio2MasteringVoice** ppMasteringVoicePtr = &ppMasteringVoice)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, char*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChain, StreamCategory);
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, nint*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChain, StreamCategory);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, char* szDeviceId, ref EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] nint* szDeviceId, [Flow(FlowDirection.In)] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -852,72 +827,41 @@ public unsafe static class XAudio2VtblExtensions
         {
             fixed (EffectChain* pEffectChainPtr = &pEffectChain)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, char*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChainPtr, StreamCategory);
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, nint*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceId, pEffectChainPtr, StreamCategory);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, ref char szDeviceId, EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] in nint szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IXAudio2MasteringVoice** ppMasteringVoicePtr = &ppMasteringVoice)
         {
-            fixed (char* szDeviceIdPtr = &szDeviceId)
+            fixed (nint* szDeviceIdPtr = &szDeviceId)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, char*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChain, StreamCategory);
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, nint*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChain, StreamCategory);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, ref char szDeviceId, ref EffectChain pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] in nint szDeviceId, [Flow(FlowDirection.In)] in EffectChain pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IXAudio2MasteringVoice** ppMasteringVoicePtr = &ppMasteringVoice)
         {
-            fixed (char* szDeviceIdPtr = &szDeviceId)
+            fixed (nint* szDeviceIdPtr = &szDeviceId)
             {
                 fixed (EffectChain* pEffectChainPtr = &pEffectChain)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, char*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChainPtr, StreamCategory);
+                    ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, nint*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChainPtr, StreamCategory);
                 }
             }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IXAudio2MasteringVoice** ppMasteringVoicePtr = &ppMasteringVoice)
-        {
-        var szDeviceIdPtr = (byte*) SilkMarshal.StringToPtr(szDeviceId, NativeStringEncoding.LPWStr);
-            ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, byte*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChain, StreamCategory);
-        SilkMarshal.Free((nint)szDeviceIdPtr);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, ref EffectChain pEffectChain, AudioStreamCategory StreamCategory)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (IXAudio2MasteringVoice** ppMasteringVoicePtr = &ppMasteringVoice)
-        {
-        var szDeviceIdPtr = (byte*) SilkMarshal.StringToPtr(szDeviceId, NativeStringEncoding.LPWStr);
-            fixed (EffectChain* pEffectChainPtr = &pEffectChain)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, byte*, EffectChain*, AudioStreamCategory, int>)@this->LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChainPtr, StreamCategory);
-            }
-        SilkMarshal.Free((nint)szDeviceIdPtr);
         }
         return ret;
     }
@@ -965,14 +909,14 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetDebugConfiguration(this ComPtr<IXAudio2> thisVtbl, DebugConfiguration* pDebugConfiguration, void* pReserved)
+    public static unsafe void SetDebugConfiguration(this ComPtr<IXAudio2> thisVtbl, [Flow(FlowDirection.In)] DebugConfiguration* pDebugConfiguration, void* pReserved)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<IXAudio2*, DebugConfiguration*, void*, void>)@this->LpVtbl[12])(@this, pDebugConfiguration, pReserved);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetDebugConfiguration<T0>(this ComPtr<IXAudio2> thisVtbl, DebugConfiguration* pDebugConfiguration, ref T0 pReserved) where T0 : unmanaged
+    public static unsafe void SetDebugConfiguration<T0>(this ComPtr<IXAudio2> thisVtbl, [Flow(FlowDirection.In)] DebugConfiguration* pDebugConfiguration, ref T0 pReserved) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pReservedPtr = &pReserved)
@@ -982,7 +926,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetDebugConfiguration(this ComPtr<IXAudio2> thisVtbl, ref DebugConfiguration pDebugConfiguration, void* pReserved)
+    public static unsafe void SetDebugConfiguration(this ComPtr<IXAudio2> thisVtbl, [Flow(FlowDirection.In)] in DebugConfiguration pDebugConfiguration, void* pReserved)
     {
         var @this = thisVtbl.Handle;
         fixed (DebugConfiguration* pDebugConfigurationPtr = &pDebugConfiguration)
@@ -992,7 +936,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetDebugConfiguration<T0>(this ComPtr<IXAudio2> thisVtbl, ref DebugConfiguration pDebugConfiguration, ref T0 pReserved) where T0 : unmanaged
+    public static void SetDebugConfiguration<T0>(this ComPtr<IXAudio2> thisVtbl, [Flow(FlowDirection.In)] in DebugConfiguration pDebugConfiguration, ref T0 pReserved) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (DebugConfiguration* pDebugConfigurationPtr = &pDebugConfiguration)
@@ -1046,31 +990,31 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, VoiceSends* pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, pCallback, pSendList, ref pEffectChain.GetPinnableReference());
+        return @this->CreateSourceVoice(ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, pCallback, pSendList, in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, Span<VoiceSends> pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, pCallback, ref pSendList.GetPinnableReference(), pEffectChain);
+        return @this->CreateSourceVoice(ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, pCallback, in pSendList.GetPinnableReference(), pEffectChain);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, Span<VoiceSends> pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, pCallback, ref pSendList.GetPinnableReference(), ref pEffectChain.GetPinnableReference());
+        return @this->CreateSourceVoice(ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, pCallback, in pSendList.GetPinnableReference(), in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, VoiceSends* pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1078,119 +1022,119 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, VoiceSends* pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), pSendList, ref pEffectChain.GetPinnableReference());
+        return @this->CreateSourceVoice(ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), pSendList, in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, Span<VoiceSends> pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), ref pSendList.GetPinnableReference(), pEffectChain);
+        return @this->CreateSourceVoice(ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), in pSendList.GetPinnableReference(), pEffectChain);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, Span<VoiceSends> pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), ref pSendList.GetPinnableReference(), ref pEffectChain.GetPinnableReference());
+        return @this->CreateSourceVoice(ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), in pSendList.GetPinnableReference(), in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, Span<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, VoiceSends* pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] ReadOnlySpan<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ppSourceVoice, ref pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, pCallback, pSendList, pEffectChain);
+        return @this->CreateSourceVoice(ppSourceVoice, in pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, pCallback, pSendList, pEffectChain);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, Span<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, VoiceSends* pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] ReadOnlySpan<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ppSourceVoice, ref pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, pCallback, pSendList, ref pEffectChain.GetPinnableReference());
+        return @this->CreateSourceVoice(ppSourceVoice, in pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, pCallback, pSendList, in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, Span<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, Span<VoiceSends> pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] ReadOnlySpan<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ppSourceVoice, ref pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, pCallback, ref pSendList.GetPinnableReference(), pEffectChain);
+        return @this->CreateSourceVoice(ppSourceVoice, in pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, pCallback, in pSendList.GetPinnableReference(), pEffectChain);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, Span<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, Span<VoiceSends> pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] ReadOnlySpan<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ppSourceVoice, ref pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, pCallback, ref pSendList.GetPinnableReference(), ref pEffectChain.GetPinnableReference());
+        return @this->CreateSourceVoice(ppSourceVoice, in pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, pCallback, in pSendList.GetPinnableReference(), in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, Span<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, VoiceSends* pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] ReadOnlySpan<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ppSourceVoice, ref pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), pSendList, pEffectChain);
+        return @this->CreateSourceVoice(ppSourceVoice, in pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), pSendList, pEffectChain);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, Span<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, VoiceSends* pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] ReadOnlySpan<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ppSourceVoice, ref pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), pSendList, ref pEffectChain.GetPinnableReference());
+        return @this->CreateSourceVoice(ppSourceVoice, in pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), pSendList, in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, Span<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, Span<VoiceSends> pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] ReadOnlySpan<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ppSourceVoice, ref pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), ref pSendList.GetPinnableReference(), pEffectChain);
+        return @this->CreateSourceVoice(ppSourceVoice, in pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), in pSendList.GetPinnableReference(), pEffectChain);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, Span<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, Span<VoiceSends> pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SourceVoice** ppSourceVoice, [Flow(FlowDirection.In)] ReadOnlySpan<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ppSourceVoice, ref pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), ref pSendList.GetPinnableReference(), ref pEffectChain.GetPinnableReference());
+        return @this->CreateSourceVoice(ppSourceVoice, in pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), in pSendList.GetPinnableReference(), in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, VoiceSends* pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ref ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, pCallback, pSendList, ref pEffectChain.GetPinnableReference());
+        return @this->CreateSourceVoice(ref ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, pCallback, pSendList, in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, Span<VoiceSends> pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ref ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, pCallback, ref pSendList.GetPinnableReference(), pEffectChain);
+        return @this->CreateSourceVoice(ref ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, pCallback, in pSendList.GetPinnableReference(), pEffectChain);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, Span<VoiceSends> pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ref ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, pCallback, ref pSendList.GetPinnableReference(), ref pEffectChain.GetPinnableReference());
+        return @this->CreateSourceVoice(ref ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, pCallback, in pSendList.GetPinnableReference(), in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, VoiceSends* pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1198,203 +1142,187 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, VoiceSends* pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ref ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), pSendList, ref pEffectChain.GetPinnableReference());
+        return @this->CreateSourceVoice(ref ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), pSendList, in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, Span<VoiceSends> pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ref ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), ref pSendList.GetPinnableReference(), pEffectChain);
+        return @this->CreateSourceVoice(ref ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), in pSendList.GetPinnableReference(), pEffectChain);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, Span<VoiceSends> pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] WaveFormatEx* pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ref ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), ref pSendList.GetPinnableReference(), ref pEffectChain.GetPinnableReference());
+        return @this->CreateSourceVoice(ref ppSourceVoice, pSourceFormat, Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), in pSendList.GetPinnableReference(), in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, Span<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, VoiceSends* pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] ReadOnlySpan<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ref ppSourceVoice, ref pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, pCallback, pSendList, pEffectChain);
+        return @this->CreateSourceVoice(ref ppSourceVoice, in pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, pCallback, pSendList, pEffectChain);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, Span<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, VoiceSends* pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] ReadOnlySpan<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ref ppSourceVoice, ref pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, pCallback, pSendList, ref pEffectChain.GetPinnableReference());
+        return @this->CreateSourceVoice(ref ppSourceVoice, in pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, pCallback, pSendList, in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, Span<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, Span<VoiceSends> pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] ReadOnlySpan<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ref ppSourceVoice, ref pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, pCallback, ref pSendList.GetPinnableReference(), pEffectChain);
+        return @this->CreateSourceVoice(ref ppSourceVoice, in pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, pCallback, in pSendList.GetPinnableReference(), pEffectChain);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, Span<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, Span<VoiceSends> pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] ReadOnlySpan<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, IXAudio2VoiceCallback* pCallback, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ref ppSourceVoice, ref pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, pCallback, ref pSendList.GetPinnableReference(), ref pEffectChain.GetPinnableReference());
+        return @this->CreateSourceVoice(ref ppSourceVoice, in pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, pCallback, in pSendList.GetPinnableReference(), in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, Span<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, VoiceSends* pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] ReadOnlySpan<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ref ppSourceVoice, ref pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), pSendList, pEffectChain);
+        return @this->CreateSourceVoice(ref ppSourceVoice, in pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), pSendList, pEffectChain);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, Span<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, VoiceSends* pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] ReadOnlySpan<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ref ppSourceVoice, ref pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), pSendList, ref pEffectChain.GetPinnableReference());
+        return @this->CreateSourceVoice(ref ppSourceVoice, in pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), pSendList, in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, Span<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, Span<VoiceSends> pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] ReadOnlySpan<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ref ppSourceVoice, ref pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), ref pSendList.GetPinnableReference(), pEffectChain);
+        return @this->CreateSourceVoice(ref ppSourceVoice, in pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), in pSendList.GetPinnableReference(), pEffectChain);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, Span<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, Span<VoiceSends> pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSourceVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SourceVoice* ppSourceVoice, [Flow(FlowDirection.In)] ReadOnlySpan<WaveFormatEx> pSourceFormat, uint Flags, float MaxFrequencyRatio, Span<IXAudio2VoiceCallback> pCallback, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSourceVoice(ref ppSourceVoice, ref pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), ref pSendList.GetPinnableReference(), ref pEffectChain.GetPinnableReference());
+        return @this->CreateSourceVoice(ref ppSourceVoice, in pSourceFormat.GetPinnableReference(), Flags, MaxFrequencyRatio, ref pCallback.GetPinnableReference(), in pSendList.GetPinnableReference(), in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, VoiceSends* pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSubmixVoice(ppSubmixVoice, InputChannels, InputSampleRate, Flags, ProcessingStage, pSendList, ref pEffectChain.GetPinnableReference());
+        return @this->CreateSubmixVoice(ppSubmixVoice, InputChannels, InputSampleRate, Flags, ProcessingStage, pSendList, in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, Span<VoiceSends> pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSubmixVoice(ppSubmixVoice, InputChannels, InputSampleRate, Flags, ProcessingStage, ref pSendList.GetPinnableReference(), pEffectChain);
+        return @this->CreateSubmixVoice(ppSubmixVoice, InputChannels, InputSampleRate, Flags, ProcessingStage, in pSendList.GetPinnableReference(), pEffectChain);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, Span<VoiceSends> pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2SubmixVoice** ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSubmixVoice(ppSubmixVoice, InputChannels, InputSampleRate, Flags, ProcessingStage, ref pSendList.GetPinnableReference(), ref pEffectChain.GetPinnableReference());
+        return @this->CreateSubmixVoice(ppSubmixVoice, InputChannels, InputSampleRate, Flags, ProcessingStage, in pSendList.GetPinnableReference(), in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, VoiceSends* pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(FlowDirection.In)] VoiceSends* pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSubmixVoice(ref ppSubmixVoice, InputChannels, InputSampleRate, Flags, ProcessingStage, pSendList, ref pEffectChain.GetPinnableReference());
+        return @this->CreateSubmixVoice(ref ppSubmixVoice, InputChannels, InputSampleRate, Flags, ProcessingStage, pSendList, in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, Span<VoiceSends> pSendList, EffectChain* pEffectChain)
+    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSubmixVoice(ref ppSubmixVoice, InputChannels, InputSampleRate, Flags, ProcessingStage, ref pSendList.GetPinnableReference(), pEffectChain);
+        return @this->CreateSubmixVoice(ref ppSubmixVoice, InputChannels, InputSampleRate, Flags, ProcessingStage, in pSendList.GetPinnableReference(), pEffectChain);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, Span<VoiceSends> pSendList, Span<EffectChain> pEffectChain)
+    public static unsafe int CreateSubmixVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2SubmixVoice* ppSubmixVoice, uint InputChannels, uint InputSampleRate, uint Flags, uint ProcessingStage, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSubmixVoice(ref ppSubmixVoice, InputChannels, InputSampleRate, Flags, ProcessingStage, ref pSendList.GetPinnableReference(), ref pEffectChain.GetPinnableReference());
+        return @this->CreateSubmixVoice(ref ppSubmixVoice, InputChannels, InputSampleRate, Flags, ProcessingStage, in pSendList.GetPinnableReference(), in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, char* szDeviceId, Span<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] nint* szDeviceId, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateMasteringVoice(ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, ref pEffectChain.GetPinnableReference(), StreamCategory);
+        return @this->CreateMasteringVoice(ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, in pEffectChain.GetPinnableReference(), StreamCategory);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, Span<char> szDeviceId, EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] ReadOnlySpan<nint> szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateMasteringVoice(ppMasteringVoice, InputChannels, InputSampleRate, Flags, ref szDeviceId.GetPinnableReference(), pEffectChain, StreamCategory);
+        return @this->CreateMasteringVoice(ppMasteringVoice, InputChannels, InputSampleRate, Flags, in szDeviceId.GetPinnableReference(), pEffectChain, StreamCategory);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, Span<char> szDeviceId, Span<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] ReadOnlySpan<nint> szDeviceId, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateMasteringVoice(ppMasteringVoice, InputChannels, InputSampleRate, Flags, ref szDeviceId.GetPinnableReference(), ref pEffectChain.GetPinnableReference(), StreamCategory);
+        return @this->CreateMasteringVoice(ppMasteringVoice, InputChannels, InputSampleRate, Flags, in szDeviceId.GetPinnableReference(), in pEffectChain.GetPinnableReference(), StreamCategory);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, IXAudio2MasteringVoice** ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, Span<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] nint* szDeviceId, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateMasteringVoice(ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, ref pEffectChain.GetPinnableReference(), StreamCategory);
+        return @this->CreateMasteringVoice(ref ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, in pEffectChain.GetPinnableReference(), StreamCategory);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, char* szDeviceId, Span<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] ReadOnlySpan<nint> szDeviceId, [Flow(FlowDirection.In)] EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateMasteringVoice(ref ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, ref pEffectChain.GetPinnableReference(), StreamCategory);
+        return @this->CreateMasteringVoice(ref ppMasteringVoice, InputChannels, InputSampleRate, Flags, in szDeviceId.GetPinnableReference(), pEffectChain, StreamCategory);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, Span<char> szDeviceId, EffectChain* pEffectChain, AudioStreamCategory StreamCategory)
+    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [Flow(FlowDirection.In)] ReadOnlySpan<nint> szDeviceId, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateMasteringVoice(ref ppMasteringVoice, InputChannels, InputSampleRate, Flags, ref szDeviceId.GetPinnableReference(), pEffectChain, StreamCategory);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, Span<char> szDeviceId, Span<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateMasteringVoice(ref ppMasteringVoice, InputChannels, InputSampleRate, Flags, ref szDeviceId.GetPinnableReference(), ref pEffectChain.GetPinnableReference(), StreamCategory);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int CreateMasteringVoice(this ComPtr<IXAudio2> thisVtbl, ref IXAudio2MasteringVoice* ppMasteringVoice, uint InputChannels, uint InputSampleRate, uint Flags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string szDeviceId, Span<EffectChain> pEffectChain, AudioStreamCategory StreamCategory)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->CreateMasteringVoice(ref ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceId, ref pEffectChain.GetPinnableReference(), StreamCategory);
+        return @this->CreateMasteringVoice(ref ppMasteringVoice, InputChannels, InputSampleRate, Flags, in szDeviceId.GetPinnableReference(), in pEffectChain.GetPinnableReference(), StreamCategory);
     }
 
     /// <summary>To be documented.</summary>
@@ -1406,7 +1334,7 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetDebugConfiguration<T0>(this ComPtr<IXAudio2> thisVtbl, DebugConfiguration* pDebugConfiguration, Span<T0> pReserved) where T0 : unmanaged
+    public static unsafe void SetDebugConfiguration<T0>(this ComPtr<IXAudio2> thisVtbl, [Flow(FlowDirection.In)] DebugConfiguration* pDebugConfiguration, Span<T0> pReserved) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1414,19 +1342,19 @@ public unsafe static class XAudio2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetDebugConfiguration(this ComPtr<IXAudio2> thisVtbl, Span<DebugConfiguration> pDebugConfiguration, void* pReserved)
+    public static unsafe void SetDebugConfiguration(this ComPtr<IXAudio2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DebugConfiguration> pDebugConfiguration, void* pReserved)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->SetDebugConfiguration(ref pDebugConfiguration.GetPinnableReference(), pReserved);
+        @this->SetDebugConfiguration(in pDebugConfiguration.GetPinnableReference(), pReserved);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetDebugConfiguration<T0>(this ComPtr<IXAudio2> thisVtbl, Span<DebugConfiguration> pDebugConfiguration, Span<T0> pReserved) where T0 : unmanaged
+    public static void SetDebugConfiguration<T0>(this ComPtr<IXAudio2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DebugConfiguration> pDebugConfiguration, Span<T0> pReserved) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->SetDebugConfiguration(ref pDebugConfiguration.GetPinnableReference(), ref pReserved.GetPinnableReference());
+        @this->SetDebugConfiguration(in pDebugConfiguration.GetPinnableReference(), ref pReserved.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

@@ -111,11 +111,11 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Wait(uint dwFlags, uint dwMilliseconds)
+        public readonly int Wait(int dwFlags, int dwMilliseconds)
         {
             var @this = (ISynchronize*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ISynchronize*, uint, uint, int>)@this->LpVtbl[3])(@this, dwFlags, dwMilliseconds);
+            ret = ((delegate* unmanaged[Cdecl]<ISynchronize*, int, int, int>)@this->LpVtbl[3])(@this, dwFlags, dwMilliseconds);
             return ret;
         }
 

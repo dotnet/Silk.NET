@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataArchitectureInfo
         (
-            int? tileBasedDeferredRenderer = null
+            bool? tileBasedDeferredRenderer = null
         ) : this()
         {
             if (tileBasedDeferredRenderer is not null)
@@ -34,6 +34,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "TileBasedDeferredRenderer")]
-        public int TileBasedDeferredRenderer;
+        public bool TileBasedDeferredRenderer;
     }
 }

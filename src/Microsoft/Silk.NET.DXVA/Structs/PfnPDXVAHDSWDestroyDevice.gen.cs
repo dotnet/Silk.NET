@@ -19,10 +19,10 @@ namespace Silk.NET.DXVA
     public unsafe readonly struct PfnPDXVAHDSWDestroyDevice : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<void*, int> Handle => (delegate* unmanaged[Cdecl]<void*, int>) _handle;
+        public delegate* unmanaged[Cdecl]<nint*, int> Handle => (delegate* unmanaged[Cdecl]<nint*, int>) _handle;
         public PfnPDXVAHDSWDestroyDevice
         (
-            delegate* unmanaged[Cdecl]<void*, int> ptr
+            delegate* unmanaged[Cdecl]<nint*, int> ptr
         ) => _handle = ptr;
 
         public PfnPDXVAHDSWDestroyDevice
@@ -35,7 +35,7 @@ namespace Silk.NET.DXVA
 
         public static implicit operator nint(PfnPDXVAHDSWDestroyDevice pfn) => (nint) pfn.Handle;
         public static explicit operator PfnPDXVAHDSWDestroyDevice(nint pfn)
-            => new PfnPDXVAHDSWDestroyDevice((delegate* unmanaged[Cdecl]<void*, int>) pfn);
+            => new PfnPDXVAHDSWDestroyDevice((delegate* unmanaged[Cdecl]<nint*, int>) pfn);
 
         public static implicit operator PfnPDXVAHDSWDestroyDevice(PDXVAHDSWDestroyDevice proc)
             => new PfnPDXVAHDSWDestroyDevice(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.DXVA
         public static explicit operator PDXVAHDSWDestroyDevice(PfnPDXVAHDSWDestroyDevice pfn)
             => SilkMarshal.PtrToDelegate<PDXVAHDSWDestroyDevice>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<void*, int>(PfnPDXVAHDSWDestroyDevice pfn) => pfn.Handle;
-        public static implicit operator PfnPDXVAHDSWDestroyDevice(delegate* unmanaged[Cdecl]<void*, int> ptr) => new PfnPDXVAHDSWDestroyDevice(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<nint*, int>(PfnPDXVAHDSWDestroyDevice pfn) => pfn.Handle;
+        public static implicit operator PfnPDXVAHDSWDestroyDevice(delegate* unmanaged[Cdecl]<nint*, int> ptr) => new PfnPDXVAHDSWDestroyDevice(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate int PDXVAHDSWDestroyDevice(void* arg0);
+    public unsafe delegate int PDXVAHDSWDestroyDevice(nint* arg0);
 }
 

@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan.Video
             byte? numRefIdxL0ActiveMinus1 = null,
             byte? numRefIdxL1ActiveMinus1 = null,
             byte? maxNumMergeCand = null,
-            byte? sliceCbQpOffset = null,
-            byte? sliceCrQpOffset = null,
-            byte? sliceBetaOffsetDiv2 = null,
-            byte? sliceTcOffsetDiv2 = null,
-            byte? sliceActYQpOffset = null,
-            byte? sliceActCbQpOffset = null,
-            byte? sliceActCrQpOffset = null,
+            sbyte? sliceCbQpOffset = null,
+            sbyte? sliceCrQpOffset = null,
+            sbyte? sliceBetaOffsetDiv2 = null,
+            sbyte? sliceTcOffsetDiv2 = null,
+            sbyte? sliceActYQpOffset = null,
+            sbyte? sliceActCbQpOffset = null,
+            sbyte? sliceActCrQpOffset = null,
             StdVideoH265ShortTermRefPicSet* pShortTermRefPicSet = null,
             StdVideoEncodeH265SliceSegmentLongTermRefPics* pLongTermRefPics = null,
             StdVideoEncodeH265WeightTable* pWeightTable = null
@@ -176,37 +176,37 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "slice_cb_qp_offset")]
-        public byte SliceCbQpOffset;
+        public sbyte SliceCbQpOffset;
 
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "slice_cr_qp_offset")]
-        public byte SliceCrQpOffset;
+        public sbyte SliceCrQpOffset;
 
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "slice_beta_offset_div2")]
-        public byte SliceBetaOffsetDiv2;
+        public sbyte SliceBetaOffsetDiv2;
 
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "slice_tc_offset_div2")]
-        public byte SliceTcOffsetDiv2;
+        public sbyte SliceTcOffsetDiv2;
 
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "slice_act_y_qp_offset")]
-        public byte SliceActYQpOffset;
+        public sbyte SliceActYQpOffset;
 
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "slice_act_cb_qp_offset")]
-        public byte SliceActCbQpOffset;
+        public sbyte SliceActCbQpOffset;
 
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "slice_act_cr_qp_offset")]
-        public byte SliceActCrQpOffset;
+        public sbyte SliceActCrQpOffset;
 
         [NativeName("Type", "const StdVideoH265ShortTermRefPicSet *")]
         [NativeName("Type.Name", "const StdVideoH265ShortTermRefPicSet *")]

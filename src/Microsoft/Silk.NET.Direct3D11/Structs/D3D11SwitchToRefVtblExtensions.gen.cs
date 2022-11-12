@@ -85,20 +85,20 @@ public unsafe static class D3D11SwitchToRefVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetUseRef(this ComPtr<ID3D11SwitchToRef> thisVtbl, int UseRef)
+    public static bool SetUseRef(this ComPtr<ID3D11SwitchToRef> thisVtbl, bool UseRef)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D11SwitchToRef*, int, int>)@this->LpVtbl[3])(@this, UseRef);
+        bool ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D11SwitchToRef*, bool, bool>)@this->LpVtbl[3])(@this, UseRef);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetUseRef(this ComPtr<ID3D11SwitchToRef> thisVtbl)
+    public static bool GetUseRef(this ComPtr<ID3D11SwitchToRef> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D11SwitchToRef*, int>)@this->LpVtbl[4])(@this);
+        bool ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D11SwitchToRef*, bool>)@this->LpVtbl[4])(@this);
         return ret;
     }
 

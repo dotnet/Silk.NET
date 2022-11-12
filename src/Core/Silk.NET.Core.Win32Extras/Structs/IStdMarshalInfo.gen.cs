@@ -111,40 +111,40 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetClassForHandler(uint dwDestContext, void* pvDestContext, Guid* pClsid)
+        public readonly unsafe int GetClassForHandler(int dwDestContext, void* pvDestContext, Guid* pClsid)
         {
             var @this = (IStdMarshalInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, uint, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContext, pClsid);
+            ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, int, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContext, pClsid);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetClassForHandler(uint dwDestContext, void* pvDestContext, ref Guid pClsid)
+        public readonly unsafe int GetClassForHandler(int dwDestContext, void* pvDestContext, ref Guid pClsid)
         {
             var @this = (IStdMarshalInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pClsidPtr = &pClsid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, uint, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContext, pClsidPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, int, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContext, pClsidPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetClassForHandler<T0>(uint dwDestContext, ref T0 pvDestContext, Guid* pClsid) where T0 : unmanaged
+        public readonly unsafe int GetClassForHandler<T0>(int dwDestContext, ref T0 pvDestContext, Guid* pClsid) where T0 : unmanaged
         {
             var @this = (IStdMarshalInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* pvDestContextPtr = &pvDestContext)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, uint, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContextPtr, pClsid);
+                ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, int, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContextPtr, pClsid);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetClassForHandler<T0>(uint dwDestContext, ref T0 pvDestContext, ref Guid pClsid) where T0 : unmanaged
+        public readonly int GetClassForHandler<T0>(int dwDestContext, ref T0 pvDestContext, ref Guid pClsid) where T0 : unmanaged
         {
             var @this = (IStdMarshalInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -152,7 +152,7 @@ namespace Silk.NET.Core.Win32Extras
             {
                 fixed (Guid* pClsidPtr = &pClsid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, uint, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContextPtr, pClsidPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IStdMarshalInfo*, int, void*, Guid*, int>)@this->LpVtbl[3])(@this, dwDestContext, pvDestContextPtr, pClsidPtr);
                 }
             }
             return ret;

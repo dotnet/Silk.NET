@@ -21,14 +21,14 @@ namespace Silk.NET.DXVA
     {
         public DeinterlaceBltEx
         (
-            uint? size = null,
+            int? size = null,
             AYUVsample2? backgroundColor = null,
             Silk.NET.Maths.Box2D<int>? rcTarget = null,
             long? rtTarget = null,
-            uint? numSourceSurfaces = null,
+            int? numSourceSurfaces = null,
             float? alpha = null,
-            uint? destinationFormat = null,
-            uint? destinationFlags = null
+            int? destinationFormat = null,
+            int? destinationFlags = null
         ) : this()
         {
             if (size is not null)
@@ -76,7 +76,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "Size")]
-        public uint Size;
+        public int Size;
 
         [NativeName("Type", "DXVA_AYUVsample2")]
         [NativeName("Type.Name", "DXVA_AYUVsample2")]
@@ -96,7 +96,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "NumSourceSurfaces")]
-        public uint NumSourceSurfaces;
+        public int NumSourceSurfaces;
 
         [NativeName("Type", "FLOAT")]
         [NativeName("Type.Name", "FLOAT")]
@@ -168,11 +168,11 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "DestinationFormat")]
-        public uint DestinationFormat;
+        public int DestinationFormat;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "DestinationFlags")]
-        public uint DestinationFlags;
+        public int DestinationFlags;
     }
 }

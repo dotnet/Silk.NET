@@ -85,19 +85,19 @@ public unsafe static class DXGIDisplayControlVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsStereoEnabled(this ComPtr<IDXGIDisplayControl> thisVtbl)
+    public static bool IsStereoEnabled(this ComPtr<IDXGIDisplayControl> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, int>)@this->LpVtbl[3])(@this);
+        bool ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, bool>)@this->LpVtbl[3])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetStereoEnabled(this ComPtr<IDXGIDisplayControl> thisVtbl, int enabled)
+    public static void SetStereoEnabled(this ComPtr<IDXGIDisplayControl> thisVtbl, bool enabled)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, int, void>)@this->LpVtbl[4])(@this, enabled);
+        ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, bool, void>)@this->LpVtbl[4])(@this, enabled);
     }
 
     /// <summary>To be documented.</summary>

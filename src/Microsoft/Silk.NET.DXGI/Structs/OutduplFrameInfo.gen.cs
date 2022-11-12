@@ -24,8 +24,8 @@ namespace Silk.NET.DXGI
             long? lastPresentTime = null,
             long? lastMouseUpdateTime = null,
             uint? accumulatedFrames = null,
-            int? rectsCoalesced = null,
-            int? protectedContentMaskedOut = null,
+            bool? rectsCoalesced = null,
+            bool? protectedContentMaskedOut = null,
             OutduplPointerPosition? pointerPosition = null,
             uint? totalMetadataBufferSize = null,
             uint? pointerShapeBufferSize = null
@@ -91,12 +91,12 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "RectsCoalesced")]
-        public int RectsCoalesced;
+        public bool RectsCoalesced;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ProtectedContentMaskedOut")]
-        public int ProtectedContentMaskedOut;
+        public bool ProtectedContentMaskedOut;
 
         [NativeName("Type", "DXGI_OUTDUPL_POINTER_POSITION")]
         [NativeName("Type.Name", "DXGI_OUTDUPL_POINTER_POSITION")]

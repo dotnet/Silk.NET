@@ -85,7 +85,7 @@ public unsafe static class D3D12VersionedRootSignatureDeserializerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetRootSignatureDescAtVersion(this ComPtr<ID3D12VersionedRootSignatureDeserializer> thisVtbl, D3DRootSignatureVersion convertToVersion, VersionedRootSignatureDesc** ppDesc)
+    public static unsafe int GetRootSignatureDescAtVersion(this ComPtr<ID3D12VersionedRootSignatureDeserializer> thisVtbl, D3DRootSignatureVersion convertToVersion, [Flow(FlowDirection.In)] VersionedRootSignatureDesc** ppDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -94,7 +94,7 @@ public unsafe static class D3D12VersionedRootSignatureDeserializerVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetRootSignatureDescAtVersion(this ComPtr<ID3D12VersionedRootSignatureDeserializer> thisVtbl, D3DRootSignatureVersion convertToVersion, ref VersionedRootSignatureDesc* ppDesc)
+    public static unsafe int GetRootSignatureDescAtVersion(this ComPtr<ID3D12VersionedRootSignatureDeserializer> thisVtbl, D3DRootSignatureVersion convertToVersion, [Flow(FlowDirection.In)] in VersionedRootSignatureDesc* ppDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;

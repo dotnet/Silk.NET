@@ -22,8 +22,8 @@ namespace Silk.NET.Direct3D12
         public VideoEncoderReferencePictureDescriptorHevc
         (
             uint? reconstructedPictureResourceIndex = null,
-            int? isRefUsedByCurrentPic = null,
-            int? isLongTermReference = null,
+            bool? isRefUsedByCurrentPic = null,
+            bool? isLongTermReference = null,
             uint? pictureOrderCountNumber = null,
             uint? temporalLayerIndex = null
         ) : this()
@@ -63,12 +63,12 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "IsRefUsedByCurrentPic")]
-        public int IsRefUsedByCurrentPic;
+        public bool IsRefUsedByCurrentPic;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "IsLongTermReference")]
-        public int IsLongTermReference;
+        public bool IsLongTermReference;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

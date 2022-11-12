@@ -23,13 +23,13 @@ namespace Silk.NET.Direct3D12
         (
             FillMode? fillMode = null,
             CullMode? cullMode = null,
-            int? frontCounterClockwise = null,
+            bool? frontCounterClockwise = null,
             int? depthBias = null,
             float? depthBiasClamp = null,
             float? slopeScaledDepthBias = null,
-            int? depthClipEnable = null,
-            int? multisampleEnable = null,
-            int? antialiasedLineEnable = null,
+            bool? depthClipEnable = null,
+            bool? multisampleEnable = null,
+            bool? antialiasedLineEnable = null,
             uint? forcedSampleCount = null,
             ConservativeRasterizationMode? conservativeRaster = null
         ) : this()
@@ -104,7 +104,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "FrontCounterClockwise")]
-        public int FrontCounterClockwise;
+        public bool FrontCounterClockwise;
 
         [NativeName("Type", "INT")]
         [NativeName("Type.Name", "INT")]
@@ -124,17 +124,17 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DepthClipEnable")]
-        public int DepthClipEnable;
+        public bool DepthClipEnable;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "MultisampleEnable")]
-        public int MultisampleEnable;
+        public bool MultisampleEnable;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "AntialiasedLineEnable")]
-        public int AntialiasedLineEnable;
+        public bool AntialiasedLineEnable;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

@@ -148,11 +148,11 @@ public unsafe static class DxcResultVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int HasOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind)
+    public static bool HasOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, int>)@this->LpVtbl[6])(@this, dxcOutKind);
+        bool ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, bool>)@this->LpVtbl[6])(@this, dxcOutKind);
         return ret;
     }
 

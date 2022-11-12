@@ -21,20 +21,20 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options
         (
-            int? doublePrecisionFloatShaderOps = null,
-            int? outputMergerLogicOp = null,
+            bool? doublePrecisionFloatShaderOps = null,
+            bool? outputMergerLogicOp = null,
             ShaderMinPrecisionSupport? minPrecisionSupport = null,
             TiledResourcesTier? tiledResourcesTier = null,
             ResourceBindingTier? resourceBindingTier = null,
-            int? pSSpecifiedStencilRefSupported = null,
-            int? typedUAVLoadAdditionalFormats = null,
-            int? rOVsSupported = null,
+            bool? pSSpecifiedStencilRefSupported = null,
+            bool? typedUAVLoadAdditionalFormats = null,
+            bool? rOVsSupported = null,
             ConservativeRasterizationTier? conservativeRasterizationTier = null,
             uint? maxGPUVirtualAddressBitsPerResource = null,
-            int? standardSwizzle64KBSupported = null,
+            bool? standardSwizzle64KBSupported = null,
             CrossNodeSharingTier? crossNodeSharingTier = null,
-            int? crossAdapterRowMajorTextureSupported = null,
-            int? vPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation = null,
+            bool? crossAdapterRowMajorTextureSupported = null,
+            bool? vPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation = null,
             ResourceHeapTier? resourceHeapTier = null
         ) : this()
         {
@@ -118,12 +118,12 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DoublePrecisionFloatShaderOps")]
-        public int DoublePrecisionFloatShaderOps;
+        public bool DoublePrecisionFloatShaderOps;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "OutputMergerLogicOp")]
-        public int OutputMergerLogicOp;
+        public bool OutputMergerLogicOp;
 
         [NativeName("Type", "D3D12_SHADER_MIN_PRECISION_SUPPORT")]
         [NativeName("Type.Name", "D3D12_SHADER_MIN_PRECISION_SUPPORT")]
@@ -143,17 +143,17 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "PSSpecifiedStencilRefSupported")]
-        public int PSSpecifiedStencilRefSupported;
+        public bool PSSpecifiedStencilRefSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "TypedUAVLoadAdditionalFormats")]
-        public int TypedUAVLoadAdditionalFormats;
+        public bool TypedUAVLoadAdditionalFormats;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ROVsSupported")]
-        public int ROVsSupported;
+        public bool ROVsSupported;
 
         [NativeName("Type", "D3D12_CONSERVATIVE_RASTERIZATION_TIER")]
         [NativeName("Type.Name", "D3D12_CONSERVATIVE_RASTERIZATION_TIER")]
@@ -168,7 +168,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "StandardSwizzle64KBSupported")]
-        public int StandardSwizzle64KBSupported;
+        public bool StandardSwizzle64KBSupported;
 
         [NativeName("Type", "D3D12_CROSS_NODE_SHARING_TIER")]
         [NativeName("Type.Name", "D3D12_CROSS_NODE_SHARING_TIER")]
@@ -178,12 +178,12 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "CrossAdapterRowMajorTextureSupported")]
-        public int CrossAdapterRowMajorTextureSupported;
+        public bool CrossAdapterRowMajorTextureSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation")]
-        public int VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation;
+        public bool VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation;
 
         [NativeName("Type", "D3D12_RESOURCE_HEAP_TIER")]
         [NativeName("Type.Name", "D3D12_RESOURCE_HEAP_TIER")]

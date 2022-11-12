@@ -193,7 +193,7 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Guid* guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -214,7 +214,7 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref Guid guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -289,34 +289,23 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetName(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* Name)
+    public static unsafe int SetName(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, int>)@this->LpVtbl[6])(@this, Name);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, int>)@this->LpVtbl[6])(@this, Name);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char Name)
+    public static int SetName(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* NamePtr = &Name)
+        fixed (nint* NamePtr = &Name)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, int>)@this->LpVtbl[6])(@this, NamePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, int>)@this->LpVtbl[6])(@this, NamePtr);
         }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, int>)@this->LpVtbl[6])(@this, NamePtr);
-        SilkMarshal.Free((nint)NamePtr);
         return ret;
     }
 
@@ -369,113 +358,88 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StorePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ID3D12PipelineState* pPipeline)
+    public static unsafe int StorePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, ID3D12PipelineState* pPipeline)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)@this->LpVtbl[8])(@this, pName, pPipeline);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ID3D12PipelineState*, int>)@this->LpVtbl[8])(@this, pName, pPipeline);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StorePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ref ID3D12PipelineState pPipeline)
+    public static unsafe int StorePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, ref ID3D12PipelineState pPipeline)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D12PipelineState* pPipelinePtr = &pPipeline)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)@this->LpVtbl[8])(@this, pName, pPipelinePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ID3D12PipelineState*, int>)@this->LpVtbl[8])(@this, pName, pPipelinePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StorePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ID3D12PipelineState* pPipeline)
+    public static unsafe int StorePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, ID3D12PipelineState* pPipeline)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* pNamePtr = &pName)
+        fixed (nint* pNamePtr = &pName)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)@this->LpVtbl[8])(@this, pNamePtr, pPipeline);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ID3D12PipelineState*, int>)@this->LpVtbl[8])(@this, pNamePtr, pPipeline);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int StorePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ref ID3D12PipelineState pPipeline)
+    public static int StorePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, ref ID3D12PipelineState pPipeline)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* pNamePtr = &pName)
+        fixed (nint* pNamePtr = &pName)
         {
             fixed (ID3D12PipelineState* pPipelinePtr = &pPipeline)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)@this->LpVtbl[8])(@this, pNamePtr, pPipelinePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ID3D12PipelineState*, int>)@this->LpVtbl[8])(@this, pNamePtr, pPipelinePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StorePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ID3D12PipelineState* pPipeline)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ID3D12PipelineState*, int>)@this->LpVtbl[8])(@this, pNamePtr, pPipeline);
-        SilkMarshal.Free((nint)pNamePtr);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDesc, riid, ppPipelineState);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int StorePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref ID3D12PipelineState pPipeline)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-        fixed (ID3D12PipelineState* pPipelinePtr = &pPipeline)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ID3D12PipelineState*, int>)@this->LpVtbl[8])(@this, pNamePtr, pPipelinePtr);
-        }
-        SilkMarshal.Free((nint)pNamePtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDesc, riid, ppPipelineState);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppPipelineStatePtr = &ppPipelineState)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDesc, riid, ppPipelineStatePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDesc, riid, ppPipelineStatePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDesc, riidPtr, ppPipelineState);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDesc, riidPtr, ppPipelineState);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -483,26 +447,26 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
         {
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDesc, riidPtr, ppPipelineStatePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDesc, riidPtr, ppPipelineStatePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDescPtr, riid, ppPipelineState);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDescPtr, riid, ppPipelineState);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -510,14 +474,14 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
         {
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDescPtr, riid, ppPipelineStatePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDescPtr, riid, ppPipelineStatePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -525,14 +489,14 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
         {
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDescPtr, riidPtr, ppPipelineState);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDescPtr, riidPtr, ppPipelineState);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -542,7 +506,7 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDescPtr, riidPtr, ppPipelineStatePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDescPtr, riidPtr, ppPipelineStatePtr);
                 }
             }
         }
@@ -550,59 +514,59 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* pNamePtr = &pName)
+        fixed (nint* pNamePtr = &pName)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineState);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineState);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* pNamePtr = &pName)
+        fixed (nint* pNamePtr = &pName)
         {
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* pNamePtr = &pName)
+        fixed (nint* pNamePtr = &pName)
         {
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* pNamePtr = &pName)
+        fixed (nint* pNamePtr = &pName)
         {
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
                 }
             }
         }
@@ -610,32 +574,32 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* pNamePtr = &pName)
+        fixed (nint* pNamePtr = &pName)
         {
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* pNamePtr = &pName)
+        fixed (nint* pNamePtr = &pName)
         {
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
                 }
             }
         }
@@ -643,17 +607,17 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* pNamePtr = &pName)
+        fixed (nint* pNamePtr = &pName)
         {
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
                 }
             }
         }
@@ -661,11 +625,11 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* pNamePtr = &pName)
+        fixed (nint* pNamePtr = &pName)
         {
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
@@ -673,7 +637,7 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
                 {
                     fixed (void** ppPipelineStatePtr = &ppPipelineState)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
                     }
                 }
             }
@@ -682,164 +646,40 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineState);
-        SilkMarshal.Free((nint)pNamePtr);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDesc, riid, ppPipelineState);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-        fixed (void** ppPipelineStatePtr = &ppPipelineState)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
-        }
-        SilkMarshal.Free((nint)pNamePtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-        fixed (Guid* riidPtr = &riid)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
-        }
-        SilkMarshal.Free((nint)pNamePtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-        fixed (Guid* riidPtr = &riid)
-        {
-            fixed (void** ppPipelineStatePtr = &ppPipelineState)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
-            }
-        }
-        SilkMarshal.Free((nint)pNamePtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-        fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
-        }
-        SilkMarshal.Free((nint)pNamePtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-        fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
-        {
-            fixed (void** ppPipelineStatePtr = &ppPipelineState)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
-            }
-        }
-        SilkMarshal.Free((nint)pNamePtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-        fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
-        {
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
-            }
-        }
-        SilkMarshal.Free((nint)pNamePtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-        fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
-        {
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppPipelineStatePtr = &ppPipelineState)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
-                }
-            }
-        }
-        SilkMarshal.Free((nint)pNamePtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDesc, riid, ppPipelineState);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void** ppPipelineStatePtr = &ppPipelineState)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDesc, riid, ppPipelineStatePtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDesc, riid, ppPipelineStatePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Guid* riidPtr = &riid)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDesc, riidPtr, ppPipelineState);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDesc, riidPtr, ppPipelineState);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -847,26 +687,26 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
         {
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDesc, riidPtr, ppPipelineStatePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDesc, riidPtr, ppPipelineStatePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ref ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDescPtr, riid, ppPipelineState);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDescPtr, riid, ppPipelineState);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ref ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -874,14 +714,14 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
         {
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDescPtr, riid, ppPipelineStatePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDescPtr, riid, ppPipelineStatePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -889,14 +729,14 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
         {
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDescPtr, riidPtr, ppPipelineState);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDescPtr, riidPtr, ppPipelineState);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -906,7 +746,7 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDescPtr, riidPtr, ppPipelineStatePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDescPtr, riidPtr, ppPipelineStatePtr);
                 }
             }
         }
@@ -914,59 +754,59 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* pNamePtr = &pName)
+        fixed (nint* pNamePtr = &pName)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineState);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineState);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* pNamePtr = &pName)
+        fixed (nint* pNamePtr = &pName)
         {
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* pNamePtr = &pName)
+        fixed (nint* pNamePtr = &pName)
         {
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* pNamePtr = &pName)
+        fixed (nint* pNamePtr = &pName)
         {
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
                 }
             }
         }
@@ -974,32 +814,32 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ref ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* pNamePtr = &pName)
+        fixed (nint* pNamePtr = &pName)
         {
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ref ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* pNamePtr = &pName)
+        fixed (nint* pNamePtr = &pName)
         {
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
                 }
             }
         }
@@ -1007,17 +847,17 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* pNamePtr = &pName)
+        fixed (nint* pNamePtr = &pName)
         {
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
                 }
             }
         }
@@ -1025,11 +865,11 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (char* pNamePtr = &pName)
+        fixed (nint* pNamePtr = &pName)
         {
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
@@ -1037,135 +877,11 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
                 {
                     fixed (void** ppPipelineStatePtr = &ppPipelineState)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nint*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
                     }
                 }
             }
         }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineState);
-        SilkMarshal.Free((nint)pNamePtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-        fixed (void** ppPipelineStatePtr = &ppPipelineState)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
-        }
-        SilkMarshal.Free((nint)pNamePtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-        fixed (Guid* riidPtr = &riid)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
-        }
-        SilkMarshal.Free((nint)pNamePtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-        fixed (Guid* riidPtr = &riid)
-        {
-            fixed (void** ppPipelineStatePtr = &ppPipelineState)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
-            }
-        }
-        SilkMarshal.Free((nint)pNamePtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-        fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
-        {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
-        }
-        SilkMarshal.Free((nint)pNamePtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-        fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
-        {
-            fixed (void** ppPipelineStatePtr = &ppPipelineState)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
-            }
-        }
-        SilkMarshal.Free((nint)pNamePtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-        fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
-        {
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
-            }
-        }
-        SilkMarshal.Free((nint)pNamePtr);
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-        fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
-        {
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppPipelineStatePtr = &ppPipelineState)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
-                }
-            }
-        }
-        SilkMarshal.Free((nint)pNamePtr);
         return ret;
     }
 
@@ -1281,15 +997,15 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(guid, DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(guid, DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<Guid> guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1297,11 +1013,11 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -1345,11 +1061,11 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<char> Name)
+    public static int SetName(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetName(ref Name.GetPinnableReference());
+        return @this->SetName(in Name.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -1378,7 +1094,7 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StorePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ComPtr<TI0> pPipeline) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
+    public static unsafe int StorePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, ComPtr<TI0> pPipeline) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1386,7 +1102,7 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StorePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, Span<ID3D12PipelineState> pPipeline)
+    public static unsafe int StorePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, Span<ID3D12PipelineState> pPipeline)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1394,47 +1110,31 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StorePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<char> pName, ID3D12PipelineState* pPipeline)
+    public static unsafe int StorePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pName, ID3D12PipelineState* pPipeline)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StorePipeline(ref pName.GetPinnableReference(), pPipeline);
+        return @this->StorePipeline(in pName.GetPinnableReference(), pPipeline);
     }
 
     /// <summary>To be documented.</summary>
-    public static int StorePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ComPtr<TI0> pPipeline) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
+    public static int StorePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, ComPtr<TI0> pPipeline) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->StorePipeline(ref pName, (ID3D12PipelineState*) pPipeline.Handle);
+        return @this->StorePipeline(in pName, (ID3D12PipelineState*) pPipeline.Handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static int StorePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<char> pName, Span<ID3D12PipelineState> pPipeline)
+    public static int StorePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pName, Span<ID3D12PipelineState> pPipeline)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StorePipeline(ref pName.GetPinnableReference(), ref pPipeline.GetPinnableReference());
+        return @this->StorePipeline(in pName.GetPinnableReference(), ref pPipeline.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int StorePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComPtr<TI0> pPipeline) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        return @this->StorePipeline(pName, (ID3D12PipelineState*) pPipeline.Handle);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int StorePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<ID3D12PipelineState> pPipeline)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->StorePipeline(pName, ref pPipeline.GetPinnableReference());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1443,7 +1143,7 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1451,7 +1151,7 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1459,196 +1159,130 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, Span<GraphicsPipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] ReadOnlySpan<GraphicsPipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadGraphicsPipeline(pName, ref pDesc.GetPinnableReference(), riid, ppPipelineState);
+        return @this->LoadGraphicsPipeline(pName, in pDesc.GetPinnableReference(), riid, ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ref GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppPipelineState = default;
-        return @this->LoadGraphicsPipeline(pName, ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+        return @this->LoadGraphicsPipeline(pName, in pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, Span<GraphicsPipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] ReadOnlySpan<GraphicsPipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadGraphicsPipeline(pName, ref pDesc.GetPinnableReference(), riid, ref ppPipelineState);
+        return @this->LoadGraphicsPipeline(pName, in pDesc.GetPinnableReference(), riid, ref ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, Span<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] ReadOnlySpan<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadGraphicsPipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
+        return @this->LoadGraphicsPipeline(pName, in pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, Span<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] ReadOnlySpan<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadGraphicsPipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
+        return @this->LoadGraphicsPipeline(pName, in pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<char> pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadGraphicsPipeline(ref pName.GetPinnableReference(), pDesc, riid, ppPipelineState);
+        return @this->LoadGraphicsPipeline(in pName.GetPinnableReference(), pDesc, riid, ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppPipelineState = default;
-        return @this->LoadGraphicsPipeline(ref pName, pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+        return @this->LoadGraphicsPipeline(in pName, pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<char> pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadGraphicsPipeline(ref pName.GetPinnableReference(), pDesc, riid, ref ppPipelineState);
+        return @this->LoadGraphicsPipeline(in pName.GetPinnableReference(), pDesc, riid, ref ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<char> pName, GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadGraphicsPipeline(ref pName.GetPinnableReference(), pDesc, ref riid.GetPinnableReference(), ppPipelineState);
+        return @this->LoadGraphicsPipeline(in pName.GetPinnableReference(), pDesc, ref riid.GetPinnableReference(), ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<char> pName, GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadGraphicsPipeline(ref pName.GetPinnableReference(), pDesc, ref riid.GetPinnableReference(), ref ppPipelineState);
+        return @this->LoadGraphicsPipeline(in pName.GetPinnableReference(), pDesc, ref riid.GetPinnableReference(), ref ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<char> pName, Span<GraphicsPipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pName, [Flow(FlowDirection.In)] ReadOnlySpan<GraphicsPipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadGraphicsPipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), riid, ppPipelineState);
+        return @this->LoadGraphicsPipeline(in pName.GetPinnableReference(), in pDesc.GetPinnableReference(), riid, ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ref GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppPipelineState = default;
-        return @this->LoadGraphicsPipeline(ref pName, ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+        return @this->LoadGraphicsPipeline(in pName, in pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<char> pName, Span<GraphicsPipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pName, [Flow(FlowDirection.In)] ReadOnlySpan<GraphicsPipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadGraphicsPipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), riid, ref ppPipelineState);
+        return @this->LoadGraphicsPipeline(in pName.GetPinnableReference(), in pDesc.GetPinnableReference(), riid, ref ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<char> pName, Span<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pName, [Flow(FlowDirection.In)] ReadOnlySpan<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadGraphicsPipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
+        return @this->LoadGraphicsPipeline(in pName.GetPinnableReference(), in pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<char> pName, Span<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState)
+    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pName, [Flow(FlowDirection.In)] ReadOnlySpan<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadGraphicsPipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
+        return @this->LoadGraphicsPipeline(in pName.GetPinnableReference(), in pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        ppPipelineState = default;
-        return @this->LoadGraphicsPipeline(pName, pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->LoadGraphicsPipeline(pName, pDesc, ref riid.GetPinnableReference(), ppPipelineState);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, GraphicsPipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->LoadGraphicsPipeline(pName, pDesc, ref riid.GetPinnableReference(), ref ppPipelineState);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<GraphicsPipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->LoadGraphicsPipeline(pName, ref pDesc.GetPinnableReference(), riid, ppPipelineState);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        ppPipelineState = default;
-        return @this->LoadGraphicsPipeline(pName, ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<GraphicsPipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->LoadGraphicsPipeline(pName, ref pDesc.GetPinnableReference(), riid, ref ppPipelineState);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->LoadGraphicsPipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadGraphicsPipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<GraphicsPipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->LoadGraphicsPipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1657,7 +1291,7 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ComputePipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1665,7 +1299,7 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ComputePipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1673,192 +1307,126 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, Span<ComputePipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadComputePipeline(pName, ref pDesc.GetPinnableReference(), riid, ppPipelineState);
+        return @this->LoadComputePipeline(pName, in pDesc.GetPinnableReference(), riid, ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ref ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppPipelineState = default;
-        return @this->LoadComputePipeline(pName, ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+        return @this->LoadComputePipeline(pName, in pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, Span<ComputePipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadComputePipeline(pName, ref pDesc.GetPinnableReference(), riid, ref ppPipelineState);
+        return @this->LoadComputePipeline(pName, in pDesc.GetPinnableReference(), riid, ref ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, Span<ComputePipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadComputePipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
+        return @this->LoadComputePipeline(pName, in pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, Span<ComputePipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadComputePipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
+        return @this->LoadComputePipeline(pName, in pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<char> pName, ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadComputePipeline(ref pName.GetPinnableReference(), pDesc, riid, ppPipelineState);
+        return @this->LoadComputePipeline(in pName.GetPinnableReference(), pDesc, riid, ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe int LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppPipelineState = default;
-        return @this->LoadComputePipeline(ref pName, pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+        return @this->LoadComputePipeline(in pName, pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<char> pName, ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadComputePipeline(ref pName.GetPinnableReference(), pDesc, riid, ref ppPipelineState);
+        return @this->LoadComputePipeline(in pName.GetPinnableReference(), pDesc, riid, ref ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<char> pName, ComputePipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadComputePipeline(ref pName.GetPinnableReference(), pDesc, ref riid.GetPinnableReference(), ppPipelineState);
+        return @this->LoadComputePipeline(in pName.GetPinnableReference(), pDesc, ref riid.GetPinnableReference(), ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<char> pName, ComputePipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadComputePipeline(ref pName.GetPinnableReference(), pDesc, ref riid.GetPinnableReference(), ref ppPipelineState);
+        return @this->LoadComputePipeline(in pName.GetPinnableReference(), pDesc, ref riid.GetPinnableReference(), ref ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<char> pName, Span<ComputePipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pName, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadComputePipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), riid, ppPipelineState);
+        return @this->LoadComputePipeline(in pName.GetPinnableReference(), in pDesc.GetPinnableReference(), riid, ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static int LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ref ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+    public static int LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
         ppPipelineState = default;
-        return @this->LoadComputePipeline(ref pName, ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+        return @this->LoadComputePipeline(in pName, in pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<char> pName, Span<ComputePipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pName, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadComputePipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), riid, ref ppPipelineState);
+        return @this->LoadComputePipeline(in pName.GetPinnableReference(), in pDesc.GetPinnableReference(), riid, ref ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<char> pName, Span<ComputePipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pName, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadComputePipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
+        return @this->LoadComputePipeline(in pName.GetPinnableReference(), in pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, Span<char> pName, Span<ComputePipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState)
+    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<nint> pName, [Flow(FlowDirection.In)] ReadOnlySpan<ComputePipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LoadComputePipeline(ref pName.GetPinnableReference(), ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        ppPipelineState = default;
-        return @this->LoadComputePipeline(pName, pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc, Span<Guid> riid, void** ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->LoadComputePipeline(pName, pDesc, ref riid.GetPinnableReference(), ppPipelineState);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc, Span<Guid> riid, ref void* ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->LoadComputePipeline(pName, pDesc, ref riid.GetPinnableReference(), ref ppPipelineState);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<ComputePipelineStateDesc> pDesc, Guid* riid, void** ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->LoadComputePipeline(pName, ref pDesc.GetPinnableReference(), riid, ppPipelineState);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // ComPtrOverloader
-        ppPipelineState = default;
-        return @this->LoadComputePipeline(pName, ref pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<ComputePipelineStateDesc> pDesc, Guid* riid, ref void* ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->LoadComputePipeline(pName, ref pDesc.GetPinnableReference(), riid, ref ppPipelineState);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<ComputePipelineStateDesc> pDesc, Span<Guid> riid, void** ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->LoadComputePipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ppPipelineState);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int LoadComputePipeline(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, Span<ComputePipelineStateDesc> pDesc, Span<Guid> riid, ref void* ppPipelineState)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->LoadComputePipeline(pName, ref pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
+        return @this->LoadComputePipeline(in pName.GetPinnableReference(), in pDesc.GetPinnableReference(), ref riid.GetPinnableReference(), ref ppPipelineState);
     }
 
     /// <summary>To be documented.</summary>
@@ -1888,7 +1456,7 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, GraphicsPipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -1897,52 +1465,34 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ref GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->LoadGraphicsPipeline(pName, ref pDesc, out ComPtr<TI0> silkRet));
+        SilkMarshal.ThrowHResult(@this->LoadGraphicsPipeline(pName, in pDesc, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, GraphicsPipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->LoadGraphicsPipeline(ref pName, pDesc, out ComPtr<TI0> silkRet));
+        SilkMarshal.ThrowHResult(@this->LoadGraphicsPipeline(in pName, pDesc, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ref GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->LoadGraphicsPipeline(ref pName, ref pDesc, out ComPtr<TI0> silkRet));
+        SilkMarshal.ThrowHResult(@this->LoadGraphicsPipeline(in pName, in pDesc, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, GraphicsPipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->LoadGraphicsPipeline(pName, pDesc, out ComPtr<TI0> silkRet));
-        return silkRet;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> LoadGraphicsPipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->LoadGraphicsPipeline(pName, ref pDesc, out ComPtr<TI0> silkRet));
-        return silkRet;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ComputePipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
@@ -1951,47 +1501,29 @@ public unsafe static class D3D12PipelineLibraryVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, char* pName, ref ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] nint* pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->LoadComputePipeline(pName, ref pDesc, out ComPtr<TI0> silkRet));
+        SilkMarshal.ThrowHResult(@this->LoadComputePipeline(pName, in pDesc, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ComputePipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static unsafe ComPtr<TI0> LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->LoadComputePipeline(ref pName, pDesc, out ComPtr<TI0> silkRet));
+        SilkMarshal.ThrowHResult(@this->LoadComputePipeline(in pName, pDesc, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
     /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, ref char pName, ref ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+    public static ComPtr<TI0> LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [Flow(FlowDirection.In)] in nint pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->LoadComputePipeline(ref pName, ref pDesc, out ComPtr<TI0> silkRet));
-        return silkRet;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe ComPtr<TI0> LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->LoadComputePipeline(pName, pDesc, out ComPtr<TI0> silkRet));
-        return silkRet;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static ComPtr<TI0> LoadComputePipeline<TI0>(this ComPtr<ID3D12PipelineLibrary> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
-    {
-        var @this = thisVtbl.Handle;
-        // NonKhrReturnTypeOverloader
-        SilkMarshal.ThrowHResult(@this->LoadComputePipeline(pName, ref pDesc, out ComPtr<TI0> silkRet));
+        SilkMarshal.ThrowHResult(@this->LoadComputePipeline(in pName, in pDesc, out ComPtr<TI0> silkRet));
         return silkRet;
     }
 
