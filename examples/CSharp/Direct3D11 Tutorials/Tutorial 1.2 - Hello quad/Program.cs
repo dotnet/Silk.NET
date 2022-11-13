@@ -156,8 +156,8 @@ unsafe void OnLoad()
         factory.CreateSwapChainForHwnd
         (
             device,
-            window.Native!.Win32!.Value.Hwnd,
-            ref swapChainDesc,
+            window.Native!.DXHandle!.Value,
+            swapChainDesc,
             null,
             ref Unsafe.NullRef<IDXGIOutput>(),
             ref swapchain
@@ -179,7 +179,7 @@ unsafe void OnLoad()
             PSysMem = vertexData
         };
 
-        SilkMarshal.ThrowHResult(device.CreateBuffer(ref bufferDesc, ref subresourceData, ref vertexBuffer));
+        SilkMarshal.ThrowHResult(device.CreateBuffer(bufferDesc, subresourceData, ref vertexBuffer));
     }
     
     // Create our index buffer.
@@ -197,7 +197,7 @@ unsafe void OnLoad()
             PSysMem = indexData
         };
 
-        SilkMarshal.ThrowHResult(device.CreateBuffer(ref bufferDesc, ref subresourceData, ref indexBuffer));
+        SilkMarshal.ThrowHResult(device.CreateBuffer(bufferDesc, subresourceData, ref indexBuffer));
     }
 
     var shaderBytes = Encoding.ASCII.GetBytes(shaderSource);
@@ -302,7 +302,7 @@ unsafe void OnLoad()
         (
             device.CreateInputLayout
             (
-                ref inputElement,
+                inputElement,
                 1,
                 vertexCode.GetBufferPointer(),
                 vertexCode.GetBufferSize(),
@@ -347,7 +347,7 @@ unsafe void OnRender(double deltaSeconds)
     
     // Update the rasterizer state with the current viewport.
     var viewport = new Viewport(0, 0, window.FramebufferSize.X, window.FramebufferSize.Y, 0, 1);
-    deviceContext.RSSetViewports(1, ref viewport);
+    deviceContext.RSSetViewports(1, viewport);
     
     // Tell the output merger about our render target view.
     deviceContext.OMSetRenderTargets(1, ref renderTargetView, ref Unsafe.NullRef<ID3D11DepthStencilView>());
@@ -355,7 +355,7 @@ unsafe void OnRender(double deltaSeconds)
     // Update the input assembler to use our shader input layout, and associated vertex & index buffers.
     deviceContext.IASetPrimitiveTopology(D3DPrimitiveTopology.D3DPrimitiveTopologyTrianglelist);
     deviceContext.IASetInputLayout(inputLayout);
-    deviceContext.IASetVertexBuffers(0, 1, ref vertexBuffer, ref vertexStride, ref vertexOffset);
+    deviceContext.IASetVertexBuffers(0, 1, vertexBuffer, vertexStride, vertexOffset);
     deviceContext.IASetIndexBuffer(indexBuffer, Format.FormatR32Uint, 0);
     
     // Bind our shaders.
