@@ -207,7 +207,7 @@ unsafe void OnLoad()
     ComPtr<ID3D10Blob> vertexErrors = default;
     HResult hr = compiler.Compile
     (
-        ref shaderBytes[0],
+        in shaderBytes[0],
         (nuint) shaderBytes.Length,
         nameof(shaderSource),
         null,
@@ -236,7 +236,7 @@ unsafe void OnLoad()
     ComPtr<ID3D10Blob> pixelErrors = default;
     hr = compiler.Compile
     (
-        ref shaderBytes[0],
+        in shaderBytes[0],
         (nuint)shaderBytes.Length,
         nameof(shaderSource),
         null,
