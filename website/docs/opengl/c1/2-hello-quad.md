@@ -137,4 +137,71 @@ Binding is a term you will hear a lot with OpenGL, and in these tutorials too. B
 We're now ready to give the VAO some data. But first, we need a **vertex buffer**.
 
 ## Vertex Buffer Objects (VBOs)
-Here is the part where we actually give the GPU some data it can work with. 
+Here is the part where we actually give the GPU some data it can work with. For 95% of graphics applications, a vertex buffer is **required** to display anything on screen.
+
+### What is a vertex buffer?
+Before we can continue, it's handy to know what a vertex buffer is, and what it does.
+
+Let's define both vertex, and buffer.
+
+* Vertex - A point where two lines, or edges meet.
+* Buffer - A region in memory that can be accessed to be written to, or read from.
+
+Knowing these definitions should give us a good idea of what a vertex buffer is. It's a region of memory, on the GPU, that stores points, which will get **rasterized** on-screen (usually in the form of triangles).
+
+### Vertex data
+Let's create the data that we will fill the vertex buffer with!
+
+In your `OnLoad` function, just after you call `_gl.BindVertexArray()`, add the following:
+
+```cs
+float[] vertices =
+{
+     0.5f,  0.5f, 0.0f,
+     0.5f, -0.5f, 0.0f,
+    -0.5f, -0.5f, 0.0f,
+    -0.5f,  0.5f, 0.5f
+}
+```
+
+### What makes up a quad?
+In modern graphics programming, you are expected to use triangles. While you may see options for quads, or lines, these are mostly deprecated.
+
+Therefore, a quad is made of two right-angle triangles. This can best be seen if we view the result in **wireframe** mode.
+
+![Wireframe quad](../../../images/opengl/chapter1/wireframe-quad.png)
+
+In the image, you can also see where the four vertices go in relation to the quad. While you won't *usually* be defining vertices yourself, it's still handy to know how it works.
+
+### Creating the buffer
+Now that we've got our vertex data, let's create the buffer!
+
+At the top of your class, add the following:
+
+```cs
+private static uint _vbo;
+```
+
+Then, in your `OnLoad` method, under where the vertices are defined, add:
+
+```
+_vbo = _gl.GenBuffer();
+_gl.BindBuffer(BufferTargetARB.ArrayBuffer, _vbo);
+```
+
+Much like the VAO, we need to first generate the buffer, and then bind it. Unlike vertex arrays, however, buffers need to be bound to a **target**. Some of the more common targets include:
+
+* `ArrayBuffer` - The vertex buffer target (which is what we're using here).
+* `ElementArrayBuffer` - The index buffer target (which you'll see later).
+* `UniformBuffer` - A uniform buffer, not used in this tutorial, but we'll get to it in a later tutorial.
+
+In this case, we're binding to `ArrayBuffer` since we're creating a vertex buffer.
+
+### Filling our buffer with data
+Let's fill our buffer with some data! Before we do that though, you need to be aware of `unsafe` in C#.
+
+#### Unsafe C#
+Silk.NET heavily uses `unsafe` code. Don't worry, this won't make your computer explode, however it does exit out of the "safe" managed environment of C#, and enters a realm where undefined behaviour, segmentation faults, and strange results are more likely to occur if you are not careful.
+
+<?# Info "If you wish to use `Span` instead, and remain in `safe` mode, Silk.NET does support these too. However, I will be using `unsafe` in this tutorial instead, as this is both what I personally use, as well as what the samples use." /?>
+
