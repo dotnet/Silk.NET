@@ -167,7 +167,7 @@ Input is a key part of any program. If the user can't input anything, it's not a
 ### Creating an input context
 An input context is responsible for receiving user input, and handling input events. Creating one is simple, thanks to an extension method that `Silk.NET.Input` provides to the `IWindow`.
 
-In your `Load` method, add the following:
+In your `OnLoad` method, add the following:
 
 ```cs
 IInputContext input = _window.CreateInput();
@@ -181,7 +181,7 @@ First, let's create the method that handles this event:
 private static void KeyDown(IKeyboard keyboard, Key key, int keyCode) { }
 ```
 
-Now that we've done that, we can subscribe to it in our `Load` method. Add the following after you create the input context:
+Now that we've done that, we can subscribe to it in our `OnLoad` method. Add the following after you create the input context:
 
 ```cs
 for (int i = 0; i < input.Keyboards.Count; i++)

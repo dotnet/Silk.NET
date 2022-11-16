@@ -161,7 +161,7 @@ float[] vertices =
      0.5f, -0.5f, 0.0f,
     -0.5f, -0.5f, 0.0f,
     -0.5f,  0.5f, 0.5f
-}
+};
 ```
 
 ### What makes up a quad?
@@ -189,10 +189,10 @@ _vbo = _gl.GenBuffer();
 _gl.BindBuffer(BufferTargetARB.ArrayBuffer, _vbo);
 ```
 
-Much like the VAO, we need to first generate the buffer, and then bind it. Unlike vertex arrays, however, buffers need to be bound to a **target**. Some of the more common targets include:
+Much like the VAO, we need to first generate the buffer, and then bind it. Unlike vertex arrays, however, buffers need to be bound to a **target**. This allows you to bind buffers to different targets at the same time. Some of the more common targets include:
 
 * `ArrayBuffer` - The vertex buffer target (which is what we're using here).
-* `ElementArrayBuffer` - The index buffer target (which you'll see later).
+* `ElementArrayBuffer` - The element array buffer target (which you'll see later).
 * `UniformBuffer` - A uniform buffer, not used in this tutorial, but we'll get to it in a later tutorial.
 
 In this case, we're binding to `ArrayBuffer` since we're creating a vertex buffer.
@@ -205,3 +205,21 @@ Silk.NET heavily uses `unsafe` code. Don't worry, this won't make your computer 
 
 <?# Info "If you wish to use `Span` instead, and remain in `safe` mode, Silk.NET does support these too. However, I will be using `unsafe` in this tutorial instead, as this is both what I personally use, as well as what the samples use." /?>
 
+Unsafe mode is not enabled by default, so we need to enable it. To enable it, add `<AllowUnsafeBlocks>true</AllowUnsafeBlocks>` to the `PropertyGroup` in your project's `.csproj` file.
+
+Now let's fill the buffer!
+
+Add the following after you create the buffer:
+
+```cs
+fixed (float* buf = vertices)
+    _gl.BufferData(BufferTargetARB.ArrayBuffer, (nuint) vertices.Length, buf, BufferUsageARB.StaticDraw);
+```
+
+Let's go over what's going on here. First, we `fix` the vertices data. This prevents the garbage collector from moving it around, so we can take a pointer to the data. We tell it the target we want, the `ArrayBuffer` in this case, give it the data length, the buffer pointer, and we choose `StaticDraw` for our usage.
+
+Now, run the program again, and if you get the same blue window, you've set the buffer data successfully!
+
+Now, let's create the **element buffer object**.
+
+## Element Buffer Objects (EBOs)
