@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D12
     {
         public VideoProcessOutputStreamArguments
         (
-            Silk.NET.Maths.Rectangle<int>? targetRectangle = null
+            Silk.NET.Maths.Box2D<int>? targetRectangle = null
         ) : this()
         {
             if (targetRectangle is not null)
@@ -66,6 +66,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "D3D12_RECT")]
         [NativeName("Type.Name", "D3D12_RECT")]
         [NativeName("Name", "TargetRectangle")]
-        public Silk.NET.Maths.Rectangle<int> TargetRectangle;
+        public Silk.NET.Maths.Box2D<int> TargetRectangle;
     }
 }

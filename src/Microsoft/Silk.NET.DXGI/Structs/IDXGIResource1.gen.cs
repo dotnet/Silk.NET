@@ -18,7 +18,7 @@ namespace Silk.NET.DXGI
 {
     [Guid("30961379-4609-4a41-998e-54fe567ee0c1")]
     [NativeName("Name", "IDXGIResource1")]
-    public unsafe partial struct IDXGIResource1 : IComVtbl<IDXGIResource1>, IComVtbl<IDXGIResource>, IComVtbl<IDXGIDeviceSubObject>, IComVtbl<IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
+    public unsafe partial struct IDXGIResource1 : IComVtbl<IDXGIResource1>, IComVtbl<IDXGIResource>, IComVtbl<Silk.NET.DXGI.IDXGIDeviceSubObject>, IComVtbl<Silk.NET.DXGI.IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("30961379-4609-4a41-998e-54fe567ee0c1");
 
@@ -28,11 +28,11 @@ namespace Silk.NET.DXGI
         public static implicit operator IDXGIResource(IDXGIResource1 val)
             => Unsafe.As<IDXGIResource1, IDXGIResource>(ref val);
 
-        public static implicit operator IDXGIDeviceSubObject(IDXGIResource1 val)
-            => Unsafe.As<IDXGIResource1, IDXGIDeviceSubObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIDeviceSubObject(IDXGIResource1 val)
+            => Unsafe.As<IDXGIResource1, Silk.NET.DXGI.IDXGIDeviceSubObject>(ref val);
 
-        public static implicit operator IDXGIObject(IDXGIResource1 val)
-            => Unsafe.As<IDXGIResource1, IDXGIObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIObject(IDXGIResource1 val)
+            => Unsafe.As<IDXGIResource1, Silk.NET.DXGI.IDXGIObject>(ref val);
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIResource1 val)
             => Unsafe.As<IDXGIResource1, Silk.NET.Core.Native.IUnknown>(ref val);

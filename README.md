@@ -18,7 +18,7 @@
 ![Silk.NET Logo](https://raw.githubusercontent.com/dotnet/Silk.NET/main/documentation/readme/silkdotnet_v3_horizontal_96.svg)
 End include in NuGet readme. -->
 
-Silk.NET is your one-stop-shop for high-speed .NET multimedia, graphics, and compute; providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX.
+Silk.NET is your one-stop-shop for high-speed .NET multimedia, graphics, and compute; providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, WebGPU, and DirectX.
 
 Use Silk.NET to spruce up applications with cross-platform 3D graphics, audio, compute and haptics!
 
@@ -28,7 +28,7 @@ Silk.NET works on any .NET Standard 2.0 compliant platform, including .NET 6.0, 
 <br />
 <div>
 <!-- Begin exclude from NuGet readme. -->
-<a href="https://dotnetfoundation.org" align="right"><img src="https://dotnetfoundation.org/img/logo_v4.svg" alt=".NET Foundation" class="logo-footer" width="72" align="left">
+<a href="https://dotnetfoundation.org" align="right"><img src="https://github.com/dotnet-foundation/swag/blob/main/logo/dotnetfoundation_v4.svg" alt=".NET Foundation" class="logo-footer" width="72" align="left">
 <!-- End exclude from NuGet readme. -->
 <!-- Begin include in NuGet readme.
 ![.NET Foundation](https://raw.githubusercontent.com/dotnet/Silk.NET/main/documentation/readme/dotnetfoundation_v4_horizontal_64.svg)

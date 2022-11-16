@@ -660,41 +660,41 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int Enable, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessor, Enable, pRect);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessor, Enable, pRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
-        fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+        fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessor, Enable, pRectPtr);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessor, Enable, pRectPtr);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, int Enable, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRect);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRect);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRectPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRectPtr);
             }
         }
     }
@@ -939,92 +939,92 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int* Enabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int* Enabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessor, Enabled, pRect);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessor, Enabled, pRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int* Enabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int* Enabled, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
-        fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+        fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessor, Enabled, pRectPtr);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessor, Enabled, pRectPtr);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ref int Enabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ref int Enabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (int* EnabledPtr = &Enabled)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRect);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRect);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ref int Enabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ref int Enabled, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (int* EnabledPtr = &Enabled)
         {
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRectPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessor, EnabledPtr, pRectPtr);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, int* Enabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, int* Enabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRect);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRect);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, int* Enabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, int* Enabled, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRectPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessorPtr, Enabled, pRectPtr);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ref int Enabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ref int Enabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
             fixed (int* EnabledPtr = &Enabled)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRect);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRect);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ref int Enabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ref int Enabled, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
             fixed (int* EnabledPtr = &Enabled)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRectPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[20])(@this, pVideoProcessorPtr, EnabledPtr, pRectPtr);
                 }
             }
         }
@@ -1592,81 +1592,81 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
-        fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+        fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
-        fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+        fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
             }
         }
     }
@@ -2285,184 +2285,184 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
-        fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+        fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (int* pEnabledPtr = &pEnabled)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (int* pEnabledPtr = &pEnabled)
         {
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
             fixed (int* pEnabledPtr = &pEnabled)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
             fixed (int* pEnabledPtr = &pEnabled)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[43])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
                 }
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
-        fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+        fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabled, pRectPtr);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (int* pEnabledPtr = &pEnabled)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRect);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (int* pEnabledPtr = &pEnabled)
         {
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessor, StreamIndex, pEnabledPtr, pRectPtr);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRect);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabled, pRectPtr);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
             fixed (int* pEnabledPtr = &pEnabled)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRect);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect)
+    public static void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
             fixed (int* pEnabledPtr = &pEnabled)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Rectangle<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int*, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[44])(@this, pVideoProcessorPtr, StreamIndex, pEnabledPtr, pRectPtr);
                 }
             }
         }
@@ -8616,7 +8616,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, int Enable, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, int Enable, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8624,7 +8624,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int Enable, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int Enable, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8632,7 +8632,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, int Enable, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8640,7 +8640,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, int Enable, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8648,7 +8648,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, int Enable, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, int Enable, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8872,7 +8872,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, int* Enabled, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorGetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, int* Enabled, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8880,7 +8880,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int* Enabled, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int* Enabled, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8888,7 +8888,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, int* Enabled, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorGetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, int* Enabled, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8896,7 +8896,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Span<int> Enabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Span<int> Enabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8904,7 +8904,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ref int Enabled, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorGetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ref int Enabled, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8912,7 +8912,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Span<int> Enabled, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Span<int> Enabled, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8920,7 +8920,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorGetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ref int Enabled, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorGetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ref int Enabled, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8928,7 +8928,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, int* Enabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, int* Enabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8936,7 +8936,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, int* Enabled, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, int* Enabled, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8944,7 +8944,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Span<int> Enabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Span<int> Enabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8952,7 +8952,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Span<int> Enabled, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static void VideoProcessorGetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Span<int> Enabled, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9488,7 +9488,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9496,7 +9496,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9504,7 +9504,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9512,7 +9512,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9520,7 +9520,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9528,7 +9528,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9536,7 +9536,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9544,7 +9544,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9552,7 +9552,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9560,7 +9560,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10128,7 +10128,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorGetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10136,7 +10136,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10144,7 +10144,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorGetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10152,7 +10152,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Span<int> pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Span<int> pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10160,7 +10160,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorGetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10168,7 +10168,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Span<int> pEnabled, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Span<int> pEnabled, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10176,7 +10176,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorGetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorGetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10184,7 +10184,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10192,7 +10192,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int* pEnabled, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int* pEnabled, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10200,7 +10200,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Span<int> pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Span<int> pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10208,7 +10208,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Span<int> pEnabled, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static void VideoProcessorGetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Span<int> pEnabled, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10216,7 +10216,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorGetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10224,7 +10224,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int* pEnabled, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10232,7 +10232,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorGetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int* pEnabled, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10240,7 +10240,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Span<int> pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Span<int> pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10248,7 +10248,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Rectangle<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorGetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10256,7 +10256,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Span<int> pEnabled, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Span<int> pEnabled, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10264,7 +10264,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorGetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Rectangle<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorGetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref int pEnabled, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10272,7 +10272,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int* pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10280,7 +10280,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int* pEnabled, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int* pEnabled, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10288,7 +10288,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Span<int> pEnabled, Silk.NET.Maths.Rectangle<int>* pRect)
+    public static unsafe void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Span<int> pEnabled, Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10296,7 +10296,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Span<int> pEnabled, Span<Silk.NET.Maths.Rectangle<int>> pRect)
+    public static void VideoProcessorGetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Span<int> pEnabled, Span<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

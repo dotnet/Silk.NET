@@ -17,8 +17,8 @@ namespace Silk.NET.DirectStorage
         None = 0,
         [NativeName("Name", "DSTORAGE_COMPRESSION_FORMAT_NONE")]
         CompressionFormatNone = 0x0,
-        [NativeName("Name", "DSTORAGE_COMPRESSION_FORMAT_1")]
-        CompressionFormat1 = 0x1,
+        [NativeName("Name", "DSTORAGE_COMPRESSION_FORMAT_GDEFLATE")]
+        CompressionFormatGdeflate = 0x1,
         [NativeName("Name", "DSTORAGE_CUSTOM_COMPRESSION_0")]
         CustomCompression0 = unchecked((byte) 0xFFFFFFFFFFFFFF80),
     }

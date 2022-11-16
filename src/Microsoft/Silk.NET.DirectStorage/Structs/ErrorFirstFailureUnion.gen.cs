@@ -17,14 +17,15 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.DirectStorage
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_dstorage_L506_C5")]
+    [NativeName("Name", "__AnonymousRecord_dstorage_L552_C5")]
     public unsafe partial struct ErrorFirstFailureUnion
     {
         public ErrorFirstFailureUnion
         (
             ErrorParametersRequest? request = null,
             ErrorParametersStatus? status = null,
-            ErrorParametersSignal? signal = null
+            ErrorParametersSignal? signal = null,
+            ErrorParametersEvent? @event = null
         ) : this()
         {
             if (request is not null)
@@ -40,6 +41,11 @@ namespace Silk.NET.DirectStorage
             if (signal is not null)
             {
                 Signal = signal.Value;
+            }
+
+            if (@event is not null)
+            {
+                Event = @event.Value;
             }
         }
 
@@ -61,5 +67,11 @@ namespace Silk.NET.DirectStorage
         [NativeName("Type.Name", "DSTORAGE_ERROR_PARAMETERS_SIGNAL")]
         [NativeName("Name", "Signal")]
         public ErrorParametersSignal Signal;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "DSTORAGE_ERROR_PARAMETERS_EVENT")]
+        [NativeName("Type.Name", "DSTORAGE_ERROR_PARAMETERS_EVENT")]
+        [NativeName("Name", "Event")]
+        public ErrorParametersEvent Event;
     }
 }

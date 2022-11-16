@@ -1392,6 +1392,14 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceFragmentDensityMapOffsetPropertiesQCom = 1000425001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SUBPASS_FRAGMENT_DENSITY_MAP_OFFSET_END_INFO_QCOM")]
         SubpassFragmentDensityMapOffsetEndInfoQCom = 1000425002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COPY_MEMORY_INDIRECT_FEATURES_NV")]
+        PhysicalDeviceCopyMemoryIndirectFeaturesNV = 1000426000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COPY_MEMORY_INDIRECT_PROPERTIES_NV")]
+        PhysicalDeviceCopyMemoryIndirectPropertiesNV = 1000426001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_DECOMPRESSION_FEATURES_NV")]
+        PhysicalDeviceMemoryDecompressionFeaturesNV = 1000427000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_DECOMPRESSION_PROPERTIES_NV")]
+        PhysicalDeviceMemoryDecompressionPropertiesNV = 1000427001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINEAR_COLOR_ATTACHMENT_FEATURES_NV")]
         PhysicalDeviceLinearColorAttachmentFeaturesNV = 1000430000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_COMPRESSION_CONTROL_SWAPCHAIN_FEATURES_EXT")]
@@ -1450,6 +1458,10 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceAmigoProfilingFeaturesSec = 1000485000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_AMIGO_PROFILING_SUBMIT_INFO_SEC")]
         AmigoProfilingSubmitInfoSec = 1000485001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_INVOCATION_REORDER_FEATURES_NV")]
+        PhysicalDeviceRayTracingInvocationReorderFeaturesNV = 1000490000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_INVOCATION_REORDER_PROPERTIES_NV")]
+        PhysicalDeviceRayTracingInvocationReorderPropertiesNV = 1000490001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MUTABLE_DESCRIPTOR_TYPE_FEATURES_EXT")]
         PhysicalDeviceMutableDescriptorTypeFeaturesExt = 1000351000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_MUTABLE_DESCRIPTOR_TYPE_CREATE_INFO_EXT")]

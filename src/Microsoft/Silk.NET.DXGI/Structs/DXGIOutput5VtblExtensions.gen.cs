@@ -614,43 +614,43 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetDisplaySurface(this ComPtr<IDXGIOutput5> thisVtbl, IDXGISurface* pScanoutSurface)
+    public static unsafe int SetDisplaySurface(this ComPtr<IDXGIOutput5> thisVtbl, Silk.NET.DXGI.IDXGISurface* pScanoutSurface)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput5*, IDXGISurface*, int>)@this->LpVtbl[16])(@this, pScanoutSurface);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput5*, Silk.NET.DXGI.IDXGISurface*, int>)@this->LpVtbl[16])(@this, pScanoutSurface);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetDisplaySurface(this ComPtr<IDXGIOutput5> thisVtbl, ref IDXGISurface pScanoutSurface)
+    public static int SetDisplaySurface(this ComPtr<IDXGIOutput5> thisVtbl, ref Silk.NET.DXGI.IDXGISurface pScanoutSurface)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (IDXGISurface* pScanoutSurfacePtr = &pScanoutSurface)
+        fixed (Silk.NET.DXGI.IDXGISurface* pScanoutSurfacePtr = &pScanoutSurface)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput5*, IDXGISurface*, int>)@this->LpVtbl[16])(@this, pScanoutSurfacePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput5*, Silk.NET.DXGI.IDXGISurface*, int>)@this->LpVtbl[16])(@this, pScanoutSurfacePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDisplaySurfaceData(this ComPtr<IDXGIOutput5> thisVtbl, IDXGISurface* pDestination)
+    public static unsafe int GetDisplaySurfaceData(this ComPtr<IDXGIOutput5> thisVtbl, Silk.NET.DXGI.IDXGISurface* pDestination)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput5*, IDXGISurface*, int>)@this->LpVtbl[17])(@this, pDestination);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput5*, Silk.NET.DXGI.IDXGISurface*, int>)@this->LpVtbl[17])(@this, pDestination);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDisplaySurfaceData(this ComPtr<IDXGIOutput5> thisVtbl, ref IDXGISurface pDestination)
+    public static int GetDisplaySurfaceData(this ComPtr<IDXGIOutput5> thisVtbl, ref Silk.NET.DXGI.IDXGISurface pDestination)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (IDXGISurface* pDestinationPtr = &pDestination)
+        fixed (Silk.NET.DXGI.IDXGISurface* pDestinationPtr = &pDestination)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput5*, IDXGISurface*, int>)@this->LpVtbl[17])(@this, pDestinationPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput5*, Silk.NET.DXGI.IDXGISurface*, int>)@this->LpVtbl[17])(@this, pDestinationPtr);
         }
         return ret;
     }
@@ -1445,15 +1445,15 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetDisplaySurface<TI0>(this ComPtr<IDXGIOutput5> thisVtbl, ComPtr<TI0> pScanoutSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
+    public static int SetDisplaySurface<TI0>(this ComPtr<IDXGIOutput5> thisVtbl, ComPtr<TI0> pScanoutSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->SetDisplaySurface((IDXGISurface*) pScanoutSurface.Handle);
+        return @this->SetDisplaySurface((Silk.NET.DXGI.IDXGISurface*) pScanoutSurface.Handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetDisplaySurface(this ComPtr<IDXGIOutput5> thisVtbl, Span<IDXGISurface> pScanoutSurface)
+    public static int SetDisplaySurface(this ComPtr<IDXGIOutput5> thisVtbl, Span<Silk.NET.DXGI.IDXGISurface> pScanoutSurface)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1461,15 +1461,15 @@ public unsafe static class DXGIOutput5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDisplaySurfaceData<TI0>(this ComPtr<IDXGIOutput5> thisVtbl, ComPtr<TI0> pDestination) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
+    public static int GetDisplaySurfaceData<TI0>(this ComPtr<IDXGIOutput5> thisVtbl, ComPtr<TI0> pDestination) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetDisplaySurfaceData((IDXGISurface*) pDestination.Handle);
+        return @this->GetDisplaySurfaceData((Silk.NET.DXGI.IDXGISurface*) pDestination.Handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDisplaySurfaceData(this ComPtr<IDXGIOutput5> thisVtbl, Span<IDXGISurface> pDestination)
+    public static int GetDisplaySurfaceData(this ComPtr<IDXGIOutput5> thisVtbl, Span<Silk.NET.DXGI.IDXGISurface> pDestination)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

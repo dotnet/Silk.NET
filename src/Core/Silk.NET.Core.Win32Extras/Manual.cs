@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -128,5 +128,32 @@ namespace Silk.NET.Core.Win32Extras
         public void* Buffer;
         [FieldOffset(0)]
         public ulong Alignment;
+    }
+
+    public struct RPCVersion
+    {
+        public ushort MajorVersion;
+        public ushort MinorVersion;
+    }
+
+    public struct RPCSyntaxIdentifier
+    {
+        public Guid SyntaxGUID;
+        public RPCVersion SyntaxVersion;
+    }
+
+    public unsafe struct RPCMessage
+    {
+        public void* Handle;
+        public uint DataRepresentation;
+        public void* Buffer;
+        public uint BufferLength;
+        public uint ProcNum;
+        public RPCSyntaxIdentifier* TransferSyntax;
+        public void* RpcInterfaceInformation;
+        public void* ReservedForRuntime;
+        public void* ManagerEpv;
+        public void* ImportContext;
+        public uint RpcFlags;
     }
 }

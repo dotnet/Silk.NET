@@ -18,7 +18,7 @@ namespace Silk.NET.DXGI
 {
     [Guid("50c83a1c-e072-4c48-87b0-3630fa36a6d0")]
     [NativeName("Name", "IDXGIFactory2")]
-    public unsafe partial struct IDXGIFactory2 : IComVtbl<IDXGIFactory2>, IComVtbl<IDXGIFactory1>, IComVtbl<IDXGIFactory>, IComVtbl<IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
+    public unsafe partial struct IDXGIFactory2 : IComVtbl<IDXGIFactory2>, IComVtbl<IDXGIFactory1>, IComVtbl<IDXGIFactory>, IComVtbl<Silk.NET.DXGI.IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("50c83a1c-e072-4c48-87b0-3630fa36a6d0");
 
@@ -31,8 +31,8 @@ namespace Silk.NET.DXGI
         public static implicit operator IDXGIFactory(IDXGIFactory2 val)
             => Unsafe.As<IDXGIFactory2, IDXGIFactory>(ref val);
 
-        public static implicit operator IDXGIObject(IDXGIFactory2 val)
-            => Unsafe.As<IDXGIFactory2, IDXGIObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIObject(IDXGIFactory2 val)
+            => Unsafe.As<IDXGIFactory2, Silk.NET.DXGI.IDXGIObject>(ref val);
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIFactory2 val)
             => Unsafe.As<IDXGIFactory2, Silk.NET.Core.Native.IUnknown>(ref val);

@@ -18,7 +18,7 @@ namespace Silk.NET.DXGI
 {
     [Guid("94d99bdb-f1f8-4ab0-b236-7da0170edab1")]
     [NativeName("Name", "IDXGISwapChain3")]
-    public unsafe partial struct IDXGISwapChain3 : IComVtbl<IDXGISwapChain3>, IComVtbl<IDXGISwapChain2>, IComVtbl<IDXGISwapChain1>, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<IDXGIDeviceSubObject>, IComVtbl<IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
+    public unsafe partial struct IDXGISwapChain3 : IComVtbl<IDXGISwapChain3>, IComVtbl<IDXGISwapChain2>, IComVtbl<IDXGISwapChain1>, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<Silk.NET.DXGI.IDXGIDeviceSubObject>, IComVtbl<Silk.NET.DXGI.IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("94d99bdb-f1f8-4ab0-b236-7da0170edab1");
 
@@ -34,11 +34,11 @@ namespace Silk.NET.DXGI
         public static implicit operator Silk.NET.DXGI.IDXGISwapChain(IDXGISwapChain3 val)
             => Unsafe.As<IDXGISwapChain3, Silk.NET.DXGI.IDXGISwapChain>(ref val);
 
-        public static implicit operator IDXGIDeviceSubObject(IDXGISwapChain3 val)
-            => Unsafe.As<IDXGISwapChain3, IDXGIDeviceSubObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIDeviceSubObject(IDXGISwapChain3 val)
+            => Unsafe.As<IDXGISwapChain3, Silk.NET.DXGI.IDXGIDeviceSubObject>(ref val);
 
-        public static implicit operator IDXGIObject(IDXGISwapChain3 val)
-            => Unsafe.As<IDXGISwapChain3, IDXGIObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIObject(IDXGISwapChain3 val)
+            => Unsafe.As<IDXGISwapChain3, Silk.NET.DXGI.IDXGIObject>(ref val);
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGISwapChain3 val)
             => Unsafe.As<IDXGISwapChain3, Silk.NET.Core.Native.IUnknown>(ref val);
