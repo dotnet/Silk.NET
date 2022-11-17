@@ -26,12 +26,12 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     /// </summary>
     public static class FloatFormatALExtensions
     {
-        public static unsafe partial void BufferData(this AL al, uint buffer, FloatBufferFormat format, void* data, int size, int frequency)
+        public static unsafe void BufferData(this AL al, uint buffer, FloatBufferFormat format, void* data, int size, int frequency)
         {
             al.BufferData(buffer, (BufferFormat) format, data, size, frequency);
         }
 
-        public void BufferData<TElement>(this AL al, uint buffer, FloatBufferFormat format, TElement[] data, int frequency)
+        public static void BufferData<TElement>(this AL al, uint buffer, FloatBufferFormat format, TElement[] data, int frequency)
             where TElement : unmanaged
         {
             al.BufferData<TElement>(buffer, (BufferFormat) format, data, frequency);
