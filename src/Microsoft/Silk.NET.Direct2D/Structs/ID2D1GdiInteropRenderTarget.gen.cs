@@ -132,7 +132,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReleaseDC(Silk.NET.Maths.Box2D<int>* update)
+        public readonly unsafe int ReleaseDC([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* update)
         {
             var @this = (ID2D1GdiInteropRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -141,7 +141,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ReleaseDC(ref Silk.NET.Maths.Box2D<int> update)
+        public readonly int ReleaseDC([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> update)
         {
             var @this = (ID2D1GdiInteropRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

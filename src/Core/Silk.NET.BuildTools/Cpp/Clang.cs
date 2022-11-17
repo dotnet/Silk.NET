@@ -259,11 +259,14 @@ namespace Silk.NET.BuildTools.Cpp
             Console.WriteLine("Mapping C# names...");
             var variedNameMap = TypeMapper.CreateVariedNameMap(project);
             task.InjectTypeMap(variedNameMap);
+
+            bool mapNative = task.Controls.Contains("typemap-native");
+            
             foreach (var map in task.TypeMaps)
             {
-                TypeMapper.Map(map, project.Structs);
-                TypeMapper.Map(map, @class.NativeApis[fileName].Functions);
-                TypeMapper.Map(map, @class.Constants);
+                TypeMapper.Map(map, project.Structs, mapNative);
+                TypeMapper.Map(map, @class.NativeApis[fileName].Functions, mapNative);
+                TypeMapper.Map(map, @class.Constants, mapNative);
             }
 
             Console.WriteLine("Applying postprocessing...");

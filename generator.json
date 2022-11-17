@@ -2009,7 +2009,8 @@
             "cacheKey": "webgpu",
             "controlDescriptors": [
                 "convert-windows-only",
-                "no-obsolete-enum"
+                "no-obsolete-enum",
+                "typemap-native"
             ],
             "converter": {},
             "prefix": "wgpu",

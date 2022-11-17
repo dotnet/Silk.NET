@@ -134,7 +134,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, Silk.NET.Maths.Box2D<float>* rectangle, ID2D1RectangleGeometry** rectangleGeometry)
+    public static unsafe int CreateRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rectangle, ID2D1RectangleGeometry** rectangleGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -143,7 +143,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, Silk.NET.Maths.Box2D<float>* rectangle, ref ID2D1RectangleGeometry* rectangleGeometry)
+    public static unsafe int CreateRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rectangle, ref ID2D1RectangleGeometry* rectangleGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -155,7 +155,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ref Silk.NET.Maths.Box2D<float> rectangle, ID2D1RectangleGeometry** rectangleGeometry)
+    public static unsafe int CreateRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rectangle, ID2D1RectangleGeometry** rectangleGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -167,7 +167,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ref Silk.NET.Maths.Box2D<float> rectangle, ref ID2D1RectangleGeometry* rectangleGeometry)
+    public static unsafe int CreateRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rectangle, ref ID2D1RectangleGeometry* rectangleGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -182,7 +182,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRoundedRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, RoundedRect* roundedRectangle, ID2D1RoundedRectangleGeometry** roundedRectangleGeometry)
+    public static unsafe int CreateRoundedRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] RoundedRect* roundedRectangle, ID2D1RoundedRectangleGeometry** roundedRectangleGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -191,7 +191,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRoundedRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, RoundedRect* roundedRectangle, ref ID2D1RoundedRectangleGeometry* roundedRectangleGeometry)
+    public static unsafe int CreateRoundedRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] RoundedRect* roundedRectangle, ref ID2D1RoundedRectangleGeometry* roundedRectangleGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -203,7 +203,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRoundedRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ref RoundedRect roundedRectangle, ID2D1RoundedRectangleGeometry** roundedRectangleGeometry)
+    public static unsafe int CreateRoundedRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in RoundedRect roundedRectangle, ID2D1RoundedRectangleGeometry** roundedRectangleGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -215,7 +215,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRoundedRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ref RoundedRect roundedRectangle, ref ID2D1RoundedRectangleGeometry* roundedRectangleGeometry)
+    public static unsafe int CreateRoundedRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in RoundedRect roundedRectangle, ref ID2D1RoundedRectangleGeometry* roundedRectangleGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -230,7 +230,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateEllipseGeometry(this ComPtr<ID2D1Factory1> thisVtbl, Ellipse* ellipse, ID2D1EllipseGeometry** ellipseGeometry)
+    public static unsafe int CreateEllipseGeometry(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] Ellipse* ellipse, ID2D1EllipseGeometry** ellipseGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -239,7 +239,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateEllipseGeometry(this ComPtr<ID2D1Factory1> thisVtbl, Ellipse* ellipse, ref ID2D1EllipseGeometry* ellipseGeometry)
+    public static unsafe int CreateEllipseGeometry(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] Ellipse* ellipse, ref ID2D1EllipseGeometry* ellipseGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -251,7 +251,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateEllipseGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ref Ellipse ellipse, ID2D1EllipseGeometry** ellipseGeometry)
+    public static unsafe int CreateEllipseGeometry(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in Ellipse ellipse, ID2D1EllipseGeometry** ellipseGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -263,7 +263,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateEllipseGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ref Ellipse ellipse, ref ID2D1EllipseGeometry* ellipseGeometry)
+    public static unsafe int CreateEllipseGeometry(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in Ellipse ellipse, ref ID2D1EllipseGeometry* ellipseGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -326,7 +326,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ID2D1Geometry* sourceGeometry, Silk.NET.Maths.Matrix3X2<float>* transform, ID2D1TransformedGeometry** transformedGeometry)
+    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ID2D1Geometry* sourceGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform, ID2D1TransformedGeometry** transformedGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -335,7 +335,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ID2D1Geometry* sourceGeometry, Silk.NET.Maths.Matrix3X2<float>* transform, ref ID2D1TransformedGeometry* transformedGeometry)
+    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ID2D1Geometry* sourceGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform, ref ID2D1TransformedGeometry* transformedGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -347,7 +347,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ID2D1Geometry* sourceGeometry, ref Silk.NET.Maths.Matrix3X2<float> transform, ID2D1TransformedGeometry** transformedGeometry)
+    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ID2D1Geometry* sourceGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform, ID2D1TransformedGeometry** transformedGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -359,7 +359,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ID2D1Geometry* sourceGeometry, ref Silk.NET.Maths.Matrix3X2<float> transform, ref ID2D1TransformedGeometry* transformedGeometry)
+    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ID2D1Geometry* sourceGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform, ref ID2D1TransformedGeometry* transformedGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -374,7 +374,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ref ID2D1Geometry sourceGeometry, Silk.NET.Maths.Matrix3X2<float>* transform, ID2D1TransformedGeometry** transformedGeometry)
+    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ref ID2D1Geometry sourceGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform, ID2D1TransformedGeometry** transformedGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -386,7 +386,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ref ID2D1Geometry sourceGeometry, Silk.NET.Maths.Matrix3X2<float>* transform, ref ID2D1TransformedGeometry* transformedGeometry)
+    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ref ID2D1Geometry sourceGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform, ref ID2D1TransformedGeometry* transformedGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -401,7 +401,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ref ID2D1Geometry sourceGeometry, ref Silk.NET.Maths.Matrix3X2<float> transform, ID2D1TransformedGeometry** transformedGeometry)
+    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ref ID2D1Geometry sourceGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform, ID2D1TransformedGeometry** transformedGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -416,7 +416,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ref ID2D1Geometry sourceGeometry, ref Silk.NET.Maths.Matrix3X2<float> transform, ref ID2D1TransformedGeometry* transformedGeometry)
+    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ref ID2D1Geometry sourceGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform, ref ID2D1TransformedGeometry* transformedGeometry)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -455,7 +455,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, StrokeStyleProperties* strokeStyleProperties, float* dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -464,7 +464,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, StrokeStyleProperties* strokeStyleProperties, float* dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -476,7 +476,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, StrokeStyleProperties* strokeStyleProperties, ref float dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -488,7 +488,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, StrokeStyleProperties* strokeStyleProperties, ref float dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -503,7 +503,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, ref StrokeStyleProperties strokeStyleProperties, float* dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in StrokeStyleProperties strokeStyleProperties, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -515,7 +515,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, ref StrokeStyleProperties strokeStyleProperties, float* dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in StrokeStyleProperties strokeStyleProperties, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -530,7 +530,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, ref StrokeStyleProperties strokeStyleProperties, ref float dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in StrokeStyleProperties strokeStyleProperties, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -545,7 +545,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, ref StrokeStyleProperties strokeStyleProperties, ref float dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in StrokeStyleProperties strokeStyleProperties, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -563,7 +563,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, DrawingStateDescription* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] DrawingStateDescription* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -572,7 +572,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, DrawingStateDescription* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] DrawingStateDescription* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -584,7 +584,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, DrawingStateDescription* drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] DrawingStateDescription* drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -596,7 +596,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, DrawingStateDescription* drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] DrawingStateDescription* drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -611,7 +611,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, ref DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -623,7 +623,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, ref DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -638,7 +638,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, ref DrawingStateDescription drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in DrawingStateDescription drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -653,7 +653,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, ref DrawingStateDescription drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in DrawingStateDescription drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -671,7 +671,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, IWICBitmap* target, RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, IWICBitmap* target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -680,7 +680,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, IWICBitmap* target, RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, IWICBitmap* target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -692,7 +692,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, IWICBitmap* target, ref RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, IWICBitmap* target, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -704,7 +704,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, IWICBitmap* target, ref RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, IWICBitmap* target, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -719,7 +719,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref IWICBitmap target, RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref IWICBitmap target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -731,7 +731,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref IWICBitmap target, RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref IWICBitmap target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -746,7 +746,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref IWICBitmap target, ref RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref IWICBitmap target, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -761,7 +761,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref IWICBitmap target, ref RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref IWICBitmap target, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -779,7 +779,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, RenderTargetProperties* renderTargetProperties, HwndRenderTargetProperties* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -788,7 +788,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, RenderTargetProperties* renderTargetProperties, HwndRenderTargetProperties* hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -800,7 +800,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, RenderTargetProperties* renderTargetProperties, ref HwndRenderTargetProperties hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] in HwndRenderTargetProperties hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -812,7 +812,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, RenderTargetProperties* renderTargetProperties, ref HwndRenderTargetProperties hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] in HwndRenderTargetProperties hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -827,7 +827,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref RenderTargetProperties renderTargetProperties, HwndRenderTargetProperties* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -839,7 +839,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref RenderTargetProperties renderTargetProperties, HwndRenderTargetProperties* hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -854,7 +854,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref RenderTargetProperties renderTargetProperties, ref HwndRenderTargetProperties hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, [Flow(FlowDirection.In)] in HwndRenderTargetProperties hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -869,7 +869,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref RenderTargetProperties renderTargetProperties, ref HwndRenderTargetProperties hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, [Flow(FlowDirection.In)] in HwndRenderTargetProperties hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -887,7 +887,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -896,7 +896,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -908,7 +908,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, ref RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -920,7 +920,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, ref RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -935,7 +935,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref Silk.NET.DXGI.IDXGISurface dxgiSurface, RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref Silk.NET.DXGI.IDXGISurface dxgiSurface, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -947,7 +947,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref Silk.NET.DXGI.IDXGISurface dxgiSurface, RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref Silk.NET.DXGI.IDXGISurface dxgiSurface, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -962,7 +962,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref Silk.NET.DXGI.IDXGISurface dxgiSurface, ref RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref Silk.NET.DXGI.IDXGISurface dxgiSurface, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -977,7 +977,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref Silk.NET.DXGI.IDXGISurface dxgiSurface, ref RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref Silk.NET.DXGI.IDXGISurface dxgiSurface, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -995,7 +995,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDCRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, RenderTargetProperties* renderTargetProperties, ID2D1DCRenderTarget** dcRenderTarget)
+    public static unsafe int CreateDCRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1DCRenderTarget** dcRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1004,7 +1004,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDCRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, RenderTargetProperties* renderTargetProperties, ref ID2D1DCRenderTarget* dcRenderTarget)
+    public static unsafe int CreateDCRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ID2D1DCRenderTarget* dcRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1016,7 +1016,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDCRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref RenderTargetProperties renderTargetProperties, ID2D1DCRenderTarget** dcRenderTarget)
+    public static unsafe int CreateDCRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ID2D1DCRenderTarget** dcRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1028,7 +1028,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDCRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, ref RenderTargetProperties renderTargetProperties, ref ID2D1DCRenderTarget* dcRenderTarget)
+    public static unsafe int CreateDCRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ID2D1DCRenderTarget* dcRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1139,7 +1139,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1148,7 +1148,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1160,7 +1160,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1172,7 +1172,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1187,7 +1187,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1199,7 +1199,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1214,7 +1214,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1229,7 +1229,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1247,7 +1247,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, char* propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, [Flow(FlowDirection.In)] char* propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1256,7 +1256,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, char* propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, [Flow(FlowDirection.In)] char* propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1268,7 +1268,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, ref char propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, [Flow(FlowDirection.In)] in char propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1280,7 +1280,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, ref char propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, [Flow(FlowDirection.In)] in char propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1295,7 +1295,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1306,7 +1306,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1320,7 +1320,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, char* propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, [Flow(FlowDirection.In)] char* propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1332,7 +1332,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, char* propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, [Flow(FlowDirection.In)] char* propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1347,7 +1347,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, ref char propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, [Flow(FlowDirection.In)] in char propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1362,7 +1362,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, ref char propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, [Flow(FlowDirection.In)] in char propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1380,7 +1380,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1394,7 +1394,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, ref Guid classId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1637,7 +1637,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRectangleGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, Silk.NET.Maths.Box2D<float>* rectangle, ref ComPtr<TI0> rectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RectangleGeometry>, IComVtbl<TI0>
+    public static unsafe int CreateRectangleGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rectangle, ref ComPtr<TI0> rectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RectangleGeometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1645,31 +1645,31 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, Span<Silk.NET.Maths.Box2D<float>> rectangle, ID2D1RectangleGeometry** rectangleGeometry)
+    public static unsafe int CreateRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> rectangle, ID2D1RectangleGeometry** rectangleGeometry)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateRectangleGeometry(ref rectangle.GetPinnableReference(), rectangleGeometry);
+        return @this->CreateRectangleGeometry(in rectangle.GetPinnableReference(), rectangleGeometry);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateRectangleGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref Silk.NET.Maths.Box2D<float> rectangle, ref ComPtr<TI0> rectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RectangleGeometry>, IComVtbl<TI0>
+    public static int CreateRectangleGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rectangle, ref ComPtr<TI0> rectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RectangleGeometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateRectangleGeometry(ref rectangle, (ID2D1RectangleGeometry**) rectangleGeometry.GetAddressOf());
+        return @this->CreateRectangleGeometry(in rectangle, (ID2D1RectangleGeometry**) rectangleGeometry.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, Span<Silk.NET.Maths.Box2D<float>> rectangle, ref ID2D1RectangleGeometry* rectangleGeometry)
+    public static unsafe int CreateRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> rectangle, ref ID2D1RectangleGeometry* rectangleGeometry)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateRectangleGeometry(ref rectangle.GetPinnableReference(), ref rectangleGeometry);
+        return @this->CreateRectangleGeometry(in rectangle.GetPinnableReference(), ref rectangleGeometry);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRoundedRectangleGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, RoundedRect* roundedRectangle, ref ComPtr<TI0> roundedRectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RoundedRectangleGeometry>, IComVtbl<TI0>
+    public static unsafe int CreateRoundedRectangleGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] RoundedRect* roundedRectangle, ref ComPtr<TI0> roundedRectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RoundedRectangleGeometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1677,31 +1677,31 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRoundedRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, Span<RoundedRect> roundedRectangle, ID2D1RoundedRectangleGeometry** roundedRectangleGeometry)
+    public static unsafe int CreateRoundedRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RoundedRect> roundedRectangle, ID2D1RoundedRectangleGeometry** roundedRectangleGeometry)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateRoundedRectangleGeometry(ref roundedRectangle.GetPinnableReference(), roundedRectangleGeometry);
+        return @this->CreateRoundedRectangleGeometry(in roundedRectangle.GetPinnableReference(), roundedRectangleGeometry);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateRoundedRectangleGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref RoundedRect roundedRectangle, ref ComPtr<TI0> roundedRectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RoundedRectangleGeometry>, IComVtbl<TI0>
+    public static int CreateRoundedRectangleGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in RoundedRect roundedRectangle, ref ComPtr<TI0> roundedRectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RoundedRectangleGeometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateRoundedRectangleGeometry(ref roundedRectangle, (ID2D1RoundedRectangleGeometry**) roundedRectangleGeometry.GetAddressOf());
+        return @this->CreateRoundedRectangleGeometry(in roundedRectangle, (ID2D1RoundedRectangleGeometry**) roundedRectangleGeometry.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRoundedRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, Span<RoundedRect> roundedRectangle, ref ID2D1RoundedRectangleGeometry* roundedRectangleGeometry)
+    public static unsafe int CreateRoundedRectangleGeometry(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RoundedRect> roundedRectangle, ref ID2D1RoundedRectangleGeometry* roundedRectangleGeometry)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateRoundedRectangleGeometry(ref roundedRectangle.GetPinnableReference(), ref roundedRectangleGeometry);
+        return @this->CreateRoundedRectangleGeometry(in roundedRectangle.GetPinnableReference(), ref roundedRectangleGeometry);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateEllipseGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, Ellipse* ellipse, ref ComPtr<TI0> ellipseGeometry) where TI0 : unmanaged, IComVtbl<ID2D1EllipseGeometry>, IComVtbl<TI0>
+    public static unsafe int CreateEllipseGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] Ellipse* ellipse, ref ComPtr<TI0> ellipseGeometry) where TI0 : unmanaged, IComVtbl<ID2D1EllipseGeometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1709,27 +1709,27 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateEllipseGeometry(this ComPtr<ID2D1Factory1> thisVtbl, Span<Ellipse> ellipse, ID2D1EllipseGeometry** ellipseGeometry)
+    public static unsafe int CreateEllipseGeometry(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Ellipse> ellipse, ID2D1EllipseGeometry** ellipseGeometry)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateEllipseGeometry(ref ellipse.GetPinnableReference(), ellipseGeometry);
+        return @this->CreateEllipseGeometry(in ellipse.GetPinnableReference(), ellipseGeometry);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateEllipseGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref Ellipse ellipse, ref ComPtr<TI0> ellipseGeometry) where TI0 : unmanaged, IComVtbl<ID2D1EllipseGeometry>, IComVtbl<TI0>
+    public static int CreateEllipseGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in Ellipse ellipse, ref ComPtr<TI0> ellipseGeometry) where TI0 : unmanaged, IComVtbl<ID2D1EllipseGeometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateEllipseGeometry(ref ellipse, (ID2D1EllipseGeometry**) ellipseGeometry.GetAddressOf());
+        return @this->CreateEllipseGeometry(in ellipse, (ID2D1EllipseGeometry**) ellipseGeometry.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateEllipseGeometry(this ComPtr<ID2D1Factory1> thisVtbl, Span<Ellipse> ellipse, ref ID2D1EllipseGeometry* ellipseGeometry)
+    public static unsafe int CreateEllipseGeometry(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Ellipse> ellipse, ref ID2D1EllipseGeometry* ellipseGeometry)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateEllipseGeometry(ref ellipse.GetPinnableReference(), ref ellipseGeometry);
+        return @this->CreateEllipseGeometry(in ellipse.GetPinnableReference(), ref ellipseGeometry);
     }
 
     /// <summary>To be documented.</summary>
@@ -1757,7 +1757,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry<TI0, TI1>(this ComPtr<ID2D1Factory1> thisVtbl, ComPtr<TI0> sourceGeometry, Silk.NET.Maths.Matrix3X2<float>* transform, ref ComPtr<TI1> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI1>
+    public static unsafe int CreateTransformedGeometry<TI0, TI1>(this ComPtr<ID2D1Factory1> thisVtbl, ComPtr<TI0> sourceGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform, ref ComPtr<TI1> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1765,7 +1765,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ComPtr<TI0> sourceGeometry, Silk.NET.Maths.Matrix3X2<float>* transform, ref ID2D1TransformedGeometry* transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
+    public static unsafe int CreateTransformedGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ComPtr<TI0> sourceGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform, ref ID2D1TransformedGeometry* transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1773,39 +1773,39 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ID2D1Geometry* sourceGeometry, Span<Silk.NET.Maths.Matrix3X2<float>> transform, ID2D1TransformedGeometry** transformedGeometry)
+    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ID2D1Geometry* sourceGeometry, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transform, ID2D1TransformedGeometry** transformedGeometry)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateTransformedGeometry(sourceGeometry, ref transform.GetPinnableReference(), transformedGeometry);
+        return @this->CreateTransformedGeometry(sourceGeometry, in transform.GetPinnableReference(), transformedGeometry);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateTransformedGeometry<TI0, TI1>(this ComPtr<ID2D1Factory1> thisVtbl, ComPtr<TI0> sourceGeometry, ref Silk.NET.Maths.Matrix3X2<float> transform, ref ComPtr<TI1> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI1>
+    public static int CreateTransformedGeometry<TI0, TI1>(this ComPtr<ID2D1Factory1> thisVtbl, ComPtr<TI0> sourceGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform, ref ComPtr<TI1> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateTransformedGeometry((ID2D1Geometry*) sourceGeometry.Handle, ref transform, (ID2D1TransformedGeometry**) transformedGeometry.GetAddressOf());
+        return @this->CreateTransformedGeometry((ID2D1Geometry*) sourceGeometry.Handle, in transform, (ID2D1TransformedGeometry**) transformedGeometry.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ID2D1Geometry* sourceGeometry, Span<Silk.NET.Maths.Matrix3X2<float>> transform, ref ID2D1TransformedGeometry* transformedGeometry)
+    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, ID2D1Geometry* sourceGeometry, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transform, ref ID2D1TransformedGeometry* transformedGeometry)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateTransformedGeometry(sourceGeometry, ref transform.GetPinnableReference(), ref transformedGeometry);
+        return @this->CreateTransformedGeometry(sourceGeometry, in transform.GetPinnableReference(), ref transformedGeometry);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ComPtr<TI0> sourceGeometry, ref Silk.NET.Maths.Matrix3X2<float> transform, ref ID2D1TransformedGeometry* transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
+    public static unsafe int CreateTransformedGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ComPtr<TI0> sourceGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform, ref ID2D1TransformedGeometry* transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateTransformedGeometry((ID2D1Geometry*) sourceGeometry.Handle, ref transform, ref transformedGeometry);
+        return @this->CreateTransformedGeometry((ID2D1Geometry*) sourceGeometry.Handle, in transform, ref transformedGeometry);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, Span<ID2D1Geometry> sourceGeometry, Silk.NET.Maths.Matrix3X2<float>* transform, ID2D1TransformedGeometry** transformedGeometry)
+    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, Span<ID2D1Geometry> sourceGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform, ID2D1TransformedGeometry** transformedGeometry)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1813,7 +1813,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref ID2D1Geometry sourceGeometry, Silk.NET.Maths.Matrix3X2<float>* transform, ref ComPtr<TI0> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI0>
+    public static unsafe int CreateTransformedGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref ID2D1Geometry sourceGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform, ref ComPtr<TI0> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1821,7 +1821,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, Span<ID2D1Geometry> sourceGeometry, Silk.NET.Maths.Matrix3X2<float>* transform, ref ID2D1TransformedGeometry* transformedGeometry)
+    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, Span<ID2D1Geometry> sourceGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform, ref ID2D1TransformedGeometry* transformedGeometry)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1829,27 +1829,27 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, Span<ID2D1Geometry> sourceGeometry, Span<Silk.NET.Maths.Matrix3X2<float>> transform, ID2D1TransformedGeometry** transformedGeometry)
+    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, Span<ID2D1Geometry> sourceGeometry, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transform, ID2D1TransformedGeometry** transformedGeometry)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateTransformedGeometry(ref sourceGeometry.GetPinnableReference(), ref transform.GetPinnableReference(), transformedGeometry);
+        return @this->CreateTransformedGeometry(ref sourceGeometry.GetPinnableReference(), in transform.GetPinnableReference(), transformedGeometry);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateTransformedGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref ID2D1Geometry sourceGeometry, ref Silk.NET.Maths.Matrix3X2<float> transform, ref ComPtr<TI0> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI0>
+    public static int CreateTransformedGeometry<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref ID2D1Geometry sourceGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform, ref ComPtr<TI0> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateTransformedGeometry(ref sourceGeometry, ref transform, (ID2D1TransformedGeometry**) transformedGeometry.GetAddressOf());
+        return @this->CreateTransformedGeometry(ref sourceGeometry, in transform, (ID2D1TransformedGeometry**) transformedGeometry.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, Span<ID2D1Geometry> sourceGeometry, Span<Silk.NET.Maths.Matrix3X2<float>> transform, ref ID2D1TransformedGeometry* transformedGeometry)
+    public static unsafe int CreateTransformedGeometry(this ComPtr<ID2D1Factory1> thisVtbl, Span<ID2D1Geometry> sourceGeometry, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transform, ref ID2D1TransformedGeometry* transformedGeometry)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateTransformedGeometry(ref sourceGeometry.GetPinnableReference(), ref transform.GetPinnableReference(), ref transformedGeometry);
+        return @this->CreateTransformedGeometry(ref sourceGeometry.GetPinnableReference(), in transform.GetPinnableReference(), ref transformedGeometry);
     }
 
     /// <summary>To be documented.</summary>
@@ -1861,7 +1861,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, StrokeStyleProperties* strokeStyleProperties, float* dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static unsafe int CreateStrokeStyle<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1869,79 +1869,79 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, StrokeStyleProperties* strokeStyleProperties, Span<float> dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(FlowDirection.In)] ReadOnlySpan<float> dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateStrokeStyle(strokeStyleProperties, ref dashes.GetPinnableReference(), dashesCount, strokeStyle);
+        return @this->CreateStrokeStyle(strokeStyleProperties, in dashes.GetPinnableReference(), dashesCount, strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, StrokeStyleProperties* strokeStyleProperties, ref float dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static unsafe int CreateStrokeStyle<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateStrokeStyle(strokeStyleProperties, ref dashes, dashesCount, (ID2D1StrokeStyle**) strokeStyle.GetAddressOf());
+        return @this->CreateStrokeStyle(strokeStyleProperties, in dashes, dashesCount, (ID2D1StrokeStyle**) strokeStyle.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, StrokeStyleProperties* strokeStyleProperties, Span<float> dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(FlowDirection.In)] ReadOnlySpan<float> dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateStrokeStyle(strokeStyleProperties, ref dashes.GetPinnableReference(), dashesCount, ref strokeStyle);
+        return @this->CreateStrokeStyle(strokeStyleProperties, in dashes.GetPinnableReference(), dashesCount, ref strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, Span<StrokeStyleProperties> strokeStyleProperties, float* dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<StrokeStyleProperties> strokeStyleProperties, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateStrokeStyle(ref strokeStyleProperties.GetPinnableReference(), dashes, dashesCount, strokeStyle);
+        return @this->CreateStrokeStyle(in strokeStyleProperties.GetPinnableReference(), dashes, dashesCount, strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref StrokeStyleProperties strokeStyleProperties, float* dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static unsafe int CreateStrokeStyle<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in StrokeStyleProperties strokeStyleProperties, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateStrokeStyle(ref strokeStyleProperties, dashes, dashesCount, (ID2D1StrokeStyle**) strokeStyle.GetAddressOf());
+        return @this->CreateStrokeStyle(in strokeStyleProperties, dashes, dashesCount, (ID2D1StrokeStyle**) strokeStyle.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, Span<StrokeStyleProperties> strokeStyleProperties, float* dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<StrokeStyleProperties> strokeStyleProperties, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateStrokeStyle(ref strokeStyleProperties.GetPinnableReference(), dashes, dashesCount, ref strokeStyle);
+        return @this->CreateStrokeStyle(in strokeStyleProperties.GetPinnableReference(), dashes, dashesCount, ref strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, Span<StrokeStyleProperties> strokeStyleProperties, Span<float> dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<StrokeStyleProperties> strokeStyleProperties, [Flow(FlowDirection.In)] ReadOnlySpan<float> dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateStrokeStyle(ref strokeStyleProperties.GetPinnableReference(), ref dashes.GetPinnableReference(), dashesCount, strokeStyle);
+        return @this->CreateStrokeStyle(in strokeStyleProperties.GetPinnableReference(), in dashes.GetPinnableReference(), dashesCount, strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateStrokeStyle<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref StrokeStyleProperties strokeStyleProperties, ref float dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static int CreateStrokeStyle<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in StrokeStyleProperties strokeStyleProperties, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateStrokeStyle(ref strokeStyleProperties, ref dashes, dashesCount, (ID2D1StrokeStyle**) strokeStyle.GetAddressOf());
+        return @this->CreateStrokeStyle(in strokeStyleProperties, in dashes, dashesCount, (ID2D1StrokeStyle**) strokeStyle.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, Span<StrokeStyleProperties> strokeStyleProperties, Span<float> dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
+    public static unsafe int CreateStrokeStyle(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<StrokeStyleProperties> strokeStyleProperties, [Flow(FlowDirection.In)] ReadOnlySpan<float> dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateStrokeStyle(ref strokeStyleProperties.GetPinnableReference(), ref dashes.GetPinnableReference(), dashesCount, ref strokeStyle);
+        return @this->CreateStrokeStyle(in strokeStyleProperties.GetPinnableReference(), in dashes.GetPinnableReference(), dashesCount, ref strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, DrawingStateDescription* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
+    public static unsafe int CreateDrawingStateBlock<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] DrawingStateDescription* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1949,7 +1949,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, DrawingStateDescription* drawingStateDescription, Span<IDWriteRenderingParams> textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] DrawingStateDescription* drawingStateDescription, Span<IDWriteRenderingParams> textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1957,7 +1957,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, DrawingStateDescription* drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
+    public static unsafe int CreateDrawingStateBlock<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] DrawingStateDescription* drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1965,7 +1965,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, DrawingStateDescription* drawingStateDescription, Span<IDWriteRenderingParams> textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] DrawingStateDescription* drawingStateDescription, Span<IDWriteRenderingParams> textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1973,55 +1973,55 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, Span<DrawingStateDescription> drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DrawingStateDescription> drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateDrawingStateBlock(ref drawingStateDescription.GetPinnableReference(), textRenderingParams, drawingStateBlock);
+        return @this->CreateDrawingStateBlock(in drawingStateDescription.GetPinnableReference(), textRenderingParams, drawingStateBlock);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
+    public static unsafe int CreateDrawingStateBlock<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateDrawingStateBlock(ref drawingStateDescription, textRenderingParams, (ID2D1DrawingStateBlock**) drawingStateBlock.GetAddressOf());
+        return @this->CreateDrawingStateBlock(in drawingStateDescription, textRenderingParams, (ID2D1DrawingStateBlock**) drawingStateBlock.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, Span<DrawingStateDescription> drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DrawingStateDescription> drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateDrawingStateBlock(ref drawingStateDescription.GetPinnableReference(), textRenderingParams, ref drawingStateBlock);
+        return @this->CreateDrawingStateBlock(in drawingStateDescription.GetPinnableReference(), textRenderingParams, ref drawingStateBlock);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, Span<DrawingStateDescription> drawingStateDescription, Span<IDWriteRenderingParams> textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DrawingStateDescription> drawingStateDescription, Span<IDWriteRenderingParams> textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateDrawingStateBlock(ref drawingStateDescription.GetPinnableReference(), ref textRenderingParams.GetPinnableReference(), drawingStateBlock);
+        return @this->CreateDrawingStateBlock(in drawingStateDescription.GetPinnableReference(), ref textRenderingParams.GetPinnableReference(), drawingStateBlock);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDrawingStateBlock<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref DrawingStateDescription drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
+    public static int CreateDrawingStateBlock<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in DrawingStateDescription drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateDrawingStateBlock(ref drawingStateDescription, ref textRenderingParams, (ID2D1DrawingStateBlock**) drawingStateBlock.GetAddressOf());
+        return @this->CreateDrawingStateBlock(in drawingStateDescription, ref textRenderingParams, (ID2D1DrawingStateBlock**) drawingStateBlock.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, Span<DrawingStateDescription> drawingStateDescription, Span<IDWriteRenderingParams> textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
+    public static unsafe int CreateDrawingStateBlock(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DrawingStateDescription> drawingStateDescription, Span<IDWriteRenderingParams> textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateDrawingStateBlock(ref drawingStateDescription.GetPinnableReference(), ref textRenderingParams.GetPinnableReference(), ref drawingStateBlock);
+        return @this->CreateDrawingStateBlock(in drawingStateDescription.GetPinnableReference(), ref textRenderingParams.GetPinnableReference(), ref drawingStateBlock);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, IWICBitmap* target, RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateWicBitmapRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, IWICBitmap* target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2029,31 +2029,31 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, IWICBitmap* target, Span<RenderTargetProperties> renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, IWICBitmap* target, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateWicBitmapRenderTarget(target, ref renderTargetProperties.GetPinnableReference(), renderTarget);
+        return @this->CreateWicBitmapRenderTarget(target, in renderTargetProperties.GetPinnableReference(), renderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, IWICBitmap* target, ref RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateWicBitmapRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, IWICBitmap* target, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateWicBitmapRenderTarget(target, ref renderTargetProperties, (ID2D1RenderTarget**) renderTarget.GetAddressOf());
+        return @this->CreateWicBitmapRenderTarget(target, in renderTargetProperties, (ID2D1RenderTarget**) renderTarget.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, IWICBitmap* target, Span<RenderTargetProperties> renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, IWICBitmap* target, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateWicBitmapRenderTarget(target, ref renderTargetProperties.GetPinnableReference(), ref renderTarget);
+        return @this->CreateWicBitmapRenderTarget(target, in renderTargetProperties.GetPinnableReference(), ref renderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<IWICBitmap> target, RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<IWICBitmap> target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2061,7 +2061,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref IWICBitmap target, RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateWicBitmapRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref IWICBitmap target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2069,7 +2069,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<IWICBitmap> target, RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<IWICBitmap> target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2077,31 +2077,31 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<IWICBitmap> target, Span<RenderTargetProperties> renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<IWICBitmap> target, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateWicBitmapRenderTarget(ref target.GetPinnableReference(), ref renderTargetProperties.GetPinnableReference(), renderTarget);
+        return @this->CreateWicBitmapRenderTarget(ref target.GetPinnableReference(), in renderTargetProperties.GetPinnableReference(), renderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateWicBitmapRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref IWICBitmap target, ref RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+    public static int CreateWicBitmapRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref IWICBitmap target, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateWicBitmapRenderTarget(ref target, ref renderTargetProperties, (ID2D1RenderTarget**) renderTarget.GetAddressOf());
+        return @this->CreateWicBitmapRenderTarget(ref target, in renderTargetProperties, (ID2D1RenderTarget**) renderTarget.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<IWICBitmap> target, Span<RenderTargetProperties> renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+    public static unsafe int CreateWicBitmapRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<IWICBitmap> target, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateWicBitmapRenderTarget(ref target.GetPinnableReference(), ref renderTargetProperties.GetPinnableReference(), ref renderTarget);
+        return @this->CreateWicBitmapRenderTarget(ref target.GetPinnableReference(), in renderTargetProperties.GetPinnableReference(), ref renderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, RenderTargetProperties* renderTargetProperties, HwndRenderTargetProperties* hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2109,79 +2109,79 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, RenderTargetProperties* renderTargetProperties, Span<HwndRenderTargetProperties> hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] ReadOnlySpan<HwndRenderTargetProperties> hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateHwndRenderTarget(renderTargetProperties, ref hwndRenderTargetProperties.GetPinnableReference(), hwndRenderTarget);
+        return @this->CreateHwndRenderTarget(renderTargetProperties, in hwndRenderTargetProperties.GetPinnableReference(), hwndRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, RenderTargetProperties* renderTargetProperties, ref HwndRenderTargetProperties hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] in HwndRenderTargetProperties hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateHwndRenderTarget(renderTargetProperties, ref hwndRenderTargetProperties, (ID2D1HwndRenderTarget**) hwndRenderTarget.GetAddressOf());
+        return @this->CreateHwndRenderTarget(renderTargetProperties, in hwndRenderTargetProperties, (ID2D1HwndRenderTarget**) hwndRenderTarget.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, RenderTargetProperties* renderTargetProperties, Span<HwndRenderTargetProperties> hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] ReadOnlySpan<HwndRenderTargetProperties> hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateHwndRenderTarget(renderTargetProperties, ref hwndRenderTargetProperties.GetPinnableReference(), ref hwndRenderTarget);
+        return @this->CreateHwndRenderTarget(renderTargetProperties, in hwndRenderTargetProperties.GetPinnableReference(), ref hwndRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<RenderTargetProperties> renderTargetProperties, HwndRenderTargetProperties* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateHwndRenderTarget(ref renderTargetProperties.GetPinnableReference(), hwndRenderTargetProperties, hwndRenderTarget);
+        return @this->CreateHwndRenderTarget(in renderTargetProperties.GetPinnableReference(), hwndRenderTargetProperties, hwndRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref RenderTargetProperties renderTargetProperties, HwndRenderTargetProperties* hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateHwndRenderTarget(ref renderTargetProperties, hwndRenderTargetProperties, (ID2D1HwndRenderTarget**) hwndRenderTarget.GetAddressOf());
+        return @this->CreateHwndRenderTarget(in renderTargetProperties, hwndRenderTargetProperties, (ID2D1HwndRenderTarget**) hwndRenderTarget.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<RenderTargetProperties> renderTargetProperties, HwndRenderTargetProperties* hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateHwndRenderTarget(ref renderTargetProperties.GetPinnableReference(), hwndRenderTargetProperties, ref hwndRenderTarget);
+        return @this->CreateHwndRenderTarget(in renderTargetProperties.GetPinnableReference(), hwndRenderTargetProperties, ref hwndRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<RenderTargetProperties> renderTargetProperties, Span<HwndRenderTargetProperties> hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties, [Flow(FlowDirection.In)] ReadOnlySpan<HwndRenderTargetProperties> hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateHwndRenderTarget(ref renderTargetProperties.GetPinnableReference(), ref hwndRenderTargetProperties.GetPinnableReference(), hwndRenderTarget);
+        return @this->CreateHwndRenderTarget(in renderTargetProperties.GetPinnableReference(), in hwndRenderTargetProperties.GetPinnableReference(), hwndRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref RenderTargetProperties renderTargetProperties, ref HwndRenderTargetProperties hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
+    public static int CreateHwndRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, [Flow(FlowDirection.In)] in HwndRenderTargetProperties hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateHwndRenderTarget(ref renderTargetProperties, ref hwndRenderTargetProperties, (ID2D1HwndRenderTarget**) hwndRenderTarget.GetAddressOf());
+        return @this->CreateHwndRenderTarget(in renderTargetProperties, in hwndRenderTargetProperties, (ID2D1HwndRenderTarget**) hwndRenderTarget.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<RenderTargetProperties> renderTargetProperties, Span<HwndRenderTargetProperties> hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
+    public static unsafe int CreateHwndRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties, [Flow(FlowDirection.In)] ReadOnlySpan<HwndRenderTargetProperties> hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateHwndRenderTarget(ref renderTargetProperties.GetPinnableReference(), ref hwndRenderTargetProperties.GetPinnableReference(), ref hwndRenderTarget);
+        return @this->CreateHwndRenderTarget(in renderTargetProperties.GetPinnableReference(), in hwndRenderTargetProperties.GetPinnableReference(), ref hwndRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateDxgiSurfaceRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2189,31 +2189,31 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, Span<RenderTargetProperties> renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateDxgiSurfaceRenderTarget(dxgiSurface, ref renderTargetProperties.GetPinnableReference(), renderTarget);
+        return @this->CreateDxgiSurfaceRenderTarget(dxgiSurface, in renderTargetProperties.GetPinnableReference(), renderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, ref RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateDxgiSurfaceRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateDxgiSurfaceRenderTarget(dxgiSurface, ref renderTargetProperties, (ID2D1RenderTarget**) renderTarget.GetAddressOf());
+        return @this->CreateDxgiSurfaceRenderTarget(dxgiSurface, in renderTargetProperties, (ID2D1RenderTarget**) renderTarget.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, Span<RenderTargetProperties> renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateDxgiSurfaceRenderTarget(dxgiSurface, ref renderTargetProperties.GetPinnableReference(), ref renderTarget);
+        return @this->CreateDxgiSurfaceRenderTarget(dxgiSurface, in renderTargetProperties.GetPinnableReference(), ref renderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<Silk.NET.DXGI.IDXGISurface> dxgiSurface, RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<Silk.NET.DXGI.IDXGISurface> dxgiSurface, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2221,7 +2221,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref Silk.NET.DXGI.IDXGISurface dxgiSurface, RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateDxgiSurfaceRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref Silk.NET.DXGI.IDXGISurface dxgiSurface, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2229,7 +2229,7 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<Silk.NET.DXGI.IDXGISurface> dxgiSurface, RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<Silk.NET.DXGI.IDXGISurface> dxgiSurface, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2237,31 +2237,31 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<Silk.NET.DXGI.IDXGISurface> dxgiSurface, Span<RenderTargetProperties> renderTargetProperties, ID2D1RenderTarget** renderTarget)
+    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<Silk.NET.DXGI.IDXGISurface> dxgiSurface, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties, ID2D1RenderTarget** renderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateDxgiSurfaceRenderTarget(ref dxgiSurface.GetPinnableReference(), ref renderTargetProperties.GetPinnableReference(), renderTarget);
+        return @this->CreateDxgiSurfaceRenderTarget(ref dxgiSurface.GetPinnableReference(), in renderTargetProperties.GetPinnableReference(), renderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDxgiSurfaceRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref Silk.NET.DXGI.IDXGISurface dxgiSurface, ref RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+    public static int CreateDxgiSurfaceRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref Silk.NET.DXGI.IDXGISurface dxgiSurface, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateDxgiSurfaceRenderTarget(ref dxgiSurface, ref renderTargetProperties, (ID2D1RenderTarget**) renderTarget.GetAddressOf());
+        return @this->CreateDxgiSurfaceRenderTarget(ref dxgiSurface, in renderTargetProperties, (ID2D1RenderTarget**) renderTarget.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<Silk.NET.DXGI.IDXGISurface> dxgiSurface, Span<RenderTargetProperties> renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+    public static unsafe int CreateDxgiSurfaceRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<Silk.NET.DXGI.IDXGISurface> dxgiSurface, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateDxgiSurfaceRenderTarget(ref dxgiSurface.GetPinnableReference(), ref renderTargetProperties.GetPinnableReference(), ref renderTarget);
+        return @this->CreateDxgiSurfaceRenderTarget(ref dxgiSurface.GetPinnableReference(), in renderTargetProperties.GetPinnableReference(), ref renderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDCRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> dcRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1DCRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateDCRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> dcRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1DCRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2269,27 +2269,27 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDCRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<RenderTargetProperties> renderTargetProperties, ID2D1DCRenderTarget** dcRenderTarget)
+    public static unsafe int CreateDCRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties, ID2D1DCRenderTarget** dcRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateDCRenderTarget(ref renderTargetProperties.GetPinnableReference(), dcRenderTarget);
+        return @this->CreateDCRenderTarget(in renderTargetProperties.GetPinnableReference(), dcRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateDCRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, ref RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> dcRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1DCRenderTarget>, IComVtbl<TI0>
+    public static int CreateDCRenderTarget<TI0>(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> dcRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1DCRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateDCRenderTarget(ref renderTargetProperties, (ID2D1DCRenderTarget**) dcRenderTarget.GetAddressOf());
+        return @this->CreateDCRenderTarget(in renderTargetProperties, (ID2D1DCRenderTarget**) dcRenderTarget.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateDCRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, Span<RenderTargetProperties> renderTargetProperties, ref ID2D1DCRenderTarget* dcRenderTarget)
+    public static unsafe int CreateDCRenderTarget(this ComPtr<ID2D1Factory1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties, ref ID2D1DCRenderTarget* dcRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateDCRenderTarget(ref renderTargetProperties.GetPinnableReference(), ref dcRenderTarget);
+        return @this->CreateDCRenderTarget(in renderTargetProperties.GetPinnableReference(), ref dcRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
@@ -2357,15 +2357,15 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, Span<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterEffectFromStream(classId, propertyXml, ref bindings.GetPinnableReference(), bindingsCount, effectFactory);
+        return @this->RegisterEffectFromStream(classId, propertyXml, in bindings.GetPinnableReference(), bindingsCount, effectFactory);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, Span<Silk.NET.Core.Win32Extras.IStream> propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, Span<Silk.NET.Core.Win32Extras.IStream> propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2373,15 +2373,15 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, Span<Silk.NET.Core.Win32Extras.IStream> propertyXml, Span<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, Span<Silk.NET.Core.Win32Extras.IStream> propertyXml, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterEffectFromStream(classId, ref propertyXml.GetPinnableReference(), ref bindings.GetPinnableReference(), bindingsCount, effectFactory);
+        return @this->RegisterEffectFromStream(classId, ref propertyXml.GetPinnableReference(), in bindings.GetPinnableReference(), bindingsCount, effectFactory);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2389,15 +2389,15 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, Span<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterEffectFromStream(ref classId.GetPinnableReference(), propertyXml, ref bindings.GetPinnableReference(), bindingsCount, effectFactory);
+        return @this->RegisterEffectFromStream(ref classId.GetPinnableReference(), propertyXml, in bindings.GetPinnableReference(), bindingsCount, effectFactory);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, Span<Silk.NET.Core.Win32Extras.IStream> propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, Span<Silk.NET.Core.Win32Extras.IStream> propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2405,47 +2405,47 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, Span<Silk.NET.Core.Win32Extras.IStream> propertyXml, Span<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static int RegisterEffectFromStream(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, Span<Silk.NET.Core.Win32Extras.IStream> propertyXml, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterEffectFromStream(ref classId.GetPinnableReference(), ref propertyXml.GetPinnableReference(), ref bindings.GetPinnableReference(), bindingsCount, effectFactory);
+        return @this->RegisterEffectFromStream(ref classId.GetPinnableReference(), ref propertyXml.GetPinnableReference(), in bindings.GetPinnableReference(), bindingsCount, effectFactory);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, char* propertyXml, Span<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, [Flow(FlowDirection.In)] char* propertyXml, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterEffectFromString(classId, propertyXml, ref bindings.GetPinnableReference(), bindingsCount, effectFactory);
+        return @this->RegisterEffectFromString(classId, propertyXml, in bindings.GetPinnableReference(), bindingsCount, effectFactory);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, Span<char> propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, [Flow(FlowDirection.In)] ReadOnlySpan<char> propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterEffectFromString(classId, ref propertyXml.GetPinnableReference(), bindings, bindingsCount, effectFactory);
+        return @this->RegisterEffectFromString(classId, in propertyXml.GetPinnableReference(), bindings, bindingsCount, effectFactory);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, Span<char> propertyXml, Span<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, [Flow(FlowDirection.In)] ReadOnlySpan<char> propertyXml, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterEffectFromString(classId, ref propertyXml.GetPinnableReference(), ref bindings.GetPinnableReference(), bindingsCount, effectFactory);
+        return @this->RegisterEffectFromString(classId, in propertyXml.GetPinnableReference(), in bindings.GetPinnableReference(), bindingsCount, effectFactory);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, Span<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Guid* classId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterEffectFromString(classId, propertyXml, ref bindings.GetPinnableReference(), bindingsCount, effectFactory);
+        return @this->RegisterEffectFromString(classId, propertyXml, in bindings.GetPinnableReference(), bindingsCount, effectFactory);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, char* propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, [Flow(FlowDirection.In)] char* propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2453,31 +2453,31 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, char* propertyXml, Span<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, [Flow(FlowDirection.In)] char* propertyXml, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterEffectFromString(ref classId.GetPinnableReference(), propertyXml, ref bindings.GetPinnableReference(), bindingsCount, effectFactory);
+        return @this->RegisterEffectFromString(ref classId.GetPinnableReference(), propertyXml, in bindings.GetPinnableReference(), bindingsCount, effectFactory);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, Span<char> propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, [Flow(FlowDirection.In)] ReadOnlySpan<char> propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterEffectFromString(ref classId.GetPinnableReference(), ref propertyXml.GetPinnableReference(), bindings, bindingsCount, effectFactory);
+        return @this->RegisterEffectFromString(ref classId.GetPinnableReference(), in propertyXml.GetPinnableReference(), bindings, bindingsCount, effectFactory);
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, Span<char> propertyXml, Span<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, [Flow(FlowDirection.In)] ReadOnlySpan<char> propertyXml, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterEffectFromString(ref classId.GetPinnableReference(), ref propertyXml.GetPinnableReference(), ref bindings.GetPinnableReference(), bindingsCount, effectFactory);
+        return @this->RegisterEffectFromString(ref classId.GetPinnableReference(), in propertyXml.GetPinnableReference(), in bindings.GetPinnableReference(), bindingsCount, effectFactory);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static unsafe int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2485,11 +2485,11 @@ public unsafe static class D2D1Factory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, Span<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+    public static int RegisterEffectFromString(this ComPtr<ID2D1Factory1> thisVtbl, Span<Guid> classId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, [Flow(FlowDirection.In)] ReadOnlySpan<PropertyBinding> bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RegisterEffectFromString(ref classId.GetPinnableReference(), propertyXml, ref bindings.GetPinnableReference(), bindingsCount, effectFactory);
+        return @this->RegisterEffectFromString(ref classId.GetPinnableReference(), propertyXml, in bindings.GetPinnableReference(), bindingsCount, effectFactory);
     }
 
     /// <summary>To be documented.</summary>

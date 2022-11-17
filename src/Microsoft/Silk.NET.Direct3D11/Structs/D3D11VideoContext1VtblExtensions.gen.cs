@@ -210,7 +210,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D11VideoContext1> thisVtbl, Guid* guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D11VideoContext1> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -219,7 +219,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -231,7 +231,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D11VideoContext1> thisVtbl, ref Guid guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D11VideoContext1> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -243,7 +243,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -435,7 +435,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderBeginFrame(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, void* pContentKey)
+    public static unsafe int DecoderBeginFrame(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -444,7 +444,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, ref T0 pContentKey) where T0 : unmanaged
+    public static unsafe int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -456,7 +456,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderBeginFrame(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, void* pContentKey)
+    public static unsafe int DecoderBeginFrame(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -468,7 +468,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, ref T0 pContentKey) where T0 : unmanaged
+    public static unsafe int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -483,7 +483,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderBeginFrame(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, void* pContentKey)
+    public static unsafe int DecoderBeginFrame(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -495,7 +495,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, ref T0 pContentKey) where T0 : unmanaged
+    public static unsafe int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -510,7 +510,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderBeginFrame(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, void* pContentKey)
+    public static unsafe int DecoderBeginFrame(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -525,7 +525,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, ref T0 pContentKey) where T0 : unmanaged
+    public static int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -564,7 +564,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SubmitDecoderBuffers(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, uint NumBuffers, VideoDecoderBufferDesc* pBufferDesc)
+    public static unsafe int SubmitDecoderBuffers(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] VideoDecoderBufferDesc* pBufferDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -573,7 +573,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SubmitDecoderBuffers(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, uint NumBuffers, ref VideoDecoderBufferDesc pBufferDesc)
+    public static unsafe int SubmitDecoderBuffers(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] in VideoDecoderBufferDesc pBufferDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -585,7 +585,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SubmitDecoderBuffers(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, uint NumBuffers, VideoDecoderBufferDesc* pBufferDesc)
+    public static unsafe int SubmitDecoderBuffers(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] VideoDecoderBufferDesc* pBufferDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -597,7 +597,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SubmitDecoderBuffers(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, uint NumBuffers, ref VideoDecoderBufferDesc pBufferDesc)
+    public static int SubmitDecoderBuffers(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] in VideoDecoderBufferDesc pBufferDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -612,7 +612,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, VideoDecoderExtension* pExtensionData)
+    public static unsafe int DecoderExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, [Flow(FlowDirection.In)] VideoDecoderExtension* pExtensionData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -621,7 +621,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, ref VideoDecoderExtension pExtensionData)
+    public static unsafe int DecoderExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, [Flow(FlowDirection.In)] in VideoDecoderExtension pExtensionData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -633,7 +633,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, VideoDecoderExtension* pExtensionData)
+    public static unsafe int DecoderExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, [Flow(FlowDirection.In)] VideoDecoderExtension* pExtensionData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -645,7 +645,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ref VideoDecoderExtension pExtensionData)
+    public static int DecoderExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, [Flow(FlowDirection.In)] in VideoDecoderExtension pExtensionData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -660,14 +660,14 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessor, Enable, pRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
+    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
@@ -677,7 +677,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -687,7 +687,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
+    public static void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, int Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -700,14 +700,14 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int YCbCr, VideoColor* pColor)
+    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int YCbCr, [Flow(FlowDirection.In)] VideoColor* pColor)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, int, VideoColor*, void>)@this->LpVtbl[14])(@this, pVideoProcessor, YCbCr, pColor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int YCbCr, ref VideoColor pColor)
+    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int YCbCr, [Flow(FlowDirection.In)] in VideoColor pColor)
     {
         var @this = thisVtbl.Handle;
         fixed (VideoColor* pColorPtr = &pColor)
@@ -717,7 +717,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, int YCbCr, VideoColor* pColor)
+    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, int YCbCr, [Flow(FlowDirection.In)] VideoColor* pColor)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -727,7 +727,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, int YCbCr, ref VideoColor pColor)
+    public static void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, int YCbCr, [Flow(FlowDirection.In)] in VideoColor pColor)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -740,14 +740,14 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, VideoProcessorColorSpace* pColorSpace)
+    public static unsafe void VideoProcessorSetOutputColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessorColorSpace* pColorSpace)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)@this->LpVtbl[15])(@this, pVideoProcessor, pColorSpace);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ref VideoProcessorColorSpace pColorSpace)
+    public static unsafe void VideoProcessorSetOutputColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] in VideoProcessorColorSpace pColorSpace)
     {
         var @this = thisVtbl.Handle;
         fixed (VideoProcessorColorSpace* pColorSpacePtr = &pColorSpace)
@@ -757,7 +757,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, VideoProcessorColorSpace* pColorSpace)
+    public static unsafe void VideoProcessorSetOutputColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessorColorSpace* pColorSpace)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -767,7 +767,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ref VideoProcessorColorSpace pColorSpace)
+    public static void VideoProcessorSetOutputColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] in VideoProcessorColorSpace pColorSpace)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -831,7 +831,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Guid* pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorSetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -840,7 +840,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -852,7 +852,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorSetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -864,7 +864,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -879,7 +879,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Guid* pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorSetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -891,7 +891,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -906,7 +906,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorSetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -921,7 +921,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1387,7 +1387,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Guid* pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorGetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1396,7 +1396,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1408,7 +1408,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorGetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1420,7 +1420,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1435,7 +1435,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Guid* pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorGetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1447,7 +1447,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1462,7 +1462,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorGetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1477,7 +1477,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1512,14 +1512,14 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorColorSpace* pColorSpace)
+    public static unsafe void VideoProcessorSetStreamColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] VideoProcessorColorSpace* pColorSpace)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)@this->LpVtbl[28])(@this, pVideoProcessor, StreamIndex, pColorSpace);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref VideoProcessorColorSpace pColorSpace)
+    public static unsafe void VideoProcessorSetStreamColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in VideoProcessorColorSpace pColorSpace)
     {
         var @this = thisVtbl.Handle;
         fixed (VideoProcessorColorSpace* pColorSpacePtr = &pColorSpace)
@@ -1529,7 +1529,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, VideoProcessorColorSpace* pColorSpace)
+    public static unsafe void VideoProcessorSetStreamColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] VideoProcessorColorSpace* pColorSpace)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1539,7 +1539,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref VideoProcessorColorSpace pColorSpace)
+    public static void VideoProcessorSetStreamColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in VideoProcessorColorSpace pColorSpace)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1552,14 +1552,14 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, Silk.NET.DXGI.Rational* pCustomRate)
+    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pCustomRate)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, int, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[29])(@this, pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, pCustomRate);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, ref Silk.NET.DXGI.Rational pCustomRate)
+    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pCustomRate)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.DXGI.Rational* pCustomRatePtr = &pCustomRate)
@@ -1569,7 +1569,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, Silk.NET.DXGI.Rational* pCustomRate)
+    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pCustomRate)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1579,7 +1579,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, ref Silk.NET.DXGI.Rational pCustomRate)
+    public static void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pCustomRate)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1592,14 +1592,14 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
+    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
@@ -1609,7 +1609,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1619,7 +1619,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
+    public static void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1632,14 +1632,14 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
+    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
@@ -1649,7 +1649,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1659,7 +1659,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
+    public static void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1689,14 +1689,14 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPalette(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, uint Count, uint* pEntries)
+    public static unsafe void VideoProcessorSetStreamPalette(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, uint Count, [Flow(FlowDirection.In)] uint* pEntries)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, uint, uint*, void>)@this->LpVtbl[33])(@this, pVideoProcessor, StreamIndex, Count, pEntries);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPalette(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, uint Count, ref uint pEntries)
+    public static unsafe void VideoProcessorSetStreamPalette(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, uint Count, [Flow(FlowDirection.In)] in uint pEntries)
     {
         var @this = thisVtbl.Handle;
         fixed (uint* pEntriesPtr = &pEntries)
@@ -1706,7 +1706,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPalette(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, uint Count, uint* pEntries)
+    public static unsafe void VideoProcessorSetStreamPalette(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, uint Count, [Flow(FlowDirection.In)] uint* pEntries)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1716,7 +1716,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamPalette(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, uint Count, ref uint pEntries)
+    public static void VideoProcessorSetStreamPalette(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, uint Count, [Flow(FlowDirection.In)] in uint pEntries)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1729,14 +1729,14 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.DXGI.Rational* pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatio);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.DXGI.Rational* pSourceAspectRatio, ref Silk.NET.DXGI.Rational pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.DXGI.Rational* pDestinationAspectRatioPtr = &pDestinationAspectRatio)
@@ -1746,7 +1746,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.DXGI.Rational pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.DXGI.Rational* pSourceAspectRatioPtr = &pSourceAspectRatio)
@@ -1756,7 +1756,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.DXGI.Rational pSourceAspectRatio, ref Silk.NET.DXGI.Rational pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.DXGI.Rational* pSourceAspectRatioPtr = &pSourceAspectRatio)
@@ -1769,7 +1769,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.DXGI.Rational* pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1779,7 +1779,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.DXGI.Rational* pSourceAspectRatio, ref Silk.NET.DXGI.Rational pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1792,7 +1792,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.DXGI.Rational pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1805,7 +1805,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.DXGI.Rational pSourceAspectRatio, ref Silk.NET.DXGI.Rational pDestinationAspectRatio)
+    public static void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1889,7 +1889,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorSetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1898,7 +1898,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1910,7 +1910,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorSetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1922,7 +1922,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1937,7 +1937,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorSetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1949,7 +1949,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1964,7 +1964,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorSetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1979,7 +1979,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5389,7 +5389,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorGetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5398,7 +5398,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5410,7 +5410,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorGetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5422,7 +5422,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5437,7 +5437,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorGetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5449,7 +5449,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5464,7 +5464,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorGetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5479,7 +5479,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5497,7 +5497,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams)
+    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStream* pStreams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5506,7 +5506,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, ref VideoProcessorStream pStreams)
+    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStream pStreams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5518,7 +5518,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams)
+    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStream* pStreams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5530,7 +5530,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, ref VideoProcessorStream pStreams)
+    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStream pStreams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5545,7 +5545,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams)
+    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStream* pStreams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5557,7 +5557,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, ref VideoProcessorStream pStreams)
+    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStream pStreams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5572,7 +5572,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams)
+    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStream* pStreams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5587,7 +5587,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, ref VideoProcessorStream pStreams)
+    public static int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStream pStreams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5861,14 +5861,14 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D11VideoContext1*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)@this->LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pIVPtr = &pIV)
@@ -5878,7 +5878,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pContentKeyPtr = &pContentKey)
@@ -5888,7 +5888,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pContentKeyPtr = &pContentKey)
@@ -5901,7 +5901,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
@@ -5911,7 +5911,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
@@ -5924,7 +5924,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
@@ -5937,7 +5937,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
@@ -5953,7 +5953,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -5963,7 +5963,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -5976,7 +5976,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -5989,7 +5989,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -6005,7 +6005,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -6018,7 +6018,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -6034,7 +6034,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -6050,7 +6050,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -6069,7 +6069,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6079,7 +6079,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6092,7 +6092,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6105,7 +6105,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6121,7 +6121,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6134,7 +6134,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6150,7 +6150,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6166,7 +6166,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6185,7 +6185,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6198,7 +6198,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6214,7 +6214,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6230,7 +6230,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6249,7 +6249,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6265,7 +6265,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6284,7 +6284,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6303,7 +6303,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6325,7 +6325,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6335,7 +6335,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6348,7 +6348,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6361,7 +6361,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6377,7 +6377,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6390,7 +6390,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6406,7 +6406,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6422,7 +6422,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6441,7 +6441,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6454,7 +6454,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6470,7 +6470,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6486,7 +6486,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6505,7 +6505,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6521,7 +6521,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6540,7 +6540,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6559,7 +6559,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6581,7 +6581,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6594,7 +6594,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6610,7 +6610,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6626,7 +6626,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6645,7 +6645,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6661,7 +6661,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6680,7 +6680,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6699,7 +6699,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6721,7 +6721,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6737,7 +6737,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6756,7 +6756,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6775,7 +6775,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6797,7 +6797,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6816,7 +6816,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6838,7 +6838,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6860,7 +6860,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+    public static void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -7038,7 +7038,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, void* pInput, uint OutputSize, void* pOutput)
+    public static unsafe int QueryAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, void* pOutput)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7047,7 +7047,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, void* pInput, uint OutputSize, ref T0 pOutput) where T0 : unmanaged
+    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, ref T0 pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7059,7 +7059,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, ref T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
+    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7071,7 +7071,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, ref T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe int QueryAuthenticatedChannel<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7086,7 +7086,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, void* pInput, uint OutputSize, void* pOutput)
+    public static unsafe int QueryAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, void* pOutput)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7098,7 +7098,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, void* pInput, uint OutputSize, ref T0 pOutput) where T0 : unmanaged
+    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, ref T0 pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7113,7 +7113,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, ref T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
+    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7128,7 +7128,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryAuthenticatedChannel<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, ref T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged
+    public static int QueryAuthenticatedChannel<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7146,7 +7146,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, void* pInput, AuthenticatedConfigureOutput* pOutput)
+    public static unsafe int ConfigureAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, AuthenticatedConfigureOutput* pOutput)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7155,7 +7155,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, void* pInput, ref AuthenticatedConfigureOutput pOutput)
+    public static unsafe int ConfigureAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, ref AuthenticatedConfigureOutput pOutput)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7167,7 +7167,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, ref T0 pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged
+    public static unsafe int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7179,7 +7179,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, ref T0 pInput, ref AuthenticatedConfigureOutput pOutput) where T0 : unmanaged
+    public static unsafe int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, ref AuthenticatedConfigureOutput pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7194,7 +7194,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, void* pInput, AuthenticatedConfigureOutput* pOutput)
+    public static unsafe int ConfigureAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, AuthenticatedConfigureOutput* pOutput)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7206,7 +7206,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, void* pInput, ref AuthenticatedConfigureOutput pOutput)
+    public static unsafe int ConfigureAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, ref AuthenticatedConfigureOutput pOutput)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7221,7 +7221,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, ref T0 pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged
+    public static unsafe int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7236,7 +7236,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, ref T0 pInput, ref AuthenticatedConfigureOutput pOutput) where T0 : unmanaged
+    public static int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, ref AuthenticatedConfigureOutput pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7363,7 +7363,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SubmitDecoderBuffers1(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, uint NumBuffers, VideoDecoderBufferDesc1* pBufferDesc)
+    public static unsafe int SubmitDecoderBuffers1(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] VideoDecoderBufferDesc1* pBufferDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7372,7 +7372,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SubmitDecoderBuffers1(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, uint NumBuffers, ref VideoDecoderBufferDesc1 pBufferDesc)
+    public static unsafe int SubmitDecoderBuffers1(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] in VideoDecoderBufferDesc1 pBufferDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7384,7 +7384,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SubmitDecoderBuffers1(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, uint NumBuffers, VideoDecoderBufferDesc1* pBufferDesc)
+    public static unsafe int SubmitDecoderBuffers1(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] VideoDecoderBufferDesc1* pBufferDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7396,7 +7396,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SubmitDecoderBuffers1(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, uint NumBuffers, ref VideoDecoderBufferDesc1 pBufferDesc)
+    public static int SubmitDecoderBuffers1(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] in VideoDecoderBufferDesc1 pBufferDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7411,7 +7411,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, void* pPrivatInputData, ulong* pPrivateOutputData)
+    public static unsafe int GetDataForNewHardwareKey(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] void* pPrivatInputData, ulong* pPrivateOutputData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7420,7 +7420,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, void* pPrivatInputData, ref ulong pPrivateOutputData)
+    public static unsafe int GetDataForNewHardwareKey(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] void* pPrivatInputData, ref ulong pPrivateOutputData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7432,7 +7432,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, ref T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged
+    public static unsafe int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] in T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7444,7 +7444,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, ref T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged
+    public static unsafe int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] in T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7459,7 +7459,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, void* pPrivatInputData, ulong* pPrivateOutputData)
+    public static unsafe int GetDataForNewHardwareKey(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] void* pPrivatInputData, ulong* pPrivateOutputData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7471,7 +7471,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, void* pPrivatInputData, ref ulong pPrivateOutputData)
+    public static unsafe int GetDataForNewHardwareKey(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] void* pPrivatInputData, ref ulong pPrivateOutputData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7486,7 +7486,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, ref T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged
+    public static unsafe int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] in T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7501,7 +7501,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, ref T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged
+    public static int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] in T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7567,7 +7567,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderEnableDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoSampleDesc* pOutputDesc, uint ReferenceFrameCount)
+    public static unsafe int DecoderEnableDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, uint ReferenceFrameCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7576,7 +7576,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderEnableDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoSampleDesc pOutputDesc, uint ReferenceFrameCount)
+    public static unsafe int DecoderEnableDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, uint ReferenceFrameCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7588,7 +7588,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderEnableDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoSampleDesc* pOutputDesc, uint ReferenceFrameCount)
+    public static unsafe int DecoderEnableDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, uint ReferenceFrameCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7600,7 +7600,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderEnableDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoSampleDesc pOutputDesc, uint ReferenceFrameCount)
+    public static int DecoderEnableDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, uint ReferenceFrameCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7615,7 +7615,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderUpdateDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, VideoSampleDesc* pOutputDesc)
+    public static unsafe int DecoderUpdateDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7624,7 +7624,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderUpdateDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, ref VideoSampleDesc pOutputDesc)
+    public static unsafe int DecoderUpdateDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7636,7 +7636,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderUpdateDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, VideoSampleDesc* pOutputDesc)
+    public static unsafe int DecoderUpdateDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -7648,7 +7648,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderUpdateDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ref VideoSampleDesc pOutputDesc)
+    public static int DecoderUpdateDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8059,7 +8059,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, VideoProcessorStreamBehaviorHint* pStreams, uint* pBehaviorHints)
+    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStreamBehaviorHint* pStreams, uint* pBehaviorHints)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8068,7 +8068,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, VideoProcessorStreamBehaviorHint* pStreams, ref uint pBehaviorHints)
+    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStreamBehaviorHint* pStreams, ref uint pBehaviorHints)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8080,7 +8080,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, ref VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints)
+    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8092,7 +8092,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, ref VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints)
+    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8107,7 +8107,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, VideoProcessorStreamBehaviorHint* pStreams, uint* pBehaviorHints)
+    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStreamBehaviorHint* pStreams, uint* pBehaviorHints)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8119,7 +8119,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, VideoProcessorStreamBehaviorHint* pStreams, ref uint pBehaviorHints)
+    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStreamBehaviorHint* pStreams, ref uint pBehaviorHints)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8134,7 +8134,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, ref VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints)
+    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8149,7 +8149,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, ref VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints)
+    public static int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -8256,15 +8256,15 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(guid, DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(guid, DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<Guid> guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8272,11 +8272,11 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -8416,7 +8416,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderBeginFrame<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, ComPtr<TI1> pView, uint ContentKeySize, void* pContentKey) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI1>
+    public static unsafe int DecoderBeginFrame<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, ComPtr<TI1> pView, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8424,23 +8424,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, Span<T0> pContentKey) where T0 : unmanaged
+    public static unsafe int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DecoderBeginFrame(pDecoder, pView, ContentKeySize, ref pContentKey.GetPinnableReference());
+        return @this->DecoderBeginFrame(pDecoder, pView, ContentKeySize, in pContentKey.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderBeginFrame<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, ComPtr<TI1> pView, uint ContentKeySize, ref T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI1>
+    public static int DecoderBeginFrame<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, ComPtr<TI1> pView, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DecoderBeginFrame((ID3D11VideoDecoder*) pDecoder.Handle, (ID3D11VideoDecoderOutputView*) pView.Handle, ContentKeySize, ref pContentKey);
+        return @this->DecoderBeginFrame((ID3D11VideoDecoder*) pDecoder.Handle, (ID3D11VideoDecoderOutputView*) pView.Handle, ContentKeySize, in pContentKey);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderBeginFrame(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, Span<ID3D11VideoDecoderOutputView> pView, uint ContentKeySize, void* pContentKey)
+    public static unsafe int DecoderBeginFrame(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, Span<ID3D11VideoDecoderOutputView> pView, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8448,7 +8448,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderBeginFrame<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, void* pContentKey) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static unsafe int DecoderBeginFrame<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8456,23 +8456,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, Span<ID3D11VideoDecoderOutputView> pView, uint ContentKeySize, Span<T0> pContentKey) where T0 : unmanaged
+    public static unsafe int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, Span<ID3D11VideoDecoderOutputView> pView, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DecoderBeginFrame(pDecoder, ref pView.GetPinnableReference(), ContentKeySize, ref pContentKey.GetPinnableReference());
+        return @this->DecoderBeginFrame(pDecoder, ref pView.GetPinnableReference(), ContentKeySize, in pContentKey.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderBeginFrame<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, ref T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static int DecoderBeginFrame<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DecoderBeginFrame((ID3D11VideoDecoder*) pDecoder.Handle, ref pView, ContentKeySize, ref pContentKey);
+        return @this->DecoderBeginFrame((ID3D11VideoDecoder*) pDecoder.Handle, ref pView, ContentKeySize, in pContentKey);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderBeginFrame(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, void* pContentKey)
+    public static unsafe int DecoderBeginFrame(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8480,7 +8480,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderBeginFrame<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ComPtr<TI0> pView, uint ContentKeySize, void* pContentKey) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI0>
+    public static unsafe int DecoderBeginFrame<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ComPtr<TI0> pView, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8488,23 +8488,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, Span<T0> pContentKey) where T0 : unmanaged
+    public static unsafe int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DecoderBeginFrame(ref pDecoder.GetPinnableReference(), pView, ContentKeySize, ref pContentKey.GetPinnableReference());
+        return @this->DecoderBeginFrame(ref pDecoder.GetPinnableReference(), pView, ContentKeySize, in pContentKey.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderBeginFrame<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ComPtr<TI0> pView, uint ContentKeySize, ref T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI0>
+    public static int DecoderBeginFrame<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoDecoder pDecoder, ComPtr<TI0> pView, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DecoderBeginFrame(ref pDecoder, (ID3D11VideoDecoderOutputView*) pView.Handle, ContentKeySize, ref pContentKey);
+        return @this->DecoderBeginFrame(ref pDecoder, (ID3D11VideoDecoderOutputView*) pView.Handle, ContentKeySize, in pContentKey);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderBeginFrame(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, Span<ID3D11VideoDecoderOutputView> pView, uint ContentKeySize, void* pContentKey)
+    public static unsafe int DecoderBeginFrame(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, Span<ID3D11VideoDecoderOutputView> pView, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8512,11 +8512,11 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, Span<ID3D11VideoDecoderOutputView> pView, uint ContentKeySize, Span<T0> pContentKey) where T0 : unmanaged
+    public static int DecoderBeginFrame<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, Span<ID3D11VideoDecoderOutputView> pView, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DecoderBeginFrame(ref pDecoder.GetPinnableReference(), ref pView.GetPinnableReference(), ContentKeySize, ref pContentKey.GetPinnableReference());
+        return @this->DecoderBeginFrame(ref pDecoder.GetPinnableReference(), ref pView.GetPinnableReference(), ContentKeySize, in pContentKey.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -8536,7 +8536,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SubmitDecoderBuffers<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, uint NumBuffers, VideoDecoderBufferDesc* pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static unsafe int SubmitDecoderBuffers<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] VideoDecoderBufferDesc* pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8544,23 +8544,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SubmitDecoderBuffers(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, uint NumBuffers, Span<VideoDecoderBufferDesc> pBufferDesc)
+    public static unsafe int SubmitDecoderBuffers(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] ReadOnlySpan<VideoDecoderBufferDesc> pBufferDesc)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SubmitDecoderBuffers(pDecoder, NumBuffers, ref pBufferDesc.GetPinnableReference());
+        return @this->SubmitDecoderBuffers(pDecoder, NumBuffers, in pBufferDesc.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int SubmitDecoderBuffers<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, uint NumBuffers, ref VideoDecoderBufferDesc pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static int SubmitDecoderBuffers<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] in VideoDecoderBufferDesc pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->SubmitDecoderBuffers((ID3D11VideoDecoder*) pDecoder.Handle, NumBuffers, ref pBufferDesc);
+        return @this->SubmitDecoderBuffers((ID3D11VideoDecoder*) pDecoder.Handle, NumBuffers, in pBufferDesc);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SubmitDecoderBuffers(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, uint NumBuffers, VideoDecoderBufferDesc* pBufferDesc)
+    public static unsafe int SubmitDecoderBuffers(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] VideoDecoderBufferDesc* pBufferDesc)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8568,15 +8568,15 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SubmitDecoderBuffers(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, uint NumBuffers, Span<VideoDecoderBufferDesc> pBufferDesc)
+    public static int SubmitDecoderBuffers(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] ReadOnlySpan<VideoDecoderBufferDesc> pBufferDesc)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SubmitDecoderBuffers(ref pDecoder.GetPinnableReference(), NumBuffers, ref pBufferDesc.GetPinnableReference());
+        return @this->SubmitDecoderBuffers(ref pDecoder.GetPinnableReference(), NumBuffers, in pBufferDesc.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, VideoDecoderExtension* pExtensionData) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static unsafe int DecoderExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, [Flow(FlowDirection.In)] VideoDecoderExtension* pExtensionData) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8584,23 +8584,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, Span<VideoDecoderExtension> pExtensionData)
+    public static unsafe int DecoderExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, [Flow(FlowDirection.In)] ReadOnlySpan<VideoDecoderExtension> pExtensionData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DecoderExtension(pDecoder, ref pExtensionData.GetPinnableReference());
+        return @this->DecoderExtension(pDecoder, in pExtensionData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, ref VideoDecoderExtension pExtensionData) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static int DecoderExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, [Flow(FlowDirection.In)] in VideoDecoderExtension pExtensionData) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DecoderExtension((ID3D11VideoDecoder*) pDecoder.Handle, ref pExtensionData);
+        return @this->DecoderExtension((ID3D11VideoDecoder*) pDecoder.Handle, in pExtensionData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, VideoDecoderExtension* pExtensionData)
+    public static unsafe int DecoderExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, [Flow(FlowDirection.In)] VideoDecoderExtension* pExtensionData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8608,15 +8608,15 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, Span<VideoDecoderExtension> pExtensionData)
+    public static int DecoderExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, [Flow(FlowDirection.In)] ReadOnlySpan<VideoDecoderExtension> pExtensionData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DecoderExtension(ref pDecoder.GetPinnableReference(), ref pExtensionData.GetPinnableReference());
+        return @this->DecoderExtension(ref pDecoder.GetPinnableReference(), in pExtensionData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, int Enable, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8624,23 +8624,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int Enable, Span<Silk.NET.Maths.Box2D<int>> pRect)
+    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetOutputTargetRect(pVideoProcessor, Enable, ref pRect.GetPinnableReference());
+        @this->VideoProcessorSetOutputTargetRect(pVideoProcessor, Enable, in pRect.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, int Enable, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, int Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->VideoProcessorSetOutputTargetRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, Enable, ref pRect);
+        @this->VideoProcessorSetOutputTargetRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, Enable, in pRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8648,15 +8648,15 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, int Enable, Span<Silk.NET.Maths.Box2D<int>> pRect)
+    public static void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, int Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetOutputTargetRect(ref pVideoProcessor.GetPinnableReference(), Enable, ref pRect.GetPinnableReference());
+        @this->VideoProcessorSetOutputTargetRect(ref pVideoProcessor.GetPinnableReference(), Enable, in pRect.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputBackgroundColor<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, int YCbCr, VideoColor* pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetOutputBackgroundColor<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, int YCbCr, [Flow(FlowDirection.In)] VideoColor* pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8664,23 +8664,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int YCbCr, Span<VideoColor> pColor)
+    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, int YCbCr, [Flow(FlowDirection.In)] ReadOnlySpan<VideoColor> pColor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetOutputBackgroundColor(pVideoProcessor, YCbCr, ref pColor.GetPinnableReference());
+        @this->VideoProcessorSetOutputBackgroundColor(pVideoProcessor, YCbCr, in pColor.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputBackgroundColor<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, int YCbCr, ref VideoColor pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetOutputBackgroundColor<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, int YCbCr, [Flow(FlowDirection.In)] in VideoColor pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->VideoProcessorSetOutputBackgroundColor((ID3D11VideoProcessor*) pVideoProcessor.Handle, YCbCr, ref pColor);
+        @this->VideoProcessorSetOutputBackgroundColor((ID3D11VideoProcessor*) pVideoProcessor.Handle, YCbCr, in pColor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, int YCbCr, VideoColor* pColor)
+    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, int YCbCr, [Flow(FlowDirection.In)] VideoColor* pColor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8688,15 +8688,15 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, int YCbCr, Span<VideoColor> pColor)
+    public static void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, int YCbCr, [Flow(FlowDirection.In)] ReadOnlySpan<VideoColor> pColor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetOutputBackgroundColor(ref pVideoProcessor.GetPinnableReference(), YCbCr, ref pColor.GetPinnableReference());
+        @this->VideoProcessorSetOutputBackgroundColor(ref pVideoProcessor.GetPinnableReference(), YCbCr, in pColor.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputColorSpace<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, VideoProcessorColorSpace* pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetOutputColorSpace<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessorColorSpace* pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8704,23 +8704,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Span<VideoProcessorColorSpace> pColorSpace)
+    public static unsafe void VideoProcessorSetOutputColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessorColorSpace> pColorSpace)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetOutputColorSpace(pVideoProcessor, ref pColorSpace.GetPinnableReference());
+        @this->VideoProcessorSetOutputColorSpace(pVideoProcessor, in pColorSpace.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputColorSpace<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ref VideoProcessorColorSpace pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetOutputColorSpace<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] in VideoProcessorColorSpace pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->VideoProcessorSetOutputColorSpace((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pColorSpace);
+        @this->VideoProcessorSetOutputColorSpace((ID3D11VideoProcessor*) pVideoProcessor.Handle, in pColorSpace);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, VideoProcessorColorSpace* pColorSpace)
+    public static unsafe void VideoProcessorSetOutputColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessorColorSpace* pColorSpace)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8728,11 +8728,11 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Span<VideoProcessorColorSpace> pColorSpace)
+    public static void VideoProcessorSetOutputColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessorColorSpace> pColorSpace)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetOutputColorSpace(ref pVideoProcessor.GetPinnableReference(), ref pColorSpace.GetPinnableReference());
+        @this->VideoProcessorSetOutputColorSpace(ref pVideoProcessor.GetPinnableReference(), in pColorSpace.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -8784,7 +8784,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorSetOutputExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8792,7 +8792,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Guid* pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8800,7 +8800,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorSetOutputExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8808,39 +8808,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Span<Guid> pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorSetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorSetOutputExtension(pVideoProcessor, ref pExtensionGuid.GetPinnableReference(), DataSize, pData);
+        return @this->VideoProcessorSetOutputExtension(pVideoProcessor, in pExtensionGuid.GetPinnableReference(), DataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorSetOutputExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->VideoProcessorSetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pExtensionGuid, DataSize, pData);
+        return @this->VideoProcessorSetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, in pExtensionGuid, DataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Span<Guid> pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorSetOutputExtension(pVideoProcessor, ref pExtensionGuid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->VideoProcessorSetOutputExtension(pVideoProcessor, in pExtensionGuid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorSetOutputExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static int VideoProcessorSetOutputExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->VideoProcessorSetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pExtensionGuid, DataSize, ref pData);
+        return @this->VideoProcessorSetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, in pExtensionGuid, DataSize, ref pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Guid* pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorSetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8848,7 +8848,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Guid* pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8856,19 +8856,19 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Span<Guid> pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorSetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorSetOutputExtension(ref pVideoProcessor.GetPinnableReference(), ref pExtensionGuid.GetPinnableReference(), DataSize, pData);
+        return @this->VideoProcessorSetOutputExtension(ref pVideoProcessor.GetPinnableReference(), in pExtensionGuid.GetPinnableReference(), DataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Span<Guid> pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int VideoProcessorSetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorSetOutputExtension(ref pVideoProcessor.GetPinnableReference(), ref pExtensionGuid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->VideoProcessorSetOutputExtension(ref pVideoProcessor.GetPinnableReference(), in pExtensionGuid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -9304,7 +9304,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorGetOutputExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9312,7 +9312,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Guid* pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9320,7 +9320,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorGetOutputExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9328,39 +9328,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Span<Guid> pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorGetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorGetOutputExtension(pVideoProcessor, ref pExtensionGuid.GetPinnableReference(), DataSize, pData);
+        return @this->VideoProcessorGetOutputExtension(pVideoProcessor, in pExtensionGuid.GetPinnableReference(), DataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorGetOutputExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->VideoProcessorGetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pExtensionGuid, DataSize, pData);
+        return @this->VideoProcessorGetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, in pExtensionGuid, DataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Span<Guid> pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorGetOutputExtension(pVideoProcessor, ref pExtensionGuid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->VideoProcessorGetOutputExtension(pVideoProcessor, in pExtensionGuid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorGetOutputExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static int VideoProcessorGetOutputExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->VideoProcessorGetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pExtensionGuid, DataSize, ref pData);
+        return @this->VideoProcessorGetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, in pExtensionGuid, DataSize, ref pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Guid* pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorGetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9368,7 +9368,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Guid* pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9376,19 +9376,19 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Span<Guid> pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorGetOutputExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorGetOutputExtension(ref pVideoProcessor.GetPinnableReference(), ref pExtensionGuid.GetPinnableReference(), DataSize, pData);
+        return @this->VideoProcessorGetOutputExtension(ref pVideoProcessor.GetPinnableReference(), in pExtensionGuid.GetPinnableReference(), DataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Span<Guid> pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int VideoProcessorGetOutputExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorGetOutputExtension(ref pVideoProcessor.GetPinnableReference(), ref pExtensionGuid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->VideoProcessorGetOutputExtension(ref pVideoProcessor.GetPinnableReference(), in pExtensionGuid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -9408,7 +9408,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamColorSpace<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorColorSpace* pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetStreamColorSpace<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] VideoProcessorColorSpace* pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9416,23 +9416,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Span<VideoProcessorColorSpace> pColorSpace)
+    public static unsafe void VideoProcessorSetStreamColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessorColorSpace> pColorSpace)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetStreamColorSpace(pVideoProcessor, StreamIndex, ref pColorSpace.GetPinnableReference());
+        @this->VideoProcessorSetStreamColorSpace(pVideoProcessor, StreamIndex, in pColorSpace.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamColorSpace<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref VideoProcessorColorSpace pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamColorSpace<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in VideoProcessorColorSpace pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->VideoProcessorSetStreamColorSpace((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pColorSpace);
+        @this->VideoProcessorSetStreamColorSpace((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, in pColorSpace);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, VideoProcessorColorSpace* pColorSpace)
+    public static unsafe void VideoProcessorSetStreamColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] VideoProcessorColorSpace* pColorSpace)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9440,15 +9440,15 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Span<VideoProcessorColorSpace> pColorSpace)
+    public static void VideoProcessorSetStreamColorSpace(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessorColorSpace> pColorSpace)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetStreamColorSpace(ref pVideoProcessor.GetPinnableReference(), StreamIndex, ref pColorSpace.GetPinnableReference());
+        @this->VideoProcessorSetStreamColorSpace(ref pVideoProcessor.GetPinnableReference(), StreamIndex, in pColorSpace.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamOutputRate<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, Silk.NET.DXGI.Rational* pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetStreamOutputRate<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9456,23 +9456,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, Span<Silk.NET.DXGI.Rational> pCustomRate)
+    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pCustomRate)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetStreamOutputRate(pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, ref pCustomRate.GetPinnableReference());
+        @this->VideoProcessorSetStreamOutputRate(pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, in pCustomRate.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamOutputRate<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, ref Silk.NET.DXGI.Rational pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamOutputRate<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->VideoProcessorSetStreamOutputRate((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, OutputRate, RepeatFrame, ref pCustomRate);
+        @this->VideoProcessorSetStreamOutputRate((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, OutputRate, RepeatFrame, in pCustomRate);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, Silk.NET.DXGI.Rational* pCustomRate)
+    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pCustomRate)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9480,15 +9480,15 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, Span<Silk.NET.DXGI.Rational> pCustomRate)
+    public static void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pCustomRate)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetStreamOutputRate(ref pVideoProcessor.GetPinnableReference(), StreamIndex, OutputRate, RepeatFrame, ref pCustomRate.GetPinnableReference());
+        @this->VideoProcessorSetStreamOutputRate(ref pVideoProcessor.GetPinnableReference(), StreamIndex, OutputRate, RepeatFrame, in pCustomRate.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9496,23 +9496,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Span<Silk.NET.Maths.Box2D<int>> pRect)
+    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetStreamSourceRect(pVideoProcessor, StreamIndex, Enable, ref pRect.GetPinnableReference());
+        @this->VideoProcessorSetStreamSourceRect(pVideoProcessor, StreamIndex, Enable, in pRect.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->VideoProcessorSetStreamSourceRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, ref pRect);
+        @this->VideoProcessorSetStreamSourceRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, in pRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9520,15 +9520,15 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, Span<Silk.NET.Maths.Box2D<int>> pRect)
+    public static void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetStreamSourceRect(ref pVideoProcessor.GetPinnableReference(), StreamIndex, Enable, ref pRect.GetPinnableReference());
+        @this->VideoProcessorSetStreamSourceRect(ref pVideoProcessor.GetPinnableReference(), StreamIndex, Enable, in pRect.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9536,23 +9536,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Span<Silk.NET.Maths.Box2D<int>> pRect)
+    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetStreamDestRect(pVideoProcessor, StreamIndex, Enable, ref pRect.GetPinnableReference());
+        @this->VideoProcessorSetStreamDestRect(pVideoProcessor, StreamIndex, Enable, in pRect.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->VideoProcessorSetStreamDestRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, ref pRect);
+        @this->VideoProcessorSetStreamDestRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, in pRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9560,11 +9560,11 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, Span<Silk.NET.Maths.Box2D<int>> pRect)
+    public static void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetStreamDestRect(ref pVideoProcessor.GetPinnableReference(), StreamIndex, Enable, ref pRect.GetPinnableReference());
+        @this->VideoProcessorSetStreamDestRect(ref pVideoProcessor.GetPinnableReference(), StreamIndex, Enable, in pRect.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -9584,7 +9584,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPalette<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, uint Count, uint* pEntries) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetStreamPalette<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, uint Count, [Flow(FlowDirection.In)] uint* pEntries) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9592,23 +9592,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPalette(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, uint Count, Span<uint> pEntries)
+    public static unsafe void VideoProcessorSetStreamPalette(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, uint Count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pEntries)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetStreamPalette(pVideoProcessor, StreamIndex, Count, ref pEntries.GetPinnableReference());
+        @this->VideoProcessorSetStreamPalette(pVideoProcessor, StreamIndex, Count, in pEntries.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamPalette<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, uint Count, ref uint pEntries) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamPalette<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, uint Count, [Flow(FlowDirection.In)] in uint pEntries) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->VideoProcessorSetStreamPalette((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Count, ref pEntries);
+        @this->VideoProcessorSetStreamPalette((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Count, in pEntries);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPalette(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, uint Count, uint* pEntries)
+    public static unsafe void VideoProcessorSetStreamPalette(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, uint Count, [Flow(FlowDirection.In)] uint* pEntries)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9616,15 +9616,15 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamPalette(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, uint Count, Span<uint> pEntries)
+    public static void VideoProcessorSetStreamPalette(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, uint Count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pEntries)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetStreamPalette(ref pVideoProcessor.GetPinnableReference(), StreamIndex, Count, ref pEntries.GetPinnableReference());
+        @this->VideoProcessorSetStreamPalette(ref pVideoProcessor.GetPinnableReference(), StreamIndex, Count, in pEntries.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.DXGI.Rational* pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9632,55 +9632,55 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.DXGI.Rational* pSourceAspectRatio, Span<Silk.NET.DXGI.Rational> pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetStreamPixelAspectRatio(pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, ref pDestinationAspectRatio.GetPinnableReference());
+        @this->VideoProcessorSetStreamPixelAspectRatio(pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, in pDestinationAspectRatio.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.DXGI.Rational* pSourceAspectRatio, ref Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->VideoProcessorSetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, pSourceAspectRatio, ref pDestinationAspectRatio);
+        @this->VideoProcessorSetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, pSourceAspectRatio, in pDestinationAspectRatio);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Span<Silk.NET.DXGI.Rational> pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetStreamPixelAspectRatio(pVideoProcessor, StreamIndex, Enable, ref pSourceAspectRatio.GetPinnableReference(), pDestinationAspectRatio);
+        @this->VideoProcessorSetStreamPixelAspectRatio(pVideoProcessor, StreamIndex, Enable, in pSourceAspectRatio.GetPinnableReference(), pDestinationAspectRatio);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.DXGI.Rational pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->VideoProcessorSetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, ref pSourceAspectRatio, pDestinationAspectRatio);
+        @this->VideoProcessorSetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, in pSourceAspectRatio, pDestinationAspectRatio);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Span<Silk.NET.DXGI.Rational> pSourceAspectRatio, Span<Silk.NET.DXGI.Rational> pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pSourceAspectRatio, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetStreamPixelAspectRatio(pVideoProcessor, StreamIndex, Enable, ref pSourceAspectRatio.GetPinnableReference(), ref pDestinationAspectRatio.GetPinnableReference());
+        @this->VideoProcessorSetStreamPixelAspectRatio(pVideoProcessor, StreamIndex, Enable, in pSourceAspectRatio.GetPinnableReference(), in pDestinationAspectRatio.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.DXGI.Rational pSourceAspectRatio, ref Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->VideoProcessorSetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, ref pSourceAspectRatio, ref pDestinationAspectRatio);
+        @this->VideoProcessorSetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, in pSourceAspectRatio, in pDestinationAspectRatio);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.DXGI.Rational* pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9688,27 +9688,27 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.DXGI.Rational* pSourceAspectRatio, Span<Silk.NET.DXGI.Rational> pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetStreamPixelAspectRatio(ref pVideoProcessor.GetPinnableReference(), StreamIndex, Enable, pSourceAspectRatio, ref pDestinationAspectRatio.GetPinnableReference());
+        @this->VideoProcessorSetStreamPixelAspectRatio(ref pVideoProcessor.GetPinnableReference(), StreamIndex, Enable, pSourceAspectRatio, in pDestinationAspectRatio.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, Span<Silk.NET.DXGI.Rational> pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetStreamPixelAspectRatio(ref pVideoProcessor.GetPinnableReference(), StreamIndex, Enable, ref pSourceAspectRatio.GetPinnableReference(), pDestinationAspectRatio);
+        @this->VideoProcessorSetStreamPixelAspectRatio(ref pVideoProcessor.GetPinnableReference(), StreamIndex, Enable, in pSourceAspectRatio.GetPinnableReference(), pDestinationAspectRatio);
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, Span<Silk.NET.DXGI.Rational> pSourceAspectRatio, Span<Silk.NET.DXGI.Rational> pDestinationAspectRatio)
+    public static void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pSourceAspectRatio, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->VideoProcessorSetStreamPixelAspectRatio(ref pVideoProcessor.GetPinnableReference(), StreamIndex, Enable, ref pSourceAspectRatio.GetPinnableReference(), ref pDestinationAspectRatio.GetPinnableReference());
+        @this->VideoProcessorSetStreamPixelAspectRatio(ref pVideoProcessor.GetPinnableReference(), StreamIndex, Enable, in pSourceAspectRatio.GetPinnableReference(), in pDestinationAspectRatio.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -9776,7 +9776,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorSetStreamExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9784,7 +9784,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9792,7 +9792,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorSetStreamExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9800,39 +9800,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Span<Guid> pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorSetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorSetStreamExtension(pVideoProcessor, StreamIndex, ref pExtensionGuid.GetPinnableReference(), DataSize, pData);
+        return @this->VideoProcessorSetStreamExtension(pVideoProcessor, StreamIndex, in pExtensionGuid.GetPinnableReference(), DataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorSetStreamExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->VideoProcessorSetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pExtensionGuid, DataSize, pData);
+        return @this->VideoProcessorSetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, in pExtensionGuid, DataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Span<Guid> pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorSetStreamExtension(pVideoProcessor, StreamIndex, ref pExtensionGuid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->VideoProcessorSetStreamExtension(pVideoProcessor, StreamIndex, in pExtensionGuid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorSetStreamExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static int VideoProcessorSetStreamExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->VideoProcessorSetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pExtensionGuid, DataSize, ref pData);
+        return @this->VideoProcessorSetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, in pExtensionGuid, DataSize, ref pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorSetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9840,7 +9840,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9848,19 +9848,19 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorSetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Span<Guid> pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorSetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorSetStreamExtension(ref pVideoProcessor.GetPinnableReference(), StreamIndex, ref pExtensionGuid.GetPinnableReference(), DataSize, pData);
+        return @this->VideoProcessorSetStreamExtension(ref pVideoProcessor.GetPinnableReference(), StreamIndex, in pExtensionGuid.GetPinnableReference(), DataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Span<Guid> pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int VideoProcessorSetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorSetStreamExtension(ref pVideoProcessor.GetPinnableReference(), StreamIndex, ref pExtensionGuid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->VideoProcessorSetStreamExtension(ref pVideoProcessor.GetPinnableReference(), StreamIndex, in pExtensionGuid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -12456,7 +12456,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorGetStreamExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12464,7 +12464,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12472,7 +12472,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorGetStreamExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12480,39 +12480,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Span<Guid> pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorGetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorGetStreamExtension(pVideoProcessor, StreamIndex, ref pExtensionGuid.GetPinnableReference(), DataSize, pData);
+        return @this->VideoProcessorGetStreamExtension(pVideoProcessor, StreamIndex, in pExtensionGuid.GetPinnableReference(), DataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorGetStreamExtension<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->VideoProcessorGetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pExtensionGuid, DataSize, pData);
+        return @this->VideoProcessorGetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, in pExtensionGuid, DataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Span<Guid> pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorGetStreamExtension(pVideoProcessor, StreamIndex, ref pExtensionGuid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->VideoProcessorGetStreamExtension(pVideoProcessor, StreamIndex, in pExtensionGuid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorGetStreamExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static int VideoProcessorGetStreamExtension<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->VideoProcessorGetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pExtensionGuid, DataSize, ref pData);
+        return @this->VideoProcessorGetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, in pExtensionGuid, DataSize, ref pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorGetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12520,7 +12520,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12528,23 +12528,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Span<Guid> pExtensionGuid, uint DataSize, void* pData)
+    public static unsafe int VideoProcessorGetStreamExtension(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pExtensionGuid, uint DataSize, void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorGetStreamExtension(ref pVideoProcessor.GetPinnableReference(), StreamIndex, ref pExtensionGuid.GetPinnableReference(), DataSize, pData);
+        return @this->VideoProcessorGetStreamExtension(ref pVideoProcessor.GetPinnableReference(), StreamIndex, in pExtensionGuid.GetPinnableReference(), DataSize, pData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Span<Guid> pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int VideoProcessorGetStreamExtension<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pExtensionGuid, uint DataSize, Span<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorGetStreamExtension(ref pVideoProcessor.GetPinnableReference(), StreamIndex, ref pExtensionGuid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->VideoProcessorGetStreamExtension(ref pVideoProcessor.GetPinnableReference(), StreamIndex, in pExtensionGuid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorBlt<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ComPtr<TI1> pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
+    public static unsafe int VideoProcessorBlt<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ComPtr<TI1> pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStream* pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12552,23 +12552,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, Span<VideoProcessorStream> pStreams)
+    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessorStream> pStreams)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorBlt(pVideoProcessor, pView, OutputFrame, StreamCount, ref pStreams.GetPinnableReference());
+        return @this->VideoProcessorBlt(pVideoProcessor, pView, OutputFrame, StreamCount, in pStreams.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorBlt<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ComPtr<TI1> pView, uint OutputFrame, uint StreamCount, ref VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
+    public static int VideoProcessorBlt<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ComPtr<TI1> pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->VideoProcessorBlt((ID3D11VideoProcessor*) pVideoProcessor.Handle, (ID3D11VideoProcessorOutputView*) pView.Handle, OutputFrame, StreamCount, ref pStreams);
+        return @this->VideoProcessorBlt((ID3D11VideoProcessor*) pVideoProcessor.Handle, (ID3D11VideoProcessorOutputView*) pView.Handle, OutputFrame, StreamCount, in pStreams);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Span<ID3D11VideoProcessorOutputView> pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams)
+    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Span<ID3D11VideoProcessorOutputView> pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStream* pStreams)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12576,7 +12576,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStream* pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12584,23 +12584,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Span<ID3D11VideoProcessorOutputView> pView, uint OutputFrame, uint StreamCount, Span<VideoProcessorStream> pStreams)
+    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Span<ID3D11VideoProcessorOutputView> pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessorStream> pStreams)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorBlt(pVideoProcessor, ref pView.GetPinnableReference(), OutputFrame, StreamCount, ref pStreams.GetPinnableReference());
+        return @this->VideoProcessorBlt(pVideoProcessor, ref pView.GetPinnableReference(), OutputFrame, StreamCount, in pStreams.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, ref VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static int VideoProcessorBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->VideoProcessorBlt((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pView, OutputFrame, StreamCount, ref pStreams);
+        return @this->VideoProcessorBlt((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pView, OutputFrame, StreamCount, in pStreams);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams)
+    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStream* pStreams)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12608,7 +12608,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ComPtr<TI0> pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ComPtr<TI0> pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStream* pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12616,23 +12616,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, Span<VideoProcessorStream> pStreams)
+    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessorStream> pStreams)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorBlt(ref pVideoProcessor.GetPinnableReference(), pView, OutputFrame, StreamCount, ref pStreams.GetPinnableReference());
+        return @this->VideoProcessorBlt(ref pVideoProcessor.GetPinnableReference(), pView, OutputFrame, StreamCount, in pStreams.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ComPtr<TI0> pView, uint OutputFrame, uint StreamCount, ref VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI0>
+    public static int VideoProcessorBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, ComPtr<TI0> pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->VideoProcessorBlt(ref pVideoProcessor, (ID3D11VideoProcessorOutputView*) pView.Handle, OutputFrame, StreamCount, ref pStreams);
+        return @this->VideoProcessorBlt(ref pVideoProcessor, (ID3D11VideoProcessorOutputView*) pView.Handle, OutputFrame, StreamCount, in pStreams);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Span<ID3D11VideoProcessorOutputView> pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams)
+    public static unsafe int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Span<ID3D11VideoProcessorOutputView> pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStream* pStreams)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12640,11 +12640,11 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Span<ID3D11VideoProcessorOutputView> pView, uint OutputFrame, uint StreamCount, Span<VideoProcessorStream> pStreams)
+    public static int VideoProcessorBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Span<ID3D11VideoProcessorOutputView> pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessorStream> pStreams)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorBlt(ref pVideoProcessor.GetPinnableReference(), ref pView.GetPinnableReference(), OutputFrame, StreamCount, ref pStreams.GetPinnableReference());
+        return @this->VideoProcessorBlt(ref pVideoProcessor.GetPinnableReference(), ref pView.GetPinnableReference(), OutputFrame, StreamCount, in pStreams.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -12920,7 +12920,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+    public static unsafe void DecryptionBlt<TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12928,7 +12928,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12936,7 +12936,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12944,39 +12944,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, pIV);
+        @this->DecryptionBlt(pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
+        @this->DecryptionBlt(pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+    public static unsafe void DecryptionBlt<T0, T1, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -12984,7 +12984,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+    public static unsafe void DecryptionBlt<TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -12992,7 +12992,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13000,7 +13000,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13008,39 +13008,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(pCryptoSession, pSrcSurface, pDstSurface, ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, pIV);
+        @this->DecryptionBlt(pCryptoSession, pSrcSurface, pDstSurface, ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(pCryptoSession, pSrcSurface, pDstSurface, ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
+        @this->DecryptionBlt(pCryptoSession, pSrcSurface, pDstSurface, ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecryptionBlt<T0, T1, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+    public static void DecryptionBlt<T0, T1, TI0, TI1, TI2>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13048,7 +13048,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13056,7 +13056,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13064,7 +13064,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13072,39 +13072,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(pCryptoSession, pSrcSurface, ref pDstSurface.GetPinnableReference(), pEncryptedBlockInfo, ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, pIV);
+        @this->DecryptionBlt(pCryptoSession, pSrcSurface, ref pDstSurface.GetPinnableReference(), pEncryptedBlockInfo, ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(pCryptoSession, pSrcSurface, ref pDstSurface.GetPinnableReference(), pEncryptedBlockInfo, ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
+        @this->DecryptionBlt(pCryptoSession, pSrcSurface, ref pDstSurface.GetPinnableReference(), pEncryptedBlockInfo, ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13112,7 +13112,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13120,7 +13120,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13128,7 +13128,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13136,39 +13136,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(pCryptoSession, pSrcSurface, ref pDstSurface.GetPinnableReference(), ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, pIV);
+        @this->DecryptionBlt(pCryptoSession, pSrcSurface, ref pDstSurface.GetPinnableReference(), ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(pCryptoSession, pSrcSurface, ref pDstSurface.GetPinnableReference(), ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
+        @this->DecryptionBlt(pCryptoSession, pSrcSurface, ref pDstSurface.GetPinnableReference(), ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13176,7 +13176,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13184,7 +13184,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13192,7 +13192,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13200,39 +13200,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(pCryptoSession, ref pSrcSurface.GetPinnableReference(), pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, pIV);
+        @this->DecryptionBlt(pCryptoSession, ref pSrcSurface.GetPinnableReference(), pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(pCryptoSession, ref pSrcSurface.GetPinnableReference(), pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
+        @this->DecryptionBlt(pCryptoSession, ref pSrcSurface.GetPinnableReference(), pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13240,7 +13240,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13248,7 +13248,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13256,7 +13256,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13264,39 +13264,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(pCryptoSession, ref pSrcSurface.GetPinnableReference(), pDstSurface, ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, pIV);
+        @this->DecryptionBlt(pCryptoSession, ref pSrcSurface.GetPinnableReference(), pDstSurface, ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(pCryptoSession, ref pSrcSurface.GetPinnableReference(), pDstSurface, ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
+        @this->DecryptionBlt(pCryptoSession, ref pSrcSurface.GetPinnableReference(), pDstSurface, ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13304,7 +13304,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13312,7 +13312,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13320,7 +13320,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13328,39 +13328,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(pCryptoSession, ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), pEncryptedBlockInfo, ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, pIV);
+        @this->DecryptionBlt(pCryptoSession, ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), pEncryptedBlockInfo, ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(pCryptoSession, ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), pEncryptedBlockInfo, ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
+        @this->DecryptionBlt(pCryptoSession, ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), pEncryptedBlockInfo, ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13368,7 +13368,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13376,7 +13376,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13384,7 +13384,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13392,39 +13392,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(pCryptoSession, ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, pIV);
+        @this->DecryptionBlt(pCryptoSession, ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(pCryptoSession, ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
+        @this->DecryptionBlt(pCryptoSession, ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13432,7 +13432,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13440,7 +13440,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13448,7 +13448,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13456,39 +13456,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, pIV);
+        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
+        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13496,7 +13496,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13504,7 +13504,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13512,7 +13512,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13520,39 +13520,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), pSrcSurface, pDstSurface, ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, pIV);
+        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), pSrcSurface, pDstSurface, ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static unsafe void DecryptionBlt<T0, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), pSrcSurface, pDstSurface, ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
+        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), pSrcSurface, pDstSurface, ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+    public static void DecryptionBlt<T0, T1, TI0, TI1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13560,7 +13560,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13568,7 +13568,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13576,7 +13576,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13584,39 +13584,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), pSrcSurface, ref pDstSurface.GetPinnableReference(), pEncryptedBlockInfo, ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, pIV);
+        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), pSrcSurface, ref pDstSurface.GetPinnableReference(), pEncryptedBlockInfo, ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), pSrcSurface, ref pDstSurface.GetPinnableReference(), pEncryptedBlockInfo, ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
+        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), pSrcSurface, ref pDstSurface.GetPinnableReference(), pEncryptedBlockInfo, ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13624,7 +13624,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13632,7 +13632,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13640,7 +13640,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13648,39 +13648,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), pSrcSurface, ref pDstSurface.GetPinnableReference(), ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, pIV);
+        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), pSrcSurface, ref pDstSurface.GetPinnableReference(), ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, ID3D11Texture2D* pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), pSrcSurface, ref pDstSurface.GetPinnableReference(), ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
+        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), pSrcSurface, ref pDstSurface.GetPinnableReference(), ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13688,7 +13688,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13696,7 +13696,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13704,7 +13704,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13712,39 +13712,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), ref pSrcSurface.GetPinnableReference(), pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, pIV);
+        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), ref pSrcSurface.GetPinnableReference(), pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), ref pSrcSurface.GetPinnableReference(), pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
+        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), ref pSrcSurface.GetPinnableReference(), pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13752,7 +13752,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13760,7 +13760,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13768,7 +13768,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -13776,39 +13776,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), ref pSrcSurface.GetPinnableReference(), pDstSurface, ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, pIV);
+        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), ref pSrcSurface.GetPinnableReference(), pDstSurface, ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static unsafe void DecryptionBlt<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+        @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, ID3D11Texture2D* pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), ref pSrcSurface.GetPinnableReference(), pDstSurface, ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
+        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), ref pSrcSurface.GetPinnableReference(), pDstSurface, ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+    public static void DecryptionBlt<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+        @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13816,7 +13816,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13824,23 +13824,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), pEncryptedBlockInfo, ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, pIV);
+        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), pEncryptedBlockInfo, ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), pEncryptedBlockInfo, ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
+        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), pEncryptedBlockInfo, ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+    public static unsafe void DecryptionBlt(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13848,7 +13848,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, Span<T0> pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -13856,19 +13856,19 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+    public static unsafe void DecryptionBlt<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, pIV);
+        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, pIV);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, Span<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
+    public static void DecryptionBlt<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, Span<ID3D11Texture2D> pSrcSurface, Span<ID3D11Texture2D> pDstSurface, Span<EncryptedBlockInfo> pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pContentKey, uint IVSize, Span<T1> pIV) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, ref pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
+        @this->DecryptionBlt(ref pCryptoSession.GetPinnableReference(), ref pSrcSurface.GetPinnableReference(), ref pDstSurface.GetPinnableReference(), ref pEncryptedBlockInfo.GetPinnableReference(), ContentKeySize, in pContentKey.GetPinnableReference(), IVSize, ref pIV.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -14008,7 +14008,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, void* pInput, uint OutputSize, void* pOutput) where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+    public static unsafe int QueryAuthenticatedChannel<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, void* pOutput) where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14016,7 +14016,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, void* pInput, uint OutputSize, Span<T0> pOutput) where T0 : unmanaged
+    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, Span<T0> pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14024,7 +14024,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, void* pInput, uint OutputSize, ref T0 pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+    public static unsafe int QueryAuthenticatedChannel<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, ref T0 pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14032,39 +14032,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, Span<T0> pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
+    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->QueryAuthenticatedChannel(pChannel, InputSize, ref pInput.GetPinnableReference(), OutputSize, pOutput);
+        return @this->QueryAuthenticatedChannel(pChannel, InputSize, in pInput.GetPinnableReference(), OutputSize, pOutput);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, ref T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+    public static unsafe int QueryAuthenticatedChannel<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->QueryAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, ref pInput, OutputSize, pOutput);
+        return @this->QueryAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, in pInput, OutputSize, pOutput);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, Span<T0> pInput, uint OutputSize, Span<T1> pOutput) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe int QueryAuthenticatedChannel<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pInput, uint OutputSize, Span<T1> pOutput) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->QueryAuthenticatedChannel(pChannel, InputSize, ref pInput.GetPinnableReference(), OutputSize, ref pOutput.GetPinnableReference());
+        return @this->QueryAuthenticatedChannel(pChannel, InputSize, in pInput.GetPinnableReference(), OutputSize, ref pOutput.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryAuthenticatedChannel<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, ref T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+    public static int QueryAuthenticatedChannel<T0, T1, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->QueryAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, ref pInput, OutputSize, ref pOutput);
+        return @this->QueryAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, in pInput, OutputSize, ref pOutput);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11AuthenticatedChannel> pChannel, uint InputSize, void* pInput, uint OutputSize, void* pOutput)
+    public static unsafe int QueryAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11AuthenticatedChannel> pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, void* pOutput)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14072,7 +14072,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11AuthenticatedChannel> pChannel, uint InputSize, void* pInput, uint OutputSize, Span<T0> pOutput) where T0 : unmanaged
+    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11AuthenticatedChannel> pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, Span<T0> pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14080,23 +14080,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11AuthenticatedChannel> pChannel, uint InputSize, Span<T0> pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
+    public static unsafe int QueryAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11AuthenticatedChannel> pChannel, uint InputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->QueryAuthenticatedChannel(ref pChannel.GetPinnableReference(), InputSize, ref pInput.GetPinnableReference(), OutputSize, pOutput);
+        return @this->QueryAuthenticatedChannel(ref pChannel.GetPinnableReference(), InputSize, in pInput.GetPinnableReference(), OutputSize, pOutput);
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryAuthenticatedChannel<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11AuthenticatedChannel> pChannel, uint InputSize, Span<T0> pInput, uint OutputSize, Span<T1> pOutput) where T0 : unmanaged where T1 : unmanaged
+    public static int QueryAuthenticatedChannel<T0, T1>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11AuthenticatedChannel> pChannel, uint InputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pInput, uint OutputSize, Span<T1> pOutput) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->QueryAuthenticatedChannel(ref pChannel.GetPinnableReference(), InputSize, ref pInput.GetPinnableReference(), OutputSize, ref pOutput.GetPinnableReference());
+        return @this->QueryAuthenticatedChannel(ref pChannel.GetPinnableReference(), InputSize, in pInput.GetPinnableReference(), OutputSize, ref pOutput.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, void* pInput, AuthenticatedConfigureOutput* pOutput) where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+    public static unsafe int ConfigureAuthenticatedChannel<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, AuthenticatedConfigureOutput* pOutput) where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14104,7 +14104,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, void* pInput, Span<AuthenticatedConfigureOutput> pOutput)
+    public static unsafe int ConfigureAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, Span<AuthenticatedConfigureOutput> pOutput)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14112,7 +14112,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, void* pInput, ref AuthenticatedConfigureOutput pOutput) where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+    public static unsafe int ConfigureAuthenticatedChannel<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, ref AuthenticatedConfigureOutput pOutput) where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14120,39 +14120,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, Span<T0> pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged
+    public static unsafe int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->ConfigureAuthenticatedChannel(pChannel, InputSize, ref pInput.GetPinnableReference(), pOutput);
+        return @this->ConfigureAuthenticatedChannel(pChannel, InputSize, in pInput.GetPinnableReference(), pOutput);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, ref T0 pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+    public static unsafe int ConfigureAuthenticatedChannel<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->ConfigureAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, ref pInput, pOutput);
+        return @this->ConfigureAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, in pInput, pOutput);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, Span<T0> pInput, Span<AuthenticatedConfigureOutput> pOutput) where T0 : unmanaged
+    public static unsafe int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pInput, Span<AuthenticatedConfigureOutput> pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->ConfigureAuthenticatedChannel(pChannel, InputSize, ref pInput.GetPinnableReference(), ref pOutput.GetPinnableReference());
+        return @this->ConfigureAuthenticatedChannel(pChannel, InputSize, in pInput.GetPinnableReference(), ref pOutput.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int ConfigureAuthenticatedChannel<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, ref T0 pInput, ref AuthenticatedConfigureOutput pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+    public static int ConfigureAuthenticatedChannel<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, ref AuthenticatedConfigureOutput pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->ConfigureAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, ref pInput, ref pOutput);
+        return @this->ConfigureAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, in pInput, ref pOutput);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11AuthenticatedChannel> pChannel, uint InputSize, void* pInput, AuthenticatedConfigureOutput* pOutput)
+    public static unsafe int ConfigureAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11AuthenticatedChannel> pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, AuthenticatedConfigureOutput* pOutput)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14160,7 +14160,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11AuthenticatedChannel> pChannel, uint InputSize, void* pInput, Span<AuthenticatedConfigureOutput> pOutput)
+    public static unsafe int ConfigureAuthenticatedChannel(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11AuthenticatedChannel> pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, Span<AuthenticatedConfigureOutput> pOutput)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14168,19 +14168,19 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11AuthenticatedChannel> pChannel, uint InputSize, Span<T0> pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged
+    public static unsafe int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11AuthenticatedChannel> pChannel, uint InputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->ConfigureAuthenticatedChannel(ref pChannel.GetPinnableReference(), InputSize, ref pInput.GetPinnableReference(), pOutput);
+        return @this->ConfigureAuthenticatedChannel(ref pChannel.GetPinnableReference(), InputSize, in pInput.GetPinnableReference(), pOutput);
     }
 
     /// <summary>To be documented.</summary>
-    public static int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11AuthenticatedChannel> pChannel, uint InputSize, Span<T0> pInput, Span<AuthenticatedConfigureOutput> pOutput) where T0 : unmanaged
+    public static int ConfigureAuthenticatedChannel<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11AuthenticatedChannel> pChannel, uint InputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pInput, Span<AuthenticatedConfigureOutput> pOutput) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->ConfigureAuthenticatedChannel(ref pChannel.GetPinnableReference(), InputSize, ref pInput.GetPinnableReference(), ref pOutput.GetPinnableReference());
+        return @this->ConfigureAuthenticatedChannel(ref pChannel.GetPinnableReference(), InputSize, in pInput.GetPinnableReference(), ref pOutput.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -14288,7 +14288,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SubmitDecoderBuffers1<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, uint NumBuffers, VideoDecoderBufferDesc1* pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static unsafe int SubmitDecoderBuffers1<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] VideoDecoderBufferDesc1* pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14296,23 +14296,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SubmitDecoderBuffers1(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, uint NumBuffers, Span<VideoDecoderBufferDesc1> pBufferDesc)
+    public static unsafe int SubmitDecoderBuffers1(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] ReadOnlySpan<VideoDecoderBufferDesc1> pBufferDesc)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SubmitDecoderBuffers1(pDecoder, NumBuffers, ref pBufferDesc.GetPinnableReference());
+        return @this->SubmitDecoderBuffers1(pDecoder, NumBuffers, in pBufferDesc.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int SubmitDecoderBuffers1<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, uint NumBuffers, ref VideoDecoderBufferDesc1 pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static int SubmitDecoderBuffers1<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] in VideoDecoderBufferDesc1 pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->SubmitDecoderBuffers1((ID3D11VideoDecoder*) pDecoder.Handle, NumBuffers, ref pBufferDesc);
+        return @this->SubmitDecoderBuffers1((ID3D11VideoDecoder*) pDecoder.Handle, NumBuffers, in pBufferDesc);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SubmitDecoderBuffers1(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, uint NumBuffers, VideoDecoderBufferDesc1* pBufferDesc)
+    public static unsafe int SubmitDecoderBuffers1(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] VideoDecoderBufferDesc1* pBufferDesc)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14320,15 +14320,15 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SubmitDecoderBuffers1(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, uint NumBuffers, Span<VideoDecoderBufferDesc1> pBufferDesc)
+    public static int SubmitDecoderBuffers1(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] ReadOnlySpan<VideoDecoderBufferDesc1> pBufferDesc)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SubmitDecoderBuffers1(ref pDecoder.GetPinnableReference(), NumBuffers, ref pBufferDesc.GetPinnableReference());
+        return @this->SubmitDecoderBuffers1(ref pDecoder.GetPinnableReference(), NumBuffers, in pBufferDesc.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, uint PrivateInputSize, void* pPrivatInputData, ulong* pPrivateOutputData) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe int GetDataForNewHardwareKey<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] void* pPrivatInputData, ulong* pPrivateOutputData) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14336,7 +14336,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, void* pPrivatInputData, Span<ulong> pPrivateOutputData)
+    public static unsafe int GetDataForNewHardwareKey(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] void* pPrivatInputData, Span<ulong> pPrivateOutputData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14344,7 +14344,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, uint PrivateInputSize, void* pPrivatInputData, ref ulong pPrivateOutputData) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe int GetDataForNewHardwareKey<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] void* pPrivatInputData, ref ulong pPrivateOutputData) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14352,39 +14352,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, Span<T0> pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged
+    public static unsafe int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDataForNewHardwareKey(pCryptoSession, PrivateInputSize, ref pPrivatInputData.GetPinnableReference(), pPrivateOutputData);
+        return @this->GetDataForNewHardwareKey(pCryptoSession, PrivateInputSize, in pPrivatInputData.GetPinnableReference(), pPrivateOutputData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, uint PrivateInputSize, ref T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static unsafe int GetDataForNewHardwareKey<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] in T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetDataForNewHardwareKey((ID3D11CryptoSession*) pCryptoSession.Handle, PrivateInputSize, ref pPrivatInputData, pPrivateOutputData);
+        return @this->GetDataForNewHardwareKey((ID3D11CryptoSession*) pCryptoSession.Handle, PrivateInputSize, in pPrivatInputData, pPrivateOutputData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, Span<T0> pPrivatInputData, Span<ulong> pPrivateOutputData) where T0 : unmanaged
+    public static unsafe int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pPrivatInputData, Span<ulong> pPrivateOutputData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDataForNewHardwareKey(pCryptoSession, PrivateInputSize, ref pPrivatInputData.GetPinnableReference(), ref pPrivateOutputData.GetPinnableReference());
+        return @this->GetDataForNewHardwareKey(pCryptoSession, PrivateInputSize, in pPrivatInputData.GetPinnableReference(), ref pPrivateOutputData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDataForNewHardwareKey<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, uint PrivateInputSize, ref T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+    public static int GetDataForNewHardwareKey<T0, TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] in T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetDataForNewHardwareKey((ID3D11CryptoSession*) pCryptoSession.Handle, PrivateInputSize, ref pPrivatInputData, ref pPrivateOutputData);
+        return @this->GetDataForNewHardwareKey((ID3D11CryptoSession*) pCryptoSession.Handle, PrivateInputSize, in pPrivatInputData, ref pPrivateOutputData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, uint PrivateInputSize, void* pPrivatInputData, ulong* pPrivateOutputData)
+    public static unsafe int GetDataForNewHardwareKey(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] void* pPrivatInputData, ulong* pPrivateOutputData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14392,7 +14392,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, uint PrivateInputSize, void* pPrivatInputData, Span<ulong> pPrivateOutputData)
+    public static unsafe int GetDataForNewHardwareKey(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] void* pPrivatInputData, Span<ulong> pPrivateOutputData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14400,19 +14400,19 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, uint PrivateInputSize, Span<T0> pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged
+    public static unsafe int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDataForNewHardwareKey(ref pCryptoSession.GetPinnableReference(), PrivateInputSize, ref pPrivatInputData.GetPinnableReference(), pPrivateOutputData);
+        return @this->GetDataForNewHardwareKey(ref pCryptoSession.GetPinnableReference(), PrivateInputSize, in pPrivatInputData.GetPinnableReference(), pPrivateOutputData);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, uint PrivateInputSize, Span<T0> pPrivatInputData, Span<ulong> pPrivateOutputData) where T0 : unmanaged
+    public static int GetDataForNewHardwareKey<T0>(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11CryptoSession> pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pPrivatInputData, Span<ulong> pPrivateOutputData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetDataForNewHardwareKey(ref pCryptoSession.GetPinnableReference(), PrivateInputSize, ref pPrivatInputData.GetPinnableReference(), ref pPrivateOutputData.GetPinnableReference());
+        return @this->GetDataForNewHardwareKey(ref pCryptoSession.GetPinnableReference(), PrivateInputSize, in pPrivatInputData.GetPinnableReference(), ref pPrivateOutputData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -14456,7 +14456,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderEnableDownsampling<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoSampleDesc* pOutputDesc, uint ReferenceFrameCount) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static unsafe int DecoderEnableDownsampling<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, uint ReferenceFrameCount) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14464,23 +14464,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderEnableDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, Span<VideoSampleDesc> pOutputDesc, uint ReferenceFrameCount)
+    public static unsafe int DecoderEnableDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] ReadOnlySpan<VideoSampleDesc> pOutputDesc, uint ReferenceFrameCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DecoderEnableDownsampling(pDecoder, InputColorSpace, ref pOutputDesc.GetPinnableReference(), ReferenceFrameCount);
+        return @this->DecoderEnableDownsampling(pDecoder, InputColorSpace, in pOutputDesc.GetPinnableReference(), ReferenceFrameCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderEnableDownsampling<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoSampleDesc pOutputDesc, uint ReferenceFrameCount) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static int DecoderEnableDownsampling<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, uint ReferenceFrameCount) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DecoderEnableDownsampling((ID3D11VideoDecoder*) pDecoder.Handle, InputColorSpace, ref pOutputDesc, ReferenceFrameCount);
+        return @this->DecoderEnableDownsampling((ID3D11VideoDecoder*) pDecoder.Handle, InputColorSpace, in pOutputDesc, ReferenceFrameCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderEnableDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoSampleDesc* pOutputDesc, uint ReferenceFrameCount)
+    public static unsafe int DecoderEnableDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, uint ReferenceFrameCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14488,15 +14488,15 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderEnableDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, Span<VideoSampleDesc> pOutputDesc, uint ReferenceFrameCount)
+    public static int DecoderEnableDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] ReadOnlySpan<VideoSampleDesc> pOutputDesc, uint ReferenceFrameCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DecoderEnableDownsampling(ref pDecoder.GetPinnableReference(), InputColorSpace, ref pOutputDesc.GetPinnableReference(), ReferenceFrameCount);
+        return @this->DecoderEnableDownsampling(ref pDecoder.GetPinnableReference(), InputColorSpace, in pOutputDesc.GetPinnableReference(), ReferenceFrameCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderUpdateDownsampling<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, VideoSampleDesc* pOutputDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static unsafe int DecoderUpdateDownsampling<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14504,23 +14504,23 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderUpdateDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, Span<VideoSampleDesc> pOutputDesc)
+    public static unsafe int DecoderUpdateDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoDecoder* pDecoder, [Flow(FlowDirection.In)] ReadOnlySpan<VideoSampleDesc> pOutputDesc)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DecoderUpdateDownsampling(pDecoder, ref pOutputDesc.GetPinnableReference());
+        return @this->DecoderUpdateDownsampling(pDecoder, in pOutputDesc.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderUpdateDownsampling<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, ref VideoSampleDesc pOutputDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+    public static int DecoderUpdateDownsampling<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pDecoder, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DecoderUpdateDownsampling((ID3D11VideoDecoder*) pDecoder.Handle, ref pOutputDesc);
+        return @this->DecoderUpdateDownsampling((ID3D11VideoDecoder*) pDecoder.Handle, in pOutputDesc);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DecoderUpdateDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, VideoSampleDesc* pOutputDesc)
+    public static unsafe int DecoderUpdateDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14528,11 +14528,11 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DecoderUpdateDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, Span<VideoSampleDesc> pOutputDesc)
+    public static int DecoderUpdateDownsampling(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoDecoder> pDecoder, [Flow(FlowDirection.In)] ReadOnlySpan<VideoSampleDesc> pOutputDesc)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DecoderUpdateDownsampling(ref pDecoder.GetPinnableReference(), ref pOutputDesc.GetPinnableReference());
+        return @this->DecoderUpdateDownsampling(ref pDecoder.GetPinnableReference(), in pOutputDesc.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -14904,7 +14904,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, VideoProcessorStreamBehaviorHint* pStreams, uint* pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorGetBehaviorHints<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStreamBehaviorHint* pStreams, uint* pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14912,7 +14912,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, VideoProcessorStreamBehaviorHint* pStreams, Span<uint> pBehaviorHints)
+    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStreamBehaviorHint* pStreams, Span<uint> pBehaviorHints)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14920,7 +14920,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, VideoProcessorStreamBehaviorHint* pStreams, ref uint pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorGetBehaviorHints<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStreamBehaviorHint* pStreams, ref uint pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14928,39 +14928,39 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, Span<VideoProcessorStreamBehaviorHint> pStreams, uint* pBehaviorHints)
+    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessorStreamBehaviorHint> pStreams, uint* pBehaviorHints)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorGetBehaviorHints(pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, ref pStreams.GetPinnableReference(), pBehaviorHints);
+        return @this->VideoProcessorGetBehaviorHints(pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, in pStreams.GetPinnableReference(), pBehaviorHints);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, ref VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe int VideoProcessorGetBehaviorHints<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->VideoProcessorGetBehaviorHints((ID3D11VideoProcessor*) pVideoProcessor.Handle, OutputWidth, OutputHeight, OutputFormat, StreamCount, ref pStreams, pBehaviorHints);
+        return @this->VideoProcessorGetBehaviorHints((ID3D11VideoProcessor*) pVideoProcessor.Handle, OutputWidth, OutputHeight, OutputFormat, StreamCount, in pStreams, pBehaviorHints);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, Span<VideoProcessorStreamBehaviorHint> pStreams, Span<uint> pBehaviorHints)
+    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessorStreamBehaviorHint> pStreams, Span<uint> pBehaviorHints)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorGetBehaviorHints(pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, ref pStreams.GetPinnableReference(), ref pBehaviorHints.GetPinnableReference());
+        return @this->VideoProcessorGetBehaviorHints(pVideoProcessor, OutputWidth, OutputHeight, OutputFormat, StreamCount, in pStreams.GetPinnableReference(), ref pBehaviorHints.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorGetBehaviorHints<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, ref VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static int VideoProcessorGetBehaviorHints<TI0>(this ComPtr<ID3D11VideoContext1> thisVtbl, ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->VideoProcessorGetBehaviorHints((ID3D11VideoProcessor*) pVideoProcessor.Handle, OutputWidth, OutputHeight, OutputFormat, StreamCount, ref pStreams, ref pBehaviorHints);
+        return @this->VideoProcessorGetBehaviorHints((ID3D11VideoProcessor*) pVideoProcessor.Handle, OutputWidth, OutputHeight, OutputFormat, StreamCount, in pStreams, ref pBehaviorHints);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, VideoProcessorStreamBehaviorHint* pStreams, uint* pBehaviorHints)
+    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStreamBehaviorHint* pStreams, uint* pBehaviorHints)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14968,7 +14968,7 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, VideoProcessorStreamBehaviorHint* pStreams, Span<uint> pBehaviorHints)
+    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStreamBehaviorHint* pStreams, Span<uint> pBehaviorHints)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14976,19 +14976,19 @@ public unsafe static class D3D11VideoContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, Span<VideoProcessorStreamBehaviorHint> pStreams, uint* pBehaviorHints)
+    public static unsafe int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessorStreamBehaviorHint> pStreams, uint* pBehaviorHints)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorGetBehaviorHints(ref pVideoProcessor.GetPinnableReference(), OutputWidth, OutputHeight, OutputFormat, StreamCount, ref pStreams.GetPinnableReference(), pBehaviorHints);
+        return @this->VideoProcessorGetBehaviorHints(ref pVideoProcessor.GetPinnableReference(), OutputWidth, OutputHeight, OutputFormat, StreamCount, in pStreams.GetPinnableReference(), pBehaviorHints);
     }
 
     /// <summary>To be documented.</summary>
-    public static int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, Span<VideoProcessorStreamBehaviorHint> pStreams, Span<uint> pBehaviorHints)
+    public static int VideoProcessorGetBehaviorHints(this ComPtr<ID3D11VideoContext1> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] ReadOnlySpan<VideoProcessorStreamBehaviorHint> pStreams, Span<uint> pBehaviorHints)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->VideoProcessorGetBehaviorHints(ref pVideoProcessor.GetPinnableReference(), OutputWidth, OutputHeight, OutputFormat, StreamCount, ref pStreams.GetPinnableReference(), ref pBehaviorHints.GetPinnableReference());
+        return @this->VideoProcessorGetBehaviorHints(ref pVideoProcessor.GetPinnableReference(), OutputWidth, OutputHeight, OutputFormat, StreamCount, in pStreams.GetPinnableReference(), ref pBehaviorHints.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

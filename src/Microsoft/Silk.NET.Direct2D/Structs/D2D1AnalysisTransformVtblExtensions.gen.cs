@@ -85,7 +85,7 @@ public unsafe static class D2D1AnalysisTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ProcessAnalysisResults(this ComPtr<ID2D1AnalysisTransform> thisVtbl, byte* analysisData, uint analysisDataCount)
+    public static unsafe int ProcessAnalysisResults(this ComPtr<ID2D1AnalysisTransform> thisVtbl, [Flow(FlowDirection.In)] byte* analysisData, uint analysisDataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -94,7 +94,7 @@ public unsafe static class D2D1AnalysisTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ProcessAnalysisResults(this ComPtr<ID2D1AnalysisTransform> thisVtbl, ref byte analysisData, uint analysisDataCount)
+    public static int ProcessAnalysisResults(this ComPtr<ID2D1AnalysisTransform> thisVtbl, [Flow(FlowDirection.In)] in byte analysisData, uint analysisDataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -106,7 +106,7 @@ public unsafe static class D2D1AnalysisTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ProcessAnalysisResults(this ComPtr<ID2D1AnalysisTransform> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string analysisData, uint analysisDataCount)
+    public static int ProcessAnalysisResults(this ComPtr<ID2D1AnalysisTransform> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string analysisData, uint analysisDataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -142,11 +142,11 @@ public unsafe static class D2D1AnalysisTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ProcessAnalysisResults(this ComPtr<ID2D1AnalysisTransform> thisVtbl, Span<byte> analysisData, uint analysisDataCount)
+    public static int ProcessAnalysisResults(this ComPtr<ID2D1AnalysisTransform> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> analysisData, uint analysisDataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->ProcessAnalysisResults(ref analysisData.GetPinnableReference(), analysisDataCount);
+        return @this->ProcessAnalysisResults(in analysisData.GetPinnableReference(), analysisDataCount);
     }
 
     /// <summary>To be documented.</summary>

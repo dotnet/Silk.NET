@@ -351,7 +351,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe uint GetAdapterModeCountEx(uint Adapter, Displaymodefilter* pFilter)
+        public readonly unsafe uint GetAdapterModeCountEx(uint Adapter, [Flow(FlowDirection.In)] Displaymodefilter* pFilter)
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
@@ -360,7 +360,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly uint GetAdapterModeCountEx(uint Adapter, ref Displaymodefilter pFilter)
+        public readonly uint GetAdapterModeCountEx(uint Adapter, [Flow(FlowDirection.In)] in Displaymodefilter pFilter)
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
@@ -372,7 +372,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int EnumAdapterModesEx(uint Adapter, Displaymodefilter* pFilter, uint Mode, Displaymodeex* pMode)
+        public readonly unsafe int EnumAdapterModesEx(uint Adapter, [Flow(FlowDirection.In)] Displaymodefilter* pFilter, uint Mode, Displaymodeex* pMode)
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -381,7 +381,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int EnumAdapterModesEx(uint Adapter, Displaymodefilter* pFilter, uint Mode, ref Displaymodeex pMode)
+        public readonly unsafe int EnumAdapterModesEx(uint Adapter, [Flow(FlowDirection.In)] Displaymodefilter* pFilter, uint Mode, ref Displaymodeex pMode)
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -393,7 +393,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int EnumAdapterModesEx(uint Adapter, ref Displaymodefilter pFilter, uint Mode, Displaymodeex* pMode)
+        public readonly unsafe int EnumAdapterModesEx(uint Adapter, [Flow(FlowDirection.In)] in Displaymodefilter pFilter, uint Mode, Displaymodeex* pMode)
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -405,7 +405,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int EnumAdapterModesEx(uint Adapter, ref Displaymodefilter pFilter, uint Mode, ref Displaymodeex pMode)
+        public readonly int EnumAdapterModesEx(uint Adapter, [Flow(FlowDirection.In)] in Displaymodefilter pFilter, uint Mode, ref Displaymodeex pMode)
         {
             var @this = (IDirect3D9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

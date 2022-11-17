@@ -111,7 +111,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ProcessAnalysisResults(byte* analysisData, uint analysisDataCount)
+        public readonly unsafe int ProcessAnalysisResults([Flow(FlowDirection.In)] byte* analysisData, uint analysisDataCount)
         {
             var @this = (ID2D1AnalysisTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -120,7 +120,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ProcessAnalysisResults(ref byte analysisData, uint analysisDataCount)
+        public readonly int ProcessAnalysisResults([Flow(FlowDirection.In)] in byte analysisData, uint analysisDataCount)
         {
             var @this = (ID2D1AnalysisTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -132,7 +132,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ProcessAnalysisResults([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string analysisData, uint analysisDataCount)
+        public readonly int ProcessAnalysisResults([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string analysisData, uint analysisDataCount)
         {
             var @this = (ID2D1AnalysisTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

@@ -483,7 +483,7 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, byte* pDescription)
+    public static unsafe int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(FlowDirection.In)] byte* pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -492,7 +492,7 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, ref byte pDescription)
+    public static int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(FlowDirection.In)] in byte pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -504,7 +504,7 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
+    public static int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -515,7 +515,7 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, byte* pDescription)
+    public static unsafe int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, [Flow(FlowDirection.In)] byte* pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -524,7 +524,7 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, ref byte pDescription)
+    public static int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, [Flow(FlowDirection.In)] in byte pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -536,7 +536,7 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
+    public static int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -746,19 +746,19 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, Span<byte> pDescription)
+    public static int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pDescription)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddMessage(Producer, Category, Severity, ID, ref pDescription.GetPinnableReference());
+        return @this->AddMessage(Producer, Category, Severity, ID, in pDescription.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, Span<byte> pDescription)
+    public static int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pDescription)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddApplicationMessage(Severity, ref pDescription.GetPinnableReference());
+        return @this->AddApplicationMessage(Severity, in pDescription.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

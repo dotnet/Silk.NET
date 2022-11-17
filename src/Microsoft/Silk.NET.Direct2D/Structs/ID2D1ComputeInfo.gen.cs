@@ -146,7 +146,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetComputeShaderConstantBuffer(byte* buffer, uint bufferCount)
+        public readonly unsafe int SetComputeShaderConstantBuffer([Flow(FlowDirection.In)] byte* buffer, uint bufferCount)
         {
             var @this = (ID2D1ComputeInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -155,7 +155,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetComputeShaderConstantBuffer(ref byte buffer, uint bufferCount)
+        public readonly int SetComputeShaderConstantBuffer([Flow(FlowDirection.In)] in byte buffer, uint bufferCount)
         {
             var @this = (ID2D1ComputeInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -167,7 +167,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetComputeShaderConstantBuffer([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer, uint bufferCount)
+        public readonly int SetComputeShaderConstantBuffer([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer, uint bufferCount)
         {
             var @this = (ID2D1ComputeInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

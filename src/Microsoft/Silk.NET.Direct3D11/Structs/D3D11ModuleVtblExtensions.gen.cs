@@ -85,7 +85,7 @@ public unsafe static class D3D11ModuleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInstance(this ComPtr<ID3D11Module> thisVtbl, byte* pNamespace, ID3D11ModuleInstance** ppModuleInstance)
+    public static unsafe int CreateInstance(this ComPtr<ID3D11Module> thisVtbl, [Flow(FlowDirection.In)] byte* pNamespace, ID3D11ModuleInstance** ppModuleInstance)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -94,7 +94,7 @@ public unsafe static class D3D11ModuleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInstance(this ComPtr<ID3D11Module> thisVtbl, byte* pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
+    public static unsafe int CreateInstance(this ComPtr<ID3D11Module> thisVtbl, [Flow(FlowDirection.In)] byte* pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -106,7 +106,7 @@ public unsafe static class D3D11ModuleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInstance(this ComPtr<ID3D11Module> thisVtbl, ref byte pNamespace, ID3D11ModuleInstance** ppModuleInstance)
+    public static unsafe int CreateInstance(this ComPtr<ID3D11Module> thisVtbl, [Flow(FlowDirection.In)] in byte pNamespace, ID3D11ModuleInstance** ppModuleInstance)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class D3D11ModuleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInstance(this ComPtr<ID3D11Module> thisVtbl, ref byte pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
+    public static unsafe int CreateInstance(this ComPtr<ID3D11Module> thisVtbl, [Flow(FlowDirection.In)] in byte pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -133,7 +133,7 @@ public unsafe static class D3D11ModuleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInstance(this ComPtr<ID3D11Module> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pNamespace, ID3D11ModuleInstance** ppModuleInstance)
+    public static unsafe int CreateInstance(this ComPtr<ID3D11Module> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pNamespace, ID3D11ModuleInstance** ppModuleInstance)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -144,7 +144,7 @@ public unsafe static class D3D11ModuleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInstance(this ComPtr<ID3D11Module> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
+    public static unsafe int CreateInstance(this ComPtr<ID3D11Module> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -183,7 +183,7 @@ public unsafe static class D3D11ModuleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInstance<TI0>(this ComPtr<ID3D11Module> thisVtbl, byte* pNamespace, ref ComPtr<TI0> ppModuleInstance) where TI0 : unmanaged, IComVtbl<ID3D11ModuleInstance>, IComVtbl<TI0>
+    public static unsafe int CreateInstance<TI0>(this ComPtr<ID3D11Module> thisVtbl, [Flow(FlowDirection.In)] byte* pNamespace, ref ComPtr<TI0> ppModuleInstance) where TI0 : unmanaged, IComVtbl<ID3D11ModuleInstance>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -191,31 +191,31 @@ public unsafe static class D3D11ModuleVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInstance(this ComPtr<ID3D11Module> thisVtbl, Span<byte> pNamespace, ID3D11ModuleInstance** ppModuleInstance)
+    public static unsafe int CreateInstance(this ComPtr<ID3D11Module> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pNamespace, ID3D11ModuleInstance** ppModuleInstance)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateInstance(ref pNamespace.GetPinnableReference(), ppModuleInstance);
+        return @this->CreateInstance(in pNamespace.GetPinnableReference(), ppModuleInstance);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateInstance<TI0>(this ComPtr<ID3D11Module> thisVtbl, ref byte pNamespace, ref ComPtr<TI0> ppModuleInstance) where TI0 : unmanaged, IComVtbl<ID3D11ModuleInstance>, IComVtbl<TI0>
+    public static int CreateInstance<TI0>(this ComPtr<ID3D11Module> thisVtbl, [Flow(FlowDirection.In)] in byte pNamespace, ref ComPtr<TI0> ppModuleInstance) where TI0 : unmanaged, IComVtbl<ID3D11ModuleInstance>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateInstance(ref pNamespace, (ID3D11ModuleInstance**) ppModuleInstance.GetAddressOf());
+        return @this->CreateInstance(in pNamespace, (ID3D11ModuleInstance**) ppModuleInstance.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInstance(this ComPtr<ID3D11Module> thisVtbl, Span<byte> pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
+    public static unsafe int CreateInstance(this ComPtr<ID3D11Module> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pNamespace, ref ID3D11ModuleInstance* ppModuleInstance)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateInstance(ref pNamespace.GetPinnableReference(), ref ppModuleInstance);
+        return @this->CreateInstance(in pNamespace.GetPinnableReference(), ref ppModuleInstance);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateInstance<TI0>(this ComPtr<ID3D11Module> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pNamespace, ref ComPtr<TI0> ppModuleInstance) where TI0 : unmanaged, IComVtbl<ID3D11ModuleInstance>, IComVtbl<TI0>
+    public static int CreateInstance<TI0>(this ComPtr<ID3D11Module> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pNamespace, ref ComPtr<TI0> ppModuleInstance) where TI0 : unmanaged, IComVtbl<ID3D11ModuleInstance>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

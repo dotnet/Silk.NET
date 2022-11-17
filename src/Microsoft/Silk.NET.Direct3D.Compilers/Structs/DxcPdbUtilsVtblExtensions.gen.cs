@@ -583,7 +583,7 @@ public unsafe static class DxcPdbUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int OverrideRootSignature(this ComPtr<IDxcPdbUtils> thisVtbl, char* pRootSignature)
+    public static unsafe int OverrideRootSignature(this ComPtr<IDxcPdbUtils> thisVtbl, [Flow(FlowDirection.In)] char* pRootSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -592,7 +592,7 @@ public unsafe static class DxcPdbUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int OverrideRootSignature(this ComPtr<IDxcPdbUtils> thisVtbl, ref char pRootSignature)
+    public static int OverrideRootSignature(this ComPtr<IDxcPdbUtils> thisVtbl, [Flow(FlowDirection.In)] in char pRootSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -604,7 +604,7 @@ public unsafe static class DxcPdbUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int OverrideRootSignature(this ComPtr<IDxcPdbUtils> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pRootSignature)
+    public static int OverrideRootSignature(this ComPtr<IDxcPdbUtils> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pRootSignature)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -895,11 +895,11 @@ public unsafe static class DxcPdbUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int OverrideRootSignature(this ComPtr<IDxcPdbUtils> thisVtbl, Span<char> pRootSignature)
+    public static int OverrideRootSignature(this ComPtr<IDxcPdbUtils> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> pRootSignature)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->OverrideRootSignature(ref pRootSignature.GetPinnableReference());
+        return @this->OverrideRootSignature(in pRootSignature.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

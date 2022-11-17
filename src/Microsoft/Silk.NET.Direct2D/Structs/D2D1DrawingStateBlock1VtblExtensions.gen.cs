@@ -119,14 +119,14 @@ public unsafe static class D2D1DrawingStateBlock1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetDescription(this ComPtr<ID2D1DrawingStateBlock1> thisVtbl, DrawingStateDescription* stateDescription)
+    public static unsafe void SetDescription(this ComPtr<ID2D1DrawingStateBlock1> thisVtbl, [Flow(FlowDirection.In)] DrawingStateDescription* stateDescription)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DrawingStateBlock1*, DrawingStateDescription*, void>)@this->LpVtbl[5])(@this, stateDescription);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetDescription(this ComPtr<ID2D1DrawingStateBlock1> thisVtbl, ref DrawingStateDescription stateDescription)
+    public static void SetDescription(this ComPtr<ID2D1DrawingStateBlock1> thisVtbl, [Flow(FlowDirection.In)] in DrawingStateDescription stateDescription)
     {
         var @this = thisVtbl.Handle;
         fixed (DrawingStateDescription* stateDescriptionPtr = &stateDescription)
@@ -211,11 +211,11 @@ public unsafe static class D2D1DrawingStateBlock1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetDescription(this ComPtr<ID2D1DrawingStateBlock1> thisVtbl, Span<DrawingStateDescription> stateDescription)
+    public static void SetDescription(this ComPtr<ID2D1DrawingStateBlock1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DrawingStateDescription> stateDescription)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->SetDescription(ref stateDescription.GetPinnableReference());
+        @this->SetDescription(in stateDescription.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

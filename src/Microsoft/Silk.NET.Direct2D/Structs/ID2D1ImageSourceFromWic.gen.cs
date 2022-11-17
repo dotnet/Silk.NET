@@ -167,7 +167,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int EnsureCached(Silk.NET.Maths.Box2D<uint>* rectangleToFill)
+        public readonly unsafe int EnsureCached([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* rectangleToFill)
         {
             var @this = (ID2D1ImageSourceFromWic*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -176,7 +176,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int EnsureCached(ref Silk.NET.Maths.Box2D<uint> rectangleToFill)
+        public readonly int EnsureCached([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> rectangleToFill)
         {
             var @this = (ID2D1ImageSourceFromWic*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -188,7 +188,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int TrimCache(Silk.NET.Maths.Box2D<uint>* rectangleToPreserve)
+        public readonly unsafe int TrimCache([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* rectangleToPreserve)
         {
             var @this = (ID2D1ImageSourceFromWic*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -197,7 +197,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int TrimCache(ref Silk.NET.Maths.Box2D<uint> rectangleToPreserve)
+        public readonly int TrimCache([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> rectangleToPreserve)
         {
             var @this = (ID2D1ImageSourceFromWic*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

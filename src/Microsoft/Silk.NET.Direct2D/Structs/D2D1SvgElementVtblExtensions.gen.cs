@@ -463,7 +463,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, char* tagName, ID2D1SvgElement** newChild)
+    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* tagName, ID2D1SvgElement** newChild)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -472,7 +472,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, char* tagName, ref ID2D1SvgElement* newChild)
+    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* tagName, ref ID2D1SvgElement* newChild)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -484,7 +484,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, ref char tagName, ID2D1SvgElement** newChild)
+    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] in char tagName, ID2D1SvgElement** newChild)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -496,7 +496,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, ref char tagName, ref ID2D1SvgElement* newChild)
+    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] in char tagName, ref ID2D1SvgElement* newChild)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -511,7 +511,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tagName, ID2D1SvgElement** newChild)
+    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tagName, ID2D1SvgElement** newChild)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -522,7 +522,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tagName, ref ID2D1SvgElement* newChild)
+    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tagName, ref ID2D1SvgElement* newChild)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -536,7 +536,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, char* name, int* inherited)
+    public static unsafe int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, int* inherited)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -545,7 +545,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, char* name, ref int inherited)
+    public static unsafe int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, ref int inherited)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -557,7 +557,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, ref char name, int* inherited)
+    public static unsafe int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] in char name, int* inherited)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -569,7 +569,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, ref char name, ref int inherited)
+    public static int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] in char name, ref int inherited)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -584,7 +584,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, int* inherited)
+    public static unsafe int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, int* inherited)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -595,7 +595,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, ref int inherited)
+    public static int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, ref int inherited)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -739,7 +739,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int RemoveAttribute(this ComPtr<ID2D1SvgElement> thisVtbl, char* name)
+    public static unsafe int RemoveAttribute(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -748,7 +748,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RemoveAttribute(this ComPtr<ID2D1SvgElement> thisVtbl, ref char name)
+    public static int RemoveAttribute(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] in char name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -760,7 +760,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RemoveAttribute(this ComPtr<ID2D1SvgElement> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name)
+    public static int RemoveAttribute(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -771,7 +771,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetTextValue(this ComPtr<ID2D1SvgElement> thisVtbl, char* name, uint nameCount)
+    public static unsafe int SetTextValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, uint nameCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -780,7 +780,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTextValue(this ComPtr<ID2D1SvgElement> thisVtbl, ref char name, uint nameCount)
+    public static int SetTextValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] in char name, uint nameCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -792,7 +792,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTextValue(this ComPtr<ID2D1SvgElement> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, uint nameCount)
+    public static int SetTextValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, uint nameCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -844,7 +844,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, char* name, SvgAttributeStringType type, char* value)
+    public static unsafe int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, SvgAttributeStringType type, [Flow(FlowDirection.In)] char* value)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -853,7 +853,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, char* name, SvgAttributeStringType type, ref char value)
+    public static unsafe int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, SvgAttributeStringType type, [Flow(FlowDirection.In)] in char value)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -865,7 +865,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, char* name, SvgAttributeStringType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value)
+    public static unsafe int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, SvgAttributeStringType type, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -876,7 +876,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, ref char name, SvgAttributeStringType type, char* value)
+    public static unsafe int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] in char name, SvgAttributeStringType type, [Flow(FlowDirection.In)] char* value)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -888,7 +888,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, ref char name, SvgAttributeStringType type, ref char value)
+    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] in char name, SvgAttributeStringType type, [Flow(FlowDirection.In)] in char value)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -903,7 +903,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, ref char name, SvgAttributeStringType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value)
+    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] in char name, SvgAttributeStringType type, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -917,7 +917,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, char* value)
+    public static unsafe int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, [Flow(FlowDirection.In)] char* value)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -928,7 +928,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, ref char value)
+    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, [Flow(FlowDirection.In)] in char value)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -942,7 +942,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value)
+    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -955,7 +955,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, char* name, SvgAttributeStringType type, char* value, uint valueCount)
+    public static unsafe int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, SvgAttributeStringType type, char* value, uint valueCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -964,7 +964,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, char* name, SvgAttributeStringType type, ref char value, uint valueCount)
+    public static unsafe int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, SvgAttributeStringType type, ref char value, uint valueCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -976,7 +976,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, char* name, SvgAttributeStringType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, uint valueCount)
+    public static unsafe int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, SvgAttributeStringType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, uint valueCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -987,7 +987,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, ref char name, SvgAttributeStringType type, char* value, uint valueCount)
+    public static unsafe int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] in char name, SvgAttributeStringType type, char* value, uint valueCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -999,7 +999,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, ref char name, SvgAttributeStringType type, ref char value, uint valueCount)
+    public static int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] in char name, SvgAttributeStringType type, ref char value, uint valueCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1014,7 +1014,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, ref char name, SvgAttributeStringType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, uint valueCount)
+    public static int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] in char name, SvgAttributeStringType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, uint valueCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1028,7 +1028,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, char* value, uint valueCount)
+    public static unsafe int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, char* value, uint valueCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1039,7 +1039,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, ref char value, uint valueCount)
+    public static int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, ref char value, uint valueCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1053,7 +1053,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, uint valueCount)
+    public static int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, uint valueCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1066,7 +1066,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, char* name, SvgAttributeStringType type, uint* valueLength)
+    public static unsafe int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, SvgAttributeStringType type, uint* valueLength)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1075,7 +1075,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, char* name, SvgAttributeStringType type, ref uint valueLength)
+    public static unsafe int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, SvgAttributeStringType type, ref uint valueLength)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1087,7 +1087,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, ref char name, SvgAttributeStringType type, uint* valueLength)
+    public static unsafe int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] in char name, SvgAttributeStringType type, uint* valueLength)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1099,7 +1099,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, ref char name, SvgAttributeStringType type, ref uint valueLength)
+    public static int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] in char name, SvgAttributeStringType type, ref uint valueLength)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1114,7 +1114,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, uint* valueLength)
+    public static unsafe int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, uint* valueLength)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1125,7 +1125,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, ref uint valueLength)
+    public static int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, ref uint valueLength)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1420,7 +1420,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateChild<TI0>(this ComPtr<ID2D1SvgElement> thisVtbl, char* tagName, ref ComPtr<TI0> newChild) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
+    public static unsafe int CreateChild<TI0>(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* tagName, ref ComPtr<TI0> newChild) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1428,31 +1428,31 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, Span<char> tagName, ID2D1SvgElement** newChild)
+    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> tagName, ID2D1SvgElement** newChild)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateChild(ref tagName.GetPinnableReference(), newChild);
+        return @this->CreateChild(in tagName.GetPinnableReference(), newChild);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateChild<TI0>(this ComPtr<ID2D1SvgElement> thisVtbl, ref char tagName, ref ComPtr<TI0> newChild) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
+    public static int CreateChild<TI0>(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] in char tagName, ref ComPtr<TI0> newChild) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateChild(ref tagName, (ID2D1SvgElement**) newChild.GetAddressOf());
+        return @this->CreateChild(in tagName, (ID2D1SvgElement**) newChild.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, Span<char> tagName, ref ID2D1SvgElement* newChild)
+    public static unsafe int CreateChild(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> tagName, ref ID2D1SvgElement* newChild)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateChild(ref tagName.GetPinnableReference(), ref newChild);
+        return @this->CreateChild(in tagName.GetPinnableReference(), ref newChild);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateChild<TI0>(this ComPtr<ID2D1SvgElement> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tagName, ref ComPtr<TI0> newChild) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
+    public static int CreateChild<TI0>(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string tagName, ref ComPtr<TI0> newChild) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1460,7 +1460,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, char* name, Span<int> inherited)
+    public static unsafe int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, Span<int> inherited)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1468,23 +1468,23 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, Span<char> name, int* inherited)
+    public static unsafe int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, int* inherited)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->IsAttributeSpecified(ref name.GetPinnableReference(), inherited);
+        return @this->IsAttributeSpecified(in name.GetPinnableReference(), inherited);
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, Span<char> name, Span<int> inherited)
+    public static int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, Span<int> inherited)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->IsAttributeSpecified(ref name.GetPinnableReference(), ref inherited.GetPinnableReference());
+        return @this->IsAttributeSpecified(in name.GetPinnableReference(), ref inherited.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<int> inherited)
+    public static int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<int> inherited)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1548,19 +1548,19 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int RemoveAttribute(this ComPtr<ID2D1SvgElement> thisVtbl, Span<char> name)
+    public static int RemoveAttribute(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->RemoveAttribute(ref name.GetPinnableReference());
+        return @this->RemoveAttribute(in name.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTextValue(this ComPtr<ID2D1SvgElement> thisVtbl, Span<char> name, uint nameCount)
+    public static int SetTextValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, uint nameCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetTextValue(ref name.GetPinnableReference(), nameCount);
+        return @this->SetTextValue(in name.GetPinnableReference(), nameCount);
     }
 
     /// <summary>To be documented.</summary>
@@ -1572,79 +1572,47 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, char* name, SvgAttributeStringType type, Span<char> value)
+    public static unsafe int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, SvgAttributeStringType type, [Flow(FlowDirection.In)] ReadOnlySpan<char> value)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetAttributeValue(name, type, ref value.GetPinnableReference());
+        return @this->SetAttributeValue(name, type, in value.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, Span<char> name, SvgAttributeStringType type, char* value)
+    public static unsafe int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, SvgAttributeStringType type, [Flow(FlowDirection.In)] char* value)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetAttributeValue(ref name.GetPinnableReference(), type, value);
+        return @this->SetAttributeValue(in name.GetPinnableReference(), type, value);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, Span<char> name, SvgAttributeStringType type, Span<char> value)
+    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, SvgAttributeStringType type, [Flow(FlowDirection.In)] ReadOnlySpan<char> value)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetAttributeValue(ref name.GetPinnableReference(), type, ref value.GetPinnableReference());
+        return @this->SetAttributeValue(in name.GetPinnableReference(), type, in value.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, Span<char> name, SvgAttributeStringType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value)
+    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, SvgAttributeStringType type, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetAttributeValue(ref name.GetPinnableReference(), type, value);
+        return @this->SetAttributeValue(in name.GetPinnableReference(), type, value);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, Span<char> value)
+    public static int SetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, [Flow(FlowDirection.In)] ReadOnlySpan<char> value)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetAttributeValue(name, type, ref value.GetPinnableReference());
+        return @this->SetAttributeValue(name, type, in value.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, char* name, SvgAttributeStringType type, Span<char> value, uint valueCount)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetAttributeValue(name, type, ref value.GetPinnableReference(), valueCount);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, Span<char> name, SvgAttributeStringType type, char* value, uint valueCount)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetAttributeValue(ref name.GetPinnableReference(), type, value, valueCount);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, Span<char> name, SvgAttributeStringType type, Span<char> value, uint valueCount)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetAttributeValue(ref name.GetPinnableReference(), type, ref value.GetPinnableReference(), valueCount);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, Span<char> name, SvgAttributeStringType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, uint valueCount)
-    {
-        var @this = thisVtbl.Handle;
-        // SpanOverloader
-        return @this->GetAttributeValue(ref name.GetPinnableReference(), type, value, valueCount);
-    }
-
-    /// <summary>To be documented.</summary>
-    public static int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, Span<char> value, uint valueCount)
+    public static unsafe int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, SvgAttributeStringType type, Span<char> value, uint valueCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1652,7 +1620,39 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, char* name, SvgAttributeStringType type, Span<uint> valueLength)
+    public static unsafe int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, SvgAttributeStringType type, char* value, uint valueCount)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetAttributeValue(in name.GetPinnableReference(), type, value, valueCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, SvgAttributeStringType type, Span<char> value, uint valueCount)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetAttributeValue(in name.GetPinnableReference(), type, ref value.GetPinnableReference(), valueCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, SvgAttributeStringType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string value, uint valueCount)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetAttributeValue(in name.GetPinnableReference(), type, value, valueCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int GetAttributeValue(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, Span<char> value, uint valueCount)
+    {
+        var @this = thisVtbl.Handle;
+        // SpanOverloader
+        return @this->GetAttributeValue(name, type, ref value.GetPinnableReference(), valueCount);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, SvgAttributeStringType type, Span<uint> valueLength)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1660,23 +1660,23 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, Span<char> name, SvgAttributeStringType type, uint* valueLength)
+    public static unsafe int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, SvgAttributeStringType type, uint* valueLength)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetAttributeValueLength(ref name.GetPinnableReference(), type, valueLength);
+        return @this->GetAttributeValueLength(in name.GetPinnableReference(), type, valueLength);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, Span<char> name, SvgAttributeStringType type, Span<uint> valueLength)
+    public static int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, SvgAttributeStringType type, Span<uint> valueLength)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetAttributeValueLength(ref name.GetPinnableReference(), type, ref valueLength.GetPinnableReference());
+        return @this->GetAttributeValueLength(in name.GetPinnableReference(), type, ref valueLength.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, Span<uint> valueLength)
+    public static int GetAttributeValueLength(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, SvgAttributeStringType type, Span<uint> valueLength)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

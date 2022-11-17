@@ -245,7 +245,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -254,7 +254,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -266,7 +266,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -278,7 +278,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -470,7 +470,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderBeginFrame(ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, void* pContentKey)
+        public readonly unsafe int DecoderBeginFrame(ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -479,7 +479,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderBeginFrame<T0>(ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, ref T0 pContentKey) where T0 : unmanaged
+        public readonly unsafe int DecoderBeginFrame<T0>(ID3D11VideoDecoder* pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -491,7 +491,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderBeginFrame(ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, void* pContentKey)
+        public readonly unsafe int DecoderBeginFrame(ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -503,7 +503,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderBeginFrame<T0>(ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, ref T0 pContentKey) where T0 : unmanaged
+        public readonly unsafe int DecoderBeginFrame<T0>(ID3D11VideoDecoder* pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -518,7 +518,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderBeginFrame(ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, void* pContentKey)
+        public readonly unsafe int DecoderBeginFrame(ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -530,7 +530,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderBeginFrame<T0>(ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, ref T0 pContentKey) where T0 : unmanaged
+        public readonly unsafe int DecoderBeginFrame<T0>(ref ID3D11VideoDecoder pDecoder, ID3D11VideoDecoderOutputView* pView, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -545,7 +545,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderBeginFrame(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, void* pContentKey)
+        public readonly unsafe int DecoderBeginFrame(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -560,7 +560,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DecoderBeginFrame<T0>(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, ref T0 pContentKey) where T0 : unmanaged
+        public readonly int DecoderBeginFrame<T0>(ref ID3D11VideoDecoder pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -599,7 +599,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SubmitDecoderBuffers(ID3D11VideoDecoder* pDecoder, uint NumBuffers, VideoDecoderBufferDesc* pBufferDesc)
+        public readonly unsafe int SubmitDecoderBuffers(ID3D11VideoDecoder* pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] VideoDecoderBufferDesc* pBufferDesc)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -608,7 +608,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SubmitDecoderBuffers(ID3D11VideoDecoder* pDecoder, uint NumBuffers, ref VideoDecoderBufferDesc pBufferDesc)
+        public readonly unsafe int SubmitDecoderBuffers(ID3D11VideoDecoder* pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] in VideoDecoderBufferDesc pBufferDesc)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -620,7 +620,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SubmitDecoderBuffers(ref ID3D11VideoDecoder pDecoder, uint NumBuffers, VideoDecoderBufferDesc* pBufferDesc)
+        public readonly unsafe int SubmitDecoderBuffers(ref ID3D11VideoDecoder pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] VideoDecoderBufferDesc* pBufferDesc)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -632,7 +632,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SubmitDecoderBuffers(ref ID3D11VideoDecoder pDecoder, uint NumBuffers, ref VideoDecoderBufferDesc pBufferDesc)
+        public readonly int SubmitDecoderBuffers(ref ID3D11VideoDecoder pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] in VideoDecoderBufferDesc pBufferDesc)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -647,7 +647,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderExtension(ID3D11VideoDecoder* pDecoder, VideoDecoderExtension* pExtensionData)
+        public readonly unsafe int DecoderExtension(ID3D11VideoDecoder* pDecoder, [Flow(FlowDirection.In)] VideoDecoderExtension* pExtensionData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -656,7 +656,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderExtension(ID3D11VideoDecoder* pDecoder, ref VideoDecoderExtension pExtensionData)
+        public readonly unsafe int DecoderExtension(ID3D11VideoDecoder* pDecoder, [Flow(FlowDirection.In)] in VideoDecoderExtension pExtensionData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -668,7 +668,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderExtension(ref ID3D11VideoDecoder pDecoder, VideoDecoderExtension* pExtensionData)
+        public readonly unsafe int DecoderExtension(ref ID3D11VideoDecoder pDecoder, [Flow(FlowDirection.In)] VideoDecoderExtension* pExtensionData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -680,7 +680,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DecoderExtension(ref ID3D11VideoDecoder pDecoder, ref VideoDecoderExtension pExtensionData)
+        public readonly int DecoderExtension(ref ID3D11VideoDecoder pDecoder, [Flow(FlowDirection.In)] in VideoDecoderExtension pExtensionData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -695,14 +695,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
+        public readonly unsafe void VideoProcessorSetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessor, Enable, pRect);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
+        public readonly unsafe void VideoProcessorSetOutputTargetRect(ID3D11VideoProcessor* pVideoProcessor, int Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
@@ -712,7 +712,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
+        public readonly unsafe void VideoProcessorSetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -722,7 +722,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
+        public readonly void VideoProcessorSetOutputTargetRect(ref ID3D11VideoProcessor pVideoProcessor, int Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -735,14 +735,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputBackgroundColor(ID3D11VideoProcessor* pVideoProcessor, int YCbCr, VideoColor* pColor)
+        public readonly unsafe void VideoProcessorSetOutputBackgroundColor(ID3D11VideoProcessor* pVideoProcessor, int YCbCr, [Flow(FlowDirection.In)] VideoColor* pColor)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, int, VideoColor*, void>)@this->LpVtbl[14])(@this, pVideoProcessor, YCbCr, pColor);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputBackgroundColor(ID3D11VideoProcessor* pVideoProcessor, int YCbCr, ref VideoColor pColor)
+        public readonly unsafe void VideoProcessorSetOutputBackgroundColor(ID3D11VideoProcessor* pVideoProcessor, int YCbCr, [Flow(FlowDirection.In)] in VideoColor pColor)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoColor* pColorPtr = &pColor)
@@ -752,7 +752,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputBackgroundColor(ref ID3D11VideoProcessor pVideoProcessor, int YCbCr, VideoColor* pColor)
+        public readonly unsafe void VideoProcessorSetOutputBackgroundColor(ref ID3D11VideoProcessor pVideoProcessor, int YCbCr, [Flow(FlowDirection.In)] VideoColor* pColor)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -762,7 +762,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetOutputBackgroundColor(ref ID3D11VideoProcessor pVideoProcessor, int YCbCr, ref VideoColor pColor)
+        public readonly void VideoProcessorSetOutputBackgroundColor(ref ID3D11VideoProcessor pVideoProcessor, int YCbCr, [Flow(FlowDirection.In)] in VideoColor pColor)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -775,14 +775,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputColorSpace(ID3D11VideoProcessor* pVideoProcessor, VideoProcessorColorSpace* pColorSpace)
+        public readonly unsafe void VideoProcessorSetOutputColorSpace(ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessorColorSpace* pColorSpace)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, VideoProcessorColorSpace*, void>)@this->LpVtbl[15])(@this, pVideoProcessor, pColorSpace);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputColorSpace(ID3D11VideoProcessor* pVideoProcessor, ref VideoProcessorColorSpace pColorSpace)
+        public readonly unsafe void VideoProcessorSetOutputColorSpace(ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] in VideoProcessorColorSpace pColorSpace)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoProcessorColorSpace* pColorSpacePtr = &pColorSpace)
@@ -792,7 +792,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputColorSpace(ref ID3D11VideoProcessor pVideoProcessor, VideoProcessorColorSpace* pColorSpace)
+        public readonly unsafe void VideoProcessorSetOutputColorSpace(ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessorColorSpace* pColorSpace)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -802,7 +802,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetOutputColorSpace(ref ID3D11VideoProcessor pVideoProcessor, ref VideoProcessorColorSpace pColorSpace)
+        public readonly void VideoProcessorSetOutputColorSpace(ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] in VideoProcessorColorSpace pColorSpace)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -866,7 +866,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetOutputExtension(ID3D11VideoProcessor* pVideoProcessor, Guid* pExtensionGuid, uint DataSize, void* pData)
+        public readonly unsafe int VideoProcessorSetOutputExtension(ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -875,7 +875,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetOutputExtension<T0>(ID3D11VideoProcessor* pVideoProcessor, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int VideoProcessorSetOutputExtension<T0>(ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -887,7 +887,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetOutputExtension(ID3D11VideoProcessor* pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, void* pData)
+        public readonly unsafe int VideoProcessorSetOutputExtension(ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -899,7 +899,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetOutputExtension<T0>(ID3D11VideoProcessor* pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int VideoProcessorSetOutputExtension<T0>(ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -914,7 +914,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetOutputExtension(ref ID3D11VideoProcessor pVideoProcessor, Guid* pExtensionGuid, uint DataSize, void* pData)
+        public readonly unsafe int VideoProcessorSetOutputExtension(ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -926,7 +926,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetOutputExtension<T0>(ref ID3D11VideoProcessor pVideoProcessor, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int VideoProcessorSetOutputExtension<T0>(ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -941,7 +941,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetOutputExtension(ref ID3D11VideoProcessor pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, void* pData)
+        public readonly unsafe int VideoProcessorSetOutputExtension(ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -956,7 +956,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int VideoProcessorSetOutputExtension<T0>(ref ID3D11VideoProcessor pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int VideoProcessorSetOutputExtension<T0>(ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1422,7 +1422,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetOutputExtension(ID3D11VideoProcessor* pVideoProcessor, Guid* pExtensionGuid, uint DataSize, void* pData)
+        public readonly unsafe int VideoProcessorGetOutputExtension(ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1431,7 +1431,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetOutputExtension<T0>(ID3D11VideoProcessor* pVideoProcessor, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int VideoProcessorGetOutputExtension<T0>(ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1443,7 +1443,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetOutputExtension(ID3D11VideoProcessor* pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, void* pData)
+        public readonly unsafe int VideoProcessorGetOutputExtension(ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1455,7 +1455,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetOutputExtension<T0>(ID3D11VideoProcessor* pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int VideoProcessorGetOutputExtension<T0>(ID3D11VideoProcessor* pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1470,7 +1470,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetOutputExtension(ref ID3D11VideoProcessor pVideoProcessor, Guid* pExtensionGuid, uint DataSize, void* pData)
+        public readonly unsafe int VideoProcessorGetOutputExtension(ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1482,7 +1482,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetOutputExtension<T0>(ref ID3D11VideoProcessor pVideoProcessor, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int VideoProcessorGetOutputExtension<T0>(ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1497,7 +1497,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetOutputExtension(ref ID3D11VideoProcessor pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, void* pData)
+        public readonly unsafe int VideoProcessorGetOutputExtension(ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1512,7 +1512,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int VideoProcessorGetOutputExtension<T0>(ref ID3D11VideoProcessor pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int VideoProcessorGetOutputExtension<T0>(ref ID3D11VideoProcessor pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1547,14 +1547,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamColorSpace(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorColorSpace* pColorSpace)
+        public readonly unsafe void VideoProcessorSetStreamColorSpace(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] VideoProcessorColorSpace* pColorSpace)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, VideoProcessorColorSpace*, void>)@this->LpVtbl[28])(@this, pVideoProcessor, StreamIndex, pColorSpace);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamColorSpace(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref VideoProcessorColorSpace pColorSpace)
+        public readonly unsafe void VideoProcessorSetStreamColorSpace(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in VideoProcessorColorSpace pColorSpace)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VideoProcessorColorSpace* pColorSpacePtr = &pColorSpace)
@@ -1564,7 +1564,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamColorSpace(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, VideoProcessorColorSpace* pColorSpace)
+        public readonly unsafe void VideoProcessorSetStreamColorSpace(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] VideoProcessorColorSpace* pColorSpace)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1574,7 +1574,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetStreamColorSpace(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref VideoProcessorColorSpace pColorSpace)
+        public readonly void VideoProcessorSetStreamColorSpace(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in VideoProcessorColorSpace pColorSpace)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1587,14 +1587,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamOutputRate(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, Silk.NET.DXGI.Rational* pCustomRate)
+        public readonly unsafe void VideoProcessorSetStreamOutputRate(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pCustomRate)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, int, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[29])(@this, pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, pCustomRate);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamOutputRate(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, ref Silk.NET.DXGI.Rational pCustomRate)
+        public readonly unsafe void VideoProcessorSetStreamOutputRate(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pCustomRate)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.DXGI.Rational* pCustomRatePtr = &pCustomRate)
@@ -1604,7 +1604,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamOutputRate(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, Silk.NET.DXGI.Rational* pCustomRate)
+        public readonly unsafe void VideoProcessorSetStreamOutputRate(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pCustomRate)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1614,7 +1614,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetStreamOutputRate(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, ref Silk.NET.DXGI.Rational pCustomRate)
+        public readonly void VideoProcessorSetStreamOutputRate(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pCustomRate)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1627,14 +1627,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
+        public readonly unsafe void VideoProcessorSetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
+        public readonly unsafe void VideoProcessorSetStreamSourceRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
@@ -1644,7 +1644,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
+        public readonly unsafe void VideoProcessorSetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1654,7 +1654,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
+        public readonly void VideoProcessorSetStreamSourceRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1667,14 +1667,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
+        public readonly unsafe void VideoProcessorSetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
+        public readonly unsafe void VideoProcessorSetStreamDestRect(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
@@ -1684,7 +1684,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect)
+        public readonly unsafe void VideoProcessorSetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1694,7 +1694,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect)
+        public readonly void VideoProcessorSetStreamDestRect(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1724,14 +1724,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamPalette(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, uint Count, uint* pEntries)
+        public readonly unsafe void VideoProcessorSetStreamPalette(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, uint Count, [Flow(FlowDirection.In)] uint* pEntries)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, uint, uint*, void>)@this->LpVtbl[33])(@this, pVideoProcessor, StreamIndex, Count, pEntries);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamPalette(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, uint Count, ref uint pEntries)
+        public readonly unsafe void VideoProcessorSetStreamPalette(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, uint Count, [Flow(FlowDirection.In)] in uint pEntries)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pEntriesPtr = &pEntries)
@@ -1741,7 +1741,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamPalette(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, uint Count, uint* pEntries)
+        public readonly unsafe void VideoProcessorSetStreamPalette(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, uint Count, [Flow(FlowDirection.In)] uint* pEntries)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1751,7 +1751,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetStreamPalette(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, uint Count, ref uint pEntries)
+        public readonly void VideoProcessorSetStreamPalette(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, uint Count, [Flow(FlowDirection.In)] in uint pEntries)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1764,14 +1764,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.DXGI.Rational* pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, int, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatio);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.DXGI.Rational* pSourceAspectRatio, ref Silk.NET.DXGI.Rational pDestinationAspectRatio)
+        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.DXGI.Rational* pDestinationAspectRatioPtr = &pDestinationAspectRatio)
@@ -1781,7 +1781,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.DXGI.Rational pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.DXGI.Rational* pSourceAspectRatioPtr = &pSourceAspectRatio)
@@ -1791,7 +1791,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.DXGI.Rational pSourceAspectRatio, ref Silk.NET.DXGI.Rational pDestinationAspectRatio)
+        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Silk.NET.DXGI.Rational* pSourceAspectRatioPtr = &pSourceAspectRatio)
@@ -1804,7 +1804,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.DXGI.Rational* pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1814,7 +1814,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.DXGI.Rational* pSourceAspectRatio, ref Silk.NET.DXGI.Rational pDestinationAspectRatio)
+        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1827,7 +1827,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.DXGI.Rational pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1840,7 +1840,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetStreamPixelAspectRatio(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.DXGI.Rational pSourceAspectRatio, ref Silk.NET.DXGI.Rational pDestinationAspectRatio)
+        public readonly void VideoProcessorSetStreamPixelAspectRatio(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1924,7 +1924,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetStreamExtension(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, void* pData)
+        public readonly unsafe int VideoProcessorSetStreamExtension(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1933,7 +1933,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetStreamExtension<T0>(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int VideoProcessorSetStreamExtension<T0>(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1945,7 +1945,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetStreamExtension(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, void* pData)
+        public readonly unsafe int VideoProcessorSetStreamExtension(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1957,7 +1957,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetStreamExtension<T0>(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int VideoProcessorSetStreamExtension<T0>(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1972,7 +1972,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetStreamExtension(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, void* pData)
+        public readonly unsafe int VideoProcessorSetStreamExtension(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1984,7 +1984,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetStreamExtension<T0>(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int VideoProcessorSetStreamExtension<T0>(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1999,7 +1999,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetStreamExtension(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, void* pData)
+        public readonly unsafe int VideoProcessorSetStreamExtension(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2014,7 +2014,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int VideoProcessorSetStreamExtension<T0>(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int VideoProcessorSetStreamExtension<T0>(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5424,7 +5424,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetStreamExtension(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, void* pData)
+        public readonly unsafe int VideoProcessorGetStreamExtension(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5433,7 +5433,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetStreamExtension<T0>(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int VideoProcessorGetStreamExtension<T0>(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5445,7 +5445,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetStreamExtension(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, void* pData)
+        public readonly unsafe int VideoProcessorGetStreamExtension(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5457,7 +5457,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetStreamExtension<T0>(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int VideoProcessorGetStreamExtension<T0>(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5472,7 +5472,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetStreamExtension(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, void* pData)
+        public readonly unsafe int VideoProcessorGetStreamExtension(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5484,7 +5484,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetStreamExtension<T0>(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int VideoProcessorGetStreamExtension<T0>(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5499,7 +5499,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetStreamExtension(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, void* pData)
+        public readonly unsafe int VideoProcessorGetStreamExtension(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5514,7 +5514,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int VideoProcessorGetStreamExtension<T0>(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int VideoProcessorGetStreamExtension<T0>(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5532,7 +5532,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorBlt(ID3D11VideoProcessor* pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams)
+        public readonly unsafe int VideoProcessorBlt(ID3D11VideoProcessor* pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStream* pStreams)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5541,7 +5541,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorBlt(ID3D11VideoProcessor* pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, ref VideoProcessorStream pStreams)
+        public readonly unsafe int VideoProcessorBlt(ID3D11VideoProcessor* pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStream pStreams)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5553,7 +5553,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorBlt(ID3D11VideoProcessor* pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams)
+        public readonly unsafe int VideoProcessorBlt(ID3D11VideoProcessor* pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStream* pStreams)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5565,7 +5565,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorBlt(ID3D11VideoProcessor* pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, ref VideoProcessorStream pStreams)
+        public readonly unsafe int VideoProcessorBlt(ID3D11VideoProcessor* pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStream pStreams)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5580,7 +5580,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorBlt(ref ID3D11VideoProcessor pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams)
+        public readonly unsafe int VideoProcessorBlt(ref ID3D11VideoProcessor pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStream* pStreams)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5592,7 +5592,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorBlt(ref ID3D11VideoProcessor pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, ref VideoProcessorStream pStreams)
+        public readonly unsafe int VideoProcessorBlt(ref ID3D11VideoProcessor pVideoProcessor, ID3D11VideoProcessorOutputView* pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStream pStreams)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5607,7 +5607,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorBlt(ref ID3D11VideoProcessor pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams)
+        public readonly unsafe int VideoProcessorBlt(ref ID3D11VideoProcessor pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStream* pStreams)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5622,7 +5622,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int VideoProcessorBlt(ref ID3D11VideoProcessor pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, ref VideoProcessorStream pStreams)
+        public readonly int VideoProcessorBlt(ref ID3D11VideoProcessor pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStream pStreams)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5896,14 +5896,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+        public readonly unsafe void DecryptionBlt(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11CryptoSession*, ID3D11Texture2D*, ID3D11Texture2D*, EncryptedBlockInfo*, uint, void*, uint, void*, void>)@this->LpVtbl[56])(@this, pCryptoSession, pSrcSurface, pDstSurface, pEncryptedBlockInfo, ContentKeySize, pContentKey, IVSize, pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pIVPtr = &pIV)
@@ -5913,7 +5913,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pContentKeyPtr = &pContentKey)
@@ -5923,7 +5923,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0, T1>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pContentKeyPtr = &pContentKey)
@@ -5936,7 +5936,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+        public readonly unsafe void DecryptionBlt(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
@@ -5946,7 +5946,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
@@ -5959,7 +5959,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
@@ -5972,7 +5972,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0, T1>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
@@ -5988,7 +5988,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+        public readonly unsafe void DecryptionBlt(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -5998,7 +5998,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -6011,7 +6011,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -6024,7 +6024,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0, T1>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -6040,7 +6040,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+        public readonly unsafe void DecryptionBlt(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -6053,7 +6053,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -6069,7 +6069,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -6085,7 +6085,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0, T1>(ID3D11CryptoSession* pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pDstSurfacePtr = &pDstSurface)
@@ -6104,7 +6104,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+        public readonly unsafe void DecryptionBlt(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6114,7 +6114,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6127,7 +6127,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6140,7 +6140,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0, T1>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6156,7 +6156,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+        public readonly unsafe void DecryptionBlt(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6169,7 +6169,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6185,7 +6185,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6201,7 +6201,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0, T1>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6220,7 +6220,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+        public readonly unsafe void DecryptionBlt(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6233,7 +6233,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6249,7 +6249,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6265,7 +6265,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0, T1>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6284,7 +6284,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+        public readonly unsafe void DecryptionBlt(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6300,7 +6300,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6319,7 +6319,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6338,7 +6338,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0, T1>(ID3D11CryptoSession* pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Texture2D* pSrcSurfacePtr = &pSrcSurface)
@@ -6360,7 +6360,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+        public readonly unsafe void DecryptionBlt(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6370,7 +6370,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6383,7 +6383,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6396,7 +6396,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0, T1>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6412,7 +6412,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+        public readonly unsafe void DecryptionBlt(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6425,7 +6425,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6441,7 +6441,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6457,7 +6457,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0, T1>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6476,7 +6476,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+        public readonly unsafe void DecryptionBlt(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6489,7 +6489,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6505,7 +6505,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6521,7 +6521,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0, T1>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6540,7 +6540,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+        public readonly unsafe void DecryptionBlt(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6556,7 +6556,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6575,7 +6575,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6594,7 +6594,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0, T1>(ref ID3D11CryptoSession pCryptoSession, ID3D11Texture2D* pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6616,7 +6616,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+        public readonly unsafe void DecryptionBlt(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6629,7 +6629,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6645,7 +6645,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6661,7 +6661,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0, T1>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6680,7 +6680,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+        public readonly unsafe void DecryptionBlt(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6696,7 +6696,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6715,7 +6715,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6734,7 +6734,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0, T1>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ID3D11Texture2D* pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6756,7 +6756,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+        public readonly unsafe void DecryptionBlt(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6772,7 +6772,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6791,7 +6791,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6810,7 +6810,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0, T1>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6832,7 +6832,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV)
+        public readonly unsafe void DecryptionBlt(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6851,7 +6851,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6873,7 +6873,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
+        public readonly unsafe void DecryptionBlt<T0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -6895,7 +6895,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DecryptionBlt<T0, T1>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
+        public readonly void DecryptionBlt<T0, T1>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CryptoSession* pCryptoSessionPtr = &pCryptoSession)
@@ -7073,7 +7073,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryAuthenticatedChannel(ID3D11AuthenticatedChannel* pChannel, uint InputSize, void* pInput, uint OutputSize, void* pOutput)
+        public readonly unsafe int QueryAuthenticatedChannel(ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, void* pOutput)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7082,7 +7082,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryAuthenticatedChannel<T0>(ID3D11AuthenticatedChannel* pChannel, uint InputSize, void* pInput, uint OutputSize, ref T0 pOutput) where T0 : unmanaged
+        public readonly unsafe int QueryAuthenticatedChannel<T0>(ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, ref T0 pOutput) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7094,7 +7094,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryAuthenticatedChannel<T0>(ID3D11AuthenticatedChannel* pChannel, uint InputSize, ref T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
+        public readonly unsafe int QueryAuthenticatedChannel<T0>(ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7106,7 +7106,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryAuthenticatedChannel<T0, T1>(ID3D11AuthenticatedChannel* pChannel, uint InputSize, ref T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged
+        public readonly unsafe int QueryAuthenticatedChannel<T0, T1>(ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7121,7 +7121,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryAuthenticatedChannel(ref ID3D11AuthenticatedChannel pChannel, uint InputSize, void* pInput, uint OutputSize, void* pOutput)
+        public readonly unsafe int QueryAuthenticatedChannel(ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, void* pOutput)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7133,7 +7133,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryAuthenticatedChannel<T0>(ref ID3D11AuthenticatedChannel pChannel, uint InputSize, void* pInput, uint OutputSize, ref T0 pOutput) where T0 : unmanaged
+        public readonly unsafe int QueryAuthenticatedChannel<T0>(ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, ref T0 pOutput) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7148,7 +7148,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryAuthenticatedChannel<T0>(ref ID3D11AuthenticatedChannel pChannel, uint InputSize, ref T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
+        public readonly unsafe int QueryAuthenticatedChannel<T0>(ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7163,7 +7163,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int QueryAuthenticatedChannel<T0, T1>(ref ID3D11AuthenticatedChannel pChannel, uint InputSize, ref T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged
+        public readonly int QueryAuthenticatedChannel<T0, T1>(ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7181,7 +7181,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ConfigureAuthenticatedChannel(ID3D11AuthenticatedChannel* pChannel, uint InputSize, void* pInput, AuthenticatedConfigureOutput* pOutput)
+        public readonly unsafe int ConfigureAuthenticatedChannel(ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, AuthenticatedConfigureOutput* pOutput)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7190,7 +7190,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ConfigureAuthenticatedChannel(ID3D11AuthenticatedChannel* pChannel, uint InputSize, void* pInput, ref AuthenticatedConfigureOutput pOutput)
+        public readonly unsafe int ConfigureAuthenticatedChannel(ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, ref AuthenticatedConfigureOutput pOutput)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7202,7 +7202,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ConfigureAuthenticatedChannel<T0>(ID3D11AuthenticatedChannel* pChannel, uint InputSize, ref T0 pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged
+        public readonly unsafe int ConfigureAuthenticatedChannel<T0>(ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7214,7 +7214,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ConfigureAuthenticatedChannel<T0>(ID3D11AuthenticatedChannel* pChannel, uint InputSize, ref T0 pInput, ref AuthenticatedConfigureOutput pOutput) where T0 : unmanaged
+        public readonly unsafe int ConfigureAuthenticatedChannel<T0>(ID3D11AuthenticatedChannel* pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, ref AuthenticatedConfigureOutput pOutput) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7229,7 +7229,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ConfigureAuthenticatedChannel(ref ID3D11AuthenticatedChannel pChannel, uint InputSize, void* pInput, AuthenticatedConfigureOutput* pOutput)
+        public readonly unsafe int ConfigureAuthenticatedChannel(ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, AuthenticatedConfigureOutput* pOutput)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7241,7 +7241,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ConfigureAuthenticatedChannel(ref ID3D11AuthenticatedChannel pChannel, uint InputSize, void* pInput, ref AuthenticatedConfigureOutput pOutput)
+        public readonly unsafe int ConfigureAuthenticatedChannel(ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, ref AuthenticatedConfigureOutput pOutput)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7256,7 +7256,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ConfigureAuthenticatedChannel<T0>(ref ID3D11AuthenticatedChannel pChannel, uint InputSize, ref T0 pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged
+        public readonly unsafe int ConfigureAuthenticatedChannel<T0>(ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7271,7 +7271,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ConfigureAuthenticatedChannel<T0>(ref ID3D11AuthenticatedChannel pChannel, uint InputSize, ref T0 pInput, ref AuthenticatedConfigureOutput pOutput) where T0 : unmanaged
+        public readonly int ConfigureAuthenticatedChannel<T0>(ref ID3D11AuthenticatedChannel pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, ref AuthenticatedConfigureOutput pOutput) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7398,7 +7398,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SubmitDecoderBuffers1(ID3D11VideoDecoder* pDecoder, uint NumBuffers, VideoDecoderBufferDesc1* pBufferDesc)
+        public readonly unsafe int SubmitDecoderBuffers1(ID3D11VideoDecoder* pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] VideoDecoderBufferDesc1* pBufferDesc)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7407,7 +7407,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SubmitDecoderBuffers1(ID3D11VideoDecoder* pDecoder, uint NumBuffers, ref VideoDecoderBufferDesc1 pBufferDesc)
+        public readonly unsafe int SubmitDecoderBuffers1(ID3D11VideoDecoder* pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] in VideoDecoderBufferDesc1 pBufferDesc)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7419,7 +7419,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SubmitDecoderBuffers1(ref ID3D11VideoDecoder pDecoder, uint NumBuffers, VideoDecoderBufferDesc1* pBufferDesc)
+        public readonly unsafe int SubmitDecoderBuffers1(ref ID3D11VideoDecoder pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] VideoDecoderBufferDesc1* pBufferDesc)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7431,7 +7431,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SubmitDecoderBuffers1(ref ID3D11VideoDecoder pDecoder, uint NumBuffers, ref VideoDecoderBufferDesc1 pBufferDesc)
+        public readonly int SubmitDecoderBuffers1(ref ID3D11VideoDecoder pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] in VideoDecoderBufferDesc1 pBufferDesc)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7446,7 +7446,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDataForNewHardwareKey(ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, void* pPrivatInputData, ulong* pPrivateOutputData)
+        public readonly unsafe int GetDataForNewHardwareKey(ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] void* pPrivatInputData, ulong* pPrivateOutputData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7455,7 +7455,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDataForNewHardwareKey(ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, void* pPrivatInputData, ref ulong pPrivateOutputData)
+        public readonly unsafe int GetDataForNewHardwareKey(ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] void* pPrivatInputData, ref ulong pPrivateOutputData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7467,7 +7467,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDataForNewHardwareKey<T0>(ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, ref T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged
+        public readonly unsafe int GetDataForNewHardwareKey<T0>(ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] in T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7479,7 +7479,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDataForNewHardwareKey<T0>(ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, ref T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged
+        public readonly unsafe int GetDataForNewHardwareKey<T0>(ID3D11CryptoSession* pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] in T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7494,7 +7494,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDataForNewHardwareKey(ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, void* pPrivatInputData, ulong* pPrivateOutputData)
+        public readonly unsafe int GetDataForNewHardwareKey(ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] void* pPrivatInputData, ulong* pPrivateOutputData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7506,7 +7506,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDataForNewHardwareKey(ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, void* pPrivatInputData, ref ulong pPrivateOutputData)
+        public readonly unsafe int GetDataForNewHardwareKey(ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] void* pPrivatInputData, ref ulong pPrivateOutputData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7521,7 +7521,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDataForNewHardwareKey<T0>(ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, ref T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged
+        public readonly unsafe int GetDataForNewHardwareKey<T0>(ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] in T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7536,7 +7536,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetDataForNewHardwareKey<T0>(ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, ref T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged
+        public readonly int GetDataForNewHardwareKey<T0>(ref ID3D11CryptoSession pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] in T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7602,7 +7602,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderEnableDownsampling(ID3D11VideoDecoder* pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoSampleDesc* pOutputDesc, uint ReferenceFrameCount)
+        public readonly unsafe int DecoderEnableDownsampling(ID3D11VideoDecoder* pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, uint ReferenceFrameCount)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7611,7 +7611,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderEnableDownsampling(ID3D11VideoDecoder* pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoSampleDesc pOutputDesc, uint ReferenceFrameCount)
+        public readonly unsafe int DecoderEnableDownsampling(ID3D11VideoDecoder* pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, uint ReferenceFrameCount)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7623,7 +7623,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderEnableDownsampling(ref ID3D11VideoDecoder pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoSampleDesc* pOutputDesc, uint ReferenceFrameCount)
+        public readonly unsafe int DecoderEnableDownsampling(ref ID3D11VideoDecoder pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, uint ReferenceFrameCount)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7635,7 +7635,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DecoderEnableDownsampling(ref ID3D11VideoDecoder pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoSampleDesc pOutputDesc, uint ReferenceFrameCount)
+        public readonly int DecoderEnableDownsampling(ref ID3D11VideoDecoder pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, uint ReferenceFrameCount)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7650,7 +7650,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderUpdateDownsampling(ID3D11VideoDecoder* pDecoder, VideoSampleDesc* pOutputDesc)
+        public readonly unsafe int DecoderUpdateDownsampling(ID3D11VideoDecoder* pDecoder, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7659,7 +7659,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderUpdateDownsampling(ID3D11VideoDecoder* pDecoder, ref VideoSampleDesc pOutputDesc)
+        public readonly unsafe int DecoderUpdateDownsampling(ID3D11VideoDecoder* pDecoder, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7671,7 +7671,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderUpdateDownsampling(ref ID3D11VideoDecoder pDecoder, VideoSampleDesc* pOutputDesc)
+        public readonly unsafe int DecoderUpdateDownsampling(ref ID3D11VideoDecoder pDecoder, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -7683,7 +7683,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DecoderUpdateDownsampling(ref ID3D11VideoDecoder pDecoder, ref VideoSampleDesc pOutputDesc)
+        public readonly int DecoderUpdateDownsampling(ref ID3D11VideoDecoder pDecoder, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8094,7 +8094,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetBehaviorHints(ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, VideoProcessorStreamBehaviorHint* pStreams, uint* pBehaviorHints)
+        public readonly unsafe int VideoProcessorGetBehaviorHints(ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStreamBehaviorHint* pStreams, uint* pBehaviorHints)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8103,7 +8103,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetBehaviorHints(ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, VideoProcessorStreamBehaviorHint* pStreams, ref uint pBehaviorHints)
+        public readonly unsafe int VideoProcessorGetBehaviorHints(ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStreamBehaviorHint* pStreams, ref uint pBehaviorHints)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8115,7 +8115,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetBehaviorHints(ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, ref VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints)
+        public readonly unsafe int VideoProcessorGetBehaviorHints(ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8127,7 +8127,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetBehaviorHints(ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, ref VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints)
+        public readonly unsafe int VideoProcessorGetBehaviorHints(ID3D11VideoProcessor* pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8142,7 +8142,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetBehaviorHints(ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, VideoProcessorStreamBehaviorHint* pStreams, uint* pBehaviorHints)
+        public readonly unsafe int VideoProcessorGetBehaviorHints(ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStreamBehaviorHint* pStreams, uint* pBehaviorHints)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8154,7 +8154,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetBehaviorHints(ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, VideoProcessorStreamBehaviorHint* pStreams, ref uint pBehaviorHints)
+        public readonly unsafe int VideoProcessorGetBehaviorHints(ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStreamBehaviorHint* pStreams, ref uint pBehaviorHints)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8169,7 +8169,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetBehaviorHints(ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, ref VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints)
+        public readonly unsafe int VideoProcessorGetBehaviorHints(ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8184,7 +8184,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int VideoProcessorGetBehaviorHints(ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, ref VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints)
+        public readonly int VideoProcessorGetBehaviorHints(ref ID3D11VideoProcessor pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -8202,14 +8202,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputHDRMetaData(ID3D11VideoProcessor* pVideoProcessor, Silk.NET.DXGI.HdrMetadataType Type, uint Size, void* pHDRMetaData)
+        public readonly unsafe void VideoProcessorSetOutputHDRMetaData(ID3D11VideoProcessor* pVideoProcessor, Silk.NET.DXGI.HdrMetadataType Type, uint Size, [Flow(FlowDirection.In)] void* pHDRMetaData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.DXGI.HdrMetadataType, uint, void*, void>)@this->LpVtbl[79])(@this, pVideoProcessor, Type, Size, pHDRMetaData);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputHDRMetaData<T0>(ID3D11VideoProcessor* pVideoProcessor, Silk.NET.DXGI.HdrMetadataType Type, uint Size, ref T0 pHDRMetaData) where T0 : unmanaged
+        public readonly unsafe void VideoProcessorSetOutputHDRMetaData<T0>(ID3D11VideoProcessor* pVideoProcessor, Silk.NET.DXGI.HdrMetadataType Type, uint Size, [Flow(FlowDirection.In)] in T0 pHDRMetaData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pHDRMetaDataPtr = &pHDRMetaData)
@@ -8219,7 +8219,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputHDRMetaData(ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.DXGI.HdrMetadataType Type, uint Size, void* pHDRMetaData)
+        public readonly unsafe void VideoProcessorSetOutputHDRMetaData(ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.DXGI.HdrMetadataType Type, uint Size, [Flow(FlowDirection.In)] void* pHDRMetaData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -8229,7 +8229,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetOutputHDRMetaData<T0>(ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.DXGI.HdrMetadataType Type, uint Size, ref T0 pHDRMetaData) where T0 : unmanaged
+        public readonly void VideoProcessorSetOutputHDRMetaData<T0>(ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.DXGI.HdrMetadataType Type, uint Size, [Flow(FlowDirection.In)] in T0 pHDRMetaData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -8334,14 +8334,14 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamHDRMetaData(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType Type, uint Size, void* pHDRMetaData)
+        public readonly unsafe void VideoProcessorSetStreamHDRMetaData(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType Type, uint Size, [Flow(FlowDirection.In)] void* pHDRMetaData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.DXGI.HdrMetadataType, uint, void*, void>)@this->LpVtbl[81])(@this, pVideoProcessor, StreamIndex, Type, Size, pHDRMetaData);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamHDRMetaData<T0>(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType Type, uint Size, ref T0 pHDRMetaData) where T0 : unmanaged
+        public readonly unsafe void VideoProcessorSetStreamHDRMetaData<T0>(ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType Type, uint Size, [Flow(FlowDirection.In)] in T0 pHDRMetaData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pHDRMetaDataPtr = &pHDRMetaData)
@@ -8351,7 +8351,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamHDRMetaData(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType Type, uint Size, void* pHDRMetaData)
+        public readonly unsafe void VideoProcessorSetStreamHDRMetaData(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType Type, uint Size, [Flow(FlowDirection.In)] void* pHDRMetaData)
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -8361,7 +8361,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetStreamHDRMetaData<T0>(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType Type, uint Size, ref T0 pHDRMetaData) where T0 : unmanaged
+        public readonly void VideoProcessorSetStreamHDRMetaData<T0>(ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType Type, uint Size, [Flow(FlowDirection.In)] in T0 pHDRMetaData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -8539,7 +8539,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderBeginFrame<TI0, TI1>(ComPtr<TI0> pDecoder, ComPtr<TI1> pView, uint ContentKeySize, void* pContentKey) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI1>
+        public readonly unsafe int DecoderBeginFrame<TI0, TI1>(ComPtr<TI0> pDecoder, ComPtr<TI1> pView, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8547,15 +8547,15 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DecoderBeginFrame<T0, TI0, TI1>(ComPtr<TI0> pDecoder, ComPtr<TI1> pView, uint ContentKeySize, ref T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI1>
+        public readonly int DecoderBeginFrame<T0, TI0, TI1>(ComPtr<TI0> pDecoder, ComPtr<TI1> pView, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->DecoderBeginFrame((ID3D11VideoDecoder*) pDecoder.Handle, (ID3D11VideoDecoderOutputView*) pView.Handle, ContentKeySize, ref pContentKey);
+            return @this->DecoderBeginFrame((ID3D11VideoDecoder*) pDecoder.Handle, (ID3D11VideoDecoderOutputView*) pView.Handle, ContentKeySize, in pContentKey);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderBeginFrame<TI0>(ComPtr<TI0> pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, void* pContentKey) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        public readonly unsafe int DecoderBeginFrame<TI0>(ComPtr<TI0> pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8563,15 +8563,15 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DecoderBeginFrame<T0, TI0>(ComPtr<TI0> pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, ref T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        public readonly int DecoderBeginFrame<T0, TI0>(ComPtr<TI0> pDecoder, ref ID3D11VideoDecoderOutputView pView, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->DecoderBeginFrame((ID3D11VideoDecoder*) pDecoder.Handle, ref pView, ContentKeySize, ref pContentKey);
+            return @this->DecoderBeginFrame((ID3D11VideoDecoder*) pDecoder.Handle, ref pView, ContentKeySize, in pContentKey);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderBeginFrame<TI0>(ref ID3D11VideoDecoder pDecoder, ComPtr<TI0> pView, uint ContentKeySize, void* pContentKey) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI0>
+        public readonly unsafe int DecoderBeginFrame<TI0>(ref ID3D11VideoDecoder pDecoder, ComPtr<TI0> pView, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8579,11 +8579,11 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DecoderBeginFrame<T0, TI0>(ref ID3D11VideoDecoder pDecoder, ComPtr<TI0> pView, uint ContentKeySize, ref T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI0>
+        public readonly int DecoderBeginFrame<T0, TI0>(ref ID3D11VideoDecoder pDecoder, ComPtr<TI0> pView, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->DecoderBeginFrame(ref pDecoder, (ID3D11VideoDecoderOutputView*) pView.Handle, ContentKeySize, ref pContentKey);
+            return @this->DecoderBeginFrame(ref pDecoder, (ID3D11VideoDecoderOutputView*) pView.Handle, ContentKeySize, in pContentKey);
         }
 
         /// <summary>To be documented.</summary>
@@ -8595,7 +8595,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SubmitDecoderBuffers<TI0>(ComPtr<TI0> pDecoder, uint NumBuffers, VideoDecoderBufferDesc* pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        public readonly unsafe int SubmitDecoderBuffers<TI0>(ComPtr<TI0> pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] VideoDecoderBufferDesc* pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8603,15 +8603,15 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SubmitDecoderBuffers<TI0>(ComPtr<TI0> pDecoder, uint NumBuffers, ref VideoDecoderBufferDesc pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        public readonly int SubmitDecoderBuffers<TI0>(ComPtr<TI0> pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] in VideoDecoderBufferDesc pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->SubmitDecoderBuffers((ID3D11VideoDecoder*) pDecoder.Handle, NumBuffers, ref pBufferDesc);
+            return @this->SubmitDecoderBuffers((ID3D11VideoDecoder*) pDecoder.Handle, NumBuffers, in pBufferDesc);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderExtension<TI0>(ComPtr<TI0> pDecoder, VideoDecoderExtension* pExtensionData) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        public readonly unsafe int DecoderExtension<TI0>(ComPtr<TI0> pDecoder, [Flow(FlowDirection.In)] VideoDecoderExtension* pExtensionData) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8619,15 +8619,15 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DecoderExtension<TI0>(ComPtr<TI0> pDecoder, ref VideoDecoderExtension pExtensionData) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        public readonly int DecoderExtension<TI0>(ComPtr<TI0> pDecoder, [Flow(FlowDirection.In)] in VideoDecoderExtension pExtensionData) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->DecoderExtension((ID3D11VideoDecoder*) pDecoder.Handle, ref pExtensionData);
+            return @this->DecoderExtension((ID3D11VideoDecoder*) pDecoder.Handle, in pExtensionData);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, int Enable, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorSetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8635,15 +8635,15 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, int Enable, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly void VideoProcessorSetOutputTargetRect<TI0>(ComPtr<TI0> pVideoProcessor, int Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->VideoProcessorSetOutputTargetRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, Enable, ref pRect);
+            @this->VideoProcessorSetOutputTargetRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, Enable, in pRect);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputBackgroundColor<TI0>(ComPtr<TI0> pVideoProcessor, int YCbCr, VideoColor* pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorSetOutputBackgroundColor<TI0>(ComPtr<TI0> pVideoProcessor, int YCbCr, [Flow(FlowDirection.In)] VideoColor* pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8651,15 +8651,15 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetOutputBackgroundColor<TI0>(ComPtr<TI0> pVideoProcessor, int YCbCr, ref VideoColor pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly void VideoProcessorSetOutputBackgroundColor<TI0>(ComPtr<TI0> pVideoProcessor, int YCbCr, [Flow(FlowDirection.In)] in VideoColor pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->VideoProcessorSetOutputBackgroundColor((ID3D11VideoProcessor*) pVideoProcessor.Handle, YCbCr, ref pColor);
+            @this->VideoProcessorSetOutputBackgroundColor((ID3D11VideoProcessor*) pVideoProcessor.Handle, YCbCr, in pColor);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputColorSpace<TI0>(ComPtr<TI0> pVideoProcessor, VideoProcessorColorSpace* pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorSetOutputColorSpace<TI0>(ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] VideoProcessorColorSpace* pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8667,11 +8667,11 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetOutputColorSpace<TI0>(ComPtr<TI0> pVideoProcessor, ref VideoProcessorColorSpace pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly void VideoProcessorSetOutputColorSpace<TI0>(ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] in VideoProcessorColorSpace pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->VideoProcessorSetOutputColorSpace((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pColorSpace);
+            @this->VideoProcessorSetOutputColorSpace((ID3D11VideoProcessor*) pVideoProcessor.Handle, in pColorSpace);
         }
 
         /// <summary>To be documented.</summary>
@@ -8699,7 +8699,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetOutputExtension<TI0>(ComPtr<TI0> pVideoProcessor, Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe int VideoProcessorSetOutputExtension<TI0>(ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8707,7 +8707,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetOutputExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe int VideoProcessorSetOutputExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8715,19 +8715,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetOutputExtension<TI0>(ComPtr<TI0> pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe int VideoProcessorSetOutputExtension<TI0>(ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->VideoProcessorSetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pExtensionGuid, DataSize, pData);
+            return @this->VideoProcessorSetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, in pExtensionGuid, DataSize, pData);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int VideoProcessorSetOutputExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly int VideoProcessorSetOutputExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->VideoProcessorSetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pExtensionGuid, DataSize, ref pData);
+            return @this->VideoProcessorSetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, in pExtensionGuid, DataSize, ref pData);
         }
 
         /// <summary>To be documented.</summary>
@@ -8891,7 +8891,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetOutputExtension<TI0>(ComPtr<TI0> pVideoProcessor, Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe int VideoProcessorGetOutputExtension<TI0>(ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8899,7 +8899,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetOutputExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe int VideoProcessorGetOutputExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8907,19 +8907,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetOutputExtension<TI0>(ComPtr<TI0> pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe int VideoProcessorGetOutputExtension<TI0>(ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->VideoProcessorGetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pExtensionGuid, DataSize, pData);
+            return @this->VideoProcessorGetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, in pExtensionGuid, DataSize, pData);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int VideoProcessorGetOutputExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly int VideoProcessorGetOutputExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->VideoProcessorGetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pExtensionGuid, DataSize, ref pData);
+            return @this->VideoProcessorGetOutputExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, in pExtensionGuid, DataSize, ref pData);
         }
 
         /// <summary>To be documented.</summary>
@@ -8931,7 +8931,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamColorSpace<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorColorSpace* pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorSetStreamColorSpace<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] VideoProcessorColorSpace* pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8939,15 +8939,15 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetStreamColorSpace<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref VideoProcessorColorSpace pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly void VideoProcessorSetStreamColorSpace<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in VideoProcessorColorSpace pColorSpace) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->VideoProcessorSetStreamColorSpace((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pColorSpace);
+            @this->VideoProcessorSetStreamColorSpace((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, in pColorSpace);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamOutputRate<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, Silk.NET.DXGI.Rational* pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorSetStreamOutputRate<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8955,15 +8955,15 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetStreamOutputRate<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, ref Silk.NET.DXGI.Rational pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly void VideoProcessorSetStreamOutputRate<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, int RepeatFrame, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->VideoProcessorSetStreamOutputRate((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, OutputRate, RepeatFrame, ref pCustomRate);
+            @this->VideoProcessorSetStreamOutputRate((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, OutputRate, RepeatFrame, in pCustomRate);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorSetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8971,15 +8971,15 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly void VideoProcessorSetStreamSourceRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->VideoProcessorSetStreamSourceRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, ref pRect);
+            @this->VideoProcessorSetStreamSourceRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, in pRect);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorSetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -8987,11 +8987,11 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly void VideoProcessorSetStreamDestRect<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->VideoProcessorSetStreamDestRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, ref pRect);
+            @this->VideoProcessorSetStreamDestRect((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, in pRect);
         }
 
         /// <summary>To be documented.</summary>
@@ -9003,7 +9003,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamPalette<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, uint Count, uint* pEntries) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorSetStreamPalette<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, uint Count, [Flow(FlowDirection.In)] uint* pEntries) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9011,15 +9011,15 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetStreamPalette<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, uint Count, ref uint pEntries) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly void VideoProcessorSetStreamPalette<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, uint Count, [Flow(FlowDirection.In)] in uint pEntries) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->VideoProcessorSetStreamPalette((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Count, ref pEntries);
+            @this->VideoProcessorSetStreamPalette((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Count, in pEntries);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.DXGI.Rational* pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9027,27 +9027,27 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, Silk.NET.DXGI.Rational* pSourceAspectRatio, ref Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->VideoProcessorSetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, pSourceAspectRatio, ref pDestinationAspectRatio);
+            @this->VideoProcessorSetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, pSourceAspectRatio, in pDestinationAspectRatio);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.DXGI.Rational pSourceAspectRatio, Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->VideoProcessorSetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, ref pSourceAspectRatio, pDestinationAspectRatio);
+            @this->VideoProcessorSetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, in pSourceAspectRatio, pDestinationAspectRatio);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, ref Silk.NET.DXGI.Rational pSourceAspectRatio, ref Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly void VideoProcessorSetStreamPixelAspectRatio<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, int Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->VideoProcessorSetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, ref pSourceAspectRatio, ref pDestinationAspectRatio);
+            @this->VideoProcessorSetStreamPixelAspectRatio((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Enable, in pSourceAspectRatio, in pDestinationAspectRatio);
         }
 
         /// <summary>To be documented.</summary>
@@ -9083,7 +9083,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetStreamExtension<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe int VideoProcessorSetStreamExtension<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9091,7 +9091,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetStreamExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe int VideoProcessorSetStreamExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9099,19 +9099,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorSetStreamExtension<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe int VideoProcessorSetStreamExtension<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->VideoProcessorSetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pExtensionGuid, DataSize, pData);
+            return @this->VideoProcessorSetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, in pExtensionGuid, DataSize, pData);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int VideoProcessorSetStreamExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly int VideoProcessorSetStreamExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->VideoProcessorSetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pExtensionGuid, DataSize, ref pData);
+            return @this->VideoProcessorSetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, in pExtensionGuid, DataSize, ref pData);
         }
 
         /// <summary>To be documented.</summary>
@@ -10011,7 +10011,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetStreamExtension<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe int VideoProcessorGetStreamExtension<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10019,7 +10019,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetStreamExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe int VideoProcessorGetStreamExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] Guid* pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10027,23 +10027,23 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetStreamExtension<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe int VideoProcessorGetStreamExtension<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, void* pData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->VideoProcessorGetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pExtensionGuid, DataSize, pData);
+            return @this->VideoProcessorGetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, in pExtensionGuid, DataSize, pData);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int VideoProcessorGetStreamExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, ref Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly int VideoProcessorGetStreamExtension<T0, TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, [Flow(FlowDirection.In)] in Guid pExtensionGuid, uint DataSize, ref T0 pData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->VideoProcessorGetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, ref pExtensionGuid, DataSize, ref pData);
+            return @this->VideoProcessorGetStreamExtension((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, in pExtensionGuid, DataSize, ref pData);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorBlt<TI0, TI1>(ComPtr<TI0> pVideoProcessor, ComPtr<TI1> pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
+        public readonly unsafe int VideoProcessorBlt<TI0, TI1>(ComPtr<TI0> pVideoProcessor, ComPtr<TI1> pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStream* pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10051,15 +10051,15 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int VideoProcessorBlt<TI0, TI1>(ComPtr<TI0> pVideoProcessor, ComPtr<TI1> pView, uint OutputFrame, uint StreamCount, ref VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
+        public readonly int VideoProcessorBlt<TI0, TI1>(ComPtr<TI0> pVideoProcessor, ComPtr<TI1> pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->VideoProcessorBlt((ID3D11VideoProcessor*) pVideoProcessor.Handle, (ID3D11VideoProcessorOutputView*) pView.Handle, OutputFrame, StreamCount, ref pStreams);
+            return @this->VideoProcessorBlt((ID3D11VideoProcessor*) pVideoProcessor.Handle, (ID3D11VideoProcessorOutputView*) pView.Handle, OutputFrame, StreamCount, in pStreams);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorBlt<TI0>(ComPtr<TI0> pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe int VideoProcessorBlt<TI0>(ComPtr<TI0> pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStream* pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10067,15 +10067,15 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int VideoProcessorBlt<TI0>(ComPtr<TI0> pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, ref VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly int VideoProcessorBlt<TI0>(ComPtr<TI0> pVideoProcessor, ref ID3D11VideoProcessorOutputView pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->VideoProcessorBlt((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pView, OutputFrame, StreamCount, ref pStreams);
+            return @this->VideoProcessorBlt((ID3D11VideoProcessor*) pVideoProcessor.Handle, ref pView, OutputFrame, StreamCount, in pStreams);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorBlt<TI0>(ref ID3D11VideoProcessor pVideoProcessor, ComPtr<TI0> pView, uint OutputFrame, uint StreamCount, VideoProcessorStream* pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI0>
+        public readonly unsafe int VideoProcessorBlt<TI0>(ref ID3D11VideoProcessor pVideoProcessor, ComPtr<TI0> pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStream* pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10083,11 +10083,11 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int VideoProcessorBlt<TI0>(ref ID3D11VideoProcessor pVideoProcessor, ComPtr<TI0> pView, uint OutputFrame, uint StreamCount, ref VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI0>
+        public readonly int VideoProcessorBlt<TI0>(ref ID3D11VideoProcessor pVideoProcessor, ComPtr<TI0> pView, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStream pStreams) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->VideoProcessorBlt(ref pVideoProcessor, (ID3D11VideoProcessorOutputView*) pView.Handle, OutputFrame, StreamCount, ref pStreams);
+            return @this->VideoProcessorBlt(ref pVideoProcessor, (ID3D11VideoProcessorOutputView*) pView.Handle, OutputFrame, StreamCount, in pStreams);
         }
 
         /// <summary>To be documented.</summary>
@@ -10219,7 +10219,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+        public readonly unsafe void DecryptionBlt<TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10227,7 +10227,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10235,23 +10235,23 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1, TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+        public readonly unsafe void DecryptionBlt<T0, T1, TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+        public readonly unsafe void DecryptionBlt<TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10259,7 +10259,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10267,23 +10267,23 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DecryptionBlt<T0, T1, TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
+        public readonly void DecryptionBlt<T0, T1, TI0, TI1, TI2>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ComPtr<TI2> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI2>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10291,7 +10291,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10299,23 +10299,23 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1, TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<T0, T1, TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10323,7 +10323,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10331,23 +10331,23 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DecryptionBlt<T0, T1, TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly void DecryptionBlt<T0, T1, TI0, TI1>(ComPtr<TI0> pCryptoSession, ComPtr<TI1> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10355,7 +10355,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10363,23 +10363,23 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1, TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<T0, T1, TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10387,7 +10387,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10395,23 +10395,23 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DecryptionBlt<T0, T1, TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly void DecryptionBlt<T0, T1, TI0, TI1>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10419,7 +10419,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10427,23 +10427,23 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1, TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<T0, T1, TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10451,7 +10451,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10459,23 +10459,23 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DecryptionBlt<T0, T1, TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        public readonly void DecryptionBlt<T0, T1, TI0>(ComPtr<TI0> pCryptoSession, ref ID3D11Texture2D pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+            @this->DecryptionBlt((ID3D11CryptoSession*) pCryptoSession.Handle, ref pSrcSurface, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10483,7 +10483,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10491,23 +10491,23 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1, TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<T0, T1, TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10515,7 +10515,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10523,23 +10523,23 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly unsafe void DecryptionBlt<T0, TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DecryptionBlt<T0, T1, TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
+        public readonly void DecryptionBlt<T0, T1, TI0, TI1>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI1>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10547,7 +10547,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10555,23 +10555,23 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1, TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<T0, T1, TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10579,7 +10579,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10587,23 +10587,23 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DecryptionBlt<T0, T1, TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        public readonly void DecryptionBlt<T0, T1, TI0>(ref ID3D11CryptoSession pCryptoSession, ComPtr<TI0> pSrcSurface, ref ID3D11Texture2D pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+            @this->DecryptionBlt(ref pCryptoSession, (ID3D11Texture2D*) pSrcSurface.Handle, ref pDstSurface, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10611,7 +10611,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10619,23 +10619,23 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+            @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, T1, TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<T0, T1, TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, EncryptedBlockInfo* pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+            @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, void* pIV) where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10643,7 +10643,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] void* pContentKey, uint IVSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10651,19 +10651,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        public readonly unsafe void DecryptionBlt<T0, TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, pIV);
+            @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, pIV);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DecryptionBlt<T0, T1, TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, ref T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
+        public readonly void DecryptionBlt<T0, T1, TI0>(ref ID3D11CryptoSession pCryptoSession, ref ID3D11Texture2D pSrcSurface, ComPtr<TI0> pDstSurface, ref EncryptedBlockInfo pEncryptedBlockInfo, uint ContentKeySize, [Flow(FlowDirection.In)] in T0 pContentKey, uint IVSize, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11Texture2D>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, ref pContentKey, IVSize, ref pIV);
+            @this->DecryptionBlt(ref pCryptoSession, ref pSrcSurface, (ID3D11Texture2D*) pDstSurface.Handle, ref pEncryptedBlockInfo, ContentKeySize, in pContentKey, IVSize, ref pIV);
         }
 
         /// <summary>To be documented.</summary>
@@ -10723,7 +10723,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryAuthenticatedChannel<TI0>(ComPtr<TI0> pChannel, uint InputSize, void* pInput, uint OutputSize, void* pOutput) where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+        public readonly unsafe int QueryAuthenticatedChannel<TI0>(ComPtr<TI0> pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, void* pOutput) where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10731,7 +10731,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryAuthenticatedChannel<T0, TI0>(ComPtr<TI0> pChannel, uint InputSize, void* pInput, uint OutputSize, ref T0 pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+        public readonly unsafe int QueryAuthenticatedChannel<T0, TI0>(ComPtr<TI0> pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, uint OutputSize, ref T0 pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10739,23 +10739,23 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryAuthenticatedChannel<T0, TI0>(ComPtr<TI0> pChannel, uint InputSize, ref T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+        public readonly unsafe int QueryAuthenticatedChannel<T0, TI0>(ComPtr<TI0> pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, uint OutputSize, void* pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->QueryAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, ref pInput, OutputSize, pOutput);
+            return @this->QueryAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, in pInput, OutputSize, pOutput);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int QueryAuthenticatedChannel<T0, T1, TI0>(ComPtr<TI0> pChannel, uint InputSize, ref T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+        public readonly int QueryAuthenticatedChannel<T0, T1, TI0>(ComPtr<TI0> pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, uint OutputSize, ref T1 pOutput) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->QueryAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, ref pInput, OutputSize, ref pOutput);
+            return @this->QueryAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, in pInput, OutputSize, ref pOutput);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ConfigureAuthenticatedChannel<TI0>(ComPtr<TI0> pChannel, uint InputSize, void* pInput, AuthenticatedConfigureOutput* pOutput) where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+        public readonly unsafe int ConfigureAuthenticatedChannel<TI0>(ComPtr<TI0> pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, AuthenticatedConfigureOutput* pOutput) where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10763,7 +10763,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ConfigureAuthenticatedChannel<TI0>(ComPtr<TI0> pChannel, uint InputSize, void* pInput, ref AuthenticatedConfigureOutput pOutput) where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+        public readonly unsafe int ConfigureAuthenticatedChannel<TI0>(ComPtr<TI0> pChannel, uint InputSize, [Flow(FlowDirection.In)] void* pInput, ref AuthenticatedConfigureOutput pOutput) where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10771,19 +10771,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ConfigureAuthenticatedChannel<T0, TI0>(ComPtr<TI0> pChannel, uint InputSize, ref T0 pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+        public readonly unsafe int ConfigureAuthenticatedChannel<T0, TI0>(ComPtr<TI0> pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, AuthenticatedConfigureOutput* pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->ConfigureAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, ref pInput, pOutput);
+            return @this->ConfigureAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, in pInput, pOutput);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ConfigureAuthenticatedChannel<T0, TI0>(ComPtr<TI0> pChannel, uint InputSize, ref T0 pInput, ref AuthenticatedConfigureOutput pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+        public readonly int ConfigureAuthenticatedChannel<T0, TI0>(ComPtr<TI0> pChannel, uint InputSize, [Flow(FlowDirection.In)] in T0 pInput, ref AuthenticatedConfigureOutput pOutput) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->ConfigureAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, ref pInput, ref pOutput);
+            return @this->ConfigureAuthenticatedChannel((ID3D11AuthenticatedChannel*) pChannel.Handle, InputSize, in pInput, ref pOutput);
         }
 
         /// <summary>To be documented.</summary>
@@ -10827,7 +10827,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SubmitDecoderBuffers1<TI0>(ComPtr<TI0> pDecoder, uint NumBuffers, VideoDecoderBufferDesc1* pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        public readonly unsafe int SubmitDecoderBuffers1<TI0>(ComPtr<TI0> pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] VideoDecoderBufferDesc1* pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10835,15 +10835,15 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SubmitDecoderBuffers1<TI0>(ComPtr<TI0> pDecoder, uint NumBuffers, ref VideoDecoderBufferDesc1 pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        public readonly int SubmitDecoderBuffers1<TI0>(ComPtr<TI0> pDecoder, uint NumBuffers, [Flow(FlowDirection.In)] in VideoDecoderBufferDesc1 pBufferDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->SubmitDecoderBuffers1((ID3D11VideoDecoder*) pDecoder.Handle, NumBuffers, ref pBufferDesc);
+            return @this->SubmitDecoderBuffers1((ID3D11VideoDecoder*) pDecoder.Handle, NumBuffers, in pBufferDesc);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDataForNewHardwareKey<TI0>(ComPtr<TI0> pCryptoSession, uint PrivateInputSize, void* pPrivatInputData, ulong* pPrivateOutputData) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        public readonly unsafe int GetDataForNewHardwareKey<TI0>(ComPtr<TI0> pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] void* pPrivatInputData, ulong* pPrivateOutputData) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10851,7 +10851,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDataForNewHardwareKey<TI0>(ComPtr<TI0> pCryptoSession, uint PrivateInputSize, void* pPrivatInputData, ref ulong pPrivateOutputData) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        public readonly unsafe int GetDataForNewHardwareKey<TI0>(ComPtr<TI0> pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] void* pPrivatInputData, ref ulong pPrivateOutputData) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10859,19 +10859,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDataForNewHardwareKey<T0, TI0>(ComPtr<TI0> pCryptoSession, uint PrivateInputSize, ref T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        public readonly unsafe int GetDataForNewHardwareKey<T0, TI0>(ComPtr<TI0> pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] in T0 pPrivatInputData, ulong* pPrivateOutputData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->GetDataForNewHardwareKey((ID3D11CryptoSession*) pCryptoSession.Handle, PrivateInputSize, ref pPrivatInputData, pPrivateOutputData);
+            return @this->GetDataForNewHardwareKey((ID3D11CryptoSession*) pCryptoSession.Handle, PrivateInputSize, in pPrivatInputData, pPrivateOutputData);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetDataForNewHardwareKey<T0, TI0>(ComPtr<TI0> pCryptoSession, uint PrivateInputSize, ref T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        public readonly int GetDataForNewHardwareKey<T0, TI0>(ComPtr<TI0> pCryptoSession, uint PrivateInputSize, [Flow(FlowDirection.In)] in T0 pPrivatInputData, ref ulong pPrivateOutputData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->GetDataForNewHardwareKey((ID3D11CryptoSession*) pCryptoSession.Handle, PrivateInputSize, ref pPrivatInputData, ref pPrivateOutputData);
+            return @this->GetDataForNewHardwareKey((ID3D11CryptoSession*) pCryptoSession.Handle, PrivateInputSize, in pPrivatInputData, ref pPrivateOutputData);
         }
 
         /// <summary>To be documented.</summary>
@@ -10891,7 +10891,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderEnableDownsampling<TI0>(ComPtr<TI0> pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoSampleDesc* pOutputDesc, uint ReferenceFrameCount) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        public readonly unsafe int DecoderEnableDownsampling<TI0>(ComPtr<TI0> pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, uint ReferenceFrameCount) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10899,15 +10899,15 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DecoderEnableDownsampling<TI0>(ComPtr<TI0> pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoSampleDesc pOutputDesc, uint ReferenceFrameCount) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        public readonly int DecoderEnableDownsampling<TI0>(ComPtr<TI0> pDecoder, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, uint ReferenceFrameCount) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->DecoderEnableDownsampling((ID3D11VideoDecoder*) pDecoder.Handle, InputColorSpace, ref pOutputDesc, ReferenceFrameCount);
+            return @this->DecoderEnableDownsampling((ID3D11VideoDecoder*) pDecoder.Handle, InputColorSpace, in pOutputDesc, ReferenceFrameCount);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int DecoderUpdateDownsampling<TI0>(ComPtr<TI0> pDecoder, VideoSampleDesc* pOutputDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        public readonly unsafe int DecoderUpdateDownsampling<TI0>(ComPtr<TI0> pDecoder, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10915,11 +10915,11 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int DecoderUpdateDownsampling<TI0>(ComPtr<TI0> pDecoder, ref VideoSampleDesc pOutputDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        public readonly int DecoderUpdateDownsampling<TI0>(ComPtr<TI0> pDecoder, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->DecoderUpdateDownsampling((ID3D11VideoDecoder*) pDecoder.Handle, ref pOutputDesc);
+            return @this->DecoderUpdateDownsampling((ID3D11VideoDecoder*) pDecoder.Handle, in pOutputDesc);
         }
 
         /// <summary>To be documented.</summary>
@@ -11067,7 +11067,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetBehaviorHints<TI0>(ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, VideoProcessorStreamBehaviorHint* pStreams, uint* pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe int VideoProcessorGetBehaviorHints<TI0>(ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStreamBehaviorHint* pStreams, uint* pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11075,7 +11075,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetBehaviorHints<TI0>(ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, VideoProcessorStreamBehaviorHint* pStreams, ref uint pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe int VideoProcessorGetBehaviorHints<TI0>(ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] VideoProcessorStreamBehaviorHint* pStreams, ref uint pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11083,23 +11083,23 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessorGetBehaviorHints<TI0>(ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, ref VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe int VideoProcessorGetBehaviorHints<TI0>(ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStreamBehaviorHint pStreams, uint* pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->VideoProcessorGetBehaviorHints((ID3D11VideoProcessor*) pVideoProcessor.Handle, OutputWidth, OutputHeight, OutputFormat, StreamCount, ref pStreams, pBehaviorHints);
+            return @this->VideoProcessorGetBehaviorHints((ID3D11VideoProcessor*) pVideoProcessor.Handle, OutputWidth, OutputHeight, OutputFormat, StreamCount, in pStreams, pBehaviorHints);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int VideoProcessorGetBehaviorHints<TI0>(ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, ref VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly int VideoProcessorGetBehaviorHints<TI0>(ComPtr<TI0> pVideoProcessor, uint OutputWidth, uint OutputHeight, Silk.NET.DXGI.Format OutputFormat, uint StreamCount, [Flow(FlowDirection.In)] in VideoProcessorStreamBehaviorHint pStreams, ref uint pBehaviorHints) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->VideoProcessorGetBehaviorHints((ID3D11VideoProcessor*) pVideoProcessor.Handle, OutputWidth, OutputHeight, OutputFormat, StreamCount, ref pStreams, ref pBehaviorHints);
+            return @this->VideoProcessorGetBehaviorHints((ID3D11VideoProcessor*) pVideoProcessor.Handle, OutputWidth, OutputHeight, OutputFormat, StreamCount, in pStreams, ref pBehaviorHints);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetOutputHDRMetaData<TI0>(ComPtr<TI0> pVideoProcessor, Silk.NET.DXGI.HdrMetadataType Type, uint Size, void* pHDRMetaData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorSetOutputHDRMetaData<TI0>(ComPtr<TI0> pVideoProcessor, Silk.NET.DXGI.HdrMetadataType Type, uint Size, [Flow(FlowDirection.In)] void* pHDRMetaData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11107,11 +11107,11 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetOutputHDRMetaData<T0, TI0>(ComPtr<TI0> pVideoProcessor, Silk.NET.DXGI.HdrMetadataType Type, uint Size, ref T0 pHDRMetaData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly void VideoProcessorSetOutputHDRMetaData<T0, TI0>(ComPtr<TI0> pVideoProcessor, Silk.NET.DXGI.HdrMetadataType Type, uint Size, [Flow(FlowDirection.In)] in T0 pHDRMetaData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->VideoProcessorSetOutputHDRMetaData((ID3D11VideoProcessor*) pVideoProcessor.Handle, Type, Size, ref pHDRMetaData);
+            @this->VideoProcessorSetOutputHDRMetaData((ID3D11VideoProcessor*) pVideoProcessor.Handle, Type, Size, in pHDRMetaData);
         }
 
         /// <summary>To be documented.</summary>
@@ -11147,7 +11147,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void VideoProcessorSetStreamHDRMetaData<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType Type, uint Size, void* pHDRMetaData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly unsafe void VideoProcessorSetStreamHDRMetaData<TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType Type, uint Size, [Flow(FlowDirection.In)] void* pHDRMetaData) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -11155,11 +11155,11 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void VideoProcessorSetStreamHDRMetaData<T0, TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType Type, uint Size, ref T0 pHDRMetaData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        public readonly void VideoProcessorSetStreamHDRMetaData<T0, TI0>(ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.DXGI.HdrMetadataType Type, uint Size, [Flow(FlowDirection.In)] in T0 pHDRMetaData) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
         {
             var @this = (ID3D11VideoContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            @this->VideoProcessorSetStreamHDRMetaData((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Type, Size, ref pHDRMetaData);
+            @this->VideoProcessorSetStreamHDRMetaData((ID3D11VideoProcessor*) pVideoProcessor.Handle, StreamIndex, Type, Size, in pHDRMetaData);
         }
 
         /// <summary>To be documented.</summary>

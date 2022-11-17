@@ -465,7 +465,7 @@ public unsafe static class D3D11InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMessage(this ComPtr<ID3D11InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, byte* pDescription)
+    public static unsafe int AddMessage(this ComPtr<ID3D11InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(FlowDirection.In)] byte* pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -474,7 +474,7 @@ public unsafe static class D3D11InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMessage(this ComPtr<ID3D11InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, ref byte pDescription)
+    public static int AddMessage(this ComPtr<ID3D11InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(FlowDirection.In)] in byte pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -486,7 +486,7 @@ public unsafe static class D3D11InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMessage(this ComPtr<ID3D11InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
+    public static int AddMessage(this ComPtr<ID3D11InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -497,7 +497,7 @@ public unsafe static class D3D11InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddApplicationMessage(this ComPtr<ID3D11InfoQueue> thisVtbl, MessageSeverity Severity, byte* pDescription)
+    public static unsafe int AddApplicationMessage(this ComPtr<ID3D11InfoQueue> thisVtbl, MessageSeverity Severity, [Flow(FlowDirection.In)] byte* pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -506,7 +506,7 @@ public unsafe static class D3D11InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddApplicationMessage(this ComPtr<ID3D11InfoQueue> thisVtbl, MessageSeverity Severity, ref byte pDescription)
+    public static int AddApplicationMessage(this ComPtr<ID3D11InfoQueue> thisVtbl, MessageSeverity Severity, [Flow(FlowDirection.In)] in byte pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -518,7 +518,7 @@ public unsafe static class D3D11InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddApplicationMessage(this ComPtr<ID3D11InfoQueue> thisVtbl, MessageSeverity Severity, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
+    public static int AddApplicationMessage(this ComPtr<ID3D11InfoQueue> thisVtbl, MessageSeverity Severity, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -728,19 +728,19 @@ public unsafe static class D3D11InfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMessage(this ComPtr<ID3D11InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, Span<byte> pDescription)
+    public static int AddMessage(this ComPtr<ID3D11InfoQueue> thisVtbl, MessageCategory Category, MessageSeverity Severity, MessageID ID, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pDescription)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddMessage(Category, Severity, ID, ref pDescription.GetPinnableReference());
+        return @this->AddMessage(Category, Severity, ID, in pDescription.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddApplicationMessage(this ComPtr<ID3D11InfoQueue> thisVtbl, MessageSeverity Severity, Span<byte> pDescription)
+    public static int AddApplicationMessage(this ComPtr<ID3D11InfoQueue> thisVtbl, MessageSeverity Severity, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pDescription)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddApplicationMessage(Severity, ref pDescription.GetPinnableReference());
+        return @this->AddApplicationMessage(Severity, in pDescription.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
