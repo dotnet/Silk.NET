@@ -16,16 +16,15 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkExportFenceWin32HandleInfoKHR")]
-    public unsafe partial struct ExportFenceWin32HandleInfoKHR : IExtendsChain<FenceCreateInfo>
+    [NativeName("Name", "VkAccelerationStructureCaptureDescriptorDataInfoEXT")]
+    public unsafe partial struct AccelerationStructureCaptureDescriptorDataInfoEXT : IChainable
     {
-        public ExportFenceWin32HandleInfoKHR
+        public AccelerationStructureCaptureDescriptorDataInfoEXT
         (
-            StructureType? sType = StructureType.ExportFenceWin32HandleInfoKhr,
+            StructureType? sType = StructureType.AccelerationStructureCaptureDescriptorDataInfoExt,
             void* pNext = null,
-            nint* pAttributes = null,
-            uint? dwAccess = null,
-            nint? name = null
+            AccelerationStructureKHR? accelerationStructure = null,
+            AccelerationStructureNV? accelerationStructureNV = null
         ) : this()
         {
             if (sType is not null)
@@ -38,19 +37,14 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (pAttributes is not null)
+            if (accelerationStructure is not null)
             {
-                PAttributes = pAttributes;
+                AccelerationStructure = accelerationStructure.Value;
             }
 
-            if (dwAccess is not null)
+            if (accelerationStructureNV is not null)
             {
-                DwAccess = dwAccess.Value;
-            }
-
-            if (name is not null)
-            {
-                Name = name.Value;
+                AccelerationStructureNV = accelerationStructureNV.Value;
             }
         }
 
@@ -65,25 +59,20 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "SECURITY_ATTRIBUTES*")]
-        [NativeName("Type.Name", "SECURITY_ATTRIBUTES")]
-        [NativeName("Name", "pAttributes")]
-        public nint* PAttributes;
+        [NativeName("Type", "VkAccelerationStructureKHR")]
+        [NativeName("Type.Name", "VkAccelerationStructureKHR")]
+        [NativeName("Name", "accelerationStructure")]
+        public AccelerationStructureKHR AccelerationStructure;
 /// <summary></summary>
-        [NativeName("Type", "DWORD")]
-        [NativeName("Type.Name", "DWORD")]
-        [NativeName("Name", "dwAccess")]
-        public uint DwAccess;
-/// <summary></summary>
-        [NativeName("Type", "LPCWSTR")]
-        [NativeName("Type.Name", "LPCWSTR")]
-        [NativeName("Name", "name")]
-        public nint Name;
+        [NativeName("Type", "VkAccelerationStructureNV")]
+        [NativeName("Type.Name", "VkAccelerationStructureNV")]
+        [NativeName("Name", "accelerationStructureNV")]
+        public AccelerationStructureNV AccelerationStructureNV;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.ExportFenceWin32HandleInfoKhr;
+            return SType = StructureType.AccelerationStructureCaptureDescriptorDataInfoExt;
         }
 
         /// <inheritdoc />

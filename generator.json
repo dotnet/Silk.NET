@@ -1292,7 +1292,8 @@
             "cacheDir": "build/cache",
             "cacheKey": "d3d11",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "typemap-native"
             ],
             "converter": {},
             "prefix": "D3D11",

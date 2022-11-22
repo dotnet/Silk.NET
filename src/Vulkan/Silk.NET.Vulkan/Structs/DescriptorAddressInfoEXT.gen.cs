@@ -16,16 +16,16 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkExportFenceWin32HandleInfoKHR")]
-    public unsafe partial struct ExportFenceWin32HandleInfoKHR : IExtendsChain<FenceCreateInfo>
+    [NativeName("Name", "VkDescriptorAddressInfoEXT")]
+    public unsafe partial struct DescriptorAddressInfoEXT : IChainable
     {
-        public ExportFenceWin32HandleInfoKHR
+        public DescriptorAddressInfoEXT
         (
-            StructureType? sType = StructureType.ExportFenceWin32HandleInfoKhr,
+            StructureType? sType = StructureType.DescriptorAddressInfoExt,
             void* pNext = null,
-            nint* pAttributes = null,
-            uint? dwAccess = null,
-            nint? name = null
+            ulong? address = null,
+            ulong? range = null,
+            Format? format = null
         ) : this()
         {
             if (sType is not null)
@@ -38,19 +38,19 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (pAttributes is not null)
+            if (address is not null)
             {
-                PAttributes = pAttributes;
+                Address = address.Value;
             }
 
-            if (dwAccess is not null)
+            if (range is not null)
             {
-                DwAccess = dwAccess.Value;
+                Range = range.Value;
             }
 
-            if (name is not null)
+            if (format is not null)
             {
-                Name = name.Value;
+                Format = format.Value;
             }
         }
 
@@ -65,25 +65,25 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "SECURITY_ATTRIBUTES*")]
-        [NativeName("Type.Name", "SECURITY_ATTRIBUTES")]
-        [NativeName("Name", "pAttributes")]
-        public nint* PAttributes;
+        [NativeName("Type", "VkDeviceAddress")]
+        [NativeName("Type.Name", "VkDeviceAddress")]
+        [NativeName("Name", "address")]
+        public ulong Address;
 /// <summary></summary>
-        [NativeName("Type", "DWORD")]
-        [NativeName("Type.Name", "DWORD")]
-        [NativeName("Name", "dwAccess")]
-        public uint DwAccess;
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "range")]
+        public ulong Range;
 /// <summary></summary>
-        [NativeName("Type", "LPCWSTR")]
-        [NativeName("Type.Name", "LPCWSTR")]
-        [NativeName("Name", "name")]
-        public nint Name;
+        [NativeName("Type", "VkFormat")]
+        [NativeName("Type.Name", "VkFormat")]
+        [NativeName("Name", "format")]
+        public Format Format;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.ExportFenceWin32HandleInfoKhr;
+            return SType = StructureType.DescriptorAddressInfoExt;
         }
 
         /// <inheritdoc />

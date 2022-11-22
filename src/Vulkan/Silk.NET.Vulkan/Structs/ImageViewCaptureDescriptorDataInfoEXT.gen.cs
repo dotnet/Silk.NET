@@ -16,16 +16,14 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkExportFenceWin32HandleInfoKHR")]
-    public unsafe partial struct ExportFenceWin32HandleInfoKHR : IExtendsChain<FenceCreateInfo>
+    [NativeName("Name", "VkImageViewCaptureDescriptorDataInfoEXT")]
+    public unsafe partial struct ImageViewCaptureDescriptorDataInfoEXT : IChainable
     {
-        public ExportFenceWin32HandleInfoKHR
+        public ImageViewCaptureDescriptorDataInfoEXT
         (
-            StructureType? sType = StructureType.ExportFenceWin32HandleInfoKhr,
+            StructureType? sType = StructureType.ImageViewCaptureDescriptorDataInfoExt,
             void* pNext = null,
-            nint* pAttributes = null,
-            uint? dwAccess = null,
-            nint? name = null
+            ImageView? imageView = null
         ) : this()
         {
             if (sType is not null)
@@ -38,19 +36,9 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (pAttributes is not null)
+            if (imageView is not null)
             {
-                PAttributes = pAttributes;
-            }
-
-            if (dwAccess is not null)
-            {
-                DwAccess = dwAccess.Value;
-            }
-
-            if (name is not null)
-            {
-                Name = name.Value;
+                ImageView = imageView.Value;
             }
         }
 
@@ -65,25 +53,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "SECURITY_ATTRIBUTES*")]
-        [NativeName("Type.Name", "SECURITY_ATTRIBUTES")]
-        [NativeName("Name", "pAttributes")]
-        public nint* PAttributes;
-/// <summary></summary>
-        [NativeName("Type", "DWORD")]
-        [NativeName("Type.Name", "DWORD")]
-        [NativeName("Name", "dwAccess")]
-        public uint DwAccess;
-/// <summary></summary>
-        [NativeName("Type", "LPCWSTR")]
-        [NativeName("Type.Name", "LPCWSTR")]
-        [NativeName("Name", "name")]
-        public nint Name;
+        [NativeName("Type", "VkImageView")]
+        [NativeName("Type.Name", "VkImageView")]
+        [NativeName("Name", "imageView")]
+        public ImageView ImageView;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.ExportFenceWin32HandleInfoKhr;
+            return SType = StructureType.ImageViewCaptureDescriptorDataInfoExt;
         }
 
         /// <inheritdoc />

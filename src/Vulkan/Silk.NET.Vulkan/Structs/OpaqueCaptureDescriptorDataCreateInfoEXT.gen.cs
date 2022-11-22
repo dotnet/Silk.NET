@@ -16,16 +16,14 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkExportFenceWin32HandleInfoKHR")]
-    public unsafe partial struct ExportFenceWin32HandleInfoKHR : IExtendsChain<FenceCreateInfo>
+    [NativeName("Name", "VkOpaqueCaptureDescriptorDataCreateInfoEXT")]
+    public unsafe partial struct OpaqueCaptureDescriptorDataCreateInfoEXT : IExtendsChain<BufferCreateInfo>, IExtendsChain<ImageCreateInfo>, IExtendsChain<ImageViewCreateInfo>, IExtendsChain<SamplerCreateInfo>, IExtendsChain<AccelerationStructureCreateInfoKHR>, IExtendsChain<AccelerationStructureCreateInfoNV>
     {
-        public ExportFenceWin32HandleInfoKHR
+        public OpaqueCaptureDescriptorDataCreateInfoEXT
         (
-            StructureType? sType = StructureType.ExportFenceWin32HandleInfoKhr,
+            StructureType? sType = StructureType.OpaqueCaptureDescriptorDataCreateInfoExt,
             void* pNext = null,
-            nint* pAttributes = null,
-            uint? dwAccess = null,
-            nint? name = null
+            void* opaqueCaptureDescriptorData = null
         ) : this()
         {
             if (sType is not null)
@@ -38,19 +36,9 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (pAttributes is not null)
+            if (opaqueCaptureDescriptorData is not null)
             {
-                PAttributes = pAttributes;
-            }
-
-            if (dwAccess is not null)
-            {
-                DwAccess = dwAccess.Value;
-            }
-
-            if (name is not null)
-            {
-                Name = name.Value;
+                OpaqueCaptureDescriptorData = opaqueCaptureDescriptorData;
             }
         }
 
@@ -65,25 +53,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "SECURITY_ATTRIBUTES*")]
-        [NativeName("Type.Name", "SECURITY_ATTRIBUTES")]
-        [NativeName("Name", "pAttributes")]
-        public nint* PAttributes;
-/// <summary></summary>
-        [NativeName("Type", "DWORD")]
-        [NativeName("Type.Name", "DWORD")]
-        [NativeName("Name", "dwAccess")]
-        public uint DwAccess;
-/// <summary></summary>
-        [NativeName("Type", "LPCWSTR")]
-        [NativeName("Type.Name", "LPCWSTR")]
-        [NativeName("Name", "name")]
-        public nint Name;
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "opaqueCaptureDescriptorData")]
+        public void* OpaqueCaptureDescriptorData;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.ExportFenceWin32HandleInfoKhr;
+            return SType = StructureType.OpaqueCaptureDescriptorDataCreateInfoExt;
         }
 
         /// <inheritdoc />

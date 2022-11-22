@@ -16,16 +16,14 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkExportFenceWin32HandleInfoKHR")]
-    public unsafe partial struct ExportFenceWin32HandleInfoKHR : IExtendsChain<FenceCreateInfo>
+    [NativeName("Name", "VkSamplerCaptureDescriptorDataInfoEXT")]
+    public unsafe partial struct SamplerCaptureDescriptorDataInfoEXT : IChainable
     {
-        public ExportFenceWin32HandleInfoKHR
+        public SamplerCaptureDescriptorDataInfoEXT
         (
-            StructureType? sType = StructureType.ExportFenceWin32HandleInfoKhr,
+            StructureType? sType = StructureType.SamplerCaptureDescriptorDataInfoExt,
             void* pNext = null,
-            nint* pAttributes = null,
-            uint? dwAccess = null,
-            nint? name = null
+            Sampler? sampler = null
         ) : this()
         {
             if (sType is not null)
@@ -38,19 +36,9 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (pAttributes is not null)
+            if (sampler is not null)
             {
-                PAttributes = pAttributes;
-            }
-
-            if (dwAccess is not null)
-            {
-                DwAccess = dwAccess.Value;
-            }
-
-            if (name is not null)
-            {
-                Name = name.Value;
+                Sampler = sampler.Value;
             }
         }
 
@@ -65,25 +53,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "SECURITY_ATTRIBUTES*")]
-        [NativeName("Type.Name", "SECURITY_ATTRIBUTES")]
-        [NativeName("Name", "pAttributes")]
-        public nint* PAttributes;
-/// <summary></summary>
-        [NativeName("Type", "DWORD")]
-        [NativeName("Type.Name", "DWORD")]
-        [NativeName("Name", "dwAccess")]
-        public uint DwAccess;
-/// <summary></summary>
-        [NativeName("Type", "LPCWSTR")]
-        [NativeName("Type.Name", "LPCWSTR")]
-        [NativeName("Name", "name")]
-        public nint Name;
+        [NativeName("Type", "VkSampler")]
+        [NativeName("Type.Name", "VkSampler")]
+        [NativeName("Name", "sampler")]
+        public Sampler Sampler;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.ExportFenceWin32HandleInfoKhr;
+            return SType = StructureType.SamplerCaptureDescriptorDataInfoExt;
         }
 
         /// <inheritdoc />
