@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataExistingHeaps
         (
-            int? supported = null
+            Silk.NET.Core.Bool32? supported = null
         ) : this()
         {
             if (supported is not null)
@@ -34,6 +34,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Supported")]
-        public int Supported;
+        public Silk.NET.Core.Bool32 Supported;
     }
 }

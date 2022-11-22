@@ -1271,41 +1271,41 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] CpuDescriptorHandle* pRenderTargetDescriptors, int RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDepthStencilDescriptor)
+        public readonly unsafe void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] CpuDescriptorHandle* pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDepthStencilDescriptor)
         {
             var @this = (ID3D12GraphicsCommandList7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList7*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList7*, uint, CpuDescriptorHandle*, Silk.NET.Core.Bool32, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] CpuDescriptorHandle* pRenderTargetDescriptors, int RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] in CpuDescriptorHandle pDepthStencilDescriptor)
+        public readonly unsafe void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] CpuDescriptorHandle* pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] in CpuDescriptorHandle pDepthStencilDescriptor)
         {
             var @this = (ID3D12GraphicsCommandList7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (CpuDescriptorHandle* pDepthStencilDescriptorPtr = &pDepthStencilDescriptor)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList7*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList7*, uint, CpuDescriptorHandle*, Silk.NET.Core.Bool32, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] in CpuDescriptorHandle pRenderTargetDescriptors, int RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDepthStencilDescriptor)
+        public readonly unsafe void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] in CpuDescriptorHandle pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDepthStencilDescriptor)
         {
             var @this = (ID3D12GraphicsCommandList7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (CpuDescriptorHandle* pRenderTargetDescriptorsPtr = &pRenderTargetDescriptors)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList7*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList7*, uint, CpuDescriptorHandle*, Silk.NET.Core.Bool32, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] in CpuDescriptorHandle pRenderTargetDescriptors, int RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] in CpuDescriptorHandle pDepthStencilDescriptor)
+        public readonly void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] in CpuDescriptorHandle pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] in CpuDescriptorHandle pDepthStencilDescriptor)
         {
             var @this = (ID3D12GraphicsCommandList7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (CpuDescriptorHandle* pRenderTargetDescriptorsPtr = &pRenderTargetDescriptors)
             {
                 fixed (CpuDescriptorHandle* pDepthStencilDescriptorPtr = &pDepthStencilDescriptor)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList7*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList7*, uint, CpuDescriptorHandle*, Silk.NET.Core.Bool32, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
                 }
             }
         }

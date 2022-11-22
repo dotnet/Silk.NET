@@ -381,11 +381,11 @@ public unsafe static class D3D12ShaderReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsSampleFrequencyShader(this ComPtr<ID3D12ShaderReflection> thisVtbl)
+    public static Silk.NET.Core.Bool32 IsSampleFrequencyShader(this ComPtr<ID3D12ShaderReflection> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderReflection*, int>)@this->LpVtbl[17])(@this);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderReflection*, Silk.NET.Core.Bool32>)@this->LpVtbl[17])(@this);
         return ret;
     }
 

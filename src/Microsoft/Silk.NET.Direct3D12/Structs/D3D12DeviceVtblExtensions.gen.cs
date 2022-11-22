@@ -4305,11 +4305,11 @@ public unsafe static class D3D12DeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetStablePowerState(this ComPtr<ID3D12Device> thisVtbl, int Enable)
+    public static int SetStablePowerState(this ComPtr<ID3D12Device> thisVtbl, Silk.NET.Core.Bool32 Enable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, int, int>)@this->LpVtbl[40])(@this, Enable);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[40])(@this, Enable);
         return ret;
     }
 

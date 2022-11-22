@@ -407,11 +407,11 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int IsSampleFrequencyShader()
+        public readonly Silk.NET.Core.Bool32 IsSampleFrequencyShader()
         {
             var @this = (ID3D12ShaderReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderReflection*, int>)@this->LpVtbl[17])(@this);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderReflection*, Silk.NET.Core.Bool32>)@this->LpVtbl[17])(@this);
             return ret;
         }
 

@@ -529,72 +529,72 @@ public unsafe static class D3D12InfoQueue1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBreakOnCategory(this ComPtr<ID3D12InfoQueue1> thisVtbl, MessageCategory Category, int bEnable)
+    public static int SetBreakOnCategory(this ComPtr<ID3D12InfoQueue1> thisVtbl, MessageCategory Category, Silk.NET.Core.Bool32 bEnable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageCategory, int, int>)@this->LpVtbl[30])(@this, Category, bEnable);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageCategory, Silk.NET.Core.Bool32, int>)@this->LpVtbl[30])(@this, Category, bEnable);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBreakOnSeverity(this ComPtr<ID3D12InfoQueue1> thisVtbl, MessageSeverity Severity, int bEnable)
+    public static int SetBreakOnSeverity(this ComPtr<ID3D12InfoQueue1> thisVtbl, MessageSeverity Severity, Silk.NET.Core.Bool32 bEnable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageSeverity, int, int>)@this->LpVtbl[31])(@this, Severity, bEnable);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageSeverity, Silk.NET.Core.Bool32, int>)@this->LpVtbl[31])(@this, Severity, bEnable);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBreakOnID(this ComPtr<ID3D12InfoQueue1> thisVtbl, MessageID ID, int bEnable)
+    public static int SetBreakOnID(this ComPtr<ID3D12InfoQueue1> thisVtbl, MessageID ID, Silk.NET.Core.Bool32 bEnable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageID, int, int>)@this->LpVtbl[32])(@this, ID, bEnable);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageID, Silk.NET.Core.Bool32, int>)@this->LpVtbl[32])(@this, ID, bEnable);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBreakOnCategory(this ComPtr<ID3D12InfoQueue1> thisVtbl, MessageCategory Category)
+    public static Silk.NET.Core.Bool32 GetBreakOnCategory(this ComPtr<ID3D12InfoQueue1> thisVtbl, MessageCategory Category)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageCategory, int>)@this->LpVtbl[33])(@this, Category);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageCategory, Silk.NET.Core.Bool32>)@this->LpVtbl[33])(@this, Category);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBreakOnSeverity(this ComPtr<ID3D12InfoQueue1> thisVtbl, MessageSeverity Severity)
+    public static Silk.NET.Core.Bool32 GetBreakOnSeverity(this ComPtr<ID3D12InfoQueue1> thisVtbl, MessageSeverity Severity)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageSeverity, int>)@this->LpVtbl[34])(@this, Severity);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageSeverity, Silk.NET.Core.Bool32>)@this->LpVtbl[34])(@this, Severity);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBreakOnID(this ComPtr<ID3D12InfoQueue1> thisVtbl, MessageID ID)
+    public static Silk.NET.Core.Bool32 GetBreakOnID(this ComPtr<ID3D12InfoQueue1> thisVtbl, MessageID ID)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageID, int>)@this->LpVtbl[35])(@this, ID);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, MessageID, Silk.NET.Core.Bool32>)@this->LpVtbl[35])(@this, ID);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMuteDebugOutput(this ComPtr<ID3D12InfoQueue1> thisVtbl, int bMute)
+    public static void SetMuteDebugOutput(this ComPtr<ID3D12InfoQueue1> thisVtbl, Silk.NET.Core.Bool32 bMute)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, int, void>)@this->LpVtbl[36])(@this, bMute);
+        ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[36])(@this, bMute);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMuteDebugOutput(this ComPtr<ID3D12InfoQueue1> thisVtbl)
+    public static Silk.NET.Core.Bool32 GetMuteDebugOutput(this ComPtr<ID3D12InfoQueue1> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, int>)@this->LpVtbl[37])(@this);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12InfoQueue1*, Silk.NET.Core.Bool32>)@this->LpVtbl[37])(@this);
         return ret;
     }
 

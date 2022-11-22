@@ -21,11 +21,11 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options9
         (
-            int? meshShaderPipelineStatsSupported = null,
-            int? meshShaderSupportsFullRangeRenderTargetArrayIndex = null,
-            int? atomicInt64OnTypedResourceSupported = null,
-            int? atomicInt64OnGroupSharedSupported = null,
-            int? derivativesInMeshAndAmplificationShadersSupported = null,
+            Silk.NET.Core.Bool32? meshShaderPipelineStatsSupported = null,
+            Silk.NET.Core.Bool32? meshShaderSupportsFullRangeRenderTargetArrayIndex = null,
+            Silk.NET.Core.Bool32? atomicInt64OnTypedResourceSupported = null,
+            Silk.NET.Core.Bool32? atomicInt64OnGroupSharedSupported = null,
+            Silk.NET.Core.Bool32? derivativesInMeshAndAmplificationShadersSupported = null,
             WaveMmaTier? waveMMATier = null
         ) : this()
         {
@@ -64,27 +64,27 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "MeshShaderPipelineStatsSupported")]
-        public int MeshShaderPipelineStatsSupported;
+        public Silk.NET.Core.Bool32 MeshShaderPipelineStatsSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "MeshShaderSupportsFullRangeRenderTargetArrayIndex")]
-        public int MeshShaderSupportsFullRangeRenderTargetArrayIndex;
+        public Silk.NET.Core.Bool32 MeshShaderSupportsFullRangeRenderTargetArrayIndex;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "AtomicInt64OnTypedResourceSupported")]
-        public int AtomicInt64OnTypedResourceSupported;
+        public Silk.NET.Core.Bool32 AtomicInt64OnTypedResourceSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "AtomicInt64OnGroupSharedSupported")]
-        public int AtomicInt64OnGroupSharedSupported;
+        public Silk.NET.Core.Bool32 AtomicInt64OnGroupSharedSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DerivativesInMeshAndAmplificationShadersSupported")]
-        public int DerivativesInMeshAndAmplificationShadersSupported;
+        public Silk.NET.Core.Bool32 DerivativesInMeshAndAmplificationShadersSupported;
 
         [NativeName("Type", "D3D12_WAVE_MMA_TIER")]
         [NativeName("Type.Name", "D3D12_WAVE_MMA_TIER")]
