@@ -152,11 +152,11 @@ public unsafe static class D3DUserDefinedAnnotationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetStatus(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl)
+    public static Silk.NET.Core.Miscellaneous.Bool32 GetStatus(this ComPtr<ID3DUserDefinedAnnotation> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, int>)@this->LpVtbl[6])(@this);
+        Silk.NET.Core.Miscellaneous.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3DUserDefinedAnnotation*, Silk.NET.Core.Miscellaneous.Bool32>)@this->LpVtbl[6])(@this);
         return ret;
     }
 

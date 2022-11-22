@@ -853,19 +853,19 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetPredication(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11Predicate* pPredicate, int PredicateValue)
+    public static unsafe void SetPredication(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11Predicate* pPredicate, Silk.NET.Core.Miscellaneous.Bool32 PredicateValue)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11Predicate*, int, void>)@this->LpVtbl[30])(@this, pPredicate, PredicateValue);
+        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11Predicate*, Silk.NET.Core.Miscellaneous.Bool32, void>)@this->LpVtbl[30])(@this, pPredicate, PredicateValue);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetPredication(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref ID3D11Predicate pPredicate, int PredicateValue)
+    public static void SetPredication(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref ID3D11Predicate pPredicate, Silk.NET.Core.Miscellaneous.Bool32 PredicateValue)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11Predicate* pPredicatePtr = &pPredicate)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11Predicate*, int, void>)@this->LpVtbl[30])(@this, pPredicatePtr, PredicateValue);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11Predicate*, Silk.NET.Core.Miscellaneous.Bool32, void>)@this->LpVtbl[30])(@this, pPredicatePtr, PredicateValue);
         }
     }
 
@@ -1861,19 +1861,19 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ExecuteCommandList(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11CommandList* pCommandList, int RestoreContextState)
+    public static unsafe void ExecuteCommandList(this ComPtr<ID3D11DeviceContext1> thisVtbl, ID3D11CommandList* pCommandList, Silk.NET.Core.Miscellaneous.Bool32 RestoreContextState)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11CommandList*, int, void>)@this->LpVtbl[58])(@this, pCommandList, RestoreContextState);
+        ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11CommandList*, Silk.NET.Core.Miscellaneous.Bool32, void>)@this->LpVtbl[58])(@this, pCommandList, RestoreContextState);
     }
 
     /// <summary>To be documented.</summary>
-    public static void ExecuteCommandList(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref ID3D11CommandList pCommandList, int RestoreContextState)
+    public static void ExecuteCommandList(this ComPtr<ID3D11DeviceContext1> thisVtbl, ref ID3D11CommandList pCommandList, Silk.NET.Core.Miscellaneous.Bool32 RestoreContextState)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11CommandList* pCommandListPtr = &pCommandList)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11CommandList*, int, void>)@this->LpVtbl[58])(@this, pCommandListPtr, RestoreContextState);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, ID3D11CommandList*, Silk.NET.Core.Miscellaneous.Bool32, void>)@this->LpVtbl[58])(@this, pCommandListPtr, RestoreContextState);
         }
     }
 
@@ -3734,22 +3734,22 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FinishCommandList(this ComPtr<ID3D11DeviceContext1> thisVtbl, int RestoreDeferredContextState, ID3D11CommandList** ppCommandList)
+    public static unsafe int FinishCommandList(this ComPtr<ID3D11DeviceContext1> thisVtbl, Silk.NET.Core.Miscellaneous.Bool32 RestoreDeferredContextState, ID3D11CommandList** ppCommandList)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, int, ID3D11CommandList**, int>)@this->LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandList);
+        ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, Silk.NET.Core.Miscellaneous.Bool32, ID3D11CommandList**, int>)@this->LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandList);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FinishCommandList(this ComPtr<ID3D11DeviceContext1> thisVtbl, int RestoreDeferredContextState, ref ID3D11CommandList* ppCommandList)
+    public static unsafe int FinishCommandList(this ComPtr<ID3D11DeviceContext1> thisVtbl, Silk.NET.Core.Miscellaneous.Bool32 RestoreDeferredContextState, ref ID3D11CommandList* ppCommandList)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (ID3D11CommandList** ppCommandListPtr = &ppCommandList)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, int, ID3D11CommandList**, int>)@this->LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandListPtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext1*, Silk.NET.Core.Miscellaneous.Bool32, ID3D11CommandList**, int>)@this->LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandListPtr);
         }
         return ret;
     }
@@ -5818,7 +5818,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetPredication<TI0>(this ComPtr<ID3D11DeviceContext1> thisVtbl, ComPtr<TI0> pPredicate, int PredicateValue) where TI0 : unmanaged, IComVtbl<ID3D11Predicate>, IComVtbl<TI0>
+    public static void SetPredication<TI0>(this ComPtr<ID3D11DeviceContext1> thisVtbl, ComPtr<TI0> pPredicate, Silk.NET.Core.Miscellaneous.Bool32 PredicateValue) where TI0 : unmanaged, IComVtbl<ID3D11Predicate>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -5826,7 +5826,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetPredication(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<ID3D11Predicate> pPredicate, int PredicateValue)
+    public static void SetPredication(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<ID3D11Predicate> pPredicate, Silk.NET.Core.Miscellaneous.Bool32 PredicateValue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -6786,7 +6786,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ExecuteCommandList<TI0>(this ComPtr<ID3D11DeviceContext1> thisVtbl, ComPtr<TI0> pCommandList, int RestoreContextState) where TI0 : unmanaged, IComVtbl<ID3D11CommandList>, IComVtbl<TI0>
+    public static void ExecuteCommandList<TI0>(this ComPtr<ID3D11DeviceContext1> thisVtbl, ComPtr<TI0> pCommandList, Silk.NET.Core.Miscellaneous.Bool32 RestoreContextState) where TI0 : unmanaged, IComVtbl<ID3D11CommandList>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6794,7 +6794,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ExecuteCommandList(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<ID3D11CommandList> pCommandList, int RestoreContextState)
+    public static void ExecuteCommandList(this ComPtr<ID3D11DeviceContext1> thisVtbl, Span<ID3D11CommandList> pCommandList, Silk.NET.Core.Miscellaneous.Bool32 RestoreContextState)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8122,7 +8122,7 @@ public unsafe static class D3D11DeviceContext1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int FinishCommandList<TI0>(this ComPtr<ID3D11DeviceContext1> thisVtbl, int RestoreDeferredContextState, ref ComPtr<TI0> ppCommandList) where TI0 : unmanaged, IComVtbl<ID3D11CommandList>, IComVtbl<TI0>
+    public static int FinishCommandList<TI0>(this ComPtr<ID3D11DeviceContext1> thisVtbl, Silk.NET.Core.Miscellaneous.Bool32 RestoreDeferredContextState, ref ComPtr<TI0> ppCommandList) where TI0 : unmanaged, IComVtbl<ID3D11CommandList>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
