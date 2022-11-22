@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D9
     {
         public RasterStatus
         (
-            int? inVBlank = null,
+            Silk.NET.Core.Bool32? inVBlank = null,
             uint? scanLine = null
         ) : this()
         {
@@ -40,7 +40,7 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "InVBlank")]
-        public int InVBlank;
+        public Silk.NET.Core.Bool32 InVBlank;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]
