@@ -1,0 +1,5 @@
+{
+    "LPCSTR": "string",
+    "HANDLE": "nint",
+    "LPCWSTR": "nint"
+}

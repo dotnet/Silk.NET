@@ -78,7 +78,8 @@
                     "$include.glTypeMap": "build/gl_typemap.json"
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         },
@@ -160,7 +161,8 @@
                     "$include.glTypeMap": "build/gl_typemap.json"
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         },
@@ -242,7 +244,8 @@
                     "$include.glTypeMap": "build/gl_typemap.json"
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         },
@@ -317,7 +320,8 @@
                     "cl_svm_mem_flags": "cl_mem_flags",
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         },
@@ -423,7 +427,8 @@
                     "StdVideoH265LevelIdc": "Video.StdVideoH265LevelIdc"
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         },
@@ -697,7 +702,8 @@
                     "VkImageUsageFlags": "uint"
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         },
