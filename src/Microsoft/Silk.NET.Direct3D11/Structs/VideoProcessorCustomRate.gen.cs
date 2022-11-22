@@ -23,7 +23,7 @@ namespace Silk.NET.Direct3D11
         (
             Silk.NET.DXGI.Rational? customRate = null,
             uint? outputFrames = null,
-            Silk.NET.Core.Miscellaneous.Bool32? inputInterlaced = null,
+            Silk.NET.Core.Bool32? inputInterlaced = null,
             uint? inputFramesOrFields = null
         ) : this()
         {
@@ -62,7 +62,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "InputInterlaced")]
-        public Silk.NET.Core.Miscellaneous.Bool32 InputInterlaced;
+        public Silk.NET.Core.Bool32 InputInterlaced;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

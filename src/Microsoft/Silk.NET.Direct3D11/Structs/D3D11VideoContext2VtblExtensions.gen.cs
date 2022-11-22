@@ -660,81 +660,81 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessor, Enable, pRect);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessor, Enable, pRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
+    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessor, Enable, pRectPtr);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessor, Enable, pRectPtr);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRect);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRect);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
+    public static void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
             fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRectPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[13])(@this, pVideoProcessorPtr, Enable, pRectPtr);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 YCbCr, [Flow(FlowDirection.In)] VideoColor* pColor)
+    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Bool32 YCbCr, [Flow(FlowDirection.In)] VideoColor* pColor)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Miscellaneous.Bool32, VideoColor*, void>)@this->LpVtbl[14])(@this, pVideoProcessor, YCbCr, pColor);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Bool32, VideoColor*, void>)@this->LpVtbl[14])(@this, pVideoProcessor, YCbCr, pColor);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 YCbCr, [Flow(FlowDirection.In)] in VideoColor pColor)
+    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Bool32 YCbCr, [Flow(FlowDirection.In)] in VideoColor pColor)
     {
         var @this = thisVtbl.Handle;
         fixed (VideoColor* pColorPtr = &pColor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Miscellaneous.Bool32, VideoColor*, void>)@this->LpVtbl[14])(@this, pVideoProcessor, YCbCr, pColorPtr);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Bool32, VideoColor*, void>)@this->LpVtbl[14])(@this, pVideoProcessor, YCbCr, pColorPtr);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 YCbCr, [Flow(FlowDirection.In)] VideoColor* pColor)
+    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.Core.Bool32 YCbCr, [Flow(FlowDirection.In)] VideoColor* pColor)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Miscellaneous.Bool32, VideoColor*, void>)@this->LpVtbl[14])(@this, pVideoProcessorPtr, YCbCr, pColor);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Bool32, VideoColor*, void>)@this->LpVtbl[14])(@this, pVideoProcessorPtr, YCbCr, pColor);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 YCbCr, [Flow(FlowDirection.In)] in VideoColor pColor)
+    public static void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.Core.Bool32 YCbCr, [Flow(FlowDirection.In)] in VideoColor pColor)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
             fixed (VideoColor* pColorPtr = &pColor)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Miscellaneous.Bool32, VideoColor*, void>)@this->LpVtbl[14])(@this, pVideoProcessorPtr, YCbCr, pColorPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Bool32, VideoColor*, void>)@this->LpVtbl[14])(@this, pVideoProcessorPtr, YCbCr, pColorPtr);
             }
         }
     }
@@ -797,36 +797,36 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputConstriction(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 Enable, Silk.NET.Maths.Vector2D<int> Size)
+    public static unsafe void VideoProcessorSetOutputConstriction(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Bool32 Enable, Silk.NET.Maths.Vector2D<int> Size)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Maths.Vector2D<int>, void>)@this->LpVtbl[17])(@this, pVideoProcessor, Enable, Size);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Bool32, Silk.NET.Maths.Vector2D<int>, void>)@this->LpVtbl[17])(@this, pVideoProcessor, Enable, Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputConstriction(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 Enable, Silk.NET.Maths.Vector2D<int> Size)
+    public static void VideoProcessorSetOutputConstriction(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.Core.Bool32 Enable, Silk.NET.Maths.Vector2D<int> Size)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Maths.Vector2D<int>, void>)@this->LpVtbl[17])(@this, pVideoProcessorPtr, Enable, Size);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Bool32, Silk.NET.Maths.Vector2D<int>, void>)@this->LpVtbl[17])(@this, pVideoProcessorPtr, Enable, Size);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputStereoMode(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 Enable)
+    public static unsafe void VideoProcessorSetOutputStereoMode(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Bool32 Enable)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Miscellaneous.Bool32, void>)@this->LpVtbl[18])(@this, pVideoProcessor, Enable);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[18])(@this, pVideoProcessor, Enable);
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputStereoMode(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 Enable)
+    public static void VideoProcessorSetOutputStereoMode(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.Core.Bool32 Enable)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Miscellaneous.Bool32, void>)@this->LpVtbl[18])(@this, pVideoProcessorPtr, Enable);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[18])(@this, pVideoProcessorPtr, Enable);
         }
     }
 
@@ -1552,139 +1552,139 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Miscellaneous.Bool32 RepeatFrame, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pCustomRate)
+    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Bool32 RepeatFrame, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pCustomRate)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[29])(@this, pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, pCustomRate);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, Silk.NET.Core.Bool32, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[29])(@this, pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, pCustomRate);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Miscellaneous.Bool32 RepeatFrame, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pCustomRate)
+    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Bool32 RepeatFrame, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pCustomRate)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.DXGI.Rational* pCustomRatePtr = &pCustomRate)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[29])(@this, pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, pCustomRatePtr);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, Silk.NET.Core.Bool32, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[29])(@this, pVideoProcessor, StreamIndex, OutputRate, RepeatFrame, pCustomRatePtr);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Miscellaneous.Bool32 RepeatFrame, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pCustomRate)
+    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Bool32 RepeatFrame, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pCustomRate)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[29])(@this, pVideoProcessorPtr, StreamIndex, OutputRate, RepeatFrame, pCustomRate);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, Silk.NET.Core.Bool32, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[29])(@this, pVideoProcessorPtr, StreamIndex, OutputRate, RepeatFrame, pCustomRate);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Miscellaneous.Bool32 RepeatFrame, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pCustomRate)
+    public static void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Bool32 RepeatFrame, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pCustomRate)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
             fixed (Silk.NET.DXGI.Rational* pCustomRatePtr = &pCustomRate)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[29])(@this, pVideoProcessorPtr, StreamIndex, OutputRate, RepeatFrame, pCustomRatePtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, VideoProcessorOutputRate, Silk.NET.Core.Bool32, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[29])(@this, pVideoProcessorPtr, StreamIndex, OutputRate, RepeatFrame, pCustomRatePtr);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
+    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
+    public static void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
             fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[30])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
+    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessor, StreamIndex, Enable, pRectPtr);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRect);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
+    public static void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
             fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[31])(@this, pVideoProcessorPtr, StreamIndex, Enable, pRectPtr);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamAlpha(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, float Alpha)
+    public static unsafe void VideoProcessorSetStreamAlpha(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, float Alpha)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, float, void>)@this->LpVtbl[32])(@this, pVideoProcessor, StreamIndex, Enable, Alpha);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, float, void>)@this->LpVtbl[32])(@this, pVideoProcessor, StreamIndex, Enable, Alpha);
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamAlpha(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, float Alpha)
+    public static void VideoProcessorSetStreamAlpha(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, float Alpha)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, float, void>)@this->LpVtbl[32])(@this, pVideoProcessorPtr, StreamIndex, Enable, Alpha);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, float, void>)@this->LpVtbl[32])(@this, pVideoProcessorPtr, StreamIndex, Enable, Alpha);
         }
     }
 
@@ -1729,83 +1729,83 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatio);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatio);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.DXGI.Rational* pDestinationAspectRatioPtr = &pDestinationAspectRatio)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatioPtr);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatioPtr);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.DXGI.Rational* pSourceAspectRatioPtr = &pSourceAspectRatio)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatio);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatio);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.DXGI.Rational* pSourceAspectRatioPtr = &pSourceAspectRatio)
         {
             fixed (Silk.NET.DXGI.Rational* pDestinationAspectRatioPtr = &pDestinationAspectRatio)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[34])(@this, pVideoProcessor, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatio);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatio);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
             fixed (Silk.NET.DXGI.Rational* pDestinationAspectRatioPtr = &pDestinationAspectRatio)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatioPtr);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatio, pDestinationAspectRatioPtr);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
             fixed (Silk.NET.DXGI.Rational* pSourceAspectRatioPtr = &pSourceAspectRatio)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatio);
+                ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatio);
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
+    public static void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
@@ -1814,77 +1814,77 @@ public unsafe static class D3D11VideoContext2VtblExtensions
             {
                 fixed (Silk.NET.DXGI.Rational* pDestinationAspectRatioPtr = &pDestinationAspectRatio)
                 {
-                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
+                    ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, Silk.NET.DXGI.Rational*, Silk.NET.DXGI.Rational*, void>)@this->LpVtbl[34])(@this, pVideoProcessorPtr, StreamIndex, Enable, pSourceAspectRatioPtr, pDestinationAspectRatioPtr);
                 }
             }
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamLumaKey(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, float Lower, float Upper)
+    public static unsafe void VideoProcessorSetStreamLumaKey(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, float Lower, float Upper)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, float, float, void>)@this->LpVtbl[35])(@this, pVideoProcessor, StreamIndex, Enable, Lower, Upper);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, float, float, void>)@this->LpVtbl[35])(@this, pVideoProcessor, StreamIndex, Enable, Lower, Upper);
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamLumaKey(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, float Lower, float Upper)
+    public static void VideoProcessorSetStreamLumaKey(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, float Lower, float Upper)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, float, float, void>)@this->LpVtbl[35])(@this, pVideoProcessorPtr, StreamIndex, Enable, Lower, Upper);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, float, float, void>)@this->LpVtbl[35])(@this, pVideoProcessorPtr, StreamIndex, Enable, Lower, Upper);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamStereoFormat(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, VideoProcessorStereoFormat Format, Silk.NET.Core.Miscellaneous.Bool32 LeftViewFrame0, Silk.NET.Core.Miscellaneous.Bool32 BaseViewFrame0, VideoProcessorStereoFlipMode FlipMode, int MonoOffset)
+    public static unsafe void VideoProcessorSetStreamStereoFormat(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, VideoProcessorStereoFormat Format, Silk.NET.Core.Bool32 LeftViewFrame0, Silk.NET.Core.Bool32 BaseViewFrame0, VideoProcessorStereoFlipMode FlipMode, int MonoOffset)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, VideoProcessorStereoFormat, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Core.Miscellaneous.Bool32, VideoProcessorStereoFlipMode, int, void>)@this->LpVtbl[36])(@this, pVideoProcessor, StreamIndex, Enable, Format, LeftViewFrame0, BaseViewFrame0, FlipMode, MonoOffset);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, VideoProcessorStereoFormat, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, VideoProcessorStereoFlipMode, int, void>)@this->LpVtbl[36])(@this, pVideoProcessor, StreamIndex, Enable, Format, LeftViewFrame0, BaseViewFrame0, FlipMode, MonoOffset);
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamStereoFormat(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, VideoProcessorStereoFormat Format, Silk.NET.Core.Miscellaneous.Bool32 LeftViewFrame0, Silk.NET.Core.Miscellaneous.Bool32 BaseViewFrame0, VideoProcessorStereoFlipMode FlipMode, int MonoOffset)
+    public static void VideoProcessorSetStreamStereoFormat(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, VideoProcessorStereoFormat Format, Silk.NET.Core.Bool32 LeftViewFrame0, Silk.NET.Core.Bool32 BaseViewFrame0, VideoProcessorStereoFlipMode FlipMode, int MonoOffset)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, VideoProcessorStereoFormat, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Core.Miscellaneous.Bool32, VideoProcessorStereoFlipMode, int, void>)@this->LpVtbl[36])(@this, pVideoProcessorPtr, StreamIndex, Enable, Format, LeftViewFrame0, BaseViewFrame0, FlipMode, MonoOffset);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, VideoProcessorStereoFormat, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, VideoProcessorStereoFlipMode, int, void>)@this->LpVtbl[36])(@this, pVideoProcessorPtr, StreamIndex, Enable, Format, LeftViewFrame0, BaseViewFrame0, FlipMode, MonoOffset);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamAutoProcessingMode(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable)
+    public static unsafe void VideoProcessorSetStreamAutoProcessingMode(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, void>)@this->LpVtbl[37])(@this, pVideoProcessor, StreamIndex, Enable);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, void>)@this->LpVtbl[37])(@this, pVideoProcessor, StreamIndex, Enable);
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamAutoProcessingMode(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable)
+    public static void VideoProcessorSetStreamAutoProcessingMode(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, void>)@this->LpVtbl[37])(@this, pVideoProcessorPtr, StreamIndex, Enable);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, void>)@this->LpVtbl[37])(@this, pVideoProcessorPtr, StreamIndex, Enable);
         }
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamFilter(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorFilter Filter, Silk.NET.Core.Miscellaneous.Bool32 Enable, int Level)
+    public static unsafe void VideoProcessorSetStreamFilter(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorFilter Filter, Silk.NET.Core.Bool32 Enable, int Level)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, Silk.NET.Core.Miscellaneous.Bool32, int, void>)@this->LpVtbl[38])(@this, pVideoProcessor, StreamIndex, Filter, Enable, Level);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, Silk.NET.Core.Bool32, int, void>)@this->LpVtbl[38])(@this, pVideoProcessor, StreamIndex, Filter, Enable, Level);
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamFilter(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, VideoProcessorFilter Filter, Silk.NET.Core.Miscellaneous.Bool32 Enable, int Level)
+    public static void VideoProcessorSetStreamFilter(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, VideoProcessorFilter Filter, Silk.NET.Core.Bool32 Enable, int Level)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, Silk.NET.Core.Miscellaneous.Bool32, int, void>)@this->LpVtbl[38])(@this, pVideoProcessorPtr, StreamIndex, Filter, Enable, Level);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, VideoProcessorFilter, Silk.NET.Core.Bool32, int, void>)@this->LpVtbl[38])(@this, pVideoProcessorPtr, StreamIndex, Filter, Enable, Level);
         }
     }
 
@@ -7254,19 +7254,19 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamRotation(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, VideoProcessorRotation Rotation)
+    public static unsafe void VideoProcessorSetStreamRotation(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, VideoProcessorRotation Rotation)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, VideoProcessorRotation, void>)@this->LpVtbl[63])(@this, pVideoProcessor, StreamIndex, Enable, Rotation);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, VideoProcessorRotation, void>)@this->LpVtbl[63])(@this, pVideoProcessor, StreamIndex, Enable, Rotation);
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamRotation(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, VideoProcessorRotation Rotation)
+    public static void VideoProcessorSetStreamRotation(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, VideoProcessorRotation Rotation)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, VideoProcessorRotation, void>)@this->LpVtbl[63])(@this, pVideoProcessorPtr, StreamIndex, Enable, Rotation);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, VideoProcessorRotation, void>)@this->LpVtbl[63])(@this, pVideoProcessorPtr, StreamIndex, Enable, Rotation);
         }
     }
 
@@ -7680,19 +7680,19 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputShaderUsage(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 ShaderUsage)
+    public static unsafe void VideoProcessorSetOutputShaderUsage(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Bool32 ShaderUsage)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Miscellaneous.Bool32, void>)@this->LpVtbl[71])(@this, pVideoProcessor, ShaderUsage);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[71])(@this, pVideoProcessor, ShaderUsage);
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputShaderUsage(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 ShaderUsage)
+    public static void VideoProcessorSetOutputShaderUsage(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, Silk.NET.Core.Bool32 ShaderUsage)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Miscellaneous.Bool32, void>)@this->LpVtbl[71])(@this, pVideoProcessorPtr, ShaderUsage);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[71])(@this, pVideoProcessorPtr, ShaderUsage);
         }
     }
 
@@ -7794,19 +7794,19 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamMirror(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, Silk.NET.Core.Miscellaneous.Bool32 FlipHorizontal, Silk.NET.Core.Miscellaneous.Bool32 FlipVertical)
+    public static unsafe void VideoProcessorSetStreamMirror(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, Silk.NET.Core.Bool32 FlipHorizontal, Silk.NET.Core.Bool32 FlipVertical)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Core.Miscellaneous.Bool32, void>)@this->LpVtbl[75])(@this, pVideoProcessor, StreamIndex, Enable, FlipHorizontal, FlipVertical);
+        ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, void>)@this->LpVtbl[75])(@this, pVideoProcessor, StreamIndex, Enable, FlipHorizontal, FlipVertical);
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamMirror(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, Silk.NET.Core.Miscellaneous.Bool32 FlipHorizontal, Silk.NET.Core.Miscellaneous.Bool32 FlipVertical)
+    public static void VideoProcessorSetStreamMirror(this ComPtr<ID3D11VideoContext2> thisVtbl, ref ID3D11VideoProcessor pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, Silk.NET.Core.Bool32 FlipHorizontal, Silk.NET.Core.Bool32 FlipVertical)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D11VideoProcessor* pVideoProcessorPtr = &pVideoProcessor)
         {
-            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Core.Miscellaneous.Bool32, void>)@this->LpVtbl[75])(@this, pVideoProcessorPtr, StreamIndex, Enable, FlipHorizontal, FlipVertical);
+            ((delegate* unmanaged[Stdcall]<ID3D11VideoContext2*, ID3D11VideoProcessor*, uint, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32, void>)@this->LpVtbl[75])(@this, pVideoProcessorPtr, StreamIndex, Enable, FlipHorizontal, FlipVertical);
         }
     }
 
@@ -8880,7 +8880,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8888,7 +8888,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
+    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8896,7 +8896,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetOutputTargetRect<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8904,7 +8904,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8912,7 +8912,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
+    public static void VideoProcessorSetOutputTargetRect(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8920,7 +8920,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputBackgroundColor<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 YCbCr, [Flow(FlowDirection.In)] VideoColor* pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetOutputBackgroundColor<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, Silk.NET.Core.Bool32 YCbCr, [Flow(FlowDirection.In)] VideoColor* pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8928,7 +8928,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 YCbCr, [Flow(FlowDirection.In)] ReadOnlySpan<VideoColor> pColor)
+    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, Silk.NET.Core.Bool32 YCbCr, [Flow(FlowDirection.In)] ReadOnlySpan<VideoColor> pColor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8936,7 +8936,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputBackgroundColor<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 YCbCr, [Flow(FlowDirection.In)] in VideoColor pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetOutputBackgroundColor<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, Silk.NET.Core.Bool32 YCbCr, [Flow(FlowDirection.In)] in VideoColor pColor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8944,7 +8944,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 YCbCr, [Flow(FlowDirection.In)] VideoColor* pColor)
+    public static unsafe void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Silk.NET.Core.Bool32 YCbCr, [Flow(FlowDirection.In)] VideoColor* pColor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8952,7 +8952,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 YCbCr, [Flow(FlowDirection.In)] ReadOnlySpan<VideoColor> pColor)
+    public static void VideoProcessorSetOutputBackgroundColor(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Silk.NET.Core.Bool32 YCbCr, [Flow(FlowDirection.In)] ReadOnlySpan<VideoColor> pColor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9016,7 +9016,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputConstriction<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 Enable, Silk.NET.Maths.Vector2D<int> Size) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetOutputConstriction<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, Silk.NET.Core.Bool32 Enable, Silk.NET.Maths.Vector2D<int> Size) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9024,7 +9024,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputConstriction(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 Enable, Silk.NET.Maths.Vector2D<int> Size)
+    public static void VideoProcessorSetOutputConstriction(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Silk.NET.Core.Bool32 Enable, Silk.NET.Maths.Vector2D<int> Size)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9032,7 +9032,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputStereoMode<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 Enable) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetOutputStereoMode<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, Silk.NET.Core.Bool32 Enable) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9040,7 +9040,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputStereoMode(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 Enable)
+    public static void VideoProcessorSetOutputStereoMode(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Silk.NET.Core.Bool32 Enable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9712,7 +9712,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamOutputRate<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Miscellaneous.Bool32 RepeatFrame, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetStreamOutputRate<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Bool32 RepeatFrame, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9720,7 +9720,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Miscellaneous.Bool32 RepeatFrame, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pCustomRate)
+    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Bool32 RepeatFrame, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pCustomRate)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9728,7 +9728,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamOutputRate<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Miscellaneous.Bool32 RepeatFrame, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamOutputRate<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Bool32 RepeatFrame, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pCustomRate) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9736,7 +9736,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Miscellaneous.Bool32 RepeatFrame, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pCustomRate)
+    public static unsafe void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Bool32 RepeatFrame, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pCustomRate)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9744,7 +9744,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Miscellaneous.Bool32 RepeatFrame, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pCustomRate)
+    public static void VideoProcessorSetStreamOutputRate(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, VideoProcessorOutputRate OutputRate, Silk.NET.Core.Bool32 RepeatFrame, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pCustomRate)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9752,7 +9752,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9760,7 +9760,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
+    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9768,7 +9768,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamSourceRect<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9776,7 +9776,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9784,7 +9784,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
+    public static void VideoProcessorSetStreamSourceRect(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9792,7 +9792,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9800,7 +9800,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
+    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9808,7 +9808,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamDestRect<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9816,7 +9816,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
+    public static unsafe void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9824,7 +9824,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
+    public static void VideoProcessorSetStreamDestRect(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9832,7 +9832,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamAlpha<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, float Alpha) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamAlpha<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, float Alpha) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9840,7 +9840,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamAlpha(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, float Alpha)
+    public static void VideoProcessorSetStreamAlpha(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, float Alpha)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9888,7 +9888,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9896,7 +9896,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9904,7 +9904,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9912,7 +9912,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9920,7 +9920,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9928,7 +9928,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pSourceAspectRatio, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, ID3D11VideoProcessor* pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pSourceAspectRatio, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9936,7 +9936,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamPixelAspectRatio<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pSourceAspectRatio, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pDestinationAspectRatio) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9944,7 +9944,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9952,7 +9952,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pSourceAspectRatio, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9960,7 +9960,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
+    public static unsafe void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pSourceAspectRatio, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9968,7 +9968,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pSourceAspectRatio, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pDestinationAspectRatio)
+    public static void VideoProcessorSetStreamPixelAspectRatio(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pSourceAspectRatio, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.Rational> pDestinationAspectRatio)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9976,7 +9976,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamLumaKey<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, float Lower, float Upper) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamLumaKey<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, float Lower, float Upper) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9984,7 +9984,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamLumaKey(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, float Lower, float Upper)
+    public static void VideoProcessorSetStreamLumaKey(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, float Lower, float Upper)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9992,7 +9992,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamStereoFormat<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, VideoProcessorStereoFormat Format, Silk.NET.Core.Miscellaneous.Bool32 LeftViewFrame0, Silk.NET.Core.Miscellaneous.Bool32 BaseViewFrame0, VideoProcessorStereoFlipMode FlipMode, int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamStereoFormat<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, VideoProcessorStereoFormat Format, Silk.NET.Core.Bool32 LeftViewFrame0, Silk.NET.Core.Bool32 BaseViewFrame0, VideoProcessorStereoFlipMode FlipMode, int MonoOffset) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10000,7 +10000,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamStereoFormat(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, VideoProcessorStereoFormat Format, Silk.NET.Core.Miscellaneous.Bool32 LeftViewFrame0, Silk.NET.Core.Miscellaneous.Bool32 BaseViewFrame0, VideoProcessorStereoFlipMode FlipMode, int MonoOffset)
+    public static void VideoProcessorSetStreamStereoFormat(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, VideoProcessorStereoFormat Format, Silk.NET.Core.Bool32 LeftViewFrame0, Silk.NET.Core.Bool32 BaseViewFrame0, VideoProcessorStereoFlipMode FlipMode, int MonoOffset)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10008,7 +10008,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamAutoProcessingMode<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamAutoProcessingMode<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10016,7 +10016,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamAutoProcessingMode(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable)
+    public static void VideoProcessorSetStreamAutoProcessingMode(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10024,7 +10024,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamFilter<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorFilter Filter, Silk.NET.Core.Miscellaneous.Bool32 Enable, int Level) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamFilter<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, VideoProcessorFilter Filter, Silk.NET.Core.Bool32 Enable, int Level) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10032,7 +10032,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamFilter(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, VideoProcessorFilter Filter, Silk.NET.Core.Miscellaneous.Bool32 Enable, int Level)
+    public static void VideoProcessorSetStreamFilter(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, VideoProcessorFilter Filter, Silk.NET.Core.Bool32 Enable, int Level)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14448,7 +14448,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamRotation<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, VideoProcessorRotation Rotation) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamRotation<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, VideoProcessorRotation Rotation) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14456,7 +14456,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamRotation(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, VideoProcessorRotation Rotation)
+    public static void VideoProcessorSetStreamRotation(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, VideoProcessorRotation Rotation)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14816,7 +14816,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputShaderUsage<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 ShaderUsage) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetOutputShaderUsage<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, Silk.NET.Core.Bool32 ShaderUsage) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14824,7 +14824,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetOutputShaderUsage(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Silk.NET.Core.Miscellaneous.Bool32 ShaderUsage)
+    public static void VideoProcessorSetOutputShaderUsage(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, Silk.NET.Core.Bool32 ShaderUsage)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -14928,7 +14928,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamMirror<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, Silk.NET.Core.Miscellaneous.Bool32 FlipHorizontal, Silk.NET.Core.Miscellaneous.Bool32 FlipVertical) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+    public static void VideoProcessorSetStreamMirror<TI0>(this ComPtr<ID3D11VideoContext2> thisVtbl, ComPtr<TI0> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, Silk.NET.Core.Bool32 FlipHorizontal, Silk.NET.Core.Bool32 FlipVertical) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -14936,7 +14936,7 @@ public unsafe static class D3D11VideoContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void VideoProcessorSetStreamMirror(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Miscellaneous.Bool32 Enable, Silk.NET.Core.Miscellaneous.Bool32 FlipHorizontal, Silk.NET.Core.Miscellaneous.Bool32 FlipVertical)
+    public static void VideoProcessorSetStreamMirror(this ComPtr<ID3D11VideoContext2> thisVtbl, Span<ID3D11VideoProcessor> pVideoProcessor, uint StreamIndex, Silk.NET.Core.Bool32 Enable, Silk.NET.Core.Bool32 FlipHorizontal, Silk.NET.Core.Bool32 FlipVertical)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

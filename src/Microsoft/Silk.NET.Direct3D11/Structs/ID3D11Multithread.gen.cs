@@ -125,20 +125,20 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly Silk.NET.Core.Miscellaneous.Bool32 SetMultithreadProtected(Silk.NET.Core.Miscellaneous.Bool32 bMTProtect)
+        public readonly Silk.NET.Core.Bool32 SetMultithreadProtected(Silk.NET.Core.Bool32 bMTProtect)
         {
             var @this = (ID3D11Multithread*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            Silk.NET.Core.Miscellaneous.Bool32 ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, Silk.NET.Core.Miscellaneous.Bool32, Silk.NET.Core.Miscellaneous.Bool32>)@this->LpVtbl[5])(@this, bMTProtect);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32>)@this->LpVtbl[5])(@this, bMTProtect);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly Silk.NET.Core.Miscellaneous.Bool32 GetMultithreadProtected()
+        public readonly Silk.NET.Core.Bool32 GetMultithreadProtected()
         {
             var @this = (ID3D11Multithread*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            Silk.NET.Core.Miscellaneous.Bool32 ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, Silk.NET.Core.Miscellaneous.Bool32>)@this->LpVtbl[6])(@this);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, Silk.NET.Core.Bool32>)@this->LpVtbl[6])(@this);
             return ret;
         }
 

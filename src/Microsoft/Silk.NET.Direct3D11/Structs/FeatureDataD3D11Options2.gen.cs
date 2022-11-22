@@ -21,14 +21,14 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D11Options2
         (
-            Silk.NET.Core.Miscellaneous.Bool32? pSSpecifiedStencilRefSupported = null,
-            Silk.NET.Core.Miscellaneous.Bool32? typedUAVLoadAdditionalFormats = null,
-            Silk.NET.Core.Miscellaneous.Bool32? rOVsSupported = null,
+            Silk.NET.Core.Bool32? pSSpecifiedStencilRefSupported = null,
+            Silk.NET.Core.Bool32? typedUAVLoadAdditionalFormats = null,
+            Silk.NET.Core.Bool32? rOVsSupported = null,
             ConservativeRasterizationTier? conservativeRasterizationTier = null,
             TiledResourcesTier? tiledResourcesTier = null,
-            Silk.NET.Core.Miscellaneous.Bool32? mapOnDefaultTextures = null,
-            Silk.NET.Core.Miscellaneous.Bool32? standardSwizzle = null,
-            Silk.NET.Core.Miscellaneous.Bool32? unifiedMemoryArchitecture = null
+            Silk.NET.Core.Bool32? mapOnDefaultTextures = null,
+            Silk.NET.Core.Bool32? standardSwizzle = null,
+            Silk.NET.Core.Bool32? unifiedMemoryArchitecture = null
         ) : this()
         {
             if (pSSpecifiedStencilRefSupported is not null)
@@ -76,17 +76,17 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "PSSpecifiedStencilRefSupported")]
-        public Silk.NET.Core.Miscellaneous.Bool32 PSSpecifiedStencilRefSupported;
+        public Silk.NET.Core.Bool32 PSSpecifiedStencilRefSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "TypedUAVLoadAdditionalFormats")]
-        public Silk.NET.Core.Miscellaneous.Bool32 TypedUAVLoadAdditionalFormats;
+        public Silk.NET.Core.Bool32 TypedUAVLoadAdditionalFormats;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ROVsSupported")]
-        public Silk.NET.Core.Miscellaneous.Bool32 ROVsSupported;
+        public Silk.NET.Core.Bool32 ROVsSupported;
 
         [NativeName("Type", "D3D11_CONSERVATIVE_RASTERIZATION_TIER")]
         [NativeName("Type.Name", "D3D11_CONSERVATIVE_RASTERIZATION_TIER")]
@@ -101,16 +101,16 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "MapOnDefaultTextures")]
-        public Silk.NET.Core.Miscellaneous.Bool32 MapOnDefaultTextures;
+        public Silk.NET.Core.Bool32 MapOnDefaultTextures;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "StandardSwizzle")]
-        public Silk.NET.Core.Miscellaneous.Bool32 StandardSwizzle;
+        public Silk.NET.Core.Bool32 StandardSwizzle;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "UnifiedMemoryArchitecture")]
-        public Silk.NET.Core.Miscellaneous.Bool32 UnifiedMemoryArchitecture;
+        public Silk.NET.Core.Bool32 UnifiedMemoryArchitecture;
     }
 }

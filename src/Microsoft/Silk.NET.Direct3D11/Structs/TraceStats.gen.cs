@@ -28,10 +28,10 @@ namespace Silk.NET.Direct3D11
             ushort? numTemps = null,
             ushort? maxIndexableTempIndex = null,
             ushort? immediateConstantBufferSize = null,
-            Silk.NET.Core.Miscellaneous.Bool32? pSOutputsDepth = null,
-            Silk.NET.Core.Miscellaneous.Bool32? pSOutputsMask = null,
+            Silk.NET.Core.Bool32? pSOutputsDepth = null,
+            Silk.NET.Core.Bool32? pSOutputsMask = null,
             TraceGSInputPrimitive? gSInputPrimitive = null,
-            Silk.NET.Core.Miscellaneous.Bool32? gSInputsPrimitiveID = null
+            Silk.NET.Core.Bool32? gSInputsPrimitiveID = null
         ) : this()
         {
             if (traceDesc is not null)
@@ -169,12 +169,12 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "PSOutputsDepth")]
-        public Silk.NET.Core.Miscellaneous.Bool32 PSOutputsDepth;
+        public Silk.NET.Core.Bool32 PSOutputsDepth;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "PSOutputsMask")]
-        public Silk.NET.Core.Miscellaneous.Bool32 PSOutputsMask;
+        public Silk.NET.Core.Bool32 PSOutputsMask;
 
         [NativeName("Type", "D3D11_TRACE_GS_INPUT_PRIMITIVE")]
         [NativeName("Type.Name", "D3D11_TRACE_GS_INPUT_PRIMITIVE")]
@@ -184,7 +184,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "GSInputsPrimitiveID")]
-        public Silk.NET.Core.Miscellaneous.Bool32 GSInputsPrimitiveID;
+        public Silk.NET.Core.Bool32 GSInputsPrimitiveID;
         [NativeName("Type", "D3D11_TRACE_COMPONENT_MASK [32]")]
         [NativeName("Type.Name", "D3D11_TRACE_COMPONENT_MASK [32]")]
         [NativeName("Name", "HSOutputPatchConstantMask")]

@@ -21,10 +21,10 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D9Options1
         (
-            Silk.NET.Core.Miscellaneous.Bool32? fullNonPow2TextureSupported = null,
-            Silk.NET.Core.Miscellaneous.Bool32? depthAsTextureWithLessEqualComparisonFilterSupported = null,
-            Silk.NET.Core.Miscellaneous.Bool32? simpleInstancingSupported = null,
-            Silk.NET.Core.Miscellaneous.Bool32? textureCubeFaceRenderTargetWithNonCubeDepthStencilSupported = null
+            Silk.NET.Core.Bool32? fullNonPow2TextureSupported = null,
+            Silk.NET.Core.Bool32? depthAsTextureWithLessEqualComparisonFilterSupported = null,
+            Silk.NET.Core.Bool32? simpleInstancingSupported = null,
+            Silk.NET.Core.Bool32? textureCubeFaceRenderTargetWithNonCubeDepthStencilSupported = null
         ) : this()
         {
             if (fullNonPow2TextureSupported is not null)
@@ -52,21 +52,21 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "FullNonPow2TextureSupported")]
-        public Silk.NET.Core.Miscellaneous.Bool32 FullNonPow2TextureSupported;
+        public Silk.NET.Core.Bool32 FullNonPow2TextureSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DepthAsTextureWithLessEqualComparisonFilterSupported")]
-        public Silk.NET.Core.Miscellaneous.Bool32 DepthAsTextureWithLessEqualComparisonFilterSupported;
+        public Silk.NET.Core.Bool32 DepthAsTextureWithLessEqualComparisonFilterSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "SimpleInstancingSupported")]
-        public Silk.NET.Core.Miscellaneous.Bool32 SimpleInstancingSupported;
+        public Silk.NET.Core.Bool32 SimpleInstancingSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported")]
-        public Silk.NET.Core.Miscellaneous.Bool32 TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported;
+        public Silk.NET.Core.Bool32 TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported;
     }
 }

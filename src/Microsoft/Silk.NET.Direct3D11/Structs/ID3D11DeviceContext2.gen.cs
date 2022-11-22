@@ -888,19 +888,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetPredication(ID3D11Predicate* pPredicate, Silk.NET.Core.Miscellaneous.Bool32 PredicateValue)
+        public readonly unsafe void SetPredication(ID3D11Predicate* pPredicate, Silk.NET.Core.Bool32 PredicateValue)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext2*, ID3D11Predicate*, Silk.NET.Core.Miscellaneous.Bool32, void>)@this->LpVtbl[30])(@this, pPredicate, PredicateValue);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext2*, ID3D11Predicate*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[30])(@this, pPredicate, PredicateValue);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetPredication(ref ID3D11Predicate pPredicate, Silk.NET.Core.Miscellaneous.Bool32 PredicateValue)
+        public readonly void SetPredication(ref ID3D11Predicate pPredicate, Silk.NET.Core.Bool32 PredicateValue)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11Predicate* pPredicatePtr = &pPredicate)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext2*, ID3D11Predicate*, Silk.NET.Core.Miscellaneous.Bool32, void>)@this->LpVtbl[30])(@this, pPredicatePtr, PredicateValue);
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext2*, ID3D11Predicate*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[30])(@this, pPredicatePtr, PredicateValue);
             }
         }
 
@@ -1896,19 +1896,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ExecuteCommandList(ID3D11CommandList* pCommandList, Silk.NET.Core.Miscellaneous.Bool32 RestoreContextState)
+        public readonly unsafe void ExecuteCommandList(ID3D11CommandList* pCommandList, Silk.NET.Core.Bool32 RestoreContextState)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext2*, ID3D11CommandList*, Silk.NET.Core.Miscellaneous.Bool32, void>)@this->LpVtbl[58])(@this, pCommandList, RestoreContextState);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext2*, ID3D11CommandList*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[58])(@this, pCommandList, RestoreContextState);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ExecuteCommandList(ref ID3D11CommandList pCommandList, Silk.NET.Core.Miscellaneous.Bool32 RestoreContextState)
+        public readonly void ExecuteCommandList(ref ID3D11CommandList pCommandList, Silk.NET.Core.Bool32 RestoreContextState)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11CommandList* pCommandListPtr = &pCommandList)
             {
-                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext2*, ID3D11CommandList*, Silk.NET.Core.Miscellaneous.Bool32, void>)@this->LpVtbl[58])(@this, pCommandListPtr, RestoreContextState);
+                ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext2*, ID3D11CommandList*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[58])(@this, pCommandListPtr, RestoreContextState);
             }
         }
 
@@ -3769,22 +3769,22 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FinishCommandList(Silk.NET.Core.Miscellaneous.Bool32 RestoreDeferredContextState, ID3D11CommandList** ppCommandList)
+        public readonly unsafe int FinishCommandList(Silk.NET.Core.Bool32 RestoreDeferredContextState, ID3D11CommandList** ppCommandList)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext2*, Silk.NET.Core.Miscellaneous.Bool32, ID3D11CommandList**, int>)@this->LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandList);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext2*, Silk.NET.Core.Bool32, ID3D11CommandList**, int>)@this->LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandList);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FinishCommandList(Silk.NET.Core.Miscellaneous.Bool32 RestoreDeferredContextState, ref ID3D11CommandList* ppCommandList)
+        public readonly unsafe int FinishCommandList(Silk.NET.Core.Bool32 RestoreDeferredContextState, ref ID3D11CommandList* ppCommandList)
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11CommandList** ppCommandListPtr = &ppCommandList)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext2*, Silk.NET.Core.Miscellaneous.Bool32, ID3D11CommandList**, int>)@this->LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandListPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext2*, Silk.NET.Core.Bool32, ID3D11CommandList**, int>)@this->LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandListPtr);
             }
             return ret;
         }
@@ -8785,11 +8785,11 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly Silk.NET.Core.Miscellaneous.Bool32 IsAnnotationEnabled()
+        public readonly Silk.NET.Core.Bool32 IsAnnotationEnabled()
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            Silk.NET.Core.Miscellaneous.Bool32 ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext2*, Silk.NET.Core.Miscellaneous.Bool32>)@this->LpVtbl[140])(@this);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext2*, Silk.NET.Core.Bool32>)@this->LpVtbl[140])(@this);
             return ret;
         }
 
@@ -9118,7 +9118,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetPredication<TI0>(ComPtr<TI0> pPredicate, Silk.NET.Core.Miscellaneous.Bool32 PredicateValue) where TI0 : unmanaged, IComVtbl<ID3D11Predicate>, IComVtbl<TI0>
+        public readonly void SetPredication<TI0>(ComPtr<TI0> pPredicate, Silk.NET.Core.Bool32 PredicateValue) where TI0 : unmanaged, IComVtbl<ID3D11Predicate>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -9582,7 +9582,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ExecuteCommandList<TI0>(ComPtr<TI0> pCommandList, Silk.NET.Core.Miscellaneous.Bool32 RestoreContextState) where TI0 : unmanaged, IComVtbl<ID3D11CommandList>, IComVtbl<TI0>
+        public readonly void ExecuteCommandList<TI0>(ComPtr<TI0> pCommandList, Silk.NET.Core.Bool32 RestoreContextState) where TI0 : unmanaged, IComVtbl<ID3D11CommandList>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -10422,7 +10422,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int FinishCommandList<TI0>(Silk.NET.Core.Miscellaneous.Bool32 RestoreDeferredContextState, ref ComPtr<TI0> ppCommandList) where TI0 : unmanaged, IComVtbl<ID3D11CommandList>, IComVtbl<TI0>
+        public readonly int FinishCommandList<TI0>(Silk.NET.Core.Bool32 RestoreDeferredContextState, ref ComPtr<TI0> ppCommandList) where TI0 : unmanaged, IComVtbl<ID3D11CommandList>, IComVtbl<TI0>
         {
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

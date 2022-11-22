@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataDisplayable
         (
-            Silk.NET.Core.Miscellaneous.Bool32? displayableTexture = null,
+            Silk.NET.Core.Bool32? displayableTexture = null,
             SharedResourceTier? sharedResourceTier = null
         ) : this()
         {
@@ -40,7 +40,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DisplayableTexture")]
-        public Silk.NET.Core.Miscellaneous.Bool32 DisplayableTexture;
+        public Silk.NET.Core.Bool32 DisplayableTexture;
 
         [NativeName("Type", "D3D11_SHARED_RESOURCE_TIER")]
         [NativeName("Type.Name", "D3D11_SHARED_RESOURCE_TIER")]
