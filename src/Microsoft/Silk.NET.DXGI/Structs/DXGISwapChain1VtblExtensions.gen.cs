@@ -442,22 +442,22 @@ public unsafe static class DXGISwapChain1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetFullscreenState(this ComPtr<IDXGISwapChain1> thisVtbl, int Fullscreen, IDXGIOutput* pTarget)
+    public static unsafe int SetFullscreenState(this ComPtr<IDXGISwapChain1> thisVtbl, Silk.NET.Core.Bool32 Fullscreen, IDXGIOutput* pTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain1*, int, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTarget);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain1*, Silk.NET.Core.Bool32, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTarget);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetFullscreenState(this ComPtr<IDXGISwapChain1> thisVtbl, int Fullscreen, ref IDXGIOutput pTarget)
+    public static int SetFullscreenState(this ComPtr<IDXGISwapChain1> thisVtbl, Silk.NET.Core.Bool32 Fullscreen, ref IDXGIOutput pTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDXGIOutput* pTargetPtr = &pTarget)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain1*, int, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTargetPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain1*, Silk.NET.Core.Bool32, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTargetPtr);
         }
         return ret;
     }
@@ -757,11 +757,11 @@ public unsafe static class DXGISwapChain1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsTemporaryMonoSupported(this ComPtr<IDXGISwapChain1> thisVtbl)
+    public static Silk.NET.Core.Bool32 IsTemporaryMonoSupported(this ComPtr<IDXGISwapChain1> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain1*, int>)@this->LpVtbl[23])(@this);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain1*, Silk.NET.Core.Bool32>)@this->LpVtbl[23])(@this);
         return ret;
     }
 
@@ -1079,7 +1079,7 @@ public unsafe static class DXGISwapChain1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetFullscreenState<TI0>(this ComPtr<IDXGISwapChain1> thisVtbl, int Fullscreen, ComPtr<TI0> pTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
+    public static int SetFullscreenState<TI0>(this ComPtr<IDXGISwapChain1> thisVtbl, Silk.NET.Core.Bool32 Fullscreen, ComPtr<TI0> pTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1087,7 +1087,7 @@ public unsafe static class DXGISwapChain1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetFullscreenState(this ComPtr<IDXGISwapChain1> thisVtbl, int Fullscreen, Span<IDXGIOutput> pTarget)
+    public static int SetFullscreenState(this ComPtr<IDXGISwapChain1> thisVtbl, Silk.NET.Core.Bool32 Fullscreen, Span<IDXGIOutput> pTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

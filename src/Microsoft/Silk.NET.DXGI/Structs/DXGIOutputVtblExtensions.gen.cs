@@ -523,22 +523,22 @@ public unsafe static class DXGIOutputVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TakeOwnership(this ComPtr<IDXGIOutput> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, int Exclusive)
+    public static unsafe int TakeOwnership(this ComPtr<IDXGIOutput> thisVtbl, Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Bool32 Exclusive)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Silk.NET.Core.Native.IUnknown*, int, int>)@this->LpVtbl[11])(@this, pDevice, Exclusive);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[11])(@this, pDevice, Exclusive);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int TakeOwnership(this ComPtr<IDXGIOutput> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, int Exclusive)
+    public static int TakeOwnership(this ComPtr<IDXGIOutput> thisVtbl, ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Bool32 Exclusive)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Silk.NET.Core.Native.IUnknown*, int, int>)@this->LpVtbl[11])(@this, pDevicePtr, Exclusive);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[11])(@this, pDevicePtr, Exclusive);
         }
         return ret;
     }
@@ -967,7 +967,7 @@ public unsafe static class DXGIOutputVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int TakeOwnership<TI0>(this ComPtr<IDXGIOutput> thisVtbl, ComPtr<TI0> pDevice, int Exclusive) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static int TakeOwnership<TI0>(this ComPtr<IDXGIOutput> thisVtbl, ComPtr<TI0> pDevice, Silk.NET.Core.Bool32 Exclusive) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -975,7 +975,7 @@ public unsafe static class DXGIOutputVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int TakeOwnership(this ComPtr<IDXGIOutput> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, int Exclusive)
+    public static int TakeOwnership(this ComPtr<IDXGIOutput> thisVtbl, Span<Silk.NET.Core.Native.IUnknown> pDevice, Silk.NET.Core.Bool32 Exclusive)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

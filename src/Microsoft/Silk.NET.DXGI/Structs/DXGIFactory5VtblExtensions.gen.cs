@@ -538,20 +538,20 @@ public unsafe static class DXGIFactory5VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsCurrent(this ComPtr<IDXGIFactory5> thisVtbl)
+    public static Silk.NET.Core.Bool32 IsCurrent(this ComPtr<IDXGIFactory5> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory5*, int>)@this->LpVtbl[13])(@this);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory5*, Silk.NET.Core.Bool32>)@this->LpVtbl[13])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsWindowedStereoEnabled(this ComPtr<IDXGIFactory5> thisVtbl)
+    public static Silk.NET.Core.Bool32 IsWindowedStereoEnabled(this ComPtr<IDXGIFactory5> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory5*, int>)@this->LpVtbl[14])(@this);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory5*, Silk.NET.Core.Bool32>)@this->LpVtbl[14])(@this);
         return ret;
     }
 

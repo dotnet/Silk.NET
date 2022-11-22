@@ -573,20 +573,20 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int IsCurrent()
+        public readonly Silk.NET.Core.Bool32 IsCurrent()
         {
             var @this = (IDXGIFactory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory2*, int>)@this->LpVtbl[13])(@this);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory2*, Silk.NET.Core.Bool32>)@this->LpVtbl[13])(@this);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int IsWindowedStereoEnabled()
+        public readonly Silk.NET.Core.Bool32 IsWindowedStereoEnabled()
         {
             var @this = (IDXGIFactory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory2*, int>)@this->LpVtbl[14])(@this);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory2*, Silk.NET.Core.Bool32>)@this->LpVtbl[14])(@this);
             return ret;
         }
 

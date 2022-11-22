@@ -486,22 +486,22 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetFullscreenState(int Fullscreen, IDXGIOutput* pTarget)
+        public readonly unsafe int SetFullscreenState(Silk.NET.Core.Bool32 Fullscreen, IDXGIOutput* pTarget)
         {
             var @this = (IDXGISwapChain4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, int, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTarget);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.Core.Bool32, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTarget);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetFullscreenState(int Fullscreen, ref IDXGIOutput pTarget)
+        public readonly int SetFullscreenState(Silk.NET.Core.Bool32 Fullscreen, ref IDXGIOutput pTarget)
         {
             var @this = (IDXGISwapChain4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDXGIOutput* pTargetPtr = &pTarget)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, int, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTargetPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.Core.Bool32, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTargetPtr);
             }
             return ret;
         }
@@ -801,11 +801,11 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int IsTemporaryMonoSupported()
+        public readonly Silk.NET.Core.Bool32 IsTemporaryMonoSupported()
         {
             var @this = (IDXGISwapChain4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, int>)@this->LpVtbl[23])(@this);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.Core.Bool32>)@this->LpVtbl[23])(@this);
             return ret;
         }
 
@@ -1050,32 +1050,32 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckColorSpaceSupport(ColorSpaceType ColorSpace, uint* pColorSpaceSupport)
+        public readonly unsafe int CheckColorSpaceSupport(Silk.NET.DXGI.ColorSpaceType ColorSpace, uint* pColorSpaceSupport)
         {
             var @this = (IDXGISwapChain4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, ColorSpaceType, uint*, int>)@this->LpVtbl[37])(@this, ColorSpace, pColorSpaceSupport);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.DXGI.ColorSpaceType, uint*, int>)@this->LpVtbl[37])(@this, ColorSpace, pColorSpaceSupport);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CheckColorSpaceSupport(ColorSpaceType ColorSpace, ref uint pColorSpaceSupport)
+        public readonly int CheckColorSpaceSupport(Silk.NET.DXGI.ColorSpaceType ColorSpace, ref uint pColorSpaceSupport)
         {
             var @this = (IDXGISwapChain4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pColorSpaceSupportPtr = &pColorSpaceSupport)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, ColorSpaceType, uint*, int>)@this->LpVtbl[37])(@this, ColorSpace, pColorSpaceSupportPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.DXGI.ColorSpaceType, uint*, int>)@this->LpVtbl[37])(@this, ColorSpace, pColorSpaceSupportPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetColorSpace1(ColorSpaceType ColorSpace)
+        public readonly int SetColorSpace1(Silk.NET.DXGI.ColorSpaceType ColorSpace)
         {
             var @this = (IDXGISwapChain4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, ColorSpaceType, int>)@this->LpVtbl[38])(@this, ColorSpace);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.DXGI.ColorSpaceType, int>)@this->LpVtbl[38])(@this, ColorSpace);
             return ret;
         }
 
@@ -1128,22 +1128,22 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetHDRMetaData(HdrMetadataType Type, uint Size, void* pMetaData)
+        public readonly unsafe int SetHDRMetaData(Silk.NET.DXGI.HdrMetadataType Type, uint Size, void* pMetaData)
         {
             var @this = (IDXGISwapChain4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, HdrMetadataType, uint, void*, int>)@this->LpVtbl[40])(@this, Type, Size, pMetaData);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.DXGI.HdrMetadataType, uint, void*, int>)@this->LpVtbl[40])(@this, Type, Size, pMetaData);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetHDRMetaData<T0>(HdrMetadataType Type, uint Size, ref T0 pMetaData) where T0 : unmanaged
+        public readonly int SetHDRMetaData<T0>(Silk.NET.DXGI.HdrMetadataType Type, uint Size, ref T0 pMetaData) where T0 : unmanaged
         {
             var @this = (IDXGISwapChain4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* pMetaDataPtr = &pMetaData)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, HdrMetadataType, uint, void*, int>)@this->LpVtbl[40])(@this, Type, Size, pMetaDataPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.DXGI.HdrMetadataType, uint, void*, int>)@this->LpVtbl[40])(@this, Type, Size, pMetaDataPtr);
             }
             return ret;
         }
@@ -1201,7 +1201,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetFullscreenState<TI0>(int Fullscreen, ComPtr<TI0> pTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
+        public readonly int SetFullscreenState<TI0>(Silk.NET.Core.Bool32 Fullscreen, ComPtr<TI0> pTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
         {
             var @this = (IDXGISwapChain4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

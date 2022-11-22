@@ -840,7 +840,8 @@
                 "convert-windows-only",
                 "no-csproj",
                 "no-extra-dir",
-                "no-name-container"
+                "no-name-container",
+                "typemap-native"
             ],
             "prefix": "",
             "clang": {
@@ -985,7 +986,8 @@
             "cacheDir": "build/cache",
             "cacheKey": "dxgi",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "typemap-native"
             ],
             "converter": {},
             "prefix": "DXGI",
