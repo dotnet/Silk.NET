@@ -23,7 +23,7 @@ namespace Silk.NET.DXVA
         (
             HDRational? customRate = null,
             uint? outputFrames = null,
-            int? inputInterlaced = null,
+            Silk.NET.Core.Bool32? inputInterlaced = null,
             uint? inputFramesOrFields = null
         ) : this()
         {
@@ -62,7 +62,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "InputInterlaced")]
-        public int InputInterlaced;
+        public Silk.NET.Core.Bool32 InputInterlaced;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

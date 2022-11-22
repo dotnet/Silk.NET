@@ -21,7 +21,7 @@ namespace Silk.NET.DXVA
     {
         public HDStreamStateFilterData
         (
-            int? enable = null,
+            Silk.NET.Core.Bool32? enable = null,
             int? level = null
         ) : this()
         {
@@ -40,7 +40,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Enable")]
-        public int Enable;
+        public Silk.NET.Core.Bool32 Enable;
 
         [NativeName("Type", "INT")]
         [NativeName("Type.Name", "INT")]
