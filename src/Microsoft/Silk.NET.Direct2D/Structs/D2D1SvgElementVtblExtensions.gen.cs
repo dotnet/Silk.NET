@@ -160,11 +160,11 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsTextContent(this ComPtr<ID2D1SvgElement> thisVtbl)
+    public static Silk.NET.Core.Bool32 IsTextContent(this ComPtr<ID2D1SvgElement> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, int>)@this->LpVtbl[7])(@this);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, Silk.NET.Core.Bool32>)@this->LpVtbl[7])(@this);
         return ret;
     }
 
@@ -186,11 +186,11 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int HasChildren(this ComPtr<ID2D1SvgElement> thisVtbl)
+    public static Silk.NET.Core.Bool32 HasChildren(this ComPtr<ID2D1SvgElement> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, int>)@this->LpVtbl[9])(@this);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, Silk.NET.Core.Bool32>)@this->LpVtbl[9])(@this);
         return ret;
     }
 
@@ -536,73 +536,73 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, int* inherited)
+    public static unsafe Silk.NET.Core.Bool32 IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, int* inherited)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, int*, int>)@this->LpVtbl[19])(@this, name, inherited);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, int*, Silk.NET.Core.Bool32>)@this->LpVtbl[19])(@this, name, inherited);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, ref int inherited)
+    public static unsafe Silk.NET.Core.Bool32 IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, ref int inherited)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
+        Silk.NET.Core.Bool32 ret = default;
         fixed (int* inheritedPtr = &inherited)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, int*, int>)@this->LpVtbl[19])(@this, name, inheritedPtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, int*, Silk.NET.Core.Bool32>)@this->LpVtbl[19])(@this, name, inheritedPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] in char name, int* inherited)
+    public static unsafe Silk.NET.Core.Bool32 IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] in char name, int* inherited)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
+        Silk.NET.Core.Bool32 ret = default;
         fixed (char* namePtr = &name)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, int*, int>)@this->LpVtbl[19])(@this, namePtr, inherited);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, int*, Silk.NET.Core.Bool32>)@this->LpVtbl[19])(@this, namePtr, inherited);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] in char name, ref int inherited)
+    public static Silk.NET.Core.Bool32 IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] in char name, ref int inherited)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
+        Silk.NET.Core.Bool32 ret = default;
         fixed (char* namePtr = &name)
         {
             fixed (int* inheritedPtr = &inherited)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, int*, int>)@this->LpVtbl[19])(@this, namePtr, inheritedPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, int*, Silk.NET.Core.Bool32>)@this->LpVtbl[19])(@this, namePtr, inheritedPtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, int* inherited)
+    public static unsafe Silk.NET.Core.Bool32 IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, int* inherited)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
+        Silk.NET.Core.Bool32 ret = default;
         var namePtr = (byte*) SilkMarshal.StringToPtr(name, NativeStringEncoding.UTF8);
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, int*, int>)@this->LpVtbl[19])(@this, namePtr, inherited);
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, int*, Silk.NET.Core.Bool32>)@this->LpVtbl[19])(@this, namePtr, inherited);
         SilkMarshal.Free((nint)namePtr);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, ref int inherited)
+    public static Silk.NET.Core.Bool32 IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, ref int inherited)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
+        Silk.NET.Core.Bool32 ret = default;
         var namePtr = (byte*) SilkMarshal.StringToPtr(name, NativeStringEncoding.UTF8);
         fixed (int* inheritedPtr = &inherited)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, int*, int>)@this->LpVtbl[19])(@this, namePtr, inheritedPtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, int*, Silk.NET.Core.Bool32>)@this->LpVtbl[19])(@this, namePtr, inheritedPtr);
         }
         SilkMarshal.Free((nint)namePtr);
         return ret;
@@ -1460,7 +1460,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, Span<int> inherited)
+    public static unsafe Silk.NET.Core.Bool32 IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] char* name, Span<int> inherited)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1468,7 +1468,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, int* inherited)
+    public static unsafe Silk.NET.Core.Bool32 IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, int* inherited)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1476,7 +1476,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, Span<int> inherited)
+    public static Silk.NET.Core.Bool32 IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, Span<int> inherited)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1484,7 +1484,7 @@ public unsafe static class D2D1SvgElementVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<int> inherited)
+    public static Silk.NET.Core.Bool32 IsAttributeSpecified(this ComPtr<ID2D1SvgElement> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, Span<int> inherited)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

@@ -85,11 +85,11 @@ public unsafe static class D2D1MultithreadVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMultithreadProtected(this ComPtr<ID2D1Multithread> thisVtbl)
+    public static Silk.NET.Core.Bool32 GetMultithreadProtected(this ComPtr<ID2D1Multithread> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1Multithread*, int>)@this->LpVtbl[3])(@this);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1Multithread*, Silk.NET.Core.Bool32>)@this->LpVtbl[3])(@this);
         return ret;
     }
 
