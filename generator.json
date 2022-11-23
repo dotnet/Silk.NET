@@ -1641,7 +1641,8 @@
             "controlDescriptors": [
                 "convert-windows-only",
                 "COMMENT: the below is needed because D3DCompiler and Dxc are in the same project and will fight eachother otherwise",
-                "keep-unknown-gen-files"
+                "keep-unknown-gen-files",
+                "typemap-native"
             ],
             "prefix": "D3D",
             "clang": {
