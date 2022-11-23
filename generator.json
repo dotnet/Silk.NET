@@ -1562,6 +1562,7 @@
             "controlDescriptors": [
                 "convert-windows-only",
                 "no-csproj",
+                "typemap-native",
                 "COMMENT: the below is needed because D3DCompiler and Dxc are in the same project and will fight eachother otherwise",
                 "keep-unknown-gen-files"
             ],
