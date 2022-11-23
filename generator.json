@@ -1943,7 +1943,8 @@
                 "convert-windows-only",
                 "Currently disabled due to bakery bugs.",
                 "no-convert",
-                "no-bind"
+                "no-bind",
+                "typemap-native"
             ],
             "converter": {},
             "prefix": "D2D1",
