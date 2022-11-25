@@ -28,16 +28,16 @@ namespace Silk.NET.Direct3D12
             Silk.NET.DXGI.Rational? frameRate = null,
             VideoSizeRange? sourceSizeRange = null,
             VideoSizeRange? destinationSizeRange = null,
-            int? enableOrientation = null,
+            Silk.NET.Core.Bool32? enableOrientation = null,
             VideoProcessFilterFlags? filterFlags = null,
             VideoFrameStereoFormat? stereoFormat = null,
             VideoFieldType? fieldType = null,
             VideoProcessDeinterlaceFlags? deinterlaceMode = null,
-            int? enableAlphaBlending = null,
+            Silk.NET.Core.Bool32? enableAlphaBlending = null,
             VideoProcessLumaKey? lumaKey = null,
             uint? numPastFrames = null,
             uint? numFutureFrames = null,
-            int? enableAutoProcessing = null
+            Silk.NET.Core.Bool32? enableAutoProcessing = null
         ) : this()
         {
             if (format is not null)
@@ -165,7 +165,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "EnableOrientation")]
-        public int EnableOrientation;
+        public Silk.NET.Core.Bool32 EnableOrientation;
 
         [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_FLAGS")]
         [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_FLAGS")]
@@ -190,7 +190,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "EnableAlphaBlending")]
-        public int EnableAlphaBlending;
+        public Silk.NET.Core.Bool32 EnableAlphaBlending;
 
         [NativeName("Type", "D3D12_VIDEO_PROCESS_LUMA_KEY")]
         [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_LUMA_KEY")]
@@ -210,6 +210,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "EnableAutoProcessing")]
-        public int EnableAutoProcessing;
+        public Silk.NET.Core.Bool32 EnableAutoProcessing;
     }
 }

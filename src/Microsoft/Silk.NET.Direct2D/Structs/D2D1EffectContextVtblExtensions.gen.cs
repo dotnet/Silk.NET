@@ -626,22 +626,22 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsShaderLoaded(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* shaderId)
+    public static unsafe Silk.NET.Core.Bool32 IsShaderLoaded(this ComPtr<ID2D1EffectContext> thisVtbl, Guid* shaderId)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, Guid*, int>)@this->LpVtbl[14])(@this, shaderId);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, Guid*, Silk.NET.Core.Bool32>)@this->LpVtbl[14])(@this, shaderId);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsShaderLoaded(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid shaderId)
+    public static Silk.NET.Core.Bool32 IsShaderLoaded(this ComPtr<ID2D1EffectContext> thisVtbl, ref Guid shaderId)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
+        Silk.NET.Core.Bool32 ret = default;
         fixed (Guid* shaderIdPtr = &shaderId)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, Guid*, int>)@this->LpVtbl[14])(@this, shaderIdPtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, Guid*, Silk.NET.Core.Bool32>)@this->LpVtbl[14])(@this, shaderIdPtr);
         }
         return ret;
     }
@@ -1998,11 +1998,11 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsBufferPrecisionSupported(this ComPtr<ID2D1EffectContext> thisVtbl, BufferPrecision bufferPrecision)
+    public static Silk.NET.Core.Bool32 IsBufferPrecisionSupported(this ComPtr<ID2D1EffectContext> thisVtbl, BufferPrecision bufferPrecision)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, BufferPrecision, int>)@this->LpVtbl[23])(@this, bufferPrecision);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext*, BufferPrecision, Silk.NET.Core.Bool32>)@this->LpVtbl[23])(@this, bufferPrecision);
         return ret;
     }
 
@@ -2329,7 +2329,7 @@ public unsafe static class D2D1EffectContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsShaderLoaded(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> shaderId)
+    public static Silk.NET.Core.Bool32 IsShaderLoaded(this ComPtr<ID2D1EffectContext> thisVtbl, Span<Guid> shaderId)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

@@ -28,7 +28,7 @@ namespace Silk.NET.DXVA
             Guid? deviceGuid = null,
             uint? width = null,
             uint? height = null,
-            int? enter = null
+            Silk.NET.Core.Bool32? enter = null
         ) : this()
         {
             if (wmiHeader is not null)
@@ -101,6 +101,6 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Enter")]
-        public int Enter;
+        public Silk.NET.Core.Bool32 Enter;
     }
 }

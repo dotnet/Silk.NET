@@ -521,19 +521,19 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetInput(uint index, ID2D1Image* input, int invalidate)
+        public readonly unsafe void SetInput(uint index, ID2D1Image* input, Silk.NET.Core.Bool32 invalidate)
         {
             var @this = (ID2D1Effect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1Effect*, uint, ID2D1Image*, int, void>)@this->LpVtbl[14])(@this, index, input, invalidate);
+            ((delegate* unmanaged[Stdcall]<ID2D1Effect*, uint, ID2D1Image*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[14])(@this, index, input, invalidate);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetInput(uint index, ref ID2D1Image input, int invalidate)
+        public readonly void SetInput(uint index, ref ID2D1Image input, Silk.NET.Core.Bool32 invalidate)
         {
             var @this = (ID2D1Effect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID2D1Image* inputPtr = &input)
             {
-                ((delegate* unmanaged[Stdcall]<ID2D1Effect*, uint, ID2D1Image*, int, void>)@this->LpVtbl[14])(@this, index, inputPtr, invalidate);
+                ((delegate* unmanaged[Stdcall]<ID2D1Effect*, uint, ID2D1Image*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[14])(@this, index, inputPtr, invalidate);
             }
         }
 
@@ -607,7 +607,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetInput<TI0>(uint index, ComPtr<TI0> input, int invalidate) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+        public readonly void SetInput<TI0>(uint index, ComPtr<TI0> input, Silk.NET.Core.Bool32 invalidate) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
         {
             var @this = (ID2D1Effect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

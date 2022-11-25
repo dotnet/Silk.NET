@@ -189,11 +189,11 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int IsTextContent()
+        public readonly Silk.NET.Core.Bool32 IsTextContent()
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, int>)@this->LpVtbl[7])(@this);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, Silk.NET.Core.Bool32>)@this->LpVtbl[7])(@this);
             return ret;
         }
 
@@ -215,11 +215,11 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int HasChildren()
+        public readonly Silk.NET.Core.Bool32 HasChildren()
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, int>)@this->LpVtbl[9])(@this);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, Silk.NET.Core.Bool32>)@this->LpVtbl[9])(@this);
             return ret;
         }
 
@@ -565,73 +565,73 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsAttributeSpecified([Flow(FlowDirection.In)] char* name, int* inherited)
+        public readonly unsafe Silk.NET.Core.Bool32 IsAttributeSpecified([Flow(FlowDirection.In)] char* name, int* inherited)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, int*, int>)@this->LpVtbl[19])(@this, name, inherited);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, int*, Silk.NET.Core.Bool32>)@this->LpVtbl[19])(@this, name, inherited);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsAttributeSpecified([Flow(FlowDirection.In)] char* name, ref int inherited)
+        public readonly unsafe Silk.NET.Core.Bool32 IsAttributeSpecified([Flow(FlowDirection.In)] char* name, ref int inherited)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
+            Silk.NET.Core.Bool32 ret = default;
             fixed (int* inheritedPtr = &inherited)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, int*, int>)@this->LpVtbl[19])(@this, name, inheritedPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, int*, Silk.NET.Core.Bool32>)@this->LpVtbl[19])(@this, name, inheritedPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsAttributeSpecified([Flow(FlowDirection.In)] in char name, int* inherited)
+        public readonly unsafe Silk.NET.Core.Bool32 IsAttributeSpecified([Flow(FlowDirection.In)] in char name, int* inherited)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
+            Silk.NET.Core.Bool32 ret = default;
             fixed (char* namePtr = &name)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, int*, int>)@this->LpVtbl[19])(@this, namePtr, inherited);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, int*, Silk.NET.Core.Bool32>)@this->LpVtbl[19])(@this, namePtr, inherited);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int IsAttributeSpecified([Flow(FlowDirection.In)] in char name, ref int inherited)
+        public readonly Silk.NET.Core.Bool32 IsAttributeSpecified([Flow(FlowDirection.In)] in char name, ref int inherited)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
+            Silk.NET.Core.Bool32 ret = default;
             fixed (char* namePtr = &name)
             {
                 fixed (int* inheritedPtr = &inherited)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, int*, int>)@this->LpVtbl[19])(@this, namePtr, inheritedPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, char*, int*, Silk.NET.Core.Bool32>)@this->LpVtbl[19])(@this, namePtr, inheritedPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsAttributeSpecified([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, int* inherited)
+        public readonly unsafe Silk.NET.Core.Bool32 IsAttributeSpecified([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, int* inherited)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
+            Silk.NET.Core.Bool32 ret = default;
             var namePtr = (byte*) SilkMarshal.StringToPtr(name, NativeStringEncoding.UTF8);
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, int*, int>)@this->LpVtbl[19])(@this, namePtr, inherited);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, int*, Silk.NET.Core.Bool32>)@this->LpVtbl[19])(@this, namePtr, inherited);
             SilkMarshal.Free((nint)namePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int IsAttributeSpecified([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, ref int inherited)
+        public readonly Silk.NET.Core.Bool32 IsAttributeSpecified([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, ref int inherited)
         {
             var @this = (ID2D1SvgElement*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
+            Silk.NET.Core.Bool32 ret = default;
             var namePtr = (byte*) SilkMarshal.StringToPtr(name, NativeStringEncoding.UTF8);
             fixed (int* inheritedPtr = &inherited)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, int*, int>)@this->LpVtbl[19])(@this, namePtr, inheritedPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1SvgElement*, byte*, int*, Silk.NET.Core.Bool32>)@this->LpVtbl[19])(@this, namePtr, inheritedPtr);
             }
             SilkMarshal.Free((nint)namePtr);
             return ret;

@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D12
         public FeatureDataVideoEncoderHeapSize
         (
             VideoEncoderHeapDesc? heapDesc = null,
-            int? isSupported = null,
+            Silk.NET.Core.Bool32? isSupported = null,
             ulong? memoryPoolL0Size = null,
             ulong? memoryPoolL1Size = null
         ) : this()
@@ -57,7 +57,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "IsSupported")]
-        public int IsSupported;
+        public Silk.NET.Core.Bool32 IsSupported;
 
         [NativeName("Type", "UINT64")]
         [NativeName("Type.Name", "UINT64")]

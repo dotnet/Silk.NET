@@ -78,7 +78,8 @@
                     "$include.glTypeMap": "build/gl_typemap.json"
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         },
@@ -160,7 +161,8 @@
                     "$include.glTypeMap": "build/gl_typemap.json"
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         },
@@ -242,7 +244,8 @@
                     "$include.glTypeMap": "build/gl_typemap.json"
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         },
@@ -317,7 +320,8 @@
                     "cl_svm_mem_flags": "cl_mem_flags",
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         },
@@ -423,7 +427,8 @@
                     "StdVideoH265LevelIdc": "Video.StdVideoH265LevelIdc"
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         },
@@ -697,7 +702,8 @@
                     "VkImageUsageFlags": "uint"
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         },
@@ -834,7 +840,8 @@
                 "convert-windows-only",
                 "no-csproj",
                 "no-extra-dir",
-                "no-name-container"
+                "no-name-container",
+                "typemap-native"
             ],
             "prefix": "",
             "clang": {
@@ -895,7 +902,8 @@
             "cacheKey": "win32extras",
             "controlDescriptors": [
                 "convert-windows-only",
-                "no-name-container"
+                "no-name-container",
+                "typemap-native"
             ],
             "prefix": "",
             "clang": {
@@ -978,7 +986,8 @@
             "cacheDir": "build/cache",
             "cacheKey": "dxgi",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "typemap-native"
             ],
             "converter": {},
             "prefix": "DXGI",
@@ -1064,7 +1073,8 @@
             "cacheDir": "build/cache",
             "cacheKey": "dxva",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "typemap-native"
             ],
             "converter": {},
             "prefix": "DXVA",
@@ -1162,7 +1172,8 @@
             "cacheDir": "build/cache",
             "cacheKey": "d2d",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "typemap-native"
             ],
             "converter": {},
             "prefix": "D2D1_",
@@ -1286,7 +1297,8 @@
             "cacheDir": "build/cache",
             "cacheKey": "d3d11",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "typemap-native"
             ],
             "converter": {},
             "prefix": "D3D11",
@@ -1381,7 +1393,8 @@
             "cacheDir": "build/cache",
             "cacheKey": "d3d12",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "typemap-native"
             ],
             "converter": {},
             "prefix": "D3D12",
@@ -1461,7 +1474,8 @@
             "cacheDir": "build/cache",
             "cacheKey": "d3d9",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "typemap-native"
             ],
             "converter": {},
             "prefix": "D3D",
@@ -1548,6 +1562,7 @@
             "controlDescriptors": [
                 "convert-windows-only",
                 "no-csproj",
+                "typemap-native",
                 "COMMENT: the below is needed because D3DCompiler and Dxc are in the same project and will fight eachother otherwise",
                 "keep-unknown-gen-files"
             ],
@@ -1626,7 +1641,8 @@
             "controlDescriptors": [
                 "convert-windows-only",
                 "COMMENT: the below is needed because D3DCompiler and Dxc are in the same project and will fight eachother otherwise",
-                "keep-unknown-gen-files"
+                "keep-unknown-gen-files",
+                "typemap-native"
             ],
             "prefix": "D3D",
             "clang": {
@@ -1703,7 +1719,8 @@
             "cacheDir": "build/cache",
             "cacheKey": "dstorage",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "typemap-native"
             ],
             "prefix": "DStorage",
             "clang": {
@@ -1797,7 +1814,8 @@
             "controlDescriptors": [
                 "convert-windows-only",
                 "NOTE we'll handle the loading ourselves as it's a bit quirky here",
-                "no-name-container"
+                "no-name-container",
+                "typemap-native"
             ],
             "prefix": "XAudio2",
             "clang": {
@@ -1863,7 +1881,8 @@
             "cacheDir": "build/cache",
             "cacheKey": "xinput",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "typemap-native"
             ],
             "prefix": "XInput",
             "clang": {
@@ -1924,7 +1943,8 @@
                 "convert-windows-only",
                 "Currently disabled due to bakery bugs.",
                 "no-convert",
-                "no-bind"
+                "no-bind",
+                "typemap-native"
             ],
             "converter": {},
             "prefix": "D2D1",

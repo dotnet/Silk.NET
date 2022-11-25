@@ -21,8 +21,8 @@ namespace Silk.NET.Direct3D11
     {
         public RenderTargetBlendDesc1
         (
-            int? blendEnable = null,
-            int? logicOpEnable = null,
+            Silk.NET.Core.Bool32? blendEnable = null,
+            Silk.NET.Core.Bool32? logicOpEnable = null,
             Blend? srcBlend = null,
             Blend? destBlend = null,
             BlendOp? blendOp = null,
@@ -88,12 +88,12 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "BlendEnable")]
-        public int BlendEnable;
+        public Silk.NET.Core.Bool32 BlendEnable;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "LogicOpEnable")]
-        public int LogicOpEnable;
+        public Silk.NET.Core.Bool32 LogicOpEnable;
 
         [NativeName("Type", "D3D11_BLEND")]
         [NativeName("Type.Name", "D3D11_BLEND")]

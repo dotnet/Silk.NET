@@ -10195,62 +10195,62 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 52, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "CreateDirectoryA")]
-        public unsafe partial int CreateDirectoryA([Flow(FlowDirection.In)] byte* lpPathName, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes);
+        public unsafe partial Silk.NET.Core.Bool32 CreateDirectoryA([Flow(FlowDirection.In)] byte* lpPathName, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 52, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "CreateDirectoryA")]
-        public unsafe partial int CreateDirectoryA([Flow(FlowDirection.In)] byte* lpPathName, ref Silk.NET.Core.Native.SecurityAttributes lpSecurityAttributes);
+        public unsafe partial Silk.NET.Core.Bool32 CreateDirectoryA([Flow(FlowDirection.In)] byte* lpPathName, ref Silk.NET.Core.Native.SecurityAttributes lpSecurityAttributes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 52, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "CreateDirectoryA")]
-        public unsafe partial int CreateDirectoryA([Flow(FlowDirection.In)] in byte lpPathName, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes);
+        public unsafe partial Silk.NET.Core.Bool32 CreateDirectoryA([Flow(FlowDirection.In)] in byte lpPathName, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 52, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "CreateDirectoryA")]
-        public partial int CreateDirectoryA([Flow(FlowDirection.In)] in byte lpPathName, ref Silk.NET.Core.Native.SecurityAttributes lpSecurityAttributes);
+        public partial Silk.NET.Core.Bool32 CreateDirectoryA([Flow(FlowDirection.In)] in byte lpPathName, ref Silk.NET.Core.Native.SecurityAttributes lpSecurityAttributes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 52, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "CreateDirectoryA")]
-        public unsafe partial int CreateDirectoryA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpPathName, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes);
+        public unsafe partial Silk.NET.Core.Bool32 CreateDirectoryA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpPathName, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 52, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "CreateDirectoryA")]
-        public partial int CreateDirectoryA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpPathName, ref Silk.NET.Core.Native.SecurityAttributes lpSecurityAttributes);
+        public partial Silk.NET.Core.Bool32 CreateDirectoryA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpPathName, ref Silk.NET.Core.Native.SecurityAttributes lpSecurityAttributes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 60, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "CreateDirectoryW")]
-        public unsafe partial int CreateDirectoryW([Flow(FlowDirection.In)] char* lpPathName, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes);
+        public unsafe partial Silk.NET.Core.Bool32 CreateDirectoryW([Flow(FlowDirection.In)] char* lpPathName, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 60, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "CreateDirectoryW")]
-        public unsafe partial int CreateDirectoryW([Flow(FlowDirection.In)] char* lpPathName, ref Silk.NET.Core.Native.SecurityAttributes lpSecurityAttributes);
+        public unsafe partial Silk.NET.Core.Bool32 CreateDirectoryW([Flow(FlowDirection.In)] char* lpPathName, ref Silk.NET.Core.Native.SecurityAttributes lpSecurityAttributes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 60, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "CreateDirectoryW")]
-        public unsafe partial int CreateDirectoryW([Flow(FlowDirection.In)] in char lpPathName, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes);
+        public unsafe partial Silk.NET.Core.Bool32 CreateDirectoryW([Flow(FlowDirection.In)] in char lpPathName, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 60, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "CreateDirectoryW")]
-        public partial int CreateDirectoryW([Flow(FlowDirection.In)] in char lpPathName, ref Silk.NET.Core.Native.SecurityAttributes lpSecurityAttributes);
+        public partial Silk.NET.Core.Bool32 CreateDirectoryW([Flow(FlowDirection.In)] in char lpPathName, ref Silk.NET.Core.Native.SecurityAttributes lpSecurityAttributes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 60, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "CreateDirectoryW")]
-        public unsafe partial int CreateDirectoryW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpPathName, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes);
+        public unsafe partial Silk.NET.Core.Bool32 CreateDirectoryW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpPathName, Silk.NET.Core.Native.SecurityAttributes* lpSecurityAttributes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 60, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "CreateDirectoryW")]
-        public partial int CreateDirectoryW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpPathName, ref Silk.NET.Core.Native.SecurityAttributes lpSecurityAttributes);
+        public partial Silk.NET.Core.Bool32 CreateDirectoryW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpPathName, ref Silk.NET.Core.Native.SecurityAttributes lpSecurityAttributes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 79, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
@@ -10375,162 +10375,162 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 116, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "DefineDosDeviceW")]
-        public unsafe partial int DefineDosDeviceW(uint dwFlags, [Flow(FlowDirection.In)] char* lpDeviceName, [Flow(FlowDirection.In)] char* lpTargetPath);
+        public unsafe partial Silk.NET.Core.Bool32 DefineDosDeviceW(uint dwFlags, [Flow(FlowDirection.In)] char* lpDeviceName, [Flow(FlowDirection.In)] char* lpTargetPath);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 116, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "DefineDosDeviceW")]
-        public unsafe partial int DefineDosDeviceW(uint dwFlags, [Flow(FlowDirection.In)] char* lpDeviceName, [Flow(FlowDirection.In)] in char lpTargetPath);
+        public unsafe partial Silk.NET.Core.Bool32 DefineDosDeviceW(uint dwFlags, [Flow(FlowDirection.In)] char* lpDeviceName, [Flow(FlowDirection.In)] in char lpTargetPath);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 116, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "DefineDosDeviceW")]
-        public unsafe partial int DefineDosDeviceW(uint dwFlags, [Flow(FlowDirection.In)] char* lpDeviceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpTargetPath);
+        public unsafe partial Silk.NET.Core.Bool32 DefineDosDeviceW(uint dwFlags, [Flow(FlowDirection.In)] char* lpDeviceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpTargetPath);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 116, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "DefineDosDeviceW")]
-        public unsafe partial int DefineDosDeviceW(uint dwFlags, [Flow(FlowDirection.In)] in char lpDeviceName, [Flow(FlowDirection.In)] char* lpTargetPath);
+        public unsafe partial Silk.NET.Core.Bool32 DefineDosDeviceW(uint dwFlags, [Flow(FlowDirection.In)] in char lpDeviceName, [Flow(FlowDirection.In)] char* lpTargetPath);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 116, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "DefineDosDeviceW")]
-        public partial int DefineDosDeviceW(uint dwFlags, [Flow(FlowDirection.In)] in char lpDeviceName, [Flow(FlowDirection.In)] in char lpTargetPath);
+        public partial Silk.NET.Core.Bool32 DefineDosDeviceW(uint dwFlags, [Flow(FlowDirection.In)] in char lpDeviceName, [Flow(FlowDirection.In)] in char lpTargetPath);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 116, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "DefineDosDeviceW")]
-        public partial int DefineDosDeviceW(uint dwFlags, [Flow(FlowDirection.In)] in char lpDeviceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpTargetPath);
+        public partial Silk.NET.Core.Bool32 DefineDosDeviceW(uint dwFlags, [Flow(FlowDirection.In)] in char lpDeviceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpTargetPath);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 116, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "DefineDosDeviceW")]
-        public unsafe partial int DefineDosDeviceW(uint dwFlags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDeviceName, [Flow(FlowDirection.In)] char* lpTargetPath);
+        public unsafe partial Silk.NET.Core.Bool32 DefineDosDeviceW(uint dwFlags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDeviceName, [Flow(FlowDirection.In)] char* lpTargetPath);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 116, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "DefineDosDeviceW")]
-        public partial int DefineDosDeviceW(uint dwFlags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDeviceName, [Flow(FlowDirection.In)] in char lpTargetPath);
+        public partial Silk.NET.Core.Bool32 DefineDosDeviceW(uint dwFlags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDeviceName, [Flow(FlowDirection.In)] in char lpTargetPath);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 116, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "DefineDosDeviceW")]
-        public partial int DefineDosDeviceW(uint dwFlags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDeviceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpTargetPath);
+        public partial Silk.NET.Core.Bool32 DefineDosDeviceW(uint dwFlags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDeviceName, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpTargetPath);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "DeleteFileA")]
-        public unsafe partial int DeleteFileA([Flow(FlowDirection.In)] byte* lpFileName);
+        public unsafe partial Silk.NET.Core.Bool32 DeleteFileA([Flow(FlowDirection.In)] byte* lpFileName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "DeleteFileA")]
-        public partial int DeleteFileA([Flow(FlowDirection.In)] in byte lpFileName);
+        public partial Silk.NET.Core.Bool32 DeleteFileA([Flow(FlowDirection.In)] in byte lpFileName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "DeleteFileA")]
-        public partial int DeleteFileA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileName);
+        public partial Silk.NET.Core.Bool32 DeleteFileA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 142, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "DeleteFileW")]
-        public unsafe partial int DeleteFileW([Flow(FlowDirection.In)] char* lpFileName);
+        public unsafe partial Silk.NET.Core.Bool32 DeleteFileW([Flow(FlowDirection.In)] char* lpFileName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 142, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "DeleteFileW")]
-        public partial int DeleteFileW([Flow(FlowDirection.In)] in char lpFileName);
+        public partial Silk.NET.Core.Bool32 DeleteFileW([Flow(FlowDirection.In)] in char lpFileName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 142, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "DeleteFileW")]
-        public partial int DeleteFileW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName);
+        public partial Silk.NET.Core.Bool32 DeleteFileW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "DeleteVolumeMountPointW")]
-        public unsafe partial int DeleteVolumeMountPointW([Flow(FlowDirection.In)] char* lpszVolumeMountPoint);
+        public unsafe partial Silk.NET.Core.Bool32 DeleteVolumeMountPointW([Flow(FlowDirection.In)] char* lpszVolumeMountPoint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "DeleteVolumeMountPointW")]
-        public partial int DeleteVolumeMountPointW([Flow(FlowDirection.In)] in char lpszVolumeMountPoint);
+        public partial Silk.NET.Core.Bool32 DeleteVolumeMountPointW([Flow(FlowDirection.In)] in char lpszVolumeMountPoint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "DeleteVolumeMountPointW")]
-        public partial int DeleteVolumeMountPointW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeMountPoint);
+        public partial Silk.NET.Core.Bool32 DeleteVolumeMountPointW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeMountPoint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 177, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FileTimeToLocalFileTime")]
-        public unsafe partial int FileTimeToLocalFileTime([Flow(FlowDirection.In)] Filetime* lpFileTime, Filetime* lpLocalFileTime);
+        public unsafe partial Silk.NET.Core.Bool32 FileTimeToLocalFileTime([Flow(FlowDirection.In)] Filetime* lpFileTime, Filetime* lpLocalFileTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 177, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FileTimeToLocalFileTime")]
-        public unsafe partial int FileTimeToLocalFileTime([Flow(FlowDirection.In)] Filetime* lpFileTime, ref Filetime lpLocalFileTime);
+        public unsafe partial Silk.NET.Core.Bool32 FileTimeToLocalFileTime([Flow(FlowDirection.In)] Filetime* lpFileTime, ref Filetime lpLocalFileTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 177, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FileTimeToLocalFileTime")]
-        public unsafe partial int FileTimeToLocalFileTime([Flow(FlowDirection.In)] in Filetime lpFileTime, Filetime* lpLocalFileTime);
+        public unsafe partial Silk.NET.Core.Bool32 FileTimeToLocalFileTime([Flow(FlowDirection.In)] in Filetime lpFileTime, Filetime* lpLocalFileTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 177, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FileTimeToLocalFileTime")]
-        public partial int FileTimeToLocalFileTime([Flow(FlowDirection.In)] in Filetime lpFileTime, ref Filetime lpLocalFileTime);
+        public partial Silk.NET.Core.Bool32 FileTimeToLocalFileTime([Flow(FlowDirection.In)] in Filetime lpFileTime, ref Filetime lpLocalFileTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 191, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindClose")]
-        public unsafe partial int FindClose(void* hFindFile);
+        public unsafe partial Silk.NET.Core.Bool32 FindClose(void* hFindFile);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 191, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindClose")]
-        public partial int FindClose<T0>(ref T0 hFindFile) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 FindClose<T0>(ref T0 hFindFile) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 204, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindCloseChangeNotification")]
-        public unsafe partial int FindCloseChangeNotification(void* hChangeHandle);
+        public unsafe partial Silk.NET.Core.Bool32 FindCloseChangeNotification(void* hChangeHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 204, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindCloseChangeNotification")]
-        public partial int FindCloseChangeNotification<T0>(ref T0 hChangeHandle) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 FindCloseChangeNotification<T0>(ref T0 hChangeHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindFirstChangeNotificationA")]
-        public unsafe partial void* FindFirstChangeNotificationA([Flow(FlowDirection.In)] byte* lpPathName, int bWatchSubtree, uint dwNotifyFilter);
+        public unsafe partial void* FindFirstChangeNotificationA([Flow(FlowDirection.In)] byte* lpPathName, Silk.NET.Core.Bool32 bWatchSubtree, uint dwNotifyFilter);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindFirstChangeNotificationA")]
-        public unsafe partial void* FindFirstChangeNotificationA([Flow(FlowDirection.In)] in byte lpPathName, int bWatchSubtree, uint dwNotifyFilter);
+        public unsafe partial void* FindFirstChangeNotificationA([Flow(FlowDirection.In)] in byte lpPathName, Silk.NET.Core.Bool32 bWatchSubtree, uint dwNotifyFilter);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindFirstChangeNotificationA")]
-        public unsafe partial void* FindFirstChangeNotificationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpPathName, int bWatchSubtree, uint dwNotifyFilter);
+        public unsafe partial void* FindFirstChangeNotificationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpPathName, Silk.NET.Core.Bool32 bWatchSubtree, uint dwNotifyFilter);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 220, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindFirstChangeNotificationW")]
-        public unsafe partial void* FindFirstChangeNotificationW([Flow(FlowDirection.In)] char* lpPathName, int bWatchSubtree, uint dwNotifyFilter);
+        public unsafe partial void* FindFirstChangeNotificationW([Flow(FlowDirection.In)] char* lpPathName, Silk.NET.Core.Bool32 bWatchSubtree, uint dwNotifyFilter);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 220, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindFirstChangeNotificationW")]
-        public unsafe partial void* FindFirstChangeNotificationW([Flow(FlowDirection.In)] in char lpPathName, int bWatchSubtree, uint dwNotifyFilter);
+        public unsafe partial void* FindFirstChangeNotificationW([Flow(FlowDirection.In)] in char lpPathName, Silk.NET.Core.Bool32 bWatchSubtree, uint dwNotifyFilter);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 220, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindFirstChangeNotificationW")]
-        public unsafe partial void* FindFirstChangeNotificationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpPathName, int bWatchSubtree, uint dwNotifyFilter);
+        public unsafe partial void* FindFirstChangeNotificationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpPathName, Silk.NET.Core.Bool32 bWatchSubtree, uint dwNotifyFilter);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 240, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
@@ -10730,822 +10730,822 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 312, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextChangeNotification")]
-        public unsafe partial int FindNextChangeNotification(void* hChangeHandle);
+        public unsafe partial Silk.NET.Core.Bool32 FindNextChangeNotification(void* hChangeHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 312, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextChangeNotification")]
-        public partial int FindNextChangeNotification<T0>(ref T0 hChangeHandle) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 FindNextChangeNotification<T0>(ref T0 hChangeHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 325, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileA")]
-        public unsafe partial int FindNextFileA(void* hFindFile, Win32FindDataa* lpFindFileData);
+        public unsafe partial Silk.NET.Core.Bool32 FindNextFileA(void* hFindFile, Win32FindDataa* lpFindFileData);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 325, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileA")]
-        public unsafe partial int FindNextFileA(void* hFindFile, ref Win32FindDataa lpFindFileData);
+        public unsafe partial Silk.NET.Core.Bool32 FindNextFileA(void* hFindFile, ref Win32FindDataa lpFindFileData);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 325, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileA")]
-        public unsafe partial int FindNextFileA<T0>(ref T0 hFindFile, Win32FindDataa* lpFindFileData) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 FindNextFileA<T0>(ref T0 hFindFile, Win32FindDataa* lpFindFileData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 325, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileA")]
-        public partial int FindNextFileA<T0>(ref T0 hFindFile, ref Win32FindDataa lpFindFileData) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 FindNextFileA<T0>(ref T0 hFindFile, ref Win32FindDataa lpFindFileData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 333, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileW")]
-        public unsafe partial int FindNextFileW(void* hFindFile, Win32FindDataw* lpFindFileData);
+        public unsafe partial Silk.NET.Core.Bool32 FindNextFileW(void* hFindFile, Win32FindDataw* lpFindFileData);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 333, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileW")]
-        public unsafe partial int FindNextFileW(void* hFindFile, ref Win32FindDataw lpFindFileData);
+        public unsafe partial Silk.NET.Core.Bool32 FindNextFileW(void* hFindFile, ref Win32FindDataw lpFindFileData);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 333, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileW")]
-        public unsafe partial int FindNextFileW<T0>(ref T0 hFindFile, Win32FindDataw* lpFindFileData) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 FindNextFileW<T0>(ref T0 hFindFile, Win32FindDataw* lpFindFileData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 333, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileW")]
-        public partial int FindNextFileW<T0>(ref T0 hFindFile, ref Win32FindDataw lpFindFileData) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 FindNextFileW<T0>(ref T0 hFindFile, ref Win32FindDataw lpFindFileData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 352, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextVolumeW")]
-        public unsafe partial int FindNextVolumeW(void* hFindVolume, char* lpszVolumeName, uint cchBufferLength);
+        public unsafe partial Silk.NET.Core.Bool32 FindNextVolumeW(void* hFindVolume, char* lpszVolumeName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 352, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextVolumeW")]
-        public unsafe partial int FindNextVolumeW(void* hFindVolume, ref char lpszVolumeName, uint cchBufferLength);
+        public unsafe partial Silk.NET.Core.Bool32 FindNextVolumeW(void* hFindVolume, ref char lpszVolumeName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 352, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextVolumeW")]
-        public unsafe partial int FindNextVolumeW(void* hFindVolume, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, uint cchBufferLength);
+        public unsafe partial Silk.NET.Core.Bool32 FindNextVolumeW(void* hFindVolume, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 352, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextVolumeW")]
-        public unsafe partial int FindNextVolumeW<T0>(ref T0 hFindVolume, char* lpszVolumeName, uint cchBufferLength) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 FindNextVolumeW<T0>(ref T0 hFindVolume, char* lpszVolumeName, uint cchBufferLength) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 352, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextVolumeW")]
-        public partial int FindNextVolumeW<T0>(ref T0 hFindVolume, ref char lpszVolumeName, uint cchBufferLength) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 FindNextVolumeW<T0>(ref T0 hFindVolume, ref char lpszVolumeName, uint cchBufferLength) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 352, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextVolumeW")]
-        public partial int FindNextVolumeW<T0>(ref T0 hFindVolume, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, uint cchBufferLength) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 FindNextVolumeW<T0>(ref T0 hFindVolume, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, uint cchBufferLength) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 365, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindVolumeClose")]
-        public unsafe partial int FindVolumeClose(void* hFindVolume);
+        public unsafe partial Silk.NET.Core.Bool32 FindVolumeClose(void* hFindVolume);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 365, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindVolumeClose")]
-        public partial int FindVolumeClose<T0>(ref T0 hFindVolume) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 FindVolumeClose<T0>(ref T0 hFindVolume) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 378, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FlushFileBuffers")]
-        public unsafe partial int FlushFileBuffers(void* hFile);
+        public unsafe partial Silk.NET.Core.Bool32 FlushFileBuffers(void* hFile);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 378, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FlushFileBuffers")]
-        public partial int FlushFileBuffers<T0>(ref T0 hFile) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 FlushFileBuffers<T0>(ref T0 hFile) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] byte* lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public partial int GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In)] in byte lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public unsafe partial int GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 385, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceA")]
-        public partial int GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public partial Silk.NET.Core.Bool32 GetDiskFreeSpaceA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] char* lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public partial int GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In)] in char lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, uint* lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref uint lpSectorsPerCluster, uint* lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, uint* lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public unsafe partial int GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, uint* lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 396, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceW")]
-        public partial int GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
+        public partial Silk.NET.Core.Bool32 GetDiskFreeSpaceW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref uint lpSectorsPerCluster, ref uint lpBytesPerSector, ref uint lpNumberOfFreeClusters, ref uint lpTotalNumberOfClusters);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In)] byte* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In)] byte* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In)] byte* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In)] byte* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In)] byte* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In)] byte* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In)] byte* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In)] byte* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In)] byte* lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In)] byte* lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In)] byte* lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In)] byte* lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In)] byte* lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In)] byte* lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In)] byte* lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In)] byte* lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In)] in byte lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In)] in byte lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In)] in byte lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In)] in byte lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In)] in byte lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In)] in byte lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In)] in byte lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In)] in byte lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In)] in byte lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In)] in byte lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In)] in byte lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In)] in byte lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In)] in byte lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In)] in byte lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In)] in byte lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In)] in byte lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public unsafe partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExA")]
-        public partial int GetDiskFreeSpaceExA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In)] char* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In)] char* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In)] char* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In)] char* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In)] char* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In)] char* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In)] char* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In)] char* lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In)] char* lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In)] char* lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In)] char* lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In)] char* lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In)] char* lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In)] char* lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In)] char* lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In)] char* lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In)] in char lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In)] in char lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In)] in char lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In)] in char lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In)] in char lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In)] in char lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In)] in char lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In)] in char lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In)] in char lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In)] in char lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In)] in char lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In)] in char lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In)] in char lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In)] in char lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In)] in char lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In)] in char lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, ulong* lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ulong* lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public unsafe partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
+        public unsafe partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ulong* lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetDiskFreeSpaceExW")]
-        public partial int GetDiskFreeSpaceExW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
+        public partial Silk.NET.Core.Bool32 GetDiskFreeSpaceExW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpDirectoryName, ref ulong lpFreeBytesAvailableToCaller, ref ulong lpTotalNumberOfBytes, ref ulong lpTotalNumberOfFreeBytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 534, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
@@ -11670,82 +11670,82 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 608, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileAttributesExA")]
-        public unsafe partial int GetFileAttributesExA([Flow(FlowDirection.In)] byte* lpFileName, GetFileexInfoLevels fInfoLevelId, void* lpFileInformation);
+        public unsafe partial Silk.NET.Core.Bool32 GetFileAttributesExA([Flow(FlowDirection.In)] byte* lpFileName, GetFileexInfoLevels fInfoLevelId, void* lpFileInformation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 608, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileAttributesExA")]
-        public unsafe partial int GetFileAttributesExA<T0>([Flow(FlowDirection.In)] byte* lpFileName, GetFileexInfoLevels fInfoLevelId, ref T0 lpFileInformation) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetFileAttributesExA<T0>([Flow(FlowDirection.In)] byte* lpFileName, GetFileexInfoLevels fInfoLevelId, ref T0 lpFileInformation) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 608, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileAttributesExA")]
-        public unsafe partial int GetFileAttributesExA([Flow(FlowDirection.In)] in byte lpFileName, GetFileexInfoLevels fInfoLevelId, void* lpFileInformation);
+        public unsafe partial Silk.NET.Core.Bool32 GetFileAttributesExA([Flow(FlowDirection.In)] in byte lpFileName, GetFileexInfoLevels fInfoLevelId, void* lpFileInformation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 608, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileAttributesExA")]
-        public partial int GetFileAttributesExA<T0>([Flow(FlowDirection.In)] in byte lpFileName, GetFileexInfoLevels fInfoLevelId, ref T0 lpFileInformation) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 GetFileAttributesExA<T0>([Flow(FlowDirection.In)] in byte lpFileName, GetFileexInfoLevels fInfoLevelId, ref T0 lpFileInformation) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 608, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileAttributesExA")]
-        public unsafe partial int GetFileAttributesExA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileName, GetFileexInfoLevels fInfoLevelId, void* lpFileInformation);
+        public unsafe partial Silk.NET.Core.Bool32 GetFileAttributesExA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileName, GetFileexInfoLevels fInfoLevelId, void* lpFileInformation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 608, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileAttributesExA")]
-        public partial int GetFileAttributesExA<T0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileName, GetFileexInfoLevels fInfoLevelId, ref T0 lpFileInformation) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 GetFileAttributesExA<T0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileName, GetFileexInfoLevels fInfoLevelId, ref T0 lpFileInformation) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 617, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileAttributesExW")]
-        public unsafe partial int GetFileAttributesExW([Flow(FlowDirection.In)] char* lpFileName, GetFileexInfoLevels fInfoLevelId, void* lpFileInformation);
+        public unsafe partial Silk.NET.Core.Bool32 GetFileAttributesExW([Flow(FlowDirection.In)] char* lpFileName, GetFileexInfoLevels fInfoLevelId, void* lpFileInformation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 617, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileAttributesExW")]
-        public unsafe partial int GetFileAttributesExW<T0>([Flow(FlowDirection.In)] char* lpFileName, GetFileexInfoLevels fInfoLevelId, ref T0 lpFileInformation) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetFileAttributesExW<T0>([Flow(FlowDirection.In)] char* lpFileName, GetFileexInfoLevels fInfoLevelId, ref T0 lpFileInformation) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 617, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileAttributesExW")]
-        public unsafe partial int GetFileAttributesExW([Flow(FlowDirection.In)] in char lpFileName, GetFileexInfoLevels fInfoLevelId, void* lpFileInformation);
+        public unsafe partial Silk.NET.Core.Bool32 GetFileAttributesExW([Flow(FlowDirection.In)] in char lpFileName, GetFileexInfoLevels fInfoLevelId, void* lpFileInformation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 617, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileAttributesExW")]
-        public partial int GetFileAttributesExW<T0>([Flow(FlowDirection.In)] in char lpFileName, GetFileexInfoLevels fInfoLevelId, ref T0 lpFileInformation) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 GetFileAttributesExW<T0>([Flow(FlowDirection.In)] in char lpFileName, GetFileexInfoLevels fInfoLevelId, ref T0 lpFileInformation) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 617, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileAttributesExW")]
-        public unsafe partial int GetFileAttributesExW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, GetFileexInfoLevels fInfoLevelId, void* lpFileInformation);
+        public unsafe partial Silk.NET.Core.Bool32 GetFileAttributesExW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, GetFileexInfoLevels fInfoLevelId, void* lpFileInformation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 617, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileAttributesExW")]
-        public partial int GetFileAttributesExW<T0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, GetFileexInfoLevels fInfoLevelId, ref T0 lpFileInformation) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 GetFileAttributesExW<T0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, GetFileexInfoLevels fInfoLevelId, ref T0 lpFileInformation) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 644, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileInformationByHandle")]
-        public unsafe partial int GetFileInformationByHandle(void* hFile, ByHandleFileInformation* lpFileInformation);
+        public unsafe partial Silk.NET.Core.Bool32 GetFileInformationByHandle(void* hFile, ByHandleFileInformation* lpFileInformation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 644, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileInformationByHandle")]
-        public unsafe partial int GetFileInformationByHandle(void* hFile, ref ByHandleFileInformation lpFileInformation);
+        public unsafe partial Silk.NET.Core.Bool32 GetFileInformationByHandle(void* hFile, ref ByHandleFileInformation lpFileInformation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 644, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileInformationByHandle")]
-        public unsafe partial int GetFileInformationByHandle<T0>(ref T0 hFile, ByHandleFileInformation* lpFileInformation) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetFileInformationByHandle<T0>(ref T0 hFile, ByHandleFileInformation* lpFileInformation) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 644, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileInformationByHandle")]
-        public partial int GetFileInformationByHandle<T0>(ref T0 hFile, ref ByHandleFileInformation lpFileInformation) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 GetFileInformationByHandle<T0>(ref T0 hFile, ref ByHandleFileInformation lpFileInformation) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 658, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
@@ -11770,22 +11770,22 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 672, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileSizeEx")]
-        public unsafe partial int GetFileSizeEx(void* hFile, long* lpFileSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetFileSizeEx(void* hFile, long* lpFileSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 672, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileSizeEx")]
-        public unsafe partial int GetFileSizeEx(void* hFile, ref long lpFileSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetFileSizeEx(void* hFile, ref long lpFileSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 672, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileSizeEx")]
-        public unsafe partial int GetFileSizeEx<T0>(ref T0 hFile, long* lpFileSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetFileSizeEx<T0>(ref T0 hFile, long* lpFileSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 672, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileSizeEx")]
-        public partial int GetFileSizeEx<T0>(ref T0 hFile, ref long lpFileSize) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 GetFileSizeEx<T0>(ref T0 hFile, ref long lpFileSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 680, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
@@ -11860,82 +11860,82 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileTime")]
-        public unsafe partial int GetFileTime(void* hFile, Filetime* lpCreationTime, Filetime* lpLastAccessTime, Filetime* lpLastWriteTime);
+        public unsafe partial Silk.NET.Core.Bool32 GetFileTime(void* hFile, Filetime* lpCreationTime, Filetime* lpLastAccessTime, Filetime* lpLastWriteTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileTime")]
-        public unsafe partial int GetFileTime(void* hFile, Filetime* lpCreationTime, Filetime* lpLastAccessTime, ref Filetime lpLastWriteTime);
+        public unsafe partial Silk.NET.Core.Bool32 GetFileTime(void* hFile, Filetime* lpCreationTime, Filetime* lpLastAccessTime, ref Filetime lpLastWriteTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileTime")]
-        public unsafe partial int GetFileTime(void* hFile, Filetime* lpCreationTime, ref Filetime lpLastAccessTime, Filetime* lpLastWriteTime);
+        public unsafe partial Silk.NET.Core.Bool32 GetFileTime(void* hFile, Filetime* lpCreationTime, ref Filetime lpLastAccessTime, Filetime* lpLastWriteTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileTime")]
-        public unsafe partial int GetFileTime(void* hFile, Filetime* lpCreationTime, ref Filetime lpLastAccessTime, ref Filetime lpLastWriteTime);
+        public unsafe partial Silk.NET.Core.Bool32 GetFileTime(void* hFile, Filetime* lpCreationTime, ref Filetime lpLastAccessTime, ref Filetime lpLastWriteTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileTime")]
-        public unsafe partial int GetFileTime(void* hFile, ref Filetime lpCreationTime, Filetime* lpLastAccessTime, Filetime* lpLastWriteTime);
+        public unsafe partial Silk.NET.Core.Bool32 GetFileTime(void* hFile, ref Filetime lpCreationTime, Filetime* lpLastAccessTime, Filetime* lpLastWriteTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileTime")]
-        public unsafe partial int GetFileTime(void* hFile, ref Filetime lpCreationTime, Filetime* lpLastAccessTime, ref Filetime lpLastWriteTime);
+        public unsafe partial Silk.NET.Core.Bool32 GetFileTime(void* hFile, ref Filetime lpCreationTime, Filetime* lpLastAccessTime, ref Filetime lpLastWriteTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileTime")]
-        public unsafe partial int GetFileTime(void* hFile, ref Filetime lpCreationTime, ref Filetime lpLastAccessTime, Filetime* lpLastWriteTime);
+        public unsafe partial Silk.NET.Core.Bool32 GetFileTime(void* hFile, ref Filetime lpCreationTime, ref Filetime lpLastAccessTime, Filetime* lpLastWriteTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileTime")]
-        public unsafe partial int GetFileTime(void* hFile, ref Filetime lpCreationTime, ref Filetime lpLastAccessTime, ref Filetime lpLastWriteTime);
+        public unsafe partial Silk.NET.Core.Bool32 GetFileTime(void* hFile, ref Filetime lpCreationTime, ref Filetime lpLastAccessTime, ref Filetime lpLastWriteTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileTime")]
-        public unsafe partial int GetFileTime<T0>(ref T0 hFile, Filetime* lpCreationTime, Filetime* lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetFileTime<T0>(ref T0 hFile, Filetime* lpCreationTime, Filetime* lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileTime")]
-        public unsafe partial int GetFileTime<T0>(ref T0 hFile, Filetime* lpCreationTime, Filetime* lpLastAccessTime, ref Filetime lpLastWriteTime) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetFileTime<T0>(ref T0 hFile, Filetime* lpCreationTime, Filetime* lpLastAccessTime, ref Filetime lpLastWriteTime) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileTime")]
-        public unsafe partial int GetFileTime<T0>(ref T0 hFile, Filetime* lpCreationTime, ref Filetime lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetFileTime<T0>(ref T0 hFile, Filetime* lpCreationTime, ref Filetime lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileTime")]
-        public unsafe partial int GetFileTime<T0>(ref T0 hFile, Filetime* lpCreationTime, ref Filetime lpLastAccessTime, ref Filetime lpLastWriteTime) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetFileTime<T0>(ref T0 hFile, Filetime* lpCreationTime, ref Filetime lpLastAccessTime, ref Filetime lpLastWriteTime) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileTime")]
-        public unsafe partial int GetFileTime<T0>(ref T0 hFile, ref Filetime lpCreationTime, Filetime* lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetFileTime<T0>(ref T0 hFile, ref Filetime lpCreationTime, Filetime* lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileTime")]
-        public unsafe partial int GetFileTime<T0>(ref T0 hFile, ref Filetime lpCreationTime, Filetime* lpLastAccessTime, ref Filetime lpLastWriteTime) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetFileTime<T0>(ref T0 hFile, ref Filetime lpCreationTime, Filetime* lpLastAccessTime, ref Filetime lpLastWriteTime) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileTime")]
-        public unsafe partial int GetFileTime<T0>(ref T0 hFile, ref Filetime lpCreationTime, ref Filetime lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetFileTime<T0>(ref T0 hFile, ref Filetime lpCreationTime, ref Filetime lpLastAccessTime, Filetime* lpLastWriteTime) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 716, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetFileTime")]
-        public partial int GetFileTime<T0>(ref T0 hFile, ref Filetime lpCreationTime, ref Filetime lpLastAccessTime, ref Filetime lpLastWriteTime) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 GetFileTime<T0>(ref T0 hFile, ref Filetime lpCreationTime, ref Filetime lpLastAccessTime, ref Filetime lpLastWriteTime) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 727, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
@@ -12230,22 +12230,22 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 823, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "AreShortNamesEnabled")]
-        public unsafe partial int AreShortNamesEnabled(void* Handle, int* Enabled);
+        public unsafe partial Silk.NET.Core.Bool32 AreShortNamesEnabled(void* Handle, int* Enabled);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 823, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "AreShortNamesEnabled")]
-        public unsafe partial int AreShortNamesEnabled(void* Handle, ref int Enabled);
+        public unsafe partial Silk.NET.Core.Bool32 AreShortNamesEnabled(void* Handle, ref int Enabled);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 823, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "AreShortNamesEnabled")]
-        public unsafe partial int AreShortNamesEnabled<T0>(ref T0 Handle, int* Enabled) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 AreShortNamesEnabled<T0>(ref T0 Handle, int* Enabled) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 823, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "AreShortNamesEnabled")]
-        public partial int AreShortNamesEnabled<T0>(ref T0 Handle, ref int Enabled) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 AreShortNamesEnabled<T0>(ref T0 Handle, ref int Enabled) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
@@ -12430,1897 +12430,1897 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW(void* hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public unsafe partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 875, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationByHandleW")]
-        public partial int GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationByHandleW<T0>(ref T0 hFile, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] char* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public partial int GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In)] in char lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, char* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, ref char lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public unsafe partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, char* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref char lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 891, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationW")]
-        public partial int GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 909, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNameW")]
-        public unsafe partial int GetVolumePathNameW([Flow(FlowDirection.In)] char* lpszFileName, char* lpszVolumePathName, uint cchBufferLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumePathNameW([Flow(FlowDirection.In)] char* lpszFileName, char* lpszVolumePathName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 909, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNameW")]
-        public unsafe partial int GetVolumePathNameW([Flow(FlowDirection.In)] char* lpszFileName, ref char lpszVolumePathName, uint cchBufferLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumePathNameW([Flow(FlowDirection.In)] char* lpszFileName, ref char lpszVolumePathName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 909, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNameW")]
-        public unsafe partial int GetVolumePathNameW([Flow(FlowDirection.In)] char* lpszFileName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumePathName, uint cchBufferLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumePathNameW([Flow(FlowDirection.In)] char* lpszFileName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumePathName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 909, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNameW")]
-        public unsafe partial int GetVolumePathNameW([Flow(FlowDirection.In)] in char lpszFileName, char* lpszVolumePathName, uint cchBufferLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumePathNameW([Flow(FlowDirection.In)] in char lpszFileName, char* lpszVolumePathName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 909, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNameW")]
-        public partial int GetVolumePathNameW([Flow(FlowDirection.In)] in char lpszFileName, ref char lpszVolumePathName, uint cchBufferLength);
+        public partial Silk.NET.Core.Bool32 GetVolumePathNameW([Flow(FlowDirection.In)] in char lpszFileName, ref char lpszVolumePathName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 909, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNameW")]
-        public partial int GetVolumePathNameW([Flow(FlowDirection.In)] in char lpszFileName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumePathName, uint cchBufferLength);
+        public partial Silk.NET.Core.Bool32 GetVolumePathNameW([Flow(FlowDirection.In)] in char lpszFileName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumePathName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 909, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNameW")]
-        public unsafe partial int GetVolumePathNameW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszFileName, char* lpszVolumePathName, uint cchBufferLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumePathNameW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszFileName, char* lpszVolumePathName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 909, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNameW")]
-        public partial int GetVolumePathNameW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszFileName, ref char lpszVolumePathName, uint cchBufferLength);
+        public partial Silk.NET.Core.Bool32 GetVolumePathNameW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszFileName, ref char lpszVolumePathName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 909, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNameW")]
-        public partial int GetVolumePathNameW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszFileName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumePathName, uint cchBufferLength);
+        public partial Silk.NET.Core.Bool32 GetVolumePathNameW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszFileName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumePathName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "LocalFileTimeToFileTime")]
-        public unsafe partial int LocalFileTimeToFileTime([Flow(FlowDirection.In)] Filetime* lpLocalFileTime, Filetime* lpFileTime);
+        public unsafe partial Silk.NET.Core.Bool32 LocalFileTimeToFileTime([Flow(FlowDirection.In)] Filetime* lpLocalFileTime, Filetime* lpFileTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "LocalFileTimeToFileTime")]
-        public unsafe partial int LocalFileTimeToFileTime([Flow(FlowDirection.In)] Filetime* lpLocalFileTime, ref Filetime lpFileTime);
+        public unsafe partial Silk.NET.Core.Bool32 LocalFileTimeToFileTime([Flow(FlowDirection.In)] Filetime* lpLocalFileTime, ref Filetime lpFileTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "LocalFileTimeToFileTime")]
-        public unsafe partial int LocalFileTimeToFileTime([Flow(FlowDirection.In)] in Filetime lpLocalFileTime, Filetime* lpFileTime);
+        public unsafe partial Silk.NET.Core.Bool32 LocalFileTimeToFileTime([Flow(FlowDirection.In)] in Filetime lpLocalFileTime, Filetime* lpFileTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 922, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "LocalFileTimeToFileTime")]
-        public partial int LocalFileTimeToFileTime([Flow(FlowDirection.In)] in Filetime lpLocalFileTime, ref Filetime lpFileTime);
+        public partial Silk.NET.Core.Bool32 LocalFileTimeToFileTime([Flow(FlowDirection.In)] in Filetime lpLocalFileTime, ref Filetime lpFileTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 930, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "LockFile")]
-        public unsafe partial int LockFile(void* hFile, uint dwFileOffsetLow, uint dwFileOffsetHigh, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh);
+        public unsafe partial Silk.NET.Core.Bool32 LockFile(void* hFile, uint dwFileOffsetLow, uint dwFileOffsetHigh, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 930, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "LockFile")]
-        public partial int LockFile<T0>(ref T0 hFile, uint dwFileOffsetLow, uint dwFileOffsetHigh, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 LockFile<T0>(ref T0 hFile, uint dwFileOffsetLow, uint dwFileOffsetHigh, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 941, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "LockFileEx")]
-        public unsafe partial int LockFileEx(void* hFile, uint dwFlags, uint dwReserved, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh, Overlapped* lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 LockFileEx(void* hFile, uint dwFlags, uint dwReserved, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh, Overlapped* lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 941, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "LockFileEx")]
-        public unsafe partial int LockFileEx(void* hFile, uint dwFlags, uint dwReserved, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh, ref Overlapped lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 LockFileEx(void* hFile, uint dwFlags, uint dwReserved, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh, ref Overlapped lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 941, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "LockFileEx")]
-        public unsafe partial int LockFileEx<T0>(ref T0 hFile, uint dwFlags, uint dwReserved, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh, Overlapped* lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 LockFileEx<T0>(ref T0 hFile, uint dwFlags, uint dwReserved, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh, Overlapped* lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 941, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "LockFileEx")]
-        public partial int LockFileEx<T0>(ref T0 hFile, uint dwFlags, uint dwReserved, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh, ref Overlapped lpOverlapped) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 LockFileEx<T0>(ref T0 hFile, uint dwFlags, uint dwReserved, uint nNumberOfBytesToLockLow, uint nNumberOfBytesToLockHigh, ref Overlapped lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 959, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
@@ -14370,292 +14370,292 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 979, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFile")]
-        public unsafe partial int ReadFile(void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Overlapped* lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 ReadFile(void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Overlapped* lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 979, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFile")]
-        public unsafe partial int ReadFile(void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, ref Overlapped lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 ReadFile(void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, ref Overlapped lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 979, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFile")]
-        public unsafe partial int ReadFile(void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, ref uint lpNumberOfBytesRead, Overlapped* lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 ReadFile(void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, ref uint lpNumberOfBytesRead, Overlapped* lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 979, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFile")]
-        public unsafe partial int ReadFile(void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, ref uint lpNumberOfBytesRead, ref Overlapped lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 ReadFile(void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, ref uint lpNumberOfBytesRead, ref Overlapped lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 979, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFile")]
-        public unsafe partial int ReadFile<T0>(void* hFile, ref T0 lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFile<T0>(void* hFile, ref T0 lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 979, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFile")]
-        public unsafe partial int ReadFile<T0>(void* hFile, ref T0 lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, ref Overlapped lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFile<T0>(void* hFile, ref T0 lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, ref Overlapped lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 979, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFile")]
-        public unsafe partial int ReadFile<T0>(void* hFile, ref T0 lpBuffer, uint nNumberOfBytesToRead, ref uint lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFile<T0>(void* hFile, ref T0 lpBuffer, uint nNumberOfBytesToRead, ref uint lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 979, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFile")]
-        public unsafe partial int ReadFile<T0>(void* hFile, ref T0 lpBuffer, uint nNumberOfBytesToRead, ref uint lpNumberOfBytesRead, ref Overlapped lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFile<T0>(void* hFile, ref T0 lpBuffer, uint nNumberOfBytesToRead, ref uint lpNumberOfBytesRead, ref Overlapped lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 979, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFile")]
-        public unsafe partial int ReadFile<T0>(ref T0 hFile, void* lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFile<T0>(ref T0 hFile, void* lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 979, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFile")]
-        public unsafe partial int ReadFile<T0>(ref T0 hFile, void* lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, ref Overlapped lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFile<T0>(ref T0 hFile, void* lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, ref Overlapped lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 979, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFile")]
-        public unsafe partial int ReadFile<T0>(ref T0 hFile, void* lpBuffer, uint nNumberOfBytesToRead, ref uint lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFile<T0>(ref T0 hFile, void* lpBuffer, uint nNumberOfBytesToRead, ref uint lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 979, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFile")]
-        public unsafe partial int ReadFile<T0>(ref T0 hFile, void* lpBuffer, uint nNumberOfBytesToRead, ref uint lpNumberOfBytesRead, ref Overlapped lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFile<T0>(ref T0 hFile, void* lpBuffer, uint nNumberOfBytesToRead, ref uint lpNumberOfBytesRead, ref Overlapped lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 979, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFile")]
-        public unsafe partial int ReadFile<T0, T1>(ref T0 hFile, ref T1 lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFile<T0, T1>(ref T0 hFile, ref T1 lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 979, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFile")]
-        public unsafe partial int ReadFile<T0, T1>(ref T0 hFile, ref T1 lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, ref Overlapped lpOverlapped) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFile<T0, T1>(ref T0 hFile, ref T1 lpBuffer, uint nNumberOfBytesToRead, uint* lpNumberOfBytesRead, ref Overlapped lpOverlapped) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 979, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFile")]
-        public unsafe partial int ReadFile<T0, T1>(ref T0 hFile, ref T1 lpBuffer, uint nNumberOfBytesToRead, ref uint lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFile<T0, T1>(ref T0 hFile, ref T1 lpBuffer, uint nNumberOfBytesToRead, ref uint lpNumberOfBytesRead, Overlapped* lpOverlapped) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 979, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFile")]
-        public partial int ReadFile<T0, T1>(ref T0 hFile, ref T1 lpBuffer, uint nNumberOfBytesToRead, ref uint lpNumberOfBytesRead, ref Overlapped lpOverlapped) where T0 : unmanaged where T1 : unmanaged;
+        public partial Silk.NET.Core.Bool32 ReadFile<T0, T1>(ref T0 hFile, ref T1 lpBuffer, uint nNumberOfBytesToRead, ref uint lpNumberOfBytesRead, ref Overlapped lpOverlapped) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 991, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileEx")]
-        public unsafe partial int ReadFileEx(void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine);
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileEx(void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 991, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileEx")]
-        public unsafe partial int ReadFileEx(void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, ref Overlapped lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine);
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileEx(void* hFile, void* lpBuffer, uint nNumberOfBytesToRead, ref Overlapped lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 991, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileEx")]
-        public unsafe partial int ReadFileEx<T0>(void* hFile, ref T0 lpBuffer, uint nNumberOfBytesToRead, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileEx<T0>(void* hFile, ref T0 lpBuffer, uint nNumberOfBytesToRead, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 991, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileEx")]
-        public unsafe partial int ReadFileEx<T0>(void* hFile, ref T0 lpBuffer, uint nNumberOfBytesToRead, ref Overlapped lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileEx<T0>(void* hFile, ref T0 lpBuffer, uint nNumberOfBytesToRead, ref Overlapped lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 991, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileEx")]
-        public unsafe partial int ReadFileEx<T0>(ref T0 hFile, void* lpBuffer, uint nNumberOfBytesToRead, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileEx<T0>(ref T0 hFile, void* lpBuffer, uint nNumberOfBytesToRead, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 991, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileEx")]
-        public unsafe partial int ReadFileEx<T0>(ref T0 hFile, void* lpBuffer, uint nNumberOfBytesToRead, ref Overlapped lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileEx<T0>(ref T0 hFile, void* lpBuffer, uint nNumberOfBytesToRead, ref Overlapped lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 991, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileEx")]
-        public unsafe partial int ReadFileEx<T0, T1>(ref T0 hFile, ref T1 lpBuffer, uint nNumberOfBytesToRead, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileEx<T0, T1>(ref T0 hFile, ref T1 lpBuffer, uint nNumberOfBytesToRead, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 991, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileEx")]
-        public partial int ReadFileEx<T0, T1>(ref T0 hFile, ref T1 lpBuffer, uint nNumberOfBytesToRead, ref Overlapped lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged where T1 : unmanaged;
+        public partial Silk.NET.Core.Bool32 ReadFileEx<T0, T1>(ref T0 hFile, ref T1 lpBuffer, uint nNumberOfBytesToRead, ref Overlapped lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileScatter")]
-        public unsafe partial int ReadFileScatter(void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Overlapped* lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileScatter(void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Overlapped* lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileScatter")]
-        public unsafe partial int ReadFileScatter(void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, ref Overlapped lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileScatter(void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, ref Overlapped lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileScatter")]
-        public unsafe partial int ReadFileScatter(void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, ref uint lpReserved, Overlapped* lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileScatter(void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, ref uint lpReserved, Overlapped* lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileScatter")]
-        public unsafe partial int ReadFileScatter(void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, ref uint lpReserved, ref Overlapped lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileScatter(void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, ref uint lpReserved, ref Overlapped lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileScatter")]
-        public unsafe partial int ReadFileScatter(void* hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Overlapped* lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileScatter(void* hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Overlapped* lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileScatter")]
-        public unsafe partial int ReadFileScatter(void* hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, ref Overlapped lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileScatter(void* hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, ref Overlapped lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileScatter")]
-        public unsafe partial int ReadFileScatter(void* hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToRead, ref uint lpReserved, Overlapped* lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileScatter(void* hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToRead, ref uint lpReserved, Overlapped* lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileScatter")]
-        public unsafe partial int ReadFileScatter(void* hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToRead, ref uint lpReserved, ref Overlapped lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileScatter(void* hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToRead, ref uint lpReserved, ref Overlapped lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileScatter")]
-        public unsafe partial int ReadFileScatter<T0>(ref T0 hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileScatter<T0>(ref T0 hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileScatter")]
-        public unsafe partial int ReadFileScatter<T0>(ref T0 hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, ref Overlapped lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileScatter<T0>(ref T0 hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, ref Overlapped lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileScatter")]
-        public unsafe partial int ReadFileScatter<T0>(ref T0 hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, ref uint lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileScatter<T0>(ref T0 hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, ref uint lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileScatter")]
-        public unsafe partial int ReadFileScatter<T0>(ref T0 hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, ref uint lpReserved, ref Overlapped lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileScatter<T0>(ref T0 hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToRead, ref uint lpReserved, ref Overlapped lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileScatter")]
-        public unsafe partial int ReadFileScatter<T0>(ref T0 hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileScatter<T0>(ref T0 hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileScatter")]
-        public unsafe partial int ReadFileScatter<T0>(ref T0 hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, ref Overlapped lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileScatter<T0>(ref T0 hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToRead, uint* lpReserved, ref Overlapped lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileScatter")]
-        public unsafe partial int ReadFileScatter<T0>(ref T0 hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToRead, ref uint lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 ReadFileScatter<T0>(ref T0 hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToRead, ref uint lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1003, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "ReadFileScatter")]
-        public partial int ReadFileScatter<T0>(ref T0 hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToRead, ref uint lpReserved, ref Overlapped lpOverlapped) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 ReadFileScatter<T0>(ref T0 hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToRead, ref uint lpReserved, ref Overlapped lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1014, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "RemoveDirectoryA")]
-        public unsafe partial int RemoveDirectoryA([Flow(FlowDirection.In)] byte* lpPathName);
+        public unsafe partial Silk.NET.Core.Bool32 RemoveDirectoryA([Flow(FlowDirection.In)] byte* lpPathName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1014, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "RemoveDirectoryA")]
-        public partial int RemoveDirectoryA([Flow(FlowDirection.In)] in byte lpPathName);
+        public partial Silk.NET.Core.Bool32 RemoveDirectoryA([Flow(FlowDirection.In)] in byte lpPathName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1014, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "RemoveDirectoryA")]
-        public partial int RemoveDirectoryA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpPathName);
+        public partial Silk.NET.Core.Bool32 RemoveDirectoryA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpPathName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1021, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "RemoveDirectoryW")]
-        public unsafe partial int RemoveDirectoryW([Flow(FlowDirection.In)] char* lpPathName);
+        public unsafe partial Silk.NET.Core.Bool32 RemoveDirectoryW([Flow(FlowDirection.In)] char* lpPathName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1021, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "RemoveDirectoryW")]
-        public partial int RemoveDirectoryW([Flow(FlowDirection.In)] in char lpPathName);
+        public partial Silk.NET.Core.Bool32 RemoveDirectoryW([Flow(FlowDirection.In)] in char lpPathName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1021, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "RemoveDirectoryW")]
-        public partial int RemoveDirectoryW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpPathName);
+        public partial Silk.NET.Core.Bool32 RemoveDirectoryW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpPathName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1033, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetEndOfFile")]
-        public unsafe partial int SetEndOfFile(void* hFile);
+        public unsafe partial Silk.NET.Core.Bool32 SetEndOfFile(void* hFile);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1033, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetEndOfFile")]
-        public partial int SetEndOfFile<T0>(ref T0 hFile) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 SetEndOfFile<T0>(ref T0 hFile) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileAttributesA")]
-        public unsafe partial int SetFileAttributesA([Flow(FlowDirection.In)] byte* lpFileName, uint dwFileAttributes);
+        public unsafe partial Silk.NET.Core.Bool32 SetFileAttributesA([Flow(FlowDirection.In)] byte* lpFileName, uint dwFileAttributes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileAttributesA")]
-        public partial int SetFileAttributesA([Flow(FlowDirection.In)] in byte lpFileName, uint dwFileAttributes);
+        public partial Silk.NET.Core.Bool32 SetFileAttributesA([Flow(FlowDirection.In)] in byte lpFileName, uint dwFileAttributes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileAttributesA")]
-        public partial int SetFileAttributesA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileName, uint dwFileAttributes);
+        public partial Silk.NET.Core.Bool32 SetFileAttributesA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileName, uint dwFileAttributes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1048, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileAttributesW")]
-        public unsafe partial int SetFileAttributesW([Flow(FlowDirection.In)] char* lpFileName, uint dwFileAttributes);
+        public unsafe partial Silk.NET.Core.Bool32 SetFileAttributesW([Flow(FlowDirection.In)] char* lpFileName, uint dwFileAttributes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1048, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileAttributesW")]
-        public partial int SetFileAttributesW([Flow(FlowDirection.In)] in char lpFileName, uint dwFileAttributes);
+        public partial Silk.NET.Core.Bool32 SetFileAttributesW([Flow(FlowDirection.In)] in char lpFileName, uint dwFileAttributes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1048, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileAttributesW")]
-        public partial int SetFileAttributesW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, uint dwFileAttributes);
+        public partial Silk.NET.Core.Bool32 SetFileAttributesW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpFileName, uint dwFileAttributes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1063, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileInformationByHandle")]
-        public unsafe partial int SetFileInformationByHandle(void* hFile, FileInfoByHandleClass FileInformationClass, void* lpFileInformation, uint dwBufferSize);
+        public unsafe partial Silk.NET.Core.Bool32 SetFileInformationByHandle(void* hFile, FileInfoByHandleClass FileInformationClass, void* lpFileInformation, uint dwBufferSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1063, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileInformationByHandle")]
-        public unsafe partial int SetFileInformationByHandle<T0>(void* hFile, FileInfoByHandleClass FileInformationClass, ref T0 lpFileInformation, uint dwBufferSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 SetFileInformationByHandle<T0>(void* hFile, FileInfoByHandleClass FileInformationClass, ref T0 lpFileInformation, uint dwBufferSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1063, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileInformationByHandle")]
-        public unsafe partial int SetFileInformationByHandle<T0>(ref T0 hFile, FileInfoByHandleClass FileInformationClass, void* lpFileInformation, uint dwBufferSize) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 SetFileInformationByHandle<T0>(ref T0 hFile, FileInfoByHandleClass FileInformationClass, void* lpFileInformation, uint dwBufferSize) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1063, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileInformationByHandle")]
-        public partial int SetFileInformationByHandle<T0, T1>(ref T0 hFile, FileInfoByHandleClass FileInformationClass, ref T1 lpFileInformation, uint dwBufferSize) where T0 : unmanaged where T1 : unmanaged;
+        public partial Silk.NET.Core.Bool32 SetFileInformationByHandle<T0, T1>(ref T0 hFile, FileInfoByHandleClass FileInformationClass, ref T1 lpFileInformation, uint dwBufferSize) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1075, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
@@ -14680,342 +14680,342 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1085, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFilePointerEx")]
-        public unsafe partial int SetFilePointerEx(void* hFile, long liDistanceToMove, long* lpNewFilePointer, uint dwMoveMethod);
+        public unsafe partial Silk.NET.Core.Bool32 SetFilePointerEx(void* hFile, long liDistanceToMove, long* lpNewFilePointer, uint dwMoveMethod);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1085, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFilePointerEx")]
-        public unsafe partial int SetFilePointerEx(void* hFile, long liDistanceToMove, ref long lpNewFilePointer, uint dwMoveMethod);
+        public unsafe partial Silk.NET.Core.Bool32 SetFilePointerEx(void* hFile, long liDistanceToMove, ref long lpNewFilePointer, uint dwMoveMethod);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1085, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFilePointerEx")]
-        public unsafe partial int SetFilePointerEx<T0>(ref T0 hFile, long liDistanceToMove, long* lpNewFilePointer, uint dwMoveMethod) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 SetFilePointerEx<T0>(ref T0 hFile, long liDistanceToMove, long* lpNewFilePointer, uint dwMoveMethod) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1085, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFilePointerEx")]
-        public partial int SetFilePointerEx<T0>(ref T0 hFile, long liDistanceToMove, ref long lpNewFilePointer, uint dwMoveMethod) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 SetFilePointerEx<T0>(ref T0 hFile, long liDistanceToMove, ref long lpNewFilePointer, uint dwMoveMethod) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1095, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileTime")]
-        public unsafe partial int SetFileTime(void* hFile, [Flow(FlowDirection.In)] Filetime* lpCreationTime, [Flow(FlowDirection.In)] Filetime* lpLastAccessTime, [Flow(FlowDirection.In)] Filetime* lpLastWriteTime);
+        public unsafe partial Silk.NET.Core.Bool32 SetFileTime(void* hFile, [Flow(FlowDirection.In)] Filetime* lpCreationTime, [Flow(FlowDirection.In)] Filetime* lpLastAccessTime, [Flow(FlowDirection.In)] Filetime* lpLastWriteTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1095, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileTime")]
-        public unsafe partial int SetFileTime(void* hFile, [Flow(FlowDirection.In)] Filetime* lpCreationTime, [Flow(FlowDirection.In)] Filetime* lpLastAccessTime, [Flow(FlowDirection.In)] in Filetime lpLastWriteTime);
+        public unsafe partial Silk.NET.Core.Bool32 SetFileTime(void* hFile, [Flow(FlowDirection.In)] Filetime* lpCreationTime, [Flow(FlowDirection.In)] Filetime* lpLastAccessTime, [Flow(FlowDirection.In)] in Filetime lpLastWriteTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1095, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileTime")]
-        public unsafe partial int SetFileTime(void* hFile, [Flow(FlowDirection.In)] Filetime* lpCreationTime, [Flow(FlowDirection.In)] in Filetime lpLastAccessTime, [Flow(FlowDirection.In)] Filetime* lpLastWriteTime);
+        public unsafe partial Silk.NET.Core.Bool32 SetFileTime(void* hFile, [Flow(FlowDirection.In)] Filetime* lpCreationTime, [Flow(FlowDirection.In)] in Filetime lpLastAccessTime, [Flow(FlowDirection.In)] Filetime* lpLastWriteTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1095, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileTime")]
-        public unsafe partial int SetFileTime(void* hFile, [Flow(FlowDirection.In)] Filetime* lpCreationTime, [Flow(FlowDirection.In)] in Filetime lpLastAccessTime, [Flow(FlowDirection.In)] in Filetime lpLastWriteTime);
+        public unsafe partial Silk.NET.Core.Bool32 SetFileTime(void* hFile, [Flow(FlowDirection.In)] Filetime* lpCreationTime, [Flow(FlowDirection.In)] in Filetime lpLastAccessTime, [Flow(FlowDirection.In)] in Filetime lpLastWriteTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1095, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileTime")]
-        public unsafe partial int SetFileTime(void* hFile, [Flow(FlowDirection.In)] in Filetime lpCreationTime, [Flow(FlowDirection.In)] Filetime* lpLastAccessTime, [Flow(FlowDirection.In)] Filetime* lpLastWriteTime);
+        public unsafe partial Silk.NET.Core.Bool32 SetFileTime(void* hFile, [Flow(FlowDirection.In)] in Filetime lpCreationTime, [Flow(FlowDirection.In)] Filetime* lpLastAccessTime, [Flow(FlowDirection.In)] Filetime* lpLastWriteTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1095, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileTime")]
-        public unsafe partial int SetFileTime(void* hFile, [Flow(FlowDirection.In)] in Filetime lpCreationTime, [Flow(FlowDirection.In)] Filetime* lpLastAccessTime, [Flow(FlowDirection.In)] in Filetime lpLastWriteTime);
+        public unsafe partial Silk.NET.Core.Bool32 SetFileTime(void* hFile, [Flow(FlowDirection.In)] in Filetime lpCreationTime, [Flow(FlowDirection.In)] Filetime* lpLastAccessTime, [Flow(FlowDirection.In)] in Filetime lpLastWriteTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1095, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileTime")]
-        public unsafe partial int SetFileTime(void* hFile, [Flow(FlowDirection.In)] in Filetime lpCreationTime, [Flow(FlowDirection.In)] in Filetime lpLastAccessTime, [Flow(FlowDirection.In)] Filetime* lpLastWriteTime);
+        public unsafe partial Silk.NET.Core.Bool32 SetFileTime(void* hFile, [Flow(FlowDirection.In)] in Filetime lpCreationTime, [Flow(FlowDirection.In)] in Filetime lpLastAccessTime, [Flow(FlowDirection.In)] Filetime* lpLastWriteTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1095, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileTime")]
-        public unsafe partial int SetFileTime(void* hFile, [Flow(FlowDirection.In)] in Filetime lpCreationTime, [Flow(FlowDirection.In)] in Filetime lpLastAccessTime, [Flow(FlowDirection.In)] in Filetime lpLastWriteTime);
+        public unsafe partial Silk.NET.Core.Bool32 SetFileTime(void* hFile, [Flow(FlowDirection.In)] in Filetime lpCreationTime, [Flow(FlowDirection.In)] in Filetime lpLastAccessTime, [Flow(FlowDirection.In)] in Filetime lpLastWriteTime);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1095, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileTime")]
-        public unsafe partial int SetFileTime<T0>(ref T0 hFile, [Flow(FlowDirection.In)] Filetime* lpCreationTime, [Flow(FlowDirection.In)] Filetime* lpLastAccessTime, [Flow(FlowDirection.In)] Filetime* lpLastWriteTime) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 SetFileTime<T0>(ref T0 hFile, [Flow(FlowDirection.In)] Filetime* lpCreationTime, [Flow(FlowDirection.In)] Filetime* lpLastAccessTime, [Flow(FlowDirection.In)] Filetime* lpLastWriteTime) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1095, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileTime")]
-        public unsafe partial int SetFileTime<T0>(ref T0 hFile, [Flow(FlowDirection.In)] Filetime* lpCreationTime, [Flow(FlowDirection.In)] Filetime* lpLastAccessTime, [Flow(FlowDirection.In)] in Filetime lpLastWriteTime) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 SetFileTime<T0>(ref T0 hFile, [Flow(FlowDirection.In)] Filetime* lpCreationTime, [Flow(FlowDirection.In)] Filetime* lpLastAccessTime, [Flow(FlowDirection.In)] in Filetime lpLastWriteTime) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1095, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileTime")]
-        public unsafe partial int SetFileTime<T0>(ref T0 hFile, [Flow(FlowDirection.In)] Filetime* lpCreationTime, [Flow(FlowDirection.In)] in Filetime lpLastAccessTime, [Flow(FlowDirection.In)] Filetime* lpLastWriteTime) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 SetFileTime<T0>(ref T0 hFile, [Flow(FlowDirection.In)] Filetime* lpCreationTime, [Flow(FlowDirection.In)] in Filetime lpLastAccessTime, [Flow(FlowDirection.In)] Filetime* lpLastWriteTime) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1095, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileTime")]
-        public unsafe partial int SetFileTime<T0>(ref T0 hFile, [Flow(FlowDirection.In)] Filetime* lpCreationTime, [Flow(FlowDirection.In)] in Filetime lpLastAccessTime, [Flow(FlowDirection.In)] in Filetime lpLastWriteTime) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 SetFileTime<T0>(ref T0 hFile, [Flow(FlowDirection.In)] Filetime* lpCreationTime, [Flow(FlowDirection.In)] in Filetime lpLastAccessTime, [Flow(FlowDirection.In)] in Filetime lpLastWriteTime) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1095, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileTime")]
-        public unsafe partial int SetFileTime<T0>(ref T0 hFile, [Flow(FlowDirection.In)] in Filetime lpCreationTime, [Flow(FlowDirection.In)] Filetime* lpLastAccessTime, [Flow(FlowDirection.In)] Filetime* lpLastWriteTime) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 SetFileTime<T0>(ref T0 hFile, [Flow(FlowDirection.In)] in Filetime lpCreationTime, [Flow(FlowDirection.In)] Filetime* lpLastAccessTime, [Flow(FlowDirection.In)] Filetime* lpLastWriteTime) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1095, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileTime")]
-        public unsafe partial int SetFileTime<T0>(ref T0 hFile, [Flow(FlowDirection.In)] in Filetime lpCreationTime, [Flow(FlowDirection.In)] Filetime* lpLastAccessTime, [Flow(FlowDirection.In)] in Filetime lpLastWriteTime) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 SetFileTime<T0>(ref T0 hFile, [Flow(FlowDirection.In)] in Filetime lpCreationTime, [Flow(FlowDirection.In)] Filetime* lpLastAccessTime, [Flow(FlowDirection.In)] in Filetime lpLastWriteTime) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1095, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileTime")]
-        public unsafe partial int SetFileTime<T0>(ref T0 hFile, [Flow(FlowDirection.In)] in Filetime lpCreationTime, [Flow(FlowDirection.In)] in Filetime lpLastAccessTime, [Flow(FlowDirection.In)] Filetime* lpLastWriteTime) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 SetFileTime<T0>(ref T0 hFile, [Flow(FlowDirection.In)] in Filetime lpCreationTime, [Flow(FlowDirection.In)] in Filetime lpLastAccessTime, [Flow(FlowDirection.In)] Filetime* lpLastWriteTime) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1095, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileTime")]
-        public partial int SetFileTime<T0>(ref T0 hFile, [Flow(FlowDirection.In)] in Filetime lpCreationTime, [Flow(FlowDirection.In)] in Filetime lpLastAccessTime, [Flow(FlowDirection.In)] in Filetime lpLastWriteTime) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 SetFileTime<T0>(ref T0 hFile, [Flow(FlowDirection.In)] in Filetime lpCreationTime, [Flow(FlowDirection.In)] in Filetime lpLastAccessTime, [Flow(FlowDirection.In)] in Filetime lpLastWriteTime) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1107, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileValidData")]
-        public unsafe partial int SetFileValidData(void* hFile, long ValidDataLength);
+        public unsafe partial Silk.NET.Core.Bool32 SetFileValidData(void* hFile, long ValidDataLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1107, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileValidData")]
-        public partial int SetFileValidData<T0>(ref T0 hFile, long ValidDataLength) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 SetFileValidData<T0>(ref T0 hFile, long ValidDataLength) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1117, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "UnlockFile")]
-        public unsafe partial int UnlockFile(void* hFile, uint dwFileOffsetLow, uint dwFileOffsetHigh, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh);
+        public unsafe partial Silk.NET.Core.Bool32 UnlockFile(void* hFile, uint dwFileOffsetLow, uint dwFileOffsetHigh, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1117, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "UnlockFile")]
-        public partial int UnlockFile<T0>(ref T0 hFile, uint dwFileOffsetLow, uint dwFileOffsetHigh, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 UnlockFile<T0>(ref T0 hFile, uint dwFileOffsetLow, uint dwFileOffsetHigh, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1128, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "UnlockFileEx")]
-        public unsafe partial int UnlockFileEx(void* hFile, uint dwReserved, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh, Overlapped* lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 UnlockFileEx(void* hFile, uint dwReserved, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh, Overlapped* lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1128, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "UnlockFileEx")]
-        public unsafe partial int UnlockFileEx(void* hFile, uint dwReserved, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh, ref Overlapped lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 UnlockFileEx(void* hFile, uint dwReserved, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh, ref Overlapped lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1128, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "UnlockFileEx")]
-        public unsafe partial int UnlockFileEx<T0>(ref T0 hFile, uint dwReserved, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh, Overlapped* lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 UnlockFileEx<T0>(ref T0 hFile, uint dwReserved, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh, Overlapped* lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1128, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "UnlockFileEx")]
-        public partial int UnlockFileEx<T0>(ref T0 hFile, uint dwReserved, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh, ref Overlapped lpOverlapped) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 UnlockFileEx<T0>(ref T0 hFile, uint dwReserved, uint nNumberOfBytesToUnlockLow, uint nNumberOfBytesToUnlockHigh, ref Overlapped lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1139, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFile")]
-        public unsafe partial int WriteFile(void* hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, Overlapped* lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 WriteFile(void* hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, Overlapped* lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1139, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFile")]
-        public unsafe partial int WriteFile(void* hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, ref Overlapped lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 WriteFile(void* hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, ref Overlapped lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1139, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFile")]
-        public unsafe partial int WriteFile(void* hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, ref uint lpNumberOfBytesWritten, Overlapped* lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 WriteFile(void* hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, ref uint lpNumberOfBytesWritten, Overlapped* lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1139, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFile")]
-        public unsafe partial int WriteFile(void* hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, ref uint lpNumberOfBytesWritten, ref Overlapped lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 WriteFile(void* hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, ref uint lpNumberOfBytesWritten, ref Overlapped lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1139, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFile")]
-        public unsafe partial int WriteFile<T0>(void* hFile, [Flow(FlowDirection.In)] in T0 lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, Overlapped* lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFile<T0>(void* hFile, [Flow(FlowDirection.In)] in T0 lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, Overlapped* lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1139, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFile")]
-        public unsafe partial int WriteFile<T0>(void* hFile, [Flow(FlowDirection.In)] in T0 lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, ref Overlapped lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFile<T0>(void* hFile, [Flow(FlowDirection.In)] in T0 lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, ref Overlapped lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1139, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFile")]
-        public unsafe partial int WriteFile<T0>(void* hFile, [Flow(FlowDirection.In)] in T0 lpBuffer, uint nNumberOfBytesToWrite, ref uint lpNumberOfBytesWritten, Overlapped* lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFile<T0>(void* hFile, [Flow(FlowDirection.In)] in T0 lpBuffer, uint nNumberOfBytesToWrite, ref uint lpNumberOfBytesWritten, Overlapped* lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1139, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFile")]
-        public unsafe partial int WriteFile<T0>(void* hFile, [Flow(FlowDirection.In)] in T0 lpBuffer, uint nNumberOfBytesToWrite, ref uint lpNumberOfBytesWritten, ref Overlapped lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFile<T0>(void* hFile, [Flow(FlowDirection.In)] in T0 lpBuffer, uint nNumberOfBytesToWrite, ref uint lpNumberOfBytesWritten, ref Overlapped lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1139, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFile")]
-        public unsafe partial int WriteFile<T0>(ref T0 hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, Overlapped* lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFile<T0>(ref T0 hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, Overlapped* lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1139, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFile")]
-        public unsafe partial int WriteFile<T0>(ref T0 hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, ref Overlapped lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFile<T0>(ref T0 hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, ref Overlapped lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1139, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFile")]
-        public unsafe partial int WriteFile<T0>(ref T0 hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, ref uint lpNumberOfBytesWritten, Overlapped* lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFile<T0>(ref T0 hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, ref uint lpNumberOfBytesWritten, Overlapped* lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1139, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFile")]
-        public unsafe partial int WriteFile<T0>(ref T0 hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, ref uint lpNumberOfBytesWritten, ref Overlapped lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFile<T0>(ref T0 hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, ref uint lpNumberOfBytesWritten, ref Overlapped lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1139, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFile")]
-        public unsafe partial int WriteFile<T0, T1>(ref T0 hFile, [Flow(FlowDirection.In)] in T1 lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, Overlapped* lpOverlapped) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFile<T0, T1>(ref T0 hFile, [Flow(FlowDirection.In)] in T1 lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, Overlapped* lpOverlapped) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1139, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFile")]
-        public unsafe partial int WriteFile<T0, T1>(ref T0 hFile, [Flow(FlowDirection.In)] in T1 lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, ref Overlapped lpOverlapped) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFile<T0, T1>(ref T0 hFile, [Flow(FlowDirection.In)] in T1 lpBuffer, uint nNumberOfBytesToWrite, uint* lpNumberOfBytesWritten, ref Overlapped lpOverlapped) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1139, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFile")]
-        public unsafe partial int WriteFile<T0, T1>(ref T0 hFile, [Flow(FlowDirection.In)] in T1 lpBuffer, uint nNumberOfBytesToWrite, ref uint lpNumberOfBytesWritten, Overlapped* lpOverlapped) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFile<T0, T1>(ref T0 hFile, [Flow(FlowDirection.In)] in T1 lpBuffer, uint nNumberOfBytesToWrite, ref uint lpNumberOfBytesWritten, Overlapped* lpOverlapped) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1139, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFile")]
-        public partial int WriteFile<T0, T1>(ref T0 hFile, [Flow(FlowDirection.In)] in T1 lpBuffer, uint nNumberOfBytesToWrite, ref uint lpNumberOfBytesWritten, ref Overlapped lpOverlapped) where T0 : unmanaged where T1 : unmanaged;
+        public partial Silk.NET.Core.Bool32 WriteFile<T0, T1>(ref T0 hFile, [Flow(FlowDirection.In)] in T1 lpBuffer, uint nNumberOfBytesToWrite, ref uint lpNumberOfBytesWritten, ref Overlapped lpOverlapped) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1150, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileEx")]
-        public unsafe partial int WriteFileEx(void* hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine);
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileEx(void* hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1150, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileEx")]
-        public unsafe partial int WriteFileEx(void* hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, ref Overlapped lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine);
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileEx(void* hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, ref Overlapped lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1150, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileEx")]
-        public unsafe partial int WriteFileEx<T0>(void* hFile, [Flow(FlowDirection.In)] in T0 lpBuffer, uint nNumberOfBytesToWrite, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileEx<T0>(void* hFile, [Flow(FlowDirection.In)] in T0 lpBuffer, uint nNumberOfBytesToWrite, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1150, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileEx")]
-        public unsafe partial int WriteFileEx<T0>(void* hFile, [Flow(FlowDirection.In)] in T0 lpBuffer, uint nNumberOfBytesToWrite, ref Overlapped lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileEx<T0>(void* hFile, [Flow(FlowDirection.In)] in T0 lpBuffer, uint nNumberOfBytesToWrite, ref Overlapped lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1150, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileEx")]
-        public unsafe partial int WriteFileEx<T0>(ref T0 hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileEx<T0>(ref T0 hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1150, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileEx")]
-        public unsafe partial int WriteFileEx<T0>(ref T0 hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, ref Overlapped lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileEx<T0>(ref T0 hFile, [Flow(FlowDirection.In)] void* lpBuffer, uint nNumberOfBytesToWrite, ref Overlapped lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1150, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileEx")]
-        public unsafe partial int WriteFileEx<T0, T1>(ref T0 hFile, [Flow(FlowDirection.In)] in T1 lpBuffer, uint nNumberOfBytesToWrite, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileEx<T0, T1>(ref T0 hFile, [Flow(FlowDirection.In)] in T1 lpBuffer, uint nNumberOfBytesToWrite, Overlapped* lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1150, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileEx")]
-        public partial int WriteFileEx<T0, T1>(ref T0 hFile, [Flow(FlowDirection.In)] in T1 lpBuffer, uint nNumberOfBytesToWrite, ref Overlapped lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged where T1 : unmanaged;
+        public partial Silk.NET.Core.Bool32 WriteFileEx<T0, T1>(ref T0 hFile, [Flow(FlowDirection.In)] in T1 lpBuffer, uint nNumberOfBytesToWrite, ref Overlapped lpOverlapped, PfnLpoverlappedCompletionRoutine lpCompletionRoutine) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileGather")]
-        public unsafe partial int WriteFileGather(void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Overlapped* lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileGather(void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Overlapped* lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileGather")]
-        public unsafe partial int WriteFileGather(void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, ref Overlapped lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileGather(void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, ref Overlapped lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileGather")]
-        public unsafe partial int WriteFileGather(void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, ref uint lpReserved, Overlapped* lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileGather(void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, ref uint lpReserved, Overlapped* lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileGather")]
-        public unsafe partial int WriteFileGather(void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, ref uint lpReserved, ref Overlapped lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileGather(void* hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, ref uint lpReserved, ref Overlapped lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileGather")]
-        public unsafe partial int WriteFileGather(void* hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Overlapped* lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileGather(void* hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Overlapped* lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileGather")]
-        public unsafe partial int WriteFileGather(void* hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, ref Overlapped lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileGather(void* hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, ref Overlapped lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileGather")]
-        public unsafe partial int WriteFileGather(void* hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToWrite, ref uint lpReserved, Overlapped* lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileGather(void* hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToWrite, ref uint lpReserved, Overlapped* lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileGather")]
-        public unsafe partial int WriteFileGather(void* hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToWrite, ref uint lpReserved, ref Overlapped lpOverlapped);
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileGather(void* hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToWrite, ref uint lpReserved, ref Overlapped lpOverlapped);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileGather")]
-        public unsafe partial int WriteFileGather<T0>(ref T0 hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileGather<T0>(ref T0 hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileGather")]
-        public unsafe partial int WriteFileGather<T0>(ref T0 hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, ref Overlapped lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileGather<T0>(ref T0 hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, ref Overlapped lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileGather")]
-        public unsafe partial int WriteFileGather<T0>(ref T0 hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, ref uint lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileGather<T0>(ref T0 hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, ref uint lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileGather")]
-        public unsafe partial int WriteFileGather<T0>(ref T0 hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, ref uint lpReserved, ref Overlapped lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileGather<T0>(ref T0 hFile, FileSegmentElement* aSegmentArray, uint nNumberOfBytesToWrite, ref uint lpReserved, ref Overlapped lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileGather")]
-        public unsafe partial int WriteFileGather<T0>(ref T0 hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileGather<T0>(ref T0 hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileGather")]
-        public unsafe partial int WriteFileGather<T0>(ref T0 hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, ref Overlapped lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileGather<T0>(ref T0 hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToWrite, uint* lpReserved, ref Overlapped lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileGather")]
-        public unsafe partial int WriteFileGather<T0>(ref T0 hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToWrite, ref uint lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 WriteFileGather<T0>(ref T0 hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToWrite, ref uint lpReserved, Overlapped* lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1161, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "WriteFileGather")]
-        public partial int WriteFileGather<T0>(ref T0 hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToWrite, ref uint lpReserved, ref Overlapped lpOverlapped) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 WriteFileGather<T0>(ref T0 hFile, ref FileSegmentElement aSegmentArray, uint nNumberOfBytesToWrite, ref uint lpReserved, ref Overlapped lpOverlapped) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1172, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
@@ -15035,137 +15035,137 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1190, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeNameForVolumeMountPointW")]
-        public unsafe partial int GetVolumeNameForVolumeMountPointW([Flow(FlowDirection.In)] char* lpszVolumeMountPoint, char* lpszVolumeName, uint cchBufferLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeNameForVolumeMountPointW([Flow(FlowDirection.In)] char* lpszVolumeMountPoint, char* lpszVolumeName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1190, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeNameForVolumeMountPointW")]
-        public unsafe partial int GetVolumeNameForVolumeMountPointW([Flow(FlowDirection.In)] char* lpszVolumeMountPoint, ref char lpszVolumeName, uint cchBufferLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeNameForVolumeMountPointW([Flow(FlowDirection.In)] char* lpszVolumeMountPoint, ref char lpszVolumeName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1190, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeNameForVolumeMountPointW")]
-        public unsafe partial int GetVolumeNameForVolumeMountPointW([Flow(FlowDirection.In)] char* lpszVolumeMountPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, uint cchBufferLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeNameForVolumeMountPointW([Flow(FlowDirection.In)] char* lpszVolumeMountPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1190, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeNameForVolumeMountPointW")]
-        public unsafe partial int GetVolumeNameForVolumeMountPointW([Flow(FlowDirection.In)] in char lpszVolumeMountPoint, char* lpszVolumeName, uint cchBufferLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeNameForVolumeMountPointW([Flow(FlowDirection.In)] in char lpszVolumeMountPoint, char* lpszVolumeName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1190, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeNameForVolumeMountPointW")]
-        public partial int GetVolumeNameForVolumeMountPointW([Flow(FlowDirection.In)] in char lpszVolumeMountPoint, ref char lpszVolumeName, uint cchBufferLength);
+        public partial Silk.NET.Core.Bool32 GetVolumeNameForVolumeMountPointW([Flow(FlowDirection.In)] in char lpszVolumeMountPoint, ref char lpszVolumeName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1190, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeNameForVolumeMountPointW")]
-        public partial int GetVolumeNameForVolumeMountPointW([Flow(FlowDirection.In)] in char lpszVolumeMountPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, uint cchBufferLength);
+        public partial Silk.NET.Core.Bool32 GetVolumeNameForVolumeMountPointW([Flow(FlowDirection.In)] in char lpszVolumeMountPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1190, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeNameForVolumeMountPointW")]
-        public unsafe partial int GetVolumeNameForVolumeMountPointW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeMountPoint, char* lpszVolumeName, uint cchBufferLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeNameForVolumeMountPointW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeMountPoint, char* lpszVolumeName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1190, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeNameForVolumeMountPointW")]
-        public partial int GetVolumeNameForVolumeMountPointW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeMountPoint, ref char lpszVolumeName, uint cchBufferLength);
+        public partial Silk.NET.Core.Bool32 GetVolumeNameForVolumeMountPointW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeMountPoint, ref char lpszVolumeName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1190, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeNameForVolumeMountPointW")]
-        public partial int GetVolumeNameForVolumeMountPointW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeMountPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, uint cchBufferLength);
+        public partial Silk.NET.Core.Bool32 GetVolumeNameForVolumeMountPointW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeMountPoint, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, uint cchBufferLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNamesForVolumeNameW")]
-        public unsafe partial int GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] char* lpszVolumeName, char* lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] char* lpszVolumeName, char* lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNamesForVolumeNameW")]
-        public unsafe partial int GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] char* lpszVolumeName, char* lpszVolumePathNames, uint cchBufferLength, ref uint lpcchReturnLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] char* lpszVolumeName, char* lpszVolumePathNames, uint cchBufferLength, ref uint lpcchReturnLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNamesForVolumeNameW")]
-        public unsafe partial int GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] char* lpszVolumeName, ref char lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] char* lpszVolumeName, ref char lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNamesForVolumeNameW")]
-        public unsafe partial int GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] char* lpszVolumeName, ref char lpszVolumePathNames, uint cchBufferLength, ref uint lpcchReturnLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] char* lpszVolumeName, ref char lpszVolumePathNames, uint cchBufferLength, ref uint lpcchReturnLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNamesForVolumeNameW")]
-        public unsafe partial int GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] char* lpszVolumeName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] char* lpszVolumeName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNamesForVolumeNameW")]
-        public unsafe partial int GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] char* lpszVolumeName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string lpszVolumePathNames, uint cchBufferLength, ref uint lpcchReturnLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] char* lpszVolumeName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string lpszVolumePathNames, uint cchBufferLength, ref uint lpcchReturnLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNamesForVolumeNameW")]
-        public unsafe partial int GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] in char lpszVolumeName, char* lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] in char lpszVolumeName, char* lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNamesForVolumeNameW")]
-        public unsafe partial int GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] in char lpszVolumeName, char* lpszVolumePathNames, uint cchBufferLength, ref uint lpcchReturnLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] in char lpszVolumeName, char* lpszVolumePathNames, uint cchBufferLength, ref uint lpcchReturnLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNamesForVolumeNameW")]
-        public unsafe partial int GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] in char lpszVolumeName, ref char lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] in char lpszVolumeName, ref char lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNamesForVolumeNameW")]
-        public partial int GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] in char lpszVolumeName, ref char lpszVolumePathNames, uint cchBufferLength, ref uint lpcchReturnLength);
+        public partial Silk.NET.Core.Bool32 GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] in char lpszVolumeName, ref char lpszVolumePathNames, uint cchBufferLength, ref uint lpcchReturnLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNamesForVolumeNameW")]
-        public unsafe partial int GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] in char lpszVolumeName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] in char lpszVolumeName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNamesForVolumeNameW")]
-        public partial int GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] in char lpszVolumeName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string lpszVolumePathNames, uint cchBufferLength, ref uint lpcchReturnLength);
+        public partial Silk.NET.Core.Bool32 GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In)] in char lpszVolumeName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string lpszVolumePathNames, uint cchBufferLength, ref uint lpcchReturnLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNamesForVolumeNameW")]
-        public unsafe partial int GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, char* lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, char* lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNamesForVolumeNameW")]
-        public unsafe partial int GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, char* lpszVolumePathNames, uint cchBufferLength, ref uint lpcchReturnLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, char* lpszVolumePathNames, uint cchBufferLength, ref uint lpcchReturnLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNamesForVolumeNameW")]
-        public unsafe partial int GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, ref char lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, ref char lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNamesForVolumeNameW")]
-        public partial int GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, ref char lpszVolumePathNames, uint cchBufferLength, ref uint lpcchReturnLength);
+        public partial Silk.NET.Core.Bool32 GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, ref char lpszVolumePathNames, uint cchBufferLength, ref uint lpcchReturnLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNamesForVolumeNameW")]
-        public unsafe partial int GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string lpszVolumePathNames, uint cchBufferLength, uint* lpcchReturnLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1211, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumePathNamesForVolumeNameW")]
-        public partial int GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string lpszVolumePathNames, uint cchBufferLength, ref uint lpcchReturnLength);
+        public partial Silk.NET.Core.Bool32 GetVolumePathNamesForVolumeNameW([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpszVolumeName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string lpszVolumePathNames, uint cchBufferLength, ref uint lpcchReturnLength);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1244, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
@@ -15200,32 +15200,32 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1265, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileIoOverlappedRange")]
-        public unsafe partial int SetFileIoOverlappedRange(void* FileHandle, byte* OverlappedRangeStart, uint Length);
+        public unsafe partial Silk.NET.Core.Bool32 SetFileIoOverlappedRange(void* FileHandle, byte* OverlappedRangeStart, uint Length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1265, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileIoOverlappedRange")]
-        public unsafe partial int SetFileIoOverlappedRange(void* FileHandle, ref byte OverlappedRangeStart, uint Length);
+        public unsafe partial Silk.NET.Core.Bool32 SetFileIoOverlappedRange(void* FileHandle, ref byte OverlappedRangeStart, uint Length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1265, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileIoOverlappedRange")]
-        public unsafe partial int SetFileIoOverlappedRange(void* FileHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string OverlappedRangeStart, uint Length);
+        public unsafe partial Silk.NET.Core.Bool32 SetFileIoOverlappedRange(void* FileHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string OverlappedRangeStart, uint Length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1265, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileIoOverlappedRange")]
-        public unsafe partial int SetFileIoOverlappedRange<T0>(ref T0 FileHandle, byte* OverlappedRangeStart, uint Length) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 SetFileIoOverlappedRange<T0>(ref T0 FileHandle, byte* OverlappedRangeStart, uint Length) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1265, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileIoOverlappedRange")]
-        public partial int SetFileIoOverlappedRange<T0>(ref T0 FileHandle, ref byte OverlappedRangeStart, uint Length) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 SetFileIoOverlappedRange<T0>(ref T0 FileHandle, ref byte OverlappedRangeStart, uint Length) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1265, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "SetFileIoOverlappedRange")]
-        public partial int SetFileIoOverlappedRange<T0>(ref T0 FileHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string OverlappedRangeStart, uint Length) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 SetFileIoOverlappedRange<T0>(ref T0 FileHandle, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string OverlappedRangeStart, uint Length) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1278, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
@@ -15320,27 +15320,27 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1327, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextStreamW")]
-        public unsafe partial int FindNextStreamW(void* hFindStream, void* lpFindStreamData);
+        public unsafe partial Silk.NET.Core.Bool32 FindNextStreamW(void* hFindStream, void* lpFindStreamData);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1327, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextStreamW")]
-        public unsafe partial int FindNextStreamW<T0>(void* hFindStream, ref T0 lpFindStreamData) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 FindNextStreamW<T0>(void* hFindStream, ref T0 lpFindStreamData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1327, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextStreamW")]
-        public unsafe partial int FindNextStreamW<T0>(ref T0 hFindStream, void* lpFindStreamData) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 FindNextStreamW<T0>(ref T0 hFindStream, void* lpFindStreamData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1327, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextStreamW")]
-        public partial int FindNextStreamW<T0, T1>(ref T0 hFindStream, ref T1 lpFindStreamData) where T0 : unmanaged where T1 : unmanaged;
+        public partial Silk.NET.Core.Bool32 FindNextStreamW<T0, T1>(ref T0 hFindStream, ref T1 lpFindStreamData) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1343, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "AreFileApisANSI")]
-        public partial int AreFileApisANSI();
+        public partial Silk.NET.Core.Bool32 AreFileApisANSI();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1356, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
@@ -15450,1142 +15450,1142 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1386, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileNameW")]
-        public unsafe partial int FindNextFileNameW(void* hFindStream, uint* StringLength, char* LinkName);
+        public unsafe partial Silk.NET.Core.Bool32 FindNextFileNameW(void* hFindStream, uint* StringLength, char* LinkName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1386, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileNameW")]
-        public unsafe partial int FindNextFileNameW(void* hFindStream, uint* StringLength, ref char LinkName);
+        public unsafe partial Silk.NET.Core.Bool32 FindNextFileNameW(void* hFindStream, uint* StringLength, ref char LinkName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1386, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileNameW")]
-        public unsafe partial int FindNextFileNameW(void* hFindStream, uint* StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName);
+        public unsafe partial Silk.NET.Core.Bool32 FindNextFileNameW(void* hFindStream, uint* StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1386, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileNameW")]
-        public unsafe partial int FindNextFileNameW(void* hFindStream, ref uint StringLength, char* LinkName);
+        public unsafe partial Silk.NET.Core.Bool32 FindNextFileNameW(void* hFindStream, ref uint StringLength, char* LinkName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1386, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileNameW")]
-        public unsafe partial int FindNextFileNameW(void* hFindStream, ref uint StringLength, ref char LinkName);
+        public unsafe partial Silk.NET.Core.Bool32 FindNextFileNameW(void* hFindStream, ref uint StringLength, ref char LinkName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1386, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileNameW")]
-        public unsafe partial int FindNextFileNameW(void* hFindStream, ref uint StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName);
+        public unsafe partial Silk.NET.Core.Bool32 FindNextFileNameW(void* hFindStream, ref uint StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1386, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileNameW")]
-        public unsafe partial int FindNextFileNameW<T0>(ref T0 hFindStream, uint* StringLength, char* LinkName) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 FindNextFileNameW<T0>(ref T0 hFindStream, uint* StringLength, char* LinkName) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1386, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileNameW")]
-        public unsafe partial int FindNextFileNameW<T0>(ref T0 hFindStream, uint* StringLength, ref char LinkName) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 FindNextFileNameW<T0>(ref T0 hFindStream, uint* StringLength, ref char LinkName) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1386, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileNameW")]
-        public unsafe partial int FindNextFileNameW<T0>(ref T0 hFindStream, uint* StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 FindNextFileNameW<T0>(ref T0 hFindStream, uint* StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1386, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileNameW")]
-        public unsafe partial int FindNextFileNameW<T0>(ref T0 hFindStream, ref uint StringLength, char* LinkName) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 FindNextFileNameW<T0>(ref T0 hFindStream, ref uint StringLength, char* LinkName) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1386, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileNameW")]
-        public partial int FindNextFileNameW<T0>(ref T0 hFindStream, ref uint StringLength, ref char LinkName) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 FindNextFileNameW<T0>(ref T0 hFindStream, ref uint StringLength, ref char LinkName) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1386, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "FindNextFileNameW")]
-        public partial int FindNextFileNameW<T0>(ref T0 hFindStream, ref uint StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 FindNextFileNameW<T0>(ref T0 hFindStream, ref uint StringLength, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string LinkName) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] byte* lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public partial int GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In)] in byte lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, byte* lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, ref byte lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, uint* lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, uint* lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, uint* lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public unsafe partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public unsafe partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, byte* lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, ref byte lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1403, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
         [NativeApi(EntryPoint = "GetVolumeInformationA")]
-        public partial int GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
+        public partial Silk.NET.Core.Bool32 GetVolumeInformationA([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpRootPathName, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpVolumeNameBuffer, uint nVolumeNameSize, ref uint lpVolumeSerialNumber, ref uint lpMaximumComponentLength, ref uint lpFileSystemFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string lpFileSystemNameBuffer, uint nFileSystemNameSize);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1427, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\fileapi.h")]
@@ -16765,142 +16765,142 @@ namespace Silk.NET.Core.Win32Extras
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 39, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "CloseHandle")]
-        public unsafe partial int CloseHandle(void* hObject);
+        public unsafe partial Silk.NET.Core.Bool32 CloseHandle(void* hObject);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 39, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "CloseHandle")]
-        public partial int CloseHandle<T0>(ref T0 hObject) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 CloseHandle<T0>(ref T0 hObject) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 46, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "DuplicateHandle")]
-        public unsafe partial int DuplicateHandle(void* hSourceProcessHandle, void* hSourceHandle, void* hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions);
+        public unsafe partial Silk.NET.Core.Bool32 DuplicateHandle(void* hSourceProcessHandle, void* hSourceHandle, void* hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 46, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "DuplicateHandle")]
-        public unsafe partial int DuplicateHandle(void* hSourceProcessHandle, void* hSourceHandle, void* hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions);
+        public unsafe partial Silk.NET.Core.Bool32 DuplicateHandle(void* hSourceProcessHandle, void* hSourceHandle, void* hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 46, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "DuplicateHandle")]
-        public unsafe partial int DuplicateHandle<T0>(void* hSourceProcessHandle, void* hSourceHandle, ref T0 hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 DuplicateHandle<T0>(void* hSourceProcessHandle, void* hSourceHandle, ref T0 hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 46, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "DuplicateHandle")]
-        public unsafe partial int DuplicateHandle<T0>(void* hSourceProcessHandle, void* hSourceHandle, ref T0 hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 DuplicateHandle<T0>(void* hSourceProcessHandle, void* hSourceHandle, ref T0 hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 46, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "DuplicateHandle")]
-        public unsafe partial int DuplicateHandle<T0>(void* hSourceProcessHandle, ref T0 hSourceHandle, void* hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 DuplicateHandle<T0>(void* hSourceProcessHandle, ref T0 hSourceHandle, void* hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 46, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "DuplicateHandle")]
-        public unsafe partial int DuplicateHandle<T0>(void* hSourceProcessHandle, ref T0 hSourceHandle, void* hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 DuplicateHandle<T0>(void* hSourceProcessHandle, ref T0 hSourceHandle, void* hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 46, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "DuplicateHandle")]
-        public unsafe partial int DuplicateHandle<T0, T1>(void* hSourceProcessHandle, ref T0 hSourceHandle, ref T1 hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 DuplicateHandle<T0, T1>(void* hSourceProcessHandle, ref T0 hSourceHandle, ref T1 hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 46, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "DuplicateHandle")]
-        public unsafe partial int DuplicateHandle<T0, T1>(void* hSourceProcessHandle, ref T0 hSourceHandle, ref T1 hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 DuplicateHandle<T0, T1>(void* hSourceProcessHandle, ref T0 hSourceHandle, ref T1 hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 46, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "DuplicateHandle")]
-        public unsafe partial int DuplicateHandle<T0>(ref T0 hSourceProcessHandle, void* hSourceHandle, void* hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 DuplicateHandle<T0>(ref T0 hSourceProcessHandle, void* hSourceHandle, void* hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 46, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "DuplicateHandle")]
-        public unsafe partial int DuplicateHandle<T0>(ref T0 hSourceProcessHandle, void* hSourceHandle, void* hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 DuplicateHandle<T0>(ref T0 hSourceProcessHandle, void* hSourceHandle, void* hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 46, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "DuplicateHandle")]
-        public unsafe partial int DuplicateHandle<T0, T1>(ref T0 hSourceProcessHandle, void* hSourceHandle, ref T1 hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 DuplicateHandle<T0, T1>(ref T0 hSourceProcessHandle, void* hSourceHandle, ref T1 hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 46, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "DuplicateHandle")]
-        public unsafe partial int DuplicateHandle<T0, T1>(ref T0 hSourceProcessHandle, void* hSourceHandle, ref T1 hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 DuplicateHandle<T0, T1>(ref T0 hSourceProcessHandle, void* hSourceHandle, ref T1 hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 46, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "DuplicateHandle")]
-        public unsafe partial int DuplicateHandle<T0, T1>(ref T0 hSourceProcessHandle, ref T1 hSourceHandle, void* hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 DuplicateHandle<T0, T1>(ref T0 hSourceProcessHandle, ref T1 hSourceHandle, void* hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 46, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "DuplicateHandle")]
-        public unsafe partial int DuplicateHandle<T0, T1>(ref T0 hSourceProcessHandle, ref T1 hSourceHandle, void* hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 DuplicateHandle<T0, T1>(ref T0 hSourceProcessHandle, ref T1 hSourceHandle, void* hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 46, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "DuplicateHandle")]
-        public unsafe partial int DuplicateHandle<T0, T1, T2>(ref T0 hSourceProcessHandle, ref T1 hSourceHandle, ref T2 hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 DuplicateHandle<T0, T1, T2>(ref T0 hSourceProcessHandle, ref T1 hSourceHandle, ref T2 hTargetProcessHandle, void** lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 46, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "DuplicateHandle")]
-        public unsafe partial int DuplicateHandle<T0, T1, T2>(ref T0 hSourceProcessHandle, ref T1 hSourceHandle, ref T2 hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, int bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 DuplicateHandle<T0, T1, T2>(ref T0 hSourceProcessHandle, ref T1 hSourceHandle, ref T2 hTargetProcessHandle, ref void* lpTargetHandle, uint dwDesiredAccess, Silk.NET.Core.Bool32 bInheritHandle, uint dwOptions) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 65, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "CompareObjectHandles")]
-        public unsafe partial int CompareObjectHandles(void* hFirstObjectHandle, void* hSecondObjectHandle);
+        public unsafe partial Silk.NET.Core.Bool32 CompareObjectHandles(void* hFirstObjectHandle, void* hSecondObjectHandle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 65, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "CompareObjectHandles")]
-        public unsafe partial int CompareObjectHandles<T0>(void* hFirstObjectHandle, ref T0 hSecondObjectHandle) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 CompareObjectHandles<T0>(void* hFirstObjectHandle, ref T0 hSecondObjectHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 65, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "CompareObjectHandles")]
-        public unsafe partial int CompareObjectHandles<T0>(ref T0 hFirstObjectHandle, void* hSecondObjectHandle) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 CompareObjectHandles<T0>(ref T0 hFirstObjectHandle, void* hSecondObjectHandle) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 65, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "CompareObjectHandles")]
-        public partial int CompareObjectHandles<T0, T1>(ref T0 hFirstObjectHandle, ref T1 hSecondObjectHandle) where T0 : unmanaged where T1 : unmanaged;
+        public partial Silk.NET.Core.Bool32 CompareObjectHandles<T0, T1>(ref T0 hFirstObjectHandle, ref T1 hSecondObjectHandle) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 79, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "GetHandleInformation")]
-        public unsafe partial int GetHandleInformation(void* hObject, uint* lpdwFlags);
+        public unsafe partial Silk.NET.Core.Bool32 GetHandleInformation(void* hObject, uint* lpdwFlags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 79, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "GetHandleInformation")]
-        public unsafe partial int GetHandleInformation(void* hObject, ref uint lpdwFlags);
+        public unsafe partial Silk.NET.Core.Bool32 GetHandleInformation(void* hObject, ref uint lpdwFlags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 79, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "GetHandleInformation")]
-        public unsafe partial int GetHandleInformation<T0>(ref T0 hObject, uint* lpdwFlags) where T0 : unmanaged;
+        public unsafe partial Silk.NET.Core.Bool32 GetHandleInformation<T0>(ref T0 hObject, uint* lpdwFlags) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 79, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "GetHandleInformation")]
-        public partial int GetHandleInformation<T0>(ref T0 hObject, ref uint lpdwFlags) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 GetHandleInformation<T0>(ref T0 hObject, ref uint lpdwFlags) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 87, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "SetHandleInformation")]
-        public unsafe partial int SetHandleInformation(void* hObject, uint dwMask, uint dwFlags);
+        public unsafe partial Silk.NET.Core.Bool32 SetHandleInformation(void* hObject, uint dwMask, uint dwFlags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 87, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\handleapi.h")]
         [NativeApi(EntryPoint = "SetHandleInformation")]
-        public partial int SetHandleInformation<T0>(ref T0 hObject, uint dwMask, uint dwFlags) where T0 : unmanaged;
+        public partial Silk.NET.Core.Bool32 SetHandleInformation<T0>(ref T0 hObject, uint dwMask, uint dwFlags) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2005, Column 43 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\objidlbase.h")]

@@ -1419,7 +1419,7 @@ namespace Silk.NET.Direct3D9
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 319, Column 13 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]
         [NativeApi(EntryPoint = "D3DPERF_QueryRepeatFrame")]
-        public partial int PERFQueryRepeatFrame();
+        public partial Silk.NET.Core.Bool32 PERFQueryRepeatFrame();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 321, Column 13 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared\\d3d9.h")]

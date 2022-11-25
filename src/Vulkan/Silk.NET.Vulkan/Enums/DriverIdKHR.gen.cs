@@ -81,6 +81,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"MesaDozen\"")]
         [NativeName("Name", "VK_DRIVER_ID_MESA_DOZEN")]
         DriverIDMesaDozen = 23,
+        [Obsolete("Deprecated in favour of \"MesaNvk\"")]
+        [NativeName("Name", "VK_DRIVER_ID_MESA_NVK")]
+        DriverIDMesaNvk = 24,
         [NativeName("Name", "VK_DRIVER_ID_AMD_PROPRIETARY")]
         AmdProprietary = 1,
         [NativeName("Name", "VK_DRIVER_ID_AMD_OPEN_SOURCE")]
@@ -127,5 +130,7 @@ namespace Silk.NET.Vulkan
         MesaVenus = 22,
         [NativeName("Name", "VK_DRIVER_ID_MESA_DOZEN")]
         MesaDozen = 23,
+        [NativeName("Name", "VK_DRIVER_ID_MESA_NVK")]
+        MesaNvk = 24,
     }
 }

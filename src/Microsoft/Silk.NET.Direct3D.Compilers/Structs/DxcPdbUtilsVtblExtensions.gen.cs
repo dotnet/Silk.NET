@@ -469,11 +469,11 @@ public unsafe static class DxcPdbUtilsVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsFullPDB(this ComPtr<IDxcPdbUtils> thisVtbl)
+    public static Silk.NET.Core.Bool32 IsFullPDB(this ComPtr<IDxcPdbUtils> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDxcPdbUtils*, int>)@this->LpVtbl[20])(@this);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDxcPdbUtils*, Silk.NET.Core.Bool32>)@this->LpVtbl[20])(@this);
         return ret;
     }
 

@@ -538,11 +538,11 @@ public unsafe static class DXGIFactory1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsCurrent(this ComPtr<IDXGIFactory1> thisVtbl)
+    public static Silk.NET.Core.Bool32 IsCurrent(this ComPtr<IDXGIFactory1> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory1*, int>)@this->LpVtbl[13])(@this);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory1*, Silk.NET.Core.Bool32>)@this->LpVtbl[13])(@this);
         return ret;
     }
 

@@ -3592,22 +3592,22 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsSupported([Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties)
+        public readonly unsafe Silk.NET.Core.Bool32 IsSupported([Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties)
         {
             var @this = (ID2D1BitmapRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1BitmapRenderTarget*, RenderTargetProperties*, int>)@this->LpVtbl[56])(@this, renderTargetProperties);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1BitmapRenderTarget*, RenderTargetProperties*, Silk.NET.Core.Bool32>)@this->LpVtbl[56])(@this, renderTargetProperties);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int IsSupported([Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties)
+        public readonly Silk.NET.Core.Bool32 IsSupported([Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties)
         {
             var @this = (ID2D1BitmapRenderTarget*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
+            Silk.NET.Core.Bool32 ret = default;
             fixed (RenderTargetProperties* renderTargetPropertiesPtr = &renderTargetProperties)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1BitmapRenderTarget*, RenderTargetProperties*, int>)@this->LpVtbl[56])(@this, renderTargetPropertiesPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1BitmapRenderTarget*, RenderTargetProperties*, Silk.NET.Core.Bool32>)@this->LpVtbl[56])(@this, renderTargetPropertiesPtr);
             }
             return ret;
         }

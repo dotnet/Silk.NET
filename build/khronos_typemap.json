@@ -1,0 +1,7 @@
+{
+    "VoidPointer": "nint",
+    "LPCSTR": "string",
+    "HANDLE": "nint",
+    "LPVOID": "nint",
+    "LPCWSTR": "nint"
+}

@@ -34,7 +34,7 @@ namespace Silk.NET.Direct3D.Compilers
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 61, Column 1 in d3dcompiler.h")]
-        public static unsafe int WriteBlobToFile(this D3DCompiler thisApi, Silk.NET.Core.Native.ID3D10Blob* pBlob, [Flow(FlowDirection.In)] ReadOnlySpan<char> pFileName, int bOverwrite)
+        public static unsafe int WriteBlobToFile(this D3DCompiler thisApi, Silk.NET.Core.Native.ID3D10Blob* pBlob, [Flow(FlowDirection.In)] ReadOnlySpan<char> pFileName, Silk.NET.Core.Bool32 bOverwrite)
         {
             // SpanOverloader
             return thisApi.WriteBlobToFile(pBlob, in pFileName.GetPinnableReference(), bOverwrite);
@@ -42,7 +42,7 @@ namespace Silk.NET.Direct3D.Compilers
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 61, Column 1 in d3dcompiler.h")]
-        public static unsafe int WriteBlobToFile(this D3DCompiler thisApi, Span<Silk.NET.Core.Native.ID3D10Blob> pBlob, [Flow(FlowDirection.In)] char* pFileName, int bOverwrite)
+        public static unsafe int WriteBlobToFile(this D3DCompiler thisApi, Span<Silk.NET.Core.Native.ID3D10Blob> pBlob, [Flow(FlowDirection.In)] char* pFileName, Silk.NET.Core.Bool32 bOverwrite)
         {
             // SpanOverloader
             return thisApi.WriteBlobToFile(ref pBlob.GetPinnableReference(), pFileName, bOverwrite);
@@ -50,7 +50,7 @@ namespace Silk.NET.Direct3D.Compilers
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 61, Column 1 in d3dcompiler.h")]
-        public static unsafe int WriteBlobToFile(this D3DCompiler thisApi, Span<Silk.NET.Core.Native.ID3D10Blob> pBlob, [Flow(FlowDirection.In)] ReadOnlySpan<char> pFileName, int bOverwrite)
+        public static unsafe int WriteBlobToFile(this D3DCompiler thisApi, Span<Silk.NET.Core.Native.ID3D10Blob> pBlob, [Flow(FlowDirection.In)] ReadOnlySpan<char> pFileName, Silk.NET.Core.Bool32 bOverwrite)
         {
             // SpanOverloader
             return thisApi.WriteBlobToFile(ref pBlob.GetPinnableReference(), in pFileName.GetPinnableReference(), bOverwrite);
@@ -58,7 +58,7 @@ namespace Silk.NET.Direct3D.Compilers
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 61, Column 1 in d3dcompiler.h")]
-        public static unsafe int WriteBlobToFile(this D3DCompiler thisApi, Span<Silk.NET.Core.Native.ID3D10Blob> pBlob, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFileName, int bOverwrite)
+        public static unsafe int WriteBlobToFile(this D3DCompiler thisApi, Span<Silk.NET.Core.Native.ID3D10Blob> pBlob, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pFileName, Silk.NET.Core.Bool32 bOverwrite)
         {
             // SpanOverloader
             return thisApi.WriteBlobToFile(ref pBlob.GetPinnableReference(), pFileName, bOverwrite);

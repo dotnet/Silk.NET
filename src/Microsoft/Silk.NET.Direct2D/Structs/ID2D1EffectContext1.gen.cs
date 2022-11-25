@@ -655,22 +655,22 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int IsShaderLoaded(Guid* shaderId)
+        public readonly unsafe Silk.NET.Core.Bool32 IsShaderLoaded(Guid* shaderId)
         {
             var @this = (ID2D1EffectContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext1*, Guid*, int>)@this->LpVtbl[14])(@this, shaderId);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext1*, Guid*, Silk.NET.Core.Bool32>)@this->LpVtbl[14])(@this, shaderId);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int IsShaderLoaded(ref Guid shaderId)
+        public readonly Silk.NET.Core.Bool32 IsShaderLoaded(ref Guid shaderId)
         {
             var @this = (ID2D1EffectContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
+            Silk.NET.Core.Bool32 ret = default;
             fixed (Guid* shaderIdPtr = &shaderId)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext1*, Guid*, int>)@this->LpVtbl[14])(@this, shaderIdPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext1*, Guid*, Silk.NET.Core.Bool32>)@this->LpVtbl[14])(@this, shaderIdPtr);
             }
             return ret;
         }
@@ -2027,11 +2027,11 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int IsBufferPrecisionSupported(BufferPrecision bufferPrecision)
+        public readonly Silk.NET.Core.Bool32 IsBufferPrecisionSupported(BufferPrecision bufferPrecision)
         {
             var @this = (ID2D1EffectContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext1*, BufferPrecision, int>)@this->LpVtbl[23])(@this, bufferPrecision);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1EffectContext1*, BufferPrecision, Silk.NET.Core.Bool32>)@this->LpVtbl[23])(@this, bufferPrecision);
             return ret;
         }
 

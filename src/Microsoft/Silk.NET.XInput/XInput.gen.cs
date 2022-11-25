@@ -308,7 +308,7 @@ namespace Silk.NET.XInput
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 279, Column 13 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]
         [NativeApi(EntryPoint = "XInputEnable", Convention = CallingConvention.StdCall)]
-        public partial void Enable(int enable);
+        public partial void Enable(Silk.NET.Core.Bool32 enable);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 288, Column 14 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\Xinput.h")]

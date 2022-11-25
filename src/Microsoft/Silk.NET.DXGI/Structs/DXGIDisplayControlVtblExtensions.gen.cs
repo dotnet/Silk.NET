@@ -85,19 +85,19 @@ public unsafe static class DXGIDisplayControlVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsStereoEnabled(this ComPtr<IDXGIDisplayControl> thisVtbl)
+    public static Silk.NET.Core.Bool32 IsStereoEnabled(this ComPtr<IDXGIDisplayControl> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, int>)@this->LpVtbl[3])(@this);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, Silk.NET.Core.Bool32>)@this->LpVtbl[3])(@this);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetStereoEnabled(this ComPtr<IDXGIDisplayControl> thisVtbl, int enabled)
+    public static void SetStereoEnabled(this ComPtr<IDXGIDisplayControl> thisVtbl, Silk.NET.Core.Bool32 enabled)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, int, void>)@this->LpVtbl[4])(@this, enabled);
+        ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[4])(@this, enabled);
     }
 
     /// <summary>To be documented.</summary>

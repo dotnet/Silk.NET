@@ -148,11 +148,11 @@ public unsafe static class DxcResultVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int HasOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind)
+    public static Silk.NET.Core.Bool32 HasOutput(this ComPtr<IDxcResult> thisVtbl, OutKind dxcOutKind)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, int>)@this->LpVtbl[6])(@this, dxcOutKind);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDxcResult*, OutKind, Silk.NET.Core.Bool32>)@this->LpVtbl[6])(@this, dxcOutKind);
         return ret;
     }
 

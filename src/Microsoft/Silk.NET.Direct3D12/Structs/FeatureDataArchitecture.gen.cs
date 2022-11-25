@@ -22,9 +22,9 @@ namespace Silk.NET.Direct3D12
         public FeatureDataArchitecture
         (
             uint? nodeIndex = null,
-            int? tileBasedRenderer = null,
-            int? uMA = null,
-            int? cacheCoherentUMA = null
+            Silk.NET.Core.Bool32? tileBasedRenderer = null,
+            Silk.NET.Core.Bool32? uMA = null,
+            Silk.NET.Core.Bool32? cacheCoherentUMA = null
         ) : this()
         {
             if (nodeIndex is not null)
@@ -57,16 +57,16 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "TileBasedRenderer")]
-        public int TileBasedRenderer;
+        public Silk.NET.Core.Bool32 TileBasedRenderer;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "UMA")]
-        public int UMA;
+        public Silk.NET.Core.Bool32 UMA;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "CacheCoherentUMA")]
-        public int CacheCoherentUMA;
+        public Silk.NET.Core.Bool32 CacheCoherentUMA;
     }
 }

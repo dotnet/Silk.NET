@@ -24,13 +24,13 @@ namespace Silk.NET.DXGI
             uint? width = null,
             uint? height = null,
             Silk.NET.DXGI.Format? format = null,
-            int? stereo = null,
-            SampleDesc? sampleDesc = null,
+            Silk.NET.Core.Bool32? stereo = null,
+            Silk.NET.DXGI.SampleDesc? sampleDesc = null,
             uint? bufferUsage = null,
             uint? bufferCount = null,
             Scaling? scaling = null,
             SwapEffect? swapEffect = null,
-            AlphaMode? alphaMode = null,
+            Silk.NET.DXGI.AlphaMode? alphaMode = null,
             uint? flags = null
         ) : this()
         {
@@ -109,12 +109,12 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Stereo")]
-        public int Stereo;
+        public Silk.NET.Core.Bool32 Stereo;
 
         [NativeName("Type", "DXGI_SAMPLE_DESC")]
         [NativeName("Type.Name", "DXGI_SAMPLE_DESC")]
         [NativeName("Name", "SampleDesc")]
-        public SampleDesc SampleDesc;
+        public Silk.NET.DXGI.SampleDesc SampleDesc;
 
         [NativeName("Type", "DXGI_USAGE")]
         [NativeName("Type.Name", "DXGI_USAGE")]
@@ -139,7 +139,7 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "DXGI_ALPHA_MODE")]
         [NativeName("Type.Name", "DXGI_ALPHA_MODE")]
         [NativeName("Name", "AlphaMode")]
-        public AlphaMode AlphaMode;
+        public Silk.NET.DXGI.AlphaMode AlphaMode;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

@@ -4358,11 +4358,11 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetStablePowerState(int Enable)
+        public readonly int SetStablePowerState(Silk.NET.Core.Bool32 Enable)
         {
             var @this = (ID3D12Device8*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device8*, int, int>)@this->LpVtbl[40])(@this, Enable);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12Device8*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[40])(@this, Enable);
             return ret;
         }
 

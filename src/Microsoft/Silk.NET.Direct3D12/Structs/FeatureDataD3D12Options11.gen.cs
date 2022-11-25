@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options11
         (
-            int? atomicInt64OnDescriptorHeapResourceSupported = null
+            Silk.NET.Core.Bool32? atomicInt64OnDescriptorHeapResourceSupported = null
         ) : this()
         {
             if (atomicInt64OnDescriptorHeapResourceSupported is not null)
@@ -34,6 +34,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "AtomicInt64OnDescriptorHeapResourceSupported")]
-        public int AtomicInt64OnDescriptorHeapResourceSupported;
+        public Silk.NET.Core.Bool32 AtomicInt64OnDescriptorHeapResourceSupported;
     }
 }

@@ -555,72 +555,72 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBreakOnCategory(MessageCategory Category, int bEnable)
+        public readonly int SetBreakOnCategory(MessageCategory Category, Silk.NET.Core.Bool32 bEnable)
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11InfoQueue*, MessageCategory, int, int>)@this->LpVtbl[30])(@this, Category, bEnable);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11InfoQueue*, MessageCategory, Silk.NET.Core.Bool32, int>)@this->LpVtbl[30])(@this, Category, bEnable);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBreakOnSeverity(MessageSeverity Severity, int bEnable)
+        public readonly int SetBreakOnSeverity(MessageSeverity Severity, Silk.NET.Core.Bool32 bEnable)
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11InfoQueue*, MessageSeverity, int, int>)@this->LpVtbl[31])(@this, Severity, bEnable);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11InfoQueue*, MessageSeverity, Silk.NET.Core.Bool32, int>)@this->LpVtbl[31])(@this, Severity, bEnable);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBreakOnID(MessageID ID, int bEnable)
+        public readonly int SetBreakOnID(MessageID ID, Silk.NET.Core.Bool32 bEnable)
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11InfoQueue*, MessageID, int, int>)@this->LpVtbl[32])(@this, ID, bEnable);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11InfoQueue*, MessageID, Silk.NET.Core.Bool32, int>)@this->LpVtbl[32])(@this, ID, bEnable);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetBreakOnCategory(MessageCategory Category)
+        public readonly Silk.NET.Core.Bool32 GetBreakOnCategory(MessageCategory Category)
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11InfoQueue*, MessageCategory, int>)@this->LpVtbl[33])(@this, Category);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11InfoQueue*, MessageCategory, Silk.NET.Core.Bool32>)@this->LpVtbl[33])(@this, Category);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetBreakOnSeverity(MessageSeverity Severity)
+        public readonly Silk.NET.Core.Bool32 GetBreakOnSeverity(MessageSeverity Severity)
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11InfoQueue*, MessageSeverity, int>)@this->LpVtbl[34])(@this, Severity);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11InfoQueue*, MessageSeverity, Silk.NET.Core.Bool32>)@this->LpVtbl[34])(@this, Severity);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetBreakOnID(MessageID ID)
+        public readonly Silk.NET.Core.Bool32 GetBreakOnID(MessageID ID)
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11InfoQueue*, MessageID, int>)@this->LpVtbl[35])(@this, ID);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11InfoQueue*, MessageID, Silk.NET.Core.Bool32>)@this->LpVtbl[35])(@this, ID);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetMuteDebugOutput(int bMute)
+        public readonly void SetMuteDebugOutput(Silk.NET.Core.Bool32 bMute)
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D11InfoQueue*, int, void>)@this->LpVtbl[36])(@this, bMute);
+            ((delegate* unmanaged[Stdcall]<ID3D11InfoQueue*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[36])(@this, bMute);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetMuteDebugOutput()
+        public readonly Silk.NET.Core.Bool32 GetMuteDebugOutput()
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11InfoQueue*, int>)@this->LpVtbl[37])(@this);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11InfoQueue*, Silk.NET.Core.Bool32>)@this->LpVtbl[37])(@this);
             return ret;
         }
 

@@ -132,10 +132,10 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetCached(int isCached)
+        public readonly void SetCached(Silk.NET.Core.Bool32 isCached)
         {
             var @this = (ID2D1ComputeInfo*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID2D1ComputeInfo*, int, void>)@this->LpVtbl[5])(@this, isCached);
+            ((delegate* unmanaged[Stdcall]<ID2D1ComputeInfo*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[5])(@this, isCached);
         }
 
         /// <summary>To be documented.</summary>

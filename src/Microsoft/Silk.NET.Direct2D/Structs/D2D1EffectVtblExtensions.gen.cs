@@ -492,19 +492,19 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetInput(this ComPtr<ID2D1Effect> thisVtbl, uint index, ID2D1Image* input, int invalidate)
+    public static unsafe void SetInput(this ComPtr<ID2D1Effect> thisVtbl, uint index, ID2D1Image* input, Silk.NET.Core.Bool32 invalidate)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID2D1Effect*, uint, ID2D1Image*, int, void>)@this->LpVtbl[14])(@this, index, input, invalidate);
+        ((delegate* unmanaged[Stdcall]<ID2D1Effect*, uint, ID2D1Image*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[14])(@this, index, input, invalidate);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetInput(this ComPtr<ID2D1Effect> thisVtbl, uint index, ref ID2D1Image input, int invalidate)
+    public static void SetInput(this ComPtr<ID2D1Effect> thisVtbl, uint index, ref ID2D1Image input, Silk.NET.Core.Bool32 invalidate)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Image* inputPtr = &input)
         {
-            ((delegate* unmanaged[Stdcall]<ID2D1Effect*, uint, ID2D1Image*, int, void>)@this->LpVtbl[14])(@this, index, inputPtr, invalidate);
+            ((delegate* unmanaged[Stdcall]<ID2D1Effect*, uint, ID2D1Image*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[14])(@this, index, inputPtr, invalidate);
         }
     }
 
@@ -706,7 +706,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetInput<TI0>(this ComPtr<ID2D1Effect> thisVtbl, uint index, ComPtr<TI0> input, int invalidate) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static void SetInput<TI0>(this ComPtr<ID2D1Effect> thisVtbl, uint index, ComPtr<TI0> input, Silk.NET.Core.Bool32 invalidate) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -714,7 +714,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetInput(this ComPtr<ID2D1Effect> thisVtbl, uint index, Span<ID2D1Image> input, int invalidate)
+    public static void SetInput(this ComPtr<ID2D1Effect> thisVtbl, uint index, Span<ID2D1Image> input, Silk.NET.Core.Bool32 invalidate)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

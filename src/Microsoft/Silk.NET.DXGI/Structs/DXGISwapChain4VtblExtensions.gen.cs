@@ -442,22 +442,22 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetFullscreenState(this ComPtr<IDXGISwapChain4> thisVtbl, int Fullscreen, IDXGIOutput* pTarget)
+    public static unsafe int SetFullscreenState(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.Core.Bool32 Fullscreen, IDXGIOutput* pTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, int, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTarget);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.Core.Bool32, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTarget);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetFullscreenState(this ComPtr<IDXGISwapChain4> thisVtbl, int Fullscreen, ref IDXGIOutput pTarget)
+    public static int SetFullscreenState(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.Core.Bool32 Fullscreen, ref IDXGIOutput pTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDXGIOutput* pTargetPtr = &pTarget)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, int, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTargetPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.Core.Bool32, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTargetPtr);
         }
         return ret;
     }
@@ -757,11 +757,11 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsTemporaryMonoSupported(this ComPtr<IDXGISwapChain4> thisVtbl)
+    public static Silk.NET.Core.Bool32 IsTemporaryMonoSupported(this ComPtr<IDXGISwapChain4> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, int>)@this->LpVtbl[23])(@this);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.Core.Bool32>)@this->LpVtbl[23])(@this);
         return ret;
     }
 
@@ -1006,32 +1006,32 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CheckColorSpaceSupport(this ComPtr<IDXGISwapChain4> thisVtbl, ColorSpaceType ColorSpace, uint* pColorSpaceSupport)
+    public static unsafe int CheckColorSpaceSupport(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.DXGI.ColorSpaceType ColorSpace, uint* pColorSpaceSupport)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, ColorSpaceType, uint*, int>)@this->LpVtbl[37])(@this, ColorSpace, pColorSpaceSupport);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.DXGI.ColorSpaceType, uint*, int>)@this->LpVtbl[37])(@this, ColorSpace, pColorSpaceSupport);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckColorSpaceSupport(this ComPtr<IDXGISwapChain4> thisVtbl, ColorSpaceType ColorSpace, ref uint pColorSpaceSupport)
+    public static int CheckColorSpaceSupport(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.DXGI.ColorSpaceType ColorSpace, ref uint pColorSpaceSupport)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pColorSpaceSupportPtr = &pColorSpaceSupport)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, ColorSpaceType, uint*, int>)@this->LpVtbl[37])(@this, ColorSpace, pColorSpaceSupportPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.DXGI.ColorSpaceType, uint*, int>)@this->LpVtbl[37])(@this, ColorSpace, pColorSpaceSupportPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetColorSpace1(this ComPtr<IDXGISwapChain4> thisVtbl, ColorSpaceType ColorSpace)
+    public static int SetColorSpace1(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.DXGI.ColorSpaceType ColorSpace)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, ColorSpaceType, int>)@this->LpVtbl[38])(@this, ColorSpace);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.DXGI.ColorSpaceType, int>)@this->LpVtbl[38])(@this, ColorSpace);
         return ret;
     }
 
@@ -1084,22 +1084,22 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetHDRMetaData(this ComPtr<IDXGISwapChain4> thisVtbl, HdrMetadataType Type, uint Size, void* pMetaData)
+    public static unsafe int SetHDRMetaData(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.DXGI.HdrMetadataType Type, uint Size, void* pMetaData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, HdrMetadataType, uint, void*, int>)@this->LpVtbl[40])(@this, Type, Size, pMetaData);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.DXGI.HdrMetadataType, uint, void*, int>)@this->LpVtbl[40])(@this, Type, Size, pMetaData);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetHDRMetaData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, HdrMetadataType Type, uint Size, ref T0 pMetaData) where T0 : unmanaged
+    public static int SetHDRMetaData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.DXGI.HdrMetadataType Type, uint Size, ref T0 pMetaData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pMetaDataPtr = &pMetaData)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, HdrMetadataType, uint, void*, int>)@this->LpVtbl[40])(@this, Type, Size, pMetaDataPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.DXGI.HdrMetadataType, uint, void*, int>)@this->LpVtbl[40])(@this, Type, Size, pMetaDataPtr);
         }
         return ret;
     }
@@ -1325,7 +1325,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetFullscreenState<TI0>(this ComPtr<IDXGISwapChain4> thisVtbl, int Fullscreen, ComPtr<TI0> pTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
+    public static int SetFullscreenState<TI0>(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.Core.Bool32 Fullscreen, ComPtr<TI0> pTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1333,7 +1333,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetFullscreenState(this ComPtr<IDXGISwapChain4> thisVtbl, int Fullscreen, Span<IDXGIOutput> pTarget)
+    public static int SetFullscreenState(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.Core.Bool32 Fullscreen, Span<IDXGIOutput> pTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1550,7 +1550,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckColorSpaceSupport(this ComPtr<IDXGISwapChain4> thisVtbl, ColorSpaceType ColorSpace, Span<uint> pColorSpaceSupport)
+    public static int CheckColorSpaceSupport(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.DXGI.ColorSpaceType ColorSpace, Span<uint> pColorSpaceSupport)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1590,7 +1590,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetHDRMetaData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, HdrMetadataType Type, uint Size, Span<T0> pMetaData) where T0 : unmanaged
+    public static int SetHDRMetaData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.DXGI.HdrMetadataType Type, uint Size, Span<T0> pMetaData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

@@ -3554,22 +3554,22 @@ public unsafe static class D2D1BitmapRenderTargetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsSupported(this ComPtr<ID2D1BitmapRenderTarget> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties)
+    public static unsafe Silk.NET.Core.Bool32 IsSupported(this ComPtr<ID2D1BitmapRenderTarget> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1BitmapRenderTarget*, RenderTargetProperties*, int>)@this->LpVtbl[56])(@this, renderTargetProperties);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1BitmapRenderTarget*, RenderTargetProperties*, Silk.NET.Core.Bool32>)@this->LpVtbl[56])(@this, renderTargetProperties);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsSupported(this ComPtr<ID2D1BitmapRenderTarget> thisVtbl, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties)
+    public static Silk.NET.Core.Bool32 IsSupported(this ComPtr<ID2D1BitmapRenderTarget> thisVtbl, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
+        Silk.NET.Core.Bool32 ret = default;
         fixed (RenderTargetProperties* renderTargetPropertiesPtr = &renderTargetProperties)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1BitmapRenderTarget*, RenderTargetProperties*, int>)@this->LpVtbl[56])(@this, renderTargetPropertiesPtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1BitmapRenderTarget*, RenderTargetProperties*, Silk.NET.Core.Bool32>)@this->LpVtbl[56])(@this, renderTargetPropertiesPtr);
         }
         return ret;
     }
@@ -6533,7 +6533,7 @@ public unsafe static class D2D1BitmapRenderTargetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsSupported(this ComPtr<ID2D1BitmapRenderTarget> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties)
+    public static Silk.NET.Core.Bool32 IsSupported(this ComPtr<ID2D1BitmapRenderTarget> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

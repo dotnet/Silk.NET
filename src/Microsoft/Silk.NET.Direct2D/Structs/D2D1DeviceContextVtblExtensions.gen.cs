@@ -3554,22 +3554,22 @@ public unsafe static class D2D1DeviceContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsSupported(this ComPtr<ID2D1DeviceContext> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties)
+    public static unsafe Silk.NET.Core.Bool32 IsSupported(this ComPtr<ID2D1DeviceContext> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, RenderTargetProperties*, int>)@this->LpVtbl[56])(@this, renderTargetProperties);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, RenderTargetProperties*, Silk.NET.Core.Bool32>)@this->LpVtbl[56])(@this, renderTargetProperties);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsSupported(this ComPtr<ID2D1DeviceContext> thisVtbl, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties)
+    public static Silk.NET.Core.Bool32 IsSupported(this ComPtr<ID2D1DeviceContext> thisVtbl, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
+        Silk.NET.Core.Bool32 ret = default;
         fixed (RenderTargetProperties* renderTargetPropertiesPtr = &renderTargetProperties)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, RenderTargetProperties*, int>)@this->LpVtbl[56])(@this, renderTargetPropertiesPtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, RenderTargetProperties*, Silk.NET.Core.Bool32>)@this->LpVtbl[56])(@this, renderTargetPropertiesPtr);
         }
         return ret;
     }
@@ -4186,20 +4186,20 @@ public unsafe static class D2D1DeviceContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsDxgiFormatSupported(this ComPtr<ID2D1DeviceContext> thisVtbl, Silk.NET.DXGI.Format format)
+    public static Silk.NET.Core.Bool32 IsDxgiFormatSupported(this ComPtr<ID2D1DeviceContext> thisVtbl, Silk.NET.DXGI.Format format)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, Silk.NET.DXGI.Format, int>)@this->LpVtbl[64])(@this, format);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, Silk.NET.DXGI.Format, Silk.NET.Core.Bool32>)@this->LpVtbl[64])(@this, format);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsBufferPrecisionSupported(this ComPtr<ID2D1DeviceContext> thisVtbl, BufferPrecision bufferPrecision)
+    public static Silk.NET.Core.Bool32 IsBufferPrecisionSupported(this ComPtr<ID2D1DeviceContext> thisVtbl, BufferPrecision bufferPrecision)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, BufferPrecision, int>)@this->LpVtbl[65])(@this, bufferPrecision);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext*, BufferPrecision, Silk.NET.Core.Bool32>)@this->LpVtbl[65])(@this, bufferPrecision);
         return ret;
     }
 
@@ -7918,7 +7918,7 @@ public unsafe static class D2D1DeviceContextVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsSupported(this ComPtr<ID2D1DeviceContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties)
+    public static Silk.NET.Core.Bool32 IsSupported(this ComPtr<ID2D1DeviceContext> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

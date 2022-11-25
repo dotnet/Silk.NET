@@ -253,11 +253,11 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ShowCursor(int bShow)
+        public readonly Silk.NET.Core.Bool32 ShowCursor(Silk.NET.Core.Bool32 bShow)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, int>)@this->LpVtbl[12])(@this, bShow);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32>)@this->LpVtbl[12])(@this, bShow);
             return ret;
         }
 
@@ -511,11 +511,11 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetDialogBoxMode(int bEnableDialogs)
+        public readonly int SetDialogBoxMode(Silk.NET.Core.Bool32 bEnableDialogs)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, int>)@this->LpVtbl[20])(@this, bEnableDialogs);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[20])(@this, bEnableDialogs);
             return ret;
         }
 
@@ -794,40 +794,40 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRenderTarget(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, IDirect3DSurface9** ppSurface, void** pSharedHandle)
+        public readonly unsafe int CreateRenderTarget(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Lockable, IDirect3DSurface9** ppSurface, void** pSharedHandle)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, int>)@this->LpVtbl[28])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurface, pSharedHandle);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, Silk.NET.Core.Bool32, IDirect3DSurface9**, void**, int>)@this->LpVtbl[28])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurface, pSharedHandle);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRenderTarget(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, IDirect3DSurface9** ppSurface, ref void* pSharedHandle)
+        public readonly unsafe int CreateRenderTarget(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Lockable, IDirect3DSurface9** ppSurface, ref void* pSharedHandle)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void** pSharedHandlePtr = &pSharedHandle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, int>)@this->LpVtbl[28])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurface, pSharedHandlePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, Silk.NET.Core.Bool32, IDirect3DSurface9**, void**, int>)@this->LpVtbl[28])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurface, pSharedHandlePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRenderTarget(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref IDirect3DSurface9* ppSurface, void** pSharedHandle)
+        public readonly unsafe int CreateRenderTarget(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Lockable, ref IDirect3DSurface9* ppSurface, void** pSharedHandle)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDirect3DSurface9** ppSurfacePtr = &ppSurface)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, int>)@this->LpVtbl[28])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurfacePtr, pSharedHandle);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, Silk.NET.Core.Bool32, IDirect3DSurface9**, void**, int>)@this->LpVtbl[28])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurfacePtr, pSharedHandle);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRenderTarget(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref IDirect3DSurface9* ppSurface, ref void* pSharedHandle)
+        public readonly unsafe int CreateRenderTarget(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Lockable, ref IDirect3DSurface9* ppSurface, ref void* pSharedHandle)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -835,47 +835,47 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void** pSharedHandlePtr = &pSharedHandle)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, int>)@this->LpVtbl[28])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurfacePtr, pSharedHandlePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, Silk.NET.Core.Bool32, IDirect3DSurface9**, void**, int>)@this->LpVtbl[28])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurfacePtr, pSharedHandlePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDepthStencilSurface(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, IDirect3DSurface9** ppSurface, void** pSharedHandle)
+        public readonly unsafe int CreateDepthStencilSurface(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Discard, IDirect3DSurface9** ppSurface, void** pSharedHandle)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, int>)@this->LpVtbl[29])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurface, pSharedHandle);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, Silk.NET.Core.Bool32, IDirect3DSurface9**, void**, int>)@this->LpVtbl[29])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurface, pSharedHandle);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDepthStencilSurface(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, IDirect3DSurface9** ppSurface, ref void* pSharedHandle)
+        public readonly unsafe int CreateDepthStencilSurface(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Discard, IDirect3DSurface9** ppSurface, ref void* pSharedHandle)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void** pSharedHandlePtr = &pSharedHandle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, int>)@this->LpVtbl[29])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurface, pSharedHandlePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, Silk.NET.Core.Bool32, IDirect3DSurface9**, void**, int>)@this->LpVtbl[29])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurface, pSharedHandlePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDepthStencilSurface(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref IDirect3DSurface9* ppSurface, void** pSharedHandle)
+        public readonly unsafe int CreateDepthStencilSurface(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Discard, ref IDirect3DSurface9* ppSurface, void** pSharedHandle)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDirect3DSurface9** ppSurfacePtr = &ppSurface)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, int>)@this->LpVtbl[29])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurfacePtr, pSharedHandle);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, Silk.NET.Core.Bool32, IDirect3DSurface9**, void**, int>)@this->LpVtbl[29])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurfacePtr, pSharedHandle);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDepthStencilSurface(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref IDirect3DSurface9* ppSurface, ref void* pSharedHandle)
+        public readonly unsafe int CreateDepthStencilSurface(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Discard, ref IDirect3DSurface9* ppSurface, ref void* pSharedHandle)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -883,7 +883,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void** pSharedHandlePtr = &pSharedHandle)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, int>)@this->LpVtbl[29])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurfacePtr, pSharedHandlePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, Silk.NET.Core.Bool32, IDirect3DSurface9**, void**, int>)@this->LpVtbl[29])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurfacePtr, pSharedHandlePtr);
                 }
             }
             return ret;
@@ -1895,11 +1895,11 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LightEnable(uint Index, int Enable)
+        public readonly int LightEnable(uint Index, Silk.NET.Core.Bool32 Enable)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, int, int>)@this->LpVtbl[53])(@this, Index, Enable);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, Silk.NET.Core.Bool32, int>)@this->LpVtbl[53])(@this, Index, Enable);
             return ret;
         }
 
@@ -2327,20 +2327,20 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetSoftwareVertexProcessing(int bSoftware)
+        public readonly int SetSoftwareVertexProcessing(Silk.NET.Core.Bool32 bSoftware)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int, int>)@this->LpVtbl[77])(@this, bSoftware);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[77])(@this, bSoftware);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetSoftwareVertexProcessing()
+        public readonly Silk.NET.Core.Bool32 GetSoftwareVertexProcessing()
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, int>)@this->LpVtbl[78])(@this);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, Silk.NET.Core.Bool32>)@this->LpVtbl[78])(@this);
             return ret;
         }
 
@@ -3872,40 +3872,40 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRenderTargetEx(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, IDirect3DSurface9** ppSurface, void** pSharedHandle, uint Usage)
+        public readonly unsafe int CreateRenderTargetEx(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Lockable, IDirect3DSurface9** ppSurface, void** pSharedHandle, uint Usage)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[129])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurface, pSharedHandle, Usage);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, Silk.NET.Core.Bool32, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[129])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurface, pSharedHandle, Usage);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRenderTargetEx(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, IDirect3DSurface9** ppSurface, ref void* pSharedHandle, uint Usage)
+        public readonly unsafe int CreateRenderTargetEx(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Lockable, IDirect3DSurface9** ppSurface, ref void* pSharedHandle, uint Usage)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void** pSharedHandlePtr = &pSharedHandle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[129])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurface, pSharedHandlePtr, Usage);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, Silk.NET.Core.Bool32, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[129])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurface, pSharedHandlePtr, Usage);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRenderTargetEx(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref IDirect3DSurface9* ppSurface, void** pSharedHandle, uint Usage)
+        public readonly unsafe int CreateRenderTargetEx(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Lockable, ref IDirect3DSurface9* ppSurface, void** pSharedHandle, uint Usage)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDirect3DSurface9** ppSurfacePtr = &ppSurface)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[129])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurfacePtr, pSharedHandle, Usage);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, Silk.NET.Core.Bool32, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[129])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurfacePtr, pSharedHandle, Usage);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRenderTargetEx(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref IDirect3DSurface9* ppSurface, ref void* pSharedHandle, uint Usage)
+        public readonly unsafe int CreateRenderTargetEx(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Lockable, ref IDirect3DSurface9* ppSurface, ref void* pSharedHandle, uint Usage)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3913,7 +3913,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void** pSharedHandlePtr = &pSharedHandle)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[129])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurfacePtr, pSharedHandlePtr, Usage);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, Silk.NET.Core.Bool32, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[129])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Lockable, ppSurfacePtr, pSharedHandlePtr, Usage);
                 }
             }
             return ret;
@@ -3968,40 +3968,40 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDepthStencilSurfaceEx(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, IDirect3DSurface9** ppSurface, void** pSharedHandle, uint Usage)
+        public readonly unsafe int CreateDepthStencilSurfaceEx(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Discard, IDirect3DSurface9** ppSurface, void** pSharedHandle, uint Usage)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[131])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurface, pSharedHandle, Usage);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, Silk.NET.Core.Bool32, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[131])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurface, pSharedHandle, Usage);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDepthStencilSurfaceEx(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, IDirect3DSurface9** ppSurface, ref void* pSharedHandle, uint Usage)
+        public readonly unsafe int CreateDepthStencilSurfaceEx(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Discard, IDirect3DSurface9** ppSurface, ref void* pSharedHandle, uint Usage)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void** pSharedHandlePtr = &pSharedHandle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[131])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurface, pSharedHandlePtr, Usage);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, Silk.NET.Core.Bool32, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[131])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurface, pSharedHandlePtr, Usage);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDepthStencilSurfaceEx(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref IDirect3DSurface9* ppSurface, void** pSharedHandle, uint Usage)
+        public readonly unsafe int CreateDepthStencilSurfaceEx(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Discard, ref IDirect3DSurface9* ppSurface, void** pSharedHandle, uint Usage)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDirect3DSurface9** ppSurfacePtr = &ppSurface)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[131])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurfacePtr, pSharedHandle, Usage);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, Silk.NET.Core.Bool32, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[131])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurfacePtr, pSharedHandle, Usage);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDepthStencilSurfaceEx(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref IDirect3DSurface9* ppSurface, ref void* pSharedHandle, uint Usage)
+        public readonly unsafe int CreateDepthStencilSurfaceEx(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Discard, ref IDirect3DSurface9* ppSurface, ref void* pSharedHandle, uint Usage)
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4009,7 +4009,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void** pSharedHandlePtr = &pSharedHandle)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, int, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[131])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurfacePtr, pSharedHandlePtr, Usage);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Ex*, uint, uint, Format, MultisampleType, uint, Silk.NET.Core.Bool32, IDirect3DSurface9**, void**, uint, int>)@this->LpVtbl[131])(@this, Width, Height, Format, MultiSample, MultisampleQuality, Discard, ppSurfacePtr, pSharedHandlePtr, Usage);
                 }
             }
             return ret;
@@ -4249,7 +4249,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRenderTarget<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref ComPtr<TI0> ppSurface, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        public readonly unsafe int CreateRenderTarget<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Lockable, ref ComPtr<TI0> ppSurface, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4257,7 +4257,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRenderTarget<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        public readonly unsafe int CreateRenderTarget<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Lockable, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4265,7 +4265,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDepthStencilSurface<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref ComPtr<TI0> ppSurface, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        public readonly unsafe int CreateDepthStencilSurface<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Discard, ref ComPtr<TI0> ppSurface, void** pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4273,7 +4273,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDepthStencilSurface<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        public readonly unsafe int CreateDepthStencilSurface<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Discard, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4937,7 +4937,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRenderTargetEx<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref ComPtr<TI0> ppSurface, void** pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        public readonly unsafe int CreateRenderTargetEx<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Lockable, ref ComPtr<TI0> ppSurface, void** pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4945,7 +4945,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRenderTargetEx<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Lockable, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        public readonly unsafe int CreateRenderTargetEx<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Lockable, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4969,7 +4969,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDepthStencilSurfaceEx<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref ComPtr<TI0> ppSurface, void** pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        public readonly unsafe int CreateDepthStencilSurfaceEx<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Discard, ref ComPtr<TI0> ppSurface, void** pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -4977,7 +4977,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDepthStencilSurfaceEx<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, int Discard, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        public readonly unsafe int CreateDepthStencilSurfaceEx<TI0>(uint Width, uint Height, Format Format, MultisampleType MultiSample, uint MultisampleQuality, Silk.NET.Core.Bool32 Discard, ref ComPtr<TI0> ppSurface, ref void* pSharedHandle, uint Usage) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
         {
             var @this = (IDirect3DDevice9Ex*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
