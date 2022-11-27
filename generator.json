@@ -1800,8 +1800,7 @@
         {
             "profileName": "DirectComposition",
             "sources": [
-                "$windowsSdkDir/Include/$windowsSdkVersion/um/dcomp.h",
-                "$windowsSdkDir/Include/$windowsSdkVersion/um/dcompanimation.h"
+				"build/include/silk.net.directcomposition.dcomp.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -1825,11 +1824,12 @@
                     "-Ibuild/include"
                 ],
                 "traverse": [
-					"$windowsSdkDir/Include/$windowsSdkVersion/shared/dcomptypes.h"
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/dcompanimation.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/shared/dcomptypes.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/dcomp.h",
                 ],
                 "classes": {
-                    "dcomp.h": "[Core]DComp",
-                    "dcompanimation.h": "[Core]DComp"
+                    "silk.net.directcomposition.dcomp.h": "[Core]DComp"
                 }
             },
             "exclude": [
@@ -1843,9 +1843,7 @@
             },
             "bakery": {
                 "profileNames": [
-                    "dcomp",
-                    "dcompanimation",
-                    "dcomptypes"
+                    "silk.net.directcomposition.dcomp"
                 ]
             },
             "output": {

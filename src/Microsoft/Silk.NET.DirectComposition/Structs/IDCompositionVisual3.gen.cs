@@ -16,9 +16,15 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DirectComposition
 {
+    [Guid("2775f462-b6c1-4015-b0be-b3e7d6a4976d")]
     [NativeName("Name", "IDCompositionVisual3")]
-    public unsafe partial struct IDCompositionVisual3
+    public unsafe partial struct IDCompositionVisual3 : IComVtbl<IDCompositionVisual3>, IComVtbl<IDCompositionVisualDebug>, IComVtbl<IDCompositionVisual2>, IComVtbl<IDCompositionVisual>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
+        public static readonly Guid Guid = new("2775f462-b6c1-4015-b0be-b3e7d6a4976d");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+
         public static implicit operator IDCompositionVisualDebug(IDCompositionVisual3 val)
             => Unsafe.As<IDCompositionVisual3, IDCompositionVisualDebug>(ref val);
 
@@ -52,7 +58,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -63,7 +69,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -75,7 +81,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -89,7 +95,7 @@ namespace Silk.NET.DirectComposition
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -100,7 +106,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -109,7 +115,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -118,7 +124,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, float, int>)LpVtbl[3])(@this, offsetX);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, float, int>)@this->LpVtbl[3])(@this, offsetX);
             return ret;
         }
 
@@ -127,7 +133,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, float, int>)LpVtbl[4])(@this, offsetY);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, float, int>)@this->LpVtbl[4])(@this, offsetY);
             return ret;
         }
 
@@ -136,7 +142,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Silk.NET.Maths.Matrix3X2<float>*, int>)LpVtbl[5])(@this, matrix);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[5])(@this, matrix);
             return ret;
         }
 
@@ -147,7 +153,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (Silk.NET.Maths.Matrix3X2<float>* matrixPtr = &matrix)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Silk.NET.Maths.Matrix3X2<float>*, int>)LpVtbl[5])(@this, matrixPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[5])(@this, matrixPtr);
             }
             return ret;
         }
@@ -157,7 +163,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionVisual*, int>)LpVtbl[6])(@this, visual);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionVisual*, int>)@this->LpVtbl[6])(@this, visual);
             return ret;
         }
 
@@ -168,7 +174,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (IDCompositionVisual* visualPtr = &visual)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionVisual*, int>)LpVtbl[6])(@this, visualPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionVisual*, int>)@this->LpVtbl[6])(@this, visualPtr);
             }
             return ret;
         }
@@ -178,7 +184,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionEffect*, int>)LpVtbl[7])(@this, effect);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionEffect*, int>)@this->LpVtbl[7])(@this, effect);
             return ret;
         }
 
@@ -189,7 +195,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (IDCompositionEffect* effectPtr = &effect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionEffect*, int>)LpVtbl[7])(@this, effectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionEffect*, int>)@this->LpVtbl[7])(@this, effectPtr);
             }
             return ret;
         }
@@ -199,7 +205,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, BitmapInterpolationMode, int>)LpVtbl[8])(@this, interpolationMode);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, BitmapInterpolationMode, int>)@this->LpVtbl[8])(@this, interpolationMode);
             return ret;
         }
 
@@ -208,7 +214,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, BorderMode, int>)LpVtbl[9])(@this, borderMode);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, BorderMode, int>)@this->LpVtbl[9])(@this, borderMode);
             return ret;
         }
 
@@ -217,7 +223,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[10])(@this, rect);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Silk.NET.Maths.Rectangle<float>*, int>)@this->LpVtbl[10])(@this, rect);
             return ret;
         }
 
@@ -228,7 +234,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (Silk.NET.Maths.Rectangle<float>* rectPtr = &rect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Silk.NET.Maths.Rectangle<float>*, int>)LpVtbl[10])(@this, rectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Silk.NET.Maths.Rectangle<float>*, int>)@this->LpVtbl[10])(@this, rectPtr);
             }
             return ret;
         }
@@ -238,7 +244,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[11])(@this, content);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[11])(@this, content);
             return ret;
         }
 
@@ -249,7 +255,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* contentPtr = &content)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[11])(@this, contentPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[11])(@this, contentPtr);
             }
             return ret;
         }
@@ -259,7 +265,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionVisual*, int, IDCompositionVisual*, int>)LpVtbl[12])(@this, visual, insertAbove, referenceVisual);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionVisual*, int, IDCompositionVisual*, int>)@this->LpVtbl[12])(@this, visual, insertAbove, referenceVisual);
             return ret;
         }
 
@@ -270,7 +276,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (IDCompositionVisual* referenceVisualPtr = &referenceVisual)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionVisual*, int, IDCompositionVisual*, int>)LpVtbl[12])(@this, visual, insertAbove, referenceVisualPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionVisual*, int, IDCompositionVisual*, int>)@this->LpVtbl[12])(@this, visual, insertAbove, referenceVisualPtr);
             }
             return ret;
         }
@@ -282,7 +288,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (IDCompositionVisual* visualPtr = &visual)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionVisual*, int, IDCompositionVisual*, int>)LpVtbl[12])(@this, visualPtr, insertAbove, referenceVisual);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionVisual*, int, IDCompositionVisual*, int>)@this->LpVtbl[12])(@this, visualPtr, insertAbove, referenceVisual);
             }
             return ret;
         }
@@ -296,7 +302,7 @@ namespace Silk.NET.DirectComposition
             {
                 fixed (IDCompositionVisual* referenceVisualPtr = &referenceVisual)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionVisual*, int, IDCompositionVisual*, int>)LpVtbl[12])(@this, visualPtr, insertAbove, referenceVisualPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionVisual*, int, IDCompositionVisual*, int>)@this->LpVtbl[12])(@this, visualPtr, insertAbove, referenceVisualPtr);
                 }
             }
             return ret;
@@ -307,7 +313,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionVisual*, int>)LpVtbl[13])(@this, visual);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionVisual*, int>)@this->LpVtbl[13])(@this, visual);
             return ret;
         }
 
@@ -318,7 +324,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (IDCompositionVisual* visualPtr = &visual)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionVisual*, int>)LpVtbl[13])(@this, visualPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, IDCompositionVisual*, int>)@this->LpVtbl[13])(@this, visualPtr);
             }
             return ret;
         }
@@ -328,7 +334,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, int>)LpVtbl[14])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, int>)@this->LpVtbl[14])(@this);
             return ret;
         }
 
@@ -337,7 +343,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, CompositeMode, int>)LpVtbl[15])(@this, compositeMode);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, CompositeMode, int>)@this->LpVtbl[15])(@this, compositeMode);
             return ret;
         }
 
@@ -346,7 +352,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, OpacityMode, int>)LpVtbl[16])(@this, mode);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, OpacityMode, int>)@this->LpVtbl[16])(@this, mode);
             return ret;
         }
 
@@ -355,7 +361,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, BackfaceVisibility, int>)LpVtbl[17])(@this, visibility);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, BackfaceVisibility, int>)@this->LpVtbl[17])(@this, visibility);
             return ret;
         }
 
@@ -364,7 +370,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Silk.NET.DXGI.D3Dcolorvalue*, int>)LpVtbl[18])(@this, color);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Silk.NET.DXGI.D3Dcolorvalue*, int>)@this->LpVtbl[18])(@this, color);
             return ret;
         }
 
@@ -375,7 +381,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (Silk.NET.DXGI.D3Dcolorvalue* colorPtr = &color)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Silk.NET.DXGI.D3Dcolorvalue*, int>)LpVtbl[18])(@this, colorPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, Silk.NET.DXGI.D3Dcolorvalue*, int>)@this->LpVtbl[18])(@this, colorPtr);
             }
             return ret;
         }
@@ -385,7 +391,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, int>)LpVtbl[19])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, int>)@this->LpVtbl[19])(@this);
             return ret;
         }
 
@@ -394,7 +400,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, int>)LpVtbl[20])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, int>)@this->LpVtbl[20])(@this);
             return ret;
         }
 
@@ -403,8 +409,118 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, int>)LpVtbl[21])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, int>)@this->LpVtbl[21])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetDepthMode(DepthMode mode)
+        {
+            var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, DepthMode, int>)@this->LpVtbl[22])(@this, mode);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetOffsetZ(float offsetZ)
+        {
+            var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, float, int>)@this->LpVtbl[23])(@this, offsetZ);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetOpacity(float opacity)
+        {
+            var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, float, int>)@this->LpVtbl[24])(@this, opacity);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetVisible(int visible)
+        {
+            var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisual3*, int, int>)@this->LpVtbl[25])(@this, visible);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetTransformParent<TI0>(ComPtr<TI0> visual) where TI0 : unmanaged, IComVtbl<IDCompositionVisual>, IComVtbl<TI0>
+        {
+            var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetTransformParent((IDCompositionVisual*) visual.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetEffect<TI0>(ComPtr<TI0> effect) where TI0 : unmanaged, IComVtbl<IDCompositionEffect>, IComVtbl<TI0>
+        {
+            var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetEffect((IDCompositionEffect*) effect.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetContent<TI0>(ComPtr<TI0> content) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetContent((Silk.NET.Core.Native.IUnknown*) content.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int AddVisual<TI0, TI1>(ComPtr<TI0> visual, int insertAbove, ComPtr<TI1> referenceVisual) where TI0 : unmanaged, IComVtbl<IDCompositionVisual>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDCompositionVisual>, IComVtbl<TI1>
+        {
+            var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->AddVisual((IDCompositionVisual*) visual.Handle, insertAbove, (IDCompositionVisual*) referenceVisual.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int AddVisual<TI0>(ComPtr<TI0> visual, int insertAbove, ref IDCompositionVisual referenceVisual) where TI0 : unmanaged, IComVtbl<IDCompositionVisual>, IComVtbl<TI0>
+        {
+            var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->AddVisual((IDCompositionVisual*) visual.Handle, insertAbove, ref referenceVisual);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int AddVisual<TI0>(ref IDCompositionVisual visual, int insertAbove, ComPtr<TI0> referenceVisual) where TI0 : unmanaged, IComVtbl<IDCompositionVisual>, IComVtbl<TI0>
+        {
+            var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->AddVisual(ref visual, insertAbove, (IDCompositionVisual*) referenceVisual.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int RemoveVisual<TI0>(ComPtr<TI0> visual) where TI0 : unmanaged, IComVtbl<IDCompositionVisual>, IComVtbl<TI0>
+        {
+            var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->RemoveVisual((IDCompositionVisual*) visual.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDCompositionVisual3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

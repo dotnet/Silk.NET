@@ -16,9 +16,15 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DirectComposition
 {
+    [Guid("c1170a22-3ce2-4966-90d4-55408bfc84c4")]
     [NativeName("Name", "IDCompositionColorMatrixEffect")]
-    public unsafe partial struct IDCompositionColorMatrixEffect
+    public unsafe partial struct IDCompositionColorMatrixEffect : IComVtbl<IDCompositionColorMatrixEffect>, IComVtbl<IDCompositionFilterEffect>, IComVtbl<IDCompositionEffect>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
+        public static readonly Guid Guid = new("c1170a22-3ce2-4966-90d4-55408bfc84c4");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+
         public static implicit operator IDCompositionFilterEffect(IDCompositionColorMatrixEffect val)
             => Unsafe.As<IDCompositionColorMatrixEffect, IDCompositionFilterEffect>(ref val);
 
@@ -49,7 +55,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionColorMatrixEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -60,7 +66,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -72,7 +78,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -86,7 +92,7 @@ namespace Silk.NET.DirectComposition
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -97,7 +103,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionColorMatrixEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -106,7 +112,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionColorMatrixEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -115,7 +121,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionColorMatrixEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, uint, Silk.NET.Core.Native.IUnknown*, uint, int>)LpVtbl[3])(@this, index, input, flags);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, uint, Silk.NET.Core.Native.IUnknown*, uint, int>)@this->LpVtbl[3])(@this, index, input, flags);
             return ret;
         }
 
@@ -126,9 +132,83 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* inputPtr = &input)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, uint, Silk.NET.Core.Native.IUnknown*, uint, int>)LpVtbl[3])(@this, index, inputPtr, flags);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, uint, Silk.NET.Core.Native.IUnknown*, uint, int>)@this->LpVtbl[3])(@this, index, inputPtr, flags);
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetMatrix(Silk.NET.Maths.Matrix5X4<float>* matrix)
+        {
+            var @this = (IDCompositionColorMatrixEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, Silk.NET.Maths.Matrix5X4<float>*, int>)@this->LpVtbl[4])(@this, matrix);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetMatrix(ref Silk.NET.Maths.Matrix5X4<float> matrix)
+        {
+            var @this = (IDCompositionColorMatrixEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Maths.Matrix5X4<float>* matrixPtr = &matrix)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, Silk.NET.Maths.Matrix5X4<float>*, int>)@this->LpVtbl[4])(@this, matrixPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetMatrixElement(int row, int column, float value)
+        {
+            var @this = (IDCompositionColorMatrixEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, int, int, float, int>)@this->LpVtbl[5])(@this, row, column, value);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetAlphaMode(D2D1_COLORMATRIX_ALPHA_MODE mode)
+        {
+            var @this = (IDCompositionColorMatrixEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, D2D1_COLORMATRIX_ALPHA_MODE, int>)@this->LpVtbl[6])(@this, mode);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetClampOutput(int clamp)
+        {
+            var @this = (IDCompositionColorMatrixEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, int, int>)@this->LpVtbl[7])(@this, clamp);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDCompositionColorMatrixEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetInput<TI0>(uint index, ComPtr<TI0> input, uint flags) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (IDCompositionColorMatrixEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetInput(index, (Silk.NET.Core.Native.IUnknown*) input.Handle, flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDCompositionColorMatrixEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

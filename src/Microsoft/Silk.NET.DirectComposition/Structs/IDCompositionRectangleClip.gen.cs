@@ -16,9 +16,15 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DirectComposition
 {
+    [Guid("9842ad7d-d9cf-4908-aed7-48b51da5e7c2")]
     [NativeName("Name", "IDCompositionRectangleClip")]
-    public unsafe partial struct IDCompositionRectangleClip
+    public unsafe partial struct IDCompositionRectangleClip : IComVtbl<IDCompositionRectangleClip>, IComVtbl<IDCompositionClip>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
+        public static readonly Guid Guid = new("9842ad7d-d9cf-4908-aed7-48b51da5e7c2");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+
         public static implicit operator IDCompositionClip(IDCompositionRectangleClip val)
             => Unsafe.As<IDCompositionRectangleClip, IDCompositionClip>(ref val);
 
@@ -46,7 +52,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -57,7 +63,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -69,7 +75,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -83,7 +89,7 @@ namespace Silk.NET.DirectComposition
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -94,7 +100,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -103,8 +109,134 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, uint>)@this->LpVtbl[2])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetLeft(float left)
+        {
+            var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[3])(@this, left);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetTop(float top)
+        {
+            var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[4])(@this, top);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetRight(float right)
+        {
+            var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[5])(@this, right);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetBottom(float bottom)
+        {
+            var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[6])(@this, bottom);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetTopLeftRadiusX(float radius)
+        {
+            var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[7])(@this, radius);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetTopLeftRadiusY(float radius)
+        {
+            var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[8])(@this, radius);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetTopRightRadiusX(float radius)
+        {
+            var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[9])(@this, radius);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetTopRightRadiusY(float radius)
+        {
+            var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[10])(@this, radius);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetBottomLeftRadiusX(float radius)
+        {
+            var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[11])(@this, radius);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetBottomLeftRadiusY(float radius)
+        {
+            var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[12])(@this, radius);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetBottomRightRadiusX(float radius)
+        {
+            var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[13])(@this, radius);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetBottomRightRadiusY(float radius)
+        {
+            var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRectangleClip*, float, int>)@this->LpVtbl[14])(@this, radius);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDCompositionRectangleClip*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

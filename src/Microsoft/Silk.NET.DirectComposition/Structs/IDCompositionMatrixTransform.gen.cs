@@ -16,9 +16,15 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DirectComposition
 {
+    [Guid("16cdff07-c503-419c-83f2-0965c7af1fa6")]
     [NativeName("Name", "IDCompositionMatrixTransform")]
-    public unsafe partial struct IDCompositionMatrixTransform
+    public unsafe partial struct IDCompositionMatrixTransform : IComVtbl<IDCompositionMatrixTransform>, IComVtbl<IDCompositionTransform>, IComVtbl<IDCompositionTransform3D>, IComVtbl<IDCompositionEffect>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
+        public static readonly Guid Guid = new("16cdff07-c503-419c-83f2-0965c7af1fa6");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+
         public static implicit operator IDCompositionTransform(IDCompositionMatrixTransform val)
             => Unsafe.As<IDCompositionMatrixTransform, IDCompositionTransform>(ref val);
 
@@ -52,7 +58,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionMatrixTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionMatrixTransform*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionMatrixTransform*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -63,7 +69,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionMatrixTransform*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionMatrixTransform*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -75,7 +81,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionMatrixTransform*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionMatrixTransform*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -89,7 +95,7 @@ namespace Silk.NET.DirectComposition
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDCompositionMatrixTransform*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDCompositionMatrixTransform*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -100,7 +106,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionMatrixTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionMatrixTransform*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionMatrixTransform*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -109,8 +115,56 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionMatrixTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionMatrixTransform*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionMatrixTransform*, uint>)@this->LpVtbl[2])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetMatrix(Silk.NET.Maths.Matrix3X2<float>* matrix)
+        {
+            var @this = (IDCompositionMatrixTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionMatrixTransform*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[3])(@this, matrix);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetMatrix(ref Silk.NET.Maths.Matrix3X2<float> matrix)
+        {
+            var @this = (IDCompositionMatrixTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            fixed (Silk.NET.Maths.Matrix3X2<float>* matrixPtr = &matrix)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionMatrixTransform*, Silk.NET.Maths.Matrix3X2<float>*, int>)@this->LpVtbl[3])(@this, matrixPtr);
+            }
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetMatrixElement(int row, int column, float value)
+        {
+            var @this = (IDCompositionMatrixTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionMatrixTransform*, int, int, float, int>)@this->LpVtbl[4])(@this, row, column, value);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDCompositionMatrixTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDCompositionMatrixTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

@@ -16,9 +16,15 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DirectComposition
 {
+    [Guid("d8f5b23f-d429-4a91-b55a-d2f45fd75b18")]
     [NativeName("Name", "IDCompositionRotateTransform3D")]
-    public unsafe partial struct IDCompositionRotateTransform3D
+    public unsafe partial struct IDCompositionRotateTransform3D : IComVtbl<IDCompositionRotateTransform3D>, IComVtbl<IDCompositionTransform3D>, IComVtbl<IDCompositionEffect>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
+        public static readonly Guid Guid = new("d8f5b23f-d429-4a91-b55a-d2f45fd75b18");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+
         public static implicit operator IDCompositionTransform3D(IDCompositionRotateTransform3D val)
             => Unsafe.As<IDCompositionRotateTransform3D, IDCompositionTransform3D>(ref val);
 
@@ -49,7 +55,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionRotateTransform3D*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -60,7 +66,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -72,7 +78,7 @@ namespace Silk.NET.DirectComposition
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -86,7 +92,7 @@ namespace Silk.NET.DirectComposition
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -97,7 +103,7 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionRotateTransform3D*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -106,8 +112,89 @@ namespace Silk.NET.DirectComposition
         {
             var @this = (IDCompositionRotateTransform3D*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, uint>)@this->LpVtbl[2])(@this);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetAngle(float angle)
+        {
+            var @this = (IDCompositionRotateTransform3D*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[3])(@this, angle);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetAxisX(float axisX)
+        {
+            var @this = (IDCompositionRotateTransform3D*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[4])(@this, axisX);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetAxisY(float axisY)
+        {
+            var @this = (IDCompositionRotateTransform3D*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[5])(@this, axisY);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetAxisZ(float axisZ)
+        {
+            var @this = (IDCompositionRotateTransform3D*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[6])(@this, axisZ);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetCenterX(float centerX)
+        {
+            var @this = (IDCompositionRotateTransform3D*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[7])(@this, centerX);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetCenterY(float centerY)
+        {
+            var @this = (IDCompositionRotateTransform3D*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[8])(@this, centerY);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetCenterZ(float centerZ)
+        {
+            var @this = (IDCompositionRotateTransform3D*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionRotateTransform3D*, float, int>)@this->LpVtbl[9])(@this, centerZ);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDCompositionRotateTransform3D*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDCompositionRotateTransform3D*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }
