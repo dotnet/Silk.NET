@@ -70,7 +70,7 @@ namespace Tutorial
 
             Shader = new Shader(Gl, "shader.vert", "shader.frag");
             Texture = new Texture(Gl, "silk.png");
-            Model = new Model(Gl, "cube.obj");
+            Model = new Model(Gl, "cube.model");
         }
 
         private static unsafe void OnUpdate(double deltaTime)
