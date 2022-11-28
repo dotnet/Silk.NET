@@ -1,12 +1,13 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System;
 using System.Collections.Generic;
 using Silk.NET.OpenGL;
 
 namespace Tutorial
 {
-    public class Mesh
+    public class Mesh : IDisposable
     {
         public Mesh(GL gl, float[] vertices, uint[] indices, List<Texture> textures)
         {
@@ -17,9 +18,9 @@ namespace Tutorial
             SetupMesh();
         }
 
-        public float[] Vertices { get; }
-        public uint[] Indices { get; }
-        public IReadOnlyList<Texture> Textures { get;}
+        public float[] Vertices { get; private set; }
+        public uint[] Indices { get; private set; }
+        public IReadOnlyList<Texture> Textures { get; private set; }
         public VertexArrayObject<float, uint> VAO { get; set; }
         public BufferObject<float> VBO { get; set; }
         public BufferObject<uint> EBO { get; set; }
@@ -37,6 +38,14 @@ namespace Tutorial
         public void Bind()
         {
             VAO.Bind();
+        }
+
+        public void Dispose()
+        {
+            Textures = null;
+            VAO.Dispose();
+            VBO.Dispose();
+            EBO.Dispose();
         }
     }
 }

@@ -15,7 +15,7 @@ using AssimpMesh = Silk.NET.Assimp.Mesh;
 
 namespace Tutorial
 {
-    public class Model
+    public class Model : IDisposable
     {
         public Model(GL gl, string path, bool gamma = false)
         {
@@ -85,7 +85,8 @@ namespace Tutorial
                 vector.Z = mesh->MVertices[i].Z;
                 vertex.Position = vector;
                 // normals
-                if (mesh->HasNormals())
+                
+                if (mesh->MNormals != null)
                 {
                     vector.X = mesh->MNormals[i].X;
                     vector.Y = mesh->MNormals[i].Y;
@@ -211,13 +212,15 @@ namespace Tutorial
         {
             return indices.ToArray();
         }
-    }
 
-    public static class MeshExtensions
-    {
-        public static bool HasNormals(this AssimpMesh mesh)
+        public void Dispose()
         {
-            return false;
+            foreach (var mesh in Meshes)
+            {
+                mesh.Dispose();
+            }
+
+            _texturesLoaded = null;
         }
     }
 }
