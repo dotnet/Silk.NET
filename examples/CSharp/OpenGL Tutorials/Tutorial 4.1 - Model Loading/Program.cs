@@ -14,12 +14,6 @@ namespace Tutorial
         private static GL Gl;
         private static IKeyboard primaryKeyboard;
 
-        private const int Width = 800;
-        private const int Height = 600;
-
-        private static BufferObject<float> Vbo;
-        private static BufferObject<uint> Ebo;
-        private static VertexArrayObject<float, uint> Vao;
         private static Texture Texture;
         private static Shader Shader;
         private static Model Model;
@@ -104,7 +98,6 @@ namespace Tutorial
             Gl.Enable(EnableCap.DepthTest);
             Gl.Clear((uint) (ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit));
 
-            Vao.Bind();
             Texture.Bind();
             Shader.Use();
             Shader.SetUniform("uTexture0", 0);
@@ -114,7 +107,9 @@ namespace Tutorial
 
             var model = Matrix4x4.CreateRotationY(MathHelper.DegreesToRadians(difference)) * Matrix4x4.CreateRotationX(MathHelper.DegreesToRadians(difference));
             var view = Matrix4x4.CreateLookAt(CameraPosition, CameraPosition + CameraFront, CameraUp);
-            var projection = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(CameraZoom), Width / Height, 0.1f, 100.0f);
+            //It's super important for the width / height calculation to regard each value as a float, otherwise
+            //it creates rounding errors that result in viewport distortion
+            var projection = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(CameraZoom), (float) window.Size.X / (float)window.Size.Y, 0.1f, 100.0f);
 
             foreach (var mesh in Model.Meshes)
             {
@@ -161,9 +156,7 @@ namespace Tutorial
 
         private static void OnClose()
         {
-            Vbo.Dispose();
-            Ebo.Dispose();
-            Vao.Dispose();
+            Model.Dispose();
             Shader.Dispose();
             Texture.Dispose();
         }
