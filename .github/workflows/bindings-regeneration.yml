@@ -3,6 +3,7 @@ name: Bindings Regeneration
 on:
   schedule:
     - cron: '0 0 * * Fri'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -17,8 +18,34 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.302
+    - name: Setup Java JDK 11
+      uses: actions/setup-java@v2.3.0
+      with:
+        java-version: 11
+        distribution: "temurin"
+    - name: Setup .NET 6.0
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.201
+    - name: Setup .NET 5.0
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.201
+    - name: Setup .NET Core 3.1
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.404
+    - name: Setup NUKE
+      run: dotnet tool install Nuke.GlobalTool --global
+    - name: Install Workloads
+      # TODO: This is slow. Maybe we can make a docker container with this already done?
+      run: dotnet workload install android ios maccatalyst maui
+    - uses: GuillaumeFalourd/setup-windows10-sdk-action@v1.9
+      name: Setup Windows 11 SDK
+      with:
+        sdk-version: 22621
     - name: Run a full run of BuildTools
-      run: dotnet run --project "src/Core/BuildTools/BuildTools.csproj" -- build/binder_scripts/fullrun.json
+      run: ./build.cmd regeneratebindings
     - name: Get current date
       id: date
       run: echo "::set-output name=date::$(date +'%d-%m-%Y')"
@@ -30,5 +57,5 @@ jobs:
         title: Binding and specification updates
         body: Regenerates the bindings and the cached specifications with the latest upstream specifications.
         branch: patch/spec-updates
-        author: "Ultz Limited <31213871+UltzLtd@users.noreply.github.com>"
+        author: "Team Silk.NET <9011267+dotnet-bot@users.noreply.github.com>"
         commit-message: Latest bindings as of ${{ steps.date.outputs.date }}
