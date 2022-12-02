@@ -45,7 +45,7 @@ jobs:
       with:
         sdk-version: 22621
     - name: Run a full run of BuildTools
-      run: ./build.cmd regeneratebindings
+      run: dotnet run -c Release --project src/Core/Silk.NET.BuildTools/Silk.NET.BuildTools.csproj -- --no-parallel
     - name: Get current date
       id: date
       run: echo "::set-output name=date::$(date +'%d-%m-%Y')"
