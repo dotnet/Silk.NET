@@ -54,7 +54,12 @@ namespace Silk.NET.BuildTools
             Console.SetOut(ConsoleWriter.GetOrCreate(Console.Out));
             foreach (var arg in args)
             {
-                if (arg.StartsWith("--") && !string.Equals(arg, "--no-parallel", StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(arg, "--no-parallel", StringComparison.OrdinalIgnoreCase))
+                {
+                    // picked up in Generator.cs
+                    continue;
+                }
+                else
                 {
                     Console.WriteLine($"Control descriptor \"{arg}\" will be applied to every job herein.");
                     extraCtrls.Add(arg[2..]);
