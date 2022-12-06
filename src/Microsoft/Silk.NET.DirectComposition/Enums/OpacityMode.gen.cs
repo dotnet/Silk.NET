@@ -15,15 +15,6 @@ namespace Silk.NET.DirectComposition
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Layer\"")]
-        [NativeName("Name", "DCOMPOSITION_OPACITY_MODE_LAYER")]
-        OpacityModeLayer = 0x0,
-        [Obsolete("Deprecated in favour of \"Multiply\"")]
-        [NativeName("Name", "DCOMPOSITION_OPACITY_MODE_MULTIPLY")]
-        OpacityModeMultiply = 0x1,
-        [Obsolete("Deprecated in favour of \"Inherit\"")]
-        [NativeName("Name", "DCOMPOSITION_OPACITY_MODE_INHERIT")]
-        OpacityModeInherit = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "DCOMPOSITION_OPACITY_MODE_LAYER")]
         Layer = 0x0,
         [NativeName("Name", "DCOMPOSITION_OPACITY_MODE_MULTIPLY")]

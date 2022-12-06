@@ -124,11 +124,11 @@ public unsafe static class DCompositionLinearTransferEffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetRedDisable(this ComPtr<IDCompositionLinearTransferEffect> thisVtbl, int redDisable)
+    public static int SetRedDisable(this ComPtr<IDCompositionLinearTransferEffect> thisVtbl, Silk.NET.Core.Bool32 redDisable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, int, int>)@this->LpVtbl[6])(@this, redDisable);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[6])(@this, redDisable);
         return ret;
     }
 
@@ -151,11 +151,11 @@ public unsafe static class DCompositionLinearTransferEffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetGreenDisable(this ComPtr<IDCompositionLinearTransferEffect> thisVtbl, int greenDisable)
+    public static int SetGreenDisable(this ComPtr<IDCompositionLinearTransferEffect> thisVtbl, Silk.NET.Core.Bool32 greenDisable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, int, int>)@this->LpVtbl[9])(@this, greenDisable);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[9])(@this, greenDisable);
         return ret;
     }
 
@@ -178,11 +178,11 @@ public unsafe static class DCompositionLinearTransferEffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBlueDisable(this ComPtr<IDCompositionLinearTransferEffect> thisVtbl, int blueDisable)
+    public static int SetBlueDisable(this ComPtr<IDCompositionLinearTransferEffect> thisVtbl, Silk.NET.Core.Bool32 blueDisable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, int, int>)@this->LpVtbl[12])(@this, blueDisable);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[12])(@this, blueDisable);
         return ret;
     }
 
@@ -205,20 +205,20 @@ public unsafe static class DCompositionLinearTransferEffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetAlphaDisable(this ComPtr<IDCompositionLinearTransferEffect> thisVtbl, int alphaDisable)
+    public static int SetAlphaDisable(this ComPtr<IDCompositionLinearTransferEffect> thisVtbl, Silk.NET.Core.Bool32 alphaDisable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, int, int>)@this->LpVtbl[15])(@this, alphaDisable);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[15])(@this, alphaDisable);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetClampOutput(this ComPtr<IDCompositionLinearTransferEffect> thisVtbl, int clampOutput)
+    public static int SetClampOutput(this ComPtr<IDCompositionLinearTransferEffect> thisVtbl, Silk.NET.Core.Bool32 clampOutput)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, int, int>)@this->LpVtbl[16])(@this, clampOutput);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[16])(@this, clampOutput);
         return ret;
     }
 

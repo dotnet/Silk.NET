@@ -226,40 +226,40 @@ public unsafe static class DCompositionVisualDebugVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddVisual(this ComPtr<IDCompositionVisualDebug> thisVtbl, IDCompositionVisual* visual, int insertAbove, IDCompositionVisual* referenceVisual)
+    public static unsafe int AddVisual(this ComPtr<IDCompositionVisualDebug> thisVtbl, IDCompositionVisual* visual, Silk.NET.Core.Bool32 insertAbove, IDCompositionVisual* referenceVisual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisualDebug*, IDCompositionVisual*, int, IDCompositionVisual*, int>)@this->LpVtbl[12])(@this, visual, insertAbove, referenceVisual);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisualDebug*, IDCompositionVisual*, Silk.NET.Core.Bool32, IDCompositionVisual*, int>)@this->LpVtbl[12])(@this, visual, insertAbove, referenceVisual);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddVisual(this ComPtr<IDCompositionVisualDebug> thisVtbl, IDCompositionVisual* visual, int insertAbove, ref IDCompositionVisual referenceVisual)
+    public static unsafe int AddVisual(this ComPtr<IDCompositionVisualDebug> thisVtbl, IDCompositionVisual* visual, Silk.NET.Core.Bool32 insertAbove, ref IDCompositionVisual referenceVisual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDCompositionVisual* referenceVisualPtr = &referenceVisual)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisualDebug*, IDCompositionVisual*, int, IDCompositionVisual*, int>)@this->LpVtbl[12])(@this, visual, insertAbove, referenceVisualPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisualDebug*, IDCompositionVisual*, Silk.NET.Core.Bool32, IDCompositionVisual*, int>)@this->LpVtbl[12])(@this, visual, insertAbove, referenceVisualPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddVisual(this ComPtr<IDCompositionVisualDebug> thisVtbl, ref IDCompositionVisual visual, int insertAbove, IDCompositionVisual* referenceVisual)
+    public static unsafe int AddVisual(this ComPtr<IDCompositionVisualDebug> thisVtbl, ref IDCompositionVisual visual, Silk.NET.Core.Bool32 insertAbove, IDCompositionVisual* referenceVisual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDCompositionVisual* visualPtr = &visual)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisualDebug*, IDCompositionVisual*, int, IDCompositionVisual*, int>)@this->LpVtbl[12])(@this, visualPtr, insertAbove, referenceVisual);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisualDebug*, IDCompositionVisual*, Silk.NET.Core.Bool32, IDCompositionVisual*, int>)@this->LpVtbl[12])(@this, visualPtr, insertAbove, referenceVisual);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddVisual(this ComPtr<IDCompositionVisualDebug> thisVtbl, ref IDCompositionVisual visual, int insertAbove, ref IDCompositionVisual referenceVisual)
+    public static int AddVisual(this ComPtr<IDCompositionVisualDebug> thisVtbl, ref IDCompositionVisual visual, Silk.NET.Core.Bool32 insertAbove, ref IDCompositionVisual referenceVisual)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -267,7 +267,7 @@ public unsafe static class DCompositionVisualDebugVtblExtensions
         {
             fixed (IDCompositionVisual* referenceVisualPtr = &referenceVisual)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisualDebug*, IDCompositionVisual*, int, IDCompositionVisual*, int>)@this->LpVtbl[12])(@this, visualPtr, insertAbove, referenceVisualPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionVisualDebug*, IDCompositionVisual*, Silk.NET.Core.Bool32, IDCompositionVisual*, int>)@this->LpVtbl[12])(@this, visualPtr, insertAbove, referenceVisualPtr);
             }
         }
         return ret;
@@ -468,7 +468,7 @@ public unsafe static class DCompositionVisualDebugVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddVisual<TI0, TI1>(this ComPtr<IDCompositionVisualDebug> thisVtbl, ComPtr<TI0> visual, int insertAbove, ComPtr<TI1> referenceVisual) where TI0 : unmanaged, IComVtbl<IDCompositionVisual>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDCompositionVisual>, IComVtbl<TI1>
+    public static int AddVisual<TI0, TI1>(this ComPtr<IDCompositionVisualDebug> thisVtbl, ComPtr<TI0> visual, Silk.NET.Core.Bool32 insertAbove, ComPtr<TI1> referenceVisual) where TI0 : unmanaged, IComVtbl<IDCompositionVisual>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDCompositionVisual>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -476,7 +476,7 @@ public unsafe static class DCompositionVisualDebugVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddVisual(this ComPtr<IDCompositionVisualDebug> thisVtbl, IDCompositionVisual* visual, int insertAbove, Span<IDCompositionVisual> referenceVisual)
+    public static unsafe int AddVisual(this ComPtr<IDCompositionVisualDebug> thisVtbl, IDCompositionVisual* visual, Silk.NET.Core.Bool32 insertAbove, Span<IDCompositionVisual> referenceVisual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -484,7 +484,7 @@ public unsafe static class DCompositionVisualDebugVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddVisual<TI0>(this ComPtr<IDCompositionVisualDebug> thisVtbl, ComPtr<TI0> visual, int insertAbove, ref IDCompositionVisual referenceVisual) where TI0 : unmanaged, IComVtbl<IDCompositionVisual>, IComVtbl<TI0>
+    public static int AddVisual<TI0>(this ComPtr<IDCompositionVisualDebug> thisVtbl, ComPtr<TI0> visual, Silk.NET.Core.Bool32 insertAbove, ref IDCompositionVisual referenceVisual) where TI0 : unmanaged, IComVtbl<IDCompositionVisual>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -492,7 +492,7 @@ public unsafe static class DCompositionVisualDebugVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddVisual(this ComPtr<IDCompositionVisualDebug> thisVtbl, Span<IDCompositionVisual> visual, int insertAbove, IDCompositionVisual* referenceVisual)
+    public static unsafe int AddVisual(this ComPtr<IDCompositionVisualDebug> thisVtbl, Span<IDCompositionVisual> visual, Silk.NET.Core.Bool32 insertAbove, IDCompositionVisual* referenceVisual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -500,7 +500,7 @@ public unsafe static class DCompositionVisualDebugVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddVisual<TI0>(this ComPtr<IDCompositionVisualDebug> thisVtbl, ref IDCompositionVisual visual, int insertAbove, ComPtr<TI0> referenceVisual) where TI0 : unmanaged, IComVtbl<IDCompositionVisual>, IComVtbl<TI0>
+    public static int AddVisual<TI0>(this ComPtr<IDCompositionVisualDebug> thisVtbl, ref IDCompositionVisual visual, Silk.NET.Core.Bool32 insertAbove, ComPtr<TI0> referenceVisual) where TI0 : unmanaged, IComVtbl<IDCompositionVisual>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -508,7 +508,7 @@ public unsafe static class DCompositionVisualDebugVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddVisual(this ComPtr<IDCompositionVisualDebug> thisVtbl, Span<IDCompositionVisual> visual, int insertAbove, Span<IDCompositionVisual> referenceVisual)
+    public static int AddVisual(this ComPtr<IDCompositionVisualDebug> thisVtbl, Span<IDCompositionVisual> visual, Silk.NET.Core.Bool32 insertAbove, Span<IDCompositionVisual> referenceVisual)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

@@ -583,22 +583,22 @@ public unsafe static class DCompositionDesktopDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTargetForHwnd(this ComPtr<IDCompositionDesktopDevice> thisVtbl, nint hwnd, int topmost, IDCompositionTarget** target)
+    public static unsafe int CreateTargetForHwnd(this ComPtr<IDCompositionDesktopDevice> thisVtbl, nint hwnd, Silk.NET.Core.Bool32 topmost, IDCompositionTarget** target)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionDesktopDevice*, nint, int, IDCompositionTarget**, int>)@this->LpVtbl[24])(@this, hwnd, topmost, target);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionDesktopDevice*, nint, Silk.NET.Core.Bool32, IDCompositionTarget**, int>)@this->LpVtbl[24])(@this, hwnd, topmost, target);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTargetForHwnd(this ComPtr<IDCompositionDesktopDevice> thisVtbl, nint hwnd, int topmost, ref IDCompositionTarget* target)
+    public static unsafe int CreateTargetForHwnd(this ComPtr<IDCompositionDesktopDevice> thisVtbl, nint hwnd, Silk.NET.Core.Bool32 topmost, ref IDCompositionTarget* target)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDCompositionTarget** targetPtr = &target)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionDesktopDevice*, nint, int, IDCompositionTarget**, int>)@this->LpVtbl[24])(@this, hwnd, topmost, targetPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionDesktopDevice*, nint, Silk.NET.Core.Bool32, IDCompositionTarget**, int>)@this->LpVtbl[24])(@this, hwnd, topmost, targetPtr);
         }
         return ret;
     }
@@ -914,7 +914,7 @@ public unsafe static class DCompositionDesktopDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateTargetForHwnd<TI0>(this ComPtr<IDCompositionDesktopDevice> thisVtbl, nint hwnd, int topmost, ref ComPtr<TI0> target) where TI0 : unmanaged, IComVtbl<IDCompositionTarget>, IComVtbl<TI0>
+    public static int CreateTargetForHwnd<TI0>(this ComPtr<IDCompositionDesktopDevice> thisVtbl, nint hwnd, Silk.NET.Core.Bool32 topmost, ref ComPtr<TI0> target) where TI0 : unmanaged, IComVtbl<IDCompositionTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader

@@ -156,11 +156,11 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetRedDisable(int redDisable)
+        public readonly int SetRedDisable(Silk.NET.Core.Bool32 redDisable)
         {
             var @this = (IDCompositionLinearTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, int, int>)@this->LpVtbl[6])(@this, redDisable);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[6])(@this, redDisable);
             return ret;
         }
 
@@ -183,11 +183,11 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetGreenDisable(int greenDisable)
+        public readonly int SetGreenDisable(Silk.NET.Core.Bool32 greenDisable)
         {
             var @this = (IDCompositionLinearTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, int, int>)@this->LpVtbl[9])(@this, greenDisable);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[9])(@this, greenDisable);
             return ret;
         }
 
@@ -210,11 +210,11 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBlueDisable(int blueDisable)
+        public readonly int SetBlueDisable(Silk.NET.Core.Bool32 blueDisable)
         {
             var @this = (IDCompositionLinearTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, int, int>)@this->LpVtbl[12])(@this, blueDisable);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[12])(@this, blueDisable);
             return ret;
         }
 
@@ -237,20 +237,20 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetAlphaDisable(int alphaDisable)
+        public readonly int SetAlphaDisable(Silk.NET.Core.Bool32 alphaDisable)
         {
             var @this = (IDCompositionLinearTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, int, int>)@this->LpVtbl[15])(@this, alphaDisable);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[15])(@this, alphaDisable);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetClampOutput(int clampOutput)
+        public readonly int SetClampOutput(Silk.NET.Core.Bool32 clampOutput)
         {
             var @this = (IDCompositionLinearTransferEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, int, int>)@this->LpVtbl[16])(@this, clampOutput);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionLinearTransferEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[16])(@this, clampOutput);
             return ret;
         }
 

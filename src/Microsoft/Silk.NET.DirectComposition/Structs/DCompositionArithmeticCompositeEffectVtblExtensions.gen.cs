@@ -127,11 +127,11 @@ public unsafe static class DCompositionArithmeticCompositeEffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetClampOutput(this ComPtr<IDCompositionArithmeticCompositeEffect> thisVtbl, int clampoutput)
+    public static int SetClampOutput(this ComPtr<IDCompositionArithmeticCompositeEffect> thisVtbl, Silk.NET.Core.Bool32 clampoutput)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionArithmeticCompositeEffect*, int, int>)@this->LpVtbl[5])(@this, clampoutput);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionArithmeticCompositeEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[5])(@this, clampoutput);
         return ret;
     }
 

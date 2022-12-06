@@ -177,11 +177,11 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetClampOutput(int clamp)
+        public readonly int SetClampOutput(Silk.NET.Core.Bool32 clamp)
         {
             var @this = (IDCompositionColorMatrixEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, int, int>)@this->LpVtbl[7])(@this, clamp);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[7])(@this, clamp);
             return ret;
         }
 

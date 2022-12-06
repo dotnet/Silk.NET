@@ -15,15 +15,6 @@ namespace Silk.NET.DirectComposition
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Visible\"")]
-        [NativeName("Name", "DCOMPOSITION_BACKFACE_VISIBILITY_VISIBLE")]
-        BackfaceVisibilityVisible = 0x0,
-        [Obsolete("Deprecated in favour of \"Hidden\"")]
-        [NativeName("Name", "DCOMPOSITION_BACKFACE_VISIBILITY_HIDDEN")]
-        BackfaceVisibilityHidden = 0x1,
-        [Obsolete("Deprecated in favour of \"Inherit\"")]
-        [NativeName("Name", "DCOMPOSITION_BACKFACE_VISIBILITY_INHERIT")]
-        BackfaceVisibilityInherit = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "DCOMPOSITION_BACKFACE_VISIBILITY_VISIBLE")]
         Visible = 0x0,
         [NativeName("Name", "DCOMPOSITION_BACKFACE_VISIBILITY_HIDDEN")]

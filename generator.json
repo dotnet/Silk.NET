@@ -1806,7 +1806,9 @@
             "cacheDir": "build/cache",
             "cacheKey": "dcomp",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "no-obsolete-enum",
+                "typemap-native"
             ],
             "converter": {},
             "prefix": "DComposition",

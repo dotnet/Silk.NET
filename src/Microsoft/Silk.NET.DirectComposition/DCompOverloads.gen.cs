@@ -178,7 +178,7 @@ namespace Silk.NET.DirectComposition
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 138, Column 8 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dcomp.h")]
-        public static unsafe int AttachMouseWheelToHwnd(this DComp thisApi, Span<IDCompositionVisual> visual, nint hwnd, int enable)
+        public static unsafe int AttachMouseWheelToHwnd(this DComp thisApi, Span<IDCompositionVisual> visual, nint hwnd, Silk.NET.Core.Bool32 enable)
         {
             // SpanOverloader
             return thisApi.AttachMouseWheelToHwnd(ref visual.GetPinnableReference(), hwnd, enable);
@@ -186,7 +186,7 @@ namespace Silk.NET.DirectComposition
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 157, Column 8 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dcomp.h")]
-        public static unsafe int AttachMouseDragToHwnd(this DComp thisApi, Span<IDCompositionVisual> visual, nint hwnd, int enable)
+        public static unsafe int AttachMouseDragToHwnd(this DComp thisApi, Span<IDCompositionVisual> visual, nint hwnd, Silk.NET.Core.Bool32 enable)
         {
             // SpanOverloader
             return thisApi.AttachMouseDragToHwnd(ref visual.GetPinnableReference(), hwnd, enable);

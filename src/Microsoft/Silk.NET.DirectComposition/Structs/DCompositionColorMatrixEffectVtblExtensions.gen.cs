@@ -145,11 +145,11 @@ public unsafe static class DCompositionColorMatrixEffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetClampOutput(this ComPtr<IDCompositionColorMatrixEffect> thisVtbl, int clamp)
+    public static int SetClampOutput(this ComPtr<IDCompositionColorMatrixEffect> thisVtbl, Silk.NET.Core.Bool32 clamp)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, int, int>)@this->LpVtbl[7])(@this, clamp);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[7])(@this, clamp);
         return ret;
     }
 

@@ -150,22 +150,22 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTargetForHwnd(nint hwnd, int topmost, IDCompositionTarget** target)
+        public readonly unsafe int CreateTargetForHwnd(nint hwnd, Silk.NET.Core.Bool32 topmost, IDCompositionTarget** target)
         {
             var @this = (IDCompositionDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionDevice*, nint, int, IDCompositionTarget**, int>)@this->LpVtbl[6])(@this, hwnd, topmost, target);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionDevice*, nint, Silk.NET.Core.Bool32, IDCompositionTarget**, int>)@this->LpVtbl[6])(@this, hwnd, topmost, target);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTargetForHwnd(nint hwnd, int topmost, ref IDCompositionTarget* target)
+        public readonly unsafe int CreateTargetForHwnd(nint hwnd, Silk.NET.Core.Bool32 topmost, ref IDCompositionTarget* target)
         {
             var @this = (IDCompositionDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDCompositionTarget** targetPtr = &target)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDCompositionDevice*, nint, int, IDCompositionTarget**, int>)@this->LpVtbl[6])(@this, hwnd, topmost, targetPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDCompositionDevice*, nint, Silk.NET.Core.Bool32, IDCompositionTarget**, int>)@this->LpVtbl[6])(@this, hwnd, topmost, targetPtr);
             }
             return ret;
         }
@@ -681,7 +681,7 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateTargetForHwnd<TI0>(nint hwnd, int topmost, ref ComPtr<TI0> target) where TI0 : unmanaged, IComVtbl<IDCompositionTarget>, IComVtbl<TI0>
+        public readonly int CreateTargetForHwnd<TI0>(nint hwnd, Silk.NET.Core.Bool32 topmost, ref ComPtr<TI0> target) where TI0 : unmanaged, IComVtbl<IDCompositionTarget>, IComVtbl<TI0>
         {
             var @this = (IDCompositionDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

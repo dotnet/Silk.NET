@@ -159,11 +159,11 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetClampOutput(int clampoutput)
+        public readonly int SetClampOutput(Silk.NET.Core.Bool32 clampoutput)
         {
             var @this = (IDCompositionArithmeticCompositeEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionArithmeticCompositeEffect*, int, int>)@this->LpVtbl[5])(@this, clampoutput);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionArithmeticCompositeEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[5])(@this, clampoutput);
             return ret;
         }
 

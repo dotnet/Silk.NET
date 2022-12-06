@@ -15,18 +15,6 @@ namespace Silk.NET.DirectComposition
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"SourceOver\"")]
-        [NativeName("Name", "DCOMPOSITION_COMPOSITE_MODE_SOURCE_OVER")]
-        CompositeModeSourceOver = 0x0,
-        [Obsolete("Deprecated in favour of \"DestinationInvert\"")]
-        [NativeName("Name", "DCOMPOSITION_COMPOSITE_MODE_DESTINATION_INVERT")]
-        CompositeModeDestinationInvert = 0x1,
-        [Obsolete("Deprecated in favour of \"MinBlend\"")]
-        [NativeName("Name", "DCOMPOSITION_COMPOSITE_MODE_MIN_BLEND")]
-        CompositeModeMinBlend = 0x2,
-        [Obsolete("Deprecated in favour of \"Inherit\"")]
-        [NativeName("Name", "DCOMPOSITION_COMPOSITE_MODE_INHERIT")]
-        CompositeModeInherit = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "DCOMPOSITION_COMPOSITE_MODE_SOURCE_OVER")]
         SourceOver = 0x0,
         [NativeName("Name", "DCOMPOSITION_COMPOSITE_MODE_DESTINATION_INVERT")]

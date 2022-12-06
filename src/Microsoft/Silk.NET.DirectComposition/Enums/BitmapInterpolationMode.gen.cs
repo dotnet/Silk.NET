@@ -15,15 +15,6 @@ namespace Silk.NET.DirectComposition
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"NearestNeighbor\"")]
-        [NativeName("Name", "DCOMPOSITION_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR")]
-        BitmapInterpolationModeNearestNeighbor = 0x0,
-        [Obsolete("Deprecated in favour of \"Linear\"")]
-        [NativeName("Name", "DCOMPOSITION_BITMAP_INTERPOLATION_MODE_LINEAR")]
-        BitmapInterpolationModeLinear = 0x1,
-        [Obsolete("Deprecated in favour of \"Inherit\"")]
-        [NativeName("Name", "DCOMPOSITION_BITMAP_INTERPOLATION_MODE_INHERIT")]
-        BitmapInterpolationModeInherit = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "DCOMPOSITION_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR")]
         NearestNeighbor = 0x0,
         [NativeName("Name", "DCOMPOSITION_BITMAP_INTERPOLATION_MODE_LINEAR")]

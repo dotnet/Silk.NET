@@ -228,11 +228,11 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetStitchable(int stitchable)
+        public readonly int SetStitchable(Silk.NET.Core.Bool32 stitchable)
         {
             var @this = (IDCompositionTurbulenceEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTurbulenceEffect*, int, int>)@this->LpVtbl[10])(@this, stitchable);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTurbulenceEffect*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[10])(@this, stitchable);
             return ret;
         }
 

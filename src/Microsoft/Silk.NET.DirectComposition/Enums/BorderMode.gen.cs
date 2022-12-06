@@ -15,15 +15,6 @@ namespace Silk.NET.DirectComposition
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"Soft\"")]
-        [NativeName("Name", "DCOMPOSITION_BORDER_MODE_SOFT")]
-        BorderModeSoft = 0x0,
-        [Obsolete("Deprecated in favour of \"Hard\"")]
-        [NativeName("Name", "DCOMPOSITION_BORDER_MODE_HARD")]
-        BorderModeHard = 0x1,
-        [Obsolete("Deprecated in favour of \"Inherit\"")]
-        [NativeName("Name", "DCOMPOSITION_BORDER_MODE_INHERIT")]
-        BorderModeInherit = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "DCOMPOSITION_BORDER_MODE_SOFT")]
         Soft = 0x0,
         [NativeName("Name", "DCOMPOSITION_BORDER_MODE_HARD")]

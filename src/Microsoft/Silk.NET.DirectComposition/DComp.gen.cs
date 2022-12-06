@@ -172,22 +172,22 @@ namespace Silk.NET.DirectComposition
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 138, Column 8 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dcomp.h")]
         [NativeApi(EntryPoint = "DCompositionAttachMouseWheelToHwnd", Convention = CallingConvention.StdCall)]
-        public unsafe partial int AttachMouseWheelToHwnd(IDCompositionVisual* visual, nint hwnd, int enable);
+        public unsafe partial int AttachMouseWheelToHwnd(IDCompositionVisual* visual, nint hwnd, Silk.NET.Core.Bool32 enable);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 138, Column 8 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dcomp.h")]
         [NativeApi(EntryPoint = "DCompositionAttachMouseWheelToHwnd", Convention = CallingConvention.StdCall)]
-        public partial int AttachMouseWheelToHwnd(ref IDCompositionVisual visual, nint hwnd, int enable);
+        public partial int AttachMouseWheelToHwnd(ref IDCompositionVisual visual, nint hwnd, Silk.NET.Core.Bool32 enable);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 157, Column 8 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dcomp.h")]
         [NativeApi(EntryPoint = "DCompositionAttachMouseDragToHwnd", Convention = CallingConvention.StdCall)]
-        public unsafe partial int AttachMouseDragToHwnd(IDCompositionVisual* visual, nint hwnd, int enable);
+        public unsafe partial int AttachMouseDragToHwnd(IDCompositionVisual* visual, nint hwnd, Silk.NET.Core.Bool32 enable);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 157, Column 8 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dcomp.h")]
         [NativeApi(EntryPoint = "DCompositionAttachMouseDragToHwnd", Convention = CallingConvention.StdCall)]
-        public partial int AttachMouseDragToHwnd(ref IDCompositionVisual visual, nint hwnd, int enable);
+        public partial int AttachMouseDragToHwnd(ref IDCompositionVisual visual, nint hwnd, Silk.NET.Core.Bool32 enable);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 175, Column 8 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dcomp.h")]
@@ -262,7 +262,7 @@ namespace Silk.NET.DirectComposition
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 219, Column 8 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dcomp.h")]
         [NativeApi(EntryPoint = "DCompositionBoostCompositorClock", Convention = CallingConvention.StdCall)]
-        public partial int BoostCompositorClock(int enable);
+        public partial int BoostCompositorClock(Silk.NET.Core.Bool32 enable);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 231, Column 16 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dcomp.h")]
@@ -378,7 +378,7 @@ namespace Silk.NET.DirectComposition
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 138, Column 8 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dcomp.h")]
-        public unsafe int AttachMouseWheelToHwnd<TI0>(ComPtr<TI0> visual, nint hwnd, int enable) where TI0 : unmanaged, IComVtbl<IDCompositionVisual>, IComVtbl<TI0>
+        public unsafe int AttachMouseWheelToHwnd<TI0>(ComPtr<TI0> visual, nint hwnd, Silk.NET.Core.Bool32 enable) where TI0 : unmanaged, IComVtbl<IDCompositionVisual>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return AttachMouseWheelToHwnd((IDCompositionVisual*) visual.Handle, hwnd, enable);
@@ -386,7 +386,7 @@ namespace Silk.NET.DirectComposition
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 157, Column 8 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dcomp.h")]
-        public unsafe int AttachMouseDragToHwnd<TI0>(ComPtr<TI0> visual, nint hwnd, int enable) where TI0 : unmanaged, IComVtbl<IDCompositionVisual>, IComVtbl<TI0>
+        public unsafe int AttachMouseDragToHwnd<TI0>(ComPtr<TI0> visual, nint hwnd, Silk.NET.Core.Bool32 enable) where TI0 : unmanaged, IComVtbl<IDCompositionVisual>, IComVtbl<TI0>
         {
             // ComPtrOverloader
             return AttachMouseDragToHwnd((IDCompositionVisual*) visual.Handle, hwnd, enable);
