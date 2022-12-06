@@ -219,11 +219,11 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetNoise(D2D1_TURBULENCE_NOISE noise)
+        public readonly int SetNoise(Silk.NET.Direct2D.TurbulenceNoise noise)
         {
             var @this = (IDCompositionTurbulenceEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTurbulenceEffect*, D2D1_TURBULENCE_NOISE, int>)@this->LpVtbl[9])(@this, noise);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionTurbulenceEffect*, Silk.NET.Direct2D.TurbulenceNoise, int>)@this->LpVtbl[9])(@this, noise);
             return ret;
         }
 

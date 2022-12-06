@@ -187,11 +187,11 @@ public unsafe static class DCompositionTurbulenceEffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetNoise(this ComPtr<IDCompositionTurbulenceEffect> thisVtbl, D2D1_TURBULENCE_NOISE noise)
+    public static int SetNoise(this ComPtr<IDCompositionTurbulenceEffect> thisVtbl, Silk.NET.Direct2D.TurbulenceNoise noise)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionTurbulenceEffect*, D2D1_TURBULENCE_NOISE, int>)@this->LpVtbl[9])(@this, noise);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionTurbulenceEffect*, Silk.NET.Direct2D.TurbulenceNoise, int>)@this->LpVtbl[9])(@this, noise);
         return ret;
     }
 

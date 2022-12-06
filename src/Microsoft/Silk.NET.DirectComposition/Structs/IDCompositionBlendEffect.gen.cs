@@ -138,11 +138,11 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetMode(D2D1_BLEND_MODE mode)
+        public readonly int SetMode(Silk.NET.Direct2D.BlendMode mode)
         {
             var @this = (IDCompositionBlendEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionBlendEffect*, D2D1_BLEND_MODE, int>)@this->LpVtbl[4])(@this, mode);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionBlendEffect*, Silk.NET.Direct2D.BlendMode, int>)@this->LpVtbl[4])(@this, mode);
             return ret;
         }
 

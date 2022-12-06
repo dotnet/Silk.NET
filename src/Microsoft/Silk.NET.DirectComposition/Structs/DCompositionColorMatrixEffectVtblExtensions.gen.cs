@@ -136,11 +136,11 @@ public unsafe static class DCompositionColorMatrixEffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetAlphaMode(this ComPtr<IDCompositionColorMatrixEffect> thisVtbl, D2D1_COLORMATRIX_ALPHA_MODE mode)
+    public static int SetAlphaMode(this ComPtr<IDCompositionColorMatrixEffect> thisVtbl, Silk.NET.Direct2D.ColormatrixAlphaMode mode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, D2D1_COLORMATRIX_ALPHA_MODE, int>)@this->LpVtbl[6])(@this, mode);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, Silk.NET.Direct2D.ColormatrixAlphaMode, int>)@this->LpVtbl[6])(@this, mode);
         return ret;
     }
 

@@ -168,11 +168,11 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetAlphaMode(D2D1_COLORMATRIX_ALPHA_MODE mode)
+        public readonly int SetAlphaMode(Silk.NET.Direct2D.ColormatrixAlphaMode mode)
         {
             var @this = (IDCompositionColorMatrixEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, D2D1_COLORMATRIX_ALPHA_MODE, int>)@this->LpVtbl[6])(@this, mode);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionColorMatrixEffect*, Silk.NET.Direct2D.ColormatrixAlphaMode, int>)@this->LpVtbl[6])(@this, mode);
             return ret;
         }
 

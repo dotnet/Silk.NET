@@ -115,11 +115,11 @@ public unsafe static class DCompositionGaussianBlurEffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBorderMode(this ComPtr<IDCompositionGaussianBlurEffect> thisVtbl, D2D1_BORDER_MODE mode)
+    public static int SetBorderMode(this ComPtr<IDCompositionGaussianBlurEffect> thisVtbl, Silk.NET.Direct2D.BorderMode mode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionGaussianBlurEffect*, D2D1_BORDER_MODE, int>)@this->LpVtbl[5])(@this, mode);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionGaussianBlurEffect*, Silk.NET.Direct2D.BorderMode, int>)@this->LpVtbl[5])(@this, mode);
         return ret;
     }
 

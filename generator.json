@@ -1871,7 +1871,13 @@
 					"_D3DCOLORVALUE": "Silk.NET.DXGI.D3Dcolorvalue",
                     "DXGI_RATIONAL": "Silk.NET.DXGI.Rational",
                     "DXGI_ALPHA_MODE": "Silk.NET.DXGI.AlphaMode",
-                    "DXGI_HDR_METADATA_TYPE": "Silk.NET.DXGI.HdrMetadataType"
+                    "DXGI_HDR_METADATA_TYPE": "Silk.NET.DXGI.HdrMetadataType",
+					"D2D1_BORDER_MODE": "Silk.NET.Direct2D.BorderMode",
+					"D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE": "Silk.NET.Direct2D.D2D12DaffinetransformInterpolationMode",
+					"D2D1_COLORMATRIX_ALPHA_MODE": "Silk.NET.Direct2D.ColormatrixAlphaMode",
+					"D2D1_BLEND_MODE": "Silk.NET.Direct2D.BlendMode",
+					"D2D1_COMPOSITE_MODE": "Silk.NET.Direct2D.CompositeMode",
+					"D2D1_TURBULENCE_NOISE": "Silk.NET.Direct2D.TurbulenceNoise"			
                 },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",

@@ -138,11 +138,11 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetMode(D2D1_COMPOSITE_MODE mode)
+        public readonly int SetMode(Silk.NET.Direct2D.CompositeMode mode)
         {
             var @this = (IDCompositionCompositeEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionCompositeEffect*, D2D1_COMPOSITE_MODE, int>)@this->LpVtbl[4])(@this, mode);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionCompositeEffect*, Silk.NET.Direct2D.CompositeMode, int>)@this->LpVtbl[4])(@this, mode);
             return ret;
         }
 

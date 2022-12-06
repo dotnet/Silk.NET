@@ -147,11 +147,11 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBorderMode(D2D1_BORDER_MODE mode)
+        public readonly int SetBorderMode(Silk.NET.Direct2D.BorderMode mode)
         {
             var @this = (IDCompositionGaussianBlurEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionGaussianBlurEffect*, D2D1_BORDER_MODE, int>)@this->LpVtbl[5])(@this, mode);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionGaussianBlurEffect*, Silk.NET.Direct2D.BorderMode, int>)@this->LpVtbl[5])(@this, mode);
             return ret;
         }
 

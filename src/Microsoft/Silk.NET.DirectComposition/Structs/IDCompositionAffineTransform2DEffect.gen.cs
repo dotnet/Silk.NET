@@ -138,20 +138,20 @@ namespace Silk.NET.DirectComposition
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetInterpolationMode(D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE interpolationMode)
+        public readonly int SetInterpolationMode(Silk.NET.Direct2D.D2D12DaffinetransformInterpolationMode interpolationMode)
         {
             var @this = (IDCompositionAffineTransform2DEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionAffineTransform2DEffect*, D2D1_2DAFFINETRANSFORM_INTERPOLATION_MODE, int>)@this->LpVtbl[4])(@this, interpolationMode);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionAffineTransform2DEffect*, Silk.NET.Direct2D.D2D12DaffinetransformInterpolationMode, int>)@this->LpVtbl[4])(@this, interpolationMode);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBorderMode(D2D1_BORDER_MODE borderMode)
+        public readonly int SetBorderMode(Silk.NET.Direct2D.BorderMode borderMode)
         {
             var @this = (IDCompositionAffineTransform2DEffect*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDCompositionAffineTransform2DEffect*, D2D1_BORDER_MODE, int>)@this->LpVtbl[5])(@this, borderMode);
+            ret = ((delegate* unmanaged[Stdcall]<IDCompositionAffineTransform2DEffect*, Silk.NET.Direct2D.BorderMode, int>)@this->LpVtbl[5])(@this, borderMode);
             return ret;
         }
 

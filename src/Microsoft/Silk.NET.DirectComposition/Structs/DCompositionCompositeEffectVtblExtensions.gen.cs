@@ -106,11 +106,11 @@ public unsafe static class DCompositionCompositeEffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetMode(this ComPtr<IDCompositionCompositeEffect> thisVtbl, D2D1_COMPOSITE_MODE mode)
+    public static int SetMode(this ComPtr<IDCompositionCompositeEffect> thisVtbl, Silk.NET.Direct2D.CompositeMode mode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDCompositionCompositeEffect*, D2D1_COMPOSITE_MODE, int>)@this->LpVtbl[4])(@this, mode);
+        ret = ((delegate* unmanaged[Stdcall]<IDCompositionCompositeEffect*, Silk.NET.Direct2D.CompositeMode, int>)@this->LpVtbl[4])(@this, mode);
         return ret;
     }
 
