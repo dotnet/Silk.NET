@@ -64,7 +64,15 @@ namespace Silk.NET.GLFW
             {
                 Kind |= NativeWindowFlags.Wayland;
                 Wayland = ((nint) ((delegate* unmanaged[Cdecl]<void*>) getWaylandDisplay)(),
-                    (nint) ((delegate* unmanaged[Cdecl]<WindowHandle*, void*>) getWaylandWindow)(window));
+                           (nint) ((delegate* unmanaged[Cdecl]<WindowHandle*, void*>) getWaylandWindow)(window));
+            }
+            
+            if (api.Context.TryGetProcAddress("glfwGetEGLDisplay", out var getEGLDisplay) && 
+                api.Context.TryGetProcAddress("glfwGetEGLSurface", out var getEGLSurface))
+            {
+                Kind |= NativeWindowFlags.EGL;
+                EGL = ((nint) ((delegate* unmanaged[Cdecl]<void*>) getEGLDisplay)(),
+                           (nint) ((delegate* unmanaged[Cdecl]<WindowHandle*, void*>) getEGLSurface)(window));
             }
 
             DXHandle ??= (nint)window;
@@ -81,5 +89,6 @@ namespace Silk.NET.GLFW
         public nint? Glfw { get; }
         public nint? Sdl { get; }
         public nint? DXHandle { get; }
+        public (nint? display, nint? surface)? EGL { get; }
     }
 }
