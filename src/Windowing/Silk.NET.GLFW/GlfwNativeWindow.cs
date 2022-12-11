@@ -89,6 +89,6 @@ namespace Silk.NET.GLFW
         public nint? Glfw { get; }
         public nint? Sdl { get; }
         public nint? DXHandle { get; }
-        public (nint? display, nint? surface)? EGL { get; }
+        public (nint? Display, nint? Surface)? EGL { get; }
     }
 }
