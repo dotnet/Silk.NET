@@ -81,6 +81,6 @@ namespace Silk.NET.Core.Contexts
         /// <summary>
         /// The handles for the EGL display and EGL surface. May not be null.
         /// </summary>
-        (nint? Display, nint? Durface)? EGL { get; } 
+        (nint? Display, nint? Surface)? EGL { get; } 
     }
 }
