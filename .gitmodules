@@ -28,3 +28,6 @@
 [submodule "build/submodules/dawn"]
 	path = build/submodules/dawn
 	url = https://github.com/Beyley/dawn
+[submodule "build/submodules/vkd3d"]
+	path = build/submodules/vkd3d
+	url = https://github.com/ValveSoftware/vkd3d
