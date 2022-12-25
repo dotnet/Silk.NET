@@ -298,6 +298,7 @@ partial class Build
                             .AssertZeroExitCode();
                         InheritedShell(build, GLFWPath)
                             .AssertZeroExitCode();
+                        
                         CopyAll(@out.GlobFiles("src/Release/glfw3.dll"), runtimes / "win-x64" / "native");
 
                         EnsureCleanDirectory(@out);
@@ -308,6 +309,15 @@ partial class Build
                             .AssertZeroExitCode();
 
                         CopyAll(@out.GlobFiles("src/Release/glfw3.dll"), runtimes / "win-x86" / "native");
+                        
+                        EnsureCleanDirectory(@out);
+                        
+                        InheritedShell($"{prepare} -A arm64", GLFWPath)
+                            .AssertZeroExitCode();
+                        InheritedShell(build, GLFWPath)
+                            .AssertZeroExitCode();
+
+                        CopyAll(@out.GlobFiles("src/Release/glfw3.dll"), runtimes / "win-arm64" / "native");
                     }
                     else if (OperatingSystem.IsLinux())
                     {
