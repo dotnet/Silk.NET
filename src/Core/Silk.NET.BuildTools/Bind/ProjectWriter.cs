@@ -82,11 +82,10 @@ namespace Silk.NET.BuildTools.Bind
             (
                 x =>
                 {
-                    if ((coreProject != project &&
+                    if (!task.Task.Controls.Contains("allow-redefinitions") && (coreProject != project &&
                         coreProject.Enums.Any(y => y.NativeName == x.NativeName)))
                     {
-                        if(!task.Task.Controls.Contains("allow-redefinitions"))
-                            return;
+                        return;
                     }
 
                     x.WriteEnum
