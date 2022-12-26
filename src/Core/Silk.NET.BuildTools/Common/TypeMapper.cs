@@ -180,7 +180,13 @@ namespace Silk.NET.BuildTools.Common
             foreach (var project in profile.Projects.Values)
             {
                 var glEnum = project.Enums.FirstOrDefault(x => x.NativeName == "GLenum" && x.Tokens.Any())?.Name ??
-                             profile.Projects["Core"].Enums.First(x => x.NativeName == "GLenum").Name;
+                             profile.Projects["Core"].Enums.FirstOrDefault(x => x.NativeName == "GLenum")?.Name;
+
+                if(glEnum == null)
+                {
+                    continue;
+                }
+
                 foreach (var @interface in project.Classes.SelectMany(x => x.NativeApis.Values))
                 {
                     foreach (var function in @interface.Functions)
