@@ -8,7 +8,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "glcore",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "gl",
                 "constructor": "gl",
@@ -91,7 +91,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "gl",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "gl",
                 "constructor": "gl",
@@ -174,7 +174,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "gles2",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "gl",
                 "constructor": "gl",
@@ -257,7 +257,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "cl",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "cl",
                 "constructor": "cl",
@@ -333,7 +333,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "vulkan",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "vk",
                 "constructor": "vk",
@@ -613,7 +613,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "openxr",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "vk",
                 "constructor": "vk",
@@ -2118,6 +2118,46 @@
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+
+        {
+            "profileName": "WGL",
+            "sources": [
+                "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/wgl.xml"
+            ],
+            "mode": "ConvertConstruct",
+            "cacheDir": "build/cache",
+            "cacheKey": "wgl",
+            "controlDescriptors": ["allow-redefinitions"],
+            "converter": {
+                "reader": "gl",
+                "constructor": "gl",
+                "className": "WGL"
+            },
+            "prefix": "wgl",
+            "clang": {},
+            "bakery": {
+                "profileNames": [
+                    "wgl"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/OpenGL",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.WGL",
+            "extensionsNamespace": "Silk.NET.WGL.Extensions",
+            "typeMaps": [
+                {
+                    "$include.glTypeMap": "build/gl_typemap.json"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         }

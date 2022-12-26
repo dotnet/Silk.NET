@@ -66,7 +66,9 @@ namespace Silk.NET.BuildTools.Bind
             (
                 x =>
                 {
-                    if (coreProject != project && coreProject.Structs.Any(y => y.NativeName == x.NativeName))
+                    if (coreProject != project &&
+                        coreProject.Structs.Any(y => y.NativeName == x.NativeName) &&
+                        !task.Task.Controls.Contains("allow-redefinitions"))
                     {
                         return;
                     }
@@ -81,7 +83,9 @@ namespace Silk.NET.BuildTools.Bind
             (
                 x =>
                 {
-                    if (coreProject != project && coreProject.Enums.Any(y => y.NativeName == x.NativeName))
+                    if (coreProject != project &&
+                        coreProject.Structs.Any(y => y.NativeName == x.NativeName) &&
+                        !task.Task.Controls.Contains("allow-redefinitions"))
                     {
                         return;
                     }

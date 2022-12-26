@@ -179,6 +179,8 @@ namespace Silk.NET.BuildTools.Common
         {
             foreach (var project in profile.Projects.Values)
             {
+                var glEnum = project.Enums.FirstOrDefault(x => x.NativeName == "GLenum" && x.Tokens.Any())?.Name ??
+                             profile.Projects["Core"].Enums.First(x => x.NativeName == "GLenum").Name;
                 foreach (var @interface in project.Classes.SelectMany(x => x.NativeApis.Values))
                 {
                     foreach (var function in @interface.Functions)
@@ -187,28 +189,28 @@ namespace Silk.NET.BuildTools.Common
                         {
                             if (parameter.Type.OriginalName == "GLenum" || parameter.Type.Name == "EGLenum")
                             {
-                                parameter.Type.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
+                                parameter.Type.Name = glEnum;
                             }
 
                             foreach (var genericType in parameter.Type.GenericTypes)
                             {
                                 if (genericType.OriginalName == "GLenum")
                                 {
-                                    genericType.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
+                                    genericType.Name = glEnum;
                                 }
                             }
                         }
 
                         if (function.ReturnType.OriginalName == "GLenum" || function.ReturnType.Name == "EGLenum")
                         {
-                            function.ReturnType.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
+                            function.ReturnType.Name = glEnum;
                         }
 
                         foreach (var genericType in function.ReturnType.GenericTypes)
                         {
                             if (genericType.OriginalName == "GLenum" || genericType.Name == "CLenum")
                             {
-                                genericType.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
+                                genericType.Name = glEnum;
                             }
                         }
                     }
