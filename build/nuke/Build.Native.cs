@@ -363,6 +363,8 @@ partial class Build
                     var @out = VulkanLoaderPath / "build";
                     EnsureCleanDirectory(@out);
                     
+                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vulkan.Loader.Native" / "runtimes";
+                    
                     if (OperatingSystem.IsWindows())
                     {
                         //Build x86
@@ -408,9 +410,7 @@ partial class Build
                         
                         CopyAll(@out.GlobFiles("loader/Release/vulkan-1.dll"), runtimes / "win-arm64" / "native");
                     }
-                    
-                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vulkan.Loader.Native" / "runtimes";
-                    if (!OperatingSystem.IsWindows())
+                    else
                     {
                         //Build 
                         InheritedShell
