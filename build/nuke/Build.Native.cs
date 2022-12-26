@@ -361,7 +361,12 @@ partial class Build
                 () =>
                 {
                     var @out = VulkanLoaderPath / "build";
-                    EnsureCleanDirectory(@out);
+                    var outW32 = VulkanLoaderPath / "buildW32";
+                    var outW64 = VulkanLoaderPath / "buildW64";
+                    var outA64 = VulkanLoaderPath / "buildA64";
+                    EnsureCleanDirectory(outW32);
+                    EnsureCleanDirectory(outW64);
+                    EnsureCleanDirectory(outA64);
                     
                     var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vulkan.Loader.Native" / "runtimes";
                     
@@ -370,45 +375,41 @@ partial class Build
                         //Build x86
                         InheritedShell
                             (
-                                $"cmake -S. -Bbuild -DUPDATE_DEPS=On -DCMAKE_BUILD_TYPE=Release -A Win32",
+                                $"cmake -S. -BbuildW32 -DUPDATE_DEPS=On -DCMAKE_BUILD_TYPE=Release -A Win32",
                                 VulkanLoaderPath
                             )
                             .AssertZeroExitCode();
                         
-                        InheritedShell($"cmake --build build --config Release{JobsArg}", VulkanLoaderPath)
+                        InheritedShell($"cmake --build buildW32 --config Release{JobsArg}", VulkanLoaderPath)
                             .AssertZeroExitCode();
                         
-                        CopyAll(@out.GlobFiles("loader/Release/vulkan-1.dll"), runtimes / "win-x86" / "native");
-                        
-                        EnsureCleanDirectory(@out);
+                        CopyAll(@outW32.GlobFiles("loader/Release/vulkan-1.dll"), runtimes / "win-x86" / "native");
                         
                         //Build x64
                         InheritedShell
                             (
-                                $"cmake -S. -Bbuild -DUPDATE_DEPS=On -DCMAKE_BUILD_TYPE=Release -A X64",
+                                $"cmake -S. -BbuildW64 -DUPDATE_DEPS=On -DCMAKE_BUILD_TYPE=Release -A X64",
                                 VulkanLoaderPath
                             )
                             .AssertZeroExitCode();
                         
-                        InheritedShell($"cmake --build build --config Release{JobsArg}", VulkanLoaderPath)
+                        InheritedShell($"cmake --build buildW64 --config Release{JobsArg}", VulkanLoaderPath)
                             .AssertZeroExitCode();
                         
-                        CopyAll(@out.GlobFiles("loader/Release/vulkan-1.dll"), runtimes / "win-x64" / "native");
-                        
-                        EnsureCleanDirectory(@out);
+                        CopyAll(@outW64.GlobFiles("loader/Release/vulkan-1.dll"), runtimes / "win-x64" / "native");
                         
                         //Build arm64
                         InheritedShell
                             (
-                                $"cmake -S. -Bbuild -DUPDATE_DEPS=On -DCMAKE_BUILD_TYPE=Release -A arm64",
+                                $"cmake -S. -BbuildA64 -DUPDATE_DEPS=On -DCMAKE_BUILD_TYPE=Release -A arm64",
                                 VulkanLoaderPath
                             )
                             .AssertZeroExitCode();
                         
-                        InheritedShell($"cmake --build build --config Release{JobsArg}", VulkanLoaderPath)
+                        InheritedShell($"cmake --build buildA64 --config Release{JobsArg}", VulkanLoaderPath)
                             .AssertZeroExitCode();
                         
-                        CopyAll(@out.GlobFiles("loader/Release/vulkan-1.dll"), runtimes / "win-arm64" / "native");
+                        CopyAll(@outA64.GlobFiles("loader/Release/vulkan-1.dll"), runtimes / "win-arm64" / "native");
                     }
                     else
                     {
