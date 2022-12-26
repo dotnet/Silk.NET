@@ -370,7 +370,7 @@ partial class Build
                         //Build x86
                         InheritedShell
                             (
-                                $"cmake -S. -Bbuild -DUPDATE_DEPS=On -DCMAKE_BUILD_TYPE=Release -DCMAKE_GENERATOR_PLATFORM=Win32",
+                                $"cmake -S. -Bbuild -DUPDATE_DEPS=On -DCMAKE_BUILD_TYPE=Release -A Win32",
                                 VulkanLoaderPath
                             )
                             .AssertZeroExitCode();
@@ -385,7 +385,7 @@ partial class Build
                         //Build x64
                         InheritedShell
                             (
-                                $"cmake -S. -Bbuild -DUPDATE_DEPS=On -DCMAKE_BUILD_TYPE=Release -DCMAKE_GENERATOR_PLATFORM=Win64",
+                                $"cmake -S. -Bbuild -DUPDATE_DEPS=On -DCMAKE_BUILD_TYPE=Release -A X64",
                                 VulkanLoaderPath
                             )
                             .AssertZeroExitCode();
