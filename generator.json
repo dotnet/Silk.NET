@@ -2121,7 +2121,6 @@
                 }
             ]
         },
-
         {
             "profileName": "WGL",
             "sources": [
@@ -2153,7 +2152,19 @@
             "extensionsNamespace": "Silk.NET.WGL.Extensions",
             "typeMaps": [
                 {
-                    "$include.glTypeMap": "build/gl_typemap.json"
+                    "$include.glTypeMap": "build/gl_typemap.json",
+                    "LPGLYPHMETRICSFLOAT": "GlyphMetricsFloat*",
+                    "PIXELFORMATDESCRIPTOR": "PixelFormatDescriptor",
+                    "LAYERPLANEDESCRIPTOR": "LayerPlaneDescriptor",
+                    "HENHMETAFILE": "nint",
+                    "unsignedlong": "uint",
+                    "HPVIDEODEV": "nint",
+                    "HVIDEOOUTPUTDEVICENV": "nint",
+                    "HVIDEOINPUTDEVICENV": "nint",
+                    "INT": "int",
+                    "HGPUNV": "nint",
+                    "PGPU_DEVICE": "GpuDevice*",
+                    "unsignedint": "uint"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json",
