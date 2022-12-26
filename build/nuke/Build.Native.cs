@@ -386,7 +386,7 @@ partial class Build
                         CopyAll(@outW32.GlobFiles("loader/Release/vulkan-1.dll"), runtimes / "win-x86" / "native");
 
                         File.Delete(VulkanLoaderPath      / "buildW32" / "CMakeCache.txt");
-                        Directory.Delete(VulkanLoaderPath / "buildW32" / "CMakeFiles");
+                        Directory.Delete(VulkanLoaderPath / "buildW32" / "CMakeFiles", true);
                         EnsureCleanDirectory(@outW32);
 
                         //Build x64
@@ -403,7 +403,7 @@ partial class Build
                         CopyAll(@outW64.GlobFiles("loader/Release/vulkan-1.dll"), runtimes / "win-x64" / "native");
 
                         File.Delete(VulkanLoaderPath      / "buildW64" / "CMakeCache.txt");
-                        Directory.Delete(VulkanLoaderPath / "buildW64" / "CMakeFiles");
+                        Directory.Delete(VulkanLoaderPath / "buildW64" / "CMakeFiles", true);
                         EnsureCleanDirectory(@outW64);
 
                         //Build arm64
