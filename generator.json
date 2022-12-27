@@ -8,7 +8,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "glcore",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "gl",
                 "constructor": "gl",
@@ -91,7 +91,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "gl",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "gl",
                 "constructor": "gl",
@@ -174,7 +174,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "gles2",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "gl",
                 "constructor": "gl",
@@ -257,7 +257,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "cl",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "cl",
                 "constructor": "cl",
@@ -333,7 +333,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "vulkan",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "vk",
                 "constructor": "vk",
@@ -394,6 +394,8 @@
                     "PFN_vkDebugReportCallbackEXT": "PfnDebugReportCallbackEXT",
                     "PFN_vkDebugUtilsMessengerCallbackEXT": "PfnDebugUtilsMessengerCallbackEXT",
                     "PFN_vkDeviceMemoryReportCallbackEXT": "PfnDeviceMemoryReportCallbackEXT",
+                    "PFN_vkGetInstanceProcAddr": "PfnVoidFunction",
+                    "PFN_vkGetInstanceProcAddrLUNARG": "PfnVoidFunction",
                     "char": "byte",
                     "Window": "nint",
                     "VkAabbPositionsKHR": "Silk.NET.Maths.Box3D<float>",
@@ -613,7 +615,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "openxr",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "vk",
                 "constructor": "vk",
@@ -669,6 +671,7 @@
                     "VkDevice": "Silk.NET.Core.Native.VkHandle",
                     "_comment_0": "Dunno, should we give vkGetInstanceProcAddr its own pfn & delegate?",
                     "PFN_vkGetInstanceProcAddr": "PfnVoidFunction",
+                    "PFN_vkGetInstanceProcAddrLUNARG": "PfnVoidFunction",
                     "VkInstanceCreateInfo*": "void*",
                     "VkAllocationCallbacks*": "void*",
                     "VkDeviceCreateInfo*": "void*",
@@ -2118,6 +2121,57 @@
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "WGL",
+            "sources": [
+                "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/wgl.xml"
+            ],
+            "mode": "ConvertConstruct",
+            "cacheDir": "build/cache",
+            "cacheKey": "wgl",
+            "controlDescriptors": ["allow-redefinitions"],
+            "converter": {
+                "reader": "gl",
+                "constructor": "gl",
+                "className": "WGL"
+            },
+            "prefix": "wgl",
+            "clang": {},
+            "bakery": {
+                "profileNames": [
+                    "wgl"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/OpenGL",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.WGL",
+            "extensionsNamespace": "Silk.NET.WGL.Extensions",
+            "typeMaps": [
+                {
+                    "$include.glTypeMap": "build/gl_typemap.json",
+                    "LPGLYPHMETRICSFLOAT": "GlyphMetricsFloat*",
+                    "PIXELFORMATDESCRIPTOR": "PixelFormatDescriptor",
+                    "LAYERPLANEDESCRIPTOR": "LayerPlaneDescriptor",
+                    "HENHMETAFILE": "nint",
+                    "unsignedlong": "uint",
+                    "HPVIDEODEV": "nint",
+                    "HVIDEOOUTPUTDEVICENV": "nint",
+                    "HVIDEOINPUTDEVICENV": "nint",
+                    "INT": "int",
+                    "HGPUNV": "nint",
+                    "PGPU_DEVICE": "GpuDevice*",
+                    "unsignedint": "uint"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         }

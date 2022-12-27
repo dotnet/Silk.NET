@@ -22,7 +22,7 @@ namespace Silk.NET.OpenGLES.Extensions.ANGLE
             thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), primcount);
         }
 
-        public static unsafe void DrawElementsInstanced<T0>(this AngleInstancedArrays thisApi, [Flow(FlowDirection.In)] ANGLE mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] PrimitiveType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged
+        public static unsafe void DrawElementsInstanced<T0>(this AngleInstancedArrays thisApi, [Flow(FlowDirection.In)] ANGLE mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), primcount);
@@ -34,7 +34,7 @@ namespace Silk.NET.OpenGLES.Extensions.ANGLE
             thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), primcount);
         }
 
-        public static unsafe void DrawElementsInstanced<T0>(this AngleInstancedArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] PrimitiveType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged
+        public static unsafe void DrawElementsInstanced<T0>(this AngleInstancedArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), primcount);

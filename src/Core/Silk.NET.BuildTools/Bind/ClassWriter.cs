@@ -332,7 +332,8 @@ namespace Silk.NET.BuildTools.Bind
                         {
                             var coreProject = profile.Projects["Core"];
 
-                            if (coreProject.Classes.Any(x => x.NativeApis.Any(x => x.Value.Functions.Any(x => x.NativeName == function.NativeName))))
+                            if (!task.Task.Controls.Contains("allow-redefinitions") && coreProject.Classes.Any(x => x.NativeApis.Any(x => x.Value.Functions.Any(x => x.NativeName == function.NativeName 
+                                && x.Parameters.Select(x => x.Type.OriginalName).SequenceEqual(function.Parameters.Select(x => x.Type.OriginalName))))))
                             {
                                 continue;
                             }
@@ -388,11 +389,12 @@ namespace Silk.NET.BuildTools.Bind
                             sw.WriteLine();
                         }
 
-                        foreach (var overload in Overloader.GetOverloads(i.Functions, profile.Projects["Core"], task.Task.OverloaderExclusions))
+                        var overloads = Overloader.GetOverloads(i.Functions, profile.Projects["Core"], task.Task.OverloaderExclusions);
+                        foreach (var overload in overloads)
                         {
                             var coreProject = profile.Projects["Core"];
 
-                            if (coreProject.Classes.Any(x => x.NativeApis.Any(x => x.Value.Functions.Any(x => x.NativeName == overload.Signature.NativeName))))
+                            if (!task.Task.Controls.Contains("allow-redefinitions") && coreProject.Classes.Any(x => x.NativeApis.Any(x => x.Value.Functions.Any(x => x.NativeName == overload.Signature.NativeName))))
                             {
                                 continue;
                             }

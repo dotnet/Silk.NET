@@ -101,8 +101,8 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint16_t")]
         [NativeName("Name", "idr_pic_id")]
         public ushort IdrPicId;
-        [NativeName("Type", "int32_t [2]")]
-        [NativeName("Type.Name", "int32_t [2]")]
+        [NativeName("Type", "int32_t[2]")]
+        [NativeName("Type.Name", "int32_t[2]")]
         [NativeName("Name", "PicOrderCnt")]
         public fixed int PicOrderCnt[2];
     }

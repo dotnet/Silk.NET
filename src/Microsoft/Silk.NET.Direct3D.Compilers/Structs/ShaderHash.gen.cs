@@ -35,8 +35,8 @@ namespace Silk.NET.Direct3D.Compilers
         [NativeName("Type.Name", "UINT32")]
         [NativeName("Name", "Flags")]
         public uint Flags;
-        [NativeName("Type", "BYTE [16]")]
-        [NativeName("Type.Name", "BYTE [16]")]
+        [NativeName("Type", "BYTE[16]")]
+        [NativeName("Type.Name", "BYTE[16]")]
         [NativeName("Name", "HashDigest")]
         public fixed byte HashDigest[16];
     }

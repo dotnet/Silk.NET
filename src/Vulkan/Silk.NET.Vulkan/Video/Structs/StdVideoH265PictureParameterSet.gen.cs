@@ -301,12 +301,12 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "chroma_qp_offset_list_len_minus1")]
         public byte ChromaQpOffsetListLenMinus1;
-        [NativeName("Type", "int8_t [6]")]
-        [NativeName("Type.Name", "int8_t [6]")]
+        [NativeName("Type", "int8_t[6]")]
+        [NativeName("Type.Name", "int8_t[6]")]
         [NativeName("Name", "cb_qp_offset_list")]
         public fixed byte CbQpOffsetList[6];
-        [NativeName("Type", "int8_t [6]")]
-        [NativeName("Type.Name", "int8_t [6]")]
+        [NativeName("Type", "int8_t[6]")]
+        [NativeName("Type.Name", "int8_t[6]")]
         [NativeName("Name", "cr_qp_offset_list")]
         public fixed byte CrQpOffsetList[6];
 
@@ -369,12 +369,12 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "reserved2")]
         public byte Reserved2;
-        [NativeName("Type", "uint16_t [19]")]
-        [NativeName("Type.Name", "uint16_t [19]")]
+        [NativeName("Type", "uint16_t[19]")]
+        [NativeName("Type.Name", "uint16_t[19]")]
         [NativeName("Name", "column_width_minus1")]
         public fixed ushort ColumnWidthMinus1[19];
-        [NativeName("Type", "uint16_t [21]")]
-        [NativeName("Type.Name", "uint16_t [21]")]
+        [NativeName("Type", "uint16_t[21]")]
+        [NativeName("Type.Name", "uint16_t[21]")]
         [NativeName("Name", "row_height_minus1")]
         public fixed ushort RowHeightMinus1[21];
 

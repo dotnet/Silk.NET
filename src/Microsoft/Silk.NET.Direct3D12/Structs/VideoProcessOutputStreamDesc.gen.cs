@@ -80,8 +80,8 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "UINT")]
         [NativeName("Name", "AlphaFillModeSourceStreamIndex")]
         public uint AlphaFillModeSourceStreamIndex;
-        [NativeName("Type", "FLOAT [4]")]
-        [NativeName("Type.Name", "FLOAT [4]")]
+        [NativeName("Type", "FLOAT[4]")]
+        [NativeName("Type.Name", "FLOAT[4]")]
         [NativeName("Name", "BackgroundColor")]
         public fixed float BackgroundColor[4];
 

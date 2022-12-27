@@ -14,6 +14,8 @@ namespace Silk.NET.OpenGL
     {
         [NativeName("Name", "GL_BLEND")]
         Blend = 0xBE2,
+        [NativeName("Name", "GL_REPLACE")]
+        Replace = 0x1E01,
         [NativeName("Name", "GL_REPLACE_EXT")]
         ReplaceExt = 0x8062,
         [NativeName("Name", "GL_TEXTURE_ENV_BIAS_SGIX")]

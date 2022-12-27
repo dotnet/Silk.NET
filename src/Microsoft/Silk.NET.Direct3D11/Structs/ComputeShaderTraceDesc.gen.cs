@@ -35,12 +35,12 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type.Name", "UINT64")]
         [NativeName("Name", "Invocation")]
         public ulong Invocation;
-        [NativeName("Type", "UINT [3]")]
-        [NativeName("Type.Name", "UINT [3]")]
+        [NativeName("Type", "UINT[3]")]
+        [NativeName("Type.Name", "UINT[3]")]
         [NativeName("Name", "ThreadIDInGroup")]
         public fixed uint ThreadIDInGroup[3];
-        [NativeName("Type", "UINT [3]")]
-        [NativeName("Type.Name", "UINT [3]")]
+        [NativeName("Type", "UINT[3]")]
+        [NativeName("Type.Name", "UINT[3]")]
         [NativeName("Name", "ThreadGroupID")]
         public fixed uint ThreadGroupID[3];
     }

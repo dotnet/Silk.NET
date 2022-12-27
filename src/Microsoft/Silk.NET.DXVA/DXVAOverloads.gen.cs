@@ -17,7 +17,7 @@ namespace Silk.NET.DXVA
     public static class DXVAOverloads
     {
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1134, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dxvahd.h")]
+        [NativeName("Src", "Line 1134, Column 1 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dxvahd.h")]
         public static unsafe int HDCreateDevice(this DXVA thisApi, Silk.NET.Direct3D9.IDirect3DDevice9Ex* pD3DDevice, [Flow(FlowDirection.In)] ReadOnlySpan<HDContentDesc> pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, IDXVAHDDevice** ppDevice)
         {
             // SpanOverloader
@@ -25,7 +25,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1134, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dxvahd.h")]
+        [NativeName("Src", "Line 1134, Column 1 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dxvahd.h")]
         public static unsafe int HDCreateDevice(this DXVA thisApi, Silk.NET.Direct3D9.IDirect3DDevice9Ex* pD3DDevice, [Flow(FlowDirection.In)] ReadOnlySpan<HDContentDesc> pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref IDXVAHDDevice* ppDevice)
         {
             // SpanOverloader
@@ -33,7 +33,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1134, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dxvahd.h")]
+        [NativeName("Src", "Line 1134, Column 1 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dxvahd.h")]
         public static unsafe int HDCreateDevice(this DXVA thisApi, Span<Silk.NET.Direct3D9.IDirect3DDevice9Ex> pD3DDevice, [Flow(FlowDirection.In)] HDContentDesc* pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, IDXVAHDDevice** ppDevice)
         {
             // SpanOverloader
@@ -41,7 +41,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1134, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dxvahd.h")]
+        [NativeName("Src", "Line 1134, Column 1 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dxvahd.h")]
         public static unsafe int HDCreateDevice(this DXVA thisApi, Span<Silk.NET.Direct3D9.IDirect3DDevice9Ex> pD3DDevice, [Flow(FlowDirection.In)] HDContentDesc* pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref IDXVAHDDevice* ppDevice)
         {
             // SpanOverloader
@@ -49,7 +49,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1134, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dxvahd.h")]
+        [NativeName("Src", "Line 1134, Column 1 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dxvahd.h")]
         public static unsafe int HDCreateDevice(this DXVA thisApi, Span<Silk.NET.Direct3D9.IDirect3DDevice9Ex> pD3DDevice, [Flow(FlowDirection.In)] ReadOnlySpan<HDContentDesc> pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, IDXVAHDDevice** ppDevice)
         {
             // SpanOverloader
@@ -57,7 +57,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1134, Column 1 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dxvahd.h")]
+        [NativeName("Src", "Line 1134, Column 1 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dxvahd.h")]
         public static unsafe int HDCreateDevice(this DXVA thisApi, Span<Silk.NET.Direct3D9.IDirect3DDevice9Ex> pD3DDevice, [Flow(FlowDirection.In)] ReadOnlySpan<HDContentDesc> pContentDesc, HDDeviceUsage Usage, PfnPDXVAHDSWPlugin pPlugin, ref IDXVAHDDevice* ppDevice)
         {
             // SpanOverloader
@@ -65,7 +65,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1967, Column 8 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dxva2api.h")]
+        [NativeName("Src", "Line 1967, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dxva2api.h")]
         public static unsafe int DXVA2CreateDirect3DDeviceManager9(this DXVA thisApi, Span<uint> pResetToken, IDirect3DDeviceManager9** ppDeviceManager)
         {
             // SpanOverloader
@@ -73,7 +73,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1967, Column 8 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dxva2api.h")]
+        [NativeName("Src", "Line 1967, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dxva2api.h")]
         public static unsafe int DXVA2CreateDirect3DDeviceManager9(this DXVA thisApi, Span<uint> pResetToken, ref IDirect3DDeviceManager9* ppDeviceManager)
         {
             // SpanOverloader
@@ -81,7 +81,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1971, Column 8 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dxva2api.h")]
+        [NativeName("Src", "Line 1971, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dxva2api.h")]
         public static unsafe int DXVA2CreateVideoService(this DXVA thisApi, Silk.NET.Direct3D9.IDirect3DDevice9* pDD, Span<Guid> riid, void** ppService)
         {
             // SpanOverloader
@@ -89,7 +89,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1971, Column 8 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dxva2api.h")]
+        [NativeName("Src", "Line 1971, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dxva2api.h")]
         public static unsafe int DXVA2CreateVideoService(this DXVA thisApi, Silk.NET.Direct3D9.IDirect3DDevice9* pDD, Span<Guid> riid, ref void* ppService)
         {
             // SpanOverloader
@@ -97,7 +97,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1971, Column 8 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dxva2api.h")]
+        [NativeName("Src", "Line 1971, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dxva2api.h")]
         public static unsafe int DXVA2CreateVideoService(this DXVA thisApi, Span<Silk.NET.Direct3D9.IDirect3DDevice9> pDD, Guid* riid, void** ppService)
         {
             // SpanOverloader
@@ -105,7 +105,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1971, Column 8 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dxva2api.h")]
+        [NativeName("Src", "Line 1971, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dxva2api.h")]
         public static unsafe int DXVA2CreateVideoService(this DXVA thisApi, Span<Silk.NET.Direct3D9.IDirect3DDevice9> pDD, Guid* riid, ref void* ppService)
         {
             // SpanOverloader
@@ -113,7 +113,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1971, Column 8 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dxva2api.h")]
+        [NativeName("Src", "Line 1971, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dxva2api.h")]
         public static unsafe int DXVA2CreateVideoService(this DXVA thisApi, Span<Silk.NET.Direct3D9.IDirect3DDevice9> pDD, Span<Guid> riid, void** ppService)
         {
             // SpanOverloader
@@ -121,7 +121,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1971, Column 8 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um\\dxva2api.h")]
+        [NativeName("Src", "Line 1971, Column 8 in C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\dxva2api.h")]
         public static unsafe int DXVA2CreateVideoService(this DXVA thisApi, Span<Silk.NET.Direct3D9.IDirect3DDevice9> pDD, Span<Guid> riid, ref void* ppService)
         {
             // SpanOverloader

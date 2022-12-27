@@ -31,12 +31,12 @@ namespace Silk.NET.DirectStorage
             }
         }
 
-        [NativeName("Type", "WCHAR [260]")]
-        [NativeName("Type.Name", "WCHAR [260]")]
+        [NativeName("Type", "WCHAR[260]")]
+        [NativeName("Type.Name", "WCHAR[260]")]
         [NativeName("Name", "Filename")]
         public fixed char Filename[260];
-        [NativeName("Type", "CHAR [64]")]
-        [NativeName("Type.Name", "CHAR [64]")]
+        [NativeName("Type", "CHAR[64]")]
+        [NativeName("Type.Name", "CHAR[64]")]
         [NativeName("Name", "RequestName")]
         public fixed byte RequestName[64];
 
