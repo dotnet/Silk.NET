@@ -24,7 +24,7 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.DirectDriverLoadingInfoLunarg,
             void* pNext = null,
             uint? flags = null,
-            PFN_vkGetInstanceProcAddrLUNARG? pfnGetInstanceProcAddr = null
+            PfnVoidFunction? pfnGetInstanceProcAddr = null
         ) : this()
         {
             if (sType is not null)
@@ -67,7 +67,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "PFN_vkGetInstanceProcAddrLUNARG")]
         [NativeName("Type.Name", "PFN_vkGetInstanceProcAddrLUNARG")]
         [NativeName("Name", "pfnGetInstanceProcAddr")]
-        public PFN_vkGetInstanceProcAddrLUNARG PfnGetInstanceProcAddr;
+        public PfnVoidFunction PfnGetInstanceProcAddr;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
