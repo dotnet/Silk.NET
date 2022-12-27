@@ -33,7 +33,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 454, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -41,7 +42,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 454, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -49,7 +51,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 454, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -57,7 +60,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 454, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -65,7 +69,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 454, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -73,7 +78,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 454, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -81,7 +87,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 454, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -89,7 +96,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 454, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -97,7 +105,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 454, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -105,7 +114,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 454, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -113,7 +123,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 454, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -121,7 +132,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 454, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -129,7 +141,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 454, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -137,7 +150,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 454, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
@@ -145,7 +159,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 454, Column 30 in SDL_stdinc.h")]
+        [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void GetOriginalMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
@@ -329,32 +344,36 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 490, Column 32 in SDL_stdinc.h")]
-        public static unsafe void* Bsearch<T0>(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* key, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged
+        [NativeName("Src", "Line 490, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe void* Bsearch<T0>(this Sdl thisApi, [Flow(FlowDirection.In)] void* key, [Flow(FlowDirection.In)] ReadOnlySpan<T0> @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.Bsearch(key, in @base.GetPinnableReference(), nmemb, size, compare);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 490, Column 32 in SDL_stdinc.h")]
-        public static unsafe void* Bsearch<T0>(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> key, [Flow(Silk.NET.Core.Native.FlowDirection.In)] void* @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged
+        [NativeName("Src", "Line 490, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe void* Bsearch<T0>(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> key, [Flow(FlowDirection.In)] void* @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.Bsearch(in key.GetPinnableReference(), @base, nmemb, size, compare);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 490, Column 32 in SDL_stdinc.h")]
-        public static unsafe void* Bsearch<T0, T1>(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> key, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T1> @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged where T1 : unmanaged
+        [NativeName("Src", "Line 490, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe void* Bsearch<T0, T1>(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> key, [Flow(FlowDirection.In)] ReadOnlySpan<T1> @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
             return thisApi.Bsearch(in key.GetPinnableReference(), in @base.GetPinnableReference(), nmemb, size, compare);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 514, Column 32 in SDL_stdinc.h")]
-        public static unsafe ushort Crc16<T0>(this Sdl thisApi, ushort crc, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, nuint len) where T0 : unmanaged
+        [NativeName("Src", "Line 514, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe ushort Crc16<T0>(this Sdl thisApi, ushort crc, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, nuint len) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.Crc16(crc, in data.GetPinnableReference(), len);
@@ -961,40 +980,45 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 586, Column 31 in SDL_stdinc.h")]
-        public static unsafe byte* Strcasestr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> needle)
+        [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe byte* Strcasestr(this Sdl thisApi, [Flow(FlowDirection.In)] byte* haystack, [Flow(FlowDirection.In)] ReadOnlySpan<byte> needle)
         {
             // SpanOverloader
             return thisApi.Strcasestr(haystack, in needle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 586, Column 31 in SDL_stdinc.h")]
-        public static unsafe byte* Strcasestr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* needle)
+        [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe byte* Strcasestr(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> haystack, [Flow(FlowDirection.In)] byte* needle)
         {
             // SpanOverloader
             return thisApi.Strcasestr(in haystack.GetPinnableReference(), needle);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 586, Column 31 in SDL_stdinc.h")]
-        public static unsafe byte* Strcasestr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> needle)
+        [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe byte* Strcasestr(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> haystack, [Flow(FlowDirection.In)] ReadOnlySpan<byte> needle)
         {
             // SpanOverloader
             return thisApi.Strcasestr(in haystack.GetPinnableReference(), in needle.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 586, Column 31 in SDL_stdinc.h")]
-        public static unsafe byte* Strcasestr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle)
+        [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe byte* Strcasestr(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> haystack, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle)
         {
             // SpanOverloader
             return thisApi.Strcasestr(in haystack.GetPinnableReference(), needle);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 586, Column 31 in SDL_stdinc.h")]
-        public static unsafe byte* Strcasestr(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> needle)
+        [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe byte* Strcasestr(this Sdl thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(FlowDirection.In)] ReadOnlySpan<byte> needle)
         {
             // SpanOverloader
             return thisApi.Strcasestr(haystack, in needle.GetPinnableReference());
@@ -1089,8 +1113,9 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 589, Column 32 in SDL_stdinc.h")]
-        public static unsafe nuint Utf8strnlen(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str, nuint bytes)
+        [NativeName("Src", "Line 589, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe nuint Utf8strnlen(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> str, nuint bytes)
         {
             // SpanOverloader
             return thisApi.Utf8strnlen(in str.GetPinnableReference(), bytes);
@@ -6569,16 +6594,18 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 612, Column 29 in SDL_video.h")]
-        public static unsafe int GetPointDisplayIndex(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Point> point)
+        [NativeName("Src", "Line 612, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GetPointDisplayIndex(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Point> point)
         {
             // SpanOverloader
             return thisApi.GetPointDisplayIndex(in point.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 627, Column 29 in SDL_video.h")]
-        public static unsafe int GetRectDisplayIndex(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Rectangle<int>> rect)
+        [NativeName("Src", "Line 627, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GetRectDisplayIndex(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             return thisApi.GetRectDisplayIndex(in rect.GetPinnableReference());
@@ -6849,7 +6876,136 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1067, Column 30 in SDL_video.h")]
+        [NativeName("Src", "Line 1045, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        public static unsafe int GetWindowBordersSize(this Sdl thisApi, Span<Window> window, int* top, int* left, int* bottom, int* right)
+        {
+            // SpanOverloader
+            return thisApi.GetWindowBordersSize(ref window.GetPinnableReference(), top, left, bottom, right);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1045, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        public static unsafe int GetWindowBordersSize(this Sdl thisApi, Span<Window> window, int* top, int* left, int* bottom, Span<int> right)
+        {
+            // SpanOverloader
+            return thisApi.GetWindowBordersSize(ref window.GetPinnableReference(), top, left, bottom, ref right.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1045, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        public static unsafe int GetWindowBordersSize(this Sdl thisApi, Span<Window> window, int* top, int* left, Span<int> bottom, int* right)
+        {
+            // SpanOverloader
+            return thisApi.GetWindowBordersSize(ref window.GetPinnableReference(), top, left, ref bottom.GetPinnableReference(), right);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1045, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        public static unsafe int GetWindowBordersSize(this Sdl thisApi, Span<Window> window, int* top, int* left, Span<int> bottom, Span<int> right)
+        {
+            // SpanOverloader
+            return thisApi.GetWindowBordersSize(ref window.GetPinnableReference(), top, left, ref bottom.GetPinnableReference(), ref right.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1045, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        public static unsafe int GetWindowBordersSize(this Sdl thisApi, Span<Window> window, int* top, Span<int> left, int* bottom, int* right)
+        {
+            // SpanOverloader
+            return thisApi.GetWindowBordersSize(ref window.GetPinnableReference(), top, ref left.GetPinnableReference(), bottom, right);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1045, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        public static unsafe int GetWindowBordersSize(this Sdl thisApi, Span<Window> window, int* top, Span<int> left, int* bottom, Span<int> right)
+        {
+            // SpanOverloader
+            return thisApi.GetWindowBordersSize(ref window.GetPinnableReference(), top, ref left.GetPinnableReference(), bottom, ref right.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1045, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        public static unsafe int GetWindowBordersSize(this Sdl thisApi, Span<Window> window, int* top, Span<int> left, Span<int> bottom, int* right)
+        {
+            // SpanOverloader
+            return thisApi.GetWindowBordersSize(ref window.GetPinnableReference(), top, ref left.GetPinnableReference(), ref bottom.GetPinnableReference(), right);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1045, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        public static unsafe int GetWindowBordersSize(this Sdl thisApi, Span<Window> window, int* top, Span<int> left, Span<int> bottom, Span<int> right)
+        {
+            // SpanOverloader
+            return thisApi.GetWindowBordersSize(ref window.GetPinnableReference(), top, ref left.GetPinnableReference(), ref bottom.GetPinnableReference(), ref right.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1045, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        public static unsafe int GetWindowBordersSize(this Sdl thisApi, Span<Window> window, Span<int> top, int* left, int* bottom, int* right)
+        {
+            // SpanOverloader
+            return thisApi.GetWindowBordersSize(ref window.GetPinnableReference(), ref top.GetPinnableReference(), left, bottom, right);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1045, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        public static unsafe int GetWindowBordersSize(this Sdl thisApi, Span<Window> window, Span<int> top, int* left, int* bottom, Span<int> right)
+        {
+            // SpanOverloader
+            return thisApi.GetWindowBordersSize(ref window.GetPinnableReference(), ref top.GetPinnableReference(), left, bottom, ref right.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1045, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        public static unsafe int GetWindowBordersSize(this Sdl thisApi, Span<Window> window, Span<int> top, int* left, Span<int> bottom, int* right)
+        {
+            // SpanOverloader
+            return thisApi.GetWindowBordersSize(ref window.GetPinnableReference(), ref top.GetPinnableReference(), left, ref bottom.GetPinnableReference(), right);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1045, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        public static unsafe int GetWindowBordersSize(this Sdl thisApi, Span<Window> window, Span<int> top, int* left, Span<int> bottom, Span<int> right)
+        {
+            // SpanOverloader
+            return thisApi.GetWindowBordersSize(ref window.GetPinnableReference(), ref top.GetPinnableReference(), left, ref bottom.GetPinnableReference(), ref right.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1045, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        public static unsafe int GetWindowBordersSize(this Sdl thisApi, Span<Window> window, Span<int> top, Span<int> left, int* bottom, int* right)
+        {
+            // SpanOverloader
+            return thisApi.GetWindowBordersSize(ref window.GetPinnableReference(), ref top.GetPinnableReference(), ref left.GetPinnableReference(), bottom, right);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1045, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        public static unsafe int GetWindowBordersSize(this Sdl thisApi, Span<Window> window, Span<int> top, Span<int> left, int* bottom, Span<int> right)
+        {
+            // SpanOverloader
+            return thisApi.GetWindowBordersSize(ref window.GetPinnableReference(), ref top.GetPinnableReference(), ref left.GetPinnableReference(), bottom, ref right.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1045, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        public static unsafe int GetWindowBordersSize(this Sdl thisApi, Span<Window> window, Span<int> top, Span<int> left, Span<int> bottom, int* right)
+        {
+            // SpanOverloader
+            return thisApi.GetWindowBordersSize(ref window.GetPinnableReference(), ref top.GetPinnableReference(), ref left.GetPinnableReference(), ref bottom.GetPinnableReference(), right);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1045, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        public static unsafe int GetWindowBordersSize(this Sdl thisApi, Span<Window> window, Span<int> top, Span<int> left, Span<int> bottom, Span<int> right)
+        {
+            // SpanOverloader
+            return thisApi.GetWindowBordersSize(ref window.GetPinnableReference(), ref top.GetPinnableReference(), ref left.GetPinnableReference(), ref bottom.GetPinnableReference(), ref right.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1067, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void GetWindowSizeInPixels(this Sdl thisApi, Window* window, int* w, Span<int> h)
         {
             // SpanOverloader
@@ -6857,7 +7013,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1067, Column 30 in SDL_video.h")]
+        [NativeName("Src", "Line 1067, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void GetWindowSizeInPixels(this Sdl thisApi, Window* window, Span<int> w, int* h)
         {
             // SpanOverloader
@@ -6865,7 +7022,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1067, Column 30 in SDL_video.h")]
+        [NativeName("Src", "Line 1067, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void GetWindowSizeInPixels(this Sdl thisApi, Window* window, Span<int> w, Span<int> h)
         {
             // SpanOverloader
@@ -6873,7 +7031,51 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1099, Column 30 in SDL_video.h")]
+        [NativeName("Src", "Line 1067, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe void GetWindowSizeInPixels(this Sdl thisApi, Span<Window> window, int* w, int* h)
+        {
+            // SpanOverloader
+            thisApi.GetWindowSizeInPixels(ref window.GetPinnableReference(), w, h);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1067, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe void GetWindowSizeInPixels(this Sdl thisApi, Span<Window> window, int* w, Span<int> h)
+        {
+            // SpanOverloader
+            thisApi.GetWindowSizeInPixels(ref window.GetPinnableReference(), w, ref h.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1067, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe void GetWindowSizeInPixels(this Sdl thisApi, Span<Window> window, Span<int> w, int* h)
+        {
+            // SpanOverloader
+            thisApi.GetWindowSizeInPixels(ref window.GetPinnableReference(), ref w.GetPinnableReference(), h);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1067, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe void GetWindowSizeInPixels(this Sdl thisApi, Span<Window> window, Span<int> w, Span<int> h)
+        {
+            // SpanOverloader
+            thisApi.GetWindowSizeInPixels(ref window.GetPinnableReference(), ref w.GetPinnableReference(), ref h.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1082, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
+        public static unsafe void SetWindowMinimumSize(this Sdl thisApi, Span<Window> window, int min_w, int min_h)
+        {
+            // SpanOverloader
+            thisApi.SetWindowMinimumSize(ref window.GetPinnableReference(), min_w, min_h);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1099, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
         public static unsafe void GetWindowMinimumSize(this Sdl thisApi, Window* window, int* w, Span<int> h)
         {
             // SpanOverloader
@@ -7195,7 +7397,8 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 198, Column 29 in SDL_main.h")]
         [ExcludeFromOverride(0)]
-        public static unsafe int RegisterApp<T0>(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, uint style, Span<T0> hInst) where T0 : unmanaged
+        [ExcludeFromOverride(2)]
+        public static unsafe int RegisterApp<T0>(this Sdl thisApi, [Flow(FlowDirection.In)] byte* name, uint style, Span<T0> hInst) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterApp(name, style, ref hInst.GetPinnableReference());
@@ -7204,7 +7407,8 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 198, Column 29 in SDL_main.h")]
         [ExcludeFromOverride(0)]
-        public static unsafe int RegisterApp(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, uint style, void* hInst)
+        [ExcludeFromOverride(2)]
+        public static unsafe int RegisterApp(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, uint style, void* hInst)
         {
             // SpanOverloader
             return thisApi.RegisterApp(in name.GetPinnableReference(), style, hInst);
@@ -7213,7 +7417,8 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 198, Column 29 in SDL_main.h")]
         [ExcludeFromOverride(0)]
-        public static unsafe int RegisterApp<T0>(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name, uint style, Span<T0> hInst) where T0 : unmanaged
+        [ExcludeFromOverride(2)]
+        public static unsafe int RegisterApp<T0>(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name, uint style, Span<T0> hInst) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterApp(in name.GetPinnableReference(), style, ref hInst.GetPinnableReference());
@@ -7222,7 +7427,8 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 198, Column 29 in SDL_main.h")]
         [ExcludeFromOverride(0)]
-        public static unsafe int RegisterApp<T0>(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, uint style, Span<T0> hInst) where T0 : unmanaged
+        [ExcludeFromOverride(2)]
+        public static unsafe int RegisterApp<T0>(this Sdl thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, uint style, Span<T0> hInst) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RegisterApp(name, style, ref hInst.GetPinnableReference());
@@ -7599,7 +7805,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 553, Column 29 in SDL_audio.h")]
+        [NativeName("Src", "Line 553, Column 29 in build/submodules/SDL/include\\SDL_audio.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GetDefaultAudioInfo(this Sdl thisApi, byte** name, Span<AudioSpec> spec, int iscapture)
         {
             // SpanOverloader
@@ -7607,7 +7814,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 553, Column 29 in SDL_audio.h")]
+        [NativeName("Src", "Line 553, Column 29 in build/submodules/SDL/include\\SDL_audio.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GetDefaultAudioInfo(this Sdl thisApi, ref byte* name, Span<AudioSpec> spec, int iscapture)
         {
             // SpanOverloader
@@ -7951,8 +8159,9 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 97, Column 29 in SDL_clipboard.h")]
-        public static unsafe int SetPrimarySelectionText(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> text)
+        [NativeName("Src", "Line 97, Column 29 in build/submodules/SDL/include\\SDL_clipboard.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int SetPrimarySelectionText(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> text)
         {
             // SpanOverloader
             return thisApi.SetPrimarySelectionText(in text.GetPinnableReference());
@@ -8127,7 +8336,24 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 74, Column 30 in SDL_guid.h")]
+        [NativeName("Src", "Line 373, Column 30 in build/submodules/SDL/include/SDL_mouse.h")]
+        public static unsafe void SetCursor(this Sdl thisApi, Span<Cursor> cursor)
+        {
+            // SpanOverloader
+            thisApi.SetCursor(ref cursor.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 414, Column 30 in build/submodules/SDL/include/SDL_mouse.h")]
+        public static unsafe void FreeCursor(this Sdl thisApi, Span<Cursor> cursor)
+        {
+            // SpanOverloader
+            thisApi.FreeCursor(ref cursor.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 74, Column 30 in build/submodules/SDL/include\\SDL_guid.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void GUIDToString(this Sdl thisApi, GUID guid, Span<byte> pszGUID, int cbGUID)
         {
             // SpanOverloader
@@ -8143,15 +8369,143 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 401, Column 29 in SDL_joystick.h")]
-        public static unsafe int JoystickAttachVirtualEx(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<VirtualJoystickDesc> desc)
+        [NativeName("Src", "Line 401, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickAttachVirtualEx(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<VirtualJoystickDesc> desc)
         {
             // SpanOverloader
             return thisApi.JoystickAttachVirtualEx(in desc.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 637, Column 30 in SDL_joystick.h")]
+        [NativeName("Src", "Line 444, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickSetVirtualAxis(this Sdl thisApi, Span<Joystick> joystick, int axis, short value)
+        {
+            // SpanOverloader
+            return thisApi.JoystickSetVirtualAxis(ref joystick.GetPinnableReference(), axis, value);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 462, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickSetVirtualButton(this Sdl thisApi, Span<Joystick> joystick, int button, byte value)
+        {
+            // SpanOverloader
+            return thisApi.JoystickSetVirtualButton(ref joystick.GetPinnableReference(), button, value);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 480, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickSetVirtualHat(this Sdl thisApi, Span<Joystick> joystick, int hat, byte value)
+        {
+            // SpanOverloader
+            return thisApi.JoystickSetVirtualHat(ref joystick.GetPinnableReference(), hat, value);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 494, Column 37 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe byte* JoystickName(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickName(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 507, Column 37 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe byte* JoystickPath(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickPath(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 520, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickGetPlayerIndex(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickGetPlayerIndex(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 531, Column 30 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe void JoystickSetPlayerIndex(this Sdl thisApi, Span<Joystick> joystick, int player_index)
+        {
+            // SpanOverloader
+            thisApi.JoystickSetPlayerIndex(ref joystick.GetPinnableReference(), player_index);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 548, Column 42 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe GUID JoystickGetGUID(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickGetGUID(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 560, Column 32 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe ushort JoystickGetVendor(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickGetVendor(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 572, Column 32 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe ushort JoystickGetProduct(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickGetProduct(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 584, Column 32 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe ushort JoystickGetProductVersion(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickGetProductVersion(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 597, Column 32 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe ushort JoystickGetFirmwareVersion(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickGetFirmwareVersion(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 610, Column 38 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe byte* JoystickGetSerial(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickGetSerial(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 620, Column 42 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe JoystickType JoystickGetType(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickGetType(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 637, Column 30 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void JoystickGetGUIDString(this Sdl thisApi, GUID guid, Span<byte> pszGUID, int cbGUID)
         {
             // SpanOverloader
@@ -8159,8 +8513,9 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 653, Column 42 in SDL_joystick.h")]
-        public static unsafe GUID JoystickGetGUIDFromString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> pchGUID)
+        [NativeName("Src", "Line 653, Column 42 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe GUID JoystickGetGUIDFromString(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pchGUID)
         {
             // SpanOverloader
             return thisApi.JoystickGetGUIDFromString(in pchGUID.GetPinnableReference());
@@ -8287,7 +8642,71 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 845, Column 34 in SDL_joystick.h")]
+        [NativeName("Src", "Line 686, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe SdlBool JoystickGetAttached(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickGetAttached(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 699, Column 40 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickInstanceID(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickInstanceID(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 718, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickNumAxes(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickNumAxes(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 736, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickNumBalls(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickNumBalls(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 750, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickNumHats(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickNumHats(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 764, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickNumButtons(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickNumButtons(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 828, Column 32 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe short JoystickGetAxis(this Sdl thisApi, Span<Joystick> joystick, int axis)
+        {
+            // SpanOverloader
+            return thisApi.JoystickGetAxis(ref joystick.GetPinnableReference(), axis);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 845, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe SdlBool JoystickGetAxisInitialState(this Sdl thisApi, Joystick* joystick, int axis, Span<short> state)
         {
             // SpanOverloader
@@ -8295,7 +8714,35 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 908, Column 29 in SDL_joystick.h")]
+        [NativeName("Src", "Line 845, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe SdlBool JoystickGetAxisInitialState(this Sdl thisApi, Span<Joystick> joystick, int axis, short* state)
+        {
+            // SpanOverloader
+            return thisApi.JoystickGetAxisInitialState(ref joystick.GetPinnableReference(), axis, state);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 845, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe SdlBool JoystickGetAxisInitialState(this Sdl thisApi, Span<Joystick> joystick, int axis, Span<short> state)
+        {
+            // SpanOverloader
+            return thisApi.JoystickGetAxisInitialState(ref joystick.GetPinnableReference(), axis, ref state.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 886, Column 31 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe byte JoystickGetHat(this Sdl thisApi, Span<Joystick> joystick, int hat)
+        {
+            // SpanOverloader
+            return thisApi.JoystickGetHat(ref joystick.GetPinnableReference(), hat);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 908, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int JoystickGetBall(this Sdl thisApi, Joystick* joystick, int ball, int* dx, Span<int> dy)
         {
             // SpanOverloader
@@ -8303,7 +8750,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 908, Column 29 in SDL_joystick.h")]
+        [NativeName("Src", "Line 908, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int JoystickGetBall(this Sdl thisApi, Joystick* joystick, int ball, Span<int> dx, int* dy)
         {
             // SpanOverloader
@@ -8311,7 +8759,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 908, Column 29 in SDL_joystick.h")]
+        [NativeName("Src", "Line 908, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int JoystickGetBall(this Sdl thisApi, Joystick* joystick, int ball, Span<int> dx, Span<int> dy)
         {
             // SpanOverloader
@@ -8319,15 +8768,183 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1034, Column 29 in SDL_joystick.h")]
-        public static unsafe int JoystickSendEffect<T0>(this Sdl thisApi, Joystick* joystick, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, int size) where T0 : unmanaged
+        [NativeName("Src", "Line 908, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickGetBall(this Sdl thisApi, Span<Joystick> joystick, int ball, int* dx, int* dy)
+        {
+            // SpanOverloader
+            return thisApi.JoystickGetBall(ref joystick.GetPinnableReference(), ball, dx, dy);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 908, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickGetBall(this Sdl thisApi, Span<Joystick> joystick, int ball, int* dx, Span<int> dy)
+        {
+            // SpanOverloader
+            return thisApi.JoystickGetBall(ref joystick.GetPinnableReference(), ball, dx, ref dy.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 908, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickGetBall(this Sdl thisApi, Span<Joystick> joystick, int ball, Span<int> dx, int* dy)
+        {
+            // SpanOverloader
+            return thisApi.JoystickGetBall(ref joystick.GetPinnableReference(), ball, ref dx.GetPinnableReference(), dy);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 908, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickGetBall(this Sdl thisApi, Span<Joystick> joystick, int ball, Span<int> dx, Span<int> dy)
+        {
+            // SpanOverloader
+            return thisApi.JoystickGetBall(ref joystick.GetPinnableReference(), ball, ref dx.GetPinnableReference(), ref dy.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 923, Column 31 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe byte JoystickGetButton(this Sdl thisApi, Span<Joystick> joystick, int button)
+        {
+            // SpanOverloader
+            return thisApi.JoystickGetButton(ref joystick.GetPinnableReference(), button);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 944, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickRumble(this Sdl thisApi, Span<Joystick> joystick, ushort low_frequency_rumble, ushort high_frequency_rumble, uint duration_ms)
+        {
+            // SpanOverloader
+            return thisApi.JoystickRumble(ref joystick.GetPinnableReference(), low_frequency_rumble, high_frequency_rumble, duration_ms);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 969, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickRumbleTriggers(this Sdl thisApi, Span<Joystick> joystick, ushort left_rumble, ushort right_rumble, uint duration_ms)
+        {
+            // SpanOverloader
+            return thisApi.JoystickRumbleTriggers(ref joystick.GetPinnableReference(), left_rumble, right_rumble, duration_ms);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 982, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe SdlBool JoystickHasLED(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickHasLED(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 994, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe SdlBool JoystickHasRumble(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickHasRumble(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1006, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe SdlBool JoystickHasRumbleTriggers(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickHasRumbleTriggers(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1022, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickSetLED(this Sdl thisApi, Span<Joystick> joystick, byte red, byte green, byte blue)
+        {
+            // SpanOverloader
+            return thisApi.JoystickSetLED(ref joystick.GetPinnableReference(), red, green, blue);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1034, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickSendEffect<T0>(this Sdl thisApi, Joystick* joystick, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, int size) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.JoystickSendEffect(joystick, in data.GetPinnableReference(), size);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 270, Column 29 in SDL_sensor.h")]
+        [NativeName("Src", "Line 1034, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickSendEffect(this Sdl thisApi, Span<Joystick> joystick, [Flow(FlowDirection.In)] void* data, int size)
+        {
+            // SpanOverloader
+            return thisApi.JoystickSendEffect(ref joystick.GetPinnableReference(), data, size);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1034, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickSendEffect<T0>(this Sdl thisApi, Span<Joystick> joystick, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, int size) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.JoystickSendEffect(ref joystick.GetPinnableReference(), in data.GetPinnableReference(), size);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1045, Column 30 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe void JoystickClose(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            thisApi.JoystickClose(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1056, Column 48 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe JoystickPowerLevel JoystickCurrentPowerLevel(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickCurrentPowerLevel(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 225, Column 37 in build/submodules/SDL/include\\SDL_sensor.h")]
+        public static unsafe byte* SensorGetName(this Sdl thisApi, Span<Sensor> sensor)
+        {
+            // SpanOverloader
+            return thisApi.SensorGetName(ref sensor.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 236, Column 40 in build/submodules/SDL/include\\SDL_sensor.h")]
+        public static unsafe SensorType SensorGetType(this Sdl thisApi, Span<Sensor> sensor)
+        {
+            // SpanOverloader
+            return thisApi.SensorGetType(ref sensor.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 246, Column 29 in build/submodules/SDL/include\\SDL_sensor.h")]
+        public static unsafe int SensorGetNonPortableType(this Sdl thisApi, Span<Sensor> sensor)
+        {
+            // SpanOverloader
+            return thisApi.SensorGetNonPortableType(ref sensor.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 256, Column 38 in build/submodules/SDL/include\\SDL_sensor.h")]
+        public static unsafe int SensorGetInstanceID(this Sdl thisApi, Span<Sensor> sensor)
+        {
+            // SpanOverloader
+            return thisApi.SensorGetInstanceID(ref sensor.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 270, Column 29 in build/submodules/SDL/include\\SDL_sensor.h")]
         public static unsafe int SensorGetData(this Sdl thisApi, Sensor* sensor, Span<float> data, int num_values)
         {
             // SpanOverloader
@@ -8335,7 +8952,24 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 287, Column 29 in SDL_sensor.h")]
+        [NativeName("Src", "Line 270, Column 29 in build/submodules/SDL/include\\SDL_sensor.h")]
+        public static unsafe int SensorGetData(this Sdl thisApi, Span<Sensor> sensor, float* data, int num_values)
+        {
+            // SpanOverloader
+            return thisApi.SensorGetData(ref sensor.GetPinnableReference(), data, num_values);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 270, Column 29 in build/submodules/SDL/include\\SDL_sensor.h")]
+        public static unsafe int SensorGetData(this Sdl thisApi, Span<Sensor> sensor, Span<float> data, int num_values)
+        {
+            // SpanOverloader
+            return thisApi.SensorGetData(ref sensor.GetPinnableReference(), ref data.GetPinnableReference(), num_values);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 287, Column 29 in build/submodules/SDL/include\\SDL_sensor.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int SensorGetDataWithTimestamp(this Sdl thisApi, Sensor* sensor, ulong* timestamp, Span<float> data, int num_values)
         {
             // SpanOverloader
@@ -8343,7 +8977,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 287, Column 29 in SDL_sensor.h")]
+        [NativeName("Src", "Line 287, Column 29 in build/submodules/SDL/include\\SDL_sensor.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int SensorGetDataWithTimestamp(this Sdl thisApi, Sensor* sensor, Span<ulong> timestamp, float* data, int num_values)
         {
             // SpanOverloader
@@ -8351,7 +8986,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 287, Column 29 in SDL_sensor.h")]
+        [NativeName("Src", "Line 287, Column 29 in build/submodules/SDL/include\\SDL_sensor.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int SensorGetDataWithTimestamp(this Sdl thisApi, Sensor* sensor, Span<ulong> timestamp, Span<float> data, int num_values)
         {
             // SpanOverloader
@@ -8359,7 +8995,52 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 165, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 287, Column 29 in build/submodules/SDL/include\\SDL_sensor.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int SensorGetDataWithTimestamp(this Sdl thisApi, Span<Sensor> sensor, ulong* timestamp, float* data, int num_values)
+        {
+            // SpanOverloader
+            return thisApi.SensorGetDataWithTimestamp(ref sensor.GetPinnableReference(), timestamp, data, num_values);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 287, Column 29 in build/submodules/SDL/include\\SDL_sensor.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int SensorGetDataWithTimestamp(this Sdl thisApi, Span<Sensor> sensor, ulong* timestamp, Span<float> data, int num_values)
+        {
+            // SpanOverloader
+            return thisApi.SensorGetDataWithTimestamp(ref sensor.GetPinnableReference(), timestamp, ref data.GetPinnableReference(), num_values);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 287, Column 29 in build/submodules/SDL/include\\SDL_sensor.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int SensorGetDataWithTimestamp(this Sdl thisApi, Span<Sensor> sensor, Span<ulong> timestamp, float* data, int num_values)
+        {
+            // SpanOverloader
+            return thisApi.SensorGetDataWithTimestamp(ref sensor.GetPinnableReference(), ref timestamp.GetPinnableReference(), data, num_values);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 287, Column 29 in build/submodules/SDL/include\\SDL_sensor.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int SensorGetDataWithTimestamp(this Sdl thisApi, Span<Sensor> sensor, Span<ulong> timestamp, Span<float> data, int num_values)
+        {
+            // SpanOverloader
+            return thisApi.SensorGetDataWithTimestamp(ref sensor.GetPinnableReference(), ref timestamp.GetPinnableReference(), ref data.GetPinnableReference(), num_values);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 296, Column 30 in build/submodules/SDL/include\\SDL_sensor.h")]
+        public static unsafe void SensorClose(this Sdl thisApi, Span<Sensor> sensor)
+        {
+            // SpanOverloader
+            thisApi.SensorClose(ref sensor.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 165, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerAddMappingsFromRW(this Sdl thisApi, Span<RWops> rw, int freerw)
         {
             // SpanOverloader
@@ -8367,31 +9048,224 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 201, Column 29 in SDL_gamecontroller.h")]
-        public static unsafe int GameControllerAddMapping(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> mappingString)
+        [NativeName("Src", "Line 201, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerAddMapping(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> mappingString)
         {
             // SpanOverloader
             return thisApi.GameControllerAddMapping(in mappingString.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 635, Column 48 in SDL_gamecontroller.h")]
-        public static unsafe GameControllerAxis GameControllerGetAxisFromString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str)
+        [NativeName("Src", "Line 255, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe byte* GameControllerMapping(this Sdl thisApi, Span<GameController> gamecontroller)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerMapping(ref gamecontroller.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 410, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe byte* GameControllerName(this Sdl thisApi, Span<GameController> gamecontroller)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerName(ref gamecontroller.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 427, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe byte* GameControllerPath(this Sdl thisApi, Span<GameController> gamecontroller)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerPath(ref gamecontroller.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 440, Column 48 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe GameControllerType GameControllerGetType(this Sdl thisApi, Span<GameController> gamecontroller)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetType(ref gamecontroller.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 452, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetPlayerIndex(this Sdl thisApi, Span<GameController> gamecontroller)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetPlayerIndex(ref gamecontroller.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 463, Column 30 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe void GameControllerSetPlayerIndex(this Sdl thisApi, Span<GameController> gamecontroller, int player_index)
+        {
+            // SpanOverloader
+            thisApi.GameControllerSetPlayerIndex(ref gamecontroller.GetPinnableReference(), player_index);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 475, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe ushort GameControllerGetVendor(this Sdl thisApi, Span<GameController> gamecontroller)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetVendor(ref gamecontroller.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 487, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe ushort GameControllerGetProduct(this Sdl thisApi, Span<GameController> gamecontroller)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetProduct(ref gamecontroller.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 499, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe ushort GameControllerGetProductVersion(this Sdl thisApi, Span<GameController> gamecontroller)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetProductVersion(ref gamecontroller.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 511, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe ushort GameControllerGetFirmwareVersion(this Sdl thisApi, Span<GameController> gamecontroller)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetFirmwareVersion(ref gamecontroller.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 524, Column 38 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe byte* GameControllerGetSerial(this Sdl thisApi, Span<GameController> gamecontroller)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetSerial(ref gamecontroller.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 539, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe SdlBool GameControllerGetAttached(this Sdl thisApi, Span<GameController> gamecontroller)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetAttached(ref gamecontroller.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 560, Column 39 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe Joystick* GameControllerGetJoystick(this Sdl thisApi, Span<GameController> gamecontroller)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetJoystick(ref gamecontroller.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 635, Column 48 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe GameControllerAxis GameControllerGetAxisFromString(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> str)
         {
             // SpanOverloader
             return thisApi.GameControllerGetAxisFromString(in str.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 749, Column 50 in SDL_gamecontroller.h")]
-        public static unsafe GameControllerButton GameControllerGetButtonFromString(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> str)
+        [NativeName("Src", "Line 667, Column 1 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe GameControllerButtonBind GameControllerGetBindForAxis(this Sdl thisApi, Span<GameController> gamecontroller, GameControllerAxis axis)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetBindForAxis(ref gamecontroller.GetPinnableReference(), axis);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 683, Column 1 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe SdlBool GameControllerHasAxis(this Sdl thisApi, Span<GameController> gamecontroller, GameControllerAxis axis)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerHasAxis(ref gamecontroller.GetPinnableReference(), axis);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 703, Column 1 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe short GameControllerGetAxis(this Sdl thisApi, Span<GameController> gamecontroller, GameControllerAxis axis)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetAxis(ref gamecontroller.GetPinnableReference(), axis);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 749, Column 50 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe GameControllerButton GameControllerGetButtonFromString(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> str)
         {
             // SpanOverloader
             return thisApi.GameControllerGetButtonFromString(in str.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 781, Column 1 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe GameControllerButtonBind GameControllerGetBindForButton(this Sdl thisApi, Span<GameController> gamecontroller, GameControllerButton button)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetBindForButton(ref gamecontroller.GetPinnableReference(), button);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 796, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe SdlBool GameControllerHasButton(this Sdl thisApi, Span<GameController> gamecontroller, GameControllerButton button)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerHasButton(ref gamecontroller.GetPinnableReference(), button);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 811, Column 31 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe byte GameControllerGetButton(this Sdl thisApi, Span<GameController> gamecontroller, GameControllerButton button)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetButton(ref gamecontroller.GetPinnableReference(), button);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 819, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetNumTouchpads(this Sdl thisApi, Span<GameController> gamecontroller)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetNumTouchpads(ref gamecontroller.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 827, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetNumTouchpadFingers(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetNumTouchpadFingers(ref gamecontroller.GetPinnableReference(), touchpad);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, byte* state, float* x, float* y, Span<float> pressure)
         {
             // SpanOverloader
@@ -8399,7 +9273,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, byte* state, float* x, Span<float> y, float* pressure)
         {
             // SpanOverloader
@@ -8407,7 +9282,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, byte* state, float* x, Span<float> y, Span<float> pressure)
         {
             // SpanOverloader
@@ -8415,7 +9291,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, byte* state, Span<float> x, float* y, float* pressure)
         {
             // SpanOverloader
@@ -8423,7 +9300,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, byte* state, Span<float> x, float* y, Span<float> pressure)
         {
             // SpanOverloader
@@ -8431,7 +9309,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, byte* state, Span<float> x, Span<float> y, float* pressure)
         {
             // SpanOverloader
@@ -8439,7 +9318,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, byte* state, Span<float> x, Span<float> y, Span<float> pressure)
         {
             // SpanOverloader
@@ -8447,7 +9327,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, Span<byte> state, float* x, float* y, float* pressure)
         {
             // SpanOverloader
@@ -8455,7 +9336,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, Span<byte> state, float* x, float* y, Span<float> pressure)
         {
             // SpanOverloader
@@ -8463,7 +9345,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, Span<byte> state, float* x, Span<float> y, float* pressure)
         {
             // SpanOverloader
@@ -8471,7 +9354,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, Span<byte> state, float* x, Span<float> y, Span<float> pressure)
         {
             // SpanOverloader
@@ -8479,7 +9363,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, Span<byte> state, Span<float> x, float* y, float* pressure)
         {
             // SpanOverloader
@@ -8487,7 +9372,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, Span<byte> state, Span<float> x, float* y, Span<float> pressure)
         {
             // SpanOverloader
@@ -8495,7 +9381,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, Span<byte> state, Span<float> x, Span<float> y, float* pressure)
         {
             // SpanOverloader
@@ -8503,7 +9390,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, Span<byte> state, Span<float> x, Span<float> y, Span<float> pressure)
         {
             // SpanOverloader
@@ -8511,7 +9399,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, float* y, Span<float> pressure)
         {
             // SpanOverloader
@@ -8519,7 +9408,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, Span<float> y, float* pressure)
         {
             // SpanOverloader
@@ -8527,7 +9417,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, Span<float> y, Span<float> pressure)
         {
             // SpanOverloader
@@ -8535,7 +9426,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, Span<float> x, float* y, float* pressure)
         {
             // SpanOverloader
@@ -8543,7 +9435,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, Span<float> x, float* y, Span<float> pressure)
         {
             // SpanOverloader
@@ -8551,7 +9444,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, Span<float> x, Span<float> y, float* pressure)
         {
             // SpanOverloader
@@ -8559,7 +9453,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 834, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, Span<float> x, Span<float> y, Span<float> pressure)
         {
             // SpanOverloader
@@ -8567,7 +9462,260 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 896, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, byte* state, float* x, float* y, float* pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, x, y, pressure);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, byte* state, float* x, float* y, Span<float> pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, x, y, ref pressure.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, byte* state, float* x, Span<float> y, float* pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, x, ref y.GetPinnableReference(), pressure);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, byte* state, float* x, Span<float> y, Span<float> pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, x, ref y.GetPinnableReference(), ref pressure.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, byte* state, Span<float> x, float* y, float* pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, ref x.GetPinnableReference(), y, pressure);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, byte* state, Span<float> x, float* y, Span<float> pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, ref x.GetPinnableReference(), y, ref pressure.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, byte* state, Span<float> x, Span<float> y, float* pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, ref x.GetPinnableReference(), ref y.GetPinnableReference(), pressure);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, byte* state, Span<float> x, Span<float> y, Span<float> pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, ref x.GetPinnableReference(), ref y.GetPinnableReference(), ref pressure.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, Span<byte> state, float* x, float* y, float* pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, ref state.GetPinnableReference(), x, y, pressure);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, Span<byte> state, float* x, float* y, Span<float> pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, ref state.GetPinnableReference(), x, y, ref pressure.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, Span<byte> state, float* x, Span<float> y, float* pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, ref state.GetPinnableReference(), x, ref y.GetPinnableReference(), pressure);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, Span<byte> state, float* x, Span<float> y, Span<float> pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, ref state.GetPinnableReference(), x, ref y.GetPinnableReference(), ref pressure.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, Span<byte> state, Span<float> x, float* y, float* pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, ref state.GetPinnableReference(), ref x.GetPinnableReference(), y, pressure);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, Span<byte> state, Span<float> x, float* y, Span<float> pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, ref state.GetPinnableReference(), ref x.GetPinnableReference(), y, ref pressure.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, Span<byte> state, Span<float> x, Span<float> y, float* pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, ref state.GetPinnableReference(), ref x.GetPinnableReference(), ref y.GetPinnableReference(), pressure);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, Span<byte> state, Span<float> x, Span<float> y, Span<float> pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, ref state.GetPinnableReference(), ref x.GetPinnableReference(), ref y.GetPinnableReference(), ref pressure.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, float* y, float* pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, x, y, pressure);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, float* y, Span<float> pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, x, y, ref pressure.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, Span<float> y, float* pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, x, ref y.GetPinnableReference(), pressure);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, Span<float> y, Span<float> pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, x, ref y.GetPinnableReference(), ref pressure.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, Span<float> x, float* y, float* pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, ref x.GetPinnableReference(), y, pressure);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, Span<float> x, float* y, Span<float> pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, ref x.GetPinnableReference(), y, ref pressure.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, Span<float> x, Span<float> y, float* pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, ref x.GetPinnableReference(), ref y.GetPinnableReference(), pressure);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetTouchpadFinger(this Sdl thisApi, Span<GameController> gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, Span<float> x, Span<float> y, Span<float> pressure)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetTouchpadFinger(ref gamecontroller.GetPinnableReference(), touchpad, finger, state, ref x.GetPinnableReference(), ref y.GetPinnableReference(), ref pressure.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 845, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe SdlBool GameControllerHasSensor(this Sdl thisApi, Span<GameController> gamecontroller, SensorType type)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerHasSensor(ref gamecontroller.GetPinnableReference(), type);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 857, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerSetSensorEnabled(this Sdl thisApi, Span<GameController> gamecontroller, SensorType type, SdlBool enabled)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerSetSensorEnabled(ref gamecontroller.GetPinnableReference(), type, enabled);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 868, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe SdlBool GameControllerIsSensorEnabled(this Sdl thisApi, Span<GameController> gamecontroller, SensorType type)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerIsSensorEnabled(ref gamecontroller.GetPinnableReference(), type);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 880, Column 31 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe float GameControllerGetSensorDataRate(this Sdl thisApi, Span<GameController> gamecontroller, SensorType type)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetSensorDataRate(ref gamecontroller.GetPinnableReference(), type);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 896, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetSensorData(this Sdl thisApi, GameController* gamecontroller, SensorType type, Span<float> data, int num_values)
         {
             // SpanOverloader
@@ -8575,7 +9723,26 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 915, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 896, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetSensorData(this Sdl thisApi, Span<GameController> gamecontroller, SensorType type, float* data, int num_values)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetSensorData(ref gamecontroller.GetPinnableReference(), type, data, num_values);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 896, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetSensorData(this Sdl thisApi, Span<GameController> gamecontroller, SensorType type, Span<float> data, int num_values)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetSensorData(ref gamecontroller.GetPinnableReference(), type, ref data.GetPinnableReference(), num_values);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 915, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetSensorDataWithTimestamp(this Sdl thisApi, GameController* gamecontroller, SensorType type, ulong* timestamp, Span<float> data, int num_values)
         {
             // SpanOverloader
@@ -8583,7 +9750,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 915, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 915, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetSensorDataWithTimestamp(this Sdl thisApi, GameController* gamecontroller, SensorType type, Span<ulong> timestamp, float* data, int num_values)
         {
             // SpanOverloader
@@ -8591,7 +9759,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 915, Column 29 in SDL_gamecontroller.h")]
+        [NativeName("Src", "Line 915, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int GameControllerGetSensorDataWithTimestamp(this Sdl thisApi, GameController* gamecontroller, SensorType type, Span<ulong> timestamp, Span<float> data, int num_values)
         {
             // SpanOverloader
@@ -8599,15 +9768,151 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1023, Column 29 in SDL_gamecontroller.h")]
-        public static unsafe int GameControllerSendEffect<T0>(this Sdl thisApi, GameController* gamecontroller, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<T0> data, int size) where T0 : unmanaged
+        [NativeName("Src", "Line 915, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetSensorDataWithTimestamp(this Sdl thisApi, Span<GameController> gamecontroller, SensorType type, ulong* timestamp, float* data, int num_values)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetSensorDataWithTimestamp(ref gamecontroller.GetPinnableReference(), type, timestamp, data, num_values);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 915, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetSensorDataWithTimestamp(this Sdl thisApi, Span<GameController> gamecontroller, SensorType type, ulong* timestamp, Span<float> data, int num_values)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetSensorDataWithTimestamp(ref gamecontroller.GetPinnableReference(), type, timestamp, ref data.GetPinnableReference(), num_values);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 915, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetSensorDataWithTimestamp(this Sdl thisApi, Span<GameController> gamecontroller, SensorType type, Span<ulong> timestamp, float* data, int num_values)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetSensorDataWithTimestamp(ref gamecontroller.GetPinnableReference(), type, ref timestamp.GetPinnableReference(), data, num_values);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 915, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerGetSensorDataWithTimestamp(this Sdl thisApi, Span<GameController> gamecontroller, SensorType type, Span<ulong> timestamp, Span<float> data, int num_values)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetSensorDataWithTimestamp(ref gamecontroller.GetPinnableReference(), type, ref timestamp.GetPinnableReference(), ref data.GetPinnableReference(), num_values);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 935, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerRumble(this Sdl thisApi, Span<GameController> gamecontroller, ushort low_frequency_rumble, ushort high_frequency_rumble, uint duration_ms)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerRumble(ref gamecontroller.GetPinnableReference(), low_frequency_rumble, high_frequency_rumble, duration_ms);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 960, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerRumbleTriggers(this Sdl thisApi, Span<GameController> gamecontroller, ushort left_rumble, ushort right_rumble, uint duration_ms)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerRumbleTriggers(ref gamecontroller.GetPinnableReference(), left_rumble, right_rumble, duration_ms);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 971, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe SdlBool GameControllerHasLED(this Sdl thisApi, Span<GameController> gamecontroller)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerHasLED(ref gamecontroller.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 984, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe SdlBool GameControllerHasRumble(this Sdl thisApi, Span<GameController> gamecontroller)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerHasRumble(ref gamecontroller.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 997, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe SdlBool GameControllerHasRumbleTriggers(this Sdl thisApi, Span<GameController> gamecontroller)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerHasRumbleTriggers(ref gamecontroller.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1010, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerSetLED(this Sdl thisApi, Span<GameController> gamecontroller, byte red, byte green, byte blue)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerSetLED(ref gamecontroller.GetPinnableReference(), red, green, blue);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1023, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerSendEffect<T0>(this Sdl thisApi, GameController* gamecontroller, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, int size) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.GameControllerSendEffect(gamecontroller, in data.GetPinnableReference(), size);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 76, Column 29 in SDL_gesture.h")]
+        [NativeName("Src", "Line 1023, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerSendEffect(this Sdl thisApi, Span<GameController> gamecontroller, [Flow(FlowDirection.In)] void* data, int size)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerSendEffect(ref gamecontroller.GetPinnableReference(), data, size);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1023, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int GameControllerSendEffect<T0>(this Sdl thisApi, Span<GameController> gamecontroller, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, int size) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.GameControllerSendEffect(ref gamecontroller.GetPinnableReference(), in data.GetPinnableReference(), size);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1035, Column 30 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe void GameControllerClose(this Sdl thisApi, Span<GameController> gamecontroller)
+        {
+            // SpanOverloader
+            thisApi.GameControllerClose(ref gamecontroller.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1049, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe byte* GameControllerGetAppleSFSymbolsNameForButton(this Sdl thisApi, Span<GameController> gamecontroller, GameControllerButton button)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetAppleSFSymbolsNameForButton(ref gamecontroller.GetPinnableReference(), button);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1063, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe byte* GameControllerGetAppleSFSymbolsNameForAxis(this Sdl thisApi, Span<GameController> gamecontroller, GameControllerAxis axis)
+        {
+            // SpanOverloader
+            return thisApi.GameControllerGetAppleSFSymbolsNameForAxis(ref gamecontroller.GetPinnableReference(), axis);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 76, Column 29 in build/submodules/SDL/include/SDL_gesture.h")]
         public static unsafe int SaveAllDollarTemplates(this Sdl thisApi, Span<RWops> dst)
         {
             // SpanOverloader
@@ -8759,7 +10064,72 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1058, Column 29 in SDL_haptic.h")]
+        [NativeName("Src", "Line 905, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe int HapticIndex(this Sdl thisApi, Span<Haptic> haptic)
+        {
+            // SpanOverloader
+            return thisApi.HapticIndex(ref haptic.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 943, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int JoystickIsHaptic(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.JoystickIsHaptic(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 966, Column 37 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe Haptic* HapticOpenFromJoystick(this Sdl thisApi, Span<Joystick> joystick)
+        {
+            // SpanOverloader
+            return thisApi.HapticOpenFromJoystick(ref joystick.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 978, Column 30 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe void HapticClose(this Sdl thisApi, Span<Haptic> haptic)
+        {
+            // SpanOverloader
+            thisApi.HapticClose(ref haptic.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 996, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe int HapticNumEffects(this Sdl thisApi, Span<Haptic> haptic)
+        {
+            // SpanOverloader
+            return thisApi.HapticNumEffects(ref haptic.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1013, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe int HapticNumEffectsPlaying(this Sdl thisApi, Span<Haptic> haptic)
+        {
+            // SpanOverloader
+            return thisApi.HapticNumEffectsPlaying(ref haptic.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1027, Column 38 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe uint HapticQuery(this Sdl thisApi, Span<Haptic> haptic)
+        {
+            // SpanOverloader
+            return thisApi.HapticQuery(ref haptic.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1042, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe int HapticNumAxes(this Sdl thisApi, Span<Haptic> haptic)
+        {
+            // SpanOverloader
+            return thisApi.HapticNumAxes(ref haptic.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1058, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
         public static unsafe int HapticEffectSupported(this Sdl thisApi, Haptic* haptic, Span<HapticEffect> effect)
         {
             // SpanOverloader
@@ -8783,7 +10153,128 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 211, Column 30 in SDL_hidapi.h")]
+        [NativeName("Src", "Line 1101, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe int HapticUpdateEffect(this Sdl thisApi, Span<Haptic> haptic, int effect, HapticEffect* data)
+        {
+            // SpanOverloader
+            return thisApi.HapticUpdateEffect(ref haptic.GetPinnableReference(), effect, data);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1101, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe int HapticUpdateEffect(this Sdl thisApi, Span<Haptic> haptic, int effect, Span<HapticEffect> data)
+        {
+            // SpanOverloader
+            return thisApi.HapticUpdateEffect(ref haptic.GetPinnableReference(), effect, ref data.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1127, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe int HapticRunEffect(this Sdl thisApi, Span<Haptic> haptic, int effect, uint iterations)
+        {
+            // SpanOverloader
+            return thisApi.HapticRunEffect(ref haptic.GetPinnableReference(), effect, iterations);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1146, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe int HapticStopEffect(this Sdl thisApi, Span<Haptic> haptic, int effect)
+        {
+            // SpanOverloader
+            return thisApi.HapticStopEffect(ref haptic.GetPinnableReference(), effect);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1162, Column 30 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe void HapticDestroyEffect(this Sdl thisApi, Span<Haptic> haptic, int effect)
+        {
+            // SpanOverloader
+            thisApi.HapticDestroyEffect(ref haptic.GetPinnableReference(), effect);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1180, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe int HapticGetEffectStatus(this Sdl thisApi, Span<Haptic> haptic, int effect)
+        {
+            // SpanOverloader
+            return thisApi.HapticGetEffectStatus(ref haptic.GetPinnableReference(), effect);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1202, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe int HapticSetGain(this Sdl thisApi, Span<Haptic> haptic, int gain)
+        {
+            // SpanOverloader
+            return thisApi.HapticSetGain(ref haptic.GetPinnableReference(), gain);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1221, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe int HapticSetAutocenter(this Sdl thisApi, Span<Haptic> haptic, int autocenter)
+        {
+            // SpanOverloader
+            return thisApi.HapticSetAutocenter(ref haptic.GetPinnableReference(), autocenter);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1241, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe int HapticPause(this Sdl thisApi, Span<Haptic> haptic)
+        {
+            // SpanOverloader
+            return thisApi.HapticPause(ref haptic.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1256, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe int HapticUnpause(this Sdl thisApi, Span<Haptic> haptic)
+        {
+            // SpanOverloader
+            return thisApi.HapticUnpause(ref haptic.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1267, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe int HapticStopAll(this Sdl thisApi, Span<Haptic> haptic)
+        {
+            // SpanOverloader
+            return thisApi.HapticStopAll(ref haptic.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1283, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe int HapticRumbleSupported(this Sdl thisApi, Span<Haptic> haptic)
+        {
+            // SpanOverloader
+            return thisApi.HapticRumbleSupported(ref haptic.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1299, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe int HapticRumbleInit(this Sdl thisApi, Span<Haptic> haptic)
+        {
+            // SpanOverloader
+            return thisApi.HapticRumbleInit(ref haptic.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1316, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe int HapticRumblePlay(this Sdl thisApi, Span<Haptic> haptic, float strength, uint length)
+        {
+            // SpanOverloader
+            return thisApi.HapticRumblePlay(ref haptic.GetPinnableReference(), strength, length);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1331, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        public static unsafe int HapticRumbleStop(this Sdl thisApi, Span<Haptic> haptic)
+        {
+            // SpanOverloader
+            return thisApi.HapticRumbleStop(ref haptic.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 211, Column 30 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe void HidFreeEnumeration(this Sdl thisApi, Span<HidDeviceInfo> devs)
         {
             // SpanOverloader
@@ -8791,31 +10282,62 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 229, Column 42 in SDL_hidapi.h")]
-        public static unsafe HidDevice* HidOpen(this Sdl thisApi, ushort vendor_id, ushort product_id, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<char> serial_number)
+        [NativeName("Src", "Line 229, Column 42 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe HidDevice* HidOpen(this Sdl thisApi, ushort vendor_id, ushort product_id, [Flow(FlowDirection.In)] ReadOnlySpan<char> serial_number)
         {
             // SpanOverloader
             return thisApi.HidOpen(vendor_id, product_id, in serial_number.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 243, Column 42 in SDL_hidapi.h")]
-        public static unsafe HidDevice* HidOpenPath(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> path, int bExclusive)
+        [NativeName("Src", "Line 243, Column 42 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe HidDevice* HidOpenPath(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> path, int bExclusive)
         {
             // SpanOverloader
             return thisApi.HidOpenPath(in path.GetPinnableReference(), bExclusive);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 269, Column 29 in SDL_hidapi.h")]
-        public static unsafe int HidWrite(this Sdl thisApi, HidDevice* dev, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> data, nuint length)
+        [NativeName("Src", "Line 269, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidWrite(this Sdl thisApi, HidDevice* dev, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, nuint length)
         {
             // SpanOverloader
             return thisApi.HidWrite(dev, in data.GetPinnableReference(), length);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 290, Column 29 in SDL_hidapi.h")]
+        [NativeName("Src", "Line 269, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidWrite(this Sdl thisApi, Span<HidDevice> dev, [Flow(FlowDirection.In)] byte* data, nuint length)
+        {
+            // SpanOverloader
+            return thisApi.HidWrite(ref dev.GetPinnableReference(), data, length);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 269, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidWrite(this Sdl thisApi, Span<HidDevice> dev, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, nuint length)
+        {
+            // SpanOverloader
+            return thisApi.HidWrite(ref dev.GetPinnableReference(), in data.GetPinnableReference(), length);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 269, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidWrite(this Sdl thisApi, Span<HidDevice> dev, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length)
+        {
+            // SpanOverloader
+            return thisApi.HidWrite(ref dev.GetPinnableReference(), data, length);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 290, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int HidReadTimeout(this Sdl thisApi, HidDevice* dev, Span<byte> data, nuint length, int milliseconds)
         {
             // SpanOverloader
@@ -8823,7 +10345,35 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 310, Column 29 in SDL_hidapi.h")]
+        [NativeName("Src", "Line 290, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidReadTimeout(this Sdl thisApi, Span<HidDevice> dev, byte* data, nuint length, int milliseconds)
+        {
+            // SpanOverloader
+            return thisApi.HidReadTimeout(ref dev.GetPinnableReference(), data, length, milliseconds);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 290, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidReadTimeout(this Sdl thisApi, Span<HidDevice> dev, Span<byte> data, nuint length, int milliseconds)
+        {
+            // SpanOverloader
+            return thisApi.HidReadTimeout(ref dev.GetPinnableReference(), ref data.GetPinnableReference(), length, milliseconds);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 290, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidReadTimeout(this Sdl thisApi, Span<HidDevice> dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length, int milliseconds)
+        {
+            // SpanOverloader
+            return thisApi.HidReadTimeout(ref dev.GetPinnableReference(), data, length, milliseconds);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 310, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int HidRead(this Sdl thisApi, HidDevice* dev, Span<byte> data, nuint length)
         {
             // SpanOverloader
@@ -8831,15 +10381,80 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 352, Column 29 in SDL_hidapi.h")]
-        public static unsafe int HidSendFeatureReport(this Sdl thisApi, HidDevice* dev, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> data, nuint length)
+        [NativeName("Src", "Line 310, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidRead(this Sdl thisApi, Span<HidDevice> dev, byte* data, nuint length)
+        {
+            // SpanOverloader
+            return thisApi.HidRead(ref dev.GetPinnableReference(), data, length);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 310, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidRead(this Sdl thisApi, Span<HidDevice> dev, Span<byte> data, nuint length)
+        {
+            // SpanOverloader
+            return thisApi.HidRead(ref dev.GetPinnableReference(), ref data.GetPinnableReference(), length);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 310, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidRead(this Sdl thisApi, Span<HidDevice> dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length)
+        {
+            // SpanOverloader
+            return thisApi.HidRead(ref dev.GetPinnableReference(), data, length);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 328, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidSetNonblocking(this Sdl thisApi, Span<HidDevice> dev, int nonblock)
+        {
+            // SpanOverloader
+            return thisApi.HidSetNonblocking(ref dev.GetPinnableReference(), nonblock);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 352, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidSendFeatureReport(this Sdl thisApi, HidDevice* dev, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, nuint length)
         {
             // SpanOverloader
             return thisApi.HidSendFeatureReport(dev, in data.GetPinnableReference(), length);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 374, Column 29 in SDL_hidapi.h")]
+        [NativeName("Src", "Line 352, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidSendFeatureReport(this Sdl thisApi, Span<HidDevice> dev, [Flow(FlowDirection.In)] byte* data, nuint length)
+        {
+            // SpanOverloader
+            return thisApi.HidSendFeatureReport(ref dev.GetPinnableReference(), data, length);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 352, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidSendFeatureReport(this Sdl thisApi, Span<HidDevice> dev, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, nuint length)
+        {
+            // SpanOverloader
+            return thisApi.HidSendFeatureReport(ref dev.GetPinnableReference(), in data.GetPinnableReference(), length);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 352, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidSendFeatureReport(this Sdl thisApi, Span<HidDevice> dev, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length)
+        {
+            // SpanOverloader
+            return thisApi.HidSendFeatureReport(ref dev.GetPinnableReference(), data, length);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 374, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int HidGetFeatureReport(this Sdl thisApi, HidDevice* dev, Span<byte> data, nuint length)
         {
             // SpanOverloader
@@ -8847,7 +10462,44 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 395, Column 29 in SDL_hidapi.h")]
+        [NativeName("Src", "Line 374, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidGetFeatureReport(this Sdl thisApi, Span<HidDevice> dev, byte* data, nuint length)
+        {
+            // SpanOverloader
+            return thisApi.HidGetFeatureReport(ref dev.GetPinnableReference(), data, length);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 374, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidGetFeatureReport(this Sdl thisApi, Span<HidDevice> dev, Span<byte> data, nuint length)
+        {
+            // SpanOverloader
+            return thisApi.HidGetFeatureReport(ref dev.GetPinnableReference(), ref data.GetPinnableReference(), length);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 374, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidGetFeatureReport(this Sdl thisApi, Span<HidDevice> dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length)
+        {
+            // SpanOverloader
+            return thisApi.HidGetFeatureReport(ref dev.GetPinnableReference(), data, length);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 383, Column 30 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe void HidClose(this Sdl thisApi, Span<HidDevice> dev)
+        {
+            // SpanOverloader
+            thisApi.HidClose(ref dev.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 395, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int HidGetManufacturerString(this Sdl thisApi, HidDevice* dev, Span<char> @string, nuint maxlen)
         {
             // SpanOverloader
@@ -8855,7 +10507,35 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 407, Column 29 in SDL_hidapi.h")]
+        [NativeName("Src", "Line 395, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidGetManufacturerString(this Sdl thisApi, Span<HidDevice> dev, char* @string, nuint maxlen)
+        {
+            // SpanOverloader
+            return thisApi.HidGetManufacturerString(ref dev.GetPinnableReference(), @string, maxlen);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 395, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidGetManufacturerString(this Sdl thisApi, Span<HidDevice> dev, Span<char> @string, nuint maxlen)
+        {
+            // SpanOverloader
+            return thisApi.HidGetManufacturerString(ref dev.GetPinnableReference(), ref @string.GetPinnableReference(), maxlen);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 395, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidGetManufacturerString(this Sdl thisApi, Span<HidDevice> dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen)
+        {
+            // SpanOverloader
+            return thisApi.HidGetManufacturerString(ref dev.GetPinnableReference(), @string, maxlen);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 407, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int HidGetProductString(this Sdl thisApi, HidDevice* dev, Span<char> @string, nuint maxlen)
         {
             // SpanOverloader
@@ -8863,7 +10543,35 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 419, Column 29 in SDL_hidapi.h")]
+        [NativeName("Src", "Line 407, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidGetProductString(this Sdl thisApi, Span<HidDevice> dev, char* @string, nuint maxlen)
+        {
+            // SpanOverloader
+            return thisApi.HidGetProductString(ref dev.GetPinnableReference(), @string, maxlen);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 407, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidGetProductString(this Sdl thisApi, Span<HidDevice> dev, Span<char> @string, nuint maxlen)
+        {
+            // SpanOverloader
+            return thisApi.HidGetProductString(ref dev.GetPinnableReference(), ref @string.GetPinnableReference(), maxlen);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 407, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidGetProductString(this Sdl thisApi, Span<HidDevice> dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen)
+        {
+            // SpanOverloader
+            return thisApi.HidGetProductString(ref dev.GetPinnableReference(), @string, maxlen);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 419, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int HidGetSerialNumberString(this Sdl thisApi, HidDevice* dev, Span<char> @string, nuint maxlen)
         {
             // SpanOverloader
@@ -8871,7 +10579,35 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 432, Column 29 in SDL_hidapi.h")]
+        [NativeName("Src", "Line 419, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidGetSerialNumberString(this Sdl thisApi, Span<HidDevice> dev, char* @string, nuint maxlen)
+        {
+            // SpanOverloader
+            return thisApi.HidGetSerialNumberString(ref dev.GetPinnableReference(), @string, maxlen);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 419, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidGetSerialNumberString(this Sdl thisApi, Span<HidDevice> dev, Span<char> @string, nuint maxlen)
+        {
+            // SpanOverloader
+            return thisApi.HidGetSerialNumberString(ref dev.GetPinnableReference(), ref @string.GetPinnableReference(), maxlen);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 419, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidGetSerialNumberString(this Sdl thisApi, Span<HidDevice> dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen)
+        {
+            // SpanOverloader
+            return thisApi.HidGetSerialNumberString(ref dev.GetPinnableReference(), @string, maxlen);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 432, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int HidGetIndexedString(this Sdl thisApi, HidDevice* dev, int string_index, Span<char> @string, nuint maxlen)
         {
             // SpanOverloader
@@ -8879,8 +10615,35 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2419, Column 34 in SDL_hints.h")]
-        public static unsafe SdlBool SetHintWithPriority(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* name, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> value, HintPriority priority)
+        [NativeName("Src", "Line 432, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidGetIndexedString(this Sdl thisApi, Span<HidDevice> dev, int string_index, char* @string, nuint maxlen)
+        {
+            // SpanOverloader
+            return thisApi.HidGetIndexedString(ref dev.GetPinnableReference(), string_index, @string, maxlen);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 432, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidGetIndexedString(this Sdl thisApi, Span<HidDevice> dev, int string_index, Span<char> @string, nuint maxlen)
+        {
+            // SpanOverloader
+            return thisApi.HidGetIndexedString(ref dev.GetPinnableReference(), string_index, ref @string.GetPinnableReference(), maxlen);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 432, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int HidGetIndexedString(this Sdl thisApi, Span<HidDevice> dev, int string_index, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen)
+        {
+            // SpanOverloader
+            return thisApi.HidGetIndexedString(ref dev.GetPinnableReference(), string_index, @string, maxlen);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2419, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
+        public static unsafe SdlBool SetHintWithPriority(this Sdl thisApi, [Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] ReadOnlySpan<byte> value, HintPriority priority)
         {
             // SpanOverloader
             return thisApi.SetHintWithPriority(name, in value.GetPinnableReference(), priority);
@@ -8959,8 +10722,9 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 2457, Column 34 in SDL_hints.h")]
-        public static unsafe SdlBool ResetHint(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> name)
+        [NativeName("Src", "Line 2457, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe SdlBool ResetHint(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name)
         {
             // SpanOverloader
             return thisApi.ResetHint(in name.GetPinnableReference());
@@ -9367,7 +11131,24 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 288, Column 29 in SDL_render.h")]
+        [NativeName("Src", "Line 262, Column 40 in build/submodules/SDL/include/SDL_render.h")]
+        public static unsafe Renderer* GetRenderer(this Sdl thisApi, Span<Window> window)
+        {
+            // SpanOverloader
+            return thisApi.GetRenderer(ref window.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 273, Column 38 in build/submodules/SDL/include/SDL_render.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe Window* RenderGetWindow(this Sdl thisApi, Span<Renderer> renderer)
+        {
+            // SpanOverloader
+            return thisApi.RenderGetWindow(ref renderer.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 288, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         public static unsafe int GetRendererInfo(this Sdl thisApi, Renderer* renderer, Span<RendererInfo> info)
         {
             // SpanOverloader
@@ -11443,7 +13224,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 99, Column 39 in build/submodules/SDL/include\\SDL_system.h")]
+        [NativeName("Src", "Line 107, Column 39 in build/submodules/SDL/include\\SDL_system.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe Silk.NET.Core.Native.IUnknown* RenderGetD3D11Device(this Sdl thisApi, Span<Renderer> renderer)
         {
             // SpanOverloader
@@ -11452,6 +13234,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 127, Column 39 in build/submodules/SDL/include\\SDL_system.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe Silk.NET.Core.Native.IUnknown* RenderGetD3D12Device(this Sdl thisApi, Span<Renderer> renderer)
         {
             // SpanOverloader
@@ -11489,7 +13272,8 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 144, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
+        [NativeName("Src", "Line 225, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int IPhoneSetAnimationCallback<T0>(this Sdl thisApi, Window* window, int interval, PfnFreeFunc callback, Span<T0> callbackParam) where T0 : unmanaged
         {
             // SpanOverloader
@@ -11497,16 +13281,17 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 428, Column 34 in SDL_system.h")]
-        [ExcludeFromOverride(0)]
-        public static unsafe SdlBool AndroidRequestPermission(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> permission)
+        [NativeName("Src", "Line 225, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
+        [ExcludeFromOverride(2)]
+        public static unsafe int IPhoneSetAnimationCallback(this Sdl thisApi, Span<Window> window, int interval, PfnFreeFunc callback, void* callbackParam)
         {
             // SpanOverloader
             return thisApi.IPhoneSetAnimationCallback(ref window.GetPinnableReference(), interval, callback, callbackParam);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 144, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
+        [NativeName("Src", "Line 225, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
+        [ExcludeFromOverride(2)]
         public static unsafe int IPhoneSetAnimationCallback<T0>(this Sdl thisApi, Span<Window> window, int interval, PfnFreeFunc callback, Span<T0> callbackParam) where T0 : unmanaged
         {
             // SpanOverloader
@@ -11516,7 +13301,8 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 428, Column 34 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
-        public static unsafe SdlBool AndroidRequestPermission(this Sdl thisApi, Span<byte> permission)
+        [ExcludeFromOverride(2)]
+        public static unsafe SdlBool AndroidRequestPermission(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> permission)
         {
             // SpanOverloader
             return thisApi.AndroidRequestPermission(in permission.GetPinnableReference());
@@ -11525,7 +13311,8 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 29 in SDL_system.h")]
         [ExcludeFromOverride(0)]
-        public static unsafe int AndroidShowToast(this Sdl thisApi, [Flow(Silk.NET.Core.Native.FlowDirection.In)] ReadOnlySpan<byte> message, int duration, int gravity, int xoffset, int yoffset)
+        [ExcludeFromOverride(2)]
+        public static unsafe int AndroidShowToast(this Sdl thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<byte> message, int duration, int gravity, int xoffset, int yoffset)
         {
             // SpanOverloader
             return thisApi.AndroidShowToast(in message.GetPinnableReference(), duration, gravity, xoffset, yoffset);
