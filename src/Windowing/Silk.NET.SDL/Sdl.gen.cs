@@ -11215,16 +11215,19 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 90, Column 34 in build/submodules/SDL/include\\SDL_guid.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GUIDFromString")]
         public unsafe partial GUID GUIDFromString([Flow(FlowDirection.In)] byte* pchGUID);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 90, Column 34 in build/submodules/SDL/include\\SDL_guid.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GUIDFromString")]
         public partial GUID GUIDFromString([Flow(FlowDirection.In)] in byte pchGUID);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 90, Column 34 in build/submodules/SDL/include\\SDL_guid.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GUIDFromString")]
         public partial GUID GUIDFromString([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pchGUID);
 
