@@ -1023,81 +1023,97 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetOriginalMemoryFunctions")]
         public unsafe partial void GetOriginalMemoryFunctions(PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetOriginalMemoryFunctions")]
         public unsafe partial void GetOriginalMemoryFunctions(PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetOriginalMemoryFunctions")]
         public unsafe partial void GetOriginalMemoryFunctions(PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, ref PfnReallocFunc realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetOriginalMemoryFunctions")]
         public unsafe partial void GetOriginalMemoryFunctions(PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, ref PfnReallocFunc realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetOriginalMemoryFunctions")]
         public unsafe partial void GetOriginalMemoryFunctions(PfnMallocFunc* malloc_func, ref PfnCallocFunc calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetOriginalMemoryFunctions")]
         public unsafe partial void GetOriginalMemoryFunctions(PfnMallocFunc* malloc_func, ref PfnCallocFunc calloc_func, PfnReallocFunc* realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetOriginalMemoryFunctions")]
         public unsafe partial void GetOriginalMemoryFunctions(PfnMallocFunc* malloc_func, ref PfnCallocFunc calloc_func, ref PfnReallocFunc realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetOriginalMemoryFunctions")]
         public unsafe partial void GetOriginalMemoryFunctions(PfnMallocFunc* malloc_func, ref PfnCallocFunc calloc_func, ref PfnReallocFunc realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetOriginalMemoryFunctions")]
         public unsafe partial void GetOriginalMemoryFunctions(ref PfnMallocFunc malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetOriginalMemoryFunctions")]
         public unsafe partial void GetOriginalMemoryFunctions(ref PfnMallocFunc malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetOriginalMemoryFunctions")]
         public unsafe partial void GetOriginalMemoryFunctions(ref PfnMallocFunc malloc_func, PfnCallocFunc* calloc_func, ref PfnReallocFunc realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetOriginalMemoryFunctions")]
         public unsafe partial void GetOriginalMemoryFunctions(ref PfnMallocFunc malloc_func, PfnCallocFunc* calloc_func, ref PfnReallocFunc realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetOriginalMemoryFunctions")]
         public unsafe partial void GetOriginalMemoryFunctions(ref PfnMallocFunc malloc_func, ref PfnCallocFunc calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetOriginalMemoryFunctions")]
         public unsafe partial void GetOriginalMemoryFunctions(ref PfnMallocFunc malloc_func, ref PfnCallocFunc calloc_func, PfnReallocFunc* realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetOriginalMemoryFunctions")]
         public unsafe partial void GetOriginalMemoryFunctions(ref PfnMallocFunc malloc_func, ref PfnCallocFunc calloc_func, ref PfnReallocFunc realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 454, Column 30 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetOriginalMemoryFunctions")]
         public partial void GetOriginalMemoryFunctions(ref PfnMallocFunc malloc_func, ref PfnCallocFunc calloc_func, ref PfnReallocFunc realloc_func, ref PfnFreeFunc free_func);
 
@@ -1281,21 +1297,25 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 490, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_bsearch")]
         public unsafe partial void* Bsearch([Flow(FlowDirection.In)] void* key, [Flow(FlowDirection.In)] void* @base, nuint nmemb, nuint size, PfnVvVvI compare);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 490, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_bsearch")]
         public unsafe partial void* Bsearch<T0>([Flow(FlowDirection.In)] void* key, [Flow(FlowDirection.In)] in T0 @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 490, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_bsearch")]
         public unsafe partial void* Bsearch<T0>([Flow(FlowDirection.In)] in T0 key, [Flow(FlowDirection.In)] void* @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 490, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_bsearch")]
         public unsafe partial void* Bsearch<T0, T1>([Flow(FlowDirection.In)] in T0 key, [Flow(FlowDirection.In)] in T1 @base, nuint nmemb, nuint size, PfnVvVvI compare) where T0 : unmanaged where T1 : unmanaged;
 
@@ -1376,11 +1396,13 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 514, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_crc16")]
         public unsafe partial ushort Crc16(ushort crc, [Flow(FlowDirection.In)] void* data, nuint len);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 514, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_crc16")]
         public partial ushort Crc16<T0>(ushort crc, [Flow(FlowDirection.In)] in T0 data, nuint len) where T0 : unmanaged;
 
@@ -2330,100 +2352,118 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
         public unsafe partial byte* Strcasestr([Flow(FlowDirection.In)] byte* haystack, [Flow(FlowDirection.In)] byte* needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
         public unsafe partial string StrcasestrS([Flow(FlowDirection.In)] byte* haystack, [Flow(FlowDirection.In)] byte* needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
         public unsafe partial byte* Strcasestr([Flow(FlowDirection.In)] byte* haystack, [Flow(FlowDirection.In)] in byte needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
         public unsafe partial string StrcasestrS([Flow(FlowDirection.In)] byte* haystack, [Flow(FlowDirection.In)] in byte needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
         public unsafe partial byte* Strcasestr([Flow(FlowDirection.In)] byte* haystack, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
         public unsafe partial string StrcasestrS([Flow(FlowDirection.In)] byte* haystack, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
         public unsafe partial byte* Strcasestr([Flow(FlowDirection.In)] in byte haystack, [Flow(FlowDirection.In)] byte* needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
         public unsafe partial string StrcasestrS([Flow(FlowDirection.In)] in byte haystack, [Flow(FlowDirection.In)] byte* needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
         public unsafe partial byte* Strcasestr([Flow(FlowDirection.In)] in byte haystack, [Flow(FlowDirection.In)] in byte needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
         public partial string StrcasestrS([Flow(FlowDirection.In)] in byte haystack, [Flow(FlowDirection.In)] in byte needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
         public unsafe partial byte* Strcasestr([Flow(FlowDirection.In)] in byte haystack, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
         public partial string StrcasestrS([Flow(FlowDirection.In)] in byte haystack, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
         public unsafe partial byte* Strcasestr([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(FlowDirection.In)] byte* needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
         public unsafe partial string StrcasestrS([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(FlowDirection.In)] byte* needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
         public unsafe partial byte* Strcasestr([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(FlowDirection.In)] in byte needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
         public partial string StrcasestrS([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(FlowDirection.In)] in byte needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
         public unsafe partial byte* Strcasestr([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 586, Column 31 in build/submodules/SDL/include/SDL_stdinc.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_strcasestr")]
         public partial string StrcasestrS([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string haystack, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string needle);
 
@@ -2642,16 +2682,19 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_utf8strnlen")]
         public unsafe partial nuint Utf8strnlen([Flow(FlowDirection.In)] byte* str, nuint bytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_utf8strnlen")]
         public partial nuint Utf8strnlen([Flow(FlowDirection.In)] in byte str, nuint bytes);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 589, Column 32 in build/submodules/SDL/include/SDL_stdinc.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_utf8strnlen")]
         public partial nuint Utf8strnlen([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str, nuint bytes);
 
@@ -7805,21 +7848,25 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 612, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetPointDisplayIndex")]
         public unsafe partial int GetPointDisplayIndex([Flow(FlowDirection.In)] Point* point);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 612, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetPointDisplayIndex")]
         public partial int GetPointDisplayIndex([Flow(FlowDirection.In)] in Point point);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 627, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetRectDisplayIndex")]
         public unsafe partial int GetRectDisplayIndex([Flow(FlowDirection.In)] Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 627, Column 29 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetRectDisplayIndex")]
         public partial int GetRectDisplayIndex([Flow(FlowDirection.In)] in Silk.NET.Maths.Rectangle<int> rect);
 
@@ -8377,41 +8424,49 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1067, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetWindowSizeInPixels")]
         public unsafe partial void GetWindowSizeInPixels(Window* window, int* w, int* h);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1067, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetWindowSizeInPixels")]
         public unsafe partial void GetWindowSizeInPixels(Window* window, int* w, ref int h);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1067, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetWindowSizeInPixels")]
         public unsafe partial void GetWindowSizeInPixels(Window* window, ref int w, int* h);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1067, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetWindowSizeInPixels")]
         public unsafe partial void GetWindowSizeInPixels(Window* window, ref int w, ref int h);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1067, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetWindowSizeInPixels")]
         public unsafe partial void GetWindowSizeInPixels(ref Window window, int* w, int* h);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1067, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetWindowSizeInPixels")]
         public unsafe partial void GetWindowSizeInPixels(ref Window window, int* w, ref int h);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1067, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetWindowSizeInPixels")]
         public unsafe partial void GetWindowSizeInPixels(ref Window window, ref int w, int* h);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1067, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetWindowSizeInPixels")]
         public partial void GetWindowSizeInPixels(ref Window window, ref int w, ref int h);
 
@@ -10149,21 +10204,25 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 553, Column 29 in build/submodules/SDL/include\\SDL_audio.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetDefaultAudioInfo")]
         public unsafe partial int GetDefaultAudioInfo(byte** name, AudioSpec* spec, int iscapture);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 553, Column 29 in build/submodules/SDL/include\\SDL_audio.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetDefaultAudioInfo")]
         public unsafe partial int GetDefaultAudioInfo(byte** name, ref AudioSpec spec, int iscapture);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 553, Column 29 in build/submodules/SDL/include\\SDL_audio.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetDefaultAudioInfo")]
         public unsafe partial int GetDefaultAudioInfo(ref byte* name, AudioSpec* spec, int iscapture);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 553, Column 29 in build/submodules/SDL/include\\SDL_audio.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetDefaultAudioInfo")]
         public unsafe partial int GetDefaultAudioInfo(ref byte* name, ref AudioSpec spec, int iscapture);
 
@@ -10630,32 +10689,38 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 97, Column 29 in build/submodules/SDL/include\\SDL_clipboard.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_SetPrimarySelectionText")]
         public unsafe partial int SetPrimarySelectionText([Flow(FlowDirection.In)] byte* text);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 97, Column 29 in build/submodules/SDL/include\\SDL_clipboard.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_SetPrimarySelectionText")]
         public partial int SetPrimarySelectionText([Flow(FlowDirection.In)] in byte text);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 97, Column 29 in build/submodules/SDL/include\\SDL_clipboard.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_SetPrimarySelectionText")]
         public partial int SetPrimarySelectionText([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string text);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 116, Column 32 in build/submodules/SDL/include\\SDL_clipboard.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetPrimarySelectionText")]
         public unsafe partial byte* GetPrimarySelectionText();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 116, Column 32 in build/submodules/SDL/include\\SDL_clipboard.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GetPrimarySelectionText")]
         public partial string GetPrimarySelectionTextS();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 130, Column 34 in build/submodules/SDL/include\\SDL_clipboard.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_HasPrimarySelectionText")]
         public partial SdlBool HasPrimarySelectionText();
 
@@ -10741,11 +10806,13 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 456, Column 34 in build/submodules/SDL/include\\SDL_cpuinfo.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_HasLSX")]
         public partial SdlBool HasLSX();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 469, Column 34 in build/submodules/SDL/include\\SDL_cpuinfo.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_HasLASX")]
         public partial SdlBool HasLASX();
 
@@ -11130,16 +11197,19 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 74, Column 30 in build/submodules/SDL/include\\SDL_guid.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GUIDToString")]
         public unsafe partial void GUIDToString(GUID guid, byte* pszGUID, int cbGUID);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 74, Column 30 in build/submodules/SDL/include\\SDL_guid.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GUIDToString")]
         public partial void GUIDToString(GUID guid, ref byte pszGUID, int cbGUID);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 74, Column 30 in build/submodules/SDL/include\\SDL_guid.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GUIDToString")]
         public partial void GUIDToString(GUID guid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pszGUID, int cbGUID);
 
@@ -11175,304 +11245,363 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 37 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickNameForIndex")]
         public unsafe partial byte* JoystickNameForIndex(int device_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 37 in build/submodules/SDL/include\\SDL_joystick.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickNameForIndex")]
         public partial string JoystickNameForIndexS(int device_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 197, Column 37 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickPathForIndex")]
         public unsafe partial byte* JoystickPathForIndex(int device_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 197, Column 37 in build/submodules/SDL/include\\SDL_joystick.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickPathForIndex")]
         public partial string JoystickPathForIndexS(int device_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetDevicePlayerIndex")]
         public partial int JoystickGetDevicePlayerIndex(int device_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 223, Column 42 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetDeviceGUID")]
         public partial GUID JoystickGetDeviceGUID(int device_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 238, Column 32 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetDeviceVendor")]
         public partial ushort JoystickGetDeviceVendor(int device_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 253, Column 32 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetDeviceProduct")]
         public partial ushort JoystickGetDeviceProduct(int device_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 268, Column 32 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetDeviceProductVersion")]
         public partial ushort JoystickGetDeviceProductVersion(int device_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 282, Column 42 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetDeviceType")]
         public partial JoystickType JoystickGetDeviceType(int device_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 297, Column 40 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetDeviceInstanceID")]
         public partial int JoystickGetDeviceInstanceID(int device_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 319, Column 39 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickOpen")]
         public unsafe partial Joystick* JoystickOpen(int device_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 330, Column 39 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickFromInstanceID")]
         public unsafe partial Joystick* JoystickFromInstanceID(int instance_id);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 341, Column 39 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickFromPlayerIndex")]
         public unsafe partial Joystick* JoystickFromPlayerIndex(int player_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 350, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickAttachVirtual")]
         public partial int JoystickAttachVirtual(JoystickType type, int naxes, int nbuttons, int nhats);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 401, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickAttachVirtualEx")]
         public unsafe partial int JoystickAttachVirtualEx([Flow(FlowDirection.In)] VirtualJoystickDesc* desc);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 401, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickAttachVirtualEx")]
         public partial int JoystickAttachVirtualEx([Flow(FlowDirection.In)] in VirtualJoystickDesc desc);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 412, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickDetachVirtual")]
         public partial int JoystickDetachVirtual(int device_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 422, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickIsVirtual")]
         public partial SdlBool JoystickIsVirtual(int device_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 444, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickSetVirtualAxis")]
         public unsafe partial int JoystickSetVirtualAxis(Joystick* joystick, int axis, short value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 444, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickSetVirtualAxis")]
         public partial int JoystickSetVirtualAxis(ref Joystick joystick, int axis, short value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 462, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickSetVirtualButton")]
         public unsafe partial int JoystickSetVirtualButton(Joystick* joystick, int button, byte value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 462, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickSetVirtualButton")]
         public partial int JoystickSetVirtualButton(ref Joystick joystick, int button, byte value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 480, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickSetVirtualHat")]
         public unsafe partial int JoystickSetVirtualHat(Joystick* joystick, int hat, byte value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 480, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickSetVirtualHat")]
         public partial int JoystickSetVirtualHat(ref Joystick joystick, int hat, byte value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 494, Column 37 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickName")]
         public unsafe partial byte* JoystickName(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 494, Column 37 in build/submodules/SDL/include\\SDL_joystick.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickName")]
         public unsafe partial string JoystickNameS(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 494, Column 37 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickName")]
         public unsafe partial byte* JoystickName(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 494, Column 37 in build/submodules/SDL/include\\SDL_joystick.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickName")]
         public partial string JoystickNameS(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 507, Column 37 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickPath")]
         public unsafe partial byte* JoystickPath(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 507, Column 37 in build/submodules/SDL/include\\SDL_joystick.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickPath")]
         public unsafe partial string JoystickPathS(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 507, Column 37 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickPath")]
         public unsafe partial byte* JoystickPath(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 507, Column 37 in build/submodules/SDL/include\\SDL_joystick.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickPath")]
         public partial string JoystickPathS(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 520, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetPlayerIndex")]
         public unsafe partial int JoystickGetPlayerIndex(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 520, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetPlayerIndex")]
         public partial int JoystickGetPlayerIndex(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 531, Column 30 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickSetPlayerIndex")]
         public unsafe partial void JoystickSetPlayerIndex(Joystick* joystick, int player_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 531, Column 30 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickSetPlayerIndex")]
         public partial void JoystickSetPlayerIndex(ref Joystick joystick, int player_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 42 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetGUID")]
         public unsafe partial GUID JoystickGetGUID(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 42 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetGUID")]
         public partial GUID JoystickGetGUID(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 560, Column 32 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetVendor")]
         public unsafe partial ushort JoystickGetVendor(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 560, Column 32 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetVendor")]
         public partial ushort JoystickGetVendor(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 572, Column 32 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetProduct")]
         public unsafe partial ushort JoystickGetProduct(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 572, Column 32 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetProduct")]
         public partial ushort JoystickGetProduct(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 584, Column 32 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetProductVersion")]
         public unsafe partial ushort JoystickGetProductVersion(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 584, Column 32 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetProductVersion")]
         public partial ushort JoystickGetProductVersion(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 597, Column 32 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetFirmwareVersion")]
         public unsafe partial ushort JoystickGetFirmwareVersion(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 597, Column 32 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetFirmwareVersion")]
         public partial ushort JoystickGetFirmwareVersion(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 610, Column 38 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetSerial")]
         public unsafe partial byte* JoystickGetSerial(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 610, Column 38 in build/submodules/SDL/include\\SDL_joystick.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetSerial")]
         public unsafe partial string JoystickGetSerialS(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 610, Column 38 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetSerial")]
         public unsafe partial byte* JoystickGetSerial(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 610, Column 38 in build/submodules/SDL/include\\SDL_joystick.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetSerial")]
         public partial string JoystickGetSerialS(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 620, Column 42 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetType")]
         public unsafe partial JoystickType JoystickGetType(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 620, Column 42 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetType")]
         public partial JoystickType JoystickGetType(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 637, Column 30 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetGUIDString")]
         public unsafe partial void JoystickGetGUIDString(GUID guid, byte* pszGUID, int cbGUID);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 637, Column 30 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetGUIDString")]
         public partial void JoystickGetGUIDString(GUID guid, ref byte pszGUID, int cbGUID);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 637, Column 30 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetGUIDString")]
         public partial void JoystickGetGUIDString(GUID guid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pszGUID, int cbGUID);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 653, Column 42 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetGUIDFromString")]
         public unsafe partial GUID JoystickGetGUIDFromString([Flow(FlowDirection.In)] byte* pchGUID);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 653, Column 42 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetGUIDFromString")]
         public partial GUID JoystickGetGUIDFromString([Flow(FlowDirection.In)] in byte pchGUID);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 653, Column 42 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetGUIDFromString")]
         public partial GUID JoystickGetGUIDFromString([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pchGUID);
 
@@ -11558,261 +11687,313 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 686, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetAttached")]
         public unsafe partial SdlBool JoystickGetAttached(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 686, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetAttached")]
         public partial SdlBool JoystickGetAttached(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 699, Column 40 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickInstanceID")]
         public unsafe partial int JoystickInstanceID(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 699, Column 40 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickInstanceID")]
         public partial int JoystickInstanceID(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 718, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickNumAxes")]
         public unsafe partial int JoystickNumAxes(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 718, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickNumAxes")]
         public partial int JoystickNumAxes(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 736, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickNumBalls")]
         public unsafe partial int JoystickNumBalls(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 736, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickNumBalls")]
         public partial int JoystickNumBalls(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 750, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickNumHats")]
         public unsafe partial int JoystickNumHats(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 750, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickNumHats")]
         public partial int JoystickNumHats(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 764, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickNumButtons")]
         public unsafe partial int JoystickNumButtons(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 764, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickNumButtons")]
         public partial int JoystickNumButtons(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 776, Column 30 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickUpdate")]
         public partial void JoystickUpdate();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 801, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickEventState")]
         public partial int JoystickEventState(int state);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 828, Column 32 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetAxis")]
         public unsafe partial short JoystickGetAxis(Joystick* joystick, int axis);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 828, Column 32 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetAxis")]
         public partial short JoystickGetAxis(ref Joystick joystick, int axis);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 845, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetAxisInitialState")]
         public unsafe partial SdlBool JoystickGetAxisInitialState(Joystick* joystick, int axis, short* state);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 845, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetAxisInitialState")]
         public unsafe partial SdlBool JoystickGetAxisInitialState(Joystick* joystick, int axis, ref short state);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 845, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetAxisInitialState")]
         public unsafe partial SdlBool JoystickGetAxisInitialState(ref Joystick joystick, int axis, short* state);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 845, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetAxisInitialState")]
         public partial SdlBool JoystickGetAxisInitialState(ref Joystick joystick, int axis, ref short state);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 886, Column 31 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetHat")]
         public unsafe partial byte JoystickGetHat(Joystick* joystick, int hat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 886, Column 31 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetHat")]
         public partial byte JoystickGetHat(ref Joystick joystick, int hat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 908, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetBall")]
         public unsafe partial int JoystickGetBall(Joystick* joystick, int ball, int* dx, int* dy);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 908, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetBall")]
         public unsafe partial int JoystickGetBall(Joystick* joystick, int ball, int* dx, ref int dy);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 908, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetBall")]
         public unsafe partial int JoystickGetBall(Joystick* joystick, int ball, ref int dx, int* dy);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 908, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetBall")]
         public unsafe partial int JoystickGetBall(Joystick* joystick, int ball, ref int dx, ref int dy);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 908, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetBall")]
         public unsafe partial int JoystickGetBall(ref Joystick joystick, int ball, int* dx, int* dy);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 908, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetBall")]
         public unsafe partial int JoystickGetBall(ref Joystick joystick, int ball, int* dx, ref int dy);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 908, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetBall")]
         public unsafe partial int JoystickGetBall(ref Joystick joystick, int ball, ref int dx, int* dy);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 908, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetBall")]
         public partial int JoystickGetBall(ref Joystick joystick, int ball, ref int dx, ref int dy);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 923, Column 31 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetButton")]
         public unsafe partial byte JoystickGetButton(Joystick* joystick, int button);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 923, Column 31 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickGetButton")]
         public partial byte JoystickGetButton(ref Joystick joystick, int button);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 944, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickRumble")]
         public unsafe partial int JoystickRumble(Joystick* joystick, ushort low_frequency_rumble, ushort high_frequency_rumble, uint duration_ms);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 944, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickRumble")]
         public partial int JoystickRumble(ref Joystick joystick, ushort low_frequency_rumble, ushort high_frequency_rumble, uint duration_ms);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 969, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickRumbleTriggers")]
         public unsafe partial int JoystickRumbleTriggers(Joystick* joystick, ushort left_rumble, ushort right_rumble, uint duration_ms);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 969, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickRumbleTriggers")]
         public partial int JoystickRumbleTriggers(ref Joystick joystick, ushort left_rumble, ushort right_rumble, uint duration_ms);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 982, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickHasLED")]
         public unsafe partial SdlBool JoystickHasLED(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 982, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickHasLED")]
         public partial SdlBool JoystickHasLED(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 994, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickHasRumble")]
         public unsafe partial SdlBool JoystickHasRumble(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 994, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickHasRumble")]
         public partial SdlBool JoystickHasRumble(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1006, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickHasRumbleTriggers")]
         public unsafe partial SdlBool JoystickHasRumbleTriggers(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1006, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickHasRumbleTriggers")]
         public partial SdlBool JoystickHasRumbleTriggers(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1022, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickSetLED")]
         public unsafe partial int JoystickSetLED(Joystick* joystick, byte red, byte green, byte blue);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1022, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickSetLED")]
         public partial int JoystickSetLED(ref Joystick joystick, byte red, byte green, byte blue);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1034, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickSendEffect")]
         public unsafe partial int JoystickSendEffect(Joystick* joystick, [Flow(FlowDirection.In)] void* data, int size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1034, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickSendEffect")]
         public unsafe partial int JoystickSendEffect<T0>(Joystick* joystick, [Flow(FlowDirection.In)] in T0 data, int size) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1034, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickSendEffect")]
         public unsafe partial int JoystickSendEffect(ref Joystick joystick, [Flow(FlowDirection.In)] void* data, int size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1034, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickSendEffect")]
         public partial int JoystickSendEffect<T0>(ref Joystick joystick, [Flow(FlowDirection.In)] in T0 data, int size) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1045, Column 30 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickClose")]
         public unsafe partial void JoystickClose(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1045, Column 30 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickClose")]
         public partial void JoystickClose(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1056, Column 48 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickCurrentPowerLevel")]
         public unsafe partial JoystickPowerLevel JoystickCurrentPowerLevel(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1056, Column 48 in build/submodules/SDL/include\\SDL_joystick.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickCurrentPowerLevel")]
         public partial JoystickPowerLevel JoystickCurrentPowerLevel(ref Joystick joystick);
 
@@ -11941,41 +12122,49 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 29 in build/submodules/SDL/include\\SDL_sensor.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_SensorGetDataWithTimestamp")]
         public unsafe partial int SensorGetDataWithTimestamp(Sensor* sensor, ulong* timestamp, float* data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 29 in build/submodules/SDL/include\\SDL_sensor.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_SensorGetDataWithTimestamp")]
         public unsafe partial int SensorGetDataWithTimestamp(Sensor* sensor, ulong* timestamp, ref float data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 29 in build/submodules/SDL/include\\SDL_sensor.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_SensorGetDataWithTimestamp")]
         public unsafe partial int SensorGetDataWithTimestamp(Sensor* sensor, ref ulong timestamp, float* data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 29 in build/submodules/SDL/include\\SDL_sensor.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_SensorGetDataWithTimestamp")]
         public unsafe partial int SensorGetDataWithTimestamp(Sensor* sensor, ref ulong timestamp, ref float data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 29 in build/submodules/SDL/include\\SDL_sensor.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_SensorGetDataWithTimestamp")]
         public unsafe partial int SensorGetDataWithTimestamp(ref Sensor sensor, ulong* timestamp, float* data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 29 in build/submodules/SDL/include\\SDL_sensor.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_SensorGetDataWithTimestamp")]
         public unsafe partial int SensorGetDataWithTimestamp(ref Sensor sensor, ulong* timestamp, ref float data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 29 in build/submodules/SDL/include\\SDL_sensor.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_SensorGetDataWithTimestamp")]
         public unsafe partial int SensorGetDataWithTimestamp(ref Sensor sensor, ref ulong timestamp, float* data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 29 in build/submodules/SDL/include\\SDL_sensor.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_SensorGetDataWithTimestamp")]
         public partial int SensorGetDataWithTimestamp(ref Sensor sensor, ref ulong timestamp, ref float data, int num_values);
 
@@ -11996,75 +12185,89 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 165, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerAddMappingsFromRW")]
         public unsafe partial int GameControllerAddMappingsFromRW(RWops* rw, int freerw);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 165, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerAddMappingsFromRW")]
         public partial int GameControllerAddMappingsFromRW(ref RWops rw, int freerw);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 201, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerAddMapping")]
         public unsafe partial int GameControllerAddMapping([Flow(FlowDirection.In)] byte* mappingString);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 201, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerAddMapping")]
         public partial int GameControllerAddMapping([Flow(FlowDirection.In)] in byte mappingString);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 201, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerAddMapping")]
         public partial int GameControllerAddMapping([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string mappingString);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 210, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerNumMappings")]
         public partial int GameControllerNumMappings();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 220, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerMappingForIndex")]
         public unsafe partial byte* GameControllerMappingForIndex(int mapping_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 220, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerMappingForIndex")]
         public partial string GameControllerMappingForIndexS(int mapping_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 236, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerMappingForGUID")]
         public unsafe partial byte* GameControllerMappingForGUID(GUID guid);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 236, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerMappingForGUID")]
         public partial string GameControllerMappingForGUIDS(GUID guid);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 255, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerMapping")]
         public unsafe partial byte* GameControllerMapping(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 255, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerMapping")]
         public unsafe partial string GameControllerMappingS(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 255, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerMapping")]
         public unsafe partial byte* GameControllerMapping(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 255, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerMapping")]
         public partial string GameControllerMappingS(ref GameController gamecontroller);
 
@@ -12075,826 +12278,988 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 294, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerNameForIndex")]
         public unsafe partial byte* GameControllerNameForIndex(int joystick_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 294, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerNameForIndex")]
         public partial string GameControllerNameForIndexS(int joystick_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 313, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerPathForIndex")]
         public unsafe partial byte* GameControllerPathForIndex(int joystick_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 313, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerPathForIndex")]
         public partial string GameControllerPathForIndexS(int joystick_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 326, Column 48 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerTypeForIndex")]
         public partial GameControllerType GameControllerTypeForIndex(int joystick_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 340, Column 31 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerMappingForDeviceIndex")]
         public unsafe partial byte* GameControllerMappingForDeviceIndex(int joystick_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 340, Column 31 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerMappingForDeviceIndex")]
         public partial string GameControllerMappingForDeviceIndexS(int joystick_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 364, Column 45 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerOpen")]
         public unsafe partial GameController* GameControllerOpen(int joystick_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 375, Column 45 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerFromInstanceID")]
         public unsafe partial GameController* GameControllerFromInstanceID(int joyid);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 392, Column 45 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerFromPlayerIndex")]
         public unsafe partial GameController* GameControllerFromPlayerIndex(int player_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 410, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerName")]
         public unsafe partial byte* GameControllerName(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 410, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerName")]
         public unsafe partial string GameControllerNameS(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 410, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerName")]
         public unsafe partial byte* GameControllerName(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 410, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerName")]
         public partial string GameControllerNameS(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 427, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerPath")]
         public unsafe partial byte* GameControllerPath(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 427, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerPath")]
         public unsafe partial string GameControllerPathS(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 427, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerPath")]
         public unsafe partial byte* GameControllerPath(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 427, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerPath")]
         public partial string GameControllerPathS(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 440, Column 48 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetType")]
         public unsafe partial GameControllerType GameControllerGetType(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 440, Column 48 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetType")]
         public partial GameControllerType GameControllerGetType(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 452, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetPlayerIndex")]
         public unsafe partial int GameControllerGetPlayerIndex(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 452, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetPlayerIndex")]
         public partial int GameControllerGetPlayerIndex(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 463, Column 30 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerSetPlayerIndex")]
         public unsafe partial void GameControllerSetPlayerIndex(GameController* gamecontroller, int player_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 463, Column 30 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerSetPlayerIndex")]
         public partial void GameControllerSetPlayerIndex(ref GameController gamecontroller, int player_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 475, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetVendor")]
         public unsafe partial ushort GameControllerGetVendor(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 475, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetVendor")]
         public partial ushort GameControllerGetVendor(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 487, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetProduct")]
         public unsafe partial ushort GameControllerGetProduct(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 487, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetProduct")]
         public partial ushort GameControllerGetProduct(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 499, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetProductVersion")]
         public unsafe partial ushort GameControllerGetProductVersion(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 499, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetProductVersion")]
         public partial ushort GameControllerGetProductVersion(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 511, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetFirmwareVersion")]
         public unsafe partial ushort GameControllerGetFirmwareVersion(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 511, Column 32 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetFirmwareVersion")]
         public partial ushort GameControllerGetFirmwareVersion(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 38 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSerial")]
         public unsafe partial byte* GameControllerGetSerial(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 38 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSerial")]
         public unsafe partial string GameControllerGetSerialS(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 38 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSerial")]
         public unsafe partial byte* GameControllerGetSerial(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 524, Column 38 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSerial")]
         public partial string GameControllerGetSerialS(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 539, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAttached")]
         public unsafe partial SdlBool GameControllerGetAttached(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 539, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAttached")]
         public partial SdlBool GameControllerGetAttached(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 560, Column 39 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetJoystick")]
         public unsafe partial Joystick* GameControllerGetJoystick(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 560, Column 39 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetJoystick")]
         public unsafe partial Joystick* GameControllerGetJoystick(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 580, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerEventState")]
         public partial int GameControllerEventState(int state);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 591, Column 30 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerUpdate")]
         public partial void GameControllerUpdate();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 635, Column 48 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAxisFromString")]
         public unsafe partial GameControllerAxis GameControllerGetAxisFromString([Flow(FlowDirection.In)] byte* str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 635, Column 48 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAxisFromString")]
         public partial GameControllerAxis GameControllerGetAxisFromString([Flow(FlowDirection.In)] in byte str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 635, Column 48 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAxisFromString")]
         public partial GameControllerAxis GameControllerGetAxisFromString([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 651, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetStringForAxis")]
         public unsafe partial byte* GameControllerGetStringForAxis(GameControllerAxis axis);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 651, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetStringForAxis")]
         public partial string GameControllerGetStringForAxisS(GameControllerAxis axis);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 667, Column 1 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetBindForAxis")]
         public unsafe partial GameControllerButtonBind GameControllerGetBindForAxis(GameController* gamecontroller, GameControllerAxis axis);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 667, Column 1 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetBindForAxis")]
         public partial GameControllerButtonBind GameControllerGetBindForAxis(ref GameController gamecontroller, GameControllerAxis axis);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 683, Column 1 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerHasAxis")]
         public unsafe partial SdlBool GameControllerHasAxis(GameController* gamecontroller, GameControllerAxis axis);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 683, Column 1 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerHasAxis")]
         public partial SdlBool GameControllerHasAxis(ref GameController gamecontroller, GameControllerAxis axis);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 703, Column 1 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAxis")]
         public unsafe partial short GameControllerGetAxis(GameController* gamecontroller, GameControllerAxis axis);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 703, Column 1 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAxis")]
         public partial short GameControllerGetAxis(ref GameController gamecontroller, GameControllerAxis axis);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 749, Column 50 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetButtonFromString")]
         public unsafe partial GameControllerButton GameControllerGetButtonFromString([Flow(FlowDirection.In)] byte* str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 749, Column 50 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetButtonFromString")]
         public partial GameControllerButton GameControllerGetButtonFromString([Flow(FlowDirection.In)] in byte str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 749, Column 50 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetButtonFromString")]
         public partial GameControllerButton GameControllerGetButtonFromString([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string str);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 765, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetStringForButton")]
         public unsafe partial byte* GameControllerGetStringForButton(GameControllerButton button);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 765, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetStringForButton")]
         public partial string GameControllerGetStringForButtonS(GameControllerButton button);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 781, Column 1 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetBindForButton")]
         public unsafe partial GameControllerButtonBind GameControllerGetBindForButton(GameController* gamecontroller, GameControllerButton button);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 781, Column 1 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetBindForButton")]
         public partial GameControllerButtonBind GameControllerGetBindForButton(ref GameController gamecontroller, GameControllerButton button);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 796, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerHasButton")]
         public unsafe partial SdlBool GameControllerHasButton(GameController* gamecontroller, GameControllerButton button);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 796, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerHasButton")]
         public partial SdlBool GameControllerHasButton(ref GameController gamecontroller, GameControllerButton button);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 811, Column 31 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetButton")]
         public unsafe partial byte GameControllerGetButton(GameController* gamecontroller, GameControllerButton button);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 811, Column 31 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetButton")]
         public partial byte GameControllerGetButton(ref GameController gamecontroller, GameControllerButton button);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 819, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetNumTouchpads")]
         public unsafe partial int GameControllerGetNumTouchpads(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 819, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetNumTouchpads")]
         public partial int GameControllerGetNumTouchpads(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 827, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetNumTouchpadFingers")]
         public unsafe partial int GameControllerGetNumTouchpadFingers(GameController* gamecontroller, int touchpad);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 827, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetNumTouchpadFingers")]
         public partial int GameControllerGetNumTouchpadFingers(ref GameController gamecontroller, int touchpad);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, byte* state, float* x, float* y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, byte* state, float* x, float* y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, byte* state, float* x, ref float y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, byte* state, float* x, ref float y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, byte* state, ref float x, float* y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, byte* state, ref float x, float* y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, byte* state, ref float x, ref float y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, byte* state, ref float x, ref float y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, ref byte state, float* x, float* y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, ref byte state, float* x, float* y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, ref byte state, float* x, ref float y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, ref byte state, float* x, ref float y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, ref byte state, ref float x, float* y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, ref byte state, ref float x, float* y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, ref byte state, ref float x, ref float y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, ref byte state, ref float x, ref float y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, float* y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, float* y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, ref float y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, ref float y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, float* y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, float* y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, ref float y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(GameController* gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, ref float y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, byte* state, float* x, float* y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, byte* state, float* x, float* y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, byte* state, float* x, ref float y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, byte* state, float* x, ref float y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, byte* state, ref float x, float* y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, byte* state, ref float x, float* y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, byte* state, ref float x, ref float y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, byte* state, ref float x, ref float y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, ref byte state, float* x, float* y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, ref byte state, float* x, float* y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, ref byte state, float* x, ref float y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, ref byte state, float* x, ref float y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, ref byte state, ref float x, float* y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, ref byte state, ref float x, float* y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, ref byte state, ref float x, ref float y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, ref byte state, ref float x, ref float y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, float* y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, float* y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, ref float y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, float* x, ref float y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, float* y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, float* y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public unsafe partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, ref float y, float* pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 834, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetTouchpadFinger")]
         public partial int GameControllerGetTouchpadFinger(ref GameController gamecontroller, int touchpad, int finger, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string state, ref float x, ref float y, ref float pressure);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 845, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerHasSensor")]
         public unsafe partial SdlBool GameControllerHasSensor(GameController* gamecontroller, SensorType type);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 845, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerHasSensor")]
         public partial SdlBool GameControllerHasSensor(ref GameController gamecontroller, SensorType type);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 857, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerSetSensorEnabled")]
         public unsafe partial int GameControllerSetSensorEnabled(GameController* gamecontroller, SensorType type, SdlBool enabled);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 857, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerSetSensorEnabled")]
         public partial int GameControllerSetSensorEnabled(ref GameController gamecontroller, SensorType type, SdlBool enabled);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 868, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerIsSensorEnabled")]
         public unsafe partial SdlBool GameControllerIsSensorEnabled(GameController* gamecontroller, SensorType type);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 868, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerIsSensorEnabled")]
         public partial SdlBool GameControllerIsSensorEnabled(ref GameController gamecontroller, SensorType type);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 880, Column 31 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSensorDataRate")]
         public unsafe partial float GameControllerGetSensorDataRate(GameController* gamecontroller, SensorType type);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 880, Column 31 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSensorDataRate")]
         public partial float GameControllerGetSensorDataRate(ref GameController gamecontroller, SensorType type);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 896, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSensorData")]
         public unsafe partial int GameControllerGetSensorData(GameController* gamecontroller, SensorType type, float* data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 896, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSensorData")]
         public unsafe partial int GameControllerGetSensorData(GameController* gamecontroller, SensorType type, ref float data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 896, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSensorData")]
         public unsafe partial int GameControllerGetSensorData(ref GameController gamecontroller, SensorType type, float* data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 896, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSensorData")]
         public partial int GameControllerGetSensorData(ref GameController gamecontroller, SensorType type, ref float data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 915, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSensorDataWithTimestamp")]
         public unsafe partial int GameControllerGetSensorDataWithTimestamp(GameController* gamecontroller, SensorType type, ulong* timestamp, float* data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 915, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSensorDataWithTimestamp")]
         public unsafe partial int GameControllerGetSensorDataWithTimestamp(GameController* gamecontroller, SensorType type, ulong* timestamp, ref float data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 915, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSensorDataWithTimestamp")]
         public unsafe partial int GameControllerGetSensorDataWithTimestamp(GameController* gamecontroller, SensorType type, ref ulong timestamp, float* data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 915, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSensorDataWithTimestamp")]
         public unsafe partial int GameControllerGetSensorDataWithTimestamp(GameController* gamecontroller, SensorType type, ref ulong timestamp, ref float data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 915, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSensorDataWithTimestamp")]
         public unsafe partial int GameControllerGetSensorDataWithTimestamp(ref GameController gamecontroller, SensorType type, ulong* timestamp, float* data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 915, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSensorDataWithTimestamp")]
         public unsafe partial int GameControllerGetSensorDataWithTimestamp(ref GameController gamecontroller, SensorType type, ulong* timestamp, ref float data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 915, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSensorDataWithTimestamp")]
         public unsafe partial int GameControllerGetSensorDataWithTimestamp(ref GameController gamecontroller, SensorType type, ref ulong timestamp, float* data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 915, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetSensorDataWithTimestamp")]
         public partial int GameControllerGetSensorDataWithTimestamp(ref GameController gamecontroller, SensorType type, ref ulong timestamp, ref float data, int num_values);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 935, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerRumble")]
         public unsafe partial int GameControllerRumble(GameController* gamecontroller, ushort low_frequency_rumble, ushort high_frequency_rumble, uint duration_ms);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 935, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerRumble")]
         public partial int GameControllerRumble(ref GameController gamecontroller, ushort low_frequency_rumble, ushort high_frequency_rumble, uint duration_ms);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 960, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerRumbleTriggers")]
         public unsafe partial int GameControllerRumbleTriggers(GameController* gamecontroller, ushort left_rumble, ushort right_rumble, uint duration_ms);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 960, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerRumbleTriggers")]
         public partial int GameControllerRumbleTriggers(ref GameController gamecontroller, ushort left_rumble, ushort right_rumble, uint duration_ms);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 971, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerHasLED")]
         public unsafe partial SdlBool GameControllerHasLED(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 971, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerHasLED")]
         public partial SdlBool GameControllerHasLED(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 984, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerHasRumble")]
         public unsafe partial SdlBool GameControllerHasRumble(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 984, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerHasRumble")]
         public partial SdlBool GameControllerHasRumble(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 997, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerHasRumbleTriggers")]
         public unsafe partial SdlBool GameControllerHasRumbleTriggers(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 997, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerHasRumbleTriggers")]
         public partial SdlBool GameControllerHasRumbleTriggers(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1010, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerSetLED")]
         public unsafe partial int GameControllerSetLED(GameController* gamecontroller, byte red, byte green, byte blue);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1010, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerSetLED")]
         public partial int GameControllerSetLED(ref GameController gamecontroller, byte red, byte green, byte blue);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerSendEffect")]
         public unsafe partial int GameControllerSendEffect(GameController* gamecontroller, [Flow(FlowDirection.In)] void* data, int size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerSendEffect")]
         public unsafe partial int GameControllerSendEffect<T0>(GameController* gamecontroller, [Flow(FlowDirection.In)] in T0 data, int size) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerSendEffect")]
         public unsafe partial int GameControllerSendEffect(ref GameController gamecontroller, [Flow(FlowDirection.In)] void* data, int size);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerSendEffect")]
         public partial int GameControllerSendEffect<T0>(ref GameController gamecontroller, [Flow(FlowDirection.In)] in T0 data, int size) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1035, Column 30 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerClose")]
         public unsafe partial void GameControllerClose(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1035, Column 30 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerClose")]
         public partial void GameControllerClose(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1049, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAppleSFSymbolsNameForButton")]
         public unsafe partial byte* GameControllerGetAppleSFSymbolsNameForButton(GameController* gamecontroller, GameControllerButton button);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1049, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAppleSFSymbolsNameForButton")]
         public unsafe partial string GameControllerGetAppleSFSymbolsNameForButtonS(GameController* gamecontroller, GameControllerButton button);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1049, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAppleSFSymbolsNameForButton")]
         public unsafe partial byte* GameControllerGetAppleSFSymbolsNameForButton(ref GameController gamecontroller, GameControllerButton button);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1049, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAppleSFSymbolsNameForButton")]
         public partial string GameControllerGetAppleSFSymbolsNameForButtonS(ref GameController gamecontroller, GameControllerButton button);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1063, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAppleSFSymbolsNameForAxis")]
         public unsafe partial byte* GameControllerGetAppleSFSymbolsNameForAxis(GameController* gamecontroller, GameControllerAxis axis);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1063, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAppleSFSymbolsNameForAxis")]
         public unsafe partial string GameControllerGetAppleSFSymbolsNameForAxisS(GameController* gamecontroller, GameControllerAxis axis);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1063, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAppleSFSymbolsNameForAxis")]
         public unsafe partial byte* GameControllerGetAppleSFSymbolsNameForAxis(ref GameController gamecontroller, GameControllerAxis axis);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1063, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAppleSFSymbolsNameForAxis")]
         public partial string GameControllerGetAppleSFSymbolsNameForAxisS(ref GameController gamecontroller, GameControllerAxis axis);
 
@@ -13272,11 +13637,13 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 943, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickIsHaptic")]
         public unsafe partial int JoystickIsHaptic(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 943, Column 29 in build/submodules/SDL/include\\SDL_haptic.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_JoystickIsHaptic")]
         public partial int JoystickIsHaptic(ref Joystick joystick);
 
@@ -13532,356 +13899,427 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 142, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_init")]
         public partial int HidInit();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 156, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_exit")]
         public partial int HidExit();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 177, Column 32 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_device_change_count")]
         public partial uint HidDeviceChangeCount();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 199, Column 47 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_enumerate")]
         public unsafe partial HidDeviceInfo* HidEnumerate(ushort vendor_id, ushort product_id);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 211, Column 30 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_free_enumeration")]
         public unsafe partial void HidFreeEnumeration(HidDeviceInfo* devs);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 211, Column 30 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_free_enumeration")]
         public partial void HidFreeEnumeration(ref HidDeviceInfo devs);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 229, Column 42 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_open")]
         public unsafe partial HidDevice* HidOpen(ushort vendor_id, ushort product_id, [Flow(FlowDirection.In)] char* serial_number);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 229, Column 42 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_open")]
         public unsafe partial HidDevice* HidOpen(ushort vendor_id, ushort product_id, [Flow(FlowDirection.In)] in char serial_number);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 229, Column 42 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_open")]
         public unsafe partial HidDevice* HidOpen(ushort vendor_id, ushort product_id, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string serial_number);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 243, Column 42 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_open_path")]
         public unsafe partial HidDevice* HidOpenPath([Flow(FlowDirection.In)] byte* path, int bExclusive);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 243, Column 42 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_open_path")]
         public unsafe partial HidDevice* HidOpenPath([Flow(FlowDirection.In)] in byte path, int bExclusive);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 243, Column 42 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_open_path")]
         public unsafe partial HidDevice* HidOpenPath([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string path, int bExclusive);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 269, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_write")]
         public unsafe partial int HidWrite(HidDevice* dev, [Flow(FlowDirection.In)] byte* data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 269, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_write")]
         public unsafe partial int HidWrite(HidDevice* dev, [Flow(FlowDirection.In)] in byte data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 269, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_write")]
         public unsafe partial int HidWrite(HidDevice* dev, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 269, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_write")]
         public unsafe partial int HidWrite(ref HidDevice dev, [Flow(FlowDirection.In)] byte* data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 269, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_write")]
         public partial int HidWrite(ref HidDevice dev, [Flow(FlowDirection.In)] in byte data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 269, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_write")]
         public partial int HidWrite(ref HidDevice dev, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 290, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_read_timeout")]
         public unsafe partial int HidReadTimeout(HidDevice* dev, byte* data, nuint length, int milliseconds);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 290, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_read_timeout")]
         public unsafe partial int HidReadTimeout(HidDevice* dev, ref byte data, nuint length, int milliseconds);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 290, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_read_timeout")]
         public unsafe partial int HidReadTimeout(HidDevice* dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length, int milliseconds);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 290, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_read_timeout")]
         public unsafe partial int HidReadTimeout(ref HidDevice dev, byte* data, nuint length, int milliseconds);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 290, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_read_timeout")]
         public partial int HidReadTimeout(ref HidDevice dev, ref byte data, nuint length, int milliseconds);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 290, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_read_timeout")]
         public partial int HidReadTimeout(ref HidDevice dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length, int milliseconds);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 310, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_read")]
         public unsafe partial int HidRead(HidDevice* dev, byte* data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 310, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_read")]
         public unsafe partial int HidRead(HidDevice* dev, ref byte data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 310, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_read")]
         public unsafe partial int HidRead(HidDevice* dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 310, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_read")]
         public unsafe partial int HidRead(ref HidDevice dev, byte* data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 310, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_read")]
         public partial int HidRead(ref HidDevice dev, ref byte data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 310, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_read")]
         public partial int HidRead(ref HidDevice dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 328, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_set_nonblocking")]
         public unsafe partial int HidSetNonblocking(HidDevice* dev, int nonblock);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 328, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_set_nonblocking")]
         public partial int HidSetNonblocking(ref HidDevice dev, int nonblock);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 352, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_send_feature_report")]
         public unsafe partial int HidSendFeatureReport(HidDevice* dev, [Flow(FlowDirection.In)] byte* data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 352, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_send_feature_report")]
         public unsafe partial int HidSendFeatureReport(HidDevice* dev, [Flow(FlowDirection.In)] in byte data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 352, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_send_feature_report")]
         public unsafe partial int HidSendFeatureReport(HidDevice* dev, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 352, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_send_feature_report")]
         public unsafe partial int HidSendFeatureReport(ref HidDevice dev, [Flow(FlowDirection.In)] byte* data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 352, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_send_feature_report")]
         public partial int HidSendFeatureReport(ref HidDevice dev, [Flow(FlowDirection.In)] in byte data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 352, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_send_feature_report")]
         public partial int HidSendFeatureReport(ref HidDevice dev, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_feature_report")]
         public unsafe partial int HidGetFeatureReport(HidDevice* dev, byte* data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_feature_report")]
         public unsafe partial int HidGetFeatureReport(HidDevice* dev, ref byte data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_feature_report")]
         public unsafe partial int HidGetFeatureReport(HidDevice* dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_feature_report")]
         public unsafe partial int HidGetFeatureReport(ref HidDevice dev, byte* data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_feature_report")]
         public partial int HidGetFeatureReport(ref HidDevice dev, ref byte data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_feature_report")]
         public partial int HidGetFeatureReport(ref HidDevice dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, nuint length);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 383, Column 30 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_close")]
         public unsafe partial void HidClose(HidDevice* dev);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 383, Column 30 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_close")]
         public partial void HidClose(ref HidDevice dev);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 395, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_manufacturer_string")]
         public unsafe partial int HidGetManufacturerString(HidDevice* dev, char* @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 395, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_manufacturer_string")]
         public unsafe partial int HidGetManufacturerString(HidDevice* dev, ref char @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 395, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_manufacturer_string")]
         public unsafe partial int HidGetManufacturerString(HidDevice* dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 395, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_manufacturer_string")]
         public unsafe partial int HidGetManufacturerString(ref HidDevice dev, char* @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 395, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_manufacturer_string")]
         public partial int HidGetManufacturerString(ref HidDevice dev, ref char @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 395, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_manufacturer_string")]
         public partial int HidGetManufacturerString(ref HidDevice dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 407, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_product_string")]
         public unsafe partial int HidGetProductString(HidDevice* dev, char* @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 407, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_product_string")]
         public unsafe partial int HidGetProductString(HidDevice* dev, ref char @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 407, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_product_string")]
         public unsafe partial int HidGetProductString(HidDevice* dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 407, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_product_string")]
         public unsafe partial int HidGetProductString(ref HidDevice dev, char* @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 407, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_product_string")]
         public partial int HidGetProductString(ref HidDevice dev, ref char @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 407, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_product_string")]
         public partial int HidGetProductString(ref HidDevice dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 419, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_serial_number_string")]
         public unsafe partial int HidGetSerialNumberString(HidDevice* dev, char* @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 419, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_serial_number_string")]
         public unsafe partial int HidGetSerialNumberString(HidDevice* dev, ref char @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 419, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_serial_number_string")]
         public unsafe partial int HidGetSerialNumberString(HidDevice* dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 419, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_serial_number_string")]
         public unsafe partial int HidGetSerialNumberString(ref HidDevice dev, char* @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 419, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_serial_number_string")]
         public partial int HidGetSerialNumberString(ref HidDevice dev, ref char @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 419, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_serial_number_string")]
         public partial int HidGetSerialNumberString(ref HidDevice dev, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 432, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_indexed_string")]
         public unsafe partial int HidGetIndexedString(HidDevice* dev, int string_index, char* @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 432, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_indexed_string")]
         public unsafe partial int HidGetIndexedString(HidDevice* dev, int string_index, ref char @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 432, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_indexed_string")]
         public unsafe partial int HidGetIndexedString(HidDevice* dev, int string_index, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 432, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_indexed_string")]
         public unsafe partial int HidGetIndexedString(ref HidDevice dev, int string_index, char* @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 432, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_indexed_string")]
         public partial int HidGetIndexedString(ref HidDevice dev, int string_index, ref char @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 432, Column 29 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_get_indexed_string")]
         public partial int HidGetIndexedString(ref HidDevice dev, int string_index, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, nuint maxlen);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 441, Column 30 in build/submodules/SDL/include\\SDL_hidapi.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_hid_ble_scan")]
         public partial void HidBleScan(SdlBool active);
 
@@ -13977,21 +14415,25 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2457, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_ResetHint")]
         public unsafe partial SdlBool ResetHint([Flow(FlowDirection.In)] byte* name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2457, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_ResetHint")]
         public partial SdlBool ResetHint([Flow(FlowDirection.In)] in byte name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2457, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_ResetHint")]
         public partial SdlBool ResetHint([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 2472, Column 30 in build/submodules/SDL/include\\SDL_hints.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_ResetHints")]
         public partial void ResetHints();
 
@@ -14645,11 +15087,13 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 273, Column 38 in build/submodules/SDL/include/SDL_render.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_RenderGetWindow")]
         public unsafe partial Window* RenderGetWindow(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 273, Column 38 in build/submodules/SDL/include/SDL_render.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_RenderGetWindow")]
         public unsafe partial Window* RenderGetWindow(ref Renderer renderer);
 
@@ -18834,24 +19278,26 @@ namespace Silk.NET.SDL
         public unsafe partial IDirect3DDevice9* RenderGetD3D9Device(ref Renderer renderer);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 99, Column 39 in build/submodules/SDL/include\\SDL_system.h")]
+        [NativeName("Src", "Line 107, Column 39 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_RenderGetD3D11Device")]
         public unsafe partial Silk.NET.Core.Native.IUnknown* RenderGetD3D11Device(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 99, Column 39 in build/submodules/SDL/include\\SDL_system.h")]
+        [NativeName("Src", "Line 107, Column 39 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_RenderGetD3D11Device")]
         public unsafe partial Silk.NET.Core.Native.IUnknown* RenderGetD3D11Device(ref Renderer renderer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 127, Column 39 in build/submodules/SDL/include\\SDL_system.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_RenderGetD3D12Device")]
         public unsafe partial Silk.NET.Core.Native.IUnknown* RenderGetD3D12Device(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 127, Column 39 in build/submodules/SDL/include\\SDL_system.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_RenderGetD3D12Device")]
         public unsafe partial Silk.NET.Core.Native.IUnknown* RenderGetD3D12Device(ref Renderer renderer);
 
@@ -18884,13 +19330,13 @@ namespace Silk.NET.SDL
         public partial SdlBool DXGIGetOutputInfo(int displayIndex, ref int adapterIndex, ref int outputIndex);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 144, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
+        [NativeName("Src", "Line 225, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
         public unsafe partial int IPhoneSetAnimationCallback(Window* window, int interval, PfnFreeFunc callback, void* callbackParam);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 144, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
+        [NativeName("Src", "Line 225, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
         public unsafe partial int IPhoneSetAnimationCallback<T0>(Window* window, int interval, PfnFreeFunc callback, ref T0 callbackParam) where T0 : unmanaged;
@@ -18902,13 +19348,13 @@ namespace Silk.NET.SDL
         public unsafe partial int IPhoneSetAnimationCallback(ref Window window, int interval, PfnFreeFunc callback, void* callbackParam);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 144, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
+        [NativeName("Src", "Line 225, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
         public partial int IPhoneSetAnimationCallback<T0>(ref Window window, int interval, PfnFreeFunc callback, ref T0 callbackParam) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 147, Column 30 in build/submodules/SDL/include\\SDL_system.h")]
+        [NativeName("Src", "Line 243, Column 30 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_iPhoneSetEventPump")]
         public partial void IPhoneSetEventPump(SdlBool enabled);
@@ -19042,7 +19488,14 @@ namespace Silk.NET.SDL
         public partial int AndroidShowToast([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string message, int duration, int gravity, int xoffset, int yoffset);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 414, Column 41 in build/submodules/SDL/include\\SDL_system.h")]
+        [NativeName("Src", "Line 465, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
+        [ExcludeFromOverride(0)]
+        [ExcludeFromOverride(2)]
+        [NativeApi(EntryPoint = "SDL_AndroidSendMessage")]
+        public partial int AndroidSendMessage(uint command, int param);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 536, Column 41 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
         [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_WinRTGetFSPathUNICODE")]
@@ -20140,7 +20593,7 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 173, Column 29 in build/submodules/SDL/include\\SDL_main.h")]
+        [NativeName("Src", "Line 248, Column 29 in build/submodules/SDL/include\\SDL_main.h")]
         [ExcludeFromOverride(2)]
         public unsafe int UIKitRunApp(int argc, string[] argvSa, PfnMainFunc mainFunction)
         {
@@ -20154,6 +20607,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 553, Column 29 in build/submodules/SDL/include\\SDL_audio.h")]
+        [ExcludeFromOverride(2)]
         public unsafe int GetDefaultAudioInfo(string[] nameSa, AudioSpec* spec, int iscapture)
         {
             // StringArrayOverloader
@@ -20166,6 +20620,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 553, Column 29 in build/submodules/SDL/include\\SDL_audio.h")]
+        [ExcludeFromOverride(2)]
         public unsafe int GetDefaultAudioInfo(string[] nameSa, ref AudioSpec spec, int iscapture)
         {
             // StringArrayOverloader
