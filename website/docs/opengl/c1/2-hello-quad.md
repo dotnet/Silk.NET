@@ -273,3 +273,50 @@ And that's it! In OpenGL, this is the common way you'll **create** buffers, from
 Run the program again, and if you still see the blue window, you've successfully created the EBO!
 
 Now we can move onto the **shader**.
+
+## Shaders
+This tutorial won't go fully into detail about what shaders are and how they work, instead we'll leave that for a later tutorial, but in essence, a shader is a small program that runs on your GPU, that tells it how to process and display the data in our buffers.
+
+There are many different types of shaders:
+* Vertex
+* Fragment (or Pixel, as used by Direct3D)
+* Geometry
+* Compute
+* Tessellation
+
+These shaders all serve different purposes, however the most commonly used shaders are the **vertex** and **fragment** shaders, and we will be using those in this tutorial.
+
+A vertex shader is run (invoked) for every vertex in the vertex buffer. The vertex buffer is where you perform transformations, such as world and camera matrices (which we'll get into in a later tutorial).
+
+The fragment shader is invoked for every fragment of every vertex on screen. A fragment is essentially a pixel, and Direct3D even calls them pixel shaders. As you may expect, these shaders are a lot more intensive than vertex shaders, and can often be the cause of GPU slowdowns. Fragment shaders is where you perform the stuff that gets displayed on screen, such as texturing and many forms of lighting.
+
+For the moment, this is all you need to know about shaders. You will learn more about shaders as we progress further in this tutorial, as knowing how shaders work and operate is a vital thing to know when it comes to modern graphics programming. The sky is the limit! (Or in our case, an endless cornflower blue void...)
+
+### The shader code
+Before we can create our shader objects, we need some shader code. OpenGL uses **GLSL** (Open**GL** **S**hading **L**anguage). Syntactically, it is quite similar to C. Don't worry though, there are no pointers in sight.
+
+#### Creating the vertex shader
+
+Add the following to your `OnLoad` method:
+
+```cs
+const string vertexCode = @"
+#version 330 core
+
+layout (location = 0) in vec3 aPosition;
+
+void main()
+{
+    gl_Position = vec4(aPosition, 1.0);
+}";
+```
+
+This is our vertex shader! Let's go through it line-by-line.
+
+First, we must tell it which GLSL version we wish to use. Since OpenGL 3.3 (the version we are using), the GLSL version corresponds to the OpenGL version. We tell it we want `core`, as we are using Core OpenGL 3.3, rather than compatibility.
+
+Next, we define our **shader attributes**. In our example, we only have one, which is the position we defined in the vertex buffer. Remember - the vertex buffer is executed *for each* vertex in the vertex buffer, which is why we only need one value at a time. We define it at a manual "location", 0. While this is not necessary, we will be using it in this tutorial, as certain drivers (such as intel) like to use random locations if you do not specify one, which can cause many problems if you are not careful.
+
+Much like C, we define our entry point, the `main` function. In it, we set the value of `gl_Position` to the vertex position. As we are not performing any transformations, we simply set the input value directly to the output value. `gl_Position`, which is a built-in shader variable, only accepts a `vec4` value though, so we must convert `aPosition` to `vec4` first. You may notice we use `1.0` instead of `0.0` though. While in this case it does not matter, it's a habit you should get into, as this will become very important when we start using matrices and transformations.
+
+#### Creating the fragment shader
