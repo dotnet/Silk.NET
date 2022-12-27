@@ -205,7 +205,13 @@ Silk.NET heavily uses `unsafe` code. Don't worry, this won't make your computer 
 
 <?# Info "If you wish to use `Span` instead, and remain in `safe` mode, Silk.NET does support these too. However, I will be using `unsafe` in this tutorial instead, as this is both what I personally use, as well as what the samples use." /?>
 
-Unsafe mode is not enabled by default, so we need to enable it. To enable it, add `<AllowUnsafeBlocks>true</AllowUnsafeBlocks>` to the `PropertyGroup` in your project's `.csproj` file.
+Unsafe mode is not enabled by default, so we need to enable it. To enable it, add `<AllowUnsafeBlocks>true</AllowUnsafeBlocks>` to the `PropertyGroup` in your project's `.csproj` file. You also **MUST** add `unsafe` to your `OnLoad` and `OnRender` methods, like so:
+
+```cs
+public static unsafe void OnLoad() { ... }
+```
+
+If you forget to do either of these, you'll get compile methods. While our `OnRender` method does not contain any unsafe code yet, it will when we draw to the screen later, so it's best just to do it now so you don't forget to do it later.
 
 Now let's fill the buffer!
 
@@ -461,5 +467,7 @@ Doing this means we've "un-bound" everything, so calling something like `BufferD
 
 <?# Warning "You **MUST** unbind the vertex array first, before unbinding the other buffers. If you forget to do it in this order, the buffer will be unbound from the vertex buffer, meaning you'll see incorrect results when you render the object." /?>
 
+If you want to see the resulting code so far, you can see it [here](../sources/1.2.8-finished-setup.md).
+
 ## Drawing to the screen
-It's finally time to draw to the screen! That was a lot of setup work we just did there. While it may seem like a lot to understand at first, the resulting code is actually relatively small, and 
+It's finally time to draw to the screen! That was a lot of setup work we just did there.
