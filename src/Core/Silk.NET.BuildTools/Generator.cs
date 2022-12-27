@@ -80,6 +80,9 @@ namespace Silk.NET.BuildTools
             }
             catch (Exception ex)
             {
+                if(Debugger.IsAttached)
+                    throw;
+
                 Console.Error.WriteLine($"Unhandled exception when running BuildTools for {task.Name}: {ex}");
                 if (sw is not null)
                 {

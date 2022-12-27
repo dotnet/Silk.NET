@@ -49,8 +49,8 @@ namespace Silk.NET.DXGI
             }
         }
 
-        [NativeName("Type", "WCHAR [32]")]
-        [NativeName("Type.Name", "WCHAR [32]")]
+        [NativeName("Type", "WCHAR[32]")]
+        [NativeName("Type.Name", "WCHAR[32]")]
         [NativeName("Name", "DeviceName")]
         public fixed char DeviceName[32];
 

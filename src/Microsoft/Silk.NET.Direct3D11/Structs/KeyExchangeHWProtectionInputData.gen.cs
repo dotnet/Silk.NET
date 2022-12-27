@@ -46,8 +46,8 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type.Name", "UINT")]
         [NativeName("Name", "HWProtectionDataSize")]
         public uint HWProtectionDataSize;
-        [NativeName("Type", "BYTE [4]")]
-        [NativeName("Type.Name", "BYTE [4]")]
+        [NativeName("Type", "BYTE[4]")]
+        [NativeName("Type.Name", "BYTE[4]")]
         [NativeName("Name", "pbInput")]
         public fixed byte PbInput[4];
     }

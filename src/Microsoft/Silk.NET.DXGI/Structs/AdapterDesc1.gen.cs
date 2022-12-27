@@ -79,8 +79,8 @@ namespace Silk.NET.DXGI
             }
         }
 
-        [NativeName("Type", "WCHAR [128]")]
-        [NativeName("Type.Name", "WCHAR [128]")]
+        [NativeName("Type", "WCHAR[128]")]
+        [NativeName("Type.Name", "WCHAR[128]")]
         [NativeName("Name", "Description")]
         public fixed char Description[128];
 

@@ -156,12 +156,12 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "num_positive_pics")]
         public byte NumPositivePics;
-        [NativeName("Type", "uint16_t [16]")]
-        [NativeName("Type.Name", "uint16_t [16]")]
+        [NativeName("Type", "uint16_t[16]")]
+        [NativeName("Type.Name", "uint16_t[16]")]
         [NativeName("Name", "delta_poc_s0_minus1")]
         public fixed ushort DeltaPocS0Minus1[16];
-        [NativeName("Type", "uint16_t [16]")]
-        [NativeName("Type.Name", "uint16_t [16]")]
+        [NativeName("Type", "uint16_t[16]")]
+        [NativeName("Type.Name", "uint16_t[16]")]
         [NativeName("Name", "delta_poc_s1_minus1")]
         public fixed ushort DeltaPocS1Minus1[16];
     }

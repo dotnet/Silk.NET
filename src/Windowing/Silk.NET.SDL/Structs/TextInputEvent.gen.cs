@@ -57,8 +57,8 @@ namespace Silk.NET.SDL
         [NativeName("Type.Name", "Uint32")]
         [NativeName("Name", "windowID")]
         public uint WindowID;
-        [NativeName("Type", "char [32]")]
-        [NativeName("Type.Name", "char [32]")]
+        [NativeName("Type", "char[32]")]
+        [NativeName("Type.Name", "char[32]")]
         [NativeName("Name", "text")]
         public fixed byte Text[32];
     }

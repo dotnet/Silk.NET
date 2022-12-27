@@ -90,8 +90,8 @@ namespace Silk.NET.Direct2D
         [NativeName("Type.Name", "D2D1_BLEND_OPERATION")]
         [NativeName("Name", "blendOperationAlpha")]
         public BlendOperation BlendOperationAlpha;
-        [NativeName("Type", "FLOAT [4]")]
-        [NativeName("Type.Name", "FLOAT [4]")]
+        [NativeName("Type", "FLOAT[4]")]
+        [NativeName("Type.Name", "FLOAT[4]")]
         [NativeName("Name", "blendFactor")]
         public fixed float BlendFactor[4];
     }

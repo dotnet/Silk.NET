@@ -55,8 +55,8 @@ namespace Silk.NET.Direct3D12
         }
 
         
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_INPUT_STREAM [2]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_INPUT_STREAM [2]")]
+        [NativeName("Type", "D3D12_VIDEO_PROCESS_INPUT_STREAM[2]")]
+        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_INPUT_STREAM[2]")]
         [NativeName("Name", "InputStream")]
         public InputStreamBuffer InputStream;
 
@@ -101,8 +101,8 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_INPUT_STREAM_RATE")]
         [NativeName("Name", "RateInfo")]
         public VideoProcessInputStreamRate RateInfo;
-        [NativeName("Type", "INT [32]")]
-        [NativeName("Type.Name", "INT [32]")]
+        [NativeName("Type", "INT[32]")]
+        [NativeName("Type.Name", "INT[32]")]
         [NativeName("Name", "FilterLevels")]
         public fixed int FilterLevels[32];
 

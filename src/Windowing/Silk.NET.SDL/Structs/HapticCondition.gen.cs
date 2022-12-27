@@ -90,28 +90,28 @@ namespace Silk.NET.SDL
         [NativeName("Type.Name", "Uint16")]
         [NativeName("Name", "interval")]
         public ushort Interval;
-        [NativeName("Type", "Uint16 [3]")]
-        [NativeName("Type.Name", "Uint16 [3]")]
+        [NativeName("Type", "Uint16[3]")]
+        [NativeName("Type.Name", "Uint16[3]")]
         [NativeName("Name", "right_sat")]
         public fixed ushort RightSat[3];
-        [NativeName("Type", "Uint16 [3]")]
-        [NativeName("Type.Name", "Uint16 [3]")]
+        [NativeName("Type", "Uint16[3]")]
+        [NativeName("Type.Name", "Uint16[3]")]
         [NativeName("Name", "left_sat")]
         public fixed ushort LeftSat[3];
-        [NativeName("Type", "Sint16 [3]")]
-        [NativeName("Type.Name", "Sint16 [3]")]
+        [NativeName("Type", "Sint16[3]")]
+        [NativeName("Type.Name", "Sint16[3]")]
         [NativeName("Name", "right_coeff")]
         public fixed short RightCoeff[3];
-        [NativeName("Type", "Sint16 [3]")]
-        [NativeName("Type.Name", "Sint16 [3]")]
+        [NativeName("Type", "Sint16[3]")]
+        [NativeName("Type.Name", "Sint16[3]")]
         [NativeName("Name", "left_coeff")]
         public fixed short LeftCoeff[3];
-        [NativeName("Type", "Uint16 [3]")]
-        [NativeName("Type.Name", "Uint16 [3]")]
+        [NativeName("Type", "Uint16[3]")]
+        [NativeName("Type.Name", "Uint16[3]")]
         [NativeName("Name", "deadband")]
         public fixed ushort Deadband[3];
-        [NativeName("Type", "Sint16 [3]")]
-        [NativeName("Type.Name", "Sint16 [3]")]
+        [NativeName("Type", "Sint16[3]")]
+        [NativeName("Type.Name", "Sint16[3]")]
         [NativeName("Name", "center")]
         public fixed short Center[3];
     }

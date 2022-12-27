@@ -130,8 +130,8 @@ namespace Silk.NET.SDL
         [NativeName("Name", "len_ratio")]
         public double LenRatio;
         
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
+        [NativeName("Type", "SDL_AudioFilter[10]")]
+        [NativeName("Type.Name", "SDL_AudioFilter[10]")]
         [NativeName("Name", "filters")]
         public FiltersBuffer Filters;
 
