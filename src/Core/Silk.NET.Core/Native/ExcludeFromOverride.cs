@@ -5,7 +5,7 @@ using System;
 
 namespace Silk.NET.Core.Native
 {
-    [AttributeUsage(AttributeTargets.Method)]
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
     public sealed class ExcludeFromOverrideAttribute : Attribute
     {
         public ExcludeFromOverrideAttribute(int id) { }
