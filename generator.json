@@ -911,6 +911,7 @@
                         "SDL_WinRT.*",
                         "SDL_iPhone.*",
                         "SDL_GUIDToString",
+                        "SDL_GUIDFromString",
                         "SDL_GameController.*",
                         "SDL_GetDefaultAudioInfo",
                         "SDL_GetOriginalMemoryFunctions",

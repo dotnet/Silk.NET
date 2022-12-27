@@ -10362,17 +10362,20 @@ namespace Silk.NET.SDL
         public partial void GUIDToString(GUID guid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pszGUID, int cbGUID);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 90, Column 34 in SDL_guid.h")]
+        [NativeName("Src", "Line 90, Column 34 in build/submodules/SDL/include\\SDL_guid.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GUIDFromString")]
         public unsafe partial GUID GUIDFromString([Flow(Silk.NET.Core.Native.FlowDirection.In)] byte* pchGUID);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 90, Column 34 in SDL_guid.h")]
+        [NativeName("Src", "Line 90, Column 34 in build/submodules/SDL/include\\SDL_guid.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GUIDFromString")]
         public partial GUID GUIDFromString([Flow(Silk.NET.Core.Native.FlowDirection.In)] in byte pchGUID);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 90, Column 34 in SDL_guid.h")]
+        [NativeName("Src", "Line 90, Column 34 in build/submodules/SDL/include\\SDL_guid.h")]
+        [ExcludeFromOverride(2)]
         [NativeApi(EntryPoint = "SDL_GUIDFromString")]
         public partial GUID GUIDFromString([Flow(Silk.NET.Core.Native.FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pchGUID);
 
