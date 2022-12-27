@@ -94,7 +94,7 @@ public unsafe static class D3D11ModuleInstanceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BindConstantBufferByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, byte* pName, uint uDstSlot, uint cbDstOffset)
+    public static unsafe int BindConstantBufferByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In)] byte* pName, uint uDstSlot, uint cbDstOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -103,7 +103,7 @@ public unsafe static class D3D11ModuleInstanceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int BindConstantBufferByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, ref byte pName, uint uDstSlot, uint cbDstOffset)
+    public static int BindConstantBufferByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In)] in byte pName, uint uDstSlot, uint cbDstOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -115,7 +115,7 @@ public unsafe static class D3D11ModuleInstanceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int BindConstantBufferByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint cbDstOffset)
+    public static int BindConstantBufferByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint cbDstOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -135,7 +135,7 @@ public unsafe static class D3D11ModuleInstanceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BindResourceByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, byte* pName, uint uDstSlot, uint uCount)
+    public static unsafe int BindResourceByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In)] byte* pName, uint uDstSlot, uint uCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -144,7 +144,7 @@ public unsafe static class D3D11ModuleInstanceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int BindResourceByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, ref byte pName, uint uDstSlot, uint uCount)
+    public static int BindResourceByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In)] in byte pName, uint uDstSlot, uint uCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -156,7 +156,7 @@ public unsafe static class D3D11ModuleInstanceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int BindResourceByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint uCount)
+    public static int BindResourceByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint uCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -176,7 +176,7 @@ public unsafe static class D3D11ModuleInstanceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BindSamplerByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, byte* pName, uint uDstSlot, uint uCount)
+    public static unsafe int BindSamplerByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In)] byte* pName, uint uDstSlot, uint uCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -185,7 +185,7 @@ public unsafe static class D3D11ModuleInstanceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int BindSamplerByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, ref byte pName, uint uDstSlot, uint uCount)
+    public static int BindSamplerByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In)] in byte pName, uint uDstSlot, uint uCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -197,7 +197,7 @@ public unsafe static class D3D11ModuleInstanceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int BindSamplerByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint uCount)
+    public static int BindSamplerByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint uCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -217,7 +217,7 @@ public unsafe static class D3D11ModuleInstanceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BindUnorderedAccessViewByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, byte* pName, uint uDstSlot, uint uCount)
+    public static unsafe int BindUnorderedAccessViewByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In)] byte* pName, uint uDstSlot, uint uCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class D3D11ModuleInstanceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int BindUnorderedAccessViewByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, ref byte pName, uint uDstSlot, uint uCount)
+    public static int BindUnorderedAccessViewByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In)] in byte pName, uint uDstSlot, uint uCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -238,7 +238,7 @@ public unsafe static class D3D11ModuleInstanceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int BindUnorderedAccessViewByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint uCount)
+    public static int BindUnorderedAccessViewByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint uCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -258,7 +258,7 @@ public unsafe static class D3D11ModuleInstanceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int BindResourceAsUnorderedAccessViewByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, byte* pSrvName, uint uDstUavSlot, uint uCount)
+    public static unsafe int BindResourceAsUnorderedAccessViewByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In)] byte* pSrvName, uint uDstUavSlot, uint uCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -267,7 +267,7 @@ public unsafe static class D3D11ModuleInstanceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int BindResourceAsUnorderedAccessViewByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, ref byte pSrvName, uint uDstUavSlot, uint uCount)
+    public static int BindResourceAsUnorderedAccessViewByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In)] in byte pSrvName, uint uDstUavSlot, uint uCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -279,7 +279,7 @@ public unsafe static class D3D11ModuleInstanceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int BindResourceAsUnorderedAccessViewByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrvName, uint uDstUavSlot, uint uCount)
+    public static int BindResourceAsUnorderedAccessViewByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrvName, uint uDstUavSlot, uint uCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -315,43 +315,43 @@ public unsafe static class D3D11ModuleInstanceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int BindConstantBufferByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, Span<byte> pName, uint uDstSlot, uint cbDstOffset)
+    public static int BindConstantBufferByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pName, uint uDstSlot, uint cbDstOffset)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->BindConstantBufferByName(ref pName.GetPinnableReference(), uDstSlot, cbDstOffset);
+        return @this->BindConstantBufferByName(in pName.GetPinnableReference(), uDstSlot, cbDstOffset);
     }
 
     /// <summary>To be documented.</summary>
-    public static int BindResourceByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, Span<byte> pName, uint uDstSlot, uint uCount)
+    public static int BindResourceByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pName, uint uDstSlot, uint uCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->BindResourceByName(ref pName.GetPinnableReference(), uDstSlot, uCount);
+        return @this->BindResourceByName(in pName.GetPinnableReference(), uDstSlot, uCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static int BindSamplerByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, Span<byte> pName, uint uDstSlot, uint uCount)
+    public static int BindSamplerByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pName, uint uDstSlot, uint uCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->BindSamplerByName(ref pName.GetPinnableReference(), uDstSlot, uCount);
+        return @this->BindSamplerByName(in pName.GetPinnableReference(), uDstSlot, uCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static int BindUnorderedAccessViewByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, Span<byte> pName, uint uDstSlot, uint uCount)
+    public static int BindUnorderedAccessViewByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pName, uint uDstSlot, uint uCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->BindUnorderedAccessViewByName(ref pName.GetPinnableReference(), uDstSlot, uCount);
+        return @this->BindUnorderedAccessViewByName(in pName.GetPinnableReference(), uDstSlot, uCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static int BindResourceAsUnorderedAccessViewByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, Span<byte> pSrvName, uint uDstUavSlot, uint uCount)
+    public static int BindResourceAsUnorderedAccessViewByName(this ComPtr<ID3D11ModuleInstance> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pSrvName, uint uDstUavSlot, uint uCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->BindResourceAsUnorderedAccessViewByName(ref pSrvName.GetPinnableReference(), uDstUavSlot, uCount);
+        return @this->BindResourceAsUnorderedAccessViewByName(in pSrvName.GetPinnableReference(), uDstUavSlot, uCount);
     }
 
     /// <summary>To be documented.</summary>

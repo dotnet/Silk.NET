@@ -1146,6 +1146,32 @@ namespace Silk.NET.Vulkan
         QueueFamilyCheckpointProperties2NV = 1000314008,
         [NativeName("Name", "VK_STRUCTURE_TYPE_CHECKPOINT_DATA_2_NV")]
         CheckpointData2NV = 1000314009,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_BUFFER_PROPERTIES_EXT")]
+        PhysicalDeviceDescriptorBufferPropertiesExt = 1000316000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_BUFFER_DENSITY_MAP_PROPERTIES_EXT")]
+        PhysicalDeviceDescriptorBufferDensityMapPropertiesExt = 1000316001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DESCRIPTOR_BUFFER_FEATURES_EXT")]
+        PhysicalDeviceDescriptorBufferFeaturesExt = 1000316002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_DESCRIPTOR_ADDRESS_INFO_EXT")]
+        DescriptorAddressInfoExt = 1000316003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_DESCRIPTOR_GET_INFO_EXT")]
+        DescriptorGetInfoExt = 1000316004,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_BUFFER_CAPTURE_DESCRIPTOR_DATA_INFO_EXT")]
+        BufferCaptureDescriptorDataInfoExt = 1000316005,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_CAPTURE_DESCRIPTOR_DATA_INFO_EXT")]
+        ImageCaptureDescriptorDataInfoExt = 1000316006,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_VIEW_CAPTURE_DESCRIPTOR_DATA_INFO_EXT")]
+        ImageViewCaptureDescriptorDataInfoExt = 1000316007,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_SAMPLER_CAPTURE_DESCRIPTOR_DATA_INFO_EXT")]
+        SamplerCaptureDescriptorDataInfoExt = 1000316008,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_OPAQUE_CAPTURE_DESCRIPTOR_DATA_CREATE_INFO_EXT")]
+        OpaqueCaptureDescriptorDataCreateInfoExt = 1000316010,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_DESCRIPTOR_BUFFER_BINDING_INFO_EXT")]
+        DescriptorBufferBindingInfoExt = 1000316011,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_DESCRIPTOR_BUFFER_BINDING_PUSH_DESCRIPTOR_BUFFER_HANDLE_EXT")]
+        DescriptorBufferBindingPushDescriptorBufferHandleExt = 1000316012,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_CAPTURE_DESCRIPTOR_DATA_INFO_EXT")]
+        AccelerationStructureCaptureDescriptorDataInfoExt = 1000316009,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GRAPHICS_PIPELINE_LIBRARY_FEATURES_EXT")]
         PhysicalDeviceGraphicsPipelineLibraryFeaturesExt = 1000320000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_GRAPHICS_PIPELINE_LIBRARY_PROPERTIES_EXT")]

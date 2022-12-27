@@ -21,11 +21,11 @@ namespace Silk.NET.BuildTools.Common
         /// </summary>
         /// <param name="map">The typemap/dictionary to use.</param>
         /// <param name="functions">The functions to map.</param>
-        public static void Map(Dictionary<string, string> map, IEnumerable<Function> functions)
+        public static void Map(Dictionary<string, string> map, IEnumerable<Function> functions, bool mapNative)
         {
             foreach (var function in functions)
             {
-                Map(map, function);
+                Map(map, function, mapNative);
             }
         }
 
@@ -35,12 +35,12 @@ namespace Silk.NET.BuildTools.Common
         /// <param name="maps">The map to use.</param>
         /// <param name="og">The type to map.</param>
         /// <returns>The mapped type.</returns>
-        public static Type MapOne(IEnumerable<Dictionary<string, string>> maps, Type og, string ogN = null)
+        public static Type MapOne(IEnumerable<Dictionary<string, string>> maps, Type og, bool mapNative, string ogN = null)
         {
             var type = og;
             foreach (var map in maps)
             {
-                type = MapOne(map, type, ogN);
+                type = MapOne(map, type, mapNative, ogN);
             }
 
             return type;
@@ -52,7 +52,7 @@ namespace Silk.NET.BuildTools.Common
         /// <param name="map">The map to use.</param>
         /// <param name="og">The type to map.</param>
         /// <returns>The mapped type.</returns>
-        public static Type MapOne(Dictionary<string, string> map, Type og, string ogN = null)
+        public static Type MapOne(Dictionary<string, string> map, Type og, bool mapNative, string ogN = null)
         {
             var type = og;
             if (map.TryGetValue(type.ToString(), out var mapped))
@@ -66,7 +66,7 @@ namespace Silk.NET.BuildTools.Common
             {
                 type.Name = mapped;
             }
-            else if (ogN != null && map.TryGetValue(ogN, out mapped)) 
+            else if (mapNative && ogN != null && map.TryGetValue(ogN, out mapped)) 
             {
                 type.Name = mapped;
             }
@@ -74,7 +74,7 @@ namespace Silk.NET.BuildTools.Common
             if (og.FunctionPointerSignature is not null)
             {
                 type.FunctionPointerSignature = og.FunctionPointerSignature;
-                Map(map, type.FunctionPointerSignature);
+                Map(map, type.FunctionPointerSignature, mapNative);
             }
 
             return type;
@@ -119,13 +119,13 @@ namespace Silk.NET.BuildTools.Common
         /// </summary>
         /// <param name="map">The typemap/dictionary to use.</param>
         /// <param name="structs">The functions to map.</param>
-        public static void Map(Dictionary<string, string> map, IEnumerable<Struct> structs)
+        public static void Map(Dictionary<string, string> map, IEnumerable<Struct> structs, bool mapNative)
         {
             foreach (var @struct in structs)
             {
                 foreach (var field in @struct.Fields)
                 {
-                    field.Type = MapOne(map, field.Type, field.NativeType);
+                    field.Type = MapOne(map, field.Type, mapNative, field.NativeType);
                 }
 
                 for (var i = 0; i < @struct.ComBases.Count; i++)
@@ -138,12 +138,12 @@ namespace Silk.NET.BuildTools.Common
 
                 foreach (var function in @struct.Vtbl)
                 {
-                    Map(map, function);
+                    Map(map, function, mapNative);
                 }
 
                 foreach (var function in @struct.Functions)
                 {
-                    Map(map, function.Signature);
+                    Map(map, function.Signature, mapNative);
                 }
             }
         }
@@ -153,21 +153,21 @@ namespace Silk.NET.BuildTools.Common
         /// </summary>
         /// <param name="map">The typemap/dictionary to use.</param>
         /// <param name="constants">The constants to map.</param>
-        public static void Map(Dictionary<string, string> map, IEnumerable<Constant> constants)
+        public static void Map(Dictionary<string, string> map, IEnumerable<Constant> constants, bool mapNative)
         {
             foreach (var constant in constants)
             {
-                constant.Type = MapOne(map, constant.Type, constant.Type.OriginalName);
+                constant.Type = MapOne(map, constant.Type, mapNative, constant.Type.OriginalName);
             }
         }
 
-        public static void Map(Dictionary<string, string> map, Function function)
+        public static void Map(Dictionary<string, string> map, Function function, bool mapNative)
         {
-            function.ReturnType = MapOne(map, function.ReturnType, function.ReturnType.OriginalName);
+            function.ReturnType = MapOne(map, function.ReturnType, mapNative, function.ReturnType.OriginalName);
 
             foreach (var parameter in function.Parameters)
             {
-                parameter.Type = MapOne(map, parameter.Type, parameter.Type.OriginalName);
+                parameter.Type = MapOne(map, parameter.Type, mapNative, parameter.Type.OriginalName);
             }
         }
 

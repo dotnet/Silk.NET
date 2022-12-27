@@ -483,7 +483,7 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, byte* pDescription)
+    public static unsafe int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(FlowDirection.In)] byte* pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -492,7 +492,7 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, ref byte pDescription)
+    public static int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(FlowDirection.In)] in byte pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -504,7 +504,7 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
+    public static int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -515,7 +515,7 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, byte* pDescription)
+    public static unsafe int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, [Flow(FlowDirection.In)] byte* pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -524,7 +524,7 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, ref byte pDescription)
+    public static int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, [Flow(FlowDirection.In)] in byte pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -536,7 +536,7 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
+    public static int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -547,72 +547,72 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBreakOnCategory(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, int bEnable)
+    public static int SetBreakOnCategory(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, Silk.NET.Core.Bool32 bEnable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, int, int>)@this->LpVtbl[32])(@this, Producer, Category, bEnable);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, Silk.NET.Core.Bool32, int>)@this->LpVtbl[32])(@this, Producer, Category, bEnable);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBreakOnSeverity(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageSeverity Severity, int bEnable)
+    public static int SetBreakOnSeverity(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageSeverity Severity, Silk.NET.Core.Bool32 bEnable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, int, int>)@this->LpVtbl[33])(@this, Producer, Severity, bEnable);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, Silk.NET.Core.Bool32, int>)@this->LpVtbl[33])(@this, Producer, Severity, bEnable);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBreakOnID(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, int ID, int bEnable)
+    public static int SetBreakOnID(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, int ID, Silk.NET.Core.Bool32 bEnable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, int, int>)@this->LpVtbl[34])(@this, Producer, ID, bEnable);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, Silk.NET.Core.Bool32, int>)@this->LpVtbl[34])(@this, Producer, ID, bEnable);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBreakOnCategory(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category)
+    public static Silk.NET.Core.Bool32 GetBreakOnCategory(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, int>)@this->LpVtbl[35])(@this, Producer, Category);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, Silk.NET.Core.Bool32>)@this->LpVtbl[35])(@this, Producer, Category);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBreakOnSeverity(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageSeverity Severity)
+    public static Silk.NET.Core.Bool32 GetBreakOnSeverity(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageSeverity Severity)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, int>)@this->LpVtbl[36])(@this, Producer, Severity);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, Silk.NET.Core.Bool32>)@this->LpVtbl[36])(@this, Producer, Severity);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetBreakOnID(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, int ID)
+    public static Silk.NET.Core.Bool32 GetBreakOnID(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, int ID)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, int>)@this->LpVtbl[37])(@this, Producer, ID);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, Silk.NET.Core.Bool32>)@this->LpVtbl[37])(@this, Producer, ID);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMuteDebugOutput(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, int bMute)
+    public static void SetMuteDebugOutput(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, Silk.NET.Core.Bool32 bMute)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, void>)@this->LpVtbl[38])(@this, Producer, bMute);
+        ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, Silk.NET.Core.Bool32, void>)@this->LpVtbl[38])(@this, Producer, bMute);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMuteDebugOutput(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
+    public static Silk.NET.Core.Bool32 GetMuteDebugOutput(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)@this->LpVtbl[39])(@this, Producer);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, Silk.NET.Core.Bool32>)@this->LpVtbl[39])(@this, Producer);
         return ret;
     }
 
@@ -746,19 +746,19 @@ public unsafe static class DXGIInfoQueueVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, Span<byte> pDescription)
+    public static int AddMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pDescription)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddMessage(Producer, Category, Severity, ID, ref pDescription.GetPinnableReference());
+        return @this->AddMessage(Producer, Category, Severity, ID, in pDescription.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, Span<byte> pDescription)
+    public static int AddApplicationMessage(this ComPtr<IDXGIInfoQueue> thisVtbl, InfoQueueMessageSeverity Severity, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pDescription)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->AddApplicationMessage(Severity, ref pDescription.GetPinnableReference());
+        return @this->AddApplicationMessage(Severity, in pDescription.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

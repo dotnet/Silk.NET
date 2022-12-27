@@ -193,7 +193,7 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12Resource1> thisVtbl, Guid* guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12Resource1> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12Resource1> thisVtbl, Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12Resource1> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -214,7 +214,7 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12Resource1> thisVtbl, ref Guid guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12Resource1> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12Resource1> thisVtbl, ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12Resource1> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -289,7 +289,7 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetName(this ComPtr<ID3D12Resource1> thisVtbl, char* Name)
+    public static unsafe int SetName(this ComPtr<ID3D12Resource1> thisVtbl, [Flow(FlowDirection.In)] char* Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -298,7 +298,7 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12Resource1> thisVtbl, ref char Name)
+    public static int SetName(this ComPtr<ID3D12Resource1> thisVtbl, [Flow(FlowDirection.In)] in char Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -310,7 +310,7 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12Resource1> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+    public static int SetName(this ComPtr<ID3D12Resource1> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -369,7 +369,7 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Map(this ComPtr<ID3D12Resource1> thisVtbl, uint Subresource, Range* pReadRange, void** ppData)
+    public static unsafe int Map(this ComPtr<ID3D12Resource1> thisVtbl, uint Subresource, [Flow(FlowDirection.In)] Range* pReadRange, void** ppData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -378,7 +378,7 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Map(this ComPtr<ID3D12Resource1> thisVtbl, uint Subresource, Range* pReadRange, ref void* ppData)
+    public static unsafe int Map(this ComPtr<ID3D12Resource1> thisVtbl, uint Subresource, [Flow(FlowDirection.In)] Range* pReadRange, ref void* ppData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -390,7 +390,7 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Map(this ComPtr<ID3D12Resource1> thisVtbl, uint Subresource, ref Range pReadRange, void** ppData)
+    public static unsafe int Map(this ComPtr<ID3D12Resource1> thisVtbl, uint Subresource, [Flow(FlowDirection.In)] in Range pReadRange, void** ppData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -402,7 +402,7 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Map(this ComPtr<ID3D12Resource1> thisVtbl, uint Subresource, ref Range pReadRange, ref void* ppData)
+    public static unsafe int Map(this ComPtr<ID3D12Resource1> thisVtbl, uint Subresource, [Flow(FlowDirection.In)] in Range pReadRange, ref void* ppData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -417,14 +417,14 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void Unmap(this ComPtr<ID3D12Resource1> thisVtbl, uint Subresource, Range* pWrittenRange)
+    public static unsafe void Unmap(this ComPtr<ID3D12Resource1> thisVtbl, uint Subresource, [Flow(FlowDirection.In)] Range* pWrittenRange)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12Resource1*, uint, Range*, void>)@this->LpVtbl[9])(@this, Subresource, pWrittenRange);
     }
 
     /// <summary>To be documented.</summary>
-    public static void Unmap(this ComPtr<ID3D12Resource1> thisVtbl, uint Subresource, ref Range pWrittenRange)
+    public static void Unmap(this ComPtr<ID3D12Resource1> thisVtbl, uint Subresource, [Flow(FlowDirection.In)] in Range pWrittenRange)
     {
         var @this = thisVtbl.Handle;
         fixed (Range* pWrittenRangePtr = &pWrittenRange)
@@ -452,7 +452,7 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteToSubresource(this ComPtr<ID3D12Resource1> thisVtbl, uint DstSubresource, Box* pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+    public static unsafe int WriteToSubresource(this ComPtr<ID3D12Resource1> thisVtbl, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -461,7 +461,7 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteToSubresource<T0>(this ComPtr<ID3D12Resource1> thisVtbl, uint DstSubresource, Box* pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+    public static unsafe int WriteToSubresource<T0>(this ComPtr<ID3D12Resource1> thisVtbl, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -473,7 +473,7 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteToSubresource(this ComPtr<ID3D12Resource1> thisVtbl, uint DstSubresource, ref Box pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+    public static unsafe int WriteToSubresource(this ComPtr<ID3D12Resource1> thisVtbl, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -485,7 +485,7 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int WriteToSubresource<T0>(this ComPtr<ID3D12Resource1> thisVtbl, uint DstSubresource, ref Box pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+    public static int WriteToSubresource<T0>(this ComPtr<ID3D12Resource1> thisVtbl, uint DstSubresource, [Flow(FlowDirection.In)] in Box pDstBox, [Flow(FlowDirection.In)] in T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -500,7 +500,7 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReadFromSubresource(this ComPtr<ID3D12Resource1> thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Box* pSrcBox)
+    public static unsafe int ReadFromSubresource(this ComPtr<ID3D12Resource1> thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -509,7 +509,7 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReadFromSubresource(this ComPtr<ID3D12Resource1> thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, ref Box pSrcBox)
+    public static unsafe int ReadFromSubresource(this ComPtr<ID3D12Resource1> thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -521,7 +521,7 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource1> thisVtbl, ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Box* pSrcBox) where T0 : unmanaged
+    public static unsafe int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource1> thisVtbl, ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -533,7 +533,7 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource1> thisVtbl, ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, ref Box pSrcBox) where T0 : unmanaged
+    public static int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource1> thisVtbl, ref T0 pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] in Box pSrcBox) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -725,15 +725,15 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12Resource1> thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12Resource1> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(guid, DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(guid, DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12Resource1> thisVtbl, Span<Guid> guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12Resource1> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -741,11 +741,11 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12Resource1> thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12Resource1> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -789,11 +789,11 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12Resource1> thisVtbl, Span<char> Name)
+    public static int SetName(this ComPtr<ID3D12Resource1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetName(ref Name.GetPinnableReference());
+        return @this->SetName(in Name.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -822,63 +822,63 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Map(this ComPtr<ID3D12Resource1> thisVtbl, uint Subresource, Span<Range> pReadRange, void** ppData)
+    public static unsafe int Map(this ComPtr<ID3D12Resource1> thisVtbl, uint Subresource, [Flow(FlowDirection.In)] ReadOnlySpan<Range> pReadRange, void** ppData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Map(Subresource, ref pReadRange.GetPinnableReference(), ppData);
+        return @this->Map(Subresource, in pReadRange.GetPinnableReference(), ppData);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Map(this ComPtr<ID3D12Resource1> thisVtbl, uint Subresource, Span<Range> pReadRange, ref void* ppData)
+    public static unsafe int Map(this ComPtr<ID3D12Resource1> thisVtbl, uint Subresource, [Flow(FlowDirection.In)] ReadOnlySpan<Range> pReadRange, ref void* ppData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Map(Subresource, ref pReadRange.GetPinnableReference(), ref ppData);
+        return @this->Map(Subresource, in pReadRange.GetPinnableReference(), ref ppData);
     }
 
     /// <summary>To be documented.</summary>
-    public static void Unmap(this ComPtr<ID3D12Resource1> thisVtbl, uint Subresource, Span<Range> pWrittenRange)
+    public static void Unmap(this ComPtr<ID3D12Resource1> thisVtbl, uint Subresource, [Flow(FlowDirection.In)] ReadOnlySpan<Range> pWrittenRange)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->Unmap(Subresource, ref pWrittenRange.GetPinnableReference());
+        @this->Unmap(Subresource, in pWrittenRange.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteToSubresource<T0>(this ComPtr<ID3D12Resource1> thisVtbl, uint DstSubresource, Box* pDstBox, Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+    public static unsafe int WriteToSubresource<T0>(this ComPtr<ID3D12Resource1> thisVtbl, uint DstSubresource, [Flow(FlowDirection.In)] Box* pDstBox, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->WriteToSubresource(DstSubresource, pDstBox, ref pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
+        return @this->WriteToSubresource(DstSubresource, pDstBox, in pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int WriteToSubresource(this ComPtr<ID3D12Resource1> thisVtbl, uint DstSubresource, Span<Box> pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
+    public static unsafe int WriteToSubresource(this ComPtr<ID3D12Resource1> thisVtbl, uint DstSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pDstBox, [Flow(FlowDirection.In)] void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->WriteToSubresource(DstSubresource, ref pDstBox.GetPinnableReference(), pSrcData, SrcRowPitch, SrcDepthPitch);
+        return @this->WriteToSubresource(DstSubresource, in pDstBox.GetPinnableReference(), pSrcData, SrcRowPitch, SrcDepthPitch);
     }
 
     /// <summary>To be documented.</summary>
-    public static int WriteToSubresource<T0>(this ComPtr<ID3D12Resource1> thisVtbl, uint DstSubresource, Span<Box> pDstBox, Span<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
+    public static int WriteToSubresource<T0>(this ComPtr<ID3D12Resource1> thisVtbl, uint DstSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pDstBox, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->WriteToSubresource(DstSubresource, ref pDstBox.GetPinnableReference(), ref pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
+        return @this->WriteToSubresource(DstSubresource, in pDstBox.GetPinnableReference(), in pSrcData.GetPinnableReference(), SrcRowPitch, SrcDepthPitch);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReadFromSubresource(this ComPtr<ID3D12Resource1> thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Span<Box> pSrcBox)
+    public static unsafe int ReadFromSubresource(this ComPtr<ID3D12Resource1> thisVtbl, void* pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pSrcBox)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->ReadFromSubresource(pDstData, DstRowPitch, DstDepthPitch, SrcSubresource, ref pSrcBox.GetPinnableReference());
+        return @this->ReadFromSubresource(pDstData, DstRowPitch, DstDepthPitch, SrcSubresource, in pSrcBox.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource1> thisVtbl, Span<T0> pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Box* pSrcBox) where T0 : unmanaged
+    public static unsafe int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource1> thisVtbl, Span<T0> pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] Box* pSrcBox) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -886,11 +886,11 @@ public unsafe static class D3D12Resource1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource1> thisVtbl, Span<T0> pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, Span<Box> pSrcBox) where T0 : unmanaged
+    public static int ReadFromSubresource<T0>(this ComPtr<ID3D12Resource1> thisVtbl, Span<T0> pDstData, uint DstRowPitch, uint DstDepthPitch, uint SrcSubresource, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pSrcBox) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->ReadFromSubresource(ref pDstData.GetPinnableReference(), DstRowPitch, DstDepthPitch, SrcSubresource, ref pSrcBox.GetPinnableReference());
+        return @this->ReadFromSubresource(ref pDstData.GetPinnableReference(), DstRowPitch, DstDepthPitch, SrcSubresource, in pSrcBox.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

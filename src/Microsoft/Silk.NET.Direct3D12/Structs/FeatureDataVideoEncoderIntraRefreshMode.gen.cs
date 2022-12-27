@@ -26,7 +26,7 @@ namespace Silk.NET.Direct3D12
             VideoEncoderProfileDesc? profile = null,
             VideoEncoderLevelSetting? level = null,
             VideoEncoderIntraRefreshMode? intraRefreshMode = null,
-            int? isSupported = null
+            Silk.NET.Core.Bool32? isSupported = null
         ) : this()
         {
             if (nodeIndex is not null)
@@ -89,6 +89,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "IsSupported")]
-        public int IsSupported;
+        public Silk.NET.Core.Bool32 IsSupported;
     }
 }

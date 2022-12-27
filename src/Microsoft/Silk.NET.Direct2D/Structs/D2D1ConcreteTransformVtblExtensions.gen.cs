@@ -103,10 +103,10 @@ public unsafe static class D2D1ConcreteTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetCached(this ComPtr<ID2D1ConcreteTransform> thisVtbl, int isCached)
+    public static void SetCached(this ComPtr<ID2D1ConcreteTransform> thisVtbl, Silk.NET.Core.Bool32 isCached)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID2D1ConcreteTransform*, int, void>)@this->LpVtbl[5])(@this, isCached);
+        ((delegate* unmanaged[Stdcall]<ID2D1ConcreteTransform*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[5])(@this, isCached);
     }
 
     /// <summary>To be documented.</summary>

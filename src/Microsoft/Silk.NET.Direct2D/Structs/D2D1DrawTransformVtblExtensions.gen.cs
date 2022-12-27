@@ -94,7 +94,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapOutputRectToInputRects(this ComPtr<ID2D1DrawTransform> thisVtbl, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* inputRects, uint inputRectsCount)
+    public static unsafe int MapOutputRectToInputRects(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* inputRects, uint inputRectsCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -103,7 +103,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapOutputRectToInputRects(this ComPtr<ID2D1DrawTransform> thisVtbl, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> inputRects, uint inputRectsCount)
+    public static unsafe int MapOutputRectToInputRects(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> inputRects, uint inputRectsCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -115,7 +115,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapOutputRectToInputRects(this ComPtr<ID2D1DrawTransform> thisVtbl, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* inputRects, uint inputRectsCount)
+    public static unsafe int MapOutputRectToInputRects(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* inputRects, uint inputRectsCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -127,7 +127,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int MapOutputRectToInputRects(this ComPtr<ID2D1DrawTransform> thisVtbl, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> inputRects, uint inputRectsCount)
+    public static int MapOutputRectToInputRects(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> inputRects, uint inputRectsCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -142,7 +142,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Silk.NET.Maths.Box2D<int>* inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -151,7 +151,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Silk.NET.Maths.Box2D<int>* inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -163,7 +163,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Silk.NET.Maths.Box2D<int>* inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -175,7 +175,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Silk.NET.Maths.Box2D<int>* inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -190,7 +190,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Silk.NET.Maths.Box2D<int>* inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Silk.NET.Maths.Box2D<int>* inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -217,7 +217,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Silk.NET.Maths.Box2D<int>* inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -232,7 +232,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Silk.NET.Maths.Box2D<int>* inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -250,7 +250,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, ref Silk.NET.Maths.Box2D<int> inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -262,7 +262,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, ref Silk.NET.Maths.Box2D<int> inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -277,7 +277,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, ref Silk.NET.Maths.Box2D<int> inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -292,7 +292,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, ref Silk.NET.Maths.Box2D<int> inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -310,7 +310,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, ref Silk.NET.Maths.Box2D<int> inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -325,7 +325,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, ref Silk.NET.Maths.Box2D<int> inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -343,7 +343,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, ref Silk.NET.Maths.Box2D<int> inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -361,7 +361,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, ref Silk.NET.Maths.Box2D<int> inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
+    public static int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -449,7 +449,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapOutputRectToInputRects(this ComPtr<ID2D1DrawTransform> thisVtbl, Silk.NET.Maths.Box2D<int>* outputRect, Span<Silk.NET.Maths.Box2D<int>> inputRects, uint inputRectsCount)
+    public static unsafe int MapOutputRectToInputRects(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* outputRect, Span<Silk.NET.Maths.Box2D<int>> inputRects, uint inputRectsCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -457,23 +457,23 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapOutputRectToInputRects(this ComPtr<ID2D1DrawTransform> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> outputRect, Silk.NET.Maths.Box2D<int>* inputRects, uint inputRectsCount)
+    public static unsafe int MapOutputRectToInputRects(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> outputRect, Silk.NET.Maths.Box2D<int>* inputRects, uint inputRectsCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->MapOutputRectToInputRects(ref outputRect.GetPinnableReference(), inputRects, inputRectsCount);
+        return @this->MapOutputRectToInputRects(in outputRect.GetPinnableReference(), inputRects, inputRectsCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static int MapOutputRectToInputRects(this ComPtr<ID2D1DrawTransform> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> outputRect, Span<Silk.NET.Maths.Box2D<int>> inputRects, uint inputRectsCount)
+    public static int MapOutputRectToInputRects(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> outputRect, Span<Silk.NET.Maths.Box2D<int>> inputRects, uint inputRectsCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->MapOutputRectToInputRects(ref outputRect.GetPinnableReference(), ref inputRects.GetPinnableReference(), inputRectsCount);
+        return @this->MapOutputRectToInputRects(in outputRect.GetPinnableReference(), ref inputRects.GetPinnableReference(), inputRectsCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Silk.NET.Maths.Box2D<int>* inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Span<Silk.NET.Maths.Box2D<int>> outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Span<Silk.NET.Maths.Box2D<int>> outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -481,7 +481,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Silk.NET.Maths.Box2D<int>* inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Span<Silk.NET.Maths.Box2D<int>> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Span<Silk.NET.Maths.Box2D<int>> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -489,7 +489,7 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Silk.NET.Maths.Box2D<int>* inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Span<Silk.NET.Maths.Box2D<int>> outputRect, Span<Silk.NET.Maths.Box2D<int>> outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Span<Silk.NET.Maths.Box2D<int>> outputRect, Span<Silk.NET.Maths.Box2D<int>> outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -497,99 +497,99 @@ public unsafe static class D2D1DrawTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Silk.NET.Maths.Box2D<int>* inputRects, Span<Silk.NET.Maths.Box2D<int>> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->MapInputRectsToOutputRect(inputRects, ref inputOpaqueSubRects.GetPinnableReference(), inputRectCount, outputRect, outputOpaqueSubRect);
+        return @this->MapInputRectsToOutputRect(inputRects, in inputOpaqueSubRects.GetPinnableReference(), inputRectCount, outputRect, outputOpaqueSubRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Silk.NET.Maths.Box2D<int>* inputRects, Span<Silk.NET.Maths.Box2D<int>> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Span<Silk.NET.Maths.Box2D<int>> outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Span<Silk.NET.Maths.Box2D<int>> outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->MapInputRectsToOutputRect(inputRects, ref inputOpaqueSubRects.GetPinnableReference(), inputRectCount, outputRect, ref outputOpaqueSubRect.GetPinnableReference());
+        return @this->MapInputRectsToOutputRect(inputRects, in inputOpaqueSubRects.GetPinnableReference(), inputRectCount, outputRect, ref outputOpaqueSubRect.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Silk.NET.Maths.Box2D<int>* inputRects, Span<Silk.NET.Maths.Box2D<int>> inputOpaqueSubRects, uint inputRectCount, Span<Silk.NET.Maths.Box2D<int>> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> inputOpaqueSubRects, uint inputRectCount, Span<Silk.NET.Maths.Box2D<int>> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->MapInputRectsToOutputRect(inputRects, ref inputOpaqueSubRects.GetPinnableReference(), inputRectCount, ref outputRect.GetPinnableReference(), outputOpaqueSubRect);
+        return @this->MapInputRectsToOutputRect(inputRects, in inputOpaqueSubRects.GetPinnableReference(), inputRectCount, ref outputRect.GetPinnableReference(), outputOpaqueSubRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Silk.NET.Maths.Box2D<int>* inputRects, Span<Silk.NET.Maths.Box2D<int>> inputOpaqueSubRects, uint inputRectCount, Span<Silk.NET.Maths.Box2D<int>> outputRect, Span<Silk.NET.Maths.Box2D<int>> outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> inputOpaqueSubRects, uint inputRectCount, Span<Silk.NET.Maths.Box2D<int>> outputRect, Span<Silk.NET.Maths.Box2D<int>> outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->MapInputRectsToOutputRect(inputRects, ref inputOpaqueSubRects.GetPinnableReference(), inputRectCount, ref outputRect.GetPinnableReference(), ref outputOpaqueSubRect.GetPinnableReference());
+        return @this->MapInputRectsToOutputRect(inputRects, in inputOpaqueSubRects.GetPinnableReference(), inputRectCount, ref outputRect.GetPinnableReference(), ref outputOpaqueSubRect.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->MapInputRectsToOutputRect(ref inputRects.GetPinnableReference(), inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRect);
+        return @this->MapInputRectsToOutputRect(in inputRects.GetPinnableReference(), inputOpaqueSubRects, inputRectCount, outputRect, outputOpaqueSubRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Span<Silk.NET.Maths.Box2D<int>> outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Span<Silk.NET.Maths.Box2D<int>> outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->MapInputRectsToOutputRect(ref inputRects.GetPinnableReference(), inputOpaqueSubRects, inputRectCount, outputRect, ref outputOpaqueSubRect.GetPinnableReference());
+        return @this->MapInputRectsToOutputRect(in inputRects.GetPinnableReference(), inputOpaqueSubRects, inputRectCount, outputRect, ref outputOpaqueSubRect.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Span<Silk.NET.Maths.Box2D<int>> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Span<Silk.NET.Maths.Box2D<int>> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->MapInputRectsToOutputRect(ref inputRects.GetPinnableReference(), inputOpaqueSubRects, inputRectCount, ref outputRect.GetPinnableReference(), outputOpaqueSubRect);
+        return @this->MapInputRectsToOutputRect(in inputRects.GetPinnableReference(), inputOpaqueSubRects, inputRectCount, ref outputRect.GetPinnableReference(), outputOpaqueSubRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Span<Silk.NET.Maths.Box2D<int>> outputRect, Span<Silk.NET.Maths.Box2D<int>> outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Span<Silk.NET.Maths.Box2D<int>> outputRect, Span<Silk.NET.Maths.Box2D<int>> outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->MapInputRectsToOutputRect(ref inputRects.GetPinnableReference(), inputOpaqueSubRects, inputRectCount, ref outputRect.GetPinnableReference(), ref outputOpaqueSubRect.GetPinnableReference());
+        return @this->MapInputRectsToOutputRect(in inputRects.GetPinnableReference(), inputOpaqueSubRects, inputRectCount, ref outputRect.GetPinnableReference(), ref outputOpaqueSubRect.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> inputRects, Span<Silk.NET.Maths.Box2D<int>> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> inputRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->MapInputRectsToOutputRect(ref inputRects.GetPinnableReference(), ref inputOpaqueSubRects.GetPinnableReference(), inputRectCount, outputRect, outputOpaqueSubRect);
+        return @this->MapInputRectsToOutputRect(in inputRects.GetPinnableReference(), in inputOpaqueSubRects.GetPinnableReference(), inputRectCount, outputRect, outputOpaqueSubRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> inputRects, Span<Silk.NET.Maths.Box2D<int>> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Span<Silk.NET.Maths.Box2D<int>> outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> inputRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Span<Silk.NET.Maths.Box2D<int>> outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->MapInputRectsToOutputRect(ref inputRects.GetPinnableReference(), ref inputOpaqueSubRects.GetPinnableReference(), inputRectCount, outputRect, ref outputOpaqueSubRect.GetPinnableReference());
+        return @this->MapInputRectsToOutputRect(in inputRects.GetPinnableReference(), in inputOpaqueSubRects.GetPinnableReference(), inputRectCount, outputRect, ref outputOpaqueSubRect.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> inputRects, Span<Silk.NET.Maths.Box2D<int>> inputOpaqueSubRects, uint inputRectCount, Span<Silk.NET.Maths.Box2D<int>> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+    public static unsafe int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> inputRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> inputOpaqueSubRects, uint inputRectCount, Span<Silk.NET.Maths.Box2D<int>> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->MapInputRectsToOutputRect(ref inputRects.GetPinnableReference(), ref inputOpaqueSubRects.GetPinnableReference(), inputRectCount, ref outputRect.GetPinnableReference(), outputOpaqueSubRect);
+        return @this->MapInputRectsToOutputRect(in inputRects.GetPinnableReference(), in inputOpaqueSubRects.GetPinnableReference(), inputRectCount, ref outputRect.GetPinnableReference(), outputOpaqueSubRect);
     }
 
     /// <summary>To be documented.</summary>
-    public static int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> inputRects, Span<Silk.NET.Maths.Box2D<int>> inputOpaqueSubRects, uint inputRectCount, Span<Silk.NET.Maths.Box2D<int>> outputRect, Span<Silk.NET.Maths.Box2D<int>> outputOpaqueSubRect)
+    public static int MapInputRectsToOutputRect(this ComPtr<ID2D1DrawTransform> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> inputRects, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> inputOpaqueSubRects, uint inputRectCount, Span<Silk.NET.Maths.Box2D<int>> outputRect, Span<Silk.NET.Maths.Box2D<int>> outputOpaqueSubRect)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->MapInputRectsToOutputRect(ref inputRects.GetPinnableReference(), ref inputOpaqueSubRects.GetPinnableReference(), inputRectCount, ref outputRect.GetPinnableReference(), ref outputOpaqueSubRect.GetPinnableReference());
+        return @this->MapInputRectsToOutputRect(in inputRects.GetPinnableReference(), in inputOpaqueSubRects.GetPinnableReference(), inputRectCount, ref outputRect.GetPinnableReference(), ref outputOpaqueSubRect.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

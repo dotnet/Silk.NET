@@ -120,7 +120,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSourceRect(Silk.NET.Maths.Box2D<int>* pRect)
+        public readonly unsafe int SetSourceRect([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -129,7 +129,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetSourceRect(ref Silk.NET.Maths.Box2D<int> pRect)
+        public readonly int SetSourceRect([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -141,7 +141,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetTargetRect(Silk.NET.Maths.Box2D<int>* pRect)
+        public readonly unsafe int SetTargetRect([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -150,7 +150,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetTargetRect(ref Silk.NET.Maths.Box2D<int> pRect)
+        public readonly int SetTargetRect([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

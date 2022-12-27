@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D12
     {
         public VideoProcessAlphaBlending
         (
-            int? enable = null,
+            Silk.NET.Core.Bool32? enable = null,
             float? alpha = null
         ) : this()
         {
@@ -40,7 +40,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Enable")]
-        public int Enable;
+        public Silk.NET.Core.Bool32 Enable;
 
         [NativeName("Type", "FLOAT")]
         [NativeName("Type.Name", "FLOAT")]

@@ -103,10 +103,10 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetCached(this ComPtr<ID2D1DrawInfo> thisVtbl, int isCached)
+    public static void SetCached(this ComPtr<ID2D1DrawInfo> thisVtbl, Silk.NET.Core.Bool32 isCached)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID2D1DrawInfo*, int, void>)@this->LpVtbl[5])(@this, isCached);
+        ((delegate* unmanaged[Stdcall]<ID2D1DrawInfo*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[5])(@this, isCached);
     }
 
     /// <summary>To be documented.</summary>
@@ -117,7 +117,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPixelShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, byte* buffer, uint bufferCount)
+    public static unsafe int SetPixelShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(FlowDirection.In)] byte* buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -126,7 +126,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPixelShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, ref byte buffer, uint bufferCount)
+    public static int SetPixelShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(FlowDirection.In)] in byte buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -138,7 +138,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPixelShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer, uint bufferCount)
+    public static int SetPixelShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -170,7 +170,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, byte* buffer, uint bufferCount)
+    public static unsafe int SetVertexShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(FlowDirection.In)] byte* buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -179,7 +179,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, ref byte buffer, uint bufferCount)
+    public static int SetVertexShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(FlowDirection.In)] in byte buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -191,7 +191,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer, uint bufferCount)
+    public static int SetVertexShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -223,7 +223,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, BlendDescription* blendDescription, VertexRange* vertexRange, Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -232,7 +232,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, BlendDescription* blendDescription, VertexRange* vertexRange, ref Guid vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -244,7 +244,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, BlendDescription* blendDescription, ref VertexRange vertexRange, Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -256,7 +256,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, BlendDescription* blendDescription, ref VertexRange vertexRange, ref Guid vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -271,7 +271,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, ref BlendDescription blendDescription, VertexRange* vertexRange, Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -283,7 +283,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, ref BlendDescription blendDescription, VertexRange* vertexRange, ref Guid vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -298,7 +298,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, ref BlendDescription blendDescription, ref VertexRange vertexRange, Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -313,7 +313,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, ref BlendDescription blendDescription, ref VertexRange vertexRange, ref Guid vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -331,7 +331,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, BlendDescription* blendDescription, VertexRange* vertexRange, Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -343,7 +343,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, BlendDescription* blendDescription, VertexRange* vertexRange, ref Guid vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -358,7 +358,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, BlendDescription* blendDescription, ref VertexRange vertexRange, Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -373,7 +373,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, BlendDescription* blendDescription, ref VertexRange vertexRange, ref Guid vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -391,7 +391,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, ref BlendDescription blendDescription, VertexRange* vertexRange, Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -406,7 +406,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, ref BlendDescription blendDescription, VertexRange* vertexRange, ref Guid vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -424,7 +424,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, ref BlendDescription blendDescription, ref VertexRange vertexRange, Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -442,7 +442,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, ref BlendDescription blendDescription, ref VertexRange vertexRange, ref Guid vertexShader)
+    public static int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ref ID2D1VertexBuffer vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -488,11 +488,11 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPixelShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<byte> buffer, uint bufferCount)
+    public static int SetPixelShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPixelShaderConstantBuffer(ref buffer.GetPinnableReference(), bufferCount);
+        return @this->SetPixelShaderConstantBuffer(in buffer.GetPinnableReference(), bufferCount);
     }
 
     /// <summary>To be documented.</summary>
@@ -512,11 +512,11 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<byte> buffer, uint bufferCount)
+    public static int SetVertexShaderConstantBuffer(this ComPtr<ID2D1DrawInfo> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVertexShaderConstantBuffer(ref buffer.GetPinnableReference(), bufferCount);
+        return @this->SetVertexShaderConstantBuffer(in buffer.GetPinnableReference(), bufferCount);
     }
 
     /// <summary>To be documented.</summary>
@@ -528,7 +528,7 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, BlendDescription* blendDescription, VertexRange* vertexRange, Guid* vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -536,119 +536,119 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, BlendDescription* blendDescription, VertexRange* vertexRange, Span<Guid> vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVertexProcessing(vertexBuffer, vertexOptions, blendDescription, vertexRange, ref vertexShader.GetPinnableReference());
+        return @this->SetVertexProcessing(vertexBuffer, vertexOptions, blendDescription, vertexRange, in vertexShader.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, BlendDescription* blendDescription, VertexRange* vertexRange, ref Guid vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->SetVertexProcessing((ID2D1VertexBuffer*) vertexBuffer.Handle, vertexOptions, blendDescription, vertexRange, ref vertexShader);
+        return @this->SetVertexProcessing((ID2D1VertexBuffer*) vertexBuffer.Handle, vertexOptions, blendDescription, vertexRange, in vertexShader);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, BlendDescription* blendDescription, Span<VertexRange> vertexRange, Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVertexProcessing(vertexBuffer, vertexOptions, blendDescription, ref vertexRange.GetPinnableReference(), vertexShader);
+        return @this->SetVertexProcessing(vertexBuffer, vertexOptions, blendDescription, in vertexRange.GetPinnableReference(), vertexShader);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, BlendDescription* blendDescription, ref VertexRange vertexRange, Guid* vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->SetVertexProcessing((ID2D1VertexBuffer*) vertexBuffer.Handle, vertexOptions, blendDescription, ref vertexRange, vertexShader);
+        return @this->SetVertexProcessing((ID2D1VertexBuffer*) vertexBuffer.Handle, vertexOptions, blendDescription, in vertexRange, vertexShader);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, BlendDescription* blendDescription, Span<VertexRange> vertexRange, Span<Guid> vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVertexProcessing(vertexBuffer, vertexOptions, blendDescription, ref vertexRange.GetPinnableReference(), ref vertexShader.GetPinnableReference());
+        return @this->SetVertexProcessing(vertexBuffer, vertexOptions, blendDescription, in vertexRange.GetPinnableReference(), in vertexShader.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, BlendDescription* blendDescription, ref VertexRange vertexRange, ref Guid vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->SetVertexProcessing((ID2D1VertexBuffer*) vertexBuffer.Handle, vertexOptions, blendDescription, ref vertexRange, ref vertexShader);
+        return @this->SetVertexProcessing((ID2D1VertexBuffer*) vertexBuffer.Handle, vertexOptions, blendDescription, in vertexRange, in vertexShader);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, Span<BlendDescription> blendDescription, VertexRange* vertexRange, Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVertexProcessing(vertexBuffer, vertexOptions, ref blendDescription.GetPinnableReference(), vertexRange, vertexShader);
+        return @this->SetVertexProcessing(vertexBuffer, vertexOptions, in blendDescription.GetPinnableReference(), vertexRange, vertexShader);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, ref BlendDescription blendDescription, VertexRange* vertexRange, Guid* vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->SetVertexProcessing((ID2D1VertexBuffer*) vertexBuffer.Handle, vertexOptions, ref blendDescription, vertexRange, vertexShader);
+        return @this->SetVertexProcessing((ID2D1VertexBuffer*) vertexBuffer.Handle, vertexOptions, in blendDescription, vertexRange, vertexShader);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, Span<BlendDescription> blendDescription, VertexRange* vertexRange, Span<Guid> vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVertexProcessing(vertexBuffer, vertexOptions, ref blendDescription.GetPinnableReference(), vertexRange, ref vertexShader.GetPinnableReference());
+        return @this->SetVertexProcessing(vertexBuffer, vertexOptions, in blendDescription.GetPinnableReference(), vertexRange, in vertexShader.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, ref BlendDescription blendDescription, VertexRange* vertexRange, ref Guid vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->SetVertexProcessing((ID2D1VertexBuffer*) vertexBuffer.Handle, vertexOptions, ref blendDescription, vertexRange, ref vertexShader);
+        return @this->SetVertexProcessing((ID2D1VertexBuffer*) vertexBuffer.Handle, vertexOptions, in blendDescription, vertexRange, in vertexShader);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, Span<BlendDescription> blendDescription, Span<VertexRange> vertexRange, Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVertexProcessing(vertexBuffer, vertexOptions, ref blendDescription.GetPinnableReference(), ref vertexRange.GetPinnableReference(), vertexShader);
+        return @this->SetVertexProcessing(vertexBuffer, vertexOptions, in blendDescription.GetPinnableReference(), in vertexRange.GetPinnableReference(), vertexShader);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, ref BlendDescription blendDescription, ref VertexRange vertexRange, Guid* vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static unsafe int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->SetVertexProcessing((ID2D1VertexBuffer*) vertexBuffer.Handle, vertexOptions, ref blendDescription, ref vertexRange, vertexShader);
+        return @this->SetVertexProcessing((ID2D1VertexBuffer*) vertexBuffer.Handle, vertexOptions, in blendDescription, in vertexRange, vertexShader);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, Span<BlendDescription> blendDescription, Span<VertexRange> vertexRange, Span<Guid> vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, ID2D1VertexBuffer* vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVertexProcessing(vertexBuffer, vertexOptions, ref blendDescription.GetPinnableReference(), ref vertexRange.GetPinnableReference(), ref vertexShader.GetPinnableReference());
+        return @this->SetVertexProcessing(vertexBuffer, vertexOptions, in blendDescription.GetPinnableReference(), in vertexRange.GetPinnableReference(), in vertexShader.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, ref BlendDescription blendDescription, ref VertexRange vertexRange, ref Guid vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
+    public static int SetVertexProcessing<TI0>(this ComPtr<ID2D1DrawInfo> thisVtbl, ComPtr<TI0> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] in BlendDescription blendDescription, [Flow(FlowDirection.In)] in VertexRange vertexRange, [Flow(FlowDirection.In)] in Guid vertexShader) where TI0 : unmanaged, IComVtbl<ID2D1VertexBuffer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->SetVertexProcessing((ID2D1VertexBuffer*) vertexBuffer.Handle, vertexOptions, ref blendDescription, ref vertexRange, ref vertexShader);
+        return @this->SetVertexProcessing((ID2D1VertexBuffer*) vertexBuffer.Handle, vertexOptions, in blendDescription, in vertexRange, in vertexShader);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, BlendDescription* blendDescription, VertexRange* vertexRange, Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -656,59 +656,59 @@ public unsafe static class D2D1DrawInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, BlendDescription* blendDescription, VertexRange* vertexRange, Span<Guid> vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVertexProcessing(ref vertexBuffer.GetPinnableReference(), vertexOptions, blendDescription, vertexRange, ref vertexShader.GetPinnableReference());
+        return @this->SetVertexProcessing(ref vertexBuffer.GetPinnableReference(), vertexOptions, blendDescription, vertexRange, in vertexShader.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, BlendDescription* blendDescription, Span<VertexRange> vertexRange, Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVertexProcessing(ref vertexBuffer.GetPinnableReference(), vertexOptions, blendDescription, ref vertexRange.GetPinnableReference(), vertexShader);
+        return @this->SetVertexProcessing(ref vertexBuffer.GetPinnableReference(), vertexOptions, blendDescription, in vertexRange.GetPinnableReference(), vertexShader);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, BlendDescription* blendDescription, Span<VertexRange> vertexRange, Span<Guid> vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] BlendDescription* blendDescription, [Flow(FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVertexProcessing(ref vertexBuffer.GetPinnableReference(), vertexOptions, blendDescription, ref vertexRange.GetPinnableReference(), ref vertexShader.GetPinnableReference());
+        return @this->SetVertexProcessing(ref vertexBuffer.GetPinnableReference(), vertexOptions, blendDescription, in vertexRange.GetPinnableReference(), in vertexShader.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, Span<BlendDescription> blendDescription, VertexRange* vertexRange, Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVertexProcessing(ref vertexBuffer.GetPinnableReference(), vertexOptions, ref blendDescription.GetPinnableReference(), vertexRange, vertexShader);
+        return @this->SetVertexProcessing(ref vertexBuffer.GetPinnableReference(), vertexOptions, in blendDescription.GetPinnableReference(), vertexRange, vertexShader);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, Span<BlendDescription> blendDescription, VertexRange* vertexRange, Span<Guid> vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(FlowDirection.In)] VertexRange* vertexRange, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVertexProcessing(ref vertexBuffer.GetPinnableReference(), vertexOptions, ref blendDescription.GetPinnableReference(), vertexRange, ref vertexShader.GetPinnableReference());
+        return @this->SetVertexProcessing(ref vertexBuffer.GetPinnableReference(), vertexOptions, in blendDescription.GetPinnableReference(), vertexRange, in vertexShader.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, Span<BlendDescription> blendDescription, Span<VertexRange> vertexRange, Guid* vertexShader)
+    public static unsafe int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(FlowDirection.In)] Guid* vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVertexProcessing(ref vertexBuffer.GetPinnableReference(), vertexOptions, ref blendDescription.GetPinnableReference(), ref vertexRange.GetPinnableReference(), vertexShader);
+        return @this->SetVertexProcessing(ref vertexBuffer.GetPinnableReference(), vertexOptions, in blendDescription.GetPinnableReference(), in vertexRange.GetPinnableReference(), vertexShader);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, Span<BlendDescription> blendDescription, Span<VertexRange> vertexRange, Span<Guid> vertexShader)
+    public static int SetVertexProcessing(this ComPtr<ID2D1DrawInfo> thisVtbl, Span<ID2D1VertexBuffer> vertexBuffer, VertexOptions vertexOptions, [Flow(FlowDirection.In)] ReadOnlySpan<BlendDescription> blendDescription, [Flow(FlowDirection.In)] ReadOnlySpan<VertexRange> vertexRange, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> vertexShader)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetVertexProcessing(ref vertexBuffer.GetPinnableReference(), vertexOptions, ref blendDescription.GetPinnableReference(), ref vertexRange.GetPinnableReference(), ref vertexShader.GetPinnableReference());
+        return @this->SetVertexProcessing(ref vertexBuffer.GetPinnableReference(), vertexOptions, in blendDescription.GetPinnableReference(), in vertexRange.GetPinnableReference(), in vertexShader.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

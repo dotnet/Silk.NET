@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataDoubles
         (
-            int? doublePrecisionFloatShaderOps = null
+            Silk.NET.Core.Bool32? doublePrecisionFloatShaderOps = null
         ) : this()
         {
             if (doublePrecisionFloatShaderOps is not null)
@@ -34,6 +34,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DoublePrecisionFloatShaderOps")]
-        public int DoublePrecisionFloatShaderOps;
+        public Silk.NET.Core.Bool32 DoublePrecisionFloatShaderOps;
     }
 }

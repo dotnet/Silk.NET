@@ -151,7 +151,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetTransform(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Matrix3X2<float>* transform)
+    public static unsafe int SetTransform(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -160,7 +160,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTransform(this ComPtr<ID2D1CommandSink4> thisVtbl, ref Silk.NET.Maths.Matrix3X2<float> transform)
+    public static int SetTransform(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -190,7 +190,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Clear(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.DXGI.D3Dcolorvalue* color)
+    public static unsafe int Clear(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -199,7 +199,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Clear(this ComPtr<ID2D1CommandSink4> thisVtbl, ref Silk.NET.DXGI.D3Dcolorvalue color)
+    public static int Clear(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -211,7 +211,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, DwriteGlyphRunDescription* glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, [Flow(FlowDirection.In)] DwriteGlyphRunDescription* glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -220,7 +220,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, DwriteGlyphRunDescription* glyphRunDescription, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, [Flow(FlowDirection.In)] DwriteGlyphRunDescription* glyphRunDescription, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -232,7 +232,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, ref DwriteGlyphRunDescription glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, [Flow(FlowDirection.In)] in DwriteGlyphRunDescription glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -244,7 +244,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, ref DwriteGlyphRunDescription glyphRunDescription, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, [Flow(FlowDirection.In)] in DwriteGlyphRunDescription glyphRunDescription, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -259,7 +259,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, ref DwriteGlyphRun glyphRun, DwriteGlyphRunDescription* glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, [Flow(FlowDirection.In)] DwriteGlyphRunDescription* glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -271,7 +271,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, ref DwriteGlyphRun glyphRun, DwriteGlyphRunDescription* glyphRunDescription, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, [Flow(FlowDirection.In)] DwriteGlyphRunDescription* glyphRunDescription, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -286,7 +286,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, ref DwriteGlyphRun glyphRun, ref DwriteGlyphRunDescription glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, [Flow(FlowDirection.In)] in DwriteGlyphRunDescription glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -301,7 +301,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, ref DwriteGlyphRun glyphRun, ref DwriteGlyphRunDescription glyphRunDescription, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, [Flow(FlowDirection.In)] in DwriteGlyphRunDescription glyphRunDescription, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -475,7 +475,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -484,7 +484,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -496,7 +496,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -508,7 +508,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -523,7 +523,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -535,7 +535,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -550,7 +550,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -565,7 +565,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -583,7 +583,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle, Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -592,7 +592,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle, ref Silk.NET.Maths.Matrix4X4<float> perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix4X4<float> perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -604,7 +604,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle, Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -616,7 +616,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle, ref Silk.NET.Maths.Matrix4X4<float> perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix4X4<float> perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -631,7 +631,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle, Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -643,7 +643,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle, ref Silk.NET.Maths.Matrix4X4<float> perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix4X4<float> perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -658,7 +658,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle, Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -673,7 +673,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle, ref Silk.NET.Maths.Matrix4X4<float> perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix4X4<float> perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -691,7 +691,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle, Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -703,7 +703,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle, ref Silk.NET.Maths.Matrix4X4<float> perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix4X4<float> perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -718,7 +718,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle, Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -733,7 +733,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle, ref Silk.NET.Maths.Matrix4X4<float> perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix4X4<float> perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -751,7 +751,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle, Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -766,7 +766,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle, ref Silk.NET.Maths.Matrix4X4<float> perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix4X4<float> perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -784,7 +784,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle, Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -802,7 +802,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle, ref Silk.NET.Maths.Matrix4X4<float> perspectiveTransform)
+    public static int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix4X4<float> perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -823,7 +823,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Image* image, Silk.NET.Maths.Vector2D<float>* targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -832,7 +832,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Image* image, Silk.NET.Maths.Vector2D<float>* targetOffset, ref Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -844,7 +844,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Image* image, ref Silk.NET.Maths.Vector2D<float> targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -856,7 +856,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Image* image, ref Silk.NET.Maths.Vector2D<float> targetOffset, ref Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -871,7 +871,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Image image, Silk.NET.Maths.Vector2D<float>* targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -883,7 +883,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Image image, Silk.NET.Maths.Vector2D<float>* targetOffset, ref Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -898,7 +898,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Image image, ref Silk.NET.Maths.Vector2D<float> targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -913,7 +913,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Image image, ref Silk.NET.Maths.Vector2D<float> targetOffset, ref Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -931,7 +931,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGdiMetafile(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1GdiMetafile* gdiMetafile, Silk.NET.Maths.Vector2D<float>* targetOffset)
+    public static unsafe int DrawGdiMetafile(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1GdiMetafile* gdiMetafile, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -940,7 +940,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGdiMetafile(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1GdiMetafile* gdiMetafile, ref Silk.NET.Maths.Vector2D<float> targetOffset)
+    public static unsafe int DrawGdiMetafile(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1GdiMetafile* gdiMetafile, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -952,7 +952,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGdiMetafile(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1GdiMetafile gdiMetafile, Silk.NET.Maths.Vector2D<float>* targetOffset)
+    public static unsafe int DrawGdiMetafile(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1GdiMetafile gdiMetafile, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -964,7 +964,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawGdiMetafile(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1GdiMetafile gdiMetafile, ref Silk.NET.Maths.Vector2D<float> targetOffset)
+    public static int DrawGdiMetafile(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1GdiMetafile gdiMetafile, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1027,7 +1027,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1036,7 +1036,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1048,7 +1048,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, ref Silk.NET.Maths.Box2D<float> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1060,7 +1060,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, ref Silk.NET.Maths.Box2D<float> destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1075,7 +1075,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1087,7 +1087,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1102,7 +1102,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, ref Silk.NET.Maths.Box2D<float> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1117,7 +1117,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, ref Silk.NET.Maths.Box2D<float> destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1135,7 +1135,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1147,7 +1147,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1162,7 +1162,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, ref Silk.NET.Maths.Box2D<float> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1177,7 +1177,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, ref Silk.NET.Maths.Box2D<float> destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1195,7 +1195,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1210,7 +1210,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1228,7 +1228,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, ref Silk.NET.Maths.Box2D<float> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1246,7 +1246,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, ref Silk.NET.Maths.Box2D<float> destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1375,7 +1375,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush)
+    public static unsafe int FillRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1384,7 +1384,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush)
+    public static unsafe int FillRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1396,7 +1396,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush)
+    public static unsafe int FillRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1408,7 +1408,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int FillRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush)
+    public static int FillRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1423,7 +1423,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PushAxisAlignedClip(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Box2D<float>* clipRect, AntialiasMode antialiasMode)
+    public static unsafe int PushAxisAlignedClip(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* clipRect, AntialiasMode antialiasMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1432,7 +1432,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int PushAxisAlignedClip(this ComPtr<ID2D1CommandSink4> thisVtbl, ref Silk.NET.Maths.Box2D<float> clipRect, AntialiasMode antialiasMode)
+    public static int PushAxisAlignedClip(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> clipRect, AntialiasMode antialiasMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1444,7 +1444,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PushLayer(this ComPtr<ID2D1CommandSink4> thisVtbl, LayerParameters1* layerParameters1, ID2D1Layer* layer)
+    public static unsafe int PushLayer(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] LayerParameters1* layerParameters1, ID2D1Layer* layer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1453,7 +1453,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PushLayer(this ComPtr<ID2D1CommandSink4> thisVtbl, LayerParameters1* layerParameters1, ref ID2D1Layer layer)
+    public static unsafe int PushLayer(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] LayerParameters1* layerParameters1, ref ID2D1Layer layer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1465,7 +1465,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PushLayer(this ComPtr<ID2D1CommandSink4> thisVtbl, ref LayerParameters1 layerParameters1, ID2D1Layer* layer)
+    public static unsafe int PushLayer(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] in LayerParameters1 layerParameters1, ID2D1Layer* layer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1477,7 +1477,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int PushLayer(this ComPtr<ID2D1CommandSink4> thisVtbl, ref LayerParameters1 layerParameters1, ref ID2D1Layer layer)
+    public static int PushLayer(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] in LayerParameters1 layerParameters1, ref ID2D1Layer layer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1738,23 +1738,23 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetTransform(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<Silk.NET.Maths.Matrix3X2<float>> transform)
+    public static int SetTransform(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetTransform(ref transform.GetPinnableReference());
+        return @this->SetTransform(in transform.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int Clear(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<Silk.NET.DXGI.D3Dcolorvalue> color)
+    public static int Clear(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> color)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Clear(ref color.GetPinnableReference());
+        return @this->Clear(in color.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, DwriteGlyphRunDescription* glyphRunDescription, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe int DrawGlyphRun<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, [Flow(FlowDirection.In)] DwriteGlyphRunDescription* glyphRunDescription, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1762,7 +1762,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, DwriteGlyphRunDescription* glyphRunDescription, Span<ID2D1Brush> foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, [Flow(FlowDirection.In)] DwriteGlyphRunDescription* glyphRunDescription, Span<ID2D1Brush> foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1770,75 +1770,75 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, Span<DwriteGlyphRunDescription> glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRunDescription> glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawGlyphRun(baselineOrigin, glyphRun, ref glyphRunDescription.GetPinnableReference(), foregroundBrush, measuringMode);
+        return @this->DrawGlyphRun(baselineOrigin, glyphRun, in glyphRunDescription.GetPinnableReference(), foregroundBrush, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, ref DwriteGlyphRunDescription glyphRunDescription, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe int DrawGlyphRun<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, [Flow(FlowDirection.In)] in DwriteGlyphRunDescription glyphRunDescription, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DrawGlyphRun(baselineOrigin, glyphRun, ref glyphRunDescription, (ID2D1Brush*) foregroundBrush.Handle, measuringMode);
+        return @this->DrawGlyphRun(baselineOrigin, glyphRun, in glyphRunDescription, (ID2D1Brush*) foregroundBrush.Handle, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, Span<DwriteGlyphRunDescription> glyphRunDescription, Span<ID2D1Brush> foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRunDescription> glyphRunDescription, Span<ID2D1Brush> foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawGlyphRun(baselineOrigin, glyphRun, ref glyphRunDescription.GetPinnableReference(), ref foregroundBrush.GetPinnableReference(), measuringMode);
+        return @this->DrawGlyphRun(baselineOrigin, glyphRun, in glyphRunDescription.GetPinnableReference(), ref foregroundBrush.GetPinnableReference(), measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, Span<DwriteGlyphRun> glyphRun, DwriteGlyphRunDescription* glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRun> glyphRun, [Flow(FlowDirection.In)] DwriteGlyphRunDescription* glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawGlyphRun(baselineOrigin, ref glyphRun.GetPinnableReference(), glyphRunDescription, foregroundBrush, measuringMode);
+        return @this->DrawGlyphRun(baselineOrigin, in glyphRun.GetPinnableReference(), glyphRunDescription, foregroundBrush, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, ref DwriteGlyphRun glyphRun, DwriteGlyphRunDescription* glyphRunDescription, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe int DrawGlyphRun<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, [Flow(FlowDirection.In)] DwriteGlyphRunDescription* glyphRunDescription, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DrawGlyphRun(baselineOrigin, ref glyphRun, glyphRunDescription, (ID2D1Brush*) foregroundBrush.Handle, measuringMode);
+        return @this->DrawGlyphRun(baselineOrigin, in glyphRun, glyphRunDescription, (ID2D1Brush*) foregroundBrush.Handle, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, Span<DwriteGlyphRun> glyphRun, DwriteGlyphRunDescription* glyphRunDescription, Span<ID2D1Brush> foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRun> glyphRun, [Flow(FlowDirection.In)] DwriteGlyphRunDescription* glyphRunDescription, Span<ID2D1Brush> foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawGlyphRun(baselineOrigin, ref glyphRun.GetPinnableReference(), glyphRunDescription, ref foregroundBrush.GetPinnableReference(), measuringMode);
+        return @this->DrawGlyphRun(baselineOrigin, in glyphRun.GetPinnableReference(), glyphRunDescription, ref foregroundBrush.GetPinnableReference(), measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, Span<DwriteGlyphRun> glyphRun, Span<DwriteGlyphRunDescription> glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static unsafe int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRun> glyphRun, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRunDescription> glyphRunDescription, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawGlyphRun(baselineOrigin, ref glyphRun.GetPinnableReference(), ref glyphRunDescription.GetPinnableReference(), foregroundBrush, measuringMode);
+        return @this->DrawGlyphRun(baselineOrigin, in glyphRun.GetPinnableReference(), in glyphRunDescription.GetPinnableReference(), foregroundBrush, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawGlyphRun<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, ref DwriteGlyphRun glyphRun, ref DwriteGlyphRunDescription glyphRunDescription, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static int DrawGlyphRun<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, [Flow(FlowDirection.In)] in DwriteGlyphRunDescription glyphRunDescription, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DrawGlyphRun(baselineOrigin, ref glyphRun, ref glyphRunDescription, (ID2D1Brush*) foregroundBrush.Handle, measuringMode);
+        return @this->DrawGlyphRun(baselineOrigin, in glyphRun, in glyphRunDescription, (ID2D1Brush*) foregroundBrush.Handle, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, Span<DwriteGlyphRun> glyphRun, Span<DwriteGlyphRunDescription> glyphRunDescription, Span<ID2D1Brush> foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static int DrawGlyphRun(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRun> glyphRun, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRunDescription> glyphRunDescription, Span<ID2D1Brush> foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawGlyphRun(baselineOrigin, ref glyphRun.GetPinnableReference(), ref glyphRunDescription.GetPinnableReference(), ref foregroundBrush.GetPinnableReference(), measuringMode);
+        return @this->DrawGlyphRun(baselineOrigin, in glyphRun.GetPinnableReference(), in glyphRunDescription.GetPinnableReference(), ref foregroundBrush.GetPinnableReference(), measuringMode);
     }
 
     /// <summary>To be documented.</summary>
@@ -2002,7 +2002,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectangle<TI0, TI1>(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
+    public static unsafe int DrawRectangle<TI0, TI1>(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2010,7 +2010,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
+    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2018,7 +2018,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectangle<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe int DrawRectangle<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2026,7 +2026,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, Span<ID2D1Brush> brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, Span<ID2D1Brush> brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2034,7 +2034,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectangle<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static unsafe int DrawRectangle<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2042,7 +2042,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, Span<ID2D1Brush> brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
+    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, Span<ID2D1Brush> brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2050,63 +2050,63 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<Silk.NET.Maths.Box2D<float>> rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawRectangle(ref rect.GetPinnableReference(), brush, strokeWidth, strokeStyle);
+        return @this->DrawRectangle(in rect.GetPinnableReference(), brush, strokeWidth, strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawRectangle<TI0, TI1>(this ComPtr<ID2D1CommandSink4> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
+    public static int DrawRectangle<TI0, TI1>(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DrawRectangle(ref rect, (ID2D1Brush*) brush.Handle, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle);
+        return @this->DrawRectangle(in rect, (ID2D1Brush*) brush.Handle, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<Silk.NET.Maths.Box2D<float>> rect, ID2D1Brush* brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
+    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> rect, ID2D1Brush* brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawRectangle(ref rect.GetPinnableReference(), brush, strokeWidth, ref strokeStyle.GetPinnableReference());
+        return @this->DrawRectangle(in rect.GetPinnableReference(), brush, strokeWidth, ref strokeStyle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawRectangle<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static int DrawRectangle<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DrawRectangle(ref rect, (ID2D1Brush*) brush.Handle, strokeWidth, ref strokeStyle);
+        return @this->DrawRectangle(in rect, (ID2D1Brush*) brush.Handle, strokeWidth, ref strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<Silk.NET.Maths.Box2D<float>> rect, Span<ID2D1Brush> brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> rect, Span<ID2D1Brush> brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawRectangle(ref rect.GetPinnableReference(), ref brush.GetPinnableReference(), strokeWidth, strokeStyle);
+        return @this->DrawRectangle(in rect.GetPinnableReference(), ref brush.GetPinnableReference(), strokeWidth, strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawRectangle<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static int DrawRectangle<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DrawRectangle(ref rect, ref brush, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle);
+        return @this->DrawRectangle(in rect, ref brush, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<Silk.NET.Maths.Box2D<float>> rect, Span<ID2D1Brush> brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
+    public static int DrawRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> rect, Span<ID2D1Brush> brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawRectangle(ref rect.GetPinnableReference(), ref brush.GetPinnableReference(), strokeWidth, ref strokeStyle.GetPinnableReference());
+        return @this->DrawRectangle(in rect.GetPinnableReference(), ref brush.GetPinnableReference(), strokeWidth, ref strokeStyle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle, Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int DrawBitmap<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2114,119 +2114,119 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle, Span<Silk.NET.Maths.Matrix4X4<float>> perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix4X4<float>> perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawBitmap(bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle, ref perspectiveTransform.GetPinnableReference());
+        return @this->DrawBitmap(bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle, in perspectiveTransform.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle, ref Silk.NET.Maths.Matrix4X4<float> perspectiveTransform) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int DrawBitmap<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix4X4<float> perspectiveTransform) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, destinationRectangle, opacity, interpolationMode, sourceRectangle, ref perspectiveTransform);
+        return @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, destinationRectangle, opacity, interpolationMode, sourceRectangle, in perspectiveTransform);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle, Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawBitmap(bitmap, destinationRectangle, opacity, interpolationMode, ref sourceRectangle.GetPinnableReference(), perspectiveTransform);
+        return @this->DrawBitmap(bitmap, destinationRectangle, opacity, interpolationMode, in sourceRectangle.GetPinnableReference(), perspectiveTransform);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle, Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int DrawBitmap<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, destinationRectangle, opacity, interpolationMode, ref sourceRectangle, perspectiveTransform);
+        return @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, destinationRectangle, opacity, interpolationMode, in sourceRectangle, perspectiveTransform);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle, Span<Silk.NET.Maths.Matrix4X4<float>> perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix4X4<float>> perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawBitmap(bitmap, destinationRectangle, opacity, interpolationMode, ref sourceRectangle.GetPinnableReference(), ref perspectiveTransform.GetPinnableReference());
+        return @this->DrawBitmap(bitmap, destinationRectangle, opacity, interpolationMode, in sourceRectangle.GetPinnableReference(), in perspectiveTransform.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle, ref Silk.NET.Maths.Matrix4X4<float> perspectiveTransform) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int DrawBitmap<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix4X4<float> perspectiveTransform) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, destinationRectangle, opacity, interpolationMode, ref sourceRectangle, ref perspectiveTransform);
+        return @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, destinationRectangle, opacity, interpolationMode, in sourceRectangle, in perspectiveTransform);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, InterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle, Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawBitmap(bitmap, ref destinationRectangle.GetPinnableReference(), opacity, interpolationMode, sourceRectangle, perspectiveTransform);
+        return @this->DrawBitmap(bitmap, in destinationRectangle.GetPinnableReference(), opacity, interpolationMode, sourceRectangle, perspectiveTransform);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle, Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int DrawBitmap<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, ref destinationRectangle, opacity, interpolationMode, sourceRectangle, perspectiveTransform);
+        return @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, in destinationRectangle, opacity, interpolationMode, sourceRectangle, perspectiveTransform);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, InterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle, Span<Silk.NET.Maths.Matrix4X4<float>> perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix4X4<float>> perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawBitmap(bitmap, ref destinationRectangle.GetPinnableReference(), opacity, interpolationMode, sourceRectangle, ref perspectiveTransform.GetPinnableReference());
+        return @this->DrawBitmap(bitmap, in destinationRectangle.GetPinnableReference(), opacity, interpolationMode, sourceRectangle, in perspectiveTransform.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle, ref Silk.NET.Maths.Matrix4X4<float> perspectiveTransform) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int DrawBitmap<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix4X4<float> perspectiveTransform) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, ref destinationRectangle, opacity, interpolationMode, sourceRectangle, ref perspectiveTransform);
+        return @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, in destinationRectangle, opacity, interpolationMode, sourceRectangle, in perspectiveTransform);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, InterpolationMode interpolationMode, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle, Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawBitmap(bitmap, ref destinationRectangle.GetPinnableReference(), opacity, interpolationMode, ref sourceRectangle.GetPinnableReference(), perspectiveTransform);
+        return @this->DrawBitmap(bitmap, in destinationRectangle.GetPinnableReference(), opacity, interpolationMode, in sourceRectangle.GetPinnableReference(), perspectiveTransform);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle, Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int DrawBitmap<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, ref destinationRectangle, opacity, interpolationMode, ref sourceRectangle, perspectiveTransform);
+        return @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, in destinationRectangle, opacity, interpolationMode, in sourceRectangle, perspectiveTransform);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, InterpolationMode interpolationMode, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle, Span<Silk.NET.Maths.Matrix4X4<float>> perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix4X4<float>> perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawBitmap(bitmap, ref destinationRectangle.GetPinnableReference(), opacity, interpolationMode, ref sourceRectangle.GetPinnableReference(), ref perspectiveTransform.GetPinnableReference());
+        return @this->DrawBitmap(bitmap, in destinationRectangle.GetPinnableReference(), opacity, interpolationMode, in sourceRectangle.GetPinnableReference(), in perspectiveTransform.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawBitmap<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle, ref Silk.NET.Maths.Matrix4X4<float> perspectiveTransform) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static int DrawBitmap<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix4X4<float> perspectiveTransform) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, ref destinationRectangle, opacity, interpolationMode, ref sourceRectangle, ref perspectiveTransform);
+        return @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, in destinationRectangle, opacity, interpolationMode, in sourceRectangle, in perspectiveTransform);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle, Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2234,63 +2234,63 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle, Span<Silk.NET.Maths.Matrix4X4<float>> perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix4X4<float>> perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawBitmap(ref bitmap.GetPinnableReference(), destinationRectangle, opacity, interpolationMode, sourceRectangle, ref perspectiveTransform.GetPinnableReference());
+        return @this->DrawBitmap(ref bitmap.GetPinnableReference(), destinationRectangle, opacity, interpolationMode, sourceRectangle, in perspectiveTransform.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle, Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawBitmap(ref bitmap.GetPinnableReference(), destinationRectangle, opacity, interpolationMode, ref sourceRectangle.GetPinnableReference(), perspectiveTransform);
+        return @this->DrawBitmap(ref bitmap.GetPinnableReference(), destinationRectangle, opacity, interpolationMode, in sourceRectangle.GetPinnableReference(), perspectiveTransform);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle, Span<Silk.NET.Maths.Matrix4X4<float>> perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix4X4<float>> perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawBitmap(ref bitmap.GetPinnableReference(), destinationRectangle, opacity, interpolationMode, ref sourceRectangle.GetPinnableReference(), ref perspectiveTransform.GetPinnableReference());
+        return @this->DrawBitmap(ref bitmap.GetPinnableReference(), destinationRectangle, opacity, interpolationMode, in sourceRectangle.GetPinnableReference(), in perspectiveTransform.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> bitmap, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, InterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle, Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawBitmap(ref bitmap.GetPinnableReference(), ref destinationRectangle.GetPinnableReference(), opacity, interpolationMode, sourceRectangle, perspectiveTransform);
+        return @this->DrawBitmap(ref bitmap.GetPinnableReference(), in destinationRectangle.GetPinnableReference(), opacity, interpolationMode, sourceRectangle, perspectiveTransform);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> bitmap, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, InterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle, Span<Silk.NET.Maths.Matrix4X4<float>> perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix4X4<float>> perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawBitmap(ref bitmap.GetPinnableReference(), ref destinationRectangle.GetPinnableReference(), opacity, interpolationMode, sourceRectangle, ref perspectiveTransform.GetPinnableReference());
+        return @this->DrawBitmap(ref bitmap.GetPinnableReference(), in destinationRectangle.GetPinnableReference(), opacity, interpolationMode, sourceRectangle, in perspectiveTransform.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> bitmap, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, InterpolationMode interpolationMode, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle, Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
+    public static unsafe int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix4X4<float>* perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawBitmap(ref bitmap.GetPinnableReference(), ref destinationRectangle.GetPinnableReference(), opacity, interpolationMode, ref sourceRectangle.GetPinnableReference(), perspectiveTransform);
+        return @this->DrawBitmap(ref bitmap.GetPinnableReference(), in destinationRectangle.GetPinnableReference(), opacity, interpolationMode, in sourceRectangle.GetPinnableReference(), perspectiveTransform);
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> bitmap, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, InterpolationMode interpolationMode, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle, Span<Silk.NET.Maths.Matrix4X4<float>> perspectiveTransform)
+    public static int DrawBitmap(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, InterpolationMode interpolationMode, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix4X4<float>> perspectiveTransform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawBitmap(ref bitmap.GetPinnableReference(), ref destinationRectangle.GetPinnableReference(), opacity, interpolationMode, ref sourceRectangle.GetPinnableReference(), ref perspectiveTransform.GetPinnableReference());
+        return @this->DrawBitmap(ref bitmap.GetPinnableReference(), in destinationRectangle.GetPinnableReference(), opacity, interpolationMode, in sourceRectangle.GetPinnableReference(), in perspectiveTransform.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawImage<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> image, Silk.NET.Maths.Vector2D<float>* targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static unsafe int DrawImage<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2298,55 +2298,55 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Image* image, Silk.NET.Maths.Vector2D<float>* targetOffset, Span<Silk.NET.Maths.Box2D<float>> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawImage(image, targetOffset, ref imageRectangle.GetPinnableReference(), interpolationMode, compositeMode);
+        return @this->DrawImage(image, targetOffset, in imageRectangle.GetPinnableReference(), interpolationMode, compositeMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawImage<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> image, Silk.NET.Maths.Vector2D<float>* targetOffset, ref Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static unsafe int DrawImage<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DrawImage((ID2D1Image*) image.Handle, targetOffset, ref imageRectangle, interpolationMode, compositeMode);
+        return @this->DrawImage((ID2D1Image*) image.Handle, targetOffset, in imageRectangle, interpolationMode, compositeMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Image* image, Span<Silk.NET.Maths.Vector2D<float>> targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawImage(image, ref targetOffset.GetPinnableReference(), imageRectangle, interpolationMode, compositeMode);
+        return @this->DrawImage(image, in targetOffset.GetPinnableReference(), imageRectangle, interpolationMode, compositeMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawImage<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> image, ref Silk.NET.Maths.Vector2D<float> targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static unsafe int DrawImage<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> image, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DrawImage((ID2D1Image*) image.Handle, ref targetOffset, imageRectangle, interpolationMode, compositeMode);
+        return @this->DrawImage((ID2D1Image*) image.Handle, in targetOffset, imageRectangle, interpolationMode, compositeMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Image* image, Span<Silk.NET.Maths.Vector2D<float>> targetOffset, Span<Silk.NET.Maths.Box2D<float>> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> targetOffset, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawImage(image, ref targetOffset.GetPinnableReference(), ref imageRectangle.GetPinnableReference(), interpolationMode, compositeMode);
+        return @this->DrawImage(image, in targetOffset.GetPinnableReference(), in imageRectangle.GetPinnableReference(), interpolationMode, compositeMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawImage<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> image, ref Silk.NET.Maths.Vector2D<float> targetOffset, ref Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static int DrawImage<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> image, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DrawImage((ID2D1Image*) image.Handle, ref targetOffset, ref imageRectangle, interpolationMode, compositeMode);
+        return @this->DrawImage((ID2D1Image*) image.Handle, in targetOffset, in imageRectangle, interpolationMode, compositeMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Image> image, Silk.NET.Maths.Vector2D<float>* targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Image> image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2354,31 +2354,31 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Image> image, Silk.NET.Maths.Vector2D<float>* targetOffset, Span<Silk.NET.Maths.Box2D<float>> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Image> image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawImage(ref image.GetPinnableReference(), targetOffset, ref imageRectangle.GetPinnableReference(), interpolationMode, compositeMode);
+        return @this->DrawImage(ref image.GetPinnableReference(), targetOffset, in imageRectangle.GetPinnableReference(), interpolationMode, compositeMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Image> image, Span<Silk.NET.Maths.Vector2D<float>> targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Image> image, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawImage(ref image.GetPinnableReference(), ref targetOffset.GetPinnableReference(), imageRectangle, interpolationMode, compositeMode);
+        return @this->DrawImage(ref image.GetPinnableReference(), in targetOffset.GetPinnableReference(), imageRectangle, interpolationMode, compositeMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Image> image, Span<Silk.NET.Maths.Vector2D<float>> targetOffset, Span<Silk.NET.Maths.Box2D<float>> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static int DrawImage(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Image> image, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> targetOffset, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawImage(ref image.GetPinnableReference(), ref targetOffset.GetPinnableReference(), ref imageRectangle.GetPinnableReference(), interpolationMode, compositeMode);
+        return @this->DrawImage(ref image.GetPinnableReference(), in targetOffset.GetPinnableReference(), in imageRectangle.GetPinnableReference(), interpolationMode, compositeMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGdiMetafile<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> gdiMetafile, Silk.NET.Maths.Vector2D<float>* targetOffset) where TI0 : unmanaged, IComVtbl<ID2D1GdiMetafile>, IComVtbl<TI0>
+    public static unsafe int DrawGdiMetafile<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> gdiMetafile, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset) where TI0 : unmanaged, IComVtbl<ID2D1GdiMetafile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2386,23 +2386,23 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGdiMetafile(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1GdiMetafile* gdiMetafile, Span<Silk.NET.Maths.Vector2D<float>> targetOffset)
+    public static unsafe int DrawGdiMetafile(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1GdiMetafile* gdiMetafile, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> targetOffset)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawGdiMetafile(gdiMetafile, ref targetOffset.GetPinnableReference());
+        return @this->DrawGdiMetafile(gdiMetafile, in targetOffset.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawGdiMetafile<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> gdiMetafile, ref Silk.NET.Maths.Vector2D<float> targetOffset) where TI0 : unmanaged, IComVtbl<ID2D1GdiMetafile>, IComVtbl<TI0>
+    public static int DrawGdiMetafile<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> gdiMetafile, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset) where TI0 : unmanaged, IComVtbl<ID2D1GdiMetafile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->DrawGdiMetafile((ID2D1GdiMetafile*) gdiMetafile.Handle, ref targetOffset);
+        return @this->DrawGdiMetafile((ID2D1GdiMetafile*) gdiMetafile.Handle, in targetOffset);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int DrawGdiMetafile(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1GdiMetafile> gdiMetafile, Silk.NET.Maths.Vector2D<float>* targetOffset)
+    public static unsafe int DrawGdiMetafile(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1GdiMetafile> gdiMetafile, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2410,11 +2410,11 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int DrawGdiMetafile(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1GdiMetafile> gdiMetafile, Span<Silk.NET.Maths.Vector2D<float>> targetOffset)
+    public static int DrawGdiMetafile(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1GdiMetafile> gdiMetafile, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> targetOffset)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->DrawGdiMetafile(ref gdiMetafile.GetPinnableReference(), ref targetOffset.GetPinnableReference());
+        return @this->DrawGdiMetafile(ref gdiMetafile.GetPinnableReference(), in targetOffset.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -2466,7 +2466,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
+    public static unsafe int FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2474,55 +2474,55 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FillOpacityMask(opacityMask, brush, destinationRectangle, ref sourceRectangle.GetPinnableReference());
+        return @this->FillOpacityMask(opacityMask, brush, destinationRectangle, in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
+    public static unsafe int FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, (ID2D1Brush*) brush.Handle, destinationRectangle, ref sourceRectangle);
+        return @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, (ID2D1Brush*) brush.Handle, destinationRectangle, in sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FillOpacityMask(opacityMask, brush, ref destinationRectangle.GetPinnableReference(), sourceRectangle);
+        return @this->FillOpacityMask(opacityMask, brush, in destinationRectangle.GetPinnableReference(), sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, ref Silk.NET.Maths.Box2D<float> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
+    public static unsafe int FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, (ID2D1Brush*) brush.Handle, ref destinationRectangle, sourceRectangle);
+        return @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, (ID2D1Brush*) brush.Handle, in destinationRectangle, sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FillOpacityMask(opacityMask, brush, ref destinationRectangle.GetPinnableReference(), ref sourceRectangle.GetPinnableReference());
+        return @this->FillOpacityMask(opacityMask, brush, in destinationRectangle.GetPinnableReference(), in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, ref Silk.NET.Maths.Box2D<float> destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
+    public static int FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, (ID2D1Brush*) brush.Handle, ref destinationRectangle, ref sourceRectangle);
+        return @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, (ID2D1Brush*) brush.Handle, in destinationRectangle, in sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, Span<ID2D1Brush> brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, Span<ID2D1Brush> brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2530,7 +2530,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int FillOpacityMask<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2538,55 +2538,55 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, Span<ID2D1Brush> brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, Span<ID2D1Brush> brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FillOpacityMask(opacityMask, ref brush.GetPinnableReference(), destinationRectangle, ref sourceRectangle.GetPinnableReference());
+        return @this->FillOpacityMask(opacityMask, ref brush.GetPinnableReference(), destinationRectangle, in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int FillOpacityMask<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, ref brush, destinationRectangle, ref sourceRectangle);
+        return @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, ref brush, destinationRectangle, in sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, Span<ID2D1Brush> brush, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, Span<ID2D1Brush> brush, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FillOpacityMask(opacityMask, ref brush.GetPinnableReference(), ref destinationRectangle.GetPinnableReference(), sourceRectangle);
+        return @this->FillOpacityMask(opacityMask, ref brush.GetPinnableReference(), in destinationRectangle.GetPinnableReference(), sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, ref Silk.NET.Maths.Box2D<float> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int FillOpacityMask<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, ref brush, ref destinationRectangle, sourceRectangle);
+        return @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, ref brush, in destinationRectangle, sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, Span<ID2D1Brush> brush, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, ID2D1Bitmap* opacityMask, Span<ID2D1Brush> brush, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FillOpacityMask(opacityMask, ref brush.GetPinnableReference(), ref destinationRectangle.GetPinnableReference(), ref sourceRectangle.GetPinnableReference());
+        return @this->FillOpacityMask(opacityMask, ref brush.GetPinnableReference(), in destinationRectangle.GetPinnableReference(), in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int FillOpacityMask<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, ref Silk.NET.Maths.Box2D<float> destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static int FillOpacityMask<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, ref brush, ref destinationRectangle, ref sourceRectangle);
+        return @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, ref brush, in destinationRectangle, in sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> opacityMask, ID2D1Brush* brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> opacityMask, ID2D1Brush* brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2594,7 +2594,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe int FillOpacityMask<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2602,55 +2602,55 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> opacityMask, ID2D1Brush* brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> opacityMask, ID2D1Brush* brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), brush, destinationRectangle, ref sourceRectangle.GetPinnableReference());
+        return @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), brush, destinationRectangle, in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe int FillOpacityMask<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->FillOpacityMask(ref opacityMask, (ID2D1Brush*) brush.Handle, destinationRectangle, ref sourceRectangle);
+        return @this->FillOpacityMask(ref opacityMask, (ID2D1Brush*) brush.Handle, destinationRectangle, in sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> opacityMask, ID2D1Brush* brush, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> opacityMask, ID2D1Brush* brush, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), brush, ref destinationRectangle.GetPinnableReference(), sourceRectangle);
+        return @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), brush, in destinationRectangle.GetPinnableReference(), sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, ref Silk.NET.Maths.Box2D<float> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe int FillOpacityMask<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->FillOpacityMask(ref opacityMask, (ID2D1Brush*) brush.Handle, ref destinationRectangle, sourceRectangle);
+        return @this->FillOpacityMask(ref opacityMask, (ID2D1Brush*) brush.Handle, in destinationRectangle, sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> opacityMask, ID2D1Brush* brush, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> opacityMask, ID2D1Brush* brush, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), brush, ref destinationRectangle.GetPinnableReference(), ref sourceRectangle.GetPinnableReference());
+        return @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), brush, in destinationRectangle.GetPinnableReference(), in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int FillOpacityMask<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, ref Silk.NET.Maths.Box2D<float> destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static int FillOpacityMask<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->FillOpacityMask(ref opacityMask, (ID2D1Brush*) brush.Handle, ref destinationRectangle, ref sourceRectangle);
+        return @this->FillOpacityMask(ref opacityMask, (ID2D1Brush*) brush.Handle, in destinationRectangle, in sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> opacityMask, Span<ID2D1Brush> brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> opacityMask, Span<ID2D1Brush> brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2658,27 +2658,27 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> opacityMask, Span<ID2D1Brush> brush, Silk.NET.Maths.Box2D<float>* destinationRectangle, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> opacityMask, Span<ID2D1Brush> brush, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), ref brush.GetPinnableReference(), destinationRectangle, ref sourceRectangle.GetPinnableReference());
+        return @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), ref brush.GetPinnableReference(), destinationRectangle, in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> opacityMask, Span<ID2D1Brush> brush, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> opacityMask, Span<ID2D1Brush> brush, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), ref brush.GetPinnableReference(), ref destinationRectangle.GetPinnableReference(), sourceRectangle);
+        return @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), ref brush.GetPinnableReference(), in destinationRectangle.GetPinnableReference(), sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> opacityMask, Span<ID2D1Brush> brush, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static int FillOpacityMask(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<ID2D1Bitmap> opacityMask, Span<ID2D1Brush> brush, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), ref brush.GetPinnableReference(), ref destinationRectangle.GetPinnableReference(), ref sourceRectangle.GetPinnableReference());
+        return @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), ref brush.GetPinnableReference(), in destinationRectangle.GetPinnableReference(), in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -2794,7 +2794,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillRectangle<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe int FillRectangle<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2802,7 +2802,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, Span<ID2D1Brush> brush)
+    public static unsafe int FillRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, Span<ID2D1Brush> brush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2810,39 +2810,39 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FillRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<Silk.NET.Maths.Box2D<float>> rect, ID2D1Brush* brush)
+    public static unsafe int FillRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> rect, ID2D1Brush* brush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FillRectangle(ref rect.GetPinnableReference(), brush);
+        return @this->FillRectangle(in rect.GetPinnableReference(), brush);
     }
 
     /// <summary>To be documented.</summary>
-    public static int FillRectangle<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static int FillRectangle<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->FillRectangle(ref rect, (ID2D1Brush*) brush.Handle);
+        return @this->FillRectangle(in rect, (ID2D1Brush*) brush.Handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static int FillRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<Silk.NET.Maths.Box2D<float>> rect, Span<ID2D1Brush> brush)
+    public static int FillRectangle(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> rect, Span<ID2D1Brush> brush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FillRectangle(ref rect.GetPinnableReference(), ref brush.GetPinnableReference());
+        return @this->FillRectangle(in rect.GetPinnableReference(), ref brush.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int PushAxisAlignedClip(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<Silk.NET.Maths.Box2D<float>> clipRect, AntialiasMode antialiasMode)
+    public static int PushAxisAlignedClip(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> clipRect, AntialiasMode antialiasMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->PushAxisAlignedClip(ref clipRect.GetPinnableReference(), antialiasMode);
+        return @this->PushAxisAlignedClip(in clipRect.GetPinnableReference(), antialiasMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PushLayer<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, LayerParameters1* layerParameters1, ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
+    public static unsafe int PushLayer<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] LayerParameters1* layerParameters1, ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -2850,7 +2850,7 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PushLayer(this ComPtr<ID2D1CommandSink4> thisVtbl, LayerParameters1* layerParameters1, Span<ID2D1Layer> layer)
+    public static unsafe int PushLayer(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] LayerParameters1* layerParameters1, Span<ID2D1Layer> layer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -2858,27 +2858,27 @@ public unsafe static class D2D1CommandSink4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int PushLayer(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<LayerParameters1> layerParameters1, ID2D1Layer* layer)
+    public static unsafe int PushLayer(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<LayerParameters1> layerParameters1, ID2D1Layer* layer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->PushLayer(ref layerParameters1.GetPinnableReference(), layer);
+        return @this->PushLayer(in layerParameters1.GetPinnableReference(), layer);
     }
 
     /// <summary>To be documented.</summary>
-    public static int PushLayer<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, ref LayerParameters1 layerParameters1, ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
+    public static int PushLayer<TI0>(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] in LayerParameters1 layerParameters1, ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->PushLayer(ref layerParameters1, (ID2D1Layer*) layer.Handle);
+        return @this->PushLayer(in layerParameters1, (ID2D1Layer*) layer.Handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static int PushLayer(this ComPtr<ID2D1CommandSink4> thisVtbl, Span<LayerParameters1> layerParameters1, Span<ID2D1Layer> layer)
+    public static int PushLayer(this ComPtr<ID2D1CommandSink4> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<LayerParameters1> layerParameters1, Span<ID2D1Layer> layer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->PushLayer(ref layerParameters1.GetPinnableReference(), ref layer.GetPinnableReference());
+        return @this->PushLayer(in layerParameters1.GetPinnableReference(), ref layer.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

@@ -41,6 +41,7 @@ namespace Silk.NET.BuildTools
         {
             var tasks = new Task[config.Tasks.Length];
 
+            var parallel = !Environment.GetCommandLineArgs().Contains("--no-parallel", StringComparer.OrdinalIgnoreCase);
             for (var i = 0; i < config.Tasks.Length; i++)
             {
                 var i1 = i;
@@ -48,13 +49,17 @@ namespace Silk.NET.BuildTools
                 {
                     RunTaskUnguarded(config.Tasks[i1], config);
                 }
+                else if (!parallel)
+                {
+                    RunTaskGuarded(config.Tasks[i1], config);
+                }
                 else
                 {
                     tasks[i] = Task.Run(() => RunTaskGuarded(config.Tasks[i1], config));
                 }
             }
 
-            if (!TestMode)
+            if (!TestMode && parallel)
             {
                 Task.WaitAll(tasks);
             }

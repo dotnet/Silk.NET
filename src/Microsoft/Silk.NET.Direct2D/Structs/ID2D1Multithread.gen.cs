@@ -111,11 +111,11 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetMultithreadProtected()
+        public readonly Silk.NET.Core.Bool32 GetMultithreadProtected()
         {
             var @this = (ID2D1Multithread*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1Multithread*, int>)@this->LpVtbl[3])(@this);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1Multithread*, Silk.NET.Core.Bool32>)@this->LpVtbl[3])(@this);
             return ret;
         }
 

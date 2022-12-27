@@ -132,7 +132,7 @@ public unsafe static class D2D1ImageSourceFromWicVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int EnsureCached(this ComPtr<ID2D1ImageSourceFromWic> thisVtbl, Silk.NET.Maths.Box2D<uint>* rectangleToFill)
+    public static unsafe int EnsureCached(this ComPtr<ID2D1ImageSourceFromWic> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* rectangleToFill)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -141,7 +141,7 @@ public unsafe static class D2D1ImageSourceFromWicVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int EnsureCached(this ComPtr<ID2D1ImageSourceFromWic> thisVtbl, ref Silk.NET.Maths.Box2D<uint> rectangleToFill)
+    public static int EnsureCached(this ComPtr<ID2D1ImageSourceFromWic> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> rectangleToFill)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -153,7 +153,7 @@ public unsafe static class D2D1ImageSourceFromWicVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int TrimCache(this ComPtr<ID2D1ImageSourceFromWic> thisVtbl, Silk.NET.Maths.Box2D<uint>* rectangleToPreserve)
+    public static unsafe int TrimCache(this ComPtr<ID2D1ImageSourceFromWic> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* rectangleToPreserve)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -162,7 +162,7 @@ public unsafe static class D2D1ImageSourceFromWicVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int TrimCache(this ComPtr<ID2D1ImageSourceFromWic> thisVtbl, ref Silk.NET.Maths.Box2D<uint> rectangleToPreserve)
+    public static int TrimCache(this ComPtr<ID2D1ImageSourceFromWic> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> rectangleToPreserve)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -232,19 +232,19 @@ public unsafe static class D2D1ImageSourceFromWicVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int EnsureCached(this ComPtr<ID2D1ImageSourceFromWic> thisVtbl, Span<Silk.NET.Maths.Box2D<uint>> rectangleToFill)
+    public static int EnsureCached(this ComPtr<ID2D1ImageSourceFromWic> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> rectangleToFill)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->EnsureCached(ref rectangleToFill.GetPinnableReference());
+        return @this->EnsureCached(in rectangleToFill.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int TrimCache(this ComPtr<ID2D1ImageSourceFromWic> thisVtbl, Span<Silk.NET.Maths.Box2D<uint>> rectangleToPreserve)
+    public static int TrimCache(this ComPtr<ID2D1ImageSourceFromWic> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<uint>> rectangleToPreserve)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->TrimCache(ref rectangleToPreserve.GetPinnableReference());
+        return @this->TrimCache(in rectangleToPreserve.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

@@ -36,7 +36,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetOutputVoices(this ComPtr<IXAudio2Voice> thisVtbl, VoiceSends* pSendList)
+    public static unsafe int SetOutputVoices(this ComPtr<IXAudio2Voice> thisVtbl, [Flow(FlowDirection.In)] VoiceSends* pSendList)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -45,7 +45,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetOutputVoices(this ComPtr<IXAudio2Voice> thisVtbl, ref VoiceSends pSendList)
+    public static int SetOutputVoices(this ComPtr<IXAudio2Voice> thisVtbl, [Flow(FlowDirection.In)] in VoiceSends pSendList)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -57,7 +57,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEffectChain(this ComPtr<IXAudio2Voice> thisVtbl, EffectChain* pEffectChain)
+    public static unsafe int SetEffectChain(this ComPtr<IXAudio2Voice> thisVtbl, [Flow(FlowDirection.In)] EffectChain* pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -66,7 +66,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetEffectChain(this ComPtr<IXAudio2Voice> thisVtbl, ref EffectChain pEffectChain)
+    public static int SetEffectChain(this ComPtr<IXAudio2Voice> thisVtbl, [Flow(FlowDirection.In)] in EffectChain pEffectChain)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -113,7 +113,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetEffectParameters(this ComPtr<IXAudio2Voice> thisVtbl, uint EffectIndex, void* pParameters, uint ParametersByteSize, uint OperationSet)
+    public static unsafe int SetEffectParameters(this ComPtr<IXAudio2Voice> thisVtbl, uint EffectIndex, [Flow(FlowDirection.In)] void* pParameters, uint ParametersByteSize, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -122,7 +122,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetEffectParameters<T0>(this ComPtr<IXAudio2Voice> thisVtbl, uint EffectIndex, ref T0 pParameters, uint ParametersByteSize, uint OperationSet) where T0 : unmanaged
+    public static int SetEffectParameters<T0>(this ComPtr<IXAudio2Voice> thisVtbl, uint EffectIndex, [Flow(FlowDirection.In)] in T0 pParameters, uint ParametersByteSize, uint OperationSet) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -155,7 +155,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, FilterParameters* pParameters, uint OperationSet)
+    public static unsafe int SetFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, [Flow(FlowDirection.In)] FilterParameters* pParameters, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -164,7 +164,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, ref FilterParameters pParameters, uint OperationSet)
+    public static int SetFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, [Flow(FlowDirection.In)] in FilterParameters pParameters, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -193,7 +193,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetOutputFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, IXAudio2Voice* pDestinationVoice, FilterParameters* pParameters, uint OperationSet)
+    public static unsafe int SetOutputFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, IXAudio2Voice* pDestinationVoice, [Flow(FlowDirection.In)] FilterParameters* pParameters, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetOutputFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, IXAudio2Voice* pDestinationVoice, ref FilterParameters pParameters, uint OperationSet)
+    public static unsafe int SetOutputFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, IXAudio2Voice* pDestinationVoice, [Flow(FlowDirection.In)] in FilterParameters pParameters, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -214,7 +214,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetOutputFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, ref IXAudio2Voice pDestinationVoice, FilterParameters* pParameters, uint OperationSet)
+    public static unsafe int SetOutputFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, ref IXAudio2Voice pDestinationVoice, [Flow(FlowDirection.In)] FilterParameters* pParameters, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetOutputFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, ref IXAudio2Voice pDestinationVoice, ref FilterParameters pParameters, uint OperationSet)
+    public static int SetOutputFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, ref IXAudio2Voice pDestinationVoice, [Flow(FlowDirection.In)] in FilterParameters pParameters, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -307,7 +307,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetChannelVolumes(this ComPtr<IXAudio2Voice> thisVtbl, uint Channels, float* pVolumes, uint OperationSet)
+    public static unsafe int SetChannelVolumes(this ComPtr<IXAudio2Voice> thisVtbl, uint Channels, [Flow(FlowDirection.In)] float* pVolumes, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -316,7 +316,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetChannelVolumes(this ComPtr<IXAudio2Voice> thisVtbl, uint Channels, ref float pVolumes, uint OperationSet)
+    public static int SetChannelVolumes(this ComPtr<IXAudio2Voice> thisVtbl, uint Channels, [Flow(FlowDirection.In)] in float pVolumes, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -345,7 +345,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetOutputMatrix(this ComPtr<IXAudio2Voice> thisVtbl, IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, float* pLevelMatrix, uint OperationSet)
+    public static unsafe int SetOutputMatrix(this ComPtr<IXAudio2Voice> thisVtbl, IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] float* pLevelMatrix, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -354,7 +354,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetOutputMatrix(this ComPtr<IXAudio2Voice> thisVtbl, IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, ref float pLevelMatrix, uint OperationSet)
+    public static unsafe int SetOutputMatrix(this ComPtr<IXAudio2Voice> thisVtbl, IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] in float pLevelMatrix, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -366,7 +366,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetOutputMatrix(this ComPtr<IXAudio2Voice> thisVtbl, ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, float* pLevelMatrix, uint OperationSet)
+    public static unsafe int SetOutputMatrix(this ComPtr<IXAudio2Voice> thisVtbl, ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] float* pLevelMatrix, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -378,7 +378,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetOutputMatrix(this ComPtr<IXAudio2Voice> thisVtbl, ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, ref float pLevelMatrix, uint OperationSet)
+    public static int SetOutputMatrix(this ComPtr<IXAudio2Voice> thisVtbl, ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] in float pLevelMatrix, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -448,19 +448,19 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetOutputVoices(this ComPtr<IXAudio2Voice> thisVtbl, Span<VoiceSends> pSendList)
+    public static int SetOutputVoices(this ComPtr<IXAudio2Voice> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<VoiceSends> pSendList)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetOutputVoices(ref pSendList.GetPinnableReference());
+        return @this->SetOutputVoices(in pSendList.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetEffectChain(this ComPtr<IXAudio2Voice> thisVtbl, Span<EffectChain> pEffectChain)
+    public static int SetEffectChain(this ComPtr<IXAudio2Voice> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<EffectChain> pEffectChain)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetEffectChain(ref pEffectChain.GetPinnableReference());
+        return @this->SetEffectChain(in pEffectChain.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -472,11 +472,11 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetEffectParameters<T0>(this ComPtr<IXAudio2Voice> thisVtbl, uint EffectIndex, Span<T0> pParameters, uint ParametersByteSize, uint OperationSet) where T0 : unmanaged
+    public static int SetEffectParameters<T0>(this ComPtr<IXAudio2Voice> thisVtbl, uint EffectIndex, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pParameters, uint ParametersByteSize, uint OperationSet) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetEffectParameters(EffectIndex, ref pParameters.GetPinnableReference(), ParametersByteSize, OperationSet);
+        return @this->SetEffectParameters(EffectIndex, in pParameters.GetPinnableReference(), ParametersByteSize, OperationSet);
     }
 
     /// <summary>To be documented.</summary>
@@ -488,11 +488,11 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, Span<FilterParameters> pParameters, uint OperationSet)
+    public static int SetFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<FilterParameters> pParameters, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetFilterParameters(ref pParameters.GetPinnableReference(), OperationSet);
+        return @this->SetFilterParameters(in pParameters.GetPinnableReference(), OperationSet);
     }
 
     /// <summary>To be documented.</summary>
@@ -504,7 +504,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetOutputFilterParameters<TI0>(this ComPtr<IXAudio2Voice> thisVtbl, ComPtr<TI0> pDestinationVoice, FilterParameters* pParameters, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
+    public static unsafe int SetOutputFilterParameters<TI0>(this ComPtr<IXAudio2Voice> thisVtbl, ComPtr<TI0> pDestinationVoice, [Flow(FlowDirection.In)] FilterParameters* pParameters, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -512,23 +512,23 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetOutputFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, IXAudio2Voice* pDestinationVoice, Span<FilterParameters> pParameters, uint OperationSet)
+    public static unsafe int SetOutputFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, IXAudio2Voice* pDestinationVoice, [Flow(FlowDirection.In)] ReadOnlySpan<FilterParameters> pParameters, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetOutputFilterParameters(pDestinationVoice, ref pParameters.GetPinnableReference(), OperationSet);
+        return @this->SetOutputFilterParameters(pDestinationVoice, in pParameters.GetPinnableReference(), OperationSet);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetOutputFilterParameters<TI0>(this ComPtr<IXAudio2Voice> thisVtbl, ComPtr<TI0> pDestinationVoice, ref FilterParameters pParameters, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
+    public static int SetOutputFilterParameters<TI0>(this ComPtr<IXAudio2Voice> thisVtbl, ComPtr<TI0> pDestinationVoice, [Flow(FlowDirection.In)] in FilterParameters pParameters, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->SetOutputFilterParameters((IXAudio2Voice*) pDestinationVoice.Handle, ref pParameters, OperationSet);
+        return @this->SetOutputFilterParameters((IXAudio2Voice*) pDestinationVoice.Handle, in pParameters, OperationSet);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetOutputFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, Span<IXAudio2Voice> pDestinationVoice, FilterParameters* pParameters, uint OperationSet)
+    public static unsafe int SetOutputFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, Span<IXAudio2Voice> pDestinationVoice, [Flow(FlowDirection.In)] FilterParameters* pParameters, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -536,11 +536,11 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetOutputFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, Span<IXAudio2Voice> pDestinationVoice, Span<FilterParameters> pParameters, uint OperationSet)
+    public static int SetOutputFilterParameters(this ComPtr<IXAudio2Voice> thisVtbl, Span<IXAudio2Voice> pDestinationVoice, [Flow(FlowDirection.In)] ReadOnlySpan<FilterParameters> pParameters, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetOutputFilterParameters(ref pDestinationVoice.GetPinnableReference(), ref pParameters.GetPinnableReference(), OperationSet);
+        return @this->SetOutputFilterParameters(ref pDestinationVoice.GetPinnableReference(), in pParameters.GetPinnableReference(), OperationSet);
     }
 
     /// <summary>To be documented.</summary>
@@ -592,11 +592,11 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetChannelVolumes(this ComPtr<IXAudio2Voice> thisVtbl, uint Channels, Span<float> pVolumes, uint OperationSet)
+    public static int SetChannelVolumes(this ComPtr<IXAudio2Voice> thisVtbl, uint Channels, [Flow(FlowDirection.In)] ReadOnlySpan<float> pVolumes, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetChannelVolumes(Channels, ref pVolumes.GetPinnableReference(), OperationSet);
+        return @this->SetChannelVolumes(Channels, in pVolumes.GetPinnableReference(), OperationSet);
     }
 
     /// <summary>To be documented.</summary>
@@ -608,7 +608,7 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetOutputMatrix<TI0>(this ComPtr<IXAudio2Voice> thisVtbl, ComPtr<TI0> pDestinationVoice, uint SourceChannels, uint DestinationChannels, float* pLevelMatrix, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
+    public static unsafe int SetOutputMatrix<TI0>(this ComPtr<IXAudio2Voice> thisVtbl, ComPtr<TI0> pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] float* pLevelMatrix, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -616,23 +616,23 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetOutputMatrix(this ComPtr<IXAudio2Voice> thisVtbl, IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, Span<float> pLevelMatrix, uint OperationSet)
+    public static unsafe int SetOutputMatrix(this ComPtr<IXAudio2Voice> thisVtbl, IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] ReadOnlySpan<float> pLevelMatrix, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetOutputMatrix(pDestinationVoice, SourceChannels, DestinationChannels, ref pLevelMatrix.GetPinnableReference(), OperationSet);
+        return @this->SetOutputMatrix(pDestinationVoice, SourceChannels, DestinationChannels, in pLevelMatrix.GetPinnableReference(), OperationSet);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetOutputMatrix<TI0>(this ComPtr<IXAudio2Voice> thisVtbl, ComPtr<TI0> pDestinationVoice, uint SourceChannels, uint DestinationChannels, ref float pLevelMatrix, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
+    public static int SetOutputMatrix<TI0>(this ComPtr<IXAudio2Voice> thisVtbl, ComPtr<TI0> pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] in float pLevelMatrix, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->SetOutputMatrix((IXAudio2Voice*) pDestinationVoice.Handle, SourceChannels, DestinationChannels, ref pLevelMatrix, OperationSet);
+        return @this->SetOutputMatrix((IXAudio2Voice*) pDestinationVoice.Handle, SourceChannels, DestinationChannels, in pLevelMatrix, OperationSet);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetOutputMatrix(this ComPtr<IXAudio2Voice> thisVtbl, Span<IXAudio2Voice> pDestinationVoice, uint SourceChannels, uint DestinationChannels, float* pLevelMatrix, uint OperationSet)
+    public static unsafe int SetOutputMatrix(this ComPtr<IXAudio2Voice> thisVtbl, Span<IXAudio2Voice> pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] float* pLevelMatrix, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -640,11 +640,11 @@ public unsafe static class XAudio2VoiceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetOutputMatrix(this ComPtr<IXAudio2Voice> thisVtbl, Span<IXAudio2Voice> pDestinationVoice, uint SourceChannels, uint DestinationChannels, Span<float> pLevelMatrix, uint OperationSet)
+    public static int SetOutputMatrix(this ComPtr<IXAudio2Voice> thisVtbl, Span<IXAudio2Voice> pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] ReadOnlySpan<float> pLevelMatrix, uint OperationSet)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetOutputMatrix(ref pDestinationVoice.GetPinnableReference(), SourceChannels, DestinationChannels, ref pLevelMatrix.GetPinnableReference(), OperationSet);
+        return @this->SetOutputMatrix(ref pDestinationVoice.GetPinnableReference(), SourceChannels, DestinationChannels, in pLevelMatrix.GetPinnableReference(), OperationSet);
     }
 
     /// <summary>To be documented.</summary>

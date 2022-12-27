@@ -20,4 +20,21 @@ namespace Silk.NET.OpenAL.Extensions.EXT
         {
         }
     }
+
+    /// <summary>
+    /// Extends the AL functions abilities to make use of the float enums provided by AL_EXT_float32.
+    /// </summary>
+    public static class FloatFormatALExtensions
+    {
+        public static unsafe void BufferData(this AL al, uint buffer, FloatBufferFormat format, void* data, int size, int frequency)
+        {
+            al.BufferData(buffer, (BufferFormat) format, data, size, frequency);
+        }
+
+        public static void BufferData<TElement>(this AL al, uint buffer, FloatBufferFormat format, TElement[] data, int frequency)
+            where TElement : unmanaged
+        {
+            al.BufferData<TElement>(buffer, (BufferFormat) format, data, frequency);
+        }
+    }
 }

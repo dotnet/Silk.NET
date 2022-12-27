@@ -49,7 +49,7 @@ public unsafe static class D3D11FunctionReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, byte* Name)
+    public static unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(FlowDirection.In)] byte* Name)
     {
         var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionConstantBuffer* ret = default;
@@ -58,7 +58,7 @@ public unsafe static class D3D11FunctionReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, ref byte Name)
+    public static unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(FlowDirection.In)] in byte Name)
     {
         var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionConstantBuffer* ret = default;
@@ -70,7 +70,7 @@ public unsafe static class D3D11FunctionReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name)
+    public static unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name)
     {
         var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionConstantBuffer* ret = default;
@@ -102,7 +102,7 @@ public unsafe static class D3D11FunctionReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionVariable* GetVariableByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, byte* Name)
+    public static unsafe ID3D11ShaderReflectionVariable* GetVariableByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(FlowDirection.In)] byte* Name)
     {
         var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionVariable* ret = default;
@@ -111,7 +111,7 @@ public unsafe static class D3D11FunctionReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionVariable* GetVariableByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, ref byte Name)
+    public static unsafe ID3D11ShaderReflectionVariable* GetVariableByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(FlowDirection.In)] in byte Name)
     {
         var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionVariable* ret = default;
@@ -123,7 +123,7 @@ public unsafe static class D3D11FunctionReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionVariable* GetVariableByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name)
+    public static unsafe ID3D11ShaderReflectionVariable* GetVariableByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name)
     {
         var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionVariable* ret = default;
@@ -134,7 +134,7 @@ public unsafe static class D3D11FunctionReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, byte* Name, ShaderInputBindDesc* pDesc)
+    public static unsafe int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(FlowDirection.In)] byte* Name, ShaderInputBindDesc* pDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -143,7 +143,7 @@ public unsafe static class D3D11FunctionReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, byte* Name, ref ShaderInputBindDesc pDesc)
+    public static unsafe int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(FlowDirection.In)] byte* Name, ref ShaderInputBindDesc pDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -155,7 +155,7 @@ public unsafe static class D3D11FunctionReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, ref byte Name, ShaderInputBindDesc* pDesc)
+    public static unsafe int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(FlowDirection.In)] in byte Name, ShaderInputBindDesc* pDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -167,7 +167,7 @@ public unsafe static class D3D11FunctionReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, ref byte Name, ref ShaderInputBindDesc pDesc)
+    public static int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(FlowDirection.In)] in byte Name, ref ShaderInputBindDesc pDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -182,7 +182,7 @@ public unsafe static class D3D11FunctionReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name, ShaderInputBindDesc* pDesc)
+    public static unsafe int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name, ShaderInputBindDesc* pDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -193,7 +193,7 @@ public unsafe static class D3D11FunctionReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name, ref ShaderInputBindDesc pDesc)
+    public static int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name, ref ShaderInputBindDesc pDesc)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -224,11 +224,11 @@ public unsafe static class D3D11FunctionReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, Span<byte> Name)
+    public static unsafe ID3D11ShaderReflectionConstantBuffer* GetConstantBufferByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetConstantBufferByName(ref Name.GetPinnableReference());
+        return @this->GetConstantBufferByName(in Name.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -240,15 +240,15 @@ public unsafe static class D3D11FunctionReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionVariable* GetVariableByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, Span<byte> Name)
+    public static unsafe ID3D11ShaderReflectionVariable* GetVariableByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetVariableByName(ref Name.GetPinnableReference());
+        return @this->GetVariableByName(in Name.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, byte* Name, Span<ShaderInputBindDesc> pDesc)
+    public static unsafe int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(FlowDirection.In)] byte* Name, Span<ShaderInputBindDesc> pDesc)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -256,23 +256,23 @@ public unsafe static class D3D11FunctionReflectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, Span<byte> Name, ShaderInputBindDesc* pDesc)
+    public static unsafe int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> Name, ShaderInputBindDesc* pDesc)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetResourceBindingDescByName(ref Name.GetPinnableReference(), pDesc);
+        return @this->GetResourceBindingDescByName(in Name.GetPinnableReference(), pDesc);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, Span<byte> Name, Span<ShaderInputBindDesc> pDesc)
+    public static int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> Name, Span<ShaderInputBindDesc> pDesc)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetResourceBindingDescByName(ref Name.GetPinnableReference(), ref pDesc.GetPinnableReference());
+        return @this->GetResourceBindingDescByName(in Name.GetPinnableReference(), ref pDesc.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name, Span<ShaderInputBindDesc> pDesc)
+    public static int GetResourceBindingDescByName(this ComPtr<ID3D11FunctionReflection> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name, Span<ShaderInputBindDesc> pDesc)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

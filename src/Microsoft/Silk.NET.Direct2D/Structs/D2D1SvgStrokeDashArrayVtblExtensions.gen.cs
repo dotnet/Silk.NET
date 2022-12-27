@@ -149,7 +149,7 @@ public unsafe static class D2D1SvgStrokeDashArrayVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, float* dashes, uint dashesCount, uint startIndex)
+    public static unsafe int UpdateDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, uint startIndex)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -158,7 +158,7 @@ public unsafe static class D2D1SvgStrokeDashArrayVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, ref float dashes, uint dashesCount, uint startIndex)
+    public static int UpdateDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, uint startIndex)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -249,11 +249,11 @@ public unsafe static class D2D1SvgStrokeDashArrayVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, Span<float> dashes, uint dashesCount, uint startIndex)
+    public static int UpdateDashes(this ComPtr<ID2D1SvgStrokeDashArray> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<float> dashes, uint dashesCount, uint startIndex)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->UpdateDashes(ref dashes.GetPinnableReference(), dashesCount, startIndex);
+        return @this->UpdateDashes(in dashes.GetPinnableReference(), dashesCount, startIndex);
     }
 
     /// <summary>To be documented.</summary>

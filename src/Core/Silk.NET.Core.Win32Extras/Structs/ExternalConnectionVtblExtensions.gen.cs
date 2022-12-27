@@ -94,11 +94,11 @@ public unsafe static class ExternalConnectionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint ReleaseConnection(this ComPtr<IExternalConnection> thisVtbl, uint extconn, uint reserved, int fLastReleaseCloses)
+    public static uint ReleaseConnection(this ComPtr<IExternalConnection> thisVtbl, uint extconn, uint reserved, Silk.NET.Core.Bool32 fLastReleaseCloses)
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IExternalConnection*, uint, uint, int, uint>)@this->LpVtbl[4])(@this, extconn, reserved, fLastReleaseCloses);
+        ret = ((delegate* unmanaged[Cdecl]<IExternalConnection*, uint, uint, Silk.NET.Core.Bool32, uint>)@this->LpVtbl[4])(@this, extconn, reserved, fLastReleaseCloses);
         return ret;
     }
 

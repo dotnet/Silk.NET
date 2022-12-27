@@ -133,7 +133,7 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Write(this ComPtr<IMarshalingStream> thisVtbl, void* pv, uint cb, uint* pcbWritten)
+    public static unsafe int Write(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] void* pv, uint cb, uint* pcbWritten)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -142,7 +142,7 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Write(this ComPtr<IMarshalingStream> thisVtbl, void* pv, uint cb, ref uint pcbWritten)
+    public static unsafe int Write(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] void* pv, uint cb, ref uint pcbWritten)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -154,7 +154,7 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, ref T0 pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+    public static unsafe int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] in T0 pv, uint cb, uint* pcbWritten) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -166,7 +166,7 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, ref T0 pv, uint cb, ref uint pcbWritten) where T0 : unmanaged
+    public static int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] in T0 pv, uint cb, ref uint pcbWritten) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -467,7 +467,7 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Write(this ComPtr<IMarshalingStream> thisVtbl, void* pv, uint cb, Span<uint> pcbWritten)
+    public static unsafe int Write(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] void* pv, uint cb, Span<uint> pcbWritten)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -475,19 +475,19 @@ public unsafe static class MarshalingStreamVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, Span<T0> pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+    public static unsafe int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, uint* pcbWritten) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Write(ref pv.GetPinnableReference(), cb, pcbWritten);
+        return @this->Write(in pv.GetPinnableReference(), cb, pcbWritten);
     }
 
     /// <summary>To be documented.</summary>
-    public static int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, Span<T0> pv, uint cb, Span<uint> pcbWritten) where T0 : unmanaged
+    public static int Write<T0>(this ComPtr<IMarshalingStream> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pv, uint cb, Span<uint> pcbWritten) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Write(ref pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
+        return @this->Write(in pv.GetPinnableReference(), cb, ref pcbWritten.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

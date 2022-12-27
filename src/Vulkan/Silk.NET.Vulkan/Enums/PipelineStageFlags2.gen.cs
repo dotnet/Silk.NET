@@ -229,6 +229,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"MicromapBuildBitExt\"")]
         [NativeName("Name", "VK_PIPELINE_STAGE_2_MICROMAP_BUILD_BIT_EXT")]
         PipelineStage2MicromapBuildBitExt = 1073741824,
+        [Obsolete("Deprecated in favour of \"Reseved41BitHuawei\"")]
+        [NativeName("Name", "VK_PIPELINE_STAGE_2_RESEVED_41_BIT_HUAWEI")]
+        PipelineStage2Reseved41BitHuawei = 2199023255552,
         [Obsolete("Deprecated in favour of \"OpticalFlowBitNV\"")]
         [NativeName("Name", "VK_PIPELINE_STAGE_2_OPTICAL_FLOW_BIT_NV")]
         PipelineStage2OpticalFlowBitNV = 536870912,
@@ -376,6 +379,8 @@ namespace Silk.NET.Vulkan
         AccelerationStructureCopyBitKhr = 268435456,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_MICROMAP_BUILD_BIT_EXT")]
         MicromapBuildBitExt = 1073741824,
+        [NativeName("Name", "VK_PIPELINE_STAGE_2_RESEVED_41_BIT_HUAWEI")]
+        Reseved41BitHuawei = 2199023255552,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_OPTICAL_FLOW_BIT_NV")]
         OpticalFlowBitNV = 536870912,
     }

@@ -169,40 +169,40 @@ public unsafe static class Direct3DDeviceManager9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockDevice(this ComPtr<IDirect3DDeviceManager9> thisVtbl, void* hDevice, Silk.NET.Direct3D9.IDirect3DDevice9** ppDevice, int fBlock)
+    public static unsafe int LockDevice(this ComPtr<IDirect3DDeviceManager9> thisVtbl, void* hDevice, Silk.NET.Direct3D9.IDirect3DDevice9** ppDevice, Silk.NET.Core.Bool32 fBlock)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)@this->LpVtbl[7])(@this, hDevice, ppDevice, fBlock);
+        ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, Silk.NET.Core.Bool32, int>)@this->LpVtbl[7])(@this, hDevice, ppDevice, fBlock);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockDevice(this ComPtr<IDirect3DDeviceManager9> thisVtbl, void* hDevice, ref Silk.NET.Direct3D9.IDirect3DDevice9* ppDevice, int fBlock)
+    public static unsafe int LockDevice(this ComPtr<IDirect3DDeviceManager9> thisVtbl, void* hDevice, ref Silk.NET.Direct3D9.IDirect3DDevice9* ppDevice, Silk.NET.Core.Bool32 fBlock)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (Silk.NET.Direct3D9.IDirect3DDevice9** ppDevicePtr = &ppDevice)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)@this->LpVtbl[7])(@this, hDevice, ppDevicePtr, fBlock);
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, Silk.NET.Core.Bool32, int>)@this->LpVtbl[7])(@this, hDevice, ppDevicePtr, fBlock);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, ref T0 hDevice, Silk.NET.Direct3D9.IDirect3DDevice9** ppDevice, int fBlock) where T0 : unmanaged
+    public static unsafe int LockDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, ref T0 hDevice, Silk.NET.Direct3D9.IDirect3DDevice9** ppDevice, Silk.NET.Core.Bool32 fBlock) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* hDevicePtr = &hDevice)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)@this->LpVtbl[7])(@this, hDevicePtr, ppDevice, fBlock);
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, Silk.NET.Core.Bool32, int>)@this->LpVtbl[7])(@this, hDevicePtr, ppDevice, fBlock);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, ref T0 hDevice, ref Silk.NET.Direct3D9.IDirect3DDevice9* ppDevice, int fBlock) where T0 : unmanaged
+    public static unsafe int LockDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, ref T0 hDevice, ref Silk.NET.Direct3D9.IDirect3DDevice9* ppDevice, Silk.NET.Core.Bool32 fBlock) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -210,29 +210,29 @@ public unsafe static class Direct3DDeviceManager9VtblExtensions
         {
             fixed (Silk.NET.Direct3D9.IDirect3DDevice9** ppDevicePtr = &ppDevice)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, int, int>)@this->LpVtbl[7])(@this, hDevicePtr, ppDevicePtr, fBlock);
+                ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Direct3D9.IDirect3DDevice9**, Silk.NET.Core.Bool32, int>)@this->LpVtbl[7])(@this, hDevicePtr, ppDevicePtr, fBlock);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UnlockDevice(this ComPtr<IDirect3DDeviceManager9> thisVtbl, void* hDevice, int fSaveState)
+    public static unsafe int UnlockDevice(this ComPtr<IDirect3DDeviceManager9> thisVtbl, void* hDevice, Silk.NET.Core.Bool32 fSaveState)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, int, int>)@this->LpVtbl[8])(@this, hDevice, fSaveState);
+        ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[8])(@this, hDevice, fSaveState);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int UnlockDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, ref T0 hDevice, int fSaveState) where T0 : unmanaged
+    public static int UnlockDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, ref T0 hDevice, Silk.NET.Core.Bool32 fSaveState) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* hDevicePtr = &hDevice)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, int, int>)@this->LpVtbl[8])(@this, hDevicePtr, fSaveState);
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DDeviceManager9*, void*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[8])(@this, hDevicePtr, fSaveState);
         }
         return ret;
     }
@@ -395,7 +395,7 @@ public unsafe static class Direct3DDeviceManager9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, Span<T0> hDevice, Silk.NET.Direct3D9.IDirect3DDevice9** ppDevice, int fBlock) where T0 : unmanaged
+    public static unsafe int LockDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, Span<T0> hDevice, Silk.NET.Direct3D9.IDirect3DDevice9** ppDevice, Silk.NET.Core.Bool32 fBlock) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -403,7 +403,7 @@ public unsafe static class Direct3DDeviceManager9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, Span<T0> hDevice, ref Silk.NET.Direct3D9.IDirect3DDevice9* ppDevice, int fBlock) where T0 : unmanaged
+    public static unsafe int LockDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, Span<T0> hDevice, ref Silk.NET.Direct3D9.IDirect3DDevice9* ppDevice, Silk.NET.Core.Bool32 fBlock) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -411,7 +411,7 @@ public unsafe static class Direct3DDeviceManager9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UnlockDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, Span<T0> hDevice, int fSaveState) where T0 : unmanaged
+    public static int UnlockDevice<T0>(this ComPtr<IDirect3DDeviceManager9> thisVtbl, Span<T0> hDevice, Silk.NET.Core.Bool32 fSaveState) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

@@ -27,7 +27,7 @@ namespace Silk.NET.DXVA
             ulong? pRenderTarget = null,
             ulong? targetFrameTime = null,
             Silk.NET.Maths.Box2D<int>? targetRect = null,
-            int? enter = null
+            Silk.NET.Core.Bool32? enter = null
         ) : this()
         {
             if (wmiHeader is not null)
@@ -90,6 +90,6 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Enter")]
-        public int Enter;
+        public Silk.NET.Core.Bool32 Enter;
     }
 }

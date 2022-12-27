@@ -106,7 +106,7 @@ public unsafe static class D2D1GdiInteropRenderTargetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ReleaseDC(this ComPtr<ID2D1GdiInteropRenderTarget> thisVtbl, Silk.NET.Maths.Box2D<int>* update)
+    public static unsafe int ReleaseDC(this ComPtr<ID2D1GdiInteropRenderTarget> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* update)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -115,7 +115,7 @@ public unsafe static class D2D1GdiInteropRenderTargetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ReleaseDC(this ComPtr<ID2D1GdiInteropRenderTarget> thisVtbl, ref Silk.NET.Maths.Box2D<int> update)
+    public static int ReleaseDC(this ComPtr<ID2D1GdiInteropRenderTarget> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> update)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -160,11 +160,11 @@ public unsafe static class D2D1GdiInteropRenderTargetVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ReleaseDC(this ComPtr<ID2D1GdiInteropRenderTarget> thisVtbl, Span<Silk.NET.Maths.Box2D<int>> update)
+    public static int ReleaseDC(this ComPtr<ID2D1GdiInteropRenderTarget> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> update)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->ReleaseDC(ref update.GetPinnableReference());
+        return @this->ReleaseDC(in update.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

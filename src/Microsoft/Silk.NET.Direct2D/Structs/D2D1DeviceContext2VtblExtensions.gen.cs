@@ -102,7 +102,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, void* srcData, uint pitch, BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] void* srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -111,7 +111,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, void* srcData, uint pitch, BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] void* srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -123,7 +123,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, void* srcData, uint pitch, ref BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] void* srcData, uint pitch, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -135,7 +135,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, void* srcData, uint pitch, ref BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] void* srcData, uint pitch, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -150,7 +150,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, ref T0 srcData, uint pitch, BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -162,7 +162,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, ref T0 srcData, uint pitch, BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -177,7 +177,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, ref T0 srcData, uint pitch, ref BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -192,7 +192,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, ref T0 srcData, uint pitch, ref BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -210,7 +210,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -219,7 +219,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -231,7 +231,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, ref BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -243,7 +243,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, ref BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -258,7 +258,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -270,7 +270,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -285,7 +285,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, ref BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -300,7 +300,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, ref BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -318,7 +318,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -327,7 +327,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -339,7 +339,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, ref BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -351,7 +351,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, ref BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -366,7 +366,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, ref T0 data, BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -378,7 +378,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, ref T0 data, BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -393,7 +393,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, ref T0 data, ref BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -408,7 +408,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, ref T0 data, ref BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -426,7 +426,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, void* data, BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -438,7 +438,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, void* data, BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -453,7 +453,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, void* data, ref BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, void* data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -468,7 +468,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, void* data, ref BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, void* data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -486,7 +486,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, ref T0 data, BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -501,7 +501,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, ref T0 data, BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -519,7 +519,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, ref T0 data, ref BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -537,7 +537,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, ref T0 data, ref BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -558,7 +558,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, BitmapBrushProperties* bitmapBrushProperties, BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -567,7 +567,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, BitmapBrushProperties* bitmapBrushProperties, BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -579,7 +579,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, BitmapBrushProperties* bitmapBrushProperties, ref BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -591,7 +591,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, BitmapBrushProperties* bitmapBrushProperties, ref BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -606,7 +606,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, ref BitmapBrushProperties bitmapBrushProperties, BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -618,7 +618,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, ref BitmapBrushProperties bitmapBrushProperties, BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -633,7 +633,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, ref BitmapBrushProperties bitmapBrushProperties, ref BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -648,7 +648,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, ref BitmapBrushProperties bitmapBrushProperties, ref BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -666,7 +666,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, BitmapBrushProperties* bitmapBrushProperties, BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -678,7 +678,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, BitmapBrushProperties* bitmapBrushProperties, BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -693,7 +693,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, BitmapBrushProperties* bitmapBrushProperties, ref BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -708,7 +708,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, BitmapBrushProperties* bitmapBrushProperties, ref BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -726,7 +726,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, ref BitmapBrushProperties bitmapBrushProperties, BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -741,7 +741,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, ref BitmapBrushProperties bitmapBrushProperties, BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -759,7 +759,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, ref BitmapBrushProperties bitmapBrushProperties, ref BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -777,7 +777,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, ref BitmapBrushProperties bitmapBrushProperties, ref BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -798,7 +798,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.D3Dcolorvalue* color, BrushProperties* brushProperties, ID2D1SolidColorBrush** solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1SolidColorBrush** solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -807,7 +807,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.D3Dcolorvalue* color, BrushProperties* brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -819,7 +819,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.D3Dcolorvalue* color, ref BrushProperties brushProperties, ID2D1SolidColorBrush** solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1SolidColorBrush** solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -831,7 +831,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.D3Dcolorvalue* color, ref BrushProperties brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -846,7 +846,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.D3Dcolorvalue color, BrushProperties* brushProperties, ID2D1SolidColorBrush** solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1SolidColorBrush** solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -858,7 +858,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.D3Dcolorvalue color, BrushProperties* brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -873,7 +873,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.D3Dcolorvalue color, ref BrushProperties brushProperties, ID2D1SolidColorBrush** solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1SolidColorBrush** solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -888,7 +888,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.D3Dcolorvalue color, ref BrushProperties brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -906,7 +906,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGradientStopCollection(this ComPtr<ID2D1DeviceContext2> thisVtbl, GradientStop* gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ID2D1GradientStopCollection** gradientStopCollection)
+    public static unsafe int CreateGradientStopCollection(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] GradientStop* gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ID2D1GradientStopCollection** gradientStopCollection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -915,7 +915,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGradientStopCollection(this ComPtr<ID2D1DeviceContext2> thisVtbl, GradientStop* gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ID2D1GradientStopCollection* gradientStopCollection)
+    public static unsafe int CreateGradientStopCollection(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] GradientStop* gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ID2D1GradientStopCollection* gradientStopCollection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -927,7 +927,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGradientStopCollection(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref GradientStop gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ID2D1GradientStopCollection** gradientStopCollection)
+    public static unsafe int CreateGradientStopCollection(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in GradientStop gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ID2D1GradientStopCollection** gradientStopCollection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -939,7 +939,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGradientStopCollection(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref GradientStop gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ID2D1GradientStopCollection* gradientStopCollection)
+    public static unsafe int CreateGradientStopCollection(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in GradientStop gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ID2D1GradientStopCollection* gradientStopCollection)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -954,7 +954,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -963,7 +963,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -975,7 +975,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -987,7 +987,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1002,7 +1002,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, ref BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1014,7 +1014,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, ref BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1029,7 +1029,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, ref BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1044,7 +1044,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, ref BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1062,7 +1062,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref LinearGradientBrushProperties linearGradientBrushProperties, BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1074,7 +1074,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref LinearGradientBrushProperties linearGradientBrushProperties, BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1089,7 +1089,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref LinearGradientBrushProperties linearGradientBrushProperties, BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1104,7 +1104,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref LinearGradientBrushProperties linearGradientBrushProperties, BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1122,7 +1122,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref LinearGradientBrushProperties linearGradientBrushProperties, ref BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1137,7 +1137,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref LinearGradientBrushProperties linearGradientBrushProperties, ref BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1155,7 +1155,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref LinearGradientBrushProperties linearGradientBrushProperties, ref BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1173,7 +1173,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref LinearGradientBrushProperties linearGradientBrushProperties, ref BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1194,7 +1194,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1203,7 +1203,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1215,7 +1215,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1227,7 +1227,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1242,7 +1242,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, ref BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1254,7 +1254,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, ref BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1269,7 +1269,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, ref BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1284,7 +1284,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, ref BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1302,7 +1302,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RadialGradientBrushProperties radialGradientBrushProperties, BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1314,7 +1314,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RadialGradientBrushProperties radialGradientBrushProperties, BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1329,7 +1329,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RadialGradientBrushProperties radialGradientBrushProperties, BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1344,7 +1344,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RadialGradientBrushProperties radialGradientBrushProperties, BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1362,7 +1362,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RadialGradientBrushProperties radialGradientBrushProperties, ref BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1377,7 +1377,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RadialGradientBrushProperties radialGradientBrushProperties, ref BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1395,7 +1395,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RadialGradientBrushProperties radialGradientBrushProperties, ref BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1413,7 +1413,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RadialGradientBrushProperties radialGradientBrushProperties, ref BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1434,7 +1434,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1443,7 +1443,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1455,7 +1455,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1467,7 +1467,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1482,7 +1482,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1494,7 +1494,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1509,7 +1509,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1524,7 +1524,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1542,7 +1542,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Vector2D<float> desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1554,7 +1554,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Vector2D<float> desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1569,7 +1569,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Vector2D<float> desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1584,7 +1584,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Vector2D<float> desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1602,7 +1602,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Vector2D<float> desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1617,7 +1617,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Vector2D<float> desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1635,7 +1635,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Vector2D<float> desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1653,7 +1653,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Vector2D<float> desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1674,7 +1674,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* size, ID2D1Layer** layer)
+    public static unsafe int CreateLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* size, ID2D1Layer** layer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1683,7 +1683,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* size, ref ID2D1Layer* layer)
+    public static unsafe int CreateLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* size, ref ID2D1Layer* layer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1695,7 +1695,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Vector2D<float> size, ID2D1Layer** layer)
+    public static unsafe int CreateLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> size, ID2D1Layer** layer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1707,7 +1707,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Vector2D<float> size, ref ID2D1Layer* layer)
+    public static unsafe int CreateLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> size, ref ID2D1Layer* layer)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1783,14 +1783,14 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)@this->LpVtbl[16])(@this, rect, brush, strokeWidth, strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
@@ -1800,7 +1800,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Brush* brushPtr = &brush)
@@ -1810,7 +1810,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Brush* brushPtr = &brush)
@@ -1823,7 +1823,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
@@ -1833,7 +1833,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
@@ -1846,7 +1846,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
@@ -1859,7 +1859,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
@@ -1875,14 +1875,14 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush)
+    public static unsafe void FillRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, void>)@this->LpVtbl[17])(@this, rect, brush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush)
+    public static unsafe void FillRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Brush* brushPtr = &brush)
@@ -1892,7 +1892,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush)
+    public static unsafe void FillRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ID2D1Brush* brush)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
@@ -1902,7 +1902,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush)
+    public static void FillRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* rectPtr = &rect)
@@ -1915,14 +1915,14 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, RoundedRect* roundedRect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RoundedRect* roundedRect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, RoundedRect*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)@this->LpVtbl[18])(@this, roundedRect, brush, strokeWidth, strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, RoundedRect* roundedRect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RoundedRect* roundedRect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
@@ -1932,7 +1932,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, RoundedRect* roundedRect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RoundedRect* roundedRect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Brush* brushPtr = &brush)
@@ -1942,7 +1942,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, RoundedRect* roundedRect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RoundedRect* roundedRect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Brush* brushPtr = &brush)
@@ -1955,7 +1955,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RoundedRect roundedRect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RoundedRect roundedRect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (RoundedRect* roundedRectPtr = &roundedRect)
@@ -1965,7 +1965,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RoundedRect roundedRect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RoundedRect roundedRect, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (RoundedRect* roundedRectPtr = &roundedRect)
@@ -1978,7 +1978,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RoundedRect roundedRect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RoundedRect roundedRect, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (RoundedRect* roundedRectPtr = &roundedRect)
@@ -1991,7 +1991,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RoundedRect roundedRect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RoundedRect roundedRect, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (RoundedRect* roundedRectPtr = &roundedRect)
@@ -2007,14 +2007,14 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, RoundedRect* roundedRect, ID2D1Brush* brush)
+    public static unsafe void FillRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RoundedRect* roundedRect, ID2D1Brush* brush)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, RoundedRect*, ID2D1Brush*, void>)@this->LpVtbl[19])(@this, roundedRect, brush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, RoundedRect* roundedRect, ref ID2D1Brush brush)
+    public static unsafe void FillRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RoundedRect* roundedRect, ref ID2D1Brush brush)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Brush* brushPtr = &brush)
@@ -2024,7 +2024,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RoundedRect roundedRect, ID2D1Brush* brush)
+    public static unsafe void FillRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RoundedRect roundedRect, ID2D1Brush* brush)
     {
         var @this = thisVtbl.Handle;
         fixed (RoundedRect* roundedRectPtr = &roundedRect)
@@ -2034,7 +2034,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RoundedRect roundedRect, ref ID2D1Brush brush)
+    public static void FillRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RoundedRect roundedRect, ref ID2D1Brush brush)
     {
         var @this = thisVtbl.Handle;
         fixed (RoundedRect* roundedRectPtr = &roundedRect)
@@ -2047,14 +2047,14 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, Ellipse* ellipse, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Ellipse* ellipse, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, Ellipse*, ID2D1Brush*, float, ID2D1StrokeStyle*, void>)@this->LpVtbl[20])(@this, ellipse, brush, strokeWidth, strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, Ellipse* ellipse, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Ellipse* ellipse, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1StrokeStyle* strokeStylePtr = &strokeStyle)
@@ -2064,7 +2064,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, Ellipse* ellipse, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Ellipse* ellipse, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Brush* brushPtr = &brush)
@@ -2074,7 +2074,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, Ellipse* ellipse, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Ellipse* ellipse, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Brush* brushPtr = &brush)
@@ -2087,7 +2087,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Ellipse ellipse, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Ellipse ellipse, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (Ellipse* ellipsePtr = &ellipse)
@@ -2097,7 +2097,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Ellipse ellipse, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Ellipse ellipse, ID2D1Brush* brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (Ellipse* ellipsePtr = &ellipse)
@@ -2110,7 +2110,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Ellipse ellipse, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Ellipse ellipse, ref ID2D1Brush brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (Ellipse* ellipsePtr = &ellipse)
@@ -2123,7 +2123,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Ellipse ellipse, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
+    public static void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Ellipse ellipse, ref ID2D1Brush brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle)
     {
         var @this = thisVtbl.Handle;
         fixed (Ellipse* ellipsePtr = &ellipse)
@@ -2139,14 +2139,14 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, Ellipse* ellipse, ID2D1Brush* brush)
+    public static unsafe void FillEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Ellipse* ellipse, ID2D1Brush* brush)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, Ellipse*, ID2D1Brush*, void>)@this->LpVtbl[21])(@this, ellipse, brush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, Ellipse* ellipse, ref ID2D1Brush brush)
+    public static unsafe void FillEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Ellipse* ellipse, ref ID2D1Brush brush)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Brush* brushPtr = &brush)
@@ -2156,7 +2156,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Ellipse ellipse, ID2D1Brush* brush)
+    public static unsafe void FillEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Ellipse ellipse, ID2D1Brush* brush)
     {
         var @this = thisVtbl.Handle;
         fixed (Ellipse* ellipsePtr = &ellipse)
@@ -2166,7 +2166,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Ellipse ellipse, ref ID2D1Brush brush)
+    public static void FillEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Ellipse ellipse, ref ID2D1Brush brush)
     {
         var @this = thisVtbl.Handle;
         fixed (Ellipse* ellipsePtr = &ellipse)
@@ -2403,14 +2403,14 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, ID2D1Bitmap*, ID2D1Brush*, OpacityMaskContent, Silk.NET.Maths.Box2D<float>*, Silk.NET.Maths.Box2D<float>*, void>)@this->LpVtbl[25])(@this, opacityMask, brush, content, destinationRectangle, sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
@@ -2420,7 +2420,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
@@ -2430,7 +2430,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
@@ -2443,7 +2443,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Brush* brushPtr = &brush)
@@ -2453,7 +2453,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Brush* brushPtr = &brush)
@@ -2466,7 +2466,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Brush* brushPtr = &brush)
@@ -2479,7 +2479,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Brush* brushPtr = &brush)
@@ -2495,7 +2495,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2505,7 +2505,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2518,7 +2518,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2531,7 +2531,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2547,7 +2547,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2560,7 +2560,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2576,7 +2576,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2592,7 +2592,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* opacityMaskPtr = &opacityMask)
@@ -2611,14 +2611,14 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, ID2D1Bitmap*, Silk.NET.Maths.Box2D<float>*, float, BitmapInterpolationMode, Silk.NET.Maths.Box2D<float>*, void>)@this->LpVtbl[26])(@this, bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* sourceRectanglePtr = &sourceRectangle)
@@ -2628,7 +2628,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
@@ -2638,7 +2638,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* destinationRectanglePtr = &destinationRectangle)
@@ -2651,7 +2651,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
@@ -2661,7 +2661,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
@@ -2674,7 +2674,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
@@ -2687,7 +2687,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle)
+    public static void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Bitmap* bitmapPtr = &bitmap)
@@ -2703,14 +2703,14 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, char*, uint, IDWriteTextFormat*, Silk.NET.Maths.Box2D<float>*, ID2D1Brush*, DrawTextOptions, DwriteMeasuringMode, void>)@this->LpVtbl[27])(@this, @string, stringLength, textFormat, layoutRect, defaultFillBrush, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Brush* defaultFillBrushPtr = &defaultFillBrush)
@@ -2720,7 +2720,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
@@ -2730,7 +2730,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* layoutRectPtr = &layoutRect)
@@ -2743,7 +2743,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
@@ -2753,7 +2753,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
@@ -2766,7 +2766,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
@@ -2779,7 +2779,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (IDWriteTextFormat* textFormatPtr = &textFormat)
@@ -2795,7 +2795,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref char @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (char* @stringPtr = &@string)
@@ -2805,7 +2805,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref char @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (char* @stringPtr = &@string)
@@ -2818,7 +2818,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref char @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (char* @stringPtr = &@string)
@@ -2831,7 +2831,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref char @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (char* @stringPtr = &@string)
@@ -2847,7 +2847,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref char @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (char* @stringPtr = &@string)
@@ -2860,7 +2860,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref char @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (char* @stringPtr = &@string)
@@ -2876,7 +2876,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref char @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (char* @stringPtr = &@string)
@@ -2892,7 +2892,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref char @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (char* @stringPtr = &@string)
@@ -2911,7 +2911,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
@@ -2920,7 +2920,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
@@ -2932,7 +2932,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
@@ -2944,7 +2944,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
@@ -2959,7 +2959,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
@@ -2971,7 +2971,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
@@ -2986,7 +2986,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
@@ -3001,7 +3001,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ref ID2D1Brush defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         var @stringPtr = (byte*) SilkMarshal.StringToPtr(@string, NativeStringEncoding.UTF8);
@@ -3059,14 +3059,14 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawGlyphRun(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawGlyphRun(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, Silk.NET.Maths.Vector2D<float>, DwriteGlyphRun*, ID2D1Brush*, DwriteMeasuringMode, void>)@this->LpVtbl[29])(@this, baselineOrigin, glyphRun, foregroundBrush, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawGlyphRun(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawGlyphRun(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Brush* foregroundBrushPtr = &foregroundBrush)
@@ -3076,7 +3076,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawGlyphRun(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, ref DwriteGlyphRun glyphRun, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawGlyphRun(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
@@ -3086,7 +3086,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawGlyphRun(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, ref DwriteGlyphRun glyphRun, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static void DrawGlyphRun(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, ref ID2D1Brush foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         fixed (DwriteGlyphRun* glyphRunPtr = &glyphRun)
@@ -3099,14 +3099,14 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetTransform(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Matrix3X2<float>* transform)
+    public static unsafe void SetTransform(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, Silk.NET.Maths.Matrix3X2<float>*, void>)@this->LpVtbl[30])(@this, transform);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetTransform(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Matrix3X2<float> transform)
+    public static void SetTransform(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Matrix3X2<float>* transformPtr = &transform)
@@ -3246,14 +3246,14 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PushLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, LayerParameters* layerParameters, ID2D1Layer* layer)
+    public static unsafe void PushLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LayerParameters* layerParameters, ID2D1Layer* layer)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, LayerParameters*, ID2D1Layer*, void>)@this->LpVtbl[40])(@this, layerParameters, layer);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PushLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, LayerParameters* layerParameters, ref ID2D1Layer layer)
+    public static unsafe void PushLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LayerParameters* layerParameters, ref ID2D1Layer layer)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Layer* layerPtr = &layer)
@@ -3263,7 +3263,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PushLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref LayerParameters layerParameters, ID2D1Layer* layer)
+    public static unsafe void PushLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in LayerParameters layerParameters, ID2D1Layer* layer)
     {
         var @this = thisVtbl.Handle;
         fixed (LayerParameters* layerParametersPtr = &layerParameters)
@@ -3273,7 +3273,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void PushLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref LayerParameters layerParameters, ref ID2D1Layer layer)
+    public static void PushLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in LayerParameters layerParameters, ref ID2D1Layer layer)
     {
         var @this = thisVtbl.Handle;
         fixed (LayerParameters* layerParametersPtr = &layerParameters)
@@ -3375,14 +3375,14 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PushAxisAlignedClip(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Box2D<float>* clipRect, AntialiasMode antialiasMode)
+    public static unsafe void PushAxisAlignedClip(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* clipRect, AntialiasMode antialiasMode)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, Silk.NET.Maths.Box2D<float>*, AntialiasMode, void>)@this->LpVtbl[45])(@this, clipRect, antialiasMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static void PushAxisAlignedClip(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Box2D<float> clipRect, AntialiasMode antialiasMode)
+    public static void PushAxisAlignedClip(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> clipRect, AntialiasMode antialiasMode)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* clipRectPtr = &clipRect)
@@ -3399,14 +3399,14 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void Clear(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.D3Dcolorvalue* clearColor)
+    public static unsafe void Clear(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* clearColor)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, Silk.NET.DXGI.D3Dcolorvalue*, void>)@this->LpVtbl[47])(@this, clearColor);
     }
 
     /// <summary>To be documented.</summary>
-    public static void Clear(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.D3Dcolorvalue clearColor)
+    public static void Clear(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue clearColor)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.DXGI.D3Dcolorvalue* clearColorPtr = &clearColor)
@@ -3554,28 +3554,28 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int IsSupported(this ComPtr<ID2D1DeviceContext2> thisVtbl, RenderTargetProperties* renderTargetProperties)
+    public static unsafe Silk.NET.Core.Bool32 IsSupported(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, RenderTargetProperties*, int>)@this->LpVtbl[56])(@this, renderTargetProperties);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, RenderTargetProperties*, Silk.NET.Core.Bool32>)@this->LpVtbl[56])(@this, renderTargetProperties);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsSupported(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RenderTargetProperties renderTargetProperties)
+    public static Silk.NET.Core.Bool32 IsSupported(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
+        Silk.NET.Core.Bool32 ret = default;
         fixed (RenderTargetProperties* renderTargetPropertiesPtr = &renderTargetProperties)
         {
-            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, RenderTargetProperties*, int>)@this->LpVtbl[56])(@this, renderTargetPropertiesPtr);
+            ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, RenderTargetProperties*, Silk.NET.Core.Bool32>)@this->LpVtbl[56])(@this, renderTargetPropertiesPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, byte* profile, uint profileSize, ID2D1ColorContext** colorContext)
+    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [Flow(FlowDirection.In)] byte* profile, uint profileSize, ID2D1ColorContext** colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3584,7 +3584,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, byte* profile, uint profileSize, ref ID2D1ColorContext* colorContext)
+    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [Flow(FlowDirection.In)] byte* profile, uint profileSize, ref ID2D1ColorContext* colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3596,7 +3596,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, ref byte profile, uint profileSize, ID2D1ColorContext** colorContext)
+    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [Flow(FlowDirection.In)] in byte profile, uint profileSize, ID2D1ColorContext** colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3608,7 +3608,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, ref byte profile, uint profileSize, ref ID2D1ColorContext* colorContext)
+    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [Flow(FlowDirection.In)] in byte profile, uint profileSize, ref ID2D1ColorContext* colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3623,7 +3623,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ID2D1ColorContext** colorContext)
+    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ID2D1ColorContext** colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3634,7 +3634,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ref ID2D1ColorContext* colorContext)
+    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ref ID2D1ColorContext* colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3648,7 +3648,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* filename, ID2D1ColorContext** colorContext)
+    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* filename, ID2D1ColorContext** colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3657,7 +3657,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* filename, ref ID2D1ColorContext* colorContext)
+    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* filename, ref ID2D1ColorContext* colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3669,7 +3669,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref char filename, ID2D1ColorContext** colorContext)
+    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in char filename, ID2D1ColorContext** colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3681,7 +3681,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref char filename, ref ID2D1ColorContext* colorContext)
+    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in char filename, ref ID2D1ColorContext* colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3696,7 +3696,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ID2D1ColorContext** colorContext)
+    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ID2D1ColorContext** colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3707,7 +3707,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ref ID2D1ColorContext* colorContext)
+    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ref ID2D1ColorContext* colorContext)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3769,7 +3769,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, BitmapProperties1* bitmapProperties, ID2D1Bitmap1** bitmap)
+    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, [Flow(FlowDirection.In)] BitmapProperties1* bitmapProperties, ID2D1Bitmap1** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3778,7 +3778,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, BitmapProperties1* bitmapProperties, ref ID2D1Bitmap1* bitmap)
+    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, [Flow(FlowDirection.In)] BitmapProperties1* bitmapProperties, ref ID2D1Bitmap1* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3790,7 +3790,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, ref BitmapProperties1 bitmapProperties, ID2D1Bitmap1** bitmap)
+    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, [Flow(FlowDirection.In)] in BitmapProperties1 bitmapProperties, ID2D1Bitmap1** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3802,7 +3802,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, ref BitmapProperties1 bitmapProperties, ref ID2D1Bitmap1* bitmap)
+    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, [Flow(FlowDirection.In)] in BitmapProperties1 bitmapProperties, ref ID2D1Bitmap1* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3817,7 +3817,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface surface, BitmapProperties1* bitmapProperties, ID2D1Bitmap1** bitmap)
+    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface surface, [Flow(FlowDirection.In)] BitmapProperties1* bitmapProperties, ID2D1Bitmap1** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3829,7 +3829,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface surface, BitmapProperties1* bitmapProperties, ref ID2D1Bitmap1* bitmap)
+    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface surface, [Flow(FlowDirection.In)] BitmapProperties1* bitmapProperties, ref ID2D1Bitmap1* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3844,7 +3844,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface surface, ref BitmapProperties1 bitmapProperties, ID2D1Bitmap1** bitmap)
+    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface surface, [Flow(FlowDirection.In)] in BitmapProperties1 bitmapProperties, ID2D1Bitmap1** bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3859,7 +3859,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface surface, ref BitmapProperties1 bitmapProperties, ref ID2D1Bitmap1* bitmap)
+    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface surface, [Flow(FlowDirection.In)] in BitmapProperties1 bitmapProperties, ref ID2D1Bitmap1* bitmap)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3925,7 +3925,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, ImageBrushProperties* imageBrushProperties, BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3934,7 +3934,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, ImageBrushProperties* imageBrushProperties, BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3946,7 +3946,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, ImageBrushProperties* imageBrushProperties, ref BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3958,7 +3958,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, ImageBrushProperties* imageBrushProperties, ref BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3973,7 +3973,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, ref ImageBrushProperties imageBrushProperties, BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -3985,7 +3985,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, ref ImageBrushProperties imageBrushProperties, BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4000,7 +4000,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, ref ImageBrushProperties imageBrushProperties, ref BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4015,7 +4015,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, ref ImageBrushProperties imageBrushProperties, ref BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4033,7 +4033,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, ImageBrushProperties* imageBrushProperties, BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4045,7 +4045,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, ImageBrushProperties* imageBrushProperties, BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4060,7 +4060,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, ImageBrushProperties* imageBrushProperties, ref BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4075,7 +4075,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, ImageBrushProperties* imageBrushProperties, ref BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4093,7 +4093,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, ref ImageBrushProperties imageBrushProperties, BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4108,7 +4108,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, ref ImageBrushProperties imageBrushProperties, BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4126,7 +4126,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, ref ImageBrushProperties imageBrushProperties, ref BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4144,7 +4144,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, ref ImageBrushProperties imageBrushProperties, ref BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4186,20 +4186,20 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsDxgiFormatSupported(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.Format format)
+    public static Silk.NET.Core.Bool32 IsDxgiFormatSupported(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.Format format)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, Silk.NET.DXGI.Format, int>)@this->LpVtbl[64])(@this, format);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, Silk.NET.DXGI.Format, Silk.NET.Core.Bool32>)@this->LpVtbl[64])(@this, format);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsBufferPrecisionSupported(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision bufferPrecision)
+    public static Silk.NET.Core.Bool32 IsBufferPrecisionSupported(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision bufferPrecision)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, BufferPrecision, int>)@this->LpVtbl[65])(@this, bufferPrecision);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, BufferPrecision, Silk.NET.Core.Bool32>)@this->LpVtbl[65])(@this, bufferPrecision);
         return ret;
     }
 
@@ -4300,7 +4300,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunWorldBounds(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, DwriteMeasuringMode measuringMode, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetGlyphRunWorldBounds(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, DwriteMeasuringMode measuringMode, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4309,7 +4309,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunWorldBounds(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, DwriteMeasuringMode measuringMode, ref Silk.NET.Maths.Box2D<float> bounds)
+    public static unsafe int GetGlyphRunWorldBounds(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, DwriteMeasuringMode measuringMode, ref Silk.NET.Maths.Box2D<float> bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4321,7 +4321,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunWorldBounds(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, ref DwriteGlyphRun glyphRun, DwriteMeasuringMode measuringMode, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetGlyphRunWorldBounds(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, DwriteMeasuringMode measuringMode, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4333,7 +4333,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetGlyphRunWorldBounds(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, ref DwriteGlyphRun glyphRun, DwriteMeasuringMode measuringMode, ref Silk.NET.Maths.Box2D<float> bounds)
+    public static int GetGlyphRunWorldBounds(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, DwriteMeasuringMode measuringMode, ref Silk.NET.Maths.Box2D<float> bounds)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4399,14 +4399,14 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetRenderingControls(this ComPtr<ID2D1DeviceContext2> thisVtbl, RenderingControls* renderingControls)
+    public static unsafe void SetRenderingControls(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RenderingControls* renderingControls)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, RenderingControls*, void>)@this->LpVtbl[72])(@this, renderingControls);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetRenderingControls(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RenderingControls renderingControls)
+    public static void SetRenderingControls(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RenderingControls renderingControls)
     {
         var @this = thisVtbl.Handle;
         fixed (RenderingControls* renderingControlsPtr = &renderingControls)
@@ -4465,14 +4465,14 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, Silk.NET.Maths.Vector2D<float>* targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, ID2D1Image*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Box2D<float>*, InterpolationMode, CompositeMode, void>)@this->LpVtbl[78])(@this, image, targetOffset, imageRectangle, interpolationMode, compositeMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, Silk.NET.Maths.Vector2D<float>* targetOffset, ref Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Box2D<float>* imageRectanglePtr = &imageRectangle)
@@ -4482,7 +4482,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, ref Silk.NET.Maths.Vector2D<float> targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Vector2D<float>* targetOffsetPtr = &targetOffset)
@@ -4492,7 +4492,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, ref Silk.NET.Maths.Vector2D<float> targetOffset, ref Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Vector2D<float>* targetOffsetPtr = &targetOffset)
@@ -4505,7 +4505,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, Silk.NET.Maths.Vector2D<float>* targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Image* imagePtr = &image)
@@ -4515,7 +4515,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, Silk.NET.Maths.Vector2D<float>* targetOffset, ref Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Image* imagePtr = &image)
@@ -4528,7 +4528,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, ref Silk.NET.Maths.Vector2D<float> targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Image* imagePtr = &image)
@@ -4541,7 +4541,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, ref Silk.NET.Maths.Vector2D<float> targetOffset, ref Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Image* imagePtr = &image)
@@ -4557,14 +4557,14 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawGdiMetafile(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1GdiMetafile* gdiMetafile, Silk.NET.Maths.Vector2D<float>* targetOffset)
+    public static unsafe void DrawGdiMetafile(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1GdiMetafile* gdiMetafile, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1DeviceContext2*, ID2D1GdiMetafile*, Silk.NET.Maths.Vector2D<float>*, void>)@this->LpVtbl[79])(@this, gdiMetafile, targetOffset);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawGdiMetafile(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1GdiMetafile* gdiMetafile, ref Silk.NET.Maths.Vector2D<float> targetOffset)
+    public static unsafe void DrawGdiMetafile(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1GdiMetafile* gdiMetafile, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Vector2D<float>* targetOffsetPtr = &targetOffset)
@@ -4574,7 +4574,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawGdiMetafile(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1GdiMetafile gdiMetafile, Silk.NET.Maths.Vector2D<float>* targetOffset)
+    public static unsafe void DrawGdiMetafile(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1GdiMetafile gdiMetafile, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1GdiMetafile* gdiMetafilePtr = &gdiMetafile)
@@ -4584,7 +4584,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawGdiMetafile(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1GdiMetafile gdiMetafile, ref Silk.NET.Maths.Vector2D<float> targetOffset)
+    public static void DrawGdiMetafile(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1GdiMetafile gdiMetafile, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1GdiMetafile* gdiMetafilePtr = &gdiMetafile)
@@ -4597,7 +4597,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int InvalidateEffectInputRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* effect, uint input, Silk.NET.Maths.Box2D<float>* inputRectangle)
+    public static unsafe int InvalidateEffectInputRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* effect, uint input, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* inputRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4606,7 +4606,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int InvalidateEffectInputRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* effect, uint input, ref Silk.NET.Maths.Box2D<float> inputRectangle)
+    public static unsafe int InvalidateEffectInputRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* effect, uint input, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> inputRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4618,7 +4618,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int InvalidateEffectInputRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect effect, uint input, Silk.NET.Maths.Box2D<float>* inputRectangle)
+    public static unsafe int InvalidateEffectInputRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect effect, uint input, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* inputRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4630,7 +4630,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int InvalidateEffectInputRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect effect, uint input, ref Silk.NET.Maths.Box2D<float> inputRectangle)
+    public static int InvalidateEffectInputRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect effect, uint input, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> inputRectangle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4741,7 +4741,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4750,7 +4750,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4762,7 +4762,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, ref EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4774,7 +4774,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, ref EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4789,7 +4789,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4801,7 +4801,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4816,7 +4816,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, ref EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4831,7 +4831,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, ref EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4849,7 +4849,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4861,7 +4861,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4876,7 +4876,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, ref EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4891,7 +4891,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, ref EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4909,7 +4909,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4924,7 +4924,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4942,7 +4942,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, ref EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -4960,7 +4960,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, ref EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
+    public static int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Effect renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5177,7 +5177,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInk(this ComPtr<ID2D1DeviceContext2> thisVtbl, InkPoint* startPoint, ID2D1Ink** ink)
+    public static unsafe int CreateInk(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] InkPoint* startPoint, ID2D1Ink** ink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5186,7 +5186,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInk(this ComPtr<ID2D1DeviceContext2> thisVtbl, InkPoint* startPoint, ref ID2D1Ink* ink)
+    public static unsafe int CreateInk(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] InkPoint* startPoint, ref ID2D1Ink* ink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5198,7 +5198,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInk(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref InkPoint startPoint, ID2D1Ink** ink)
+    public static unsafe int CreateInk(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in InkPoint startPoint, ID2D1Ink** ink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5210,7 +5210,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInk(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref InkPoint startPoint, ref ID2D1Ink* ink)
+    public static unsafe int CreateInk(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in InkPoint startPoint, ref ID2D1Ink* ink)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5225,7 +5225,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInkStyle(this ComPtr<ID2D1DeviceContext2> thisVtbl, InkStyleProperties* inkStyleProperties, ID2D1InkStyle** inkStyle)
+    public static unsafe int CreateInkStyle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] InkStyleProperties* inkStyleProperties, ID2D1InkStyle** inkStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5234,7 +5234,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInkStyle(this ComPtr<ID2D1DeviceContext2> thisVtbl, InkStyleProperties* inkStyleProperties, ref ID2D1InkStyle* inkStyle)
+    public static unsafe int CreateInkStyle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] InkStyleProperties* inkStyleProperties, ref ID2D1InkStyle* inkStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5246,7 +5246,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInkStyle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref InkStyleProperties inkStyleProperties, ID2D1InkStyle** inkStyle)
+    public static unsafe int CreateInkStyle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in InkStyleProperties inkStyleProperties, ID2D1InkStyle** inkStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5258,7 +5258,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInkStyle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref InkStyleProperties inkStyleProperties, ref ID2D1InkStyle* inkStyle)
+    public static unsafe int CreateInkStyle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in InkStyleProperties inkStyleProperties, ref ID2D1InkStyle* inkStyle)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5273,7 +5273,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGradientMesh(this ComPtr<ID2D1DeviceContext2> thisVtbl, GradientMeshPatch* patches, uint patchesCount, ID2D1GradientMesh** gradientMesh)
+    public static unsafe int CreateGradientMesh(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] GradientMeshPatch* patches, uint patchesCount, ID2D1GradientMesh** gradientMesh)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5282,7 +5282,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGradientMesh(this ComPtr<ID2D1DeviceContext2> thisVtbl, GradientMeshPatch* patches, uint patchesCount, ref ID2D1GradientMesh* gradientMesh)
+    public static unsafe int CreateGradientMesh(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] GradientMeshPatch* patches, uint patchesCount, ref ID2D1GradientMesh* gradientMesh)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5294,7 +5294,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGradientMesh(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref GradientMeshPatch patches, uint patchesCount, ID2D1GradientMesh** gradientMesh)
+    public static unsafe int CreateGradientMesh(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in GradientMeshPatch patches, uint patchesCount, ID2D1GradientMesh** gradientMesh)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5306,7 +5306,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGradientMesh(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref GradientMeshPatch patches, uint patchesCount, ref ID2D1GradientMesh* gradientMesh)
+    public static unsafe int CreateGradientMesh(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in GradientMeshPatch patches, uint patchesCount, ref ID2D1GradientMesh* gradientMesh)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5369,7 +5369,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, byte* data, uint dataCount, uint* strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5378,7 +5378,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, byte* data, uint dataCount, uint* strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5390,7 +5390,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, byte* data, uint dataCount, ref uint strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5402,7 +5402,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, byte* data, uint dataCount, ref uint strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5417,7 +5417,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, ref byte data, uint dataCount, uint* strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5429,7 +5429,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, ref byte data, uint dataCount, uint* strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5444,7 +5444,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, ref byte data, uint dataCount, ref uint strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5459,7 +5459,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, ref byte data, uint dataCount, ref uint strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5477,7 +5477,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, uint* strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5488,7 +5488,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, uint* strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5502,7 +5502,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, ref uint strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5516,7 +5516,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, ref uint strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5533,7 +5533,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, ref uint extents, byte* data, uint dataCount, uint* strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5545,7 +5545,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, ref uint extents, byte* data, uint dataCount, uint* strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5560,7 +5560,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, ref uint extents, byte* data, uint dataCount, ref uint strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5575,7 +5575,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, ref uint extents, byte* data, uint dataCount, ref uint strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5593,7 +5593,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, ref uint extents, ref byte data, uint dataCount, uint* strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5608,7 +5608,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, ref uint extents, ref byte data, uint dataCount, uint* strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5626,7 +5626,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, ref uint extents, ref byte data, uint dataCount, ref uint strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5644,7 +5644,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, ref uint extents, ref byte data, uint dataCount, ref uint strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5665,7 +5665,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, ref uint extents, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, uint* strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5679,7 +5679,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, ref uint extents, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, uint* strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5696,7 +5696,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, ref uint extents, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, ref uint strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5713,7 +5713,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, ref uint extents, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, ref uint strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5938,7 +5938,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1ImageSource* imageSource, TransformedImageSourceProperties* properties, ID2D1TransformedImageSource** transformedImageSource)
+    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1ImageSource* imageSource, [Flow(FlowDirection.In)] TransformedImageSourceProperties* properties, ID2D1TransformedImageSource** transformedImageSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5947,7 +5947,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1ImageSource* imageSource, TransformedImageSourceProperties* properties, ref ID2D1TransformedImageSource* transformedImageSource)
+    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1ImageSource* imageSource, [Flow(FlowDirection.In)] TransformedImageSourceProperties* properties, ref ID2D1TransformedImageSource* transformedImageSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5959,7 +5959,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1ImageSource* imageSource, ref TransformedImageSourceProperties properties, ID2D1TransformedImageSource** transformedImageSource)
+    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1ImageSource* imageSource, [Flow(FlowDirection.In)] in TransformedImageSourceProperties properties, ID2D1TransformedImageSource** transformedImageSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5971,7 +5971,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1ImageSource* imageSource, ref TransformedImageSourceProperties properties, ref ID2D1TransformedImageSource* transformedImageSource)
+    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1ImageSource* imageSource, [Flow(FlowDirection.In)] in TransformedImageSourceProperties properties, ref ID2D1TransformedImageSource* transformedImageSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5986,7 +5986,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1ImageSource imageSource, TransformedImageSourceProperties* properties, ID2D1TransformedImageSource** transformedImageSource)
+    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1ImageSource imageSource, [Flow(FlowDirection.In)] TransformedImageSourceProperties* properties, ID2D1TransformedImageSource** transformedImageSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -5998,7 +5998,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1ImageSource imageSource, TransformedImageSourceProperties* properties, ref ID2D1TransformedImageSource* transformedImageSource)
+    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1ImageSource imageSource, [Flow(FlowDirection.In)] TransformedImageSourceProperties* properties, ref ID2D1TransformedImageSource* transformedImageSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6013,7 +6013,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1ImageSource imageSource, ref TransformedImageSourceProperties properties, ID2D1TransformedImageSource** transformedImageSource)
+    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1ImageSource imageSource, [Flow(FlowDirection.In)] in TransformedImageSourceProperties properties, ID2D1TransformedImageSource** transformedImageSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6028,7 +6028,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1ImageSource imageSource, ref TransformedImageSourceProperties properties, ref ID2D1TransformedImageSource* transformedImageSource)
+    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1ImageSource imageSource, [Flow(FlowDirection.In)] in TransformedImageSourceProperties properties, ref ID2D1TransformedImageSource* transformedImageSource)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -6079,7 +6079,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, void* srcData, uint pitch, BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] void* srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6087,79 +6087,79 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, void* srcData, uint pitch, Span<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] void* srcData, uint pitch, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmap(size, srcData, pitch, ref bitmapProperties.GetPinnableReference(), bitmap);
+        return @this->CreateBitmap(size, srcData, pitch, in bitmapProperties.GetPinnableReference(), bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, void* srcData, uint pitch, ref BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] void* srcData, uint pitch, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBitmap(size, srcData, pitch, ref bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
+        return @this->CreateBitmap(size, srcData, pitch, in bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, void* srcData, uint pitch, Span<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] void* srcData, uint pitch, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmap(size, srcData, pitch, ref bitmapProperties.GetPinnableReference(), ref bitmap);
+        return @this->CreateBitmap(size, srcData, pitch, in bitmapProperties.GetPinnableReference(), ref bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, Span<T0> srcData, uint pitch, BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmap(size, ref srcData.GetPinnableReference(), pitch, bitmapProperties, bitmap);
+        return @this->CreateBitmap(size, in srcData.GetPinnableReference(), pitch, bitmapProperties, bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, ref T0 srcData, uint pitch, BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBitmap(size, ref srcData, pitch, bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
+        return @this->CreateBitmap(size, in srcData, pitch, bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, Span<T0> srcData, uint pitch, BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> srcData, uint pitch, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmap(size, ref srcData.GetPinnableReference(), pitch, bitmapProperties, ref bitmap);
+        return @this->CreateBitmap(size, in srcData.GetPinnableReference(), pitch, bitmapProperties, ref bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, Span<T0> srcData, uint pitch, Span<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> srcData, uint pitch, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmap(size, ref srcData.GetPinnableReference(), pitch, ref bitmapProperties.GetPinnableReference(), bitmap);
+        return @this->CreateBitmap(size, in srcData.GetPinnableReference(), pitch, in bitmapProperties.GetPinnableReference(), bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, ref T0 srcData, uint pitch, ref BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static int CreateBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] in T0 srcData, uint pitch, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBitmap(size, ref srcData, pitch, ref bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
+        return @this->CreateBitmap(size, in srcData, pitch, in bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, Span<T0> srcData, uint pitch, Span<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+    public static unsafe int CreateBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<uint> size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> srcData, uint pitch, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmap(size, ref srcData.GetPinnableReference(), pitch, ref bitmapProperties.GetPinnableReference(), ref bitmap);
+        return @this->CreateBitmap(size, in srcData.GetPinnableReference(), pitch, in bitmapProperties.GetPinnableReference(), ref bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapFromWicBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6167,31 +6167,31 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, Span<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapFromWicBitmap(wicBitmapSource, ref bitmapProperties.GetPinnableReference(), bitmap);
+        return @this->CreateBitmapFromWicBitmap(wicBitmapSource, in bitmapProperties.GetPinnableReference(), bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, ref BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapFromWicBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBitmapFromWicBitmap(wicBitmapSource, ref bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
+        return @this->CreateBitmapFromWicBitmap(wicBitmapSource, in bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, Span<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, IWICBitmapSource* wicBitmapSource, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapFromWicBitmap(wicBitmapSource, ref bitmapProperties.GetPinnableReference(), ref bitmap);
+        return @this->CreateBitmapFromWicBitmap(wicBitmapSource, in bitmapProperties.GetPinnableReference(), ref bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<IWICBitmapSource> wicBitmapSource, BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<IWICBitmapSource> wicBitmapSource, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -6199,7 +6199,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapFromWicBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6207,7 +6207,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<IWICBitmapSource> wicBitmapSource, BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<IWICBitmapSource> wicBitmapSource, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -6215,31 +6215,31 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<IWICBitmapSource> wicBitmapSource, Span<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<IWICBitmapSource> wicBitmapSource, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapFromWicBitmap(ref wicBitmapSource.GetPinnableReference(), ref bitmapProperties.GetPinnableReference(), bitmap);
+        return @this->CreateBitmapFromWicBitmap(ref wicBitmapSource.GetPinnableReference(), in bitmapProperties.GetPinnableReference(), bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBitmapFromWicBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, ref BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static int CreateBitmapFromWicBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref IWICBitmapSource wicBitmapSource, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBitmapFromWicBitmap(ref wicBitmapSource, ref bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
+        return @this->CreateBitmapFromWicBitmap(ref wicBitmapSource, in bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<IWICBitmapSource> wicBitmapSource, Span<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateBitmapFromWicBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<IWICBitmapSource> wicBitmapSource, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapFromWicBitmap(ref wicBitmapSource.GetPinnableReference(), ref bitmapProperties.GetPinnableReference(), ref bitmap);
+        return @this->CreateBitmapFromWicBitmap(ref wicBitmapSource.GetPinnableReference(), in bitmapProperties.GetPinnableReference(), ref bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateSharedBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6247,31 +6247,31 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, Span<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedBitmap(riid, data, ref bitmapProperties.GetPinnableReference(), bitmap);
+        return @this->CreateSharedBitmap(riid, data, in bitmapProperties.GetPinnableReference(), bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, ref BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateSharedBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateSharedBitmap(riid, data, ref bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
+        return @this->CreateSharedBitmap(riid, data, in bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, Span<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, void* data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedBitmap(riid, data, ref bitmapProperties.GetPinnableReference(), ref bitmap);
+        return @this->CreateSharedBitmap(riid, data, in bitmapProperties.GetPinnableReference(), ref bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, Span<T0> data, BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, Span<T0> data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -6279,7 +6279,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, ref T0 data, BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateSharedBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6287,7 +6287,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, Span<T0> data, BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, Span<T0> data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -6295,31 +6295,31 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, Span<T0> data, Span<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, Span<T0> data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedBitmap(riid, ref data.GetPinnableReference(), ref bitmapProperties.GetPinnableReference(), bitmap);
+        return @this->CreateSharedBitmap(riid, ref data.GetPinnableReference(), in bitmapProperties.GetPinnableReference(), bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, ref T0 data, ref BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateSharedBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateSharedBitmap(riid, ref data, ref bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
+        return @this->CreateSharedBitmap(riid, ref data, in bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, Span<T0> data, Span<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Guid* riid, Span<T0> data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedBitmap(riid, ref data.GetPinnableReference(), ref bitmapProperties.GetPinnableReference(), ref bitmap);
+        return @this->CreateSharedBitmap(riid, ref data.GetPinnableReference(), in bitmapProperties.GetPinnableReference(), ref bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Guid> riid, void* data, BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Guid> riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -6327,7 +6327,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, void* data, BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateSharedBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6335,7 +6335,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Guid> riid, void* data, BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Guid> riid, void* data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -6343,31 +6343,31 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Guid> riid, void* data, Span<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap)
+    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Guid> riid, void* data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), data, ref bitmapProperties.GetPinnableReference(), bitmap);
+        return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), data, in bitmapProperties.GetPinnableReference(), bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, void* data, ref BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateSharedBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, void* data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateSharedBitmap(ref riid, data, ref bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
+        return @this->CreateSharedBitmap(ref riid, data, in bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Guid> riid, void* data, Span<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap)
+    public static unsafe int CreateSharedBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Guid> riid, void* data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), data, ref bitmapProperties.GetPinnableReference(), ref bitmap);
+        return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), data, in bitmapProperties.GetPinnableReference(), ref bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Guid> riid, Span<T0> data, BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Guid> riid, Span<T0> data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -6375,7 +6375,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, ref T0 data, BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateSharedBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6383,7 +6383,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Guid> riid, Span<T0> data, BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Guid> riid, Span<T0> data, [Flow(FlowDirection.In)] BitmapProperties* bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -6391,31 +6391,31 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Guid> riid, Span<T0> data, Span<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Guid> riid, Span<T0> data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ID2D1Bitmap** bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), ref data.GetPinnableReference(), ref bitmapProperties.GetPinnableReference(), bitmap);
+        return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), ref data.GetPinnableReference(), in bitmapProperties.GetPinnableReference(), bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSharedBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, ref T0 data, ref BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static int CreateSharedBitmap<T0, TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Guid riid, ref T0 data, [Flow(FlowDirection.In)] in BitmapProperties bitmapProperties, ref ComPtr<TI0> bitmap) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateSharedBitmap(ref riid, ref data, ref bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
+        return @this->CreateSharedBitmap(ref riid, ref data, in bitmapProperties, (ID2D1Bitmap**) bitmap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Guid> riid, Span<T0> data, Span<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
+    public static unsafe int CreateSharedBitmap<T0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Guid> riid, Span<T0> data, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties> bitmapProperties, ref ID2D1Bitmap* bitmap) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), ref data.GetPinnableReference(), ref bitmapProperties.GetPinnableReference(), ref bitmap);
+        return @this->CreateSharedBitmap(ref riid.GetPinnableReference(), ref data.GetPinnableReference(), in bitmapProperties.GetPinnableReference(), ref bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, BitmapBrushProperties* bitmapBrushProperties, BrushProperties* brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
+    public static unsafe int CreateBitmapBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6423,7 +6423,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, BitmapBrushProperties* bitmapBrushProperties, BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6431,103 +6431,103 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, BitmapBrushProperties* bitmapBrushProperties, Span<BrushProperties> brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapBrush(bitmap, bitmapBrushProperties, ref brushProperties.GetPinnableReference(), bitmapBrush);
+        return @this->CreateBitmapBrush(bitmap, bitmapBrushProperties, in brushProperties.GetPinnableReference(), bitmapBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, BitmapBrushProperties* bitmapBrushProperties, ref BrushProperties brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
+    public static unsafe int CreateBitmapBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBitmapBrush((ID2D1Bitmap*) bitmap.Handle, bitmapBrushProperties, ref brushProperties, (ID2D1BitmapBrush**) bitmapBrush.GetAddressOf());
+        return @this->CreateBitmapBrush((ID2D1Bitmap*) bitmap.Handle, bitmapBrushProperties, in brushProperties, (ID2D1BitmapBrush**) bitmapBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, BitmapBrushProperties* bitmapBrushProperties, Span<BrushProperties> brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapBrush(bitmap, bitmapBrushProperties, ref brushProperties.GetPinnableReference(), ref bitmapBrush);
+        return @this->CreateBitmapBrush(bitmap, bitmapBrushProperties, in brushProperties.GetPinnableReference(), ref bitmapBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, BitmapBrushProperties* bitmapBrushProperties, ref BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBitmapBrush((ID2D1Bitmap*) bitmap.Handle, bitmapBrushProperties, ref brushProperties, ref bitmapBrush);
+        return @this->CreateBitmapBrush((ID2D1Bitmap*) bitmap.Handle, bitmapBrushProperties, in brushProperties, ref bitmapBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, Span<BitmapBrushProperties> bitmapBrushProperties, BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapBrushProperties> bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapBrush(bitmap, ref bitmapBrushProperties.GetPinnableReference(), brushProperties, bitmapBrush);
+        return @this->CreateBitmapBrush(bitmap, in bitmapBrushProperties.GetPinnableReference(), brushProperties, bitmapBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, ref BitmapBrushProperties bitmapBrushProperties, BrushProperties* brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
+    public static unsafe int CreateBitmapBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBitmapBrush((ID2D1Bitmap*) bitmap.Handle, ref bitmapBrushProperties, brushProperties, (ID2D1BitmapBrush**) bitmapBrush.GetAddressOf());
+        return @this->CreateBitmapBrush((ID2D1Bitmap*) bitmap.Handle, in bitmapBrushProperties, brushProperties, (ID2D1BitmapBrush**) bitmapBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, Span<BitmapBrushProperties> bitmapBrushProperties, BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapBrushProperties> bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapBrush(bitmap, ref bitmapBrushProperties.GetPinnableReference(), brushProperties, ref bitmapBrush);
+        return @this->CreateBitmapBrush(bitmap, in bitmapBrushProperties.GetPinnableReference(), brushProperties, ref bitmapBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, ref BitmapBrushProperties bitmapBrushProperties, BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBitmapBrush((ID2D1Bitmap*) bitmap.Handle, ref bitmapBrushProperties, brushProperties, ref bitmapBrush);
+        return @this->CreateBitmapBrush((ID2D1Bitmap*) bitmap.Handle, in bitmapBrushProperties, brushProperties, ref bitmapBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, Span<BitmapBrushProperties> bitmapBrushProperties, Span<BrushProperties> brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapBrushProperties> bitmapBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapBrush(bitmap, ref bitmapBrushProperties.GetPinnableReference(), ref brushProperties.GetPinnableReference(), bitmapBrush);
+        return @this->CreateBitmapBrush(bitmap, in bitmapBrushProperties.GetPinnableReference(), in brushProperties.GetPinnableReference(), bitmapBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBitmapBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, ref BitmapBrushProperties bitmapBrushProperties, ref BrushProperties brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
+    public static int CreateBitmapBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI1> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBitmapBrush((ID2D1Bitmap*) bitmap.Handle, ref bitmapBrushProperties, ref brushProperties, (ID2D1BitmapBrush**) bitmapBrush.GetAddressOf());
+        return @this->CreateBitmapBrush((ID2D1Bitmap*) bitmap.Handle, in bitmapBrushProperties, in brushProperties, (ID2D1BitmapBrush**) bitmapBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, Span<BitmapBrushProperties> bitmapBrushProperties, Span<BrushProperties> brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapBrushProperties> bitmapBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapBrush(bitmap, ref bitmapBrushProperties.GetPinnableReference(), ref brushProperties.GetPinnableReference(), ref bitmapBrush);
+        return @this->CreateBitmapBrush(bitmap, in bitmapBrushProperties.GetPinnableReference(), in brushProperties.GetPinnableReference(), ref bitmapBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, ref BitmapBrushProperties bitmapBrushProperties, ref BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1BitmapBrush* bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBitmapBrush((ID2D1Bitmap*) bitmap.Handle, ref bitmapBrushProperties, ref brushProperties, ref bitmapBrush);
+        return @this->CreateBitmapBrush((ID2D1Bitmap*) bitmap.Handle, in bitmapBrushProperties, in brushProperties, ref bitmapBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, BitmapBrushProperties* bitmapBrushProperties, BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -6535,7 +6535,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, BitmapBrushProperties* bitmapBrushProperties, BrushProperties* brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6543,7 +6543,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, BitmapBrushProperties* bitmapBrushProperties, BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -6551,79 +6551,79 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, BitmapBrushProperties* bitmapBrushProperties, Span<BrushProperties> brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapBrush(ref bitmap.GetPinnableReference(), bitmapBrushProperties, ref brushProperties.GetPinnableReference(), bitmapBrush);
+        return @this->CreateBitmapBrush(ref bitmap.GetPinnableReference(), bitmapBrushProperties, in brushProperties.GetPinnableReference(), bitmapBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, BitmapBrushProperties* bitmapBrushProperties, ref BrushProperties brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBitmapBrush(ref bitmap, bitmapBrushProperties, ref brushProperties, (ID2D1BitmapBrush**) bitmapBrush.GetAddressOf());
+        return @this->CreateBitmapBrush(ref bitmap, bitmapBrushProperties, in brushProperties, (ID2D1BitmapBrush**) bitmapBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, BitmapBrushProperties* bitmapBrushProperties, Span<BrushProperties> brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] BitmapBrushProperties* bitmapBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapBrush(ref bitmap.GetPinnableReference(), bitmapBrushProperties, ref brushProperties.GetPinnableReference(), ref bitmapBrush);
+        return @this->CreateBitmapBrush(ref bitmap.GetPinnableReference(), bitmapBrushProperties, in brushProperties.GetPinnableReference(), ref bitmapBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, Span<BitmapBrushProperties> bitmapBrushProperties, BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapBrushProperties> bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapBrush(ref bitmap.GetPinnableReference(), ref bitmapBrushProperties.GetPinnableReference(), brushProperties, bitmapBrush);
+        return @this->CreateBitmapBrush(ref bitmap.GetPinnableReference(), in bitmapBrushProperties.GetPinnableReference(), brushProperties, bitmapBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, ref BitmapBrushProperties bitmapBrushProperties, BrushProperties* brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBitmapBrush(ref bitmap, ref bitmapBrushProperties, brushProperties, (ID2D1BitmapBrush**) bitmapBrush.GetAddressOf());
+        return @this->CreateBitmapBrush(ref bitmap, in bitmapBrushProperties, brushProperties, (ID2D1BitmapBrush**) bitmapBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, Span<BitmapBrushProperties> bitmapBrushProperties, BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapBrushProperties> bitmapBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapBrush(ref bitmap.GetPinnableReference(), ref bitmapBrushProperties.GetPinnableReference(), brushProperties, ref bitmapBrush);
+        return @this->CreateBitmapBrush(ref bitmap.GetPinnableReference(), in bitmapBrushProperties.GetPinnableReference(), brushProperties, ref bitmapBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, Span<BitmapBrushProperties> bitmapBrushProperties, Span<BrushProperties> brushProperties, ID2D1BitmapBrush** bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapBrushProperties> bitmapBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ID2D1BitmapBrush** bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapBrush(ref bitmap.GetPinnableReference(), ref bitmapBrushProperties.GetPinnableReference(), ref brushProperties.GetPinnableReference(), bitmapBrush);
+        return @this->CreateBitmapBrush(ref bitmap.GetPinnableReference(), in bitmapBrushProperties.GetPinnableReference(), in brushProperties.GetPinnableReference(), bitmapBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, ref BitmapBrushProperties bitmapBrushProperties, ref BrushProperties brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
+    public static int CreateBitmapBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap bitmap, [Flow(FlowDirection.In)] in BitmapBrushProperties bitmapBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI0> bitmapBrush) where TI0 : unmanaged, IComVtbl<ID2D1BitmapBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBitmapBrush(ref bitmap, ref bitmapBrushProperties, ref brushProperties, (ID2D1BitmapBrush**) bitmapBrush.GetAddressOf());
+        return @this->CreateBitmapBrush(ref bitmap, in bitmapBrushProperties, in brushProperties, (ID2D1BitmapBrush**) bitmapBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, Span<BitmapBrushProperties> bitmapBrushProperties, Span<BrushProperties> brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
+    public static unsafe int CreateBitmapBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapBrushProperties> bitmapBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ref ID2D1BitmapBrush* bitmapBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapBrush(ref bitmap.GetPinnableReference(), ref bitmapBrushProperties.GetPinnableReference(), ref brushProperties.GetPinnableReference(), ref bitmapBrush);
+        return @this->CreateBitmapBrush(ref bitmap.GetPinnableReference(), in bitmapBrushProperties.GetPinnableReference(), in brushProperties.GetPinnableReference(), ref bitmapBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.D3Dcolorvalue* color, BrushProperties* brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
+    public static unsafe int CreateSolidColorBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6631,79 +6631,79 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.D3Dcolorvalue* color, Span<BrushProperties> brushProperties, ID2D1SolidColorBrush** solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ID2D1SolidColorBrush** solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSolidColorBrush(color, ref brushProperties.GetPinnableReference(), solidColorBrush);
+        return @this->CreateSolidColorBrush(color, in brushProperties.GetPinnableReference(), solidColorBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.D3Dcolorvalue* color, ref BrushProperties brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
+    public static unsafe int CreateSolidColorBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateSolidColorBrush(color, ref brushProperties, (ID2D1SolidColorBrush**) solidColorBrush.GetAddressOf());
+        return @this->CreateSolidColorBrush(color, in brushProperties, (ID2D1SolidColorBrush**) solidColorBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.D3Dcolorvalue* color, Span<BrushProperties> brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSolidColorBrush(color, ref brushProperties.GetPinnableReference(), ref solidColorBrush);
+        return @this->CreateSolidColorBrush(color, in brushProperties.GetPinnableReference(), ref solidColorBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.DXGI.D3Dcolorvalue> color, BrushProperties* brushProperties, ID2D1SolidColorBrush** solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> color, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1SolidColorBrush** solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSolidColorBrush(ref color.GetPinnableReference(), brushProperties, solidColorBrush);
+        return @this->CreateSolidColorBrush(in color.GetPinnableReference(), brushProperties, solidColorBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.D3Dcolorvalue color, BrushProperties* brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
+    public static unsafe int CreateSolidColorBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateSolidColorBrush(ref color, brushProperties, (ID2D1SolidColorBrush**) solidColorBrush.GetAddressOf());
+        return @this->CreateSolidColorBrush(in color, brushProperties, (ID2D1SolidColorBrush**) solidColorBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.DXGI.D3Dcolorvalue> color, BrushProperties* brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> color, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSolidColorBrush(ref color.GetPinnableReference(), brushProperties, ref solidColorBrush);
+        return @this->CreateSolidColorBrush(in color.GetPinnableReference(), brushProperties, ref solidColorBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.DXGI.D3Dcolorvalue> color, Span<BrushProperties> brushProperties, ID2D1SolidColorBrush** solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> color, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ID2D1SolidColorBrush** solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSolidColorBrush(ref color.GetPinnableReference(), ref brushProperties.GetPinnableReference(), solidColorBrush);
+        return @this->CreateSolidColorBrush(in color.GetPinnableReference(), in brushProperties.GetPinnableReference(), solidColorBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSolidColorBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.D3Dcolorvalue color, ref BrushProperties brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
+    public static int CreateSolidColorBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI0> solidColorBrush) where TI0 : unmanaged, IComVtbl<ID2D1SolidColorBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateSolidColorBrush(ref color, ref brushProperties, (ID2D1SolidColorBrush**) solidColorBrush.GetAddressOf());
+        return @this->CreateSolidColorBrush(in color, in brushProperties, (ID2D1SolidColorBrush**) solidColorBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.DXGI.D3Dcolorvalue> color, Span<BrushProperties> brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
+    public static unsafe int CreateSolidColorBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> color, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ref ID2D1SolidColorBrush* solidColorBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSolidColorBrush(ref color.GetPinnableReference(), ref brushProperties.GetPinnableReference(), ref solidColorBrush);
+        return @this->CreateSolidColorBrush(in color.GetPinnableReference(), in brushProperties.GetPinnableReference(), ref solidColorBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGradientStopCollection<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, GradientStop* gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ComPtr<TI0> gradientStopCollection) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+    public static unsafe int CreateGradientStopCollection<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] GradientStop* gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ComPtr<TI0> gradientStopCollection) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6711,31 +6711,31 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGradientStopCollection(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<GradientStop> gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ID2D1GradientStopCollection** gradientStopCollection)
+    public static unsafe int CreateGradientStopCollection(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<GradientStop> gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ID2D1GradientStopCollection** gradientStopCollection)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateGradientStopCollection(ref gradientStops.GetPinnableReference(), gradientStopsCount, colorInterpolationGamma, extendMode, gradientStopCollection);
+        return @this->CreateGradientStopCollection(in gradientStops.GetPinnableReference(), gradientStopsCount, colorInterpolationGamma, extendMode, gradientStopCollection);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateGradientStopCollection<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref GradientStop gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ComPtr<TI0> gradientStopCollection) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+    public static int CreateGradientStopCollection<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in GradientStop gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ComPtr<TI0> gradientStopCollection) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateGradientStopCollection(ref gradientStops, gradientStopsCount, colorInterpolationGamma, extendMode, (ID2D1GradientStopCollection**) gradientStopCollection.GetAddressOf());
+        return @this->CreateGradientStopCollection(in gradientStops, gradientStopsCount, colorInterpolationGamma, extendMode, (ID2D1GradientStopCollection**) gradientStopCollection.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGradientStopCollection(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<GradientStop> gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ID2D1GradientStopCollection* gradientStopCollection)
+    public static unsafe int CreateGradientStopCollection(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<GradientStop> gradientStops, uint gradientStopsCount, Gamma colorInterpolationGamma, ExtendMode extendMode, ref ID2D1GradientStopCollection* gradientStopCollection)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateGradientStopCollection(ref gradientStops.GetPinnableReference(), gradientStopsCount, colorInterpolationGamma, extendMode, ref gradientStopCollection);
+        return @this->CreateGradientStopCollection(in gradientStops.GetPinnableReference(), gradientStopsCount, colorInterpolationGamma, extendMode, ref gradientStopCollection);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
+    public static unsafe int CreateLinearGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6743,7 +6743,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6751,7 +6751,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, BrushProperties* brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -6759,7 +6759,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
+    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6767,7 +6767,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, BrushProperties* brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -6775,175 +6775,175 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, Span<BrushProperties> brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLinearGradientBrush(linearGradientBrushProperties, ref brushProperties.GetPinnableReference(), gradientStopCollection, linearGradientBrush);
+        return @this->CreateLinearGradientBrush(linearGradientBrushProperties, in brushProperties.GetPinnableReference(), gradientStopCollection, linearGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, ref BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
+    public static unsafe int CreateLinearGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLinearGradientBrush(linearGradientBrushProperties, ref brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, (ID2D1LinearGradientBrush**) linearGradientBrush.GetAddressOf());
+        return @this->CreateLinearGradientBrush(linearGradientBrushProperties, in brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, (ID2D1LinearGradientBrush**) linearGradientBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, Span<BrushProperties> brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLinearGradientBrush(linearGradientBrushProperties, ref brushProperties.GetPinnableReference(), gradientStopCollection, ref linearGradientBrush);
+        return @this->CreateLinearGradientBrush(linearGradientBrushProperties, in brushProperties.GetPinnableReference(), gradientStopCollection, ref linearGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, ref BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLinearGradientBrush(linearGradientBrushProperties, ref brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, ref linearGradientBrush);
+        return @this->CreateLinearGradientBrush(linearGradientBrushProperties, in brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, ref linearGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, Span<BrushProperties> brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLinearGradientBrush(linearGradientBrushProperties, ref brushProperties.GetPinnableReference(), ref gradientStopCollection.GetPinnableReference(), linearGradientBrush);
+        return @this->CreateLinearGradientBrush(linearGradientBrushProperties, in brushProperties.GetPinnableReference(), ref gradientStopCollection.GetPinnableReference(), linearGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, ref BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
+    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLinearGradientBrush(linearGradientBrushProperties, ref brushProperties, ref gradientStopCollection, (ID2D1LinearGradientBrush**) linearGradientBrush.GetAddressOf());
+        return @this->CreateLinearGradientBrush(linearGradientBrushProperties, in brushProperties, ref gradientStopCollection, (ID2D1LinearGradientBrush**) linearGradientBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, LinearGradientBrushProperties* linearGradientBrushProperties, Span<BrushProperties> brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LinearGradientBrushProperties* linearGradientBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLinearGradientBrush(linearGradientBrushProperties, ref brushProperties.GetPinnableReference(), ref gradientStopCollection.GetPinnableReference(), ref linearGradientBrush);
+        return @this->CreateLinearGradientBrush(linearGradientBrushProperties, in brushProperties.GetPinnableReference(), ref gradientStopCollection.GetPinnableReference(), ref linearGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<LinearGradientBrushProperties> linearGradientBrushProperties, BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<LinearGradientBrushProperties> linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLinearGradientBrush(ref linearGradientBrushProperties.GetPinnableReference(), brushProperties, gradientStopCollection, linearGradientBrush);
+        return @this->CreateLinearGradientBrush(in linearGradientBrushProperties.GetPinnableReference(), brushProperties, gradientStopCollection, linearGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref LinearGradientBrushProperties linearGradientBrushProperties, BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
+    public static unsafe int CreateLinearGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLinearGradientBrush(ref linearGradientBrushProperties, brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, (ID2D1LinearGradientBrush**) linearGradientBrush.GetAddressOf());
+        return @this->CreateLinearGradientBrush(in linearGradientBrushProperties, brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, (ID2D1LinearGradientBrush**) linearGradientBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<LinearGradientBrushProperties> linearGradientBrushProperties, BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<LinearGradientBrushProperties> linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLinearGradientBrush(ref linearGradientBrushProperties.GetPinnableReference(), brushProperties, gradientStopCollection, ref linearGradientBrush);
+        return @this->CreateLinearGradientBrush(in linearGradientBrushProperties.GetPinnableReference(), brushProperties, gradientStopCollection, ref linearGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref LinearGradientBrushProperties linearGradientBrushProperties, BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLinearGradientBrush(ref linearGradientBrushProperties, brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, ref linearGradientBrush);
+        return @this->CreateLinearGradientBrush(in linearGradientBrushProperties, brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, ref linearGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<LinearGradientBrushProperties> linearGradientBrushProperties, BrushProperties* brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<LinearGradientBrushProperties> linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLinearGradientBrush(ref linearGradientBrushProperties.GetPinnableReference(), brushProperties, ref gradientStopCollection.GetPinnableReference(), linearGradientBrush);
+        return @this->CreateLinearGradientBrush(in linearGradientBrushProperties.GetPinnableReference(), brushProperties, ref gradientStopCollection.GetPinnableReference(), linearGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref LinearGradientBrushProperties linearGradientBrushProperties, BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
+    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLinearGradientBrush(ref linearGradientBrushProperties, brushProperties, ref gradientStopCollection, (ID2D1LinearGradientBrush**) linearGradientBrush.GetAddressOf());
+        return @this->CreateLinearGradientBrush(in linearGradientBrushProperties, brushProperties, ref gradientStopCollection, (ID2D1LinearGradientBrush**) linearGradientBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<LinearGradientBrushProperties> linearGradientBrushProperties, BrushProperties* brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<LinearGradientBrushProperties> linearGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLinearGradientBrush(ref linearGradientBrushProperties.GetPinnableReference(), brushProperties, ref gradientStopCollection.GetPinnableReference(), ref linearGradientBrush);
+        return @this->CreateLinearGradientBrush(in linearGradientBrushProperties.GetPinnableReference(), brushProperties, ref gradientStopCollection.GetPinnableReference(), ref linearGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<LinearGradientBrushProperties> linearGradientBrushProperties, Span<BrushProperties> brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<LinearGradientBrushProperties> linearGradientBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLinearGradientBrush(ref linearGradientBrushProperties.GetPinnableReference(), ref brushProperties.GetPinnableReference(), gradientStopCollection, linearGradientBrush);
+        return @this->CreateLinearGradientBrush(in linearGradientBrushProperties.GetPinnableReference(), in brushProperties.GetPinnableReference(), gradientStopCollection, linearGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateLinearGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref LinearGradientBrushProperties linearGradientBrushProperties, ref BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
+    public static int CreateLinearGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLinearGradientBrush(ref linearGradientBrushProperties, ref brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, (ID2D1LinearGradientBrush**) linearGradientBrush.GetAddressOf());
+        return @this->CreateLinearGradientBrush(in linearGradientBrushProperties, in brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, (ID2D1LinearGradientBrush**) linearGradientBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<LinearGradientBrushProperties> linearGradientBrushProperties, Span<BrushProperties> brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<LinearGradientBrushProperties> linearGradientBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLinearGradientBrush(ref linearGradientBrushProperties.GetPinnableReference(), ref brushProperties.GetPinnableReference(), gradientStopCollection, ref linearGradientBrush);
+        return @this->CreateLinearGradientBrush(in linearGradientBrushProperties.GetPinnableReference(), in brushProperties.GetPinnableReference(), gradientStopCollection, ref linearGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref LinearGradientBrushProperties linearGradientBrushProperties, ref BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+    public static unsafe int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLinearGradientBrush(ref linearGradientBrushProperties, ref brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, ref linearGradientBrush);
+        return @this->CreateLinearGradientBrush(in linearGradientBrushProperties, in brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, ref linearGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<LinearGradientBrushProperties> linearGradientBrushProperties, Span<BrushProperties> brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<LinearGradientBrushProperties> linearGradientBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ID2D1LinearGradientBrush** linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLinearGradientBrush(ref linearGradientBrushProperties.GetPinnableReference(), ref brushProperties.GetPinnableReference(), ref gradientStopCollection.GetPinnableReference(), linearGradientBrush);
+        return @this->CreateLinearGradientBrush(in linearGradientBrushProperties.GetPinnableReference(), in brushProperties.GetPinnableReference(), ref gradientStopCollection.GetPinnableReference(), linearGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref LinearGradientBrushProperties linearGradientBrushProperties, ref BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
+    public static int CreateLinearGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in LinearGradientBrushProperties linearGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> linearGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1LinearGradientBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLinearGradientBrush(ref linearGradientBrushProperties, ref brushProperties, ref gradientStopCollection, (ID2D1LinearGradientBrush**) linearGradientBrush.GetAddressOf());
+        return @this->CreateLinearGradientBrush(in linearGradientBrushProperties, in brushProperties, ref gradientStopCollection, (ID2D1LinearGradientBrush**) linearGradientBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<LinearGradientBrushProperties> linearGradientBrushProperties, Span<BrushProperties> brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
+    public static unsafe int CreateLinearGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<LinearGradientBrushProperties> linearGradientBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ref ID2D1LinearGradientBrush* linearGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLinearGradientBrush(ref linearGradientBrushProperties.GetPinnableReference(), ref brushProperties.GetPinnableReference(), ref gradientStopCollection.GetPinnableReference(), ref linearGradientBrush);
+        return @this->CreateLinearGradientBrush(in linearGradientBrushProperties.GetPinnableReference(), in brushProperties.GetPinnableReference(), ref gradientStopCollection.GetPinnableReference(), ref linearGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
+    public static unsafe int CreateRadialGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6951,7 +6951,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6959,7 +6959,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, BrushProperties* brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -6967,7 +6967,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
+    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -6975,7 +6975,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, BrushProperties* brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -6983,175 +6983,175 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, Span<BrushProperties> brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateRadialGradientBrush(radialGradientBrushProperties, ref brushProperties.GetPinnableReference(), gradientStopCollection, radialGradientBrush);
+        return @this->CreateRadialGradientBrush(radialGradientBrushProperties, in brushProperties.GetPinnableReference(), gradientStopCollection, radialGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, ref BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
+    public static unsafe int CreateRadialGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateRadialGradientBrush(radialGradientBrushProperties, ref brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, (ID2D1RadialGradientBrush**) radialGradientBrush.GetAddressOf());
+        return @this->CreateRadialGradientBrush(radialGradientBrushProperties, in brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, (ID2D1RadialGradientBrush**) radialGradientBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, Span<BrushProperties> brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateRadialGradientBrush(radialGradientBrushProperties, ref brushProperties.GetPinnableReference(), gradientStopCollection, ref radialGradientBrush);
+        return @this->CreateRadialGradientBrush(radialGradientBrushProperties, in brushProperties.GetPinnableReference(), gradientStopCollection, ref radialGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, ref BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateRadialGradientBrush(radialGradientBrushProperties, ref brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, ref radialGradientBrush);
+        return @this->CreateRadialGradientBrush(radialGradientBrushProperties, in brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, ref radialGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, Span<BrushProperties> brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateRadialGradientBrush(radialGradientBrushProperties, ref brushProperties.GetPinnableReference(), ref gradientStopCollection.GetPinnableReference(), radialGradientBrush);
+        return @this->CreateRadialGradientBrush(radialGradientBrushProperties, in brushProperties.GetPinnableReference(), ref gradientStopCollection.GetPinnableReference(), radialGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, ref BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
+    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateRadialGradientBrush(radialGradientBrushProperties, ref brushProperties, ref gradientStopCollection, (ID2D1RadialGradientBrush**) radialGradientBrush.GetAddressOf());
+        return @this->CreateRadialGradientBrush(radialGradientBrushProperties, in brushProperties, ref gradientStopCollection, (ID2D1RadialGradientBrush**) radialGradientBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, RadialGradientBrushProperties* radialGradientBrushProperties, Span<BrushProperties> brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RadialGradientBrushProperties* radialGradientBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateRadialGradientBrush(radialGradientBrushProperties, ref brushProperties.GetPinnableReference(), ref gradientStopCollection.GetPinnableReference(), ref radialGradientBrush);
+        return @this->CreateRadialGradientBrush(radialGradientBrushProperties, in brushProperties.GetPinnableReference(), ref gradientStopCollection.GetPinnableReference(), ref radialGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<RadialGradientBrushProperties> radialGradientBrushProperties, BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RadialGradientBrushProperties> radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateRadialGradientBrush(ref radialGradientBrushProperties.GetPinnableReference(), brushProperties, gradientStopCollection, radialGradientBrush);
+        return @this->CreateRadialGradientBrush(in radialGradientBrushProperties.GetPinnableReference(), brushProperties, gradientStopCollection, radialGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RadialGradientBrushProperties radialGradientBrushProperties, BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
+    public static unsafe int CreateRadialGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateRadialGradientBrush(ref radialGradientBrushProperties, brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, (ID2D1RadialGradientBrush**) radialGradientBrush.GetAddressOf());
+        return @this->CreateRadialGradientBrush(in radialGradientBrushProperties, brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, (ID2D1RadialGradientBrush**) radialGradientBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<RadialGradientBrushProperties> radialGradientBrushProperties, BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RadialGradientBrushProperties> radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateRadialGradientBrush(ref radialGradientBrushProperties.GetPinnableReference(), brushProperties, gradientStopCollection, ref radialGradientBrush);
+        return @this->CreateRadialGradientBrush(in radialGradientBrushProperties.GetPinnableReference(), brushProperties, gradientStopCollection, ref radialGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RadialGradientBrushProperties radialGradientBrushProperties, BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateRadialGradientBrush(ref radialGradientBrushProperties, brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, ref radialGradientBrush);
+        return @this->CreateRadialGradientBrush(in radialGradientBrushProperties, brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, ref radialGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<RadialGradientBrushProperties> radialGradientBrushProperties, BrushProperties* brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RadialGradientBrushProperties> radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateRadialGradientBrush(ref radialGradientBrushProperties.GetPinnableReference(), brushProperties, ref gradientStopCollection.GetPinnableReference(), radialGradientBrush);
+        return @this->CreateRadialGradientBrush(in radialGradientBrushProperties.GetPinnableReference(), brushProperties, ref gradientStopCollection.GetPinnableReference(), radialGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RadialGradientBrushProperties radialGradientBrushProperties, BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
+    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateRadialGradientBrush(ref radialGradientBrushProperties, brushProperties, ref gradientStopCollection, (ID2D1RadialGradientBrush**) radialGradientBrush.GetAddressOf());
+        return @this->CreateRadialGradientBrush(in radialGradientBrushProperties, brushProperties, ref gradientStopCollection, (ID2D1RadialGradientBrush**) radialGradientBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<RadialGradientBrushProperties> radialGradientBrushProperties, BrushProperties* brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RadialGradientBrushProperties> radialGradientBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateRadialGradientBrush(ref radialGradientBrushProperties.GetPinnableReference(), brushProperties, ref gradientStopCollection.GetPinnableReference(), ref radialGradientBrush);
+        return @this->CreateRadialGradientBrush(in radialGradientBrushProperties.GetPinnableReference(), brushProperties, ref gradientStopCollection.GetPinnableReference(), ref radialGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<RadialGradientBrushProperties> radialGradientBrushProperties, Span<BrushProperties> brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RadialGradientBrushProperties> radialGradientBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateRadialGradientBrush(ref radialGradientBrushProperties.GetPinnableReference(), ref brushProperties.GetPinnableReference(), gradientStopCollection, radialGradientBrush);
+        return @this->CreateRadialGradientBrush(in radialGradientBrushProperties.GetPinnableReference(), in brushProperties.GetPinnableReference(), gradientStopCollection, radialGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateRadialGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RadialGradientBrushProperties radialGradientBrushProperties, ref BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
+    public static int CreateRadialGradientBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ComPtr<TI1> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateRadialGradientBrush(ref radialGradientBrushProperties, ref brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, (ID2D1RadialGradientBrush**) radialGradientBrush.GetAddressOf());
+        return @this->CreateRadialGradientBrush(in radialGradientBrushProperties, in brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, (ID2D1RadialGradientBrush**) radialGradientBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<RadialGradientBrushProperties> radialGradientBrushProperties, Span<BrushProperties> brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RadialGradientBrushProperties> radialGradientBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ID2D1GradientStopCollection* gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateRadialGradientBrush(ref radialGradientBrushProperties.GetPinnableReference(), ref brushProperties.GetPinnableReference(), gradientStopCollection, ref radialGradientBrush);
+        return @this->CreateRadialGradientBrush(in radialGradientBrushProperties.GetPinnableReference(), in brushProperties.GetPinnableReference(), gradientStopCollection, ref radialGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RadialGradientBrushProperties radialGradientBrushProperties, ref BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
+    public static unsafe int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ComPtr<TI0> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1GradientStopCollection>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateRadialGradientBrush(ref radialGradientBrushProperties, ref brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, ref radialGradientBrush);
+        return @this->CreateRadialGradientBrush(in radialGradientBrushProperties, in brushProperties, (ID2D1GradientStopCollection*) gradientStopCollection.Handle, ref radialGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<RadialGradientBrushProperties> radialGradientBrushProperties, Span<BrushProperties> brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RadialGradientBrushProperties> radialGradientBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ID2D1RadialGradientBrush** radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateRadialGradientBrush(ref radialGradientBrushProperties.GetPinnableReference(), ref brushProperties.GetPinnableReference(), ref gradientStopCollection.GetPinnableReference(), radialGradientBrush);
+        return @this->CreateRadialGradientBrush(in radialGradientBrushProperties.GetPinnableReference(), in brushProperties.GetPinnableReference(), ref gradientStopCollection.GetPinnableReference(), radialGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RadialGradientBrushProperties radialGradientBrushProperties, ref BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
+    public static int CreateRadialGradientBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RadialGradientBrushProperties radialGradientBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1GradientStopCollection gradientStopCollection, ref ComPtr<TI0> radialGradientBrush) where TI0 : unmanaged, IComVtbl<ID2D1RadialGradientBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateRadialGradientBrush(ref radialGradientBrushProperties, ref brushProperties, ref gradientStopCollection, (ID2D1RadialGradientBrush**) radialGradientBrush.GetAddressOf());
+        return @this->CreateRadialGradientBrush(in radialGradientBrushProperties, in brushProperties, ref gradientStopCollection, (ID2D1RadialGradientBrush**) radialGradientBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<RadialGradientBrushProperties> radialGradientBrushProperties, Span<BrushProperties> brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
+    public static unsafe int CreateRadialGradientBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RadialGradientBrushProperties> radialGradientBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, Span<ID2D1GradientStopCollection> gradientStopCollection, ref ID2D1RadialGradientBrush* radialGradientBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateRadialGradientBrush(ref radialGradientBrushProperties.GetPinnableReference(), ref brushProperties.GetPinnableReference(), ref gradientStopCollection.GetPinnableReference(), ref radialGradientBrush);
+        return @this->CreateRadialGradientBrush(in radialGradientBrushProperties.GetPinnableReference(), in brushProperties.GetPinnableReference(), ref gradientStopCollection.GetPinnableReference(), ref radialGradientBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7159,175 +7159,175 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, Span<PixelFormat> desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] ReadOnlySpan<PixelFormat> desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateCompatibleRenderTarget(desiredSize, desiredPixelSize, ref desiredFormat.GetPinnableReference(), options, bitmapRenderTarget);
+        return @this->CreateCompatibleRenderTarget(desiredSize, desiredPixelSize, in desiredFormat.GetPinnableReference(), options, bitmapRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateCompatibleRenderTarget(desiredSize, desiredPixelSize, ref desiredFormat, options, (ID2D1BitmapRenderTarget**) bitmapRenderTarget.GetAddressOf());
+        return @this->CreateCompatibleRenderTarget(desiredSize, desiredPixelSize, in desiredFormat, options, (ID2D1BitmapRenderTarget**) bitmapRenderTarget.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, Span<PixelFormat> desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] ReadOnlySpan<PixelFormat> desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateCompatibleRenderTarget(desiredSize, desiredPixelSize, ref desiredFormat.GetPinnableReference(), options, ref bitmapRenderTarget);
+        return @this->CreateCompatibleRenderTarget(desiredSize, desiredPixelSize, in desiredFormat.GetPinnableReference(), options, ref bitmapRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* desiredSize, Span<Silk.NET.Maths.Vector2D<uint>> desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<uint>> desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateCompatibleRenderTarget(desiredSize, ref desiredPixelSize.GetPinnableReference(), desiredFormat, options, bitmapRenderTarget);
+        return @this->CreateCompatibleRenderTarget(desiredSize, in desiredPixelSize.GetPinnableReference(), desiredFormat, options, bitmapRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateCompatibleRenderTarget(desiredSize, ref desiredPixelSize, desiredFormat, options, (ID2D1BitmapRenderTarget**) bitmapRenderTarget.GetAddressOf());
+        return @this->CreateCompatibleRenderTarget(desiredSize, in desiredPixelSize, desiredFormat, options, (ID2D1BitmapRenderTarget**) bitmapRenderTarget.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* desiredSize, Span<Silk.NET.Maths.Vector2D<uint>> desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<uint>> desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateCompatibleRenderTarget(desiredSize, ref desiredPixelSize.GetPinnableReference(), desiredFormat, options, ref bitmapRenderTarget);
+        return @this->CreateCompatibleRenderTarget(desiredSize, in desiredPixelSize.GetPinnableReference(), desiredFormat, options, ref bitmapRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* desiredSize, Span<Silk.NET.Maths.Vector2D<uint>> desiredPixelSize, Span<PixelFormat> desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<uint>> desiredPixelSize, [Flow(FlowDirection.In)] ReadOnlySpan<PixelFormat> desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateCompatibleRenderTarget(desiredSize, ref desiredPixelSize.GetPinnableReference(), ref desiredFormat.GetPinnableReference(), options, bitmapRenderTarget);
+        return @this->CreateCompatibleRenderTarget(desiredSize, in desiredPixelSize.GetPinnableReference(), in desiredFormat.GetPinnableReference(), options, bitmapRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateCompatibleRenderTarget(desiredSize, ref desiredPixelSize, ref desiredFormat, options, (ID2D1BitmapRenderTarget**) bitmapRenderTarget.GetAddressOf());
+        return @this->CreateCompatibleRenderTarget(desiredSize, in desiredPixelSize, in desiredFormat, options, (ID2D1BitmapRenderTarget**) bitmapRenderTarget.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* desiredSize, Span<Silk.NET.Maths.Vector2D<uint>> desiredPixelSize, Span<PixelFormat> desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* desiredSize, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<uint>> desiredPixelSize, [Flow(FlowDirection.In)] ReadOnlySpan<PixelFormat> desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateCompatibleRenderTarget(desiredSize, ref desiredPixelSize.GetPinnableReference(), ref desiredFormat.GetPinnableReference(), options, ref bitmapRenderTarget);
+        return @this->CreateCompatibleRenderTarget(desiredSize, in desiredPixelSize.GetPinnableReference(), in desiredFormat.GetPinnableReference(), options, ref bitmapRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.Maths.Vector2D<float>> desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateCompatibleRenderTarget(ref desiredSize.GetPinnableReference(), desiredPixelSize, desiredFormat, options, bitmapRenderTarget);
+        return @this->CreateCompatibleRenderTarget(in desiredSize.GetPinnableReference(), desiredPixelSize, desiredFormat, options, bitmapRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Vector2D<float> desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateCompatibleRenderTarget(ref desiredSize, desiredPixelSize, desiredFormat, options, (ID2D1BitmapRenderTarget**) bitmapRenderTarget.GetAddressOf());
+        return @this->CreateCompatibleRenderTarget(in desiredSize, desiredPixelSize, desiredFormat, options, (ID2D1BitmapRenderTarget**) bitmapRenderTarget.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.Maths.Vector2D<float>> desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateCompatibleRenderTarget(ref desiredSize.GetPinnableReference(), desiredPixelSize, desiredFormat, options, ref bitmapRenderTarget);
+        return @this->CreateCompatibleRenderTarget(in desiredSize.GetPinnableReference(), desiredPixelSize, desiredFormat, options, ref bitmapRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.Maths.Vector2D<float>> desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, Span<PixelFormat> desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] ReadOnlySpan<PixelFormat> desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateCompatibleRenderTarget(ref desiredSize.GetPinnableReference(), desiredPixelSize, ref desiredFormat.GetPinnableReference(), options, bitmapRenderTarget);
+        return @this->CreateCompatibleRenderTarget(in desiredSize.GetPinnableReference(), desiredPixelSize, in desiredFormat.GetPinnableReference(), options, bitmapRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Vector2D<float> desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateCompatibleRenderTarget(ref desiredSize, desiredPixelSize, ref desiredFormat, options, (ID2D1BitmapRenderTarget**) bitmapRenderTarget.GetAddressOf());
+        return @this->CreateCompatibleRenderTarget(in desiredSize, desiredPixelSize, in desiredFormat, options, (ID2D1BitmapRenderTarget**) bitmapRenderTarget.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.Maths.Vector2D<float>> desiredSize, Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, Span<PixelFormat> desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> desiredSize, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<uint>* desiredPixelSize, [Flow(FlowDirection.In)] ReadOnlySpan<PixelFormat> desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateCompatibleRenderTarget(ref desiredSize.GetPinnableReference(), desiredPixelSize, ref desiredFormat.GetPinnableReference(), options, ref bitmapRenderTarget);
+        return @this->CreateCompatibleRenderTarget(in desiredSize.GetPinnableReference(), desiredPixelSize, in desiredFormat.GetPinnableReference(), options, ref bitmapRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.Maths.Vector2D<float>> desiredSize, Span<Silk.NET.Maths.Vector2D<uint>> desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> desiredSize, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<uint>> desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateCompatibleRenderTarget(ref desiredSize.GetPinnableReference(), ref desiredPixelSize.GetPinnableReference(), desiredFormat, options, bitmapRenderTarget);
+        return @this->CreateCompatibleRenderTarget(in desiredSize.GetPinnableReference(), in desiredPixelSize.GetPinnableReference(), desiredFormat, options, bitmapRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Vector2D<float> desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+    public static unsafe int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateCompatibleRenderTarget(ref desiredSize, ref desiredPixelSize, desiredFormat, options, (ID2D1BitmapRenderTarget**) bitmapRenderTarget.GetAddressOf());
+        return @this->CreateCompatibleRenderTarget(in desiredSize, in desiredPixelSize, desiredFormat, options, (ID2D1BitmapRenderTarget**) bitmapRenderTarget.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.Maths.Vector2D<float>> desiredSize, Span<Silk.NET.Maths.Vector2D<uint>> desiredPixelSize, PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> desiredSize, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<uint>> desiredPixelSize, [Flow(FlowDirection.In)] PixelFormat* desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateCompatibleRenderTarget(ref desiredSize.GetPinnableReference(), ref desiredPixelSize.GetPinnableReference(), desiredFormat, options, ref bitmapRenderTarget);
+        return @this->CreateCompatibleRenderTarget(in desiredSize.GetPinnableReference(), in desiredPixelSize.GetPinnableReference(), desiredFormat, options, ref bitmapRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.Maths.Vector2D<float>> desiredSize, Span<Silk.NET.Maths.Vector2D<uint>> desiredPixelSize, Span<PixelFormat> desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> desiredSize, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<uint>> desiredPixelSize, [Flow(FlowDirection.In)] ReadOnlySpan<PixelFormat> desiredFormat, CompatibleRenderTargetOptions options, ID2D1BitmapRenderTarget** bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateCompatibleRenderTarget(ref desiredSize.GetPinnableReference(), ref desiredPixelSize.GetPinnableReference(), ref desiredFormat.GetPinnableReference(), options, bitmapRenderTarget);
+        return @this->CreateCompatibleRenderTarget(in desiredSize.GetPinnableReference(), in desiredPixelSize.GetPinnableReference(), in desiredFormat.GetPinnableReference(), options, bitmapRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Vector2D<float> desiredSize, ref Silk.NET.Maths.Vector2D<uint> desiredPixelSize, ref PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
+    public static int CreateCompatibleRenderTarget<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> desiredSize, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<uint> desiredPixelSize, [Flow(FlowDirection.In)] in PixelFormat desiredFormat, CompatibleRenderTargetOptions options, ref ComPtr<TI0> bitmapRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1BitmapRenderTarget>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateCompatibleRenderTarget(ref desiredSize, ref desiredPixelSize, ref desiredFormat, options, (ID2D1BitmapRenderTarget**) bitmapRenderTarget.GetAddressOf());
+        return @this->CreateCompatibleRenderTarget(in desiredSize, in desiredPixelSize, in desiredFormat, options, (ID2D1BitmapRenderTarget**) bitmapRenderTarget.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.Maths.Vector2D<float>> desiredSize, Span<Silk.NET.Maths.Vector2D<uint>> desiredPixelSize, Span<PixelFormat> desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
+    public static unsafe int CreateCompatibleRenderTarget(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> desiredSize, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<uint>> desiredPixelSize, [Flow(FlowDirection.In)] ReadOnlySpan<PixelFormat> desiredFormat, CompatibleRenderTargetOptions options, ref ID2D1BitmapRenderTarget* bitmapRenderTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateCompatibleRenderTarget(ref desiredSize.GetPinnableReference(), ref desiredPixelSize.GetPinnableReference(), ref desiredFormat.GetPinnableReference(), options, ref bitmapRenderTarget);
+        return @this->CreateCompatibleRenderTarget(in desiredSize.GetPinnableReference(), in desiredPixelSize.GetPinnableReference(), in desiredFormat.GetPinnableReference(), options, ref bitmapRenderTarget);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLayer<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float>* size, ref ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
+    public static unsafe int CreateLayer<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* size, ref ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7335,27 +7335,27 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.Maths.Vector2D<float>> size, ID2D1Layer** layer)
+    public static unsafe int CreateLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> size, ID2D1Layer** layer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLayer(ref size.GetPinnableReference(), layer);
+        return @this->CreateLayer(in size.GetPinnableReference(), layer);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateLayer<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Vector2D<float> size, ref ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
+    public static int CreateLayer<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> size, ref ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLayer(ref size, (ID2D1Layer**) layer.GetAddressOf());
+        return @this->CreateLayer(in size, (ID2D1Layer**) layer.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.Maths.Vector2D<float>> size, ref ID2D1Layer* layer)
+    public static unsafe int CreateLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> size, ref ID2D1Layer* layer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLayer(ref size.GetPinnableReference(), ref layer);
+        return @this->CreateLayer(in size.GetPinnableReference(), ref layer);
     }
 
     /// <summary>To be documented.</summary>
@@ -7415,7 +7415,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRectangle<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
+    public static unsafe void DrawRectangle<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7423,7 +7423,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
+    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ID2D1Brush* brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -7431,7 +7431,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void DrawRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7439,7 +7439,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, Span<ID2D1Brush> brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, Span<ID2D1Brush> brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -7447,7 +7447,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static unsafe void DrawRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7455,7 +7455,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, Span<ID2D1Brush> brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
+    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, Span<ID2D1Brush> brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -7463,63 +7463,63 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.Maths.Box2D<float>> rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> rect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawRectangle(ref rect.GetPinnableReference(), brush, strokeWidth, strokeStyle);
+        @this->DrawRectangle(in rect.GetPinnableReference(), brush, strokeWidth, strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawRectangle<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
+    public static void DrawRectangle<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawRectangle(ref rect, (ID2D1Brush*) brush.Handle, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle);
+        @this->DrawRectangle(in rect, (ID2D1Brush*) brush.Handle, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.Maths.Box2D<float>> rect, ID2D1Brush* brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
+    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> rect, ID2D1Brush* brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawRectangle(ref rect.GetPinnableReference(), brush, strokeWidth, ref strokeStyle.GetPinnableReference());
+        @this->DrawRectangle(in rect.GetPinnableReference(), brush, strokeWidth, ref strokeStyle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static void DrawRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawRectangle(ref rect, (ID2D1Brush*) brush.Handle, strokeWidth, ref strokeStyle);
+        @this->DrawRectangle(in rect, (ID2D1Brush*) brush.Handle, strokeWidth, ref strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.Maths.Box2D<float>> rect, Span<ID2D1Brush> brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> rect, Span<ID2D1Brush> brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawRectangle(ref rect.GetPinnableReference(), ref brush.GetPinnableReference(), strokeWidth, strokeStyle);
+        @this->DrawRectangle(in rect.GetPinnableReference(), ref brush.GetPinnableReference(), strokeWidth, strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static void DrawRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawRectangle(ref rect, ref brush, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle);
+        @this->DrawRectangle(in rect, ref brush, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.Maths.Box2D<float>> rect, Span<ID2D1Brush> brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
+    public static void DrawRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> rect, Span<ID2D1Brush> brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawRectangle(ref rect.GetPinnableReference(), ref brush.GetPinnableReference(), strokeWidth, ref strokeStyle.GetPinnableReference());
+        @this->DrawRectangle(in rect.GetPinnableReference(), ref brush.GetPinnableReference(), strokeWidth, ref strokeStyle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void FillRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7527,7 +7527,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Box2D<float>* rect, Span<ID2D1Brush> brush)
+    public static unsafe void FillRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rect, Span<ID2D1Brush> brush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -7535,31 +7535,31 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.Maths.Box2D<float>> rect, ID2D1Brush* brush)
+    public static unsafe void FillRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> rect, ID2D1Brush* brush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->FillRectangle(ref rect.GetPinnableReference(), brush);
+        @this->FillRectangle(in rect.GetPinnableReference(), brush);
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static void FillRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->FillRectangle(ref rect, (ID2D1Brush*) brush.Handle);
+        @this->FillRectangle(in rect, (ID2D1Brush*) brush.Handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.Maths.Box2D<float>> rect, Span<ID2D1Brush> brush)
+    public static void FillRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> rect, Span<ID2D1Brush> brush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->FillRectangle(ref rect.GetPinnableReference(), ref brush.GetPinnableReference());
+        @this->FillRectangle(in rect.GetPinnableReference(), ref brush.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRoundedRectangle<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, RoundedRect* roundedRect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
+    public static unsafe void DrawRoundedRectangle<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RoundedRect* roundedRect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7567,7 +7567,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, RoundedRect* roundedRect, ID2D1Brush* brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
+    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RoundedRect* roundedRect, ID2D1Brush* brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -7575,7 +7575,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRoundedRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, RoundedRect* roundedRect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void DrawRoundedRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RoundedRect* roundedRect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7583,7 +7583,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, RoundedRect* roundedRect, Span<ID2D1Brush> brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RoundedRect* roundedRect, Span<ID2D1Brush> brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -7591,7 +7591,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRoundedRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, RoundedRect* roundedRect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static unsafe void DrawRoundedRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RoundedRect* roundedRect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7599,7 +7599,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, RoundedRect* roundedRect, Span<ID2D1Brush> brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
+    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RoundedRect* roundedRect, Span<ID2D1Brush> brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -7607,63 +7607,63 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<RoundedRect> roundedRect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RoundedRect> roundedRect, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawRoundedRectangle(ref roundedRect.GetPinnableReference(), brush, strokeWidth, strokeStyle);
+        @this->DrawRoundedRectangle(in roundedRect.GetPinnableReference(), brush, strokeWidth, strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawRoundedRectangle<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RoundedRect roundedRect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
+    public static void DrawRoundedRectangle<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RoundedRect roundedRect, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawRoundedRectangle(ref roundedRect, (ID2D1Brush*) brush.Handle, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle);
+        @this->DrawRoundedRectangle(in roundedRect, (ID2D1Brush*) brush.Handle, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<RoundedRect> roundedRect, ID2D1Brush* brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
+    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RoundedRect> roundedRect, ID2D1Brush* brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawRoundedRectangle(ref roundedRect.GetPinnableReference(), brush, strokeWidth, ref strokeStyle.GetPinnableReference());
+        @this->DrawRoundedRectangle(in roundedRect.GetPinnableReference(), brush, strokeWidth, ref strokeStyle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawRoundedRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RoundedRect roundedRect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static void DrawRoundedRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RoundedRect roundedRect, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawRoundedRectangle(ref roundedRect, (ID2D1Brush*) brush.Handle, strokeWidth, ref strokeStyle);
+        @this->DrawRoundedRectangle(in roundedRect, (ID2D1Brush*) brush.Handle, strokeWidth, ref strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<RoundedRect> roundedRect, Span<ID2D1Brush> brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RoundedRect> roundedRect, Span<ID2D1Brush> brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawRoundedRectangle(ref roundedRect.GetPinnableReference(), ref brush.GetPinnableReference(), strokeWidth, strokeStyle);
+        @this->DrawRoundedRectangle(in roundedRect.GetPinnableReference(), ref brush.GetPinnableReference(), strokeWidth, strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawRoundedRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RoundedRect roundedRect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static void DrawRoundedRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RoundedRect roundedRect, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawRoundedRectangle(ref roundedRect, ref brush, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle);
+        @this->DrawRoundedRectangle(in roundedRect, ref brush, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<RoundedRect> roundedRect, Span<ID2D1Brush> brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
+    public static void DrawRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RoundedRect> roundedRect, Span<ID2D1Brush> brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawRoundedRectangle(ref roundedRect.GetPinnableReference(), ref brush.GetPinnableReference(), strokeWidth, ref strokeStyle.GetPinnableReference());
+        @this->DrawRoundedRectangle(in roundedRect.GetPinnableReference(), ref brush.GetPinnableReference(), strokeWidth, ref strokeStyle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillRoundedRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, RoundedRect* roundedRect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void FillRoundedRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RoundedRect* roundedRect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7671,7 +7671,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, RoundedRect* roundedRect, Span<ID2D1Brush> brush)
+    public static unsafe void FillRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] RoundedRect* roundedRect, Span<ID2D1Brush> brush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -7679,31 +7679,31 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<RoundedRect> roundedRect, ID2D1Brush* brush)
+    public static unsafe void FillRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RoundedRect> roundedRect, ID2D1Brush* brush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->FillRoundedRectangle(ref roundedRect.GetPinnableReference(), brush);
+        @this->FillRoundedRectangle(in roundedRect.GetPinnableReference(), brush);
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillRoundedRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref RoundedRect roundedRect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static void FillRoundedRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in RoundedRect roundedRect, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->FillRoundedRectangle(ref roundedRect, (ID2D1Brush*) brush.Handle);
+        @this->FillRoundedRectangle(in roundedRect, (ID2D1Brush*) brush.Handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<RoundedRect> roundedRect, Span<ID2D1Brush> brush)
+    public static void FillRoundedRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RoundedRect> roundedRect, Span<ID2D1Brush> brush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->FillRoundedRectangle(ref roundedRect.GetPinnableReference(), ref brush.GetPinnableReference());
+        @this->FillRoundedRectangle(in roundedRect.GetPinnableReference(), ref brush.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawEllipse<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Ellipse* ellipse, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
+    public static unsafe void DrawEllipse<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Ellipse* ellipse, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7711,7 +7711,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, Ellipse* ellipse, ID2D1Brush* brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
+    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Ellipse* ellipse, ID2D1Brush* brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -7719,7 +7719,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawEllipse<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Ellipse* ellipse, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void DrawEllipse<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Ellipse* ellipse, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7727,7 +7727,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, Ellipse* ellipse, Span<ID2D1Brush> brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Ellipse* ellipse, Span<ID2D1Brush> brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -7735,7 +7735,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawEllipse<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Ellipse* ellipse, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static unsafe void DrawEllipse<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Ellipse* ellipse, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7743,7 +7743,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, Ellipse* ellipse, Span<ID2D1Brush> brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
+    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Ellipse* ellipse, Span<ID2D1Brush> brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -7751,63 +7751,63 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Ellipse> ellipse, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Ellipse> ellipse, ID2D1Brush* brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawEllipse(ref ellipse.GetPinnableReference(), brush, strokeWidth, strokeStyle);
+        @this->DrawEllipse(in ellipse.GetPinnableReference(), brush, strokeWidth, strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawEllipse<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Ellipse ellipse, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
+    public static void DrawEllipse<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Ellipse ellipse, ComPtr<TI0> brush, float strokeWidth, ComPtr<TI1> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawEllipse(ref ellipse, (ID2D1Brush*) brush.Handle, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle);
+        @this->DrawEllipse(in ellipse, (ID2D1Brush*) brush.Handle, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Ellipse> ellipse, ID2D1Brush* brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
+    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Ellipse> ellipse, ID2D1Brush* brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawEllipse(ref ellipse.GetPinnableReference(), brush, strokeWidth, ref strokeStyle.GetPinnableReference());
+        @this->DrawEllipse(in ellipse.GetPinnableReference(), brush, strokeWidth, ref strokeStyle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawEllipse<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Ellipse ellipse, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static void DrawEllipse<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Ellipse ellipse, ComPtr<TI0> brush, float strokeWidth, ref ID2D1StrokeStyle strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawEllipse(ref ellipse, (ID2D1Brush*) brush.Handle, strokeWidth, ref strokeStyle);
+        @this->DrawEllipse(in ellipse, (ID2D1Brush*) brush.Handle, strokeWidth, ref strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Ellipse> ellipse, Span<ID2D1Brush> brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
+    public static unsafe void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Ellipse> ellipse, Span<ID2D1Brush> brush, float strokeWidth, ID2D1StrokeStyle* strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawEllipse(ref ellipse.GetPinnableReference(), ref brush.GetPinnableReference(), strokeWidth, strokeStyle);
+        @this->DrawEllipse(in ellipse.GetPinnableReference(), ref brush.GetPinnableReference(), strokeWidth, strokeStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawEllipse<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Ellipse ellipse, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+    public static void DrawEllipse<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Ellipse ellipse, ref ID2D1Brush brush, float strokeWidth, ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawEllipse(ref ellipse, ref brush, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle);
+        @this->DrawEllipse(in ellipse, ref brush, strokeWidth, (ID2D1StrokeStyle*) strokeStyle.Handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Ellipse> ellipse, Span<ID2D1Brush> brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
+    public static void DrawEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Ellipse> ellipse, Span<ID2D1Brush> brush, float strokeWidth, Span<ID2D1StrokeStyle> strokeStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawEllipse(ref ellipse.GetPinnableReference(), ref brush.GetPinnableReference(), strokeWidth, ref strokeStyle.GetPinnableReference());
+        @this->DrawEllipse(in ellipse.GetPinnableReference(), ref brush.GetPinnableReference(), strokeWidth, ref strokeStyle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillEllipse<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Ellipse* ellipse, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void FillEllipse<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Ellipse* ellipse, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -7815,7 +7815,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, Ellipse* ellipse, Span<ID2D1Brush> brush)
+    public static unsafe void FillEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] Ellipse* ellipse, Span<ID2D1Brush> brush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -7823,27 +7823,27 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Ellipse> ellipse, ID2D1Brush* brush)
+    public static unsafe void FillEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Ellipse> ellipse, ID2D1Brush* brush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->FillEllipse(ref ellipse.GetPinnableReference(), brush);
+        @this->FillEllipse(in ellipse.GetPinnableReference(), brush);
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillEllipse<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Ellipse ellipse, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static void FillEllipse<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in Ellipse ellipse, ComPtr<TI0> brush) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->FillEllipse(ref ellipse, (ID2D1Brush*) brush.Handle);
+        @this->FillEllipse(in ellipse, (ID2D1Brush*) brush.Handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Ellipse> ellipse, Span<ID2D1Brush> brush)
+    public static void FillEllipse(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Ellipse> ellipse, Span<ID2D1Brush> brush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->FillEllipse(ref ellipse.GetPinnableReference(), ref brush.GetPinnableReference());
+        @this->FillEllipse(in ellipse.GetPinnableReference(), ref brush.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -8119,7 +8119,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
+    public static unsafe void FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8127,55 +8127,55 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->FillOpacityMask(opacityMask, brush, content, destinationRectangle, ref sourceRectangle.GetPinnableReference());
+        @this->FillOpacityMask(opacityMask, brush, content, destinationRectangle, in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
+    public static unsafe void FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, (ID2D1Brush*) brush.Handle, content, destinationRectangle, ref sourceRectangle);
+        @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, (ID2D1Brush*) brush.Handle, content, destinationRectangle, in sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->FillOpacityMask(opacityMask, brush, content, ref destinationRectangle.GetPinnableReference(), sourceRectangle);
+        @this->FillOpacityMask(opacityMask, brush, content, in destinationRectangle.GetPinnableReference(), sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
+    public static unsafe void FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, (ID2D1Brush*) brush.Handle, content, ref destinationRectangle, sourceRectangle);
+        @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, (ID2D1Brush*) brush.Handle, content, in destinationRectangle, sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->FillOpacityMask(opacityMask, brush, content, ref destinationRectangle.GetPinnableReference(), ref sourceRectangle.GetPinnableReference());
+        @this->FillOpacityMask(opacityMask, brush, content, in destinationRectangle.GetPinnableReference(), in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
+    public static void FillOpacityMask<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ComPtr<TI1> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, (ID2D1Brush*) brush.Handle, content, ref destinationRectangle, ref sourceRectangle);
+        @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, (ID2D1Brush*) brush.Handle, content, in destinationRectangle, in sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, Span<ID2D1Brush> brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, Span<ID2D1Brush> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8183,7 +8183,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8191,55 +8191,55 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, Span<ID2D1Brush> brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, Span<ID2D1Brush> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->FillOpacityMask(opacityMask, ref brush.GetPinnableReference(), content, destinationRectangle, ref sourceRectangle.GetPinnableReference());
+        @this->FillOpacityMask(opacityMask, ref brush.GetPinnableReference(), content, destinationRectangle, in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, ref brush, content, destinationRectangle, ref sourceRectangle);
+        @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, ref brush, content, destinationRectangle, in sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, Span<ID2D1Brush> brush, OpacityMaskContent content, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, Span<ID2D1Brush> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->FillOpacityMask(opacityMask, ref brush.GetPinnableReference(), content, ref destinationRectangle.GetPinnableReference(), sourceRectangle);
+        @this->FillOpacityMask(opacityMask, ref brush.GetPinnableReference(), content, in destinationRectangle.GetPinnableReference(), sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, ref brush, content, ref destinationRectangle, sourceRectangle);
+        @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, ref brush, content, in destinationRectangle, sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, Span<ID2D1Brush> brush, OpacityMaskContent content, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* opacityMask, Span<ID2D1Brush> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->FillOpacityMask(opacityMask, ref brush.GetPinnableReference(), content, ref destinationRectangle.GetPinnableReference(), ref sourceRectangle.GetPinnableReference());
+        @this->FillOpacityMask(opacityMask, ref brush.GetPinnableReference(), content, in destinationRectangle.GetPinnableReference(), in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> opacityMask, ref ID2D1Brush brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, ref brush, content, ref destinationRectangle, ref sourceRectangle);
+        @this->FillOpacityMask((ID2D1Bitmap*) opacityMask.Handle, ref brush, content, in destinationRectangle, in sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> opacityMask, ID2D1Brush* brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8247,7 +8247,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8255,55 +8255,55 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> opacityMask, ID2D1Brush* brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), brush, content, destinationRectangle, ref sourceRectangle.GetPinnableReference());
+        @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), brush, content, destinationRectangle, in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->FillOpacityMask(ref opacityMask, (ID2D1Brush*) brush.Handle, content, destinationRectangle, ref sourceRectangle);
+        @this->FillOpacityMask(ref opacityMask, (ID2D1Brush*) brush.Handle, content, destinationRectangle, in sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> opacityMask, ID2D1Brush* brush, OpacityMaskContent content, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), brush, content, ref destinationRectangle.GetPinnableReference(), sourceRectangle);
+        @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), brush, content, in destinationRectangle.GetPinnableReference(), sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->FillOpacityMask(ref opacityMask, (ID2D1Brush*) brush.Handle, content, ref destinationRectangle, sourceRectangle);
+        @this->FillOpacityMask(ref opacityMask, (ID2D1Brush*) brush.Handle, content, in destinationRectangle, sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> opacityMask, ID2D1Brush* brush, OpacityMaskContent content, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> opacityMask, ID2D1Brush* brush, OpacityMaskContent content, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), brush, content, ref destinationRectangle.GetPinnableReference(), ref sourceRectangle.GetPinnableReference());
+        @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), brush, content, in destinationRectangle.GetPinnableReference(), in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, ref Silk.NET.Maths.Box2D<float> destinationRectangle, ref Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static void FillOpacityMask<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Bitmap opacityMask, ComPtr<TI0> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->FillOpacityMask(ref opacityMask, (ID2D1Brush*) brush.Handle, content, ref destinationRectangle, ref sourceRectangle);
+        @this->FillOpacityMask(ref opacityMask, (ID2D1Brush*) brush.Handle, content, in destinationRectangle, in sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> opacityMask, Span<ID2D1Brush> brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> opacityMask, Span<ID2D1Brush> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8311,31 +8311,31 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> opacityMask, Span<ID2D1Brush> brush, OpacityMaskContent content, Silk.NET.Maths.Box2D<float>* destinationRectangle, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> opacityMask, Span<ID2D1Brush> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), ref brush.GetPinnableReference(), content, destinationRectangle, ref sourceRectangle.GetPinnableReference());
+        @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), ref brush.GetPinnableReference(), content, destinationRectangle, in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> opacityMask, Span<ID2D1Brush> brush, OpacityMaskContent content, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> opacityMask, Span<ID2D1Brush> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), ref brush.GetPinnableReference(), content, ref destinationRectangle.GetPinnableReference(), sourceRectangle);
+        @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), ref brush.GetPinnableReference(), content, in destinationRectangle.GetPinnableReference(), sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> opacityMask, Span<ID2D1Brush> brush, OpacityMaskContent content, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static void FillOpacityMask(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> opacityMask, Span<ID2D1Brush> brush, OpacityMaskContent content, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), ref brush.GetPinnableReference(), content, ref destinationRectangle.GetPinnableReference(), ref sourceRectangle.GetPinnableReference());
+        @this->FillOpacityMask(ref opacityMask.GetPinnableReference(), ref brush.GetPinnableReference(), content, in destinationRectangle.GetPinnableReference(), in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe void DrawBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8343,55 +8343,55 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawBitmap(bitmap, destinationRectangle, opacity, interpolationMode, ref sourceRectangle.GetPinnableReference());
+        @this->DrawBitmap(bitmap, destinationRectangle, opacity, interpolationMode, in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe void DrawBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, destinationRectangle, opacity, interpolationMode, ref sourceRectangle);
+        @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, destinationRectangle, opacity, interpolationMode, in sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawBitmap(bitmap, ref destinationRectangle.GetPinnableReference(), opacity, interpolationMode, sourceRectangle);
+        @this->DrawBitmap(bitmap, in destinationRectangle.GetPinnableReference(), opacity, interpolationMode, sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static unsafe void DrawBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, ref destinationRectangle, opacity, interpolationMode, sourceRectangle);
+        @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, in destinationRectangle, opacity, interpolationMode, sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Bitmap* bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawBitmap(bitmap, ref destinationRectangle.GetPinnableReference(), opacity, interpolationMode, ref sourceRectangle.GetPinnableReference());
+        @this->DrawBitmap(bitmap, in destinationRectangle.GetPinnableReference(), opacity, interpolationMode, in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, ref Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, ref Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
+    public static void DrawBitmap<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> bitmap, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> sourceRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, ref destinationRectangle, opacity, interpolationMode, ref sourceRectangle);
+        @this->DrawBitmap((ID2D1Bitmap*) bitmap.Handle, in destinationRectangle, opacity, interpolationMode, in sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8399,31 +8399,31 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawBitmap(ref bitmap.GetPinnableReference(), destinationRectangle, opacity, interpolationMode, ref sourceRectangle.GetPinnableReference());
+        @this->DrawBitmap(ref bitmap.GetPinnableReference(), destinationRectangle, opacity, interpolationMode, in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Silk.NET.Maths.Box2D<float>* sourceRectangle)
+    public static unsafe void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawBitmap(ref bitmap.GetPinnableReference(), ref destinationRectangle.GetPinnableReference(), opacity, interpolationMode, sourceRectangle);
+        @this->DrawBitmap(ref bitmap.GetPinnableReference(), in destinationRectangle.GetPinnableReference(), opacity, interpolationMode, sourceRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, Span<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, Span<Silk.NET.Maths.Box2D<float>> sourceRectangle)
+    public static void DrawBitmap(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Bitmap> bitmap, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> destinationRectangle, float opacity, BitmapInterpolationMode interpolationMode, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> sourceRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawBitmap(ref bitmap.GetPinnableReference(), ref destinationRectangle.GetPinnableReference(), opacity, interpolationMode, ref sourceRectangle.GetPinnableReference());
+        @this->DrawBitmap(ref bitmap.GetPinnableReference(), in destinationRectangle.GetPinnableReference(), opacity, interpolationMode, in sourceRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8431,7 +8431,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8439,31 +8439,31 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* @string, uint stringLength, IDWriteTextFormat* textFormat, Span<Silk.NET.Maths.Box2D<float>> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawTextA(@string, stringLength, textFormat, ref layoutRect.GetPinnableReference(), defaultFillBrush, options, measuringMode);
+        @this->DrawTextA(@string, stringLength, textFormat, in layoutRect.GetPinnableReference(), defaultFillBrush, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawTextA(@string, stringLength, textFormat, ref layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
+        @this->DrawTextA(@string, stringLength, textFormat, in layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* @string, uint stringLength, IDWriteTextFormat* textFormat, Span<Silk.NET.Maths.Box2D<float>> layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawTextA(@string, stringLength, textFormat, ref layoutRect.GetPinnableReference(), ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
+        @this->DrawTextA(@string, stringLength, textFormat, in layoutRect.GetPinnableReference(), ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* @string, uint stringLength, Span<IDWriteTextFormat> textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8471,7 +8471,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8479,7 +8479,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* @string, uint stringLength, Span<IDWriteTextFormat> textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8487,127 +8487,127 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* @string, uint stringLength, Span<IDWriteTextFormat> textFormat, Span<Silk.NET.Maths.Box2D<float>> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawTextA(@string, stringLength, ref textFormat.GetPinnableReference(), ref layoutRect.GetPinnableReference(), defaultFillBrush, options, measuringMode);
+        @this->DrawTextA(@string, stringLength, ref textFormat.GetPinnableReference(), in layoutRect.GetPinnableReference(), defaultFillBrush, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawTextA(@string, stringLength, ref textFormat, ref layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
+        @this->DrawTextA(@string, stringLength, ref textFormat, in layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* @string, uint stringLength, Span<IDWriteTextFormat> textFormat, Span<Silk.NET.Maths.Box2D<float>> layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawTextA(@string, stringLength, ref textFormat.GetPinnableReference(), ref layoutRect.GetPinnableReference(), ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
+        @this->DrawTextA(@string, stringLength, ref textFormat.GetPinnableReference(), in layoutRect.GetPinnableReference(), ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<char> @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawTextA(ref @string.GetPinnableReference(), stringLength, textFormat, layoutRect, defaultFillBrush, options, measuringMode);
+        @this->DrawTextA(in @string.GetPinnableReference(), stringLength, textFormat, layoutRect, defaultFillBrush, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref char @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawTextA(ref @string, stringLength, textFormat, layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
+        @this->DrawTextA(in @string, stringLength, textFormat, layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<char> @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawTextA(ref @string.GetPinnableReference(), stringLength, textFormat, layoutRect, ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
+        @this->DrawTextA(in @string.GetPinnableReference(), stringLength, textFormat, layoutRect, ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<char> @string, uint stringLength, IDWriteTextFormat* textFormat, Span<Silk.NET.Maths.Box2D<float>> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawTextA(ref @string.GetPinnableReference(), stringLength, textFormat, ref layoutRect.GetPinnableReference(), defaultFillBrush, options, measuringMode);
+        @this->DrawTextA(in @string.GetPinnableReference(), stringLength, textFormat, in layoutRect.GetPinnableReference(), defaultFillBrush, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref char @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in char @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawTextA(ref @string, stringLength, textFormat, ref layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
+        @this->DrawTextA(in @string, stringLength, textFormat, in layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<char> @string, uint stringLength, IDWriteTextFormat* textFormat, Span<Silk.NET.Maths.Box2D<float>> layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawTextA(ref @string.GetPinnableReference(), stringLength, textFormat, ref layoutRect.GetPinnableReference(), ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
+        @this->DrawTextA(in @string.GetPinnableReference(), stringLength, textFormat, in layoutRect.GetPinnableReference(), ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<char> @string, uint stringLength, Span<IDWriteTextFormat> textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawTextA(ref @string.GetPinnableReference(), stringLength, ref textFormat.GetPinnableReference(), layoutRect, defaultFillBrush, options, measuringMode);
+        @this->DrawTextA(in @string.GetPinnableReference(), stringLength, ref textFormat.GetPinnableReference(), layoutRect, defaultFillBrush, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref char @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawTextA(ref @string, stringLength, ref textFormat, layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
+        @this->DrawTextA(in @string, stringLength, ref textFormat, layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<char> @string, uint stringLength, Span<IDWriteTextFormat> textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawTextA(ref @string.GetPinnableReference(), stringLength, ref textFormat.GetPinnableReference(), layoutRect, ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
+        @this->DrawTextA(in @string.GetPinnableReference(), stringLength, ref textFormat.GetPinnableReference(), layoutRect, ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<char> @string, uint stringLength, Span<IDWriteTextFormat> textFormat, Span<Silk.NET.Maths.Box2D<float>> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawTextA(ref @string.GetPinnableReference(), stringLength, ref textFormat.GetPinnableReference(), ref layoutRect.GetPinnableReference(), defaultFillBrush, options, measuringMode);
+        @this->DrawTextA(in @string.GetPinnableReference(), stringLength, ref textFormat.GetPinnableReference(), in layoutRect.GetPinnableReference(), defaultFillBrush, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref char @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in char @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawTextA(ref @string, stringLength, ref textFormat, ref layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
+        @this->DrawTextA(in @string, stringLength, ref textFormat, in layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<char> @string, uint stringLength, Span<IDWriteTextFormat> textFormat, Span<Silk.NET.Maths.Box2D<float>> layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawTextA(ref @string.GetPinnableReference(), stringLength, ref textFormat.GetPinnableReference(), ref layoutRect.GetPinnableReference(), ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
+        @this->DrawTextA(in @string.GetPinnableReference(), stringLength, ref textFormat.GetPinnableReference(), in layoutRect.GetPinnableReference(), ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8615,7 +8615,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8623,31 +8623,31 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, Span<Silk.NET.Maths.Box2D<float>> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawTextA(@string, stringLength, textFormat, ref layoutRect.GetPinnableReference(), defaultFillBrush, options, measuringMode);
+        @this->DrawTextA(@string, stringLength, textFormat, in layoutRect.GetPinnableReference(), defaultFillBrush, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawTextA(@string, stringLength, textFormat, ref layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
+        @this->DrawTextA(@string, stringLength, textFormat, in layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, Span<Silk.NET.Maths.Box2D<float>> layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, IDWriteTextFormat* textFormat, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawTextA(@string, stringLength, textFormat, ref layoutRect.GetPinnableReference(), ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
+        @this->DrawTextA(@string, stringLength, textFormat, in layoutRect.GetPinnableReference(), ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, Span<IDWriteTextFormat> textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8655,7 +8655,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8663,7 +8663,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, Span<IDWriteTextFormat> textFormat, Silk.NET.Maths.Box2D<float>* layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8671,27 +8671,27 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, Span<IDWriteTextFormat> textFormat, Span<Silk.NET.Maths.Box2D<float>> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> layoutRect, ID2D1Brush* defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawTextA(@string, stringLength, ref textFormat.GetPinnableReference(), ref layoutRect.GetPinnableReference(), defaultFillBrush, options, measuringMode);
+        @this->DrawTextA(@string, stringLength, ref textFormat.GetPinnableReference(), in layoutRect.GetPinnableReference(), defaultFillBrush, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, ref Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static void DrawTextA<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, ref IDWriteTextFormat textFormat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> layoutRect, ComPtr<TI0> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawTextA(@string, stringLength, ref textFormat, ref layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
+        @this->DrawTextA(@string, stringLength, ref textFormat, in layoutRect, (ID2D1Brush*) defaultFillBrush.Handle, options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, Span<IDWriteTextFormat> textFormat, Span<Silk.NET.Maths.Box2D<float>> layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
+    public static void DrawTextA(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string, uint stringLength, Span<IDWriteTextFormat> textFormat, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> layoutRect, Span<ID2D1Brush> defaultFillBrush, DrawTextOptions options, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawTextA(@string, stringLength, ref textFormat.GetPinnableReference(), ref layoutRect.GetPinnableReference(), ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
+        @this->DrawTextA(@string, stringLength, ref textFormat.GetPinnableReference(), in layoutRect.GetPinnableReference(), ref defaultFillBrush.GetPinnableReference(), options, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
@@ -8735,7 +8735,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawGlyphRun<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static unsafe void DrawGlyphRun<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8743,7 +8743,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawGlyphRun(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, Span<ID2D1Brush> foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawGlyphRun(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, Span<ID2D1Brush> foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8751,35 +8751,35 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawGlyphRun(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, Span<DwriteGlyphRun> glyphRun, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static unsafe void DrawGlyphRun(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRun> glyphRun, ID2D1Brush* foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawGlyphRun(baselineOrigin, ref glyphRun.GetPinnableReference(), foregroundBrush, measuringMode);
+        @this->DrawGlyphRun(baselineOrigin, in glyphRun.GetPinnableReference(), foregroundBrush, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawGlyphRun<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, ref DwriteGlyphRun glyphRun, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
+    public static void DrawGlyphRun<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] in DwriteGlyphRun glyphRun, ComPtr<TI0> foregroundBrush, DwriteMeasuringMode measuringMode) where TI0 : unmanaged, IComVtbl<ID2D1Brush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawGlyphRun(baselineOrigin, ref glyphRun, (ID2D1Brush*) foregroundBrush.Handle, measuringMode);
+        @this->DrawGlyphRun(baselineOrigin, in glyphRun, (ID2D1Brush*) foregroundBrush.Handle, measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawGlyphRun(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, Span<DwriteGlyphRun> glyphRun, Span<ID2D1Brush> foregroundBrush, DwriteMeasuringMode measuringMode)
+    public static void DrawGlyphRun(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRun> glyphRun, Span<ID2D1Brush> foregroundBrush, DwriteMeasuringMode measuringMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawGlyphRun(baselineOrigin, ref glyphRun.GetPinnableReference(), ref foregroundBrush.GetPinnableReference(), measuringMode);
+        @this->DrawGlyphRun(baselineOrigin, in glyphRun.GetPinnableReference(), ref foregroundBrush.GetPinnableReference(), measuringMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetTransform(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.Maths.Matrix3X2<float>> transform)
+    public static void SetTransform(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->SetTransform(ref transform.GetPinnableReference());
+        @this->SetTransform(in transform.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -8823,7 +8823,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PushLayer<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, LayerParameters* layerParameters, ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
+    public static unsafe void PushLayer<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LayerParameters* layerParameters, ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8831,7 +8831,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PushLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, LayerParameters* layerParameters, Span<ID2D1Layer> layer)
+    public static unsafe void PushLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] LayerParameters* layerParameters, Span<ID2D1Layer> layer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -8839,27 +8839,27 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void PushLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<LayerParameters> layerParameters, ID2D1Layer* layer)
+    public static unsafe void PushLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<LayerParameters> layerParameters, ID2D1Layer* layer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->PushLayer(ref layerParameters.GetPinnableReference(), layer);
+        @this->PushLayer(in layerParameters.GetPinnableReference(), layer);
     }
 
     /// <summary>To be documented.</summary>
-    public static void PushLayer<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref LayerParameters layerParameters, ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
+    public static void PushLayer<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in LayerParameters layerParameters, ComPtr<TI0> layer) where TI0 : unmanaged, IComVtbl<ID2D1Layer>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->PushLayer(ref layerParameters, (ID2D1Layer*) layer.Handle);
+        @this->PushLayer(in layerParameters, (ID2D1Layer*) layer.Handle);
     }
 
     /// <summary>To be documented.</summary>
-    public static void PushLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<LayerParameters> layerParameters, Span<ID2D1Layer> layer)
+    public static void PushLayer(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<LayerParameters> layerParameters, Span<ID2D1Layer> layer)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->PushLayer(ref layerParameters.GetPinnableReference(), ref layer.GetPinnableReference());
+        @this->PushLayer(in layerParameters.GetPinnableReference(), ref layer.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -8919,19 +8919,19 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void PushAxisAlignedClip(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.Maths.Box2D<float>> clipRect, AntialiasMode antialiasMode)
+    public static void PushAxisAlignedClip(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> clipRect, AntialiasMode antialiasMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->PushAxisAlignedClip(ref clipRect.GetPinnableReference(), antialiasMode);
+        @this->PushAxisAlignedClip(in clipRect.GetPinnableReference(), antialiasMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static void Clear(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.DXGI.D3Dcolorvalue> clearColor)
+    public static void Clear(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> clearColor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->Clear(ref clearColor.GetPinnableReference());
+        @this->Clear(in clearColor.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -8983,15 +8983,15 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsSupported(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<RenderTargetProperties> renderTargetProperties)
+    public static Silk.NET.Core.Bool32 IsSupported(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RenderTargetProperties> renderTargetProperties)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->IsSupported(ref renderTargetProperties.GetPinnableReference());
+        return @this->IsSupported(in renderTargetProperties.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, byte* profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+    public static unsafe int CreateColorContext<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [Flow(FlowDirection.In)] byte* profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -8999,31 +8999,31 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, Span<byte> profile, uint profileSize, ID2D1ColorContext** colorContext)
+    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [Flow(FlowDirection.In)] ReadOnlySpan<byte> profile, uint profileSize, ID2D1ColorContext** colorContext)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateColorContext(space, ref profile.GetPinnableReference(), profileSize, colorContext);
+        return @this->CreateColorContext(space, in profile.GetPinnableReference(), profileSize, colorContext);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateColorContext<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, ref byte profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+    public static int CreateColorContext<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [Flow(FlowDirection.In)] in byte profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateColorContext(space, ref profile, profileSize, (ID2D1ColorContext**) colorContext.GetAddressOf());
+        return @this->CreateColorContext(space, in profile, profileSize, (ID2D1ColorContext**) colorContext.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, Span<byte> profile, uint profileSize, ref ID2D1ColorContext* colorContext)
+    public static unsafe int CreateColorContext(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [Flow(FlowDirection.In)] ReadOnlySpan<byte> profile, uint profileSize, ref ID2D1ColorContext* colorContext)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateColorContext(space, ref profile.GetPinnableReference(), profileSize, ref colorContext);
+        return @this->CreateColorContext(space, in profile.GetPinnableReference(), profileSize, ref colorContext);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateColorContext<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+    public static int CreateColorContext<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ColorSpace space, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string profile, uint profileSize, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9031,7 +9031,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, char* filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+    public static unsafe int CreateColorContextFromFilename<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] char* filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9039,31 +9039,31 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<char> filename, ID2D1ColorContext** colorContext)
+    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> filename, ID2D1ColorContext** colorContext)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateColorContextFromFilename(ref filename.GetPinnableReference(), colorContext);
+        return @this->CreateColorContextFromFilename(in filename.GetPinnableReference(), colorContext);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateColorContextFromFilename<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref char filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+    public static int CreateColorContextFromFilename<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in char filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateColorContextFromFilename(ref filename, (ID2D1ColorContext**) colorContext.GetAddressOf());
+        return @this->CreateColorContextFromFilename(in filename, (ID2D1ColorContext**) colorContext.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<char> filename, ref ID2D1ColorContext* colorContext)
+    public static unsafe int CreateColorContextFromFilename(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> filename, ref ID2D1ColorContext* colorContext)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateColorContextFromFilename(ref filename.GetPinnableReference(), ref colorContext);
+        return @this->CreateColorContextFromFilename(in filename.GetPinnableReference(), ref colorContext);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateColorContextFromFilename<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
+    public static int CreateColorContextFromFilename<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string filename, ref ComPtr<TI0> colorContext) where TI0 : unmanaged, IComVtbl<ID2D1ColorContext>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9103,7 +9103,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, BitmapProperties1* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapFromDxgiSurface<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, [Flow(FlowDirection.In)] BitmapProperties1* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9111,31 +9111,31 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, Span<BitmapProperties1> bitmapProperties, ID2D1Bitmap1** bitmap)
+    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties1> bitmapProperties, ID2D1Bitmap1** bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapFromDxgiSurface(surface, ref bitmapProperties.GetPinnableReference(), bitmap);
+        return @this->CreateBitmapFromDxgiSurface(surface, in bitmapProperties.GetPinnableReference(), bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, ref BitmapProperties1 bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapFromDxgiSurface<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, [Flow(FlowDirection.In)] in BitmapProperties1 bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBitmapFromDxgiSurface(surface, ref bitmapProperties, (ID2D1Bitmap1**) bitmap.GetAddressOf());
+        return @this->CreateBitmapFromDxgiSurface(surface, in bitmapProperties, (ID2D1Bitmap1**) bitmap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, Span<BitmapProperties1> bitmapProperties, ref ID2D1Bitmap1* bitmap)
+    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.DXGI.IDXGISurface* surface, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties1> bitmapProperties, ref ID2D1Bitmap1* bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapFromDxgiSurface(surface, ref bitmapProperties.GetPinnableReference(), ref bitmap);
+        return @this->CreateBitmapFromDxgiSurface(surface, in bitmapProperties.GetPinnableReference(), ref bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.DXGI.IDXGISurface> surface, BitmapProperties1* bitmapProperties, ID2D1Bitmap1** bitmap)
+    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.DXGI.IDXGISurface> surface, [Flow(FlowDirection.In)] BitmapProperties1* bitmapProperties, ID2D1Bitmap1** bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9143,7 +9143,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface surface, BitmapProperties1* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
+    public static unsafe int CreateBitmapFromDxgiSurface<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface surface, [Flow(FlowDirection.In)] BitmapProperties1* bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9151,7 +9151,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.DXGI.IDXGISurface> surface, BitmapProperties1* bitmapProperties, ref ID2D1Bitmap1* bitmap)
+    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.DXGI.IDXGISurface> surface, [Flow(FlowDirection.In)] BitmapProperties1* bitmapProperties, ref ID2D1Bitmap1* bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9159,27 +9159,27 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.DXGI.IDXGISurface> surface, Span<BitmapProperties1> bitmapProperties, ID2D1Bitmap1** bitmap)
+    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.DXGI.IDXGISurface> surface, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties1> bitmapProperties, ID2D1Bitmap1** bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapFromDxgiSurface(ref surface.GetPinnableReference(), ref bitmapProperties.GetPinnableReference(), bitmap);
+        return @this->CreateBitmapFromDxgiSurface(ref surface.GetPinnableReference(), in bitmapProperties.GetPinnableReference(), bitmap);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateBitmapFromDxgiSurface<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface surface, ref BitmapProperties1 bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
+    public static int CreateBitmapFromDxgiSurface<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref Silk.NET.DXGI.IDXGISurface surface, [Flow(FlowDirection.In)] in BitmapProperties1 bitmapProperties, ref ComPtr<TI0> bitmap) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateBitmapFromDxgiSurface(ref surface, ref bitmapProperties, (ID2D1Bitmap1**) bitmap.GetAddressOf());
+        return @this->CreateBitmapFromDxgiSurface(ref surface, in bitmapProperties, (ID2D1Bitmap1**) bitmap.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.DXGI.IDXGISurface> surface, Span<BitmapProperties1> bitmapProperties, ref ID2D1Bitmap1* bitmap)
+    public static unsafe int CreateBitmapFromDxgiSurface(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<Silk.NET.DXGI.IDXGISurface> surface, [Flow(FlowDirection.In)] ReadOnlySpan<BitmapProperties1> bitmapProperties, ref ID2D1Bitmap1* bitmap)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateBitmapFromDxgiSurface(ref surface.GetPinnableReference(), ref bitmapProperties.GetPinnableReference(), ref bitmap);
+        return @this->CreateBitmapFromDxgiSurface(ref surface.GetPinnableReference(), in bitmapProperties.GetPinnableReference(), ref bitmap);
     }
 
     /// <summary>To be documented.</summary>
@@ -9216,7 +9216,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, ImageBrushProperties* imageBrushProperties, BrushProperties* brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
+    public static unsafe int CreateImageBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9224,7 +9224,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, ImageBrushProperties* imageBrushProperties, BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9232,103 +9232,103 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, ImageBrushProperties* imageBrushProperties, Span<BrushProperties> brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateImageBrush(image, imageBrushProperties, ref brushProperties.GetPinnableReference(), imageBrush);
+        return @this->CreateImageBrush(image, imageBrushProperties, in brushProperties.GetPinnableReference(), imageBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, ImageBrushProperties* imageBrushProperties, ref BrushProperties brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
+    public static unsafe int CreateImageBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateImageBrush((ID2D1Image*) image.Handle, imageBrushProperties, ref brushProperties, (ID2D1ImageBrush**) imageBrush.GetAddressOf());
+        return @this->CreateImageBrush((ID2D1Image*) image.Handle, imageBrushProperties, in brushProperties, (ID2D1ImageBrush**) imageBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, ImageBrushProperties* imageBrushProperties, Span<BrushProperties> brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateImageBrush(image, imageBrushProperties, ref brushProperties.GetPinnableReference(), ref imageBrush);
+        return @this->CreateImageBrush(image, imageBrushProperties, in brushProperties.GetPinnableReference(), ref imageBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, ImageBrushProperties* imageBrushProperties, ref BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateImageBrush((ID2D1Image*) image.Handle, imageBrushProperties, ref brushProperties, ref imageBrush);
+        return @this->CreateImageBrush((ID2D1Image*) image.Handle, imageBrushProperties, in brushProperties, ref imageBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, Span<ImageBrushProperties> imageBrushProperties, BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] ReadOnlySpan<ImageBrushProperties> imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateImageBrush(image, ref imageBrushProperties.GetPinnableReference(), brushProperties, imageBrush);
+        return @this->CreateImageBrush(image, in imageBrushProperties.GetPinnableReference(), brushProperties, imageBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, ref ImageBrushProperties imageBrushProperties, BrushProperties* brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
+    public static unsafe int CreateImageBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateImageBrush((ID2D1Image*) image.Handle, ref imageBrushProperties, brushProperties, (ID2D1ImageBrush**) imageBrush.GetAddressOf());
+        return @this->CreateImageBrush((ID2D1Image*) image.Handle, in imageBrushProperties, brushProperties, (ID2D1ImageBrush**) imageBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, Span<ImageBrushProperties> imageBrushProperties, BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] ReadOnlySpan<ImageBrushProperties> imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateImageBrush(image, ref imageBrushProperties.GetPinnableReference(), brushProperties, ref imageBrush);
+        return @this->CreateImageBrush(image, in imageBrushProperties.GetPinnableReference(), brushProperties, ref imageBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, ref ImageBrushProperties imageBrushProperties, BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateImageBrush((ID2D1Image*) image.Handle, ref imageBrushProperties, brushProperties, ref imageBrush);
+        return @this->CreateImageBrush((ID2D1Image*) image.Handle, in imageBrushProperties, brushProperties, ref imageBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, Span<ImageBrushProperties> imageBrushProperties, Span<BrushProperties> brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] ReadOnlySpan<ImageBrushProperties> imageBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateImageBrush(image, ref imageBrushProperties.GetPinnableReference(), ref brushProperties.GetPinnableReference(), imageBrush);
+        return @this->CreateImageBrush(image, in imageBrushProperties.GetPinnableReference(), in brushProperties.GetPinnableReference(), imageBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateImageBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, ref ImageBrushProperties imageBrushProperties, ref BrushProperties brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
+    public static int CreateImageBrush<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI1> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateImageBrush((ID2D1Image*) image.Handle, ref imageBrushProperties, ref brushProperties, (ID2D1ImageBrush**) imageBrush.GetAddressOf());
+        return @this->CreateImageBrush((ID2D1Image*) image.Handle, in imageBrushProperties, in brushProperties, (ID2D1ImageBrush**) imageBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, Span<ImageBrushProperties> imageBrushProperties, Span<BrushProperties> brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] ReadOnlySpan<ImageBrushProperties> imageBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateImageBrush(image, ref imageBrushProperties.GetPinnableReference(), ref brushProperties.GetPinnableReference(), ref imageBrush);
+        return @this->CreateImageBrush(image, in imageBrushProperties.GetPinnableReference(), in brushProperties.GetPinnableReference(), ref imageBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, ref ImageBrushProperties imageBrushProperties, ref BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ID2D1ImageBrush* imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateImageBrush((ID2D1Image*) image.Handle, ref imageBrushProperties, ref brushProperties, ref imageBrush);
+        return @this->CreateImageBrush((ID2D1Image*) image.Handle, in imageBrushProperties, in brushProperties, ref imageBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, ImageBrushProperties* imageBrushProperties, BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9336,7 +9336,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, ImageBrushProperties* imageBrushProperties, BrushProperties* brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
+    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9344,7 +9344,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, ImageBrushProperties* imageBrushProperties, BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9352,75 +9352,75 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, ImageBrushProperties* imageBrushProperties, Span<BrushProperties> brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateImageBrush(ref image.GetPinnableReference(), imageBrushProperties, ref brushProperties.GetPinnableReference(), imageBrush);
+        return @this->CreateImageBrush(ref image.GetPinnableReference(), imageBrushProperties, in brushProperties.GetPinnableReference(), imageBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, ImageBrushProperties* imageBrushProperties, ref BrushProperties brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
+    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateImageBrush(ref image, imageBrushProperties, ref brushProperties, (ID2D1ImageBrush**) imageBrush.GetAddressOf());
+        return @this->CreateImageBrush(ref image, imageBrushProperties, in brushProperties, (ID2D1ImageBrush**) imageBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, ImageBrushProperties* imageBrushProperties, Span<BrushProperties> brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, [Flow(FlowDirection.In)] ImageBrushProperties* imageBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateImageBrush(ref image.GetPinnableReference(), imageBrushProperties, ref brushProperties.GetPinnableReference(), ref imageBrush);
+        return @this->CreateImageBrush(ref image.GetPinnableReference(), imageBrushProperties, in brushProperties.GetPinnableReference(), ref imageBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, Span<ImageBrushProperties> imageBrushProperties, BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, [Flow(FlowDirection.In)] ReadOnlySpan<ImageBrushProperties> imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateImageBrush(ref image.GetPinnableReference(), ref imageBrushProperties.GetPinnableReference(), brushProperties, imageBrush);
+        return @this->CreateImageBrush(ref image.GetPinnableReference(), in imageBrushProperties.GetPinnableReference(), brushProperties, imageBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, ref ImageBrushProperties imageBrushProperties, BrushProperties* brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
+    public static unsafe int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateImageBrush(ref image, ref imageBrushProperties, brushProperties, (ID2D1ImageBrush**) imageBrush.GetAddressOf());
+        return @this->CreateImageBrush(ref image, in imageBrushProperties, brushProperties, (ID2D1ImageBrush**) imageBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, Span<ImageBrushProperties> imageBrushProperties, BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, [Flow(FlowDirection.In)] ReadOnlySpan<ImageBrushProperties> imageBrushProperties, [Flow(FlowDirection.In)] BrushProperties* brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateImageBrush(ref image.GetPinnableReference(), ref imageBrushProperties.GetPinnableReference(), brushProperties, ref imageBrush);
+        return @this->CreateImageBrush(ref image.GetPinnableReference(), in imageBrushProperties.GetPinnableReference(), brushProperties, ref imageBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, Span<ImageBrushProperties> imageBrushProperties, Span<BrushProperties> brushProperties, ID2D1ImageBrush** imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, [Flow(FlowDirection.In)] ReadOnlySpan<ImageBrushProperties> imageBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ID2D1ImageBrush** imageBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateImageBrush(ref image.GetPinnableReference(), ref imageBrushProperties.GetPinnableReference(), ref brushProperties.GetPinnableReference(), imageBrush);
+        return @this->CreateImageBrush(ref image.GetPinnableReference(), in imageBrushProperties.GetPinnableReference(), in brushProperties.GetPinnableReference(), imageBrush);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, ref ImageBrushProperties imageBrushProperties, ref BrushProperties brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
+    public static int CreateImageBrush<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1Image image, [Flow(FlowDirection.In)] in ImageBrushProperties imageBrushProperties, [Flow(FlowDirection.In)] in BrushProperties brushProperties, ref ComPtr<TI0> imageBrush) where TI0 : unmanaged, IComVtbl<ID2D1ImageBrush>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateImageBrush(ref image, ref imageBrushProperties, ref brushProperties, (ID2D1ImageBrush**) imageBrush.GetAddressOf());
+        return @this->CreateImageBrush(ref image, in imageBrushProperties, in brushProperties, (ID2D1ImageBrush**) imageBrush.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, Span<ImageBrushProperties> imageBrushProperties, Span<BrushProperties> brushProperties, ref ID2D1ImageBrush* imageBrush)
+    public static unsafe int CreateImageBrush(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, [Flow(FlowDirection.In)] ReadOnlySpan<ImageBrushProperties> imageBrushProperties, [Flow(FlowDirection.In)] ReadOnlySpan<BrushProperties> brushProperties, ref ID2D1ImageBrush* imageBrush)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateImageBrush(ref image.GetPinnableReference(), ref imageBrushProperties.GetPinnableReference(), ref brushProperties.GetPinnableReference(), ref imageBrush);
+        return @this->CreateImageBrush(ref image.GetPinnableReference(), in imageBrushProperties.GetPinnableReference(), in brushProperties.GetPinnableReference(), ref imageBrush);
     }
 
     /// <summary>To be documented.</summary>
@@ -9512,7 +9512,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunWorldBounds(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, DwriteGlyphRun* glyphRun, DwriteMeasuringMode measuringMode, Span<Silk.NET.Maths.Box2D<float>> bounds)
+    public static unsafe int GetGlyphRunWorldBounds(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] DwriteGlyphRun* glyphRun, DwriteMeasuringMode measuringMode, Span<Silk.NET.Maths.Box2D<float>> bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9520,19 +9520,19 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetGlyphRunWorldBounds(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, Span<DwriteGlyphRun> glyphRun, DwriteMeasuringMode measuringMode, Silk.NET.Maths.Box2D<float>* bounds)
+    public static unsafe int GetGlyphRunWorldBounds(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRun> glyphRun, DwriteMeasuringMode measuringMode, Silk.NET.Maths.Box2D<float>* bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetGlyphRunWorldBounds(baselineOrigin, ref glyphRun.GetPinnableReference(), measuringMode, bounds);
+        return @this->GetGlyphRunWorldBounds(baselineOrigin, in glyphRun.GetPinnableReference(), measuringMode, bounds);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetGlyphRunWorldBounds(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, Span<DwriteGlyphRun> glyphRun, DwriteMeasuringMode measuringMode, Span<Silk.NET.Maths.Box2D<float>> bounds)
+    public static int GetGlyphRunWorldBounds(this ComPtr<ID2D1DeviceContext2> thisVtbl, Silk.NET.Maths.Vector2D<float> baselineOrigin, [Flow(FlowDirection.In)] ReadOnlySpan<DwriteGlyphRun> glyphRun, DwriteMeasuringMode measuringMode, Span<Silk.NET.Maths.Box2D<float>> bounds)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetGlyphRunWorldBounds(baselineOrigin, ref glyphRun.GetPinnableReference(), measuringMode, ref bounds.GetPinnableReference());
+        return @this->GetGlyphRunWorldBounds(baselineOrigin, in glyphRun.GetPinnableReference(), measuringMode, ref bounds.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -9568,11 +9568,11 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetRenderingControls(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<RenderingControls> renderingControls)
+    public static void SetRenderingControls(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<RenderingControls> renderingControls)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->SetRenderingControls(ref renderingControls.GetPinnableReference());
+        @this->SetRenderingControls(in renderingControls.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -9584,7 +9584,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, Silk.NET.Maths.Vector2D<float>* targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static unsafe void DrawImage<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9592,55 +9592,55 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, Silk.NET.Maths.Vector2D<float>* targetOffset, Span<Silk.NET.Maths.Box2D<float>> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawImage(image, targetOffset, ref imageRectangle.GetPinnableReference(), interpolationMode, compositeMode);
+        @this->DrawImage(image, targetOffset, in imageRectangle.GetPinnableReference(), interpolationMode, compositeMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, Silk.NET.Maths.Vector2D<float>* targetOffset, ref Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static unsafe void DrawImage<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawImage((ID2D1Image*) image.Handle, targetOffset, ref imageRectangle, interpolationMode, compositeMode);
+        @this->DrawImage((ID2D1Image*) image.Handle, targetOffset, in imageRectangle, interpolationMode, compositeMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, Span<Silk.NET.Maths.Vector2D<float>> targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawImage(image, ref targetOffset.GetPinnableReference(), imageRectangle, interpolationMode, compositeMode);
+        @this->DrawImage(image, in targetOffset.GetPinnableReference(), imageRectangle, interpolationMode, compositeMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, ref Silk.NET.Maths.Vector2D<float> targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static unsafe void DrawImage<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawImage((ID2D1Image*) image.Handle, ref targetOffset, imageRectangle, interpolationMode, compositeMode);
+        @this->DrawImage((ID2D1Image*) image.Handle, in targetOffset, imageRectangle, interpolationMode, compositeMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, Span<Silk.NET.Maths.Vector2D<float>> targetOffset, Span<Silk.NET.Maths.Box2D<float>> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Image* image, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> targetOffset, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawImage(image, ref targetOffset.GetPinnableReference(), ref imageRectangle.GetPinnableReference(), interpolationMode, compositeMode);
+        @this->DrawImage(image, in targetOffset.GetPinnableReference(), in imageRectangle.GetPinnableReference(), interpolationMode, compositeMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawImage<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, ref Silk.NET.Maths.Vector2D<float> targetOffset, ref Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static void DrawImage<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> image, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawImage((ID2D1Image*) image.Handle, ref targetOffset, ref imageRectangle, interpolationMode, compositeMode);
+        @this->DrawImage((ID2D1Image*) image.Handle, in targetOffset, in imageRectangle, interpolationMode, compositeMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, Silk.NET.Maths.Vector2D<float>* targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9648,31 +9648,31 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, Silk.NET.Maths.Vector2D<float>* targetOffset, Span<Silk.NET.Maths.Box2D<float>> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawImage(ref image.GetPinnableReference(), targetOffset, ref imageRectangle.GetPinnableReference(), interpolationMode, compositeMode);
+        @this->DrawImage(ref image.GetPinnableReference(), targetOffset, in imageRectangle.GetPinnableReference(), interpolationMode, compositeMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, Span<Silk.NET.Maths.Vector2D<float>> targetOffset, Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static unsafe void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> targetOffset, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawImage(ref image.GetPinnableReference(), ref targetOffset.GetPinnableReference(), imageRectangle, interpolationMode, compositeMode);
+        @this->DrawImage(ref image.GetPinnableReference(), in targetOffset.GetPinnableReference(), imageRectangle, interpolationMode, compositeMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, Span<Silk.NET.Maths.Vector2D<float>> targetOffset, Span<Silk.NET.Maths.Box2D<float>> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
+    public static void DrawImage(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Image> image, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> targetOffset, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> imageRectangle, InterpolationMode interpolationMode, CompositeMode compositeMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawImage(ref image.GetPinnableReference(), ref targetOffset.GetPinnableReference(), ref imageRectangle.GetPinnableReference(), interpolationMode, compositeMode);
+        @this->DrawImage(ref image.GetPinnableReference(), in targetOffset.GetPinnableReference(), in imageRectangle.GetPinnableReference(), interpolationMode, compositeMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawGdiMetafile<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> gdiMetafile, Silk.NET.Maths.Vector2D<float>* targetOffset) where TI0 : unmanaged, IComVtbl<ID2D1GdiMetafile>, IComVtbl<TI0>
+    public static unsafe void DrawGdiMetafile<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> gdiMetafile, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset) where TI0 : unmanaged, IComVtbl<ID2D1GdiMetafile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9680,23 +9680,23 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawGdiMetafile(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1GdiMetafile* gdiMetafile, Span<Silk.NET.Maths.Vector2D<float>> targetOffset)
+    public static unsafe void DrawGdiMetafile(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1GdiMetafile* gdiMetafile, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> targetOffset)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawGdiMetafile(gdiMetafile, ref targetOffset.GetPinnableReference());
+        @this->DrawGdiMetafile(gdiMetafile, in targetOffset.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawGdiMetafile<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> gdiMetafile, ref Silk.NET.Maths.Vector2D<float> targetOffset) where TI0 : unmanaged, IComVtbl<ID2D1GdiMetafile>, IComVtbl<TI0>
+    public static void DrawGdiMetafile<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> gdiMetafile, [Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> targetOffset) where TI0 : unmanaged, IComVtbl<ID2D1GdiMetafile>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DrawGdiMetafile((ID2D1GdiMetafile*) gdiMetafile.Handle, ref targetOffset);
+        @this->DrawGdiMetafile((ID2D1GdiMetafile*) gdiMetafile.Handle, in targetOffset);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DrawGdiMetafile(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1GdiMetafile> gdiMetafile, Silk.NET.Maths.Vector2D<float>* targetOffset)
+    public static unsafe void DrawGdiMetafile(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1GdiMetafile> gdiMetafile, [Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* targetOffset)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9704,15 +9704,15 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DrawGdiMetafile(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1GdiMetafile> gdiMetafile, Span<Silk.NET.Maths.Vector2D<float>> targetOffset)
+    public static void DrawGdiMetafile(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1GdiMetafile> gdiMetafile, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Vector2D<float>> targetOffset)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DrawGdiMetafile(ref gdiMetafile.GetPinnableReference(), ref targetOffset.GetPinnableReference());
+        @this->DrawGdiMetafile(ref gdiMetafile.GetPinnableReference(), in targetOffset.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int InvalidateEffectInputRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> effect, uint input, Silk.NET.Maths.Box2D<float>* inputRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+    public static unsafe int InvalidateEffectInputRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> effect, uint input, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* inputRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9720,23 +9720,23 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int InvalidateEffectInputRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* effect, uint input, Span<Silk.NET.Maths.Box2D<float>> inputRectangle)
+    public static unsafe int InvalidateEffectInputRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* effect, uint input, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> inputRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->InvalidateEffectInputRectangle(effect, input, ref inputRectangle.GetPinnableReference());
+        return @this->InvalidateEffectInputRectangle(effect, input, in inputRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int InvalidateEffectInputRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> effect, uint input, ref Silk.NET.Maths.Box2D<float> inputRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+    public static int InvalidateEffectInputRectangle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> effect, uint input, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> inputRectangle) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->InvalidateEffectInputRectangle((ID2D1Effect*) effect.Handle, input, ref inputRectangle);
+        return @this->InvalidateEffectInputRectangle((ID2D1Effect*) effect.Handle, input, in inputRectangle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int InvalidateEffectInputRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> effect, uint input, Silk.NET.Maths.Box2D<float>* inputRectangle)
+    public static unsafe int InvalidateEffectInputRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> effect, uint input, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* inputRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9744,11 +9744,11 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int InvalidateEffectInputRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> effect, uint input, Span<Silk.NET.Maths.Box2D<float>> inputRectangle)
+    public static int InvalidateEffectInputRectangle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> effect, uint input, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> inputRectangle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->InvalidateEffectInputRectangle(ref effect.GetPinnableReference(), input, ref inputRectangle.GetPinnableReference());
+        return @this->InvalidateEffectInputRectangle(ref effect.GetPinnableReference(), input, in inputRectangle.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -9832,7 +9832,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9840,7 +9840,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, EffectInputDescription* inputDescriptions, Span<Silk.NET.Maths.Box2D<float>> requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, Span<Silk.NET.Maths.Box2D<float>> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9848,7 +9848,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -9856,103 +9856,103 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, Span<EffectInputDescription> inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<EffectInputDescription> inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetEffectRequiredInputRectangles(renderEffect, renderImageRectangle, ref inputDescriptions.GetPinnableReference(), requiredInputRects, inputCount);
+        return @this->GetEffectRequiredInputRectangles(renderEffect, renderImageRectangle, in inputDescriptions.GetPinnableReference(), requiredInputRects, inputCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, ref EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetEffectRequiredInputRectangles((ID2D1Effect*) renderEffect.Handle, renderImageRectangle, ref inputDescriptions, requiredInputRects, inputCount);
+        return @this->GetEffectRequiredInputRectangles((ID2D1Effect*) renderEffect.Handle, renderImageRectangle, in inputDescriptions, requiredInputRects, inputCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, Span<EffectInputDescription> inputDescriptions, Span<Silk.NET.Maths.Box2D<float>> requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<EffectInputDescription> inputDescriptions, Span<Silk.NET.Maths.Box2D<float>> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetEffectRequiredInputRectangles(renderEffect, renderImageRectangle, ref inputDescriptions.GetPinnableReference(), ref requiredInputRects.GetPinnableReference(), inputCount);
+        return @this->GetEffectRequiredInputRectangles(renderEffect, renderImageRectangle, in inputDescriptions.GetPinnableReference(), ref requiredInputRects.GetPinnableReference(), inputCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, ref EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetEffectRequiredInputRectangles((ID2D1Effect*) renderEffect.Handle, renderImageRectangle, ref inputDescriptions, ref requiredInputRects, inputCount);
+        return @this->GetEffectRequiredInputRectangles((ID2D1Effect*) renderEffect.Handle, renderImageRectangle, in inputDescriptions, ref requiredInputRects, inputCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, Span<Silk.NET.Maths.Box2D<float>> renderImageRectangle, EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetEffectRequiredInputRectangles(renderEffect, ref renderImageRectangle.GetPinnableReference(), inputDescriptions, requiredInputRects, inputCount);
+        return @this->GetEffectRequiredInputRectangles(renderEffect, in renderImageRectangle.GetPinnableReference(), inputDescriptions, requiredInputRects, inputCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetEffectRequiredInputRectangles((ID2D1Effect*) renderEffect.Handle, ref renderImageRectangle, inputDescriptions, requiredInputRects, inputCount);
+        return @this->GetEffectRequiredInputRectangles((ID2D1Effect*) renderEffect.Handle, in renderImageRectangle, inputDescriptions, requiredInputRects, inputCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, Span<Silk.NET.Maths.Box2D<float>> renderImageRectangle, EffectInputDescription* inputDescriptions, Span<Silk.NET.Maths.Box2D<float>> requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, Span<Silk.NET.Maths.Box2D<float>> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetEffectRequiredInputRectangles(renderEffect, ref renderImageRectangle.GetPinnableReference(), inputDescriptions, ref requiredInputRects.GetPinnableReference(), inputCount);
+        return @this->GetEffectRequiredInputRectangles(renderEffect, in renderImageRectangle.GetPinnableReference(), inputDescriptions, ref requiredInputRects.GetPinnableReference(), inputCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetEffectRequiredInputRectangles((ID2D1Effect*) renderEffect.Handle, ref renderImageRectangle, inputDescriptions, ref requiredInputRects, inputCount);
+        return @this->GetEffectRequiredInputRectangles((ID2D1Effect*) renderEffect.Handle, in renderImageRectangle, inputDescriptions, ref requiredInputRects, inputCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, Span<Silk.NET.Maths.Box2D<float>> renderImageRectangle, Span<EffectInputDescription> inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> renderImageRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<EffectInputDescription> inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetEffectRequiredInputRectangles(renderEffect, ref renderImageRectangle.GetPinnableReference(), ref inputDescriptions.GetPinnableReference(), requiredInputRects, inputCount);
+        return @this->GetEffectRequiredInputRectangles(renderEffect, in renderImageRectangle.GetPinnableReference(), in inputDescriptions.GetPinnableReference(), requiredInputRects, inputCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, ref EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+    public static unsafe int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetEffectRequiredInputRectangles((ID2D1Effect*) renderEffect.Handle, ref renderImageRectangle, ref inputDescriptions, requiredInputRects, inputCount);
+        return @this->GetEffectRequiredInputRectangles((ID2D1Effect*) renderEffect.Handle, in renderImageRectangle, in inputDescriptions, requiredInputRects, inputCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, Span<Silk.NET.Maths.Box2D<float>> renderImageRectangle, Span<EffectInputDescription> inputDescriptions, Span<Silk.NET.Maths.Box2D<float>> requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1Effect* renderEffect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> renderImageRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<EffectInputDescription> inputDescriptions, Span<Silk.NET.Maths.Box2D<float>> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetEffectRequiredInputRectangles(renderEffect, ref renderImageRectangle.GetPinnableReference(), ref inputDescriptions.GetPinnableReference(), ref requiredInputRects.GetPinnableReference(), inputCount);
+        return @this->GetEffectRequiredInputRectangles(renderEffect, in renderImageRectangle.GetPinnableReference(), in inputDescriptions.GetPinnableReference(), ref requiredInputRects.GetPinnableReference(), inputCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, ref Silk.NET.Maths.Box2D<float> renderImageRectangle, ref EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
+    public static int GetEffectRequiredInputRectangles<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> renderEffect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> renderImageRectangle, [Flow(FlowDirection.In)] in EffectInputDescription inputDescriptions, ref Silk.NET.Maths.Box2D<float> requiredInputRects, uint inputCount) where TI0 : unmanaged, IComVtbl<ID2D1Effect>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->GetEffectRequiredInputRectangles((ID2D1Effect*) renderEffect.Handle, ref renderImageRectangle, ref inputDescriptions, ref requiredInputRects, inputCount);
+        return @this->GetEffectRequiredInputRectangles((ID2D1Effect*) renderEffect.Handle, in renderImageRectangle, in inputDescriptions, ref requiredInputRects, inputCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9960,7 +9960,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, EffectInputDescription* inputDescriptions, Span<Silk.NET.Maths.Box2D<float>> requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, Span<Silk.NET.Maths.Box2D<float>> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -9968,51 +9968,51 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, Span<EffectInputDescription> inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<EffectInputDescription> inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetEffectRequiredInputRectangles(ref renderEffect.GetPinnableReference(), renderImageRectangle, ref inputDescriptions.GetPinnableReference(), requiredInputRects, inputCount);
+        return @this->GetEffectRequiredInputRectangles(ref renderEffect.GetPinnableReference(), renderImageRectangle, in inputDescriptions.GetPinnableReference(), requiredInputRects, inputCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> renderEffect, Silk.NET.Maths.Box2D<float>* renderImageRectangle, Span<EffectInputDescription> inputDescriptions, Span<Silk.NET.Maths.Box2D<float>> requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> renderEffect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* renderImageRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<EffectInputDescription> inputDescriptions, Span<Silk.NET.Maths.Box2D<float>> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetEffectRequiredInputRectangles(ref renderEffect.GetPinnableReference(), renderImageRectangle, ref inputDescriptions.GetPinnableReference(), ref requiredInputRects.GetPinnableReference(), inputCount);
+        return @this->GetEffectRequiredInputRectangles(ref renderEffect.GetPinnableReference(), renderImageRectangle, in inputDescriptions.GetPinnableReference(), ref requiredInputRects.GetPinnableReference(), inputCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> renderEffect, Span<Silk.NET.Maths.Box2D<float>> renderImageRectangle, EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> renderEffect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetEffectRequiredInputRectangles(ref renderEffect.GetPinnableReference(), ref renderImageRectangle.GetPinnableReference(), inputDescriptions, requiredInputRects, inputCount);
+        return @this->GetEffectRequiredInputRectangles(ref renderEffect.GetPinnableReference(), in renderImageRectangle.GetPinnableReference(), inputDescriptions, requiredInputRects, inputCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> renderEffect, Span<Silk.NET.Maths.Box2D<float>> renderImageRectangle, EffectInputDescription* inputDescriptions, Span<Silk.NET.Maths.Box2D<float>> requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> renderEffect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> renderImageRectangle, [Flow(FlowDirection.In)] EffectInputDescription* inputDescriptions, Span<Silk.NET.Maths.Box2D<float>> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetEffectRequiredInputRectangles(ref renderEffect.GetPinnableReference(), ref renderImageRectangle.GetPinnableReference(), inputDescriptions, ref requiredInputRects.GetPinnableReference(), inputCount);
+        return @this->GetEffectRequiredInputRectangles(ref renderEffect.GetPinnableReference(), in renderImageRectangle.GetPinnableReference(), inputDescriptions, ref requiredInputRects.GetPinnableReference(), inputCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> renderEffect, Span<Silk.NET.Maths.Box2D<float>> renderImageRectangle, Span<EffectInputDescription> inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
+    public static unsafe int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> renderEffect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> renderImageRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<EffectInputDescription> inputDescriptions, Silk.NET.Maths.Box2D<float>* requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetEffectRequiredInputRectangles(ref renderEffect.GetPinnableReference(), ref renderImageRectangle.GetPinnableReference(), ref inputDescriptions.GetPinnableReference(), requiredInputRects, inputCount);
+        return @this->GetEffectRequiredInputRectangles(ref renderEffect.GetPinnableReference(), in renderImageRectangle.GetPinnableReference(), in inputDescriptions.GetPinnableReference(), requiredInputRects, inputCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> renderEffect, Span<Silk.NET.Maths.Box2D<float>> renderImageRectangle, Span<EffectInputDescription> inputDescriptions, Span<Silk.NET.Maths.Box2D<float>> requiredInputRects, uint inputCount)
+    public static int GetEffectRequiredInputRectangles(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1Effect> renderEffect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<float>> renderImageRectangle, [Flow(FlowDirection.In)] ReadOnlySpan<EffectInputDescription> inputDescriptions, Span<Silk.NET.Maths.Box2D<float>> requiredInputRects, uint inputCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetEffectRequiredInputRectangles(ref renderEffect.GetPinnableReference(), ref renderImageRectangle.GetPinnableReference(), ref inputDescriptions.GetPinnableReference(), ref requiredInputRects.GetPinnableReference(), inputCount);
+        return @this->GetEffectRequiredInputRectangles(ref renderEffect.GetPinnableReference(), in renderImageRectangle.GetPinnableReference(), in inputDescriptions.GetPinnableReference(), ref requiredInputRects.GetPinnableReference(), inputCount);
     }
 
     /// <summary>To be documented.</summary>
@@ -10208,7 +10208,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInk<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, InkPoint* startPoint, ref ComPtr<TI0> ink) where TI0 : unmanaged, IComVtbl<ID2D1Ink>, IComVtbl<TI0>
+    public static unsafe int CreateInk<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] InkPoint* startPoint, ref ComPtr<TI0> ink) where TI0 : unmanaged, IComVtbl<ID2D1Ink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10216,31 +10216,31 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInk(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<InkPoint> startPoint, ID2D1Ink** ink)
+    public static unsafe int CreateInk(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<InkPoint> startPoint, ID2D1Ink** ink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateInk(ref startPoint.GetPinnableReference(), ink);
+        return @this->CreateInk(in startPoint.GetPinnableReference(), ink);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateInk<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref InkPoint startPoint, ref ComPtr<TI0> ink) where TI0 : unmanaged, IComVtbl<ID2D1Ink>, IComVtbl<TI0>
+    public static int CreateInk<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in InkPoint startPoint, ref ComPtr<TI0> ink) where TI0 : unmanaged, IComVtbl<ID2D1Ink>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateInk(ref startPoint, (ID2D1Ink**) ink.GetAddressOf());
+        return @this->CreateInk(in startPoint, (ID2D1Ink**) ink.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInk(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<InkPoint> startPoint, ref ID2D1Ink* ink)
+    public static unsafe int CreateInk(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<InkPoint> startPoint, ref ID2D1Ink* ink)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateInk(ref startPoint.GetPinnableReference(), ref ink);
+        return @this->CreateInk(in startPoint.GetPinnableReference(), ref ink);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInkStyle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, InkStyleProperties* inkStyleProperties, ref ComPtr<TI0> inkStyle) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+    public static unsafe int CreateInkStyle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] InkStyleProperties* inkStyleProperties, ref ComPtr<TI0> inkStyle) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10248,31 +10248,31 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInkStyle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<InkStyleProperties> inkStyleProperties, ID2D1InkStyle** inkStyle)
+    public static unsafe int CreateInkStyle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<InkStyleProperties> inkStyleProperties, ID2D1InkStyle** inkStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateInkStyle(ref inkStyleProperties.GetPinnableReference(), inkStyle);
+        return @this->CreateInkStyle(in inkStyleProperties.GetPinnableReference(), inkStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateInkStyle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref InkStyleProperties inkStyleProperties, ref ComPtr<TI0> inkStyle) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
+    public static int CreateInkStyle<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in InkStyleProperties inkStyleProperties, ref ComPtr<TI0> inkStyle) where TI0 : unmanaged, IComVtbl<ID2D1InkStyle>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateInkStyle(ref inkStyleProperties, (ID2D1InkStyle**) inkStyle.GetAddressOf());
+        return @this->CreateInkStyle(in inkStyleProperties, (ID2D1InkStyle**) inkStyle.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateInkStyle(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<InkStyleProperties> inkStyleProperties, ref ID2D1InkStyle* inkStyle)
+    public static unsafe int CreateInkStyle(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<InkStyleProperties> inkStyleProperties, ref ID2D1InkStyle* inkStyle)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateInkStyle(ref inkStyleProperties.GetPinnableReference(), ref inkStyle);
+        return @this->CreateInkStyle(in inkStyleProperties.GetPinnableReference(), ref inkStyle);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGradientMesh<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, GradientMeshPatch* patches, uint patchesCount, ref ComPtr<TI0> gradientMesh) where TI0 : unmanaged, IComVtbl<ID2D1GradientMesh>, IComVtbl<TI0>
+    public static unsafe int CreateGradientMesh<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] GradientMeshPatch* patches, uint patchesCount, ref ComPtr<TI0> gradientMesh) where TI0 : unmanaged, IComVtbl<ID2D1GradientMesh>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10280,27 +10280,27 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGradientMesh(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<GradientMeshPatch> patches, uint patchesCount, ID2D1GradientMesh** gradientMesh)
+    public static unsafe int CreateGradientMesh(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<GradientMeshPatch> patches, uint patchesCount, ID2D1GradientMesh** gradientMesh)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateGradientMesh(ref patches.GetPinnableReference(), patchesCount, gradientMesh);
+        return @this->CreateGradientMesh(in patches.GetPinnableReference(), patchesCount, gradientMesh);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateGradientMesh<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref GradientMeshPatch patches, uint patchesCount, ref ComPtr<TI0> gradientMesh) where TI0 : unmanaged, IComVtbl<ID2D1GradientMesh>, IComVtbl<TI0>
+    public static int CreateGradientMesh<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] in GradientMeshPatch patches, uint patchesCount, ref ComPtr<TI0> gradientMesh) where TI0 : unmanaged, IComVtbl<ID2D1GradientMesh>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateGradientMesh(ref patches, patchesCount, (ID2D1GradientMesh**) gradientMesh.GetAddressOf());
+        return @this->CreateGradientMesh(in patches, patchesCount, (ID2D1GradientMesh**) gradientMesh.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateGradientMesh(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<GradientMeshPatch> patches, uint patchesCount, ref ID2D1GradientMesh* gradientMesh)
+    public static unsafe int CreateGradientMesh(this ComPtr<ID2D1DeviceContext2> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<GradientMeshPatch> patches, uint patchesCount, ref ID2D1GradientMesh* gradientMesh)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateGradientMesh(ref patches.GetPinnableReference(), patchesCount, ref gradientMesh);
+        return @this->CreateGradientMesh(in patches.GetPinnableReference(), patchesCount, ref gradientMesh);
     }
 
     /// <summary>To be documented.</summary>
@@ -10336,7 +10336,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, byte* data, uint dataCount, uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10344,79 +10344,79 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, byte* data, uint dataCount, Span<uint> strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, extents, data, dataCount, ref strides.GetPinnableReference(), lookupTable);
+        return @this->CreateLookupTable3D(precision, extents, data, dataCount, in strides.GetPinnableReference(), lookupTable);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, byte* data, uint dataCount, ref uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLookupTable3D(precision, extents, data, dataCount, ref strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
+        return @this->CreateLookupTable3D(precision, extents, data, dataCount, in strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, byte* data, uint dataCount, Span<uint> strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, extents, data, dataCount, ref strides.GetPinnableReference(), ref lookupTable);
+        return @this->CreateLookupTable3D(precision, extents, data, dataCount, in strides.GetPinnableReference(), ref lookupTable);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, Span<byte> data, uint dataCount, uint* strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, extents, ref data.GetPinnableReference(), dataCount, strides, lookupTable);
+        return @this->CreateLookupTable3D(precision, extents, in data.GetPinnableReference(), dataCount, strides, lookupTable);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, ref byte data, uint dataCount, uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLookupTable3D(precision, extents, ref data, dataCount, strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
+        return @this->CreateLookupTable3D(precision, extents, in data, dataCount, strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, Span<byte> data, uint dataCount, uint* strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, extents, ref data.GetPinnableReference(), dataCount, strides, ref lookupTable);
+        return @this->CreateLookupTable3D(precision, extents, in data.GetPinnableReference(), dataCount, strides, ref lookupTable);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, Span<byte> data, uint dataCount, Span<uint> strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, extents, ref data.GetPinnableReference(), dataCount, ref strides.GetPinnableReference(), lookupTable);
+        return @this->CreateLookupTable3D(precision, extents, in data.GetPinnableReference(), dataCount, in strides.GetPinnableReference(), lookupTable);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, ref byte data, uint dataCount, ref uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLookupTable3D(precision, extents, ref data, dataCount, ref strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
+        return @this->CreateLookupTable3D(precision, extents, in data, dataCount, in strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, Span<byte> data, uint dataCount, Span<uint> strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, extents, ref data.GetPinnableReference(), dataCount, ref strides.GetPinnableReference(), ref lookupTable);
+        return @this->CreateLookupTable3D(precision, extents, in data.GetPinnableReference(), dataCount, in strides.GetPinnableReference(), ref lookupTable);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10424,171 +10424,171 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, Span<uint> strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, extents, data, dataCount, ref strides.GetPinnableReference(), lookupTable);
+        return @this->CreateLookupTable3D(precision, extents, data, dataCount, in strides.GetPinnableReference(), lookupTable);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, ref uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLookupTable3D(precision, extents, data, dataCount, ref strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
+        return @this->CreateLookupTable3D(precision, extents, data, dataCount, in strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, uint* extents, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, Span<uint> strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] uint* extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, extents, data, dataCount, ref strides.GetPinnableReference(), ref lookupTable);
+        return @this->CreateLookupTable3D(precision, extents, data, dataCount, in strides.GetPinnableReference(), ref lookupTable);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, Span<uint> extents, byte* data, uint dataCount, uint* strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] ReadOnlySpan<uint> extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, ref extents.GetPinnableReference(), data, dataCount, strides, lookupTable);
+        return @this->CreateLookupTable3D(precision, in extents.GetPinnableReference(), data, dataCount, strides, lookupTable);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, ref uint extents, byte* data, uint dataCount, uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLookupTable3D(precision, ref extents, data, dataCount, strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
+        return @this->CreateLookupTable3D(precision, in extents, data, dataCount, strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, Span<uint> extents, byte* data, uint dataCount, uint* strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] ReadOnlySpan<uint> extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, ref extents.GetPinnableReference(), data, dataCount, strides, ref lookupTable);
+        return @this->CreateLookupTable3D(precision, in extents.GetPinnableReference(), data, dataCount, strides, ref lookupTable);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, Span<uint> extents, byte* data, uint dataCount, Span<uint> strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] ReadOnlySpan<uint> extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, ref extents.GetPinnableReference(), data, dataCount, ref strides.GetPinnableReference(), lookupTable);
+        return @this->CreateLookupTable3D(precision, in extents.GetPinnableReference(), data, dataCount, in strides.GetPinnableReference(), lookupTable);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, ref uint extents, byte* data, uint dataCount, ref uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLookupTable3D(precision, ref extents, data, dataCount, ref strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
+        return @this->CreateLookupTable3D(precision, in extents, data, dataCount, in strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, Span<uint> extents, byte* data, uint dataCount, Span<uint> strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] ReadOnlySpan<uint> extents, [Flow(FlowDirection.In)] byte* data, uint dataCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, ref extents.GetPinnableReference(), data, dataCount, ref strides.GetPinnableReference(), ref lookupTable);
+        return @this->CreateLookupTable3D(precision, in extents.GetPinnableReference(), data, dataCount, in strides.GetPinnableReference(), ref lookupTable);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, Span<uint> extents, Span<byte> data, uint dataCount, uint* strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] ReadOnlySpan<uint> extents, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, ref extents.GetPinnableReference(), ref data.GetPinnableReference(), dataCount, strides, lookupTable);
+        return @this->CreateLookupTable3D(precision, in extents.GetPinnableReference(), in data.GetPinnableReference(), dataCount, strides, lookupTable);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, ref uint extents, ref byte data, uint dataCount, uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLookupTable3D(precision, ref extents, ref data, dataCount, strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
+        return @this->CreateLookupTable3D(precision, in extents, in data, dataCount, strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, Span<uint> extents, Span<byte> data, uint dataCount, uint* strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] ReadOnlySpan<uint> extents, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, ref extents.GetPinnableReference(), ref data.GetPinnableReference(), dataCount, strides, ref lookupTable);
+        return @this->CreateLookupTable3D(precision, in extents.GetPinnableReference(), in data.GetPinnableReference(), dataCount, strides, ref lookupTable);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, Span<uint> extents, Span<byte> data, uint dataCount, Span<uint> strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] ReadOnlySpan<uint> extents, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, ref extents.GetPinnableReference(), ref data.GetPinnableReference(), dataCount, ref strides.GetPinnableReference(), lookupTable);
+        return @this->CreateLookupTable3D(precision, in extents.GetPinnableReference(), in data.GetPinnableReference(), dataCount, in strides.GetPinnableReference(), lookupTable);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, ref uint extents, ref byte data, uint dataCount, ref uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In)] in byte data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLookupTable3D(precision, ref extents, ref data, dataCount, ref strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
+        return @this->CreateLookupTable3D(precision, in extents, in data, dataCount, in strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, Span<uint> extents, Span<byte> data, uint dataCount, Span<uint> strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] ReadOnlySpan<uint> extents, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, ref extents.GetPinnableReference(), ref data.GetPinnableReference(), dataCount, ref strides.GetPinnableReference(), ref lookupTable);
+        return @this->CreateLookupTable3D(precision, in extents.GetPinnableReference(), in data.GetPinnableReference(), dataCount, in strides.GetPinnableReference(), ref lookupTable);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, Span<uint> extents, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, uint* strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] ReadOnlySpan<uint> extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, ref extents.GetPinnableReference(), data, dataCount, strides, lookupTable);
+        return @this->CreateLookupTable3D(precision, in extents.GetPinnableReference(), data, dataCount, strides, lookupTable);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, ref uint extents, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static unsafe int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLookupTable3D(precision, ref extents, data, dataCount, strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
+        return @this->CreateLookupTable3D(precision, in extents, data, dataCount, strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, Span<uint> extents, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, uint* strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] ReadOnlySpan<uint> extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] uint* strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, ref extents.GetPinnableReference(), data, dataCount, strides, ref lookupTable);
+        return @this->CreateLookupTable3D(precision, in extents.GetPinnableReference(), data, dataCount, strides, ref lookupTable);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, Span<uint> extents, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, Span<uint> strides, ID2D1LookupTable3D** lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] ReadOnlySpan<uint> extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, ID2D1LookupTable3D** lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, ref extents.GetPinnableReference(), data, dataCount, ref strides.GetPinnableReference(), lookupTable);
+        return @this->CreateLookupTable3D(precision, in extents.GetPinnableReference(), data, dataCount, in strides.GetPinnableReference(), lookupTable);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, ref uint extents, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, ref uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
+    public static int CreateLookupTable3D<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] in uint extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] in uint strides, ref ComPtr<TI0> lookupTable) where TI0 : unmanaged, IComVtbl<ID2D1LookupTable3D>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateLookupTable3D(precision, ref extents, data, dataCount, ref strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
+        return @this->CreateLookupTable3D(precision, in extents, data, dataCount, in strides, (ID2D1LookupTable3D**) lookupTable.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, Span<uint> extents, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, Span<uint> strides, ref ID2D1LookupTable3D* lookupTable)
+    public static unsafe int CreateLookupTable3D(this ComPtr<ID2D1DeviceContext2> thisVtbl, BufferPrecision precision, [Flow(FlowDirection.In)] ReadOnlySpan<uint> extents, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, ref ID2D1LookupTable3D* lookupTable)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateLookupTable3D(precision, ref extents.GetPinnableReference(), data, dataCount, ref strides.GetPinnableReference(), ref lookupTable);
+        return @this->CreateLookupTable3D(precision, in extents.GetPinnableReference(), data, dataCount, in strides.GetPinnableReference(), ref lookupTable);
     }
 
     /// <summary>To be documented.</summary>
@@ -10776,7 +10776,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> imageSource, TransformedImageSourceProperties* properties, ref ComPtr<TI1> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI1>
+    public static unsafe int CreateTransformedImageSource<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> imageSource, [Flow(FlowDirection.In)] TransformedImageSourceProperties* properties, ref ComPtr<TI1> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10784,7 +10784,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> imageSource, TransformedImageSourceProperties* properties, ref ID2D1TransformedImageSource* transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0>
+    public static unsafe int CreateTransformedImageSource<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> imageSource, [Flow(FlowDirection.In)] TransformedImageSourceProperties* properties, ref ID2D1TransformedImageSource* transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10792,39 +10792,39 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1ImageSource* imageSource, Span<TransformedImageSourceProperties> properties, ID2D1TransformedImageSource** transformedImageSource)
+    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1ImageSource* imageSource, [Flow(FlowDirection.In)] ReadOnlySpan<TransformedImageSourceProperties> properties, ID2D1TransformedImageSource** transformedImageSource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateTransformedImageSource(imageSource, ref properties.GetPinnableReference(), transformedImageSource);
+        return @this->CreateTransformedImageSource(imageSource, in properties.GetPinnableReference(), transformedImageSource);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateTransformedImageSource<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> imageSource, ref TransformedImageSourceProperties properties, ref ComPtr<TI1> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI1>
+    public static int CreateTransformedImageSource<TI0, TI1>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> imageSource, [Flow(FlowDirection.In)] in TransformedImageSourceProperties properties, ref ComPtr<TI1> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI1>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateTransformedImageSource((ID2D1ImageSource*) imageSource.Handle, ref properties, (ID2D1TransformedImageSource**) transformedImageSource.GetAddressOf());
+        return @this->CreateTransformedImageSource((ID2D1ImageSource*) imageSource.Handle, in properties, (ID2D1TransformedImageSource**) transformedImageSource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1ImageSource* imageSource, Span<TransformedImageSourceProperties> properties, ref ID2D1TransformedImageSource* transformedImageSource)
+    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, ID2D1ImageSource* imageSource, [Flow(FlowDirection.In)] ReadOnlySpan<TransformedImageSourceProperties> properties, ref ID2D1TransformedImageSource* transformedImageSource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateTransformedImageSource(imageSource, ref properties.GetPinnableReference(), ref transformedImageSource);
+        return @this->CreateTransformedImageSource(imageSource, in properties.GetPinnableReference(), ref transformedImageSource);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> imageSource, ref TransformedImageSourceProperties properties, ref ID2D1TransformedImageSource* transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0>
+    public static unsafe int CreateTransformedImageSource<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ComPtr<TI0> imageSource, [Flow(FlowDirection.In)] in TransformedImageSourceProperties properties, ref ID2D1TransformedImageSource* transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1ImageSource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateTransformedImageSource((ID2D1ImageSource*) imageSource.Handle, ref properties, ref transformedImageSource);
+        return @this->CreateTransformedImageSource((ID2D1ImageSource*) imageSource.Handle, in properties, ref transformedImageSource);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1ImageSource> imageSource, TransformedImageSourceProperties* properties, ID2D1TransformedImageSource** transformedImageSource)
+    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1ImageSource> imageSource, [Flow(FlowDirection.In)] TransformedImageSourceProperties* properties, ID2D1TransformedImageSource** transformedImageSource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10832,7 +10832,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1ImageSource imageSource, TransformedImageSourceProperties* properties, ref ComPtr<TI0> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI0>
+    public static unsafe int CreateTransformedImageSource<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1ImageSource imageSource, [Flow(FlowDirection.In)] TransformedImageSourceProperties* properties, ref ComPtr<TI0> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -10840,7 +10840,7 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1ImageSource> imageSource, TransformedImageSourceProperties* properties, ref ID2D1TransformedImageSource* transformedImageSource)
+    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1ImageSource> imageSource, [Flow(FlowDirection.In)] TransformedImageSourceProperties* properties, ref ID2D1TransformedImageSource* transformedImageSource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -10848,27 +10848,27 @@ public unsafe static class D2D1DeviceContext2VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1ImageSource> imageSource, Span<TransformedImageSourceProperties> properties, ID2D1TransformedImageSource** transformedImageSource)
+    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1ImageSource> imageSource, [Flow(FlowDirection.In)] ReadOnlySpan<TransformedImageSourceProperties> properties, ID2D1TransformedImageSource** transformedImageSource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateTransformedImageSource(ref imageSource.GetPinnableReference(), ref properties.GetPinnableReference(), transformedImageSource);
+        return @this->CreateTransformedImageSource(ref imageSource.GetPinnableReference(), in properties.GetPinnableReference(), transformedImageSource);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateTransformedImageSource<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1ImageSource imageSource, ref TransformedImageSourceProperties properties, ref ComPtr<TI0> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI0>
+    public static int CreateTransformedImageSource<TI0>(this ComPtr<ID2D1DeviceContext2> thisVtbl, ref ID2D1ImageSource imageSource, [Flow(FlowDirection.In)] in TransformedImageSourceProperties properties, ref ComPtr<TI0> transformedImageSource) where TI0 : unmanaged, IComVtbl<ID2D1TransformedImageSource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateTransformedImageSource(ref imageSource, ref properties, (ID2D1TransformedImageSource**) transformedImageSource.GetAddressOf());
+        return @this->CreateTransformedImageSource(ref imageSource, in properties, (ID2D1TransformedImageSource**) transformedImageSource.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1ImageSource> imageSource, Span<TransformedImageSourceProperties> properties, ref ID2D1TransformedImageSource* transformedImageSource)
+    public static unsafe int CreateTransformedImageSource(this ComPtr<ID2D1DeviceContext2> thisVtbl, Span<ID2D1ImageSource> imageSource, [Flow(FlowDirection.In)] ReadOnlySpan<TransformedImageSourceProperties> properties, ref ID2D1TransformedImageSource* transformedImageSource)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateTransformedImageSource(ref imageSource.GetPinnableReference(), ref properties.GetPinnableReference(), ref transformedImageSource);
+        return @this->CreateTransformedImageSource(ref imageSource.GetPinnableReference(), in properties.GetPinnableReference(), ref transformedImageSource);
     }
 
     /// <summary>To be documented.</summary>
