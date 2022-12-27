@@ -13,7 +13,7 @@
 ---
 
 # 1.1 - Hello Window
-<?# Info "You can view the source code for this tutorial [here.](https://github.com/dotnet/Silk.NET/blob/main/examples/CSharp/OpenGL%20Tutorials/Tutorial%201.1%20-%20Hello%20Window/Program.cs)" /?>
+<?# Info "You can view the source code for this tutorial [here.](../sources/1.1-final-result.md)" /?>
 
 ## Introduction
 Welcome to your first Silk.NET tutorial!
@@ -209,6 +209,7 @@ And that's it! You should now be able to press the escape key and the window wil
 ## Wrapping up
 You've just completed your first Silk.NET tutorial! Here's some next steps you can take:
 * Move on to the [next tutorial](2-hello-quad.html), where you'll learn how to create a GL context and display a quad on the screen.
+* View the full tutorial source code on the [Silk.NET git repository](https://github.com/dotnet/Silk.NET/tree/main/examples/CSharp/OpenGL%20Tutorials/Tutorial%201.1%20-%20Hello%20Window).
 * Join the [Discord server](https://discord.gg/DTHHXRt), where you can ask questions, show your stuff, and chat with everyone there.
 
 Something isn't working? Compare it with the final result!
@@ -266,3 +267,5 @@ public class Program
     }
 }
 ```
+
+You can also view this on its own [here.](../sources/1.1-final-result.html)

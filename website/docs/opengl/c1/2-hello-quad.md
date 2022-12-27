@@ -13,7 +13,7 @@
 ---
 
 # 1.2 - Hello Quad
-<?# Info "You can view the source code for this tutorial [here.](https://github.com/dotnet/Silk.NET/blob/main/examples/CSharp/OpenGL%20Tutorials/Tutorial%201.2%20-%20Hello%20quad/Program.cs) This tutorial builds on the previous tutorial. If you haven't read it, you can do so [here.](1-hello-window.html)" /?>
+<?# Info "You can view the source code for this tutorial [here.](../sources/1.2-final-result.md) This tutorial builds on the previous tutorial. If you haven't read it, you can do so [here.](1-hello-window.html)" /?>
 
 Let's draw something on-screen! In this tutorial, you'll learn:
 
@@ -219,7 +219,7 @@ Add the following after you create the buffer:
 
 ```cs
 fixed (float* buf = vertices)
-    _gl.BufferData(BufferTargetARB.ArrayBuffer, (nuint) vertices.Length, buf, BufferUsageARB.StaticDraw);
+    _gl.BufferData(BufferTargetARB.ArrayBuffer, (nuint) (vertices.Length * sizeof(float)), buf, BufferUsageARB.StaticDraw);
 ```
 
 Let's go over what's going on here. First, we `fix` the vertices data. This prevents the garbage collector from moving it around, so we can take a pointer to the data. We tell it the target we want, the `ArrayBuffer` in this case, give it the data length, the buffer pointer, and we choose `StaticDraw` for our usage.
@@ -271,7 +271,7 @@ Again, add the following to your `OnLoad` method:
 
 ```cs
 fixed (uint* buf = indices)
-    _gl.BufferData(BufferTargetARB.ArrayBuffer, (nuint) vertices.Length, buf, BufferUsageARB.StaticDraw);
+    _gl.BufferData(BufferTargetARB.ElementArrayBuffer, (nuint) (indices.Length * sizeof(uint)), buf, BufferUsageARB.StaticDraw);
 ```
 
 And that's it! In OpenGL, this is the common way you'll **create** buffers, from VBOs, to EBOs, to UBOs.
@@ -467,7 +467,57 @@ Doing this means we've "un-bound" everything, so calling something like `BufferD
 
 <?# Warning "You **MUST** unbind the vertex array first, before unbinding the other buffers. If you forget to do it in this order, the buffer will be unbound from the vertex buffer, meaning you'll see incorrect results when you render the object." /?>
 
-If you want to see the resulting code so far, you can see it [here](../sources/1.2.8-finished-setup.md).
+If you want to see the resulting code so far, you can see it [here](../sources/1.2.8-finished-setup.html).
 
 ## Drawing to the screen
-It's finally time to draw to the screen! That was a lot of setup work we just did there.
+It's finally time to draw to the screen! That was a lot of setup work we just did there. Fortunately, that was the hard part. Drawing our result to the screen is now very easy.
+
+Add the following to your `OnRender` method:
+
+```cs
+_gl.BindVertexArray(_vao);
+_gl.UseProgram(_program);
+_gl.DrawElements(PrimitiveType.Triangles, 6, DrawElementsType.UnsignedInt, null);
+```
+
+That's all we need to draw our quad to the screen! Yes, seriously.
+
+Let's explain what's going on here.
+
+First, we bind our vertex array. Before we can draw anything, we need to have a vertex array bound. The vertex array you bind will depend on what you want to draw. Next, we use the program object we created earlier. Again, we must have a program bound before we can draw.
+
+Finally, we tell the GPU to draw. We're using `glDrawElements` here, as we used an EBO. If we didn't use an EBO, we'd want to use `glDrawArrays` instead. 
+
+The first parameter tells it that we're drawing triangles (triangle list to be precise, there are other triangle types we don't need to worry about for now.). 
+
+The `6` is simply the number of elements in our EBO. Remember, a quad is two triangles, with three vertices per triangle, making six vertices total. 
+
+We tell it we're using an unsigned int as the element type (you may have noticed earlier that `indices` was of type `uint[]`). The most commonly used values are `UnsignedInt` and `UnsignedShort`. Some older GPUs only supported `UnsignedShort`, however all modern GPUs can fully support `UnsignedInt`, so this isn't really something you need to worry about anymore.
+
+The last parameter is a pointer to the starting index of the indices. Since we want all the indices, we just set this value to `null`. (Equivalent to `(void*) 0`).
+
+And that's it! Run your program and you should see a lovely orange rectangle on a blue background. Exciting, isn't it... Right...?
+
+![Final result](../../../images/opengl/chapter1/final-result-t2.png)
+
+While this may have seen like a lot of set up for a boring result, this code can render pretty much anything you want to the screen. It remains pretty much the same, whether you're rendering a basic quad like this, or a complex 3D model. All you need to change are the vertices & indices going in, and some more complex shader code to handle the transformations.
+
+Once you get the basics understood and you can confidently use it, creating more complex stuff becomes a lot easier.
+
+If you would like to view the full source code for the application, you can view it [here](../sources/1.2-final-result.html).
+
+## Cleaning up
+When you're done with an OpenGL resource, you should delete it, to free GPU memory. For this though, it's not needed. The driver will automatically clean all created resources when your application closes. In fact, it's recommended that you *don't* manually delete resources when the application closes. The driver can free these objects a lot faster than manually removing them. If you have a lot of objects, manually deleting can cause the application to hang while the driver tries to free everything.
+
+You must remember to remove unused objects while your application is running, however, as forgetting to do so will use more and more of the GPU's memory, potentially causing it to run out of memory. OpenGL isn't garbage collected! It requires manual memory management, a bit like C.
+
+## Wrapping up
+That was a lot to digest! You've hopefully learned a lot along the way though, and if there's bits you still don't understand, just go back and re-read the sections again to hopefully improve your understanding. Don't worry about it too much though, the learning curve is steep, and once you do understand it, you'll be writing graphics programs in no time!
+
+Here's some stuff you can do now:
+
+* Move on to the [next tutorial](), where you'll learn how to create a GL context and display a quad on the screen.
+* View the full tutorial source code on the [Silk.NET git repository](https://github.com/dotnet/Silk.NET/tree/main/examples/CSharp/OpenGL%20Tutorials/Tutorial%201.2%20-%20Hello%20quad).
+* Join the [Discord server](https://discord.gg/DTHHXRt), where you can ask questions, show your stuff, and chat with everyone there.
+
+Something not right? [Compare your code with the final result.](../sources/1.2-final-result.html)
