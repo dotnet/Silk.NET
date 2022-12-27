@@ -13,15 +13,16 @@
 ---
 
 # 1.2 - Hello Quad
-<?# Info "You can view the source code for this tutorial [here.](../sources/1.2-final-result.md) This tutorial builds on the previous tutorial. If you haven't read it, you can do so [here.](1-hello-window.html)" /?>
+<?# Info "You can view the source code for this tutorial [here.](../sources/1.2-final-result.html) This tutorial builds on the previous tutorial. If you haven't read it, you can do so [here.](1-hello-window.html)" /?>
 
 Let's draw something on-screen! In this tutorial, you'll learn:
 
 * How to initialize OpenGL.
 * How to clear the window.
+* How the OpenGL pipeline works.
 * What vertex array objects, vertex buffers, and element array buffers are, and how to use them.
 * How to create and use shaders.
-* How the OpenGL pipeline works.
+* How to draw to the screen.
 
 This tutorial will feature a lot of content and new info, so we'll take it slow and with lots of explanations.
 
@@ -72,13 +73,13 @@ Add the following using directive to the top of your file:
 using System.Drawing;
 ```
 
-Then, in your `OnLoad` method, underneath `GetApi()`, add the following:
+Then, in your `OnLoad` method, add the following:
 
 ```cs
 _gl.ClearColor(Color.CornflowerBlue);
 ```
 
-You may notice that this function contains various **overloads**, including ones for a Vector4, and 4 floats. We'll be using the overload that takes `System.Drawing.Color`, because it is the most readable for this example.
+You may notice that this function contains various **overloads**, including ones for a Vector4, and 4 floats. We'll be using the overload that takes `System.Drawing.Color`, because it is the easiest to use and understand.
 
 If you run your application now, you'll notice that the window is still black. That's because we've set the clear *color*, but not actually told OpenGL to clear the window.
 
@@ -160,7 +161,7 @@ float[] vertices =
      0.5f,  0.5f, 0.0f,
      0.5f, -0.5f, 0.0f,
     -0.5f, -0.5f, 0.0f,
-    -0.5f,  0.5f, 0.5f
+    -0.5f,  0.5f, 0.0f
 };
 ```
 
@@ -211,7 +212,7 @@ Unsafe mode is not enabled by default, so we need to enable it. To enable it, ad
 public static unsafe void OnLoad() { ... }
 ```
 
-If you forget to do either of these, you'll get compile methods. While our `OnRender` method does not contain any unsafe code yet, it will when we draw to the screen later, so it's best just to do it now so you don't forget to do it later.
+If you forget to do either of these, you'll get compile errors. While our `OnRender` method does not contain any unsafe code yet, it will when we draw to the screen later, so it's best just to do it now so you don't forget to do it later.
 
 Now let's fill the buffer!
 
@@ -342,7 +343,7 @@ void main()
 }";
 ```
 
-In our fragment shader, we simply output a single color per vertex, in this case a reddish-orange.
+In our fragment shader, we simply output a single color, in this case a reddish-orange.
 
 Because our fragment shader is so simple, we don't use any `in` attributes for this example. However, unlike a vertex shader, a fragment shader must **always** have at least one `out` attribute. This attribute is the output color of the fragment shader itself, and must always be assigned a value. (We'll get more into this in a later tutorial). The output color is in the RGBA format. In OpenGL, the output color in the fragment shader is a **normalized** 32-bit float. Therefore, each of the RGBA values must be between 0 and 1. This is also true for our clear color too, however Silk.NET handily accepts a `System.Drawing.Color`, which we are using in this tutorial.
 
@@ -465,9 +466,9 @@ _gl.BindBuffer(BufferTargetARB.ElementArrayBuffer, 0);
 
 Doing this means we've "un-bound" everything, so calling something like `BufferData` won't affect the buffers we've just created.
 
-<?# Warning "You **MUST** unbind the vertex array first, before unbinding the other buffers. If you forget to do it in this order, the buffer will be unbound from the vertex buffer, meaning you'll see incorrect results when you render the object." /?>
+<?# Warning "You **MUST** unbind the vertex array first, before unbinding the other buffers. If you forget to do it in this order, the buffer will be unbound from the vertex array, meaning you'll see incorrect results when you render the object." /?>
 
-If you want to see the resulting code so far, you can see it [here](../sources/1.2.8-finished-setup.html).
+If you want to see the resulting code so far, you can see it [here](../sources/1.2.7-finished-setup.html).
 
 ## Drawing to the screen
 It's finally time to draw to the screen! That was a lot of setup work we just did there. Fortunately, that was the hard part. Drawing our result to the screen is now very easy.
@@ -509,7 +510,7 @@ If you would like to view the full source code for the application, you can view
 ## Cleaning up
 When you're done with an OpenGL resource, you should delete it, to free GPU memory. For this though, it's not needed. The driver will automatically clean all created resources when your application closes. In fact, it's recommended that you *don't* manually delete resources when the application closes. The driver can free these objects a lot faster than manually removing them. If you have a lot of objects, manually deleting can cause the application to hang while the driver tries to free everything.
 
-You must remember to remove unused objects while your application is running, however, as forgetting to do so will use more and more of the GPU's memory, potentially causing it to run out of memory. OpenGL isn't garbage collected! It requires manual memory management, a bit like C.
+You **MUST** remember to remove unused objects while your application is running, however, as forgetting to do so will use more and more of the GPU's memory, potentially causing it to run out of memory. OpenGL isn't garbage collected! It requires manual memory management, a lot like C.
 
 ## Wrapping up
 That was a lot to digest! You've hopefully learned a lot along the way though, and if there's bits you still don't understand, just go back and re-read the sections again to hopefully improve your understanding. Don't worry about it too much though, the learning curve is steep, and once you do understand it, you'll be writing graphics programs in no time!

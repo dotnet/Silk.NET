@@ -13,7 +13,7 @@
 ---
 
 # 1.1 - Hello Window
-<?# Info "You can view the source code for this tutorial [here.](../sources/1.1-final-result.md)" /?>
+<?# Info "You can view the source code for this tutorial [here.](../sources/1.1-final-result.html)" /?>
 
 ## Introduction
 Welcome to your first Silk.NET tutorial!
@@ -26,11 +26,11 @@ Okay, let's get started!
 The first thing we will need is a blank C# project. For this tutorial, we're going to be using .NET 6, however Silk works with any .NET Standard 2.0 platform.
 
 We're going to assume you know how to create projects with your chosen code editor, so create a blank console project. If you don't know how to do this, here are some good guides to get started:
-* [Creating a basic project using the dotnet cli](https://dotnet.microsoft.com/en-us/learn/dotnet/hello-world-tutorial/intro)
+* [Creating a basic project using the dotnet CLI](https://dotnet.microsoft.com/en-us/learn/dotnet/hello-world-tutorial/intro)
 * [Using Visual Studio to create a .NET project](https://docs.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-console?view=vs-2022)
 * [Creating and opening projects with Jetbrains Rider](https://www.jetbrains.com/help/rider/Creating_and_Opening_Projects_and_Solutions.html#trusted-and-untrusted-solutions)
 
-If you've used, or are using, an older version of .NET, you will be familliar with the standard C# entry point. .NET 6 changes this by default, however Silk works best using the old format. If you're using an older version of .NET, you can skip this bit.
+If you've used, or are using, an older version of .NET, you will be familliar with the standard C# entry point. .NET 6 and up changes this by default, however Silk works best using the old format. If you're using an older version of .NET, you can skip this bit.
 
 Add the following code to your file:
 
@@ -54,7 +54,7 @@ While there are many packages available, we'll only need three for this tutorial
 
 We won't be using the `OpenGL` package in this tutorial, however we'll be using it in every other tutorial, so it's a good idea to install it now.
 
-Using the dotnet cli, installing the packages is simple:
+Using the dotnet CLI, installing the packages is simple:
 
 ```
 dotnet add package Silk.NET.Windowing
@@ -62,7 +62,7 @@ dotnet add package Silk.NET.Input
 dotnet add package Silk.NET.OpenGL
 ```
 
-Or, if you're using Visual Studio, you can use the NuGet Package Manager by right-clicking on your project in the solution explorer and selecting "Manage NuGet Packages...".
+Or, if you're using Visual Studio, you can use the NuGet Package Manager by right-CLIcking on your project in the solution explorer and selecting "Manage NuGet Packages...".
 
 ## Creating a Window
 The first thing we need before we can even think about rendering some graphics is a window to render to.
@@ -145,7 +145,7 @@ private static void OnRender(double dt) { }
 
 These are the methods that will power our main application. For this tutorial, we'll only be using `OnLoad`, but it's helpful to have all three.
 
-<?# Info "The `dt` parameter (which your IDE will often name it as `obj`), is the **delta time**, which is the amount of time, in seconds, that has passed since the last frame. Using delta time is key for framerate-independent actions, such as movement." /?>
+<?# Info "The `dt` parameter is the **delta time**, which is the amount of time, in seconds, that has passed since the last frame. Using delta time is key for framerate-independent actions, such as movement." /?>
 
 Next, we need to subscribe to these events. Add the following code to your `Main` method, just after you call `Window.Create()`:
 
