@@ -220,8 +220,8 @@ namespace Silk.NET.Direct3D12
         [NativeName("Name", "NumRenderTargets")]
         public uint NumRenderTargets;
         
-        [NativeName("Type", "DXGI_FORMAT [8]")]
-        [NativeName("Type.Name", "DXGI_FORMAT [8]")]
+        [NativeName("Type", "DXGI_FORMAT[8]")]
+        [NativeName("Type.Name", "DXGI_FORMAT[8]")]
         [NativeName("Name", "RTVFormats")]
         public RTVFormatsBuffer RTVFormats;
 

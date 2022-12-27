@@ -12,7 +12,7 @@
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/bin/Debug/net6.0/win-x64/Silk.NET.BuildTools.dll",
-            "args": [ "C:\\Users\\Administrator\\Silk.NET\\dx11.json" ],
+            "args": [ "C:\\Users\\Administrator\\Silk.NET\\generator.json" ],
             "cwd": "${workspaceFolder}",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",

@@ -16,16 +16,16 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkVideoDecodeH264PictureInfoEXT")]
-    public unsafe partial struct VideoDecodeH264PictureInfoEXT : IExtendsChain<VideoDecodeInfoKHR>
+    [NativeName("Name", "VkVideoDecodeH265PictureInfoKHR")]
+    public unsafe partial struct VideoDecodeH265PictureInfoKHR : IExtendsChain<VideoDecodeInfoKHR>
     {
-        public VideoDecodeH264PictureInfoEXT
+        public VideoDecodeH265PictureInfoKHR
         (
-            StructureType? sType = StructureType.VideoDecodeH264PictureInfoExt,
+            StructureType? sType = StructureType.VideoDecodeH265PictureInfoKhr,
             void* pNext = null,
-            Video.StdVideoDecodeH264PictureInfo* pStdPictureInfo = null,
-            uint? sliceCount = null,
-            uint* pSliceOffsets = null
+            Video.StdVideoDecodeH265PictureInfo* pStdPictureInfo = null,
+            uint? sliceSegmentCount = null,
+            uint* pSliceSegmentOffsets = null
         ) : this()
         {
             if (sType is not null)
@@ -43,14 +43,14 @@ namespace Silk.NET.Vulkan
                 PStdPictureInfo = pStdPictureInfo;
             }
 
-            if (sliceCount is not null)
+            if (sliceSegmentCount is not null)
             {
-                SliceCount = sliceCount.Value;
+                SliceSegmentCount = sliceSegmentCount.Value;
             }
 
-            if (pSliceOffsets is not null)
+            if (pSliceSegmentOffsets is not null)
             {
-                PSliceOffsets = pSliceOffsets;
+                PSliceSegmentOffsets = pSliceSegmentOffsets;
             }
         }
 
@@ -65,25 +65,25 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "StdVideoDecodeH264PictureInfo*")]
-        [NativeName("Type.Name", "StdVideoDecodeH264PictureInfo")]
+        [NativeName("Type", "StdVideoDecodeH265PictureInfo*")]
+        [NativeName("Type.Name", "StdVideoDecodeH265PictureInfo")]
         [NativeName("Name", "pStdPictureInfo")]
-        public Video.StdVideoDecodeH264PictureInfo* PStdPictureInfo;
+        public Video.StdVideoDecodeH265PictureInfo* PStdPictureInfo;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "sliceCount")]
-        public uint SliceCount;
+        [NativeName("Name", "sliceSegmentCount")]
+        public uint SliceSegmentCount;
 /// <summary></summary>
         [NativeName("Type", "uint32_t*")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "pSliceOffsets")]
-        public uint* PSliceOffsets;
+        [NativeName("Name", "pSliceSegmentOffsets")]
+        public uint* PSliceSegmentOffsets;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.VideoDecodeH264PictureInfoExt;
+            return SType = StructureType.VideoDecodeH265PictureInfoKhr;
         }
 
         /// <inheritdoc />

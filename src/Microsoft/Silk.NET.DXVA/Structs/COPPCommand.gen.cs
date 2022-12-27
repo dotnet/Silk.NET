@@ -68,8 +68,8 @@ namespace Silk.NET.DXVA
         [NativeName("Type.Name", "ULONG")]
         [NativeName("Name", "cbSizeData")]
         public uint CbSizeData;
-        [NativeName("Type", "UCHAR [4056]")]
-        [NativeName("Type.Name", "UCHAR [4056]")]
+        [NativeName("Type", "UCHAR[4056]")]
+        [NativeName("Type.Name", "UCHAR[4056]")]
         [NativeName("Name", "CommandData")]
         public fixed byte CommandData[4056];
     }

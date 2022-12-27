@@ -16,14 +16,15 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkVideoDecodeH264DpbSlotInfoEXT")]
-    public unsafe partial struct VideoDecodeH264DpbSlotInfoEXT : IExtendsChain<VideoReferenceSlotInfoKHR>
+    [NativeName("Name", "VkSwapchainPresentModeInfoEXT")]
+    public unsafe partial struct SwapchainPresentModeInfoEXT : IExtendsChain<PresentInfoKHR>
     {
-        public VideoDecodeH264DpbSlotInfoEXT
+        public SwapchainPresentModeInfoEXT
         (
-            StructureType? sType = StructureType.VideoDecodeH264DpbSlotInfoExt,
+            StructureType? sType = StructureType.SwapchainPresentModeInfoExt,
             void* pNext = null,
-            Video.StdVideoDecodeH264ReferenceInfo* pStdReferenceInfo = null
+            uint? swapchainCount = null,
+            PresentModeKHR* pPresentModes = null
         ) : this()
         {
             if (sType is not null)
@@ -36,9 +37,14 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (pStdReferenceInfo is not null)
+            if (swapchainCount is not null)
             {
-                PStdReferenceInfo = pStdReferenceInfo;
+                SwapchainCount = swapchainCount.Value;
+            }
+
+            if (pPresentModes is not null)
+            {
+                PPresentModes = pPresentModes;
             }
         }
 
@@ -53,15 +59,20 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "StdVideoDecodeH264ReferenceInfo*")]
-        [NativeName("Type.Name", "StdVideoDecodeH264ReferenceInfo")]
-        [NativeName("Name", "pStdReferenceInfo")]
-        public Video.StdVideoDecodeH264ReferenceInfo* PStdReferenceInfo;
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "swapchainCount")]
+        public uint SwapchainCount;
+/// <summary></summary>
+        [NativeName("Type", "VkPresentModeKHR*")]
+        [NativeName("Type.Name", "VkPresentModeKHR")]
+        [NativeName("Name", "pPresentModes")]
+        public PresentModeKHR* PPresentModes;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.VideoDecodeH264DpbSlotInfoExt;
+            return SType = StructureType.SwapchainPresentModeInfoExt;
         }
 
         /// <inheritdoc />

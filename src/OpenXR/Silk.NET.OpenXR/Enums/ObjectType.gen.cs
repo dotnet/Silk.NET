@@ -52,5 +52,7 @@ namespace Silk.NET.OpenXR
         GeometryInstanceFB = 1000118004,
         [NativeName("Name", "XR_OBJECT_TYPE_SPATIAL_ANCHOR_STORE_CONNECTION_MSFT")]
         SpatialAnchorStoreConnectionMsft = 1000142000,
+        [NativeName("Name", "XR_OBJECT_TYPE_PASSTHROUGH_HTC")]
+        PassthroughHtc = 1000317000,
     }
 }

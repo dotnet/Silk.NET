@@ -16,17 +16,17 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkVideoDecodeH265SessionParametersCreateInfoEXT")]
-    public unsafe partial struct VideoDecodeH265SessionParametersCreateInfoEXT : IExtendsChain<VideoSessionParametersCreateInfoKHR>
+    [NativeName("Name", "VkVideoDecodeH264SessionParametersAddInfoKHR")]
+    public unsafe partial struct VideoDecodeH264SessionParametersAddInfoKHR : IExtendsChain<VideoSessionParametersUpdateInfoKHR>
     {
-        public VideoDecodeH265SessionParametersCreateInfoEXT
+        public VideoDecodeH264SessionParametersAddInfoKHR
         (
-            StructureType? sType = StructureType.VideoDecodeH265SessionParametersCreateInfoExt,
+            StructureType? sType = StructureType.VideoDecodeH264SessionParametersAddInfoKhr,
             void* pNext = null,
-            uint? maxStdVpscount = null,
-            uint? maxStdSpscount = null,
-            uint? maxStdPpscount = null,
-            VideoDecodeH265SessionParametersAddInfoEXT* pParametersAddInfo = null
+            uint? stdSpscount = null,
+            Video.StdVideoH264SequenceParameterSet* pStdSpss = null,
+            uint? stdPpscount = null,
+            Video.StdVideoH264PictureParameterSet* pStdPpss = null
         ) : this()
         {
             if (sType is not null)
@@ -39,24 +39,24 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (maxStdVpscount is not null)
+            if (stdSpscount is not null)
             {
-                MaxStdVpscount = maxStdVpscount.Value;
+                StdSpscount = stdSpscount.Value;
             }
 
-            if (maxStdSpscount is not null)
+            if (pStdSpss is not null)
             {
-                MaxStdSpscount = maxStdSpscount.Value;
+                PStdSpss = pStdSpss;
             }
 
-            if (maxStdPpscount is not null)
+            if (stdPpscount is not null)
             {
-                MaxStdPpscount = maxStdPpscount.Value;
+                StdPpscount = stdPpscount.Value;
             }
 
-            if (pParametersAddInfo is not null)
+            if (pStdPpss is not null)
             {
-                PParametersAddInfo = pParametersAddInfo;
+                PStdPpss = pStdPpss;
             }
         }
 
@@ -73,28 +73,28 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxStdVPSCount")]
-        public uint MaxStdVpscount;
+        [NativeName("Name", "stdSPSCount")]
+        public uint StdSpscount;
+/// <summary></summary>
+        [NativeName("Type", "StdVideoH264SequenceParameterSet*")]
+        [NativeName("Type.Name", "StdVideoH264SequenceParameterSet")]
+        [NativeName("Name", "pStdSPSs")]
+        public Video.StdVideoH264SequenceParameterSet* PStdSpss;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxStdSPSCount")]
-        public uint MaxStdSpscount;
+        [NativeName("Name", "stdPPSCount")]
+        public uint StdPpscount;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxStdPPSCount")]
-        public uint MaxStdPpscount;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoDecodeH265SessionParametersAddInfoEXT*")]
-        [NativeName("Type.Name", "VkVideoDecodeH265SessionParametersAddInfoEXT")]
-        [NativeName("Name", "pParametersAddInfo")]
-        public VideoDecodeH265SessionParametersAddInfoEXT* PParametersAddInfo;
+        [NativeName("Type", "StdVideoH264PictureParameterSet*")]
+        [NativeName("Type.Name", "StdVideoH264PictureParameterSet")]
+        [NativeName("Name", "pStdPPSs")]
+        public Video.StdVideoH264PictureParameterSet* PStdPpss;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.VideoDecodeH265SessionParametersCreateInfoExt;
+            return SType = StructureType.VideoDecodeH264SessionParametersAddInfoKhr;
         }
 
         /// <inheritdoc />

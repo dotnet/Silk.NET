@@ -66,16 +66,16 @@ namespace Silk.NET.Direct3D9
             }
         }
 
-        [NativeName("Type", "char [512]")]
-        [NativeName("Type.Name", "char [512]")]
+        [NativeName("Type", "char[512]")]
+        [NativeName("Type.Name", "char[512]")]
         [NativeName("Name", "Driver")]
         public fixed byte Driver[512];
-        [NativeName("Type", "char [512]")]
-        [NativeName("Type.Name", "char [512]")]
+        [NativeName("Type", "char[512]")]
+        [NativeName("Type.Name", "char[512]")]
         [NativeName("Name", "Description")]
         public fixed byte Description[512];
-        [NativeName("Type", "char [32]")]
-        [NativeName("Type.Name", "char [32]")]
+        [NativeName("Type", "char[32]")]
+        [NativeName("Type.Name", "char[32]")]
         [NativeName("Name", "DeviceName")]
         public fixed byte DeviceName[32];
 

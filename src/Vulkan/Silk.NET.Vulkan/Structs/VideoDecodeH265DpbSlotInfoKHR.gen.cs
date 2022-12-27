@@ -16,15 +16,14 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkVideoDecodeH264ProfileInfoEXT")]
-    public unsafe partial struct VideoDecodeH264ProfileInfoEXT : IExtendsChain<VideoProfileInfoKHR>, IExtendsChain<QueryPoolCreateInfo>
+    [NativeName("Name", "VkVideoDecodeH265DpbSlotInfoKHR")]
+    public unsafe partial struct VideoDecodeH265DpbSlotInfoKHR : IExtendsChain<VideoReferenceSlotInfoKHR>
     {
-        public VideoDecodeH264ProfileInfoEXT
+        public VideoDecodeH265DpbSlotInfoKHR
         (
-            StructureType? sType = StructureType.VideoDecodeH264ProfileInfoExt,
+            StructureType? sType = StructureType.VideoDecodeH265DpbSlotInfoKhr,
             void* pNext = null,
-            Video.StdVideoH264ProfileIdc? stdProfileIdc = null,
-            VideoDecodeH264PictureLayoutFlagsEXT? pictureLayout = null
+            Video.StdVideoDecodeH265ReferenceInfo* pStdReferenceInfo = null
         ) : this()
         {
             if (sType is not null)
@@ -37,14 +36,9 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (stdProfileIdc is not null)
+            if (pStdReferenceInfo is not null)
             {
-                StdProfileIdc = stdProfileIdc.Value;
-            }
-
-            if (pictureLayout is not null)
-            {
-                PictureLayout = pictureLayout.Value;
+                PStdReferenceInfo = pStdReferenceInfo;
             }
         }
 
@@ -59,20 +53,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "StdVideoH264ProfileIdc")]
-        [NativeName("Type.Name", "StdVideoH264ProfileIdc")]
-        [NativeName("Name", "stdProfileIdc")]
-        public Video.StdVideoH264ProfileIdc StdProfileIdc;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoDecodeH264PictureLayoutFlagBitsEXT")]
-        [NativeName("Type.Name", "VkVideoDecodeH264PictureLayoutFlagBitsEXT")]
-        [NativeName("Name", "pictureLayout")]
-        public VideoDecodeH264PictureLayoutFlagsEXT PictureLayout;
+        [NativeName("Type", "StdVideoDecodeH265ReferenceInfo*")]
+        [NativeName("Type.Name", "StdVideoDecodeH265ReferenceInfo")]
+        [NativeName("Name", "pStdReferenceInfo")]
+        public Video.StdVideoDecodeH265ReferenceInfo* PStdReferenceInfo;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.VideoDecodeH264ProfileInfoExt;
+            return SType = StructureType.VideoDecodeH265DpbSlotInfoKhr;
         }
 
         /// <inheritdoc />

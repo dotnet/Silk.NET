@@ -35,8 +35,8 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type.Name", "ULONG")]
         [NativeName("Name", "clSize")]
         public uint ClSize;
-        [NativeName("Type", "ULONG [1]")]
-        [NativeName("Type.Name", "ULONG [1]")]
+        [NativeName("Type", "ULONG[1]")]
+        [NativeName("Type.Name", "ULONG[1]")]
         [NativeName("Name", "alData")]
         public fixed uint AlData[1];
     }

@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkVideoDecodeH265CapabilitiesEXT")]
-    public unsafe partial struct VideoDecodeH265CapabilitiesEXT : IExtendsChain<VideoCapabilitiesKHR>
+    [NativeName("Name", "VkVideoDecodeH265ProfileInfoKHR")]
+    public unsafe partial struct VideoDecodeH265ProfileInfoKHR : IExtendsChain<VideoProfileInfoKHR>, IExtendsChain<QueryPoolCreateInfo>
     {
-        public VideoDecodeH265CapabilitiesEXT
+        public VideoDecodeH265ProfileInfoKHR
         (
-            StructureType? sType = StructureType.VideoDecodeH265CapabilitiesExt,
+            StructureType? sType = StructureType.VideoDecodeH265ProfileInfoKhr,
             void* pNext = null,
-            Video.StdVideoH265LevelIdc? maxLevelIdc = null
+            Video.StdVideoH265ProfileIdc? stdProfileIdc = null
         ) : this()
         {
             if (sType is not null)
@@ -36,9 +36,9 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (maxLevelIdc is not null)
+            if (stdProfileIdc is not null)
             {
-                MaxLevelIdc = maxLevelIdc.Value;
+                StdProfileIdc = stdProfileIdc.Value;
             }
         }
 
@@ -53,15 +53,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "StdVideoH265LevelIdc")]
-        [NativeName("Type.Name", "StdVideoH265LevelIdc")]
-        [NativeName("Name", "maxLevelIdc")]
-        public Video.StdVideoH265LevelIdc MaxLevelIdc;
+        [NativeName("Type", "StdVideoH265ProfileIdc")]
+        [NativeName("Type.Name", "StdVideoH265ProfileIdc")]
+        [NativeName("Name", "stdProfileIdc")]
+        public Video.StdVideoH265ProfileIdc StdProfileIdc;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.VideoDecodeH265CapabilitiesExt;
+            return SType = StructureType.VideoDecodeH265ProfileInfoKhr;
         }
 
         /// <inheritdoc />

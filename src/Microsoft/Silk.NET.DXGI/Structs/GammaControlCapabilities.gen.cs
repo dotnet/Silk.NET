@@ -68,8 +68,8 @@ namespace Silk.NET.DXGI
         [NativeName("Type.Name", "UINT")]
         [NativeName("Name", "NumGammaControlPoints")]
         public uint NumGammaControlPoints;
-        [NativeName("Type", "float [1025]")]
-        [NativeName("Type.Name", "float [1025]")]
+        [NativeName("Type", "float[1025]")]
+        [NativeName("Type.Name", "float[1025]")]
         [NativeName("Name", "ControlPointPositions")]
         public fixed float ControlPointPositions[1025];
     }

@@ -25,7 +25,7 @@ namespace Silk.NET.Direct3D11
             uint? startOffset = null,
             uint? size = null,
             uint? uFlags = null,
-            nint* defaultValue = null,
+            void* defaultValue = null,
             uint? startTexture = null,
             uint? textureSize = null,
             uint? startSampler = null,
@@ -102,7 +102,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "LPVOID")]
         [NativeName("Type.Name", "LPVOID")]
         [NativeName("Name", "DefaultValue")]
-        public nint* DefaultValue;
+        public void* DefaultValue;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

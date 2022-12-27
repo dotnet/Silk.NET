@@ -16,16 +16,16 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkVideoDecodeH265PictureInfoEXT")]
-    public unsafe partial struct VideoDecodeH265PictureInfoEXT : IExtendsChain<VideoDecodeInfoKHR>
+    [NativeName("Name", "VkReleaseSwapchainImagesInfoEXT")]
+    public unsafe partial struct ReleaseSwapchainImagesInfoEXT : IChainable
     {
-        public VideoDecodeH265PictureInfoEXT
+        public ReleaseSwapchainImagesInfoEXT
         (
-            StructureType? sType = StructureType.VideoDecodeH265PictureInfoExt,
+            StructureType? sType = StructureType.ReleaseSwapchainImagesInfoExt,
             void* pNext = null,
-            Video.StdVideoDecodeH265PictureInfo* pStdPictureInfo = null,
-            uint? sliceCount = null,
-            uint* pSliceOffsets = null
+            SwapchainKHR? swapchain = null,
+            uint? imageIndexCount = null,
+            uint* pImageIndices = null
         ) : this()
         {
             if (sType is not null)
@@ -38,19 +38,19 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (pStdPictureInfo is not null)
+            if (swapchain is not null)
             {
-                PStdPictureInfo = pStdPictureInfo;
+                Swapchain = swapchain.Value;
             }
 
-            if (sliceCount is not null)
+            if (imageIndexCount is not null)
             {
-                SliceCount = sliceCount.Value;
+                ImageIndexCount = imageIndexCount.Value;
             }
 
-            if (pSliceOffsets is not null)
+            if (pImageIndices is not null)
             {
-                PSliceOffsets = pSliceOffsets;
+                PImageIndices = pImageIndices;
             }
         }
 
@@ -65,25 +65,25 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "StdVideoDecodeH265PictureInfo*")]
-        [NativeName("Type.Name", "StdVideoDecodeH265PictureInfo")]
-        [NativeName("Name", "pStdPictureInfo")]
-        public Video.StdVideoDecodeH265PictureInfo* PStdPictureInfo;
+        [NativeName("Type", "VkSwapchainKHR")]
+        [NativeName("Type.Name", "VkSwapchainKHR")]
+        [NativeName("Name", "swapchain")]
+        public SwapchainKHR Swapchain;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "sliceCount")]
-        public uint SliceCount;
+        [NativeName("Name", "imageIndexCount")]
+        public uint ImageIndexCount;
 /// <summary></summary>
         [NativeName("Type", "uint32_t*")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "pSliceOffsets")]
-        public uint* PSliceOffsets;
+        [NativeName("Name", "pImageIndices")]
+        public uint* PImageIndices;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.VideoDecodeH265PictureInfoExt;
+            return SType = StructureType.ReleaseSwapchainImagesInfoExt;
         }
 
         /// <inheritdoc />

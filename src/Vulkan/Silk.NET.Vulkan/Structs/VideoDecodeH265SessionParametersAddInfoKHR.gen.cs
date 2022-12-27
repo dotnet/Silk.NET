@@ -16,12 +16,12 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkVideoDecodeH265SessionParametersAddInfoEXT")]
-    public unsafe partial struct VideoDecodeH265SessionParametersAddInfoEXT : IExtendsChain<VideoSessionParametersUpdateInfoKHR>
+    [NativeName("Name", "VkVideoDecodeH265SessionParametersAddInfoKHR")]
+    public unsafe partial struct VideoDecodeH265SessionParametersAddInfoKHR : IExtendsChain<VideoSessionParametersUpdateInfoKHR>
     {
-        public VideoDecodeH265SessionParametersAddInfoEXT
+        public VideoDecodeH265SessionParametersAddInfoKHR
         (
-            StructureType? sType = StructureType.VideoDecodeH265SessionParametersAddInfoExt,
+            StructureType? sType = StructureType.VideoDecodeH265SessionParametersAddInfoKhr,
             void* pNext = null,
             uint? stdVpscount = null,
             Video.StdVideoH265VideoParameterSet* pStdVpss = null,
@@ -116,7 +116,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.VideoDecodeH265SessionParametersAddInfoExt;
+            return SType = StructureType.VideoDecodeH265SessionParametersAddInfoKhr;
         }
 
         /// <inheritdoc />

@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkVideoDecodeH265ProfileInfoEXT")]
-    public unsafe partial struct VideoDecodeH265ProfileInfoEXT : IExtendsChain<VideoProfileInfoKHR>, IExtendsChain<QueryPoolCreateInfo>
+    [NativeName("Name", "VkPhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM")]
+    public unsafe partial struct PhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
-        public VideoDecodeH265ProfileInfoEXT
+        public PhysicalDeviceMultiviewPerViewViewportsFeaturesQCOM
         (
-            StructureType? sType = StructureType.VideoDecodeH265ProfileInfoExt,
+            StructureType? sType = StructureType.PhysicalDeviceMultiviewPerViewViewportsFeaturesQCom,
             void* pNext = null,
-            Video.StdVideoH265ProfileIdc? stdProfileIdc = null
+            Bool32? multiviewPerViewViewports = null
         ) : this()
         {
             if (sType is not null)
@@ -36,9 +36,9 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (stdProfileIdc is not null)
+            if (multiviewPerViewViewports is not null)
             {
-                StdProfileIdc = stdProfileIdc.Value;
+                MultiviewPerViewViewports = multiviewPerViewViewports.Value;
             }
         }
 
@@ -53,15 +53,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "StdVideoH265ProfileIdc")]
-        [NativeName("Type.Name", "StdVideoH265ProfileIdc")]
-        [NativeName("Name", "stdProfileIdc")]
-        public Video.StdVideoH265ProfileIdc StdProfileIdc;
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "multiviewPerViewViewports")]
+        public Bool32 MultiviewPerViewViewports;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.VideoDecodeH265ProfileInfoExt;
+            return SType = StructureType.PhysicalDeviceMultiviewPerViewViewportsFeaturesQCom;
         }
 
         /// <inheritdoc />

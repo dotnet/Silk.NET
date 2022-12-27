@@ -16,15 +16,16 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkVideoDecodeH264CapabilitiesEXT")]
-    public unsafe partial struct VideoDecodeH264CapabilitiesEXT : IExtendsChain<VideoCapabilitiesKHR>
+    [NativeName("Name", "VkDirectDriverLoadingListLUNARG")]
+    public unsafe partial struct DirectDriverLoadingListLUNARG : IExtendsChain<InstanceCreateInfo>
     {
-        public VideoDecodeH264CapabilitiesEXT
+        public DirectDriverLoadingListLUNARG
         (
-            StructureType? sType = StructureType.VideoDecodeH264CapabilitiesExt,
+            StructureType? sType = StructureType.DirectDriverLoadingListLunarg,
             void* pNext = null,
-            Video.StdVideoH264LevelIdc? maxLevelIdc = null,
-            Offset2D? fieldOffsetGranularity = null
+            DirectDriverLoadingModeLUNARG? mode = null,
+            uint? driverCount = null,
+            DirectDriverLoadingInfoLUNARG* pDrivers = null
         ) : this()
         {
             if (sType is not null)
@@ -37,14 +38,19 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (maxLevelIdc is not null)
+            if (mode is not null)
             {
-                MaxLevelIdc = maxLevelIdc.Value;
+                Mode = mode.Value;
             }
 
-            if (fieldOffsetGranularity is not null)
+            if (driverCount is not null)
             {
-                FieldOffsetGranularity = fieldOffsetGranularity.Value;
+                DriverCount = driverCount.Value;
+            }
+
+            if (pDrivers is not null)
+            {
+                PDrivers = pDrivers;
             }
         }
 
@@ -59,20 +65,25 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "StdVideoH264LevelIdc")]
-        [NativeName("Type.Name", "StdVideoH264LevelIdc")]
-        [NativeName("Name", "maxLevelIdc")]
-        public Video.StdVideoH264LevelIdc MaxLevelIdc;
+        [NativeName("Type", "VkDirectDriverLoadingModeLUNARG")]
+        [NativeName("Type.Name", "VkDirectDriverLoadingModeLUNARG")]
+        [NativeName("Name", "mode")]
+        public DirectDriverLoadingModeLUNARG Mode;
 /// <summary></summary>
-        [NativeName("Type", "VkOffset2D")]
-        [NativeName("Type.Name", "VkOffset2D")]
-        [NativeName("Name", "fieldOffsetGranularity")]
-        public Offset2D FieldOffsetGranularity;
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "driverCount")]
+        public uint DriverCount;
+/// <summary></summary>
+        [NativeName("Type", "VkDirectDriverLoadingInfoLUNARG*")]
+        [NativeName("Type.Name", "VkDirectDriverLoadingInfoLUNARG")]
+        [NativeName("Name", "pDrivers")]
+        public DirectDriverLoadingInfoLUNARG* PDrivers;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.VideoDecodeH264CapabilitiesExt;
+            return SType = StructureType.DirectDriverLoadingListLunarg;
         }
 
         /// <inheritdoc />

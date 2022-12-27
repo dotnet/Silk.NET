@@ -79,8 +79,8 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type.Name", "UINT64")]
         [NativeName("Name", "ExecutionTime")]
         public ulong ExecutionTime;
-        [NativeName("Type", "BYTE [4]")]
-        [NativeName("Type.Name", "BYTE [4]")]
+        [NativeName("Type", "BYTE[4]")]
+        [NativeName("Type.Name", "BYTE[4]")]
         [NativeName("Name", "pbOutput")]
         public fixed byte PbOutput[4];
     }

@@ -12,6 +12,8 @@ namespace Silk.NET.OpenGL
     [NativeName("Name", "TextureEnvParameter")]
     public enum TextureEnvParameter : int
     {
+        [NativeName("Name", "GL_TEXTURE_LOD_BIAS")]
+        TextureLodBias = 0x8501,
         [NativeName("Name", "GL_COMBINE_ARB")]
         CombineArb = 0x8570,
         [NativeName("Name", "GL_COMBINE_EXT")]

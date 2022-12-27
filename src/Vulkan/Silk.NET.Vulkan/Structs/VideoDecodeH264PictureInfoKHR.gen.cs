@@ -16,16 +16,16 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkVideoDecodeH264SessionParametersCreateInfoEXT")]
-    public unsafe partial struct VideoDecodeH264SessionParametersCreateInfoEXT : IExtendsChain<VideoSessionParametersCreateInfoKHR>
+    [NativeName("Name", "VkVideoDecodeH264PictureInfoKHR")]
+    public unsafe partial struct VideoDecodeH264PictureInfoKHR : IExtendsChain<VideoDecodeInfoKHR>
     {
-        public VideoDecodeH264SessionParametersCreateInfoEXT
+        public VideoDecodeH264PictureInfoKHR
         (
-            StructureType? sType = StructureType.VideoDecodeH264SessionParametersCreateInfoExt,
+            StructureType? sType = StructureType.VideoDecodeH264PictureInfoKhr,
             void* pNext = null,
-            uint? maxStdSpscount = null,
-            uint? maxStdPpscount = null,
-            VideoDecodeH264SessionParametersAddInfoEXT* pParametersAddInfo = null
+            Video.StdVideoDecodeH264PictureInfo* pStdPictureInfo = null,
+            uint? sliceCount = null,
+            uint* pSliceOffsets = null
         ) : this()
         {
             if (sType is not null)
@@ -38,19 +38,19 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (maxStdSpscount is not null)
+            if (pStdPictureInfo is not null)
             {
-                MaxStdSpscount = maxStdSpscount.Value;
+                PStdPictureInfo = pStdPictureInfo;
             }
 
-            if (maxStdPpscount is not null)
+            if (sliceCount is not null)
             {
-                MaxStdPpscount = maxStdPpscount.Value;
+                SliceCount = sliceCount.Value;
             }
 
-            if (pParametersAddInfo is not null)
+            if (pSliceOffsets is not null)
             {
-                PParametersAddInfo = pParametersAddInfo;
+                PSliceOffsets = pSliceOffsets;
             }
         }
 
@@ -65,25 +65,25 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxStdSPSCount")]
-        public uint MaxStdSpscount;
+        [NativeName("Type", "StdVideoDecodeH264PictureInfo*")]
+        [NativeName("Type.Name", "StdVideoDecodeH264PictureInfo")]
+        [NativeName("Name", "pStdPictureInfo")]
+        public Video.StdVideoDecodeH264PictureInfo* PStdPictureInfo;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxStdPPSCount")]
-        public uint MaxStdPpscount;
+        [NativeName("Name", "sliceCount")]
+        public uint SliceCount;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoDecodeH264SessionParametersAddInfoEXT*")]
-        [NativeName("Type.Name", "VkVideoDecodeH264SessionParametersAddInfoEXT")]
-        [NativeName("Name", "pParametersAddInfo")]
-        public VideoDecodeH264SessionParametersAddInfoEXT* PParametersAddInfo;
+        [NativeName("Type", "uint32_t*")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "pSliceOffsets")]
+        public uint* PSliceOffsets;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.VideoDecodeH264SessionParametersCreateInfoExt;
+            return SType = StructureType.VideoDecodeH264PictureInfoKhr;
         }
 
         /// <inheritdoc />

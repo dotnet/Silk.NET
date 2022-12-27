@@ -1051,6 +1051,26 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         public partial void QueueCopyTextureForBrowser(ref Queue queue, [Flow(FlowDirection.In)] in ImageCopyTexture source, [Flow(FlowDirection.In)] in ImageCopyTexture destination, [Flow(FlowDirection.In)] in Extent3D copySize, [Flow(FlowDirection.In)] in CopyTextureForBrowserOptions options);
 
         /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1747, Column 18 in dawn-webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuQueueOnSubmittedWorkDone")]
+        public unsafe partial void QueueOnSubmittedWorkDone(Queue* queue, ulong signalValue, PfnQueueWorkDoneCallback callback, void* userdata);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1747, Column 18 in dawn-webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuQueueOnSubmittedWorkDone")]
+        public unsafe partial void QueueOnSubmittedWorkDone<T0>(Queue* queue, ulong signalValue, PfnQueueWorkDoneCallback callback, ref T0 userdata) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1747, Column 18 in dawn-webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuQueueOnSubmittedWorkDone")]
+        public unsafe partial void QueueOnSubmittedWorkDone(ref Queue queue, ulong signalValue, PfnQueueWorkDoneCallback callback, void* userdata);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1747, Column 18 in dawn-webgpu.h")]
+        [NativeApi(EntryPoint = "wgpuQueueOnSubmittedWorkDone")]
+        public partial void QueueOnSubmittedWorkDone<T0>(ref Queue queue, ulong signalValue, PfnQueueWorkDoneCallback callback, ref T0 userdata) where T0 : unmanaged;
+
+        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1752, Column 18 in dawn-webgpu.h")]
         [NativeApi(EntryPoint = "wgpuQueueReference")]
         public unsafe partial void QueueReference(Queue* queue);
