@@ -223,3 +223,53 @@ Now, run the program again, and if you get the same blue window, you've set the 
 Now, let's create the **element buffer object**.
 
 ## Element Buffer Objects (EBOs)
+Unlike a vertex buffer, an element buffer is not *strictly* required to display something on screen, however not using it will require making your vertex buffer a lot larger, with a lot more duplicate data.
+
+For those familliar with Direct3D terms, EBOs are more commonly referred to as **index buffers**, which is what this tutorial will refer to them from now on.
+
+Take a look at the `vertices` array we defined earlier. You may have noticed that it only has four different points in it. Great! That's how you make a quad. But remember - that's not how this works. As mentioned earlier, a quad is made up of two triangles. But wait - that's six points... But we've only defined four. What's going on?
+
+Well, that's where index buffers come in! An index buffer simply tells the GPU which points in the vertex buffer to use for each triangle.
+
+Add the following to your `OnLoad` method:
+
+```cs
+uint[] indices =
+{
+    0u, 1u, 3u,
+    1u, 2u, 3u
+};
+```
+
+Now, you may be looking at this thinking "what is this?". Don't worry, once you know what it's doing it's quite easy to wrap your head around.
+
+You'll notice that it contains 6 values. These values correspond to an index in our vertex buffer (notice how the maximum value is 3, which is the maximum index in our vertex buffer.)
+
+Take a look at the [image you saw earlier](#what-makes-up-a-quad). The points are representitive of a value in the vertex buffer. If you trace each point, you'll see it's in clockwise order (top left is the first point, bottom left is the last point). Assign each of these an incrementing value from 0-3. Then, trace out the indices we defined above. You may notice that you'll trace out two triangles, making up our quad. 
+
+Great! Hopefully you now have a better understanding of how index buffers allow you to reduce the amount of duplicate data in the vertex buffer. If we didn't use an index buffer, we'd have to define the top left, and bottom left points twice!
+
+### Creating the buffer
+Creating the EBO is very similar to creating a vertex buffer.
+
+First, we must create and bind the buffer itself. Add the following to your `OnLoad` method:
+
+```cs
+_ebo = _gl.GenBuffer();
+_gl.BindBuffer(BufferTargetARB.ElementArrayBuffer, _ebo);
+```
+
+Then, we fill the buffer with data, much in the same way as we did with the vertex buffer.
+
+Again, add the following to your `OnLoad` method:
+
+```cs
+fixed (uint* buf = indices)
+    _gl.BufferData(BufferTargetARB.ArrayBuffer, (nuint) vertices.Length, buf, BufferUsageARB.StaticDraw);
+```
+
+And that's it! In OpenGL, this is the common way you'll **create** buffers, from VBOs, to EBOs, to UBOs.
+
+Run the program again, and if you still see the blue window, you've successfully created the EBO!
+
+Now we can move onto the **shader**.
