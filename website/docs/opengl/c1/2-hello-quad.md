@@ -206,7 +206,11 @@ Silk.NET heavily uses `unsafe` code. Don't worry, this won't make your computer 
 
 <?# Info "If you wish to use `Span` instead, and remain in `safe` mode, Silk.NET does support these too. However, I will be using `unsafe` in this tutorial instead, as this is both what I personally use, as well as what the samples use." /?>
 
-Unsafe mode is not enabled by default, so we need to enable it. To enable it, add `<AllowUnsafeBlocks>true</AllowUnsafeBlocks>` to the `PropertyGroup` in your project's `.csproj` file. You also **MUST** add `unsafe` to your `OnLoad` and `OnRender` methods, like so:
+Unsafe mode is not enabled by default, so we need to enable it. To enable it:
+- If you're on Visual Studio 2022, open your project properties and under Build --> General, make sure the box that says "Unsafe code" is checked.
+- You can also edit your project's `.csproj` file manually, by adding an `<AllowUnsafeBlocks>true</AllowUnsafeBlocks>` inside the `<PropertyGroup>`.
+
+This will now allow you to use the `unsafe` keyword, which allows a block of code to contain unsafe code. You now **MUST** add `unsafe` to your `OnLoad` and `OnRender` methods, like so:
 
 ```cs
 public static unsafe void OnLoad() { ... }
