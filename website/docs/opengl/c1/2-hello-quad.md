@@ -138,7 +138,7 @@ Binding is a term you will hear a lot with OpenGL, and in these tutorials too. B
 We're now ready to give the VAO some data. But first, we need a **vertex buffer**.
 
 ## Vertex Buffer Objects (VBOs)
-Here is the part where we actually give the GPU some data it can work with. For 95% of graphics applications, a vertex buffer is **required** to display anything on screen.
+Here is the part where we actually give the GPU some data it can work with. For most graphics applications, a vertex buffer is **required** to display anything on screen.
 
 ### What is a vertex buffer?
 Before we can continue, it's handy to know what a vertex buffer is, and what it does.
