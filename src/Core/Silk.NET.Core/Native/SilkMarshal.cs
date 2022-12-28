@@ -300,20 +300,25 @@ namespace Silk.NET.Core.Native
         /// <returns>The string read from memory.</returns>
         public static string? PtrToString(nint input, NativeStringEncoding encoding = NativeStringEncoding.Ansi)
         {
+            Console.WriteLine($"in ptr to string: {input}");
             if (input == 0)
             {
+                Console.WriteLine($"null");
                 return null;
             }
             
-            return encoding switch
+            Console.WriteLine("got to the decoding part, sick");
+            var var = encoding switch
             {
-                NativeStringEncoding.BStr => BStrToString(input),
-                NativeStringEncoding.LPStr => AnsiToString(input),
-                NativeStringEncoding.LPTStr => Utf8PtrToString(input),
+                NativeStringEncoding.BStr      => BStrToString(input),
+                NativeStringEncoding.LPStr     => AnsiToString(input),
+                NativeStringEncoding.LPTStr    => Utf8PtrToString(input),
                 NativeStringEncoding.LPUTF8Str => Utf8PtrToString(input),
-                NativeStringEncoding.LPWStr => WideToString(input),
-                _ => ThrowInvalidEncoding<string>()
+                NativeStringEncoding.LPWStr    => WideToString(input),
+                _                              => ThrowInvalidEncoding<string>()
             };
+            Console.WriteLine($"got {var}");
+            return var;
 
             static unsafe string BStrToString(nint ptr)
                 => new string((char*) ptr, 0, (int) (*((uint*) ptr - 1) / sizeof(char)));
