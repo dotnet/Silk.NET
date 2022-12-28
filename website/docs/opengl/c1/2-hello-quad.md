@@ -166,7 +166,7 @@ float[] vertices =
 ```
 
 ### What makes up a quad?
-In modern graphics programming, you are expected to use triangles. While you may see options for quads, or lines, these are mostly deprecated.
+In modern graphics programming, you are expected to use triangles, lines, or points. While you may see options for quads, these are obsolete.
 
 Therefore, a quad is made of two right-angle triangles. This can best be seen if we view the result in **wireframe** mode.
 
