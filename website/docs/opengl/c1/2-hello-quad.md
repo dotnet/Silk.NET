@@ -202,7 +202,7 @@ In this case, we're binding to `ArrayBuffer` since we're creating a vertex buffe
 Let's fill our buffer with some data! Before we do that though, you need to be aware of `unsafe` in C#.
 
 #### Unsafe C#
-Silk.NET heavily uses `unsafe` code. Don't worry, this won't make your computer explode, however it does exit out of the "safe" managed environment of C#, and enters a realm where undefined behaviour, segmentation faults, and strange results are more likely to occur if you are not careful.
+Silk.NET heavily uses `unsafe` code. Don't worry, this won't make your computer explode, however it does exit out of the "memory safe" managed environment of C#, and enters a realm where undefined behavior, segmentation faults, and strange results are more likely to occur if you are not careful. Since we're working with low-level APIs, and OpenGL is defined in plain C, some unsafe code will be necessary in order for us to be able to communicate with it from C#.
 
 <?# Info "If you wish to use `Span` instead, and remain in `safe` mode, Silk.NET does support these too. However, I will be using `unsafe` in this tutorial instead, as this is both what I personally use, as well as what the samples use." /?>
 
