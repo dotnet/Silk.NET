@@ -129,14 +129,18 @@ namespace Silk.NET.Windowing
         {
             get
             {
+                Console.WriteLine("In view only");
                 foreach (var windowPlatform in Platforms)
                 {
+                    Console.WriteLine($"In view only trying {windowPlatform.GetType()}");
                     if (windowPlatform.IsApplicable && !windowPlatform.IsViewOnly)
                     {
+                        Console.WriteLine($"not view only");
                         return false;
                     }
                 }
 
+                Console.WriteLine($"view only");
                 return true;
             }
         }
@@ -188,8 +192,10 @@ namespace Silk.NET.Windowing
         /// <returns>A Silk.NET window using the current platform.</returns>
         public static IView GetView(ViewOptions? options = null)
         {
+            Console.WriteLine($"Getting view");
             foreach (var platform in Platforms)
             {
+                Console.WriteLine($"Trying platform {platform.GetType()}");
                 if (platform.IsApplicable)
                 {
                     return platform.GetView(options);

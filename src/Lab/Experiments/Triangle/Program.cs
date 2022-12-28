@@ -4,9 +4,11 @@ using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using SampleBase;
+using Silk.NET.Input.Sdl;
 using Silk.NET.Maths;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
+using Silk.NET.Windowing.Sdl;
 using SdlProvider = Silk.NET.SDL.SdlProvider;
 using Shader = SampleBase.Shader;
 
@@ -29,7 +31,7 @@ namespace Triangle
         
         public static GraphicsAPI API { get; set; } = GraphicsAPI.Default;
 
-#if !NET6_0
+#if !ANDROID
         // Exclude the entry point if we're running in .NET 6, as this file is
         // compiled into the TriangleNET6 project too which has its own
         // entrypoint.
@@ -38,28 +40,49 @@ namespace Triangle
 
         public static void Run()
         {
-            //Silk.NET.Windowing.Sdl.SdlWindowing.Use();
-            //SdlProvider.SetMainReady = true;
+            Console.WriteLine("Start");
+            #if WASM //NOTE: not having this WASM check changes nothing, but it's here for clarity
+            // Register SDL windowing and Input manually
+            // Silk.NET doesn't have all the reflection facilities to find them automatically on WASM
+            Console.WriteLine("Before Window registration");
+            SdlWindowing.RegisterPlatform();
+            Console.WriteLine("Before Input registration");
+            SdlInput.RegisterPlatform();
+            #endif
+            
             var opts = ViewOptions.Default;
             opts.FramesPerSecond = 90;
             opts.UpdatesPerSecond = 90;
             opts.API = API;
+            
+            #if WASM
+            //On WASM, we should be using OpenGLES 3.0
+            opts.API = new GraphicsAPI(ContextAPI.OpenGLES, new APIVersion(3, 0));
+            #endif
+            
             opts.VSync = false;
+            Console.WriteLine("Before window creation");
+            Console.WriteLine(Window.Platforms.Count);
             if (Window.IsViewOnly)
             {
+                Console.WriteLine("View only");
                 _window = Window.GetView(opts);
             }
             else
             {
+                Console.WriteLine("Not view only");
                 _window = Window.Create(new(opts));
             }
+            Console.WriteLine($"After window creation");
 
+            Console.WriteLine($"before setting events");
             _window.Load += Load;
             _window.Load += InputTest.Program.OnLoad(_window);
             _window.Render += RenderFrame;
             _window.Update += UpdateFrame;
             _window.FramebufferResize += Resize;
             _window.Closing += End;
+            Console.WriteLine("Before window run");
             _window.Run();
 #if REOPEN_EXPERIMENT
             // Experiment notes:
@@ -79,13 +102,14 @@ namespace Triangle
 
         private static unsafe void Load()
         {
-            _gl = GL.GetApi(_window);
-            Console.WriteLine("=== BEGIN OPENGL INFORMATION");
-            foreach (StringName val in Enum.GetValues(typeof(StringName)))
-            {
-                Console.WriteLine($"{val} = {_gl.GetStringS(val)}");
-            }
-            Console.WriteLine("=== END OPENGL INFORMATION");
+            Console.WriteLine("Before GL");
+            _gl = _window.CreateOpenGL();
+            // Console.WriteLine("=== BEGIN OPENGL INFORMATION");
+            // foreach (StringName val in Enum.GetValues(typeof(StringName)))
+            // {
+            //     Console.WriteLine($"{val} = {_gl.GetStringS(val)}");
+            // }
+            // Console.WriteLine("=== END OPENGL INFORMATION");
 
             if (API.API == ContextAPI.OpenGL)
             {
@@ -94,20 +118,25 @@ namespace Triangle
                 _gl.DebugMessageCallback(OnDebug, null);
             }
 
+            Console.WriteLine("Before clear");
             _gl.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
             _vertexBufferObject = _gl.GenBuffer();
             _gl.BindBuffer(GLEnum.ArrayBuffer, _vertexBufferObject);
             fixed (float* vertices = _vertices)
             {
+                Console.WriteLine("Before buffer");
                 _gl.BufferData
                     (GLEnum.ArrayBuffer, (nuint)( _vertices.Length * sizeof(float)), vertices, GLEnum.StaticDraw);
             }
 
-#if NET6_0
+            Console.WriteLine("Before shader");
+#if ANDROID
             _shader = new Shader("TriangleNET6.shader.vert", "TriangleNET6.shader.frag", _gl, typeof(Program));
 #else
             _shader = new Shader("Triangle.shader.vert", "Triangle.shader.frag", _gl, typeof(Program));
 #endif
+            Console.WriteLine("After shader");
+            
             _shader.Use();
             _vertexArrayObject = _gl.GenVertexArray();
             _gl.BindVertexArray(_vertexArrayObject);
