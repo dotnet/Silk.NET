@@ -9,6 +9,14 @@
         <RuntimeIdentifiers Condition="'$(RuntimeIdentifiers)' == '' And '$(TargetFramework)' == 'net6.0-android'">android-arm64;android-x86;android-arm;android-x64</RuntimeIdentifiers>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DefineConstants>TRACE;ANDROID</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DefineConstants>TRACE;ANDROID</DefineConstants>
+    </PropertyGroup>
+
     <ItemGroup>
         <!-- Apparently NETSDK1150 is a thing now so let's use Compile on all the files instead of ProjectReferences -->
         <Compile Include="..\Triangle\**\*.cs" Exclude="..\Triangle\obj\**\*.cs" />

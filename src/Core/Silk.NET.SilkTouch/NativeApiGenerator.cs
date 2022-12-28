@@ -110,7 +110,7 @@ namespace Silk.NET.SilkTouch
             hintName = hintName.Select(x => char.IsLetterOrDigit(x) ? x : '_').ToArray().AsSpan().ToString();
             var name = $"{hintName}.{Guid.NewGuid()}.gen";
             context.AddSource(name, SourceText.From(s, Encoding.UTF8));
-            // File.WriteAllText(@"C:\st\" + name, s);
+            File.WriteAllText(@"/home/beyley/Silk.NET/src/Lab/" + name, s);
         }
 
         private string ProcessClassDeclaration

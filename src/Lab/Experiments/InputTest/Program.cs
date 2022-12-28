@@ -13,7 +13,7 @@ namespace InputTest
 {
     public class Program
     {
-#if !NET6_0
+#if !ANDROID
         // Exclude the entry point if we're running in .NET 6, as this file is
         // compiled into the TriangleNET6 project too which has its own
         // entrypoint.

@@ -36,7 +36,9 @@ namespace Silk.NET.Windowing.Sdl
             {
                 try
                 {
+                    Console.WriteLine($"Trying to get sdl api");
                     SDL.Sdl.GetApi();
+                    Console.WriteLine($"after sdl API");
                 }
                 catch (Exception ex)
                 {
@@ -46,6 +48,7 @@ namespace Silk.NET.Windowing.Sdl
                     return false;
                 }
 
+                Console.WriteLine($"returning true for applicable");
                 return true;
             }
         );
@@ -68,13 +71,22 @@ namespace Silk.NET.Windowing.Sdl
 
         string Name => nameof(SdlPlatform);
 
-        public bool IsViewOnly => IsApplicable && SdlProvider.UninitializedSDL.Value.GetPlatformS() switch
+        public bool IsViewOnly
         {
-            "Windows" => false,
-            "Mac OS X" => false,
-            "Linux" => false,
-            _ => true
-        };
+            get
+            {
+                Console.WriteLine("in view only SDL check");
+                var platform = SdlProvider.UninitializedSDL.Value.GetPlatformS();
+                Console.WriteLine($"found platform {platform}");
+                return IsApplicable && platform switch
+                {
+                    "Windows"  => false,
+                    "Mac OS X" => false,
+                    "Linux"    => false,
+                    _          => true
+                };
+            }
+        }
 
         public bool IsApplicable => _isApplicable.Value;
         public event Action<List<Event>>? EventReceived;
