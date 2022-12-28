@@ -79,7 +79,7 @@ Then, in your `OnLoad` method, add the following:
 _gl.ClearColor(Color.CornflowerBlue);
 ```
 
-You may notice that this function contains various **overloads**, including ones for a Vector4, and 4 floats. We'll be using the overload that takes `System.Drawing.Color`, because it is the easiest to use and understand.
+You may notice that this function contains various **overloads**, including ones for a `System.Numerics.Vector4`, and 4 floats. We'll be using the overload that takes `System.Drawing.Color`, because it is the easiest to use and understand.
 
 If you run your application now, you'll notice that the window is still black. That's because we've set the clear *color*, but not actually told OpenGL to clear the window.
 
