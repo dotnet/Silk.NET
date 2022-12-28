@@ -164,23 +164,47 @@ namespace Silk.NET.Windowing.Internals
 
 #if NET6_0_OR_GREATER
         [DllImport("__Internal_emscripten")]
-        private static extern unsafe double emscripten_set_main_loop(IntPtr action, int fps, bool simulateInfiniteLoop);
+        private static extern void emscripten_set_main_loop(IntPtr action, int fps, bool simulateInfiniteLoop);
+        
+        [DllImport("__Internal_emscripten")]
+        private static extern void emscripten_cancel_main_loop();
+
+        private enum LoopTimingMode
+        {
+            SetTimeout   = 0,
+            RAF          = 1,
+            SetImmediate = 2
+        }
+
+        [DllImport("__Internal_emscripten")]
+        private static extern void emscripten_set_main_loop_timing(LoopTimingMode mode, int value);
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         private delegate void em_callback_func();
 
         private static Action _onFrame;
+        private static IView  _browserView;
+        
         [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
-        static void onFrameCallback() => _onFrame();
+        static void onFrameCallback()
+        {
+            if (_browserView.IsClosing)
+            {
+                emscripten_cancel_main_loop();
+                return;
+            }
+            _onFrame();
+        }
 #endif
 
         // Game loop implementation
         public virtual unsafe void Run(Action onFrame)
         {
 #if NET6_0_OR_GREATER
-            if(RuntimeInformation.IsOSPlatform(OSPlatform.Create("BROWSER"))) 
+            if(RuntimeInformation.IsOSPlatform(OSPlatform.Create("BROWSER")))
             {
-                _onFrame = onFrame;
+                _browserView = this;
+                _onFrame     = onFrame;
                 emscripten_set_main_loop((IntPtr)(delegate* unmanaged[Cdecl] <void>)&onFrameCallback, 0, true);
             }
             else 
@@ -208,8 +232,17 @@ namespace Silk.NET.Windowing.Internals
 
                 if (!IsContextControlDisabled && _swapIntervalChanged)
                 {
-                    GLContext?.SwapInterval(VSync ? 1 : 0);
-                    _swapIntervalChanged = false;
+#if NET6_0_OR_GREATER
+                    if (RuntimeInformation.IsOSPlatform(OSPlatform.Create("BROWSER")))
+                    {
+                        emscripten_set_main_loop_timing(VSync ? LoopTimingMode.RAF : LoopTimingMode.SetTimeout, VSync ? 1 : 0);
+                    }
+                    else
+#endif
+                    {
+                        GLContext?.SwapInterval(VSync ? 1 : 0);
+                        _swapIntervalChanged = false;
+                    }
                 }
 
                 delta = _renderStopwatch.Elapsed.TotalSeconds;
