@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Runtime.InteropServices;
 
 namespace Silk.NET.SDL
 {
@@ -48,6 +49,13 @@ namespace Silk.NET.SDL
             #if DEBUG
             Console.WriteLine("SDL initialized.");
             #endif
+
+            //Disable haptic support on the web
+            if(RuntimeInformation.IsOSPlatform(OSPlatform.Create("BROWSER")))
+            {
+                InitFlags &= ~Sdl.InitHaptic;
+            }
+
             if (sdl.Init(InitFlags) != 0)
             {
                 sdl.ThrowError();
