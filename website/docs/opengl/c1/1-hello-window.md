@@ -13,7 +13,7 @@
 ---
 
 # 1.1 - Hello Window
-<?# Info "You can view the source code for this tutorial [here.](../sources/1.1-final-result.html)" /?>
+<?# Info "You can view the source code for this tutorial [here](../sources/1.1-final-result.html)." /?>
 
 ## Introduction
 Welcome to your first Silk.NET tutorial!
@@ -268,4 +268,4 @@ public class Program
 }
 ```
 
-You can also view this on its own [here.](../sources/1.1-final-result.html)
+You can also view this on its own [here](../sources/1.1-final-result.html).
