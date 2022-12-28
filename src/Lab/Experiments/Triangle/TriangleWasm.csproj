@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <DefineConstants>TRACE;WASM</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <DefineConstants>TRACE;WASM</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="../BlankWindow/WasmScripts/**" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Input\Silk.NET.Input\Silk.NET.Input.csproj" />
+      <ProjectReference Include="..\..\..\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
+      <ProjectReference Include="..\..\..\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
+      <ProjectReference Include="..\InputTest\InputTest.csproj" />
+      <ProjectReference Include="..\SampleBase\SampleBase.csproj" />
+
+        <PackageReference Include="Uno.Foundation.Runtime.WebAssembly" Version="4.7.0-dev.730" />
+        <PackageReference Include="Uno.Wasm.Bootstrap" Version="8.0.0-dev.65" />
+        <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="8.0.0-dev.65" PrivateAssets="all" />
+
+        <WasmShellAdditionalPInvokeLibrary Include="SDL" />
+        <WasmShellAdditionalPInvokeLibrary Include="__Internal_emscripten" />
+        <WasmShellExtraEmccFlags Include="-s USE_SDL=2 -s USE_WEBGL2=1" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <EmbeddedResource Include="*.vert" />
+      <EmbeddedResource Include="*.frag" />
+    </ItemGroup>
+</Project>
