@@ -297,9 +297,11 @@ There are many different types of shaders:
 
 These shaders all serve different purposes, however the most commonly used shaders are the **vertex** and **fragment** shaders, and we will be using those in this tutorial.
 
-A vertex shader is run (invoked) for every vertex in the vertex buffer. The vertex buffer is where you perform transformations, such as world and camera matrices (which we'll get into in a later tutorial).
+A vertex shader is run (invoked) for every vertex in the vertex buffer. The vertex buffer is where you perform transformations such as translating, rotating or scaling and object. Once the vertex shaders are done running, our vertices are arranged into **primitives** (in our case, triangles), and the on-screen pixels these triangles occupy are filled by fragment shaders. This process is called **rasterization**.
 
-The fragment shader is invoked for every fragment of every vertex on screen. A fragment is essentially a pixel, and Direct3D even calls them pixel shaders. As you may expect, these shaders are a lot more intensive than vertex shaders, and can often be the cause of GPU slowdowns. Fragment shaders is where you perform the stuff that gets displayed on screen, such as texturing and many forms of lighting.
+The fragment shader is invoked for every fragment of every primitive on screen. A fragment is essentially a pixel, and Direct3D even calls them pixel shaders. As you may expect, these shaders are a lot more intensive than vertex shaders, and can often be the cause of GPU slowdowns, given that a single triangle may only invoke three vertex shaders, but can result in hundreds or thousands of fragment shader invocations!
+
+Fragment shaders is where you perform the stuff that gets displayed on screen, such as texturing and many forms of lighting.
 
 For the moment, this is all you need to know about shaders. You will learn more about shaders as we progress further in this tutorial, as knowing how shaders work and operate is a vital thing to know when it comes to modern graphics programming. The sky is the limit! (Or in our case, an endless cornflower blue void...)
 
