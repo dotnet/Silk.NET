@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Threading;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Maths;
@@ -161,12 +162,34 @@ namespace Silk.NET.Windowing.Internals
             set => _optionsCache.VideoMode = value;
         }
 
+#if NET6_0_OR_GREATER
+        [DllImport("__Internal_emscripten")]
+        private static extern unsafe double emscripten_set_main_loop(IntPtr action, int fps, bool simulateInfiniteLoop);
+
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void em_callback_func();
+
+        private static Action _onFrame;
+        [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
+        static void onFrameCallback() => _onFrame();
+#endif
+
         // Game loop implementation
-        public virtual void Run(Action onFrame)
+        public virtual unsafe void Run(Action onFrame)
         {
-            while (!IsClosing)
+#if NET6_0_OR_GREATER
+            if(RuntimeInformation.IsOSPlatform(OSPlatform.Create("BROWSER"))) 
             {
-                onFrame();
+                _onFrame = onFrame;
+                emscripten_set_main_loop((IntPtr)(delegate* unmanaged[Cdecl] <void>)&onFrameCallback, 0, true);
+            }
+            else 
+#endif
+            {
+                while (!IsClosing)
+                {
+                    onFrame();
+                }
             }
         }
 
