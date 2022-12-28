@@ -372,8 +372,8 @@ Add the following to your `OnLoad` method:
 ```cs
 _gl.CompileShader(vertexShader);
 
-_gl.GetShader(vertexShader, ShaderParameterName.CompileStatus, out int status);
-if (status != (int) GLEnum.True)
+_gl.GetShader(vertexShader, ShaderParameterName.CompileStatus, out int vStatus);
+if (vStatus != (int) GLEnum.True)
     throw new Exception("Vertex shader failed to compile: " + _gl.GetShaderInfoLog(vertexShader));
 ```
 
