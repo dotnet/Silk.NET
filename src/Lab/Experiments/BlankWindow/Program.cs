@@ -4,54 +4,94 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Runtime.InteropServices;
 using System.Threading;
+using System.Runtime.InteropServices;
 using Silk.NET.Core;
 using Silk.NET.Maths;
 using Silk.NET.Windowing;
+using Silk.NET.Windowing.Sdl;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Advanced;
 using SixLabors.ImageSharp.PixelFormats;
+#if WASM
+using Uno.Foundation;
+#endif
 
 namespace BlankWindow
 {
     internal class Program
     {
-        public const bool Quieter = true;
+        public const bool Quieter = false;
 
+        public static IView   view;
         public static IWindow window;
 
         private static void Main()
         {
+            SdlWindowing.RegisterPlatform();
+
+#if WASM
+            WebAssemblyRuntime.InvokeJS
+            (
+                @"var canvas = document.createElement('canvas');
+canvas.style.position = ""absolute"";
+canvas.style.left       = ""0px"";
+canvas.style.top        = ""0px"";
+canvas.style.zIndex     = ""100"";
+canvas.style.width      = ""1920"";
+canvas.style.height     = ""1080"";
+canvas.style.width = ""100%"";
+canvas.style.height = ""100%"";
+canvas.oncontextmenu=""event.preventDefault()"";
+canvas.id = 'canvas';
+document.body.appendChild(canvas);
+//Set the module canvas
+Module['canvas'] = canvas;
+"
+            );
+#endif
+
             var options = WindowOptions.Default;
+            options.API = new GraphicsAPI(ContextAPI.OpenGLES, new APIVersion(3, 0));
 
             //options.ShouldSwapAutomatically = false;
 
-            options.UpdatesPerSecond = 60.0;
-            options.FramesPerSecond = 60.0;
-            options.VSync = true;
+            // options.UpdatesPerSecond = 60.0;
+            // options.FramesPerSecond  = 60.0;
+            // options.VSync = false;
+
             // options.VSync = VSyncMode.On;
 
             // options.WindowState = WindowState.Fullscreen;
 
-            window = Window.Create(options);
+            if (Window.IsViewOnly)
+            {
+                view = Window.GetView(new(options));
+            }
+            else
+            {
+                view = window = Window.Create(options);
+            }
 
-            window.FileDrop += FileDrop;
-            window.Move += Move;
-            window.Resize += Resize;
-            window.StateChanged += StateChanged;
-            window.Load += Load;
-            window.Closing += Closing;
-            window.FocusChanged += FocusChanged;
+            if (!Window.IsViewOnly)
+            {
+                window.FileDrop     += FileDrop;
+                window.Move         += Move;
+                window.StateChanged += StateChanged;
+            }
+            view.Resize       += Resize;
+            view.Load         += Load;
+            view.Closing      += Closing;
+            view.FocusChanged += FocusChanged;
 
-            window.Render += Render;
-            window.Update += Update;
+            view.Render += Render;
+            view.Update += Update;
 
-            //window.VSync = VSyncMode.Off;
+            //view.VSync = VSyncMode.Off;
 
             Console.WriteLine($"Entry thread is {Thread.CurrentThread.ManagedThreadId}");
 
-            window.Run();
+            view.Run();
         }
 
         public static void FileDrop(string[] args)
@@ -81,18 +121,21 @@ namespace BlankWindow
         //private static bool _rsz = true;
         public static unsafe void Load()
         {
-            using var image = Image.Load<Rgba32>("favicon.png");
-            var memoryGroup = image.GetPixelMemoryGroup();
-            Memory<byte> array = new byte[memoryGroup.TotalLength * sizeof(Rgba32)];
-            var block = MemoryMarshal.Cast<byte, Rgba32>(array.Span);
-            foreach (var memory in memoryGroup)
+            if (!Window.IsViewOnly)
             {
-                memory.Span.CopyTo(block);
-                block = block.Slice(memory.Length);
-            }
+                using var    image       = Image.Load<Rgba32>("favicon.png");
+                var          memoryGroup = image.GetPixelMemoryGroup();
+                Memory<byte> array       = new byte[memoryGroup.TotalLength * sizeof(Rgba32)];
+                var          block       = MemoryMarshal.Cast<byte, Rgba32>(array.Span);
+                foreach (var memory in memoryGroup)
+                {
+                    memory.Span.CopyTo(block);
+                    block = block.Slice(memory.Length);
+                }
 
-            var icon = new RawImage(image.Width, image.Height, array);
-            window.SetWindowIcon(ref icon);
+                var icon = new RawImage(image.Width, image.Height, array);
+                window.SetWindowIcon(ref icon);
+            }
             Console.WriteLine("Finished loading");
         }
 
@@ -110,7 +153,7 @@ namespace BlankWindow
         {
             if (!Quieter)
             {
-                Console.WriteLine($"Render {1 / delta}");
+                Console.WriteLine($"Render {delta}:{1 / delta}");
             }
         }
 
@@ -118,16 +161,16 @@ namespace BlankWindow
         {
             //if (_rsz)
             //{
-            //    Console.WriteLine("* " + window.Size);
+            //    Console.WriteLine("* " + view.Size);
             //    _rsz = false;
             //}
 
             if (!Quieter)
             {
-                Console.WriteLine($"Update {1 / delta}");
+                Console.WriteLine($"Update {delta}:{1 / delta}");
             }
 
-            //Debug.WriteLine(window.VSync);
+            //Debug.WriteLine(view.VSync);
         }
     }
 }

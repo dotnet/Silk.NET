@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DefineConstants>TRACE;WASM</DefineConstants>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DefineConstants>TRACE;WASM</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="WasmScripts/**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="SixLabors.ImageSharp" Version="2.1.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="favicon.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
+        <ProjectReference Include="..\..\..\Windowing\Silk.NET.Windowing.Sdl\Silk.NET.Windowing.Sdl.csproj" />
+        
+        <PackageReference Include="Uno.Foundation.Runtime.WebAssembly" Version="4.7.0-dev.730" />
+        <PackageReference Include="Uno.Wasm.Bootstrap" Version="7.0.11" />
+        <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="7.0.11" PrivateAssets="all" />
+
+        <WasmShellAdditionalPInvokeLibrary Include="SDL" />
+        <WasmShellAdditionalPInvokeLibrary Include="__Internal_emscripten" />
+        <WasmShellExtraEmccFlags Include="-s USE_SDL=2 -s USE_WEBGL2=1" />
+    </ItemGroup>
+
+</Project>
