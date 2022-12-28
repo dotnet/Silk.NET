@@ -413,7 +413,7 @@ if (lStatus != (int) GLEnum.True)
     throw new Exception("Program failed to link: " + _gl.GetProgramInfoLog(_program));
 ```
 
-Much like before, we must check to make sure that the program has linked correctly. Link errors are rare, most often caused by attempting to link with a shader that has failed to compile, which, assuming you implemented the checks earlier, should basically never happen.
+Much like before, we must check to make sure that the program has linked correctly. Link errors are most often caused by things like a typo in an `in` or `out` variable name, or attempting to link with a shader that has failed to compile, which, assuming you implemented the checks earlier, should basically never happen.
 
 Now that we have linked the program, it can now function by itself, and we no longer need the shader objects. Therefore, we can **detach and delete** them, freeing a bit of GPU memory.
 
