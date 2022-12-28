@@ -133,7 +133,7 @@ _gl.BindVertexArray(_vao);
 
 What's going on here? First, we generate the VAO. Then, before we can use, or update it, we need to **bind** it.
 
-Binding is a term you will hear a lot with OpenGL, and in these tutorials too. Binding essentially means updating the current OpenGL state with the given object. So, in this example, when we bind the VAO, we update OpenGL's state so that the VAO we are currently using is now the VAO we have just created. If you don't bind an object before updating/using it, you will use or update the previously bound object instead, which can cause problems and headaches later.
+Binding is a term you will hear a lot with OpenGL, and in these tutorials too. Binding essentially means updating the current OpenGL state with the given object. So, in this example, when we bind the VAO, we update OpenGL's state so that the VAO in the state machine is now the VAO we have just created. If you don't bind an object before updating/using it, you will use or update the previously bound object instead, which can cause problems and headaches later.
 
 We're now ready to give the VAO some data. But first, we need a **vertex buffer**.
 
