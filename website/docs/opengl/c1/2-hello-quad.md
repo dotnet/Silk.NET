@@ -234,7 +234,7 @@ Now, run the program again, and if you get the same blue window, you've set the 
 Now, let's create the **element buffer object**.
 
 ## Element Buffer Objects (EBOs)
-Unlike a vertex buffer, an element buffer is not *strictly* required to display something on screen, however not using it will require making your vertex buffer a lot larger, with a lot more duplicate data.
+Unlike a vertex buffer, an element buffer is not *strictly* required to display something on screen, however not using it in some cases may require making your vertex buffer a lot larger, with a lot more duplicate data.
 
 For those familliar with Direct3D terms, EBOs are more commonly referred to as **index buffers**, which is what this tutorial will refer to them from now on.
 
