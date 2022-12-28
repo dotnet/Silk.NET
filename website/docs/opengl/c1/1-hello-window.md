@@ -62,7 +62,7 @@ dotnet add package Silk.NET.Input
 dotnet add package Silk.NET.OpenGL
 ```
 
-Or, if you're using Visual Studio, you can use the NuGet Package Manager by right-CLIcking on your project in the solution explorer and selecting "Manage NuGet Packages...".
+Or, if you're using Visual Studio, you can use the NuGet Package Manager by right-clicking on your project in the solution explorer and selecting "Manage NuGet Packages...".
 
 ## Creating a Window
 The first thing we need before we can even think about rendering some graphics is a window to render to.
