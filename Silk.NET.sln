@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31612.314
@@ -557,6 +557,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{58FECE86-7530-4E6F-BA61-512BE44DEA83}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Direct3D11.Extensions.D3D11On12", "src\Microsoft\Extensions\Silk.NET.Direct3D11.Extensions.D3D11On12\Silk.NET.Direct3D11.Extensions.D3D11On12.csproj", "{82626916-C5F3-46E7-B0EC-1D38191450C7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankWindowWasm", "src\Lab\Experiments\BlankWindow\BlankWindowWasm.csproj", "{F7019F5A-B03C-467F-B15A-C6D5852F27A6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.DirectComposition", "src\Microsoft\Silk.NET.DirectComposition\Silk.NET.DirectComposition.csproj", "{8773396C-5EDF-498C-97D7-1D2728CB969B}"
 EndProject
@@ -3487,6 +3488,18 @@ Global
 		{ABC4717F-2863-4B79-8812-7C1D851EE336}.Release|x64.Build.0 = Release|Any CPU
 		{ABC4717F-2863-4B79-8812-7C1D851EE336}.Release|x86.ActiveCfg = Release|Any CPU
 		{ABC4717F-2863-4B79-8812-7C1D851EE336}.Release|x86.Build.0 = Release|Any CPU
+		{F7019F5A-B03C-467F-B15A-C6D5852F27A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7019F5A-B03C-467F-B15A-C6D5852F27A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7019F5A-B03C-467F-B15A-C6D5852F27A6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F7019F5A-B03C-467F-B15A-C6D5852F27A6}.Debug|x64.Build.0 = Debug|Any CPU
+		{F7019F5A-B03C-467F-B15A-C6D5852F27A6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F7019F5A-B03C-467F-B15A-C6D5852F27A6}.Debug|x86.Build.0 = Debug|Any CPU
+		{F7019F5A-B03C-467F-B15A-C6D5852F27A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7019F5A-B03C-467F-B15A-C6D5852F27A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7019F5A-B03C-467F-B15A-C6D5852F27A6}.Release|x64.ActiveCfg = Release|Any CPU
+		{F7019F5A-B03C-467F-B15A-C6D5852F27A6}.Release|x64.Build.0 = Release|Any CPU
+		{F7019F5A-B03C-467F-B15A-C6D5852F27A6}.Release|x86.ActiveCfg = Release|Any CPU
+		{F7019F5A-B03C-467F-B15A-C6D5852F27A6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -3766,6 +3779,7 @@ Global
 		{E1624E31-C702-42EC-AC47-20358B3CCF49} = {90471225-AC23-424E-B62E-F6EC4C6ECAC0}
 		{82D76E01-3166-4549-A433-4C2C4FD6788E} = {90471225-AC23-424E-B62E-F6EC4C6ECAC0}
 		{ABC4717F-2863-4B79-8812-7C1D851EE336} = {90471225-AC23-424E-B62E-F6EC4C6ECAC0}
+		{F7019F5A-B03C-467F-B15A-C6D5852F27A6} = {39B598E9-44BA-4A61-A1BB-7C543734DBA6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5273D7F-3334-48DF-94E3-41AE6816CD4D}
