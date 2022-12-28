@@ -220,7 +220,7 @@ If you forget to do either of these, you'll get compile errors. While our `OnRen
 
 Now let's fill the buffer!
 
-Add the following after you create the buffer:
+Add the following to your `OnLoad` method:
 
 ```cs
 fixed (float* buf = vertices)
