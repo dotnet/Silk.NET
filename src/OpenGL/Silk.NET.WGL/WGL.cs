@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -13,25 +15,49 @@ using static Silk.NET.Core.Attributes.ExtensionAttribute;
 
 namespace Silk.NET.WGL
 {
-    public partial class WGL
+    public unsafe partial class WGL
     {
-        public static WGL GetApi()
-        {
-             throw new NotImplementedException();
-        }
+        private readonly Dictionary<nint, HashSet<string>> _extensions = new();
+        public static WGL GetApi() => new(CreateDefaultContext("opengl32.dll"));
 
-        public bool TryGetExtension<T>(out T ext)
+        public bool TryGetDcExtension<T>(nint hDc, out T ext)
             where T:NativeExtension<WGL>
         {
-             ext = IsExtensionPresent(GetExtensionAttribute(typeof(T)).Name)
+             ext = IsDcExtensionPresent(hDc, $"WGL_{GetExtensionAttribute(typeof(T)).Name}")
                  ? (T) Activator.CreateInstance(typeof(T), Context)
                  : null;
              return ext is not null;
         }
 
-        public override bool IsExtensionPresent(string extension)
+        [Obsolete("Use IsDcExtensionPresent instead", true)]
+        public override bool IsExtensionPresent(string extension) => IsDcExtensionPresent(0, extension);
+
+        public bool IsDcExtensionPresent(nint hDc, string extension)
         {
-            throw new NotImplementedException();
+            if (_extensions.TryGetValue(hDc, out var extensions))
+            {
+                return extensions.Contains(extension);
+            }
+
+            var getExtStrPtr = GetProcAddress("wglGetExtensionsStringARB");
+            if (getExtStrPtr == 0)
+            {
+                throw new NotSupportedException("Can't retrieve extensions string (wglGetExtensionsStringARB is missing)");
+            }
+
+#if NET6_0_OR_GREATER
+            var exts = ((delegate* unmanaged<nint, byte*>) getExtStrPtr)(hDc);
+#else
+            var exts = SilkMarshal.IsWinapiStdcall
+                ? ((delegate* unmanaged[Stdcall]<nint, byte*>) getExtStrPtr)(hDc)
+                : ((delegate* unmanaged[Cdecl]<nint, byte*>) getExtStrPtr)(hDc);
+#endif
+
+            var hs = SilkMarshal.PtrToString((nint) exts)?
+                .Split(' ')
+                .ToHashSet() ?? new HashSet<string>();
+            _extensions.Add(hDc, hs);
+            return hs.Contains(extension);
         }
     }
 }

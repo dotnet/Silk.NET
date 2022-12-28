@@ -18,7 +18,7 @@ namespace Silk.NET.Windowing.Internals
     /// Abstracts away common view functions to ease implementation of the windowing API.
     /// </summary>
     [EditorBrowsable(EditorBrowsableState.Never)]
-    internal abstract class ViewImplementationBase : IView
+    public abstract class ViewImplementationBase : IView
     {
         private const int InitialInvocationRental = 2;
 

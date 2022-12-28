@@ -8,6 +8,8 @@ namespace Silk.NET.Core.Contexts
     public interface IGLContext : INativeContext, IDisposable
     {
         nint Handle { get; }
+        uint DefaultFramebuffer => 0;
+        uint DefaultRenderbuffer => 0;
         IGLContextSource? Source { get; }
         bool IsCurrent { get; }
         void SwapInterval(int interval);

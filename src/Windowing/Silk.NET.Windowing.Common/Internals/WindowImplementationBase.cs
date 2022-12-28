@@ -12,7 +12,7 @@ namespace Silk.NET.Windowing.Internals
     /// <summary>
     /// Abstracts away common window functions to ease implementation of the windowing API.
     /// </summary>
-    internal abstract class WindowImplementationBase : ViewImplementationBase, IWindow
+    public abstract class WindowImplementationBase : ViewImplementationBase, IWindow
     {
         protected WindowOptions ExtendedOptionsCache;
 

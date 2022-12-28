@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <UseWpf>true</UseWpf>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\Microsoft\Silk.NET.Direct3D9\Silk.NET.Direct3D9.csproj" />
+        <ProjectReference Include="..\..\OpenGL\Silk.NET.WGL\Silk.NET.WGL.csproj" />
+        <ProjectReference Include="..\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
+    </ItemGroup>
+
+    <Import Project="..\..\..\..\build\props\common.props" />
+</Project>
