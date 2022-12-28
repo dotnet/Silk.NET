@@ -22,11 +22,10 @@ namespace BlankWindow
 {
     internal class Program
     {
-        public const bool Quieter = false;
+        private const bool QUIETER = true;
 
-        public static  IView   view;
-        public static  IWindow window;
-        private static GL      ES;
+        private static  IView   _View;
+        private static  IWindow _Window;
 
         private static void Main()
         {
@@ -54,46 +53,35 @@ Module['canvas'] = canvas;
 #endif
 
             var options = WindowOptions.Default;
-            options.API = new GraphicsAPI(ContextAPI.OpenGLES, new APIVersion(3, 0));
-
-            //options.ShouldSwapAutomatically = false;
 
             options.UpdatesPerSecond = 60.0;
             options.FramesPerSecond  = 60.0;
             options.VSync = true;
 
-            // options.VSync = VSyncMode.On;
-
-            // options.WindowState = WindowState.Fullscreen;
-
             if (Window.IsViewOnly)
             {
-                view = Window.GetView(new(options));
+                _View = Window.GetView(new(options));
             }
             else
             {
-                view = window = Window.Create(options);
+                _View = _Window = Window.Create(options);
+                
+                _Window.FileDrop     += FileDrop;
+                _Window.Move         += Move;
+                _Window.StateChanged += StateChanged;
             }
 
-            if (!Window.IsViewOnly)
-            {
-                window.FileDrop     += FileDrop;
-                window.Move         += Move;
-                window.StateChanged += StateChanged;
-            }
-            view.Resize       += Resize;
-            view.Load         += Load;
-            view.Closing      += Closing;
-            view.FocusChanged += FocusChanged;
+            _View.Resize       += Resize;
+            _View.Load         += Load;
+            _View.Closing      += Closing;
+            _View.FocusChanged += FocusChanged;
 
-            view.Render += Render;
-            view.Update += Update;
-
-            //view.VSync = VSyncMode.Off;
+            _View.Render += Render;
+            _View.Update += Update;
 
             Console.WriteLine($"Entry thread is {Thread.CurrentThread.ManagedThreadId}");
 
-            view.Run();
+            _View.Run();
         }
 
         public static void FileDrop(string[] args)
@@ -123,7 +111,7 @@ Module['canvas'] = canvas;
         //private static bool _rsz = true;
         public static unsafe void Load()
         {
-            if (!Window.IsViewOnly)
+            if (!Silk.NET.Windowing.Window.IsViewOnly)
             {
                 using var    image       = Image.Load<Rgba32>("favicon.png");
                 var          memoryGroup = image.GetPixelMemoryGroup();
@@ -136,11 +124,9 @@ Module['canvas'] = canvas;
                 }
 
                 var icon = new RawImage(image.Width, image.Height, array);
-                window.SetWindowIcon(ref icon);
+                _Window.SetWindowIcon(ref icon);
             }
             Console.WriteLine("Finished loading");
-
-            ES = view.CreateOpenGLES();
         }
 
         public static void Closing()
@@ -155,10 +141,7 @@ Module['canvas'] = canvas;
 
         public static void Render(double delta)
         {
-            ES.ClearColor(0, 1, 0, 1);
-            ES.Clear(ClearBufferMask.ColorBufferBit);
-            
-            if (!Quieter)
+            if (!QUIETER)
             {
                 Console.WriteLine($"Render {delta}:{1 / delta}");
             }
@@ -172,9 +155,9 @@ Module['canvas'] = canvas;
             //    _rsz = false;
             //}
 
-            if (!Quieter)
+            if (!QUIETER)
             {
-                // Console.WriteLine($"Update {delta}:{1 / delta}");
+                Console.WriteLine($"Update {delta}:{1 / delta}");
             }
 
             //Debug.WriteLine(view.VSync);
