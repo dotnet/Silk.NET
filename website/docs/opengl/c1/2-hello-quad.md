@@ -13,7 +13,7 @@
 ---
 
 # 1.2 - Hello Quad
-<?# Info "You can view the source code for this tutorial [here.](../sources/1.2-final-result.html) This tutorial builds on the previous tutorial. If you haven't read it, you can do so [here.](1-hello-window.html)" /?>
+<?# Info "You can view the source code for this tutorial [here](../sources/1.2-final-result.html). This tutorial builds on the previous tutorial. If you haven't read it, you can do so [here](1-hello-window.html)." /?>
 
 Let's draw something on-screen! In this tutorial, you'll learn:
 
