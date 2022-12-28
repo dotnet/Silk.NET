@@ -8,6 +8,7 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using Silk.NET.Core;
 using Silk.NET.Maths;
+using Silk.NET.OpenGLES;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Sdl;
 using SixLabors.ImageSharp;
@@ -23,8 +24,9 @@ namespace BlankWindow
     {
         public const bool Quieter = false;
 
-        public static IView   view;
-        public static IWindow window;
+        public static  IView   view;
+        public static  IWindow window;
+        private static GL      ES;
 
         private static void Main()
         {
@@ -56,9 +58,9 @@ Module['canvas'] = canvas;
 
             //options.ShouldSwapAutomatically = false;
 
-            // options.UpdatesPerSecond = 60.0;
-            // options.FramesPerSecond  = 60.0;
-            // options.VSync = false;
+            options.UpdatesPerSecond = 60.0;
+            options.FramesPerSecond  = 60.0;
+            options.VSync = true;
 
             // options.VSync = VSyncMode.On;
 
@@ -137,6 +139,8 @@ Module['canvas'] = canvas;
                 window.SetWindowIcon(ref icon);
             }
             Console.WriteLine("Finished loading");
+
+            ES = view.CreateOpenGLES();
         }
 
         public static void Closing()
@@ -151,6 +155,9 @@ Module['canvas'] = canvas;
 
         public static void Render(double delta)
         {
+            ES.ClearColor(0, 1, 0, 1);
+            ES.Clear(ClearBufferMask.ColorBufferBit);
+            
             if (!Quieter)
             {
                 Console.WriteLine($"Render {delta}:{1 / delta}");
@@ -167,7 +174,7 @@ Module['canvas'] = canvas;
 
             if (!Quieter)
             {
-                Console.WriteLine($"Update {delta}:{1 / delta}");
+                // Console.WriteLine($"Update {delta}:{1 / delta}");
             }
 
             //Debug.WriteLine(view.VSync);

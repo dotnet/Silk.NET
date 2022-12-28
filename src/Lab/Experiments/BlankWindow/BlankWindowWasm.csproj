@@ -31,6 +31,7 @@
     <ItemGroup>
         <ProjectReference Include="..\..\..\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
         <ProjectReference Include="..\..\..\Windowing\Silk.NET.Windowing.Sdl\Silk.NET.Windowing.Sdl.csproj" />
+        <ProjectReference Include="..\..\..\OpenGL\Silk.NET.OpenGLES\Silk.NET.OpenGLES.csproj" />
         
         <PackageReference Include="Uno.Foundation.Runtime.WebAssembly" Version="4.7.0-dev.730" />
         <PackageReference Include="Uno.Wasm.Bootstrap" Version="7.0.11" />

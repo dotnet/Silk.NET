@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
+using System.Runtime.InteropServices;
 using Microsoft.Extensions.DependencyModel;
 using Silk.NET.Core;
 using Silk.NET.Core.Attributes;
@@ -16,6 +17,10 @@ using Silk.NET.Maths;
 
 namespace Silk.NET.OpenGL
 {
+    // This is to make the Mono P/Invoke signature generator happy.
+    // Else it wont find the OpenGL function pointer signatures
+    // and ittl crash trying to invoke a function pointer with a not-found signature
+    [PInvokeOverride(0, "dummy")]
     public partial class GL
     {
         /// <summary>
@@ -27,11 +32,17 @@ namespace Silk.NET.OpenGL
         /// <returns>
         ///     A <see cref="GL" /> instance.
         /// </returns>
-        public static GL GetApi(IGLContextSource contextSource) => GetApi
-        (
-             contextSource.GLContext ??
-             throw new InvalidOperationException("The given IGLContextSource is not configured with a context.")
-        );
+        public static GL GetApi(IGLContextSource contextSource)
+        {
+            // This is to make the Mono P/Invoke signature generator happy. Else it wont find the OpenGL function pointer signatures
+            if(RuntimeInformation.IsOSPlatform(OSPlatform.Create("BROWSER")))
+                CreateDefaultContext("dummy");
+            return GetApi
+            (
+                contextSource.GLContext ??
+                throw new InvalidOperationException("The given IGLContextSource is not configured with a context.")
+            );
+        }
 
         /// <summary>
         ///     Creates a <see cref="GL" /> instance from an <see cref="IGLContext" />.

@@ -19,6 +19,7 @@
     <ItemGroup>
       <ProjectReference Include="..\..\..\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
       <ProjectReference Include="..\..\..\Windowing\Silk.NET.Windowing.Sdl\Silk.NET.Windowing.Sdl.csproj" />
+      <ProjectReference Include="..\..\..\OpenGL\Silk.NET.OpenGLES\Silk.NET.OpenGLES.csproj" />
     </ItemGroup>
 
 </Project>
