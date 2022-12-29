@@ -8,7 +8,7 @@
         <RoslynPackageVersion>4.2.0</RoslynPackageVersion>
     </PropertyGroup>
     <ItemGroup>
-        <PackageVersion Include="BenchmarkDotNet" Version="0.13.1"/>
+        <PackageVersion Include="BenchmarkDotNet" Version="0.13.3"/>
         <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="$(RoslynPackageVersion)"/>
         <PackageVersion Include="System.Text.Json" Version="6.0.5"/>
         <PackageVersion Include="ClangSharp.PInvokeGenerator" Version="14.0.0-rc1"/>
