@@ -273,7 +273,7 @@
                 "CL_DRIVER_UUID_KHR": "CL_DEVICE_DRIVER_UUID_KHR",
                 
                 "CL_PRINTF_CALLBACK_ARM": "CL_CONTEXT_PRINTF_CALLBACK_ARM",
-                "CL_PRINTF_BUFFERSIZE_ARM": "CL_CONTEXT_PRINTF_BUFFERSIZE_ARM",
+                "CL_PRINTF_BUFFERSIZE_ARM": "CL_CONTEXT_PRINTF_BUFFERSIZE_ARM"
             },
             "bakery": {
                 "profileNames": [
@@ -317,7 +317,7 @@
                 },
                 {
                     "cl_icd_dispatch": "void",
-                    "cl_svm_mem_flags": "cl_mem_flags",
+                    "cl_svm_mem_flags": "cl_mem_flags"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json",
@@ -864,7 +864,7 @@
 					
                 ],
                 "classes": {
-                    "d3dcommon.h": "[Core]D3DCommon",
+                    "d3dcommon.h": "[Core]D3DCommon"
                 }
             },
             "exclude": [
@@ -1294,7 +1294,8 @@
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11_4.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11shader.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11shadertracing.h",
-                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11sdklayers.h"
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11sdklayers.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11on12.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -1328,7 +1329,8 @@
                     "d3d11_4.h": "[Core]D3D11",
                     "d3d11shader.h": "[Core]D3D11",
                     "d3d11shadertracing.h": "[Core]D3D11",
-                    "d3d11sdklayers.h": "[Core]D3D11"
+                    "d3d11sdklayers.h": "[Core]D3D11",
+                    "d3d11on12.h": "[Core]D3D11"
                 },
                 "comRefs": [
                     "Silk.NET.DXGI.IDXGIAdapter",
@@ -1353,7 +1355,8 @@
                     "d3d11_4",
                     "d3d11shader",
                     "d3d11shadertracing",
-                    "d3d11sdklayers"
+                    "d3d11sdklayers",
+                    "d3d11on12"
                 ]
             },
             "output": {
