@@ -231,6 +231,13 @@ fixed (float* buf = vertices)
 
 Let's go over what's going on here. First, we `fix` the vertex data. This prevents the garbage collector from moving it around, so we can take a pointer to the data. We then call `_gl.BufferData` and tell it the target we want, `ArrayBuffer` in this case, give it the data length (measured in bytes), the buffer pointer, and we choose `StaticDraw` for our usage hint.
 
+What is a usage hint? A usage hint simply tells the GPU how we plan on using this data. These are some of the most common usage hints you'll use in an OpenGL application:
+
+* **StaticDraw** - Set the data once, and it can only be read from by the GPU (in this case for drawing)
+* **DynamicDraw** - Similar to StaticDraw, however the data will be set & updated more than once.
+
+There are a lot more usage hints, including `StreamDraw` and variants of these hints with `XyzCopy` and `XyzRead`, but they are not as common in most OpenGL applications. On top of this, the usage hint is only a *hint*. Most OpenGL drivers interpret these hints the same way, and it is perfectly valid to set the data with a `StaticDraw` hint. However, you should still get into the practice of using the correct usage hint, as some APIs such as Direct3D *do* care about the hint you use.
+
 Now, run the program again, and if you get the same blue window, you've set the buffer data successfully!
 
 Now, let's create the **element buffer object**.
