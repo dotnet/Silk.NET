@@ -56,12 +56,14 @@ Now, run your application again. If all is good, you should see no change. Aweso
 ## Clearing the window
 Before we start this, let's take a look at what makes up an OpenGL window. 
 
-A window consists of several **framebuffers**. A framebuffer is essentially a texture that can be drawn to by OpenGL. An OpenGL window will consist of the following framebuffers:
+A window contains at least two **framebuffers**. A framebuffer is a set of textures that can be rendered to. An OpenGL window's framebuffer consists of the following textures:
 
-* Color buffer
-* Depth stencil buffer
+* Color texture
+* Depth stencil texture
 
-On top of this, a window will often contain at least two of these buffers. This is known as **double-buffering** and is imperitive for VSync to work properly. One buffer is displayed, while another is rendered to. 
+<?# Info "The technical name for these textures is **buffers**. For simplicity reasons we will call them textures here, as to not confuse you with the buffers we use later in the tutorial." /?>
+
+On top of this, a window will contain at least two of these framebuffers. This is known as **double-buffering** and is imperative for rendering to work properly. One buffer is displayed, while another is rendered to. They are then swapped between once the GPU is ready.
 
 This is what makes up the **swapchain**, which, if you've ever looked into Direct3D, you should be familliar with. OpenGL does not use the term, nor does it allow you to manage this yourself, however it is still in the background, and it is helpful to know this.
 
@@ -112,7 +114,7 @@ So, this explains why clearing the window works. You set the clear color, and it
 Now that we've got that, let's move on!
 
 ## Vertex Array Objects (VAOs)
-A unique feature that modern OpenGL has is what is known as a Vertex Array Object, or VAO. It stores the state of various parameters, such as which buffers you wish to use, and the shader inputs.
+A unique feature that modern OpenGL has is what is known as a Vertex Array Object, or VAO. It stores all the necessary information required to draw an object to the screen, such as the vertex data (which we'll get into in a minute), and also information on how to process this data.
 
 This is a required feature of modern OpenGL. You **must** have a VAO bound, otherwise your application won't work.
 
