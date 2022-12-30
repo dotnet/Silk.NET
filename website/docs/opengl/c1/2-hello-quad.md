@@ -227,7 +227,7 @@ fixed (float* buf = vertices)
     _gl.BufferData(BufferTargetARB.ArrayBuffer, (nuint) (vertices.Length * sizeof(float)), buf, BufferUsageARB.StaticDraw);
 ```
 
-Let's go over what's going on here. First, we `fix` the vertices data. This prevents the garbage collector from moving it around, so we can take a pointer to the data. We tell it the target we want, the `ArrayBuffer` in this case, give it the data length, the buffer pointer, and we choose `StaticDraw` for our usage.
+Let's go over what's going on here. First, we `fix` the vertex data. This prevents the garbage collector from moving it around, so we can take a pointer to the data. We then call `_gl.BufferData` and tell it the target we want, `ArrayBuffer` in this case, give it the data length (measured in bytes), the buffer pointer, and we choose `StaticDraw` for our usage hint.
 
 Now, run the program again, and if you get the same blue window, you've set the buffer data successfully!
 
