@@ -14,7 +14,7 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11.Extensions.D3D11on12
 {
     [Guid("dc90f331-4740-43fa-866e-67f12cb58223")]
     [NativeName("Name", "ID3D11On12Device2")]
@@ -117,40 +117,40 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource(Silk.NET.Core.Native.IUnknown* pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, Guid* riid, void** ppResource11)
+        public readonly unsafe int CreateWrappedResource(Silk.NET.Core.Native.IUnknown* pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, Guid* riid, void** ppResource11)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12, pFlags11, InState, OutState, riid, ppResource11);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, Silk.NET.Direct3D12.ResourceStates, Silk.NET.Direct3D12.ResourceStates, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12, pFlags11, InState, OutState, riid, ppResource11);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource(Silk.NET.Core.Native.IUnknown* pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, Guid* riid, ref void* ppResource11)
+        public readonly unsafe int CreateWrappedResource(Silk.NET.Core.Native.IUnknown* pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, Guid* riid, ref void* ppResource11)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void** ppResource11Ptr = &ppResource11)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12, pFlags11, InState, OutState, riid, ppResource11Ptr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, Silk.NET.Direct3D12.ResourceStates, Silk.NET.Direct3D12.ResourceStates, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12, pFlags11, InState, OutState, riid, ppResource11Ptr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource(Silk.NET.Core.Native.IUnknown* pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, ref Guid riid, void** ppResource11)
+        public readonly unsafe int CreateWrappedResource(Silk.NET.Core.Native.IUnknown* pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, ref Guid riid, void** ppResource11)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12, pFlags11, InState, OutState, riidPtr, ppResource11);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, Silk.NET.Direct3D12.ResourceStates, Silk.NET.Direct3D12.ResourceStates, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12, pFlags11, InState, OutState, riidPtr, ppResource11);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource(Silk.NET.Core.Native.IUnknown* pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, ref Guid riid, ref void* ppResource11)
+        public readonly unsafe int CreateWrappedResource(Silk.NET.Core.Native.IUnknown* pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, ref Guid riid, ref void* ppResource11)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -158,26 +158,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void** ppResource11Ptr = &ppResource11)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12, pFlags11, InState, OutState, riidPtr, ppResource11Ptr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, Silk.NET.Direct3D12.ResourceStates, Silk.NET.Direct3D12.ResourceStates, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12, pFlags11, InState, OutState, riidPtr, ppResource11Ptr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource(Silk.NET.Core.Native.IUnknown* pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, Guid* riid, void** ppResource11)
+        public readonly unsafe int CreateWrappedResource(Silk.NET.Core.Native.IUnknown* pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, Guid* riid, void** ppResource11)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ResourceFlags* pFlags11Ptr = &pFlags11)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12, pFlags11Ptr, InState, OutState, riid, ppResource11);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, Silk.NET.Direct3D12.ResourceStates, Silk.NET.Direct3D12.ResourceStates, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12, pFlags11Ptr, InState, OutState, riid, ppResource11);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource(Silk.NET.Core.Native.IUnknown* pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, Guid* riid, ref void* ppResource11)
+        public readonly unsafe int CreateWrappedResource(Silk.NET.Core.Native.IUnknown* pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, Guid* riid, ref void* ppResource11)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -185,14 +185,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void** ppResource11Ptr = &ppResource11)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12, pFlags11Ptr, InState, OutState, riid, ppResource11Ptr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, Silk.NET.Direct3D12.ResourceStates, Silk.NET.Direct3D12.ResourceStates, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12, pFlags11Ptr, InState, OutState, riid, ppResource11Ptr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource(Silk.NET.Core.Native.IUnknown* pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, ref Guid riid, void** ppResource11)
+        public readonly unsafe int CreateWrappedResource(Silk.NET.Core.Native.IUnknown* pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, ref Guid riid, void** ppResource11)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -200,14 +200,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12, pFlags11Ptr, InState, OutState, riidPtr, ppResource11);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, Silk.NET.Direct3D12.ResourceStates, Silk.NET.Direct3D12.ResourceStates, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12, pFlags11Ptr, InState, OutState, riidPtr, ppResource11);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource(Silk.NET.Core.Native.IUnknown* pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, ref Guid riid, ref void* ppResource11)
+        public readonly unsafe int CreateWrappedResource(Silk.NET.Core.Native.IUnknown* pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, ref Guid riid, ref void* ppResource11)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -217,7 +217,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void** ppResource11Ptr = &ppResource11)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12, pFlags11Ptr, InState, OutState, riidPtr, ppResource11Ptr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, Silk.NET.Direct3D12.ResourceStates, Silk.NET.Direct3D12.ResourceStates, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12, pFlags11Ptr, InState, OutState, riidPtr, ppResource11Ptr);
                     }
                 }
             }
@@ -225,19 +225,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, Guid* riid, void** ppResource11)
+        public readonly unsafe int CreateWrappedResource(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, Guid* riid, void** ppResource11)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pResource12Ptr = &pResource12)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12Ptr, pFlags11, InState, OutState, riid, ppResource11);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, Silk.NET.Direct3D12.ResourceStates, Silk.NET.Direct3D12.ResourceStates, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12Ptr, pFlags11, InState, OutState, riid, ppResource11);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, Guid* riid, ref void* ppResource11)
+        public readonly unsafe int CreateWrappedResource(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, Guid* riid, ref void* ppResource11)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -245,14 +245,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void** ppResource11Ptr = &ppResource11)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12Ptr, pFlags11, InState, OutState, riid, ppResource11Ptr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, Silk.NET.Direct3D12.ResourceStates, Silk.NET.Direct3D12.ResourceStates, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12Ptr, pFlags11, InState, OutState, riid, ppResource11Ptr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, ref Guid riid, void** ppResource11)
+        public readonly unsafe int CreateWrappedResource(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, ref Guid riid, void** ppResource11)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -260,14 +260,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12Ptr, pFlags11, InState, OutState, riidPtr, ppResource11);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, Silk.NET.Direct3D12.ResourceStates, Silk.NET.Direct3D12.ResourceStates, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12Ptr, pFlags11, InState, OutState, riidPtr, ppResource11);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, ref Guid riid, ref void* ppResource11)
+        public readonly unsafe int CreateWrappedResource(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, ref Guid riid, ref void* ppResource11)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -277,7 +277,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void** ppResource11Ptr = &ppResource11)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12Ptr, pFlags11, InState, OutState, riidPtr, ppResource11Ptr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, Silk.NET.Direct3D12.ResourceStates, Silk.NET.Direct3D12.ResourceStates, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12Ptr, pFlags11, InState, OutState, riidPtr, ppResource11Ptr);
                     }
                 }
             }
@@ -285,7 +285,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, Guid* riid, void** ppResource11)
+        public readonly unsafe int CreateWrappedResource(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, Guid* riid, void** ppResource11)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -293,14 +293,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ResourceFlags* pFlags11Ptr = &pFlags11)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12Ptr, pFlags11Ptr, InState, OutState, riid, ppResource11);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, Silk.NET.Direct3D12.ResourceStates, Silk.NET.Direct3D12.ResourceStates, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12Ptr, pFlags11Ptr, InState, OutState, riid, ppResource11);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, Guid* riid, ref void* ppResource11)
+        public readonly unsafe int CreateWrappedResource(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, Guid* riid, ref void* ppResource11)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -310,7 +310,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void** ppResource11Ptr = &ppResource11)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12Ptr, pFlags11Ptr, InState, OutState, riid, ppResource11Ptr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, Silk.NET.Direct3D12.ResourceStates, Silk.NET.Direct3D12.ResourceStates, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12Ptr, pFlags11Ptr, InState, OutState, riid, ppResource11Ptr);
                     }
                 }
             }
@@ -318,7 +318,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, ref Guid riid, void** ppResource11)
+        public readonly unsafe int CreateWrappedResource(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, ref Guid riid, void** ppResource11)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -328,7 +328,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Guid* riidPtr = &riid)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12Ptr, pFlags11Ptr, InState, OutState, riidPtr, ppResource11);
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, Silk.NET.Direct3D12.ResourceStates, Silk.NET.Direct3D12.ResourceStates, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12Ptr, pFlags11Ptr, InState, OutState, riidPtr, ppResource11);
                     }
                 }
             }
@@ -336,7 +336,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, ref Guid riid, ref void* ppResource11)
+        public readonly unsafe int CreateWrappedResource(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, ref Guid riid, ref void* ppResource11)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -348,7 +348,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (void** ppResource11Ptr = &ppResource11)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, D3D12_RESOURCE_STATES, D3D12_RESOURCE_STATES, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12Ptr, pFlags11Ptr, InState, OutState, riidPtr, ppResource11Ptr);
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, Silk.NET.Core.Native.IUnknown*, ResourceFlags*, Silk.NET.Direct3D12.ResourceStates, Silk.NET.Direct3D12.ResourceStates, Guid*, void**, int>)@this->LpVtbl[3])(@this, pResource12Ptr, pFlags11Ptr, InState, OutState, riidPtr, ppResource11Ptr);
                         }
                     }
                 }
@@ -439,40 +439,40 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource(ID3D11Resource* pResource11, ID3D12CommandQueue* pCommandQueue, Guid* riid, void** ppvResource12)
+        public readonly unsafe int UnwrapUnderlyingResource(ID3D11Resource* pResource11, Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueue, Guid* riid, void** ppvResource12)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11, pCommandQueue, riid, ppvResource12);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, Silk.NET.Direct3D12.ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11, pCommandQueue, riid, ppvResource12);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource(ID3D11Resource* pResource11, ID3D12CommandQueue* pCommandQueue, Guid* riid, ref void* ppvResource12)
+        public readonly unsafe int UnwrapUnderlyingResource(ID3D11Resource* pResource11, Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueue, Guid* riid, ref void* ppvResource12)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void** ppvResource12Ptr = &ppvResource12)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11, pCommandQueue, riid, ppvResource12Ptr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, Silk.NET.Direct3D12.ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11, pCommandQueue, riid, ppvResource12Ptr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource(ID3D11Resource* pResource11, ID3D12CommandQueue* pCommandQueue, ref Guid riid, void** ppvResource12)
+        public readonly unsafe int UnwrapUnderlyingResource(ID3D11Resource* pResource11, Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueue, ref Guid riid, void** ppvResource12)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11, pCommandQueue, riidPtr, ppvResource12);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, Silk.NET.Direct3D12.ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11, pCommandQueue, riidPtr, ppvResource12);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource(ID3D11Resource* pResource11, ID3D12CommandQueue* pCommandQueue, ref Guid riid, ref void* ppvResource12)
+        public readonly unsafe int UnwrapUnderlyingResource(ID3D11Resource* pResource11, Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueue, ref Guid riid, ref void* ppvResource12)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -480,66 +480,66 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void** ppvResource12Ptr = &ppvResource12)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11, pCommandQueue, riidPtr, ppvResource12Ptr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, Silk.NET.Direct3D12.ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11, pCommandQueue, riidPtr, ppvResource12Ptr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource(ID3D11Resource* pResource11, ref ID3D12CommandQueue pCommandQueue, Guid* riid, void** ppvResource12)
+        public readonly unsafe int UnwrapUnderlyingResource(ID3D11Resource* pResource11, ref Silk.NET.Direct3D12.ID3D12CommandQueue pCommandQueue, Guid* riid, void** ppvResource12)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (ID3D12CommandQueue* pCommandQueuePtr = &pCommandQueue)
+            fixed (Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueuePtr = &pCommandQueue)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11, pCommandQueuePtr, riid, ppvResource12);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, Silk.NET.Direct3D12.ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11, pCommandQueuePtr, riid, ppvResource12);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource(ID3D11Resource* pResource11, ref ID3D12CommandQueue pCommandQueue, Guid* riid, ref void* ppvResource12)
+        public readonly unsafe int UnwrapUnderlyingResource(ID3D11Resource* pResource11, ref Silk.NET.Direct3D12.ID3D12CommandQueue pCommandQueue, Guid* riid, ref void* ppvResource12)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (ID3D12CommandQueue* pCommandQueuePtr = &pCommandQueue)
+            fixed (Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueuePtr = &pCommandQueue)
             {
                 fixed (void** ppvResource12Ptr = &ppvResource12)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11, pCommandQueuePtr, riid, ppvResource12Ptr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, Silk.NET.Direct3D12.ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11, pCommandQueuePtr, riid, ppvResource12Ptr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource(ID3D11Resource* pResource11, ref ID3D12CommandQueue pCommandQueue, ref Guid riid, void** ppvResource12)
+        public readonly unsafe int UnwrapUnderlyingResource(ID3D11Resource* pResource11, ref Silk.NET.Direct3D12.ID3D12CommandQueue pCommandQueue, ref Guid riid, void** ppvResource12)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (ID3D12CommandQueue* pCommandQueuePtr = &pCommandQueue)
+            fixed (Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueuePtr = &pCommandQueue)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11, pCommandQueuePtr, riidPtr, ppvResource12);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, Silk.NET.Direct3D12.ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11, pCommandQueuePtr, riidPtr, ppvResource12);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource(ID3D11Resource* pResource11, ref ID3D12CommandQueue pCommandQueue, ref Guid riid, ref void* ppvResource12)
+        public readonly unsafe int UnwrapUnderlyingResource(ID3D11Resource* pResource11, ref Silk.NET.Direct3D12.ID3D12CommandQueue pCommandQueue, ref Guid riid, ref void* ppvResource12)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (ID3D12CommandQueue* pCommandQueuePtr = &pCommandQueue)
+            fixed (Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueuePtr = &pCommandQueue)
             {
                 fixed (Guid* riidPtr = &riid)
                 {
                     fixed (void** ppvResource12Ptr = &ppvResource12)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11, pCommandQueuePtr, riidPtr, ppvResource12Ptr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, Silk.NET.Direct3D12.ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11, pCommandQueuePtr, riidPtr, ppvResource12Ptr);
                     }
                 }
             }
@@ -547,19 +547,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource(ref ID3D11Resource pResource11, ID3D12CommandQueue* pCommandQueue, Guid* riid, void** ppvResource12)
+        public readonly unsafe int UnwrapUnderlyingResource(ref ID3D11Resource pResource11, Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueue, Guid* riid, void** ppvResource12)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11Resource* pResource11Ptr = &pResource11)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11Ptr, pCommandQueue, riid, ppvResource12);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, Silk.NET.Direct3D12.ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11Ptr, pCommandQueue, riid, ppvResource12);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource(ref ID3D11Resource pResource11, ID3D12CommandQueue* pCommandQueue, Guid* riid, ref void* ppvResource12)
+        public readonly unsafe int UnwrapUnderlyingResource(ref ID3D11Resource pResource11, Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueue, Guid* riid, ref void* ppvResource12)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -567,14 +567,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void** ppvResource12Ptr = &ppvResource12)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11Ptr, pCommandQueue, riid, ppvResource12Ptr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, Silk.NET.Direct3D12.ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11Ptr, pCommandQueue, riid, ppvResource12Ptr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource(ref ID3D11Resource pResource11, ID3D12CommandQueue* pCommandQueue, ref Guid riid, void** ppvResource12)
+        public readonly unsafe int UnwrapUnderlyingResource(ref ID3D11Resource pResource11, Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueue, ref Guid riid, void** ppvResource12)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -582,14 +582,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11Ptr, pCommandQueue, riidPtr, ppvResource12);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, Silk.NET.Direct3D12.ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11Ptr, pCommandQueue, riidPtr, ppvResource12);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource(ref ID3D11Resource pResource11, ID3D12CommandQueue* pCommandQueue, ref Guid riid, ref void* ppvResource12)
+        public readonly unsafe int UnwrapUnderlyingResource(ref ID3D11Resource pResource11, Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueue, ref Guid riid, ref void* ppvResource12)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -599,7 +599,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (void** ppvResource12Ptr = &ppvResource12)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11Ptr, pCommandQueue, riidPtr, ppvResource12Ptr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, Silk.NET.Direct3D12.ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11Ptr, pCommandQueue, riidPtr, ppvResource12Ptr);
                     }
                 }
             }
@@ -607,32 +607,32 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource(ref ID3D11Resource pResource11, ref ID3D12CommandQueue pCommandQueue, Guid* riid, void** ppvResource12)
+        public readonly unsafe int UnwrapUnderlyingResource(ref ID3D11Resource pResource11, ref Silk.NET.Direct3D12.ID3D12CommandQueue pCommandQueue, Guid* riid, void** ppvResource12)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11Resource* pResource11Ptr = &pResource11)
             {
-                fixed (ID3D12CommandQueue* pCommandQueuePtr = &pCommandQueue)
+                fixed (Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueuePtr = &pCommandQueue)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11Ptr, pCommandQueuePtr, riid, ppvResource12);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, Silk.NET.Direct3D12.ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11Ptr, pCommandQueuePtr, riid, ppvResource12);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource(ref ID3D11Resource pResource11, ref ID3D12CommandQueue pCommandQueue, Guid* riid, ref void* ppvResource12)
+        public readonly unsafe int UnwrapUnderlyingResource(ref ID3D11Resource pResource11, ref Silk.NET.Direct3D12.ID3D12CommandQueue pCommandQueue, Guid* riid, ref void* ppvResource12)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11Resource* pResource11Ptr = &pResource11)
             {
-                fixed (ID3D12CommandQueue* pCommandQueuePtr = &pCommandQueue)
+                fixed (Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueuePtr = &pCommandQueue)
                 {
                     fixed (void** ppvResource12Ptr = &ppvResource12)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11Ptr, pCommandQueuePtr, riid, ppvResource12Ptr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, Silk.NET.Direct3D12.ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11Ptr, pCommandQueuePtr, riid, ppvResource12Ptr);
                     }
                 }
             }
@@ -640,17 +640,17 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource(ref ID3D11Resource pResource11, ref ID3D12CommandQueue pCommandQueue, ref Guid riid, void** ppvResource12)
+        public readonly unsafe int UnwrapUnderlyingResource(ref ID3D11Resource pResource11, ref Silk.NET.Direct3D12.ID3D12CommandQueue pCommandQueue, ref Guid riid, void** ppvResource12)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11Resource* pResource11Ptr = &pResource11)
             {
-                fixed (ID3D12CommandQueue* pCommandQueuePtr = &pCommandQueue)
+                fixed (Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueuePtr = &pCommandQueue)
                 {
                     fixed (Guid* riidPtr = &riid)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11Ptr, pCommandQueuePtr, riidPtr, ppvResource12);
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, Silk.NET.Direct3D12.ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11Ptr, pCommandQueuePtr, riidPtr, ppvResource12);
                     }
                 }
             }
@@ -658,19 +658,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource(ref ID3D11Resource pResource11, ref ID3D12CommandQueue pCommandQueue, ref Guid riid, ref void* ppvResource12)
+        public readonly unsafe int UnwrapUnderlyingResource(ref ID3D11Resource pResource11, ref Silk.NET.Direct3D12.ID3D12CommandQueue pCommandQueue, ref Guid riid, ref void* ppvResource12)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11Resource* pResource11Ptr = &pResource11)
             {
-                fixed (ID3D12CommandQueue* pCommandQueuePtr = &pCommandQueue)
+                fixed (Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueuePtr = &pCommandQueue)
                 {
                     fixed (Guid* riidPtr = &riid)
                     {
                         fixed (void** ppvResource12Ptr = &ppvResource12)
                         {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11Ptr, pCommandQueuePtr, riidPtr, ppvResource12Ptr);
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, Silk.NET.Direct3D12.ID3D12CommandQueue*, Guid*, void**, int>)@this->LpVtbl[7])(@this, pResource11Ptr, pCommandQueuePtr, riidPtr, ppvResource12Ptr);
                         }
                     }
                 }
@@ -679,82 +679,82 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReturnUnderlyingResource(ID3D11Resource* pResource11, uint NumSync, ulong* pSignalValues, ID3D12Fence** ppFences)
+        public readonly unsafe int ReturnUnderlyingResource(ID3D11Resource* pResource11, uint NumSync, ulong* pSignalValues, Silk.NET.Direct3D12.ID3D12Fence** ppFences)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, ID3D12Fence**, int>)@this->LpVtbl[8])(@this, pResource11, NumSync, pSignalValues, ppFences);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, Silk.NET.Direct3D12.ID3D12Fence**, int>)@this->LpVtbl[8])(@this, pResource11, NumSync, pSignalValues, ppFences);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReturnUnderlyingResource(ID3D11Resource* pResource11, uint NumSync, ulong* pSignalValues, ref ID3D12Fence* ppFences)
+        public readonly unsafe int ReturnUnderlyingResource(ID3D11Resource* pResource11, uint NumSync, ulong* pSignalValues, ref Silk.NET.Direct3D12.ID3D12Fence* ppFences)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (ID3D12Fence** ppFencesPtr = &ppFences)
+            fixed (Silk.NET.Direct3D12.ID3D12Fence** ppFencesPtr = &ppFences)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, ID3D12Fence**, int>)@this->LpVtbl[8])(@this, pResource11, NumSync, pSignalValues, ppFencesPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, Silk.NET.Direct3D12.ID3D12Fence**, int>)@this->LpVtbl[8])(@this, pResource11, NumSync, pSignalValues, ppFencesPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReturnUnderlyingResource(ID3D11Resource* pResource11, uint NumSync, ref ulong pSignalValues, ID3D12Fence** ppFences)
+        public readonly unsafe int ReturnUnderlyingResource(ID3D11Resource* pResource11, uint NumSync, ref ulong pSignalValues, Silk.NET.Direct3D12.ID3D12Fence** ppFences)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ulong* pSignalValuesPtr = &pSignalValues)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, ID3D12Fence**, int>)@this->LpVtbl[8])(@this, pResource11, NumSync, pSignalValuesPtr, ppFences);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, Silk.NET.Direct3D12.ID3D12Fence**, int>)@this->LpVtbl[8])(@this, pResource11, NumSync, pSignalValuesPtr, ppFences);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReturnUnderlyingResource(ID3D11Resource* pResource11, uint NumSync, ref ulong pSignalValues, ref ID3D12Fence* ppFences)
+        public readonly unsafe int ReturnUnderlyingResource(ID3D11Resource* pResource11, uint NumSync, ref ulong pSignalValues, ref Silk.NET.Direct3D12.ID3D12Fence* ppFences)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ulong* pSignalValuesPtr = &pSignalValues)
             {
-                fixed (ID3D12Fence** ppFencesPtr = &ppFences)
+                fixed (Silk.NET.Direct3D12.ID3D12Fence** ppFencesPtr = &ppFences)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, ID3D12Fence**, int>)@this->LpVtbl[8])(@this, pResource11, NumSync, pSignalValuesPtr, ppFencesPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, Silk.NET.Direct3D12.ID3D12Fence**, int>)@this->LpVtbl[8])(@this, pResource11, NumSync, pSignalValuesPtr, ppFencesPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReturnUnderlyingResource(ref ID3D11Resource pResource11, uint NumSync, ulong* pSignalValues, ID3D12Fence** ppFences)
+        public readonly unsafe int ReturnUnderlyingResource(ref ID3D11Resource pResource11, uint NumSync, ulong* pSignalValues, Silk.NET.Direct3D12.ID3D12Fence** ppFences)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11Resource* pResource11Ptr = &pResource11)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, ID3D12Fence**, int>)@this->LpVtbl[8])(@this, pResource11Ptr, NumSync, pSignalValues, ppFences);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, Silk.NET.Direct3D12.ID3D12Fence**, int>)@this->LpVtbl[8])(@this, pResource11Ptr, NumSync, pSignalValues, ppFences);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReturnUnderlyingResource(ref ID3D11Resource pResource11, uint NumSync, ulong* pSignalValues, ref ID3D12Fence* ppFences)
+        public readonly unsafe int ReturnUnderlyingResource(ref ID3D11Resource pResource11, uint NumSync, ulong* pSignalValues, ref Silk.NET.Direct3D12.ID3D12Fence* ppFences)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11Resource* pResource11Ptr = &pResource11)
             {
-                fixed (ID3D12Fence** ppFencesPtr = &ppFences)
+                fixed (Silk.NET.Direct3D12.ID3D12Fence** ppFencesPtr = &ppFences)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, ID3D12Fence**, int>)@this->LpVtbl[8])(@this, pResource11Ptr, NumSync, pSignalValues, ppFencesPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, Silk.NET.Direct3D12.ID3D12Fence**, int>)@this->LpVtbl[8])(@this, pResource11Ptr, NumSync, pSignalValues, ppFencesPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReturnUnderlyingResource(ref ID3D11Resource pResource11, uint NumSync, ref ulong pSignalValues, ID3D12Fence** ppFences)
+        public readonly unsafe int ReturnUnderlyingResource(ref ID3D11Resource pResource11, uint NumSync, ref ulong pSignalValues, Silk.NET.Direct3D12.ID3D12Fence** ppFences)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -762,14 +762,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ulong* pSignalValuesPtr = &pSignalValues)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, ID3D12Fence**, int>)@this->LpVtbl[8])(@this, pResource11Ptr, NumSync, pSignalValuesPtr, ppFences);
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, Silk.NET.Direct3D12.ID3D12Fence**, int>)@this->LpVtbl[8])(@this, pResource11Ptr, NumSync, pSignalValuesPtr, ppFences);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReturnUnderlyingResource(ref ID3D11Resource pResource11, uint NumSync, ref ulong pSignalValues, ref ID3D12Fence* ppFences)
+        public readonly unsafe int ReturnUnderlyingResource(ref ID3D11Resource pResource11, uint NumSync, ref ulong pSignalValues, ref Silk.NET.Direct3D12.ID3D12Fence* ppFences)
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -777,9 +777,9 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ulong* pSignalValuesPtr = &pSignalValues)
                 {
-                    fixed (ID3D12Fence** ppFencesPtr = &ppFences)
+                    fixed (Silk.NET.Direct3D12.ID3D12Fence** ppFencesPtr = &ppFences)
                     {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, ID3D12Fence**, int>)@this->LpVtbl[8])(@this, pResource11Ptr, NumSync, pSignalValuesPtr, ppFencesPtr);
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11On12Device2*, ID3D11Resource*, uint, ulong*, Silk.NET.Direct3D12.ID3D12Fence**, int>)@this->LpVtbl[8])(@this, pResource11Ptr, NumSync, pSignalValuesPtr, ppFencesPtr);
                     }
                 }
             }
@@ -796,7 +796,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource<TI0, TI1>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, out ComPtr<TI1> ppResource11) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int CreateWrappedResource<TI0, TI1>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, out ComPtr<TI1> ppResource11) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -805,7 +805,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource<TI0>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, Guid* riid, ref void* ppResource11) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int CreateWrappedResource<TI0>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, Guid* riid, ref void* ppResource11) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -813,7 +813,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource<TI0>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, ref Guid riid, void** ppResource11) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int CreateWrappedResource<TI0>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, ref Guid riid, void** ppResource11) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -821,7 +821,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource<TI0>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, ref Guid riid, ref void* ppResource11) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int CreateWrappedResource<TI0>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, ref Guid riid, ref void* ppResource11) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -829,7 +829,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateWrappedResource<TI0, TI1>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, out ComPtr<TI1> ppResource11) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly int CreateWrappedResource<TI0, TI1>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, out ComPtr<TI1> ppResource11) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -838,7 +838,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource<TI0>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, Guid* riid, ref void* ppResource11) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int CreateWrappedResource<TI0>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, Guid* riid, ref void* ppResource11) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -846,7 +846,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource<TI0>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, ref Guid riid, void** ppResource11) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int CreateWrappedResource<TI0>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, ref Guid riid, void** ppResource11) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -854,7 +854,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource<TI0>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, ref Guid riid, ref void* ppResource11) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int CreateWrappedResource<TI0>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, ref Guid riid, ref void* ppResource11) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -862,7 +862,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWrappedResource<TI0>(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, out ComPtr<TI0> ppResource11) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int CreateWrappedResource<TI0>(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, out ComPtr<TI0> ppResource11) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -871,7 +871,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateWrappedResource<TI0>(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState, out ComPtr<TI0> ppResource11) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int CreateWrappedResource<TI0>(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState, out ComPtr<TI0> ppResource11) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -905,7 +905,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource<TI0, TI1>(ComPtr<TI0> pResource11, ID3D12CommandQueue* pCommandQueue, out ComPtr<TI1> ppvResource12) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe int UnwrapUnderlyingResource<TI0, TI1>(ComPtr<TI0> pResource11, Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueue, out ComPtr<TI1> ppvResource12) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -914,7 +914,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource<TI0>(ComPtr<TI0> pResource11, ID3D12CommandQueue* pCommandQueue, Guid* riid, ref void* ppvResource12) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UnwrapUnderlyingResource<TI0>(ComPtr<TI0> pResource11, Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueue, Guid* riid, ref void* ppvResource12) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -922,7 +922,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource<TI0>(ComPtr<TI0> pResource11, ID3D12CommandQueue* pCommandQueue, ref Guid riid, void** ppvResource12) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UnwrapUnderlyingResource<TI0>(ComPtr<TI0> pResource11, Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueue, ref Guid riid, void** ppvResource12) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -930,7 +930,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource<TI0>(ComPtr<TI0> pResource11, ID3D12CommandQueue* pCommandQueue, ref Guid riid, ref void* ppvResource12) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UnwrapUnderlyingResource<TI0>(ComPtr<TI0> pResource11, Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueue, ref Guid riid, ref void* ppvResource12) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -938,7 +938,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int UnwrapUnderlyingResource<TI0, TI1>(ComPtr<TI0> pResource11, ref ID3D12CommandQueue pCommandQueue, out ComPtr<TI1> ppvResource12) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly int UnwrapUnderlyingResource<TI0, TI1>(ComPtr<TI0> pResource11, ref Silk.NET.Direct3D12.ID3D12CommandQueue pCommandQueue, out ComPtr<TI1> ppvResource12) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -947,7 +947,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource<TI0>(ComPtr<TI0> pResource11, ref ID3D12CommandQueue pCommandQueue, Guid* riid, ref void* ppvResource12) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UnwrapUnderlyingResource<TI0>(ComPtr<TI0> pResource11, ref Silk.NET.Direct3D12.ID3D12CommandQueue pCommandQueue, Guid* riid, ref void* ppvResource12) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -955,7 +955,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource<TI0>(ComPtr<TI0> pResource11, ref ID3D12CommandQueue pCommandQueue, ref Guid riid, void** ppvResource12) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UnwrapUnderlyingResource<TI0>(ComPtr<TI0> pResource11, ref Silk.NET.Direct3D12.ID3D12CommandQueue pCommandQueue, ref Guid riid, void** ppvResource12) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -963,7 +963,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource<TI0>(ComPtr<TI0> pResource11, ref ID3D12CommandQueue pCommandQueue, ref Guid riid, ref void* ppvResource12) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int UnwrapUnderlyingResource<TI0>(ComPtr<TI0> pResource11, ref Silk.NET.Direct3D12.ID3D12CommandQueue pCommandQueue, ref Guid riid, ref void* ppvResource12) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -971,7 +971,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int UnwrapUnderlyingResource<TI0>(ref ID3D11Resource pResource11, ID3D12CommandQueue* pCommandQueue, out ComPtr<TI0> ppvResource12) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int UnwrapUnderlyingResource<TI0>(ref ID3D11Resource pResource11, Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueue, out ComPtr<TI0> ppvResource12) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -980,7 +980,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int UnwrapUnderlyingResource<TI0>(ref ID3D11Resource pResource11, ref ID3D12CommandQueue pCommandQueue, out ComPtr<TI0> ppvResource12) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int UnwrapUnderlyingResource<TI0>(ref ID3D11Resource pResource11, ref Silk.NET.Direct3D12.ID3D12CommandQueue pCommandQueue, out ComPtr<TI0> ppvResource12) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -989,7 +989,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReturnUnderlyingResource<TI0>(ComPtr<TI0> pResource11, uint NumSync, ulong* pSignalValues, ID3D12Fence** ppFences) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int ReturnUnderlyingResource<TI0>(ComPtr<TI0> pResource11, uint NumSync, ulong* pSignalValues, Silk.NET.Direct3D12.ID3D12Fence** ppFences) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -997,7 +997,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReturnUnderlyingResource<TI0>(ComPtr<TI0> pResource11, uint NumSync, ulong* pSignalValues, ref ID3D12Fence* ppFences) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int ReturnUnderlyingResource<TI0>(ComPtr<TI0> pResource11, uint NumSync, ulong* pSignalValues, ref Silk.NET.Direct3D12.ID3D12Fence* ppFences) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1005,7 +1005,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReturnUnderlyingResource<TI0>(ComPtr<TI0> pResource11, uint NumSync, ref ulong pSignalValues, ID3D12Fence** ppFences) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int ReturnUnderlyingResource<TI0>(ComPtr<TI0> pResource11, uint NumSync, ref ulong pSignalValues, Silk.NET.Direct3D12.ID3D12Fence** ppFences) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1013,7 +1013,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReturnUnderlyingResource<TI0>(ComPtr<TI0> pResource11, uint NumSync, ref ulong pSignalValues, ref ID3D12Fence* ppFences) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        public readonly unsafe int ReturnUnderlyingResource<TI0>(ComPtr<TI0> pResource11, uint NumSync, ref ulong pSignalValues, ref Silk.NET.Direct3D12.ID3D12Fence* ppFences) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1030,7 +1030,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> CreateWrappedResource<TI0, TI1>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> CreateWrappedResource<TI0, TI1>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1039,7 +1039,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI1> CreateWrappedResource<TI0, TI1>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly ComPtr<TI1> CreateWrappedResource<TI0, TI1>(ComPtr<TI0> pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1048,7 +1048,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> CreateWrappedResource<TI0>(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> CreateWrappedResource<TI0>(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] ResourceFlags* pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1057,7 +1057,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> CreateWrappedResource<TI0>(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, D3D12_RESOURCE_STATES InState, D3D12_RESOURCE_STATES OutState) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> CreateWrappedResource<TI0>(ref Silk.NET.Core.Native.IUnknown pResource12, [Flow(FlowDirection.In)] in ResourceFlags pFlags11, Silk.NET.Direct3D12.ResourceStates InState, Silk.NET.Direct3D12.ResourceStates OutState) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1075,7 +1075,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI1> UnwrapUnderlyingResource<TI0, TI1>(ComPtr<TI0> pResource11, ID3D12CommandQueue* pCommandQueue) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly unsafe ComPtr<TI1> UnwrapUnderlyingResource<TI0, TI1>(ComPtr<TI0> pResource11, Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueue) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1084,7 +1084,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI1> UnwrapUnderlyingResource<TI0, TI1>(ComPtr<TI0> pResource11, ref ID3D12CommandQueue pCommandQueue) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
+        public readonly ComPtr<TI1> UnwrapUnderlyingResource<TI0, TI1>(ComPtr<TI0> pResource11, ref Silk.NET.Direct3D12.ID3D12CommandQueue pCommandQueue) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<TI1>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1093,7 +1093,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> UnwrapUnderlyingResource<TI0>(ref ID3D11Resource pResource11, ID3D12CommandQueue* pCommandQueue) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> UnwrapUnderlyingResource<TI0>(ref ID3D11Resource pResource11, Silk.NET.Direct3D12.ID3D12CommandQueue* pCommandQueue) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1102,7 +1102,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> UnwrapUnderlyingResource<TI0>(ref ID3D11Resource pResource11, ref ID3D12CommandQueue pCommandQueue) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> UnwrapUnderlyingResource<TI0>(ref ID3D11Resource pResource11, ref Silk.NET.Direct3D12.ID3D12CommandQueue pCommandQueue) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (ID3D11On12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader

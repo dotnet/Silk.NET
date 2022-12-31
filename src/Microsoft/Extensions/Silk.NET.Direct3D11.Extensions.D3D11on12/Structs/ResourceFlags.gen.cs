@@ -14,7 +14,7 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11.Extensions.D3D11on12
 {
     [NativeName("Name", "D3D11_RESOURCE_FLAGS")]
     public unsafe partial struct ResourceFlags
