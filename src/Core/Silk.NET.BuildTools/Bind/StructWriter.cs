@@ -470,7 +470,7 @@ namespace Silk.NET.BuildTools.Bind
                     }
                 }
 
-                foreach (var attr in function.Signature.Attributes)
+                foreach (var attr in function.Signature.GetAttributes())
                 {
                     sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                 }
@@ -609,7 +609,7 @@ namespace Silk.NET.BuildTools.Bind
                         }
                     }
 
-                    foreach (var attr in helper.Signature.Attributes)
+                    foreach (var attr in helper.Signature.GetAttributes())
                     {
                         vt.WriteLine($"    [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                     }

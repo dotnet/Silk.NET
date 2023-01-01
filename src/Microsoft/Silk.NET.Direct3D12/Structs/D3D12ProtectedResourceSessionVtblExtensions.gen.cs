@@ -429,9 +429,11 @@ public unsafe static class D3D12ProtectedResourceSessionVtblExtensions
     public static ProtectedResourceSessionDesc GetDesc(this ComPtr<ID3D12ProtectedResourceSession> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        ProtectedResourceSessionDesc ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12ProtectedResourceSession*, ProtectedResourceSessionDesc>)@this->LpVtbl[10])(@this);
-        return ret;
+        ProtectedResourceSessionDesc silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        ProtectedResourceSessionDesc* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12ProtectedResourceSession*, ProtectedResourceSessionDesc*, ProtectedResourceSessionDesc*>)@this->LpVtbl[10])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>
