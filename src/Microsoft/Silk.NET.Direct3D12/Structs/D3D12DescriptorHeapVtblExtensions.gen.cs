@@ -372,27 +372,33 @@ public unsafe static class D3D12DescriptorHeapVtblExtensions
     public static DescriptorHeapDesc GetDesc(this ComPtr<ID3D12DescriptorHeap> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        DescriptorHeapDesc ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12DescriptorHeap*, DescriptorHeapDesc>)@this->LpVtbl[8])(@this);
-        return ret;
+        DescriptorHeapDesc silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        DescriptorHeapDesc* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12DescriptorHeap*, DescriptorHeapDesc*, DescriptorHeapDesc*>)@this->LpVtbl[8])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>
     public static CpuDescriptorHandle GetCPUDescriptorHandleForHeapStart(this ComPtr<ID3D12DescriptorHeap> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        CpuDescriptorHandle ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12DescriptorHeap*, CpuDescriptorHandle>)@this->LpVtbl[9])(@this);
-        return ret;
+        CpuDescriptorHandle silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        CpuDescriptorHandle* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12DescriptorHeap*, CpuDescriptorHandle*, CpuDescriptorHandle*>)@this->LpVtbl[9])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>
     public static GpuDescriptorHandle GetGPUDescriptorHandleForHeapStart(this ComPtr<ID3D12DescriptorHeap> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        GpuDescriptorHandle ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12DescriptorHeap*, GpuDescriptorHandle>)@this->LpVtbl[10])(@this);
-        return ret;
+        GpuDescriptorHandle silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        GpuDescriptorHandle* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12DescriptorHeap*, GpuDescriptorHandle*, GpuDescriptorHandle*>)@this->LpVtbl[10])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>

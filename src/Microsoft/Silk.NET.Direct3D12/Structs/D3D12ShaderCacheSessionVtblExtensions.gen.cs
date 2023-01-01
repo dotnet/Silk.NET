@@ -535,9 +535,11 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     public static ShaderCacheSessionDesc GetDesc(this ComPtr<ID3D12ShaderCacheSession> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        ShaderCacheSessionDesc ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, ShaderCacheSessionDesc>)@this->LpVtbl[11])(@this);
-        return ret;
+        ShaderCacheSessionDesc silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        ShaderCacheSessionDesc* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, ShaderCacheSessionDesc*, ShaderCacheSessionDesc*>)@this->LpVtbl[11])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>

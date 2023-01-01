@@ -140,7 +140,7 @@ namespace Silk.NET.BuildTools.Bind
                             }
                         }
 
-                        foreach (var attr in function.Attributes)
+                        foreach (var attr in function.GetAttributes())
                         {
                             sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                         }
@@ -208,7 +208,7 @@ namespace Silk.NET.BuildTools.Bind
                             }
                         }
 
-                        foreach (var attr in overload.Signature.Attributes)
+                        foreach (var attr in overload.Signature.GetAttributes())
                         {
                             sw2u.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                         }
@@ -354,7 +354,7 @@ namespace Silk.NET.BuildTools.Bind
                                 }
                             }
 
-                            foreach (var attr in function.Attributes)
+                            foreach (var attr in function.GetAttributes())
                             {
                                 sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                             }
@@ -429,7 +429,7 @@ namespace Silk.NET.BuildTools.Bind
                                 }
                             }
 
-                            foreach (var attr in overload.Signature.Attributes)
+                            foreach (var attr in overload.Signature.GetAttributes())
                             {
                                 sw2u.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                             }
