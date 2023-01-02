@@ -114,7 +114,7 @@ So, this explains why clearing the window works. You set the clear color, and it
 Now that we've got that, let's move on!
 
 ## Vertex Array Objects (VAOs)
-A unique feature that modern OpenGL has is what is known as a Vertex Array Object, or VAO. It stores all the necessary information required to draw an object to the screen, such as the vertex data (which we'll get into in a minute), and also information on how to process this data.
+A unique feature that modern OpenGL has is what is known as a Vertex Array Object, or VAO. It stores all the necessary information required to draw an object to the screen, such as the vertex data (which we'll get into in a minute), and also information on how to read this data.
 
 This is a required feature of modern OpenGL. You **must** have a VAO bound, otherwise your application won't work.
 
