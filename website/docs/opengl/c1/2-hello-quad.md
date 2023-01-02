@@ -455,19 +455,19 @@ Now, run your program again. If you get no errors, this has all worked successfu
 ### Setting up the attributes
 The last thing we need to do before we can begin drawing our quad to the screen is to set up the attributes. By default, OpenGL does not know how to send the data to our shader, so we must tell it.
 
+This is done with the **attribute setup**. This sets various parameters in the VAO, which tells OpenGL how to read the vertex data in the vertex buffer. As vertex buffers can contain more than just position data (it can contain almost anything you want), it is vital that OpenGL knows how to separate out the individual bits of data, so it can pass it to the shader correctly.
+
 <?# Warning "While fragment shaders (and other shaders) can have `in` attributes, the only ones you can directly set *outside* of a shader are the ones going into the vertex shader. The only way to set attributes in the fragment shader is to pass them through the vertex shader. Therefore, the attribute setup only affects the vertex shader and vertex buffer, not any other shader." /?>
 
 Add the following to your `OnLoad` method:
 
 ```cs
-_gl.UseProgram(_program);
-
 const uint positionLoc = 0;
 _gl.EnableVertexAttribArray(positionLoc);
 _gl.VertexAttribPointer(positionLoc, 3, VertexAttribPointerType.Float, false, 3 * sizeof(float), (void*) 0);
 ```
 
-First, we tell OpenGL to use the shader program we just created. While this is not strictly necessary, some drivers require you to use the program for the attribute setup to work properly.
+Let's go over what is going on here.
 
 `positionLoc` simply refers to the `aPosition` attribute we defined in our vertex shader earlier. Since we explicitly stated we wanted it at position 0, we must also use that here. If you decided against explicitly giving a location in your shader, you can replace the `0` with `_gl.GetAttribLocation("aPosition");` (just remember to remove the `const` too...)
 
@@ -547,7 +547,7 @@ That was a lot to digest! You've hopefully learned a lot along the way though, a
 
 Here's some stuff you can do now:
 
-* Move on to the [next tutorial](), where you'll learn how to create a GL context and display a quad on the screen.
+* Move on to the [next tutorial](../../coming-soon.html), where we'll be abstracting away some of our code to make it easier to read.
 * View the full tutorial source code on the [Silk.NET git repository](https://github.com/dotnet/Silk.NET/tree/main/examples/CSharp/OpenGL%20Tutorials/Tutorial%201.2%20-%20Hello%20quad).
 * Join the [Discord server](https://discord.gg/DTHHXRt), where you can ask questions, show your stuff, and chat with everyone there.
 
