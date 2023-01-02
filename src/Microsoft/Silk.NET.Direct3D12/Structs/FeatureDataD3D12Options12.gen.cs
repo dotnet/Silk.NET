@@ -22,8 +22,8 @@ namespace Silk.NET.Direct3D12
         public FeatureDataD3D12Options12
         (
             TriState? mSPrimitivesPipelineStatisticIncludesCulledPrimitives = null,
-            int? enhancedBarriersSupported = null,
-            int? relaxedFormatCastingSupported = null
+            Silk.NET.Core.Bool32? enhancedBarriersSupported = null,
+            Silk.NET.Core.Bool32? relaxedFormatCastingSupported = null
         ) : this()
         {
             if (mSPrimitivesPipelineStatisticIncludesCulledPrimitives is not null)
@@ -51,11 +51,11 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "EnhancedBarriersSupported")]
-        public int EnhancedBarriersSupported;
+        public Silk.NET.Core.Bool32 EnhancedBarriersSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "RelaxedFormatCastingSupported")]
-        public int RelaxedFormatCastingSupported;
+        public Silk.NET.Core.Bool32 RelaxedFormatCastingSupported;
     }
 }

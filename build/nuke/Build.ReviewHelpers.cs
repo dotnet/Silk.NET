@@ -26,7 +26,7 @@ partial class Build
                 foreach (var file in files)
                 {
                     var found = false;
-                    foreach (var project in Solution.GetProjects("*"))
+                    foreach (var project in OriginalSolution.GetProjects("*"))
                     {
                         if (new FileInfo(file).FullName.Equals(new FileInfo(project.Path).FullName))
                         {
@@ -53,7 +53,7 @@ partial class Build
                     Logger.Warn("Commands to add these for your convenience:");
                     foreach (var file in missedOut)
                     {
-                        Logger.Warn($"dotnet sln \"{Path.GetFileName(Solution.FileName)}\" add \"{file}\"");
+                        Logger.Warn($"dotnet sln \"{Path.GetFileName(OriginalSolution.FileName)}\" add \"{file}\"");
                     }
 
                     ControlFlow.Fail("Action required.");

@@ -54,8 +54,8 @@ namespace Silk.NET.Direct3D12
             }
         }
 
-        [NativeName("Type", "FLOAT [3][4]")]
-        [NativeName("Type.Name", "FLOAT [3][4]")]
+        [NativeName("Type", "FLOAT[3][4]")]
+        [NativeName("Type.Name", "FLOAT[3][4]")]
         [NativeName("Name", "Transform")]
         public fixed float Transform[12];
 

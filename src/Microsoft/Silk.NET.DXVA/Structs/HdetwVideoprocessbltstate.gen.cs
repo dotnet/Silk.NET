@@ -24,7 +24,7 @@ namespace Silk.NET.DXVA
             ulong? pObject = null,
             HDBltState? state = null,
             uint? dataSize = null,
-            int? setState = null
+            Silk.NET.Core.Bool32? setState = null
         ) : this()
         {
             if (pObject is not null)
@@ -67,6 +67,6 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "SetState")]
-        public int SetState;
+        public Silk.NET.Core.Bool32 SetState;
     }
 }

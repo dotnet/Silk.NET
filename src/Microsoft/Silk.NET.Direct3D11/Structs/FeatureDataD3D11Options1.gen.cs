@@ -22,9 +22,9 @@ namespace Silk.NET.Direct3D11
         public FeatureDataD3D11Options1
         (
             TiledResourcesTier? tiledResourcesTier = null,
-            int? minMaxFiltering = null,
-            int? clearViewAlsoSupportsDepthOnlyFormats = null,
-            int? mapOnDefaultBuffers = null
+            Silk.NET.Core.Bool32? minMaxFiltering = null,
+            Silk.NET.Core.Bool32? clearViewAlsoSupportsDepthOnlyFormats = null,
+            Silk.NET.Core.Bool32? mapOnDefaultBuffers = null
         ) : this()
         {
             if (tiledResourcesTier is not null)
@@ -57,16 +57,16 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "MinMaxFiltering")]
-        public int MinMaxFiltering;
+        public Silk.NET.Core.Bool32 MinMaxFiltering;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ClearViewAlsoSupportsDepthOnlyFormats")]
-        public int ClearViewAlsoSupportsDepthOnlyFormats;
+        public Silk.NET.Core.Bool32 ClearViewAlsoSupportsDepthOnlyFormats;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "MapOnDefaultBuffers")]
-        public int MapOnDefaultBuffers;
+        public Silk.NET.Core.Bool32 MapOnDefaultBuffers;
     }
 }

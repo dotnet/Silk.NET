@@ -21,20 +21,20 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D11Options
         (
-            int? outputMergerLogicOp = null,
-            int? uAVOnlyRenderingForcedSampleCount = null,
-            int? discardAPIsSeenByDriver = null,
-            int? flagsForUpdateAndCopySeenByDriver = null,
-            int? clearView = null,
-            int? copyWithOverlap = null,
-            int? constantBufferPartialUpdate = null,
-            int? constantBufferOffsetting = null,
-            int? mapNoOverwriteOnDynamicConstantBuffer = null,
-            int? mapNoOverwriteOnDynamicBufferSRV = null,
-            int? multisampleRTVWithForcedSampleCountOne = null,
-            int? sAD4ShaderInstructions = null,
-            int? extendedDoublesShaderInstructions = null,
-            int? extendedResourceSharing = null
+            Silk.NET.Core.Bool32? outputMergerLogicOp = null,
+            Silk.NET.Core.Bool32? uAVOnlyRenderingForcedSampleCount = null,
+            Silk.NET.Core.Bool32? discardAPIsSeenByDriver = null,
+            Silk.NET.Core.Bool32? flagsForUpdateAndCopySeenByDriver = null,
+            Silk.NET.Core.Bool32? clearView = null,
+            Silk.NET.Core.Bool32? copyWithOverlap = null,
+            Silk.NET.Core.Bool32? constantBufferPartialUpdate = null,
+            Silk.NET.Core.Bool32? constantBufferOffsetting = null,
+            Silk.NET.Core.Bool32? mapNoOverwriteOnDynamicConstantBuffer = null,
+            Silk.NET.Core.Bool32? mapNoOverwriteOnDynamicBufferSRV = null,
+            Silk.NET.Core.Bool32? multisampleRTVWithForcedSampleCountOne = null,
+            Silk.NET.Core.Bool32? sAD4ShaderInstructions = null,
+            Silk.NET.Core.Bool32? extendedDoublesShaderInstructions = null,
+            Silk.NET.Core.Bool32? extendedResourceSharing = null
         ) : this()
         {
             if (outputMergerLogicOp is not null)
@@ -112,71 +112,71 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "OutputMergerLogicOp")]
-        public int OutputMergerLogicOp;
+        public Silk.NET.Core.Bool32 OutputMergerLogicOp;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "UAVOnlyRenderingForcedSampleCount")]
-        public int UAVOnlyRenderingForcedSampleCount;
+        public Silk.NET.Core.Bool32 UAVOnlyRenderingForcedSampleCount;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DiscardAPIsSeenByDriver")]
-        public int DiscardAPIsSeenByDriver;
+        public Silk.NET.Core.Bool32 DiscardAPIsSeenByDriver;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "FlagsForUpdateAndCopySeenByDriver")]
-        public int FlagsForUpdateAndCopySeenByDriver;
+        public Silk.NET.Core.Bool32 FlagsForUpdateAndCopySeenByDriver;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ClearView")]
-        public int ClearView;
+        public Silk.NET.Core.Bool32 ClearView;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "CopyWithOverlap")]
-        public int CopyWithOverlap;
+        public Silk.NET.Core.Bool32 CopyWithOverlap;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ConstantBufferPartialUpdate")]
-        public int ConstantBufferPartialUpdate;
+        public Silk.NET.Core.Bool32 ConstantBufferPartialUpdate;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ConstantBufferOffsetting")]
-        public int ConstantBufferOffsetting;
+        public Silk.NET.Core.Bool32 ConstantBufferOffsetting;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "MapNoOverwriteOnDynamicConstantBuffer")]
-        public int MapNoOverwriteOnDynamicConstantBuffer;
+        public Silk.NET.Core.Bool32 MapNoOverwriteOnDynamicConstantBuffer;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "MapNoOverwriteOnDynamicBufferSRV")]
-        public int MapNoOverwriteOnDynamicBufferSRV;
+        public Silk.NET.Core.Bool32 MapNoOverwriteOnDynamicBufferSRV;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "MultisampleRTVWithForcedSampleCountOne")]
-        public int MultisampleRTVWithForcedSampleCountOne;
+        public Silk.NET.Core.Bool32 MultisampleRTVWithForcedSampleCountOne;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "SAD4ShaderInstructions")]
-        public int SAD4ShaderInstructions;
+        public Silk.NET.Core.Bool32 SAD4ShaderInstructions;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ExtendedDoublesShaderInstructions")]
-        public int ExtendedDoublesShaderInstructions;
+        public Silk.NET.Core.Bool32 ExtendedDoublesShaderInstructions;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ExtendedResourceSharing")]
-        public int ExtendedResourceSharing;
+        public Silk.NET.Core.Bool32 ExtendedResourceSharing;
     }
 }

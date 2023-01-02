@@ -144,7 +144,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe uint GetPropertyIndex(this ComPtr<ID2D1Effect> thisVtbl, char* name)
+    public static unsafe uint GetPropertyIndex(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] char* name)
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
@@ -153,7 +153,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint GetPropertyIndex(this ComPtr<ID2D1Effect> thisVtbl, ref char name)
+    public static uint GetPropertyIndex(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] in char name)
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
@@ -165,7 +165,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint GetPropertyIndex(this ComPtr<ID2D1Effect> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name)
+    public static uint GetPropertyIndex(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name)
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
@@ -176,7 +176,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, char* name, PropertyType type, byte* data, uint dataSize)
+    public static unsafe int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] char* name, PropertyType type, [Flow(FlowDirection.In)] byte* data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -185,7 +185,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, char* name, PropertyType type, ref byte data, uint dataSize)
+    public static unsafe int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] char* name, PropertyType type, [Flow(FlowDirection.In)] in byte data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -197,7 +197,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, char* name, PropertyType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
+    public static unsafe int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] char* name, PropertyType type, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -208,7 +208,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, ref char name, PropertyType type, byte* data, uint dataSize)
+    public static unsafe int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] in char name, PropertyType type, [Flow(FlowDirection.In)] byte* data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -220,7 +220,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, ref char name, PropertyType type, ref byte data, uint dataSize)
+    public static int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] in char name, PropertyType type, [Flow(FlowDirection.In)] in byte data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -235,7 +235,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, ref char name, PropertyType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
+    public static int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] in char name, PropertyType type, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -249,7 +249,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, byte* data, uint dataSize)
+    public static unsafe int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, [Flow(FlowDirection.In)] byte* data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -260,7 +260,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, ref byte data, uint dataSize)
+    public static int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, [Flow(FlowDirection.In)] in byte data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -274,7 +274,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
+    public static int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -287,7 +287,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValue(this ComPtr<ID2D1Effect> thisVtbl, uint index, PropertyType type, byte* data, uint dataSize)
+    public static unsafe int SetValue(this ComPtr<ID2D1Effect> thisVtbl, uint index, PropertyType type, [Flow(FlowDirection.In)] byte* data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -296,7 +296,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetValue(this ComPtr<ID2D1Effect> thisVtbl, uint index, PropertyType type, ref byte data, uint dataSize)
+    public static int SetValue(this ComPtr<ID2D1Effect> thisVtbl, uint index, PropertyType type, [Flow(FlowDirection.In)] in byte data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -308,7 +308,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetValue(this ComPtr<ID2D1Effect> thisVtbl, uint index, PropertyType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
+    public static int SetValue(this ComPtr<ID2D1Effect> thisVtbl, uint index, PropertyType type, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -319,7 +319,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, char* name, PropertyType type, byte* data, uint dataSize)
+    public static unsafe int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] char* name, PropertyType type, byte* data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -328,7 +328,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, char* name, PropertyType type, ref byte data, uint dataSize)
+    public static unsafe int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] char* name, PropertyType type, ref byte data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -340,7 +340,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, char* name, PropertyType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
+    public static unsafe int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] char* name, PropertyType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -351,7 +351,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, ref char name, PropertyType type, byte* data, uint dataSize)
+    public static unsafe int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] in char name, PropertyType type, byte* data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -363,7 +363,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, ref char name, PropertyType type, ref byte data, uint dataSize)
+    public static int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] in char name, PropertyType type, ref byte data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -378,7 +378,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, ref char name, PropertyType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
+    public static int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] in char name, PropertyType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -392,7 +392,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, byte* data, uint dataSize)
+    public static unsafe int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, byte* data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -403,7 +403,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, ref byte data, uint dataSize)
+    public static int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, ref byte data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -417,7 +417,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
+    public static int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -492,19 +492,19 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetInput(this ComPtr<ID2D1Effect> thisVtbl, uint index, ID2D1Image* input, int invalidate)
+    public static unsafe void SetInput(this ComPtr<ID2D1Effect> thisVtbl, uint index, ID2D1Image* input, Silk.NET.Core.Bool32 invalidate)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID2D1Effect*, uint, ID2D1Image*, int, void>)@this->LpVtbl[14])(@this, index, input, invalidate);
+        ((delegate* unmanaged[Stdcall]<ID2D1Effect*, uint, ID2D1Image*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[14])(@this, index, input, invalidate);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetInput(this ComPtr<ID2D1Effect> thisVtbl, uint index, ref ID2D1Image input, int invalidate)
+    public static void SetInput(this ComPtr<ID2D1Effect> thisVtbl, uint index, ref ID2D1Image input, Silk.NET.Core.Bool32 invalidate)
     {
         var @this = thisVtbl.Handle;
         fixed (ID2D1Image* inputPtr = &input)
         {
-            ((delegate* unmanaged[Stdcall]<ID2D1Effect*, uint, ID2D1Image*, int, void>)@this->LpVtbl[14])(@this, index, inputPtr, invalidate);
+            ((delegate* unmanaged[Stdcall]<ID2D1Effect*, uint, ID2D1Image*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[14])(@this, index, inputPtr, invalidate);
         }
     }
 
@@ -594,63 +594,63 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint GetPropertyIndex(this ComPtr<ID2D1Effect> thisVtbl, Span<char> name)
+    public static uint GetPropertyIndex(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetPropertyIndex(ref name.GetPinnableReference());
+        return @this->GetPropertyIndex(in name.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, char* name, PropertyType type, Span<byte> data, uint dataSize)
+    public static unsafe int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] char* name, PropertyType type, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetValueByName(name, type, ref data.GetPinnableReference(), dataSize);
+        return @this->SetValueByName(name, type, in data.GetPinnableReference(), dataSize);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, Span<char> name, PropertyType type, byte* data, uint dataSize)
+    public static unsafe int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, PropertyType type, [Flow(FlowDirection.In)] byte* data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetValueByName(ref name.GetPinnableReference(), type, data, dataSize);
+        return @this->SetValueByName(in name.GetPinnableReference(), type, data, dataSize);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, Span<char> name, PropertyType type, Span<byte> data, uint dataSize)
+    public static int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, PropertyType type, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetValueByName(ref name.GetPinnableReference(), type, ref data.GetPinnableReference(), dataSize);
+        return @this->SetValueByName(in name.GetPinnableReference(), type, in data.GetPinnableReference(), dataSize);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, Span<char> name, PropertyType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
+    public static int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, PropertyType type, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetValueByName(ref name.GetPinnableReference(), type, data, dataSize);
+        return @this->SetValueByName(in name.GetPinnableReference(), type, data, dataSize);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, Span<byte> data, uint dataSize)
+    public static int SetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetValueByName(name, type, ref data.GetPinnableReference(), dataSize);
+        return @this->SetValueByName(name, type, in data.GetPinnableReference(), dataSize);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetValue(this ComPtr<ID2D1Effect> thisVtbl, uint index, PropertyType type, Span<byte> data, uint dataSize)
+    public static int SetValue(this ComPtr<ID2D1Effect> thisVtbl, uint index, PropertyType type, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetValue(index, type, ref data.GetPinnableReference(), dataSize);
+        return @this->SetValue(index, type, in data.GetPinnableReference(), dataSize);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, char* name, PropertyType type, Span<byte> data, uint dataSize)
+    public static unsafe int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] char* name, PropertyType type, Span<byte> data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -658,31 +658,31 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, Span<char> name, PropertyType type, byte* data, uint dataSize)
+    public static unsafe int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, PropertyType type, byte* data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetValueByName(ref name.GetPinnableReference(), type, data, dataSize);
+        return @this->GetValueByName(in name.GetPinnableReference(), type, data, dataSize);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, Span<char> name, PropertyType type, Span<byte> data, uint dataSize)
+    public static int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, PropertyType type, Span<byte> data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetValueByName(ref name.GetPinnableReference(), type, ref data.GetPinnableReference(), dataSize);
+        return @this->GetValueByName(in name.GetPinnableReference(), type, ref data.GetPinnableReference(), dataSize);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, Span<char> name, PropertyType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
+    public static int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> name, PropertyType type, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetValueByName(ref name.GetPinnableReference(), type, data, dataSize);
+        return @this->GetValueByName(in name.GetPinnableReference(), type, data, dataSize);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, Span<byte> data, uint dataSize)
+    public static int GetValueByName(this ComPtr<ID2D1Effect> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, PropertyType type, Span<byte> data, uint dataSize)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -706,7 +706,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetInput<TI0>(this ComPtr<ID2D1Effect> thisVtbl, uint index, ComPtr<TI0> input, int invalidate) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
+    public static void SetInput<TI0>(this ComPtr<ID2D1Effect> thisVtbl, uint index, ComPtr<TI0> input, Silk.NET.Core.Bool32 invalidate) where TI0 : unmanaged, IComVtbl<ID2D1Image>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -714,7 +714,7 @@ public unsafe static class D2D1EffectVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetInput(this ComPtr<ID2D1Effect> thisVtbl, uint index, Span<ID2D1Image> input, int invalidate)
+    public static void SetInput(this ComPtr<ID2D1Effect> thisVtbl, uint index, Span<ID2D1Image> input, Silk.NET.Core.Bool32 invalidate)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

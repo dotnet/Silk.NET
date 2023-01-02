@@ -32,8 +32,8 @@ namespace Silk.NET.Direct3D12
         }
 
         [FieldOffset(0)]
-        [NativeName("Type", "FLOAT [4]")]
-        [NativeName("Type.Name", "FLOAT [4]")]
+        [NativeName("Type", "FLOAT[4]")]
+        [NativeName("Type.Name", "FLOAT[4]")]
         [NativeName("Name", "Color")]
         public fixed float Color[4];
 

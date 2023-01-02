@@ -103,21 +103,21 @@ public unsafe static class D2D1BlendTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetCached(this ComPtr<ID2D1BlendTransform> thisVtbl, int isCached)
+    public static void SetCached(this ComPtr<ID2D1BlendTransform> thisVtbl, Silk.NET.Core.Bool32 isCached)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, int, void>)@this->LpVtbl[5])(@this, isCached);
+        ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[5])(@this, isCached);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetDescription(this ComPtr<ID2D1BlendTransform> thisVtbl, BlendDescription* description)
+    public static unsafe void SetDescription(this ComPtr<ID2D1BlendTransform> thisVtbl, [Flow(FlowDirection.In)] BlendDescription* description)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1BlendTransform*, BlendDescription*, void>)@this->LpVtbl[6])(@this, description);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetDescription(this ComPtr<ID2D1BlendTransform> thisVtbl, ref BlendDescription description)
+    public static void SetDescription(this ComPtr<ID2D1BlendTransform> thisVtbl, [Flow(FlowDirection.In)] in BlendDescription description)
     {
         var @this = thisVtbl.Handle;
         fixed (BlendDescription* descriptionPtr = &description)
@@ -169,11 +169,11 @@ public unsafe static class D2D1BlendTransformVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetDescription(this ComPtr<ID2D1BlendTransform> thisVtbl, Span<BlendDescription> description)
+    public static void SetDescription(this ComPtr<ID2D1BlendTransform> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<BlendDescription> description)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->SetDescription(ref description.GetPinnableReference());
+        @this->SetDescription(in description.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

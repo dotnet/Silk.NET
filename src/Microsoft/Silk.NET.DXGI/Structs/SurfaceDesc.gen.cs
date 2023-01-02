@@ -24,7 +24,7 @@ namespace Silk.NET.DXGI
             uint? width = null,
             uint? height = null,
             Silk.NET.DXGI.Format? format = null,
-            SampleDesc? sampleDesc = null
+            Silk.NET.DXGI.SampleDesc? sampleDesc = null
         ) : this()
         {
             if (width is not null)
@@ -67,6 +67,6 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "DXGI_SAMPLE_DESC")]
         [NativeName("Type.Name", "DXGI_SAMPLE_DESC")]
         [NativeName("Name", "SampleDesc")]
-        public SampleDesc SampleDesc;
+        public Silk.NET.DXGI.SampleDesc SampleDesc;
     }
 }

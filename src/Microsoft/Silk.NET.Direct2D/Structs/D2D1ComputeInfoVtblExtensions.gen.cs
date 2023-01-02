@@ -103,10 +103,10 @@ public unsafe static class D2D1ComputeInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetCached(this ComPtr<ID2D1ComputeInfo> thisVtbl, int isCached)
+    public static void SetCached(this ComPtr<ID2D1ComputeInfo> thisVtbl, Silk.NET.Core.Bool32 isCached)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID2D1ComputeInfo*, int, void>)@this->LpVtbl[5])(@this, isCached);
+        ((delegate* unmanaged[Stdcall]<ID2D1ComputeInfo*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[5])(@this, isCached);
     }
 
     /// <summary>To be documented.</summary>
@@ -117,7 +117,7 @@ public unsafe static class D2D1ComputeInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, byte* buffer, uint bufferCount)
+    public static unsafe int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, [Flow(FlowDirection.In)] byte* buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -126,7 +126,7 @@ public unsafe static class D2D1ComputeInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, ref byte buffer, uint bufferCount)
+    public static int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, [Flow(FlowDirection.In)] in byte buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -138,7 +138,7 @@ public unsafe static class D2D1ComputeInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer, uint bufferCount)
+    public static int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -216,11 +216,11 @@ public unsafe static class D2D1ComputeInfoVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, Span<byte> buffer, uint bufferCount)
+    public static int SetComputeShaderConstantBuffer(this ComPtr<ID2D1ComputeInfo> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> buffer, uint bufferCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetComputeShaderConstantBuffer(ref buffer.GetPinnableReference(), bufferCount);
+        return @this->SetComputeShaderConstantBuffer(in buffer.GetPinnableReference(), bufferCount);
     }
 
     /// <summary>To be documented.</summary>

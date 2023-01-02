@@ -26,7 +26,7 @@ namespace Silk.NET.Direct3D12
             VideoMotionEstimatorSearchBlockSize? blockSize = null,
             VideoMotionEstimatorVectorPrecision? precision = null,
             VideoSizeRange? sizeRange = null,
-            int? @protected = null,
+            Silk.NET.Core.Bool32? @protected = null,
             ulong? motionVectorHeapMemoryPoolL0Size = null,
             ulong? motionVectorHeapMemoryPoolL1Size = null,
             ulong? motionEstimatorMemoryPoolL0Size = null,
@@ -113,7 +113,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Protected")]
-        public int Protected;
+        public Silk.NET.Core.Bool32 Protected;
 
         [NativeName("Type", "UINT64")]
         [NativeName("Type.Name", "UINT64")]

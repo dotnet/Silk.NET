@@ -126,8 +126,8 @@ namespace Silk.NET.DXVA
         [NativeName("Type.Name", "DXVA_ConfigQueryOrReplyFunc")]
         [NativeName("Name", "dwFunction")]
         public uint DwFunction;
-        [NativeName("Type", "DWORD [3]")]
-        [NativeName("Type.Name", "DWORD [3]")]
+        [NativeName("Type", "DWORD[3]")]
+        [NativeName("Type.Name", "DWORD[3]")]
         [NativeName("Name", "dwReservedBits")]
         public fixed uint DwReservedBits[3];
 

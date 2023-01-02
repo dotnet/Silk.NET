@@ -63,8 +63,8 @@ namespace Silk.NET.SDL
         [NativeName("Type.Name", "Sint32")]
         [NativeName("Name", "which")]
         public int Which;
-        [NativeName("Type", "float [6]")]
-        [NativeName("Type.Name", "float [6]")]
+        [NativeName("Type", "float[6]")]
+        [NativeName("Type.Name", "float[6]")]
         [NativeName("Name", "data")]
         public fixed float Data[6];
 

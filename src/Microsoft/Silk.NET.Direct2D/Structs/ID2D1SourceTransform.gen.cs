@@ -126,7 +126,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapOutputRectToInputRects(Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* inputRects, uint inputRectsCount)
+        public readonly unsafe int MapOutputRectToInputRects([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* inputRects, uint inputRectsCount)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -135,7 +135,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapOutputRectToInputRects(Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> inputRects, uint inputRectsCount)
+        public readonly unsafe int MapOutputRectToInputRects([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> inputRects, uint inputRectsCount)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -147,7 +147,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapOutputRectToInputRects(ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* inputRects, uint inputRectsCount)
+        public readonly unsafe int MapOutputRectToInputRects([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* inputRects, uint inputRectsCount)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -159,7 +159,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MapOutputRectToInputRects(ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> inputRects, uint inputRectsCount)
+        public readonly int MapOutputRectToInputRects([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> inputRects, uint inputRectsCount)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -174,7 +174,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Box2D<int>* inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -183,7 +183,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Box2D<int>* inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -195,7 +195,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Box2D<int>* inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -207,7 +207,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Box2D<int>* inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -222,7 +222,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Box2D<int>* inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -234,7 +234,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Box2D<int>* inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -249,7 +249,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Box2D<int>* inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -264,7 +264,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(Silk.NET.Maths.Box2D<int>* inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -282,7 +282,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Box2D<int> inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -294,7 +294,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Box2D<int> inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -309,7 +309,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Box2D<int> inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -324,7 +324,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Box2D<int> inputRects, Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -342,7 +342,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Box2D<int> inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -357,7 +357,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Box2D<int> inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, Silk.NET.Maths.Box2D<int>* outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -375,7 +375,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MapInputRectsToOutputRect(ref Silk.NET.Maths.Box2D<int> inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
+        public readonly unsafe int MapInputRectsToOutputRect([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, Silk.NET.Maths.Box2D<int>* outputOpaqueSubRect)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -393,7 +393,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MapInputRectsToOutputRect(ref Silk.NET.Maths.Box2D<int> inputRects, ref Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
+        public readonly int MapInputRectsToOutputRect([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> inputOpaqueSubRects, uint inputRectCount, ref Silk.NET.Maths.Box2D<int> outputRect, ref Silk.NET.Maths.Box2D<int> outputOpaqueSubRect)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -456,7 +456,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Draw(ID2D1Bitmap1* target, Silk.NET.Maths.Box2D<int>* drawRect, Silk.NET.Maths.Vector2D<uint> targetOrigin)
+        public readonly unsafe int Draw(ID2D1Bitmap1* target, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* drawRect, Silk.NET.Maths.Vector2D<uint> targetOrigin)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -465,7 +465,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Draw(ID2D1Bitmap1* target, ref Silk.NET.Maths.Box2D<int> drawRect, Silk.NET.Maths.Vector2D<uint> targetOrigin)
+        public readonly unsafe int Draw(ID2D1Bitmap1* target, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> drawRect, Silk.NET.Maths.Vector2D<uint> targetOrigin)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -477,7 +477,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Draw(ref ID2D1Bitmap1 target, Silk.NET.Maths.Box2D<int>* drawRect, Silk.NET.Maths.Vector2D<uint> targetOrigin)
+        public readonly unsafe int Draw(ref ID2D1Bitmap1 target, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* drawRect, Silk.NET.Maths.Vector2D<uint> targetOrigin)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -489,7 +489,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Draw(ref ID2D1Bitmap1 target, ref Silk.NET.Maths.Box2D<int> drawRect, Silk.NET.Maths.Vector2D<uint> targetOrigin)
+        public readonly int Draw(ref ID2D1Bitmap1 target, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> drawRect, Silk.NET.Maths.Vector2D<uint> targetOrigin)
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -521,7 +521,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Draw<TI0>(ComPtr<TI0> target, Silk.NET.Maths.Box2D<int>* drawRect, Silk.NET.Maths.Vector2D<uint> targetOrigin) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
+        public readonly unsafe int Draw<TI0>(ComPtr<TI0> target, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* drawRect, Silk.NET.Maths.Vector2D<uint> targetOrigin) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -529,11 +529,11 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Draw<TI0>(ComPtr<TI0> target, ref Silk.NET.Maths.Box2D<int> drawRect, Silk.NET.Maths.Vector2D<uint> targetOrigin) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
+        public readonly int Draw<TI0>(ComPtr<TI0> target, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> drawRect, Silk.NET.Maths.Vector2D<uint> targetOrigin) where TI0 : unmanaged, IComVtbl<ID2D1Bitmap1>, IComVtbl<TI0>
         {
             var @this = (ID2D1SourceTransform*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->Draw((ID2D1Bitmap1*) target.Handle, ref drawRect, targetOrigin);
+            return @this->Draw((ID2D1Bitmap1*) target.Handle, in drawRect, targetOrigin);
         }
 
         /// <summary>To be documented.</summary>

@@ -20,8 +20,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_GUID")]
     public unsafe partial struct GUID
     {
-        [NativeName("Type", "Uint8 [16]")]
-        [NativeName("Type.Name", "Uint8 [16]")]
+        [NativeName("Type", "Uint8[16]")]
+        [NativeName("Type.Name", "Uint8[16]")]
         [NativeName("Name", "data")]
         public fixed byte Data[16];
     }

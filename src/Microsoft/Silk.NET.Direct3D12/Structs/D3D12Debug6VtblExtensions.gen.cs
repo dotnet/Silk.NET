@@ -92,17 +92,17 @@ public unsafe static class D3D12Debug6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetEnableGPUBasedValidation(this ComPtr<ID3D12Debug6> thisVtbl, int Enable)
+    public static void SetEnableGPUBasedValidation(this ComPtr<ID3D12Debug6> thisVtbl, Silk.NET.Core.Bool32 Enable)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D12Debug6*, int, void>)@this->LpVtbl[4])(@this, Enable);
+        ((delegate* unmanaged[Stdcall]<ID3D12Debug6*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[4])(@this, Enable);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetEnableSynchronizedCommandQueueValidation(this ComPtr<ID3D12Debug6> thisVtbl, int Enable)
+    public static void SetEnableSynchronizedCommandQueueValidation(this ComPtr<ID3D12Debug6> thisVtbl, Silk.NET.Core.Bool32 Enable)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D12Debug6*, int, void>)@this->LpVtbl[5])(@this, Enable);
+        ((delegate* unmanaged[Stdcall]<ID3D12Debug6*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[5])(@this, Enable);
     }
 
     /// <summary>To be documented.</summary>
@@ -120,17 +120,17 @@ public unsafe static class D3D12Debug6VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetEnableAutoName(this ComPtr<ID3D12Debug6> thisVtbl, int Enable)
+    public static void SetEnableAutoName(this ComPtr<ID3D12Debug6> thisVtbl, Silk.NET.Core.Bool32 Enable)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D12Debug6*, int, void>)@this->LpVtbl[8])(@this, Enable);
+        ((delegate* unmanaged[Stdcall]<ID3D12Debug6*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[8])(@this, Enable);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetForceLegacyBarrierValidation(this ComPtr<ID3D12Debug6> thisVtbl, int Enable)
+    public static void SetForceLegacyBarrierValidation(this ComPtr<ID3D12Debug6> thisVtbl, Silk.NET.Core.Bool32 Enable)
     {
         var @this = thisVtbl.Handle;
-        ((delegate* unmanaged[Stdcall]<ID3D12Debug6*, int, void>)@this->LpVtbl[9])(@this, Enable);
+        ((delegate* unmanaged[Stdcall]<ID3D12Debug6*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[9])(@this, Enable);
     }
 
     /// <summary>To be documented.</summary>

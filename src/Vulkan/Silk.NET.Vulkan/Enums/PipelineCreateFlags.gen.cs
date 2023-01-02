@@ -84,9 +84,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"CreateEarlyReturnOnFailureBitExt\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_EARLY_RETURN_ON_FAILURE_BIT_EXT")]
         PipelineCreateEarlyReturnOnFailureBitExt = 512,
-        [Obsolete("Deprecated in favour of \"CreateReserved29Amd\"")]
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_29_AMD")]
-        PipelineCreateReserved29Amd = 536870912,
+        [Obsolete("Deprecated in favour of \"CreateDescriptorBufferBitExt\"")]
+        [NativeName("Name", "VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT")]
+        PipelineCreateDescriptorBufferBitExt = 536870912,
         [Obsolete("Deprecated in favour of \"CreateRetainLinkTimeOptimizationInfoBitExt\"")]
         [NativeName("Name", "VK_PIPELINE_CREATE_RETAIN_LINK_TIME_OPTIMIZATION_INFO_BIT_EXT")]
         PipelineCreateRetainLinkTimeOptimizationInfoBitExt = 8388608,
@@ -175,8 +175,8 @@ namespace Silk.NET.Vulkan
         CreateFailOnPipelineCompileRequiredBitExt = 256,
         [NativeName("Name", "VK_PIPELINE_CREATE_EARLY_RETURN_ON_FAILURE_BIT_EXT")]
         CreateEarlyReturnOnFailureBitExt = 512,
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_29_AMD")]
-        CreateReserved29Amd = 536870912,
+        [NativeName("Name", "VK_PIPELINE_CREATE_DESCRIPTOR_BUFFER_BIT_EXT")]
+        CreateDescriptorBufferBitExt = 536870912,
         [NativeName("Name", "VK_PIPELINE_CREATE_RETAIN_LINK_TIME_OPTIMIZATION_INFO_BIT_EXT")]
         CreateRetainLinkTimeOptimizationInfoBitExt = 8388608,
         [NativeName("Name", "VK_PIPELINE_CREATE_LINK_TIME_OPTIMIZATION_BIT_EXT")]

@@ -23,14 +23,14 @@ namespace Silk.NET.Direct3D11
         (
             FillMode? fillMode = null,
             CullMode? cullMode = null,
-            int? frontCounterClockwise = null,
+            Silk.NET.Core.Bool32? frontCounterClockwise = null,
             int? depthBias = null,
             float? depthBiasClamp = null,
             float? slopeScaledDepthBias = null,
-            int? depthClipEnable = null,
-            int? scissorEnable = null,
-            int? multisampleEnable = null,
-            int? antialiasedLineEnable = null,
+            Silk.NET.Core.Bool32? depthClipEnable = null,
+            Silk.NET.Core.Bool32? scissorEnable = null,
+            Silk.NET.Core.Bool32? multisampleEnable = null,
+            Silk.NET.Core.Bool32? antialiasedLineEnable = null,
             uint? forcedSampleCount = null
         ) : this()
         {
@@ -104,7 +104,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "FrontCounterClockwise")]
-        public int FrontCounterClockwise;
+        public Silk.NET.Core.Bool32 FrontCounterClockwise;
 
         [NativeName("Type", "INT")]
         [NativeName("Type.Name", "INT")]
@@ -124,22 +124,22 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DepthClipEnable")]
-        public int DepthClipEnable;
+        public Silk.NET.Core.Bool32 DepthClipEnable;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ScissorEnable")]
-        public int ScissorEnable;
+        public Silk.NET.Core.Bool32 ScissorEnable;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "MultisampleEnable")]
-        public int MultisampleEnable;
+        public Silk.NET.Core.Bool32 MultisampleEnable;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "AntialiasedLineEnable")]
-        public int AntialiasedLineEnable;
+        public Silk.NET.Core.Bool32 AntialiasedLineEnable;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

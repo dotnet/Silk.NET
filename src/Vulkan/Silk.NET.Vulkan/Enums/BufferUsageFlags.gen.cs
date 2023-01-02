@@ -87,12 +87,15 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"VideoEncodeSrcBitKhr\"")]
         [NativeName("Name", "VK_BUFFER_USAGE_VIDEO_ENCODE_SRC_BIT_KHR")]
         BufferUsageVideoEncodeSrcBitKhr = 65536,
-        [Obsolete("Deprecated in favour of \"Reserved21BitAmd\"")]
-        [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_21_BIT_AMD")]
-        BufferUsageReserved21BitAmd = 2097152,
-        [Obsolete("Deprecated in favour of \"Reserved22BitAmd\"")]
-        [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_22_BIT_AMD")]
-        BufferUsageReserved22BitAmd = 4194304,
+        [Obsolete("Deprecated in favour of \"SamplerDescriptorBufferBitExt\"")]
+        [NativeName("Name", "VK_BUFFER_USAGE_SAMPLER_DESCRIPTOR_BUFFER_BIT_EXT")]
+        BufferUsageSamplerDescriptorBufferBitExt = 2097152,
+        [Obsolete("Deprecated in favour of \"ResourceDescriptorBufferBitExt\"")]
+        [NativeName("Name", "VK_BUFFER_USAGE_RESOURCE_DESCRIPTOR_BUFFER_BIT_EXT")]
+        BufferUsageResourceDescriptorBufferBitExt = 4194304,
+        [Obsolete("Deprecated in favour of \"PushDescriptorsDescriptorBufferBitExt\"")]
+        [NativeName("Name", "VK_BUFFER_USAGE_PUSH_DESCRIPTORS_DESCRIPTOR_BUFFER_BIT_EXT")]
+        BufferUsagePushDescriptorsDescriptorBufferBitExt = 67108864,
         [Obsolete("Deprecated in favour of \"MicromapBuildInputReadOnlyBitExt\"")]
         [NativeName("Name", "VK_BUFFER_USAGE_MICROMAP_BUILD_INPUT_READ_ONLY_BIT_EXT")]
         BufferUsageMicromapBuildInputReadOnlyBitExt = 8388608,
@@ -150,10 +153,12 @@ namespace Silk.NET.Vulkan
         VideoEncodeDstBitKhr = 32768,
         [NativeName("Name", "VK_BUFFER_USAGE_VIDEO_ENCODE_SRC_BIT_KHR")]
         VideoEncodeSrcBitKhr = 65536,
-        [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_21_BIT_AMD")]
-        Reserved21BitAmd = 2097152,
-        [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_22_BIT_AMD")]
-        Reserved22BitAmd = 4194304,
+        [NativeName("Name", "VK_BUFFER_USAGE_SAMPLER_DESCRIPTOR_BUFFER_BIT_EXT")]
+        SamplerDescriptorBufferBitExt = 2097152,
+        [NativeName("Name", "VK_BUFFER_USAGE_RESOURCE_DESCRIPTOR_BUFFER_BIT_EXT")]
+        ResourceDescriptorBufferBitExt = 4194304,
+        [NativeName("Name", "VK_BUFFER_USAGE_PUSH_DESCRIPTORS_DESCRIPTOR_BUFFER_BIT_EXT")]
+        PushDescriptorsDescriptorBufferBitExt = 67108864,
         [NativeName("Name", "VK_BUFFER_USAGE_MICROMAP_BUILD_INPUT_READ_ONLY_BIT_EXT")]
         MicromapBuildInputReadOnlyBitExt = 8388608,
         [NativeName("Name", "VK_BUFFER_USAGE_MICROMAP_STORAGE_BIT_EXT")]

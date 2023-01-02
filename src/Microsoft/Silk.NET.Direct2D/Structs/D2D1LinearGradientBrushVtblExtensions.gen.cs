@@ -109,14 +109,14 @@ public unsafe static class D2D1LinearGradientBrushVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetTransform(this ComPtr<ID2D1LinearGradientBrush> thisVtbl, Silk.NET.Maths.Matrix3X2<float>* transform)
+    public static unsafe void SetTransform(this ComPtr<ID2D1LinearGradientBrush> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Matrix3X2<float>*, void>)@this->LpVtbl[5])(@this, transform);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetTransform(this ComPtr<ID2D1LinearGradientBrush> thisVtbl, ref Silk.NET.Maths.Matrix3X2<float> transform)
+    public static void SetTransform(this ComPtr<ID2D1LinearGradientBrush> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform)
     {
         var @this = thisVtbl.Handle;
         fixed (Silk.NET.Maths.Matrix3X2<float>* transformPtr = &transform)
@@ -169,18 +169,22 @@ public unsafe static class D2D1LinearGradientBrushVtblExtensions
     public static Silk.NET.Maths.Vector2D<float> GetStartPoint(this ComPtr<ID2D1LinearGradientBrush> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        Silk.NET.Maths.Vector2D<float> ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Vector2D<float>>)@this->LpVtbl[10])(@this);
-        return ret;
+        Silk.NET.Maths.Vector2D<float> silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        Silk.NET.Maths.Vector2D<float>* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*>)@this->LpVtbl[10])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>
     public static Silk.NET.Maths.Vector2D<float> GetEndPoint(this ComPtr<ID2D1LinearGradientBrush> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        Silk.NET.Maths.Vector2D<float> ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Vector2D<float>>)@this->LpVtbl[11])(@this);
-        return ret;
+        Silk.NET.Maths.Vector2D<float> silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        Silk.NET.Maths.Vector2D<float>* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1LinearGradientBrush*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*>)@this->LpVtbl[11])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>
@@ -234,11 +238,11 @@ public unsafe static class D2D1LinearGradientBrushVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetTransform(this ComPtr<ID2D1LinearGradientBrush> thisVtbl, Span<Silk.NET.Maths.Matrix3X2<float>> transform)
+    public static void SetTransform(this ComPtr<ID2D1LinearGradientBrush> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Matrix3X2<float>> transform)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->SetTransform(ref transform.GetPinnableReference());
+        @this->SetTransform(in transform.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

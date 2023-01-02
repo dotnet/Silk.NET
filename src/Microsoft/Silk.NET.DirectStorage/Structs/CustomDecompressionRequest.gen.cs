@@ -76,8 +76,8 @@ namespace Silk.NET.DirectStorage
         [NativeName("Type.Name", "DSTORAGE_COMPRESSION_FORMAT")]
         [NativeName("Name", "CompressionFormat")]
         public CompressionFormat CompressionFormat;
-        [NativeName("Type", "UINT8 [3]")]
-        [NativeName("Type.Name", "UINT8 [3]")]
+        [NativeName("Type", "UINT8[3]")]
+        [NativeName("Type.Name", "UINT8[3]")]
         [NativeName("Name", "Reserved")]
         public fixed byte Reserved[3];
 

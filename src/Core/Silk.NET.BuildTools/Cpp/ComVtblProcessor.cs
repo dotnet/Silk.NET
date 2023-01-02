@@ -128,7 +128,6 @@ namespace Silk.NET.BuildTools.Cpp
                         ).ToArray()
                     ).Build();
                 Implement(sb, fixedUpFunction, parent, index, true, thisInScope);
-                function.Attributes.RemoveAll(x => x.Name == "BuildToolsIntrinsic");
                 return;
             }
             

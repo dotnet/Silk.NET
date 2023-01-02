@@ -21,10 +21,10 @@ namespace Silk.NET.DXGI
     {
         public SwapChainFullscreenDesc
         (
-            Rational? refreshRate = null,
+            Silk.NET.DXGI.Rational? refreshRate = null,
             ModeScanlineOrder? scanlineOrdering = null,
             ModeScaling? scaling = null,
-            int? windowed = null
+            Silk.NET.Core.Bool32? windowed = null
         ) : this()
         {
             if (refreshRate is not null)
@@ -52,7 +52,7 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "DXGI_RATIONAL")]
         [NativeName("Type.Name", "DXGI_RATIONAL")]
         [NativeName("Name", "RefreshRate")]
-        public Rational RefreshRate;
+        public Silk.NET.DXGI.Rational RefreshRate;
 
         [NativeName("Type", "DXGI_MODE_SCANLINE_ORDER")]
         [NativeName("Type.Name", "DXGI_MODE_SCANLINE_ORDER")]
@@ -67,6 +67,6 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Windowed")]
-        public int Windowed;
+        public Silk.NET.Core.Bool32 Windowed;
     }
 }

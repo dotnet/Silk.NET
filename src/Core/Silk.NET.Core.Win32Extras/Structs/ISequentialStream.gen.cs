@@ -159,7 +159,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Write(void* pv, uint cb, uint* pcbWritten)
+        public readonly unsafe int Write([Flow(FlowDirection.In)] void* pv, uint cb, uint* pcbWritten)
         {
             var @this = (ISequentialStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -168,7 +168,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Write(void* pv, uint cb, ref uint pcbWritten)
+        public readonly unsafe int Write([Flow(FlowDirection.In)] void* pv, uint cb, ref uint pcbWritten)
         {
             var @this = (ISequentialStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -180,7 +180,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Write<T0>(ref T0 pv, uint cb, uint* pcbWritten) where T0 : unmanaged
+        public readonly unsafe int Write<T0>([Flow(FlowDirection.In)] in T0 pv, uint cb, uint* pcbWritten) where T0 : unmanaged
         {
             var @this = (ISequentialStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -192,7 +192,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Write<T0>(ref T0 pv, uint cb, ref uint pcbWritten) where T0 : unmanaged
+        public readonly int Write<T0>([Flow(FlowDirection.In)] in T0 pv, uint cb, ref uint pcbWritten) where T0 : unmanaged
         {
             var @this = (ISequentialStream*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

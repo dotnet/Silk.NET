@@ -25,9 +25,9 @@ namespace Silk.NET.Core.Win32Extras
             char* pwcsName = null,
             uint? type = null,
             ulong? cbSize = null,
-            Filetime? mtime = null,
-            Filetime? ctime = null,
-            Filetime? atime = null,
+            Silk.NET.Core.Win32Extras.Filetime? mtime = null,
+            Silk.NET.Core.Win32Extras.Filetime? ctime = null,
+            Silk.NET.Core.Win32Extras.Filetime? atime = null,
             uint? grfMode = null,
             uint? grfLocksSupported = null,
             Guid? clsid = null,
@@ -110,17 +110,17 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type", "FILETIME")]
         [NativeName("Type.Name", "FILETIME")]
         [NativeName("Name", "mtime")]
-        public Filetime Mtime;
+        public Silk.NET.Core.Win32Extras.Filetime Mtime;
 
         [NativeName("Type", "FILETIME")]
         [NativeName("Type.Name", "FILETIME")]
         [NativeName("Name", "ctime")]
-        public Filetime Ctime;
+        public Silk.NET.Core.Win32Extras.Filetime Ctime;
 
         [NativeName("Type", "FILETIME")]
         [NativeName("Type.Name", "FILETIME")]
         [NativeName("Name", "atime")]
-        public Filetime Atime;
+        public Silk.NET.Core.Win32Extras.Filetime Atime;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
