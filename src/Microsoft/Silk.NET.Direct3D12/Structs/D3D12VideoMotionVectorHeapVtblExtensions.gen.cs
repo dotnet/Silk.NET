@@ -372,9 +372,11 @@ public unsafe static class D3D12VideoMotionVectorHeapVtblExtensions
     public static VideoMotionVectorHeapDesc GetDesc(this ComPtr<ID3D12VideoMotionVectorHeap> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        VideoMotionVectorHeapDesc ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoMotionVectorHeap*, VideoMotionVectorHeapDesc>)@this->LpVtbl[8])(@this);
-        return ret;
+        VideoMotionVectorHeapDesc silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        VideoMotionVectorHeapDesc* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoMotionVectorHeap*, VideoMotionVectorHeapDesc*, VideoMotionVectorHeapDesc*>)@this->LpVtbl[8])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>

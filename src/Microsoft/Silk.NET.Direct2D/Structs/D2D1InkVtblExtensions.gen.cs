@@ -122,9 +122,11 @@ public unsafe static class D2D1InkVtblExtensions
     public static InkPoint GetStartPoint(this ComPtr<ID2D1Ink> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        InkPoint ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, InkPoint>)@this->LpVtbl[5])(@this);
-        return ret;
+        InkPoint silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        InkPoint* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1Ink*, InkPoint*, InkPoint*>)@this->LpVtbl[5])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>

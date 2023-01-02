@@ -372,9 +372,11 @@ public unsafe static class D3D12VideoMotionEstimatorVtblExtensions
     public static VideoMotionEstimatorDesc GetDesc(this ComPtr<ID3D12VideoMotionEstimator> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        VideoMotionEstimatorDesc ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoMotionEstimator*, VideoMotionEstimatorDesc>)@this->LpVtbl[8])(@this);
-        return ret;
+        VideoMotionEstimatorDesc silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        VideoMotionEstimatorDesc* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoMotionEstimator*, VideoMotionEstimatorDesc*, VideoMotionEstimatorDesc*>)@this->LpVtbl[8])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>

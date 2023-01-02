@@ -429,18 +429,22 @@ public unsafe static class D3D12ProtectedResourceSession1VtblExtensions
     public static ProtectedResourceSessionDesc GetDesc(this ComPtr<ID3D12ProtectedResourceSession1> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        ProtectedResourceSessionDesc ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12ProtectedResourceSession1*, ProtectedResourceSessionDesc>)@this->LpVtbl[10])(@this);
-        return ret;
+        ProtectedResourceSessionDesc silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        ProtectedResourceSessionDesc* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12ProtectedResourceSession1*, ProtectedResourceSessionDesc*, ProtectedResourceSessionDesc*>)@this->LpVtbl[10])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>
     public static ProtectedResourceSessionDesc1 GetDesc1(this ComPtr<ID3D12ProtectedResourceSession1> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        ProtectedResourceSessionDesc1 ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12ProtectedResourceSession1*, ProtectedResourceSessionDesc1>)@this->LpVtbl[11])(@this);
-        return ret;
+        ProtectedResourceSessionDesc1 silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        ProtectedResourceSessionDesc1* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12ProtectedResourceSession1*, ProtectedResourceSessionDesc1*, ProtectedResourceSessionDesc1*>)@this->LpVtbl[11])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>
