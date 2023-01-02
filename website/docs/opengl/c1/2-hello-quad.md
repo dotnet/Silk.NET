@@ -390,7 +390,22 @@ First, we compile the shader. Then, we need to check to make sure it has compile
 
 The compile status returns `1` if successful, and `0` if not. If it's not successful, we throw an exception. `glGetShaderInfoLog` gets the error string for the shader, and we output that in our exception. You don't *have* to throw an exception though, you can do whatever you wish with this result. Just don't try to continue further, as you will get a link error! (We'll get to this in a minute).
 
-We've now successfully created and compiled our vertex shader. To compile our fragment shader, simply copy and paste the code you just wrote. Just make sure to change the `ShaderType` to `FragmentShader`!
+We've now successfully created and compiled our vertex shader object. Creating the fragment shader object is almost exactly the same, with only a few parameters changed.
+
+Add the following to your `OnLoad` method:
+
+```cs
+uint fragmentShader = _gl.CreateShader(ShaderType.FragmentShader);
+_gl.ShaderSource(fragmentShader, fragmentCode);
+
+_gl.CompileShader(fragmentShader);
+
+_gl.GetShader(fragmentShader, ShaderParameterName.CompileStatus, out int fStatus);
+if (fStatus != (int) GLEnum.True)
+    throw new Exception("Fragment shader failed to compile: " + _gl.GetShaderInfoLog(fragmentShader));
+```
+
+And with that, we've created and compiled both of our shader objects! Now, we need to create the shader program.
 
 #### Creating the program
 Finally, we can create the **shader program**. In OpenGL, shaders are stored in a single **program** object.
