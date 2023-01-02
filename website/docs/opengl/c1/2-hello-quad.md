@@ -508,7 +508,7 @@ Add the following to your `OnRender` method:
 ```cs
 _gl.BindVertexArray(_vao);
 _gl.UseProgram(_program);
-_gl.DrawElements(PrimitiveType.Triangles, 6, DrawElementsType.UnsignedInt, null);
+_gl.DrawElements(PrimitiveType.Triangles, 6, DrawElementsType.UnsignedInt, (void*) 0);
 ```
 
 That's all we need to draw our quad to the screen! Yes, seriously.
@@ -525,7 +525,7 @@ The `6` is simply the number of elements in our EBO. Remember, a quad is two tri
 
 We tell it we're using an unsigned int as the element type (you may have noticed earlier that `indices` was of type `uint[]`). The most commonly used values are `UnsignedInt` and `UnsignedShort`. Some older GPUs only supported `UnsignedShort`, however all modern GPUs can fully support `UnsignedInt`, so this isn't really something you need to worry about anymore.
 
-The last parameter is a pointer to the starting index of the indices. Since we want all the indices, we just set this value to `null`. (Equivalent to `(void*) 0`).
+The last parameter is a pointer to the starting index of the indices. Since we want all the indices, we just set this value to `0`. Much like the offset in our vertex attributes, OpenGL expects a `void` pointer, so we must cast this to `void*`.
 
 And that's it! Run your program and you should see a lovely orange rectangle on a blue background. Exciting, isn't it... Right...?
 
