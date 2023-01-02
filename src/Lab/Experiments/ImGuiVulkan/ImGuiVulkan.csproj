@@ -5,18 +5,6 @@
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<LangVersion>preview</LangVersion>
   </PropertyGroup>
-    <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
-        <DefineConstants>OS_WINDOWS</DefineConstants>
-    </PropertyGroup>
-    <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Linux'))">
-        <DefineConstants>OS_LINUX</DefineConstants>
-    </PropertyGroup>
-    <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('FreeBSD'))">
-        <DefineConstants>OS_FREEBSD</DefineConstants>
-    </PropertyGroup>
-    <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('OSX'))">
-        <DefineConstants>OS_MAC</DefineConstants>
-    </PropertyGroup>
 	<ItemGroup>
 		<None Remove="shader.frag.spv" />
 		<EmbeddedResource Include="shader.frag.spv" />
