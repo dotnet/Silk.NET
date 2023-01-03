@@ -320,8 +320,8 @@ namespace ImGuiVulkan
 		private unsafe void CreateInstance()
 		{
 			_vk = Vk.GetApi();
-
-            var isMacOs = Environment.OSVersion.Platform is PlatformID.Unix or PlatformID.MacOSX; 
+            
+            var isMacOs = RuntimeInformation.IsOSPlatform(OSPlatform.OSX); 
             
             if (isMacOs)
             {
