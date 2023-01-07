@@ -5,7 +5,9 @@ using Silk.NET.OpenGL;
 WindowOptions windowOptions = WindowOptions.Default with
 {
     Title = "My Silk.NET Window",
-	API = new GraphicsAPI(ContextAPI.OpenGL, new APIVersion(3, 3))
+    PreferredDepthBufferBits = 24,
+    PreferredStencilBufferBits = 8,
+    API = new GraphicsAPI(ContextAPI.OpenGL, new APIVersion(3, 3))
 };
 
 using IWindow window = Window.Create(windowOptions);
@@ -16,8 +18,8 @@ window.Load += () =>
 {
     // ran on first startup - use this event to initialize stuff.
     gl = window.CreateOpenGL();
-	inputContext = window.CreateInput();
-	gl.Viewport(window.FramebufferSize);
+    inputContext = window.CreateInput();
+    gl.Viewport(window.FramebufferSize);
 };
 
 window.Update += deltaSeconds => 

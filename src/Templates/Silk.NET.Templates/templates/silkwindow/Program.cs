@@ -2,7 +2,10 @@ using Silk.NET.Windowing;
 
 WindowOptions windowOptions = WindowOptions.Default with
 {
-    Title = "My Silk.NET Window"
+    Title = "My Silk.NET Window",
+    PreferredDepthBufferBits = 24,
+    PreferredStencilBufferBits = 8,
+    API = new GraphicsAPI(ContextAPI.OpenGL, new APIVersion(3, 3))
 };
 
 using IWindow window = Window.Create(windowOptions);

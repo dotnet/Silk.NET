@@ -2,17 +2,19 @@ using System;
 using System.Numerics;
 using System.Runtime.InteropServices;
 using Silk.NET.Windowing;
+using Silk.NET.Input;
 using Silk.NET.OpenGL;
 
 WindowOptions windowOptions = WindowOptions.Default with
 {
     Title = "My Silk.NET Triangle",
-    PreferredDepthBufferBits = 0,
-    PreferredStencilBufferBits = 0,
-	API = new GraphicsAPI(ContextAPI.OpenGL, new APIVersion(3, 3))
+    PreferredDepthBufferBits = 24,
+    PreferredStencilBufferBits = 8,
+    API = new GraphicsAPI(ContextAPI.OpenGL, new APIVersion(3, 3))
 };
 
 using IWindow window = Window.Create(windowOptions);
+IInputContext inputContext = null!;
 GL gl = null!;
 
 uint vbo = 0;
@@ -45,6 +47,7 @@ window.Load += () =>
 {
     // ran on first startup - use this event to initialize stuff.
     gl = window.CreateOpenGL();
+    inputContext = window.CreateInput();
 
     // We create a Span with our vertex data. Since it's very little
     // data, we'll just allocate it in the stack.
@@ -137,6 +140,7 @@ window.Closing += () =>
 
 window.Run();
 gl.Dispose();
+inputContext.Dispose();
 
 [StructLayout(LayoutKind.Sequential)]
 record struct Vertex(Vector3 Position, byte R, byte G, byte B, byte A)
