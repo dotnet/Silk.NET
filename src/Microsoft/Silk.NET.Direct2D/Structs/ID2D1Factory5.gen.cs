@@ -175,7 +175,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRectangleGeometry(Silk.NET.Maths.Box2D<float>* rectangle, ID2D1RectangleGeometry** rectangleGeometry)
+        public readonly unsafe int CreateRectangleGeometry([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rectangle, ID2D1RectangleGeometry** rectangleGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -184,7 +184,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRectangleGeometry(Silk.NET.Maths.Box2D<float>* rectangle, ref ID2D1RectangleGeometry* rectangleGeometry)
+        public readonly unsafe int CreateRectangleGeometry([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rectangle, ref ID2D1RectangleGeometry* rectangleGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -196,7 +196,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRectangleGeometry(ref Silk.NET.Maths.Box2D<float> rectangle, ID2D1RectangleGeometry** rectangleGeometry)
+        public readonly unsafe int CreateRectangleGeometry([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rectangle, ID2D1RectangleGeometry** rectangleGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -208,7 +208,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRectangleGeometry(ref Silk.NET.Maths.Box2D<float> rectangle, ref ID2D1RectangleGeometry* rectangleGeometry)
+        public readonly unsafe int CreateRectangleGeometry([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rectangle, ref ID2D1RectangleGeometry* rectangleGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -223,7 +223,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRoundedRectangleGeometry(RoundedRect* roundedRectangle, ID2D1RoundedRectangleGeometry** roundedRectangleGeometry)
+        public readonly unsafe int CreateRoundedRectangleGeometry([Flow(FlowDirection.In)] RoundedRect* roundedRectangle, ID2D1RoundedRectangleGeometry** roundedRectangleGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -232,7 +232,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRoundedRectangleGeometry(RoundedRect* roundedRectangle, ref ID2D1RoundedRectangleGeometry* roundedRectangleGeometry)
+        public readonly unsafe int CreateRoundedRectangleGeometry([Flow(FlowDirection.In)] RoundedRect* roundedRectangle, ref ID2D1RoundedRectangleGeometry* roundedRectangleGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -244,7 +244,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRoundedRectangleGeometry(ref RoundedRect roundedRectangle, ID2D1RoundedRectangleGeometry** roundedRectangleGeometry)
+        public readonly unsafe int CreateRoundedRectangleGeometry([Flow(FlowDirection.In)] in RoundedRect roundedRectangle, ID2D1RoundedRectangleGeometry** roundedRectangleGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -256,7 +256,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRoundedRectangleGeometry(ref RoundedRect roundedRectangle, ref ID2D1RoundedRectangleGeometry* roundedRectangleGeometry)
+        public readonly unsafe int CreateRoundedRectangleGeometry([Flow(FlowDirection.In)] in RoundedRect roundedRectangle, ref ID2D1RoundedRectangleGeometry* roundedRectangleGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -271,7 +271,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEllipseGeometry(Ellipse* ellipse, ID2D1EllipseGeometry** ellipseGeometry)
+        public readonly unsafe int CreateEllipseGeometry([Flow(FlowDirection.In)] Ellipse* ellipse, ID2D1EllipseGeometry** ellipseGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -280,7 +280,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEllipseGeometry(Ellipse* ellipse, ref ID2D1EllipseGeometry* ellipseGeometry)
+        public readonly unsafe int CreateEllipseGeometry([Flow(FlowDirection.In)] Ellipse* ellipse, ref ID2D1EllipseGeometry* ellipseGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -292,7 +292,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEllipseGeometry(ref Ellipse ellipse, ID2D1EllipseGeometry** ellipseGeometry)
+        public readonly unsafe int CreateEllipseGeometry([Flow(FlowDirection.In)] in Ellipse ellipse, ID2D1EllipseGeometry** ellipseGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -304,7 +304,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEllipseGeometry(ref Ellipse ellipse, ref ID2D1EllipseGeometry* ellipseGeometry)
+        public readonly unsafe int CreateEllipseGeometry([Flow(FlowDirection.In)] in Ellipse ellipse, ref ID2D1EllipseGeometry* ellipseGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -367,7 +367,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedGeometry(ID2D1Geometry* sourceGeometry, Silk.NET.Maths.Matrix3X2<float>* transform, ID2D1TransformedGeometry** transformedGeometry)
+        public readonly unsafe int CreateTransformedGeometry(ID2D1Geometry* sourceGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform, ID2D1TransformedGeometry** transformedGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -376,7 +376,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedGeometry(ID2D1Geometry* sourceGeometry, Silk.NET.Maths.Matrix3X2<float>* transform, ref ID2D1TransformedGeometry* transformedGeometry)
+        public readonly unsafe int CreateTransformedGeometry(ID2D1Geometry* sourceGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform, ref ID2D1TransformedGeometry* transformedGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -388,7 +388,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedGeometry(ID2D1Geometry* sourceGeometry, ref Silk.NET.Maths.Matrix3X2<float> transform, ID2D1TransformedGeometry** transformedGeometry)
+        public readonly unsafe int CreateTransformedGeometry(ID2D1Geometry* sourceGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform, ID2D1TransformedGeometry** transformedGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -400,7 +400,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedGeometry(ID2D1Geometry* sourceGeometry, ref Silk.NET.Maths.Matrix3X2<float> transform, ref ID2D1TransformedGeometry* transformedGeometry)
+        public readonly unsafe int CreateTransformedGeometry(ID2D1Geometry* sourceGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform, ref ID2D1TransformedGeometry* transformedGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -415,7 +415,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedGeometry(ref ID2D1Geometry sourceGeometry, Silk.NET.Maths.Matrix3X2<float>* transform, ID2D1TransformedGeometry** transformedGeometry)
+        public readonly unsafe int CreateTransformedGeometry(ref ID2D1Geometry sourceGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform, ID2D1TransformedGeometry** transformedGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -427,7 +427,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedGeometry(ref ID2D1Geometry sourceGeometry, Silk.NET.Maths.Matrix3X2<float>* transform, ref ID2D1TransformedGeometry* transformedGeometry)
+        public readonly unsafe int CreateTransformedGeometry(ref ID2D1Geometry sourceGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform, ref ID2D1TransformedGeometry* transformedGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -442,7 +442,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedGeometry(ref ID2D1Geometry sourceGeometry, ref Silk.NET.Maths.Matrix3X2<float> transform, ID2D1TransformedGeometry** transformedGeometry)
+        public readonly unsafe int CreateTransformedGeometry(ref ID2D1Geometry sourceGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform, ID2D1TransformedGeometry** transformedGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -457,7 +457,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedGeometry(ref ID2D1Geometry sourceGeometry, ref Silk.NET.Maths.Matrix3X2<float> transform, ref ID2D1TransformedGeometry* transformedGeometry)
+        public readonly unsafe int CreateTransformedGeometry(ref ID2D1Geometry sourceGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform, ref ID2D1TransformedGeometry* transformedGeometry)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -496,7 +496,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStrokeStyle(StrokeStyleProperties* strokeStyleProperties, float* dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
+        public readonly unsafe int CreateStrokeStyle([Flow(FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -505,7 +505,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStrokeStyle(StrokeStyleProperties* strokeStyleProperties, float* dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe int CreateStrokeStyle([Flow(FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -517,7 +517,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStrokeStyle(StrokeStyleProperties* strokeStyleProperties, ref float dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
+        public readonly unsafe int CreateStrokeStyle([Flow(FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -529,7 +529,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStrokeStyle(StrokeStyleProperties* strokeStyleProperties, ref float dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe int CreateStrokeStyle([Flow(FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -544,7 +544,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStrokeStyle(ref StrokeStyleProperties strokeStyleProperties, float* dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
+        public readonly unsafe int CreateStrokeStyle([Flow(FlowDirection.In)] in StrokeStyleProperties strokeStyleProperties, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -556,7 +556,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStrokeStyle(ref StrokeStyleProperties strokeStyleProperties, float* dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe int CreateStrokeStyle([Flow(FlowDirection.In)] in StrokeStyleProperties strokeStyleProperties, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -571,7 +571,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStrokeStyle(ref StrokeStyleProperties strokeStyleProperties, ref float dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
+        public readonly unsafe int CreateStrokeStyle([Flow(FlowDirection.In)] in StrokeStyleProperties strokeStyleProperties, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, ID2D1StrokeStyle** strokeStyle)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -586,7 +586,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStrokeStyle(ref StrokeStyleProperties strokeStyleProperties, ref float dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
+        public readonly unsafe int CreateStrokeStyle([Flow(FlowDirection.In)] in StrokeStyleProperties strokeStyleProperties, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, ref ID2D1StrokeStyle* strokeStyle)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -604,7 +604,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDrawingStateBlock(DrawingStateDescription* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
+        public readonly unsafe int CreateDrawingStateBlock([Flow(FlowDirection.In)] DrawingStateDescription* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -613,7 +613,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDrawingStateBlock(DrawingStateDescription* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
+        public readonly unsafe int CreateDrawingStateBlock([Flow(FlowDirection.In)] DrawingStateDescription* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -625,7 +625,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDrawingStateBlock(DrawingStateDescription* drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
+        public readonly unsafe int CreateDrawingStateBlock([Flow(FlowDirection.In)] DrawingStateDescription* drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -637,7 +637,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDrawingStateBlock(DrawingStateDescription* drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
+        public readonly unsafe int CreateDrawingStateBlock([Flow(FlowDirection.In)] DrawingStateDescription* drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -652,7 +652,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDrawingStateBlock(ref DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
+        public readonly unsafe int CreateDrawingStateBlock([Flow(FlowDirection.In)] in DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -664,7 +664,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDrawingStateBlock(ref DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
+        public readonly unsafe int CreateDrawingStateBlock([Flow(FlowDirection.In)] in DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -679,7 +679,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDrawingStateBlock(ref DrawingStateDescription drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
+        public readonly unsafe int CreateDrawingStateBlock([Flow(FlowDirection.In)] in DrawingStateDescription drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ID2D1DrawingStateBlock** drawingStateBlock)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -694,7 +694,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDrawingStateBlock(ref DrawingStateDescription drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
+        public readonly unsafe int CreateDrawingStateBlock([Flow(FlowDirection.In)] in DrawingStateDescription drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ID2D1DrawingStateBlock* drawingStateBlock)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -712,7 +712,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWicBitmapRenderTarget(IWICBitmap* target, RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
+        public readonly unsafe int CreateWicBitmapRenderTarget(IWICBitmap* target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -721,7 +721,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWicBitmapRenderTarget(IWICBitmap* target, RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+        public readonly unsafe int CreateWicBitmapRenderTarget(IWICBitmap* target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -733,7 +733,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWicBitmapRenderTarget(IWICBitmap* target, ref RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
+        public readonly unsafe int CreateWicBitmapRenderTarget(IWICBitmap* target, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -745,7 +745,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWicBitmapRenderTarget(IWICBitmap* target, ref RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+        public readonly unsafe int CreateWicBitmapRenderTarget(IWICBitmap* target, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -760,7 +760,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWicBitmapRenderTarget(ref IWICBitmap target, RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
+        public readonly unsafe int CreateWicBitmapRenderTarget(ref IWICBitmap target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -772,7 +772,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWicBitmapRenderTarget(ref IWICBitmap target, RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+        public readonly unsafe int CreateWicBitmapRenderTarget(ref IWICBitmap target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -787,7 +787,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWicBitmapRenderTarget(ref IWICBitmap target, ref RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
+        public readonly unsafe int CreateWicBitmapRenderTarget(ref IWICBitmap target, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -802,7 +802,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWicBitmapRenderTarget(ref IWICBitmap target, ref RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+        public readonly unsafe int CreateWicBitmapRenderTarget(ref IWICBitmap target, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -820,7 +820,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateHwndRenderTarget(RenderTargetProperties* renderTargetProperties, HwndRenderTargetProperties* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
+        public readonly unsafe int CreateHwndRenderTarget([Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -829,7 +829,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateHwndRenderTarget(RenderTargetProperties* renderTargetProperties, HwndRenderTargetProperties* hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
+        public readonly unsafe int CreateHwndRenderTarget([Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -841,7 +841,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateHwndRenderTarget(RenderTargetProperties* renderTargetProperties, ref HwndRenderTargetProperties hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
+        public readonly unsafe int CreateHwndRenderTarget([Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] in HwndRenderTargetProperties hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -853,7 +853,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateHwndRenderTarget(RenderTargetProperties* renderTargetProperties, ref HwndRenderTargetProperties hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
+        public readonly unsafe int CreateHwndRenderTarget([Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] in HwndRenderTargetProperties hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -868,7 +868,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateHwndRenderTarget(ref RenderTargetProperties renderTargetProperties, HwndRenderTargetProperties* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
+        public readonly unsafe int CreateHwndRenderTarget([Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -880,7 +880,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateHwndRenderTarget(ref RenderTargetProperties renderTargetProperties, HwndRenderTargetProperties* hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
+        public readonly unsafe int CreateHwndRenderTarget([Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -895,7 +895,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateHwndRenderTarget(ref RenderTargetProperties renderTargetProperties, ref HwndRenderTargetProperties hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
+        public readonly unsafe int CreateHwndRenderTarget([Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, [Flow(FlowDirection.In)] in HwndRenderTargetProperties hwndRenderTargetProperties, ID2D1HwndRenderTarget** hwndRenderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -910,7 +910,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateHwndRenderTarget(ref RenderTargetProperties renderTargetProperties, ref HwndRenderTargetProperties hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
+        public readonly unsafe int CreateHwndRenderTarget([Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, [Flow(FlowDirection.In)] in HwndRenderTargetProperties hwndRenderTargetProperties, ref ID2D1HwndRenderTarget* hwndRenderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -928,7 +928,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDxgiSurfaceRenderTarget(Silk.NET.DXGI.IDXGISurface* dxgiSurface, RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
+        public readonly unsafe int CreateDxgiSurfaceRenderTarget(Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -937,7 +937,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDxgiSurfaceRenderTarget(Silk.NET.DXGI.IDXGISurface* dxgiSurface, RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+        public readonly unsafe int CreateDxgiSurfaceRenderTarget(Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -949,7 +949,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDxgiSurfaceRenderTarget(Silk.NET.DXGI.IDXGISurface* dxgiSurface, ref RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
+        public readonly unsafe int CreateDxgiSurfaceRenderTarget(Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -961,7 +961,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDxgiSurfaceRenderTarget(Silk.NET.DXGI.IDXGISurface* dxgiSurface, ref RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+        public readonly unsafe int CreateDxgiSurfaceRenderTarget(Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -976,7 +976,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDxgiSurfaceRenderTarget(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
+        public readonly unsafe int CreateDxgiSurfaceRenderTarget(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1RenderTarget** renderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -988,7 +988,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDxgiSurfaceRenderTarget(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+        public readonly unsafe int CreateDxgiSurfaceRenderTarget(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1003,7 +1003,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDxgiSurfaceRenderTarget(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, ref RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
+        public readonly unsafe int CreateDxgiSurfaceRenderTarget(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ID2D1RenderTarget** renderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1018,7 +1018,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDxgiSurfaceRenderTarget(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, ref RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
+        public readonly unsafe int CreateDxgiSurfaceRenderTarget(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ID2D1RenderTarget* renderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1036,7 +1036,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDCRenderTarget(RenderTargetProperties* renderTargetProperties, ID2D1DCRenderTarget** dcRenderTarget)
+        public readonly unsafe int CreateDCRenderTarget([Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ID2D1DCRenderTarget** dcRenderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1045,7 +1045,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDCRenderTarget(RenderTargetProperties* renderTargetProperties, ref ID2D1DCRenderTarget* dcRenderTarget)
+        public readonly unsafe int CreateDCRenderTarget([Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ID2D1DCRenderTarget* dcRenderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1057,7 +1057,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDCRenderTarget(ref RenderTargetProperties renderTargetProperties, ID2D1DCRenderTarget** dcRenderTarget)
+        public readonly unsafe int CreateDCRenderTarget([Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ID2D1DCRenderTarget** dcRenderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1069,7 +1069,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDCRenderTarget(ref RenderTargetProperties renderTargetProperties, ref ID2D1DCRenderTarget* dcRenderTarget)
+        public readonly unsafe int CreateDCRenderTarget([Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ID2D1DCRenderTarget* dcRenderTarget)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1180,7 +1180,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(Guid* classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromStream(Guid* classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1189,7 +1189,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(Guid* classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromStream(Guid* classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1201,7 +1201,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(Guid* classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromStream(Guid* classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1213,7 +1213,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(Guid* classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromStream(Guid* classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1228,7 +1228,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(ref Guid classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromStream(ref Guid classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1240,7 +1240,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(ref Guid classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromStream(ref Guid classId, Silk.NET.Core.Win32Extras.IStream* propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1255,7 +1255,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromStream(ref Guid classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromStream(ref Guid classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1270,7 +1270,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int RegisterEffectFromStream(ref Guid classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly int RegisterEffectFromStream(ref Guid classId, ref Silk.NET.Core.Win32Extras.IStream propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1288,7 +1288,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromString(Guid* classId, char* propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromString(Guid* classId, [Flow(FlowDirection.In)] char* propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1297,7 +1297,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromString(Guid* classId, char* propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromString(Guid* classId, [Flow(FlowDirection.In)] char* propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1309,7 +1309,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromString(Guid* classId, ref char propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromString(Guid* classId, [Flow(FlowDirection.In)] in char propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1321,7 +1321,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromString(Guid* classId, ref char propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromString(Guid* classId, [Flow(FlowDirection.In)] in char propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1336,7 +1336,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromString(Guid* classId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromString(Guid* classId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1347,7 +1347,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromString(Guid* classId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromString(Guid* classId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1361,7 +1361,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromString(ref Guid classId, char* propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromString(ref Guid classId, [Flow(FlowDirection.In)] char* propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1373,7 +1373,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromString(ref Guid classId, char* propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromString(ref Guid classId, [Flow(FlowDirection.In)] char* propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1388,7 +1388,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromString(ref Guid classId, ref char propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromString(ref Guid classId, [Flow(FlowDirection.In)] in char propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1403,7 +1403,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int RegisterEffectFromString(ref Guid classId, ref char propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly int RegisterEffectFromString(ref Guid classId, [Flow(FlowDirection.In)] in char propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1421,7 +1421,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterEffectFromString(ref Guid classId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly unsafe int RegisterEffectFromString(ref Guid classId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, [Flow(FlowDirection.In)] PropertyBinding* bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1435,7 +1435,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int RegisterEffectFromString(ref Guid classId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, ref PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
+        public readonly int RegisterEffectFromString(ref Guid classId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string propertyXml, [Flow(FlowDirection.In)] in PropertyBinding bindings, uint bindingsCount, PfnPD2D1EffectFactory effectFactory)
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1638,7 +1638,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRectangleGeometry<TI0>(Silk.NET.Maths.Box2D<float>* rectangle, ref ComPtr<TI0> rectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RectangleGeometry>, IComVtbl<TI0>
+        public readonly unsafe int CreateRectangleGeometry<TI0>([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* rectangle, ref ComPtr<TI0> rectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RectangleGeometry>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1646,15 +1646,15 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateRectangleGeometry<TI0>(ref Silk.NET.Maths.Box2D<float> rectangle, ref ComPtr<TI0> rectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RectangleGeometry>, IComVtbl<TI0>
+        public readonly int CreateRectangleGeometry<TI0>([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> rectangle, ref ComPtr<TI0> rectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RectangleGeometry>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateRectangleGeometry(ref rectangle, (ID2D1RectangleGeometry**) rectangleGeometry.GetAddressOf());
+            return @this->CreateRectangleGeometry(in rectangle, (ID2D1RectangleGeometry**) rectangleGeometry.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRoundedRectangleGeometry<TI0>(RoundedRect* roundedRectangle, ref ComPtr<TI0> roundedRectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RoundedRectangleGeometry>, IComVtbl<TI0>
+        public readonly unsafe int CreateRoundedRectangleGeometry<TI0>([Flow(FlowDirection.In)] RoundedRect* roundedRectangle, ref ComPtr<TI0> roundedRectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RoundedRectangleGeometry>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1662,15 +1662,15 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateRoundedRectangleGeometry<TI0>(ref RoundedRect roundedRectangle, ref ComPtr<TI0> roundedRectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RoundedRectangleGeometry>, IComVtbl<TI0>
+        public readonly int CreateRoundedRectangleGeometry<TI0>([Flow(FlowDirection.In)] in RoundedRect roundedRectangle, ref ComPtr<TI0> roundedRectangleGeometry) where TI0 : unmanaged, IComVtbl<ID2D1RoundedRectangleGeometry>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateRoundedRectangleGeometry(ref roundedRectangle, (ID2D1RoundedRectangleGeometry**) roundedRectangleGeometry.GetAddressOf());
+            return @this->CreateRoundedRectangleGeometry(in roundedRectangle, (ID2D1RoundedRectangleGeometry**) roundedRectangleGeometry.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateEllipseGeometry<TI0>(Ellipse* ellipse, ref ComPtr<TI0> ellipseGeometry) where TI0 : unmanaged, IComVtbl<ID2D1EllipseGeometry>, IComVtbl<TI0>
+        public readonly unsafe int CreateEllipseGeometry<TI0>([Flow(FlowDirection.In)] Ellipse* ellipse, ref ComPtr<TI0> ellipseGeometry) where TI0 : unmanaged, IComVtbl<ID2D1EllipseGeometry>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1678,11 +1678,11 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateEllipseGeometry<TI0>(ref Ellipse ellipse, ref ComPtr<TI0> ellipseGeometry) where TI0 : unmanaged, IComVtbl<ID2D1EllipseGeometry>, IComVtbl<TI0>
+        public readonly int CreateEllipseGeometry<TI0>([Flow(FlowDirection.In)] in Ellipse ellipse, ref ComPtr<TI0> ellipseGeometry) where TI0 : unmanaged, IComVtbl<ID2D1EllipseGeometry>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateEllipseGeometry(ref ellipse, (ID2D1EllipseGeometry**) ellipseGeometry.GetAddressOf());
+            return @this->CreateEllipseGeometry(in ellipse, (ID2D1EllipseGeometry**) ellipseGeometry.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -1710,7 +1710,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedGeometry<TI0, TI1>(ComPtr<TI0> sourceGeometry, Silk.NET.Maths.Matrix3X2<float>* transform, ref ComPtr<TI1> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI1>
+        public readonly unsafe int CreateTransformedGeometry<TI0, TI1>(ComPtr<TI0> sourceGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform, ref ComPtr<TI1> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI1>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1718,7 +1718,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedGeometry<TI0>(ComPtr<TI0> sourceGeometry, Silk.NET.Maths.Matrix3X2<float>* transform, ref ID2D1TransformedGeometry* transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
+        public readonly unsafe int CreateTransformedGeometry<TI0>(ComPtr<TI0> sourceGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform, ref ID2D1TransformedGeometry* transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1726,23 +1726,23 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateTransformedGeometry<TI0, TI1>(ComPtr<TI0> sourceGeometry, ref Silk.NET.Maths.Matrix3X2<float> transform, ref ComPtr<TI1> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI1>
+        public readonly int CreateTransformedGeometry<TI0, TI1>(ComPtr<TI0> sourceGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform, ref ComPtr<TI1> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI1>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateTransformedGeometry((ID2D1Geometry*) sourceGeometry.Handle, ref transform, (ID2D1TransformedGeometry**) transformedGeometry.GetAddressOf());
+            return @this->CreateTransformedGeometry((ID2D1Geometry*) sourceGeometry.Handle, in transform, (ID2D1TransformedGeometry**) transformedGeometry.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedGeometry<TI0>(ComPtr<TI0> sourceGeometry, ref Silk.NET.Maths.Matrix3X2<float> transform, ref ID2D1TransformedGeometry* transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
+        public readonly unsafe int CreateTransformedGeometry<TI0>(ComPtr<TI0> sourceGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform, ref ID2D1TransformedGeometry* transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1Geometry>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateTransformedGeometry((ID2D1Geometry*) sourceGeometry.Handle, ref transform, ref transformedGeometry);
+            return @this->CreateTransformedGeometry((ID2D1Geometry*) sourceGeometry.Handle, in transform, ref transformedGeometry);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateTransformedGeometry<TI0>(ref ID2D1Geometry sourceGeometry, Silk.NET.Maths.Matrix3X2<float>* transform, ref ComPtr<TI0> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI0>
+        public readonly unsafe int CreateTransformedGeometry<TI0>(ref ID2D1Geometry sourceGeometry, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transform, ref ComPtr<TI0> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1750,11 +1750,11 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateTransformedGeometry<TI0>(ref ID2D1Geometry sourceGeometry, ref Silk.NET.Maths.Matrix3X2<float> transform, ref ComPtr<TI0> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI0>
+        public readonly int CreateTransformedGeometry<TI0>(ref ID2D1Geometry sourceGeometry, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transform, ref ComPtr<TI0> transformedGeometry) where TI0 : unmanaged, IComVtbl<ID2D1TransformedGeometry>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateTransformedGeometry(ref sourceGeometry, ref transform, (ID2D1TransformedGeometry**) transformedGeometry.GetAddressOf());
+            return @this->CreateTransformedGeometry(ref sourceGeometry, in transform, (ID2D1TransformedGeometry**) transformedGeometry.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
@@ -1766,7 +1766,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStrokeStyle<TI0>(StrokeStyleProperties* strokeStyleProperties, float* dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        public readonly unsafe int CreateStrokeStyle<TI0>([Flow(FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1774,31 +1774,31 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStrokeStyle<TI0>(StrokeStyleProperties* strokeStyleProperties, ref float dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        public readonly unsafe int CreateStrokeStyle<TI0>([Flow(FlowDirection.In)] StrokeStyleProperties* strokeStyleProperties, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateStrokeStyle(strokeStyleProperties, ref dashes, dashesCount, (ID2D1StrokeStyle**) strokeStyle.GetAddressOf());
+            return @this->CreateStrokeStyle(strokeStyleProperties, in dashes, dashesCount, (ID2D1StrokeStyle**) strokeStyle.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStrokeStyle<TI0>(ref StrokeStyleProperties strokeStyleProperties, float* dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        public readonly unsafe int CreateStrokeStyle<TI0>([Flow(FlowDirection.In)] in StrokeStyleProperties strokeStyleProperties, [Flow(FlowDirection.In)] float* dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateStrokeStyle(ref strokeStyleProperties, dashes, dashesCount, (ID2D1StrokeStyle**) strokeStyle.GetAddressOf());
+            return @this->CreateStrokeStyle(in strokeStyleProperties, dashes, dashesCount, (ID2D1StrokeStyle**) strokeStyle.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateStrokeStyle<TI0>(ref StrokeStyleProperties strokeStyleProperties, ref float dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
+        public readonly int CreateStrokeStyle<TI0>([Flow(FlowDirection.In)] in StrokeStyleProperties strokeStyleProperties, [Flow(FlowDirection.In)] in float dashes, uint dashesCount, ref ComPtr<TI0> strokeStyle) where TI0 : unmanaged, IComVtbl<ID2D1StrokeStyle>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateStrokeStyle(ref strokeStyleProperties, ref dashes, dashesCount, (ID2D1StrokeStyle**) strokeStyle.GetAddressOf());
+            return @this->CreateStrokeStyle(in strokeStyleProperties, in dashes, dashesCount, (ID2D1StrokeStyle**) strokeStyle.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDrawingStateBlock<TI0>(DrawingStateDescription* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
+        public readonly unsafe int CreateDrawingStateBlock<TI0>([Flow(FlowDirection.In)] DrawingStateDescription* drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1806,7 +1806,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDrawingStateBlock<TI0>(DrawingStateDescription* drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
+        public readonly unsafe int CreateDrawingStateBlock<TI0>([Flow(FlowDirection.In)] DrawingStateDescription* drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1814,23 +1814,23 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDrawingStateBlock<TI0>(ref DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
+        public readonly unsafe int CreateDrawingStateBlock<TI0>([Flow(FlowDirection.In)] in DrawingStateDescription drawingStateDescription, IDWriteRenderingParams* textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateDrawingStateBlock(ref drawingStateDescription, textRenderingParams, (ID2D1DrawingStateBlock**) drawingStateBlock.GetAddressOf());
+            return @this->CreateDrawingStateBlock(in drawingStateDescription, textRenderingParams, (ID2D1DrawingStateBlock**) drawingStateBlock.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateDrawingStateBlock<TI0>(ref DrawingStateDescription drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
+        public readonly int CreateDrawingStateBlock<TI0>([Flow(FlowDirection.In)] in DrawingStateDescription drawingStateDescription, ref IDWriteRenderingParams textRenderingParams, ref ComPtr<TI0> drawingStateBlock) where TI0 : unmanaged, IComVtbl<ID2D1DrawingStateBlock>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateDrawingStateBlock(ref drawingStateDescription, ref textRenderingParams, (ID2D1DrawingStateBlock**) drawingStateBlock.GetAddressOf());
+            return @this->CreateDrawingStateBlock(in drawingStateDescription, ref textRenderingParams, (ID2D1DrawingStateBlock**) drawingStateBlock.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWicBitmapRenderTarget<TI0>(IWICBitmap* target, RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+        public readonly unsafe int CreateWicBitmapRenderTarget<TI0>(IWICBitmap* target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1838,15 +1838,15 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWicBitmapRenderTarget<TI0>(IWICBitmap* target, ref RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+        public readonly unsafe int CreateWicBitmapRenderTarget<TI0>(IWICBitmap* target, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateWicBitmapRenderTarget(target, ref renderTargetProperties, (ID2D1RenderTarget**) renderTarget.GetAddressOf());
+            return @this->CreateWicBitmapRenderTarget(target, in renderTargetProperties, (ID2D1RenderTarget**) renderTarget.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateWicBitmapRenderTarget<TI0>(ref IWICBitmap target, RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+        public readonly unsafe int CreateWicBitmapRenderTarget<TI0>(ref IWICBitmap target, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1854,15 +1854,15 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateWicBitmapRenderTarget<TI0>(ref IWICBitmap target, ref RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+        public readonly int CreateWicBitmapRenderTarget<TI0>(ref IWICBitmap target, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateWicBitmapRenderTarget(ref target, ref renderTargetProperties, (ID2D1RenderTarget**) renderTarget.GetAddressOf());
+            return @this->CreateWicBitmapRenderTarget(ref target, in renderTargetProperties, (ID2D1RenderTarget**) renderTarget.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateHwndRenderTarget<TI0>(RenderTargetProperties* renderTargetProperties, HwndRenderTargetProperties* hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
+        public readonly unsafe int CreateHwndRenderTarget<TI0>([Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1870,31 +1870,31 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateHwndRenderTarget<TI0>(RenderTargetProperties* renderTargetProperties, ref HwndRenderTargetProperties hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
+        public readonly unsafe int CreateHwndRenderTarget<TI0>([Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, [Flow(FlowDirection.In)] in HwndRenderTargetProperties hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateHwndRenderTarget(renderTargetProperties, ref hwndRenderTargetProperties, (ID2D1HwndRenderTarget**) hwndRenderTarget.GetAddressOf());
+            return @this->CreateHwndRenderTarget(renderTargetProperties, in hwndRenderTargetProperties, (ID2D1HwndRenderTarget**) hwndRenderTarget.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateHwndRenderTarget<TI0>(ref RenderTargetProperties renderTargetProperties, HwndRenderTargetProperties* hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
+        public readonly unsafe int CreateHwndRenderTarget<TI0>([Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, [Flow(FlowDirection.In)] HwndRenderTargetProperties* hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateHwndRenderTarget(ref renderTargetProperties, hwndRenderTargetProperties, (ID2D1HwndRenderTarget**) hwndRenderTarget.GetAddressOf());
+            return @this->CreateHwndRenderTarget(in renderTargetProperties, hwndRenderTargetProperties, (ID2D1HwndRenderTarget**) hwndRenderTarget.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateHwndRenderTarget<TI0>(ref RenderTargetProperties renderTargetProperties, ref HwndRenderTargetProperties hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
+        public readonly int CreateHwndRenderTarget<TI0>([Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, [Flow(FlowDirection.In)] in HwndRenderTargetProperties hwndRenderTargetProperties, ref ComPtr<TI0> hwndRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1HwndRenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateHwndRenderTarget(ref renderTargetProperties, ref hwndRenderTargetProperties, (ID2D1HwndRenderTarget**) hwndRenderTarget.GetAddressOf());
+            return @this->CreateHwndRenderTarget(in renderTargetProperties, in hwndRenderTargetProperties, (ID2D1HwndRenderTarget**) hwndRenderTarget.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDxgiSurfaceRenderTarget<TI0>(Silk.NET.DXGI.IDXGISurface* dxgiSurface, RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+        public readonly unsafe int CreateDxgiSurfaceRenderTarget<TI0>(Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1902,15 +1902,15 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDxgiSurfaceRenderTarget<TI0>(Silk.NET.DXGI.IDXGISurface* dxgiSurface, ref RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+        public readonly unsafe int CreateDxgiSurfaceRenderTarget<TI0>(Silk.NET.DXGI.IDXGISurface* dxgiSurface, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateDxgiSurfaceRenderTarget(dxgiSurface, ref renderTargetProperties, (ID2D1RenderTarget**) renderTarget.GetAddressOf());
+            return @this->CreateDxgiSurfaceRenderTarget(dxgiSurface, in renderTargetProperties, (ID2D1RenderTarget**) renderTarget.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDxgiSurfaceRenderTarget<TI0>(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+        public readonly unsafe int CreateDxgiSurfaceRenderTarget<TI0>(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, [Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1918,15 +1918,15 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateDxgiSurfaceRenderTarget<TI0>(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, ref RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
+        public readonly int CreateDxgiSurfaceRenderTarget<TI0>(ref Silk.NET.DXGI.IDXGISurface dxgiSurface, [Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> renderTarget) where TI0 : unmanaged, IComVtbl<ID2D1RenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateDxgiSurfaceRenderTarget(ref dxgiSurface, ref renderTargetProperties, (ID2D1RenderTarget**) renderTarget.GetAddressOf());
+            return @this->CreateDxgiSurfaceRenderTarget(ref dxgiSurface, in renderTargetProperties, (ID2D1RenderTarget**) renderTarget.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDCRenderTarget<TI0>(RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> dcRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1DCRenderTarget>, IComVtbl<TI0>
+        public readonly unsafe int CreateDCRenderTarget<TI0>([Flow(FlowDirection.In)] RenderTargetProperties* renderTargetProperties, ref ComPtr<TI0> dcRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1DCRenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1934,11 +1934,11 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateDCRenderTarget<TI0>(ref RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> dcRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1DCRenderTarget>, IComVtbl<TI0>
+        public readonly int CreateDCRenderTarget<TI0>([Flow(FlowDirection.In)] in RenderTargetProperties renderTargetProperties, ref ComPtr<TI0> dcRenderTarget) where TI0 : unmanaged, IComVtbl<ID2D1DCRenderTarget>, IComVtbl<TI0>
         {
             var @this = (ID2D1Factory5*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateDCRenderTarget(ref renderTargetProperties, (ID2D1DCRenderTarget**) dcRenderTarget.GetAddressOf());
+            return @this->CreateDCRenderTarget(in renderTargetProperties, (ID2D1DCRenderTarget**) dcRenderTarget.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>

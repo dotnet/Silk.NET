@@ -23,11 +23,11 @@ namespace Silk.NET.DirectStorage
         (
             uint? numSubmitThreads = null,
             int? numBuiltInCpuDecompressionThreads = null,
-            int? forceMappingLayer = null,
-            int? disableBypassIO = null,
-            int? disableTelemetry = null,
-            int? disableGpuDecompressionMetacommand = null,
-            int? disableGpuDecompression = null
+            Silk.NET.Core.Bool32? forceMappingLayer = null,
+            Silk.NET.Core.Bool32? disableBypassIO = null,
+            Silk.NET.Core.Bool32? disableTelemetry = null,
+            Silk.NET.Core.Bool32? disableGpuDecompressionMetacommand = null,
+            Silk.NET.Core.Bool32? disableGpuDecompression = null
         ) : this()
         {
             if (numSubmitThreads is not null)
@@ -80,26 +80,26 @@ namespace Silk.NET.DirectStorage
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ForceMappingLayer")]
-        public int ForceMappingLayer;
+        public Silk.NET.Core.Bool32 ForceMappingLayer;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DisableBypassIO")]
-        public int DisableBypassIO;
+        public Silk.NET.Core.Bool32 DisableBypassIO;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DisableTelemetry")]
-        public int DisableTelemetry;
+        public Silk.NET.Core.Bool32 DisableTelemetry;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DisableGpuDecompressionMetacommand")]
-        public int DisableGpuDecompressionMetacommand;
+        public Silk.NET.Core.Bool32 DisableGpuDecompressionMetacommand;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DisableGpuDecompression")]
-        public int DisableGpuDecompression;
+        public Silk.NET.Core.Bool32 DisableGpuDecompression;
     }
 }

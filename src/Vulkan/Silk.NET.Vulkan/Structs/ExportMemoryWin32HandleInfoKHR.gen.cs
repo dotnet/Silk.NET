@@ -24,7 +24,7 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.ExportMemoryWin32HandleInfoKhr,
             void* pNext = null,
             nint* pAttributes = null,
-            int? dwAccess = null,
+            uint? dwAccess = null,
             nint? name = null
         ) : this()
         {
@@ -73,7 +73,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwAccess")]
-        public int DwAccess;
+        public uint DwAccess;
 /// <summary></summary>
         [NativeName("Type", "LPCWSTR")]
         [NativeName("Type.Name", "LPCWSTR")]

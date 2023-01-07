@@ -243,7 +243,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorCustomRates(Guid* pVPGuid, uint Count, HDCustomRateData* pRates)
+        public readonly unsafe int GetVideoProcessorCustomRates([Flow(FlowDirection.In)] Guid* pVPGuid, uint Count, HDCustomRateData* pRates)
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -252,7 +252,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorCustomRates(Guid* pVPGuid, uint Count, ref HDCustomRateData pRates)
+        public readonly unsafe int GetVideoProcessorCustomRates([Flow(FlowDirection.In)] Guid* pVPGuid, uint Count, ref HDCustomRateData pRates)
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -264,7 +264,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoProcessorCustomRates(ref Guid pVPGuid, uint Count, HDCustomRateData* pRates)
+        public readonly unsafe int GetVideoProcessorCustomRates([Flow(FlowDirection.In)] in Guid pVPGuid, uint Count, HDCustomRateData* pRates)
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -276,7 +276,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetVideoProcessorCustomRates(ref Guid pVPGuid, uint Count, ref HDCustomRateData pRates)
+        public readonly int GetVideoProcessorCustomRates([Flow(FlowDirection.In)] in Guid pVPGuid, uint Count, ref HDCustomRateData pRates)
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -312,7 +312,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessor(Guid* pVPGuid, IDXVAHDVideoProcessor** ppVideoProcessor)
+        public readonly unsafe int CreateVideoProcessor([Flow(FlowDirection.In)] Guid* pVPGuid, IDXVAHDVideoProcessor** ppVideoProcessor)
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -321,7 +321,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessor(Guid* pVPGuid, ref IDXVAHDVideoProcessor* ppVideoProcessor)
+        public readonly unsafe int CreateVideoProcessor([Flow(FlowDirection.In)] Guid* pVPGuid, ref IDXVAHDVideoProcessor* ppVideoProcessor)
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -333,7 +333,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessor(ref Guid pVPGuid, IDXVAHDVideoProcessor** ppVideoProcessor)
+        public readonly unsafe int CreateVideoProcessor([Flow(FlowDirection.In)] in Guid pVPGuid, IDXVAHDVideoProcessor** ppVideoProcessor)
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -345,7 +345,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessor(ref Guid pVPGuid, ref IDXVAHDVideoProcessor* ppVideoProcessor)
+        public readonly unsafe int CreateVideoProcessor([Flow(FlowDirection.In)] in Guid pVPGuid, ref IDXVAHDVideoProcessor* ppVideoProcessor)
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -378,11 +378,11 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateVideoProcessor<TI0>(ref Guid pVPGuid, ref ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<IDXVAHDVideoProcessor>, IComVtbl<TI0>
+        public readonly int CreateVideoProcessor<TI0>([Flow(FlowDirection.In)] in Guid pVPGuid, ref ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<IDXVAHDVideoProcessor>, IComVtbl<TI0>
         {
             var @this = (IDXVAHDDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateVideoProcessor(ref pVPGuid, (IDXVAHDVideoProcessor**) ppVideoProcessor.GetAddressOf());
+            return @this->CreateVideoProcessor(in pVPGuid, (IDXVAHDVideoProcessor**) ppVideoProcessor.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>

@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D11
     {
         public VideoProcessorStreamBehaviorHint
         (
-            int? enable = null,
+            Silk.NET.Core.Bool32? enable = null,
             uint? width = null,
             uint? height = null,
             Silk.NET.DXGI.Format? format = null
@@ -52,7 +52,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Enable")]
-        public int Enable;
+        public Silk.NET.Core.Bool32 Enable;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

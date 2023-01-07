@@ -111,14 +111,14 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void AddTriangles(Triangle* triangles, uint trianglesCount)
+        public readonly unsafe void AddTriangles([Flow(FlowDirection.In)] Triangle* triangles, uint trianglesCount)
         {
             var @this = (ID2D1TessellationSink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Stdcall]<ID2D1TessellationSink*, Triangle*, uint, void>)@this->LpVtbl[3])(@this, triangles, trianglesCount);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void AddTriangles(ref Triangle triangles, uint trianglesCount)
+        public readonly void AddTriangles([Flow(FlowDirection.In)] in Triangle triangles, uint trianglesCount)
         {
             var @this = (ID2D1TessellationSink*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Triangle* trianglesPtr = &triangles)

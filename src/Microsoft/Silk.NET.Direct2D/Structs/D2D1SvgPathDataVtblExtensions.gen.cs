@@ -149,7 +149,7 @@ public unsafe static class D2D1SvgPathDataVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateSegmentData(this ComPtr<ID2D1SvgPathData> thisVtbl, float* data, uint dataCount, uint startIndex)
+    public static unsafe int UpdateSegmentData(this ComPtr<ID2D1SvgPathData> thisVtbl, [Flow(FlowDirection.In)] float* data, uint dataCount, uint startIndex)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -158,7 +158,7 @@ public unsafe static class D2D1SvgPathDataVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateSegmentData(this ComPtr<ID2D1SvgPathData> thisVtbl, ref float data, uint dataCount, uint startIndex)
+    public static int UpdateSegmentData(this ComPtr<ID2D1SvgPathData> thisVtbl, [Flow(FlowDirection.In)] in float data, uint dataCount, uint startIndex)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -209,7 +209,7 @@ public unsafe static class D2D1SvgPathDataVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int UpdateCommands(this ComPtr<ID2D1SvgPathData> thisVtbl, SvgPathCommand* commands, uint commandsCount, uint startIndex)
+    public static unsafe int UpdateCommands(this ComPtr<ID2D1SvgPathData> thisVtbl, [Flow(FlowDirection.In)] SvgPathCommand* commands, uint commandsCount, uint startIndex)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -218,7 +218,7 @@ public unsafe static class D2D1SvgPathDataVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateCommands(this ComPtr<ID2D1SvgPathData> thisVtbl, ref SvgPathCommand commands, uint commandsCount, uint startIndex)
+    public static int UpdateCommands(this ComPtr<ID2D1SvgPathData> thisVtbl, [Flow(FlowDirection.In)] in SvgPathCommand commands, uint commandsCount, uint startIndex)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -330,11 +330,11 @@ public unsafe static class D2D1SvgPathDataVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateSegmentData(this ComPtr<ID2D1SvgPathData> thisVtbl, Span<float> data, uint dataCount, uint startIndex)
+    public static int UpdateSegmentData(this ComPtr<ID2D1SvgPathData> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<float> data, uint dataCount, uint startIndex)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->UpdateSegmentData(ref data.GetPinnableReference(), dataCount, startIndex);
+        return @this->UpdateSegmentData(in data.GetPinnableReference(), dataCount, startIndex);
     }
 
     /// <summary>To be documented.</summary>
@@ -346,11 +346,11 @@ public unsafe static class D2D1SvgPathDataVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int UpdateCommands(this ComPtr<ID2D1SvgPathData> thisVtbl, Span<SvgPathCommand> commands, uint commandsCount, uint startIndex)
+    public static int UpdateCommands(this ComPtr<ID2D1SvgPathData> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<SvgPathCommand> commands, uint commandsCount, uint startIndex)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->UpdateCommands(ref commands.GetPinnableReference(), commandsCount, startIndex);
+        return @this->UpdateCommands(in commands.GetPinnableReference(), commandsCount, startIndex);
     }
 
     /// <summary>To be documented.</summary>

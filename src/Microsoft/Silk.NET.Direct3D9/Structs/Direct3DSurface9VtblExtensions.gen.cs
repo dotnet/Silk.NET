@@ -106,7 +106,7 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDirect3DSurface9> thisVtbl, Guid* refguid, void* pData, uint SizeOfData, uint Flags)
+    public static unsafe int SetPrivateData(this ComPtr<IDirect3DSurface9> thisVtbl, Guid* refguid, [Flow(FlowDirection.In)] void* pData, uint SizeOfData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -115,7 +115,7 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DSurface9> thisVtbl, Guid* refguid, ref T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DSurface9> thisVtbl, Guid* refguid, [Flow(FlowDirection.In)] in T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -127,7 +127,7 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDirect3DSurface9> thisVtbl, ref Guid refguid, void* pData, uint SizeOfData, uint Flags)
+    public static unsafe int SetPrivateData(this ComPtr<IDirect3DSurface9> thisVtbl, ref Guid refguid, [Flow(FlowDirection.In)] void* pData, uint SizeOfData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -139,7 +139,7 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDirect3DSurface9> thisVtbl, ref Guid refguid, ref T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDirect3DSurface9> thisVtbl, ref Guid refguid, [Flow(FlowDirection.In)] in T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -386,7 +386,7 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, LockedRect* pLockedRect, Silk.NET.Maths.Box2D<int>* pRect, uint Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, LockedRect* pLockedRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -395,7 +395,7 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, LockedRect* pLockedRect, ref Silk.NET.Maths.Box2D<int> pRect, uint Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, LockedRect* pLockedRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -407,7 +407,7 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, ref LockedRect pLockedRect, Silk.NET.Maths.Box2D<int>* pRect, uint Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, ref LockedRect pLockedRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -419,7 +419,7 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, ref LockedRect pLockedRect, ref Silk.NET.Maths.Box2D<int> pRect, uint Flags)
+    public static int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, ref LockedRect pLockedRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -506,15 +506,15 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DSurface9> thisVtbl, Guid* refguid, Span<T0> pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DSurface9> thisVtbl, Guid* refguid, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint SizeOfData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(refguid, ref pData.GetPinnableReference(), SizeOfData, Flags);
+        return @this->SetPrivateData(refguid, in pData.GetPinnableReference(), SizeOfData, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDirect3DSurface9> thisVtbl, Span<Guid> refguid, void* pData, uint SizeOfData, uint Flags)
+    public static unsafe int SetPrivateData(this ComPtr<IDirect3DSurface9> thisVtbl, Span<Guid> refguid, [Flow(FlowDirection.In)] void* pData, uint SizeOfData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -522,11 +522,11 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDirect3DSurface9> thisVtbl, Span<Guid> refguid, Span<T0> pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDirect3DSurface9> thisVtbl, Span<Guid> refguid, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint SizeOfData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref refguid.GetPinnableReference(), ref pData.GetPinnableReference(), SizeOfData, Flags);
+        return @this->SetPrivateData(ref refguid.GetPinnableReference(), in pData.GetPinnableReference(), SizeOfData, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -627,15 +627,15 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, LockedRect* pLockedRect, Span<Silk.NET.Maths.Box2D<int>> pRect, uint Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, LockedRect* pLockedRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LockRect(pLockedRect, ref pRect.GetPinnableReference(), Flags);
+        return @this->LockRect(pLockedRect, in pRect.GetPinnableReference(), Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, Span<LockedRect> pLockedRect, Silk.NET.Maths.Box2D<int>* pRect, uint Flags)
+    public static unsafe int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, Span<LockedRect> pLockedRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -643,11 +643,11 @@ public unsafe static class Direct3DSurface9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, Span<LockedRect> pLockedRect, Span<Silk.NET.Maths.Box2D<int>> pRect, uint Flags)
+    public static int LockRect(this ComPtr<IDirect3DSurface9> thisVtbl, Span<LockedRect> pLockedRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pRect, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LockRect(ref pLockedRect.GetPinnableReference(), ref pRect.GetPinnableReference(), Flags);
+        return @this->LockRect(ref pLockedRect.GetPinnableReference(), in pRect.GetPinnableReference(), Flags);
     }
 
     /// <summary>To be documented.</summary>

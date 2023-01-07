@@ -111,19 +111,19 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int IsStereoEnabled()
+        public readonly Silk.NET.Core.Bool32 IsStereoEnabled()
         {
             var @this = (IDXGIDisplayControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, int>)@this->LpVtbl[3])(@this);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, Silk.NET.Core.Bool32>)@this->LpVtbl[3])(@this);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetStereoEnabled(int enabled)
+        public readonly void SetStereoEnabled(Silk.NET.Core.Bool32 enabled)
         {
             var @this = (IDXGIDisplayControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, int, void>)@this->LpVtbl[4])(@this, enabled);
+            ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[4])(@this, enabled);
         }
 
         /// <summary>To be documented.</summary>

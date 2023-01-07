@@ -85,14 +85,14 @@ public unsafe static class D2D1TessellationSinkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void AddTriangles(this ComPtr<ID2D1TessellationSink> thisVtbl, Triangle* triangles, uint trianglesCount)
+    public static unsafe void AddTriangles(this ComPtr<ID2D1TessellationSink> thisVtbl, [Flow(FlowDirection.In)] Triangle* triangles, uint trianglesCount)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID2D1TessellationSink*, Triangle*, uint, void>)@this->LpVtbl[3])(@this, triangles, trianglesCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static void AddTriangles(this ComPtr<ID2D1TessellationSink> thisVtbl, ref Triangle triangles, uint trianglesCount)
+    public static void AddTriangles(this ComPtr<ID2D1TessellationSink> thisVtbl, [Flow(FlowDirection.In)] in Triangle triangles, uint trianglesCount)
     {
         var @this = thisVtbl.Handle;
         fixed (Triangle* trianglesPtr = &triangles)
@@ -136,11 +136,11 @@ public unsafe static class D2D1TessellationSinkVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void AddTriangles(this ComPtr<ID2D1TessellationSink> thisVtbl, Span<Triangle> triangles, uint trianglesCount)
+    public static void AddTriangles(this ComPtr<ID2D1TessellationSink> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Triangle> triangles, uint trianglesCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->AddTriangles(ref triangles.GetPinnableReference(), trianglesCount);
+        @this->AddTriangles(in triangles.GetPinnableReference(), trianglesCount);
     }
 
     /// <summary>To be documented.</summary>

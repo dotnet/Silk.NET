@@ -218,7 +218,8 @@ namespace Silk.NET.Core.Native
                     {
                         fixed (byte* bytes = span)
                         {
-                            Buffer.MemoryCopy(firstChar, bytes, span.Length, input.Length + 1);
+                            Buffer.MemoryCopy(firstChar, bytes, span.Length, input.Length * 2);
+                            ((char*)bytes)[input.Length] = default;
                         }
                     }
 

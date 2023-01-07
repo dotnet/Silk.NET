@@ -47,8 +47,8 @@ namespace Silk.NET.DXGI
         [NativeName("Name", "Offset")]
         public Rgb Offset;
         
-        [NativeName("Type", "DXGI_RGB [1025]")]
-        [NativeName("Type.Name", "DXGI_RGB [1025]")]
+        [NativeName("Type", "DXGI_RGB[1025]")]
+        [NativeName("Type.Name", "DXGI_RGB[1025]")]
         [NativeName("Name", "GammaCurve")]
         public GammaCurveBuffer GammaCurve;
 

@@ -146,16 +146,16 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "dpb_output_delay_length_minus1")]
         public byte DpbOutputDelayLengthMinus1;
-        [NativeName("Type", "uint8_t [7]")]
-        [NativeName("Type.Name", "uint8_t [7]")]
+        [NativeName("Type", "uint8_t[7]")]
+        [NativeName("Type.Name", "uint8_t[7]")]
         [NativeName("Name", "cpb_cnt_minus1")]
         public fixed byte CpbCntMinus1[7];
-        [NativeName("Type", "uint16_t [7]")]
-        [NativeName("Type.Name", "uint16_t [7]")]
+        [NativeName("Type", "uint16_t[7]")]
+        [NativeName("Type.Name", "uint16_t[7]")]
         [NativeName("Name", "elemental_duration_in_tc_minus1")]
         public fixed ushort ElementalDurationInTcMinus1[7];
-        [NativeName("Type", "uint16_t [3]")]
-        [NativeName("Type.Name", "uint16_t [3]")]
+        [NativeName("Type", "uint16_t[3]")]
+        [NativeName("Type.Name", "uint16_t[3]")]
         [NativeName("Name", "reserved")]
         public fixed ushort Reserved[3];
 

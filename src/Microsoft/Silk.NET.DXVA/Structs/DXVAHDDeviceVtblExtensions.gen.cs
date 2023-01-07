@@ -217,7 +217,7 @@ public unsafe static class DXVAHDDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorCustomRates(this ComPtr<IDXVAHDDevice> thisVtbl, Guid* pVPGuid, uint Count, HDCustomRateData* pRates)
+    public static unsafe int GetVideoProcessorCustomRates(this ComPtr<IDXVAHDDevice> thisVtbl, [Flow(FlowDirection.In)] Guid* pVPGuid, uint Count, HDCustomRateData* pRates)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class DXVAHDDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorCustomRates(this ComPtr<IDXVAHDDevice> thisVtbl, Guid* pVPGuid, uint Count, ref HDCustomRateData pRates)
+    public static unsafe int GetVideoProcessorCustomRates(this ComPtr<IDXVAHDDevice> thisVtbl, [Flow(FlowDirection.In)] Guid* pVPGuid, uint Count, ref HDCustomRateData pRates)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -238,7 +238,7 @@ public unsafe static class DXVAHDDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorCustomRates(this ComPtr<IDXVAHDDevice> thisVtbl, ref Guid pVPGuid, uint Count, HDCustomRateData* pRates)
+    public static unsafe int GetVideoProcessorCustomRates(this ComPtr<IDXVAHDDevice> thisVtbl, [Flow(FlowDirection.In)] in Guid pVPGuid, uint Count, HDCustomRateData* pRates)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -250,7 +250,7 @@ public unsafe static class DXVAHDDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetVideoProcessorCustomRates(this ComPtr<IDXVAHDDevice> thisVtbl, ref Guid pVPGuid, uint Count, ref HDCustomRateData pRates)
+    public static int GetVideoProcessorCustomRates(this ComPtr<IDXVAHDDevice> thisVtbl, [Flow(FlowDirection.In)] in Guid pVPGuid, uint Count, ref HDCustomRateData pRates)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -286,7 +286,7 @@ public unsafe static class DXVAHDDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDXVAHDDevice> thisVtbl, Guid* pVPGuid, IDXVAHDVideoProcessor** ppVideoProcessor)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDXVAHDDevice> thisVtbl, [Flow(FlowDirection.In)] Guid* pVPGuid, IDXVAHDVideoProcessor** ppVideoProcessor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -295,7 +295,7 @@ public unsafe static class DXVAHDDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDXVAHDDevice> thisVtbl, Guid* pVPGuid, ref IDXVAHDVideoProcessor* ppVideoProcessor)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDXVAHDDevice> thisVtbl, [Flow(FlowDirection.In)] Guid* pVPGuid, ref IDXVAHDVideoProcessor* ppVideoProcessor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -307,7 +307,7 @@ public unsafe static class DXVAHDDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDXVAHDDevice> thisVtbl, ref Guid pVPGuid, IDXVAHDVideoProcessor** ppVideoProcessor)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDXVAHDDevice> thisVtbl, [Flow(FlowDirection.In)] in Guid pVPGuid, IDXVAHDVideoProcessor** ppVideoProcessor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -319,7 +319,7 @@ public unsafe static class DXVAHDDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDXVAHDDevice> thisVtbl, ref Guid pVPGuid, ref IDXVAHDVideoProcessor* ppVideoProcessor)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDXVAHDDevice> thisVtbl, [Flow(FlowDirection.In)] in Guid pVPGuid, ref IDXVAHDVideoProcessor* ppVideoProcessor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -391,7 +391,7 @@ public unsafe static class DXVAHDDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorCustomRates(this ComPtr<IDXVAHDDevice> thisVtbl, Guid* pVPGuid, uint Count, Span<HDCustomRateData> pRates)
+    public static unsafe int GetVideoProcessorCustomRates(this ComPtr<IDXVAHDDevice> thisVtbl, [Flow(FlowDirection.In)] Guid* pVPGuid, uint Count, Span<HDCustomRateData> pRates)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -399,19 +399,19 @@ public unsafe static class DXVAHDDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int GetVideoProcessorCustomRates(this ComPtr<IDXVAHDDevice> thisVtbl, Span<Guid> pVPGuid, uint Count, HDCustomRateData* pRates)
+    public static unsafe int GetVideoProcessorCustomRates(this ComPtr<IDXVAHDDevice> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pVPGuid, uint Count, HDCustomRateData* pRates)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetVideoProcessorCustomRates(ref pVPGuid.GetPinnableReference(), Count, pRates);
+        return @this->GetVideoProcessorCustomRates(in pVPGuid.GetPinnableReference(), Count, pRates);
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetVideoProcessorCustomRates(this ComPtr<IDXVAHDDevice> thisVtbl, Span<Guid> pVPGuid, uint Count, Span<HDCustomRateData> pRates)
+    public static int GetVideoProcessorCustomRates(this ComPtr<IDXVAHDDevice> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pVPGuid, uint Count, Span<HDCustomRateData> pRates)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetVideoProcessorCustomRates(ref pVPGuid.GetPinnableReference(), Count, ref pRates.GetPinnableReference());
+        return @this->GetVideoProcessorCustomRates(in pVPGuid.GetPinnableReference(), Count, ref pRates.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -432,27 +432,27 @@ public unsafe static class DXVAHDDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDXVAHDDevice> thisVtbl, Span<Guid> pVPGuid, IDXVAHDVideoProcessor** ppVideoProcessor)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDXVAHDDevice> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pVPGuid, IDXVAHDVideoProcessor** ppVideoProcessor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVideoProcessor(ref pVPGuid.GetPinnableReference(), ppVideoProcessor);
+        return @this->CreateVideoProcessor(in pVPGuid.GetPinnableReference(), ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateVideoProcessor<TI0>(this ComPtr<IDXVAHDDevice> thisVtbl, ref Guid pVPGuid, ref ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<IDXVAHDVideoProcessor>, IComVtbl<TI0>
+    public static int CreateVideoProcessor<TI0>(this ComPtr<IDXVAHDDevice> thisVtbl, [Flow(FlowDirection.In)] in Guid pVPGuid, ref ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<IDXVAHDVideoProcessor>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateVideoProcessor(ref pVPGuid, (IDXVAHDVideoProcessor**) ppVideoProcessor.GetAddressOf());
+        return @this->CreateVideoProcessor(in pVPGuid, (IDXVAHDVideoProcessor**) ppVideoProcessor.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateVideoProcessor(this ComPtr<IDXVAHDDevice> thisVtbl, Span<Guid> pVPGuid, ref IDXVAHDVideoProcessor* ppVideoProcessor)
+    public static unsafe int CreateVideoProcessor(this ComPtr<IDXVAHDDevice> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Guid> pVPGuid, ref IDXVAHDVideoProcessor* ppVideoProcessor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateVideoProcessor(ref pVPGuid.GetPinnableReference(), ref ppVideoProcessor);
+        return @this->CreateVideoProcessor(in pVPGuid.GetPinnableReference(), ref ppVideoProcessor);
     }
 
     /// <summary>To be documented.</summary>

@@ -36,8 +36,8 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type.Name", "LARGE_INTEGER")]
         [NativeName("Name", "StreamSize")]
         public long StreamSize;
-        [NativeName("Type", "WCHAR [296]")]
-        [NativeName("Type.Name", "WCHAR [296]")]
+        [NativeName("Type", "WCHAR[296]")]
+        [NativeName("Type.Name", "WCHAR[296]")]
         [NativeName("Name", "cStreamName")]
         public fixed char CStreamName[296];
     }

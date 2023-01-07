@@ -23,7 +23,7 @@ namespace Silk.NET.Direct3D12
         (
             CommandListType? commandListType = null,
             uint? priority = null,
-            int? priorityForTypeIsSupported = null
+            Silk.NET.Core.Bool32? priorityForTypeIsSupported = null
         ) : this()
         {
             if (commandListType is not null)
@@ -56,6 +56,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "PriorityForTypeIsSupported")]
-        public int PriorityForTypeIsSupported;
+        public Silk.NET.Core.Bool32 PriorityForTypeIsSupported;
     }
 }

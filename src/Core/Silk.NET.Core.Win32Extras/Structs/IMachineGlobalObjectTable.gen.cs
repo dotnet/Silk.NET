@@ -111,7 +111,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(Guid* clsid, char* identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
+        public readonly unsafe int RegisterObject(Guid* clsid, [Flow(FlowDirection.In)] char* identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -120,7 +120,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(Guid* clsid, char* identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
+        public readonly unsafe int RegisterObject(Guid* clsid, [Flow(FlowDirection.In)] char* identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -132,7 +132,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(Guid* clsid, char* identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
+        public readonly unsafe int RegisterObject(Guid* clsid, [Flow(FlowDirection.In)] char* identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -144,7 +144,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(Guid* clsid, char* identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
+        public readonly unsafe int RegisterObject(Guid* clsid, [Flow(FlowDirection.In)] char* identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -159,7 +159,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(Guid* clsid, ref char identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
+        public readonly unsafe int RegisterObject(Guid* clsid, [Flow(FlowDirection.In)] in char identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -171,7 +171,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(Guid* clsid, ref char identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
+        public readonly unsafe int RegisterObject(Guid* clsid, [Flow(FlowDirection.In)] in char identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -186,7 +186,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(Guid* clsid, ref char identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
+        public readonly unsafe int RegisterObject(Guid* clsid, [Flow(FlowDirection.In)] in char identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -201,7 +201,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(Guid* clsid, ref char identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
+        public readonly unsafe int RegisterObject(Guid* clsid, [Flow(FlowDirection.In)] in char identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -219,7 +219,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
+        public readonly unsafe int RegisterObject(Guid* clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -230,7 +230,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
+        public readonly unsafe int RegisterObject(Guid* clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -244,7 +244,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
+        public readonly unsafe int RegisterObject(Guid* clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -258,7 +258,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
+        public readonly unsafe int RegisterObject(Guid* clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -275,7 +275,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(ref Guid clsid, char* identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
+        public readonly unsafe int RegisterObject(ref Guid clsid, [Flow(FlowDirection.In)] char* identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -287,7 +287,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(ref Guid clsid, char* identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
+        public readonly unsafe int RegisterObject(ref Guid clsid, [Flow(FlowDirection.In)] char* identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -302,7 +302,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(ref Guid clsid, char* identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
+        public readonly unsafe int RegisterObject(ref Guid clsid, [Flow(FlowDirection.In)] char* identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -317,7 +317,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(ref Guid clsid, char* identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
+        public readonly unsafe int RegisterObject(ref Guid clsid, [Flow(FlowDirection.In)] char* identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -335,7 +335,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(ref Guid clsid, ref char identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
+        public readonly unsafe int RegisterObject(ref Guid clsid, [Flow(FlowDirection.In)] in char identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -350,7 +350,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(ref Guid clsid, ref char identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
+        public readonly unsafe int RegisterObject(ref Guid clsid, [Flow(FlowDirection.In)] in char identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -368,7 +368,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(ref Guid clsid, ref char identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
+        public readonly unsafe int RegisterObject(ref Guid clsid, [Flow(FlowDirection.In)] in char identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -386,7 +386,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(ref Guid clsid, ref char identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
+        public readonly unsafe int RegisterObject(ref Guid clsid, [Flow(FlowDirection.In)] in char identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -407,7 +407,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
+        public readonly unsafe int RegisterObject(ref Guid clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Silk.NET.Core.Native.IUnknown* @object, MachineGlobalObjectTableRegistrationToken** token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -421,7 +421,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
+        public readonly unsafe int RegisterObject(ref Guid clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Silk.NET.Core.Native.IUnknown* @object, ref MachineGlobalObjectTableRegistrationToken* token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -438,7 +438,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
+        public readonly unsafe int RegisterObject(ref Guid clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Silk.NET.Core.Native.IUnknown @object, MachineGlobalObjectTableRegistrationToken** token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -455,7 +455,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject(ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
+        public readonly unsafe int RegisterObject(ref Guid clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Silk.NET.Core.Native.IUnknown @object, ref MachineGlobalObjectTableRegistrationToken* token)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -475,7 +475,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(Guid* clsid, char* identifier, Guid* riid, void** ppv)
+        public readonly unsafe int GetObjectA(Guid* clsid, [Flow(FlowDirection.In)] char* identifier, Guid* riid, void** ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -484,7 +484,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(Guid* clsid, char* identifier, Guid* riid, ref void* ppv)
+        public readonly unsafe int GetObjectA(Guid* clsid, [Flow(FlowDirection.In)] char* identifier, Guid* riid, ref void* ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -496,7 +496,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(Guid* clsid, char* identifier, ref Guid riid, void** ppv)
+        public readonly unsafe int GetObjectA(Guid* clsid, [Flow(FlowDirection.In)] char* identifier, ref Guid riid, void** ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -508,7 +508,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(Guid* clsid, char* identifier, ref Guid riid, ref void* ppv)
+        public readonly unsafe int GetObjectA(Guid* clsid, [Flow(FlowDirection.In)] char* identifier, ref Guid riid, ref void* ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -523,7 +523,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(Guid* clsid, ref char identifier, Guid* riid, void** ppv)
+        public readonly unsafe int GetObjectA(Guid* clsid, [Flow(FlowDirection.In)] in char identifier, Guid* riid, void** ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -535,7 +535,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(Guid* clsid, ref char identifier, Guid* riid, ref void* ppv)
+        public readonly unsafe int GetObjectA(Guid* clsid, [Flow(FlowDirection.In)] in char identifier, Guid* riid, ref void* ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -550,7 +550,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(Guid* clsid, ref char identifier, ref Guid riid, void** ppv)
+        public readonly unsafe int GetObjectA(Guid* clsid, [Flow(FlowDirection.In)] in char identifier, ref Guid riid, void** ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -565,7 +565,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(Guid* clsid, ref char identifier, ref Guid riid, ref void* ppv)
+        public readonly unsafe int GetObjectA(Guid* clsid, [Flow(FlowDirection.In)] in char identifier, ref Guid riid, ref void* ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -583,7 +583,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Guid* riid, void** ppv)
+        public readonly unsafe int GetObjectA(Guid* clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Guid* riid, void** ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -594,7 +594,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Guid* riid, ref void* ppv)
+        public readonly unsafe int GetObjectA(Guid* clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Guid* riid, ref void* ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -608,7 +608,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Guid riid, void** ppv)
+        public readonly unsafe int GetObjectA(Guid* clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Guid riid, void** ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -622,7 +622,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Guid riid, ref void* ppv)
+        public readonly unsafe int GetObjectA(Guid* clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Guid riid, ref void* ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -639,7 +639,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(ref Guid clsid, char* identifier, Guid* riid, void** ppv)
+        public readonly unsafe int GetObjectA(ref Guid clsid, [Flow(FlowDirection.In)] char* identifier, Guid* riid, void** ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -651,7 +651,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(ref Guid clsid, char* identifier, Guid* riid, ref void* ppv)
+        public readonly unsafe int GetObjectA(ref Guid clsid, [Flow(FlowDirection.In)] char* identifier, Guid* riid, ref void* ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -666,7 +666,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(ref Guid clsid, char* identifier, ref Guid riid, void** ppv)
+        public readonly unsafe int GetObjectA(ref Guid clsid, [Flow(FlowDirection.In)] char* identifier, ref Guid riid, void** ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -681,7 +681,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(ref Guid clsid, char* identifier, ref Guid riid, ref void* ppv)
+        public readonly unsafe int GetObjectA(ref Guid clsid, [Flow(FlowDirection.In)] char* identifier, ref Guid riid, ref void* ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -699,7 +699,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(ref Guid clsid, ref char identifier, Guid* riid, void** ppv)
+        public readonly unsafe int GetObjectA(ref Guid clsid, [Flow(FlowDirection.In)] in char identifier, Guid* riid, void** ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -714,7 +714,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(ref Guid clsid, ref char identifier, Guid* riid, ref void* ppv)
+        public readonly unsafe int GetObjectA(ref Guid clsid, [Flow(FlowDirection.In)] in char identifier, Guid* riid, ref void* ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -732,7 +732,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(ref Guid clsid, ref char identifier, ref Guid riid, void** ppv)
+        public readonly unsafe int GetObjectA(ref Guid clsid, [Flow(FlowDirection.In)] in char identifier, ref Guid riid, void** ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -750,7 +750,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(ref Guid clsid, ref char identifier, ref Guid riid, ref void* ppv)
+        public readonly unsafe int GetObjectA(ref Guid clsid, [Flow(FlowDirection.In)] in char identifier, ref Guid riid, ref void* ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -771,7 +771,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Guid* riid, void** ppv)
+        public readonly unsafe int GetObjectA(ref Guid clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Guid* riid, void** ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -785,7 +785,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Guid* riid, ref void* ppv)
+        public readonly unsafe int GetObjectA(ref Guid clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, Guid* riid, ref void* ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -802,7 +802,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Guid riid, void** ppv)
+        public readonly unsafe int GetObjectA(ref Guid clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Guid riid, void** ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -819,7 +819,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA(ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Guid riid, ref void* ppv)
+        public readonly unsafe int GetObjectA(ref Guid clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ref Guid riid, ref void* ppv)
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -869,7 +869,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject<TI0>(Guid* clsid, char* identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int RegisterObject<TI0>(Guid* clsid, [Flow(FlowDirection.In)] char* identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -877,7 +877,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject<TI0>(Guid* clsid, char* identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int RegisterObject<TI0>(Guid* clsid, [Flow(FlowDirection.In)] char* identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -885,23 +885,23 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject<TI0>(Guid* clsid, ref char identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int RegisterObject<TI0>(Guid* clsid, [Flow(FlowDirection.In)] in char identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->RegisterObject(clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
+            return @this->RegisterObject(clsid, in identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject<TI0>(Guid* clsid, ref char identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int RegisterObject<TI0>(Guid* clsid, [Flow(FlowDirection.In)] in char identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->RegisterObject(clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
+            return @this->RegisterObject(clsid, in identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject<TI0>(Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int RegisterObject<TI0>(Guid* clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -909,7 +909,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject<TI0>(Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int RegisterObject<TI0>(Guid* clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -917,7 +917,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject<TI0>(ref Guid clsid, char* identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int RegisterObject<TI0>(ref Guid clsid, [Flow(FlowDirection.In)] char* identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -925,7 +925,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject<TI0>(ref Guid clsid, char* identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int RegisterObject<TI0>(ref Guid clsid, [Flow(FlowDirection.In)] char* identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -933,23 +933,23 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject<TI0>(ref Guid clsid, ref char identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int RegisterObject<TI0>(ref Guid clsid, [Flow(FlowDirection.In)] in char identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->RegisterObject(ref clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
+            return @this->RegisterObject(ref clsid, in identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, token);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject<TI0>(ref Guid clsid, ref char identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int RegisterObject<TI0>(ref Guid clsid, [Flow(FlowDirection.In)] in char identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->RegisterObject(ref clsid, ref identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
+            return @this->RegisterObject(ref clsid, in identifier, (Silk.NET.Core.Native.IUnknown*) @object.Handle, ref token);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject<TI0>(ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int RegisterObject<TI0>(ref Guid clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ComPtr<TI0> @object, MachineGlobalObjectTableRegistrationToken** token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -957,7 +957,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterObject<TI0>(ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int RegisterObject<TI0>(ref Guid clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, ComPtr<TI0> @object, ref MachineGlobalObjectTableRegistrationToken* token) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -965,7 +965,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA<TI0>(Guid* clsid, char* identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int GetObjectA<TI0>(Guid* clsid, [Flow(FlowDirection.In)] char* identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -974,16 +974,16 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA<TI0>(Guid* clsid, ref char identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int GetObjectA<TI0>(Guid* clsid, [Flow(FlowDirection.In)] in char identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppv = default;
-            return @this->GetObjectA(clsid, ref identifier, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
+            return @this->GetObjectA(clsid, in identifier, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA<TI0>(Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int GetObjectA<TI0>(Guid* clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -992,7 +992,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetObjectA<TI0>(ref Guid clsid, char* identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe int GetObjectA<TI0>(ref Guid clsid, [Flow(FlowDirection.In)] char* identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1001,16 +1001,16 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetObjectA<TI0>(ref Guid clsid, ref char identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int GetObjectA<TI0>(ref Guid clsid, [Flow(FlowDirection.In)] in char identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
             ppv = default;
-            return @this->GetObjectA(ref clsid, ref identifier, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
+            return @this->GetObjectA(ref clsid, in identifier, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppv.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetObjectA<TI0>(ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly int GetObjectA<TI0>(ref Guid clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier, out ComPtr<TI0> ppv) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1028,7 +1028,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> GetObjectA<TI0>(Guid* clsid, char* identifier) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> GetObjectA<TI0>(Guid* clsid, [Flow(FlowDirection.In)] char* identifier) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1037,16 +1037,16 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> GetObjectA<TI0>(Guid* clsid, ref char identifier) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> GetObjectA<TI0>(Guid* clsid, [Flow(FlowDirection.In)] in char identifier) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->GetObjectA(clsid, ref identifier, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(@this->GetObjectA(clsid, in identifier, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> GetObjectA<TI0>(Guid* clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> GetObjectA<TI0>(Guid* clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1055,7 +1055,7 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ComPtr<TI0> GetObjectA<TI0>(ref Guid clsid, char* identifier) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly unsafe ComPtr<TI0> GetObjectA<TI0>(ref Guid clsid, [Flow(FlowDirection.In)] char* identifier) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
@@ -1064,16 +1064,16 @@ namespace Silk.NET.Core.Win32Extras
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> GetObjectA<TI0>(ref Guid clsid, ref char identifier) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> GetObjectA<TI0>(ref Guid clsid, [Flow(FlowDirection.In)] in char identifier) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader
-            SilkMarshal.ThrowHResult(@this->GetObjectA(ref clsid, ref identifier, out ComPtr<TI0> silkRet));
+            SilkMarshal.ThrowHResult(@this->GetObjectA(ref clsid, in identifier, out ComPtr<TI0> silkRet));
             return silkRet;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ComPtr<TI0> GetObjectA<TI0>(ref Guid clsid, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier) where TI0 : unmanaged, IComVtbl<TI0>
+        public readonly ComPtr<TI0> GetObjectA<TI0>(ref Guid clsid, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string identifier) where TI0 : unmanaged, IComVtbl<TI0>
         {
             var @this = (IMachineGlobalObjectTable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // NonKhrReturnTypeOverloader

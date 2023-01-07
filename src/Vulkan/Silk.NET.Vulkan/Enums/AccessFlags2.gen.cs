@@ -196,9 +196,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"ColorAttachmentReadNoncoherentBitExt\"")]
         [NativeName("Name", "VK_ACCESS_2_COLOR_ATTACHMENT_READ_NONCOHERENT_BIT_EXT")]
         Access2ColorAttachmentReadNoncoherentBitExt = 524288,
-        [Obsolete("Deprecated in favour of \"Reserved41BitAmd\"")]
-        [NativeName("Name", "VK_ACCESS_2_RESERVED_41_BIT_AMD")]
-        Access2Reserved41BitAmd = 2199023255552,
+        [Obsolete("Deprecated in favour of \"DescriptorBufferReadBitExt\"")]
+        [NativeName("Name", "VK_ACCESS_2_DESCRIPTOR_BUFFER_READ_BIT_EXT")]
+        Access2DescriptorBufferReadBitExt = 2199023255552,
         [Obsolete("Deprecated in favour of \"InvocationMaskReadBitHuawei\"")]
         [NativeName("Name", "VK_ACCESS_2_INVOCATION_MASK_READ_BIT_HUAWEI")]
         Access2InvocationMaskReadBitHuawei = 549755813888,
@@ -339,8 +339,8 @@ namespace Silk.NET.Vulkan
         FragmentDensityMapReadBitExt = 16777216,
         [NativeName("Name", "VK_ACCESS_2_COLOR_ATTACHMENT_READ_NONCOHERENT_BIT_EXT")]
         ColorAttachmentReadNoncoherentBitExt = 524288,
-        [NativeName("Name", "VK_ACCESS_2_RESERVED_41_BIT_AMD")]
-        Reserved41BitAmd = 2199023255552,
+        [NativeName("Name", "VK_ACCESS_2_DESCRIPTOR_BUFFER_READ_BIT_EXT")]
+        DescriptorBufferReadBitExt = 2199023255552,
         [NativeName("Name", "VK_ACCESS_2_INVOCATION_MASK_READ_BIT_HUAWEI")]
         InvocationMaskReadBitHuawei = 549755813888,
         [NativeName("Name", "VK_ACCESS_2_SHADER_BINDING_TABLE_READ_BIT_KHR")]

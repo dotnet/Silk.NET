@@ -85,7 +85,7 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, char* pExportName)
+    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In)] char* pExportName)
     {
         var @this = thisVtbl.Handle;
         void* ret = default;
@@ -94,7 +94,7 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, ref char pExportName)
+    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In)] in char pExportName)
     {
         var @this = thisVtbl.Handle;
         void* ret = default;
@@ -106,7 +106,7 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pExportName)
+    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pExportName)
     {
         var @this = thisVtbl.Handle;
         void* ret = default;
@@ -117,7 +117,7 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, char* pExportName)
+    public static unsafe ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In)] char* pExportName)
     {
         var @this = thisVtbl.Handle;
         ulong ret = default;
@@ -126,7 +126,7 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, ref char pExportName)
+    public static ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In)] in char pExportName)
     {
         var @this = thisVtbl.Handle;
         ulong ret = default;
@@ -138,7 +138,7 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pExportName)
+    public static ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pExportName)
     {
         var @this = thisVtbl.Handle;
         ulong ret = default;
@@ -190,19 +190,19 @@ public unsafe static class D3D12StateObjectPropertiesVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, Span<char> pExportName)
+    public static unsafe void* GetShaderIdentifier(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> pExportName)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetShaderIdentifier(ref pExportName.GetPinnableReference());
+        return @this->GetShaderIdentifier(in pExportName.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, Span<char> pExportName)
+    public static ulong GetShaderStackSize(this ComPtr<ID3D12StateObjectProperties> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> pExportName)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetShaderStackSize(ref pExportName.GetPinnableReference());
+        return @this->GetShaderStackSize(in pExportName.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

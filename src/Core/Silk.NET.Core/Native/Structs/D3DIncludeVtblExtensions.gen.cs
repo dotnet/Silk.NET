@@ -19,7 +19,7 @@ namespace Silk.NET.Core.Native;
 public unsafe static class D3DIncludeVtblExtensions
 {
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, byte* pFileName, void* pParentData, void** ppData, uint* pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] byte* pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] void** ppData, uint* pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -28,7 +28,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, byte* pFileName, void* pParentData, void** ppData, ref uint pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] byte* pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] void** ppData, ref uint pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -40,7 +40,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, byte* pFileName, void* pParentData, ref void* ppData, uint* pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] byte* pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] in void* ppData, uint* pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -52,7 +52,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, byte* pFileName, void* pParentData, ref void* ppData, ref uint pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] byte* pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] in void* ppData, ref uint pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -67,7 +67,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, byte* pFileName, ref T0 pParentData, void** ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] byte* pFileName, [Flow(FlowDirection.In)] in T0 pParentData, [Flow(FlowDirection.In)] void** ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -79,7 +79,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, byte* pFileName, ref T0 pParentData, void** ppData, ref uint pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] byte* pFileName, [Flow(FlowDirection.In)] in T0 pParentData, [Flow(FlowDirection.In)] void** ppData, ref uint pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -94,7 +94,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, byte* pFileName, ref T0 pParentData, ref void* ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] byte* pFileName, [Flow(FlowDirection.In)] in T0 pParentData, [Flow(FlowDirection.In)] in void* ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -109,7 +109,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, byte* pFileName, ref T0 pParentData, ref void* ppData, ref uint pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] byte* pFileName, [Flow(FlowDirection.In)] in T0 pParentData, [Flow(FlowDirection.In)] in void* ppData, ref uint pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -127,7 +127,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, ref byte pFileName, void* pParentData, void** ppData, uint* pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] in byte pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] void** ppData, uint* pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -139,7 +139,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, ref byte pFileName, void* pParentData, void** ppData, ref uint pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] in byte pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] void** ppData, ref uint pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -154,7 +154,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, ref byte pFileName, void* pParentData, ref void* ppData, uint* pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] in byte pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] in void* ppData, uint* pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -169,7 +169,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, ref byte pFileName, void* pParentData, ref void* ppData, ref uint pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] in byte pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] in void* ppData, ref uint pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -187,7 +187,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, ref byte pFileName, ref T0 pParentData, void** ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] in byte pFileName, [Flow(FlowDirection.In)] in T0 pParentData, [Flow(FlowDirection.In)] void** ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, ref byte pFileName, ref T0 pParentData, void** ppData, ref uint pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] in byte pFileName, [Flow(FlowDirection.In)] in T0 pParentData, [Flow(FlowDirection.In)] void** ppData, ref uint pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -220,7 +220,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, ref byte pFileName, ref T0 pParentData, ref void* ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] in byte pFileName, [Flow(FlowDirection.In)] in T0 pParentData, [Flow(FlowDirection.In)] in void* ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -238,7 +238,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, ref byte pFileName, ref T0 pParentData, ref void* ppData, ref uint pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] in byte pFileName, [Flow(FlowDirection.In)] in T0 pParentData, [Flow(FlowDirection.In)] in void* ppData, ref uint pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -259,7 +259,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, void* pParentData, void** ppData, uint* pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] void** ppData, uint* pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -270,7 +270,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, void* pParentData, void** ppData, ref uint pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] void** ppData, ref uint pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -284,7 +284,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, void* pParentData, ref void* ppData, uint* pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] in void* ppData, uint* pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -298,7 +298,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, void* pParentData, ref void* ppData, ref uint pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] in void* ppData, ref uint pBytes)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -315,7 +315,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, ref T0 pParentData, void** ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(FlowDirection.In)] in T0 pParentData, [Flow(FlowDirection.In)] void** ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -329,7 +329,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, ref T0 pParentData, void** ppData, ref uint pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(FlowDirection.In)] in T0 pParentData, [Flow(FlowDirection.In)] void** ppData, ref uint pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -346,7 +346,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, ref T0 pParentData, ref void* ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(FlowDirection.In)] in T0 pParentData, [Flow(FlowDirection.In)] in void* ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -363,7 +363,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, ref T0 pParentData, ref void* ppData, ref uint pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(FlowDirection.In)] in T0 pParentData, [Flow(FlowDirection.In)] in void* ppData, ref uint pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -383,7 +383,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Close(this ComPtr<ID3DInclude> thisVtbl, void* pData)
+    public static unsafe int Close(this ComPtr<ID3DInclude> thisVtbl, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -392,7 +392,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Close<T0>(this ComPtr<ID3DInclude> thisVtbl, ref T0 pData) where T0 : unmanaged
+    public static int Close<T0>(this ComPtr<ID3DInclude> thisVtbl, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -404,7 +404,7 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, byte* pFileName, void* pParentData, void** ppData, Span<uint> pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] byte* pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] void** ppData, Span<uint> pBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -412,111 +412,111 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, byte* pFileName, void* pParentData, ref void* ppData, Span<uint> pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] byte* pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] in void* ppData, Span<uint> pBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, pFileName, pParentData, ref ppData, ref pBytes.GetPinnableReference());
+        return @this->Open(IncludeType, pFileName, pParentData, in ppData, ref pBytes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, byte* pFileName, Span<T0> pParentData, void** ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] byte* pFileName, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(FlowDirection.In)] void** ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, pFileName, ref pParentData.GetPinnableReference(), ppData, pBytes);
+        return @this->Open(IncludeType, pFileName, in pParentData.GetPinnableReference(), ppData, pBytes);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, byte* pFileName, Span<T0> pParentData, void** ppData, Span<uint> pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] byte* pFileName, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(FlowDirection.In)] void** ppData, Span<uint> pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, pFileName, ref pParentData.GetPinnableReference(), ppData, ref pBytes.GetPinnableReference());
+        return @this->Open(IncludeType, pFileName, in pParentData.GetPinnableReference(), ppData, ref pBytes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, byte* pFileName, Span<T0> pParentData, ref void* ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] byte* pFileName, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(FlowDirection.In)] in void* ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, pFileName, ref pParentData.GetPinnableReference(), ref ppData, pBytes);
+        return @this->Open(IncludeType, pFileName, in pParentData.GetPinnableReference(), in ppData, pBytes);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, byte* pFileName, Span<T0> pParentData, ref void* ppData, Span<uint> pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] byte* pFileName, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(FlowDirection.In)] in void* ppData, Span<uint> pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, pFileName, ref pParentData.GetPinnableReference(), ref ppData, ref pBytes.GetPinnableReference());
+        return @this->Open(IncludeType, pFileName, in pParentData.GetPinnableReference(), in ppData, ref pBytes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, Span<byte> pFileName, void* pParentData, void** ppData, uint* pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] void** ppData, uint* pBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, ref pFileName.GetPinnableReference(), pParentData, ppData, pBytes);
+        return @this->Open(IncludeType, in pFileName.GetPinnableReference(), pParentData, ppData, pBytes);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, Span<byte> pFileName, void* pParentData, void** ppData, Span<uint> pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] void** ppData, Span<uint> pBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, ref pFileName.GetPinnableReference(), pParentData, ppData, ref pBytes.GetPinnableReference());
+        return @this->Open(IncludeType, in pFileName.GetPinnableReference(), pParentData, ppData, ref pBytes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, Span<byte> pFileName, void* pParentData, ref void* ppData, uint* pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] in void* ppData, uint* pBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, ref pFileName.GetPinnableReference(), pParentData, ref ppData, pBytes);
+        return @this->Open(IncludeType, in pFileName.GetPinnableReference(), pParentData, in ppData, pBytes);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, Span<byte> pFileName, void* pParentData, ref void* ppData, Span<uint> pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] in void* ppData, Span<uint> pBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, ref pFileName.GetPinnableReference(), pParentData, ref ppData, ref pBytes.GetPinnableReference());
+        return @this->Open(IncludeType, in pFileName.GetPinnableReference(), pParentData, in ppData, ref pBytes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, Span<byte> pFileName, Span<T0> pParentData, void** ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pFileName, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(FlowDirection.In)] void** ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, ref pFileName.GetPinnableReference(), ref pParentData.GetPinnableReference(), ppData, pBytes);
+        return @this->Open(IncludeType, in pFileName.GetPinnableReference(), in pParentData.GetPinnableReference(), ppData, pBytes);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, Span<byte> pFileName, Span<T0> pParentData, void** ppData, Span<uint> pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pFileName, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(FlowDirection.In)] void** ppData, Span<uint> pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, ref pFileName.GetPinnableReference(), ref pParentData.GetPinnableReference(), ppData, ref pBytes.GetPinnableReference());
+        return @this->Open(IncludeType, in pFileName.GetPinnableReference(), in pParentData.GetPinnableReference(), ppData, ref pBytes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, Span<byte> pFileName, Span<T0> pParentData, ref void* ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pFileName, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(FlowDirection.In)] in void* ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, ref pFileName.GetPinnableReference(), ref pParentData.GetPinnableReference(), ref ppData, pBytes);
+        return @this->Open(IncludeType, in pFileName.GetPinnableReference(), in pParentData.GetPinnableReference(), in ppData, pBytes);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, Span<byte> pFileName, Span<T0> pParentData, ref void* ppData, Span<uint> pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In)] ReadOnlySpan<byte> pFileName, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(FlowDirection.In)] in void* ppData, Span<uint> pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, ref pFileName.GetPinnableReference(), ref pParentData.GetPinnableReference(), ref ppData, ref pBytes.GetPinnableReference());
+        return @this->Open(IncludeType, in pFileName.GetPinnableReference(), in pParentData.GetPinnableReference(), in ppData, ref pBytes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, void* pParentData, void** ppData, Span<uint> pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] void** ppData, Span<uint> pBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -524,51 +524,51 @@ public unsafe static class D3DIncludeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, void* pParentData, ref void* ppData, Span<uint> pBytes)
+    public static unsafe int Open(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(FlowDirection.In)] void* pParentData, [Flow(FlowDirection.In)] in void* ppData, Span<uint> pBytes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, pFileName, pParentData, ref ppData, ref pBytes.GetPinnableReference());
+        return @this->Open(IncludeType, pFileName, pParentData, in ppData, ref pBytes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, Span<T0> pParentData, void** ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(FlowDirection.In)] void** ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, pFileName, ref pParentData.GetPinnableReference(), ppData, pBytes);
+        return @this->Open(IncludeType, pFileName, in pParentData.GetPinnableReference(), ppData, pBytes);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, Span<T0> pParentData, void** ppData, Span<uint> pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(FlowDirection.In)] void** ppData, Span<uint> pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, pFileName, ref pParentData.GetPinnableReference(), ppData, ref pBytes.GetPinnableReference());
+        return @this->Open(IncludeType, pFileName, in pParentData.GetPinnableReference(), ppData, ref pBytes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, Span<T0> pParentData, ref void* ppData, uint* pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(FlowDirection.In)] in void* ppData, uint* pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, pFileName, ref pParentData.GetPinnableReference(), ref ppData, pBytes);
+        return @this->Open(IncludeType, pFileName, in pParentData.GetPinnableReference(), in ppData, pBytes);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, Span<T0> pParentData, ref void* ppData, Span<uint> pBytes) where T0 : unmanaged
+    public static unsafe int Open<T0>(this ComPtr<ID3DInclude> thisVtbl, D3DIncludeType IncludeType, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pFileName, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pParentData, [Flow(FlowDirection.In)] in void* ppData, Span<uint> pBytes) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Open(IncludeType, pFileName, ref pParentData.GetPinnableReference(), ref ppData, ref pBytes.GetPinnableReference());
+        return @this->Open(IncludeType, pFileName, in pParentData.GetPinnableReference(), in ppData, ref pBytes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static int Close<T0>(this ComPtr<ID3DInclude> thisVtbl, Span<T0> pData) where T0 : unmanaged
+    public static int Close<T0>(this ComPtr<ID3DInclude> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Close(ref pData.GetPinnableReference());
+        return @this->Close(in pData.GetPinnableReference());
     }
 
 }

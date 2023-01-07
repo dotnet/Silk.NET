@@ -189,7 +189,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindElementById(char* id, ID2D1SvgElement** svgElement)
+        public readonly unsafe int FindElementById([Flow(FlowDirection.In)] char* id, ID2D1SvgElement** svgElement)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -198,7 +198,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindElementById(char* id, ref ID2D1SvgElement* svgElement)
+        public readonly unsafe int FindElementById([Flow(FlowDirection.In)] char* id, ref ID2D1SvgElement* svgElement)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -210,7 +210,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindElementById(ref char id, ID2D1SvgElement** svgElement)
+        public readonly unsafe int FindElementById([Flow(FlowDirection.In)] in char id, ID2D1SvgElement** svgElement)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -222,7 +222,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindElementById(ref char id, ref ID2D1SvgElement* svgElement)
+        public readonly unsafe int FindElementById([Flow(FlowDirection.In)] in char id, ref ID2D1SvgElement* svgElement)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -237,7 +237,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindElementById([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ID2D1SvgElement** svgElement)
+        public readonly unsafe int FindElementById([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ID2D1SvgElement** svgElement)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -248,7 +248,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindElementById([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ref ID2D1SvgElement* svgElement)
+        public readonly unsafe int FindElementById([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ref ID2D1SvgElement* svgElement)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -358,7 +358,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePaint(SvgPaintType paintType, Silk.NET.DXGI.D3Dcolorvalue* color, char* id, ID2D1SvgPaint** paint)
+        public readonly unsafe int CreatePaint(SvgPaintType paintType, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] char* id, ID2D1SvgPaint** paint)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -367,7 +367,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePaint(SvgPaintType paintType, Silk.NET.DXGI.D3Dcolorvalue* color, char* id, ref ID2D1SvgPaint* paint)
+        public readonly unsafe int CreatePaint(SvgPaintType paintType, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] char* id, ref ID2D1SvgPaint* paint)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -379,7 +379,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePaint(SvgPaintType paintType, Silk.NET.DXGI.D3Dcolorvalue* color, ref char id, ID2D1SvgPaint** paint)
+        public readonly unsafe int CreatePaint(SvgPaintType paintType, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] in char id, ID2D1SvgPaint** paint)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -391,7 +391,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePaint(SvgPaintType paintType, Silk.NET.DXGI.D3Dcolorvalue* color, ref char id, ref ID2D1SvgPaint* paint)
+        public readonly unsafe int CreatePaint(SvgPaintType paintType, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] in char id, ref ID2D1SvgPaint* paint)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -406,7 +406,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePaint(SvgPaintType paintType, Silk.NET.DXGI.D3Dcolorvalue* color, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ID2D1SvgPaint** paint)
+        public readonly unsafe int CreatePaint(SvgPaintType paintType, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ID2D1SvgPaint** paint)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -417,7 +417,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePaint(SvgPaintType paintType, Silk.NET.DXGI.D3Dcolorvalue* color, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ref ID2D1SvgPaint* paint)
+        public readonly unsafe int CreatePaint(SvgPaintType paintType, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ref ID2D1SvgPaint* paint)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -431,7 +431,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePaint(SvgPaintType paintType, ref Silk.NET.DXGI.D3Dcolorvalue color, char* id, ID2D1SvgPaint** paint)
+        public readonly unsafe int CreatePaint(SvgPaintType paintType, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In)] char* id, ID2D1SvgPaint** paint)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -443,7 +443,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePaint(SvgPaintType paintType, ref Silk.NET.DXGI.D3Dcolorvalue color, char* id, ref ID2D1SvgPaint* paint)
+        public readonly unsafe int CreatePaint(SvgPaintType paintType, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In)] char* id, ref ID2D1SvgPaint* paint)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -458,7 +458,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePaint(SvgPaintType paintType, ref Silk.NET.DXGI.D3Dcolorvalue color, ref char id, ID2D1SvgPaint** paint)
+        public readonly unsafe int CreatePaint(SvgPaintType paintType, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In)] in char id, ID2D1SvgPaint** paint)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -473,7 +473,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePaint(SvgPaintType paintType, ref Silk.NET.DXGI.D3Dcolorvalue color, ref char id, ref ID2D1SvgPaint* paint)
+        public readonly unsafe int CreatePaint(SvgPaintType paintType, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In)] in char id, ref ID2D1SvgPaint* paint)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -491,7 +491,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePaint(SvgPaintType paintType, ref Silk.NET.DXGI.D3Dcolorvalue color, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ID2D1SvgPaint** paint)
+        public readonly unsafe int CreatePaint(SvgPaintType paintType, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ID2D1SvgPaint** paint)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -505,7 +505,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePaint(SvgPaintType paintType, ref Silk.NET.DXGI.D3Dcolorvalue color, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ref ID2D1SvgPaint* paint)
+        public readonly unsafe int CreatePaint(SvgPaintType paintType, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ref ID2D1SvgPaint* paint)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -522,7 +522,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStrokeDashArray(SvgLength* dashes, uint dashesCount, ID2D1SvgStrokeDashArray** strokeDashArray)
+        public readonly unsafe int CreateStrokeDashArray([Flow(FlowDirection.In)] SvgLength* dashes, uint dashesCount, ID2D1SvgStrokeDashArray** strokeDashArray)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -531,7 +531,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStrokeDashArray(SvgLength* dashes, uint dashesCount, ref ID2D1SvgStrokeDashArray* strokeDashArray)
+        public readonly unsafe int CreateStrokeDashArray([Flow(FlowDirection.In)] SvgLength* dashes, uint dashesCount, ref ID2D1SvgStrokeDashArray* strokeDashArray)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -543,7 +543,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStrokeDashArray(ref SvgLength dashes, uint dashesCount, ID2D1SvgStrokeDashArray** strokeDashArray)
+        public readonly unsafe int CreateStrokeDashArray([Flow(FlowDirection.In)] in SvgLength dashes, uint dashesCount, ID2D1SvgStrokeDashArray** strokeDashArray)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -555,7 +555,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStrokeDashArray(ref SvgLength dashes, uint dashesCount, ref ID2D1SvgStrokeDashArray* strokeDashArray)
+        public readonly unsafe int CreateStrokeDashArray([Flow(FlowDirection.In)] in SvgLength dashes, uint dashesCount, ref ID2D1SvgStrokeDashArray* strokeDashArray)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -570,7 +570,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePointCollection(Silk.NET.Maths.Vector2D<float>* points, uint pointsCount, ID2D1SvgPointCollection** pointCollection)
+        public readonly unsafe int CreatePointCollection([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* points, uint pointsCount, ID2D1SvgPointCollection** pointCollection)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -579,7 +579,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePointCollection(Silk.NET.Maths.Vector2D<float>* points, uint pointsCount, ref ID2D1SvgPointCollection* pointCollection)
+        public readonly unsafe int CreatePointCollection([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* points, uint pointsCount, ref ID2D1SvgPointCollection* pointCollection)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -591,7 +591,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePointCollection(ref Silk.NET.Maths.Vector2D<float> points, uint pointsCount, ID2D1SvgPointCollection** pointCollection)
+        public readonly unsafe int CreatePointCollection([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> points, uint pointsCount, ID2D1SvgPointCollection** pointCollection)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -603,7 +603,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePointCollection(ref Silk.NET.Maths.Vector2D<float> points, uint pointsCount, ref ID2D1SvgPointCollection* pointCollection)
+        public readonly unsafe int CreatePointCollection([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> points, uint pointsCount, ref ID2D1SvgPointCollection* pointCollection)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -618,7 +618,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePathData(float* segmentData, uint segmentDataCount, SvgPathCommand* commands, uint commandsCount, ID2D1SvgPathData** pathData)
+        public readonly unsafe int CreatePathData([Flow(FlowDirection.In)] float* segmentData, uint segmentDataCount, [Flow(FlowDirection.In)] SvgPathCommand* commands, uint commandsCount, ID2D1SvgPathData** pathData)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -627,7 +627,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePathData(float* segmentData, uint segmentDataCount, SvgPathCommand* commands, uint commandsCount, ref ID2D1SvgPathData* pathData)
+        public readonly unsafe int CreatePathData([Flow(FlowDirection.In)] float* segmentData, uint segmentDataCount, [Flow(FlowDirection.In)] SvgPathCommand* commands, uint commandsCount, ref ID2D1SvgPathData* pathData)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -639,7 +639,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePathData(float* segmentData, uint segmentDataCount, ref SvgPathCommand commands, uint commandsCount, ID2D1SvgPathData** pathData)
+        public readonly unsafe int CreatePathData([Flow(FlowDirection.In)] float* segmentData, uint segmentDataCount, [Flow(FlowDirection.In)] in SvgPathCommand commands, uint commandsCount, ID2D1SvgPathData** pathData)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -651,7 +651,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePathData(float* segmentData, uint segmentDataCount, ref SvgPathCommand commands, uint commandsCount, ref ID2D1SvgPathData* pathData)
+        public readonly unsafe int CreatePathData([Flow(FlowDirection.In)] float* segmentData, uint segmentDataCount, [Flow(FlowDirection.In)] in SvgPathCommand commands, uint commandsCount, ref ID2D1SvgPathData* pathData)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -666,7 +666,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePathData(ref float segmentData, uint segmentDataCount, SvgPathCommand* commands, uint commandsCount, ID2D1SvgPathData** pathData)
+        public readonly unsafe int CreatePathData([Flow(FlowDirection.In)] in float segmentData, uint segmentDataCount, [Flow(FlowDirection.In)] SvgPathCommand* commands, uint commandsCount, ID2D1SvgPathData** pathData)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -678,7 +678,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePathData(ref float segmentData, uint segmentDataCount, SvgPathCommand* commands, uint commandsCount, ref ID2D1SvgPathData* pathData)
+        public readonly unsafe int CreatePathData([Flow(FlowDirection.In)] in float segmentData, uint segmentDataCount, [Flow(FlowDirection.In)] SvgPathCommand* commands, uint commandsCount, ref ID2D1SvgPathData* pathData)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -693,7 +693,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePathData(ref float segmentData, uint segmentDataCount, ref SvgPathCommand commands, uint commandsCount, ID2D1SvgPathData** pathData)
+        public readonly unsafe int CreatePathData([Flow(FlowDirection.In)] in float segmentData, uint segmentDataCount, [Flow(FlowDirection.In)] in SvgPathCommand commands, uint commandsCount, ID2D1SvgPathData** pathData)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -708,7 +708,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePathData(ref float segmentData, uint segmentDataCount, ref SvgPathCommand commands, uint commandsCount, ref ID2D1SvgPathData* pathData)
+        public readonly unsafe int CreatePathData([Flow(FlowDirection.In)] in float segmentData, uint segmentDataCount, [Flow(FlowDirection.In)] in SvgPathCommand commands, uint commandsCount, ref ID2D1SvgPathData* pathData)
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -759,7 +759,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindElementById<TI0>(char* id, ref ComPtr<TI0> svgElement) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
+        public readonly unsafe int FindElementById<TI0>([Flow(FlowDirection.In)] char* id, ref ComPtr<TI0> svgElement) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -767,15 +767,15 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int FindElementById<TI0>(ref char id, ref ComPtr<TI0> svgElement) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
+        public readonly int FindElementById<TI0>([Flow(FlowDirection.In)] in char id, ref ComPtr<TI0> svgElement) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->FindElementById(ref id, (ID2D1SvgElement**) svgElement.GetAddressOf());
+            return @this->FindElementById(in id, (ID2D1SvgElement**) svgElement.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int FindElementById<TI0>([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ref ComPtr<TI0> svgElement) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
+        public readonly int FindElementById<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ref ComPtr<TI0> svgElement) where TI0 : unmanaged, IComVtbl<ID2D1SvgElement>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -815,7 +815,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePaint<TI0>(SvgPaintType paintType, Silk.NET.DXGI.D3Dcolorvalue* color, char* id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
+        public readonly unsafe int CreatePaint<TI0>(SvgPaintType paintType, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] char* id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -823,15 +823,15 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePaint<TI0>(SvgPaintType paintType, Silk.NET.DXGI.D3Dcolorvalue* color, ref char id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
+        public readonly unsafe int CreatePaint<TI0>(SvgPaintType paintType, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In)] in char id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePaint(paintType, color, ref id, (ID2D1SvgPaint**) paint.GetAddressOf());
+            return @this->CreatePaint(paintType, color, in id, (ID2D1SvgPaint**) paint.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePaint<TI0>(SvgPaintType paintType, Silk.NET.DXGI.D3Dcolorvalue* color, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
+        public readonly unsafe int CreatePaint<TI0>(SvgPaintType paintType, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -839,31 +839,31 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePaint<TI0>(SvgPaintType paintType, ref Silk.NET.DXGI.D3Dcolorvalue color, char* id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
+        public readonly unsafe int CreatePaint<TI0>(SvgPaintType paintType, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In)] char* id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePaint(paintType, ref color, id, (ID2D1SvgPaint**) paint.GetAddressOf());
+            return @this->CreatePaint(paintType, in color, id, (ID2D1SvgPaint**) paint.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreatePaint<TI0>(SvgPaintType paintType, ref Silk.NET.DXGI.D3Dcolorvalue color, ref char id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
+        public readonly int CreatePaint<TI0>(SvgPaintType paintType, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In)] in char id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePaint(paintType, ref color, ref id, (ID2D1SvgPaint**) paint.GetAddressOf());
+            return @this->CreatePaint(paintType, in color, in id, (ID2D1SvgPaint**) paint.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreatePaint<TI0>(SvgPaintType paintType, ref Silk.NET.DXGI.D3Dcolorvalue color, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
+        public readonly int CreatePaint<TI0>(SvgPaintType paintType, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id, ref ComPtr<TI0> paint) where TI0 : unmanaged, IComVtbl<ID2D1SvgPaint>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePaint(paintType, ref color, id, (ID2D1SvgPaint**) paint.GetAddressOf());
+            return @this->CreatePaint(paintType, in color, id, (ID2D1SvgPaint**) paint.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateStrokeDashArray<TI0>(SvgLength* dashes, uint dashesCount, ref ComPtr<TI0> strokeDashArray) where TI0 : unmanaged, IComVtbl<ID2D1SvgStrokeDashArray>, IComVtbl<TI0>
+        public readonly unsafe int CreateStrokeDashArray<TI0>([Flow(FlowDirection.In)] SvgLength* dashes, uint dashesCount, ref ComPtr<TI0> strokeDashArray) where TI0 : unmanaged, IComVtbl<ID2D1SvgStrokeDashArray>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -871,15 +871,15 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreateStrokeDashArray<TI0>(ref SvgLength dashes, uint dashesCount, ref ComPtr<TI0> strokeDashArray) where TI0 : unmanaged, IComVtbl<ID2D1SvgStrokeDashArray>, IComVtbl<TI0>
+        public readonly int CreateStrokeDashArray<TI0>([Flow(FlowDirection.In)] in SvgLength dashes, uint dashesCount, ref ComPtr<TI0> strokeDashArray) where TI0 : unmanaged, IComVtbl<ID2D1SvgStrokeDashArray>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreateStrokeDashArray(ref dashes, dashesCount, (ID2D1SvgStrokeDashArray**) strokeDashArray.GetAddressOf());
+            return @this->CreateStrokeDashArray(in dashes, dashesCount, (ID2D1SvgStrokeDashArray**) strokeDashArray.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePointCollection<TI0>(Silk.NET.Maths.Vector2D<float>* points, uint pointsCount, ref ComPtr<TI0> pointCollection) where TI0 : unmanaged, IComVtbl<ID2D1SvgPointCollection>, IComVtbl<TI0>
+        public readonly unsafe int CreatePointCollection<TI0>([Flow(FlowDirection.In)] Silk.NET.Maths.Vector2D<float>* points, uint pointsCount, ref ComPtr<TI0> pointCollection) where TI0 : unmanaged, IComVtbl<ID2D1SvgPointCollection>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -887,15 +887,15 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreatePointCollection<TI0>(ref Silk.NET.Maths.Vector2D<float> points, uint pointsCount, ref ComPtr<TI0> pointCollection) where TI0 : unmanaged, IComVtbl<ID2D1SvgPointCollection>, IComVtbl<TI0>
+        public readonly int CreatePointCollection<TI0>([Flow(FlowDirection.In)] in Silk.NET.Maths.Vector2D<float> points, uint pointsCount, ref ComPtr<TI0> pointCollection) where TI0 : unmanaged, IComVtbl<ID2D1SvgPointCollection>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePointCollection(ref points, pointsCount, (ID2D1SvgPointCollection**) pointCollection.GetAddressOf());
+            return @this->CreatePointCollection(in points, pointsCount, (ID2D1SvgPointCollection**) pointCollection.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePathData<TI0>(float* segmentData, uint segmentDataCount, SvgPathCommand* commands, uint commandsCount, ref ComPtr<TI0> pathData) where TI0 : unmanaged, IComVtbl<ID2D1SvgPathData>, IComVtbl<TI0>
+        public readonly unsafe int CreatePathData<TI0>([Flow(FlowDirection.In)] float* segmentData, uint segmentDataCount, [Flow(FlowDirection.In)] SvgPathCommand* commands, uint commandsCount, ref ComPtr<TI0> pathData) where TI0 : unmanaged, IComVtbl<ID2D1SvgPathData>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -903,27 +903,27 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePathData<TI0>(float* segmentData, uint segmentDataCount, ref SvgPathCommand commands, uint commandsCount, ref ComPtr<TI0> pathData) where TI0 : unmanaged, IComVtbl<ID2D1SvgPathData>, IComVtbl<TI0>
+        public readonly unsafe int CreatePathData<TI0>([Flow(FlowDirection.In)] float* segmentData, uint segmentDataCount, [Flow(FlowDirection.In)] in SvgPathCommand commands, uint commandsCount, ref ComPtr<TI0> pathData) where TI0 : unmanaged, IComVtbl<ID2D1SvgPathData>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePathData(segmentData, segmentDataCount, ref commands, commandsCount, (ID2D1SvgPathData**) pathData.GetAddressOf());
+            return @this->CreatePathData(segmentData, segmentDataCount, in commands, commandsCount, (ID2D1SvgPathData**) pathData.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePathData<TI0>(ref float segmentData, uint segmentDataCount, SvgPathCommand* commands, uint commandsCount, ref ComPtr<TI0> pathData) where TI0 : unmanaged, IComVtbl<ID2D1SvgPathData>, IComVtbl<TI0>
+        public readonly unsafe int CreatePathData<TI0>([Flow(FlowDirection.In)] in float segmentData, uint segmentDataCount, [Flow(FlowDirection.In)] SvgPathCommand* commands, uint commandsCount, ref ComPtr<TI0> pathData) where TI0 : unmanaged, IComVtbl<ID2D1SvgPathData>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePathData(ref segmentData, segmentDataCount, commands, commandsCount, (ID2D1SvgPathData**) pathData.GetAddressOf());
+            return @this->CreatePathData(in segmentData, segmentDataCount, commands, commandsCount, (ID2D1SvgPathData**) pathData.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CreatePathData<TI0>(ref float segmentData, uint segmentDataCount, ref SvgPathCommand commands, uint commandsCount, ref ComPtr<TI0> pathData) where TI0 : unmanaged, IComVtbl<ID2D1SvgPathData>, IComVtbl<TI0>
+        public readonly int CreatePathData<TI0>([Flow(FlowDirection.In)] in float segmentData, uint segmentDataCount, [Flow(FlowDirection.In)] in SvgPathCommand commands, uint commandsCount, ref ComPtr<TI0> pathData) where TI0 : unmanaged, IComVtbl<ID2D1SvgPathData>, IComVtbl<TI0>
         {
             var @this = (ID2D1SvgDocument*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->CreatePathData(ref segmentData, segmentDataCount, ref commands, commandsCount, (ID2D1SvgPathData**) pathData.GetAddressOf());
+            return @this->CreatePathData(in segmentData, segmentDataCount, in commands, commandsCount, (ID2D1SvgPathData**) pathData.GetAddressOf());
         }
 
         /// <summary>To be documented.</summary>

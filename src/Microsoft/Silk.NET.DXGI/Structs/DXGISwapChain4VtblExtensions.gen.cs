@@ -85,7 +85,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDXGISwapChain4> thisVtbl, Guid* Name, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<IDXGISwapChain4> thisVtbl, Guid* Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -94,7 +94,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Guid* Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -106,7 +106,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDXGISwapChain4> thisVtbl, ref Guid Name, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<IDXGISwapChain4> thisVtbl, ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -442,22 +442,22 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetFullscreenState(this ComPtr<IDXGISwapChain4> thisVtbl, int Fullscreen, IDXGIOutput* pTarget)
+    public static unsafe int SetFullscreenState(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.Core.Bool32 Fullscreen, IDXGIOutput* pTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, int, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTarget);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.Core.Bool32, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTarget);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetFullscreenState(this ComPtr<IDXGISwapChain4> thisVtbl, int Fullscreen, ref IDXGIOutput pTarget)
+    public static int SetFullscreenState(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.Core.Bool32 Fullscreen, ref IDXGIOutput pTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDXGIOutput* pTargetPtr = &pTarget)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, int, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTargetPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.Core.Bool32, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTargetPtr);
         }
         return ret;
     }
@@ -541,7 +541,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ResizeTarget(this ComPtr<IDXGISwapChain4> thisVtbl, ModeDesc* pNewTargetParameters)
+    public static unsafe int ResizeTarget(this ComPtr<IDXGISwapChain4> thisVtbl, [Flow(FlowDirection.In)] ModeDesc* pNewTargetParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -550,7 +550,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ResizeTarget(this ComPtr<IDXGISwapChain4> thisVtbl, ref ModeDesc pNewTargetParameters)
+    public static int ResizeTarget(this ComPtr<IDXGISwapChain4> thisVtbl, [Flow(FlowDirection.In)] in ModeDesc pNewTargetParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -736,7 +736,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present1(this ComPtr<IDXGISwapChain4> thisVtbl, uint SyncInterval, uint PresentFlags, PresentParameters* pPresentParameters)
+    public static unsafe int Present1(this ComPtr<IDXGISwapChain4> thisVtbl, uint SyncInterval, uint PresentFlags, [Flow(FlowDirection.In)] PresentParameters* pPresentParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -745,7 +745,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Present1(this ComPtr<IDXGISwapChain4> thisVtbl, uint SyncInterval, uint PresentFlags, ref PresentParameters pPresentParameters)
+    public static int Present1(this ComPtr<IDXGISwapChain4> thisVtbl, uint SyncInterval, uint PresentFlags, [Flow(FlowDirection.In)] in PresentParameters pPresentParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -757,11 +757,11 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsTemporaryMonoSupported(this ComPtr<IDXGISwapChain4> thisVtbl)
+    public static Silk.NET.Core.Bool32 IsTemporaryMonoSupported(this ComPtr<IDXGISwapChain4> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, int>)@this->LpVtbl[23])(@this);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.Core.Bool32>)@this->LpVtbl[23])(@this);
         return ret;
     }
 
@@ -787,7 +787,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetBackgroundColor(this ComPtr<IDXGISwapChain4> thisVtbl, D3Dcolorvalue* pColor)
+    public static unsafe int SetBackgroundColor(this ComPtr<IDXGISwapChain4> thisVtbl, [Flow(FlowDirection.In)] D3Dcolorvalue* pColor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -796,7 +796,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBackgroundColor(this ComPtr<IDXGISwapChain4> thisVtbl, ref D3Dcolorvalue pColor)
+    public static int SetBackgroundColor(this ComPtr<IDXGISwapChain4> thisVtbl, [Flow(FlowDirection.In)] in D3Dcolorvalue pColor)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -955,7 +955,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetMatrixTransform(this ComPtr<IDXGISwapChain4> thisVtbl, Matrix3X2F* pMatrix)
+    public static unsafe int SetMatrixTransform(this ComPtr<IDXGISwapChain4> thisVtbl, [Flow(FlowDirection.In)] Matrix3X2F* pMatrix)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -964,7 +964,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetMatrixTransform(this ComPtr<IDXGISwapChain4> thisVtbl, ref Matrix3X2F pMatrix)
+    public static int SetMatrixTransform(this ComPtr<IDXGISwapChain4> thisVtbl, [Flow(FlowDirection.In)] in Matrix3X2F pMatrix)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1006,37 +1006,37 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CheckColorSpaceSupport(this ComPtr<IDXGISwapChain4> thisVtbl, ColorSpaceType ColorSpace, uint* pColorSpaceSupport)
+    public static unsafe int CheckColorSpaceSupport(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.DXGI.ColorSpaceType ColorSpace, uint* pColorSpaceSupport)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, ColorSpaceType, uint*, int>)@this->LpVtbl[37])(@this, ColorSpace, pColorSpaceSupport);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.DXGI.ColorSpaceType, uint*, int>)@this->LpVtbl[37])(@this, ColorSpace, pColorSpaceSupport);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckColorSpaceSupport(this ComPtr<IDXGISwapChain4> thisVtbl, ColorSpaceType ColorSpace, ref uint pColorSpaceSupport)
+    public static int CheckColorSpaceSupport(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.DXGI.ColorSpaceType ColorSpace, ref uint pColorSpaceSupport)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pColorSpaceSupportPtr = &pColorSpaceSupport)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, ColorSpaceType, uint*, int>)@this->LpVtbl[37])(@this, ColorSpace, pColorSpaceSupportPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.DXGI.ColorSpaceType, uint*, int>)@this->LpVtbl[37])(@this, ColorSpace, pColorSpaceSupportPtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetColorSpace1(this ComPtr<IDXGISwapChain4> thisVtbl, ColorSpaceType ColorSpace)
+    public static int SetColorSpace1(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.DXGI.ColorSpaceType ColorSpace)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, ColorSpaceType, int>)@this->LpVtbl[38])(@this, ColorSpace);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.DXGI.ColorSpaceType, int>)@this->LpVtbl[38])(@this, ColorSpace);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, uint* pCreationNodeMask, Silk.NET.Core.Native.IUnknown** ppPresentQueue)
+    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(FlowDirection.In)] uint* pCreationNodeMask, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown** ppPresentQueue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1045,7 +1045,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, uint* pCreationNodeMask, ref Silk.NET.Core.Native.IUnknown* ppPresentQueue)
+    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(FlowDirection.In)] uint* pCreationNodeMask, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown* ppPresentQueue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1057,7 +1057,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, ref uint pCreationNodeMask, Silk.NET.Core.Native.IUnknown** ppPresentQueue)
+    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(FlowDirection.In)] in uint pCreationNodeMask, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown** ppPresentQueue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1069,7 +1069,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, ref uint pCreationNodeMask, ref Silk.NET.Core.Native.IUnknown* ppPresentQueue)
+    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(FlowDirection.In)] in uint pCreationNodeMask, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown* ppPresentQueue)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1084,22 +1084,22 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetHDRMetaData(this ComPtr<IDXGISwapChain4> thisVtbl, HdrMetadataType Type, uint Size, void* pMetaData)
+    public static unsafe int SetHDRMetaData(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.DXGI.HdrMetadataType Type, uint Size, void* pMetaData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, HdrMetadataType, uint, void*, int>)@this->LpVtbl[40])(@this, Type, Size, pMetaData);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.DXGI.HdrMetadataType, uint, void*, int>)@this->LpVtbl[40])(@this, Type, Size, pMetaData);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetHDRMetaData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, HdrMetadataType Type, uint Size, ref T0 pMetaData) where T0 : unmanaged
+    public static int SetHDRMetaData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.DXGI.HdrMetadataType Type, uint Size, ref T0 pMetaData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (void* pMetaDataPtr = &pMetaData)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, HdrMetadataType, uint, void*, int>)@this->LpVtbl[40])(@this, Type, Size, pMetaDataPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain4*, Silk.NET.DXGI.HdrMetadataType, uint, void*, int>)@this->LpVtbl[40])(@this, Type, Size, pMetaDataPtr);
         }
         return ret;
     }
@@ -1130,15 +1130,15 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Guid* Name, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Guid* Name, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(Name, DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(Name, DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDXGISwapChain4> thisVtbl, Span<Guid> Name, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<IDXGISwapChain4> thisVtbl, Span<Guid> Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1146,11 +1146,11 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Span<Guid> Name, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Span<Guid> Name, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -1325,7 +1325,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetFullscreenState<TI0>(this ComPtr<IDXGISwapChain4> thisVtbl, int Fullscreen, ComPtr<TI0> pTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
+    public static int SetFullscreenState<TI0>(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.Core.Bool32 Fullscreen, ComPtr<TI0> pTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1333,7 +1333,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetFullscreenState(this ComPtr<IDXGISwapChain4> thisVtbl, int Fullscreen, Span<IDXGIOutput> pTarget)
+    public static int SetFullscreenState(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.Core.Bool32 Fullscreen, Span<IDXGIOutput> pTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1381,11 +1381,11 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ResizeTarget(this ComPtr<IDXGISwapChain4> thisVtbl, Span<ModeDesc> pNewTargetParameters)
+    public static int ResizeTarget(this ComPtr<IDXGISwapChain4> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ModeDesc> pNewTargetParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->ResizeTarget(ref pNewTargetParameters.GetPinnableReference());
+        return @this->ResizeTarget(in pNewTargetParameters.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -1462,11 +1462,11 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Present1(this ComPtr<IDXGISwapChain4> thisVtbl, uint SyncInterval, uint PresentFlags, Span<PresentParameters> pPresentParameters)
+    public static int Present1(this ComPtr<IDXGISwapChain4> thisVtbl, uint SyncInterval, uint PresentFlags, [Flow(FlowDirection.In)] ReadOnlySpan<PresentParameters> pPresentParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Present1(SyncInterval, PresentFlags, ref pPresentParameters.GetPinnableReference());
+        return @this->Present1(SyncInterval, PresentFlags, in pPresentParameters.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -1478,11 +1478,11 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetBackgroundColor(this ComPtr<IDXGISwapChain4> thisVtbl, Span<D3Dcolorvalue> pColor)
+    public static int SetBackgroundColor(this ComPtr<IDXGISwapChain4> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<D3Dcolorvalue> pColor)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetBackgroundColor(ref pColor.GetPinnableReference());
+        return @this->SetBackgroundColor(in pColor.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -1534,11 +1534,11 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetMatrixTransform(this ComPtr<IDXGISwapChain4> thisVtbl, Span<Matrix3X2F> pMatrix)
+    public static int SetMatrixTransform(this ComPtr<IDXGISwapChain4> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Matrix3X2F> pMatrix)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetMatrixTransform(ref pMatrix.GetPinnableReference());
+        return @this->SetMatrixTransform(in pMatrix.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -1550,7 +1550,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckColorSpaceSupport(this ComPtr<IDXGISwapChain4> thisVtbl, ColorSpaceType ColorSpace, Span<uint> pColorSpaceSupport)
+    public static int CheckColorSpaceSupport(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.DXGI.ColorSpaceType ColorSpace, Span<uint> pColorSpaceSupport)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1558,7 +1558,7 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ResizeBuffers1<TI0>(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, uint* pCreationNodeMask, ref ComPtr<TI0> ppPresentQueue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int ResizeBuffers1<TI0>(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(FlowDirection.In)] uint* pCreationNodeMask, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppPresentQueue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1566,31 +1566,31 @@ public unsafe static class DXGISwapChain4VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, Span<uint> pCreationNodeMask, Silk.NET.Core.Native.IUnknown** ppPresentQueue)
+    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pCreationNodeMask, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown** ppPresentQueue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->ResizeBuffers1(BufferCount, Width, Height, Format, SwapChainFlags, ref pCreationNodeMask.GetPinnableReference(), ppPresentQueue);
+        return @this->ResizeBuffers1(BufferCount, Width, Height, Format, SwapChainFlags, in pCreationNodeMask.GetPinnableReference(), ppPresentQueue);
     }
 
     /// <summary>To be documented.</summary>
-    public static int ResizeBuffers1<TI0>(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, ref uint pCreationNodeMask, ref ComPtr<TI0> ppPresentQueue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static int ResizeBuffers1<TI0>(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(FlowDirection.In)] in uint pCreationNodeMask, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppPresentQueue) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->ResizeBuffers1(BufferCount, Width, Height, Format, SwapChainFlags, ref pCreationNodeMask, (Silk.NET.Core.Native.IUnknown**) ppPresentQueue.GetAddressOf());
+        return @this->ResizeBuffers1(BufferCount, Width, Height, Format, SwapChainFlags, in pCreationNodeMask, (Silk.NET.Core.Native.IUnknown**) ppPresentQueue.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, Span<uint> pCreationNodeMask, ref Silk.NET.Core.Native.IUnknown* ppPresentQueue)
+    public static unsafe int ResizeBuffers1(this ComPtr<IDXGISwapChain4> thisVtbl, uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format Format, uint SwapChainFlags, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pCreationNodeMask, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown* ppPresentQueue)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->ResizeBuffers1(BufferCount, Width, Height, Format, SwapChainFlags, ref pCreationNodeMask.GetPinnableReference(), ref ppPresentQueue);
+        return @this->ResizeBuffers1(BufferCount, Width, Height, Format, SwapChainFlags, in pCreationNodeMask.GetPinnableReference(), in ppPresentQueue);
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetHDRMetaData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, HdrMetadataType Type, uint Size, Span<T0> pMetaData) where T0 : unmanaged
+    public static int SetHDRMetaData<T0>(this ComPtr<IDXGISwapChain4> thisVtbl, Silk.NET.DXGI.HdrMetadataType Type, uint Size, Span<T0> pMetaData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader

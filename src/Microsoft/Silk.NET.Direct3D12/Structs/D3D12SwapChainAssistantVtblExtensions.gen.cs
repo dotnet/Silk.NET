@@ -88,9 +88,11 @@ public unsafe static class D3D12SwapChainAssistantVtblExtensions
     public static Luid GetLUID(this ComPtr<ID3D12SwapChainAssistant> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        Luid ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Luid>)@this->LpVtbl[3])(@this);
-        return ret;
+        Luid silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        Luid* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12SwapChainAssistant*, Luid*, Luid*>)@this->LpVtbl[3])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>

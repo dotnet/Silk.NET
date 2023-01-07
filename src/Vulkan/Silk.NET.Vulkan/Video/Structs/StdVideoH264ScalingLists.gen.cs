@@ -46,12 +46,12 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint16_t")]
         [NativeName("Name", "use_default_scaling_matrix_mask")]
         public ushort UseDefaultScalingMatrixMask;
-        [NativeName("Type", "uint8_t [6][16]")]
-        [NativeName("Type.Name", "uint8_t [6][16]")]
+        [NativeName("Type", "uint8_t[6][16]")]
+        [NativeName("Type.Name", "uint8_t[6][16]")]
         [NativeName("Name", "ScalingList4x4")]
         public fixed byte ScalingList4x4[96];
-        [NativeName("Type", "uint8_t [6][64]")]
-        [NativeName("Type.Name", "uint8_t [6][64]")]
+        [NativeName("Type", "uint8_t[6][64]")]
+        [NativeName("Type.Name", "uint8_t[6][64]")]
         [NativeName("Name", "ScalingList8x8")]
         public fixed byte ScalingList8x8[384];
     }

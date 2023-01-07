@@ -22,9 +22,9 @@ namespace Silk.NET.Direct3D12
         public FeatureDataVideoFeatureAreaSupport
         (
             uint? nodeIndex = null,
-            int? videoDecodeSupport = null,
-            int? videoProcessSupport = null,
-            int? videoEncodeSupport = null
+            Silk.NET.Core.Bool32? videoDecodeSupport = null,
+            Silk.NET.Core.Bool32? videoProcessSupport = null,
+            Silk.NET.Core.Bool32? videoEncodeSupport = null
         ) : this()
         {
             if (nodeIndex is not null)
@@ -57,16 +57,16 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "VideoDecodeSupport")]
-        public int VideoDecodeSupport;
+        public Silk.NET.Core.Bool32 VideoDecodeSupport;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "VideoProcessSupport")]
-        public int VideoProcessSupport;
+        public Silk.NET.Core.Bool32 VideoProcessSupport;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "VideoEncodeSupport")]
-        public int VideoEncodeSupport;
+        public Silk.NET.Core.Bool32 VideoEncodeSupport;
     }
 }

@@ -111,20 +111,20 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetUseRef(int UseRef)
+        public readonly Silk.NET.Core.Bool32 SetUseRef(Silk.NET.Core.Bool32 UseRef)
         {
             var @this = (ID3D11SwitchToRef*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11SwitchToRef*, int, int>)@this->LpVtbl[3])(@this, UseRef);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11SwitchToRef*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32>)@this->LpVtbl[3])(@this, UseRef);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetUseRef()
+        public readonly Silk.NET.Core.Bool32 GetUseRef()
         {
             var @this = (ID3D11SwitchToRef*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11SwitchToRef*, int>)@this->LpVtbl[4])(@this);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11SwitchToRef*, Silk.NET.Core.Bool32>)@this->LpVtbl[4])(@this);
             return ret;
         }
 

@@ -103,8 +103,8 @@ namespace Silk.NET.DXVA
         [NativeName("Name", "DstRect")]
         public Silk.NET.Maths.Box2D<int> DstRect;
         
-        [NativeName("Type", "DXVA2_AYUVSample8 [16]")]
-        [NativeName("Type.Name", "DXVA2_AYUVSample8 [16]")]
+        [NativeName("Type", "DXVA2_AYUVSample8[16]")]
+        [NativeName("Type.Name", "DXVA2_AYUVSample8[16]")]
         [NativeName("Name", "Pal")]
         public PalBuffer Pal;
 

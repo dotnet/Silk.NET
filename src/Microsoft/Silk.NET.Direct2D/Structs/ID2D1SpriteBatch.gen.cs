@@ -131,7 +131,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddSprites(uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int AddSprites(uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -140,7 +140,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddSprites(uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int AddSprites(uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -152,7 +152,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddSprites(uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int AddSprites(uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -164,7 +164,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddSprites(uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int AddSprites(uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -179,7 +179,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddSprites(uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int AddSprites(uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -191,7 +191,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddSprites(uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int AddSprites(uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -206,7 +206,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddSprites(uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int AddSprites(uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -221,7 +221,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddSprites(uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int AddSprites(uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -239,7 +239,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddSprites(uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int AddSprites(uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -251,7 +251,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddSprites(uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int AddSprites(uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -266,7 +266,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddSprites(uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int AddSprites(uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -281,7 +281,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddSprites(uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int AddSprites(uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -299,7 +299,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddSprites(uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int AddSprites(uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -314,7 +314,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddSprites(uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int AddSprites(uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -332,7 +332,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddSprites(uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int AddSprites(uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -350,7 +350,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddSprites(uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly int AddSprites(uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -371,7 +371,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -380,7 +380,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -392,7 +392,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -404,7 +404,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -419,7 +419,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -431,7 +431,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -446,7 +446,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -461,7 +461,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, Silk.NET.Maths.Box2D<float>* destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<float>* destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -479,7 +479,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -491,7 +491,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -506,7 +506,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -521,7 +521,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, Silk.NET.Maths.Box2D<uint>* sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<uint>* sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -539,7 +539,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -554,7 +554,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, Silk.NET.DXGI.D3Dcolorvalue* colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -572,7 +572,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly unsafe int SetSprites(uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X2<float>* transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -590,7 +590,7 @@ namespace Silk.NET.Direct2D
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetSprites(uint startIndex, uint spriteCount, ref Silk.NET.Maths.Box2D<float> destinationRectangles, ref Silk.NET.Maths.Box2D<uint> sourceRectangles, ref Silk.NET.DXGI.D3Dcolorvalue colors, ref Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
+        public readonly int SetSprites(uint startIndex, uint spriteCount, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<float> destinationRectangles, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<uint> sourceRectangles, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue colors, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X2<float> transforms, uint destinationRectanglesStride, uint sourceRectanglesStride, uint colorsStride, uint transformsStride)
         {
             var @this = (ID2D1SpriteBatch*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

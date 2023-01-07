@@ -23,7 +23,7 @@ namespace Silk.NET.XAudio
         public EffectDescriptor
         (
             Silk.NET.Core.Native.IUnknown* pEffect = null,
-            int? initialState = null,
+            Silk.NET.Core.Bool32? initialState = null,
             uint? outputChannels = null
         ) : this()
         {
@@ -52,7 +52,7 @@ namespace Silk.NET.XAudio
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "InitialState")]
-        public int InitialState;
+        public Silk.NET.Core.Bool32 InitialState;
 
         [NativeName("Type", "UINT32")]
         [NativeName("Type.Name", "UINT32")]

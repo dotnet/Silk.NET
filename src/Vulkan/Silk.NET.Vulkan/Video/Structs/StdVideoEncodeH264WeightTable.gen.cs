@@ -57,36 +57,36 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "chroma_log2_weight_denom")]
         public byte ChromaLog2WeightDenom;
-        [NativeName("Type", "int8_t [32]")]
-        [NativeName("Type.Name", "int8_t [32]")]
+        [NativeName("Type", "int8_t[32]")]
+        [NativeName("Type.Name", "int8_t[32]")]
         [NativeName("Name", "luma_weight_l0")]
         public fixed byte LumaWeightL0[32];
-        [NativeName("Type", "int8_t [32]")]
-        [NativeName("Type.Name", "int8_t [32]")]
+        [NativeName("Type", "int8_t[32]")]
+        [NativeName("Type.Name", "int8_t[32]")]
         [NativeName("Name", "luma_offset_l0")]
         public fixed byte LumaOffsetL0[32];
-        [NativeName("Type", "int8_t [32][2]")]
-        [NativeName("Type.Name", "int8_t [32][2]")]
+        [NativeName("Type", "int8_t[32][2]")]
+        [NativeName("Type.Name", "int8_t[32][2]")]
         [NativeName("Name", "chroma_weight_l0")]
         public fixed byte ChromaWeightL0[64];
-        [NativeName("Type", "int8_t [32][2]")]
-        [NativeName("Type.Name", "int8_t [32][2]")]
+        [NativeName("Type", "int8_t[32][2]")]
+        [NativeName("Type.Name", "int8_t[32][2]")]
         [NativeName("Name", "chroma_offset_l0")]
         public fixed byte ChromaOffsetL0[64];
-        [NativeName("Type", "int8_t [32]")]
-        [NativeName("Type.Name", "int8_t [32]")]
+        [NativeName("Type", "int8_t[32]")]
+        [NativeName("Type.Name", "int8_t[32]")]
         [NativeName("Name", "luma_weight_l1")]
         public fixed byte LumaWeightL1[32];
-        [NativeName("Type", "int8_t [32]")]
-        [NativeName("Type.Name", "int8_t [32]")]
+        [NativeName("Type", "int8_t[32]")]
+        [NativeName("Type.Name", "int8_t[32]")]
         [NativeName("Name", "luma_offset_l1")]
         public fixed byte LumaOffsetL1[32];
-        [NativeName("Type", "int8_t [32][2]")]
-        [NativeName("Type.Name", "int8_t [32][2]")]
+        [NativeName("Type", "int8_t[32][2]")]
+        [NativeName("Type.Name", "int8_t[32][2]")]
         [NativeName("Name", "chroma_weight_l1")]
         public fixed byte ChromaWeightL1[64];
-        [NativeName("Type", "int8_t [32][2]")]
-        [NativeName("Type.Name", "int8_t [32][2]")]
+        [NativeName("Type", "int8_t[32][2]")]
+        [NativeName("Type.Name", "int8_t[32][2]")]
         [NativeName("Name", "chroma_offset_l1")]
         public fixed byte ChromaOffsetL1[64];
     }

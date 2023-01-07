@@ -104,9 +104,11 @@ public unsafe static class D2D1OffsetTransformVtblExtensions
     public static Silk.NET.Maths.Vector2D<int> GetOffset(this ComPtr<ID2D1OffsetTransform> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        Silk.NET.Maths.Vector2D<int> ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1OffsetTransform*, Silk.NET.Maths.Vector2D<int>>)@this->LpVtbl[5])(@this);
-        return ret;
+        Silk.NET.Maths.Vector2D<int> silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        Silk.NET.Maths.Vector2D<int>* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1OffsetTransform*, Silk.NET.Maths.Vector2D<int>*, Silk.NET.Maths.Vector2D<int>*>)@this->LpVtbl[5])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>

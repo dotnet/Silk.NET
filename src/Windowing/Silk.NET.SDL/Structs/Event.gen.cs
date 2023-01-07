@@ -398,8 +398,8 @@ namespace Silk.NET.SDL
         [NativeName("Name", "drop")]
         public DropEvent Drop;
         [FieldOffset(0)]
-        [NativeName("Type", "Uint8 [56]")]
-        [NativeName("Type.Name", "Uint8 [56]")]
+        [NativeName("Type", "Uint8[56]")]
+        [NativeName("Type.Name", "Uint8[56]")]
         [NativeName("Name", "padding")]
         public fixed byte Padding[56];
     }

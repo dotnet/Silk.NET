@@ -26,7 +26,7 @@ namespace Silk.NET.Direct3D12
             VideoProcessAlphaFillMode? alphaFillMode = null,
             uint? alphaFillModeSourceStreamIndex = null,
             Silk.NET.DXGI.Rational? frameRate = null,
-            int? enableStereo = null
+            Silk.NET.Core.Bool32? enableStereo = null
         ) : this()
         {
             if (format is not null)
@@ -80,8 +80,8 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "UINT")]
         [NativeName("Name", "AlphaFillModeSourceStreamIndex")]
         public uint AlphaFillModeSourceStreamIndex;
-        [NativeName("Type", "FLOAT [4]")]
-        [NativeName("Type.Name", "FLOAT [4]")]
+        [NativeName("Type", "FLOAT[4]")]
+        [NativeName("Type.Name", "FLOAT[4]")]
         [NativeName("Name", "BackgroundColor")]
         public fixed float BackgroundColor[4];
 
@@ -93,6 +93,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "EnableStereo")]
-        public int EnableStereo;
+        public Silk.NET.Core.Bool32 EnableStereo;
     }
 }

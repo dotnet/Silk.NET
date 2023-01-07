@@ -74,8 +74,8 @@ namespace Silk.NET.SDL
         [NativeName("Type.Name", "Sint32")]
         [NativeName("Name", "sensor")]
         public int Sensor;
-        [NativeName("Type", "float [3]")]
-        [NativeName("Type.Name", "float [3]")]
+        [NativeName("Type", "float[3]")]
+        [NativeName("Type.Name", "float[3]")]
         [NativeName("Name", "data")]
         public fixed float Data[3];
 

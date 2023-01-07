@@ -193,7 +193,7 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Guid* guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -214,7 +214,7 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ref Guid guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -289,7 +289,7 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetName(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, char* Name)
+    public static unsafe int SetName(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, [Flow(FlowDirection.In)] char* Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -298,7 +298,7 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ref char Name)
+    public static int SetName(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, [Flow(FlowDirection.In)] in char Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -310,7 +310,7 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+    public static int SetName(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -415,14 +415,14 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void ResourceBarrier(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint NumBarriers, ResourceBarrier* pBarriers)
+    public static unsafe void ResourceBarrier(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint NumBarriers, [Flow(FlowDirection.In)] ResourceBarrier* pBarriers)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoDecodeCommandList*, uint, ResourceBarrier*, void>)@this->LpVtbl[12])(@this, NumBarriers, pBarriers);
     }
 
     /// <summary>To be documented.</summary>
-    public static void ResourceBarrier(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint NumBarriers, ref ResourceBarrier pBarriers)
+    public static void ResourceBarrier(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint NumBarriers, [Flow(FlowDirection.In)] in ResourceBarrier pBarriers)
     {
         var @this = thisVtbl.Handle;
         fixed (ResourceBarrier* pBarriersPtr = &pBarriers)
@@ -432,14 +432,14 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12Resource* pResource, DiscardRegion* pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoDecodeCommandList*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[13])(@this, pResource, pRegion);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12Resource* pResource, ref DiscardRegion pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] in DiscardRegion pRegion)
     {
         var @this = thisVtbl.Handle;
         fixed (DiscardRegion* pRegionPtr = &pRegion)
@@ -449,7 +449,7 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ref ID3D12Resource pResource, DiscardRegion* pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ref ID3D12Resource pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -459,7 +459,7 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardResource(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ref ID3D12Resource pResource, ref DiscardRegion pRegion)
+    public static void DiscardResource(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ref ID3D12Resource pResource, [Flow(FlowDirection.In)] in DiscardRegion pRegion)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12Resource* pResourcePtr = &pResource)
@@ -563,14 +563,14 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void SetMarker(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Metadata, void* pData, uint Size)
+    public static unsafe void SetMarker(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] void* pData, uint Size)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoDecodeCommandList*, uint, void*, uint, void>)@this->LpVtbl[18])(@this, Metadata, pData, Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker<T0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Metadata, ref T0 pData, uint Size) where T0 : unmanaged
+    public static void SetMarker<T0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pDataPtr = &pData)
@@ -580,14 +580,14 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void BeginEvent(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Metadata, void* pData, uint Size)
+    public static unsafe void BeginEvent(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] void* pData, uint Size)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoDecodeCommandList*, uint, void*, uint, void>)@this->LpVtbl[19])(@this, Metadata, pData, Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginEvent<T0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Metadata, ref T0 pData, uint Size) where T0 : unmanaged
+    public static void BeginEvent<T0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         fixed (void* pDataPtr = &pData)
@@ -604,14 +604,14 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12VideoDecoder* pDecoder, VideoDecodeOutputStreamArguments* pOutputArguments, VideoDecodeInputStreamArguments* pInputArguments)
+    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12VideoDecoder* pDecoder, [Flow(FlowDirection.In)] VideoDecodeOutputStreamArguments* pOutputArguments, [Flow(FlowDirection.In)] VideoDecodeInputStreamArguments* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoDecodeCommandList*, ID3D12VideoDecoder*, VideoDecodeOutputStreamArguments*, VideoDecodeInputStreamArguments*, void>)@this->LpVtbl[21])(@this, pDecoder, pOutputArguments, pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12VideoDecoder* pDecoder, VideoDecodeOutputStreamArguments* pOutputArguments, ref VideoDecodeInputStreamArguments pInputArguments)
+    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12VideoDecoder* pDecoder, [Flow(FlowDirection.In)] VideoDecodeOutputStreamArguments* pOutputArguments, [Flow(FlowDirection.In)] in VideoDecodeInputStreamArguments pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (VideoDecodeInputStreamArguments* pInputArgumentsPtr = &pInputArguments)
@@ -621,7 +621,7 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12VideoDecoder* pDecoder, ref VideoDecodeOutputStreamArguments pOutputArguments, VideoDecodeInputStreamArguments* pInputArguments)
+    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12VideoDecoder* pDecoder, [Flow(FlowDirection.In)] in VideoDecodeOutputStreamArguments pOutputArguments, [Flow(FlowDirection.In)] VideoDecodeInputStreamArguments* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (VideoDecodeOutputStreamArguments* pOutputArgumentsPtr = &pOutputArguments)
@@ -631,7 +631,7 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12VideoDecoder* pDecoder, ref VideoDecodeOutputStreamArguments pOutputArguments, ref VideoDecodeInputStreamArguments pInputArguments)
+    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12VideoDecoder* pDecoder, [Flow(FlowDirection.In)] in VideoDecodeOutputStreamArguments pOutputArguments, [Flow(FlowDirection.In)] in VideoDecodeInputStreamArguments pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (VideoDecodeOutputStreamArguments* pOutputArgumentsPtr = &pOutputArguments)
@@ -644,7 +644,7 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ref ID3D12VideoDecoder pDecoder, VideoDecodeOutputStreamArguments* pOutputArguments, VideoDecodeInputStreamArguments* pInputArguments)
+    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ref ID3D12VideoDecoder pDecoder, [Flow(FlowDirection.In)] VideoDecodeOutputStreamArguments* pOutputArguments, [Flow(FlowDirection.In)] VideoDecodeInputStreamArguments* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12VideoDecoder* pDecoderPtr = &pDecoder)
@@ -654,7 +654,7 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ref ID3D12VideoDecoder pDecoder, VideoDecodeOutputStreamArguments* pOutputArguments, ref VideoDecodeInputStreamArguments pInputArguments)
+    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ref ID3D12VideoDecoder pDecoder, [Flow(FlowDirection.In)] VideoDecodeOutputStreamArguments* pOutputArguments, [Flow(FlowDirection.In)] in VideoDecodeInputStreamArguments pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12VideoDecoder* pDecoderPtr = &pDecoder)
@@ -667,7 +667,7 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ref ID3D12VideoDecoder pDecoder, ref VideoDecodeOutputStreamArguments pOutputArguments, VideoDecodeInputStreamArguments* pInputArguments)
+    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ref ID3D12VideoDecoder pDecoder, [Flow(FlowDirection.In)] in VideoDecodeOutputStreamArguments pOutputArguments, [Flow(FlowDirection.In)] VideoDecodeInputStreamArguments* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12VideoDecoder* pDecoderPtr = &pDecoder)
@@ -680,7 +680,7 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ref ID3D12VideoDecoder pDecoder, ref VideoDecodeOutputStreamArguments pOutputArguments, ref VideoDecodeInputStreamArguments pInputArguments)
+    public static void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ref ID3D12VideoDecoder pDecoder, [Flow(FlowDirection.In)] in VideoDecodeOutputStreamArguments pOutputArguments, [Flow(FlowDirection.In)] in VideoDecodeInputStreamArguments pInputArguments)
     {
         var @this = thisVtbl.Handle;
         fixed (ID3D12VideoDecoder* pDecoderPtr = &pDecoder)
@@ -696,14 +696,14 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Count, WritebufferimmediateParameter* pParams, WritebufferimmediateMode* pModes)
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Count, [Flow(FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(FlowDirection.In)] WritebufferimmediateMode* pModes)
     {
         var @this = thisVtbl.Handle;
         ((delegate* unmanaged[Stdcall]<ID3D12VideoDecodeCommandList*, uint, WritebufferimmediateParameter*, WritebufferimmediateMode*, void>)@this->LpVtbl[22])(@this, Count, pParams, pModes);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Count, WritebufferimmediateParameter* pParams, ref WritebufferimmediateMode pModes)
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Count, [Flow(FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(FlowDirection.In)] in WritebufferimmediateMode pModes)
     {
         var @this = thisVtbl.Handle;
         fixed (WritebufferimmediateMode* pModesPtr = &pModes)
@@ -713,7 +713,7 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Count, ref WritebufferimmediateParameter pParams, WritebufferimmediateMode* pModes)
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Count, [Flow(FlowDirection.In)] in WritebufferimmediateParameter pParams, [Flow(FlowDirection.In)] WritebufferimmediateMode* pModes)
     {
         var @this = thisVtbl.Handle;
         fixed (WritebufferimmediateParameter* pParamsPtr = &pParams)
@@ -723,7 +723,7 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void WriteBufferImmediate(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Count, ref WritebufferimmediateParameter pParams, ref WritebufferimmediateMode pModes)
+    public static void WriteBufferImmediate(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Count, [Flow(FlowDirection.In)] in WritebufferimmediateParameter pParams, [Flow(FlowDirection.In)] in WritebufferimmediateMode pModes)
     {
         var @this = thisVtbl.Handle;
         fixed (WritebufferimmediateParameter* pParamsPtr = &pParams)
@@ -817,15 +817,15 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(guid, DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(guid, DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<Guid> guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -833,11 +833,11 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -881,11 +881,11 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<char> Name)
+    public static int SetName(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetName(ref Name.GetPinnableReference());
+        return @this->SetName(in Name.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -930,15 +930,15 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void ResourceBarrier(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint NumBarriers, Span<ResourceBarrier> pBarriers)
+    public static void ResourceBarrier(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint NumBarriers, [Flow(FlowDirection.In)] ReadOnlySpan<ResourceBarrier> pBarriers)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->ResourceBarrier(NumBarriers, ref pBarriers.GetPinnableReference());
+        @this->ResourceBarrier(NumBarriers, in pBarriers.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pResource, DiscardRegion* pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static unsafe void DiscardResource<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -946,23 +946,23 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12Resource* pResource, Span<DiscardRegion> pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12Resource* pResource, [Flow(FlowDirection.In)] ReadOnlySpan<DiscardRegion> pRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DiscardResource(pResource, ref pRegion.GetPinnableReference());
+        @this->DiscardResource(pResource, in pRegion.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardResource<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pResource, ref DiscardRegion pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+    public static void DiscardResource<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pResource, [Flow(FlowDirection.In)] in DiscardRegion pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DiscardResource((ID3D12Resource*) pResource.Handle, ref pRegion);
+        @this->DiscardResource((ID3D12Resource*) pResource.Handle, in pRegion);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<ID3D12Resource> pResource, DiscardRegion* pRegion)
+    public static unsafe void DiscardResource(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<ID3D12Resource> pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -970,11 +970,11 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void DiscardResource(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<ID3D12Resource> pResource, Span<DiscardRegion> pRegion)
+    public static void DiscardResource(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<ID3D12Resource> pResource, [Flow(FlowDirection.In)] ReadOnlySpan<DiscardRegion> pRegion)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DiscardResource(ref pResource.GetPinnableReference(), ref pRegion.GetPinnableReference());
+        @this->DiscardResource(ref pResource.GetPinnableReference(), in pRegion.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -1074,23 +1074,23 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static void SetMarker<T0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Metadata, Span<T0> pData, uint Size) where T0 : unmanaged
+    public static void SetMarker<T0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->SetMarker(Metadata, ref pData.GetPinnableReference(), Size);
+        @this->SetMarker(Metadata, in pData.GetPinnableReference(), Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static void BeginEvent<T0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Metadata, Span<T0> pData, uint Size) where T0 : unmanaged
+    public static void BeginEvent<T0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Metadata, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint Size) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->BeginEvent(Metadata, ref pData.GetPinnableReference(), Size);
+        @this->BeginEvent(Metadata, in pData.GetPinnableReference(), Size);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecodeFrame<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pDecoder, VideoDecodeOutputStreamArguments* pOutputArguments, VideoDecodeInputStreamArguments* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
+    public static unsafe void DecodeFrame<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pDecoder, [Flow(FlowDirection.In)] VideoDecodeOutputStreamArguments* pOutputArguments, [Flow(FlowDirection.In)] VideoDecodeInputStreamArguments* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -1098,55 +1098,55 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12VideoDecoder* pDecoder, VideoDecodeOutputStreamArguments* pOutputArguments, Span<VideoDecodeInputStreamArguments> pInputArguments)
+    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12VideoDecoder* pDecoder, [Flow(FlowDirection.In)] VideoDecodeOutputStreamArguments* pOutputArguments, [Flow(FlowDirection.In)] ReadOnlySpan<VideoDecodeInputStreamArguments> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecodeFrame(pDecoder, pOutputArguments, ref pInputArguments.GetPinnableReference());
+        @this->DecodeFrame(pDecoder, pOutputArguments, in pInputArguments.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecodeFrame<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pDecoder, VideoDecodeOutputStreamArguments* pOutputArguments, ref VideoDecodeInputStreamArguments pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
+    public static unsafe void DecodeFrame<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pDecoder, [Flow(FlowDirection.In)] VideoDecodeOutputStreamArguments* pOutputArguments, [Flow(FlowDirection.In)] in VideoDecodeInputStreamArguments pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecodeFrame((ID3D12VideoDecoder*) pDecoder.Handle, pOutputArguments, ref pInputArguments);
+        @this->DecodeFrame((ID3D12VideoDecoder*) pDecoder.Handle, pOutputArguments, in pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12VideoDecoder* pDecoder, Span<VideoDecodeOutputStreamArguments> pOutputArguments, VideoDecodeInputStreamArguments* pInputArguments)
+    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12VideoDecoder* pDecoder, [Flow(FlowDirection.In)] ReadOnlySpan<VideoDecodeOutputStreamArguments> pOutputArguments, [Flow(FlowDirection.In)] VideoDecodeInputStreamArguments* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecodeFrame(pDecoder, ref pOutputArguments.GetPinnableReference(), pInputArguments);
+        @this->DecodeFrame(pDecoder, in pOutputArguments.GetPinnableReference(), pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecodeFrame<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pDecoder, ref VideoDecodeOutputStreamArguments pOutputArguments, VideoDecodeInputStreamArguments* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
+    public static unsafe void DecodeFrame<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pDecoder, [Flow(FlowDirection.In)] in VideoDecodeOutputStreamArguments pOutputArguments, [Flow(FlowDirection.In)] VideoDecodeInputStreamArguments* pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecodeFrame((ID3D12VideoDecoder*) pDecoder.Handle, ref pOutputArguments, pInputArguments);
+        @this->DecodeFrame((ID3D12VideoDecoder*) pDecoder.Handle, in pOutputArguments, pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12VideoDecoder* pDecoder, Span<VideoDecodeOutputStreamArguments> pOutputArguments, Span<VideoDecodeInputStreamArguments> pInputArguments)
+    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ID3D12VideoDecoder* pDecoder, [Flow(FlowDirection.In)] ReadOnlySpan<VideoDecodeOutputStreamArguments> pOutputArguments, [Flow(FlowDirection.In)] ReadOnlySpan<VideoDecodeInputStreamArguments> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecodeFrame(pDecoder, ref pOutputArguments.GetPinnableReference(), ref pInputArguments.GetPinnableReference());
+        @this->DecodeFrame(pDecoder, in pOutputArguments.GetPinnableReference(), in pInputArguments.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecodeFrame<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pDecoder, ref VideoDecodeOutputStreamArguments pOutputArguments, ref VideoDecodeInputStreamArguments pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
+    public static void DecodeFrame<TI0>(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, ComPtr<TI0> pDecoder, [Flow(FlowDirection.In)] in VideoDecodeOutputStreamArguments pOutputArguments, [Flow(FlowDirection.In)] in VideoDecodeInputStreamArguments pInputArguments) where TI0 : unmanaged, IComVtbl<ID3D12VideoDecoder>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        @this->DecodeFrame((ID3D12VideoDecoder*) pDecoder.Handle, ref pOutputArguments, ref pInputArguments);
+        @this->DecodeFrame((ID3D12VideoDecoder*) pDecoder.Handle, in pOutputArguments, in pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<ID3D12VideoDecoder> pDecoder, VideoDecodeOutputStreamArguments* pOutputArguments, VideoDecodeInputStreamArguments* pInputArguments)
+    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<ID3D12VideoDecoder> pDecoder, [Flow(FlowDirection.In)] VideoDecodeOutputStreamArguments* pOutputArguments, [Flow(FlowDirection.In)] VideoDecodeInputStreamArguments* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -1154,51 +1154,51 @@ public unsafe static class D3D12VideoDecodeCommandListVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<ID3D12VideoDecoder> pDecoder, VideoDecodeOutputStreamArguments* pOutputArguments, Span<VideoDecodeInputStreamArguments> pInputArguments)
+    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<ID3D12VideoDecoder> pDecoder, [Flow(FlowDirection.In)] VideoDecodeOutputStreamArguments* pOutputArguments, [Flow(FlowDirection.In)] ReadOnlySpan<VideoDecodeInputStreamArguments> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecodeFrame(ref pDecoder.GetPinnableReference(), pOutputArguments, ref pInputArguments.GetPinnableReference());
+        @this->DecodeFrame(ref pDecoder.GetPinnableReference(), pOutputArguments, in pInputArguments.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<ID3D12VideoDecoder> pDecoder, Span<VideoDecodeOutputStreamArguments> pOutputArguments, VideoDecodeInputStreamArguments* pInputArguments)
+    public static unsafe void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<ID3D12VideoDecoder> pDecoder, [Flow(FlowDirection.In)] ReadOnlySpan<VideoDecodeOutputStreamArguments> pOutputArguments, [Flow(FlowDirection.In)] VideoDecodeInputStreamArguments* pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecodeFrame(ref pDecoder.GetPinnableReference(), ref pOutputArguments.GetPinnableReference(), pInputArguments);
+        @this->DecodeFrame(ref pDecoder.GetPinnableReference(), in pOutputArguments.GetPinnableReference(), pInputArguments);
     }
 
     /// <summary>To be documented.</summary>
-    public static void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<ID3D12VideoDecoder> pDecoder, Span<VideoDecodeOutputStreamArguments> pOutputArguments, Span<VideoDecodeInputStreamArguments> pInputArguments)
+    public static void DecodeFrame(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, Span<ID3D12VideoDecoder> pDecoder, [Flow(FlowDirection.In)] ReadOnlySpan<VideoDecodeOutputStreamArguments> pOutputArguments, [Flow(FlowDirection.In)] ReadOnlySpan<VideoDecodeInputStreamArguments> pInputArguments)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->DecodeFrame(ref pDecoder.GetPinnableReference(), ref pOutputArguments.GetPinnableReference(), ref pInputArguments.GetPinnableReference());
+        @this->DecodeFrame(ref pDecoder.GetPinnableReference(), in pOutputArguments.GetPinnableReference(), in pInputArguments.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Count, WritebufferimmediateParameter* pParams, Span<WritebufferimmediateMode> pModes)
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Count, [Flow(FlowDirection.In)] WritebufferimmediateParameter* pParams, [Flow(FlowDirection.In)] ReadOnlySpan<WritebufferimmediateMode> pModes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->WriteBufferImmediate(Count, pParams, ref pModes.GetPinnableReference());
+        @this->WriteBufferImmediate(Count, pParams, in pModes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Count, Span<WritebufferimmediateParameter> pParams, WritebufferimmediateMode* pModes)
+    public static unsafe void WriteBufferImmediate(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Count, [Flow(FlowDirection.In)] ReadOnlySpan<WritebufferimmediateParameter> pParams, [Flow(FlowDirection.In)] WritebufferimmediateMode* pModes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->WriteBufferImmediate(Count, ref pParams.GetPinnableReference(), pModes);
+        @this->WriteBufferImmediate(Count, in pParams.GetPinnableReference(), pModes);
     }
 
     /// <summary>To be documented.</summary>
-    public static void WriteBufferImmediate(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Count, Span<WritebufferimmediateParameter> pParams, Span<WritebufferimmediateMode> pModes)
+    public static void WriteBufferImmediate(this ComPtr<ID3D12VideoDecodeCommandList> thisVtbl, uint Count, [Flow(FlowDirection.In)] ReadOnlySpan<WritebufferimmediateParameter> pParams, [Flow(FlowDirection.In)] ReadOnlySpan<WritebufferimmediateMode> pModes)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        @this->WriteBufferImmediate(Count, ref pParams.GetPinnableReference(), ref pModes.GetPinnableReference());
+        @this->WriteBufferImmediate(Count, in pParams.GetPinnableReference(), in pModes.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

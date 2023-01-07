@@ -193,7 +193,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Guid* guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -214,7 +214,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, ref Guid guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -289,7 +289,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetName(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, char* Name)
+    public static unsafe int SetName(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] char* Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -298,7 +298,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, ref char Name)
+    public static int SetName(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] in char Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -310,7 +310,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+    public static int SetName(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -369,7 +369,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindValue(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, void* pKey, uint KeySize, void* pValue, uint* pValueSize)
+    public static unsafe int FindValue(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] void* pKey, uint KeySize, void* pValue, uint* pValueSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -378,7 +378,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindValue(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, void* pKey, uint KeySize, void* pValue, ref uint pValueSize)
+    public static unsafe int FindValue(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] void* pKey, uint KeySize, void* pValue, ref uint pValueSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -390,7 +390,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, void* pKey, uint KeySize, ref T0 pValue, uint* pValueSize) where T0 : unmanaged
+    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] void* pKey, uint KeySize, ref T0 pValue, uint* pValueSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -402,7 +402,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, void* pKey, uint KeySize, ref T0 pValue, ref uint pValueSize) where T0 : unmanaged
+    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] void* pKey, uint KeySize, ref T0 pValue, ref uint pValueSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -417,7 +417,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, ref T0 pKey, uint KeySize, void* pValue, uint* pValueSize) where T0 : unmanaged
+    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] in T0 pKey, uint KeySize, void* pValue, uint* pValueSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -429,7 +429,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, ref T0 pKey, uint KeySize, void* pValue, ref uint pValueSize) where T0 : unmanaged
+    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] in T0 pKey, uint KeySize, void* pValue, ref uint pValueSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -444,7 +444,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindValue<T0, T1>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, ref T0 pKey, uint KeySize, ref T1 pValue, uint* pValueSize) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe int FindValue<T0, T1>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] in T0 pKey, uint KeySize, ref T1 pValue, uint* pValueSize) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -459,7 +459,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int FindValue<T0, T1>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, ref T0 pKey, uint KeySize, ref T1 pValue, ref uint pValueSize) where T0 : unmanaged where T1 : unmanaged
+    public static int FindValue<T0, T1>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] in T0 pKey, uint KeySize, ref T1 pValue, ref uint pValueSize) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -477,7 +477,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StoreValue(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, void* pKey, uint KeySize, void* pValue, uint ValueSize)
+    public static unsafe int StoreValue(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] void* pKey, uint KeySize, [Flow(FlowDirection.In)] void* pValue, uint ValueSize)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -486,7 +486,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StoreValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, void* pKey, uint KeySize, ref T0 pValue, uint ValueSize) where T0 : unmanaged
+    public static unsafe int StoreValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] void* pKey, uint KeySize, [Flow(FlowDirection.In)] in T0 pValue, uint ValueSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -498,7 +498,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StoreValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, ref T0 pKey, uint KeySize, void* pValue, uint ValueSize) where T0 : unmanaged
+    public static unsafe int StoreValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] in T0 pKey, uint KeySize, [Flow(FlowDirection.In)] void* pValue, uint ValueSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -510,7 +510,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int StoreValue<T0, T1>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, ref T0 pKey, uint KeySize, ref T1 pValue, uint ValueSize) where T0 : unmanaged where T1 : unmanaged
+    public static int StoreValue<T0, T1>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] in T0 pKey, uint KeySize, [Flow(FlowDirection.In)] in T1 pValue, uint ValueSize) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -535,9 +535,11 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     public static ShaderCacheSessionDesc GetDesc(this ComPtr<ID3D12ShaderCacheSession> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        ShaderCacheSessionDesc ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, ShaderCacheSessionDesc>)@this->LpVtbl[11])(@this);
-        return ret;
+        ShaderCacheSessionDesc silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        ShaderCacheSessionDesc* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderCacheSession*, ShaderCacheSessionDesc*, ShaderCacheSessionDesc*>)@this->LpVtbl[11])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>
@@ -622,15 +624,15 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(guid, DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(guid, DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Span<Guid> guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -638,11 +640,11 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -686,11 +688,11 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Span<char> Name)
+    public static int SetName(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetName(ref Name.GetPinnableReference());
+        return @this->SetName(in Name.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -719,7 +721,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindValue(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, void* pKey, uint KeySize, void* pValue, Span<uint> pValueSize)
+    public static unsafe int FindValue(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] void* pKey, uint KeySize, void* pValue, Span<uint> pValueSize)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -727,7 +729,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, void* pKey, uint KeySize, Span<T0> pValue, uint* pValueSize) where T0 : unmanaged
+    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] void* pKey, uint KeySize, Span<T0> pValue, uint* pValueSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -735,7 +737,7 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, void* pKey, uint KeySize, Span<T0> pValue, Span<uint> pValueSize) where T0 : unmanaged
+    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] void* pKey, uint KeySize, Span<T0> pValue, Span<uint> pValueSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -743,59 +745,59 @@ public unsafe static class D3D12ShaderCacheSessionVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Span<T0> pKey, uint KeySize, void* pValue, uint* pValueSize) where T0 : unmanaged
+    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pKey, uint KeySize, void* pValue, uint* pValueSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FindValue(ref pKey.GetPinnableReference(), KeySize, pValue, pValueSize);
+        return @this->FindValue(in pKey.GetPinnableReference(), KeySize, pValue, pValueSize);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Span<T0> pKey, uint KeySize, void* pValue, Span<uint> pValueSize) where T0 : unmanaged
+    public static unsafe int FindValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pKey, uint KeySize, void* pValue, Span<uint> pValueSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FindValue(ref pKey.GetPinnableReference(), KeySize, pValue, ref pValueSize.GetPinnableReference());
+        return @this->FindValue(in pKey.GetPinnableReference(), KeySize, pValue, ref pValueSize.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int FindValue<T0, T1>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Span<T0> pKey, uint KeySize, Span<T1> pValue, uint* pValueSize) where T0 : unmanaged where T1 : unmanaged
+    public static unsafe int FindValue<T0, T1>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pKey, uint KeySize, Span<T1> pValue, uint* pValueSize) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FindValue(ref pKey.GetPinnableReference(), KeySize, ref pValue.GetPinnableReference(), pValueSize);
+        return @this->FindValue(in pKey.GetPinnableReference(), KeySize, ref pValue.GetPinnableReference(), pValueSize);
     }
 
     /// <summary>To be documented.</summary>
-    public static int FindValue<T0, T1>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Span<T0> pKey, uint KeySize, Span<T1> pValue, Span<uint> pValueSize) where T0 : unmanaged where T1 : unmanaged
+    public static int FindValue<T0, T1>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pKey, uint KeySize, Span<T1> pValue, Span<uint> pValueSize) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->FindValue(ref pKey.GetPinnableReference(), KeySize, ref pValue.GetPinnableReference(), ref pValueSize.GetPinnableReference());
+        return @this->FindValue(in pKey.GetPinnableReference(), KeySize, ref pValue.GetPinnableReference(), ref pValueSize.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StoreValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, void* pKey, uint KeySize, Span<T0> pValue, uint ValueSize) where T0 : unmanaged
+    public static unsafe int StoreValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] void* pKey, uint KeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pValue, uint ValueSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StoreValue(pKey, KeySize, ref pValue.GetPinnableReference(), ValueSize);
+        return @this->StoreValue(pKey, KeySize, in pValue.GetPinnableReference(), ValueSize);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int StoreValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Span<T0> pKey, uint KeySize, void* pValue, uint ValueSize) where T0 : unmanaged
+    public static unsafe int StoreValue<T0>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pKey, uint KeySize, [Flow(FlowDirection.In)] void* pValue, uint ValueSize) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StoreValue(ref pKey.GetPinnableReference(), KeySize, pValue, ValueSize);
+        return @this->StoreValue(in pKey.GetPinnableReference(), KeySize, pValue, ValueSize);
     }
 
     /// <summary>To be documented.</summary>
-    public static int StoreValue<T0, T1>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, Span<T0> pKey, uint KeySize, Span<T1> pValue, uint ValueSize) where T0 : unmanaged where T1 : unmanaged
+    public static int StoreValue<T0, T1>(this ComPtr<ID3D12ShaderCacheSession> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pKey, uint KeySize, [Flow(FlowDirection.In)] ReadOnlySpan<T1> pValue, uint ValueSize) where T0 : unmanaged where T1 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->StoreValue(ref pKey.GetPinnableReference(), KeySize, ref pValue.GetPinnableReference(), ValueSize);
+        return @this->StoreValue(in pKey.GetPinnableReference(), KeySize, in pValue.GetPinnableReference(), ValueSize);
     }
 
     /// <summary>To be documented.</summary>

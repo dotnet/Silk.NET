@@ -106,7 +106,7 @@ public unsafe static class Direct3DVolume9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDirect3DVolume9> thisVtbl, Guid* refguid, void* pData, uint SizeOfData, uint Flags)
+    public static unsafe int SetPrivateData(this ComPtr<IDirect3DVolume9> thisVtbl, Guid* refguid, [Flow(FlowDirection.In)] void* pData, uint SizeOfData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -115,7 +115,7 @@ public unsafe static class Direct3DVolume9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DVolume9> thisVtbl, Guid* refguid, ref T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DVolume9> thisVtbl, Guid* refguid, [Flow(FlowDirection.In)] in T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -127,7 +127,7 @@ public unsafe static class Direct3DVolume9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDirect3DVolume9> thisVtbl, ref Guid refguid, void* pData, uint SizeOfData, uint Flags)
+    public static unsafe int SetPrivateData(this ComPtr<IDirect3DVolume9> thisVtbl, ref Guid refguid, [Flow(FlowDirection.In)] void* pData, uint SizeOfData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -139,7 +139,7 @@ public unsafe static class Direct3DVolume9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDirect3DVolume9> thisVtbl, ref Guid refguid, ref T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDirect3DVolume9> thisVtbl, ref Guid refguid, [Flow(FlowDirection.In)] in T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -352,7 +352,7 @@ public unsafe static class Direct3DVolume9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockBox(this ComPtr<IDirect3DVolume9> thisVtbl, LockedBox* pLockedVolume, Box* pBox, uint Flags)
+    public static unsafe int LockBox(this ComPtr<IDirect3DVolume9> thisVtbl, LockedBox* pLockedVolume, [Flow(FlowDirection.In)] Box* pBox, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -361,7 +361,7 @@ public unsafe static class Direct3DVolume9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockBox(this ComPtr<IDirect3DVolume9> thisVtbl, LockedBox* pLockedVolume, ref Box pBox, uint Flags)
+    public static unsafe int LockBox(this ComPtr<IDirect3DVolume9> thisVtbl, LockedBox* pLockedVolume, [Flow(FlowDirection.In)] in Box pBox, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -373,7 +373,7 @@ public unsafe static class Direct3DVolume9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockBox(this ComPtr<IDirect3DVolume9> thisVtbl, ref LockedBox pLockedVolume, Box* pBox, uint Flags)
+    public static unsafe int LockBox(this ComPtr<IDirect3DVolume9> thisVtbl, ref LockedBox pLockedVolume, [Flow(FlowDirection.In)] Box* pBox, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -385,7 +385,7 @@ public unsafe static class Direct3DVolume9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LockBox(this ComPtr<IDirect3DVolume9> thisVtbl, ref LockedBox pLockedVolume, ref Box pBox, uint Flags)
+    public static int LockBox(this ComPtr<IDirect3DVolume9> thisVtbl, ref LockedBox pLockedVolume, [Flow(FlowDirection.In)] in Box pBox, uint Flags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -442,15 +442,15 @@ public unsafe static class Direct3DVolume9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DVolume9> thisVtbl, Guid* refguid, Span<T0> pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDirect3DVolume9> thisVtbl, Guid* refguid, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint SizeOfData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(refguid, ref pData.GetPinnableReference(), SizeOfData, Flags);
+        return @this->SetPrivateData(refguid, in pData.GetPinnableReference(), SizeOfData, Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDirect3DVolume9> thisVtbl, Span<Guid> refguid, void* pData, uint SizeOfData, uint Flags)
+    public static unsafe int SetPrivateData(this ComPtr<IDirect3DVolume9> thisVtbl, Span<Guid> refguid, [Flow(FlowDirection.In)] void* pData, uint SizeOfData, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -458,11 +458,11 @@ public unsafe static class Direct3DVolume9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDirect3DVolume9> thisVtbl, Span<Guid> refguid, Span<T0> pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDirect3DVolume9> thisVtbl, Span<Guid> refguid, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData, uint SizeOfData, uint Flags) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref refguid.GetPinnableReference(), ref pData.GetPinnableReference(), SizeOfData, Flags);
+        return @this->SetPrivateData(ref refguid.GetPinnableReference(), in pData.GetPinnableReference(), SizeOfData, Flags);
     }
 
     /// <summary>To be documented.</summary>
@@ -563,15 +563,15 @@ public unsafe static class Direct3DVolume9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockBox(this ComPtr<IDirect3DVolume9> thisVtbl, LockedBox* pLockedVolume, Span<Box> pBox, uint Flags)
+    public static unsafe int LockBox(this ComPtr<IDirect3DVolume9> thisVtbl, LockedBox* pLockedVolume, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pBox, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LockBox(pLockedVolume, ref pBox.GetPinnableReference(), Flags);
+        return @this->LockBox(pLockedVolume, in pBox.GetPinnableReference(), Flags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int LockBox(this ComPtr<IDirect3DVolume9> thisVtbl, Span<LockedBox> pLockedVolume, Box* pBox, uint Flags)
+    public static unsafe int LockBox(this ComPtr<IDirect3DVolume9> thisVtbl, Span<LockedBox> pLockedVolume, [Flow(FlowDirection.In)] Box* pBox, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -579,11 +579,11 @@ public unsafe static class Direct3DVolume9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int LockBox(this ComPtr<IDirect3DVolume9> thisVtbl, Span<LockedBox> pLockedVolume, Span<Box> pBox, uint Flags)
+    public static int LockBox(this ComPtr<IDirect3DVolume9> thisVtbl, Span<LockedBox> pLockedVolume, [Flow(FlowDirection.In)] ReadOnlySpan<Box> pBox, uint Flags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->LockBox(ref pLockedVolume.GetPinnableReference(), ref pBox.GetPinnableReference(), Flags);
+        return @this->LockBox(ref pLockedVolume.GetPinnableReference(), in pBox.GetPinnableReference(), Flags);
     }
 
     /// <summary>To be documented.</summary>

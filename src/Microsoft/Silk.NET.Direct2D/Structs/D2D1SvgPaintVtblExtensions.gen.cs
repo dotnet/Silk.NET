@@ -158,7 +158,7 @@ public unsafe static class D2D1SvgPaintVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetColor(this ComPtr<ID2D1SvgPaint> thisVtbl, Silk.NET.DXGI.D3Dcolorvalue* color)
+    public static unsafe int SetColor(this ComPtr<ID2D1SvgPaint> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.DXGI.D3Dcolorvalue* color)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -167,7 +167,7 @@ public unsafe static class D2D1SvgPaintVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetColor(this ComPtr<ID2D1SvgPaint> thisVtbl, ref Silk.NET.DXGI.D3Dcolorvalue color)
+    public static int SetColor(this ComPtr<ID2D1SvgPaint> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.DXGI.D3Dcolorvalue color)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -196,7 +196,7 @@ public unsafe static class D2D1SvgPaintVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetId(this ComPtr<ID2D1SvgPaint> thisVtbl, char* id)
+    public static unsafe int SetId(this ComPtr<ID2D1SvgPaint> thisVtbl, [Flow(FlowDirection.In)] char* id)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -205,7 +205,7 @@ public unsafe static class D2D1SvgPaintVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetId(this ComPtr<ID2D1SvgPaint> thisVtbl, ref char id)
+    public static int SetId(this ComPtr<ID2D1SvgPaint> thisVtbl, [Flow(FlowDirection.In)] in char id)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -217,7 +217,7 @@ public unsafe static class D2D1SvgPaintVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetId(this ComPtr<ID2D1SvgPaint> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id)
+    public static int SetId(this ComPtr<ID2D1SvgPaint> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string id)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -318,11 +318,11 @@ public unsafe static class D2D1SvgPaintVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetColor(this ComPtr<ID2D1SvgPaint> thisVtbl, Span<Silk.NET.DXGI.D3Dcolorvalue> color)
+    public static int SetColor(this ComPtr<ID2D1SvgPaint> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.DXGI.D3Dcolorvalue> color)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetColor(ref color.GetPinnableReference());
+        return @this->SetColor(in color.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -334,11 +334,11 @@ public unsafe static class D2D1SvgPaintVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetId(this ComPtr<ID2D1SvgPaint> thisVtbl, Span<char> id)
+    public static int SetId(this ComPtr<ID2D1SvgPaint> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> id)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetId(ref id.GetPinnableReference());
+        return @this->SetId(in id.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

@@ -85,7 +85,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, uint* maximimumExtents, uint* strides, uint dimensions, byte* data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In)] byte* data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -94,7 +94,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, uint* maximimumExtents, uint* strides, uint dimensions, ref byte data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In)] in byte data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -106,7 +106,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, uint* maximimumExtents, uint* strides, uint dimensions, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -117,7 +117,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, uint* maximimumExtents, ref uint strides, uint dimensions, byte* data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] in uint strides, uint dimensions, [Flow(FlowDirection.In)] byte* data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -129,7 +129,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, uint* maximimumExtents, ref uint strides, uint dimensions, ref byte data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] in uint strides, uint dimensions, [Flow(FlowDirection.In)] in byte data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -144,7 +144,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, uint* maximimumExtents, ref uint strides, uint dimensions, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] in uint strides, uint dimensions, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -158,7 +158,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, ref uint maximimumExtents, uint* strides, uint dimensions, byte* data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] in uint maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In)] byte* data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -170,7 +170,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, ref uint maximimumExtents, uint* strides, uint dimensions, ref byte data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] in uint maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In)] in byte data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -185,7 +185,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, ref uint maximimumExtents, uint* strides, uint dimensions, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] in uint maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -199,7 +199,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, ref uint maximimumExtents, ref uint strides, uint dimensions, byte* data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] in uint maximimumExtents, [Flow(FlowDirection.In)] in uint strides, uint dimensions, [Flow(FlowDirection.In)] byte* data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -214,7 +214,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, ref uint maximimumExtents, ref uint strides, uint dimensions, ref byte data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] in uint maximimumExtents, [Flow(FlowDirection.In)] in uint strides, uint dimensions, [Flow(FlowDirection.In)] in byte data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -232,7 +232,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, ref uint maximimumExtents, ref uint strides, uint dimensions, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] in uint maximimumExtents, [Flow(FlowDirection.In)] in uint strides, uint dimensions, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -249,7 +249,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, ref uint minimumExtents, uint* maximimumExtents, uint* strides, uint dimensions, byte* data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] in uint minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In)] byte* data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -261,7 +261,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, ref uint minimumExtents, uint* maximimumExtents, uint* strides, uint dimensions, ref byte data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] in uint minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In)] in byte data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -276,7 +276,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, ref uint minimumExtents, uint* maximimumExtents, uint* strides, uint dimensions, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] in uint minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -290,7 +290,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, ref uint minimumExtents, uint* maximimumExtents, ref uint strides, uint dimensions, byte* data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] in uint minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] in uint strides, uint dimensions, [Flow(FlowDirection.In)] byte* data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -305,7 +305,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, ref uint minimumExtents, uint* maximimumExtents, ref uint strides, uint dimensions, ref byte data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] in uint minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] in uint strides, uint dimensions, [Flow(FlowDirection.In)] in byte data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -323,7 +323,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, ref uint minimumExtents, uint* maximimumExtents, ref uint strides, uint dimensions, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] in uint minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] in uint strides, uint dimensions, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -340,7 +340,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, ref uint minimumExtents, ref uint maximimumExtents, uint* strides, uint dimensions, byte* data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] in uint minimumExtents, [Flow(FlowDirection.In)] in uint maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In)] byte* data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -355,7 +355,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, ref uint minimumExtents, ref uint maximimumExtents, uint* strides, uint dimensions, ref byte data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] in uint minimumExtents, [Flow(FlowDirection.In)] in uint maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In)] in byte data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -373,7 +373,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, ref uint minimumExtents, ref uint maximimumExtents, uint* strides, uint dimensions, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] in uint minimumExtents, [Flow(FlowDirection.In)] in uint maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -390,7 +390,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, ref uint minimumExtents, ref uint maximimumExtents, ref uint strides, uint dimensions, byte* data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] in uint minimumExtents, [Flow(FlowDirection.In)] in uint maximimumExtents, [Flow(FlowDirection.In)] in uint strides, uint dimensions, [Flow(FlowDirection.In)] byte* data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -408,7 +408,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, ref uint minimumExtents, ref uint maximimumExtents, ref uint strides, uint dimensions, ref byte data, uint dataCount)
+    public static int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] in uint minimumExtents, [Flow(FlowDirection.In)] in uint maximimumExtents, [Flow(FlowDirection.In)] in uint strides, uint dimensions, [Flow(FlowDirection.In)] in byte data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -429,7 +429,7 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, ref uint minimumExtents, ref uint maximimumExtents, ref uint strides, uint dimensions, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+    public static int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] in uint minimumExtents, [Flow(FlowDirection.In)] in uint maximimumExtents, [Flow(FlowDirection.In)] in uint strides, uint dimensions, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -474,179 +474,179 @@ public unsafe static class D2D1ResourceTextureVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, uint* maximimumExtents, uint* strides, uint dimensions, Span<byte> data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(minimumExtents, maximimumExtents, strides, dimensions, ref data.GetPinnableReference(), dataCount);
+        return @this->Update(minimumExtents, maximimumExtents, strides, dimensions, in data.GetPinnableReference(), dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, uint* maximimumExtents, Span<uint> strides, uint dimensions, byte* data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dimensions, [Flow(FlowDirection.In)] byte* data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(minimumExtents, maximimumExtents, ref strides.GetPinnableReference(), dimensions, data, dataCount);
+        return @this->Update(minimumExtents, maximimumExtents, in strides.GetPinnableReference(), dimensions, data, dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, uint* maximimumExtents, Span<uint> strides, uint dimensions, Span<byte> data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dimensions, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(minimumExtents, maximimumExtents, ref strides.GetPinnableReference(), dimensions, ref data.GetPinnableReference(), dataCount);
+        return @this->Update(minimumExtents, maximimumExtents, in strides.GetPinnableReference(), dimensions, in data.GetPinnableReference(), dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, uint* maximimumExtents, Span<uint> strides, uint dimensions, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dimensions, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(minimumExtents, maximimumExtents, ref strides.GetPinnableReference(), dimensions, data, dataCount);
+        return @this->Update(minimumExtents, maximimumExtents, in strides.GetPinnableReference(), dimensions, data, dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, Span<uint> maximimumExtents, uint* strides, uint dimensions, byte* data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In)] byte* data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(minimumExtents, ref maximimumExtents.GetPinnableReference(), strides, dimensions, data, dataCount);
+        return @this->Update(minimumExtents, in maximimumExtents.GetPinnableReference(), strides, dimensions, data, dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, Span<uint> maximimumExtents, uint* strides, uint dimensions, Span<byte> data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(minimumExtents, ref maximimumExtents.GetPinnableReference(), strides, dimensions, ref data.GetPinnableReference(), dataCount);
+        return @this->Update(minimumExtents, in maximimumExtents.GetPinnableReference(), strides, dimensions, in data.GetPinnableReference(), dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, Span<uint> maximimumExtents, uint* strides, uint dimensions, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(minimumExtents, ref maximimumExtents.GetPinnableReference(), strides, dimensions, data, dataCount);
+        return @this->Update(minimumExtents, in maximimumExtents.GetPinnableReference(), strides, dimensions, data, dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, Span<uint> maximimumExtents, Span<uint> strides, uint dimensions, byte* data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> maximimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dimensions, [Flow(FlowDirection.In)] byte* data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(minimumExtents, ref maximimumExtents.GetPinnableReference(), ref strides.GetPinnableReference(), dimensions, data, dataCount);
+        return @this->Update(minimumExtents, in maximimumExtents.GetPinnableReference(), in strides.GetPinnableReference(), dimensions, data, dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, Span<uint> maximimumExtents, Span<uint> strides, uint dimensions, Span<byte> data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> maximimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dimensions, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(minimumExtents, ref maximimumExtents.GetPinnableReference(), ref strides.GetPinnableReference(), dimensions, ref data.GetPinnableReference(), dataCount);
+        return @this->Update(minimumExtents, in maximimumExtents.GetPinnableReference(), in strides.GetPinnableReference(), dimensions, in data.GetPinnableReference(), dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, uint* minimumExtents, Span<uint> maximimumExtents, Span<uint> strides, uint dimensions, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] uint* minimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> maximimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dimensions, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(minimumExtents, ref maximimumExtents.GetPinnableReference(), ref strides.GetPinnableReference(), dimensions, data, dataCount);
+        return @this->Update(minimumExtents, in maximimumExtents.GetPinnableReference(), in strides.GetPinnableReference(), dimensions, data, dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, Span<uint> minimumExtents, uint* maximimumExtents, uint* strides, uint dimensions, byte* data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<uint> minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In)] byte* data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(ref minimumExtents.GetPinnableReference(), maximimumExtents, strides, dimensions, data, dataCount);
+        return @this->Update(in minimumExtents.GetPinnableReference(), maximimumExtents, strides, dimensions, data, dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, Span<uint> minimumExtents, uint* maximimumExtents, uint* strides, uint dimensions, Span<byte> data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<uint> minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(ref minimumExtents.GetPinnableReference(), maximimumExtents, strides, dimensions, ref data.GetPinnableReference(), dataCount);
+        return @this->Update(in minimumExtents.GetPinnableReference(), maximimumExtents, strides, dimensions, in data.GetPinnableReference(), dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, Span<uint> minimumExtents, uint* maximimumExtents, uint* strides, uint dimensions, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<uint> minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(ref minimumExtents.GetPinnableReference(), maximimumExtents, strides, dimensions, data, dataCount);
+        return @this->Update(in minimumExtents.GetPinnableReference(), maximimumExtents, strides, dimensions, data, dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, Span<uint> minimumExtents, uint* maximimumExtents, Span<uint> strides, uint dimensions, byte* data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<uint> minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dimensions, [Flow(FlowDirection.In)] byte* data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(ref minimumExtents.GetPinnableReference(), maximimumExtents, ref strides.GetPinnableReference(), dimensions, data, dataCount);
+        return @this->Update(in minimumExtents.GetPinnableReference(), maximimumExtents, in strides.GetPinnableReference(), dimensions, data, dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, Span<uint> minimumExtents, uint* maximimumExtents, Span<uint> strides, uint dimensions, Span<byte> data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<uint> minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dimensions, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(ref minimumExtents.GetPinnableReference(), maximimumExtents, ref strides.GetPinnableReference(), dimensions, ref data.GetPinnableReference(), dataCount);
+        return @this->Update(in minimumExtents.GetPinnableReference(), maximimumExtents, in strides.GetPinnableReference(), dimensions, in data.GetPinnableReference(), dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, Span<uint> minimumExtents, uint* maximimumExtents, Span<uint> strides, uint dimensions, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<uint> minimumExtents, [Flow(FlowDirection.In)] uint* maximimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dimensions, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(ref minimumExtents.GetPinnableReference(), maximimumExtents, ref strides.GetPinnableReference(), dimensions, data, dataCount);
+        return @this->Update(in minimumExtents.GetPinnableReference(), maximimumExtents, in strides.GetPinnableReference(), dimensions, data, dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, Span<uint> minimumExtents, Span<uint> maximimumExtents, uint* strides, uint dimensions, byte* data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<uint> minimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In)] byte* data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(ref minimumExtents.GetPinnableReference(), ref maximimumExtents.GetPinnableReference(), strides, dimensions, data, dataCount);
+        return @this->Update(in minimumExtents.GetPinnableReference(), in maximimumExtents.GetPinnableReference(), strides, dimensions, data, dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, Span<uint> minimumExtents, Span<uint> maximimumExtents, uint* strides, uint dimensions, Span<byte> data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<uint> minimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(ref minimumExtents.GetPinnableReference(), ref maximimumExtents.GetPinnableReference(), strides, dimensions, ref data.GetPinnableReference(), dataCount);
+        return @this->Update(in minimumExtents.GetPinnableReference(), in maximimumExtents.GetPinnableReference(), strides, dimensions, in data.GetPinnableReference(), dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, Span<uint> minimumExtents, Span<uint> maximimumExtents, uint* strides, uint dimensions, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<uint> minimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> maximimumExtents, [Flow(FlowDirection.In)] uint* strides, uint dimensions, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(ref minimumExtents.GetPinnableReference(), ref maximimumExtents.GetPinnableReference(), strides, dimensions, data, dataCount);
+        return @this->Update(in minimumExtents.GetPinnableReference(), in maximimumExtents.GetPinnableReference(), strides, dimensions, data, dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, Span<uint> minimumExtents, Span<uint> maximimumExtents, Span<uint> strides, uint dimensions, byte* data, uint dataCount)
+    public static unsafe int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<uint> minimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> maximimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dimensions, [Flow(FlowDirection.In)] byte* data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(ref minimumExtents.GetPinnableReference(), ref maximimumExtents.GetPinnableReference(), ref strides.GetPinnableReference(), dimensions, data, dataCount);
+        return @this->Update(in minimumExtents.GetPinnableReference(), in maximimumExtents.GetPinnableReference(), in strides.GetPinnableReference(), dimensions, data, dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, Span<uint> minimumExtents, Span<uint> maximimumExtents, Span<uint> strides, uint dimensions, Span<byte> data, uint dataCount)
+    public static int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<uint> minimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> maximimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dimensions, [Flow(FlowDirection.In)] ReadOnlySpan<byte> data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(ref minimumExtents.GetPinnableReference(), ref maximimumExtents.GetPinnableReference(), ref strides.GetPinnableReference(), dimensions, ref data.GetPinnableReference(), dataCount);
+        return @this->Update(in minimumExtents.GetPinnableReference(), in maximimumExtents.GetPinnableReference(), in strides.GetPinnableReference(), dimensions, in data.GetPinnableReference(), dataCount);
     }
 
     /// <summary>To be documented.</summary>
-    public static int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, Span<uint> minimumExtents, Span<uint> maximimumExtents, Span<uint> strides, uint dimensions, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
+    public static int Update(this ComPtr<ID2D1ResourceTexture> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<uint> minimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> maximimumExtents, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides, uint dimensions, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string data, uint dataCount)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Update(ref minimumExtents.GetPinnableReference(), ref maximimumExtents.GetPinnableReference(), ref strides.GetPinnableReference(), dimensions, data, dataCount);
+        return @this->Update(in minimumExtents.GetPinnableReference(), in maximimumExtents.GetPinnableReference(), in strides.GetPinnableReference(), dimensions, data, dataCount);
     }
 
     /// <summary>To be documented.</summary>
