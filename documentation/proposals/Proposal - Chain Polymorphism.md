@@ -13,8 +13,8 @@ a strict superset of ``Chain`1`` etc., a polymorphic interface is desired for ha
 # Current Status
 
 - [x] Proposed
-- [ ] Discussed with API Review Board (ARB)
-- [ ] Approved
+- [x] Discussed with API Review Board (ARB)
+- [x] Approved
 - [ ] Implemented
 
 # Design Decisions
