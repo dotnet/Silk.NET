@@ -2,7 +2,7 @@
 This folder contains NuGet distributions of the binaries for the various libraries we bind to. Previously, this had its
 own repository, but was coalesced into this repository to be reunited with the rest of Silk.NET.
 
-In 3.0 we intend to move the packages to use the Silk.NET.\* prefix instead of old Ultz.\* prefix. The folder and
+In 3.0 we intend to move the packages to use the Silk.NET.\* prefix instead of old Ultz.\* prefix (Silk.NET.DXVK.Native is *not* effected). The folder and
 project file names reflect this change today, but still use the old package IDs within them. The mapping of the old
 package IDs to the new project is as follows:
 
@@ -16,3 +16,4 @@ compatibility with the rest of your solution:
 - Silk.NET.Assimp.Native: BSD-3-Clause
 - Silk.NET.SDL.Native and Silk.NET.GLFW.Native: Zlib
 - Silk.NET.OpenAL.Soft.Native: LGPL-2.0-or-later
+- Silk.NET.DXVK.Native: Zlib
