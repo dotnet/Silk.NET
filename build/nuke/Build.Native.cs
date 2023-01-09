@@ -528,7 +528,7 @@ partial class Build
 
             Git("fetch --all", RootDirectory);
             Git("pull");
-            Git($"add src/Native{suffix}", RootDirectory);
+            Git($"add -f src/Native{suffix}", RootDirectory);
             var newBranch = $"ci/{curBranch}/{name.ToLower().Replace(' ', '_')}_bins";
             var curCommit = GitCurrentCommit(RootDirectory);
             var commitCmd = InheritedShell
