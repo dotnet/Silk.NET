@@ -484,9 +484,25 @@ partial class Build
                        //Copy the linux binaries
                        CopyAll(@out.GlobFiles("dxvk-native-master/usr/lib/*"), runtimes / "linux-x64" / "native");
                        CopyAll(@out.GlobFiles("dxvk-native-master/usr/lib32/*"), runtimes / "linux-x86" / "native");
-                                             
-                       PrUpdatedNativeBinary("DXVK", OSPlatform.Linux);
-                       PrUpdatedNativeBinary("DXVK", OSPlatform.Windows);
+
+                       var winx64 = runtimes / "win-x64" / "native";
+                       var winx86 = runtimes / "win-x86" / "native";
+                       
+                       var linuxx64 = runtimes / "linux-x64" / "native";
+                       var linuxx86 = runtimes / "linux-x86" / "native";
+
+                       var glob = string.Empty;
+                       var files = winx64.GlobFiles("*.dll")
+                                         .Concat(winx86.GlobFiles("*.dll"))
+                                         .Concat(linuxx64.GlobFiles("*.so"))
+                                         .Concat(linuxx86.GlobFiles("*.so"));
+
+                       glob = files.Aggregate(glob, (current, path) => current + $"\"{path}\" ");
+
+                       PrUpdatedNativeBinary
+                       (
+                           "DXVK", glob
+                       );
                    }
                )
     );
@@ -561,7 +577,7 @@ partial class Build
             )
     );
 
-    void PrUpdatedNativeBinary(string name, OSPlatform? platform = null)
+    void PrUpdatedNativeBinary(string name, [CanBeNull] string glob = null)
     {
         var pushableToken = EnvironmentInfo.GetVariable<string>("PUSHABLE_GITHUB_TOKEN");
         var curBranch = GitCurrentBranch(RootDirectory);
@@ -574,19 +590,19 @@ partial class Build
             !curBranch.StartsWith("develop/", StringComparison.OrdinalIgnoreCase))
         {
             // it's assumed that the pushable token was used to checkout the repo
-            var suffix = string.Empty;
+            var suffix = glob;
 
-            if ((platform == OSPlatform.Windows) || (!platform.HasValue && OperatingSystem.IsWindows()))
+            if (OperatingSystem.IsWindows())
             {
-                suffix = "/**/*.dll";
+                suffix ??= "/**/*.dll";
             }
-            else if ((platform == OSPlatform.OSX) || (!platform.HasValue && OperatingSystem.IsMacOS()))
+            else if (OperatingSystem.IsMacOS())
             {
-                suffix = "/**/*.dylib";
+                suffix ??= "/**/*.dylib";
             }
-            else if ((platform == OSPlatform.Linux) || (!platform.HasValue && OperatingSystem.IsLinux()))
+            else if (OperatingSystem.IsLinux())
             {
-                suffix = "/**/*.so*";
+                suffix ??= "/**/*.so*";
             }
 
             Git("fetch --all", RootDirectory);
