@@ -393,7 +393,7 @@ partial class Build
                    {
                        if (!OperatingSystem.IsLinux())
                        {
-                           throw new Exception("This task only runs under Linux!");
+                           throw new Exception("This task can only run under Linux!");
                        }
                        
                        var @out = DxvkPath / "output";
