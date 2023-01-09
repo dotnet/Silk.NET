@@ -4,6 +4,7 @@ on:
     paths:
       - build/submodules/dxvk
       - build/nuke/Build.Native.cs
+      - .github/workflows/dxvk.yml
     branches-ignore:
         - "ci/*"
         - "develop/*"
@@ -48,6 +49,9 @@ jobs:
         with:
           dotnet-version: 6.0.201
       - name: Build DXVK
-        run: ${{ matrix.env.nuke_invoke }} Dxvk
+        uses: Joshua-Ashton/arch-mingw-github-action@v8
+        with:
+          command: |
+            ${{ matrix.env.nuke_invoke }} Dxvk
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
