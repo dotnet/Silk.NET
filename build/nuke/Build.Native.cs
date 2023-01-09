@@ -590,24 +590,22 @@ partial class Build
             !curBranch.StartsWith("develop/", StringComparison.OrdinalIgnoreCase))
         {
             // it's assumed that the pushable token was used to checkout the repo
-            var suffix = glob;
-
             if (OperatingSystem.IsWindows())
             {
-                suffix ??= "/**/*.dll";
+                glob ??= "src/Native/**/*.dll";
             }
             else if (OperatingSystem.IsMacOS())
             {
-                suffix ??= "/**/*.dylib";
+                glob ??= "src/Native/**/*.dylib";
             }
             else if (OperatingSystem.IsLinux())
             {
-                suffix ??= "/**/*.so*";
+                glob ??= "src/Native/**/*.so*";
             }
 
             Git("fetch --all", RootDirectory);
             Git("pull");
-            Git($"add -f src/Native{suffix}", RootDirectory);
+            Git($"add -f {glob}", RootDirectory);
             var newBranch = $"ci/{curBranch}/{name.ToLower().Replace(' ', '_')}_bins";
             var curCommit = GitCurrentCommit(RootDirectory);
             var commitCmd = InheritedShell
