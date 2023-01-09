@@ -407,7 +407,7 @@ partial class Build
                           .AssertZeroExitCode();
                        InheritedShell
                            (
-                               $"./package-release.sh master output --no-package",
+                               $"./package-native.sh master output --no-package",
                                DxvkPath
                            )
                           .AssertZeroExitCode();

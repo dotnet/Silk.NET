@@ -4,6 +4,7 @@ on:
     paths:
       - build/submodules/dxvk
       - build/nuke/Build.Native.cs
+      - .github/workflows/dxvk.yml
     branches-ignore:
         - "ci/*"
         - "develop/*"
