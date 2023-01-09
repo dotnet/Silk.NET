@@ -48,6 +48,9 @@ jobs:
         with:
           dotnet-version: 6.0.201
       - name: Build DXVK
-        run: ${{ matrix.env.nuke_invoke }} Dxvk
+        uses: Joshua-Ashton/arch-mingw-github-action@v8
+        with:
+          command: |
+            ${{ matrix.env.nuke_invoke }} Dxvk
         env:
           PUSHABLE_GITHUB_TOKEN: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
