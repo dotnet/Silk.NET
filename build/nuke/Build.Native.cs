@@ -432,7 +432,8 @@ partial class Build
                        CopyAll(@out.GlobFiles("dxvk-native-master/usr/lib/*"), runtimes / "linux-x64" / "native");
                        CopyAll(@out.GlobFiles("dxvk-native-master/usr/lib32/*"), runtimes / "linux-x86" / "native");
                                              
-                       PrUpdatedNativeBinary("DXVK");
+                       PrUpdatedNativeBinary("DXVK", OSPlatform.Linux);
+                       PrUpdatedNativeBinary("DXVK", OSPlatform.Windows);
                    }
                )
     );
@@ -507,7 +508,7 @@ partial class Build
             )
     );
 
-    void PrUpdatedNativeBinary(string name)
+    void PrUpdatedNativeBinary(string name, OSPlatform? platform = null)
     {
         var pushableToken = EnvironmentInfo.GetVariable<string>("PUSHABLE_GITHUB_TOKEN");
         var curBranch = GitCurrentBranch(RootDirectory);
@@ -521,19 +522,20 @@ partial class Build
         {
             // it's assumed that the pushable token was used to checkout the repo
             var suffix = string.Empty;
-            if (OperatingSystem.IsWindows())
+
+            if ((platform == OSPlatform.Windows) || (!platform.HasValue && OperatingSystem.IsWindows()))
             {
                 suffix = "/**/*.dll";
             }
-            else if (OperatingSystem.IsMacOS())
+            else if ((platform == OSPlatform.OSX) || (!platform.HasValue && OperatingSystem.IsMacOS()))
             {
                 suffix = "/**/*.dylib";
             }
-            else if (OperatingSystem.IsLinux())
+            else if ((platform == OSPlatform.Linux) || (!platform.HasValue && OperatingSystem.IsLinux()))
             {
                 suffix = "/**/*.so*";
             }
-            
+
             Git("fetch --all", RootDirectory);
             Git("pull");
             Git($"add src/Native{suffix}", RootDirectory);
