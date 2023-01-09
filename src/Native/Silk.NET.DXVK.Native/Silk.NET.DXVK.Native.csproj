@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <SilkNativePackage>true</SilkNativePackage>
+  </PropertyGroup>
+
+  <Import Project="..\..\..\build\props\common.props" />
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net4.6.1</TargetFrameworks>
+    <PackageId>Silk.NET.DXVK.Native</PackageId>
+    <PackageVersion>2.17.0</PackageVersion>
+    <Authors>.NET Foundation and Contributors</Authors>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>Zlib</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/dotnet/Silk.NET</PackageProjectUrl>
+    <Description>Multi-platform native library for DXVK.</Description>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/doitsujin/dxvk</RepositoryUrl>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IncludeContentInPack>true</IncludeContentInPack>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="build\net461\$(PackageId).props" PackagePath="build\net461\$(PackageId).props" />
+    <Content Include="runtimes\linux-x64\native\libdxvk_d3d9.so" PackagePath="runtimes\linux-x64\native\libdxvk_d3d9.so" />
+    <Content Include="runtimes\linux-x64\native\libdxvk_d3d10core.so" PackagePath="runtimes\linux-x64\native\libdxvk_d3d10core.so" />
+    <Content Include="runtimes\linux-x64\native\libdxvk_d3d11.so" PackagePath="runtimes\linux-x64\native\libdxvk_d3d11.so" />
+    <Content Include="runtimes\linux-x64\native\libdxvk_dxgi.so" PackagePath="runtimes\linux-x64\native\libdxvk_dxgi.so" />
+    
+    <Content Include="runtimes\linux-x86\native\libdxvk_d3d9.so" PackagePath="runtimes\linux-x86\native\libdxvk_d3d9.so" />
+    <Content Include="runtimes\linux-x86\native\libdxvk_d3d10core.so" PackagePath="runtimes\linux-x86\native\libdxvk_d3d10core.so" />
+    <Content Include="runtimes\linux-x86\native\libdxvk_d3d11.so" PackagePath="runtimes\linux-x86\native\libdxvk_d3d11.so" />
+    <Content Include="runtimes\linux-x86\native\libdxvk_dxgi.so" PackagePath="runtimes\linux-x86\native\libdxvk_dxgi.so" />
+    
+    <Content Include="runtimes\win-x64\native\d3d11.dll" PackagePath="runtimes\win-x64\native\d3d11.dll" />
+    <Content Include="runtimes\win-x64\native\dxgi.dll" PackagePath="runtimes\win-x64\native\dxgi.dll" />
+    <Content Include="runtimes\win-x64\native\d3d9.dll" PackagePath="runtimes\win-x64\native\d3d9.dll" />
+    <Content Include="runtimes\win-x64\native\d3d10core.dll" PackagePath="runtimes\win-x64\native\d3d10core.dll" />
+    
+    <Content Include="runtimes\win-x86\native\d3d11.dll" PackagePath="runtimes\win-x86\native\d3d11.dll" />
+    <Content Include="runtimes\win-x86\native\dxgi.dll" PackagePath="runtimes\win-x86\native\dxgi.dll" />
+    <Content Include="runtimes\win-x86\native\d3d9.dll" PackagePath="runtimes\win-x86\native\d3d9.dll" />
+    <Content Include="runtimes\win-x86\native\d3d10core.dll" PackagePath="runtimes\win-x86\native\d3d10core.dll" />
+  </ItemGroup>
+
+</Project>

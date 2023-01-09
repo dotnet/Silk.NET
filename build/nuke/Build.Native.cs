@@ -380,6 +380,52 @@ partial class Build
                 }
             )
     );
+    
+    AbsolutePath DxvkPath => RootDirectory / "build" / "submodules" / "dxvk";
+
+    Target Dxvk => CommonTarget
+    (
+        x => x.Before(Compile)
+              .After(Clean)
+              .Executes
+               (
+                   () =>
+                   {
+                       if (!OperatingSystem.IsLinux())
+                       {
+                           throw new Exception("This task only runs under Linux!");
+                       }
+                       
+                       var @out = DxvkPath / "output";
+                       EnsureCleanDirectory(@out);
+                       
+                       InheritedShell
+                           (
+                               $"./package-release.sh master output --no-package",
+                               DxvkPath
+                           )
+                          .AssertZeroExitCode();
+                       InheritedShell
+                           (
+                               $"./package-release.sh master output --no-package",
+                               DxvkPath
+                           )
+                          .AssertZeroExitCode();
+                       
+                       var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.DXVK.Native" / "runtimes";
+                       
+                       //Copy the windows binaries
+                       CopyAll(@out.GlobFiles("dxvk-master/x64/*"), runtimes / "win-x64" / "native");
+                       CopyAll(@out.GlobFiles("dxvk-master/x32/*"), runtimes / "win-x86" / "native");
+
+                       //Copy the linux binaries
+                       CopyAll(@out.GlobFiles("dxvk-native-master/usr/lib/*"), runtimes / "linux-x64" / "native");
+                       CopyAll(@out.GlobFiles("dxvk-native-master/usr/lib32/*"), runtimes / "linux-x86" / "native");
+                                             
+                       PrUpdatedNativeBinary("DXVK");
+                   }
+               )
+    );
 
     AbsolutePath AssimpPath => RootDirectory / "build" / "submodules" / "Assimp";
 
