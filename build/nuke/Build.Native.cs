@@ -459,8 +459,10 @@ partial class Build
                            throw new Exception("This task can only run under Linux!");
                        }
                        
-                       var @out = DxvkPath / "output";
+                       var @out    = DxvkPath / "output";
+                       var glfwOut = DxvkPath / "glfw-output";
                        EnsureCleanDirectory(@out);
+                       EnsureCleanDirectory(glfwOut);
                        
                        InheritedShell
                            (
@@ -474,6 +476,17 @@ partial class Build
                                DxvkPath
                            )
                           .AssertZeroExitCode();
+
+                       var mesonOptionsPath = Path.Combine(DxvkPath, "meson_options.txt");
+                       
+                       //Replace `sdl2` with `glfw` in the meson options file, to build with GLFW WSI instead of SDL2 WSI
+                       File.WriteAllText(mesonOptionsPath, File.ReadAllText(mesonOptionsPath).Replace("sdl2", "glfw"));
+                       InheritedShell
+                           (
+                               $"./package-native.sh master glfw-output --no-package",
+                               DxvkPath
+                           )
+                          .AssertZeroExitCode();
                        
                        var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.DXVK.Native" / "runtimes";
                        
@@ -481,9 +494,29 @@ partial class Build
                        CopyAll(@out.GlobFiles("dxvk-master/x64/*"), runtimes / "win-x64" / "native");
                        CopyAll(@out.GlobFiles("dxvk-master/x32/*"), runtimes / "win-x86" / "native");
 
-                       //Copy the linux binaries
-                       CopyAll(@out.GlobFiles("dxvk-native-master/usr/lib/*"), runtimes / "linux-x64" / "native");
+                       var linux64SdlLibs = @out.GlobFiles("dxvk-native-master/usr/lib/*");
+                       
+                       foreach (var lib in linux64SdlLibs)
+                       {
+                           var fileName = Path.GetFileName(lib);
+                           RenameFile(lib.Parent / fileName, lib.Parent / "sdl2-" + fileName);
+                       }
+                       
+                       var linux64GlfwLibs = glfwOut.GlobFiles("dxvk-native-master/usr/lib/*");
+                       
+                       foreach (var lib in linux64GlfwLibs)
+                       {
+                           var fileName = Path.GetFileName(lib);
+                           RenameFile(lib.Parent / fileName, lib.Parent / "glfw-" + fileName);
+                       }
+
+                       //Copy the linux SDL binaries
+                       CopyAll(@out.GlobFiles("dxvk-native-master/usr/lib/*"), runtimes   / "linux-x64" / "native");
                        CopyAll(@out.GlobFiles("dxvk-native-master/usr/lib32/*"), runtimes / "linux-x86" / "native");
+
+                       //Copy the linux GLFW binaries
+                       CopyAll(glfwOut.GlobFiles("dxvk-native-master/usr/lib/*"), runtimes   / "linux-x64" / "native");
+                       CopyAll(glfwOut.GlobFiles("dxvk-native-master/usr/lib32/*"), runtimes / "linux-x86" / "native");
 
                        var winx64 = runtimes / "win-x64" / "native";
                        var winx86 = runtimes / "win-x86" / "native";
