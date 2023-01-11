@@ -49,7 +49,7 @@ jobs:
         with:
           dotnet-version: 6.0.201
       - name: Build DXVK
-        uses: beyley/arch-mingw-github-action@v9
+        uses: beyley/arch-mingw-github-action@v10
         with:
           command: |
             ${{ matrix.env.nuke_invoke }} Dxvk
