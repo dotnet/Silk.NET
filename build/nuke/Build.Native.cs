@@ -471,7 +471,7 @@ partial class Build
                            )
                           .AssertZeroExitCode();
                        
-                       var win32GlfwLibs = glfwOut.GlobFiles("dxvk-master/x32/*");
+                       var win32GlfwLibs = @out.GlobFiles("dxvk-master/x32/*");
                        
                        foreach (var lib in win32GlfwLibs)
                        {
@@ -479,7 +479,7 @@ partial class Build
                            RenameFile(lib.Parent / fileName, lib.Parent / "dxvk-" + fileName);
                        }
                        
-                       var win64GlfwLibs = glfwOut.GlobFiles("dxvk-master/x64/*");
+                       var win64GlfwLibs = @out.GlobFiles("dxvk-master/x64/*");
                        
                        foreach (var lib in win64GlfwLibs)
                        {
