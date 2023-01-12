@@ -509,6 +509,22 @@ partial class Build
                            var fileName = Path.GetFileName(lib);
                            RenameFile(lib.Parent / fileName, lib.Parent / "glfw-" + fileName);
                        }
+                       
+                       var linux32SdlLibs = @out.GlobFiles("dxvk-native-master/usr/lib32/*");
+                       
+                       foreach (var lib in linux32SdlLibs)
+                       {
+                           var fileName = Path.GetFileName(lib);
+                           RenameFile(lib.Parent / fileName, lib.Parent / "sdl2-" + fileName);
+                       }
+                       
+                       var linux32GlfwLibs = glfwOut.GlobFiles("dxvk-native-master/usr/lib32/*");
+                       
+                       foreach (var lib in linux32GlfwLibs)
+                       {
+                           var fileName = Path.GetFileName(lib);
+                           RenameFile(lib.Parent / fileName, lib.Parent / "glfw-" + fileName);
+                       }
 
                        //Copy the linux SDL binaries
                        CopyAll(@out.GlobFiles("dxvk-native-master/usr/lib/*"), runtimes   / "linux-x64" / "native");
