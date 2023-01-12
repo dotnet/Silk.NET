@@ -470,6 +470,23 @@ partial class Build
                                DxvkPath
                            )
                           .AssertZeroExitCode();
+                       
+                       var win32GlfwLibs = glfwOut.GlobFiles("dxvk-master/x32/*");
+                       
+                       foreach (var lib in win32GlfwLibs)
+                       {
+                           var fileName = Path.GetFileName(lib);
+                           RenameFile(lib.Parent / fileName, lib.Parent / "dxvk-" + fileName);
+                       }
+                       
+                       var win64GlfwLibs = glfwOut.GlobFiles("dxvk-master/x64/*");
+                       
+                       foreach (var lib in win64GlfwLibs)
+                       {
+                           var fileName = Path.GetFileName(lib);
+                           RenameFile(lib.Parent / fileName, lib.Parent / "dxvk-" + fileName);
+                       }
+
                        InheritedShell
                            (
                                $"./package-native.sh master output --no-package",
