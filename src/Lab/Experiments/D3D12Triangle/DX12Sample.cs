@@ -33,7 +33,6 @@ namespace D3D12Triangle
         private Box2D<int> _scissorRect;
         private uint _rtvDescriptorSize;
         private Silk.NET.Direct3D12.D3D12 _d3d12;
-        private Silk.NET.DXGI.DXGI _dxgi;
 
         private ID3D12Fence* _fence;
         private ulong[] _fenceValues;
@@ -56,12 +55,9 @@ namespace D3D12Triangle
             _fenceValues = new ulong[2];
             _graphicsCommandLists = new ID3D12GraphicsCommandList*[2];
             _d3d12 = Silk.NET.Direct3D12.D3D12.GetApi();
-            _dxgi = DXGI.GetApi();
         }
 
         public Silk.NET.Direct3D12.D3D12 D3D12 => _d3d12;
-
-        public Silk.NET.DXGI.DXGI Dxgi => _dxgi;
 
         public ID3D12CommandAllocator* CommandAllocator => _commandAllocators[FrameIndex];
 
