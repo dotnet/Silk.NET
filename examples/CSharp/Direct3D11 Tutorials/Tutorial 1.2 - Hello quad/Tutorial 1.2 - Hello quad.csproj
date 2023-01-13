@@ -15,6 +15,7 @@
       <ProjectReference Include="..\..\..\..\src\Microsoft\Silk.NET.Direct3D.Compilers\Silk.NET.Direct3D.Compilers.csproj" />
       <ProjectReference Include="..\..\..\..\src\Microsoft\Silk.NET.Direct3D11\Silk.NET.Direct3D11.csproj" />
       <ProjectReference Include="..\..\..\..\src\Microsoft\Silk.NET.DXGI\Silk.NET.DXGI.csproj" />
+      <ProjectReference Include="..\..\..\..\src\Native\Silk.NET.DXVK.Native\Silk.NET.DXVK.Native.csproj" />
       <ProjectReference Include="..\..\..\..\src\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
     </ItemGroup>
 
