@@ -13,11 +13,16 @@ namespace Silk.NET.OpenGLES
     public enum TextureEnvParameter : int
     {
         [System.Obsolete]
+        [NativeName("Name", "GL_ALPHA_SCALE")]
+        AlphaScale = 0xD1C,
+        [System.Obsolete]
         [NativeName("Name", "GL_TEXTURE_ENV_MODE")]
         TextureEnvMode = 0x2200,
         [System.Obsolete]
         [NativeName("Name", "GL_TEXTURE_ENV_COLOR")]
         TextureEnvColor = 0x2201,
+        [NativeName("Name", "GL_TEXTURE_LOD_BIAS")]
+        TextureLodBias = 0x8501,
         [System.Obsolete]
         [NativeName("Name", "GL_COMBINE")]
         Combine = 0x8570,
@@ -194,5 +199,8 @@ namespace Silk.NET.OpenGLES
         Operand2AlphaExt = 0x859A,
         [NativeName("Name", "GL_OPERAND3_ALPHA_NV")]
         Operand3AlphaNV = 0x859B,
+        [System.Obsolete]
+        [NativeName("Name", "GL_COORD_REPLACE")]
+        CoordReplace = 0x8862,
     }
 }

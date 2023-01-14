@@ -8,7 +8,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "glcore",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "gl",
                 "constructor": "gl",
@@ -91,7 +91,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "gl",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "gl",
                 "constructor": "gl",
@@ -174,7 +174,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "gles2",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "gl",
                 "constructor": "gl",
@@ -257,7 +257,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "cl",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "cl",
                 "constructor": "cl",
@@ -273,7 +273,7 @@
                 "CL_DRIVER_UUID_KHR": "CL_DEVICE_DRIVER_UUID_KHR",
                 
                 "CL_PRINTF_CALLBACK_ARM": "CL_CONTEXT_PRINTF_CALLBACK_ARM",
-                "CL_PRINTF_BUFFERSIZE_ARM": "CL_CONTEXT_PRINTF_BUFFERSIZE_ARM",
+                "CL_PRINTF_BUFFERSIZE_ARM": "CL_CONTEXT_PRINTF_BUFFERSIZE_ARM"
             },
             "bakery": {
                 "profileNames": [
@@ -317,7 +317,7 @@
                 },
                 {
                     "cl_icd_dispatch": "void",
-                    "cl_svm_mem_flags": "cl_mem_flags",
+                    "cl_svm_mem_flags": "cl_mem_flags"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json",
@@ -333,7 +333,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "vulkan",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "vk",
                 "constructor": "vk",
@@ -394,6 +394,8 @@
                     "PFN_vkDebugReportCallbackEXT": "PfnDebugReportCallbackEXT",
                     "PFN_vkDebugUtilsMessengerCallbackEXT": "PfnDebugUtilsMessengerCallbackEXT",
                     "PFN_vkDeviceMemoryReportCallbackEXT": "PfnDeviceMemoryReportCallbackEXT",
+                    "PFN_vkGetInstanceProcAddr": "PfnVoidFunction",
+                    "PFN_vkGetInstanceProcAddrLUNARG": "PfnVoidFunction",
                     "char": "byte",
                     "Window": "nint",
                     "VkAabbPositionsKHR": "Silk.NET.Maths.Box3D<float>",
@@ -613,7 +615,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "openxr",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "vk",
                 "constructor": "vk",
@@ -669,6 +671,7 @@
                     "VkDevice": "Silk.NET.Core.Native.VkHandle",
                     "_comment_0": "Dunno, should we give vkGetInstanceProcAddr its own pfn & delegate?",
                     "PFN_vkGetInstanceProcAddr": "PfnVoidFunction",
+                    "PFN_vkGetInstanceProcAddrLUNARG": "PfnVoidFunction",
                     "VkInstanceCreateInfo*": "void*",
                     "VkAllocationCallbacks*": "void*",
                     "VkDeviceCreateInfo*": "void*",
@@ -861,7 +864,7 @@
 					
                 ],
                 "classes": {
-                    "d3dcommon.h": "[Core]D3DCommon",
+                    "d3dcommon.h": "[Core]D3DCommon"
                 }
             },
             "exclude": [
@@ -1291,7 +1294,8 @@
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11_4.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11shader.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11shadertracing.h",
-                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11sdklayers.h"
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11sdklayers.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11on12.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -1325,7 +1329,8 @@
                     "d3d11_4.h": "[Core]D3D11",
                     "d3d11shader.h": "[Core]D3D11",
                     "d3d11shadertracing.h": "[Core]D3D11",
-                    "d3d11sdklayers.h": "[Core]D3D11"
+                    "d3d11sdklayers.h": "[Core]D3D11",
+                    "d3d11on12.h": "[D3D11On12:D3D11]D3D11On12"
                 },
                 "comRefs": [
                     "Silk.NET.DXGI.IDXGIAdapter",
@@ -1350,7 +1355,8 @@
                     "d3d11_4",
                     "d3d11shader",
                     "d3d11shadertracing",
-                    "d3d11sdklayers"
+                    "d3d11sdklayers",
+                    "d3d11on12"
                 ]
             },
             "output": {
@@ -1373,7 +1379,10 @@
             "typeMaps": [
                 {
                     "D3D11_AUTHENTICATED_PROTECTION_FLAGS::__MIDL___MIDL_itf_d3d11_0000_0034_0001": "MIDLMIDLItfD3d11000000340001",
-                    "ID3D10Blob": "Silk.NET.Core.Native.ID3D10Blob"
+                    "ID3D10Blob": "Silk.NET.Core.Native.ID3D10Blob",
+                    "D3D12_RESOURCE_STATES": "Silk.NET.Direct3D12.ResourceStates",
+                    "ID3D12Fence": "Silk.NET.Direct3D12.ID3D12Fence",
+                    "ID3D12CommandQueue": "Silk.NET.Direct3D12.ID3D12CommandQueue"
                 },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
@@ -2118,6 +2127,57 @@
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "WGL",
+            "sources": [
+                "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/wgl.xml"
+            ],
+            "mode": "ConvertConstruct",
+            "cacheDir": "build/cache",
+            "cacheKey": "wgl",
+            "controlDescriptors": ["allow-redefinitions"],
+            "converter": {
+                "reader": "gl",
+                "constructor": "gl",
+                "className": "WGL"
+            },
+            "prefix": "wgl",
+            "clang": {},
+            "bakery": {
+                "profileNames": [
+                    "wgl"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/OpenGL",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.WGL",
+            "extensionsNamespace": "Silk.NET.WGL.Extensions",
+            "typeMaps": [
+                {
+                    "$include.glTypeMap": "build/gl_typemap.json",
+                    "LPGLYPHMETRICSFLOAT": "GlyphMetricsFloat*",
+                    "PIXELFORMATDESCRIPTOR": "PixelFormatDescriptor",
+                    "LAYERPLANEDESCRIPTOR": "LayerPlaneDescriptor",
+                    "HENHMETAFILE": "nint",
+                    "unsignedlong": "uint",
+                    "HPVIDEODEV": "nint",
+                    "HVIDEOOUTPUTDEVICENV": "nint",
+                    "HVIDEOINPUTDEVICENV": "nint",
+                    "INT": "int",
+                    "HGPUNV": "nint",
+                    "PGPU_DEVICE": "GpuDevice*",
+                    "unsignedint": "uint"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         }

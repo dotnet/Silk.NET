@@ -48,8 +48,8 @@ namespace Silk.NET.Core.Win32Extras
             }
         }
 
-        [NativeName("Type", "ULONG [4]")]
-        [NativeName("Type.Name", "ULONG [4]")]
+        [NativeName("Type", "ULONG[4]")]
+        [NativeName("Type.Name", "ULONG[4]")]
         [NativeName("Name", "Reserved1")]
         public fixed uint Reserved1[4];
 
@@ -57,8 +57,8 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type.Name", "LARGE_INTEGER")]
         [NativeName("Name", "TimeStamp")]
         public long TimeStamp;
-        [NativeName("Type", "ULONG [4]")]
-        [NativeName("Type.Name", "ULONG [4]")]
+        [NativeName("Type", "ULONG[4]")]
+        [NativeName("Type.Name", "ULONG[4]")]
         [NativeName("Name", "Reserved2")]
         public fixed uint Reserved2[4];
 
@@ -76,8 +76,8 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type.Name", "ULONG")]
         [NativeName("Name", "FilledBytes")]
         public uint FilledBytes;
-        [NativeName("Type", "ULONG [5]")]
-        [NativeName("Type.Name", "ULONG [5]")]
+        [NativeName("Type", "ULONG[5]")]
+        [NativeName("Type.Name", "ULONG[5]")]
         [NativeName("Name", "Reserved4")]
         public fixed uint Reserved4[5];
     }

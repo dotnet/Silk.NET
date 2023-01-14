@@ -112,12 +112,12 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type.Name", "DWORD")]
         [NativeName("Name", "dwReserved1")]
         public uint DwReserved1;
-        [NativeName("Type", "CHAR [260]")]
-        [NativeName("Type.Name", "CHAR [260]")]
+        [NativeName("Type", "CHAR[260]")]
+        [NativeName("Type.Name", "CHAR[260]")]
         [NativeName("Name", "cFileName")]
         public fixed byte CFileName[260];
-        [NativeName("Type", "CHAR [14]")]
-        [NativeName("Type.Name", "CHAR [14]")]
+        [NativeName("Type", "CHAR[14]")]
+        [NativeName("Type.Name", "CHAR[14]")]
         [NativeName("Name", "cAlternateFileName")]
         public fixed byte CAlternateFileName[14];
     }

@@ -102,8 +102,8 @@ namespace Silk.NET.DXVA
         [NativeName("Name", "rcDst")]
         public Silk.NET.Maths.Box2D<int> RcDst;
         
-        [NativeName("Type", "DXVA_AYUVsample2 [16]")]
-        [NativeName("Type.Name", "DXVA_AYUVsample2 [16]")]
+        [NativeName("Type", "DXVA_AYUVsample2[16]")]
+        [NativeName("Type.Name", "DXVA_AYUVsample2[16]")]
         [NativeName("Name", "Palette")]
         public PaletteBuffer Palette;
 

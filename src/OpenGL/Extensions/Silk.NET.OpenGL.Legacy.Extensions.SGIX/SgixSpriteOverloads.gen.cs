@@ -34,7 +34,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
             thisApi.SpriteParameter(pname, in @params.GetPinnableReference());
         }
 
+        public static unsafe void SpriteParameter(this SgixSprite thisApi, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<SpriteModeSGIX> @params)
+        {
+            // SpanOverloader
+            thisApi.SpriteParameter(pname, in @params.GetPinnableReference());
+        }
+
         public static unsafe void SpriteParameter(this SgixSprite thisApi, [Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        {
+            // SpanOverloader
+            thisApi.SpriteParameter(pname, in @params.GetPinnableReference());
+        }
+
+        public static unsafe void SpriteParameter(this SgixSprite thisApi, [Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<SpriteModeSGIX> @params)
         {
             // SpanOverloader
             thisApi.SpriteParameter(pname, in @params.GetPinnableReference());

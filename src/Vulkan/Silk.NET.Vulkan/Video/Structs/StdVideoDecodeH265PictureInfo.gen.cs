@@ -112,16 +112,16 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint16_t")]
         [NativeName("Name", "reserved")]
         public ushort Reserved;
-        [NativeName("Type", "uint8_t [8]")]
-        [NativeName("Type.Name", "uint8_t [8]")]
+        [NativeName("Type", "uint8_t[8]")]
+        [NativeName("Type.Name", "uint8_t[8]")]
         [NativeName("Name", "RefPicSetStCurrBefore")]
         public fixed byte RefPicSetStCurrBefore[8];
-        [NativeName("Type", "uint8_t [8]")]
-        [NativeName("Type.Name", "uint8_t [8]")]
+        [NativeName("Type", "uint8_t[8]")]
+        [NativeName("Type.Name", "uint8_t[8]")]
         [NativeName("Name", "RefPicSetStCurrAfter")]
         public fixed byte RefPicSetStCurrAfter[8];
-        [NativeName("Type", "uint8_t [8]")]
-        [NativeName("Type.Name", "uint8_t [8]")]
+        [NativeName("Type", "uint8_t[8]")]
+        [NativeName("Type.Name", "uint8_t[8]")]
         [NativeName("Name", "RefPicSetLtCurr")]
         public fixed byte RefPicSetLtCurr[8];
     }

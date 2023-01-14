@@ -3245,9 +3245,11 @@ public unsafe static class D3D12CommandQueueVtblExtensions
     public static CommandQueueDesc GetDesc(this ComPtr<ID3D12CommandQueue> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        CommandQueueDesc ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12CommandQueue*, CommandQueueDesc>)@this->LpVtbl[18])(@this);
-        return ret;
+        CommandQueueDesc silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        CommandQueueDesc* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12CommandQueue*, CommandQueueDesc*, CommandQueueDesc*>)@this->LpVtbl[18])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>

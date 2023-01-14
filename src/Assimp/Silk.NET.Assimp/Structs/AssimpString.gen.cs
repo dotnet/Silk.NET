@@ -35,8 +35,8 @@ namespace Silk.NET.Assimp
         [NativeName("Type.Name", "ai_uint32")]
         [NativeName("Name", "length")]
         public uint Length;
-        [NativeName("Type", "char [1024]")]
-        [NativeName("Type.Name", "char [1024]")]
+        [NativeName("Type", "char[1024]")]
+        [NativeName("Type.Name", "char[1024]")]
         [NativeName("Name", "data")]
         public fixed byte Data[1024];
     }

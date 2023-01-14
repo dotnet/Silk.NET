@@ -35,8 +35,8 @@ namespace Silk.NET.SDL
         [NativeName("Type.Name", "Uint8")]
         [NativeName("Name", "type")]
         public byte Type;
-        [NativeName("Type", "Sint32 [3]")]
-        [NativeName("Type.Name", "Sint32 [3]")]
+        [NativeName("Type", "Sint32[3]")]
+        [NativeName("Type.Name", "Sint32[3]")]
         [NativeName("Name", "dir")]
         public fixed int Dir[3];
     }

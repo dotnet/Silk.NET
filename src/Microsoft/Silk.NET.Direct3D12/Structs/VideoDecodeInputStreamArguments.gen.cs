@@ -54,8 +54,8 @@ namespace Silk.NET.Direct3D12
         [NativeName("Name", "NumFrameArguments")]
         public uint NumFrameArguments;
         
-        [NativeName("Type", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT [10]")]
+        [NativeName("Type", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT[10]")]
+        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_FRAME_ARGUMENT[10]")]
         [NativeName("Name", "FrameArguments")]
         public FrameArgumentsBuffer FrameArguments;
 
