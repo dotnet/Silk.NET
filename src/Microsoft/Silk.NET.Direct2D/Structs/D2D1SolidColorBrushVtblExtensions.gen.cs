@@ -172,9 +172,11 @@ public unsafe static class D2D1SolidColorBrushVtblExtensions
     public static Silk.NET.DXGI.D3Dcolorvalue GetColor(this ComPtr<ID2D1SolidColorBrush> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        Silk.NET.DXGI.D3Dcolorvalue ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1SolidColorBrush*, Silk.NET.DXGI.D3Dcolorvalue>)@this->LpVtbl[9])(@this);
-        return ret;
+        Silk.NET.DXGI.D3Dcolorvalue silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        Silk.NET.DXGI.D3Dcolorvalue* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1SolidColorBrush*, Silk.NET.DXGI.D3Dcolorvalue*, Silk.NET.DXGI.D3Dcolorvalue*>)@this->LpVtbl[9])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>

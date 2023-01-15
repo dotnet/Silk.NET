@@ -80,8 +80,8 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type.Name", "ULONG64")]
         [NativeName("Name", "Reserved")]
         public ulong Reserved;
-        [NativeName("Type", "WCHAR [1]")]
-        [NativeName("Type.Name", "WCHAR [1]")]
+        [NativeName("Type", "WCHAR[1]")]
+        [NativeName("Type.Name", "WCHAR[1]")]
         [NativeName("Name", "Description")]
         public fixed char Description[1];
     }

@@ -3474,9 +3474,11 @@ public unsafe static class D2D1DCRenderTargetVtblExtensions
     public static PixelFormat GetPixelFormat(this ComPtr<ID2D1DCRenderTarget> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        PixelFormat ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1DCRenderTarget*, PixelFormat>)@this->LpVtbl[50])(@this);
-        return ret;
+        PixelFormat silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        PixelFormat* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1DCRenderTarget*, PixelFormat*, PixelFormat*>)@this->LpVtbl[50])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>
@@ -3530,18 +3532,22 @@ public unsafe static class D2D1DCRenderTargetVtblExtensions
     public static Silk.NET.Maths.Vector2D<float> GetSize(this ComPtr<ID2D1DCRenderTarget> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        Silk.NET.Maths.Vector2D<float> ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1DCRenderTarget*, Silk.NET.Maths.Vector2D<float>>)@this->LpVtbl[53])(@this);
-        return ret;
+        Silk.NET.Maths.Vector2D<float> silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        Silk.NET.Maths.Vector2D<float>* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1DCRenderTarget*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*>)@this->LpVtbl[53])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>
     public static Silk.NET.Maths.Vector2D<uint> GetPixelSize(this ComPtr<ID2D1DCRenderTarget> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        Silk.NET.Maths.Vector2D<uint> ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1DCRenderTarget*, Silk.NET.Maths.Vector2D<uint>>)@this->LpVtbl[54])(@this);
-        return ret;
+        Silk.NET.Maths.Vector2D<uint> silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        Silk.NET.Maths.Vector2D<uint>* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1DCRenderTarget*, Silk.NET.Maths.Vector2D<uint>*, Silk.NET.Maths.Vector2D<uint>*>)@this->LpVtbl[54])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>

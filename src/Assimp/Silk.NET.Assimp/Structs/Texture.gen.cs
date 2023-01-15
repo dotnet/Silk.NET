@@ -58,8 +58,8 @@ namespace Silk.NET.Assimp
         [NativeName("Type.Name", "unsigned int")]
         [NativeName("Name", "mHeight")]
         public uint MHeight;
-        [NativeName("Type", "char [9]")]
-        [NativeName("Type.Name", "char [9]")]
+        [NativeName("Type", "char[9]")]
+        [NativeName("Type.Name", "char[9]")]
         [NativeName("Name", "achFormatHint")]
         public fixed byte AchFormatHint[9];
 

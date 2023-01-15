@@ -437,9 +437,11 @@ public unsafe static class D3D12Resource1VtblExtensions
     public static ResourceDesc GetDesc(this ComPtr<ID3D12Resource1> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        ResourceDesc ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource1*, ResourceDesc>)@this->LpVtbl[10])(@this);
-        return ret;
+        ResourceDesc silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        ResourceDesc* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource1*, ResourceDesc*, ResourceDesc*>)@this->LpVtbl[10])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>

@@ -5581,9 +5581,11 @@ public unsafe static class D3D12Device5VtblExtensions
     public static Luid GetAdapterLuid(this ComPtr<ID3D12Device5> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        Luid ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device5*, Luid>)@this->LpVtbl[43])(@this);
-        return ret;
+        Luid silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        Luid* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Device5*, Luid*, Luid*>)@this->LpVtbl[43])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>

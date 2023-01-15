@@ -54,13 +54,19 @@ namespace Silk.NET.BuildTools
             Console.SetOut(ConsoleWriter.GetOrCreate(Console.Out));
             foreach (var arg in args)
             {
+                if (string.Equals(arg, "--no-parallel", StringComparison.OrdinalIgnoreCase))
+                {
+                    // picked up in Generator.cs
+                    continue;
+                }
+
                 if (arg.StartsWith("--"))
                 {
                     Console.WriteLine($"Control descriptor \"{arg}\" will be applied to every job herein.");
                     extraCtrls.Add(arg[2..]);
                     continue;
                 }
-                
+
                 var jobSw = Stopwatch.StartNew();
                 var abs = Path.GetFullPath(arg);
                 Environment.CurrentDirectory = Path.GetDirectoryName

@@ -19,16 +19,16 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "_D3DGAMMARAMP")]
     public unsafe partial struct Gammaramp
     {
-        [NativeName("Type", "WORD [256]")]
-        [NativeName("Type.Name", "WORD [256]")]
+        [NativeName("Type", "WORD[256]")]
+        [NativeName("Type.Name", "WORD[256]")]
         [NativeName("Name", "red")]
         public fixed ushort Red[256];
-        [NativeName("Type", "WORD [256]")]
-        [NativeName("Type.Name", "WORD [256]")]
+        [NativeName("Type", "WORD[256]")]
+        [NativeName("Type.Name", "WORD[256]")]
         [NativeName("Name", "green")]
         public fixed ushort Green[256];
-        [NativeName("Type", "WORD [256]")]
-        [NativeName("Type.Name", "WORD [256]")]
+        [NativeName("Type", "WORD[256]")]
+        [NativeName("Type.Name", "WORD[256]")]
         [NativeName("Name", "blue")]
         public fixed ushort Blue[256];
     }

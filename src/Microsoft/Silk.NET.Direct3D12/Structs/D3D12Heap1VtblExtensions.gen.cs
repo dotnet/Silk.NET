@@ -372,9 +372,11 @@ public unsafe static class D3D12Heap1VtblExtensions
     public static HeapDesc GetDesc(this ComPtr<ID3D12Heap1> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        HeapDesc ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12Heap1*, HeapDesc>)@this->LpVtbl[8])(@this);
-        return ret;
+        HeapDesc silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        HeapDesc* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Heap1*, HeapDesc*, HeapDesc*>)@this->LpVtbl[8])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>

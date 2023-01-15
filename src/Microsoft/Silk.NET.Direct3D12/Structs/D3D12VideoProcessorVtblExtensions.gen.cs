@@ -411,9 +411,11 @@ public unsafe static class D3D12VideoProcessorVtblExtensions
     public static VideoProcessOutputStreamDesc GetOutputStreamDesc(this ComPtr<ID3D12VideoProcessor> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        VideoProcessOutputStreamDesc ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessor*, VideoProcessOutputStreamDesc>)@this->LpVtbl[11])(@this);
-        return ret;
+        VideoProcessOutputStreamDesc silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        VideoProcessOutputStreamDesc* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessor*, VideoProcessOutputStreamDesc*, VideoProcessOutputStreamDesc*>)@this->LpVtbl[11])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>
