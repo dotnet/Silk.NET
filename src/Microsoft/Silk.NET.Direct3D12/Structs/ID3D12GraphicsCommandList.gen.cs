@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D12
 {
     [Guid("5b160d0f-ac1b-4185-8ba8-b3ae42a5a455")]
     [NativeName("Name", "ID3D12GraphicsCommandList")]
-    public unsafe partial struct ID3D12GraphicsCommandList
+    public unsafe partial struct ID3D12GraphicsCommandList : IComVtbl<ID3D12GraphicsCommandList>, IComVtbl<ID3D12CommandList>, IComVtbl<ID3D12DeviceChild>, IComVtbl<ID3D12Object>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("5b160d0f-ac1b-4185-8ba8-b3ae42a5a455");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID3D12CommandList(ID3D12GraphicsCommandList val)
             => Unsafe.As<ID3D12GraphicsCommandList, ID3D12CommandList>(ref val);
@@ -55,18 +58,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -77,18 +69,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -100,18 +81,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -125,18 +95,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -147,7 +106,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -156,7 +115,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -165,18 +124,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pData);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pData);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pData);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSize, pData);
             return ret;
         }
 
@@ -187,18 +135,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
             }
             return ret;
         }
@@ -210,18 +147,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pData);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pData);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pData);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSizePtr, pData);
             }
             return ret;
         }
@@ -235,18 +161,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void* pDataPtr = &pData)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
                 }
             }
             return ret;
@@ -259,18 +174,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pData);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pData);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pData);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pData);
             }
             return ret;
         }
@@ -284,18 +188,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void* pDataPtr = &pData)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
                 }
             }
             return ret;
@@ -310,18 +203,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pData);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pData);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pData);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSizePtr, pData);
                 }
             }
             return ret;
@@ -338,18 +220,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (void* pDataPtr = &pData)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
                     }
                 }
             }
@@ -357,73 +228,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pData);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pData);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pData);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pData);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pDataPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pDataPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pDataPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pDataPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pData);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pData);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pData);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pData);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -431,18 +269,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void* pDataPtr = &pData)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -453,18 +280,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pData);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pData);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pData);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[5])(@this, guid, pData);
             return ret;
         }
 
@@ -475,18 +291,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pDataPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pDataPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pDataPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[5])(@this, guid, pDataPtr);
             }
             return ret;
         }
@@ -498,18 +303,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pData);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pData);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pData);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[5])(@this, guidPtr, pData);
             }
             return ret;
         }
@@ -523,84 +317,40 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pDataPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pDataPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pDataPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[5])(@this, guidPtr, pDataPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetName(char* Name)
+        public readonly unsafe int SetName([Flow(FlowDirection.In)] char* Name)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, char*, int>)LpVtbl[6])(@this, Name);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, char*, int>)LpVtbl[6])(@this, Name);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, char*, int>)LpVtbl[6])(@this, Name);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, char*, int>)@this->LpVtbl[6])(@this, Name);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetName(ref char Name)
+        public readonly int SetName([Flow(FlowDirection.In)] in char Name)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* NamePtr = &Name)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, char*, int>)LpVtbl[6])(@this, NamePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, char*, int>)LpVtbl[6])(@this, NamePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, char*, int>)LpVtbl[6])(@this, NamePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, char*, int>)@this->LpVtbl[6])(@this, NamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+        public readonly int SetName([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, byte*, int>)LpVtbl[6])(@this, NamePtr);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, byte*, int>)LpVtbl[6])(@this, NamePtr);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, byte*, int>)LpVtbl[6])(@this, NamePtr);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, byte*, int>)@this->LpVtbl[6])(@this, NamePtr);
             SilkMarshal.Free((nint)NamePtr);
             return ret;
         }
@@ -610,18 +360,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevice);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevice);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevice);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riid, ppvDevice);
             return ret;
         }
 
@@ -632,18 +371,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void** ppvDevicePtr = &ppvDevice)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevicePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevicePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevicePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riid, ppvDevicePtr);
             }
             return ret;
         }
@@ -655,18 +383,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevice);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevice);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevice);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riidPtr, ppvDevice);
             }
             return ret;
         }
@@ -680,18 +397,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppvDevicePtr = &ppvDevice)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
                 }
             }
             return ret;
@@ -702,7 +408,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             CommandListType ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, CommandListType>)LpVtbl[8])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, CommandListType>)@this->LpVtbl[8])(@this);
             return ret;
         }
 
@@ -711,7 +417,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, int>)LpVtbl[9])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, int>)@this->LpVtbl[9])(@this);
             return ret;
         }
 
@@ -720,18 +426,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)LpVtbl[10])(@this, pAllocator, pInitialState);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)LpVtbl[10])(@this, pAllocator, pInitialState);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)LpVtbl[10])(@this, pAllocator, pInitialState);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)@this->LpVtbl[10])(@this, pAllocator, pInitialState);
             return ret;
         }
 
@@ -742,18 +437,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (ID3D12PipelineState* pInitialStatePtr = &pInitialState)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)LpVtbl[10])(@this, pAllocator, pInitialStatePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)LpVtbl[10])(@this, pAllocator, pInitialStatePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)LpVtbl[10])(@this, pAllocator, pInitialStatePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)@this->LpVtbl[10])(@this, pAllocator, pInitialStatePtr);
             }
             return ret;
         }
@@ -765,18 +449,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (ID3D12CommandAllocator* pAllocatorPtr = &pAllocator)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)LpVtbl[10])(@this, pAllocatorPtr, pInitialState);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)LpVtbl[10])(@this, pAllocatorPtr, pInitialState);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)LpVtbl[10])(@this, pAllocatorPtr, pInitialState);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)@this->LpVtbl[10])(@this, pAllocatorPtr, pInitialState);
             }
             return ret;
         }
@@ -790,18 +463,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12PipelineState* pInitialStatePtr = &pInitialState)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)LpVtbl[10])(@this, pAllocatorPtr, pInitialStatePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)LpVtbl[10])(@this, pAllocatorPtr, pInitialStatePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)LpVtbl[10])(@this, pAllocatorPtr, pInitialStatePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandAllocator*, ID3D12PipelineState*, int>)@this->LpVtbl[10])(@this, pAllocatorPtr, pInitialStatePtr);
                 }
             }
             return ret;
@@ -811,18 +473,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void ClearState(ID3D12PipelineState* pPipelineState)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12PipelineState*, void>)LpVtbl[11])(@this, pPipelineState);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12PipelineState*, void>)LpVtbl[11])(@this, pPipelineState);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12PipelineState*, void>)LpVtbl[11])(@this, pPipelineState);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12PipelineState*, void>)@this->LpVtbl[11])(@this, pPipelineState);
         }
 
         /// <summary>To be documented.</summary>
@@ -831,18 +482,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12PipelineState* pPipelineStatePtr = &pPipelineState)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12PipelineState*, void>)LpVtbl[11])(@this, pPipelineStatePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12PipelineState*, void>)LpVtbl[11])(@this, pPipelineStatePtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12PipelineState*, void>)LpVtbl[11])(@this, pPipelineStatePtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12PipelineState*, void>)@this->LpVtbl[11])(@this, pPipelineStatePtr);
             }
         }
 
@@ -850,72 +490,28 @@ namespace Silk.NET.Direct3D12
         public readonly void DrawInstanced(uint VertexCountPerInstance, uint InstanceCount, uint StartVertexLocation, uint StartInstanceLocation)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, uint, uint, uint, void>)LpVtbl[12])(@this, VertexCountPerInstance, InstanceCount, StartVertexLocation, StartInstanceLocation);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, uint, uint, void>)LpVtbl[12])(@this, VertexCountPerInstance, InstanceCount, StartVertexLocation, StartInstanceLocation);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, uint, uint, uint, void>)LpVtbl[12])(@this, VertexCountPerInstance, InstanceCount, StartVertexLocation, StartInstanceLocation);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, uint, uint, void>)@this->LpVtbl[12])(@this, VertexCountPerInstance, InstanceCount, StartVertexLocation, StartInstanceLocation);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void DrawIndexedInstanced(uint IndexCountPerInstance, uint InstanceCount, uint StartIndexLocation, int BaseVertexLocation, uint StartInstanceLocation)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, uint, uint, int, uint, void>)LpVtbl[13])(@this, IndexCountPerInstance, InstanceCount, StartIndexLocation, BaseVertexLocation, StartInstanceLocation);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, uint, int, uint, void>)LpVtbl[13])(@this, IndexCountPerInstance, InstanceCount, StartIndexLocation, BaseVertexLocation, StartInstanceLocation);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, uint, uint, int, uint, void>)LpVtbl[13])(@this, IndexCountPerInstance, InstanceCount, StartIndexLocation, BaseVertexLocation, StartInstanceLocation);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, uint, int, uint, void>)@this->LpVtbl[13])(@this, IndexCountPerInstance, InstanceCount, StartIndexLocation, BaseVertexLocation, StartInstanceLocation);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void Dispatch(uint ThreadGroupCountX, uint ThreadGroupCountY, uint ThreadGroupCountZ)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, uint, uint, void>)LpVtbl[14])(@this, ThreadGroupCountX, ThreadGroupCountY, ThreadGroupCountZ);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, uint, void>)LpVtbl[14])(@this, ThreadGroupCountX, ThreadGroupCountY, ThreadGroupCountZ);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, uint, uint, void>)LpVtbl[14])(@this, ThreadGroupCountX, ThreadGroupCountY, ThreadGroupCountZ);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, uint, void>)@this->LpVtbl[14])(@this, ThreadGroupCountX, ThreadGroupCountY, ThreadGroupCountZ);
         }
 
         /// <summary>To be documented.</summary>
         public readonly unsafe void CopyBufferRegion(ID3D12Resource* pDstBuffer, ulong DstOffset, ID3D12Resource* pSrcBuffer, ulong SrcOffset, ulong NumBytes)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)LpVtbl[15])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, NumBytes);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)LpVtbl[15])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, NumBytes);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)LpVtbl[15])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, NumBytes);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)@this->LpVtbl[15])(@this, pDstBuffer, DstOffset, pSrcBuffer, SrcOffset, NumBytes);
         }
 
         /// <summary>To be documented.</summary>
@@ -924,18 +520,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)LpVtbl[15])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, NumBytes);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)LpVtbl[15])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, NumBytes);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)LpVtbl[15])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, NumBytes);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)@this->LpVtbl[15])(@this, pDstBuffer, DstOffset, pSrcBufferPtr, SrcOffset, NumBytes);
             }
         }
 
@@ -945,18 +530,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstBufferPtr = &pDstBuffer)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)LpVtbl[15])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, NumBytes);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)LpVtbl[15])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, NumBytes);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)LpVtbl[15])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, NumBytes);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)@this->LpVtbl[15])(@this, pDstBufferPtr, DstOffset, pSrcBuffer, SrcOffset, NumBytes);
             }
         }
 
@@ -968,177 +542,89 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pSrcBufferPtr = &pSrcBuffer)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)LpVtbl[15])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, NumBytes);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)LpVtbl[15])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, NumBytes);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)LpVtbl[15])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, NumBytes);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, ID3D12Resource*, ulong, ulong, void>)@this->LpVtbl[15])(@this, pDstBufferPtr, DstOffset, pSrcBufferPtr, SrcOffset, NumBytes);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTextureRegion(TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, TextureCopyLocation* pSrc, Box* pSrcBox)
+        public readonly unsafe void CopyTextureRegion([Flow(FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(FlowDirection.In)] Box* pSrcBox)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrc, pSrcBox);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrc, pSrcBox);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrc, pSrcBox);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)@this->LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrc, pSrcBox);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTextureRegion(TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, TextureCopyLocation* pSrc, ref Box pSrcBox)
+        public readonly unsafe void CopyTextureRegion([Flow(FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(FlowDirection.In)] in Box pSrcBox)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Box* pSrcBoxPtr = &pSrcBox)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrc, pSrcBoxPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrc, pSrcBoxPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrc, pSrcBoxPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)@this->LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrc, pSrcBoxPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTextureRegion(TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, ref TextureCopyLocation pSrc, Box* pSrcBox)
+        public readonly unsafe void CopyTextureRegion([Flow(FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] in TextureCopyLocation pSrc, [Flow(FlowDirection.In)] Box* pSrcBox)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TextureCopyLocation* pSrcPtr = &pSrc)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrcPtr, pSrcBox);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrcPtr, pSrcBox);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrcPtr, pSrcBox);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)@this->LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrcPtr, pSrcBox);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTextureRegion(TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, ref TextureCopyLocation pSrc, ref Box pSrcBox)
+        public readonly unsafe void CopyTextureRegion([Flow(FlowDirection.In)] TextureCopyLocation* pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] in TextureCopyLocation pSrc, [Flow(FlowDirection.In)] in Box pSrcBox)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TextureCopyLocation* pSrcPtr = &pSrc)
             {
                 fixed (Box* pSrcBoxPtr = &pSrcBox)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrcPtr, pSrcBoxPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrcPtr, pSrcBoxPtr);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrcPtr, pSrcBoxPtr);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)@this->LpVtbl[16])(@this, pDst, DstX, DstY, DstZ, pSrcPtr, pSrcBoxPtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTextureRegion(ref TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, TextureCopyLocation* pSrc, Box* pSrcBox)
+        public readonly unsafe void CopyTextureRegion([Flow(FlowDirection.In)] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(FlowDirection.In)] Box* pSrcBox)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TextureCopyLocation* pDstPtr = &pDst)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrc, pSrcBox);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrc, pSrcBox);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrc, pSrcBox);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)@this->LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrc, pSrcBox);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTextureRegion(ref TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, TextureCopyLocation* pSrc, ref Box pSrcBox)
+        public readonly unsafe void CopyTextureRegion([Flow(FlowDirection.In)] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] TextureCopyLocation* pSrc, [Flow(FlowDirection.In)] in Box pSrcBox)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TextureCopyLocation* pDstPtr = &pDst)
             {
                 fixed (Box* pSrcBoxPtr = &pSrcBox)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrc, pSrcBoxPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrc, pSrcBoxPtr);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrc, pSrcBoxPtr);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)@this->LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrc, pSrcBoxPtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTextureRegion(ref TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, ref TextureCopyLocation pSrc, Box* pSrcBox)
+        public readonly unsafe void CopyTextureRegion([Flow(FlowDirection.In)] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] in TextureCopyLocation pSrc, [Flow(FlowDirection.In)] Box* pSrcBox)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TextureCopyLocation* pDstPtr = &pDst)
             {
                 fixed (TextureCopyLocation* pSrcPtr = &pSrc)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrcPtr, pSrcBox);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrcPtr, pSrcBox);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrcPtr, pSrcBox);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)@this->LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrcPtr, pSrcBox);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CopyTextureRegion(ref TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, ref TextureCopyLocation pSrc, ref Box pSrcBox)
+        public readonly void CopyTextureRegion([Flow(FlowDirection.In)] in TextureCopyLocation pDst, uint DstX, uint DstY, uint DstZ, [Flow(FlowDirection.In)] in TextureCopyLocation pSrc, [Flow(FlowDirection.In)] in Box pSrcBox)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TextureCopyLocation* pDstPtr = &pDst)
@@ -1147,18 +633,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (Box* pSrcBoxPtr = &pSrcBox)
                     {
-            #if NET5_0_OR_GREATER
-                        ((delegate* unmanaged<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrcPtr, pSrcBoxPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrcPtr, pSrcBoxPtr);
-                        }
-                        else
-                        {
-                            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrcPtr, pSrcBoxPtr);
-                        }
-            #endif
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, TextureCopyLocation*, uint, uint, uint, TextureCopyLocation*, Box*, void>)@this->LpVtbl[16])(@this, pDstPtr, DstX, DstY, DstZ, pSrcPtr, pSrcBoxPtr);
                     }
                 }
             }
@@ -1168,18 +643,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void CopyResource(ID3D12Resource* pDstResource, ID3D12Resource* pSrcResource)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, ID3D12Resource*, void>)LpVtbl[17])(@this, pDstResource, pSrcResource);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ID3D12Resource*, void>)LpVtbl[17])(@this, pDstResource, pSrcResource);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, ID3D12Resource*, void>)LpVtbl[17])(@this, pDstResource, pSrcResource);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ID3D12Resource*, void>)@this->LpVtbl[17])(@this, pDstResource, pSrcResource);
         }
 
         /// <summary>To be documented.</summary>
@@ -1188,18 +652,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pSrcResourcePtr = &pSrcResource)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, ID3D12Resource*, void>)LpVtbl[17])(@this, pDstResource, pSrcResourcePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ID3D12Resource*, void>)LpVtbl[17])(@this, pDstResource, pSrcResourcePtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, ID3D12Resource*, void>)LpVtbl[17])(@this, pDstResource, pSrcResourcePtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ID3D12Resource*, void>)@this->LpVtbl[17])(@this, pDstResource, pSrcResourcePtr);
             }
         }
 
@@ -1209,18 +662,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, ID3D12Resource*, void>)LpVtbl[17])(@this, pDstResourcePtr, pSrcResource);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ID3D12Resource*, void>)LpVtbl[17])(@this, pDstResourcePtr, pSrcResource);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, ID3D12Resource*, void>)LpVtbl[17])(@this, pDstResourcePtr, pSrcResource);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ID3D12Resource*, void>)@this->LpVtbl[17])(@this, pDstResourcePtr, pSrcResource);
             }
         }
 
@@ -1232,177 +674,89 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pSrcResourcePtr = &pSrcResource)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, ID3D12Resource*, void>)LpVtbl[17])(@this, pDstResourcePtr, pSrcResourcePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ID3D12Resource*, void>)LpVtbl[17])(@this, pDstResourcePtr, pSrcResourcePtr);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, ID3D12Resource*, void>)LpVtbl[17])(@this, pDstResourcePtr, pSrcResourcePtr);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ID3D12Resource*, void>)@this->LpVtbl[17])(@this, pDstResourcePtr, pSrcResourcePtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pBufferPtr = &pBuffer)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
             {
                 fixed (ID3D12Resource* pBufferPtr = &pBuffer)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinate, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
             {
                 fixed (ID3D12Resource* pBufferPtr = &pBuffer)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
             {
                 fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ID3D12Resource* pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
@@ -1411,94 +765,50 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (ID3D12Resource* pBufferPtr = &pBuffer)
                     {
-            #if NET5_0_OR_GREATER
-                        ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
-                        }
-                        else
-                        {
-                            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
-                        }
-            #endif
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResource, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
                     }
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (ID3D12Resource* pBufferPtr = &pBuffer)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, TiledResourceCoordinate* pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -1507,49 +817,27 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (ID3D12Resource* pBufferPtr = &pBuffer)
                     {
-            #if NET5_0_OR_GREATER
-                        ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
-                        }
-                        else
-                        {
-                            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
-                        }
-            #endif
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinate, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
                     }
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTileRegionStartCoordinatePtr = &pTileRegionStartCoordinate)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSize, pBuffer, BufferStartOffsetInBytes, Flags);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -1558,25 +846,14 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (ID3D12Resource* pBufferPtr = &pBuffer)
                     {
-            #if NET5_0_OR_GREATER
-                        ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
-                        }
-                        else
-                        {
-                            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
-                        }
-            #endif
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSize, pBufferPtr, BufferStartOffsetInBytes, Flags);
                     }
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly unsafe void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ID3D12Resource* pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -1585,25 +862,14 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
                     {
-            #if NET5_0_OR_GREATER
-                        ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
-                        }
-                        else
-                        {
-                            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
-                        }
-            #endif
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBuffer, BufferStartOffsetInBytes, Flags);
                     }
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void CopyTiles(ref ID3D12Resource pTiledResource, ref TiledResourceCoordinate pTileRegionStartCoordinate, ref TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
+        public readonly void CopyTiles(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pTiledResourcePtr = &pTiledResource)
@@ -1614,18 +880,7 @@ namespace Silk.NET.Direct3D12
                     {
                         fixed (ID3D12Resource* pBufferPtr = &pBuffer)
                         {
-            #if NET5_0_OR_GREATER
-                            ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
-                            }
-                            else
-                            {
-                                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
-                            }
-            #endif
+                            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, TiledResourceCoordinate*, TileRegionSize*, ID3D12Resource*, ulong, TileCopyFlags, void>)@this->LpVtbl[18])(@this, pTiledResourcePtr, pTileRegionStartCoordinatePtr, pTileRegionSizePtr, pBufferPtr, BufferStartOffsetInBytes, Flags);
                         }
                     }
                 }
@@ -1636,18 +891,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void ResolveSubresource(ID3D12Resource* pDstResource, uint DstSubresource, ID3D12Resource* pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)LpVtbl[19])(@this, pDstResource, DstSubresource, pSrcResource, SrcSubresource, Format);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)LpVtbl[19])(@this, pDstResource, DstSubresource, pSrcResource, SrcSubresource, Format);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)LpVtbl[19])(@this, pDstResource, DstSubresource, pSrcResource, SrcSubresource, Format);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)@this->LpVtbl[19])(@this, pDstResource, DstSubresource, pSrcResource, SrcSubresource, Format);
         }
 
         /// <summary>To be documented.</summary>
@@ -1656,18 +900,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pSrcResourcePtr = &pSrcResource)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)LpVtbl[19])(@this, pDstResource, DstSubresource, pSrcResourcePtr, SrcSubresource, Format);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)LpVtbl[19])(@this, pDstResource, DstSubresource, pSrcResourcePtr, SrcSubresource, Format);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)LpVtbl[19])(@this, pDstResource, DstSubresource, pSrcResourcePtr, SrcSubresource, Format);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)@this->LpVtbl[19])(@this, pDstResource, DstSubresource, pSrcResourcePtr, SrcSubresource, Format);
             }
         }
 
@@ -1677,18 +910,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDstResourcePtr = &pDstResource)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)LpVtbl[19])(@this, pDstResourcePtr, DstSubresource, pSrcResource, SrcSubresource, Format);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)LpVtbl[19])(@this, pDstResourcePtr, DstSubresource, pSrcResource, SrcSubresource, Format);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)LpVtbl[19])(@this, pDstResourcePtr, DstSubresource, pSrcResource, SrcSubresource, Format);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)@this->LpVtbl[19])(@this, pDstResourcePtr, DstSubresource, pSrcResource, SrcSubresource, Format);
             }
         }
 
@@ -1700,18 +922,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pSrcResourcePtr = &pSrcResource)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)LpVtbl[19])(@this, pDstResourcePtr, DstSubresource, pSrcResourcePtr, SrcSubresource, Format);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)LpVtbl[19])(@this, pDstResourcePtr, DstSubresource, pSrcResourcePtr, SrcSubresource, Format);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)LpVtbl[19])(@this, pDstResourcePtr, DstSubresource, pSrcResourcePtr, SrcSubresource, Format);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, uint, ID3D12Resource*, uint, Silk.NET.DXGI.Format, void>)@this->LpVtbl[19])(@this, pDstResourcePtr, DstSubresource, pSrcResourcePtr, SrcSubresource, Format);
                 }
             }
         }
@@ -1720,95 +931,40 @@ namespace Silk.NET.Direct3D12
         public readonly void IASetPrimitiveTopology(Silk.NET.Core.Native.D3DPrimitiveTopology PrimitiveTopology)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, Silk.NET.Core.Native.D3DPrimitiveTopology, void>)LpVtbl[20])(@this, PrimitiveTopology);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Silk.NET.Core.Native.D3DPrimitiveTopology, void>)LpVtbl[20])(@this, PrimitiveTopology);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, Silk.NET.Core.Native.D3DPrimitiveTopology, void>)LpVtbl[20])(@this, PrimitiveTopology);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, Silk.NET.Core.Native.D3DPrimitiveTopology, void>)@this->LpVtbl[20])(@this, PrimitiveTopology);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void RSSetViewports(uint NumViewports, Viewport* pViewports)
+        public readonly unsafe void RSSetViewports(uint NumViewports, [Flow(FlowDirection.In)] Viewport* pViewports)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, Viewport*, void>)LpVtbl[21])(@this, NumViewports, pViewports);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, Viewport*, void>)LpVtbl[21])(@this, NumViewports, pViewports);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, Viewport*, void>)LpVtbl[21])(@this, NumViewports, pViewports);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, Viewport*, void>)@this->LpVtbl[21])(@this, NumViewports, pViewports);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void RSSetViewports(uint NumViewports, ref Viewport pViewports)
+        public readonly void RSSetViewports(uint NumViewports, [Flow(FlowDirection.In)] in Viewport pViewports)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (Viewport* pViewportsPtr = &pViewports)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, Viewport*, void>)LpVtbl[21])(@this, NumViewports, pViewportsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, Viewport*, void>)LpVtbl[21])(@this, NumViewports, pViewportsPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, Viewport*, void>)LpVtbl[21])(@this, NumViewports, pViewportsPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, Viewport*, void>)@this->LpVtbl[21])(@this, NumViewports, pViewportsPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void RSSetScissorRects(uint NumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+        public readonly unsafe void RSSetScissorRects(uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[22])(@this, NumRects, pRects);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[22])(@this, NumRects, pRects);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[22])(@this, NumRects, pRects);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[22])(@this, NumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void RSSetScissorRects(uint NumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+        public readonly void RSSetScissorRects(uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[22])(@this, NumRects, pRectsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[22])(@this, NumRects, pRectsPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[22])(@this, NumRects, pRectsPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[22])(@this, NumRects, pRectsPtr);
             }
         }
 
@@ -1816,18 +972,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void OMSetBlendFactor([Count(Count = 4)] float* BlendFactor)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, float*, void>)LpVtbl[23])(@this, BlendFactor);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, float*, void>)LpVtbl[23])(@this, BlendFactor);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, float*, void>)LpVtbl[23])(@this, BlendFactor);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, float*, void>)@this->LpVtbl[23])(@this, BlendFactor);
         }
 
         /// <summary>To be documented.</summary>
@@ -1836,18 +981,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* BlendFactorPtr = &BlendFactor)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, float*, void>)LpVtbl[23])(@this, BlendFactorPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, float*, void>)LpVtbl[23])(@this, BlendFactorPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, float*, void>)LpVtbl[23])(@this, BlendFactorPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, float*, void>)@this->LpVtbl[23])(@this, BlendFactorPtr);
             }
         }
 
@@ -1855,36 +989,14 @@ namespace Silk.NET.Direct3D12
         public readonly void OMSetStencilRef(uint StencilRef)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, void>)LpVtbl[24])(@this, StencilRef);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, void>)LpVtbl[24])(@this, StencilRef);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, void>)LpVtbl[24])(@this, StencilRef);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, void>)@this->LpVtbl[24])(@this, StencilRef);
         }
 
         /// <summary>To be documented.</summary>
         public readonly unsafe void SetPipelineState(ID3D12PipelineState* pPipelineState)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12PipelineState*, void>)LpVtbl[25])(@this, pPipelineState);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12PipelineState*, void>)LpVtbl[25])(@this, pPipelineState);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12PipelineState*, void>)LpVtbl[25])(@this, pPipelineState);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12PipelineState*, void>)@this->LpVtbl[25])(@this, pPipelineState);
         }
 
         /// <summary>To be documented.</summary>
@@ -1893,57 +1005,24 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12PipelineState* pPipelineStatePtr = &pPipelineState)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12PipelineState*, void>)LpVtbl[25])(@this, pPipelineStatePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12PipelineState*, void>)LpVtbl[25])(@this, pPipelineStatePtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12PipelineState*, void>)LpVtbl[25])(@this, pPipelineStatePtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12PipelineState*, void>)@this->LpVtbl[25])(@this, pPipelineStatePtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ResourceBarrier(uint NumBarriers, ResourceBarrier* pBarriers)
+        public readonly unsafe void ResourceBarrier(uint NumBarriers, [Flow(FlowDirection.In)] ResourceBarrier* pBarriers)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, ResourceBarrier*, void>)LpVtbl[26])(@this, NumBarriers, pBarriers);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ResourceBarrier*, void>)LpVtbl[26])(@this, NumBarriers, pBarriers);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, ResourceBarrier*, void>)LpVtbl[26])(@this, NumBarriers, pBarriers);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ResourceBarrier*, void>)@this->LpVtbl[26])(@this, NumBarriers, pBarriers);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ResourceBarrier(uint NumBarriers, ref ResourceBarrier pBarriers)
+        public readonly void ResourceBarrier(uint NumBarriers, [Flow(FlowDirection.In)] in ResourceBarrier pBarriers)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ResourceBarrier* pBarriersPtr = &pBarriers)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, ResourceBarrier*, void>)LpVtbl[26])(@this, NumBarriers, pBarriersPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ResourceBarrier*, void>)LpVtbl[26])(@this, NumBarriers, pBarriersPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, ResourceBarrier*, void>)LpVtbl[26])(@this, NumBarriers, pBarriersPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ResourceBarrier*, void>)@this->LpVtbl[26])(@this, NumBarriers, pBarriersPtr);
             }
         }
 
@@ -1951,18 +1030,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void ExecuteBundle(ID3D12GraphicsCommandList* pCommandList)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12GraphicsCommandList*, void>)LpVtbl[27])(@this, pCommandList);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12GraphicsCommandList*, void>)LpVtbl[27])(@this, pCommandList);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12GraphicsCommandList*, void>)LpVtbl[27])(@this, pCommandList);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12GraphicsCommandList*, void>)@this->LpVtbl[27])(@this, pCommandList);
         }
 
         /// <summary>To be documented.</summary>
@@ -1971,57 +1039,24 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12GraphicsCommandList* pCommandListPtr = &pCommandList)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12GraphicsCommandList*, void>)LpVtbl[27])(@this, pCommandListPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12GraphicsCommandList*, void>)LpVtbl[27])(@this, pCommandListPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12GraphicsCommandList*, void>)LpVtbl[27])(@this, pCommandListPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12GraphicsCommandList*, void>)@this->LpVtbl[27])(@this, pCommandListPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetDescriptorHeaps(uint NumDescriptorHeaps, ID3D12DescriptorHeap** ppDescriptorHeaps)
+        public readonly unsafe void SetDescriptorHeaps(uint NumDescriptorHeaps, [Flow(FlowDirection.In)] ID3D12DescriptorHeap** ppDescriptorHeaps)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, ID3D12DescriptorHeap**, void>)LpVtbl[28])(@this, NumDescriptorHeaps, ppDescriptorHeaps);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ID3D12DescriptorHeap**, void>)LpVtbl[28])(@this, NumDescriptorHeaps, ppDescriptorHeaps);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, ID3D12DescriptorHeap**, void>)LpVtbl[28])(@this, NumDescriptorHeaps, ppDescriptorHeaps);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ID3D12DescriptorHeap**, void>)@this->LpVtbl[28])(@this, NumDescriptorHeaps, ppDescriptorHeaps);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetDescriptorHeaps(uint NumDescriptorHeaps, ref ID3D12DescriptorHeap* ppDescriptorHeaps)
+        public readonly unsafe void SetDescriptorHeaps(uint NumDescriptorHeaps, [Flow(FlowDirection.In)] in ID3D12DescriptorHeap* ppDescriptorHeaps)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12DescriptorHeap** ppDescriptorHeapsPtr = &ppDescriptorHeaps)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, ID3D12DescriptorHeap**, void>)LpVtbl[28])(@this, NumDescriptorHeaps, ppDescriptorHeapsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ID3D12DescriptorHeap**, void>)LpVtbl[28])(@this, NumDescriptorHeaps, ppDescriptorHeapsPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, ID3D12DescriptorHeap**, void>)LpVtbl[28])(@this, NumDescriptorHeaps, ppDescriptorHeapsPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ID3D12DescriptorHeap**, void>)@this->LpVtbl[28])(@this, NumDescriptorHeaps, ppDescriptorHeapsPtr);
             }
         }
 
@@ -2029,18 +1064,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void SetComputeRootSignature(ID3D12RootSignature* pRootSignature)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12RootSignature*, void>)LpVtbl[29])(@this, pRootSignature);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12RootSignature*, void>)LpVtbl[29])(@this, pRootSignature);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12RootSignature*, void>)LpVtbl[29])(@this, pRootSignature);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12RootSignature*, void>)@this->LpVtbl[29])(@this, pRootSignature);
         }
 
         /// <summary>To be documented.</summary>
@@ -2049,18 +1073,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12RootSignature* pRootSignaturePtr = &pRootSignature)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12RootSignature*, void>)LpVtbl[29])(@this, pRootSignaturePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12RootSignature*, void>)LpVtbl[29])(@this, pRootSignaturePtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12RootSignature*, void>)LpVtbl[29])(@this, pRootSignaturePtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12RootSignature*, void>)@this->LpVtbl[29])(@this, pRootSignaturePtr);
             }
         }
 
@@ -2068,18 +1081,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void SetGraphicsRootSignature(ID3D12RootSignature* pRootSignature)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12RootSignature*, void>)LpVtbl[30])(@this, pRootSignature);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12RootSignature*, void>)LpVtbl[30])(@this, pRootSignature);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12RootSignature*, void>)LpVtbl[30])(@this, pRootSignature);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12RootSignature*, void>)@this->LpVtbl[30])(@this, pRootSignature);
         }
 
         /// <summary>To be documented.</summary>
@@ -2088,18 +1090,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12RootSignature* pRootSignaturePtr = &pRootSignature)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12RootSignature*, void>)LpVtbl[30])(@this, pRootSignaturePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12RootSignature*, void>)LpVtbl[30])(@this, pRootSignaturePtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12RootSignature*, void>)LpVtbl[30])(@this, pRootSignaturePtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12RootSignature*, void>)@this->LpVtbl[30])(@this, pRootSignaturePtr);
             }
         }
 
@@ -2107,149 +1098,61 @@ namespace Silk.NET.Direct3D12
         public readonly void SetComputeRootDescriptorTable(uint RootParameterIndex, GpuDescriptorHandle BaseDescriptor)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, GpuDescriptorHandle, void>)LpVtbl[31])(@this, RootParameterIndex, BaseDescriptor);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, GpuDescriptorHandle, void>)LpVtbl[31])(@this, RootParameterIndex, BaseDescriptor);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, GpuDescriptorHandle, void>)LpVtbl[31])(@this, RootParameterIndex, BaseDescriptor);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, GpuDescriptorHandle, void>)@this->LpVtbl[31])(@this, RootParameterIndex, BaseDescriptor);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetGraphicsRootDescriptorTable(uint RootParameterIndex, GpuDescriptorHandle BaseDescriptor)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, GpuDescriptorHandle, void>)LpVtbl[32])(@this, RootParameterIndex, BaseDescriptor);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, GpuDescriptorHandle, void>)LpVtbl[32])(@this, RootParameterIndex, BaseDescriptor);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, GpuDescriptorHandle, void>)LpVtbl[32])(@this, RootParameterIndex, BaseDescriptor);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, GpuDescriptorHandle, void>)@this->LpVtbl[32])(@this, RootParameterIndex, BaseDescriptor);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetComputeRoot32BitConstant(uint RootParameterIndex, uint SrcData, uint DestOffsetIn32BitValues)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, uint, uint, void>)LpVtbl[33])(@this, RootParameterIndex, SrcData, DestOffsetIn32BitValues);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, uint, void>)LpVtbl[33])(@this, RootParameterIndex, SrcData, DestOffsetIn32BitValues);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, uint, uint, void>)LpVtbl[33])(@this, RootParameterIndex, SrcData, DestOffsetIn32BitValues);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, uint, void>)@this->LpVtbl[33])(@this, RootParameterIndex, SrcData, DestOffsetIn32BitValues);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetGraphicsRoot32BitConstant(uint RootParameterIndex, uint SrcData, uint DestOffsetIn32BitValues)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, uint, uint, void>)LpVtbl[34])(@this, RootParameterIndex, SrcData, DestOffsetIn32BitValues);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, uint, void>)LpVtbl[34])(@this, RootParameterIndex, SrcData, DestOffsetIn32BitValues);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, uint, uint, void>)LpVtbl[34])(@this, RootParameterIndex, SrcData, DestOffsetIn32BitValues);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, uint, void>)@this->LpVtbl[34])(@this, RootParameterIndex, SrcData, DestOffsetIn32BitValues);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetComputeRoot32BitConstants(uint RootParameterIndex, uint Num32BitValuesToSet, void* pSrcData, uint DestOffsetIn32BitValues)
+        public readonly unsafe void SetComputeRoot32BitConstants(uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] void* pSrcData, uint DestOffsetIn32BitValues)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, uint, void*, uint, void>)LpVtbl[35])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, void*, uint, void>)LpVtbl[35])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, uint, void*, uint, void>)LpVtbl[35])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, void*, uint, void>)@this->LpVtbl[35])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetComputeRoot32BitConstants<T0>(uint RootParameterIndex, uint Num32BitValuesToSet, ref T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
+        public readonly void SetComputeRoot32BitConstants<T0>(uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] in T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pSrcDataPtr = &pSrcData)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, uint, void*, uint, void>)LpVtbl[35])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, void*, uint, void>)LpVtbl[35])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, uint, void*, uint, void>)LpVtbl[35])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, void*, uint, void>)@this->LpVtbl[35])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetGraphicsRoot32BitConstants(uint RootParameterIndex, uint Num32BitValuesToSet, void* pSrcData, uint DestOffsetIn32BitValues)
+        public readonly unsafe void SetGraphicsRoot32BitConstants(uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] void* pSrcData, uint DestOffsetIn32BitValues)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, uint, void*, uint, void>)LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, void*, uint, void>)LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, uint, void*, uint, void>)LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, void*, uint, void>)@this->LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcData, DestOffsetIn32BitValues);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetGraphicsRoot32BitConstants<T0>(uint RootParameterIndex, uint Num32BitValuesToSet, ref T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
+        public readonly void SetGraphicsRoot32BitConstants<T0>(uint RootParameterIndex, uint Num32BitValuesToSet, [Flow(FlowDirection.In)] in T0 pSrcData, uint DestOffsetIn32BitValues) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pSrcDataPtr = &pSrcData)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, uint, void*, uint, void>)LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, void*, uint, void>)LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, uint, void*, uint, void>)LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, void*, uint, void>)@this->LpVtbl[36])(@this, RootParameterIndex, Num32BitValuesToSet, pSrcDataPtr, DestOffsetIn32BitValues);
             }
         }
 
@@ -2257,874 +1160,412 @@ namespace Silk.NET.Direct3D12
         public readonly void SetComputeRootConstantBufferView(uint RootParameterIndex, ulong BufferLocation)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, ulong, void>)LpVtbl[37])(@this, RootParameterIndex, BufferLocation);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ulong, void>)LpVtbl[37])(@this, RootParameterIndex, BufferLocation);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, ulong, void>)LpVtbl[37])(@this, RootParameterIndex, BufferLocation);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ulong, void>)@this->LpVtbl[37])(@this, RootParameterIndex, BufferLocation);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetGraphicsRootConstantBufferView(uint RootParameterIndex, ulong BufferLocation)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, ulong, void>)LpVtbl[38])(@this, RootParameterIndex, BufferLocation);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ulong, void>)LpVtbl[38])(@this, RootParameterIndex, BufferLocation);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, ulong, void>)LpVtbl[38])(@this, RootParameterIndex, BufferLocation);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ulong, void>)@this->LpVtbl[38])(@this, RootParameterIndex, BufferLocation);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetComputeRootShaderResourceView(uint RootParameterIndex, ulong BufferLocation)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, ulong, void>)LpVtbl[39])(@this, RootParameterIndex, BufferLocation);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ulong, void>)LpVtbl[39])(@this, RootParameterIndex, BufferLocation);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, ulong, void>)LpVtbl[39])(@this, RootParameterIndex, BufferLocation);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ulong, void>)@this->LpVtbl[39])(@this, RootParameterIndex, BufferLocation);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetGraphicsRootShaderResourceView(uint RootParameterIndex, ulong BufferLocation)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, ulong, void>)LpVtbl[40])(@this, RootParameterIndex, BufferLocation);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ulong, void>)LpVtbl[40])(@this, RootParameterIndex, BufferLocation);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, ulong, void>)LpVtbl[40])(@this, RootParameterIndex, BufferLocation);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ulong, void>)@this->LpVtbl[40])(@this, RootParameterIndex, BufferLocation);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetComputeRootUnorderedAccessView(uint RootParameterIndex, ulong BufferLocation)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, ulong, void>)LpVtbl[41])(@this, RootParameterIndex, BufferLocation);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ulong, void>)LpVtbl[41])(@this, RootParameterIndex, BufferLocation);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, ulong, void>)LpVtbl[41])(@this, RootParameterIndex, BufferLocation);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ulong, void>)@this->LpVtbl[41])(@this, RootParameterIndex, BufferLocation);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void SetGraphicsRootUnorderedAccessView(uint RootParameterIndex, ulong BufferLocation)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, ulong, void>)LpVtbl[42])(@this, RootParameterIndex, BufferLocation);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ulong, void>)LpVtbl[42])(@this, RootParameterIndex, BufferLocation);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, ulong, void>)LpVtbl[42])(@this, RootParameterIndex, BufferLocation);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, ulong, void>)@this->LpVtbl[42])(@this, RootParameterIndex, BufferLocation);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void IASetIndexBuffer(IndexBufferView* pView)
+        public readonly unsafe void IASetIndexBuffer([Flow(FlowDirection.In)] IndexBufferView* pView)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, IndexBufferView*, void>)LpVtbl[43])(@this, pView);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, IndexBufferView*, void>)LpVtbl[43])(@this, pView);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, IndexBufferView*, void>)LpVtbl[43])(@this, pView);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, IndexBufferView*, void>)@this->LpVtbl[43])(@this, pView);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void IASetIndexBuffer(ref IndexBufferView pView)
+        public readonly void IASetIndexBuffer([Flow(FlowDirection.In)] in IndexBufferView pView)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (IndexBufferView* pViewPtr = &pView)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, IndexBufferView*, void>)LpVtbl[43])(@this, pViewPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, IndexBufferView*, void>)LpVtbl[43])(@this, pViewPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, IndexBufferView*, void>)LpVtbl[43])(@this, pViewPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, IndexBufferView*, void>)@this->LpVtbl[43])(@this, pViewPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumViews, VertexBufferView* pViews)
+        public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] VertexBufferView* pViews)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, uint, VertexBufferView*, void>)LpVtbl[44])(@this, StartSlot, NumViews, pViews);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, VertexBufferView*, void>)LpVtbl[44])(@this, StartSlot, NumViews, pViews);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, uint, VertexBufferView*, void>)LpVtbl[44])(@this, StartSlot, NumViews, pViews);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, VertexBufferView*, void>)@this->LpVtbl[44])(@this, StartSlot, NumViews, pViews);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void IASetVertexBuffers(uint StartSlot, uint NumViews, ref VertexBufferView pViews)
+        public readonly void IASetVertexBuffers(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] in VertexBufferView pViews)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VertexBufferView* pViewsPtr = &pViews)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, uint, VertexBufferView*, void>)LpVtbl[44])(@this, StartSlot, NumViews, pViewsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, VertexBufferView*, void>)LpVtbl[44])(@this, StartSlot, NumViews, pViewsPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, uint, VertexBufferView*, void>)LpVtbl[44])(@this, StartSlot, NumViews, pViewsPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, VertexBufferView*, void>)@this->LpVtbl[44])(@this, StartSlot, NumViews, pViewsPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SOSetTargets(uint StartSlot, uint NumViews, StreamOutputBufferView* pViews)
+        public readonly unsafe void SOSetTargets(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] StreamOutputBufferView* pViews)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, uint, StreamOutputBufferView*, void>)LpVtbl[45])(@this, StartSlot, NumViews, pViews);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, StreamOutputBufferView*, void>)LpVtbl[45])(@this, StartSlot, NumViews, pViews);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, uint, StreamOutputBufferView*, void>)LpVtbl[45])(@this, StartSlot, NumViews, pViews);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, StreamOutputBufferView*, void>)@this->LpVtbl[45])(@this, StartSlot, NumViews, pViews);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SOSetTargets(uint StartSlot, uint NumViews, ref StreamOutputBufferView pViews)
+        public readonly void SOSetTargets(uint StartSlot, uint NumViews, [Flow(FlowDirection.In)] in StreamOutputBufferView pViews)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (StreamOutputBufferView* pViewsPtr = &pViews)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, uint, StreamOutputBufferView*, void>)LpVtbl[45])(@this, StartSlot, NumViews, pViewsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, StreamOutputBufferView*, void>)LpVtbl[45])(@this, StartSlot, NumViews, pViewsPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, uint, StreamOutputBufferView*, void>)LpVtbl[45])(@this, StartSlot, NumViews, pViewsPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, uint, StreamOutputBufferView*, void>)@this->LpVtbl[45])(@this, StartSlot, NumViews, pViewsPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargets(uint NumRenderTargetDescriptors, CpuDescriptorHandle* pRenderTargetDescriptors, int RTsSingleHandleToDescriptorRange, CpuDescriptorHandle* pDepthStencilDescriptor)
+        public readonly unsafe void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] CpuDescriptorHandle* pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDepthStencilDescriptor)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, Silk.NET.Core.Bool32, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargets(uint NumRenderTargetDescriptors, CpuDescriptorHandle* pRenderTargetDescriptors, int RTsSingleHandleToDescriptorRange, ref CpuDescriptorHandle pDepthStencilDescriptor)
+        public readonly unsafe void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] CpuDescriptorHandle* pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] in CpuDescriptorHandle pDepthStencilDescriptor)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (CpuDescriptorHandle* pDepthStencilDescriptorPtr = &pDepthStencilDescriptor)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, Silk.NET.Core.Bool32, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptors, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void OMSetRenderTargets(uint NumRenderTargetDescriptors, ref CpuDescriptorHandle pRenderTargetDescriptors, int RTsSingleHandleToDescriptorRange, CpuDescriptorHandle* pDepthStencilDescriptor)
+        public readonly unsafe void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] in CpuDescriptorHandle pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] CpuDescriptorHandle* pDepthStencilDescriptor)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (CpuDescriptorHandle* pRenderTargetDescriptorsPtr = &pRenderTargetDescriptors)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, Silk.NET.Core.Bool32, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptor);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void OMSetRenderTargets(uint NumRenderTargetDescriptors, ref CpuDescriptorHandle pRenderTargetDescriptors, int RTsSingleHandleToDescriptorRange, ref CpuDescriptorHandle pDepthStencilDescriptor)
+        public readonly void OMSetRenderTargets(uint NumRenderTargetDescriptors, [Flow(FlowDirection.In)] in CpuDescriptorHandle pRenderTargetDescriptors, Silk.NET.Core.Bool32 RTsSingleHandleToDescriptorRange, [Flow(FlowDirection.In)] in CpuDescriptorHandle pDepthStencilDescriptor)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (CpuDescriptorHandle* pRenderTargetDescriptorsPtr = &pRenderTargetDescriptors)
             {
                 fixed (CpuDescriptorHandle* pDepthStencilDescriptorPtr = &pDepthStencilDescriptor)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, int, CpuDescriptorHandle*, void>)LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, CpuDescriptorHandle*, Silk.NET.Core.Bool32, CpuDescriptorHandle*, void>)@this->LpVtbl[46])(@this, NumRenderTargetDescriptors, pRenderTargetDescriptorsPtr, RTsSingleHandleToDescriptorRange, pDepthStencilDescriptorPtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearDepthStencilView(CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+        public readonly unsafe void ClearDepthStencilView(CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, CpuDescriptorHandle, ClearFlags, float, byte, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[47])(@this, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRects);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, ClearFlags, float, byte, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[47])(@this, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRects);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, ClearFlags, float, byte, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[47])(@this, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRects);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, ClearFlags, float, byte, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[47])(@this, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ClearDepthStencilView(CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+        public readonly void ClearDepthStencilView(CpuDescriptorHandle DepthStencilView, ClearFlags ClearFlags, float Depth, byte Stencil, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, CpuDescriptorHandle, ClearFlags, float, byte, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[47])(@this, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRectsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, ClearFlags, float, byte, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[47])(@this, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRectsPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, ClearFlags, float, byte, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[47])(@this, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRectsPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, ClearFlags, float, byte, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[47])(@this, DepthStencilView, ClearFlags, Depth, Stencil, NumRects, pRectsPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+        public readonly unsafe void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBA, NumRects, pRects);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBA, NumRects, pRects);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBA, NumRects, pRects);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[48])(@this, RenderTargetView, ColorRGBA, NumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+        public readonly unsafe void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] float* ColorRGBA, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBA, NumRects, pRectsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBA, NumRects, pRectsPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBA, NumRects, pRectsPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[48])(@this, RenderTargetView, ColorRGBA, NumRects, pRectsPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] ref float ColorRGBA, uint NumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+        public readonly unsafe void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] ref float ColorRGBA, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* ColorRGBAPtr = &ColorRGBA)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBAPtr, NumRects, pRects);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBAPtr, NumRects, pRects);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBAPtr, NumRects, pRects);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[48])(@this, RenderTargetView, ColorRGBAPtr, NumRects, pRects);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] ref float ColorRGBA, uint NumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+        public readonly void ClearRenderTargetView(CpuDescriptorHandle RenderTargetView, [Count(Count = 4)] ref float ColorRGBA, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* ColorRGBAPtr = &ColorRGBA)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBAPtr, NumRects, pRectsPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBAPtr, NumRects, pRectsPtr);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[48])(@this, RenderTargetView, ColorRGBAPtr, NumRects, pRectsPtr);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, CpuDescriptorHandle, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[48])(@this, RenderTargetView, ColorRGBAPtr, NumRects, pRectsPtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRectsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRectsPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRectsPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRectsPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref uint Values, uint NumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* ValuesPtr = &Values)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRects);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRects);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRects);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRects);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref uint Values, uint NumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* ValuesPtr = &Values)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRectsPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRectsPtr);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRectsPtr);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRectsPtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] uint* Values, uint NumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRects);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRects);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRects);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRects);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] uint* Values, uint NumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRectsPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRectsPtr);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRectsPtr);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRectsPtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref uint Values, uint NumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+        public readonly unsafe void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
             {
                 fixed (uint* ValuesPtr = &Values)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRects);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRects);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRects);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRects);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref uint Values, uint NumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+        public readonly void ClearUnorderedAccessViewUint(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
             {
                 fixed (uint* ValuesPtr = &Values)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+                    fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
                     {
-            #if NET5_0_OR_GREATER
-                        ((delegate* unmanaged<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRectsPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRectsPtr);
-                        }
-                        else
-                        {
-                            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRectsPtr);
-                        }
-            #endif
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, uint*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[49])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRectsPtr);
                     }
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRectsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRectsPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRectsPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, Values, NumRects, pRectsPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref float Values, uint NumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* ValuesPtr = &Values)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRects);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRects);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRects);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRects);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref float Values, uint NumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ID3D12Resource* pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* ValuesPtr = &Values)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRectsPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRectsPtr);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRectsPtr);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResource, ValuesPtr, NumRects, pRectsPtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] float* Values, uint NumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRects);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRects);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRects);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRects);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] float* Values, uint NumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRectsPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRectsPtr);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRectsPtr);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, Values, NumRects, pRectsPtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref float Values, uint NumRects, Silk.NET.Maths.Rectangle<int>* pRects)
+        public readonly unsafe void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
             {
                 fixed (float* ValuesPtr = &Values)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRects);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRects);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRects);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRects);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref float Values, uint NumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
+        public readonly void ClearUnorderedAccessViewFloat(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ref ID3D12Resource pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
             {
                 fixed (float* ValuesPtr = &Values)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
+                    fixed (Silk.NET.Maths.Box2D<int>* pRectsPtr = &pRects)
                     {
-            #if NET5_0_OR_GREATER
-                        ((delegate* unmanaged<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRectsPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRectsPtr);
-                        }
-                        else
-                        {
-                            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRectsPtr);
-                        }
-            #endif
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, GpuDescriptorHandle, CpuDescriptorHandle, ID3D12Resource*, float*, uint, Silk.NET.Maths.Box2D<int>*, void>)@this->LpVtbl[50])(@this, ViewGPUHandleInCurrentHeap, ViewCPUHandle, pResourcePtr, ValuesPtr, NumRects, pRectsPtr);
                     }
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DiscardResource(ID3D12Resource* pResource, DiscardRegion* pRegion)
+        public readonly unsafe void DiscardResource(ID3D12Resource* pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[51])(@this, pResource, pRegion);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[51])(@this, pResource, pRegion);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[51])(@this, pResource, pRegion);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[51])(@this, pResource, pRegion);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DiscardResource(ID3D12Resource* pResource, ref DiscardRegion pRegion)
+        public readonly unsafe void DiscardResource(ID3D12Resource* pResource, [Flow(FlowDirection.In)] in DiscardRegion pRegion)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (DiscardRegion* pRegionPtr = &pRegion)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[51])(@this, pResource, pRegionPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[51])(@this, pResource, pRegionPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[51])(@this, pResource, pRegionPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[51])(@this, pResource, pRegionPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DiscardResource(ref ID3D12Resource pResource, DiscardRegion* pRegion)
+        public readonly unsafe void DiscardResource(ref ID3D12Resource pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[51])(@this, pResourcePtr, pRegion);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[51])(@this, pResourcePtr, pRegion);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[51])(@this, pResourcePtr, pRegion);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[51])(@this, pResourcePtr, pRegion);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DiscardResource(ref ID3D12Resource pResource, ref DiscardRegion pRegion)
+        public readonly void DiscardResource(ref ID3D12Resource pResource, [Flow(FlowDirection.In)] in DiscardRegion pRegion)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
             {
                 fixed (DiscardRegion* pRegionPtr = &pRegion)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[51])(@this, pResourcePtr, pRegionPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[51])(@this, pResourcePtr, pRegionPtr);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, DiscardRegion*, void>)LpVtbl[51])(@this, pResourcePtr, pRegionPtr);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, DiscardRegion*, void>)@this->LpVtbl[51])(@this, pResourcePtr, pRegionPtr);
                 }
             }
         }
@@ -3133,18 +1574,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void BeginQuery(ID3D12QueryHeap* pQueryHeap, QueryType Type, uint Index)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[52])(@this, pQueryHeap, Type, Index);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[52])(@this, pQueryHeap, Type, Index);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[52])(@this, pQueryHeap, Type, Index);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)@this->LpVtbl[52])(@this, pQueryHeap, Type, Index);
         }
 
         /// <summary>To be documented.</summary>
@@ -3153,18 +1583,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12QueryHeap* pQueryHeapPtr = &pQueryHeap)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[52])(@this, pQueryHeapPtr, Type, Index);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[52])(@this, pQueryHeapPtr, Type, Index);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[52])(@this, pQueryHeapPtr, Type, Index);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)@this->LpVtbl[52])(@this, pQueryHeapPtr, Type, Index);
             }
         }
 
@@ -3172,18 +1591,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void EndQuery(ID3D12QueryHeap* pQueryHeap, QueryType Type, uint Index)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[53])(@this, pQueryHeap, Type, Index);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[53])(@this, pQueryHeap, Type, Index);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[53])(@this, pQueryHeap, Type, Index);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)@this->LpVtbl[53])(@this, pQueryHeap, Type, Index);
         }
 
         /// <summary>To be documented.</summary>
@@ -3192,18 +1600,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12QueryHeap* pQueryHeapPtr = &pQueryHeap)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[53])(@this, pQueryHeapPtr, Type, Index);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[53])(@this, pQueryHeapPtr, Type, Index);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)LpVtbl[53])(@this, pQueryHeapPtr, Type, Index);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, void>)@this->LpVtbl[53])(@this, pQueryHeapPtr, Type, Index);
             }
         }
 
@@ -3211,18 +1608,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void ResolveQueryData(ID3D12QueryHeap* pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ID3D12Resource* pDestinationBuffer, ulong AlignedDestinationBufferOffset)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[54])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[54])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[54])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)@this->LpVtbl[54])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
         }
 
         /// <summary>To be documented.</summary>
@@ -3231,18 +1617,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pDestinationBufferPtr = &pDestinationBuffer)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[54])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBufferPtr, AlignedDestinationBufferOffset);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[54])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBufferPtr, AlignedDestinationBufferOffset);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[54])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBufferPtr, AlignedDestinationBufferOffset);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)@this->LpVtbl[54])(@this, pQueryHeap, Type, StartIndex, NumQueries, pDestinationBufferPtr, AlignedDestinationBufferOffset);
             }
         }
 
@@ -3252,18 +1627,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12QueryHeap* pQueryHeapPtr = &pQueryHeap)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[54])(@this, pQueryHeapPtr, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[54])(@this, pQueryHeapPtr, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[54])(@this, pQueryHeapPtr, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)@this->LpVtbl[54])(@this, pQueryHeapPtr, Type, StartIndex, NumQueries, pDestinationBuffer, AlignedDestinationBufferOffset);
             }
         }
 
@@ -3275,18 +1639,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pDestinationBufferPtr = &pDestinationBuffer)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[54])(@this, pQueryHeapPtr, Type, StartIndex, NumQueries, pDestinationBufferPtr, AlignedDestinationBufferOffset);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[54])(@this, pQueryHeapPtr, Type, StartIndex, NumQueries, pDestinationBufferPtr, AlignedDestinationBufferOffset);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)LpVtbl[54])(@this, pQueryHeapPtr, Type, StartIndex, NumQueries, pDestinationBufferPtr, AlignedDestinationBufferOffset);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12QueryHeap*, QueryType, uint, uint, ID3D12Resource*, ulong, void>)@this->LpVtbl[54])(@this, pQueryHeapPtr, Type, StartIndex, NumQueries, pDestinationBufferPtr, AlignedDestinationBufferOffset);
                 }
             }
         }
@@ -3295,18 +1648,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void SetPredication(ID3D12Resource* pBuffer, ulong AlignedBufferOffset, PredicationOp Operation)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, PredicationOp, void>)LpVtbl[55])(@this, pBuffer, AlignedBufferOffset, Operation);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, PredicationOp, void>)LpVtbl[55])(@this, pBuffer, AlignedBufferOffset, Operation);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, PredicationOp, void>)LpVtbl[55])(@this, pBuffer, AlignedBufferOffset, Operation);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, PredicationOp, void>)@this->LpVtbl[55])(@this, pBuffer, AlignedBufferOffset, Operation);
         }
 
         /// <summary>To be documented.</summary>
@@ -3315,96 +1657,41 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pBufferPtr = &pBuffer)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, PredicationOp, void>)LpVtbl[55])(@this, pBufferPtr, AlignedBufferOffset, Operation);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, PredicationOp, void>)LpVtbl[55])(@this, pBufferPtr, AlignedBufferOffset, Operation);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, PredicationOp, void>)LpVtbl[55])(@this, pBufferPtr, AlignedBufferOffset, Operation);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12Resource*, ulong, PredicationOp, void>)@this->LpVtbl[55])(@this, pBufferPtr, AlignedBufferOffset, Operation);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void SetMarker(uint Metadata, void* pData, uint Size)
+        public readonly unsafe void SetMarker(uint Metadata, [Flow(FlowDirection.In)] void* pData, uint Size)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, void*, uint, void>)LpVtbl[56])(@this, Metadata, pData, Size);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, void*, uint, void>)LpVtbl[56])(@this, Metadata, pData, Size);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, void*, uint, void>)LpVtbl[56])(@this, Metadata, pData, Size);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, void*, uint, void>)@this->LpVtbl[56])(@this, Metadata, pData, Size);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetMarker<T0>(uint Metadata, ref T0 pData, uint Size) where T0 : unmanaged
+        public readonly void SetMarker<T0>(uint Metadata, [Flow(FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, void*, uint, void>)LpVtbl[56])(@this, Metadata, pDataPtr, Size);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, void*, uint, void>)LpVtbl[56])(@this, Metadata, pDataPtr, Size);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, void*, uint, void>)LpVtbl[56])(@this, Metadata, pDataPtr, Size);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, void*, uint, void>)@this->LpVtbl[56])(@this, Metadata, pDataPtr, Size);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void BeginEvent(uint Metadata, void* pData, uint Size)
+        public readonly unsafe void BeginEvent(uint Metadata, [Flow(FlowDirection.In)] void* pData, uint Size)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, void*, uint, void>)LpVtbl[57])(@this, Metadata, pData, Size);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, void*, uint, void>)LpVtbl[57])(@this, Metadata, pData, Size);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, void*, uint, void>)LpVtbl[57])(@this, Metadata, pData, Size);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, void*, uint, void>)@this->LpVtbl[57])(@this, Metadata, pData, Size);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void BeginEvent<T0>(uint Metadata, ref T0 pData, uint Size) where T0 : unmanaged
+        public readonly void BeginEvent<T0>(uint Metadata, [Flow(FlowDirection.In)] in T0 pData, uint Size) where T0 : unmanaged
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (void* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, uint, void*, uint, void>)LpVtbl[57])(@this, Metadata, pDataPtr, Size);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, void*, uint, void>)LpVtbl[57])(@this, Metadata, pDataPtr, Size);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, uint, void*, uint, void>)LpVtbl[57])(@this, Metadata, pDataPtr, Size);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, uint, void*, uint, void>)@this->LpVtbl[57])(@this, Metadata, pDataPtr, Size);
             }
         }
 
@@ -3412,25 +1699,14 @@ namespace Silk.NET.Direct3D12
         public readonly void EndEvent()
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, void>)LpVtbl[58])(@this);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, void>)@this->LpVtbl[58])(@this);
         }
 
         /// <summary>To be documented.</summary>
         public readonly unsafe void ExecuteIndirect(ID3D12CommandSignature* pCommandSignature, uint MaxCommandCount, ID3D12Resource* pArgumentBuffer, ulong ArgumentBufferOffset, ID3D12Resource* pCountBuffer, ulong CountBufferOffset)
         {
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)@this->LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
         }
 
         /// <summary>To be documented.</summary>
@@ -3439,18 +1715,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pCountBufferPtr = &pCountBuffer)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)@this->LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
             }
         }
 
@@ -3460,18 +1725,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pArgumentBufferPtr = &pArgumentBuffer)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)@this->LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
             }
         }
 
@@ -3483,18 +1737,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pCountBufferPtr = &pCountBuffer)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)@this->LpVtbl[59])(@this, pCommandSignature, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
                 }
             }
         }
@@ -3505,18 +1748,7 @@ namespace Silk.NET.Direct3D12
             var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12CommandSignature* pCommandSignaturePtr = &pCommandSignature)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)@this->LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
             }
         }
 
@@ -3528,18 +1760,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pCountBufferPtr = &pCountBuffer)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)@this->LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBuffer, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
                 }
             }
         }
@@ -3552,18 +1773,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12Resource* pArgumentBufferPtr = &pArgumentBuffer)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)@this->LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBuffer, CountBufferOffset);
                 }
             }
         }
@@ -3578,21 +1788,486 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (ID3D12Resource* pCountBufferPtr = &pCountBuffer)
                     {
-            #if NET5_0_OR_GREATER
-                        ((delegate* unmanaged<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
-                        }
-                        else
-                        {
-                            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
-                        }
-            #endif
+                        ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList*, ID3D12CommandSignature*, uint, ID3D12Resource*, ulong, ID3D12Resource*, ulong, void>)@this->LpVtbl[59])(@this, pCommandSignaturePtr, MaxCommandCount, pArgumentBufferPtr, ArgumentBufferOffset, pCountBufferPtr, CountBufferOffset);
                     }
                 }
             }
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(ref guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDevice<TI0>(out ComPtr<TI0> ppvDevice) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvDevice = default;
+            return @this->GetDevice(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvDevice.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Reset<TI0, TI1>(ComPtr<TI0> pAllocator, ComPtr<TI1> pInitialState) where TI0 : unmanaged, IComVtbl<ID3D12CommandAllocator>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Reset((ID3D12CommandAllocator*) pAllocator.Handle, (ID3D12PipelineState*) pInitialState.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Reset<TI0>(ComPtr<TI0> pAllocator, ref ID3D12PipelineState pInitialState) where TI0 : unmanaged, IComVtbl<ID3D12CommandAllocator>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Reset((ID3D12CommandAllocator*) pAllocator.Handle, ref pInitialState);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int Reset<TI0>(ref ID3D12CommandAllocator pAllocator, ComPtr<TI0> pInitialState) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->Reset(ref pAllocator, (ID3D12PipelineState*) pInitialState.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ClearState<TI0>(ComPtr<TI0> pPipelineState) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ClearState((ID3D12PipelineState*) pPipelineState.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyBufferRegion<TI0, TI1>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ComPtr<TI1> pSrcBuffer, ulong SrcOffset, ulong NumBytes) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyBufferRegion((ID3D12Resource*) pDstBuffer.Handle, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, NumBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyBufferRegion<TI0>(ComPtr<TI0> pDstBuffer, ulong DstOffset, ref ID3D12Resource pSrcBuffer, ulong SrcOffset, ulong NumBytes) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyBufferRegion((ID3D12Resource*) pDstBuffer.Handle, DstOffset, ref pSrcBuffer, SrcOffset, NumBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyBufferRegion<TI0>(ref ID3D12Resource pDstBuffer, ulong DstOffset, ComPtr<TI0> pSrcBuffer, ulong SrcOffset, ulong NumBytes) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyBufferRegion(ref pDstBuffer, DstOffset, (ID3D12Resource*) pSrcBuffer.Handle, SrcOffset, NumBytes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyResource<TI0, TI1>(ComPtr<TI0> pDstResource, ComPtr<TI1> pSrcResource) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyResource((ID3D12Resource*) pDstResource.Handle, (ID3D12Resource*) pSrcResource.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyResource<TI0>(ComPtr<TI0> pDstResource, ref ID3D12Resource pSrcResource) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyResource((ID3D12Resource*) pDstResource.Handle, ref pSrcResource);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyResource<TI0>(ref ID3D12Resource pDstResource, ComPtr<TI0> pSrcResource) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyResource(ref pDstResource, (ID3D12Resource*) pSrcResource.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, pTileRegionStartCoordinate, pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, pTileRegionStartCoordinate, pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, pTileRegionStartCoordinate, in pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, pTileRegionStartCoordinate, in pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, in pTileRegionStartCoordinate, pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, in pTileRegionStartCoordinate, pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyTiles<TI0, TI1>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI1> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, in pTileRegionStartCoordinate, in pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyTiles<TI0>(ComPtr<TI0> pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ref ID3D12Resource pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles((ID3D12Resource*) pTiledResource.Handle, in pTileRegionStartCoordinate, in pTileRegionSize, ref pBuffer, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTiles<TI0>(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles(ref pTiledResource, pTileRegionStartCoordinate, pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTiles<TI0>(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] TiledResourceCoordinate* pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles(ref pTiledResource, pTileRegionStartCoordinate, in pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void CopyTiles<TI0>(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] TileRegionSize* pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles(ref pTiledResource, in pTileRegionStartCoordinate, pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void CopyTiles<TI0>(ref ID3D12Resource pTiledResource, [Flow(FlowDirection.In)] in TiledResourceCoordinate pTileRegionStartCoordinate, [Flow(FlowDirection.In)] in TileRegionSize pTileRegionSize, ComPtr<TI0> pBuffer, ulong BufferStartOffsetInBytes, TileCopyFlags Flags) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->CopyTiles(ref pTiledResource, in pTileRegionStartCoordinate, in pTileRegionSize, (ID3D12Resource*) pBuffer.Handle, BufferStartOffsetInBytes, Flags);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveSubresource<TI0, TI1>(ComPtr<TI0> pDstResource, uint DstSubresource, ComPtr<TI1> pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveSubresource((ID3D12Resource*) pDstResource.Handle, DstSubresource, (ID3D12Resource*) pSrcResource.Handle, SrcSubresource, Format);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveSubresource<TI0>(ComPtr<TI0> pDstResource, uint DstSubresource, ref ID3D12Resource pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveSubresource((ID3D12Resource*) pDstResource.Handle, DstSubresource, ref pSrcResource, SrcSubresource, Format);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveSubresource<TI0>(ref ID3D12Resource pDstResource, uint DstSubresource, ComPtr<TI0> pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveSubresource(ref pDstResource, DstSubresource, (ID3D12Resource*) pSrcResource.Handle, SrcSubresource, Format);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetPipelineState<TI0>(ComPtr<TI0> pPipelineState) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->SetPipelineState((ID3D12PipelineState*) pPipelineState.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteBundle<TI0>(ComPtr<TI0> pCommandList) where TI0 : unmanaged, IComVtbl<ID3D12GraphicsCommandList>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteBundle((ID3D12GraphicsCommandList*) pCommandList.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetDescriptorHeaps<TI0>(uint NumDescriptorHeaps, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppDescriptorHeaps) where TI0 : unmanaged, IComVtbl<ID3D12DescriptorHeap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->SetDescriptorHeaps(NumDescriptorHeaps, (ID3D12DescriptorHeap**) ppDescriptorHeaps.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetComputeRootSignature<TI0>(ComPtr<TI0> pRootSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->SetComputeRootSignature((ID3D12RootSignature*) pRootSignature.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetGraphicsRootSignature<TI0>(ComPtr<TI0> pRootSignature) where TI0 : unmanaged, IComVtbl<ID3D12RootSignature>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->SetGraphicsRootSignature((ID3D12RootSignature*) pRootSignature.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ClearUnorderedAccessViewUint<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, Values, NumRects, pRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ClearUnorderedAccessViewUint<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] uint* Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, Values, NumRects, in pRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ClearUnorderedAccessViewUint<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, ref Values, NumRects, pRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ClearUnorderedAccessViewUint<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref uint Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ClearUnorderedAccessViewUint(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, ref Values, NumRects, in pRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ClearUnorderedAccessViewFloat<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, Values, NumRects, pRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ClearUnorderedAccessViewFloat<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] float* Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, Values, NumRects, in pRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void ClearUnorderedAccessViewFloat<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, ref Values, NumRects, pRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ClearUnorderedAccessViewFloat<TI0>(GpuDescriptorHandle ViewGPUHandleInCurrentHeap, CpuDescriptorHandle ViewCPUHandle, ComPtr<TI0> pResource, [Count(Count = 4)] ref float Values, uint NumRects, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRects) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ClearUnorderedAccessViewFloat(ViewGPUHandleInCurrentHeap, ViewCPUHandle, (ID3D12Resource*) pResource.Handle, ref Values, NumRects, in pRects);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void DiscardResource<TI0>(ComPtr<TI0> pResource, [Flow(FlowDirection.In)] DiscardRegion* pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DiscardResource((ID3D12Resource*) pResource.Handle, pRegion);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void DiscardResource<TI0>(ComPtr<TI0> pResource, [Flow(FlowDirection.In)] in DiscardRegion pRegion) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->DiscardResource((ID3D12Resource*) pResource.Handle, in pRegion);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void BeginQuery<TI0>(ComPtr<TI0> pQueryHeap, QueryType Type, uint Index) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->BeginQuery((ID3D12QueryHeap*) pQueryHeap.Handle, Type, Index);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void EndQuery<TI0>(ComPtr<TI0> pQueryHeap, QueryType Type, uint Index) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->EndQuery((ID3D12QueryHeap*) pQueryHeap.Handle, Type, Index);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveQueryData<TI0, TI1>(ComPtr<TI0> pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ComPtr<TI1> pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveQueryData((ID3D12QueryHeap*) pQueryHeap.Handle, Type, StartIndex, NumQueries, (ID3D12Resource*) pDestinationBuffer.Handle, AlignedDestinationBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveQueryData<TI0>(ComPtr<TI0> pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ref ID3D12Resource pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12QueryHeap>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveQueryData((ID3D12QueryHeap*) pQueryHeap.Handle, Type, StartIndex, NumQueries, ref pDestinationBuffer, AlignedDestinationBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ResolveQueryData<TI0>(ref ID3D12QueryHeap pQueryHeap, QueryType Type, uint StartIndex, uint NumQueries, ComPtr<TI0> pDestinationBuffer, ulong AlignedDestinationBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ResolveQueryData(ref pQueryHeap, Type, StartIndex, NumQueries, (ID3D12Resource*) pDestinationBuffer.Handle, AlignedDestinationBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetPredication<TI0>(ComPtr<TI0> pBuffer, ulong AlignedBufferOffset, PredicationOp Operation) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->SetPredication((ID3D12Resource*) pBuffer.Handle, AlignedBufferOffset, Operation);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteIndirect<TI0, TI1, TI2>(ComPtr<TI0> pCommandSignature, uint MaxCommandCount, ComPtr<TI1> pArgumentBuffer, ulong ArgumentBufferOffset, ComPtr<TI2> pCountBuffer, ulong CountBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12CommandSignature>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI2>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteIndirect((ID3D12CommandSignature*) pCommandSignature.Handle, MaxCommandCount, (ID3D12Resource*) pArgumentBuffer.Handle, ArgumentBufferOffset, (ID3D12Resource*) pCountBuffer.Handle, CountBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteIndirect<TI0, TI1>(ComPtr<TI0> pCommandSignature, uint MaxCommandCount, ComPtr<TI1> pArgumentBuffer, ulong ArgumentBufferOffset, ref ID3D12Resource pCountBuffer, ulong CountBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12CommandSignature>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteIndirect((ID3D12CommandSignature*) pCommandSignature.Handle, MaxCommandCount, (ID3D12Resource*) pArgumentBuffer.Handle, ArgumentBufferOffset, ref pCountBuffer, CountBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteIndirect<TI0, TI1>(ComPtr<TI0> pCommandSignature, uint MaxCommandCount, ref ID3D12Resource pArgumentBuffer, ulong ArgumentBufferOffset, ComPtr<TI1> pCountBuffer, ulong CountBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12CommandSignature>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteIndirect((ID3D12CommandSignature*) pCommandSignature.Handle, MaxCommandCount, ref pArgumentBuffer, ArgumentBufferOffset, (ID3D12Resource*) pCountBuffer.Handle, CountBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteIndirect<TI0>(ComPtr<TI0> pCommandSignature, uint MaxCommandCount, ref ID3D12Resource pArgumentBuffer, ulong ArgumentBufferOffset, ref ID3D12Resource pCountBuffer, ulong CountBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12CommandSignature>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteIndirect((ID3D12CommandSignature*) pCommandSignature.Handle, MaxCommandCount, ref pArgumentBuffer, ArgumentBufferOffset, ref pCountBuffer, CountBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteIndirect<TI0, TI1>(ref ID3D12CommandSignature pCommandSignature, uint MaxCommandCount, ComPtr<TI0> pArgumentBuffer, ulong ArgumentBufferOffset, ComPtr<TI1> pCountBuffer, ulong CountBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI1>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteIndirect(ref pCommandSignature, MaxCommandCount, (ID3D12Resource*) pArgumentBuffer.Handle, ArgumentBufferOffset, (ID3D12Resource*) pCountBuffer.Handle, CountBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteIndirect<TI0>(ref ID3D12CommandSignature pCommandSignature, uint MaxCommandCount, ComPtr<TI0> pArgumentBuffer, ulong ArgumentBufferOffset, ref ID3D12Resource pCountBuffer, ulong CountBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteIndirect(ref pCommandSignature, MaxCommandCount, (ID3D12Resource*) pArgumentBuffer.Handle, ArgumentBufferOffset, ref pCountBuffer, CountBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void ExecuteIndirect<TI0>(ref ID3D12CommandSignature pCommandSignature, uint MaxCommandCount, ref ID3D12Resource pArgumentBuffer, ulong ArgumentBufferOffset, ComPtr<TI0> pCountBuffer, ulong CountBufferOffset) where TI0 : unmanaged, IComVtbl<ID3D12Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->ExecuteIndirect(ref pCommandSignature, MaxCommandCount, ref pArgumentBuffer, ArgumentBufferOffset, (ID3D12Resource*) pCountBuffer.Handle, CountBufferOffset);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> GetDevice<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12GraphicsCommandList*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->GetDevice(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

@@ -17,15 +17,16 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSemaphoreSubmitInfoKHR")]
+    [NativeName("AliasOf", "VkSemaphoreSubmitInfo")]
     public unsafe partial struct SemaphoreSubmitInfoKHR : IChainable
     {
         public SemaphoreSubmitInfoKHR
         (
-            StructureType? sType = StructureType.SemaphoreSubmitInfoKhr,
+            StructureType? sType = StructureType.SemaphoreSubmitInfo,
             void* pNext = null,
             Semaphore? semaphore = null,
             ulong? value = null,
-            PipelineStageFlags2KHR? stageMask = null,
+            PipelineStageFlags2? stageMask = null,
             uint? deviceIndex = null
         ) : this()
         {
@@ -81,10 +82,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "value")]
         public ulong Value;
 /// <summary></summary>
-        [NativeName("Type", "VkPipelineStageFlags2KHR")]
-        [NativeName("Type.Name", "VkPipelineStageFlags2KHR")]
+        [NativeName("Type", "VkPipelineStageFlags2")]
+        [NativeName("Type.Name", "VkPipelineStageFlags2")]
         [NativeName("Name", "stageMask")]
-        public PipelineStageFlags2KHR StageMask;
+        public PipelineStageFlags2 StageMask;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -94,7 +95,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.SemaphoreSubmitInfoKhr;
+            return SType = StructureType.SemaphoreSubmitInfo;
         }
 
         /// <inheritdoc />

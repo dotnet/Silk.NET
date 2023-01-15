@@ -18,9 +18,12 @@ namespace Silk.NET.DXVA
 {
     [Guid("fc51a551-d5e7-11d9-af55-00054e43ff02")]
     [NativeName("Name", "IDirectXVideoDecoderService")]
-    public unsafe partial struct IDirectXVideoDecoderService
+    public unsafe partial struct IDirectXVideoDecoderService : IComVtbl<IDirectXVideoDecoderService>, IComVtbl<IDirectXVideoAccelerationService>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("fc51a551-d5e7-11d9-af55-00054e43ff02");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator IDirectXVideoAccelerationService(IDirectXVideoDecoderService val)
             => Unsafe.As<IDirectXVideoDecoderService, IDirectXVideoAccelerationService>(ref val);
@@ -49,18 +52,7 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -71,18 +63,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -94,18 +75,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -119,18 +89,7 @@ namespace Silk.NET.DXVA
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -141,7 +100,7 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -150,7 +109,7 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -159,18 +118,7 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurface, pSharedHandle);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurface, pSharedHandle);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurface, pSharedHandle);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)@this->LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurface, pSharedHandle);
             return ret;
         }
 
@@ -181,18 +129,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (void** pSharedHandlePtr = &pSharedHandle)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurface, pSharedHandlePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurface, pSharedHandlePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurface, pSharedHandlePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)@this->LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurface, pSharedHandlePtr);
             }
             return ret;
         }
@@ -204,18 +141,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (Silk.NET.Direct3D9.IDirect3DSurface9** ppSurfacePtr = &ppSurface)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurfacePtr, pSharedHandle);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurfacePtr, pSharedHandle);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurfacePtr, pSharedHandle);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)@this->LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurfacePtr, pSharedHandle);
             }
             return ret;
         }
@@ -229,18 +155,7 @@ namespace Silk.NET.DXVA
             {
                 fixed (void** pSharedHandlePtr = &pSharedHandle)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurfacePtr, pSharedHandlePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurfacePtr, pSharedHandlePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurfacePtr, pSharedHandlePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint, uint, uint, Silk.NET.Direct3D9.Format, Silk.NET.Direct3D9.Pool, uint, uint, Silk.NET.Direct3D9.IDirect3DSurface9**, void**, int>)@this->LpVtbl[3])(@this, Width, Height, BackBuffers, Format, Pool, Usage, DxvaType, ppSurfacePtr, pSharedHandlePtr);
                 }
             }
             return ret;
@@ -251,18 +166,7 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, uint*, Guid**, int>)LpVtbl[4])(@this, pCount, pGuids);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint*, Guid**, int>)LpVtbl[4])(@this, pCount, pGuids);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, uint*, Guid**, int>)LpVtbl[4])(@this, pCount, pGuids);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint*, Guid**, int>)@this->LpVtbl[4])(@this, pCount, pGuids);
             return ret;
         }
 
@@ -273,18 +177,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (Guid** pGuidsPtr = &pGuids)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, uint*, Guid**, int>)LpVtbl[4])(@this, pCount, pGuidsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint*, Guid**, int>)LpVtbl[4])(@this, pCount, pGuidsPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, uint*, Guid**, int>)LpVtbl[4])(@this, pCount, pGuidsPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint*, Guid**, int>)@this->LpVtbl[4])(@this, pCount, pGuidsPtr);
             }
             return ret;
         }
@@ -296,18 +189,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (uint* pCountPtr = &pCount)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, uint*, Guid**, int>)LpVtbl[4])(@this, pCountPtr, pGuids);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint*, Guid**, int>)LpVtbl[4])(@this, pCountPtr, pGuids);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, uint*, Guid**, int>)LpVtbl[4])(@this, pCountPtr, pGuids);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint*, Guid**, int>)@this->LpVtbl[4])(@this, pCountPtr, pGuids);
             }
             return ret;
         }
@@ -321,18 +203,7 @@ namespace Silk.NET.DXVA
             {
                 fixed (Guid** pGuidsPtr = &pGuids)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, uint*, Guid**, int>)LpVtbl[4])(@this, pCountPtr, pGuidsPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint*, Guid**, int>)LpVtbl[4])(@this, pCountPtr, pGuidsPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, uint*, Guid**, int>)LpVtbl[4])(@this, pCountPtr, pGuidsPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, uint*, Guid**, int>)@this->LpVtbl[4])(@this, pCountPtr, pGuidsPtr);
                 }
             }
             return ret;
@@ -343,18 +214,7 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, Guid, pCount, pFormats);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, Guid, pCount, pFormats);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, Guid, pCount, pFormats);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)@this->LpVtbl[5])(@this, Guid, pCount, pFormats);
             return ret;
         }
 
@@ -365,18 +225,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (Silk.NET.Direct3D9.Format** pFormatsPtr = &pFormats)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, Guid, pCount, pFormatsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, Guid, pCount, pFormatsPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, Guid, pCount, pFormatsPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)@this->LpVtbl[5])(@this, Guid, pCount, pFormatsPtr);
             }
             return ret;
         }
@@ -388,18 +237,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (uint* pCountPtr = &pCount)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, Guid, pCountPtr, pFormats);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, Guid, pCountPtr, pFormats);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, Guid, pCountPtr, pFormats);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)@this->LpVtbl[5])(@this, Guid, pCountPtr, pFormats);
             }
             return ret;
         }
@@ -413,18 +251,7 @@ namespace Silk.NET.DXVA
             {
                 fixed (Silk.NET.Direct3D9.Format** pFormatsPtr = &pFormats)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, Guid, pCountPtr, pFormatsPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, Guid, pCountPtr, pFormatsPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, Guid, pCountPtr, pFormatsPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)@this->LpVtbl[5])(@this, Guid, pCountPtr, pFormatsPtr);
                 }
             }
             return ret;
@@ -437,18 +264,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (Guid* GuidPtr = &Guid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, GuidPtr, pCount, pFormats);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, GuidPtr, pCount, pFormats);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, GuidPtr, pCount, pFormats);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)@this->LpVtbl[5])(@this, GuidPtr, pCount, pFormats);
             }
             return ret;
         }
@@ -462,18 +278,7 @@ namespace Silk.NET.DXVA
             {
                 fixed (Silk.NET.Direct3D9.Format** pFormatsPtr = &pFormats)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, GuidPtr, pCount, pFormatsPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, GuidPtr, pCount, pFormatsPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, GuidPtr, pCount, pFormatsPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)@this->LpVtbl[5])(@this, GuidPtr, pCount, pFormatsPtr);
                 }
             }
             return ret;
@@ -488,18 +293,7 @@ namespace Silk.NET.DXVA
             {
                 fixed (uint* pCountPtr = &pCount)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, GuidPtr, pCountPtr, pFormats);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, GuidPtr, pCountPtr, pFormats);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, GuidPtr, pCountPtr, pFormats);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)@this->LpVtbl[5])(@this, GuidPtr, pCountPtr, pFormats);
                 }
             }
             return ret;
@@ -516,18 +310,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (Silk.NET.Direct3D9.Format** pFormatsPtr = &pFormats)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, GuidPtr, pCountPtr, pFormatsPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, GuidPtr, pCountPtr, pFormatsPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)LpVtbl[5])(@this, GuidPtr, pCountPtr, pFormatsPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, uint*, Silk.NET.Direct3D9.Format**, int>)@this->LpVtbl[5])(@this, GuidPtr, pCountPtr, pFormatsPtr);
                     }
                 }
             }
@@ -535,73 +318,40 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReserved, pCount, ppConfigs);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReserved, pCount, ppConfigs);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReserved, pCount, ppConfigs);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDesc, pReserved, pCount, ppConfigs);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReserved, pCount, ppConfigsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReserved, pCount, ppConfigsPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReserved, pCount, ppConfigsPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDesc, pReserved, pCount, ppConfigsPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pCountPtr = &pCount)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReserved, pCountPtr, ppConfigs);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReserved, pCountPtr, ppConfigs);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReserved, pCountPtr, ppConfigs);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDesc, pReserved, pCountPtr, ppConfigs);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -609,48 +359,26 @@ namespace Silk.NET.DXVA
             {
                 fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReserved, pCountPtr, ppConfigsPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReserved, pCountPtr, ppConfigsPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReserved, pCountPtr, ppConfigsPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDesc, pReserved, pCountPtr, ppConfigsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* pReservedPtr = &pReserved)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCount, ppConfigs);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCount, ppConfigs);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCount, ppConfigs);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCount, ppConfigs);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -658,25 +386,14 @@ namespace Silk.NET.DXVA
             {
                 fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCount, ppConfigsPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCount, ppConfigsPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCount, ppConfigsPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCount, ppConfigsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -684,25 +401,14 @@ namespace Silk.NET.DXVA
             {
                 fixed (uint* pCountPtr = &pCount)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCountPtr, ppConfigs);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCountPtr, ppConfigs);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCountPtr, ppConfigs);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCountPtr, ppConfigs);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -712,18 +418,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCountPtr, ppConfigsPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCountPtr, ppConfigsPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCountPtr, ppConfigsPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDesc, pReservedPtr, pCountPtr, ppConfigsPtr);
                     }
                 }
             }
@@ -731,30 +426,19 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReserved, pCount, ppConfigs);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReserved, pCount, ppConfigs);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReserved, pCount, ppConfigs);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDescPtr, pReserved, pCount, ppConfigs);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -762,25 +446,14 @@ namespace Silk.NET.DXVA
             {
                 fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReserved, pCount, ppConfigsPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReserved, pCount, ppConfigsPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReserved, pCount, ppConfigsPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDescPtr, pReserved, pCount, ppConfigsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -788,25 +461,14 @@ namespace Silk.NET.DXVA
             {
                 fixed (uint* pCountPtr = &pCount)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReserved, pCountPtr, ppConfigs);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReserved, pCountPtr, ppConfigs);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReserved, pCountPtr, ppConfigs);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDescPtr, pReserved, pCountPtr, ppConfigs);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -816,18 +478,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReserved, pCountPtr, ppConfigsPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReserved, pCountPtr, ppConfigsPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReserved, pCountPtr, ppConfigsPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDescPtr, pReserved, pCountPtr, ppConfigsPtr);
                     }
                 }
             }
@@ -835,7 +486,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -843,25 +494,14 @@ namespace Silk.NET.DXVA
             {
                 fixed (void* pReservedPtr = &pReserved)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCount, ppConfigs);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCount, ppConfigs);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCount, ppConfigs);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCount, ppConfigs);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -871,18 +511,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCount, ppConfigsPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCount, ppConfigsPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCount, ppConfigsPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCount, ppConfigsPtr);
                     }
                 }
             }
@@ -890,7 +519,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -900,18 +529,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (uint* pCountPtr = &pCount)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigs);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigs);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigs);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigs);
                     }
                 }
             }
@@ -919,7 +537,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -931,18 +549,7 @@ namespace Silk.NET.DXVA
                     {
                         fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigsPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigsPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigsPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, Guid, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigsPtr);
                         }
                     }
                 }
@@ -951,30 +558,19 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* GuidPtr = &Guid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReserved, pCount, ppConfigs);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReserved, pCount, ppConfigs);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReserved, pCount, ppConfigs);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReserved, pCount, ppConfigs);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -982,25 +578,14 @@ namespace Silk.NET.DXVA
             {
                 fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReserved, pCount, ppConfigsPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReserved, pCount, ppConfigsPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReserved, pCount, ppConfigsPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReserved, pCount, ppConfigsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1008,25 +593,14 @@ namespace Silk.NET.DXVA
             {
                 fixed (uint* pCountPtr = &pCount)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReserved, pCountPtr, ppConfigs);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReserved, pCountPtr, ppConfigs);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReserved, pCountPtr, ppConfigs);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReserved, pCountPtr, ppConfigs);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, DXVA2VideoDesc* pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1036,18 +610,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReserved, pCountPtr, ppConfigsPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReserved, pCountPtr, ppConfigsPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReserved, pCountPtr, ppConfigsPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReserved, pCountPtr, ppConfigsPtr);
                     }
                 }
             }
@@ -1055,7 +618,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1063,25 +626,14 @@ namespace Silk.NET.DXVA
             {
                 fixed (void* pReservedPtr = &pReserved)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCount, ppConfigs);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCount, ppConfigs);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCount, ppConfigs);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCount, ppConfigs);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1091,18 +643,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCount, ppConfigsPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCount, ppConfigsPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCount, ppConfigsPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCount, ppConfigsPtr);
                     }
                 }
             }
@@ -1110,7 +651,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1120,18 +661,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (uint* pCountPtr = &pCount)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCountPtr, ppConfigs);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCountPtr, ppConfigs);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCountPtr, ppConfigs);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCountPtr, ppConfigs);
                     }
                 }
             }
@@ -1139,7 +669,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1151,18 +681,7 @@ namespace Silk.NET.DXVA
                     {
                         fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCountPtr, ppConfigsPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCountPtr, ppConfigsPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCountPtr, ppConfigsPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDesc, pReservedPtr, pCountPtr, ppConfigsPtr);
                         }
                     }
                 }
@@ -1171,7 +690,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1179,25 +698,14 @@ namespace Silk.NET.DXVA
             {
                 fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReserved, pCount, ppConfigs);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReserved, pCount, ppConfigs);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReserved, pCount, ppConfigs);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReserved, pCount, ppConfigs);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, void* pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1207,18 +715,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReserved, pCount, ppConfigsPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReserved, pCount, ppConfigsPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReserved, pCount, ppConfigsPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReserved, pCount, ppConfigsPtr);
                     }
                 }
             }
@@ -1226,7 +723,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1236,18 +733,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (uint* pCountPtr = &pCount)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReserved, pCountPtr, ppConfigs);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReserved, pCountPtr, ppConfigs);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReserved, pCountPtr, ppConfigs);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReserved, pCountPtr, ppConfigs);
                     }
                 }
             }
@@ -1255,7 +741,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
+        public readonly unsafe int GetDecoderConfigurations(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, void* pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1267,18 +753,7 @@ namespace Silk.NET.DXVA
                     {
                         fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReserved, pCountPtr, ppConfigsPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReserved, pCountPtr, ppConfigsPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReserved, pCountPtr, ppConfigsPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReserved, pCountPtr, ppConfigsPtr);
                         }
                     }
                 }
@@ -1287,7 +762,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1297,18 +772,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (void* pReservedPtr = &pReserved)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCount, ppConfigs);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCount, ppConfigs);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCount, ppConfigs);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCount, ppConfigs);
                     }
                 }
             }
@@ -1316,7 +780,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, uint* pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1328,18 +792,7 @@ namespace Silk.NET.DXVA
                     {
                         fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCount, ppConfigsPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCount, ppConfigsPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCount, ppConfigsPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCount, ppConfigsPtr);
                         }
                     }
                 }
@@ -1348,7 +801,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, DXVA2ConfigPictureDecode** ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1360,18 +813,7 @@ namespace Silk.NET.DXVA
                     {
                         fixed (uint* pCountPtr = &pCount)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigs);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigs);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigs);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigs);
                         }
                     }
                 }
@@ -1380,7 +822,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
+        public readonly unsafe int GetDecoderConfigurations<T0>(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, ref T0 pReserved, ref uint pCount, ref DXVA2ConfigPictureDecode* ppConfigs) where T0 : unmanaged
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1394,18 +836,7 @@ namespace Silk.NET.DXVA
                         {
                             fixed (DXVA2ConfigPictureDecode** ppConfigsPtr = &ppConfigs)
                             {
-            #if NET5_0_OR_GREATER
-                                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigsPtr);
-            #else
-                                if (SilkMarshal.IsWinapiStdcall)
-                                {
-                                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigsPtr);
-                                }
-                                else
-                                {
-                                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigsPtr);
-                                }
-            #endif
+                                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, void*, uint*, DXVA2ConfigPictureDecode**, int>)@this->LpVtbl[6])(@this, GuidPtr, pVideoDescPtr, pReservedPtr, pCountPtr, ppConfigsPtr);
                             }
                         }
                     }
@@ -1415,73 +846,40 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, Guid, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDirectXVideoDecoder** ppDecodePtr = &ppDecode)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, Guid, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargetsPtr = &ppDecoderRenderTargets)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, Guid, pVideoDesc, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1489,48 +887,26 @@ namespace Silk.NET.DXVA
             {
                 fixed (IDirectXVideoDecoder** ppDecodePtr = &ppDecode)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, Guid, pVideoDesc, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (DXVA2ConfigPictureDecode* pConfigPtr = &pConfig)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, Guid, pVideoDesc, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1538,25 +914,14 @@ namespace Silk.NET.DXVA
             {
                 fixed (IDirectXVideoDecoder** ppDecodePtr = &ppDecode)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, Guid, pVideoDesc, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1564,25 +929,14 @@ namespace Silk.NET.DXVA
             {
                 fixed (Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargetsPtr = &ppDecoderRenderTargets)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, Guid, pVideoDesc, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1592,18 +946,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (IDirectXVideoDecoder** ppDecodePtr = &ppDecode)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDesc, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, Guid, pVideoDesc, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
                     }
                 }
             }
@@ -1611,30 +954,19 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1642,25 +974,14 @@ namespace Silk.NET.DXVA
             {
                 fixed (IDirectXVideoDecoder** ppDecodePtr = &ppDecode)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1668,25 +989,14 @@ namespace Silk.NET.DXVA
             {
                 fixed (Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargetsPtr = &ppDecoderRenderTargets)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1696,18 +1006,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (IDirectXVideoDecoder** ppDecodePtr = &ppDecode)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
                     }
                 }
             }
@@ -1715,7 +1014,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1723,25 +1022,14 @@ namespace Silk.NET.DXVA
             {
                 fixed (DXVA2ConfigPictureDecode* pConfigPtr = &pConfig)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1751,18 +1039,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (IDirectXVideoDecoder** ppDecodePtr = &ppDecode)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
                     }
                 }
             }
@@ -1770,7 +1047,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1780,18 +1057,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargetsPtr = &ppDecoderRenderTargets)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
                     }
                 }
             }
@@ -1799,7 +1065,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(Guid* Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1811,18 +1077,7 @@ namespace Silk.NET.DXVA
                     {
                         fixed (IDirectXVideoDecoder** ppDecodePtr = &ppDecode)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, Guid, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
                         }
                     }
                 }
@@ -1831,30 +1086,19 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* GuidPtr = &Guid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1862,25 +1106,14 @@ namespace Silk.NET.DXVA
             {
                 fixed (IDirectXVideoDecoder** ppDecodePtr = &ppDecode)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1888,25 +1121,14 @@ namespace Silk.NET.DXVA
             {
                 fixed (Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargetsPtr = &ppDecoderRenderTargets)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, DXVA2VideoDesc* pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1916,18 +1138,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (IDirectXVideoDecoder** ppDecodePtr = &ppDecode)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
                     }
                 }
             }
@@ -1935,7 +1146,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1943,25 +1154,14 @@ namespace Silk.NET.DXVA
             {
                 fixed (DXVA2ConfigPictureDecode* pConfigPtr = &pConfig)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1971,18 +1171,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (IDirectXVideoDecoder** ppDecodePtr = &ppDecode)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
                     }
                 }
             }
@@ -1990,7 +1179,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2000,18 +1189,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargetsPtr = &ppDecoderRenderTargets)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
                     }
                 }
             }
@@ -2019,7 +1197,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, DXVA2VideoDesc* pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2031,18 +1209,7 @@ namespace Silk.NET.DXVA
                     {
                         fixed (IDirectXVideoDecoder** ppDecodePtr = &ppDecode)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, GuidPtr, pVideoDesc, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
                         }
                     }
                 }
@@ -2051,7 +1218,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2059,25 +1226,14 @@ namespace Silk.NET.DXVA
             {
                 fixed (DXVA2VideoDesc* pVideoDescPtr = &pVideoDesc)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2087,18 +1243,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (IDirectXVideoDecoder** ppDecodePtr = &ppDecode)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfig, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
                     }
                 }
             }
@@ -2106,7 +1251,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2116,18 +1261,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargetsPtr = &ppDecoderRenderTargets)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
                     }
                 }
             }
@@ -2135,7 +1269,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2147,18 +1281,7 @@ namespace Silk.NET.DXVA
                     {
                         fixed (IDirectXVideoDecoder** ppDecodePtr = &ppDecode)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfig, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
                         }
                     }
                 }
@@ -2167,7 +1290,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2177,18 +1300,7 @@ namespace Silk.NET.DXVA
                 {
                     fixed (DXVA2ConfigPictureDecode* pConfigPtr = &pConfig)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecode);
                     }
                 }
             }
@@ -2196,7 +1308,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2208,18 +1320,7 @@ namespace Silk.NET.DXVA
                     {
                         fixed (IDirectXVideoDecoder** ppDecodePtr = &ppDecode)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargets, NumRenderTargets, ppDecodePtr);
                         }
                     }
                 }
@@ -2228,7 +1329,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, IDirectXVideoDecoder** ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2240,18 +1341,7 @@ namespace Silk.NET.DXVA
                     {
                         fixed (Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargetsPtr = &ppDecoderRenderTargets)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecode);
                         }
                     }
                 }
@@ -2260,7 +1350,7 @@ namespace Silk.NET.DXVA
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, ref DXVA2VideoDesc pVideoDesc, ref DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
+        public readonly unsafe int CreateVideoDecoder(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref IDirectXVideoDecoder* ppDecode)
         {
             var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2274,24 +1364,159 @@ namespace Silk.NET.DXVA
                         {
                             fixed (IDirectXVideoDecoder** ppDecodePtr = &ppDecode)
                             {
-            #if NET5_0_OR_GREATER
-                                ret = ((delegate* unmanaged<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-            #else
-                                if (SilkMarshal.IsWinapiStdcall)
-                                {
-                                    ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-                                }
-                                else
-                                {
-                                    ret = ((delegate* unmanaged[Cdecl]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
-                                }
-            #endif
+                                ret = ((delegate* unmanaged[Stdcall]<IDirectXVideoDecoderService*, Guid*, DXVA2VideoDesc*, DXVA2ConfigPictureDecode*, Silk.NET.Direct3D9.IDirect3DSurface9**, uint, IDirectXVideoDecoder**, int>)@this->LpVtbl[7])(@this, GuidPtr, pVideoDescPtr, pConfigPtr, ppDecoderRenderTargetsPtr, NumRenderTargets, ppDecodePtr);
                             }
                         }
                     }
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(Guid, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(Guid, pVideoDesc, pConfig, ref ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(Guid, pVideoDesc, in pConfig, ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(Guid, pVideoDesc, in pConfig, ref ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(Guid, in pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(Guid, in pVideoDesc, pConfig, ref ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(Guid, in pVideoDesc, in pConfig, ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoder<TI0>(Guid* Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(Guid, in pVideoDesc, in pConfig, ref ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(ref Guid, pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(ref Guid, pVideoDesc, pConfig, ref ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(ref Guid, pVideoDesc, in pConfig, ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(FlowDirection.In)] DXVA2VideoDesc* pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(ref Guid, pVideoDesc, in pConfig, ref ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(ref Guid, in pVideoDesc, pConfig, ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] DXVA2ConfigPictureDecode* pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(ref Guid, in pVideoDesc, pConfig, ref ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, Silk.NET.Direct3D9.IDirect3DSurface9** ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(ref Guid, in pVideoDesc, in pConfig, ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoder<TI0>(ref Guid Guid, [Flow(FlowDirection.In)] in DXVA2VideoDesc pVideoDesc, [Flow(FlowDirection.In)] in DXVA2ConfigPictureDecode pConfig, ref Silk.NET.Direct3D9.IDirect3DSurface9* ppDecoderRenderTargets, uint NumRenderTargets, ref ComPtr<TI0> ppDecode) where TI0 : unmanaged, IComVtbl<IDirectXVideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(ref Guid, in pVideoDesc, in pConfig, ref ppDecoderRenderTargets, NumRenderTargets, (IDirectXVideoDecoder**) ppDecode.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDirectXVideoDecoderService*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

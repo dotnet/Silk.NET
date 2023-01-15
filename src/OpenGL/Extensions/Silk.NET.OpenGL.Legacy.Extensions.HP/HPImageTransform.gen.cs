@@ -140,6 +140,34 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         [NativeApi(EntryPoint = "glImageTransformParameterfvHP", Convention = CallingConvention.Winapi)]
         public partial void ImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
+        public unsafe int GetImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetImageTransformParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetImageTransformParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] HP pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetImageTransformParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetImageTransformParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
         public HPImageTransform(INativeContext ctx)
             : base(ctx)
         {

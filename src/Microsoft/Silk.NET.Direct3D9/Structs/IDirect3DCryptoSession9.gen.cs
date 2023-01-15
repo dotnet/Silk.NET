@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D9
 {
     [Guid("fa0ab799-7a9c-48ca-8c5b-237e71a54434")]
     [NativeName("Name", "IDirect3DCryptoSession9")]
-    public unsafe partial struct IDirect3DCryptoSession9
+    public unsafe partial struct IDirect3DCryptoSession9 : IComVtbl<IDirect3DCryptoSession9>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("fa0ab799-7a9c-48ca-8c5b-237e71a54434");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDirect3DCryptoSession9 val)
             => Unsafe.As<IDirect3DCryptoSession9, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,18 +49,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -68,18 +60,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -91,18 +72,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -116,18 +86,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -138,7 +97,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -147,7 +106,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -156,18 +115,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, uint*, int>)LpVtbl[3])(@this, pCertificateSize);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, uint*, int>)LpVtbl[3])(@this, pCertificateSize);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, uint*, int>)LpVtbl[3])(@this, pCertificateSize);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, uint*, int>)@this->LpVtbl[3])(@this, pCertificateSize);
             return ret;
         }
 
@@ -178,18 +126,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (uint* pCertificateSizePtr = &pCertificateSize)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, uint*, int>)LpVtbl[3])(@this, pCertificateSizePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, uint*, int>)LpVtbl[3])(@this, pCertificateSizePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, uint*, int>)LpVtbl[3])(@this, pCertificateSizePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, uint*, int>)@this->LpVtbl[3])(@this, pCertificateSizePtr);
             }
             return ret;
         }
@@ -199,18 +136,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificate);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificate);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificate);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, uint, byte*, int>)@this->LpVtbl[4])(@this, CertifacteSize, ppCertificate);
             return ret;
         }
 
@@ -221,18 +147,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (byte* ppCertificatePtr = &ppCertificate)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificatePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificatePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificatePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, uint, byte*, int>)@this->LpVtbl[4])(@this, CertifacteSize, ppCertificatePtr);
             }
             return ret;
         }
@@ -243,18 +158,7 @@ namespace Silk.NET.Direct3D9
             var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var ppCertificatePtr = (byte*) SilkMarshal.StringToPtr(ppCertificate, NativeStringEncoding.UTF8);
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificatePtr);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificatePtr);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, uint, byte*, int>)LpVtbl[4])(@this, CertifacteSize, ppCertificatePtr);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, uint, byte*, int>)@this->LpVtbl[4])(@this, CertifacteSize, ppCertificatePtr);
             SilkMarshal.Free((nint)ppCertificatePtr);
             return ret;
         }
@@ -264,18 +168,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, uint, void*, int>)LpVtbl[5])(@this, DataSize, pData);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, uint, void*, int>)LpVtbl[5])(@this, DataSize, pData);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, uint, void*, int>)LpVtbl[5])(@this, DataSize, pData);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, uint, void*, int>)@this->LpVtbl[5])(@this, DataSize, pData);
             return ret;
         }
 
@@ -286,18 +179,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, uint, void*, int>)LpVtbl[5])(@this, DataSize, pDataPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, uint, void*, int>)LpVtbl[5])(@this, DataSize, pDataPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, uint, void*, int>)LpVtbl[5])(@this, DataSize, pDataPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, uint, void*, int>)@this->LpVtbl[5])(@this, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -307,18 +189,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurface, pDstSurface, DstSurfaceSize, pIV);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurface, pDstSurface, DstSurfaceSize, pIV);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurface, pDstSurface, DstSurfaceSize, pIV);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)@this->LpVtbl[6])(@this, pSrcSurface, pDstSurface, DstSurfaceSize, pIV);
             return ret;
         }
 
@@ -329,18 +200,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void* pIVPtr = &pIV)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurface, pDstSurface, DstSurfaceSize, pIVPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurface, pDstSurface, DstSurfaceSize, pIVPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurface, pDstSurface, DstSurfaceSize, pIVPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)@this->LpVtbl[6])(@this, pSrcSurface, pDstSurface, DstSurfaceSize, pIVPtr);
             }
             return ret;
         }
@@ -352,18 +212,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (IDirect3DSurface9* pDstSurfacePtr = &pDstSurface)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurface, pDstSurfacePtr, DstSurfaceSize, pIV);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurface, pDstSurfacePtr, DstSurfaceSize, pIV);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurface, pDstSurfacePtr, DstSurfaceSize, pIV);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)@this->LpVtbl[6])(@this, pSrcSurface, pDstSurfacePtr, DstSurfaceSize, pIV);
             }
             return ret;
         }
@@ -377,18 +226,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void* pIVPtr = &pIV)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurface, pDstSurfacePtr, DstSurfaceSize, pIVPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurface, pDstSurfacePtr, DstSurfaceSize, pIVPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurface, pDstSurfacePtr, DstSurfaceSize, pIVPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)@this->LpVtbl[6])(@this, pSrcSurface, pDstSurfacePtr, DstSurfaceSize, pIVPtr);
                 }
             }
             return ret;
@@ -401,18 +239,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (IDirect3DSurface9* pSrcSurfacePtr = &pSrcSurface)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurfacePtr, pDstSurface, DstSurfaceSize, pIV);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurfacePtr, pDstSurface, DstSurfaceSize, pIV);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurfacePtr, pDstSurface, DstSurfaceSize, pIV);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)@this->LpVtbl[6])(@this, pSrcSurfacePtr, pDstSurface, DstSurfaceSize, pIV);
             }
             return ret;
         }
@@ -426,18 +253,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void* pIVPtr = &pIV)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurfacePtr, pDstSurface, DstSurfaceSize, pIVPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurfacePtr, pDstSurface, DstSurfaceSize, pIVPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurfacePtr, pDstSurface, DstSurfaceSize, pIVPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)@this->LpVtbl[6])(@this, pSrcSurfacePtr, pDstSurface, DstSurfaceSize, pIVPtr);
                 }
             }
             return ret;
@@ -452,18 +268,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (IDirect3DSurface9* pDstSurfacePtr = &pDstSurface)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurfacePtr, pDstSurfacePtr, DstSurfaceSize, pIV);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurfacePtr, pDstSurfacePtr, DstSurfaceSize, pIV);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurfacePtr, pDstSurfacePtr, DstSurfaceSize, pIV);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)@this->LpVtbl[6])(@this, pSrcSurfacePtr, pDstSurfacePtr, DstSurfaceSize, pIV);
                 }
             }
             return ret;
@@ -480,18 +285,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurfacePtr, pDstSurfacePtr, DstSurfaceSize, pIVPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurfacePtr, pDstSurfacePtr, DstSurfaceSize, pIVPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)LpVtbl[6])(@this, pSrcSurfacePtr, pDstSurfacePtr, DstSurfaceSize, pIVPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, void*, int>)@this->LpVtbl[6])(@this, pSrcSurfacePtr, pDstSurfacePtr, DstSurfaceSize, pIVPtr);
                     }
                 }
             }
@@ -503,18 +297,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
             return ret;
         }
 
@@ -525,18 +308,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void* pIVPtr = &pIV)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIVPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIVPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIVPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIVPtr);
             }
             return ret;
         }
@@ -548,18 +320,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void* pContentKeyPtr = &pContentKey)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIV);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIV);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIV);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIV);
             }
             return ret;
         }
@@ -573,18 +334,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void* pIVPtr = &pIV)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIVPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIVPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIVPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIVPtr);
                 }
             }
             return ret;
@@ -597,18 +347,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIV);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIV);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIV);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIV);
             }
             return ret;
         }
@@ -622,18 +361,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void* pIVPtr = &pIV)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIVPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIVPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIVPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIVPtr);
                 }
             }
             return ret;
@@ -648,18 +376,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void* pContentKeyPtr = &pContentKey)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIV);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIV);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIV);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIV);
                 }
             }
             return ret;
@@ -676,18 +393,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIVPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIVPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIVPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurface, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIVPtr);
                     }
                 }
             }
@@ -701,18 +407,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (IDirect3DSurface9* pDstSurfacePtr = &pDstSurface)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
             }
             return ret;
         }
@@ -726,18 +421,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void* pIVPtr = &pIV)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIVPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIVPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIVPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIVPtr);
                 }
             }
             return ret;
@@ -752,18 +436,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void* pContentKeyPtr = &pContentKey)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIV);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIV);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIV);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIV);
                 }
             }
             return ret;
@@ -780,18 +453,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIVPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIVPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIVPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIVPtr);
                     }
                 }
             }
@@ -807,18 +469,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIV);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIV);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIV);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIV);
                 }
             }
             return ret;
@@ -835,18 +486,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIVPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIVPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIVPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIVPtr);
                     }
                 }
             }
@@ -864,18 +504,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (void* pContentKeyPtr = &pContentKey)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIV);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIV);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIV);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIV);
                     }
                 }
             }
@@ -895,18 +524,7 @@ namespace Silk.NET.Direct3D9
                     {
                         fixed (void* pIVPtr = &pIV)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIVPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIVPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIVPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurface, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIVPtr);
                         }
                     }
                 }
@@ -921,18 +539,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (IDirect3DSurface9* pSrcSurfacePtr = &pSrcSurface)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
             }
             return ret;
         }
@@ -946,18 +553,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void* pIVPtr = &pIV)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIVPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIVPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIVPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIVPtr);
                 }
             }
             return ret;
@@ -972,18 +568,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void* pContentKeyPtr = &pContentKey)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIV);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIV);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIV);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIV);
                 }
             }
             return ret;
@@ -1000,18 +585,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIVPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIVPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIVPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIVPtr);
                     }
                 }
             }
@@ -1027,18 +601,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIV);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIV);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIV);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIV);
                 }
             }
             return ret;
@@ -1055,18 +618,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIVPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIVPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIVPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIVPtr);
                     }
                 }
             }
@@ -1084,18 +636,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (void* pContentKeyPtr = &pContentKey)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIV);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIV);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIV);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIV);
                     }
                 }
             }
@@ -1115,18 +656,7 @@ namespace Silk.NET.Direct3D9
                     {
                         fixed (void* pIVPtr = &pIV)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIVPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIVPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIVPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurface, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIVPtr);
                         }
                     }
                 }
@@ -1143,18 +673,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (IDirect3DSurface9* pDstSurfacePtr = &pDstSurface)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
                 }
             }
             return ret;
@@ -1171,18 +690,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (void* pIVPtr = &pIV)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIVPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIVPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIVPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIVPtr);
                     }
                 }
             }
@@ -1200,18 +708,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (void* pContentKeyPtr = &pContentKey)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIV);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIV);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIV);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIV);
                     }
                 }
             }
@@ -1231,18 +728,7 @@ namespace Silk.NET.Direct3D9
                     {
                         fixed (void* pIVPtr = &pIV)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIVPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIVPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIVPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfo, pContentKeyPtr, pIVPtr);
                         }
                     }
                 }
@@ -1261,18 +747,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (EncryptedBlockInfo* pEncryptedBlockInfoPtr = &pEncryptedBlockInfo)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIV);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIV);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIV);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIV);
                     }
                 }
             }
@@ -1292,18 +767,7 @@ namespace Silk.NET.Direct3D9
                     {
                         fixed (void* pIVPtr = &pIV)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIVPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIVPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIVPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKey, pIVPtr);
                         }
                     }
                 }
@@ -1324,18 +788,7 @@ namespace Silk.NET.Direct3D9
                     {
                         fixed (void* pContentKeyPtr = &pContentKey)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIV);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIV);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIV);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIV);
                         }
                     }
                 }
@@ -1358,18 +811,7 @@ namespace Silk.NET.Direct3D9
                         {
                             fixed (void* pIVPtr = &pIV)
                             {
-            #if NET5_0_OR_GREATER
-                                ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIVPtr);
-            #else
-                                if (SilkMarshal.IsWinapiStdcall)
-                                {
-                                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIVPtr);
-                                }
-                                else
-                                {
-                                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIVPtr);
-                                }
-            #endif
+                                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, IDirect3DSurface9*, uint, EncryptedBlockInfo*, void*, void*, int>)@this->LpVtbl[7])(@this, pSrcSurfacePtr, pDstSurfacePtr, SrcSurfaceSize, pEncryptedBlockInfoPtr, pContentKeyPtr, pIVPtr);
                             }
                         }
                     }
@@ -1383,18 +825,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, uint*, int>)LpVtbl[8])(@this, pSrcSurface, pSurfacePitch);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, uint*, int>)LpVtbl[8])(@this, pSrcSurface, pSurfacePitch);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, uint*, int>)LpVtbl[8])(@this, pSrcSurface, pSurfacePitch);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, uint*, int>)@this->LpVtbl[8])(@this, pSrcSurface, pSurfacePitch);
             return ret;
         }
 
@@ -1405,18 +836,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (uint* pSurfacePitchPtr = &pSurfacePitch)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, uint*, int>)LpVtbl[8])(@this, pSrcSurface, pSurfacePitchPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, uint*, int>)LpVtbl[8])(@this, pSrcSurface, pSurfacePitchPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, uint*, int>)LpVtbl[8])(@this, pSrcSurface, pSurfacePitchPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, uint*, int>)@this->LpVtbl[8])(@this, pSrcSurface, pSurfacePitchPtr);
             }
             return ret;
         }
@@ -1428,18 +848,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (IDirect3DSurface9* pSrcSurfacePtr = &pSrcSurface)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, uint*, int>)LpVtbl[8])(@this, pSrcSurfacePtr, pSurfacePitch);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, uint*, int>)LpVtbl[8])(@this, pSrcSurfacePtr, pSurfacePitch);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, uint*, int>)LpVtbl[8])(@this, pSrcSurfacePtr, pSurfacePitch);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, uint*, int>)@this->LpVtbl[8])(@this, pSrcSurfacePtr, pSurfacePitch);
             }
             return ret;
         }
@@ -1453,18 +862,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (uint* pSurfacePitchPtr = &pSurfacePitch)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, IDirect3DSurface9*, uint*, int>)LpVtbl[8])(@this, pSrcSurfacePtr, pSurfacePitchPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, IDirect3DSurface9*, uint*, int>)LpVtbl[8])(@this, pSrcSurfacePtr, pSurfacePitchPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, uint*, int>)LpVtbl[8])(@this, pSrcSurfacePtr, pSurfacePitchPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, IDirect3DSurface9*, uint*, int>)@this->LpVtbl[8])(@this, pSrcSurfacePtr, pSurfacePitchPtr);
                 }
             }
             return ret;
@@ -1475,18 +873,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, void*, uint, int>)LpVtbl[9])(@this, pRandomNumber, RandomNumberSize);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, void*, uint, int>)LpVtbl[9])(@this, pRandomNumber, RandomNumberSize);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, void*, uint, int>)LpVtbl[9])(@this, pRandomNumber, RandomNumberSize);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, void*, uint, int>)@this->LpVtbl[9])(@this, pRandomNumber, RandomNumberSize);
             return ret;
         }
 
@@ -1497,18 +884,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void* pRandomNumberPtr = &pRandomNumber)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, void*, uint, int>)LpVtbl[9])(@this, pRandomNumberPtr, RandomNumberSize);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, void*, uint, int>)LpVtbl[9])(@this, pRandomNumberPtr, RandomNumberSize);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, void*, uint, int>)LpVtbl[9])(@this, pRandomNumberPtr, RandomNumberSize);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, void*, uint, int>)@this->LpVtbl[9])(@this, pRandomNumberPtr, RandomNumberSize);
             }
             return ret;
         }
@@ -1518,7 +894,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, int>)LpVtbl[10])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, int>)@this->LpVtbl[10])(@this);
             return ret;
         }
 
@@ -1527,18 +903,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, void*, uint, int>)LpVtbl[11])(@this, pReadbackKey, KeySize);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, void*, uint, int>)LpVtbl[11])(@this, pReadbackKey, KeySize);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, void*, uint, int>)LpVtbl[11])(@this, pReadbackKey, KeySize);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, void*, uint, int>)@this->LpVtbl[11])(@this, pReadbackKey, KeySize);
             return ret;
         }
 
@@ -1549,20 +914,283 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void* pReadbackKeyPtr = &pReadbackKey)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3DCryptoSession9*, void*, uint, int>)LpVtbl[11])(@this, pReadbackKeyPtr, KeySize);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3DCryptoSession9*, void*, uint, int>)LpVtbl[11])(@this, pReadbackKeyPtr, KeySize);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, void*, uint, int>)LpVtbl[11])(@this, pReadbackKeyPtr, KeySize);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCryptoSession9*, void*, uint, int>)@this->LpVtbl[11])(@this, pReadbackKeyPtr, KeySize);
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EncryptionBlt<TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint DstSurfaceSize, void* pIV) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->EncryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, DstSurfaceSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int EncryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint DstSurfaceSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->EncryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, DstSurfaceSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EncryptionBlt<TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint DstSurfaceSize, void* pIV) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->EncryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, DstSurfaceSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int EncryptionBlt<T0, TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint DstSurfaceSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->EncryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, DstSurfaceSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int EncryptionBlt<TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint DstSurfaceSize, void* pIV) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->EncryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, DstSurfaceSize, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int EncryptionBlt<T0, TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint DstSurfaceSize, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->EncryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, DstSurfaceSize, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, void* pContentKey, void* pIV) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, void* pContentKey, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, ref T0 pContentKey, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, T1, TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, ref T0 pContentKey, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, void* pContentKey, void* pIV) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, ref pEncryptedBlockInfo, pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, void* pContentKey, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, ref pEncryptedBlockInfo, pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, ref T0 pContentKey, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, ref pEncryptedBlockInfo, ref pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int DecryptionBlt<T0, T1, TI0, TI1>(ComPtr<TI0> pSrcSurface, ComPtr<TI1> pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, ref T0 pContentKey, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI1>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, ref pEncryptedBlockInfo, ref pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, void* pContentKey, void* pIV) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, void* pContentKey, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, ref T0 pContentKey, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, T1, TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, ref T0 pContentKey, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, void* pContentKey, void* pIV) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, SrcSurfaceSize, ref pEncryptedBlockInfo, pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, void* pContentKey, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, SrcSurfaceSize, ref pEncryptedBlockInfo, pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, ref T0 pContentKey, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, SrcSurfaceSize, ref pEncryptedBlockInfo, ref pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int DecryptionBlt<T0, T1, TI0>(ComPtr<TI0> pSrcSurface, ref IDirect3DSurface9 pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, ref T0 pContentKey, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt((IDirect3DSurface9*) pSrcSurface.Handle, ref pDstSurface, SrcSurfaceSize, ref pEncryptedBlockInfo, ref pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, void* pContentKey, void* pIV) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, void* pContentKey, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, pEncryptedBlockInfo, pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, ref T0 pContentKey, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, T1, TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint SrcSurfaceSize, EncryptedBlockInfo* pEncryptedBlockInfo, ref T0 pContentKey, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, pEncryptedBlockInfo, ref pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, void* pContentKey, void* pIV) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, ref pEncryptedBlockInfo, pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, void* pContentKey, ref T0 pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, ref pEncryptedBlockInfo, pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int DecryptionBlt<T0, TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, ref T0 pContentKey, void* pIV) where T0 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, ref pEncryptedBlockInfo, ref pContentKey, pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int DecryptionBlt<T0, T1, TI0>(ref IDirect3DSurface9 pSrcSurface, ComPtr<TI0> pDstSurface, uint SrcSurfaceSize, ref EncryptedBlockInfo pEncryptedBlockInfo, ref T0 pContentKey, ref T1 pIV) where T0 : unmanaged where T1 : unmanaged where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->DecryptionBlt(ref pSrcSurface, (IDirect3DSurface9*) pDstSurface.Handle, SrcSurfaceSize, ref pEncryptedBlockInfo, ref pContentKey, ref pIV);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetSurfacePitch<TI0>(ComPtr<TI0> pSrcSurface, uint* pSurfacePitch) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetSurfacePitch((IDirect3DSurface9*) pSrcSurface.Handle, pSurfacePitch);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetSurfacePitch<TI0>(ComPtr<TI0> pSrcSurface, ref uint pSurfacePitch) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetSurfacePitch((IDirect3DSurface9*) pSrcSurface.Handle, ref pSurfacePitch);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DCryptoSession9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

@@ -25,7 +25,7 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             Format? format = null,
             ulong? externalFormat = null,
-            FormatFeatureFlags2KHR? formatFeatures = null,
+            FormatFeatureFlags2? formatFeatures = null,
             ComponentMapping? samplerYcbcrConversionComponents = null,
             SamplerYcbcrModelConversion? suggestedYcbcrModel = null,
             SamplerYcbcrRange? suggestedYcbcrRange = null,
@@ -105,10 +105,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "externalFormat")]
         public ulong ExternalFormat;
 /// <summary></summary>
-        [NativeName("Type", "VkFormatFeatureFlags2KHR")]
-        [NativeName("Type.Name", "VkFormatFeatureFlags2KHR")]
+        [NativeName("Type", "VkFormatFeatureFlags2")]
+        [NativeName("Type.Name", "VkFormatFeatureFlags2")]
         [NativeName("Name", "formatFeatures")]
-        public FormatFeatureFlags2KHR FormatFeatures;
+        public FormatFeatureFlags2 FormatFeatures;
 /// <summary></summary>
         [NativeName("Type", "VkComponentMapping")]
         [NativeName("Type.Name", "VkComponentMapping")]

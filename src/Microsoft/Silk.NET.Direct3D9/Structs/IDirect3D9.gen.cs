@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D9
 {
     [Guid("81bdcbca-64d4-426d-ae8d-ad0147f4275c")]
     [NativeName("Name", "IDirect3D9")]
-    public unsafe partial struct IDirect3D9
+    public unsafe partial struct IDirect3D9 : IComVtbl<IDirect3D9>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("81bdcbca-64d4-426d-ae8d-ad0147f4275c");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDirect3D9 val)
             => Unsafe.As<IDirect3D9, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,18 +49,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3D9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -68,18 +60,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3D9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -91,18 +72,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3D9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -116,18 +86,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3D9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -138,7 +97,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -147,7 +106,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -156,18 +115,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3D9*, void*, int>)LpVtbl[3])(@this, pInitializeFunction);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, void*, int>)LpVtbl[3])(@this, pInitializeFunction);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, void*, int>)LpVtbl[3])(@this, pInitializeFunction);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, void*, int>)@this->LpVtbl[3])(@this, pInitializeFunction);
             return ret;
         }
 
@@ -178,18 +126,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void* pInitializeFunctionPtr = &pInitializeFunction)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3D9*, void*, int>)LpVtbl[3])(@this, pInitializeFunctionPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, void*, int>)LpVtbl[3])(@this, pInitializeFunctionPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, void*, int>)LpVtbl[3])(@this, pInitializeFunctionPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, void*, int>)@this->LpVtbl[3])(@this, pInitializeFunctionPtr);
             }
             return ret;
         }
@@ -199,7 +136,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint>)LpVtbl[4])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint>)@this->LpVtbl[4])(@this);
             return ret;
         }
 
@@ -208,18 +145,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3D9*, uint, uint, AdapterIdentifier9*, int>)LpVtbl[5])(@this, Adapter, Flags, pIdentifier);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, uint, AdapterIdentifier9*, int>)LpVtbl[5])(@this, Adapter, Flags, pIdentifier);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, uint, AdapterIdentifier9*, int>)LpVtbl[5])(@this, Adapter, Flags, pIdentifier);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, uint, AdapterIdentifier9*, int>)@this->LpVtbl[5])(@this, Adapter, Flags, pIdentifier);
             return ret;
         }
 
@@ -230,18 +156,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (AdapterIdentifier9* pIdentifierPtr = &pIdentifier)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3D9*, uint, uint, AdapterIdentifier9*, int>)LpVtbl[5])(@this, Adapter, Flags, pIdentifierPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, uint, AdapterIdentifier9*, int>)LpVtbl[5])(@this, Adapter, Flags, pIdentifierPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, uint, AdapterIdentifier9*, int>)LpVtbl[5])(@this, Adapter, Flags, pIdentifierPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, uint, AdapterIdentifier9*, int>)@this->LpVtbl[5])(@this, Adapter, Flags, pIdentifierPtr);
             }
             return ret;
         }
@@ -251,18 +166,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3D9*, uint, Format, uint>)LpVtbl[6])(@this, Adapter, Format);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, Format, uint>)LpVtbl[6])(@this, Adapter, Format);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Format, uint>)LpVtbl[6])(@this, Adapter, Format);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Format, uint>)@this->LpVtbl[6])(@this, Adapter, Format);
             return ret;
         }
 
@@ -271,18 +175,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3D9*, uint, Format, uint, Displaymode*, int>)LpVtbl[7])(@this, Adapter, Format, Mode, pMode);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, Format, uint, Displaymode*, int>)LpVtbl[7])(@this, Adapter, Format, Mode, pMode);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Format, uint, Displaymode*, int>)LpVtbl[7])(@this, Adapter, Format, Mode, pMode);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Format, uint, Displaymode*, int>)@this->LpVtbl[7])(@this, Adapter, Format, Mode, pMode);
             return ret;
         }
 
@@ -293,18 +186,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Displaymode* pModePtr = &pMode)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3D9*, uint, Format, uint, Displaymode*, int>)LpVtbl[7])(@this, Adapter, Format, Mode, pModePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, Format, uint, Displaymode*, int>)LpVtbl[7])(@this, Adapter, Format, Mode, pModePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Format, uint, Displaymode*, int>)LpVtbl[7])(@this, Adapter, Format, Mode, pModePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Format, uint, Displaymode*, int>)@this->LpVtbl[7])(@this, Adapter, Format, Mode, pModePtr);
             }
             return ret;
         }
@@ -314,18 +196,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3D9*, uint, Displaymode*, int>)LpVtbl[8])(@this, Adapter, pMode);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, Displaymode*, int>)LpVtbl[8])(@this, Adapter, pMode);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Displaymode*, int>)LpVtbl[8])(@this, Adapter, pMode);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Displaymode*, int>)@this->LpVtbl[8])(@this, Adapter, pMode);
             return ret;
         }
 
@@ -336,39 +207,17 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Displaymode* pModePtr = &pMode)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3D9*, uint, Displaymode*, int>)LpVtbl[8])(@this, Adapter, pModePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, Displaymode*, int>)LpVtbl[8])(@this, Adapter, pModePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Displaymode*, int>)LpVtbl[8])(@this, Adapter, pModePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Displaymode*, int>)@this->LpVtbl[8])(@this, Adapter, pModePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CheckDeviceType(uint Adapter, Devtype DevType, Format AdapterFormat, Format BackBufferFormat, int bWindowed)
+        public readonly int CheckDeviceType(uint Adapter, Devtype DevType, Format AdapterFormat, Format BackBufferFormat, Silk.NET.Core.Bool32 bWindowed)
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3D9*, uint, Devtype, Format, Format, int, int>)LpVtbl[9])(@this, Adapter, DevType, AdapterFormat, BackBufferFormat, bWindowed);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, Devtype, Format, Format, int, int>)LpVtbl[9])(@this, Adapter, DevType, AdapterFormat, BackBufferFormat, bWindowed);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, Format, int, int>)LpVtbl[9])(@this, Adapter, DevType, AdapterFormat, BackBufferFormat, bWindowed);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, Format, Silk.NET.Core.Bool32, int>)@this->LpVtbl[9])(@this, Adapter, DevType, AdapterFormat, BackBufferFormat, bWindowed);
             return ret;
         }
 
@@ -377,60 +226,27 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3D9*, uint, Devtype, Format, uint, Resourcetype, Format, int>)LpVtbl[10])(@this, Adapter, DeviceType, AdapterFormat, Usage, RType, CheckFormat);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, Devtype, Format, uint, Resourcetype, Format, int>)LpVtbl[10])(@this, Adapter, DeviceType, AdapterFormat, Usage, RType, CheckFormat);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, uint, Resourcetype, Format, int>)LpVtbl[10])(@this, Adapter, DeviceType, AdapterFormat, Usage, RType, CheckFormat);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, uint, Resourcetype, Format, int>)@this->LpVtbl[10])(@this, Adapter, DeviceType, AdapterFormat, Usage, RType, CheckFormat);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckDeviceMultiSampleType(uint Adapter, Devtype DeviceType, Format SurfaceFormat, int Windowed, MultisampleType MultiSampleType, uint* pQualityLevels)
+        public readonly unsafe int CheckDeviceMultiSampleType(uint Adapter, Devtype DeviceType, Format SurfaceFormat, Silk.NET.Core.Bool32 Windowed, MultisampleType MultiSampleType, uint* pQualityLevels)
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3D9*, uint, Devtype, Format, int, MultisampleType, uint*, int>)LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevels);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, Devtype, Format, int, MultisampleType, uint*, int>)LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevels);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, int, MultisampleType, uint*, int>)LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevels);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, Silk.NET.Core.Bool32, MultisampleType, uint*, int>)@this->LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevels);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CheckDeviceMultiSampleType(uint Adapter, Devtype DeviceType, Format SurfaceFormat, int Windowed, MultisampleType MultiSampleType, ref uint pQualityLevels)
+        public readonly int CheckDeviceMultiSampleType(uint Adapter, Devtype DeviceType, Format SurfaceFormat, Silk.NET.Core.Bool32 Windowed, MultisampleType MultiSampleType, ref uint pQualityLevels)
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pQualityLevelsPtr = &pQualityLevels)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3D9*, uint, Devtype, Format, int, MultisampleType, uint*, int>)LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevelsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, Devtype, Format, int, MultisampleType, uint*, int>)LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevelsPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, int, MultisampleType, uint*, int>)LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevelsPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, Silk.NET.Core.Bool32, MultisampleType, uint*, int>)@this->LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevelsPtr);
             }
             return ret;
         }
@@ -440,18 +256,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3D9*, uint, Devtype, Format, Format, Format, int>)LpVtbl[12])(@this, Adapter, DeviceType, AdapterFormat, RenderTargetFormat, DepthStencilFormat);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, Devtype, Format, Format, Format, int>)LpVtbl[12])(@this, Adapter, DeviceType, AdapterFormat, RenderTargetFormat, DepthStencilFormat);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, Format, Format, int>)LpVtbl[12])(@this, Adapter, DeviceType, AdapterFormat, RenderTargetFormat, DepthStencilFormat);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, Format, Format, int>)@this->LpVtbl[12])(@this, Adapter, DeviceType, AdapterFormat, RenderTargetFormat, DepthStencilFormat);
             return ret;
         }
 
@@ -460,18 +265,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3D9*, uint, Devtype, Format, Format, int>)LpVtbl[13])(@this, Adapter, DeviceType, SourceFormat, TargetFormat);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, Devtype, Format, Format, int>)LpVtbl[13])(@this, Adapter, DeviceType, SourceFormat, TargetFormat);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, Format, int>)LpVtbl[13])(@this, Adapter, DeviceType, SourceFormat, TargetFormat);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Format, Format, int>)@this->LpVtbl[13])(@this, Adapter, DeviceType, SourceFormat, TargetFormat);
             return ret;
         }
 
@@ -480,18 +274,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3D9*, uint, Devtype, Caps9*, int>)LpVtbl[14])(@this, Adapter, DeviceType, pCaps);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, Devtype, Caps9*, int>)LpVtbl[14])(@this, Adapter, DeviceType, pCaps);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Caps9*, int>)LpVtbl[14])(@this, Adapter, DeviceType, pCaps);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Caps9*, int>)@this->LpVtbl[14])(@this, Adapter, DeviceType, pCaps);
             return ret;
         }
 
@@ -502,18 +285,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Caps9* pCapsPtr = &pCaps)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3D9*, uint, Devtype, Caps9*, int>)LpVtbl[14])(@this, Adapter, DeviceType, pCapsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, Devtype, Caps9*, int>)LpVtbl[14])(@this, Adapter, DeviceType, pCapsPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Caps9*, int>)LpVtbl[14])(@this, Adapter, DeviceType, pCapsPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, Caps9*, int>)@this->LpVtbl[14])(@this, Adapter, DeviceType, pCapsPtr);
             }
             return ret;
         }
@@ -523,18 +295,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             nint ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3D9*, uint, nint>)LpVtbl[15])(@this, Adapter);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, nint>)LpVtbl[15])(@this, Adapter);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, nint>)LpVtbl[15])(@this, Adapter);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, nint>)@this->LpVtbl[15])(@this, Adapter);
             return ret;
         }
 
@@ -543,18 +304,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterface);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterface);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterface);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)@this->LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterface);
             return ret;
         }
 
@@ -565,18 +315,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (IDirect3DDevice9** ppReturnedDeviceInterfacePtr = &ppReturnedDeviceInterface)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterfacePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterfacePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterfacePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)@this->LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterfacePtr);
             }
             return ret;
         }
@@ -588,18 +327,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (PresentParameters* pPresentationParametersPtr = &pPresentationParameters)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterface);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterface);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterface);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)@this->LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterface);
             }
             return ret;
         }
@@ -613,21 +341,44 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (IDirect3DDevice9** ppReturnedDeviceInterfacePtr = &ppReturnedDeviceInterface)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterfacePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterfacePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterfacePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)@this->LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterfacePtr);
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateDevice<TI0>(uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, PresentParameters* pPresentationParameters, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateDevice(Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, (IDirect3DDevice9**) ppReturnedDeviceInterface.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateDevice<TI0>(uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, ref PresentParameters pPresentationParameters, ref ComPtr<TI0> ppReturnedDeviceInterface) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateDevice(Adapter, DeviceType, hFocusWindow, BehaviorFlags, ref pPresentationParameters, (IDirect3DDevice9**) ppReturnedDeviceInterface.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

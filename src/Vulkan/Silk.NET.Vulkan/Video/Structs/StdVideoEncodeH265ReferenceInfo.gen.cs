@@ -21,11 +21,16 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoEncodeH265ReferenceInfo
         (
+            StdVideoEncodeH265ReferenceInfoFlags? flags = null,
             int? picOrderCntVal = null,
-            byte? temporalId = null,
-            StdVideoEncodeH265ReferenceInfoFlags? flags = null
+            byte? temporalId = null
         ) : this()
         {
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
             if (picOrderCntVal is not null)
             {
                 PicOrderCntVal = picOrderCntVal.Value;
@@ -35,13 +40,13 @@ namespace Silk.NET.Vulkan.Video
             {
                 TemporalId = temporalId.Value;
             }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
         }
 
+
+        [NativeName("Type", "StdVideoEncodeH265ReferenceInfoFlags")]
+        [NativeName("Type.Name", "StdVideoEncodeH265ReferenceInfoFlags")]
+        [NativeName("Name", "flags")]
+        public StdVideoEncodeH265ReferenceInfoFlags Flags;
 
         [NativeName("Type", "int32_t")]
         [NativeName("Type.Name", "int32_t")]
@@ -52,10 +57,5 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "TemporalId")]
         public byte TemporalId;
-
-        [NativeName("Type", "StdVideoEncodeH265ReferenceInfoFlags")]
-        [NativeName("Type.Name", "StdVideoEncodeH265ReferenceInfoFlags")]
-        [NativeName("Name", "flags")]
-        public StdVideoEncodeH265ReferenceInfoFlags Flags;
     }
 }

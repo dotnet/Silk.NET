@@ -196,6 +196,62 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             return ret;
         }
 
+        public unsafe uint GenQueries([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenQueries(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe long GetInteger64([Flow(FlowDirection.In)] GetPName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInteger64(pname, out long silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetQuery([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQuery(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetQuery([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] QueryParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQuery(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetQuery([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQuery(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetQuery([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] QueryParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQuery(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQueryObject(id, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQueryObject(id, pname, out int silkRet);
+            return silkRet;
+        }
+
         public ExtDisjointTimerQuery(INativeContext ctx)
             : base(ctx)
         {

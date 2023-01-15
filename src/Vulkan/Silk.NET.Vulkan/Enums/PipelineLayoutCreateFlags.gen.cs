@@ -13,9 +13,17 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkPipelineLayoutCreateFlags")]
     public enum PipelineLayoutCreateFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"Reserved0BitAmd\"")]
         [NativeName("Name", "VK_PIPELINE_LAYOUT_CREATE_RESERVED_0_BIT_AMD")]
         PipelineLayoutCreateReserved0BitAmd = 1,
-        [NativeName("Name", "VK_PIPELINE_LAYOUT_CREATE_RESERVED_1_BIT_AMD")]
-        PipelineLayoutCreateReserved1BitAmd = 2,
+        [Obsolete("Deprecated in favour of \"IndependentSetsBitExt\"")]
+        [NativeName("Name", "VK_PIPELINE_LAYOUT_CREATE_INDEPENDENT_SETS_BIT_EXT")]
+        PipelineLayoutCreateIndependentSetsBitExt = 2,
+        [NativeName("Name", "VK_PIPELINE_LAYOUT_CREATE_RESERVED_0_BIT_AMD")]
+        Reserved0BitAmd = 1,
+        [NativeName("Name", "VK_PIPELINE_LAYOUT_CREATE_INDEPENDENT_SETS_BIT_EXT")]
+        IndependentSetsBitExt = 2,
     }
 }

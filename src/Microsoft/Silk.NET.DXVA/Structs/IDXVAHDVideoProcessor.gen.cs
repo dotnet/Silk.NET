@@ -18,9 +18,12 @@ namespace Silk.NET.DXVA
 {
     [Guid("95f4edf4-6e03-4cd7-be1b-3075d665aa52")]
     [NativeName("Name", "IDXVAHD_VideoProcessor")]
-    public unsafe partial struct IDXVAHDVideoProcessor
+    public unsafe partial struct IDXVAHDVideoProcessor : IComVtbl<IDXVAHDVideoProcessor>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("95f4edf4-6e03-4cd7-be1b-3075d665aa52");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXVAHDVideoProcessor val)
             => Unsafe.As<IDXVAHDVideoProcessor, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,18 +49,7 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXVAHDVideoProcessor*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXVAHDVideoProcessor*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -68,18 +60,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDVideoProcessor*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDVideoProcessor*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -91,18 +72,7 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDVideoProcessor*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDVideoProcessor*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -116,18 +86,7 @@ namespace Silk.NET.DXVA
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDXVAHDVideoProcessor*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXVAHDVideoProcessor*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -138,7 +97,7 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -147,49 +106,27 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetVideoProcessBltState(HDBltState State, uint DataSize, void* pData)
+        public readonly unsafe int SetVideoProcessBltState(HDBltState State, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)LpVtbl[3])(@this, State, DataSize, pData);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)LpVtbl[3])(@this, State, DataSize, pData);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)LpVtbl[3])(@this, State, DataSize, pData);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)@this->LpVtbl[3])(@this, State, DataSize, pData);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetVideoProcessBltState<T0>(HDBltState State, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int SetVideoProcessBltState<T0>(HDBltState State, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)LpVtbl[3])(@this, State, DataSize, pDataPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)LpVtbl[3])(@this, State, DataSize, pDataPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)LpVtbl[3])(@this, State, DataSize, pDataPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)@this->LpVtbl[3])(@this, State, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -199,18 +136,7 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)LpVtbl[4])(@this, State, DataSize, pData);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)LpVtbl[4])(@this, State, DataSize, pData);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)LpVtbl[4])(@this, State, DataSize, pData);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)@this->LpVtbl[4])(@this, State, DataSize, pData);
             return ret;
         }
 
@@ -221,61 +147,28 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)LpVtbl[4])(@this, State, DataSize, pDataPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)LpVtbl[4])(@this, State, DataSize, pDataPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)LpVtbl[4])(@this, State, DataSize, pDataPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, HDBltState, uint, void*, int>)@this->LpVtbl[4])(@this, State, DataSize, pDataPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetVideoProcessStreamState(uint StreamNumber, HDStreamState State, uint DataSize, void* pData)
+        public readonly unsafe int SetVideoProcessStreamState(uint StreamNumber, HDStreamState State, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)LpVtbl[5])(@this, StreamNumber, State, DataSize, pData);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)LpVtbl[5])(@this, StreamNumber, State, DataSize, pData);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)LpVtbl[5])(@this, StreamNumber, State, DataSize, pData);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)@this->LpVtbl[5])(@this, StreamNumber, State, DataSize, pData);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetVideoProcessStreamState<T0>(uint StreamNumber, HDStreamState State, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int SetVideoProcessStreamState<T0>(uint StreamNumber, HDStreamState State, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)LpVtbl[5])(@this, StreamNumber, State, DataSize, pDataPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)LpVtbl[5])(@this, StreamNumber, State, DataSize, pDataPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)LpVtbl[5])(@this, StreamNumber, State, DataSize, pDataPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)@this->LpVtbl[5])(@this, StreamNumber, State, DataSize, pDataPtr);
             }
             return ret;
         }
@@ -285,18 +178,7 @@ namespace Silk.NET.DXVA
         {
             var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)LpVtbl[6])(@this, StreamNumber, State, DataSize, pData);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)LpVtbl[6])(@this, StreamNumber, State, DataSize, pData);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)LpVtbl[6])(@this, StreamNumber, State, DataSize, pData);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)@this->LpVtbl[6])(@this, StreamNumber, State, DataSize, pData);
             return ret;
         }
 
@@ -307,90 +189,46 @@ namespace Silk.NET.DXVA
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)LpVtbl[6])(@this, StreamNumber, State, DataSize, pDataPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)LpVtbl[6])(@this, StreamNumber, State, DataSize, pDataPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)LpVtbl[6])(@this, StreamNumber, State, DataSize, pDataPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, uint, HDStreamState, uint, void*, int>)@this->LpVtbl[6])(@this, StreamNumber, State, DataSize, pDataPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessBltHD(Silk.NET.Direct3D9.IDirect3DSurface9* pOutputSurface, uint OutputFrame, uint StreamCount, HDStreamData* pStreams)
+        public readonly unsafe int VideoProcessBltHD(Silk.NET.Direct3D9.IDirect3DSurface9* pOutputSurface, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] HDStreamData* pStreams)
         {
             var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXVAHDVideoProcessor*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>)LpVtbl[7])(@this, pOutputSurface, OutputFrame, StreamCount, pStreams);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>)LpVtbl[7])(@this, pOutputSurface, OutputFrame, StreamCount, pStreams);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXVAHDVideoProcessor*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>)LpVtbl[7])(@this, pOutputSurface, OutputFrame, StreamCount, pStreams);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>)@this->LpVtbl[7])(@this, pOutputSurface, OutputFrame, StreamCount, pStreams);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessBltHD(Silk.NET.Direct3D9.IDirect3DSurface9* pOutputSurface, uint OutputFrame, uint StreamCount, ref HDStreamData pStreams)
+        public readonly unsafe int VideoProcessBltHD(Silk.NET.Direct3D9.IDirect3DSurface9* pOutputSurface, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] in HDStreamData pStreams)
         {
             var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (HDStreamData* pStreamsPtr = &pStreams)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDVideoProcessor*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>)LpVtbl[7])(@this, pOutputSurface, OutputFrame, StreamCount, pStreamsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>)LpVtbl[7])(@this, pOutputSurface, OutputFrame, StreamCount, pStreamsPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDVideoProcessor*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>)LpVtbl[7])(@this, pOutputSurface, OutputFrame, StreamCount, pStreamsPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>)@this->LpVtbl[7])(@this, pOutputSurface, OutputFrame, StreamCount, pStreamsPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int VideoProcessBltHD(ref Silk.NET.Direct3D9.IDirect3DSurface9 pOutputSurface, uint OutputFrame, uint StreamCount, HDStreamData* pStreams)
+        public readonly unsafe int VideoProcessBltHD(ref Silk.NET.Direct3D9.IDirect3DSurface9 pOutputSurface, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] HDStreamData* pStreams)
         {
             var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Direct3D9.IDirect3DSurface9* pOutputSurfacePtr = &pOutputSurface)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXVAHDVideoProcessor*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>)LpVtbl[7])(@this, pOutputSurfacePtr, OutputFrame, StreamCount, pStreams);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>)LpVtbl[7])(@this, pOutputSurfacePtr, OutputFrame, StreamCount, pStreams);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXVAHDVideoProcessor*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>)LpVtbl[7])(@this, pOutputSurfacePtr, OutputFrame, StreamCount, pStreams);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>)@this->LpVtbl[7])(@this, pOutputSurfacePtr, OutputFrame, StreamCount, pStreams);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int VideoProcessBltHD(ref Silk.NET.Direct3D9.IDirect3DSurface9 pOutputSurface, uint OutputFrame, uint StreamCount, ref HDStreamData pStreams)
+        public readonly int VideoProcessBltHD(ref Silk.NET.Direct3D9.IDirect3DSurface9 pOutputSurface, uint OutputFrame, uint StreamCount, [Flow(FlowDirection.In)] in HDStreamData pStreams)
         {
             var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -398,21 +236,28 @@ namespace Silk.NET.DXVA
             {
                 fixed (HDStreamData* pStreamsPtr = &pStreams)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDXVAHDVideoProcessor*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>)LpVtbl[7])(@this, pOutputSurfacePtr, OutputFrame, StreamCount, pStreamsPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>)LpVtbl[7])(@this, pOutputSurfacePtr, OutputFrame, StreamCount, pStreamsPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXVAHDVideoProcessor*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>)LpVtbl[7])(@this, pOutputSurfacePtr, OutputFrame, StreamCount, pStreamsPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDXVAHDVideoProcessor*, Silk.NET.Direct3D9.IDirect3DSurface9*, uint, uint, HDStreamData*, int>)@this->LpVtbl[7])(@this, pOutputSurfacePtr, OutputFrame, StreamCount, pStreamsPtr);
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXVAHDVideoProcessor*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

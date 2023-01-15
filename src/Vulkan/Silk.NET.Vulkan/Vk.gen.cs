@@ -59,6 +59,9 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "VK_MAX_GLOBAL_PRIORITY_SIZE_EXT")]
         public const uint MaxGlobalPrioritySizeExt = unchecked((uint) 16);
         [NativeName("Type", "")]
+        [NativeName("Name", "VK_MAX_GLOBAL_PRIORITY_SIZE_KHR")]
+        public const uint MaxGlobalPrioritySizeKhr = unchecked((uint) 16);
+        [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_MEMORY_HEAPS")]
         public const uint MaxMemoryHeaps = unchecked((uint) 16);
         [NativeName("Type", "")]
@@ -67,6 +70,9 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_PHYSICAL_DEVICE_NAME_SIZE")]
         public const uint MaxPhysicalDeviceNameSize = unchecked((uint) 256);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_MAX_SHADER_MODULE_IDENTIFIER_SIZE_EXT")]
+        public const uint MaxShaderModuleIdentifierSizeExt = unchecked((uint) 32);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_QUEUE_FAMILY_EXTERNAL")]
         public const uint QueueFamilyExternal = unchecked((uint) (~1U));
@@ -235,6 +241,384 @@ namespace Silk.NET.Vulkan
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkWaitSemaphores", Convention = CallingConvention.Winapi)]
         public partial Result WaitSemaphores([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in SemaphoreWaitInfo pWaitInfo, [Count(Count = 0)] ulong timeout);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBeginRendering", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBeginRendering([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] RenderingInfo* pRenderingInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBeginRendering", Convention = CallingConvention.Winapi)]
+        public partial void CmdBeginRendering([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in RenderingInfo pRenderingInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pStrides);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pStrides);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pStrides);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pStrides);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pStrides);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pStrides);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pStrides);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2", Convention = CallingConvention.Winapi)]
+        public partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pStrides);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBlitImage2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdBlitImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] BlitImageInfo2* pBlitImageInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdBlitImage2", Convention = CallingConvention.Winapi)]
+        public partial void CmdBlitImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in BlitImageInfo2 pBlitImageInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdCopyBuffer2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdCopyBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CopyBufferInfo2* pCopyBufferInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdCopyBuffer2", Convention = CallingConvention.Winapi)]
+        public partial void CmdCopyBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CopyBufferInfo2 pCopyBufferInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdCopyBufferToImage2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdCopyBufferToImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CopyBufferToImageInfo2* pCopyBufferToImageInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdCopyBufferToImage2", Convention = CallingConvention.Winapi)]
+        public partial void CmdCopyBufferToImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CopyBufferToImageInfo2 pCopyBufferToImageInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdCopyImage2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdCopyImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CopyImageInfo2* pCopyImageInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdCopyImage2", Convention = CallingConvention.Winapi)]
+        public partial void CmdCopyImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CopyImageInfo2 pCopyImageInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdCopyImageToBuffer2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdCopyImageToBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CopyImageToBufferInfo2* pCopyImageToBufferInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdCopyImageToBuffer2", Convention = CallingConvention.Winapi)]
+        public partial void CmdCopyImageToBuffer2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CopyImageToBufferInfo2 pCopyImageToBufferInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdEndRendering", Convention = CallingConvention.Winapi)]
+        public partial void CmdEndRendering([Count(Count = 0)] CommandBuffer commandBuffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPipelineBarrier2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdPipelineBarrier2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] DependencyInfo* pDependencyInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdPipelineBarrier2", Convention = CallingConvention.Winapi)]
+        public partial void CmdPipelineBarrier2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in DependencyInfo pDependencyInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdResetEvent2", Convention = CallingConvention.Winapi)]
+        public partial void CmdResetEvent2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0)] PipelineStageFlags2 stageMask);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdResolveImage2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdResolveImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ResolveImageInfo2* pResolveImageInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdResolveImage2", Convention = CallingConvention.Winapi)]
+        public partial void CmdResolveImage2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in ResolveImageInfo2 pResolveImageInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetCullMode", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetCullMode([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CullModeFlags cullMode);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetDepthBiasEnable", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetDepthBiasEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 depthBiasEnable);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetDepthBoundsTestEnable", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetDepthBoundsTestEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 depthBoundsTestEnable);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetDepthCompareOp", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetDepthCompareOp([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CompareOp depthCompareOp);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetDepthTestEnable", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetDepthTestEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 depthTestEnable);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetDepthWriteEnable", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetDepthWriteEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 depthWriteEnable);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetEvent2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdSetEvent2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(FlowDirection.In)] DependencyInfo* pDependencyInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetEvent2", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetEvent2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(FlowDirection.In)] in DependencyInfo pDependencyInfo);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetFrontFace", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetFrontFace([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] FrontFace frontFace);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetPrimitiveRestartEnable", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetPrimitiveRestartEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 primitiveRestartEnable);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetPrimitiveTopology", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetPrimitiveTopology([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PrimitiveTopology primitiveTopology);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetRasterizerDiscardEnable", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetRasterizerDiscardEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 rasterizerDiscardEnable);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetScissorWithCount", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdSetScissorWithCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint scissorCount, [Count(Parameter = "scissorCount"), Flow(FlowDirection.In)] Rect2D* pScissors);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetScissorWithCount", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetScissorWithCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint scissorCount, [Count(Parameter = "scissorCount"), Flow(FlowDirection.In)] in Rect2D pScissors);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetStencilOp", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetStencilOp([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] StencilFaceFlags faceMask, [Count(Count = 0)] StencilOp failOp, [Count(Count = 0)] StencilOp passOp, [Count(Count = 0)] StencilOp depthFailOp, [Count(Count = 0)] CompareOp compareOp);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetStencilTestEnable", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetStencilTestEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 stencilTestEnable);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetViewportWithCount", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdSetViewportWithCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] Viewport* pViewports);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetViewportWithCount", Convention = CallingConvention.Winapi)]
+        public partial void CmdSetViewportWithCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] in Viewport pViewports);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] Event* pEvents, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] DependencyInfo* pDependencyInfos);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] Event* pEvents, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] in DependencyInfo pDependencyInfos);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents2", Convention = CallingConvention.Winapi)]
+        public unsafe partial void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] in Event pEvents, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] DependencyInfo* pDependencyInfos);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWaitEvents2", Convention = CallingConvention.Winapi)]
+        public partial void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] in Event pEvents, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] in DependencyInfo pDependencyInfos);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdWriteTimestamp2", Convention = CallingConvention.Winapi)]
+        public partial void CmdWriteTimestamp2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineStageFlags2 stage, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint query);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreatePrivateDataSlot", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreatePrivateDataSlot([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PrivateDataSlotCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PrivateDataSlot* pPrivateDataSlot);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreatePrivateDataSlot", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreatePrivateDataSlot([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PrivateDataSlotCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out PrivateDataSlot pPrivateDataSlot);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreatePrivateDataSlot", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreatePrivateDataSlot([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PrivateDataSlotCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PrivateDataSlot* pPrivateDataSlot);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreatePrivateDataSlot", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreatePrivateDataSlot([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PrivateDataSlotCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out PrivateDataSlot pPrivateDataSlot);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreatePrivateDataSlot", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreatePrivateDataSlot([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PrivateDataSlotCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PrivateDataSlot* pPrivateDataSlot);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreatePrivateDataSlot", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreatePrivateDataSlot([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PrivateDataSlotCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out PrivateDataSlot pPrivateDataSlot);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreatePrivateDataSlot", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result CreatePrivateDataSlot([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PrivateDataSlotCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PrivateDataSlot* pPrivateDataSlot);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCreatePrivateDataSlot", Convention = CallingConvention.Winapi)]
+        public partial Result CreatePrivateDataSlot([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PrivateDataSlotCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out PrivateDataSlot pPrivateDataSlot);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyPrivateDataSlot", Convention = CallingConvention.Winapi)]
+        public unsafe partial void DestroyPrivateDataSlot([Count(Count = 0)] Device device, [Count(Count = 0)] PrivateDataSlot privateDataSlot, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkDestroyPrivateDataSlot", Convention = CallingConvention.Winapi)]
+        public partial void DestroyPrivateDataSlot([Count(Count = 0)] Device device, [Count(Count = 0)] PrivateDataSlot privateDataSlot, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetDeviceBufferMemoryRequirements", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetDeviceBufferMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceBufferMemoryRequirements* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
+        [NativeApi(EntryPoint = "vkGetDeviceBufferMemoryRequirements", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetDeviceBufferMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceBufferMemoryRequirements* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryRequirements2 pMemoryRequirements);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetDeviceBufferMemoryRequirements", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetDeviceBufferMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceBufferMemoryRequirements pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
+        [NativeApi(EntryPoint = "vkGetDeviceBufferMemoryRequirements", Convention = CallingConvention.Winapi)]
+        public partial void GetDeviceBufferMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceBufferMemoryRequirements pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryRequirements2 pMemoryRequirements);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetDeviceImageMemoryRequirements", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetDeviceImageMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
+        [NativeApi(EntryPoint = "vkGetDeviceImageMemoryRequirements", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetDeviceImageMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryRequirements2 pMemoryRequirements);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetDeviceImageMemoryRequirements", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetDeviceImageMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceImageMemoryRequirements pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
+        [NativeApi(EntryPoint = "vkGetDeviceImageMemoryRequirements", Convention = CallingConvention.Winapi)]
+        public partial void GetDeviceImageMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceImageMemoryRequirements pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryRequirements2 pMemoryRequirements);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetDeviceImageSparseMemoryRequirements", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetDeviceImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
+        [NativeApi(EntryPoint = "vkGetDeviceImageSparseMemoryRequirements", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetDeviceImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] out SparseImageMemoryRequirements2 pSparseMemoryRequirements);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetDeviceImageSparseMemoryRequirements", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetDeviceImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0)] ref uint pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
+        [NativeApi(EntryPoint = "vkGetDeviceImageSparseMemoryRequirements", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetDeviceImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0)] ref uint pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] out SparseImageMemoryRequirements2 pSparseMemoryRequirements);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetDeviceImageSparseMemoryRequirements", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetDeviceImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceImageMemoryRequirements pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
+        [NativeApi(EntryPoint = "vkGetDeviceImageSparseMemoryRequirements", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetDeviceImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceImageMemoryRequirements pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] out SparseImageMemoryRequirements2 pSparseMemoryRequirements);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetDeviceImageSparseMemoryRequirements", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetDeviceImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceImageMemoryRequirements pInfo, [Count(Count = 0)] ref uint pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
+        [NativeApi(EntryPoint = "vkGetDeviceImageSparseMemoryRequirements", Convention = CallingConvention.Winapi)]
+        public partial void GetDeviceImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceImageMemoryRequirements pInfo, [Count(Count = 0)] ref uint pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] out SparseImageMemoryRequirements2 pSparseMemoryRequirements);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceToolProperties", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result GetPhysicalDeviceToolProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] PhysicalDeviceToolProperties* pToolProperties);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pToolProperties = new(StructureType.PhysicalDeviceToolProperties);")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceToolProperties", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result GetPhysicalDeviceToolProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] out PhysicalDeviceToolProperties pToolProperties);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceToolProperties", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result GetPhysicalDeviceToolProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] PhysicalDeviceToolProperties* pToolProperties);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pToolProperties = new(StructureType.PhysicalDeviceToolProperties);")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceToolProperties", Convention = CallingConvention.Winapi)]
+        public partial Result GetPhysicalDeviceToolProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] out PhysicalDeviceToolProperties pToolProperties);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetPrivateData", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetPrivateData([Count(Count = 0)] Device device, [Count(Count = 0)] ObjectType objectType, [Count(Count = 0)] ulong objectHandle, [Count(Count = 0)] PrivateDataSlot privateDataSlot, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pData);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkGetPrivateData", Convention = CallingConvention.Winapi)]
+        public partial void GetPrivateData([Count(Count = 0)] Device device, [Count(Count = 0)] ObjectType objectType, [Count(Count = 0)] ulong objectHandle, [Count(Count = 0)] PrivateDataSlot privateDataSlot, [Count(Count = 0), Flow(FlowDirection.Out)] out ulong pData);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkQueueSubmit2", Convention = CallingConvention.Winapi)]
+        public unsafe partial Result QueueSubmit2([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint submitCount, [Count(Parameter = "submitCount"), Flow(FlowDirection.In)] SubmitInfo2* pSubmits, [Count(Count = 0)] Fence fence);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkQueueSubmit2", Convention = CallingConvention.Winapi)]
+        public partial Result QueueSubmit2([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint submitCount, [Count(Parameter = "submitCount"), Flow(FlowDirection.In)] in SubmitInfo2 pSubmits, [Count(Count = 0)] Fence fence);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkSetPrivateData", Convention = CallingConvention.Winapi)]
+        public partial Result SetPrivateData([Count(Count = 0)] Device device, [Count(Count = 0)] ObjectType objectType, [Count(Count = 0)] ulong objectHandle, [Count(Count = 0)] PrivateDataSlot privateDataSlot, [Count(Count = 0)] ulong data);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkBindBufferMemory2", Convention = CallingConvention.Winapi)]
@@ -2441,6 +2825,153 @@ namespace Silk.NET.Vulkan
         public partial Result WaitForFences([Count(Count = 0)] Device device, [Count(Count = 0)] uint fenceCount, [Count(Parameter = "fenceCount"), Flow(FlowDirection.In)] in Fence pFences, [Count(Count = 0)] Bool32 waitAll, [Count(Count = 0)] ulong timeout);
 
         /// <summary>To be documented.</summary>
+        public unsafe void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pStrides)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindVertexBuffers2(commandBuffer, firstBinding, (uint) pStrides.Length, pBuffers, pOffsets, pSizes, in pStrides.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindVertexBuffers2(commandBuffer, firstBinding, (uint) pSizes.Length, pBuffers, pOffsets, in pSizes.GetPinnableReference(), pStrides);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pStrides)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindVertexBuffers2(commandBuffer, firstBinding, (uint) pStrides.Length, pBuffers, pOffsets, in pSizes.GetPinnableReference(), in pStrides.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindVertexBuffers2(commandBuffer, firstBinding, (uint) pOffsets.Length, pBuffers, in pOffsets.GetPinnableReference(), pSizes, pStrides);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pStrides)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindVertexBuffers2(commandBuffer, firstBinding, (uint) pStrides.Length, pBuffers, in pOffsets.GetPinnableReference(), pSizes, in pStrides.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindVertexBuffers2(commandBuffer, firstBinding, (uint) pSizes.Length, pBuffers, in pOffsets.GetPinnableReference(), in pSizes.GetPinnableReference(), pStrides);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pStrides)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindVertexBuffers2(commandBuffer, firstBinding, (uint) pStrides.Length, pBuffers, in pOffsets.GetPinnableReference(), in pSizes.GetPinnableReference(), in pStrides.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindVertexBuffers2(commandBuffer, firstBinding, (uint) pBuffers.Length, in pBuffers.GetPinnableReference(), pOffsets, pSizes, pStrides);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pStrides)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindVertexBuffers2(commandBuffer, firstBinding, (uint) pStrides.Length, in pBuffers.GetPinnableReference(), pOffsets, pSizes, in pStrides.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindVertexBuffers2(commandBuffer, firstBinding, (uint) pSizes.Length, in pBuffers.GetPinnableReference(), pOffsets, in pSizes.GetPinnableReference(), pStrides);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pStrides)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindVertexBuffers2(commandBuffer, firstBinding, (uint) pStrides.Length, in pBuffers.GetPinnableReference(), pOffsets, in pSizes.GetPinnableReference(), in pStrides.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindVertexBuffers2(commandBuffer, firstBinding, (uint) pOffsets.Length, in pBuffers.GetPinnableReference(), in pOffsets.GetPinnableReference(), pSizes, pStrides);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pStrides)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindVertexBuffers2(commandBuffer, firstBinding, (uint) pStrides.Length, in pBuffers.GetPinnableReference(), in pOffsets.GetPinnableReference(), pSizes, in pStrides.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindVertexBuffers2(commandBuffer, firstBinding, (uint) pSizes.Length, in pBuffers.GetPinnableReference(), in pOffsets.GetPinnableReference(), in pSizes.GetPinnableReference(), pStrides);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pStrides)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindVertexBuffers2(commandBuffer, firstBinding, (uint) pStrides.Length, in pBuffers.GetPinnableReference(), in pOffsets.GetPinnableReference(), in pSizes.GetPinnableReference(), in pStrides.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdSetScissorWithCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "scissorCount"), Flow(FlowDirection.In)] ReadOnlySpan<Rect2D> pScissors)
+        {
+            // ImplicitCountSpanOverloader
+            CmdSetScissorWithCount(commandBuffer, (uint) pScissors.Length, in pScissors.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdSetViewportWithCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] ReadOnlySpan<Viewport> pViewports)
+        {
+            // ImplicitCountSpanOverloader
+            CmdSetViewportWithCount(commandBuffer, (uint) pViewports.Length, in pViewports.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] Event* pEvents, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] ReadOnlySpan<DependencyInfo> pDependencyInfos)
+        {
+            // ImplicitCountSpanOverloader
+            CmdWaitEvents2(commandBuffer, (uint) pDependencyInfos.Length, pEvents, in pDependencyInfos.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] DependencyInfo* pDependencyInfos)
+        {
+            // ImplicitCountSpanOverloader
+            CmdWaitEvents2(commandBuffer, (uint) pEvents.Length, in pEvents.GetPinnableReference(), pDependencyInfos);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdWaitEvents2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] ReadOnlySpan<DependencyInfo> pDependencyInfos)
+        {
+            // ImplicitCountSpanOverloader
+            CmdWaitEvents2(commandBuffer, (uint) pDependencyInfos.Length, in pEvents.GetPinnableReference(), in pDependencyInfos.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result QueueSubmit2([Count(Count = 0)] Queue queue, [Count(Parameter = "submitCount"), Flow(FlowDirection.In)] ReadOnlySpan<SubmitInfo2> pSubmits, [Count(Count = 0)] Fence fence)
+        {
+            // ImplicitCountSpanOverloader
+            return QueueSubmit2(queue, (uint) pSubmits.Length, in pSubmits.GetPinnableReference(), fence);
+        }
+
+        /// <summary>To be documented.</summary>
         public unsafe Result BindBufferMemory2([Count(Count = 0)] Device device, [Count(Parameter = "bindInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<BindBufferMemoryInfo> pBindInfos)
         {
             // ImplicitCountSpanOverloader
@@ -3003,6 +3534,453 @@ namespace Silk.NET.Vulkan
         {
             // ImplicitCountSpanOverloader
             return WaitForFences(device, (uint) pFences.Length, in pFences.GetPinnableReference(), waitAll, timeout);
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
+        public unsafe MemoryRequirements2 GetDeviceBufferMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceBufferMemoryRequirements* pInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDeviceBufferMemoryRequirements(device, pInfo, out MemoryRequirements2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
+        public unsafe MemoryRequirements2 GetDeviceBufferMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceBufferMemoryRequirements pInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDeviceBufferMemoryRequirements(device, in pInfo, out MemoryRequirements2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
+        public unsafe MemoryRequirements2 GetDeviceImageMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceImageMemoryRequirements* pInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDeviceImageMemoryRequirements(device, pInfo, out MemoryRequirements2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
+        public unsafe MemoryRequirements2 GetDeviceImageMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceImageMemoryRequirements pInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDeviceImageMemoryRequirements(device, in pInfo, out MemoryRequirements2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
+        public unsafe SparseImageMemoryRequirements2 GetDeviceImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDeviceImageSparseMemoryRequirements(device, pInfo, pSparseMemoryRequirementCount, out SparseImageMemoryRequirements2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
+        public unsafe SparseImageMemoryRequirements2 GetDeviceImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0)] ref uint pSparseMemoryRequirementCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDeviceImageSparseMemoryRequirements(device, pInfo, ref pSparseMemoryRequirementCount, out SparseImageMemoryRequirements2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
+        public unsafe SparseImageMemoryRequirements2 GetDeviceImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceImageMemoryRequirements pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDeviceImageSparseMemoryRequirements(device, in pInfo, pSparseMemoryRequirementCount, out SparseImageMemoryRequirements2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
+        public unsafe SparseImageMemoryRequirements2 GetDeviceImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceImageMemoryRequirements pInfo, [Count(Count = 0)] ref uint pSparseMemoryRequirementCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDeviceImageSparseMemoryRequirements(device, in pInfo, ref pSparseMemoryRequirementCount, out SparseImageMemoryRequirements2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe ulong GetPrivateData([Count(Count = 0)] Device device, [Count(Count = 0)] ObjectType objectType, [Count(Count = 0)] ulong objectHandle, [Count(Count = 0)] PrivateDataSlot privateDataSlot)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPrivateData(device, objectType, objectHandle, privateDataSlot, out ulong silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
+        public unsafe MemoryRequirements2 GetBufferMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferMemoryRequirementsInfo2* pInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferMemoryRequirements2(device, pInfo, out MemoryRequirements2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
+        public unsafe MemoryRequirements2 GetBufferMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferMemoryRequirementsInfo2 pInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferMemoryRequirements2(device, in pInfo, out MemoryRequirements2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
+        public unsafe DescriptorSetLayoutSupport GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDescriptorSetLayoutSupport(device, pCreateInfo, out DescriptorSetLayoutSupport silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
+        public unsafe DescriptorSetLayoutSupport GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorSetLayoutCreateInfo pCreateInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDescriptorSetLayoutSupport(device, in pCreateInfo, out DescriptorSetLayoutSupport silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe PeerMemoryFeatureFlags GetDeviceGroupPeerMemoryFeatures([Count(Count = 0)] Device device, [Count(Count = 0)] uint heapIndex, [Count(Count = 0)] uint localDeviceIndex, [Count(Count = 0)] uint remoteDeviceIndex)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDeviceGroupPeerMemoryFeatures(device, heapIndex, localDeviceIndex, remoteDeviceIndex, out PeerMemoryFeatureFlags silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Queue GetDeviceQueue2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceQueueInfo2* pQueueInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDeviceQueue2(device, pQueueInfo, out Queue silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Queue GetDeviceQueue2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceQueueInfo2 pQueueInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDeviceQueue2(device, in pQueueInfo, out Queue silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
+        public unsafe MemoryRequirements2 GetImageMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageMemoryRequirementsInfo2* pInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetImageMemoryRequirements2(device, pInfo, out MemoryRequirements2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
+        public unsafe MemoryRequirements2 GetImageMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageMemoryRequirementsInfo2 pInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetImageMemoryRequirements2(device, in pInfo, out MemoryRequirements2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
+        public unsafe SparseImageMemoryRequirements2 GetImageSparseMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageSparseMemoryRequirementsInfo2* pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetImageSparseMemoryRequirements2(device, pInfo, pSparseMemoryRequirementCount, out SparseImageMemoryRequirements2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
+        public unsafe SparseImageMemoryRequirements2 GetImageSparseMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageSparseMemoryRequirementsInfo2* pInfo, [Count(Count = 0)] ref uint pSparseMemoryRequirementCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetImageSparseMemoryRequirements2(device, pInfo, ref pSparseMemoryRequirementCount, out SparseImageMemoryRequirements2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
+        public unsafe SparseImageMemoryRequirements2 GetImageSparseMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageSparseMemoryRequirementsInfo2 pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetImageSparseMemoryRequirements2(device, in pInfo, pSparseMemoryRequirementCount, out SparseImageMemoryRequirements2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
+        public unsafe SparseImageMemoryRequirements2 GetImageSparseMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageSparseMemoryRequirementsInfo2 pInfo, [Count(Count = 0)] ref uint pSparseMemoryRequirementCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetImageSparseMemoryRequirements2(device, in pInfo, ref pSparseMemoryRequirementCount, out SparseImageMemoryRequirements2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalBufferProperties = new(StructureType.ExternalBufferProperties);")]
+        public unsafe ExternalBufferProperties GetPhysicalDeviceExternalBufferProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalBufferInfo* pExternalBufferInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceExternalBufferProperties(physicalDevice, pExternalBufferInfo, out ExternalBufferProperties silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalBufferProperties = new(StructureType.ExternalBufferProperties);")]
+        public unsafe ExternalBufferProperties GetPhysicalDeviceExternalBufferProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceExternalBufferInfo pExternalBufferInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceExternalBufferProperties(physicalDevice, in pExternalBufferInfo, out ExternalBufferProperties silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalFenceProperties = new(StructureType.ExternalFenceProperties);")]
+        public unsafe ExternalFenceProperties GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalFenceInfo* pExternalFenceInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceExternalFenceProperties(physicalDevice, pExternalFenceInfo, out ExternalFenceProperties silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalFenceProperties = new(StructureType.ExternalFenceProperties);")]
+        public unsafe ExternalFenceProperties GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceExternalFenceInfo pExternalFenceInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceExternalFenceProperties(physicalDevice, in pExternalFenceInfo, out ExternalFenceProperties silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalSemaphoreProperties = new(StructureType.ExternalSemaphoreProperties);")]
+        public unsafe ExternalSemaphoreProperties GetPhysicalDeviceExternalSemaphoreProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalSemaphoreInfo* pExternalSemaphoreInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceExternalSemaphoreProperties(physicalDevice, pExternalSemaphoreInfo, out ExternalSemaphoreProperties silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalSemaphoreProperties = new(StructureType.ExternalSemaphoreProperties);")]
+        public unsafe ExternalSemaphoreProperties GetPhysicalDeviceExternalSemaphoreProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceExternalSemaphoreInfo pExternalSemaphoreInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceExternalSemaphoreProperties(physicalDevice, in pExternalSemaphoreInfo, out ExternalSemaphoreProperties silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pFormatProperties = new(StructureType.FormatProperties2);")]
+        public unsafe FormatProperties2 GetPhysicalDeviceFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceFormatProperties2(physicalDevice, format, out FormatProperties2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pQueueFamilyProperties = new(StructureType.QueueFamilyProperties2);")]
+        public unsafe QueueFamilyProperties2 GetPhysicalDeviceQueueFamilyProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pQueueFamilyPropertyCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceQueueFamilyProperties2(physicalDevice, pQueueFamilyPropertyCount, out QueueFamilyProperties2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pQueueFamilyProperties = new(StructureType.QueueFamilyProperties2);")]
+        public unsafe QueueFamilyProperties2 GetPhysicalDeviceQueueFamilyProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pQueueFamilyPropertyCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceQueueFamilyProperties2(physicalDevice, ref pQueueFamilyPropertyCount, out QueueFamilyProperties2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
+        public unsafe SparseImageFormatProperties2 GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] uint* pPropertyCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceSparseImageFormatProperties2(physicalDevice, pFormatInfo, pPropertyCount, out SparseImageFormatProperties2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
+        public unsafe SparseImageFormatProperties2 GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] ref uint pPropertyCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceSparseImageFormatProperties2(physicalDevice, pFormatInfo, ref pPropertyCount, out SparseImageFormatProperties2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
+        public unsafe SparseImageFormatProperties2 GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSparseImageFormatInfo2 pFormatInfo, [Count(Count = 0)] uint* pPropertyCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceSparseImageFormatProperties2(physicalDevice, in pFormatInfo, pPropertyCount, out SparseImageFormatProperties2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
+        public unsafe SparseImageFormatProperties2 GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSparseImageFormatInfo2 pFormatInfo, [Count(Count = 0)] ref uint pPropertyCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceSparseImageFormatProperties2(physicalDevice, in pFormatInfo, ref pPropertyCount, out SparseImageFormatProperties2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe MemoryRequirements GetBufferMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] Buffer buffer)
+        {
+            // NonKhrReturnTypeOverloader
+            GetBufferMemoryRequirements(device, buffer, out MemoryRequirements silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe ulong GetDeviceMemoryCommitment([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDeviceMemoryCommitment(device, memory, out ulong silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Queue GetDeviceQueue([Count(Count = 0)] Device device, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] uint queueIndex)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDeviceQueue(device, queueFamilyIndex, queueIndex, out Queue silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe MemoryRequirements GetImageMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] Image image)
+        {
+            // NonKhrReturnTypeOverloader
+            GetImageMemoryRequirements(device, image, out MemoryRequirements silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe SparseImageMemoryRequirements GetImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0)] uint* pSparseMemoryRequirementCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetImageSparseMemoryRequirements(device, image, pSparseMemoryRequirementCount, out SparseImageMemoryRequirements silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe SparseImageMemoryRequirements GetImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0)] ref uint pSparseMemoryRequirementCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetImageSparseMemoryRequirements(device, image, ref pSparseMemoryRequirementCount, out SparseImageMemoryRequirements silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe SubresourceLayout GetImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.In)] ImageSubresource* pSubresource)
+        {
+            // NonKhrReturnTypeOverloader
+            GetImageSubresourceLayout(device, image, pSubresource, out SubresourceLayout silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe SubresourceLayout GetImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.In)] in ImageSubresource pSubresource)
+        {
+            // NonKhrReturnTypeOverloader
+            GetImageSubresourceLayout(device, image, in pSubresource, out SubresourceLayout silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe PhysicalDeviceFeatures GetPhysicalDeviceFeatures([Count(Count = 0)] PhysicalDevice physicalDevice)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceFeatures(physicalDevice, out PhysicalDeviceFeatures silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe FormatProperties GetPhysicalDeviceFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceFormatProperties(physicalDevice, format, out FormatProperties silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe PhysicalDeviceMemoryProperties GetPhysicalDeviceMemoryProperties([Count(Count = 0)] PhysicalDevice physicalDevice)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceMemoryProperties(physicalDevice, out PhysicalDeviceMemoryProperties silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe PhysicalDeviceProperties GetPhysicalDeviceProperties([Count(Count = 0)] PhysicalDevice physicalDevice)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceProperties(physicalDevice, out PhysicalDeviceProperties silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe QueueFamilyProperties GetPhysicalDeviceQueueFamilyProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pQueueFamilyPropertyCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceQueueFamilyProperties(physicalDevice, pQueueFamilyPropertyCount, out QueueFamilyProperties silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe QueueFamilyProperties GetPhysicalDeviceQueueFamilyProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pQueueFamilyPropertyCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceQueueFamilyProperties(physicalDevice, ref pQueueFamilyPropertyCount, out QueueFamilyProperties silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe SparseImageFormatProperties GetPhysicalDeviceSparseImageFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0)] ImageType type, [Count(Count = 0)] SampleCountFlags samples, [Count(Count = 0)] ImageUsageFlags usage, [Count(Count = 0)] ImageTiling tiling, [Count(Count = 0)] uint* pPropertyCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceSparseImageFormatProperties(physicalDevice, format, type, samples, usage, tiling, pPropertyCount, out SparseImageFormatProperties silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe SparseImageFormatProperties GetPhysicalDeviceSparseImageFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0)] ImageType type, [Count(Count = 0)] SampleCountFlags samples, [Count(Count = 0)] ImageUsageFlags usage, [Count(Count = 0)] ImageTiling tiling, [Count(Count = 0)] ref uint pPropertyCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceSparseImageFormatProperties(physicalDevice, format, type, samples, usage, tiling, ref pPropertyCount, out SparseImageFormatProperties silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Extent2D GetRenderAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass)
+        {
+            // NonKhrReturnTypeOverloader
+            GetRenderAreaGranularity(device, renderPass, out Extent2D silkRet);
+            return silkRet;
         }
 
 

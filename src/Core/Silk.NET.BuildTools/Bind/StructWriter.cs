@@ -47,8 +47,6 @@ namespace Silk.NET.BuildTools.Bind
             var ns = project.IsRoot ? task.Task.Namespace : task.Task.ExtensionsNamespace;
             sw.WriteLine($"namespace {ns}{project.Namespace}");
             sw.WriteLine("{");
-            string guid = null;
-
             static bool IsChar(Type type) => type.Name == "char" || type.GenericTypes.Any(IsChar);
             var needsCharSetFixup = @struct.Fields.Any(x => IsChar(x.Type));
             string structuredType = null;
@@ -112,11 +110,6 @@ namespace Silk.NET.BuildTools.Bind
                     continue;
                 }
 
-                if (guid is null && attr.Name == "Guid")
-                {
-                    guid = string.Join(", ", attr.Arguments);
-                }
-
                 if (attr.Name == "StructLayout" && needsCharSetFixup)
                 {
                     attr.Arguments.Add("CharSet = CharSet.Unicode");
@@ -126,11 +119,22 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine($"    {attr}");
             }
 
+            if (@struct.Uuid is not null)
+            {
+                sw.WriteLine($"    [Guid(\"{@struct.Uuid.Value}\")]");
+            }
+
             // Build interface list
             var interfaces = new List<string>();
             if (chainExtenderss?.Any() == true)
             {
                 interfaces.Add("IChainStart");
+            }
+
+            if (@struct.Vtbl?.Count > 0)
+            {
+                interfaces.Add($"IComVtbl<{@struct.Name}>");
+                interfaces.AddRange(@struct.ComBases.Distinct().Select(x => $"IComVtbl<{x}>"));
             }
 
             interfaces.AddRange
@@ -172,9 +176,16 @@ namespace Silk.NET.BuildTools.Bind
                 $"    public unsafe partial struct {@struct.Name}{(interfaces.Any() ? " : " + string.Join(", ", interfaces) : string.Empty)}"
             );
             sw.WriteLine("    {");
-            if (guid is not null)
+            if (@struct.Uuid is not null)
             {
-                sw.WriteLine($"        public static readonly Guid Guid = new({guid});");
+                sw.WriteLine($"        public static readonly Guid Guid = new(\"{@struct.Uuid.Value}\");");
+                sw.WriteLine();
+            }
+
+            if (@struct.Vtbl?.Count > 0)
+            {
+                sw.WriteLine("        void*** IComVtbl.AsVtblPtr()");
+                sw.WriteLine("            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));");
                 sw.WriteLine();
             }
 
@@ -442,8 +453,14 @@ namespace Silk.NET.BuildTools.Bind
             }
 
             foreach (var function in @struct.Functions.Concat
-                         (ComVtblProcessor.GetHelperFunctions(@struct, profile.Projects["Core"])))
+                         (ComVtblProcessor.GetHelperFunctions(@struct, profile)))
             {
+                if (function.Signature.Kind == SignatureKind.PotentiallyConflictingOverload)
+                {
+                    // implement it as an extension method, which is done later.
+                    continue;
+                }
+                
                 using (var sr = new StringReader(function.Signature.Doc))
                 {
                     string line;
@@ -453,7 +470,7 @@ namespace Silk.NET.BuildTools.Bind
                     }
                 }
 
-                foreach (var attr in function.Signature.Attributes)
+                foreach (var attr in function.Signature.GetAttributes())
                 {
                     sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                 }
@@ -565,6 +582,101 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine("}");
             sw.Flush();
             sw.Dispose();
+            if (@struct.Vtbl?.Count > 0)
+            {
+                var className = @struct.Name.StartsWith('I')
+                    ? $"{@struct.Name[1..]}VtblExtensions"
+                    : $"{@struct.Name}VtblExtensions";
+                using var vt = new StreamWriter(Path.Combine(Path.GetDirectoryName(file), $"{className}.gen.cs"));
+                vt.WriteLine(task.LicenseText());
+                vt.WriteLine();
+                vt.WriteCoreUsings();
+                vt.WriteLine();
+                vt.WriteLine("#pragma warning disable 1591");
+                vt.WriteLine();
+                vt.WriteLine($"namespace {ns}{project.Namespace};");
+                vt.WriteLine();
+                vt.WriteLine($"public unsafe static class {className}");
+                vt.WriteLine("{");
+                foreach (var helper in ComVtblProcessor.GetHelperFunctions(@struct, profile, true))
+                {
+                    using (var sr = new StringReader(helper.Signature.Doc))
+                    {
+                        string line;
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            vt.WriteLine($"    {line}");
+                        }
+                    }
+
+                    foreach (var attr in helper.Signature.GetAttributes())
+                    {
+                        vt.WriteLine($"    [{attr.Name}({string.Join(", ", attr.Arguments)})]");
+                    }
+
+                    // This is the important bit! Turn our signature into an extension method signature!
+                    var sig = new FunctionSignatureBuilder(helper.Signature)
+                        // TODO ideally we'd use IComVtbl, but we need to use generics for it to be zero cost which
+                        // TODO isn't easy to use extension methods for today. we could use the interface directly, but
+                        // TODO that doesn't get specialized and thus incurs a virtual call (not zero cost!)
+                        // .WithGenericTypeParameters
+                        // (
+                        //     helper.Signature.GenericTypeParameters.Concat
+                        //         (
+                        //             Enumerable.Repeat
+                        //                 (new GenericTypeParameter("TThis", new[] { $"IComVtbl<{@struct.Name}>" }), 1)
+                        //         )
+                        //         .ToList()
+                        // )
+                        .WithParameters
+                        (
+                            Enumerable.Repeat
+                                (
+                                    new Parameter
+                                    {
+                                        Type = new Type
+                                        {
+                                            IsThis = true,
+                                            // Name = "TThis",
+                                            // IsGenericTypeParameterReference = true
+                                            Name = "ComPtr",
+                                            GenericTypes = new List<Type> { new() { Name = @struct.Name } }
+                                        },
+                                        Name = "thisVtbl"
+                                    }, 1
+                                )
+                                .Concat(helper.Signature.Parameters)
+                                .ToList()
+                        )
+                        .Build();
+
+                    sig.IsReadOnly = false;
+                    using (var sr = new StringReader
+                               (sig.ToString(null, accessibility: true, semicolon: false, @static: true)))
+                    {
+                        string line;
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            vt.WriteLine($"    {line}");
+                        }
+                    }
+
+                    vt.WriteLine("    {");
+                    // vt.WriteLine($"        var @this = ({@struct.Name}*) thisVtbl.AsVtblPtr();");
+                    vt.WriteLine("        var @this = thisVtbl.Handle;");
+                    
+                    foreach (var line in helper.Body)
+                    {
+                        vt.WriteLine($"        {line}");
+                    }
+
+                    vt.WriteLine("    }");
+                    vt.WriteLine();
+                }
+
+                vt.WriteLine("}");
+                vt.Flush();
+            }
         }
 
         public static void WriteBuildToolsIntrinsic
@@ -618,7 +730,8 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine();
             sw.WriteLine("#pragma warning disable 1591");
             sw.WriteLine();
-            sw.WriteLine($"namespace {state.Task.Namespace}{coreProject.Namespace}");
+            var ns = project.IsRoot ? state.Task.Namespace : state.Task.ExtensionsNamespace;
+            sw.WriteLine($"namespace {ns}{project.Namespace}");
             sw.WriteLine("{");
             sw.WriteLine($"    public unsafe readonly struct {pfnName} : IDisposable");
             sw.WriteLine("    {");

@@ -19,8 +19,8 @@ namespace Silk.NET.Vulkan.Video
     [NativeName("Name", "StdVideoH265PredictorPaletteEntries")]
     public unsafe partial struct StdVideoH265PredictorPaletteEntries
     {
-        [NativeName("Type", "uint16_t [3][128]")]
-        [NativeName("Type.Name", "uint16_t [3][128]")]
+        [NativeName("Type", "uint16_t[3][128]")]
+        [NativeName("Type.Name", "uint16_t[3][128]")]
         [NativeName("Name", "PredictorPaletteEntries")]
         public fixed ushort PredictorPaletteEntries[384];
     }

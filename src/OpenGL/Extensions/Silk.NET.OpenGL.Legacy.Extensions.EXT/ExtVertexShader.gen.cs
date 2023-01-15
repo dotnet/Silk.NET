@@ -42,10 +42,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial uint BindMaterialParameter([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] MaterialParameter value);
 
         [NativeApi(EntryPoint = "glBindMaterialParameterEXT", Convention = CallingConvention.Winapi)]
-        public partial uint BindMaterialParameter([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] EXT value);
+        public partial uint BindMaterialParameter([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] EXT value);
 
         [NativeApi(EntryPoint = "glBindMaterialParameterEXT", Convention = CallingConvention.Winapi)]
-        public partial uint BindMaterialParameter([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter value);
+        public partial uint BindMaterialParameter([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter value);
 
         [NativeApi(EntryPoint = "glBindParameterEXT", Convention = CallingConvention.Winapi)]
         public partial uint BindParameter([Flow(FlowDirection.In)] EXT value);
@@ -493,6 +493,146 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 
         [NativeApi(EntryPoint = "glWriteMaskEXT", Convention = CallingConvention.Winapi)]
         public partial void WriteMask([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outX, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outY, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outZ, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outW);
+
+        public unsafe bool GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInvariantBoolean(id, value, out bool silkRet);
+            return silkRet;
+        }
+
+        public unsafe bool GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInvariantBoolean(id, value, out bool silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetInvariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInvariantFloat(id, value, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetInvariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInvariantFloat(id, value, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInvariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInvariantInteger(id, value, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetInvariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetInvariantInteger(id, value, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe bool GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetLocalConstantBoolean(id, value, out bool silkRet);
+            return silkRet;
+        }
+
+        public unsafe bool GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetLocalConstantBoolean(id, value, out bool silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetLocalConstantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetLocalConstantFloat(id, value, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetLocalConstantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetLocalConstantFloat(id, value, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetLocalConstantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetLocalConstantInteger(id, value, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetLocalConstantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetLocalConstantInteger(id, value, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe bool GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVariantBoolean(id, value, out bool silkRet);
+            return silkRet;
+        }
+
+        public unsafe bool GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVariantBoolean(id, value, out bool silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetVariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVariantFloat(id, value, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetVariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVariantFloat(id, value, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetVariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVariantInteger(id, value, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetVariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVariantInteger(id, value, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe void* GetVariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVariantPointer(id, value, out void* silkRet);
+            return silkRet;
+        }
+
+        public unsafe void* GetVariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVariantPointer(id, value, out void* silkRet);
+            return silkRet;
+        }
 
         public ExtVertexShader(INativeContext ctx)
             : base(ctx)

@@ -12,8 +12,10 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "VertexShaderTextureUnitParameter")]
     public enum VertexShaderTextureUnitParameter : int
     {
+        [System.Obsolete]
         [NativeName("Name", "GL_CURRENT_TEXTURE_COORDS")]
         CurrentTextureCoords = 0xB03,
+        [System.Obsolete]
         [NativeName("Name", "GL_TEXTURE_MATRIX")]
         TextureMatrix = 0xBA8,
     }

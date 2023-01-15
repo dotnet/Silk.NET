@@ -865,6 +865,41 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             ProgramUniformMatrix4x3(program, location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
+        public unsafe uint GenProgramPipelines([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenProgramPipelines(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramPipeline(pipeline, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] PipelineParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramPipeline(pipeline, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramPipelineInfoLog(pipeline, bufSize, length, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramPipelineInfoLog(pipeline, bufSize, out length, out byte silkRet);
+            return silkRet;
+        }
+
         public ArbSeparateShaderObjects(INativeContext ctx)
             : base(ctx)
         {

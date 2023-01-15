@@ -1,7 +1,6 @@
 using Silk.NET.Input;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
-using System.Drawing;
 using System.Numerics;
 using Silk.NET.Maths;
 

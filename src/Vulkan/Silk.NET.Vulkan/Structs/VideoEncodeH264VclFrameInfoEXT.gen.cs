@@ -23,13 +23,10 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoEncodeH264VclFrameInfoExt,
             void* pNext = null,
-            byte? refDefaultFinalList0EntryCount = null,
-            VideoEncodeH264DpbSlotInfoEXT* pRefDefaultFinalList0Entries = null,
-            byte? refDefaultFinalList1EntryCount = null,
-            VideoEncodeH264DpbSlotInfoEXT* pRefDefaultFinalList1Entries = null,
+            VideoEncodeH264ReferenceListsInfoEXT* pReferenceFinalLists = null,
             uint? naluSliceEntryCount = null,
-            VideoEncodeH264NaluSliceEXT* pNaluSliceEntries = null,
-            VideoEncodeH264DpbSlotInfoEXT* pCurrentPictureInfo = null
+            VideoEncodeH264NaluSliceInfoEXT* pNaluSliceEntries = null,
+            Video.StdVideoEncodeH264PictureInfo* pCurrentPictureInfo = null
         ) : this()
         {
             if (sType is not null)
@@ -42,24 +39,9 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (refDefaultFinalList0EntryCount is not null)
+            if (pReferenceFinalLists is not null)
             {
-                RefDefaultFinalList0EntryCount = refDefaultFinalList0EntryCount.Value;
-            }
-
-            if (pRefDefaultFinalList0Entries is not null)
-            {
-                PRefDefaultFinalList0Entries = pRefDefaultFinalList0Entries;
-            }
-
-            if (refDefaultFinalList1EntryCount is not null)
-            {
-                RefDefaultFinalList1EntryCount = refDefaultFinalList1EntryCount.Value;
-            }
-
-            if (pRefDefaultFinalList1Entries is not null)
-            {
-                PRefDefaultFinalList1Entries = pRefDefaultFinalList1Entries;
+                PReferenceFinalLists = pReferenceFinalLists;
             }
 
             if (naluSliceEntryCount is not null)
@@ -89,40 +71,25 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "refDefaultFinalList0EntryCount")]
-        public byte RefDefaultFinalList0EntryCount;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264DpbSlotInfoEXT*")]
-        [NativeName("Type.Name", "VkVideoEncodeH264DpbSlotInfoEXT")]
-        [NativeName("Name", "pRefDefaultFinalList0Entries")]
-        public VideoEncodeH264DpbSlotInfoEXT* PRefDefaultFinalList0Entries;
-/// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "refDefaultFinalList1EntryCount")]
-        public byte RefDefaultFinalList1EntryCount;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264DpbSlotInfoEXT*")]
-        [NativeName("Type.Name", "VkVideoEncodeH264DpbSlotInfoEXT")]
-        [NativeName("Name", "pRefDefaultFinalList1Entries")]
-        public VideoEncodeH264DpbSlotInfoEXT* PRefDefaultFinalList1Entries;
+        [NativeName("Type", "VkVideoEncodeH264ReferenceListsInfoEXT*")]
+        [NativeName("Type.Name", "VkVideoEncodeH264ReferenceListsInfoEXT")]
+        [NativeName("Name", "pReferenceFinalLists")]
+        public VideoEncodeH264ReferenceListsInfoEXT* PReferenceFinalLists;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "naluSliceEntryCount")]
         public uint NaluSliceEntryCount;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264NaluSliceEXT*")]
-        [NativeName("Type.Name", "VkVideoEncodeH264NaluSliceEXT")]
+        [NativeName("Type", "VkVideoEncodeH264NaluSliceInfoEXT*")]
+        [NativeName("Type.Name", "VkVideoEncodeH264NaluSliceInfoEXT")]
         [NativeName("Name", "pNaluSliceEntries")]
-        public VideoEncodeH264NaluSliceEXT* PNaluSliceEntries;
+        public VideoEncodeH264NaluSliceInfoEXT* PNaluSliceEntries;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264DpbSlotInfoEXT*")]
-        [NativeName("Type.Name", "VkVideoEncodeH264DpbSlotInfoEXT")]
+        [NativeName("Type", "StdVideoEncodeH264PictureInfo*")]
+        [NativeName("Type.Name", "StdVideoEncodeH264PictureInfo")]
         [NativeName("Name", "pCurrentPictureInfo")]
-        public VideoEncodeH264DpbSlotInfoEXT* PCurrentPictureInfo;
+        public Video.StdVideoEncodeH264PictureInfo* PCurrentPictureInfo;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

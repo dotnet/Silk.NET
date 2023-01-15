@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "_D3DBUSTYPE")]
     public enum Bustype : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3DBUSTYPE_OTHER")]
         BustypeOther = 0x0,
         [NativeName("Name", "D3DBUSTYPE_PCI")]

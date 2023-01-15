@@ -23,17 +23,26 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoEncodeH265CapabilitiesExt,
             void* pNext = null,
-            uint? flags = null,
+            VideoEncodeH265CapabilityFlagsEXT? flags = null,
             VideoEncodeH265InputModeFlagsEXT? inputModeFlags = null,
             VideoEncodeH265OutputModeFlagsEXT? outputModeFlags = null,
             VideoEncodeH265CtbSizeFlagsEXT? ctbSizes = null,
-            Extent2D? inputImageDataAlignment = null,
-            byte? maxNumL0ReferenceForP = null,
-            byte? maxNumL0ReferenceForB = null,
-            byte? maxNumL1Reference = null,
-            byte? maxNumSubLayers = null,
-            byte? qualityLevelCount = null,
-            ExtensionProperties? stdExtensionVersion = null
+            VideoEncodeH265TransformBlockSizeFlagsEXT? transformBlockSizes = null,
+            byte? maxPPictureL0ReferenceCount = null,
+            byte? maxBPictureL0ReferenceCount = null,
+            byte? maxL1ReferenceCount = null,
+            byte? maxSubLayersCount = null,
+            byte? minLog2MinLumaCodingBlockSizeMinus3 = null,
+            byte? maxLog2MinLumaCodingBlockSizeMinus3 = null,
+            byte? minLog2MinLumaTransformBlockSizeMinus2 = null,
+            byte? maxLog2MinLumaTransformBlockSizeMinus2 = null,
+            byte? minMaxTransformHierarchyDepthInter = null,
+            byte? maxMaxTransformHierarchyDepthInter = null,
+            byte? minMaxTransformHierarchyDepthIntra = null,
+            byte? maxMaxTransformHierarchyDepthIntra = null,
+            byte? maxDiffCuQpDeltaDepth = null,
+            byte? minMaxNumMergeCand = null,
+            byte? maxMaxNumMergeCand = null
         ) : this()
         {
             if (sType is not null)
@@ -66,39 +75,84 @@ namespace Silk.NET.Vulkan
                 CtbSizes = ctbSizes.Value;
             }
 
-            if (inputImageDataAlignment is not null)
+            if (transformBlockSizes is not null)
             {
-                InputImageDataAlignment = inputImageDataAlignment.Value;
+                TransformBlockSizes = transformBlockSizes.Value;
             }
 
-            if (maxNumL0ReferenceForP is not null)
+            if (maxPPictureL0ReferenceCount is not null)
             {
-                MaxNumL0ReferenceForP = maxNumL0ReferenceForP.Value;
+                MaxPPictureL0ReferenceCount = maxPPictureL0ReferenceCount.Value;
             }
 
-            if (maxNumL0ReferenceForB is not null)
+            if (maxBPictureL0ReferenceCount is not null)
             {
-                MaxNumL0ReferenceForB = maxNumL0ReferenceForB.Value;
+                MaxBPictureL0ReferenceCount = maxBPictureL0ReferenceCount.Value;
             }
 
-            if (maxNumL1Reference is not null)
+            if (maxL1ReferenceCount is not null)
             {
-                MaxNumL1Reference = maxNumL1Reference.Value;
+                MaxL1ReferenceCount = maxL1ReferenceCount.Value;
             }
 
-            if (maxNumSubLayers is not null)
+            if (maxSubLayersCount is not null)
             {
-                MaxNumSubLayers = maxNumSubLayers.Value;
+                MaxSubLayersCount = maxSubLayersCount.Value;
             }
 
-            if (qualityLevelCount is not null)
+            if (minLog2MinLumaCodingBlockSizeMinus3 is not null)
             {
-                QualityLevelCount = qualityLevelCount.Value;
+                MinLog2MinLumaCodingBlockSizeMinus3 = minLog2MinLumaCodingBlockSizeMinus3.Value;
             }
 
-            if (stdExtensionVersion is not null)
+            if (maxLog2MinLumaCodingBlockSizeMinus3 is not null)
             {
-                StdExtensionVersion = stdExtensionVersion.Value;
+                MaxLog2MinLumaCodingBlockSizeMinus3 = maxLog2MinLumaCodingBlockSizeMinus3.Value;
+            }
+
+            if (minLog2MinLumaTransformBlockSizeMinus2 is not null)
+            {
+                MinLog2MinLumaTransformBlockSizeMinus2 = minLog2MinLumaTransformBlockSizeMinus2.Value;
+            }
+
+            if (maxLog2MinLumaTransformBlockSizeMinus2 is not null)
+            {
+                MaxLog2MinLumaTransformBlockSizeMinus2 = maxLog2MinLumaTransformBlockSizeMinus2.Value;
+            }
+
+            if (minMaxTransformHierarchyDepthInter is not null)
+            {
+                MinMaxTransformHierarchyDepthInter = minMaxTransformHierarchyDepthInter.Value;
+            }
+
+            if (maxMaxTransformHierarchyDepthInter is not null)
+            {
+                MaxMaxTransformHierarchyDepthInter = maxMaxTransformHierarchyDepthInter.Value;
+            }
+
+            if (minMaxTransformHierarchyDepthIntra is not null)
+            {
+                MinMaxTransformHierarchyDepthIntra = minMaxTransformHierarchyDepthIntra.Value;
+            }
+
+            if (maxMaxTransformHierarchyDepthIntra is not null)
+            {
+                MaxMaxTransformHierarchyDepthIntra = maxMaxTransformHierarchyDepthIntra.Value;
+            }
+
+            if (maxDiffCuQpDeltaDepth is not null)
+            {
+                MaxDiffCuQpDeltaDepth = maxDiffCuQpDeltaDepth.Value;
+            }
+
+            if (minMaxNumMergeCand is not null)
+            {
+                MinMaxNumMergeCand = minMaxNumMergeCand.Value;
+            }
+
+            if (maxMaxNumMergeCand is not null)
+            {
+                MaxMaxNumMergeCand = maxMaxNumMergeCand.Value;
             }
         }
 
@@ -116,7 +170,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkVideoEncodeH265CapabilityFlagsEXT")]
         [NativeName("Type.Name", "VkVideoEncodeH265CapabilityFlagsEXT")]
         [NativeName("Name", "flags")]
-        public uint Flags;
+        public VideoEncodeH265CapabilityFlagsEXT Flags;
 /// <summary></summary>
         [NativeName("Type", "VkVideoEncodeH265InputModeFlagsEXT")]
         [NativeName("Type.Name", "VkVideoEncodeH265InputModeFlagsEXT")]
@@ -133,40 +187,85 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "ctbSizes")]
         public VideoEncodeH265CtbSizeFlagsEXT CtbSizes;
 /// <summary></summary>
-        [NativeName("Type", "VkExtent2D")]
-        [NativeName("Type.Name", "VkExtent2D")]
-        [NativeName("Name", "inputImageDataAlignment")]
-        public Extent2D InputImageDataAlignment;
+        [NativeName("Type", "VkVideoEncodeH265TransformBlockSizeFlagsEXT")]
+        [NativeName("Type.Name", "VkVideoEncodeH265TransformBlockSizeFlagsEXT")]
+        [NativeName("Name", "transformBlockSizes")]
+        public VideoEncodeH265TransformBlockSizeFlagsEXT TransformBlockSizes;
 /// <summary></summary>
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "maxNumL0ReferenceForP")]
-        public byte MaxNumL0ReferenceForP;
+        [NativeName("Name", "maxPPictureL0ReferenceCount")]
+        public byte MaxPPictureL0ReferenceCount;
 /// <summary></summary>
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "maxNumL0ReferenceForB")]
-        public byte MaxNumL0ReferenceForB;
+        [NativeName("Name", "maxBPictureL0ReferenceCount")]
+        public byte MaxBPictureL0ReferenceCount;
 /// <summary></summary>
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "maxNumL1Reference")]
-        public byte MaxNumL1Reference;
+        [NativeName("Name", "maxL1ReferenceCount")]
+        public byte MaxL1ReferenceCount;
 /// <summary></summary>
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "maxNumSubLayers")]
-        public byte MaxNumSubLayers;
+        [NativeName("Name", "maxSubLayersCount")]
+        public byte MaxSubLayersCount;
 /// <summary></summary>
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "qualityLevelCount")]
-        public byte QualityLevelCount;
+        [NativeName("Name", "minLog2MinLumaCodingBlockSizeMinus3")]
+        public byte MinLog2MinLumaCodingBlockSizeMinus3;
 /// <summary></summary>
-        [NativeName("Type", "VkExtensionProperties")]
-        [NativeName("Type.Name", "VkExtensionProperties")]
-        [NativeName("Name", "stdExtensionVersion")]
-        public ExtensionProperties StdExtensionVersion;
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "maxLog2MinLumaCodingBlockSizeMinus3")]
+        public byte MaxLog2MinLumaCodingBlockSizeMinus3;
+/// <summary></summary>
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "minLog2MinLumaTransformBlockSizeMinus2")]
+        public byte MinLog2MinLumaTransformBlockSizeMinus2;
+/// <summary></summary>
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "maxLog2MinLumaTransformBlockSizeMinus2")]
+        public byte MaxLog2MinLumaTransformBlockSizeMinus2;
+/// <summary></summary>
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "minMaxTransformHierarchyDepthInter")]
+        public byte MinMaxTransformHierarchyDepthInter;
+/// <summary></summary>
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "maxMaxTransformHierarchyDepthInter")]
+        public byte MaxMaxTransformHierarchyDepthInter;
+/// <summary></summary>
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "minMaxTransformHierarchyDepthIntra")]
+        public byte MinMaxTransformHierarchyDepthIntra;
+/// <summary></summary>
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "maxMaxTransformHierarchyDepthIntra")]
+        public byte MaxMaxTransformHierarchyDepthIntra;
+/// <summary></summary>
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "maxDiffCuQpDeltaDepth")]
+        public byte MaxDiffCuQpDeltaDepth;
+/// <summary></summary>
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "minMaxNumMergeCand")]
+        public byte MinMaxNumMergeCand;
+/// <summary></summary>
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "maxMaxNumMergeCand")]
+        public byte MaxMaxNumMergeCand;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

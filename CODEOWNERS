@@ -8,8 +8,8 @@
 /src/Core/Silk.NET.SilkTouch        @HurricanKai
 
 # Core
-/src/Core/Silk.NET.Core             @Perksey
-/src/Core/Silk.NET.Core.Win32Extras @Perksey
+#/src/Core/Silk.NET.Core             @Perksey
+#/src/Core/Silk.NET.Core.Win32Extras @Perksey
 
 # Input
 /src/Input/**/*.cs                  @ThomasMiz
@@ -18,8 +18,11 @@
 /src/Vulkan/**/*.cs                 @HurricanKai
 
 # OpenGL
-/src/OpenGL/**/*.cs                 @ThomasMiz
+/src/OpenGL/**/*.cs                 @ThomasMiz @Beyley
+
+# WebGPU
+/src/WebGPU/**/*.cs                 @Beyley
 
 # BuildTools
-/src/Core/Silk.NET.BuildTools       @Perksey
-/**/*.gen.cs                        @Perksey
+#/src/Core/Silk.NET.BuildTools       @Perksey
+#/**/*.gen.cs                        @Perksey

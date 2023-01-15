@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataVideoArchitecture
         (
-            int? iOCoherent = null
+            Silk.NET.Core.Bool32? iOCoherent = null
         ) : this()
         {
             if (iOCoherent is not null)
@@ -34,6 +34,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "IOCoherent")]
-        public int IOCoherent;
+        public Silk.NET.Core.Bool32 IOCoherent;
     }
 }

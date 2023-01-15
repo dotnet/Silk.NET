@@ -21,23 +21,16 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoEncodeH264SliceHeaderFlags
         (
-            uint? idrFlag = null,
-            uint? isReferenceFlag = null,
+            uint? directSpatialMvPredFlag = null,
             uint? numRefIdxActiveOverrideFlag = null,
             uint? noOutputOfPriorPicsFlag = null,
-            uint? longTermReferenceFlag = null,
             uint? adaptiveRefPicMarkingModeFlag = null,
             uint? noPriorReferencesAvailableFlag = null
         ) : this()
         {
-            if (idrFlag is not null)
+            if (directSpatialMvPredFlag is not null)
             {
-                IdrFlag = idrFlag.Value;
-            }
-
-            if (isReferenceFlag is not null)
-            {
-                IsReferenceFlag = isReferenceFlag.Value;
+                DirectSpatialMvPredFlag = directSpatialMvPredFlag.Value;
             }
 
             if (numRefIdxActiveOverrideFlag is not null)
@@ -48,11 +41,6 @@ namespace Silk.NET.Vulkan.Video
             if (noOutputOfPriorPicsFlag is not null)
             {
                 NoOutputOfPriorPicsFlag = noOutputOfPriorPicsFlag.Value;
-            }
-
-            if (longTermReferenceFlag is not null)
-            {
-                LongTermReferenceFlag = longTermReferenceFlag.Value;
             }
 
             if (adaptiveRefPicMarkingModeFlag is not null)
@@ -69,7 +57,7 @@ namespace Silk.NET.Vulkan.Video
 
         private uint _bitfield1;
 
-        public uint IdrFlag
+        public uint DirectSpatialMvPredFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)(_bitfield1 & 0x1u);
@@ -77,7 +65,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
         }
 
-        public uint IsReferenceFlag
+        public uint NumRefIdxActiveOverrideFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 1) & 0x1u);
@@ -85,7 +73,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
         }
 
-        public uint NumRefIdxActiveOverrideFlag
+        public uint NoOutputOfPriorPicsFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 2) & 0x1u);
@@ -93,7 +81,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
         }
 
-        public uint NoOutputOfPriorPicsFlag
+        public uint AdaptiveRefPicMarkingModeFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 3) & 0x1u);
@@ -101,28 +89,12 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
         }
 
-        public uint LongTermReferenceFlag
+        public uint NoPriorReferencesAvailableFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 4) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
-        }
-
-        public uint AdaptiveRefPicMarkingModeFlag
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 5) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 5)) | (uint)(((uint)(value) & 0x1u) << 5));
-        }
-
-        public uint NoPriorReferencesAvailableFlag
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 6) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 6)) | (uint)(((uint)(value) & 0x1u) << 6));
         }
     }
 }

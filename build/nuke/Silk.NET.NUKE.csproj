@@ -8,11 +8,12 @@
     <NukeRootDirectory>..\..</NukeRootDirectory>
     <NukeScriptDirectory>..\..</NukeScriptDirectory>
     <LangVersion>preview</LangVersion>
+    <NukeTelemetryVersion>1</NukeTelemetryVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Build.Locator" Version="1.4.1" />
-    <PackageReference Include="Nuke.Common" Version="5.0.0" />
+    <PackageReference Include="Nuke.Common" Version="6.3.0" />
   </ItemGroup>
 
 </Project>

@@ -319,13 +319,6 @@ namespace Silk.NET.SilkTouch
                     .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
             );
 
-            var p = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "silktouch.lock");
-            if (!File.Exists(p))
-            {
-                File.WriteAllText(p, "");
-                Debugger.Launch();
-            }
-
             vTableMembers.Add
             (
                 MethodDeclaration(IdentifierName("IVTable"), Identifier("Clone"))

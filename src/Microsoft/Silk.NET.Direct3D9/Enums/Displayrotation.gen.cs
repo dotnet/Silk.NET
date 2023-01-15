@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "D3DDISPLAYROTATION")]
     public enum Displayrotation : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3DDISPLAYROTATION_IDENTITY")]
         DisplayrotationIdentity = 0x1,
         [NativeName("Name", "D3DDISPLAYROTATION_90")]

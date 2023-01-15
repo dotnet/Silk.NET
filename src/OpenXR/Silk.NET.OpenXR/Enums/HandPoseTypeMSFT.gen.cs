@@ -12,9 +12,15 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrHandPoseTypeMSFT")]
     public enum HandPoseTypeMSFT : int
     {
+        [Obsolete("Deprecated in favour of \"TrackedMsft\"")]
         [NativeName("Name", "XR_HAND_POSE_TYPE_TRACKED_MSFT")]
         HandPoseTypeTrackedMsft = 0,
+        [Obsolete("Deprecated in favour of \"ReferenceOpenPalmMsft\"")]
         [NativeName("Name", "XR_HAND_POSE_TYPE_REFERENCE_OPEN_PALM_MSFT")]
         HandPoseTypeReferenceOpenPalmMsft = 1,
+        [NativeName("Name", "XR_HAND_POSE_TYPE_TRACKED_MSFT")]
+        TrackedMsft = 0,
+        [NativeName("Name", "XR_HAND_POSE_TYPE_REFERENCE_OPEN_PALM_MSFT")]
+        ReferenceOpenPalmMsft = 1,
     }
 }

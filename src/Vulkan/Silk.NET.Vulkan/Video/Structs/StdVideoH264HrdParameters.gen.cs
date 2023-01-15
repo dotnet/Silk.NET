@@ -24,6 +24,7 @@ namespace Silk.NET.Vulkan.Video
             byte? cpbCntMinus1 = null,
             byte? bitRateScale = null,
             byte? cpbSizeScale = null,
+            byte? reserved1 = null,
             uint? initialCpbRemovalDelayLengthMinus1 = null,
             uint? cpbRemovalDelayLengthMinus1 = null,
             uint? dpbOutputDelayLengthMinus1 = null,
@@ -43,6 +44,11 @@ namespace Silk.NET.Vulkan.Video
             if (cpbSizeScale is not null)
             {
                 CpbSizeScale = cpbSizeScale.Value;
+            }
+
+            if (reserved1 is not null)
+            {
+                Reserved1 = reserved1.Value;
             }
 
             if (initialCpbRemovalDelayLengthMinus1 is not null)
@@ -81,16 +87,21 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "cpb_size_scale")]
         public byte CpbSizeScale;
-        [NativeName("Type", "uint32_t [32]")]
-        [NativeName("Type.Name", "uint32_t [32]")]
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "reserved1")]
+        public byte Reserved1;
+        [NativeName("Type", "uint32_t[32]")]
+        [NativeName("Type.Name", "uint32_t[32]")]
         [NativeName("Name", "bit_rate_value_minus1")]
         public fixed uint BitRateValueMinus1[32];
-        [NativeName("Type", "uint32_t [32]")]
-        [NativeName("Type.Name", "uint32_t [32]")]
+        [NativeName("Type", "uint32_t[32]")]
+        [NativeName("Type.Name", "uint32_t[32]")]
         [NativeName("Name", "cpb_size_value_minus1")]
         public fixed uint CpbSizeValueMinus1[32];
-        [NativeName("Type", "uint8_t [32]")]
-        [NativeName("Type.Name", "uint8_t [32]")]
+        [NativeName("Type", "uint8_t[32]")]
+        [NativeName("Type.Name", "uint8_t[32]")]
         [NativeName("Name", "cbr_flag")]
         public fixed byte CbrFlag[32];
 

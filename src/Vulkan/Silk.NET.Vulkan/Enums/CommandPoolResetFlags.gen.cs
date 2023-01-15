@@ -13,9 +13,17 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkCommandPoolResetFlags")]
     public enum CommandPoolResetFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"ReleaseResourcesBit\"")]
         [NativeName("Name", "VK_COMMAND_POOL_RESET_RELEASE_RESOURCES_BIT")]
         CommandPoolResetReleaseResourcesBit = 1,
+        [Obsolete("Deprecated in favour of \"Reserved1BitCoreavi\"")]
         [NativeName("Name", "VK_COMMAND_POOL_RESET_RESERVED_1_BIT_COREAVI")]
         CommandPoolResetReserved1BitCoreavi = 2,
+        [NativeName("Name", "VK_COMMAND_POOL_RESET_RELEASE_RESOURCES_BIT")]
+        ReleaseResourcesBit = 1,
+        [NativeName("Name", "VK_COMMAND_POOL_RESET_RESERVED_1_BIT_COREAVI")]
+        Reserved1BitCoreavi = 2,
     }
 }

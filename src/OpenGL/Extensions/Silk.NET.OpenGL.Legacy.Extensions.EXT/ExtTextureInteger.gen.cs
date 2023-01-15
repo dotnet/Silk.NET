@@ -122,6 +122,34 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glTexParameterIuivEXT", Convention = CallingConvention.Winapi)]
         public partial void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in uint @params);
 
+        public unsafe int GetTexParameterI([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexParameterI(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexParameterI([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] GetTextureParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexParameterI(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexParameterI(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexParameterI(target, pname, out int silkRet);
+            return silkRet;
+        }
+
         public ExtTextureInteger(INativeContext ctx)
             : base(ctx)
         {

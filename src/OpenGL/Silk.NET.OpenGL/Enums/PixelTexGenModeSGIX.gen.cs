@@ -12,6 +12,14 @@ namespace Silk.NET.OpenGL
     [NativeName("Name", "PixelTexGenModeSGIX")]
     public enum PixelTexGenModeSGIX : int
     {
+        [NativeName("Name", "GL_NONE")]
+        None = 0x0,
+        [NativeName("Name", "GL_ALPHA")]
+        Alpha = 0x1906,
+        [NativeName("Name", "GL_RGB")]
+        Rgb = 0x1907,
+        [NativeName("Name", "GL_RGBA")]
+        Rgba = 0x1908,
         [NativeName("Name", "GL_PIXEL_TEX_GEN_Q_CEILING_SGIX")]
         PixelTexGenQCeilingSgix = 0x8184,
         [NativeName("Name", "GL_PIXEL_TEX_GEN_Q_ROUND_SGIX")]

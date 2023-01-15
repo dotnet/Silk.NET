@@ -23,7 +23,9 @@ namespace Silk.NET.Vulkan.Video
         (
             uint? isReferenceFlag = null,
             uint? irapPicFlag = null,
-            uint? longTermFlag = null
+            uint? longTermFlag = null,
+            uint? discardableFlag = null,
+            uint? crossLayerBlaFlag = null
         ) : this()
         {
             if (isReferenceFlag is not null)
@@ -39,6 +41,16 @@ namespace Silk.NET.Vulkan.Video
             if (longTermFlag is not null)
             {
                 LongTermFlag = longTermFlag.Value;
+            }
+
+            if (discardableFlag is not null)
+            {
+                DiscardableFlag = discardableFlag.Value;
+            }
+
+            if (crossLayerBlaFlag is not null)
+            {
+                CrossLayerBlaFlag = crossLayerBlaFlag.Value;
             }
         }
 
@@ -67,6 +79,22 @@ namespace Silk.NET.Vulkan.Video
             get => (uint)((_bitfield1 >> 2) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+        }
+
+        public uint DiscardableFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 3) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
+        }
+
+        public uint CrossLayerBlaFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 4) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
         }
     }
 }

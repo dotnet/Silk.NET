@@ -92,6 +92,34 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
             TexFilterFunc(target, filter, (uint) weights.Length, in weights.GetPinnableReference());
         }
 
+        public unsafe float GetTexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexFilterFunc(target, filter, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetTexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] TextureFilterSGIS filter)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexFilterFunc(target, filter, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetTexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SGIS filter)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexFilterFunc(target, filter, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetTexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTexFilterFunc(target, filter, out float silkRet);
+            return silkRet;
+        }
+
         public SgisTextureFilter4(INativeContext ctx)
             : base(ctx)
         {

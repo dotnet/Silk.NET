@@ -17,15 +17,16 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFormatProperties3KHR")]
+    [NativeName("AliasOf", "VkFormatProperties3")]
     public unsafe partial struct FormatProperties3KHR : IExtendsChain<FormatProperties2>, IExtendsChain<FormatProperties2KHR>
     {
         public FormatProperties3KHR
         (
-            StructureType? sType = StructureType.FormatProperties3Khr,
+            StructureType? sType = StructureType.FormatProperties3,
             void* pNext = null,
-            FormatFeatureFlags2KHR? linearTilingFeatures = null,
-            FormatFeatureFlags2KHR? optimalTilingFeatures = null,
-            FormatFeatureFlags2KHR? bufferFeatures = null
+            FormatFeatureFlags2? linearTilingFeatures = null,
+            FormatFeatureFlags2? optimalTilingFeatures = null,
+            FormatFeatureFlags2? bufferFeatures = null
         ) : this()
         {
             if (sType is not null)
@@ -65,25 +66,25 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkFormatFeatureFlags2KHR")]
-        [NativeName("Type.Name", "VkFormatFeatureFlags2KHR")]
+        [NativeName("Type", "VkFormatFeatureFlags2")]
+        [NativeName("Type.Name", "VkFormatFeatureFlags2")]
         [NativeName("Name", "linearTilingFeatures")]
-        public FormatFeatureFlags2KHR LinearTilingFeatures;
+        public FormatFeatureFlags2 LinearTilingFeatures;
 /// <summary></summary>
-        [NativeName("Type", "VkFormatFeatureFlags2KHR")]
-        [NativeName("Type.Name", "VkFormatFeatureFlags2KHR")]
+        [NativeName("Type", "VkFormatFeatureFlags2")]
+        [NativeName("Type.Name", "VkFormatFeatureFlags2")]
         [NativeName("Name", "optimalTilingFeatures")]
-        public FormatFeatureFlags2KHR OptimalTilingFeatures;
+        public FormatFeatureFlags2 OptimalTilingFeatures;
 /// <summary></summary>
-        [NativeName("Type", "VkFormatFeatureFlags2KHR")]
-        [NativeName("Type.Name", "VkFormatFeatureFlags2KHR")]
+        [NativeName("Type", "VkFormatFeatureFlags2")]
+        [NativeName("Type.Name", "VkFormatFeatureFlags2")]
         [NativeName("Name", "bufferFeatures")]
-        public FormatFeatureFlags2KHR BufferFeatures;
+        public FormatFeatureFlags2 BufferFeatures;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.FormatProperties3Khr;
+            return SType = StructureType.FormatProperties3;
         }
 
         /// <inheritdoc />

@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D11
 {
     [Guid("29da1d51-1321-4454-804b-f5fc9f861f0f")]
     [NativeName("Name", "ID3D11VideoDevice1")]
-    public unsafe partial struct ID3D11VideoDevice1
+    public unsafe partial struct ID3D11VideoDevice1 : IComVtbl<ID3D11VideoDevice1>, IComVtbl<ID3D11VideoDevice>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("29da1d51-1321-4454-804b-f5fc9f861f0f");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID3D11VideoDevice(ID3D11VideoDevice1 val)
             => Unsafe.As<ID3D11VideoDevice1, ID3D11VideoDevice>(ref val);
@@ -49,18 +52,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -71,18 +63,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -94,18 +75,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -119,18 +89,7 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -141,7 +100,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -150,78 +109,45 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(VideoDecoderDesc* pVideoDesc, VideoDecoderConfig* pConfig, ID3D11VideoDecoder** ppDecoder)
+        public readonly unsafe int CreateVideoDecoder([Flow(FlowDirection.In)] VideoDecoderDesc* pVideoDesc, [Flow(FlowDirection.In)] VideoDecoderConfig* pConfig, ID3D11VideoDecoder** ppDecoder)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDesc, pConfig, ppDecoder);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDesc, pConfig, ppDecoder);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDesc, pConfig, ppDecoder);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)@this->LpVtbl[3])(@this, pVideoDesc, pConfig, ppDecoder);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(VideoDecoderDesc* pVideoDesc, VideoDecoderConfig* pConfig, ref ID3D11VideoDecoder* ppDecoder)
+        public readonly unsafe int CreateVideoDecoder([Flow(FlowDirection.In)] VideoDecoderDesc* pVideoDesc, [Flow(FlowDirection.In)] VideoDecoderConfig* pConfig, ref ID3D11VideoDecoder* ppDecoder)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11VideoDecoder** ppDecoderPtr = &ppDecoder)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDesc, pConfig, ppDecoderPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDesc, pConfig, ppDecoderPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDesc, pConfig, ppDecoderPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)@this->LpVtbl[3])(@this, pVideoDesc, pConfig, ppDecoderPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(VideoDecoderDesc* pVideoDesc, ref VideoDecoderConfig pConfig, ID3D11VideoDecoder** ppDecoder)
+        public readonly unsafe int CreateVideoDecoder([Flow(FlowDirection.In)] VideoDecoderDesc* pVideoDesc, [Flow(FlowDirection.In)] in VideoDecoderConfig pConfig, ID3D11VideoDecoder** ppDecoder)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (VideoDecoderConfig* pConfigPtr = &pConfig)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDesc, pConfigPtr, ppDecoder);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDesc, pConfigPtr, ppDecoder);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDesc, pConfigPtr, ppDecoder);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)@this->LpVtbl[3])(@this, pVideoDesc, pConfigPtr, ppDecoder);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(VideoDecoderDesc* pVideoDesc, ref VideoDecoderConfig pConfig, ref ID3D11VideoDecoder* ppDecoder)
+        public readonly unsafe int CreateVideoDecoder([Flow(FlowDirection.In)] VideoDecoderDesc* pVideoDesc, [Flow(FlowDirection.In)] in VideoDecoderConfig pConfig, ref ID3D11VideoDecoder* ppDecoder)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -229,48 +155,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoDecoder** ppDecoderPtr = &ppDecoder)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDesc, pConfigPtr, ppDecoderPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDesc, pConfigPtr, ppDecoderPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDesc, pConfigPtr, ppDecoderPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)@this->LpVtbl[3])(@this, pVideoDesc, pConfigPtr, ppDecoderPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref VideoDecoderDesc pVideoDesc, VideoDecoderConfig* pConfig, ID3D11VideoDecoder** ppDecoder)
+        public readonly unsafe int CreateVideoDecoder([Flow(FlowDirection.In)] in VideoDecoderDesc pVideoDesc, [Flow(FlowDirection.In)] VideoDecoderConfig* pConfig, ID3D11VideoDecoder** ppDecoder)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (VideoDecoderDesc* pVideoDescPtr = &pVideoDesc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDescPtr, pConfig, ppDecoder);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDescPtr, pConfig, ppDecoder);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDescPtr, pConfig, ppDecoder);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)@this->LpVtbl[3])(@this, pVideoDescPtr, pConfig, ppDecoder);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref VideoDecoderDesc pVideoDesc, VideoDecoderConfig* pConfig, ref ID3D11VideoDecoder* ppDecoder)
+        public readonly unsafe int CreateVideoDecoder([Flow(FlowDirection.In)] in VideoDecoderDesc pVideoDesc, [Flow(FlowDirection.In)] VideoDecoderConfig* pConfig, ref ID3D11VideoDecoder* ppDecoder)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -278,25 +182,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoDecoder** ppDecoderPtr = &ppDecoder)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDescPtr, pConfig, ppDecoderPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDescPtr, pConfig, ppDecoderPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDescPtr, pConfig, ppDecoderPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)@this->LpVtbl[3])(@this, pVideoDescPtr, pConfig, ppDecoderPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref VideoDecoderDesc pVideoDesc, ref VideoDecoderConfig pConfig, ID3D11VideoDecoder** ppDecoder)
+        public readonly unsafe int CreateVideoDecoder([Flow(FlowDirection.In)] in VideoDecoderDesc pVideoDesc, [Flow(FlowDirection.In)] in VideoDecoderConfig pConfig, ID3D11VideoDecoder** ppDecoder)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -304,25 +197,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoDecoderConfig* pConfigPtr = &pConfig)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDescPtr, pConfigPtr, ppDecoder);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDescPtr, pConfigPtr, ppDecoder);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDescPtr, pConfigPtr, ppDecoder);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)@this->LpVtbl[3])(@this, pVideoDescPtr, pConfigPtr, ppDecoder);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoder(ref VideoDecoderDesc pVideoDesc, ref VideoDecoderConfig pConfig, ref ID3D11VideoDecoder* ppDecoder)
+        public readonly unsafe int CreateVideoDecoder([Flow(FlowDirection.In)] in VideoDecoderDesc pVideoDesc, [Flow(FlowDirection.In)] in VideoDecoderConfig pConfig, ref ID3D11VideoDecoder* ppDecoder)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -332,18 +214,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11VideoDecoder** ppDecoderPtr = &ppDecoder)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDescPtr, pConfigPtr, ppDecoderPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDescPtr, pConfigPtr, ppDecoderPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)LpVtbl[3])(@this, pVideoDescPtr, pConfigPtr, ppDecoderPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, VideoDecoderConfig*, ID3D11VideoDecoder**, int>)@this->LpVtbl[3])(@this, pVideoDescPtr, pConfigPtr, ppDecoderPtr);
                     }
                 }
             }
@@ -355,18 +226,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11VideoProcessorEnumerator*, uint, ID3D11VideoProcessor**, int>)LpVtbl[4])(@this, pEnum, RateConversionIndex, ppVideoProcessor);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11VideoProcessorEnumerator*, uint, ID3D11VideoProcessor**, int>)LpVtbl[4])(@this, pEnum, RateConversionIndex, ppVideoProcessor);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11VideoProcessorEnumerator*, uint, ID3D11VideoProcessor**, int>)LpVtbl[4])(@this, pEnum, RateConversionIndex, ppVideoProcessor);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11VideoProcessorEnumerator*, uint, ID3D11VideoProcessor**, int>)@this->LpVtbl[4])(@this, pEnum, RateConversionIndex, ppVideoProcessor);
             return ret;
         }
 
@@ -377,18 +237,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoProcessor** ppVideoProcessorPtr = &ppVideoProcessor)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11VideoProcessorEnumerator*, uint, ID3D11VideoProcessor**, int>)LpVtbl[4])(@this, pEnum, RateConversionIndex, ppVideoProcessorPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11VideoProcessorEnumerator*, uint, ID3D11VideoProcessor**, int>)LpVtbl[4])(@this, pEnum, RateConversionIndex, ppVideoProcessorPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11VideoProcessorEnumerator*, uint, ID3D11VideoProcessor**, int>)LpVtbl[4])(@this, pEnum, RateConversionIndex, ppVideoProcessorPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11VideoProcessorEnumerator*, uint, ID3D11VideoProcessor**, int>)@this->LpVtbl[4])(@this, pEnum, RateConversionIndex, ppVideoProcessorPtr);
             }
             return ret;
         }
@@ -400,18 +249,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11VideoProcessorEnumerator* pEnumPtr = &pEnum)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11VideoProcessorEnumerator*, uint, ID3D11VideoProcessor**, int>)LpVtbl[4])(@this, pEnumPtr, RateConversionIndex, ppVideoProcessor);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11VideoProcessorEnumerator*, uint, ID3D11VideoProcessor**, int>)LpVtbl[4])(@this, pEnumPtr, RateConversionIndex, ppVideoProcessor);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11VideoProcessorEnumerator*, uint, ID3D11VideoProcessor**, int>)LpVtbl[4])(@this, pEnumPtr, RateConversionIndex, ppVideoProcessor);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11VideoProcessorEnumerator*, uint, ID3D11VideoProcessor**, int>)@this->LpVtbl[4])(@this, pEnumPtr, RateConversionIndex, ppVideoProcessor);
             }
             return ret;
         }
@@ -425,18 +263,7 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoProcessor** ppVideoProcessorPtr = &ppVideoProcessor)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11VideoProcessorEnumerator*, uint, ID3D11VideoProcessor**, int>)LpVtbl[4])(@this, pEnumPtr, RateConversionIndex, ppVideoProcessorPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11VideoProcessorEnumerator*, uint, ID3D11VideoProcessor**, int>)LpVtbl[4])(@this, pEnumPtr, RateConversionIndex, ppVideoProcessorPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11VideoProcessorEnumerator*, uint, ID3D11VideoProcessor**, int>)LpVtbl[4])(@this, pEnumPtr, RateConversionIndex, ppVideoProcessorPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11VideoProcessorEnumerator*, uint, ID3D11VideoProcessor**, int>)@this->LpVtbl[4])(@this, pEnumPtr, RateConversionIndex, ppVideoProcessorPtr);
                 }
             }
             return ret;
@@ -447,18 +274,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, AuthenticatedChannelType, ID3D11AuthenticatedChannel**, int>)LpVtbl[5])(@this, ChannelType, ppAuthenticatedChannel);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, AuthenticatedChannelType, ID3D11AuthenticatedChannel**, int>)LpVtbl[5])(@this, ChannelType, ppAuthenticatedChannel);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, AuthenticatedChannelType, ID3D11AuthenticatedChannel**, int>)LpVtbl[5])(@this, ChannelType, ppAuthenticatedChannel);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, AuthenticatedChannelType, ID3D11AuthenticatedChannel**, int>)@this->LpVtbl[5])(@this, ChannelType, ppAuthenticatedChannel);
             return ret;
         }
 
@@ -469,90 +285,46 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11AuthenticatedChannel** ppAuthenticatedChannelPtr = &ppAuthenticatedChannel)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, AuthenticatedChannelType, ID3D11AuthenticatedChannel**, int>)LpVtbl[5])(@this, ChannelType, ppAuthenticatedChannelPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, AuthenticatedChannelType, ID3D11AuthenticatedChannel**, int>)LpVtbl[5])(@this, ChannelType, ppAuthenticatedChannelPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, AuthenticatedChannelType, ID3D11AuthenticatedChannel**, int>)LpVtbl[5])(@this, ChannelType, ppAuthenticatedChannelPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, AuthenticatedChannelType, ID3D11AuthenticatedChannel**, int>)@this->LpVtbl[5])(@this, ChannelType, ppAuthenticatedChannelPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(Guid* pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, ppCryptoSession);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, ppCryptoSession);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, ppCryptoSession);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)@this->LpVtbl[6])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, ppCryptoSession);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(Guid* pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11CryptoSession** ppCryptoSessionPtr = &ppCryptoSession)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, ppCryptoSessionPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, ppCryptoSessionPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, ppCryptoSessionPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)@this->LpVtbl[6])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, ppCryptoSessionPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(Guid* pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, ppCryptoSession);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, ppCryptoSession);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, ppCryptoSession);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)@this->LpVtbl[6])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, ppCryptoSession);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(Guid* pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -560,48 +332,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11CryptoSession** ppCryptoSessionPtr = &ppCryptoSession)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, ppCryptoSessionPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, ppCryptoSessionPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, ppCryptoSessionPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)@this->LpVtbl[6])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, ppCryptoSessionPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(Guid* pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, ppCryptoSession);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, ppCryptoSession);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, ppCryptoSession);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)@this->LpVtbl[6])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, ppCryptoSession);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(Guid* pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -609,25 +359,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11CryptoSession** ppCryptoSessionPtr = &ppCryptoSession)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, ppCryptoSessionPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, ppCryptoSessionPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, ppCryptoSessionPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)@this->LpVtbl[6])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, ppCryptoSessionPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(Guid* pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -635,25 +374,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, ppCryptoSession);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, ppCryptoSession);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, ppCryptoSession);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)@this->LpVtbl[6])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, ppCryptoSession);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(Guid* pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -663,18 +391,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11CryptoSession** ppCryptoSessionPtr = &ppCryptoSession)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, ppCryptoSessionPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, ppCryptoSessionPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, ppCryptoSessionPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)@this->LpVtbl[6])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, ppCryptoSessionPtr);
                     }
                 }
             }
@@ -682,30 +399,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(ref Guid pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pCryptoTypePtr = &pCryptoType)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, ppCryptoSession);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, ppCryptoSession);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, ppCryptoSession);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)@this->LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, ppCryptoSession);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(ref Guid pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -713,25 +419,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11CryptoSession** ppCryptoSessionPtr = &ppCryptoSession)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, ppCryptoSessionPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, ppCryptoSessionPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, ppCryptoSessionPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)@this->LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, ppCryptoSessionPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(ref Guid pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -739,25 +434,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, ppCryptoSession);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, ppCryptoSession);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, ppCryptoSession);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)@this->LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, ppCryptoSession);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(ref Guid pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -767,18 +451,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11CryptoSession** ppCryptoSessionPtr = &ppCryptoSession)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, ppCryptoSessionPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, ppCryptoSessionPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, ppCryptoSessionPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)@this->LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, ppCryptoSessionPtr);
                     }
                 }
             }
@@ -786,7 +459,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(ref Guid pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -794,25 +467,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, ppCryptoSession);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, ppCryptoSession);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, ppCryptoSession);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)@this->LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, ppCryptoSession);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(ref Guid pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -822,18 +484,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11CryptoSession** ppCryptoSessionPtr = &ppCryptoSession)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, ppCryptoSessionPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, ppCryptoSessionPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, ppCryptoSessionPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)@this->LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, ppCryptoSessionPtr);
                     }
                 }
             }
@@ -841,7 +492,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(ref Guid pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ID3D11CryptoSession** ppCryptoSession)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -851,18 +502,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, ppCryptoSession);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, ppCryptoSession);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, ppCryptoSession);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)@this->LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, ppCryptoSession);
                     }
                 }
             }
@@ -870,7 +510,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(ref Guid pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ref ID3D11CryptoSession* ppCryptoSession)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -882,18 +522,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (ID3D11CryptoSession** ppCryptoSessionPtr = &ppCryptoSession)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, ppCryptoSessionPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, ppCryptoSessionPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, ppCryptoSessionPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, ID3D11CryptoSession**, int>)@this->LpVtbl[6])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, ppCryptoSessionPtr);
                         }
                     }
                 }
@@ -902,73 +531,40 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoderOutputView(ID3D11Resource* pResource, VideoDecoderOutputViewDesc* pDesc, ID3D11VideoDecoderOutputView** ppVDOVView)
+        public readonly unsafe int CreateVideoDecoderOutputView(ID3D11Resource* pResource, [Flow(FlowDirection.In)] VideoDecoderOutputViewDesc* pDesc, ID3D11VideoDecoderOutputView** ppVDOVView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResource, pDesc, ppVDOVView);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResource, pDesc, ppVDOVView);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResource, pDesc, ppVDOVView);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)@this->LpVtbl[7])(@this, pResource, pDesc, ppVDOVView);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoderOutputView(ID3D11Resource* pResource, VideoDecoderOutputViewDesc* pDesc, ref ID3D11VideoDecoderOutputView* ppVDOVView)
+        public readonly unsafe int CreateVideoDecoderOutputView(ID3D11Resource* pResource, [Flow(FlowDirection.In)] VideoDecoderOutputViewDesc* pDesc, ref ID3D11VideoDecoderOutputView* ppVDOVView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11VideoDecoderOutputView** ppVDOVViewPtr = &ppVDOVView)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResource, pDesc, ppVDOVViewPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResource, pDesc, ppVDOVViewPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResource, pDesc, ppVDOVViewPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)@this->LpVtbl[7])(@this, pResource, pDesc, ppVDOVViewPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoderOutputView(ID3D11Resource* pResource, ref VideoDecoderOutputViewDesc pDesc, ID3D11VideoDecoderOutputView** ppVDOVView)
+        public readonly unsafe int CreateVideoDecoderOutputView(ID3D11Resource* pResource, [Flow(FlowDirection.In)] in VideoDecoderOutputViewDesc pDesc, ID3D11VideoDecoderOutputView** ppVDOVView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (VideoDecoderOutputViewDesc* pDescPtr = &pDesc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResource, pDescPtr, ppVDOVView);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResource, pDescPtr, ppVDOVView);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResource, pDescPtr, ppVDOVView);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)@this->LpVtbl[7])(@this, pResource, pDescPtr, ppVDOVView);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoderOutputView(ID3D11Resource* pResource, ref VideoDecoderOutputViewDesc pDesc, ref ID3D11VideoDecoderOutputView* ppVDOVView)
+        public readonly unsafe int CreateVideoDecoderOutputView(ID3D11Resource* pResource, [Flow(FlowDirection.In)] in VideoDecoderOutputViewDesc pDesc, ref ID3D11VideoDecoderOutputView* ppVDOVView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -976,48 +572,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoDecoderOutputView** ppVDOVViewPtr = &ppVDOVView)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResource, pDescPtr, ppVDOVViewPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResource, pDescPtr, ppVDOVViewPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResource, pDescPtr, ppVDOVViewPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)@this->LpVtbl[7])(@this, pResource, pDescPtr, ppVDOVViewPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoderOutputView(ref ID3D11Resource pResource, VideoDecoderOutputViewDesc* pDesc, ID3D11VideoDecoderOutputView** ppVDOVView)
+        public readonly unsafe int CreateVideoDecoderOutputView(ref ID3D11Resource pResource, [Flow(FlowDirection.In)] VideoDecoderOutputViewDesc* pDesc, ID3D11VideoDecoderOutputView** ppVDOVView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11Resource* pResourcePtr = &pResource)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResourcePtr, pDesc, ppVDOVView);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResourcePtr, pDesc, ppVDOVView);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResourcePtr, pDesc, ppVDOVView);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)@this->LpVtbl[7])(@this, pResourcePtr, pDesc, ppVDOVView);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoderOutputView(ref ID3D11Resource pResource, VideoDecoderOutputViewDesc* pDesc, ref ID3D11VideoDecoderOutputView* ppVDOVView)
+        public readonly unsafe int CreateVideoDecoderOutputView(ref ID3D11Resource pResource, [Flow(FlowDirection.In)] VideoDecoderOutputViewDesc* pDesc, ref ID3D11VideoDecoderOutputView* ppVDOVView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1025,25 +599,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoDecoderOutputView** ppVDOVViewPtr = &ppVDOVView)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResourcePtr, pDesc, ppVDOVViewPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResourcePtr, pDesc, ppVDOVViewPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResourcePtr, pDesc, ppVDOVViewPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)@this->LpVtbl[7])(@this, pResourcePtr, pDesc, ppVDOVViewPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoderOutputView(ref ID3D11Resource pResource, ref VideoDecoderOutputViewDesc pDesc, ID3D11VideoDecoderOutputView** ppVDOVView)
+        public readonly unsafe int CreateVideoDecoderOutputView(ref ID3D11Resource pResource, [Flow(FlowDirection.In)] in VideoDecoderOutputViewDesc pDesc, ID3D11VideoDecoderOutputView** ppVDOVView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1051,25 +614,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoDecoderOutputViewDesc* pDescPtr = &pDesc)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResourcePtr, pDescPtr, ppVDOVView);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResourcePtr, pDescPtr, ppVDOVView);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResourcePtr, pDescPtr, ppVDOVView);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)@this->LpVtbl[7])(@this, pResourcePtr, pDescPtr, ppVDOVView);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoDecoderOutputView(ref ID3D11Resource pResource, ref VideoDecoderOutputViewDesc pDesc, ref ID3D11VideoDecoderOutputView* ppVDOVView)
+        public readonly unsafe int CreateVideoDecoderOutputView(ref ID3D11Resource pResource, [Flow(FlowDirection.In)] in VideoDecoderOutputViewDesc pDesc, ref ID3D11VideoDecoderOutputView* ppVDOVView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1079,18 +631,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11VideoDecoderOutputView** ppVDOVViewPtr = &ppVDOVView)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResourcePtr, pDescPtr, ppVDOVViewPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResourcePtr, pDescPtr, ppVDOVViewPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)LpVtbl[7])(@this, pResourcePtr, pDescPtr, ppVDOVViewPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, VideoDecoderOutputViewDesc*, ID3D11VideoDecoderOutputView**, int>)@this->LpVtbl[7])(@this, pResourcePtr, pDescPtr, ppVDOVViewPtr);
                     }
                 }
             }
@@ -1098,73 +639,40 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorInputView(ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, VideoProcessorInputViewDesc* pDesc, ID3D11VideoProcessorInputView** ppVPIView)
+        public readonly unsafe int CreateVideoProcessorInputView(ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(FlowDirection.In)] VideoProcessorInputViewDesc* pDesc, ID3D11VideoProcessorInputView** ppVPIView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnum, pDesc, ppVPIView);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnum, pDesc, ppVPIView);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnum, pDesc, ppVPIView);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)@this->LpVtbl[8])(@this, pResource, pEnum, pDesc, ppVPIView);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorInputView(ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, VideoProcessorInputViewDesc* pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
+        public readonly unsafe int CreateVideoProcessorInputView(ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(FlowDirection.In)] VideoProcessorInputViewDesc* pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11VideoProcessorInputView** ppVPIViewPtr = &ppVPIView)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnum, pDesc, ppVPIViewPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnum, pDesc, ppVPIViewPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnum, pDesc, ppVPIViewPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)@this->LpVtbl[8])(@this, pResource, pEnum, pDesc, ppVPIViewPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorInputView(ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, ref VideoProcessorInputViewDesc pDesc, ID3D11VideoProcessorInputView** ppVPIView)
+        public readonly unsafe int CreateVideoProcessorInputView(ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(FlowDirection.In)] in VideoProcessorInputViewDesc pDesc, ID3D11VideoProcessorInputView** ppVPIView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (VideoProcessorInputViewDesc* pDescPtr = &pDesc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnum, pDescPtr, ppVPIView);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnum, pDescPtr, ppVPIView);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnum, pDescPtr, ppVPIView);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)@this->LpVtbl[8])(@this, pResource, pEnum, pDescPtr, ppVPIView);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorInputView(ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, ref VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
+        public readonly unsafe int CreateVideoProcessorInputView(ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(FlowDirection.In)] in VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1172,48 +680,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoProcessorInputView** ppVPIViewPtr = &ppVPIView)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnum, pDescPtr, ppVPIViewPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnum, pDescPtr, ppVPIViewPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnum, pDescPtr, ppVPIViewPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)@this->LpVtbl[8])(@this, pResource, pEnum, pDescPtr, ppVPIViewPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorInputView(ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, VideoProcessorInputViewDesc* pDesc, ID3D11VideoProcessorInputView** ppVPIView)
+        public readonly unsafe int CreateVideoProcessorInputView(ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] VideoProcessorInputViewDesc* pDesc, ID3D11VideoProcessorInputView** ppVPIView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11VideoProcessorEnumerator* pEnumPtr = &pEnum)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnumPtr, pDesc, ppVPIView);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnumPtr, pDesc, ppVPIView);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnumPtr, pDesc, ppVPIView);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)@this->LpVtbl[8])(@this, pResource, pEnumPtr, pDesc, ppVPIView);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorInputView(ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, VideoProcessorInputViewDesc* pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
+        public readonly unsafe int CreateVideoProcessorInputView(ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] VideoProcessorInputViewDesc* pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1221,25 +707,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoProcessorInputView** ppVPIViewPtr = &ppVPIView)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnumPtr, pDesc, ppVPIViewPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnumPtr, pDesc, ppVPIViewPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnumPtr, pDesc, ppVPIViewPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)@this->LpVtbl[8])(@this, pResource, pEnumPtr, pDesc, ppVPIViewPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorInputView(ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, ref VideoProcessorInputViewDesc pDesc, ID3D11VideoProcessorInputView** ppVPIView)
+        public readonly unsafe int CreateVideoProcessorInputView(ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] in VideoProcessorInputViewDesc pDesc, ID3D11VideoProcessorInputView** ppVPIView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1247,25 +722,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorInputViewDesc* pDescPtr = &pDesc)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnumPtr, pDescPtr, ppVPIView);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnumPtr, pDescPtr, ppVPIView);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnumPtr, pDescPtr, ppVPIView);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)@this->LpVtbl[8])(@this, pResource, pEnumPtr, pDescPtr, ppVPIView);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorInputView(ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, ref VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
+        public readonly unsafe int CreateVideoProcessorInputView(ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] in VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1275,18 +739,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11VideoProcessorInputView** ppVPIViewPtr = &ppVPIView)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnumPtr, pDescPtr, ppVPIViewPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnumPtr, pDescPtr, ppVPIViewPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResource, pEnumPtr, pDescPtr, ppVPIViewPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)@this->LpVtbl[8])(@this, pResource, pEnumPtr, pDescPtr, ppVPIViewPtr);
                     }
                 }
             }
@@ -1294,30 +747,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorInputView(ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, VideoProcessorInputViewDesc* pDesc, ID3D11VideoProcessorInputView** ppVPIView)
+        public readonly unsafe int CreateVideoProcessorInputView(ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(FlowDirection.In)] VideoProcessorInputViewDesc* pDesc, ID3D11VideoProcessorInputView** ppVPIView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11Resource* pResourcePtr = &pResource)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnum, pDesc, ppVPIView);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnum, pDesc, ppVPIView);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnum, pDesc, ppVPIView);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)@this->LpVtbl[8])(@this, pResourcePtr, pEnum, pDesc, ppVPIView);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorInputView(ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, VideoProcessorInputViewDesc* pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
+        public readonly unsafe int CreateVideoProcessorInputView(ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(FlowDirection.In)] VideoProcessorInputViewDesc* pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1325,25 +767,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoProcessorInputView** ppVPIViewPtr = &ppVPIView)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnum, pDesc, ppVPIViewPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnum, pDesc, ppVPIViewPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnum, pDesc, ppVPIViewPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)@this->LpVtbl[8])(@this, pResourcePtr, pEnum, pDesc, ppVPIViewPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorInputView(ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, ref VideoProcessorInputViewDesc pDesc, ID3D11VideoProcessorInputView** ppVPIView)
+        public readonly unsafe int CreateVideoProcessorInputView(ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(FlowDirection.In)] in VideoProcessorInputViewDesc pDesc, ID3D11VideoProcessorInputView** ppVPIView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1351,25 +782,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorInputViewDesc* pDescPtr = &pDesc)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnum, pDescPtr, ppVPIView);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnum, pDescPtr, ppVPIView);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnum, pDescPtr, ppVPIView);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)@this->LpVtbl[8])(@this, pResourcePtr, pEnum, pDescPtr, ppVPIView);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorInputView(ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, ref VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
+        public readonly unsafe int CreateVideoProcessorInputView(ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(FlowDirection.In)] in VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1379,18 +799,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11VideoProcessorInputView** ppVPIViewPtr = &ppVPIView)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnum, pDescPtr, ppVPIViewPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnum, pDescPtr, ppVPIViewPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnum, pDescPtr, ppVPIViewPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)@this->LpVtbl[8])(@this, pResourcePtr, pEnum, pDescPtr, ppVPIViewPtr);
                     }
                 }
             }
@@ -1398,7 +807,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorInputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, VideoProcessorInputViewDesc* pDesc, ID3D11VideoProcessorInputView** ppVPIView)
+        public readonly unsafe int CreateVideoProcessorInputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] VideoProcessorInputViewDesc* pDesc, ID3D11VideoProcessorInputView** ppVPIView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1406,25 +815,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoProcessorEnumerator* pEnumPtr = &pEnum)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnumPtr, pDesc, ppVPIView);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnumPtr, pDesc, ppVPIView);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnumPtr, pDesc, ppVPIView);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)@this->LpVtbl[8])(@this, pResourcePtr, pEnumPtr, pDesc, ppVPIView);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorInputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, VideoProcessorInputViewDesc* pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
+        public readonly unsafe int CreateVideoProcessorInputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] VideoProcessorInputViewDesc* pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1434,18 +832,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11VideoProcessorInputView** ppVPIViewPtr = &ppVPIView)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnumPtr, pDesc, ppVPIViewPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnumPtr, pDesc, ppVPIViewPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnumPtr, pDesc, ppVPIViewPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)@this->LpVtbl[8])(@this, pResourcePtr, pEnumPtr, pDesc, ppVPIViewPtr);
                     }
                 }
             }
@@ -1453,7 +840,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorInputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, ref VideoProcessorInputViewDesc pDesc, ID3D11VideoProcessorInputView** ppVPIView)
+        public readonly unsafe int CreateVideoProcessorInputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] in VideoProcessorInputViewDesc pDesc, ID3D11VideoProcessorInputView** ppVPIView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1463,18 +850,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoProcessorInputViewDesc* pDescPtr = &pDesc)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnumPtr, pDescPtr, ppVPIView);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnumPtr, pDescPtr, ppVPIView);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnumPtr, pDescPtr, ppVPIView);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)@this->LpVtbl[8])(@this, pResourcePtr, pEnumPtr, pDescPtr, ppVPIView);
                     }
                 }
             }
@@ -1482,7 +858,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorInputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, ref VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
+        public readonly unsafe int CreateVideoProcessorInputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] in VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1494,18 +870,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (ID3D11VideoProcessorInputView** ppVPIViewPtr = &ppVPIView)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnumPtr, pDescPtr, ppVPIViewPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnumPtr, pDescPtr, ppVPIViewPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)LpVtbl[8])(@this, pResourcePtr, pEnumPtr, pDescPtr, ppVPIViewPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorInputViewDesc*, ID3D11VideoProcessorInputView**, int>)@this->LpVtbl[8])(@this, pResourcePtr, pEnumPtr, pDescPtr, ppVPIViewPtr);
                         }
                     }
                 }
@@ -1514,73 +879,40 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorOutputView(ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, VideoProcessorOutputViewDesc* pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
+        public readonly unsafe int CreateVideoProcessorOutputView(ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(FlowDirection.In)] VideoProcessorOutputViewDesc* pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnum, pDesc, ppVPOView);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnum, pDesc, ppVPOView);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnum, pDesc, ppVPOView);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)@this->LpVtbl[9])(@this, pResource, pEnum, pDesc, ppVPOView);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorOutputView(ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, VideoProcessorOutputViewDesc* pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
+        public readonly unsafe int CreateVideoProcessorOutputView(ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(FlowDirection.In)] VideoProcessorOutputViewDesc* pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11VideoProcessorOutputView** ppVPOViewPtr = &ppVPOView)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnum, pDesc, ppVPOViewPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnum, pDesc, ppVPOViewPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnum, pDesc, ppVPOViewPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)@this->LpVtbl[9])(@this, pResource, pEnum, pDesc, ppVPOViewPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorOutputView(ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, ref VideoProcessorOutputViewDesc pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
+        public readonly unsafe int CreateVideoProcessorOutputView(ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(FlowDirection.In)] in VideoProcessorOutputViewDesc pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (VideoProcessorOutputViewDesc* pDescPtr = &pDesc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnum, pDescPtr, ppVPOView);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnum, pDescPtr, ppVPOView);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnum, pDescPtr, ppVPOView);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)@this->LpVtbl[9])(@this, pResource, pEnum, pDescPtr, ppVPOView);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorOutputView(ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, ref VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
+        public readonly unsafe int CreateVideoProcessorOutputView(ID3D11Resource* pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(FlowDirection.In)] in VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1588,48 +920,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoProcessorOutputView** ppVPOViewPtr = &ppVPOView)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnum, pDescPtr, ppVPOViewPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnum, pDescPtr, ppVPOViewPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnum, pDescPtr, ppVPOViewPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)@this->LpVtbl[9])(@this, pResource, pEnum, pDescPtr, ppVPOViewPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorOutputView(ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, VideoProcessorOutputViewDesc* pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
+        public readonly unsafe int CreateVideoProcessorOutputView(ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] VideoProcessorOutputViewDesc* pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11VideoProcessorEnumerator* pEnumPtr = &pEnum)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnumPtr, pDesc, ppVPOView);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnumPtr, pDesc, ppVPOView);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnumPtr, pDesc, ppVPOView);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)@this->LpVtbl[9])(@this, pResource, pEnumPtr, pDesc, ppVPOView);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorOutputView(ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, VideoProcessorOutputViewDesc* pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
+        public readonly unsafe int CreateVideoProcessorOutputView(ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] VideoProcessorOutputViewDesc* pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1637,25 +947,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoProcessorOutputView** ppVPOViewPtr = &ppVPOView)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnumPtr, pDesc, ppVPOViewPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnumPtr, pDesc, ppVPOViewPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnumPtr, pDesc, ppVPOViewPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)@this->LpVtbl[9])(@this, pResource, pEnumPtr, pDesc, ppVPOViewPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorOutputView(ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, ref VideoProcessorOutputViewDesc pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
+        public readonly unsafe int CreateVideoProcessorOutputView(ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] in VideoProcessorOutputViewDesc pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1663,25 +962,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorOutputViewDesc* pDescPtr = &pDesc)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnumPtr, pDescPtr, ppVPOView);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnumPtr, pDescPtr, ppVPOView);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnumPtr, pDescPtr, ppVPOView);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)@this->LpVtbl[9])(@this, pResource, pEnumPtr, pDescPtr, ppVPOView);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorOutputView(ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, ref VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
+        public readonly unsafe int CreateVideoProcessorOutputView(ID3D11Resource* pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] in VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1691,18 +979,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11VideoProcessorOutputView** ppVPOViewPtr = &ppVPOView)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnumPtr, pDescPtr, ppVPOViewPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnumPtr, pDescPtr, ppVPOViewPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResource, pEnumPtr, pDescPtr, ppVPOViewPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)@this->LpVtbl[9])(@this, pResource, pEnumPtr, pDescPtr, ppVPOViewPtr);
                     }
                 }
             }
@@ -1710,30 +987,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorOutputView(ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, VideoProcessorOutputViewDesc* pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
+        public readonly unsafe int CreateVideoProcessorOutputView(ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(FlowDirection.In)] VideoProcessorOutputViewDesc* pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11Resource* pResourcePtr = &pResource)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnum, pDesc, ppVPOView);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnum, pDesc, ppVPOView);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnum, pDesc, ppVPOView);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)@this->LpVtbl[9])(@this, pResourcePtr, pEnum, pDesc, ppVPOView);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorOutputView(ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, VideoProcessorOutputViewDesc* pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
+        public readonly unsafe int CreateVideoProcessorOutputView(ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(FlowDirection.In)] VideoProcessorOutputViewDesc* pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1741,25 +1007,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoProcessorOutputView** ppVPOViewPtr = &ppVPOView)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnum, pDesc, ppVPOViewPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnum, pDesc, ppVPOViewPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnum, pDesc, ppVPOViewPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)@this->LpVtbl[9])(@this, pResourcePtr, pEnum, pDesc, ppVPOViewPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorOutputView(ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, ref VideoProcessorOutputViewDesc pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
+        public readonly unsafe int CreateVideoProcessorOutputView(ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(FlowDirection.In)] in VideoProcessorOutputViewDesc pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1767,25 +1022,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoProcessorOutputViewDesc* pDescPtr = &pDesc)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnum, pDescPtr, ppVPOView);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnum, pDescPtr, ppVPOView);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnum, pDescPtr, ppVPOView);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)@this->LpVtbl[9])(@this, pResourcePtr, pEnum, pDescPtr, ppVPOView);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorOutputView(ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, ref VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
+        public readonly unsafe int CreateVideoProcessorOutputView(ref ID3D11Resource pResource, ID3D11VideoProcessorEnumerator* pEnum, [Flow(FlowDirection.In)] in VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1795,18 +1039,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11VideoProcessorOutputView** ppVPOViewPtr = &ppVPOView)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnum, pDescPtr, ppVPOViewPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnum, pDescPtr, ppVPOViewPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnum, pDescPtr, ppVPOViewPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)@this->LpVtbl[9])(@this, pResourcePtr, pEnum, pDescPtr, ppVPOViewPtr);
                     }
                 }
             }
@@ -1814,7 +1047,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorOutputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, VideoProcessorOutputViewDesc* pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
+        public readonly unsafe int CreateVideoProcessorOutputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] VideoProcessorOutputViewDesc* pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1822,25 +1055,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoProcessorEnumerator* pEnumPtr = &pEnum)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnumPtr, pDesc, ppVPOView);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnumPtr, pDesc, ppVPOView);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnumPtr, pDesc, ppVPOView);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)@this->LpVtbl[9])(@this, pResourcePtr, pEnumPtr, pDesc, ppVPOView);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorOutputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, VideoProcessorOutputViewDesc* pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
+        public readonly unsafe int CreateVideoProcessorOutputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] VideoProcessorOutputViewDesc* pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1850,18 +1072,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11VideoProcessorOutputView** ppVPOViewPtr = &ppVPOView)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnumPtr, pDesc, ppVPOViewPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnumPtr, pDesc, ppVPOViewPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnumPtr, pDesc, ppVPOViewPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)@this->LpVtbl[9])(@this, pResourcePtr, pEnumPtr, pDesc, ppVPOViewPtr);
                     }
                 }
             }
@@ -1869,7 +1080,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorOutputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, ref VideoProcessorOutputViewDesc pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
+        public readonly unsafe int CreateVideoProcessorOutputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] in VideoProcessorOutputViewDesc pDesc, ID3D11VideoProcessorOutputView** ppVPOView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1879,18 +1090,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoProcessorOutputViewDesc* pDescPtr = &pDesc)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnumPtr, pDescPtr, ppVPOView);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnumPtr, pDescPtr, ppVPOView);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnumPtr, pDescPtr, ppVPOView);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)@this->LpVtbl[9])(@this, pResourcePtr, pEnumPtr, pDescPtr, ppVPOView);
                     }
                 }
             }
@@ -1898,7 +1098,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorOutputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, ref VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
+        public readonly unsafe int CreateVideoProcessorOutputView(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] in VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1910,18 +1110,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (ID3D11VideoProcessorOutputView** ppVPOViewPtr = &ppVPOView)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnumPtr, pDescPtr, ppVPOViewPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnumPtr, pDescPtr, ppVPOViewPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)LpVtbl[9])(@this, pResourcePtr, pEnumPtr, pDescPtr, ppVPOViewPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, ID3D11Resource*, ID3D11VideoProcessorEnumerator*, VideoProcessorOutputViewDesc*, ID3D11VideoProcessorOutputView**, int>)@this->LpVtbl[9])(@this, pResourcePtr, pEnumPtr, pDescPtr, ppVPOViewPtr);
                         }
                     }
                 }
@@ -1930,73 +1119,40 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorEnumerator(VideoProcessorContentDesc* pDesc, ID3D11VideoProcessorEnumerator** ppEnum)
+        public readonly unsafe int CreateVideoProcessorEnumerator([Flow(FlowDirection.In)] VideoProcessorContentDesc* pDesc, ID3D11VideoProcessorEnumerator** ppEnum)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoProcessorContentDesc*, ID3D11VideoProcessorEnumerator**, int>)LpVtbl[10])(@this, pDesc, ppEnum);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoProcessorContentDesc*, ID3D11VideoProcessorEnumerator**, int>)LpVtbl[10])(@this, pDesc, ppEnum);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoProcessorContentDesc*, ID3D11VideoProcessorEnumerator**, int>)LpVtbl[10])(@this, pDesc, ppEnum);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoProcessorContentDesc*, ID3D11VideoProcessorEnumerator**, int>)@this->LpVtbl[10])(@this, pDesc, ppEnum);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorEnumerator(VideoProcessorContentDesc* pDesc, ref ID3D11VideoProcessorEnumerator* ppEnum)
+        public readonly unsafe int CreateVideoProcessorEnumerator([Flow(FlowDirection.In)] VideoProcessorContentDesc* pDesc, ref ID3D11VideoProcessorEnumerator* ppEnum)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D11VideoProcessorEnumerator** ppEnumPtr = &ppEnum)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoProcessorContentDesc*, ID3D11VideoProcessorEnumerator**, int>)LpVtbl[10])(@this, pDesc, ppEnumPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoProcessorContentDesc*, ID3D11VideoProcessorEnumerator**, int>)LpVtbl[10])(@this, pDesc, ppEnumPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoProcessorContentDesc*, ID3D11VideoProcessorEnumerator**, int>)LpVtbl[10])(@this, pDesc, ppEnumPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoProcessorContentDesc*, ID3D11VideoProcessorEnumerator**, int>)@this->LpVtbl[10])(@this, pDesc, ppEnumPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorEnumerator(ref VideoProcessorContentDesc pDesc, ID3D11VideoProcessorEnumerator** ppEnum)
+        public readonly unsafe int CreateVideoProcessorEnumerator([Flow(FlowDirection.In)] in VideoProcessorContentDesc pDesc, ID3D11VideoProcessorEnumerator** ppEnum)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (VideoProcessorContentDesc* pDescPtr = &pDesc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoProcessorContentDesc*, ID3D11VideoProcessorEnumerator**, int>)LpVtbl[10])(@this, pDescPtr, ppEnum);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoProcessorContentDesc*, ID3D11VideoProcessorEnumerator**, int>)LpVtbl[10])(@this, pDescPtr, ppEnum);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoProcessorContentDesc*, ID3D11VideoProcessorEnumerator**, int>)LpVtbl[10])(@this, pDescPtr, ppEnum);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoProcessorContentDesc*, ID3D11VideoProcessorEnumerator**, int>)@this->LpVtbl[10])(@this, pDescPtr, ppEnum);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVideoProcessorEnumerator(ref VideoProcessorContentDesc pDesc, ref ID3D11VideoProcessorEnumerator* ppEnum)
+        public readonly unsafe int CreateVideoProcessorEnumerator([Flow(FlowDirection.In)] in VideoProcessorContentDesc pDesc, ref ID3D11VideoProcessorEnumerator* ppEnum)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2004,18 +1160,7 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VideoProcessorEnumerator** ppEnumPtr = &ppEnum)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoProcessorContentDesc*, ID3D11VideoProcessorEnumerator**, int>)LpVtbl[10])(@this, pDescPtr, ppEnumPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoProcessorContentDesc*, ID3D11VideoProcessorEnumerator**, int>)LpVtbl[10])(@this, pDescPtr, ppEnumPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoProcessorContentDesc*, ID3D11VideoProcessorEnumerator**, int>)LpVtbl[10])(@this, pDescPtr, ppEnumPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoProcessorContentDesc*, ID3D11VideoProcessorEnumerator**, int>)@this->LpVtbl[10])(@this, pDescPtr, ppEnumPtr);
                 }
             }
             return ret;
@@ -2026,7 +1171,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, uint>)LpVtbl[11])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, uint>)@this->LpVtbl[11])(@this);
             return ret;
         }
 
@@ -2035,18 +1180,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, uint, Guid*, int>)LpVtbl[12])(@this, Index, pDecoderProfile);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, uint, Guid*, int>)LpVtbl[12])(@this, Index, pDecoderProfile);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, uint, Guid*, int>)LpVtbl[12])(@this, Index, pDecoderProfile);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, uint, Guid*, int>)@this->LpVtbl[12])(@this, Index, pDecoderProfile);
             return ret;
         }
 
@@ -2057,90 +1191,46 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, uint, Guid*, int>)LpVtbl[12])(@this, Index, pDecoderProfilePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, uint, Guid*, int>)LpVtbl[12])(@this, Index, pDecoderProfilePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, uint, Guid*, int>)LpVtbl[12])(@this, Index, pDecoderProfilePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, uint, Guid*, int>)@this->LpVtbl[12])(@this, Index, pDecoderProfilePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderFormat(Guid* pDecoderProfile, Silk.NET.DXGI.Format Format, int* pSupported)
+        public readonly unsafe int CheckVideoDecoderFormat([Flow(FlowDirection.In)] Guid* pDecoderProfile, Silk.NET.DXGI.Format Format, int* pSupported)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Silk.NET.DXGI.Format, int*, int>)LpVtbl[13])(@this, pDecoderProfile, Format, pSupported);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Silk.NET.DXGI.Format, int*, int>)LpVtbl[13])(@this, pDecoderProfile, Format, pSupported);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Silk.NET.DXGI.Format, int*, int>)LpVtbl[13])(@this, pDecoderProfile, Format, pSupported);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Silk.NET.DXGI.Format, int*, int>)@this->LpVtbl[13])(@this, pDecoderProfile, Format, pSupported);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderFormat(Guid* pDecoderProfile, Silk.NET.DXGI.Format Format, ref int pSupported)
+        public readonly unsafe int CheckVideoDecoderFormat([Flow(FlowDirection.In)] Guid* pDecoderProfile, Silk.NET.DXGI.Format Format, ref int pSupported)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (int* pSupportedPtr = &pSupported)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Silk.NET.DXGI.Format, int*, int>)LpVtbl[13])(@this, pDecoderProfile, Format, pSupportedPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Silk.NET.DXGI.Format, int*, int>)LpVtbl[13])(@this, pDecoderProfile, Format, pSupportedPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Silk.NET.DXGI.Format, int*, int>)LpVtbl[13])(@this, pDecoderProfile, Format, pSupportedPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Silk.NET.DXGI.Format, int*, int>)@this->LpVtbl[13])(@this, pDecoderProfile, Format, pSupportedPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderFormat(ref Guid pDecoderProfile, Silk.NET.DXGI.Format Format, int* pSupported)
+        public readonly unsafe int CheckVideoDecoderFormat([Flow(FlowDirection.In)] in Guid pDecoderProfile, Silk.NET.DXGI.Format Format, int* pSupported)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Silk.NET.DXGI.Format, int*, int>)LpVtbl[13])(@this, pDecoderProfilePtr, Format, pSupported);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Silk.NET.DXGI.Format, int*, int>)LpVtbl[13])(@this, pDecoderProfilePtr, Format, pSupported);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Silk.NET.DXGI.Format, int*, int>)LpVtbl[13])(@this, pDecoderProfilePtr, Format, pSupported);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Silk.NET.DXGI.Format, int*, int>)@this->LpVtbl[13])(@this, pDecoderProfilePtr, Format, pSupported);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CheckVideoDecoderFormat(ref Guid pDecoderProfile, Silk.NET.DXGI.Format Format, ref int pSupported)
+        public readonly int CheckVideoDecoderFormat([Flow(FlowDirection.In)] in Guid pDecoderProfile, Silk.NET.DXGI.Format Format, ref int pSupported)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2148,91 +1238,47 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pSupportedPtr = &pSupported)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Silk.NET.DXGI.Format, int*, int>)LpVtbl[13])(@this, pDecoderProfilePtr, Format, pSupportedPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Silk.NET.DXGI.Format, int*, int>)LpVtbl[13])(@this, pDecoderProfilePtr, Format, pSupportedPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Silk.NET.DXGI.Format, int*, int>)LpVtbl[13])(@this, pDecoderProfilePtr, Format, pSupportedPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Silk.NET.DXGI.Format, int*, int>)@this->LpVtbl[13])(@this, pDecoderProfilePtr, Format, pSupportedPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderConfigCount(VideoDecoderDesc* pDesc, uint* pCount)
+        public readonly unsafe int GetVideoDecoderConfigCount([Flow(FlowDirection.In)] VideoDecoderDesc* pDesc, uint* pCount)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, uint*, int>)LpVtbl[14])(@this, pDesc, pCount);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint*, int>)LpVtbl[14])(@this, pDesc, pCount);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint*, int>)LpVtbl[14])(@this, pDesc, pCount);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint*, int>)@this->LpVtbl[14])(@this, pDesc, pCount);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderConfigCount(VideoDecoderDesc* pDesc, ref uint pCount)
+        public readonly unsafe int GetVideoDecoderConfigCount([Flow(FlowDirection.In)] VideoDecoderDesc* pDesc, ref uint pCount)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pCountPtr = &pCount)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, uint*, int>)LpVtbl[14])(@this, pDesc, pCountPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint*, int>)LpVtbl[14])(@this, pDesc, pCountPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint*, int>)LpVtbl[14])(@this, pDesc, pCountPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint*, int>)@this->LpVtbl[14])(@this, pDesc, pCountPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderConfigCount(ref VideoDecoderDesc pDesc, uint* pCount)
+        public readonly unsafe int GetVideoDecoderConfigCount([Flow(FlowDirection.In)] in VideoDecoderDesc pDesc, uint* pCount)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (VideoDecoderDesc* pDescPtr = &pDesc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, uint*, int>)LpVtbl[14])(@this, pDescPtr, pCount);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint*, int>)LpVtbl[14])(@this, pDescPtr, pCount);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint*, int>)LpVtbl[14])(@this, pDescPtr, pCount);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint*, int>)@this->LpVtbl[14])(@this, pDescPtr, pCount);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetVideoDecoderConfigCount(ref VideoDecoderDesc pDesc, ref uint pCount)
+        public readonly int GetVideoDecoderConfigCount([Flow(FlowDirection.In)] in VideoDecoderDesc pDesc, ref uint pCount)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2240,91 +1286,47 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pCountPtr = &pCount)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, uint*, int>)LpVtbl[14])(@this, pDescPtr, pCountPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint*, int>)LpVtbl[14])(@this, pDescPtr, pCountPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint*, int>)LpVtbl[14])(@this, pDescPtr, pCountPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint*, int>)@this->LpVtbl[14])(@this, pDescPtr, pCountPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderConfig(VideoDecoderDesc* pDesc, uint Index, VideoDecoderConfig* pConfig)
+        public readonly unsafe int GetVideoDecoderConfig([Flow(FlowDirection.In)] VideoDecoderDesc* pDesc, uint Index, VideoDecoderConfig* pConfig)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, uint, VideoDecoderConfig*, int>)LpVtbl[15])(@this, pDesc, Index, pConfig);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint, VideoDecoderConfig*, int>)LpVtbl[15])(@this, pDesc, Index, pConfig);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint, VideoDecoderConfig*, int>)LpVtbl[15])(@this, pDesc, Index, pConfig);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint, VideoDecoderConfig*, int>)@this->LpVtbl[15])(@this, pDesc, Index, pConfig);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderConfig(VideoDecoderDesc* pDesc, uint Index, ref VideoDecoderConfig pConfig)
+        public readonly unsafe int GetVideoDecoderConfig([Flow(FlowDirection.In)] VideoDecoderDesc* pDesc, uint Index, ref VideoDecoderConfig pConfig)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (VideoDecoderConfig* pConfigPtr = &pConfig)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, uint, VideoDecoderConfig*, int>)LpVtbl[15])(@this, pDesc, Index, pConfigPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint, VideoDecoderConfig*, int>)LpVtbl[15])(@this, pDesc, Index, pConfigPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint, VideoDecoderConfig*, int>)LpVtbl[15])(@this, pDesc, Index, pConfigPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint, VideoDecoderConfig*, int>)@this->LpVtbl[15])(@this, pDesc, Index, pConfigPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderConfig(ref VideoDecoderDesc pDesc, uint Index, VideoDecoderConfig* pConfig)
+        public readonly unsafe int GetVideoDecoderConfig([Flow(FlowDirection.In)] in VideoDecoderDesc pDesc, uint Index, VideoDecoderConfig* pConfig)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (VideoDecoderDesc* pDescPtr = &pDesc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, uint, VideoDecoderConfig*, int>)LpVtbl[15])(@this, pDescPtr, Index, pConfig);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint, VideoDecoderConfig*, int>)LpVtbl[15])(@this, pDescPtr, Index, pConfig);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint, VideoDecoderConfig*, int>)LpVtbl[15])(@this, pDescPtr, Index, pConfig);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint, VideoDecoderConfig*, int>)@this->LpVtbl[15])(@this, pDescPtr, Index, pConfig);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetVideoDecoderConfig(ref VideoDecoderDesc pDesc, uint Index, ref VideoDecoderConfig pConfig)
+        public readonly int GetVideoDecoderConfig([Flow(FlowDirection.In)] in VideoDecoderDesc pDesc, uint Index, ref VideoDecoderConfig pConfig)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2332,91 +1334,47 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoDecoderConfig* pConfigPtr = &pConfig)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, uint, VideoDecoderConfig*, int>)LpVtbl[15])(@this, pDescPtr, Index, pConfigPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint, VideoDecoderConfig*, int>)LpVtbl[15])(@this, pDescPtr, Index, pConfigPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint, VideoDecoderConfig*, int>)LpVtbl[15])(@this, pDescPtr, Index, pConfigPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, uint, VideoDecoderConfig*, int>)@this->LpVtbl[15])(@this, pDescPtr, Index, pConfigPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetContentProtectionCaps(Guid* pCryptoType, Guid* pDecoderProfile, VideoContentProtectionCaps* pCaps)
+        public readonly unsafe int GetContentProtectionCaps([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, VideoContentProtectionCaps* pCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoType, pDecoderProfile, pCaps);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoType, pDecoderProfile, pCaps);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoType, pDecoderProfile, pCaps);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)@this->LpVtbl[16])(@this, pCryptoType, pDecoderProfile, pCaps);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetContentProtectionCaps(Guid* pCryptoType, Guid* pDecoderProfile, ref VideoContentProtectionCaps pCaps)
+        public readonly unsafe int GetContentProtectionCaps([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, ref VideoContentProtectionCaps pCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (VideoContentProtectionCaps* pCapsPtr = &pCaps)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoType, pDecoderProfile, pCapsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoType, pDecoderProfile, pCapsPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoType, pDecoderProfile, pCapsPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)@this->LpVtbl[16])(@this, pCryptoType, pDecoderProfile, pCapsPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetContentProtectionCaps(Guid* pCryptoType, ref Guid pDecoderProfile, VideoContentProtectionCaps* pCaps)
+        public readonly unsafe int GetContentProtectionCaps([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, VideoContentProtectionCaps* pCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoType, pDecoderProfilePtr, pCaps);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoType, pDecoderProfilePtr, pCaps);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoType, pDecoderProfilePtr, pCaps);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)@this->LpVtbl[16])(@this, pCryptoType, pDecoderProfilePtr, pCaps);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetContentProtectionCaps(Guid* pCryptoType, ref Guid pDecoderProfile, ref VideoContentProtectionCaps pCaps)
+        public readonly unsafe int GetContentProtectionCaps([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, ref VideoContentProtectionCaps pCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2424,48 +1382,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoContentProtectionCaps* pCapsPtr = &pCaps)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoType, pDecoderProfilePtr, pCapsPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoType, pDecoderProfilePtr, pCapsPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoType, pDecoderProfilePtr, pCapsPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)@this->LpVtbl[16])(@this, pCryptoType, pDecoderProfilePtr, pCapsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetContentProtectionCaps(ref Guid pCryptoType, Guid* pDecoderProfile, VideoContentProtectionCaps* pCaps)
+        public readonly unsafe int GetContentProtectionCaps([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, VideoContentProtectionCaps* pCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pCryptoTypePtr = &pCryptoType)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoTypePtr, pDecoderProfile, pCaps);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoTypePtr, pDecoderProfile, pCaps);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoTypePtr, pDecoderProfile, pCaps);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)@this->LpVtbl[16])(@this, pCryptoTypePtr, pDecoderProfile, pCaps);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetContentProtectionCaps(ref Guid pCryptoType, Guid* pDecoderProfile, ref VideoContentProtectionCaps pCaps)
+        public readonly unsafe int GetContentProtectionCaps([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, ref VideoContentProtectionCaps pCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2473,25 +1409,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoContentProtectionCaps* pCapsPtr = &pCaps)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoTypePtr, pDecoderProfile, pCapsPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoTypePtr, pDecoderProfile, pCapsPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoTypePtr, pDecoderProfile, pCapsPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)@this->LpVtbl[16])(@this, pCryptoTypePtr, pDecoderProfile, pCapsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetContentProtectionCaps(ref Guid pCryptoType, ref Guid pDecoderProfile, VideoContentProtectionCaps* pCaps)
+        public readonly unsafe int GetContentProtectionCaps([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, VideoContentProtectionCaps* pCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2499,25 +1424,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoTypePtr, pDecoderProfilePtr, pCaps);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoTypePtr, pDecoderProfilePtr, pCaps);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoTypePtr, pDecoderProfilePtr, pCaps);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)@this->LpVtbl[16])(@this, pCryptoTypePtr, pDecoderProfilePtr, pCaps);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetContentProtectionCaps(ref Guid pCryptoType, ref Guid pDecoderProfile, ref VideoContentProtectionCaps pCaps)
+        public readonly int GetContentProtectionCaps([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, ref VideoContentProtectionCaps pCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2527,18 +1441,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoContentProtectionCaps* pCapsPtr = &pCaps)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoTypePtr, pDecoderProfilePtr, pCapsPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoTypePtr, pDecoderProfilePtr, pCapsPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)LpVtbl[16])(@this, pCryptoTypePtr, pDecoderProfilePtr, pCapsPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, VideoContentProtectionCaps*, int>)@this->LpVtbl[16])(@this, pCryptoTypePtr, pDecoderProfilePtr, pCapsPtr);
                     }
                 }
             }
@@ -2546,73 +1449,40 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckCryptoKeyExchange(Guid* pCryptoType, Guid* pDecoderProfile, uint Index, Guid* pKeyExchangeType)
+        public readonly unsafe int CheckCryptoKeyExchange([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, uint Index, Guid* pKeyExchangeType)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoType, pDecoderProfile, Index, pKeyExchangeType);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoType, pDecoderProfile, Index, pKeyExchangeType);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoType, pDecoderProfile, Index, pKeyExchangeType);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)@this->LpVtbl[17])(@this, pCryptoType, pDecoderProfile, Index, pKeyExchangeType);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckCryptoKeyExchange(Guid* pCryptoType, Guid* pDecoderProfile, uint Index, ref Guid pKeyExchangeType)
+        public readonly unsafe int CheckCryptoKeyExchange([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, uint Index, ref Guid pKeyExchangeType)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoType, pDecoderProfile, Index, pKeyExchangeTypePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoType, pDecoderProfile, Index, pKeyExchangeTypePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoType, pDecoderProfile, Index, pKeyExchangeTypePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)@this->LpVtbl[17])(@this, pCryptoType, pDecoderProfile, Index, pKeyExchangeTypePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckCryptoKeyExchange(Guid* pCryptoType, ref Guid pDecoderProfile, uint Index, Guid* pKeyExchangeType)
+        public readonly unsafe int CheckCryptoKeyExchange([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, uint Index, Guid* pKeyExchangeType)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoType, pDecoderProfilePtr, Index, pKeyExchangeType);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoType, pDecoderProfilePtr, Index, pKeyExchangeType);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoType, pDecoderProfilePtr, Index, pKeyExchangeType);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)@this->LpVtbl[17])(@this, pCryptoType, pDecoderProfilePtr, Index, pKeyExchangeType);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckCryptoKeyExchange(Guid* pCryptoType, ref Guid pDecoderProfile, uint Index, ref Guid pKeyExchangeType)
+        public readonly unsafe int CheckCryptoKeyExchange([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, uint Index, ref Guid pKeyExchangeType)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2620,48 +1490,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoType, pDecoderProfilePtr, Index, pKeyExchangeTypePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoType, pDecoderProfilePtr, Index, pKeyExchangeTypePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoType, pDecoderProfilePtr, Index, pKeyExchangeTypePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)@this->LpVtbl[17])(@this, pCryptoType, pDecoderProfilePtr, Index, pKeyExchangeTypePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckCryptoKeyExchange(ref Guid pCryptoType, Guid* pDecoderProfile, uint Index, Guid* pKeyExchangeType)
+        public readonly unsafe int CheckCryptoKeyExchange([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, uint Index, Guid* pKeyExchangeType)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pCryptoTypePtr = &pCryptoType)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoTypePtr, pDecoderProfile, Index, pKeyExchangeType);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoTypePtr, pDecoderProfile, Index, pKeyExchangeType);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoTypePtr, pDecoderProfile, Index, pKeyExchangeType);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)@this->LpVtbl[17])(@this, pCryptoTypePtr, pDecoderProfile, Index, pKeyExchangeType);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckCryptoKeyExchange(ref Guid pCryptoType, Guid* pDecoderProfile, uint Index, ref Guid pKeyExchangeType)
+        public readonly unsafe int CheckCryptoKeyExchange([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, uint Index, ref Guid pKeyExchangeType)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2669,25 +1517,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoTypePtr, pDecoderProfile, Index, pKeyExchangeTypePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoTypePtr, pDecoderProfile, Index, pKeyExchangeTypePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoTypePtr, pDecoderProfile, Index, pKeyExchangeTypePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)@this->LpVtbl[17])(@this, pCryptoTypePtr, pDecoderProfile, Index, pKeyExchangeTypePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckCryptoKeyExchange(ref Guid pCryptoType, ref Guid pDecoderProfile, uint Index, Guid* pKeyExchangeType)
+        public readonly unsafe int CheckCryptoKeyExchange([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, uint Index, Guid* pKeyExchangeType)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2695,25 +1532,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoTypePtr, pDecoderProfilePtr, Index, pKeyExchangeType);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoTypePtr, pDecoderProfilePtr, Index, pKeyExchangeType);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoTypePtr, pDecoderProfilePtr, Index, pKeyExchangeType);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)@this->LpVtbl[17])(@this, pCryptoTypePtr, pDecoderProfilePtr, Index, pKeyExchangeType);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CheckCryptoKeyExchange(ref Guid pCryptoType, ref Guid pDecoderProfile, uint Index, ref Guid pKeyExchangeType)
+        public readonly int CheckCryptoKeyExchange([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, uint Index, ref Guid pKeyExchangeType)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2723,18 +1549,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoTypePtr, pDecoderProfilePtr, Index, pKeyExchangeTypePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoTypePtr, pDecoderProfilePtr, Index, pKeyExchangeTypePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)LpVtbl[17])(@this, pCryptoTypePtr, pDecoderProfilePtr, Index, pKeyExchangeTypePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, uint, Guid*, int>)@this->LpVtbl[17])(@this, pCryptoTypePtr, pDecoderProfilePtr, Index, pKeyExchangeTypePtr);
                     }
                 }
             }
@@ -2742,73 +1557,40 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, void*, int>)LpVtbl[18])(@this, guid, DataSize, pData);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, void*, int>)LpVtbl[18])(@this, guid, DataSize, pData);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, void*, int>)LpVtbl[18])(@this, guid, DataSize, pData);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, void*, int>)@this->LpVtbl[18])(@this, guid, DataSize, pData);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, void*, int>)LpVtbl[18])(@this, guid, DataSize, pDataPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, void*, int>)LpVtbl[18])(@this, guid, DataSize, pDataPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, void*, int>)LpVtbl[18])(@this, guid, DataSize, pDataPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, void*, int>)@this->LpVtbl[18])(@this, guid, DataSize, pDataPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, void*, int>)LpVtbl[18])(@this, guidPtr, DataSize, pData);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, void*, int>)LpVtbl[18])(@this, guidPtr, DataSize, pData);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, void*, int>)LpVtbl[18])(@this, guidPtr, DataSize, pData);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, void*, int>)@this->LpVtbl[18])(@this, guidPtr, DataSize, pData);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2816,18 +1598,7 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void* pDataPtr = &pData)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, void*, int>)LpVtbl[18])(@this, guidPtr, DataSize, pDataPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, void*, int>)LpVtbl[18])(@this, guidPtr, DataSize, pDataPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, void*, int>)LpVtbl[18])(@this, guidPtr, DataSize, pDataPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, void*, int>)@this->LpVtbl[18])(@this, guidPtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -2838,18 +1609,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[19])(@this, guid, pData);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[19])(@this, guid, pData);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[19])(@this, guid, pData);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[19])(@this, guid, pData);
             return ret;
         }
 
@@ -2860,18 +1620,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[19])(@this, guid, pDataPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[19])(@this, guid, pDataPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[19])(@this, guid, pDataPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[19])(@this, guid, pDataPtr);
             }
             return ret;
         }
@@ -2883,18 +1632,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[19])(@this, guidPtr, pData);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[19])(@this, guidPtr, pData);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[19])(@this, guidPtr, pData);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[19])(@this, guidPtr, pData);
             }
             return ret;
         }
@@ -2908,91 +1646,47 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[19])(@this, guidPtr, pDataPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[19])(@this, guidPtr, pDataPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[19])(@this, guidPtr, pDataPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[19])(@this, guidPtr, pDataPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3000,48 +1694,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3049,25 +1721,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3075,25 +1736,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3103,18 +1753,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoType, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
                     }
                 }
             }
@@ -3122,30 +1761,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3153,25 +1781,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3179,25 +1796,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3207,18 +1813,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
                     }
                 }
             }
@@ -3226,7 +1821,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3234,25 +1829,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3262,18 +1846,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
                     }
                 }
             }
@@ -3281,7 +1854,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3291,18 +1864,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
                     }
                 }
             }
@@ -3310,7 +1872,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(Guid* pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3322,18 +1884,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoType, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
                         }
                     }
                 }
@@ -3342,30 +1893,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pCryptoTypePtr = &pCryptoType)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3373,25 +1913,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3399,25 +1928,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, Guid* pDecoderProfile, Guid* pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3427,18 +1945,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
                     }
                 }
             }
@@ -3446,7 +1953,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3454,25 +1961,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3482,18 +1978,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
                     }
                 }
             }
@@ -3501,7 +1986,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3511,18 +1996,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
                     }
                 }
             }
@@ -3530,7 +2004,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, Guid* pDecoderProfile, ref Guid pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3542,18 +2016,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfile, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
                         }
                     }
                 }
@@ -3562,7 +2025,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3570,25 +2033,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSize);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3598,18 +2050,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSize, pPrivateOutputSizePtr);
                     }
                 }
             }
@@ -3617,7 +2058,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3627,18 +2068,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSize);
                     }
                 }
             }
@@ -3646,7 +2076,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, ref Guid pDecoderProfile, Guid* pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] Guid* pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3658,18 +2088,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeType, pPrivateInputSizePtr, pPrivateOutputSizePtr);
                         }
                     }
                 }
@@ -3678,7 +2097,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, uint* pPrivateInputSize, uint* pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3688,18 +2107,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Guid* pKeyExchangeTypePtr = &pKeyExchangeType)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSize);
                     }
                 }
             }
@@ -3707,7 +2115,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, uint* pPrivateInputSize, ref uint pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3719,18 +2127,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSize, pPrivateOutputSizePtr);
                         }
                     }
                 }
@@ -3739,7 +2136,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
+        public readonly unsafe int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ref uint pPrivateInputSize, uint* pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3751,18 +2148,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (uint* pPrivateInputSizePtr = &pPrivateInputSize)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSize);
                         }
                     }
                 }
@@ -3771,7 +2157,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetCryptoSessionPrivateDataSize(ref Guid pCryptoType, ref Guid pDecoderProfile, ref Guid pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
+        public readonly int GetCryptoSessionPrivateDataSize([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ref uint pPrivateInputSize, ref uint pPrivateOutputSize)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3785,18 +2171,7 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (uint* pPrivateOutputSizePtr = &pPrivateOutputSize)
                             {
-            #if NET5_0_OR_GREATER
-                                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-            #else
-                                if (SilkMarshal.IsWinapiStdcall)
-                                {
-                                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-                                }
-                                else
-                                {
-                                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
-                                }
-            #endif
+                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, Guid*, Guid*, uint*, uint*, int>)@this->LpVtbl[20])(@this, pCryptoTypePtr, pDecoderProfilePtr, pKeyExchangeTypePtr, pPrivateInputSizePtr, pPrivateOutputSizePtr);
                             }
                         }
                     }
@@ -3806,73 +2181,40 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderCaps(Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, Guid* pCryptoType, uint* pDecoderCaps)
+        public readonly unsafe int GetVideoDecoderCaps([Flow(FlowDirection.In)] Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, [Flow(FlowDirection.In)] Guid* pCryptoType, uint* pDecoderCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCaps);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCaps);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCaps);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)@this->LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCaps);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderCaps(Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, Guid* pCryptoType, ref uint pDecoderCaps)
+        public readonly unsafe int GetVideoDecoderCaps([Flow(FlowDirection.In)] Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, [Flow(FlowDirection.In)] Guid* pCryptoType, ref uint pDecoderCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (uint* pDecoderCapsPtr = &pDecoderCaps)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCapsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCapsPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCapsPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)@this->LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCapsPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderCaps(Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, ref Guid pCryptoType, uint* pDecoderCaps)
+        public readonly unsafe int GetVideoDecoderCaps([Flow(FlowDirection.In)] Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, [Flow(FlowDirection.In)] in Guid pCryptoType, uint* pDecoderCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pCryptoTypePtr = &pCryptoType)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCaps);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCaps);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCaps);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)@this->LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCaps);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderCaps(Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, ref Guid pCryptoType, ref uint pDecoderCaps)
+        public readonly unsafe int GetVideoDecoderCaps([Flow(FlowDirection.In)] Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, [Flow(FlowDirection.In)] in Guid pCryptoType, ref uint pDecoderCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3880,48 +2222,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pDecoderCapsPtr = &pDecoderCaps)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)@this->LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderCaps(Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, ref Silk.NET.DXGI.Rational pFrameRate, uint BitRate, Guid* pCryptoType, uint* pDecoderCaps)
+        public readonly unsafe int GetVideoDecoderCaps([Flow(FlowDirection.In)] Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, uint BitRate, [Flow(FlowDirection.In)] Guid* pCryptoType, uint* pDecoderCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCaps);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCaps);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCaps);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)@this->LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCaps);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderCaps(Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, ref Silk.NET.DXGI.Rational pFrameRate, uint BitRate, Guid* pCryptoType, ref uint pDecoderCaps)
+        public readonly unsafe int GetVideoDecoderCaps([Flow(FlowDirection.In)] Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, uint BitRate, [Flow(FlowDirection.In)] Guid* pCryptoType, ref uint pDecoderCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3929,25 +2249,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pDecoderCapsPtr = &pDecoderCaps)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCapsPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCapsPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCapsPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)@this->LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCapsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderCaps(Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, ref Silk.NET.DXGI.Rational pFrameRate, uint BitRate, ref Guid pCryptoType, uint* pDecoderCaps)
+        public readonly unsafe int GetVideoDecoderCaps([Flow(FlowDirection.In)] Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, uint BitRate, [Flow(FlowDirection.In)] in Guid pCryptoType, uint* pDecoderCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3955,25 +2264,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pCryptoTypePtr = &pCryptoType)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCaps);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCaps);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCaps);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)@this->LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCaps);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderCaps(Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, ref Silk.NET.DXGI.Rational pFrameRate, uint BitRate, ref Guid pCryptoType, ref uint pDecoderCaps)
+        public readonly unsafe int GetVideoDecoderCaps([Flow(FlowDirection.In)] Guid* pDecoderProfile, uint SampleWidth, uint SampleHeight, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, uint BitRate, [Flow(FlowDirection.In)] in Guid pCryptoType, ref uint pDecoderCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -3983,18 +2281,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (uint* pDecoderCapsPtr = &pDecoderCaps)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)@this->LpVtbl[21])(@this, pDecoderProfile, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
                     }
                 }
             }
@@ -4002,30 +2289,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderCaps(ref Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, Guid* pCryptoType, uint* pDecoderCaps)
+        public readonly unsafe int GetVideoDecoderCaps([Flow(FlowDirection.In)] in Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, [Flow(FlowDirection.In)] Guid* pCryptoType, uint* pDecoderCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pDecoderProfilePtr = &pDecoderProfile)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCaps);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCaps);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCaps);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)@this->LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCaps);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderCaps(ref Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, Guid* pCryptoType, ref uint pDecoderCaps)
+        public readonly unsafe int GetVideoDecoderCaps([Flow(FlowDirection.In)] in Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, [Flow(FlowDirection.In)] Guid* pCryptoType, ref uint pDecoderCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4033,25 +2309,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pDecoderCapsPtr = &pDecoderCaps)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCapsPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCapsPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCapsPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)@this->LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoType, pDecoderCapsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderCaps(ref Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, ref Guid pCryptoType, uint* pDecoderCaps)
+        public readonly unsafe int GetVideoDecoderCaps([Flow(FlowDirection.In)] in Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, [Flow(FlowDirection.In)] in Guid pCryptoType, uint* pDecoderCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4059,25 +2324,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Guid* pCryptoTypePtr = &pCryptoType)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCaps);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCaps);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCaps);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)@this->LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCaps);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderCaps(ref Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, ref Guid pCryptoType, ref uint pDecoderCaps)
+        public readonly unsafe int GetVideoDecoderCaps([Flow(FlowDirection.In)] in Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, uint BitRate, [Flow(FlowDirection.In)] in Guid pCryptoType, ref uint pDecoderCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4087,18 +2341,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (uint* pDecoderCapsPtr = &pDecoderCaps)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)@this->LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRate, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
                     }
                 }
             }
@@ -4106,7 +2349,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderCaps(ref Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, ref Silk.NET.DXGI.Rational pFrameRate, uint BitRate, Guid* pCryptoType, uint* pDecoderCaps)
+        public readonly unsafe int GetVideoDecoderCaps([Flow(FlowDirection.In)] in Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, uint BitRate, [Flow(FlowDirection.In)] Guid* pCryptoType, uint* pDecoderCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4114,25 +2357,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCaps);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCaps);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCaps);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)@this->LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCaps);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderCaps(ref Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, ref Silk.NET.DXGI.Rational pFrameRate, uint BitRate, Guid* pCryptoType, ref uint pDecoderCaps)
+        public readonly unsafe int GetVideoDecoderCaps([Flow(FlowDirection.In)] in Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, uint BitRate, [Flow(FlowDirection.In)] Guid* pCryptoType, ref uint pDecoderCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4142,18 +2374,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (uint* pDecoderCapsPtr = &pDecoderCaps)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCapsPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCapsPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCapsPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)@this->LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoType, pDecoderCapsPtr);
                     }
                 }
             }
@@ -4161,7 +2382,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetVideoDecoderCaps(ref Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, ref Silk.NET.DXGI.Rational pFrameRate, uint BitRate, ref Guid pCryptoType, uint* pDecoderCaps)
+        public readonly unsafe int GetVideoDecoderCaps([Flow(FlowDirection.In)] in Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, uint BitRate, [Flow(FlowDirection.In)] in Guid pCryptoType, uint* pDecoderCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4171,18 +2392,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Guid* pCryptoTypePtr = &pCryptoType)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCaps);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCaps);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCaps);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)@this->LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCaps);
                     }
                 }
             }
@@ -4190,7 +2400,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetVideoDecoderCaps(ref Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, ref Silk.NET.DXGI.Rational pFrameRate, uint BitRate, ref Guid pCryptoType, ref uint pDecoderCaps)
+        public readonly int GetVideoDecoderCaps([Flow(FlowDirection.In)] in Guid pDecoderProfile, uint SampleWidth, uint SampleHeight, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, uint BitRate, [Flow(FlowDirection.In)] in Guid pCryptoType, ref uint pDecoderCaps)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4202,18 +2412,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (uint* pDecoderCapsPtr = &pDecoderCaps)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, Guid*, uint, uint, Silk.NET.DXGI.Rational*, uint, Guid*, uint*, int>)@this->LpVtbl[21])(@this, pDecoderProfilePtr, SampleWidth, SampleHeight, pFrameRatePtr, BitRate, pCryptoTypePtr, pDecoderCapsPtr);
                         }
                     }
                 }
@@ -4222,73 +2421,40 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (int* pRealTimeHintPtr = &pRealTimeHint)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (int* pSupportedPtr = &pSupported)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4296,48 +2462,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4345,25 +2489,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4371,25 +2504,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pSupportedPtr = &pSupported)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4399,18 +2521,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
                     }
                 }
             }
@@ -4418,30 +2529,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4449,25 +2549,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4475,25 +2564,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pSupportedPtr = &pSupported)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4503,18 +2581,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
                     }
                 }
             }
@@ -4522,7 +2589,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4530,25 +2597,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4558,18 +2614,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
                     }
                 }
             }
@@ -4577,7 +2622,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4587,18 +2632,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pSupportedPtr = &pSupported)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
                     }
                 }
             }
@@ -4606,7 +2640,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4618,18 +2652,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
                         }
                     }
                 }
@@ -4638,30 +2661,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4669,25 +2681,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4695,25 +2696,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pSupportedPtr = &pSupported)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4723,18 +2713,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
                     }
                 }
             }
@@ -4742,7 +2721,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4750,25 +2729,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4778,18 +2746,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
                     }
                 }
             }
@@ -4797,7 +2754,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4807,18 +2764,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pSupportedPtr = &pSupported)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
                     }
                 }
             }
@@ -4826,7 +2772,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4838,18 +2784,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
                         }
                     }
                 }
@@ -4858,7 +2793,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4866,25 +2801,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4894,18 +2818,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
                     }
                 }
             }
@@ -4913,7 +2826,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4923,18 +2836,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pSupportedPtr = &pSupported)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
                     }
                 }
             }
@@ -4942,7 +2844,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4954,18 +2856,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
                         }
                     }
                 }
@@ -4974,7 +2865,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -4984,18 +2875,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
                     }
                 }
             }
@@ -5003,7 +2883,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5015,18 +2895,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
                         }
                     }
                 }
@@ -5035,7 +2904,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5047,18 +2916,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pSupportedPtr = &pSupported)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
                         }
                     }
                 }
@@ -5067,7 +2925,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5081,18 +2939,7 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                             {
-            #if NET5_0_OR_GREATER
-                                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-            #else
-                                if (SilkMarshal.IsWinapiStdcall)
-                                {
-                                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-                                }
-                                else
-                                {
-                                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-                                }
-            #endif
+                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
                             }
                         }
                     }
@@ -5102,30 +2949,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5133,25 +2969,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5159,25 +2984,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (int* pSupportedPtr = &pSupported)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5187,18 +3001,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
                     }
                 }
             }
@@ -5206,7 +3009,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5214,25 +3017,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5242,18 +3034,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
                     }
                 }
             }
@@ -5261,7 +3042,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5271,18 +3052,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pSupportedPtr = &pSupported)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
                     }
                 }
             }
@@ -5290,7 +3060,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5302,18 +3072,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
                         }
                     }
                 }
@@ -5322,7 +3081,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5330,25 +3089,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5358,18 +3106,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
                     }
                 }
             }
@@ -5377,7 +3114,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5387,18 +3124,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pSupportedPtr = &pSupported)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
                     }
                 }
             }
@@ -5406,7 +3132,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5418,18 +3144,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
                         }
                     }
                 }
@@ -5438,7 +3153,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5448,18 +3163,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
                     }
                 }
             }
@@ -5467,7 +3171,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5479,18 +3183,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
                         }
                     }
                 }
@@ -5499,7 +3192,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5511,18 +3204,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pSupportedPtr = &pSupported)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
                         }
                     }
                 }
@@ -5531,7 +3213,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5545,18 +3227,7 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                             {
-            #if NET5_0_OR_GREATER
-                                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-            #else
-                                if (SilkMarshal.IsWinapiStdcall)
-                                {
-                                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-                                }
-                                else
-                                {
-                                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-                                }
-            #endif
+                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
                             }
                         }
                     }
@@ -5566,7 +3237,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5574,25 +3245,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHint);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5602,18 +3262,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupported, pRealTimeHintPtr);
                     }
                 }
             }
@@ -5621,7 +3270,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5631,18 +3280,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (int* pSupportedPtr = &pSupported)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHint);
                     }
                 }
             }
@@ -5650,7 +3288,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5662,18 +3300,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
                         }
                     }
                 }
@@ -5682,7 +3309,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5692,18 +3319,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHint);
                     }
                 }
             }
@@ -5711,7 +3327,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5723,18 +3339,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupported, pRealTimeHintPtr);
                         }
                     }
                 }
@@ -5743,7 +3348,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5755,18 +3360,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pSupportedPtr = &pSupported)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
                         }
                     }
                 }
@@ -5775,7 +3369,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5789,18 +3383,7 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                             {
-            #if NET5_0_OR_GREATER
-                                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-            #else
-                                if (SilkMarshal.IsWinapiStdcall)
-                                {
-                                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-                                }
-                                else
-                                {
-                                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-                                }
-            #endif
+                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
                             }
                         }
                     }
@@ -5810,7 +3393,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, int* pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5820,18 +3403,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHint);
                     }
                 }
             }
@@ -5839,7 +3411,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, int* pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5851,18 +3423,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupported, pRealTimeHintPtr);
                         }
                     }
                 }
@@ -5871,7 +3432,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, ref int pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5883,18 +3444,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (int* pSupportedPtr = &pSupported)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHint);
                         }
                     }
                 }
@@ -5903,7 +3453,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] VideoSampleDesc* pOutputDesc, ref int pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5917,18 +3467,7 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                             {
-            #if NET5_0_OR_GREATER
-                                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-            #else
-                                if (SilkMarshal.IsWinapiStdcall)
-                                {
-                                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-                                }
-                                else
-                                {
-                                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
-                                }
-            #endif
+                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDesc, pSupportedPtr, pRealTimeHintPtr);
                             }
                         }
                     }
@@ -5938,7 +3477,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, int* pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5950,18 +3489,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (VideoSampleDesc* pOutputDescPtr = &pOutputDesc)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHint);
                         }
                     }
                 }
@@ -5970,7 +3498,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, int* pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -5984,18 +3512,7 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                             {
-            #if NET5_0_OR_GREATER
-                                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-            #else
-                                if (SilkMarshal.IsWinapiStdcall)
-                                {
-                                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-                                }
-                                else
-                                {
-                                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
-                                }
-            #endif
+                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupported, pRealTimeHintPtr);
                             }
                         }
                     }
@@ -6005,7 +3522,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
+        public readonly unsafe int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, ref int pSupported, int* pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6019,18 +3536,7 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (int* pSupportedPtr = &pSupported)
                             {
-            #if NET5_0_OR_GREATER
-                                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-            #else
-                                if (SilkMarshal.IsWinapiStdcall)
-                                {
-                                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-                                }
-                                else
-                                {
-                                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
-                                }
-            #endif
+                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHint);
                             }
                         }
                     }
@@ -6040,7 +3546,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int CheckVideoDecoderDownsampling(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
+        public readonly int CheckVideoDecoderDownsampling([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, [Flow(FlowDirection.In)] in VideoSampleDesc pOutputDesc, ref int pSupported, ref int pRealTimeHint)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6056,18 +3562,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 fixed (int* pRealTimeHintPtr = &pRealTimeHint)
                                 {
-            #if NET5_0_OR_GREATER
-                                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-            #else
-                                    if (SilkMarshal.IsWinapiStdcall)
-                                    {
-                                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-                                    }
-                                    else
-                                    {
-                                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
-                                    }
-            #endif
+                                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int*, int*, int>)@this->LpVtbl[22])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pOutputDescPtr, pSupportedPtr, pRealTimeHintPtr);
                                 }
                             }
                         }
@@ -6078,73 +3573,40 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDesc);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDesc);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDesc);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)@this->LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDesc);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (VideoSampleDesc* pRecommendedOutputDescPtr = &pRecommendedOutputDesc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDescPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDescPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDescPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)@this->LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDescPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDesc);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDesc);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDesc);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)@this->LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDesc);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6152,48 +3614,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoSampleDesc* pRecommendedOutputDescPtr = &pRecommendedOutputDesc)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDescPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDescPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDescPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)@this->LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDescPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDesc);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDesc);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDesc);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)@this->LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDesc);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6201,25 +3641,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoSampleDesc* pRecommendedOutputDescPtr = &pRecommendedOutputDesc)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDescPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDescPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDescPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)@this->LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDescPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6227,25 +3656,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDesc);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDesc);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDesc);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)@this->LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDesc);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters([Flow(FlowDirection.In)] VideoDecoderDesc* pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6255,18 +3673,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoSampleDesc* pRecommendedOutputDescPtr = &pRecommendedOutputDesc)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDescPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDescPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDescPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)@this->LpVtbl[23])(@this, pInputDesc, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDescPtr);
                     }
                 }
             }
@@ -6274,30 +3681,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (VideoDecoderDesc* pInputDescPtr = &pInputDesc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDesc);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDesc);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDesc);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)@this->LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDesc);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6305,25 +3701,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoSampleDesc* pRecommendedOutputDescPtr = &pRecommendedOutputDesc)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDescPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDescPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDescPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)@this->LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRate, pRecommendedOutputDescPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6331,25 +3716,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDesc);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDesc);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDesc);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)@this->LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDesc);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, VideoDecoderConfig* pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] VideoDecoderConfig* pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6359,18 +3733,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoSampleDesc* pRecommendedOutputDescPtr = &pRecommendedOutputDesc)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDescPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDescPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDescPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)@this->LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfig, pFrameRatePtr, pRecommendedOutputDescPtr);
                     }
                 }
             }
@@ -6378,7 +3741,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6386,25 +3749,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (VideoDecoderConfig* pInputConfigPtr = &pInputConfig)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDesc);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDesc);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDesc);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)@this->LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDesc);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] Silk.NET.DXGI.Rational* pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6414,18 +3766,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (VideoSampleDesc* pRecommendedOutputDescPtr = &pRecommendedOutputDesc)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDescPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDescPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDescPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)@this->LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRate, pRecommendedOutputDescPtr);
                     }
                 }
             }
@@ -6433,7 +3774,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RecommendVideoDecoderDownsampleParameters(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
+        public readonly unsafe int RecommendVideoDecoderDownsampleParameters([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, VideoSampleDesc* pRecommendedOutputDesc)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6443,18 +3784,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (Silk.NET.DXGI.Rational* pFrameRatePtr = &pFrameRate)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDesc);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDesc);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDesc);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)@this->LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDesc);
                     }
                 }
             }
@@ -6462,7 +3792,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int RecommendVideoDecoderDownsampleParameters(ref VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, ref VideoDecoderConfig pInputConfig, ref Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
+        public readonly int RecommendVideoDecoderDownsampleParameters([Flow(FlowDirection.In)] in VideoDecoderDesc pInputDesc, Silk.NET.DXGI.ColorSpaceType InputColorSpace, [Flow(FlowDirection.In)] in VideoDecoderConfig pInputConfig, [Flow(FlowDirection.In)] in Silk.NET.DXGI.Rational pFrameRate, ref VideoSampleDesc pRecommendedOutputDesc)
         {
             var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -6474,23 +3804,502 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (VideoSampleDesc* pRecommendedOutputDescPtr = &pRecommendedOutputDesc)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDescPtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDescPtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDescPtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice1*, VideoDecoderDesc*, Silk.NET.DXGI.ColorSpaceType, VideoDecoderConfig*, Silk.NET.DXGI.Rational*, VideoSampleDesc*, int>)@this->LpVtbl[23])(@this, pInputDescPtr, InputColorSpace, pInputConfigPtr, pFrameRatePtr, pRecommendedOutputDescPtr);
                         }
                     }
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoder<TI0>([Flow(FlowDirection.In)] VideoDecoderDesc* pVideoDesc, [Flow(FlowDirection.In)] VideoDecoderConfig* pConfig, ref ComPtr<TI0> ppDecoder) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(pVideoDesc, pConfig, (ID3D11VideoDecoder**) ppDecoder.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoder<TI0>([Flow(FlowDirection.In)] VideoDecoderDesc* pVideoDesc, [Flow(FlowDirection.In)] in VideoDecoderConfig pConfig, ref ComPtr<TI0> ppDecoder) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(pVideoDesc, in pConfig, (ID3D11VideoDecoder**) ppDecoder.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoder<TI0>([Flow(FlowDirection.In)] in VideoDecoderDesc pVideoDesc, [Flow(FlowDirection.In)] VideoDecoderConfig* pConfig, ref ComPtr<TI0> ppDecoder) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(in pVideoDesc, pConfig, (ID3D11VideoDecoder**) ppDecoder.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateVideoDecoder<TI0>([Flow(FlowDirection.In)] in VideoDecoderDesc pVideoDesc, [Flow(FlowDirection.In)] in VideoDecoderConfig pConfig, ref ComPtr<TI0> ppDecoder) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoder>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoder(in pVideoDesc, in pConfig, (ID3D11VideoDecoder**) ppDecoder.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateVideoProcessor<TI0, TI1>(ComPtr<TI0> pEnum, uint RateConversionIndex, ref ComPtr<TI1> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessor((ID3D11VideoProcessorEnumerator*) pEnum.Handle, RateConversionIndex, (ID3D11VideoProcessor**) ppVideoProcessor.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessor<TI0>(ComPtr<TI0> pEnum, uint RateConversionIndex, ref ID3D11VideoProcessor* ppVideoProcessor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessor((ID3D11VideoProcessorEnumerator*) pEnum.Handle, RateConversionIndex, ref ppVideoProcessor);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateVideoProcessor<TI0>(ref ID3D11VideoProcessorEnumerator pEnum, uint RateConversionIndex, ref ComPtr<TI0> ppVideoProcessor) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessor>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessor(ref pEnum, RateConversionIndex, (ID3D11VideoProcessor**) ppVideoProcessor.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateAuthenticatedChannel<TI0>(AuthenticatedChannelType ChannelType, ref ComPtr<TI0> ppAuthenticatedChannel) where TI0 : unmanaged, IComVtbl<ID3D11AuthenticatedChannel>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateAuthenticatedChannel(ChannelType, (ID3D11AuthenticatedChannel**) ppAuthenticatedChannel.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, out ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppCryptoSession = default;
+            return @this->CreateCryptoSession(pCryptoType, pDecoderProfile, SilkMarshal.GuidPtrOf<TI0>(), (ID3D11CryptoSession**) ppCryptoSession.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ref ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(pCryptoType, pDecoderProfile, in pKeyExchangeType, (ID3D11CryptoSession**) ppCryptoSession.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, out ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppCryptoSession = default;
+            return @this->CreateCryptoSession(pCryptoType, in pDecoderProfile, SilkMarshal.GuidPtrOf<TI0>(), (ID3D11CryptoSession**) ppCryptoSession.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ref ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(pCryptoType, in pDecoderProfile, in pKeyExchangeType, (ID3D11CryptoSession**) ppCryptoSession.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, out ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppCryptoSession = default;
+            return @this->CreateCryptoSession(in pCryptoType, pDecoderProfile, SilkMarshal.GuidPtrOf<TI0>(), (ID3D11CryptoSession**) ppCryptoSession.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ref ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(in pCryptoType, pDecoderProfile, in pKeyExchangeType, (ID3D11CryptoSession**) ppCryptoSession.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateCryptoSession<TI0>([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, out ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppCryptoSession = default;
+            return @this->CreateCryptoSession(in pCryptoType, in pDecoderProfile, SilkMarshal.GuidPtrOf<TI0>(), (ID3D11CryptoSession**) ppCryptoSession.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateCryptoSession<TI0>([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile, [Flow(FlowDirection.In)] in Guid pKeyExchangeType, ref ComPtr<TI0> ppCryptoSession) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(in pCryptoType, in pDecoderProfile, in pKeyExchangeType, (ID3D11CryptoSession**) ppCryptoSession.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoderOutputView<TI0, TI1>(ComPtr<TI0> pResource, [Flow(FlowDirection.In)] VideoDecoderOutputViewDesc* pDesc, ref ComPtr<TI1> ppVDOVView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoderOutputView((ID3D11Resource*) pResource.Handle, pDesc, (ID3D11VideoDecoderOutputView**) ppVDOVView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoderOutputView<TI0>(ComPtr<TI0> pResource, [Flow(FlowDirection.In)] VideoDecoderOutputViewDesc* pDesc, ref ID3D11VideoDecoderOutputView* ppVDOVView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoderOutputView((ID3D11Resource*) pResource.Handle, pDesc, ref ppVDOVView);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateVideoDecoderOutputView<TI0, TI1>(ComPtr<TI0> pResource, [Flow(FlowDirection.In)] in VideoDecoderOutputViewDesc pDesc, ref ComPtr<TI1> ppVDOVView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoderOutputView((ID3D11Resource*) pResource.Handle, in pDesc, (ID3D11VideoDecoderOutputView**) ppVDOVView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoderOutputView<TI0>(ComPtr<TI0> pResource, [Flow(FlowDirection.In)] in VideoDecoderOutputViewDesc pDesc, ref ID3D11VideoDecoderOutputView* ppVDOVView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoderOutputView((ID3D11Resource*) pResource.Handle, in pDesc, ref ppVDOVView);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoDecoderOutputView<TI0>(ref ID3D11Resource pResource, [Flow(FlowDirection.In)] VideoDecoderOutputViewDesc* pDesc, ref ComPtr<TI0> ppVDOVView) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoderOutputView(ref pResource, pDesc, (ID3D11VideoDecoderOutputView**) ppVDOVView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateVideoDecoderOutputView<TI0>(ref ID3D11Resource pResource, [Flow(FlowDirection.In)] in VideoDecoderOutputViewDesc pDesc, ref ComPtr<TI0> ppVDOVView) where TI0 : unmanaged, IComVtbl<ID3D11VideoDecoderOutputView>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoDecoderOutputView(ref pResource, in pDesc, (ID3D11VideoDecoderOutputView**) ppVDOVView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorInputView<TI0, TI1, TI2>(ComPtr<TI0> pResource, ComPtr<TI1> pEnum, [Flow(FlowDirection.In)] VideoProcessorInputViewDesc* pDesc, ref ComPtr<TI2> ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11VideoProcessorInputView>, IComVtbl<TI2>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorInputView((ID3D11Resource*) pResource.Handle, (ID3D11VideoProcessorEnumerator*) pEnum.Handle, pDesc, (ID3D11VideoProcessorInputView**) ppVPIView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorInputView<TI0, TI1>(ComPtr<TI0> pResource, ComPtr<TI1> pEnum, [Flow(FlowDirection.In)] VideoProcessorInputViewDesc* pDesc, ref ID3D11VideoProcessorInputView* ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorInputView((ID3D11Resource*) pResource.Handle, (ID3D11VideoProcessorEnumerator*) pEnum.Handle, pDesc, ref ppVPIView);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateVideoProcessorInputView<TI0, TI1, TI2>(ComPtr<TI0> pResource, ComPtr<TI1> pEnum, [Flow(FlowDirection.In)] in VideoProcessorInputViewDesc pDesc, ref ComPtr<TI2> ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11VideoProcessorInputView>, IComVtbl<TI2>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorInputView((ID3D11Resource*) pResource.Handle, (ID3D11VideoProcessorEnumerator*) pEnum.Handle, in pDesc, (ID3D11VideoProcessorInputView**) ppVPIView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorInputView<TI0, TI1>(ComPtr<TI0> pResource, ComPtr<TI1> pEnum, [Flow(FlowDirection.In)] in VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorInputView((ID3D11Resource*) pResource.Handle, (ID3D11VideoProcessorEnumerator*) pEnum.Handle, in pDesc, ref ppVPIView);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorInputView<TI0, TI1>(ComPtr<TI0> pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] VideoProcessorInputViewDesc* pDesc, ref ComPtr<TI1> ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorInputView>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorInputView((ID3D11Resource*) pResource.Handle, ref pEnum, pDesc, (ID3D11VideoProcessorInputView**) ppVPIView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorInputView<TI0>(ComPtr<TI0> pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] VideoProcessorInputViewDesc* pDesc, ref ID3D11VideoProcessorInputView* ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorInputView((ID3D11Resource*) pResource.Handle, ref pEnum, pDesc, ref ppVPIView);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateVideoProcessorInputView<TI0, TI1>(ComPtr<TI0> pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] in VideoProcessorInputViewDesc pDesc, ref ComPtr<TI1> ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorInputView>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorInputView((ID3D11Resource*) pResource.Handle, ref pEnum, in pDesc, (ID3D11VideoProcessorInputView**) ppVPIView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorInputView<TI0>(ComPtr<TI0> pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] in VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorInputView((ID3D11Resource*) pResource.Handle, ref pEnum, in pDesc, ref ppVPIView);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorInputView<TI0, TI1>(ref ID3D11Resource pResource, ComPtr<TI0> pEnum, [Flow(FlowDirection.In)] VideoProcessorInputViewDesc* pDesc, ref ComPtr<TI1> ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorInputView>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorInputView(ref pResource, (ID3D11VideoProcessorEnumerator*) pEnum.Handle, pDesc, (ID3D11VideoProcessorInputView**) ppVPIView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorInputView<TI0>(ref ID3D11Resource pResource, ComPtr<TI0> pEnum, [Flow(FlowDirection.In)] VideoProcessorInputViewDesc* pDesc, ref ID3D11VideoProcessorInputView* ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorInputView(ref pResource, (ID3D11VideoProcessorEnumerator*) pEnum.Handle, pDesc, ref ppVPIView);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateVideoProcessorInputView<TI0, TI1>(ref ID3D11Resource pResource, ComPtr<TI0> pEnum, [Flow(FlowDirection.In)] in VideoProcessorInputViewDesc pDesc, ref ComPtr<TI1> ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorInputView>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorInputView(ref pResource, (ID3D11VideoProcessorEnumerator*) pEnum.Handle, in pDesc, (ID3D11VideoProcessorInputView**) ppVPIView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorInputView<TI0>(ref ID3D11Resource pResource, ComPtr<TI0> pEnum, [Flow(FlowDirection.In)] in VideoProcessorInputViewDesc pDesc, ref ID3D11VideoProcessorInputView* ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorInputView(ref pResource, (ID3D11VideoProcessorEnumerator*) pEnum.Handle, in pDesc, ref ppVPIView);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorInputView<TI0>(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] VideoProcessorInputViewDesc* pDesc, ref ComPtr<TI0> ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorInputView>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorInputView(ref pResource, ref pEnum, pDesc, (ID3D11VideoProcessorInputView**) ppVPIView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateVideoProcessorInputView<TI0>(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] in VideoProcessorInputViewDesc pDesc, ref ComPtr<TI0> ppVPIView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorInputView>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorInputView(ref pResource, ref pEnum, in pDesc, (ID3D11VideoProcessorInputView**) ppVPIView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorOutputView<TI0, TI1, TI2>(ComPtr<TI0> pResource, ComPtr<TI1> pEnum, [Flow(FlowDirection.In)] VideoProcessorOutputViewDesc* pDesc, ref ComPtr<TI2> ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI2>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorOutputView((ID3D11Resource*) pResource.Handle, (ID3D11VideoProcessorEnumerator*) pEnum.Handle, pDesc, (ID3D11VideoProcessorOutputView**) ppVPOView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorOutputView<TI0, TI1>(ComPtr<TI0> pResource, ComPtr<TI1> pEnum, [Flow(FlowDirection.In)] VideoProcessorOutputViewDesc* pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorOutputView((ID3D11Resource*) pResource.Handle, (ID3D11VideoProcessorEnumerator*) pEnum.Handle, pDesc, ref ppVPOView);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateVideoProcessorOutputView<TI0, TI1, TI2>(ComPtr<TI0> pResource, ComPtr<TI1> pEnum, [Flow(FlowDirection.In)] in VideoProcessorOutputViewDesc pDesc, ref ComPtr<TI2> ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI1> where TI2 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI2>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorOutputView((ID3D11Resource*) pResource.Handle, (ID3D11VideoProcessorEnumerator*) pEnum.Handle, in pDesc, (ID3D11VideoProcessorOutputView**) ppVPOView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorOutputView<TI0, TI1>(ComPtr<TI0> pResource, ComPtr<TI1> pEnum, [Flow(FlowDirection.In)] in VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorOutputView((ID3D11Resource*) pResource.Handle, (ID3D11VideoProcessorEnumerator*) pEnum.Handle, in pDesc, ref ppVPOView);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorOutputView<TI0, TI1>(ComPtr<TI0> pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] VideoProcessorOutputViewDesc* pDesc, ref ComPtr<TI1> ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorOutputView((ID3D11Resource*) pResource.Handle, ref pEnum, pDesc, (ID3D11VideoProcessorOutputView**) ppVPOView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorOutputView<TI0>(ComPtr<TI0> pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] VideoProcessorOutputViewDesc* pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorOutputView((ID3D11Resource*) pResource.Handle, ref pEnum, pDesc, ref ppVPOView);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateVideoProcessorOutputView<TI0, TI1>(ComPtr<TI0> pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] in VideoProcessorOutputViewDesc pDesc, ref ComPtr<TI1> ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorOutputView((ID3D11Resource*) pResource.Handle, ref pEnum, in pDesc, (ID3D11VideoProcessorOutputView**) ppVPOView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorOutputView<TI0>(ComPtr<TI0> pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] in VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11Resource>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorOutputView((ID3D11Resource*) pResource.Handle, ref pEnum, in pDesc, ref ppVPOView);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorOutputView<TI0, TI1>(ref ID3D11Resource pResource, ComPtr<TI0> pEnum, [Flow(FlowDirection.In)] VideoProcessorOutputViewDesc* pDesc, ref ComPtr<TI1> ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorOutputView(ref pResource, (ID3D11VideoProcessorEnumerator*) pEnum.Handle, pDesc, (ID3D11VideoProcessorOutputView**) ppVPOView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorOutputView<TI0>(ref ID3D11Resource pResource, ComPtr<TI0> pEnum, [Flow(FlowDirection.In)] VideoProcessorOutputViewDesc* pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorOutputView(ref pResource, (ID3D11VideoProcessorEnumerator*) pEnum.Handle, pDesc, ref ppVPOView);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateVideoProcessorOutputView<TI0, TI1>(ref ID3D11Resource pResource, ComPtr<TI0> pEnum, [Flow(FlowDirection.In)] in VideoProcessorOutputViewDesc pDesc, ref ComPtr<TI1> ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0> where TI1 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI1>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorOutputView(ref pResource, (ID3D11VideoProcessorEnumerator*) pEnum.Handle, in pDesc, (ID3D11VideoProcessorOutputView**) ppVPOView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorOutputView<TI0>(ref ID3D11Resource pResource, ComPtr<TI0> pEnum, [Flow(FlowDirection.In)] in VideoProcessorOutputViewDesc pDesc, ref ID3D11VideoProcessorOutputView* ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorOutputView(ref pResource, (ID3D11VideoProcessorEnumerator*) pEnum.Handle, in pDesc, ref ppVPOView);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorOutputView<TI0>(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] VideoProcessorOutputViewDesc* pDesc, ref ComPtr<TI0> ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorOutputView(ref pResource, ref pEnum, pDesc, (ID3D11VideoProcessorOutputView**) ppVPOView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateVideoProcessorOutputView<TI0>(ref ID3D11Resource pResource, ref ID3D11VideoProcessorEnumerator pEnum, [Flow(FlowDirection.In)] in VideoProcessorOutputViewDesc pDesc, ref ComPtr<TI0> ppVPOView) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorOutputView>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorOutputView(ref pResource, ref pEnum, in pDesc, (ID3D11VideoProcessorOutputView**) ppVPOView.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateVideoProcessorEnumerator<TI0>([Flow(FlowDirection.In)] VideoProcessorContentDesc* pDesc, ref ComPtr<TI0> ppEnum) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorEnumerator(pDesc, (ID3D11VideoProcessorEnumerator**) ppEnum.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int CreateVideoProcessorEnumerator<TI0>([Flow(FlowDirection.In)] in VideoProcessorContentDesc pDesc, ref ComPtr<TI0> ppEnum) where TI0 : unmanaged, IComVtbl<ID3D11VideoProcessorEnumerator>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateVideoProcessorEnumerator(in pDesc, (ID3D11VideoProcessorEnumerator**) ppEnum.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(ref guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ComPtr<TI0> CreateCryptoSession<TI0>([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->CreateCryptoSession(pCryptoType, pDecoderProfile, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ComPtr<TI0> CreateCryptoSession<TI0>([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->CreateCryptoSession(pCryptoType, in pDecoderProfile, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ComPtr<TI0> CreateCryptoSession<TI0>([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecoderProfile) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->CreateCryptoSession(in pCryptoType, pDecoderProfile, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> CreateCryptoSession<TI0>([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecoderProfile) where TI0 : unmanaged, IComVtbl<ID3D11CryptoSession>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11VideoDevice1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->CreateCryptoSession(in pCryptoType, in pDecoderProfile, out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

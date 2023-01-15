@@ -77,6 +77,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glVertexFormatNV", Convention = CallingConvention.Winapi)]
         public partial void VertexFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint stride);
 
+        public unsafe ulong GetIntegerui64([Flow(FlowDirection.In)] NV value, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetIntegerui64(value, index, out ulong silkRet);
+            return silkRet;
+        }
+
         public NVVertexBufferUnifiedMemory(INativeContext ctx)
             : base(ctx)
         {

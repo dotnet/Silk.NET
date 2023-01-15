@@ -26,8 +26,8 @@ namespace Silk.NET.DXVA
             uint? sampleFormat = null,
             uint? sampleFlags = null,
             void* lpDDSSrcSurface = null,
-            Silk.NET.Maths.Rectangle<int>? rcSrc = null,
-            Silk.NET.Maths.Rectangle<int>? rcDst = null
+            Silk.NET.Maths.Box2D<int>? rcSrc = null,
+            Silk.NET.Maths.Box2D<int>? rcDst = null
         ) : this()
         {
             if (rtStart is not null)
@@ -95,15 +95,15 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "rcSrc")]
-        public Silk.NET.Maths.Rectangle<int> RcSrc;
+        public Silk.NET.Maths.Box2D<int> RcSrc;
 
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "rcDst")]
-        public Silk.NET.Maths.Rectangle<int> RcDst;
+        public Silk.NET.Maths.Box2D<int> RcDst;
         
-        [NativeName("Type", "DXVA_AYUVsample2 [16]")]
-        [NativeName("Type.Name", "DXVA_AYUVsample2 [16]")]
+        [NativeName("Type", "DXVA_AYUVsample2[16]")]
+        [NativeName("Type.Name", "DXVA_AYUVsample2[16]")]
         [NativeName("Name", "Palette")]
         public PaletteBuffer Palette;
 

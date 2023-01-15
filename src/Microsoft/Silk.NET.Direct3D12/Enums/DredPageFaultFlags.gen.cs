@@ -12,7 +12,10 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_DRED_PAGE_FAULT_FLAGS")]
     public enum DredPageFaultFlags : int
     {
+        [Obsolete("Deprecated in favour of \"None\"")]
         [NativeName("Name", "D3D12_DRED_PAGE_FAULT_FLAGS_NONE")]
         DredPageFaultFlagsNone = 0x0,
+        [NativeName("Name", "D3D12_DRED_PAGE_FAULT_FLAGS_NONE")]
+        None = 0x0,
     }
 }

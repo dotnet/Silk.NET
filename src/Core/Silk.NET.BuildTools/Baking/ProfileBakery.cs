@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using Humanizer;
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
@@ -37,7 +38,8 @@ namespace Silk.NET.BuildTools.Baking
                 new Project
                 {
                     Namespace = string.Empty, IsRoot = true,
-                    Classes = new List<Class>{}
+                    Classes = new List<Class>{},
+                    ComRefs = task.ClangOpts.ComRefs ?? new HashSet<string>()
                 }
             );
 
@@ -54,12 +56,13 @@ namespace Silk.NET.BuildTools.Baking
             profile.Projects = FuseProjects(profile.Projects.Concat(extProjects));
 
             Console.WriteLine("Profile Bakery: Stirring them until they form a nice paste...");
-            MergeAll(profile); // note: the key of the Interfaces dictionary is changed here, so don't rely on it herein
+            MergeAll(profile, in task); // note: the key of the Interfaces dictionary is changed here, so don't rely on it herein
             Console.WriteLine("Profile Bakery: Adding a bit of flavouring...");
             Vary(profile, task.OverloaderExclusions);
             Console.WriteLine("Profile Bakery: Putting it in the oven until it turns a nice golden colour...");
             CheckForDuplicates(profile);
             TypeMapper.MapEnums(profile); // we need to map the enums to make sure they are correct for their extension.
+            EnumPostProcessor.Process(profile, task);
             Console.WriteLine($"Created profile \"{name}\".");
             return profile;
         }
@@ -95,14 +98,14 @@ namespace Silk.NET.BuildTools.Baking
                     foreach (var @interface in @class.NativeApis.Values)
                     {
                         @interface.Functions = Overloader.GetWithVariants
-                                (@interface.Functions, profile.Projects["Core"], overloaderExclusions)
+                                (@interface.Functions, profile, overloaderExclusions)
                             .ToList();
                     }
                 }
             }
         }
 
-        private static void MergeAll(Profile profile) // this method could also be called Stir ;)
+        private static void MergeAll(Profile profile, in BindTask task) // this method could also be called Stir ;)
         {
             foreach (var project in profile.Projects.Values)
             {
@@ -149,23 +152,77 @@ namespace Silk.NET.BuildTools.Baking
                         classes[@class.ClassName].NativeApis = interfaces;
                         classes[@class.ClassName].Functions.AddRange(@class.Functions);
 
-                        var constants = new Dictionary<string, Constant>();
+                        var constants = new Dictionary<string, List<Constant>>();
                         foreach (var constant in @class.Constants.Concat(classes[@class.ClassName].Constants))
                         {
-                            if (constants.ContainsKey(constant.Name))
+                            if (!constants.ContainsKey(constant.Name))
                             {
-                                if (constants[constant.Name].NativeName != constant.NativeName || constants[constant.Name].Value != constant.Value)
+                                constants.Add(constant.Name, new() { constant });
+                                continue;
+                            }
+
+                            if (!constants[constant.Name]
+                                .Select(x => x.NativeName)
+                                .Contains(constant.NativeName))
+                            {
+                                constants[constant.Name].Add(constant);
+                                continue;
+                            }
+
+                            if (constants[constant.Name]
+                                .Select(x => (x.NativeName, x.Value))
+                                .Contains((constant.NativeName, constant.Value)))
+                            {
+                                // don't log, they're identical.
+                                continue;
+                            }
+                            
+                            Console.WriteLine($"Warning: Discarding duplicate constant {constant.Name}.");
+                            foreach (var existing in constants[constant.Name])
+                            {
+                                Console.WriteLine($"    Existing: {existing.NativeName} = {existing.Value}");
+                            }
+
+                            Console.WriteLine($"    Duplicate: {constant.NativeName} = {constant.Value}");
+                        }
+
+                        foreach (var (proposedName, candidates) in constants)
+                        {
+                            if (candidates.Count <= 1)
+                            {
+                                continue;
+                            }
+                            
+                            // first pass for case sensitivity - use the native name modulo prefix and underscores
+                            foreach (var candidate in candidates)
+                            {
+                                var trimmedSpaced = Naming.TrimName(candidate.NativeName, task)
+                                    .Replace('_', ' ');
+                                candidate.Name = trimmedSpaced.Pascalize();
+                                if (candidate.Name == proposedName)
                                 {
-                                    Console.WriteLine($"Warning: Discarding duplicate constant {constant.Name}.");
-                                    Console.WriteLine($"    Original: {constants[constant.Name].NativeName} = {constants[constant.Name].Value}");
-                                    Console.WriteLine($"    Duplicate: {constant.NativeName} = {constant.Value}");
+                                    candidate.Name = trimmedSpaced.Replace(" ", string.Empty);
                                 }
                             }
-                            else
+                            
+                            // second pass for anything else
+                            for (var i = 0; i < candidates.Count; i++)
                             {
-                                constants.Add(constant.Name, constant);
+                                if (candidates[i].Name == proposedName)
+                                {
+                                    candidates[i].Name += i;
+                                }
+                            }
+                            
+                            Console.WriteLine("Note: Constants with same friendly name but different native names.");
+                            Console.WriteLine($"    Proposed Friendly Name: {proposedName}");
+                            foreach (var candidate in candidates)
+                            {
+                                Console.WriteLine($"    New Name For {candidate.NativeName}: {candidate.Name}");
                             }
                         }
+
+                        classes[@class.ClassName].Constants = constants.SelectMany(x => x.Value).ToList();
                     }
                     else
                     {
@@ -211,10 +268,20 @@ namespace Silk.NET.BuildTools.Baking
                 {
                     foreach (var @interface in @class.NativeApis)
                     {
+                        var functionChecker = new Dictionary<string, List<Function>>();
                         var functions = new List<Function>();
                         foreach (var f in @interface.Value.Functions)
                         {
-                            if (functions.Any(x => x.Equals(f))) continue;
+                            var signature = f.ToString(null, returnType:false, appendAttributes: false);
+                            if (functionChecker.ContainsKey(signature))
+                            {
+                                if (functionChecker[signature].Any(x => x.Equals(f))) continue;
+                                functionChecker[signature].Add(f);
+                            }
+                            else
+                            {
+                                functionChecker.Add(signature, new List<Function>() { f });
+                            }
                             functions.Add(f);
                         }
 

@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.CheckpointData2NV,
             void* pNext = null,
-            PipelineStageFlags2KHR? stage = null,
+            PipelineStageFlags2? stage = null,
             void* pCheckpointMarker = null
         ) : this()
         {
@@ -59,10 +59,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkPipelineStageFlags2KHR")]
-        [NativeName("Type.Name", "VkPipelineStageFlags2KHR")]
+        [NativeName("Type", "VkPipelineStageFlags2")]
+        [NativeName("Type.Name", "VkPipelineStageFlags2")]
         [NativeName("Name", "stage")]
-        public PipelineStageFlags2KHR Stage;
+        public PipelineStageFlags2 Stage;
 /// <summary></summary>
         [NativeName("Type", "void*")]
         [NativeName("Type.Name", "void")]

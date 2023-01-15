@@ -21,6 +21,7 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoH264PictureParameterSet
         (
+            StdVideoH264PpsFlags? flags = null,
             byte? seqParameterSetId = null,
             byte? picParameterSetId = null,
             byte? numRefIdxL0DefaultActiveMinus1 = null,
@@ -30,10 +31,14 @@ namespace Silk.NET.Vulkan.Video
             byte? picInitQsMinus26 = null,
             byte? chromaQpIndexOffset = null,
             byte? secondChromaQpIndexOffset = null,
-            StdVideoH264PpsFlags? flags = null,
             StdVideoH264ScalingLists* pScalingLists = null
         ) : this()
         {
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
             if (seqParameterSetId is not null)
             {
                 SeqParameterSetId = seqParameterSetId.Value;
@@ -79,17 +84,17 @@ namespace Silk.NET.Vulkan.Video
                 SecondChromaQpIndexOffset = secondChromaQpIndexOffset.Value;
             }
 
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
-
             if (pScalingLists is not null)
             {
                 PScalingLists = pScalingLists;
             }
         }
 
+
+        [NativeName("Type", "StdVideoH264PpsFlags")]
+        [NativeName("Type.Name", "StdVideoH264PpsFlags")]
+        [NativeName("Name", "flags")]
+        public StdVideoH264PpsFlags Flags;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
@@ -136,13 +141,8 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "second_chroma_qp_index_offset")]
         public byte SecondChromaQpIndexOffset;
 
-        [NativeName("Type", "StdVideoH264PpsFlags")]
-        [NativeName("Type.Name", "StdVideoH264PpsFlags")]
-        [NativeName("Name", "flags")]
-        public StdVideoH264PpsFlags Flags;
-
-        [NativeName("Type", "StdVideoH264ScalingLists *")]
-        [NativeName("Type.Name", "StdVideoH264ScalingLists *")]
+        [NativeName("Type", "const StdVideoH264ScalingLists *")]
+        [NativeName("Type.Name", "const StdVideoH264ScalingLists *")]
         [NativeName("Name", "pScalingLists")]
         public StdVideoH264ScalingLists* PScalingLists;
     }

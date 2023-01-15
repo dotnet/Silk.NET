@@ -24,11 +24,10 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.VideoBeginCodingInfoKhr,
             void* pNext = null,
             uint? flags = null,
-            VideoCodingQualityPresetFlagsKHR? codecQualityPreset = null,
             VideoSessionKHR? videoSession = null,
             VideoSessionParametersKHR? videoSessionParameters = null,
             uint? referenceSlotCount = null,
-            VideoReferenceSlotKHR* pReferenceSlots = null
+            VideoReferenceSlotInfoKHR* pReferenceSlots = null
         ) : this()
         {
             if (sType is not null)
@@ -44,11 +43,6 @@ namespace Silk.NET.Vulkan
             if (flags is not null)
             {
                 Flags = flags.Value;
-            }
-
-            if (codecQualityPreset is not null)
-            {
-                CodecQualityPreset = codecQualityPreset.Value;
             }
 
             if (videoSession is not null)
@@ -88,11 +82,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "flags")]
         public uint Flags;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoCodingQualityPresetFlagsKHR")]
-        [NativeName("Type.Name", "VkVideoCodingQualityPresetFlagsKHR")]
-        [NativeName("Name", "codecQualityPreset")]
-        public VideoCodingQualityPresetFlagsKHR CodecQualityPreset;
-/// <summary></summary>
         [NativeName("Type", "VkVideoSessionKHR")]
         [NativeName("Type.Name", "VkVideoSessionKHR")]
         [NativeName("Name", "videoSession")]
@@ -108,10 +97,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "referenceSlotCount")]
         public uint ReferenceSlotCount;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoReferenceSlotKHR*")]
-        [NativeName("Type.Name", "VkVideoReferenceSlotKHR")]
+        [NativeName("Type", "VkVideoReferenceSlotInfoKHR*")]
+        [NativeName("Type.Name", "VkVideoReferenceSlotInfoKHR")]
         [NativeName("Name", "pReferenceSlots")]
-        public VideoReferenceSlotKHR* PReferenceSlots;
+        public VideoReferenceSlotInfoKHR* PReferenceSlots;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

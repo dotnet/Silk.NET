@@ -272,6 +272,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
             Uniform4(location, (uint) value.Length, in value.GetPinnableReference());
         }
 
+        public unsafe long GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location)
+        {
+            // NonKhrReturnTypeOverloader
+            GetUniform(program, location, out long silkRet);
+            return silkRet;
+        }
+
         public AmdGpuShaderInt64(INativeContext ctx)
             : base(ctx)
         {

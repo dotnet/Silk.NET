@@ -22,12 +22,12 @@ namespace Silk.NET.DXGI
     {
         public OutputDesc1
         (
-            Silk.NET.Maths.Rectangle<int>? desktopCoordinates = null,
-            int? attachedToDesktop = null,
+            Silk.NET.Maths.Box2D<int>? desktopCoordinates = null,
+            Silk.NET.Core.Bool32? attachedToDesktop = null,
             ModeRotation? rotation = null,
             nint? monitor = null,
             uint? bitsPerColor = null,
-            ColorSpaceType? colorSpace = null,
+            Silk.NET.DXGI.ColorSpaceType? colorSpace = null,
             float? minLuminance = null,
             float? maxLuminance = null,
             float? maxFullFrameLuminance = null
@@ -79,20 +79,20 @@ namespace Silk.NET.DXGI
             }
         }
 
-        [NativeName("Type", "WCHAR [32]")]
-        [NativeName("Type.Name", "WCHAR [32]")]
+        [NativeName("Type", "WCHAR[32]")]
+        [NativeName("Type.Name", "WCHAR[32]")]
         [NativeName("Name", "DeviceName")]
         public fixed char DeviceName[32];
 
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "DesktopCoordinates")]
-        public Silk.NET.Maths.Rectangle<int> DesktopCoordinates;
+        public Silk.NET.Maths.Box2D<int> DesktopCoordinates;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "AttachedToDesktop")]
-        public int AttachedToDesktop;
+        public Silk.NET.Core.Bool32 AttachedToDesktop;
 
         [NativeName("Type", "DXGI_MODE_ROTATION")]
         [NativeName("Type.Name", "DXGI_MODE_ROTATION")]
@@ -112,21 +112,21 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "DXGI_COLOR_SPACE_TYPE")]
         [NativeName("Type.Name", "DXGI_COLOR_SPACE_TYPE")]
         [NativeName("Name", "ColorSpace")]
-        public ColorSpaceType ColorSpace;
-        [NativeName("Type", "FLOAT [2]")]
-        [NativeName("Type.Name", "FLOAT [2]")]
+        public Silk.NET.DXGI.ColorSpaceType ColorSpace;
+        [NativeName("Type", "FLOAT[2]")]
+        [NativeName("Type.Name", "FLOAT[2]")]
         [NativeName("Name", "RedPrimary")]
         public fixed float RedPrimary[2];
-        [NativeName("Type", "FLOAT [2]")]
-        [NativeName("Type.Name", "FLOAT [2]")]
+        [NativeName("Type", "FLOAT[2]")]
+        [NativeName("Type.Name", "FLOAT[2]")]
         [NativeName("Name", "GreenPrimary")]
         public fixed float GreenPrimary[2];
-        [NativeName("Type", "FLOAT [2]")]
-        [NativeName("Type.Name", "FLOAT [2]")]
+        [NativeName("Type", "FLOAT[2]")]
+        [NativeName("Type.Name", "FLOAT[2]")]
         [NativeName("Name", "BluePrimary")]
         public fixed float BluePrimary[2];
-        [NativeName("Type", "FLOAT [2]")]
-        [NativeName("Type.Name", "FLOAT [2]")]
+        [NativeName("Type", "FLOAT[2]")]
+        [NativeName("Type.Name", "FLOAT[2]")]
         [NativeName("Name", "WhitePoint")]
         public fixed float WhitePoint[2];
 

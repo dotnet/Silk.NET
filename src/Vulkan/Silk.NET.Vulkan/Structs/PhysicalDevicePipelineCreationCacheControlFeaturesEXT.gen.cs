@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT")]
+    [NativeName("AliasOf", "VkPhysicalDevicePipelineCreationCacheControlFeatures")]
     public unsafe partial struct PhysicalDevicePipelineCreationCacheControlFeaturesEXT : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDevicePipelineCreationCacheControlFeaturesEXT
         (
-            StructureType? sType = StructureType.PhysicalDevicePipelineCreationCacheControlFeaturesExt,
+            StructureType? sType = StructureType.PhysicalDevicePipelineCreationCacheControlFeatures,
             void* pNext = null,
             Bool32? pipelineCreationCacheControl = null
         ) : this()
@@ -61,7 +62,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PhysicalDevicePipelineCreationCacheControlFeaturesExt;
+            return SType = StructureType.PhysicalDevicePipelineCreationCacheControlFeatures;
         }
 
         /// <inheritdoc />

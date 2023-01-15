@@ -7,7 +7,7 @@
 
     <ItemGroup>
       <PackageReference Include="Veldrid" Version="4.8.0" />
-      <PackageReference Include="Veldrid.SPIRV" Version="1.0.14" />
+      <PackageReference Include="Veldrid.SPIRV" Version="1.0.15" />
     </ItemGroup>
 
     <ItemGroup>

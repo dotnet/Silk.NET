@@ -16,7 +16,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Win32Extras
 {
-    [NativeName("Name", "__AnonymousRecord_minwinbase_L245_C9")]
+    [NativeName("Name", "__AnonymousRecord_minwinbase_L250_C9")]
     public unsafe partial struct ProcessHeapEntryUnionBlock
     {
         public ProcessHeapEntryUnionBlock
@@ -35,8 +35,8 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "hMem")]
         public void* HMem;
-        [NativeName("Type", "DWORD [3]")]
-        [NativeName("Type.Name", "DWORD [3]")]
+        [NativeName("Type", "DWORD[3]")]
+        [NativeName("Type.Name", "DWORD[3]")]
         [NativeName("Name", "dwReserved")]
         public fixed uint DwReserved[3];
     }

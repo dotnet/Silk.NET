@@ -155,6 +155,69 @@ namespace Silk.NET.Vulkan.Extensions.KHR
             return ret;
         }
 
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pFormatProperties = new(StructureType.FormatProperties2);")]
+        public unsafe FormatProperties2 GetPhysicalDeviceFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceFormatProperties2(physicalDevice, format, out FormatProperties2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pQueueFamilyProperties = new(StructureType.QueueFamilyProperties2);")]
+        public unsafe QueueFamilyProperties2 GetPhysicalDeviceQueueFamilyProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pQueueFamilyPropertyCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceQueueFamilyProperties2(physicalDevice, pQueueFamilyPropertyCount, out QueueFamilyProperties2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pQueueFamilyProperties = new(StructureType.QueueFamilyProperties2);")]
+        public unsafe QueueFamilyProperties2 GetPhysicalDeviceQueueFamilyProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pQueueFamilyPropertyCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceQueueFamilyProperties2(physicalDevice, ref pQueueFamilyPropertyCount, out QueueFamilyProperties2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
+        public unsafe SparseImageFormatProperties2 GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] uint* pPropertyCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceSparseImageFormatProperties2(physicalDevice, pFormatInfo, pPropertyCount, out SparseImageFormatProperties2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
+        public unsafe SparseImageFormatProperties2 GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] ref uint pPropertyCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceSparseImageFormatProperties2(physicalDevice, pFormatInfo, ref pPropertyCount, out SparseImageFormatProperties2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
+        public unsafe SparseImageFormatProperties2 GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSparseImageFormatInfo2 pFormatInfo, [Count(Count = 0)] uint* pPropertyCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceSparseImageFormatProperties2(physicalDevice, in pFormatInfo, pPropertyCount, out SparseImageFormatProperties2 silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
+        public unsafe SparseImageFormatProperties2 GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceSparseImageFormatInfo2 pFormatInfo, [Count(Count = 0)] ref uint pPropertyCount)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceSparseImageFormatProperties2(physicalDevice, in pFormatInfo, ref pPropertyCount, out SparseImageFormatProperties2 silkRet);
+            return silkRet;
+        }
+
         public KhrGetPhysicalDeviceProperties2(INativeContext ctx)
             : base(ctx)
         {

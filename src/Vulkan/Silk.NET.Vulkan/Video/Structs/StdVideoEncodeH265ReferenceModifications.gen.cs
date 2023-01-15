@@ -65,8 +65,8 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "referenceList0ModificationsCount")]
         public byte ReferenceList0ModificationsCount;
 
-        [NativeName("Type", "uint8_t *")]
-        [NativeName("Type.Name", "uint8_t *")]
+        [NativeName("Type", "const uint8_t *")]
+        [NativeName("Type.Name", "const uint8_t *")]
         [NativeName("Name", "pReferenceList0Modifications")]
         public byte* PReferenceList0Modifications;
 
@@ -75,8 +75,8 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "referenceList1ModificationsCount")]
         public byte ReferenceList1ModificationsCount;
 
-        [NativeName("Type", "uint8_t *")]
-        [NativeName("Type.Name", "uint8_t *")]
+        [NativeName("Type", "const uint8_t *")]
+        [NativeName("Type.Name", "const uint8_t *")]
         [NativeName("Name", "pReferenceList1Modifications")]
         public byte* PReferenceList1Modifications;
     }

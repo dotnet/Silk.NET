@@ -32,6 +32,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         [NativeApi(EntryPoint = "glObjectUnpurgeableAPPLE", Convention = CallingConvention.Winapi)]
         public partial APPLE ObjectUnpurgeable([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE option);
 
+        public unsafe int GetObjectParameter([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetObjectParameter(objectType, name, pname, out int silkRet);
+            return silkRet;
+        }
+
         public AppleObjectPurgeable(INativeContext ctx)
             : base(ctx)
         {

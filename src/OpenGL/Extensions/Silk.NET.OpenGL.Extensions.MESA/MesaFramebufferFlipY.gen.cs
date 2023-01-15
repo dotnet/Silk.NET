@@ -56,6 +56,34 @@ namespace Silk.NET.OpenGL.Extensions.MESA
         [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA", Convention = CallingConvention.Winapi)]
         public partial void GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
+        public unsafe int GetFramebufferParameter([Flow(FlowDirection.In)] MESA target, [Flow(FlowDirection.In)] MESA pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFramebufferParameter([Flow(FlowDirection.In)] MESA target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] MESA pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFramebufferParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
         public MesaFramebufferFlipY(INativeContext ctx)
             : base(ctx)
         {

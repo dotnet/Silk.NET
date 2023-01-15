@@ -13,6 +13,8 @@ namespace Silk.NET.XAudio
     [NativeName("Name", "XAUDIO2_FILTER_TYPE")]
     public enum FilterType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "LowPassFilter")]
         LowPassFilter = 0x0,
         [NativeName("Name", "BandPassFilter")]

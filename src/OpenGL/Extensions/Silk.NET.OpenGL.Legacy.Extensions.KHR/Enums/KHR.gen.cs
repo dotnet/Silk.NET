@@ -100,6 +100,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         Shader = 0x82E1,
         [NativeName("Name", "GL_PROGRAM")]
         Program = 0x82E2,
+        [System.Obsolete("Deprecated in version ")]
         [NativeName("Name", "GL_VERTEX_ARRAY")]
         VertexArray = 0x8074,
         [NativeName("Name", "GL_QUERY")]
@@ -126,8 +127,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         DebugOutput = 0x92E0,
         [NativeName("Name", "GL_CONTEXT_FLAG_DEBUG_BIT")]
         ContextFlagDebugBit = 0x2,
+        [System.Obsolete("Deprecated in version ")]
         [NativeName("Name", "GL_STACK_OVERFLOW")]
         StackOverflow = 0x503,
+        [System.Obsolete("Deprecated in version ")]
         [NativeName("Name", "GL_STACK_UNDERFLOW")]
         StackUnderflow = 0x504,
         [NativeName("Name", "GL_DISPLAY_LIST")]

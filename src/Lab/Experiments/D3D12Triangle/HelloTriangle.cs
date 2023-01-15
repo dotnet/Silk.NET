@@ -94,14 +94,14 @@ namespace D3D12Triangle
                 {
                     SemanticName = (byte*) semanticName0,
                     Format = Format.FormatR32G32B32Float,
-                    InputSlotClass = InputClassification.InputClassificationPerVertexData,
+                    InputSlotClass = InputClassification.PerVertexData,
                 },
                 new InputElementDesc
                 {
                     SemanticName = (byte*) semanticName1,
                     Format = Format.FormatR32G32B32A32Float,
                     AlignedByteOffset = 12,
-                    InputSlotClass = InputClassification.InputClassificationPerVertexData,
+                    InputSlotClass = InputClassification.PerVertexData,
                 },
             };
 
@@ -109,22 +109,22 @@ namespace D3D12Triangle
             {
                 BlendEnable = 0,
                 LogicOpEnable = 0,
-                SrcBlend = Blend.BlendOne,
-                DestBlend = Blend.BlendZero,
-                BlendOp = BlendOp.BlendOpAdd,
-                SrcBlendAlpha = Blend.BlendOne,
-                DestBlendAlpha = Blend.BlendZero,
-                BlendOpAlpha = BlendOp.BlendOpAdd,
-                LogicOp = LogicOp.LogicOpNoop,
-                RenderTargetWriteMask = (byte) ColorWriteEnable.ColorWriteEnableAll
+                SrcBlend = Blend.One,
+                DestBlend = Blend.Zero,
+                BlendOp = BlendOp.Add,
+                SrcBlendAlpha = Blend.One,
+                DestBlendAlpha = Blend.Zero,
+                BlendOpAlpha = BlendOp.Add,
+                LogicOp = LogicOp.Noop,
+                RenderTargetWriteMask = (byte) ColorWriteEnable.All
             };
 
             var defaultStencilOp = new DepthStencilopDesc
             {
-                StencilFailOp = StencilOp.StencilOpKeep,
-                StencilDepthFailOp = StencilOp.StencilOpKeep,
-                StencilPassOp = StencilOp.StencilOpKeep,
-                StencilFunc = ComparisonFunc.ComparisonFuncAlways
+                StencilFailOp = StencilOp.Keep,
+                StencilDepthFailOp = StencilOp.Keep,
+                StencilPassOp = StencilOp.Keep,
+                StencilFunc = ComparisonFunc.Always
             };
 
             // Describe and create the graphics pipeline state object (PSO).
@@ -140,8 +140,8 @@ namespace D3D12Triangle
                 PS = new ShaderBytecode(pixelShader.Get().GetBufferPointer(), pixelShader.Get().GetBufferSize()),
                 RasterizerState = new RasterizerDesc
                 {
-                    FillMode = FillMode.FillModeSolid,
-                    CullMode = CullMode.CullModeBack,
+                    FillMode = FillMode.Solid,
+                    CullMode = CullMode.Back,
                     FrontCounterClockwise = 0,
                     DepthBias = D3D12.DefaultDepthBias,
                     DepthBiasClamp = 0,
@@ -150,7 +150,7 @@ namespace D3D12Triangle
                     MultisampleEnable = 0,
                     AntialiasedLineEnable = 0,
                     ForcedSampleCount = 0,
-                    ConservativeRaster = ConservativeRasterizationMode.ConservativeRasterizationModeOff,
+                    ConservativeRaster = ConservativeRasterizationMode.Off,
                 },
                 BlendState = new BlendDesc
                 {
@@ -171,8 +171,8 @@ namespace D3D12Triangle
                 DepthStencilState = new DepthStencilDesc
                 {
                     DepthEnable = 1,
-                    DepthWriteMask = DepthWriteMask.DepthWriteMaskAll,
-                    DepthFunc = ComparisonFunc.ComparisonFuncLess,
+                    DepthWriteMask = DepthWriteMask.All,
+                    DepthFunc = ComparisonFunc.Less,
                     StencilEnable = 0,
                     StencilReadMask = D3D12.DefaultStencilReadMask,
                     StencilWriteMask = D3D12.DefaultStencilWriteMask,
@@ -180,7 +180,7 @@ namespace D3D12Triangle
                     BackFace = defaultStencilOp
                 },
                 SampleMask = uint.MaxValue,
-                PrimitiveTopologyType = PrimitiveTopologyType.PrimitiveTopologyTypeTriangle,
+                PrimitiveTopologyType = PrimitiveTopologyType.Triangle,
                 NumRenderTargets = 1,
                 SampleDesc = new SampleDesc(count: 1, quality: 0),
             };
@@ -202,14 +202,14 @@ namespace D3D12Triangle
 
             var rootSignatureDesc = new RootSignatureDesc
             {
-                Flags = RootSignatureFlags.RootSignatureFlagAllowInputAssemblerInputLayout
+                Flags = RootSignatureFlags.AllowInputAssemblerInputLayout
             };
 
             SilkMarshal.ThrowHResult
             (
                 D3D12.SerializeRootSignature
                 (
-                    &rootSignatureDesc, D3DRootSignatureVersion.D3DRootSignatureVersion1, signature.GetAddressOf(),
+                    &rootSignatureDesc, D3DRootSignatureVersion.Version1, signature.GetAddressOf(),
                     error.GetAddressOf()
                 )
             );
@@ -260,12 +260,12 @@ namespace D3D12Triangle
             // code simplicity and because there are very few verts to actually transfer.
             ID3D12Resource* vertexBuffer;
 
-            var heapProperties = new HeapProperties(HeapType.HeapTypeUpload);
+            var heapProperties = new HeapProperties(HeapType.Upload);
             var bufferDesc = new ResourceDesc
             (
-                ResourceDimension.ResourceDimensionBuffer, 0, vertexBufferSize, 1, 1, 1, Format.FormatUnknown,
+                ResourceDimension.Buffer, 0, vertexBufferSize, 1, 1, 1, Format.FormatUnknown,
                 new SampleDesc(1, 0),
-                TextureLayout.TextureLayoutRowMajor, ResourceFlags.ResourceFlagNone
+                TextureLayout.LayoutRowMajor, ResourceFlags.None
             );
 
             var iid = ID3D12Resource.Guid;
@@ -274,9 +274,9 @@ namespace D3D12Triangle
                 D3DDevice->CreateCommittedResource
                 (
                     &heapProperties,
-                    HeapFlags.HeapFlagNone,
+                    HeapFlags.None,
                     &bufferDesc,
-                    ResourceStates.ResourceStateGenericRead,
+                    ResourceStates.GenericRead,
                     pOptimizedClearValue: null,
                     &iid,
                     (void**) &vertexBuffer

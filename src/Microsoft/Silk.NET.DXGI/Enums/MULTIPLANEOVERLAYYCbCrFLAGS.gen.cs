@@ -13,11 +13,22 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS")]
     public enum MULTIPLANEOVERLAYYCbCrFLAGS : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"NominalRange\"")]
         [NativeName("Name", "DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAG_NOMINAL_RANGE")]
         MultiplaneOverlayYCbCrFlagNominalRange = 0x1,
+        [Obsolete("Deprecated in favour of \"BT709\"")]
         [NativeName("Name", "DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAG_BT709")]
         MultiplaneOverlayYCbCrFlagBT709 = 0x2,
+        [Obsolete("Deprecated in favour of \"XvYcc\"")]
         [NativeName("Name", "DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAG_xvYCC")]
         MultiplaneOverlayYCbCrFlagXvYcc = 0x4,
+        [NativeName("Name", "DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAG_NOMINAL_RANGE")]
+        NominalRange = 0x1,
+        [NativeName("Name", "DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAG_BT709")]
+        BT709 = 0x2,
+        [NativeName("Name", "DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAG_xvYCC")]
+        XvYcc = 0x4,
     }
 }

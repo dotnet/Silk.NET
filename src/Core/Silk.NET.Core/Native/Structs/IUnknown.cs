@@ -19,7 +19,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Native
 {
     [Guid("00000000-0000-0000-c000-000000000046")]
-    public unsafe partial struct IUnknown
+    public unsafe partial struct IUnknown : IComVtbl<IUnknown>
     {
         public void** LpVtbl;
         /// <summary>To be documented.</summary>
@@ -78,5 +78,7 @@ namespace Silk.NET.Core.Native
             var @this = (IUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             return ((delegate* unmanaged[Cdecl]<IUnknown*, uint>) LpVtbl[2])(@this);
         }
+
+        void*** IComVtbl.AsVtblPtr() => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
     }
 }

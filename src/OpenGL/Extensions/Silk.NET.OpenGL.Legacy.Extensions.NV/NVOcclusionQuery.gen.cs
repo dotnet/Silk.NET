@@ -92,6 +92,27 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             GenOcclusionQueries((uint) ids.Length, out ids.GetPinnableReference());
         }
 
+        public unsafe uint GenOcclusionQueries([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenOcclusionQueries(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetOcclusionQuery(id, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] OcclusionQueryParameterNameNV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetOcclusionQuery(id, pname, out int silkRet);
+            return silkRet;
+        }
+
         public NVOcclusionQuery(INativeContext ctx)
             : base(ctx)
         {

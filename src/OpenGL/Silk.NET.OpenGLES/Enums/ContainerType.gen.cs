@@ -12,9 +12,15 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "ContainerType")]
     public enum ContainerType : int
     {
+        [Obsolete("Deprecated in favour of \"Arb\"")]
         [NativeName("Name", "GL_PROGRAM_OBJECT_ARB")]
         ProgramObjectArb = 0x8B40,
+        [Obsolete("Deprecated in favour of \"Ext\"")]
         [NativeName("Name", "GL_PROGRAM_OBJECT_EXT")]
         ProgramObjectExt = 0x8B40,
+        [NativeName("Name", "GL_PROGRAM_OBJECT_ARB")]
+        Arb = 0x8B40,
+        [NativeName("Name", "GL_PROGRAM_OBJECT_EXT")]
+        Ext = 0x8B40,
     }
 }

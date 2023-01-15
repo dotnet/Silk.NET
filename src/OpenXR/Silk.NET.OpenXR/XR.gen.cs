@@ -65,9 +65,6 @@ namespace Silk.NET.OpenXR
         [NativeName("Name", "XR_MAX_SYSTEM_NAME_SIZE")]
         public const uint MaxSystemNameSize = unchecked((uint) 256);
         [NativeName("Type", "")]
-        [NativeName("Name", "XR_MIN_COMPOSITION_LAYERS_SUPPORTED")]
-        public const uint MinCompositionLayersSupported = unchecked((uint) 16);
-        [NativeName("Type", "")]
         [NativeName("Name", "XR_TRUE")]
         public const uint True = unchecked((uint) 1);
 

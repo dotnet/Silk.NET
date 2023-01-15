@@ -17,15 +17,16 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineCreationFeedbackCreateInfoEXT")]
+    [NativeName("AliasOf", "VkPipelineCreationFeedbackCreateInfo")]
     public unsafe partial struct PipelineCreationFeedbackCreateInfoEXT : IExtendsChain<GraphicsPipelineCreateInfo>, IExtendsChain<ComputePipelineCreateInfo>, IExtendsChain<RayTracingPipelineCreateInfoNV>, IExtendsChain<RayTracingPipelineCreateInfoKHR>
     {
         public PipelineCreationFeedbackCreateInfoEXT
         (
-            StructureType? sType = StructureType.PipelineCreationFeedbackCreateInfoExt,
+            StructureType? sType = StructureType.PipelineCreationFeedbackCreateInfo,
             void* pNext = null,
-            PipelineCreationFeedbackEXT* pPipelineCreationFeedback = null,
+            PipelineCreationFeedback* pPipelineCreationFeedback = null,
             uint? pipelineStageCreationFeedbackCount = null,
-            PipelineCreationFeedbackEXT* pPipelineStageCreationFeedbacks = null
+            PipelineCreationFeedback* pPipelineStageCreationFeedbacks = null
         ) : this()
         {
             if (sType is not null)
@@ -65,25 +66,25 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkPipelineCreationFeedbackEXT*")]
-        [NativeName("Type.Name", "VkPipelineCreationFeedbackEXT")]
+        [NativeName("Type", "VkPipelineCreationFeedback*")]
+        [NativeName("Type.Name", "VkPipelineCreationFeedback")]
         [NativeName("Name", "pPipelineCreationFeedback")]
-        public PipelineCreationFeedbackEXT* PPipelineCreationFeedback;
+        public PipelineCreationFeedback* PPipelineCreationFeedback;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "pipelineStageCreationFeedbackCount")]
         public uint PipelineStageCreationFeedbackCount;
 /// <summary></summary>
-        [NativeName("Type", "VkPipelineCreationFeedbackEXT*")]
-        [NativeName("Type.Name", "VkPipelineCreationFeedbackEXT")]
+        [NativeName("Type", "VkPipelineCreationFeedback*")]
+        [NativeName("Type.Name", "VkPipelineCreationFeedback")]
         [NativeName("Name", "pPipelineStageCreationFeedbacks")]
-        public PipelineCreationFeedbackEXT* PPipelineStageCreationFeedbacks;
+        public PipelineCreationFeedback* PPipelineStageCreationFeedbacks;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PipelineCreationFeedbackCreateInfoExt;
+            return SType = StructureType.PipelineCreationFeedbackCreateInfo;
         }
 
         /// <inheritdoc />

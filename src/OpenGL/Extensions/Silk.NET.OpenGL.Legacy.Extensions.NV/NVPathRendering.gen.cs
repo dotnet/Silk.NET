@@ -1736,6 +1736,335 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             WeightPath(resultPath, (uint) weights.Length, in paths.GetPinnableReference(), in weights.GetPinnableReference());
         }
 
+        public unsafe int GetPathColorGen([Flow(FlowDirection.In)] NV color, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathColorGen(color, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetPathColorGen([Flow(FlowDirection.In)] NV color, [Flow(FlowDirection.In)] PathGenMode pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathColorGen(color, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetPathColorGen([Flow(FlowDirection.In)] PathColor color, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathColorGen(color, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetPathColorGen([Flow(FlowDirection.In)] PathColor color, [Flow(FlowDirection.In)] PathGenMode pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathColorGen(color, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetPathCommands([Flow(FlowDirection.In)] uint path)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathCommands(path, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathCoords([Flow(FlowDirection.In)] uint path)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathCoords(path, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathDashArray([Flow(FlowDirection.In)] uint path)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathDashArray(path, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathMetric([Flow(FlowDirection.In)] uint metricQueryMask, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] uint stride)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathMetric(metricQueryMask, numPaths, pathNameType, paths, pathBase, stride, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathMetric<T0>([Flow(FlowDirection.In)] uint metricQueryMask, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] in T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathMetric(metricQueryMask, numPaths, pathNameType, in paths, pathBase, stride, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathMetric([Flow(FlowDirection.In)] uint metricQueryMask, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] uint stride)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathMetric(metricQueryMask, numPaths, pathNameType, paths, pathBase, stride, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathMetric<T0>([Flow(FlowDirection.In)] uint metricQueryMask, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] in T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathMetric(metricQueryMask, numPaths, pathNameType, in paths, pathBase, stride, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathMetric([Flow(FlowDirection.In)] PathMetricMask metricQueryMask, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] uint stride)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathMetric(metricQueryMask, numPaths, pathNameType, paths, pathBase, stride, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathMetric<T0>([Flow(FlowDirection.In)] PathMetricMask metricQueryMask, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] in T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathMetric(metricQueryMask, numPaths, pathNameType, in paths, pathBase, stride, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathMetric([Flow(FlowDirection.In)] PathMetricMask metricQueryMask, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] uint stride)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathMetric(metricQueryMask, numPaths, pathNameType, paths, pathBase, stride, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathMetric<T0>([Flow(FlowDirection.In)] PathMetricMask metricQueryMask, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] in T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathMetric(metricQueryMask, numPaths, pathNameType, in paths, pathBase, stride, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathMetricRange([Flow(FlowDirection.In)] uint metricQueryMask, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] uint stride)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathMetricRange(metricQueryMask, firstPathName, numPaths, stride, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathMetricRange([Flow(FlowDirection.In)] PathMetricMask metricQueryMask, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] uint stride)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathMetricRange(metricQueryMask, firstPathName, numPaths, stride, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetPathParameter([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathParameter(path, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetPathParameter([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] PathParameter pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathParameter(path, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathSpacing([Flow(FlowDirection.In)] NV pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] NV transformType)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathSpacing(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathSpacing<T0>([Flow(FlowDirection.In)] NV pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] in T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] NV transformType) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathSpacing(pathListMode, numPaths, pathNameType, in paths, pathBase, advanceScale, kerningScale, transformType, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathSpacing([Flow(FlowDirection.In)] NV pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] PathTransformType transformType)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathSpacing(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathSpacing<T0>([Flow(FlowDirection.In)] NV pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] in T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] PathTransformType transformType) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathSpacing(pathListMode, numPaths, pathNameType, in paths, pathBase, advanceScale, kerningScale, transformType, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathSpacing([Flow(FlowDirection.In)] NV pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] NV transformType)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathSpacing(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathSpacing<T0>([Flow(FlowDirection.In)] NV pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] in T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] NV transformType) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathSpacing(pathListMode, numPaths, pathNameType, in paths, pathBase, advanceScale, kerningScale, transformType, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathSpacing([Flow(FlowDirection.In)] NV pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] PathTransformType transformType)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathSpacing(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathSpacing<T0>([Flow(FlowDirection.In)] NV pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] in T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] PathTransformType transformType) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathSpacing(pathListMode, numPaths, pathNameType, in paths, pathBase, advanceScale, kerningScale, transformType, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathSpacing([Flow(FlowDirection.In)] PathListMode pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] NV transformType)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathSpacing(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathSpacing<T0>([Flow(FlowDirection.In)] PathListMode pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] in T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] NV transformType) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathSpacing(pathListMode, numPaths, pathNameType, in paths, pathBase, advanceScale, kerningScale, transformType, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathSpacing([Flow(FlowDirection.In)] PathListMode pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] PathTransformType transformType)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathSpacing(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathSpacing<T0>([Flow(FlowDirection.In)] PathListMode pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] in T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] PathTransformType transformType) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathSpacing(pathListMode, numPaths, pathNameType, in paths, pathBase, advanceScale, kerningScale, transformType, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathSpacing([Flow(FlowDirection.In)] PathListMode pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] NV transformType)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathSpacing(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathSpacing<T0>([Flow(FlowDirection.In)] PathListMode pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] in T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] NV transformType) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathSpacing(pathListMode, numPaths, pathNameType, in paths, pathBase, advanceScale, kerningScale, transformType, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathSpacing([Flow(FlowDirection.In)] PathListMode pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] PathTransformType transformType)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathSpacing(pathListMode, numPaths, pathNameType, paths, pathBase, advanceScale, kerningScale, transformType, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetPathSpacing<T0>([Flow(FlowDirection.In)] PathListMode pathListMode, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] in T0 paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] float advanceScale, [Flow(FlowDirection.In)] float kerningScale, [Flow(FlowDirection.In)] PathTransformType transformType) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathSpacing(pathListMode, numPaths, pathNameType, in paths, pathBase, advanceScale, kerningScale, transformType, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetPathTexGen([Flow(FlowDirection.In)] NV texCoordSet, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathTexGen(texCoordSet, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetPathTexGen([Flow(FlowDirection.In)] NV texCoordSet, [Flow(FlowDirection.In)] PathGenMode pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathTexGen(texCoordSet, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetPathTexGen([Flow(FlowDirection.In)] TextureUnit texCoordSet, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathTexGen(texCoordSet, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetPathTexGen([Flow(FlowDirection.In)] TextureUnit texCoordSet, [Flow(FlowDirection.In)] PathGenMode pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPathTexGen(texCoordSet, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] NV programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Flow(FlowDirection.In)] NV* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramResource(program, programInterface, index, propCount, props, count, length, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] NV programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Flow(FlowDirection.In)] NV* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramResource(program, programInterface, index, propCount, props, count, out length, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] NV programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Flow(FlowDirection.In)] in NV props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramResource(program, programInterface, index, propCount, in props, count, length, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] NV programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Flow(FlowDirection.In)] in NV props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramResource(program, programInterface, index, propCount, in props, count, out length, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Flow(FlowDirection.In)] NV* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramResource(program, programInterface, index, propCount, props, count, length, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Flow(FlowDirection.In)] NV* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramResource(program, programInterface, index, propCount, props, count, out length, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Flow(FlowDirection.In)] in NV props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramResource(program, programInterface, index, propCount, in props, count, length, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Flow(FlowDirection.In)] in NV props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramResource(program, programInterface, index, propCount, in props, count, out length, out float silkRet);
+            return silkRet;
+        }
+
         public NVPathRendering(INativeContext ctx)
             : base(ctx)
         {

@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.PipelineLayoutCreateInfo,
             void* pNext = null,
-            uint? flags = null,
+            PipelineLayoutCreateFlags? flags = null,
             uint? setLayoutCount = null,
             DescriptorSetLayout* pSetLayouts = null,
             uint? pushConstantRangeCount = null,
@@ -80,7 +80,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkPipelineLayoutCreateFlags")]
         [NativeName("Type.Name", "VkPipelineLayoutCreateFlags")]
         [NativeName("Name", "flags")]
-        public uint Flags;
+        public PipelineLayoutCreateFlags Flags;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]

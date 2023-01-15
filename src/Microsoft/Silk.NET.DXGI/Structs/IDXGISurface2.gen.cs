@@ -18,21 +18,24 @@ namespace Silk.NET.DXGI
 {
     [Guid("aba496dd-b617-4cb8-a866-bc44d7eb1fa2")]
     [NativeName("Name", "IDXGISurface2")]
-    public unsafe partial struct IDXGISurface2
+    public unsafe partial struct IDXGISurface2 : IComVtbl<IDXGISurface2>, IComVtbl<IDXGISurface1>, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<Silk.NET.DXGI.IDXGIDeviceSubObject>, IComVtbl<Silk.NET.DXGI.IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("aba496dd-b617-4cb8-a866-bc44d7eb1fa2");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator IDXGISurface1(IDXGISurface2 val)
             => Unsafe.As<IDXGISurface2, IDXGISurface1>(ref val);
 
-        public static implicit operator IDXGISurface(IDXGISurface2 val)
-            => Unsafe.As<IDXGISurface2, IDXGISurface>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGISurface(IDXGISurface2 val)
+            => Unsafe.As<IDXGISurface2, Silk.NET.DXGI.IDXGISurface>(ref val);
 
-        public static implicit operator IDXGIDeviceSubObject(IDXGISurface2 val)
-            => Unsafe.As<IDXGISurface2, IDXGIDeviceSubObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIDeviceSubObject(IDXGISurface2 val)
+            => Unsafe.As<IDXGISurface2, Silk.NET.DXGI.IDXGIDeviceSubObject>(ref val);
 
-        public static implicit operator IDXGIObject(IDXGISurface2 val)
-            => Unsafe.As<IDXGISurface2, IDXGIObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIObject(IDXGISurface2 val)
+            => Unsafe.As<IDXGISurface2, Silk.NET.DXGI.IDXGIObject>(ref val);
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGISurface2 val)
             => Unsafe.As<IDXGISurface2, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -58,18 +61,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -80,18 +72,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -103,18 +84,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -128,18 +98,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -150,7 +109,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -159,78 +118,45 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(Guid* Name, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(Guid* Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pData);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pData);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pData);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint, void*, int>)@this->LpVtbl[3])(@this, Name, DataSize, pData);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pDataPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pDataPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pDataPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint, void*, int>)@this->LpVtbl[3])(@this, Name, DataSize, pDataPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(ref Guid Name, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* NamePtr = &Name)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pData);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pData);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pData);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint, void*, int>)@this->LpVtbl[3])(@this, NamePtr, DataSize, pData);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -238,18 +164,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (void* pDataPtr = &pData)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pDataPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pDataPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pDataPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint, void*, int>)@this->LpVtbl[3])(@this, NamePtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -260,18 +175,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[4])(@this, Name, pUnknown);
             return ret;
         }
 
@@ -282,18 +186,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[4])(@this, Name, pUnknownPtr);
             }
             return ret;
         }
@@ -305,18 +198,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* NamePtr = &Name)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[4])(@this, NamePtr, pUnknown);
             }
             return ret;
         }
@@ -330,18 +212,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknownPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[4])(@this, NamePtr, pUnknownPtr);
                 }
             }
             return ret;
@@ -352,18 +223,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pData);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pData);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pData);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSize, pData);
             return ret;
         }
 
@@ -374,18 +234,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
             }
             return ret;
         }
@@ -397,18 +246,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pData);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pData);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pData);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSizePtr, pData);
             }
             return ret;
         }
@@ -422,18 +260,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (void* pDataPtr = &pData)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, Name, pDataSizePtr, pDataPtr);
                 }
             }
             return ret;
@@ -446,18 +273,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* NamePtr = &Name)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pData);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pData);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pData);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSize, pData);
             }
             return ret;
         }
@@ -471,18 +287,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (void* pDataPtr = &pData)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSize, pDataPtr);
                 }
             }
             return ret;
@@ -497,18 +302,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSizePtr, pData);
                 }
             }
             return ret;
@@ -525,18 +319,7 @@ namespace Silk.NET.DXGI
                 {
                     fixed (void* pDataPtr = &pData)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, uint*, void*, int>)@this->LpVtbl[5])(@this, NamePtr, pDataSizePtr, pDataPtr);
                     }
                 }
             }
@@ -548,18 +331,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParent);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParent);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParent);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)@this->LpVtbl[6])(@this, riid, ppParent);
             return ret;
         }
 
@@ -570,18 +342,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (void** ppParentPtr = &ppParent)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParentPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParentPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParentPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)@this->LpVtbl[6])(@this, riid, ppParentPtr);
             }
             return ret;
         }
@@ -593,18 +354,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParent);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParent);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParent);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)@this->LpVtbl[6])(@this, riidPtr, ppParent);
             }
             return ret;
         }
@@ -618,18 +368,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (void** ppParentPtr = &ppParent)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParentPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParentPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParentPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)@this->LpVtbl[6])(@this, riidPtr, ppParentPtr);
                 }
             }
             return ret;
@@ -640,18 +379,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppDevice);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppDevice);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppDevice);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riid, ppDevice);
             return ret;
         }
 
@@ -662,18 +390,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (void** ppDevicePtr = &ppDevice)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppDevicePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppDevicePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppDevicePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riid, ppDevicePtr);
             }
             return ret;
         }
@@ -685,18 +402,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppDevice);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppDevice);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppDevice);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riidPtr, ppDevice);
             }
             return ret;
         }
@@ -710,18 +416,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (void** ppDevicePtr = &ppDevice)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppDevicePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppDevicePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppDevicePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riidPtr, ppDevicePtr);
                 }
             }
             return ret;
@@ -732,18 +427,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXGISurface2*, SurfaceDesc*, int>)LpVtbl[8])(@this, pDesc);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, SurfaceDesc*, int>)LpVtbl[8])(@this, pDesc);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, SurfaceDesc*, int>)LpVtbl[8])(@this, pDesc);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, SurfaceDesc*, int>)@this->LpVtbl[8])(@this, pDesc);
             return ret;
         }
 
@@ -754,18 +438,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (SurfaceDesc* pDescPtr = &pDesc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, SurfaceDesc*, int>)LpVtbl[8])(@this, pDescPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, SurfaceDesc*, int>)LpVtbl[8])(@this, pDescPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, SurfaceDesc*, int>)LpVtbl[8])(@this, pDescPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, SurfaceDesc*, int>)@this->LpVtbl[8])(@this, pDescPtr);
             }
             return ret;
         }
@@ -775,18 +448,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXGISurface2*, MappedRect*, uint, int>)LpVtbl[9])(@this, pLockedRect, MapFlags);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, MappedRect*, uint, int>)LpVtbl[9])(@this, pLockedRect, MapFlags);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, MappedRect*, uint, int>)LpVtbl[9])(@this, pLockedRect, MapFlags);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, MappedRect*, uint, int>)@this->LpVtbl[9])(@this, pLockedRect, MapFlags);
             return ret;
         }
 
@@ -797,18 +459,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (MappedRect* pLockedRectPtr = &pLockedRect)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, MappedRect*, uint, int>)LpVtbl[9])(@this, pLockedRectPtr, MapFlags);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, MappedRect*, uint, int>)LpVtbl[9])(@this, pLockedRectPtr, MapFlags);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, MappedRect*, uint, int>)LpVtbl[9])(@this, pLockedRectPtr, MapFlags);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, MappedRect*, uint, int>)@this->LpVtbl[9])(@this, pLockedRectPtr, MapFlags);
             }
             return ret;
         }
@@ -818,92 +469,48 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, int>)LpVtbl[10])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, int>)@this->LpVtbl[10])(@this);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDC(int Discard, nint* phdc)
+        public readonly unsafe int GetDC(Silk.NET.Core.Bool32 Discard, nint* phdc)
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXGISurface2*, int, nint*, int>)LpVtbl[11])(@this, Discard, phdc);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, int, nint*, int>)LpVtbl[11])(@this, Discard, phdc);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, int, nint*, int>)LpVtbl[11])(@this, Discard, phdc);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Silk.NET.Core.Bool32, nint*, int>)@this->LpVtbl[11])(@this, Discard, phdc);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetDC(int Discard, ref nint phdc)
+        public readonly int GetDC(Silk.NET.Core.Bool32 Discard, ref nint phdc)
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (nint* phdcPtr = &phdc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, int, nint*, int>)LpVtbl[11])(@this, Discard, phdcPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, int, nint*, int>)LpVtbl[11])(@this, Discard, phdcPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, int, nint*, int>)LpVtbl[11])(@this, Discard, phdcPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Silk.NET.Core.Bool32, nint*, int>)@this->LpVtbl[11])(@this, Discard, phdcPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ReleaseDC(Silk.NET.Maths.Rectangle<int>* pDirtyRect)
+        public readonly unsafe int ReleaseDC(Silk.NET.Maths.Box2D<int>* pDirtyRect)
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXGISurface2*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[12])(@this, pDirtyRect);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[12])(@this, pDirtyRect);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[12])(@this, pDirtyRect);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[12])(@this, pDirtyRect);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ReleaseDC(ref Silk.NET.Maths.Rectangle<int> pDirtyRect)
+        public readonly int ReleaseDC(ref Silk.NET.Maths.Box2D<int> pDirtyRect)
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* pDirtyRectPtr = &pDirtyRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pDirtyRectPtr = &pDirtyRect)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[12])(@this, pDirtyRectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[12])(@this, pDirtyRectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[12])(@this, pDirtyRectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[12])(@this, pDirtyRectPtr);
             }
             return ret;
         }
@@ -913,18 +520,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riid, ppParentResource, pSubresourceIndex);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riid, ppParentResource, pSubresourceIndex);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riid, ppParentResource, pSubresourceIndex);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, uint*, int>)@this->LpVtbl[13])(@this, riid, ppParentResource, pSubresourceIndex);
             return ret;
         }
 
@@ -935,18 +531,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (uint* pSubresourceIndexPtr = &pSubresourceIndex)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riid, ppParentResource, pSubresourceIndexPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riid, ppParentResource, pSubresourceIndexPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riid, ppParentResource, pSubresourceIndexPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, uint*, int>)@this->LpVtbl[13])(@this, riid, ppParentResource, pSubresourceIndexPtr);
             }
             return ret;
         }
@@ -958,18 +543,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (void** ppParentResourcePtr = &ppParentResource)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riid, ppParentResourcePtr, pSubresourceIndex);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riid, ppParentResourcePtr, pSubresourceIndex);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riid, ppParentResourcePtr, pSubresourceIndex);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, uint*, int>)@this->LpVtbl[13])(@this, riid, ppParentResourcePtr, pSubresourceIndex);
             }
             return ret;
         }
@@ -983,18 +557,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (uint* pSubresourceIndexPtr = &pSubresourceIndex)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riid, ppParentResourcePtr, pSubresourceIndexPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riid, ppParentResourcePtr, pSubresourceIndexPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riid, ppParentResourcePtr, pSubresourceIndexPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, uint*, int>)@this->LpVtbl[13])(@this, riid, ppParentResourcePtr, pSubresourceIndexPtr);
                 }
             }
             return ret;
@@ -1007,18 +570,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riidPtr, ppParentResource, pSubresourceIndex);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riidPtr, ppParentResource, pSubresourceIndex);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riidPtr, ppParentResource, pSubresourceIndex);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, uint*, int>)@this->LpVtbl[13])(@this, riidPtr, ppParentResource, pSubresourceIndex);
             }
             return ret;
         }
@@ -1032,18 +584,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (uint* pSubresourceIndexPtr = &pSubresourceIndex)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riidPtr, ppParentResource, pSubresourceIndexPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riidPtr, ppParentResource, pSubresourceIndexPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riidPtr, ppParentResource, pSubresourceIndexPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, uint*, int>)@this->LpVtbl[13])(@this, riidPtr, ppParentResource, pSubresourceIndexPtr);
                 }
             }
             return ret;
@@ -1058,18 +599,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (void** ppParentResourcePtr = &ppParentResource)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riidPtr, ppParentResourcePtr, pSubresourceIndex);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riidPtr, ppParentResourcePtr, pSubresourceIndex);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riidPtr, ppParentResourcePtr, pSubresourceIndex);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, uint*, int>)@this->LpVtbl[13])(@this, riidPtr, ppParentResourcePtr, pSubresourceIndex);
                 }
             }
             return ret;
@@ -1086,22 +616,97 @@ namespace Silk.NET.DXGI
                 {
                     fixed (uint* pSubresourceIndexPtr = &pSubresourceIndex)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riidPtr, ppParentResourcePtr, pSubresourceIndexPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riidPtr, ppParentResourcePtr, pSubresourceIndexPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<IDXGISurface2*, Guid*, void**, uint*, int>)LpVtbl[13])(@this, riidPtr, ppParentResourcePtr, pSubresourceIndexPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<IDXGISurface2*, Guid*, void**, uint*, int>)@this->LpVtbl[13])(@this, riidPtr, ppParentResourcePtr, pSubresourceIndexPtr);
                     }
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* Name, [Flow(FlowDirection.In)] ComPtr<TI0> pUnknown) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(Name, (Silk.NET.Core.Native.IUnknown*) pUnknown.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetPrivateDataInterface<TI0>(ref Guid Name, [Flow(FlowDirection.In)] ComPtr<TI0> pUnknown) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(ref Name, (Silk.NET.Core.Native.IUnknown*) pUnknown.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetParent<TI0>(out ComPtr<TI0> ppParent) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppParent = default;
+            return @this->GetParent(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppParent.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDevice<TI0>(out ComPtr<TI0> ppDevice) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppDevice = default;
+            return @this->GetDevice(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppDevice.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int GetResource<TI0>(ref ComPtr<TI0> ppParentResource, uint* pSubresourceIndex) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetResource(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppParentResource.GetAddressOf(), pSubresourceIndex);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetResource<TI0>(ref ComPtr<TI0> ppParentResource, ref uint pSubresourceIndex) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetResource(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppParentResource.GetAddressOf(), ref pSubresourceIndex);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> GetParent<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->GetParent(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> GetDevice<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGISurface2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->GetDevice(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

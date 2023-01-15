@@ -21,10 +21,10 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D9Options1
         (
-            int? fullNonPow2TextureSupported = null,
-            int? depthAsTextureWithLessEqualComparisonFilterSupported = null,
-            int? simpleInstancingSupported = null,
-            int? textureCubeFaceRenderTargetWithNonCubeDepthStencilSupported = null
+            Silk.NET.Core.Bool32? fullNonPow2TextureSupported = null,
+            Silk.NET.Core.Bool32? depthAsTextureWithLessEqualComparisonFilterSupported = null,
+            Silk.NET.Core.Bool32? simpleInstancingSupported = null,
+            Silk.NET.Core.Bool32? textureCubeFaceRenderTargetWithNonCubeDepthStencilSupported = null
         ) : this()
         {
             if (fullNonPow2TextureSupported is not null)
@@ -52,21 +52,21 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "FullNonPow2TextureSupported")]
-        public int FullNonPow2TextureSupported;
+        public Silk.NET.Core.Bool32 FullNonPow2TextureSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DepthAsTextureWithLessEqualComparisonFilterSupported")]
-        public int DepthAsTextureWithLessEqualComparisonFilterSupported;
+        public Silk.NET.Core.Bool32 DepthAsTextureWithLessEqualComparisonFilterSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "SimpleInstancingSupported")]
-        public int SimpleInstancingSupported;
+        public Silk.NET.Core.Bool32 SimpleInstancingSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported")]
-        public int TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported;
+        public Silk.NET.Core.Bool32 TextureCubeFaceRenderTargetWithNonCubeDepthStencilSupported;
     }
 }

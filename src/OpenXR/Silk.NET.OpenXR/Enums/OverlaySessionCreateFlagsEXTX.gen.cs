@@ -13,5 +13,7 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrOverlaySessionCreateFlagsEXTX")]
     public enum OverlaySessionCreateFlagsEXTX : long
     {
+        [NativeName("Name", "")]
+        None = 0,
     }
 }

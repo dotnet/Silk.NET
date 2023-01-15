@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D11
 {
     [Guid("79cf2233-7536-4948-9d36-1e4692dc5760")]
     [NativeName("Name", "ID3D11Debug")]
-    public unsafe partial struct ID3D11Debug
+    public unsafe partial struct ID3D11Debug : IComVtbl<ID3D11Debug>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("79cf2233-7536-4948-9d36-1e4692dc5760");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11Debug val)
             => Unsafe.As<ID3D11Debug, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,18 +49,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11Debug*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Debug*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -68,18 +60,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11Debug*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Debug*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -91,18 +72,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11Debug*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Debug*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -116,18 +86,7 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D11Debug*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Debug*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -138,7 +97,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -147,7 +106,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -156,18 +115,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11Debug*, uint, int>)LpVtbl[3])(@this, Mask);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, uint, int>)LpVtbl[3])(@this, Mask);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Debug*, uint, int>)LpVtbl[3])(@this, Mask);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, uint, int>)@this->LpVtbl[3])(@this, Mask);
             return ret;
         }
 
@@ -176,7 +124,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, uint>)LpVtbl[4])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, uint>)@this->LpVtbl[4])(@this);
             return ret;
         }
 
@@ -185,18 +133,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11Debug*, uint, int>)LpVtbl[5])(@this, Milliseconds);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, uint, int>)LpVtbl[5])(@this, Milliseconds);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Debug*, uint, int>)LpVtbl[5])(@this, Milliseconds);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, uint, int>)@this->LpVtbl[5])(@this, Milliseconds);
             return ret;
         }
 
@@ -205,7 +142,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, uint>)LpVtbl[6])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, uint>)@this->LpVtbl[6])(@this);
             return ret;
         }
 
@@ -214,18 +151,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11Debug*, Silk.NET.DXGI.IDXGISwapChain*, int>)LpVtbl[7])(@this, pSwapChain);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, Silk.NET.DXGI.IDXGISwapChain*, int>)LpVtbl[7])(@this, pSwapChain);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Debug*, Silk.NET.DXGI.IDXGISwapChain*, int>)LpVtbl[7])(@this, pSwapChain);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, Silk.NET.DXGI.IDXGISwapChain*, int>)@this->LpVtbl[7])(@this, pSwapChain);
             return ret;
         }
 
@@ -236,18 +162,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Silk.NET.DXGI.IDXGISwapChain* pSwapChainPtr = &pSwapChain)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11Debug*, Silk.NET.DXGI.IDXGISwapChain*, int>)LpVtbl[7])(@this, pSwapChainPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, Silk.NET.DXGI.IDXGISwapChain*, int>)LpVtbl[7])(@this, pSwapChainPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Debug*, Silk.NET.DXGI.IDXGISwapChain*, int>)LpVtbl[7])(@this, pSwapChainPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, Silk.NET.DXGI.IDXGISwapChain*, int>)@this->LpVtbl[7])(@this, pSwapChainPtr);
             }
             return ret;
         }
@@ -257,18 +172,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11Debug*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[8])(@this, ppSwapChain);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[8])(@this, ppSwapChain);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Debug*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[8])(@this, ppSwapChain);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, Silk.NET.DXGI.IDXGISwapChain**, int>)@this->LpVtbl[8])(@this, ppSwapChain);
             return ret;
         }
 
@@ -279,18 +183,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (Silk.NET.DXGI.IDXGISwapChain** ppSwapChainPtr = &ppSwapChain)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11Debug*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[8])(@this, ppSwapChainPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[8])(@this, ppSwapChainPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Debug*, Silk.NET.DXGI.IDXGISwapChain**, int>)LpVtbl[8])(@this, ppSwapChainPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, Silk.NET.DXGI.IDXGISwapChain**, int>)@this->LpVtbl[8])(@this, ppSwapChainPtr);
             }
             return ret;
         }
@@ -300,18 +193,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11Debug*, ID3D11DeviceContext*, int>)LpVtbl[9])(@this, pContext);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, ID3D11DeviceContext*, int>)LpVtbl[9])(@this, pContext);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Debug*, ID3D11DeviceContext*, int>)LpVtbl[9])(@this, pContext);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, ID3D11DeviceContext*, int>)@this->LpVtbl[9])(@this, pContext);
             return ret;
         }
 
@@ -322,18 +204,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11DeviceContext* pContextPtr = &pContext)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11Debug*, ID3D11DeviceContext*, int>)LpVtbl[9])(@this, pContextPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, ID3D11DeviceContext*, int>)LpVtbl[9])(@this, pContextPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Debug*, ID3D11DeviceContext*, int>)LpVtbl[9])(@this, pContextPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, ID3D11DeviceContext*, int>)@this->LpVtbl[9])(@this, pContextPtr);
             }
             return ret;
         }
@@ -343,18 +214,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11Debug*, RldoFlags, int>)LpVtbl[10])(@this, Flags);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, RldoFlags, int>)LpVtbl[10])(@this, Flags);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Debug*, RldoFlags, int>)LpVtbl[10])(@this, Flags);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, RldoFlags, int>)@this->LpVtbl[10])(@this, Flags);
             return ret;
         }
 
@@ -363,18 +223,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11Debug*, ID3D11DeviceContext*, int>)LpVtbl[11])(@this, pContext);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, ID3D11DeviceContext*, int>)LpVtbl[11])(@this, pContext);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Debug*, ID3D11DeviceContext*, int>)LpVtbl[11])(@this, pContext);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, ID3D11DeviceContext*, int>)@this->LpVtbl[11])(@this, pContext);
             return ret;
         }
 
@@ -385,20 +234,59 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ID3D11DeviceContext* pContextPtr = &pContext)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11Debug*, ID3D11DeviceContext*, int>)LpVtbl[11])(@this, pContextPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, ID3D11DeviceContext*, int>)LpVtbl[11])(@this, pContextPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Debug*, ID3D11DeviceContext*, int>)LpVtbl[11])(@this, pContextPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11Debug*, ID3D11DeviceContext*, int>)@this->LpVtbl[11])(@this, pContextPtr);
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetSwapChain<TI0>(ComPtr<TI0> pSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetSwapChain((Silk.NET.DXGI.IDXGISwapChain*) pSwapChain.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetSwapChain<TI0>(ref ComPtr<TI0> ppSwapChain) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetSwapChain((Silk.NET.DXGI.IDXGISwapChain**) ppSwapChain.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ValidateContext<TI0>(ComPtr<TI0> pContext) where TI0 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ValidateContext((ID3D11DeviceContext*) pContext.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int ValidateContextForDispatch<TI0>(ComPtr<TI0> pContext) where TI0 : unmanaged, IComVtbl<ID3D11DeviceContext>, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->ValidateContextForDispatch((ID3D11DeviceContext*) pContext.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

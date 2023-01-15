@@ -28,10 +28,13 @@ partial class Build
         "specified, but if you don't want to run a build just use \"nuke sln --projects ...\" to run a dummy target."
     )]
     readonly string[] Projects;
+    
+    [Parameter("If specified, ignores any generated solution present and builds the entire project.", Name = "All")]
+    readonly bool BuildAll;
 
     Solution GeneratedSolution;
 
-    Solution Solution => GeneratedSolution ?? (File.Exists(RootDirectory / "Silk.NET.gen.sln")
+    Solution Solution => GeneratedSolution ?? (File.Exists(RootDirectory / "Silk.NET.gen.sln") && !BuildAll
         ? ParseSolution(RootDirectory / "Silk.NET.gen.sln")
         : OriginalSolution);
 

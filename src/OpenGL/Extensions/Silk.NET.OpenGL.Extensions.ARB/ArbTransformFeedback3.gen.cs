@@ -62,6 +62,34 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         [NativeApi(EntryPoint = "glGetQueryIndexediv", Convention = CallingConvention.Winapi)]
         public partial void GetQueryIndexed([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
+        public unsafe int GetQueryIndexed([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQueryIndexed(target, index, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetQueryIndexed([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] QueryParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQueryIndexed(target, index, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetQueryIndexed([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQueryIndexed(target, index, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetQueryIndexed([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] QueryParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQueryIndexed(target, index, pname, out int silkRet);
+            return silkRet;
+        }
+
         public ArbTransformFeedback3(INativeContext ctx)
             : base(ctx)
         {

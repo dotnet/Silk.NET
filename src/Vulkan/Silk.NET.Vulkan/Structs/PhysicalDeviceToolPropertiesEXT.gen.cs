@@ -17,13 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceToolPropertiesEXT")]
+    [NativeName("AliasOf", "VkPhysicalDeviceToolProperties")]
     public unsafe partial struct PhysicalDeviceToolPropertiesEXT : IChainable
     {
         public PhysicalDeviceToolPropertiesEXT
         (
-            StructureType? sType = StructureType.PhysicalDeviceToolPropertiesExt,
+            StructureType? sType = StructureType.PhysicalDeviceToolProperties,
             void* pNext = null,
-            ToolPurposeFlagsEXT? purposes = null
+            ToolPurposeFlags? purposes = null
         ) : this()
         {
             if (sType is not null)
@@ -63,10 +64,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "version")]
         public fixed byte Version[256];
 /// <summary></summary>
-        [NativeName("Type", "VkToolPurposeFlagsEXT")]
-        [NativeName("Type.Name", "VkToolPurposeFlagsEXT")]
+        [NativeName("Type", "VkToolPurposeFlags")]
+        [NativeName("Type.Name", "VkToolPurposeFlags")]
         [NativeName("Name", "purposes")]
-        public ToolPurposeFlagsEXT Purposes;
+        public ToolPurposeFlags Purposes;
         /// <summary></summary>
         [NativeName("Type", "char")]
         [NativeName("Type.Name", "char")]
@@ -81,7 +82,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.PhysicalDeviceToolPropertiesExt;
+            return SType = StructureType.PhysicalDeviceToolProperties;
         }
 
         /// <inheritdoc />

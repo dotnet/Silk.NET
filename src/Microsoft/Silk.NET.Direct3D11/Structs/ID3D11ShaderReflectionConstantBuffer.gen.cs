@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D11
 {
     [Guid("eb62d63d-93dd-4318-8ae8-c6f83ad371b8")]
     [NativeName("Name", "ID3D11ShaderReflectionConstantBuffer")]
-    public unsafe partial struct ID3D11ShaderReflectionConstantBuffer
+    public unsafe partial struct ID3D11ShaderReflectionConstantBuffer : IComVtbl<ID3D11ShaderReflectionConstantBuffer>
     {
         public static readonly Guid Guid = new("eb62d63d-93dd-4318-8ae8-c6f83ad371b8");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public ID3D11ShaderReflectionConstantBuffer
         (
@@ -43,18 +46,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11ShaderReflectionConstantBuffer*, ShaderBufferDesc*, int>)LpVtbl[0])(@this, pDesc);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionConstantBuffer*, ShaderBufferDesc*, int>)LpVtbl[0])(@this, pDesc);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflectionConstantBuffer*, ShaderBufferDesc*, int>)LpVtbl[0])(@this, pDesc);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionConstantBuffer*, ShaderBufferDesc*, int>)@this->LpVtbl[0])(@this, pDesc);
             return ret;
         }
 
@@ -65,18 +57,7 @@ namespace Silk.NET.Direct3D11
             int ret = default;
             fixed (ShaderBufferDesc* pDescPtr = &pDesc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11ShaderReflectionConstantBuffer*, ShaderBufferDesc*, int>)LpVtbl[0])(@this, pDescPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionConstantBuffer*, ShaderBufferDesc*, int>)LpVtbl[0])(@this, pDescPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflectionConstantBuffer*, ShaderBufferDesc*, int>)LpVtbl[0])(@this, pDescPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionConstantBuffer*, ShaderBufferDesc*, int>)@this->LpVtbl[0])(@this, pDescPtr);
             }
             return ret;
         }
@@ -86,82 +67,38 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ID3D11ShaderReflectionVariable* ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11ShaderReflectionConstantBuffer*, uint, ID3D11ShaderReflectionVariable*>)LpVtbl[1])(@this, Index);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionConstantBuffer*, uint, ID3D11ShaderReflectionVariable*>)LpVtbl[1])(@this, Index);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflectionConstantBuffer*, uint, ID3D11ShaderReflectionVariable*>)LpVtbl[1])(@this, Index);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionConstantBuffer*, uint, ID3D11ShaderReflectionVariable*>)@this->LpVtbl[1])(@this, Index);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ID3D11ShaderReflectionVariable* GetVariableByName(byte* Name)
+        public readonly unsafe ID3D11ShaderReflectionVariable* GetVariableByName([Flow(FlowDirection.In)] byte* Name)
         {
             var @this = (ID3D11ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ID3D11ShaderReflectionVariable* ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11ShaderReflectionConstantBuffer*, byte*, ID3D11ShaderReflectionVariable*>)LpVtbl[2])(@this, Name);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionConstantBuffer*, byte*, ID3D11ShaderReflectionVariable*>)LpVtbl[2])(@this, Name);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflectionConstantBuffer*, byte*, ID3D11ShaderReflectionVariable*>)LpVtbl[2])(@this, Name);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionConstantBuffer*, byte*, ID3D11ShaderReflectionVariable*>)@this->LpVtbl[2])(@this, Name);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ID3D11ShaderReflectionVariable* GetVariableByName(ref byte Name)
+        public readonly unsafe ID3D11ShaderReflectionVariable* GetVariableByName([Flow(FlowDirection.In)] in byte Name)
         {
             var @this = (ID3D11ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ID3D11ShaderReflectionVariable* ret = default;
             fixed (byte* NamePtr = &Name)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D11ShaderReflectionConstantBuffer*, byte*, ID3D11ShaderReflectionVariable*>)LpVtbl[2])(@this, NamePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionConstantBuffer*, byte*, ID3D11ShaderReflectionVariable*>)LpVtbl[2])(@this, NamePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflectionConstantBuffer*, byte*, ID3D11ShaderReflectionVariable*>)LpVtbl[2])(@this, NamePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionConstantBuffer*, byte*, ID3D11ShaderReflectionVariable*>)@this->LpVtbl[2])(@this, NamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe ID3D11ShaderReflectionVariable* GetVariableByName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name)
+        public readonly unsafe ID3D11ShaderReflectionVariable* GetVariableByName([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name)
         {
             var @this = (ID3D11ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ID3D11ShaderReflectionVariable* ret = default;
             var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPStr);
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D11ShaderReflectionConstantBuffer*, byte*, ID3D11ShaderReflectionVariable*>)LpVtbl[2])(@this, NamePtr);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionConstantBuffer*, byte*, ID3D11ShaderReflectionVariable*>)LpVtbl[2])(@this, NamePtr);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderReflectionConstantBuffer*, byte*, ID3D11ShaderReflectionVariable*>)LpVtbl[2])(@this, NamePtr);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderReflectionConstantBuffer*, byte*, ID3D11ShaderReflectionVariable*>)@this->LpVtbl[2])(@this, NamePtr);
             SilkMarshal.Free((nint)NamePtr);
             return ret;
         }

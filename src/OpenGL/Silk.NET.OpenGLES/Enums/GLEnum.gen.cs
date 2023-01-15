@@ -150,6 +150,7 @@ namespace Silk.NET.OpenGLES
         Ccw = 0x901,
         [NativeName("Name", "GL_LINE_WIDTH")]
         LineWidth = 0xB21,
+        [System.Obsolete("Deprecated in version 2.0")]
         [NativeName("Name", "GL_ALIASED_POINT_SIZE_RANGE")]
         AliasedPointSizeRange = 0x846D,
         [NativeName("Name", "GL_ALIASED_LINE_WIDTH_RANGE")]
@@ -214,16 +215,22 @@ namespace Silk.NET.OpenGLES
         MaxViewportDims = 0xD3A,
         [NativeName("Name", "GL_SUBPIXEL_BITS")]
         SubpixelBits = 0xD50,
+        [System.Obsolete("Deprecated in version 2.0")]
         [NativeName("Name", "GL_RED_BITS")]
         RedBits = 0xD52,
+        [System.Obsolete("Deprecated in version 2.0")]
         [NativeName("Name", "GL_GREEN_BITS")]
         GreenBits = 0xD53,
+        [System.Obsolete("Deprecated in version 2.0")]
         [NativeName("Name", "GL_BLUE_BITS")]
         BlueBits = 0xD54,
+        [System.Obsolete("Deprecated in version 2.0")]
         [NativeName("Name", "GL_ALPHA_BITS")]
         AlphaBits = 0xD55,
+        [System.Obsolete("Deprecated in version 2.0")]
         [NativeName("Name", "GL_DEPTH_BITS")]
         DepthBits = 0xD56,
+        [System.Obsolete("Deprecated in version 2.0")]
         [NativeName("Name", "GL_STENCIL_BITS")]
         StencilBits = 0xD57,
         [NativeName("Name", "GL_POLYGON_OFFSET_UNITS")]
@@ -250,6 +257,7 @@ namespace Silk.NET.OpenGLES
         Fastest = 0x1101,
         [NativeName("Name", "GL_NICEST")]
         Nicest = 0x1102,
+        [System.Obsolete("Deprecated in version 2.0")]
         [NativeName("Name", "GL_GENERATE_MIPMAP_HINT")]
         GenerateMipmapHint = 0x8192,
         [NativeName("Name", "GL_BYTE")]
@@ -276,8 +284,10 @@ namespace Silk.NET.OpenGLES
         Rgb = 0x1907,
         [NativeName("Name", "GL_RGBA")]
         Rgba = 0x1908,
+        [System.Obsolete("Deprecated in version 2.0")]
         [NativeName("Name", "GL_LUMINANCE")]
         Luminance = 0x1909,
+        [System.Obsolete("Deprecated in version 2.0")]
         [NativeName("Name", "GL_LUMINANCE_ALPHA")]
         LuminanceAlpha = 0x190A,
         [NativeName("Name", "GL_UNSIGNED_SHORT_4_4_4_4")]

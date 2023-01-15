@@ -66,7 +66,9 @@ namespace Silk.NET.Core.Win32Extras
         TracePmcCounterOwners = 0x19,
         [NativeName("Name", "TraceUnifiedStackCachingInfo")]
         TraceUnifiedStackCachingInfo = 0x1A,
+        [NativeName("Name", "TracePmcSessionInformation")]
+        TracePmcSessionInformation = 0x1B,
         [NativeName("Name", "MaxTraceSetInfoClass")]
-        MaxTraceSetInfoClass = 0x1B,
+        MaxTraceSetInfoClass = 0x1C,
     }
 }

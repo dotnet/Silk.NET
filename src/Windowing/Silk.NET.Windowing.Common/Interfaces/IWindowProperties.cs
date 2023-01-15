@@ -55,6 +55,11 @@ namespace Silk.NET.Windowing
         /// Whether or not the window's framebuffer should be transparent.
         /// </summary>
         bool TransparentFramebuffer { get; }
+        
+        /// <summary>
+        /// Whether or not the window will be on the top of all the other windows.
+        /// </summary>
+        bool TopMost { get; set; }
 
         /// <summary>
         /// The context with which this window's context's resources are shared.

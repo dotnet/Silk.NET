@@ -14,7 +14,7 @@ namespace Silk.NET.Vulkan;
 /// Base class for all <see cref="Chain{T}">Managed Chains</see>.
 /// </summary>
 public abstract unsafe partial class Chain : IReadOnlyList<IChainable>, IEquatable<Chain>, IDisposable
-{
+{ 
     /// <summary>
     /// Gets a pointer to the current head.
     /// </summary>

@@ -17,8 +17,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.XAudio
 {
     [NativeName("Name", "IXAudio2Voice")]
-    public unsafe partial struct IXAudio2Voice
+    public unsafe partial struct IXAudio2Voice : IComVtbl<IXAudio2Voice>
     {
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+
         public IXAudio2Voice
         (
             void** lpVtbl = null
@@ -39,18 +42,7 @@ namespace Silk.NET.XAudio
         public readonly unsafe void GetVoiceDetails(VoiceDetails* pVoiceDetails)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<IXAudio2Voice*, VoiceDetails*, void>)LpVtbl[0])(@this, pVoiceDetails);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, VoiceDetails*, void>)LpVtbl[0])(@this, pVoiceDetails);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, VoiceDetails*, void>)LpVtbl[0])(@this, pVoiceDetails);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, VoiceDetails*, void>)@this->LpVtbl[0])(@this, pVoiceDetails);
         }
 
         /// <summary>To be documented.</summary>
@@ -59,103 +51,48 @@ namespace Silk.NET.XAudio
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (VoiceDetails* pVoiceDetailsPtr = &pVoiceDetails)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<IXAudio2Voice*, VoiceDetails*, void>)LpVtbl[0])(@this, pVoiceDetailsPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, VoiceDetails*, void>)LpVtbl[0])(@this, pVoiceDetailsPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, VoiceDetails*, void>)LpVtbl[0])(@this, pVoiceDetailsPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, VoiceDetails*, void>)@this->LpVtbl[0])(@this, pVoiceDetailsPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputVoices(VoiceSends* pSendList)
+        public readonly unsafe int SetOutputVoices([Flow(FlowDirection.In)] VoiceSends* pSendList)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IXAudio2Voice*, VoiceSends*, int>)LpVtbl[1])(@this, pSendList);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, VoiceSends*, int>)LpVtbl[1])(@this, pSendList);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, VoiceSends*, int>)LpVtbl[1])(@this, pSendList);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, VoiceSends*, int>)@this->LpVtbl[1])(@this, pSendList);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetOutputVoices(ref VoiceSends pSendList)
+        public readonly int SetOutputVoices([Flow(FlowDirection.In)] in VoiceSends pSendList)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (VoiceSends* pSendListPtr = &pSendList)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IXAudio2Voice*, VoiceSends*, int>)LpVtbl[1])(@this, pSendListPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, VoiceSends*, int>)LpVtbl[1])(@this, pSendListPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, VoiceSends*, int>)LpVtbl[1])(@this, pSendListPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, VoiceSends*, int>)@this->LpVtbl[1])(@this, pSendListPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetEffectChain(EffectChain* pEffectChain)
+        public readonly unsafe int SetEffectChain([Flow(FlowDirection.In)] EffectChain* pEffectChain)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IXAudio2Voice*, EffectChain*, int>)LpVtbl[2])(@this, pEffectChain);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, EffectChain*, int>)LpVtbl[2])(@this, pEffectChain);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, EffectChain*, int>)LpVtbl[2])(@this, pEffectChain);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, EffectChain*, int>)@this->LpVtbl[2])(@this, pEffectChain);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetEffectChain(ref EffectChain pEffectChain)
+        public readonly int SetEffectChain([Flow(FlowDirection.In)] in EffectChain pEffectChain)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (EffectChain* pEffectChainPtr = &pEffectChain)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IXAudio2Voice*, EffectChain*, int>)LpVtbl[2])(@this, pEffectChainPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, EffectChain*, int>)LpVtbl[2])(@this, pEffectChainPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, EffectChain*, int>)LpVtbl[2])(@this, pEffectChainPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, EffectChain*, int>)@this->LpVtbl[2])(@this, pEffectChainPtr);
             }
             return ret;
         }
@@ -165,18 +102,7 @@ namespace Silk.NET.XAudio
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IXAudio2Voice*, uint, uint, int>)LpVtbl[3])(@this, EffectIndex, OperationSet);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, uint, int>)LpVtbl[3])(@this, EffectIndex, OperationSet);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, uint, int>)LpVtbl[3])(@this, EffectIndex, OperationSet);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, uint, int>)@this->LpVtbl[3])(@this, EffectIndex, OperationSet);
             return ret;
         }
 
@@ -185,18 +111,7 @@ namespace Silk.NET.XAudio
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IXAudio2Voice*, uint, uint, int>)LpVtbl[4])(@this, EffectIndex, OperationSet);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, uint, int>)LpVtbl[4])(@this, EffectIndex, OperationSet);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, uint, int>)LpVtbl[4])(@this, EffectIndex, OperationSet);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, uint, int>)@this->LpVtbl[4])(@this, EffectIndex, OperationSet);
             return ret;
         }
 
@@ -204,18 +119,7 @@ namespace Silk.NET.XAudio
         public readonly unsafe void GetEffectState(uint EffectIndex, int* pEnabled)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<IXAudio2Voice*, uint, int*, void>)LpVtbl[5])(@this, EffectIndex, pEnabled);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, int*, void>)LpVtbl[5])(@this, EffectIndex, pEnabled);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, int*, void>)LpVtbl[5])(@this, EffectIndex, pEnabled);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, int*, void>)@this->LpVtbl[5])(@this, EffectIndex, pEnabled);
         }
 
         /// <summary>To be documented.</summary>
@@ -224,60 +128,27 @@ namespace Silk.NET.XAudio
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (int* pEnabledPtr = &pEnabled)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<IXAudio2Voice*, uint, int*, void>)LpVtbl[5])(@this, EffectIndex, pEnabledPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, int*, void>)LpVtbl[5])(@this, EffectIndex, pEnabledPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, int*, void>)LpVtbl[5])(@this, EffectIndex, pEnabledPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, int*, void>)@this->LpVtbl[5])(@this, EffectIndex, pEnabledPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetEffectParameters(uint EffectIndex, void* pParameters, uint ParametersByteSize, uint OperationSet)
+        public readonly unsafe int SetEffectParameters(uint EffectIndex, [Flow(FlowDirection.In)] void* pParameters, uint ParametersByteSize, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IXAudio2Voice*, uint, void*, uint, uint, int>)LpVtbl[6])(@this, EffectIndex, pParameters, ParametersByteSize, OperationSet);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, void*, uint, uint, int>)LpVtbl[6])(@this, EffectIndex, pParameters, ParametersByteSize, OperationSet);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, void*, uint, uint, int>)LpVtbl[6])(@this, EffectIndex, pParameters, ParametersByteSize, OperationSet);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, void*, uint, uint, int>)@this->LpVtbl[6])(@this, EffectIndex, pParameters, ParametersByteSize, OperationSet);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetEffectParameters<T0>(uint EffectIndex, ref T0 pParameters, uint ParametersByteSize, uint OperationSet) where T0 : unmanaged
+        public readonly int SetEffectParameters<T0>(uint EffectIndex, [Flow(FlowDirection.In)] in T0 pParameters, uint ParametersByteSize, uint OperationSet) where T0 : unmanaged
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* pParametersPtr = &pParameters)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IXAudio2Voice*, uint, void*, uint, uint, int>)LpVtbl[6])(@this, EffectIndex, pParametersPtr, ParametersByteSize, OperationSet);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, void*, uint, uint, int>)LpVtbl[6])(@this, EffectIndex, pParametersPtr, ParametersByteSize, OperationSet);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, void*, uint, uint, int>)LpVtbl[6])(@this, EffectIndex, pParametersPtr, ParametersByteSize, OperationSet);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, void*, uint, uint, int>)@this->LpVtbl[6])(@this, EffectIndex, pParametersPtr, ParametersByteSize, OperationSet);
             }
             return ret;
         }
@@ -287,18 +158,7 @@ namespace Silk.NET.XAudio
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IXAudio2Voice*, uint, void*, uint, int>)LpVtbl[7])(@this, EffectIndex, pParameters, ParametersByteSize);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, void*, uint, int>)LpVtbl[7])(@this, EffectIndex, pParameters, ParametersByteSize);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, void*, uint, int>)LpVtbl[7])(@this, EffectIndex, pParameters, ParametersByteSize);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, void*, uint, int>)@this->LpVtbl[7])(@this, EffectIndex, pParameters, ParametersByteSize);
             return ret;
         }
 
@@ -309,61 +169,28 @@ namespace Silk.NET.XAudio
             int ret = default;
             fixed (void* pParametersPtr = &pParameters)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IXAudio2Voice*, uint, void*, uint, int>)LpVtbl[7])(@this, EffectIndex, pParametersPtr, ParametersByteSize);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, void*, uint, int>)LpVtbl[7])(@this, EffectIndex, pParametersPtr, ParametersByteSize);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, void*, uint, int>)LpVtbl[7])(@this, EffectIndex, pParametersPtr, ParametersByteSize);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, void*, uint, int>)@this->LpVtbl[7])(@this, EffectIndex, pParametersPtr, ParametersByteSize);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetFilterParameters(FilterParameters* pParameters, uint OperationSet)
+        public readonly unsafe int SetFilterParameters([Flow(FlowDirection.In)] FilterParameters* pParameters, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[8])(@this, pParameters, OperationSet);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[8])(@this, pParameters, OperationSet);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[8])(@this, pParameters, OperationSet);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, FilterParameters*, uint, int>)@this->LpVtbl[8])(@this, pParameters, OperationSet);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetFilterParameters(ref FilterParameters pParameters, uint OperationSet)
+        public readonly int SetFilterParameters([Flow(FlowDirection.In)] in FilterParameters pParameters, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (FilterParameters* pParametersPtr = &pParameters)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[8])(@this, pParametersPtr, OperationSet);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[8])(@this, pParametersPtr, OperationSet);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[8])(@this, pParametersPtr, OperationSet);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, FilterParameters*, uint, int>)@this->LpVtbl[8])(@this, pParametersPtr, OperationSet);
             }
             return ret;
         }
@@ -372,18 +199,7 @@ namespace Silk.NET.XAudio
         public readonly unsafe void GetFilterParameters(FilterParameters* pParameters)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<IXAudio2Voice*, FilterParameters*, void>)LpVtbl[9])(@this, pParameters);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, FilterParameters*, void>)LpVtbl[9])(@this, pParameters);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, FilterParameters*, void>)LpVtbl[9])(@this, pParameters);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, FilterParameters*, void>)@this->LpVtbl[9])(@this, pParameters);
         }
 
         /// <summary>To be documented.</summary>
@@ -392,89 +208,45 @@ namespace Silk.NET.XAudio
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (FilterParameters* pParametersPtr = &pParameters)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<IXAudio2Voice*, FilterParameters*, void>)LpVtbl[9])(@this, pParametersPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, FilterParameters*, void>)LpVtbl[9])(@this, pParametersPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, FilterParameters*, void>)LpVtbl[9])(@this, pParametersPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, FilterParameters*, void>)@this->LpVtbl[9])(@this, pParametersPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, FilterParameters* pParameters, uint OperationSet)
+        public readonly unsafe int SetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, [Flow(FlowDirection.In)] FilterParameters* pParameters, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[10])(@this, pDestinationVoice, pParameters, OperationSet);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[10])(@this, pDestinationVoice, pParameters, OperationSet);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[10])(@this, pDestinationVoice, pParameters, OperationSet);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, uint, int>)@this->LpVtbl[10])(@this, pDestinationVoice, pParameters, OperationSet);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, ref FilterParameters pParameters, uint OperationSet)
+        public readonly unsafe int SetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, [Flow(FlowDirection.In)] in FilterParameters pParameters, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (FilterParameters* pParametersPtr = &pParameters)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[10])(@this, pDestinationVoice, pParametersPtr, OperationSet);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[10])(@this, pDestinationVoice, pParametersPtr, OperationSet);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[10])(@this, pDestinationVoice, pParametersPtr, OperationSet);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, uint, int>)@this->LpVtbl[10])(@this, pDestinationVoice, pParametersPtr, OperationSet);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputFilterParameters(ref IXAudio2Voice pDestinationVoice, FilterParameters* pParameters, uint OperationSet)
+        public readonly unsafe int SetOutputFilterParameters(ref IXAudio2Voice pDestinationVoice, [Flow(FlowDirection.In)] FilterParameters* pParameters, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IXAudio2Voice* pDestinationVoicePtr = &pDestinationVoice)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[10])(@this, pDestinationVoicePtr, pParameters, OperationSet);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[10])(@this, pDestinationVoicePtr, pParameters, OperationSet);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[10])(@this, pDestinationVoicePtr, pParameters, OperationSet);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, uint, int>)@this->LpVtbl[10])(@this, pDestinationVoicePtr, pParameters, OperationSet);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetOutputFilterParameters(ref IXAudio2Voice pDestinationVoice, ref FilterParameters pParameters, uint OperationSet)
+        public readonly int SetOutputFilterParameters(ref IXAudio2Voice pDestinationVoice, [Flow(FlowDirection.In)] in FilterParameters pParameters, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -482,18 +254,7 @@ namespace Silk.NET.XAudio
             {
                 fixed (FilterParameters* pParametersPtr = &pParameters)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[10])(@this, pDestinationVoicePtr, pParametersPtr, OperationSet);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[10])(@this, pDestinationVoicePtr, pParametersPtr, OperationSet);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[10])(@this, pDestinationVoicePtr, pParametersPtr, OperationSet);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, uint, int>)@this->LpVtbl[10])(@this, pDestinationVoicePtr, pParametersPtr, OperationSet);
                 }
             }
             return ret;
@@ -503,18 +264,7 @@ namespace Silk.NET.XAudio
         public readonly unsafe void GetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, FilterParameters* pParameters)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, void>)LpVtbl[11])(@this, pDestinationVoice, pParameters);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, void>)LpVtbl[11])(@this, pDestinationVoice, pParameters);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, void>)LpVtbl[11])(@this, pDestinationVoice, pParameters);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, void>)@this->LpVtbl[11])(@this, pDestinationVoice, pParameters);
         }
 
         /// <summary>To be documented.</summary>
@@ -523,18 +273,7 @@ namespace Silk.NET.XAudio
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (FilterParameters* pParametersPtr = &pParameters)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, void>)LpVtbl[11])(@this, pDestinationVoice, pParametersPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, void>)LpVtbl[11])(@this, pDestinationVoice, pParametersPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, void>)LpVtbl[11])(@this, pDestinationVoice, pParametersPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, void>)@this->LpVtbl[11])(@this, pDestinationVoice, pParametersPtr);
             }
         }
 
@@ -544,18 +283,7 @@ namespace Silk.NET.XAudio
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (IXAudio2Voice* pDestinationVoicePtr = &pDestinationVoice)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, void>)LpVtbl[11])(@this, pDestinationVoicePtr, pParameters);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, void>)LpVtbl[11])(@this, pDestinationVoicePtr, pParameters);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, void>)LpVtbl[11])(@this, pDestinationVoicePtr, pParameters);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, void>)@this->LpVtbl[11])(@this, pDestinationVoicePtr, pParameters);
             }
         }
 
@@ -567,18 +295,7 @@ namespace Silk.NET.XAudio
             {
                 fixed (FilterParameters* pParametersPtr = &pParameters)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, void>)LpVtbl[11])(@this, pDestinationVoicePtr, pParametersPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, void>)LpVtbl[11])(@this, pDestinationVoicePtr, pParametersPtr);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, void>)LpVtbl[11])(@this, pDestinationVoicePtr, pParametersPtr);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, void>)@this->LpVtbl[11])(@this, pDestinationVoicePtr, pParametersPtr);
                 }
             }
         }
@@ -588,18 +305,7 @@ namespace Silk.NET.XAudio
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IXAudio2Voice*, float, uint, int>)LpVtbl[12])(@this, Volume, OperationSet);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, float, uint, int>)LpVtbl[12])(@this, Volume, OperationSet);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, float, uint, int>)LpVtbl[12])(@this, Volume, OperationSet);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, float, uint, int>)@this->LpVtbl[12])(@this, Volume, OperationSet);
             return ret;
         }
 
@@ -607,18 +313,7 @@ namespace Silk.NET.XAudio
         public readonly unsafe void GetVolume(float* pVolume)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<IXAudio2Voice*, float*, void>)LpVtbl[13])(@this, pVolume);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, float*, void>)LpVtbl[13])(@this, pVolume);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, float*, void>)LpVtbl[13])(@this, pVolume);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, float*, void>)@this->LpVtbl[13])(@this, pVolume);
         }
 
         /// <summary>To be documented.</summary>
@@ -627,60 +322,27 @@ namespace Silk.NET.XAudio
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* pVolumePtr = &pVolume)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<IXAudio2Voice*, float*, void>)LpVtbl[13])(@this, pVolumePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, float*, void>)LpVtbl[13])(@this, pVolumePtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, float*, void>)LpVtbl[13])(@this, pVolumePtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, float*, void>)@this->LpVtbl[13])(@this, pVolumePtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetChannelVolumes(uint Channels, float* pVolumes, uint OperationSet)
+        public readonly unsafe int SetChannelVolumes(uint Channels, [Flow(FlowDirection.In)] float* pVolumes, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IXAudio2Voice*, uint, float*, uint, int>)LpVtbl[14])(@this, Channels, pVolumes, OperationSet);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, float*, uint, int>)LpVtbl[14])(@this, Channels, pVolumes, OperationSet);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, float*, uint, int>)LpVtbl[14])(@this, Channels, pVolumes, OperationSet);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, float*, uint, int>)@this->LpVtbl[14])(@this, Channels, pVolumes, OperationSet);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetChannelVolumes(uint Channels, ref float pVolumes, uint OperationSet)
+        public readonly int SetChannelVolumes(uint Channels, [Flow(FlowDirection.In)] in float pVolumes, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (float* pVolumesPtr = &pVolumes)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IXAudio2Voice*, uint, float*, uint, int>)LpVtbl[14])(@this, Channels, pVolumesPtr, OperationSet);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, float*, uint, int>)LpVtbl[14])(@this, Channels, pVolumesPtr, OperationSet);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, float*, uint, int>)LpVtbl[14])(@this, Channels, pVolumesPtr, OperationSet);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, float*, uint, int>)@this->LpVtbl[14])(@this, Channels, pVolumesPtr, OperationSet);
             }
             return ret;
         }
@@ -689,18 +351,7 @@ namespace Silk.NET.XAudio
         public readonly unsafe void GetChannelVolumes(uint Channels, float* pVolumes)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<IXAudio2Voice*, uint, float*, void>)LpVtbl[15])(@this, Channels, pVolumes);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, float*, void>)LpVtbl[15])(@this, Channels, pVolumes);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, float*, void>)LpVtbl[15])(@this, Channels, pVolumes);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, float*, void>)@this->LpVtbl[15])(@this, Channels, pVolumes);
         }
 
         /// <summary>To be documented.</summary>
@@ -709,89 +360,45 @@ namespace Silk.NET.XAudio
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* pVolumesPtr = &pVolumes)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<IXAudio2Voice*, uint, float*, void>)LpVtbl[15])(@this, Channels, pVolumesPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, float*, void>)LpVtbl[15])(@this, Channels, pVolumesPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, float*, void>)LpVtbl[15])(@this, Channels, pVolumesPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, uint, float*, void>)@this->LpVtbl[15])(@this, Channels, pVolumesPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputMatrix(IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, float* pLevelMatrix, uint OperationSet)
+        public readonly unsafe int SetOutputMatrix(IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] float* pLevelMatrix, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, uint, int>)LpVtbl[16])(@this, pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrix, OperationSet);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, uint, int>)LpVtbl[16])(@this, pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrix, OperationSet);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, uint, int>)LpVtbl[16])(@this, pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrix, OperationSet);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, uint, int>)@this->LpVtbl[16])(@this, pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrix, OperationSet);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputMatrix(IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, ref float pLevelMatrix, uint OperationSet)
+        public readonly unsafe int SetOutputMatrix(IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] in float pLevelMatrix, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (float* pLevelMatrixPtr = &pLevelMatrix)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, uint, int>)LpVtbl[16])(@this, pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrixPtr, OperationSet);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, uint, int>)LpVtbl[16])(@this, pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrixPtr, OperationSet);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, uint, int>)LpVtbl[16])(@this, pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrixPtr, OperationSet);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, uint, int>)@this->LpVtbl[16])(@this, pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrixPtr, OperationSet);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetOutputMatrix(ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, float* pLevelMatrix, uint OperationSet)
+        public readonly unsafe int SetOutputMatrix(ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] float* pLevelMatrix, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IXAudio2Voice* pDestinationVoicePtr = &pDestinationVoice)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, uint, int>)LpVtbl[16])(@this, pDestinationVoicePtr, SourceChannels, DestinationChannels, pLevelMatrix, OperationSet);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, uint, int>)LpVtbl[16])(@this, pDestinationVoicePtr, SourceChannels, DestinationChannels, pLevelMatrix, OperationSet);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, uint, int>)LpVtbl[16])(@this, pDestinationVoicePtr, SourceChannels, DestinationChannels, pLevelMatrix, OperationSet);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, uint, int>)@this->LpVtbl[16])(@this, pDestinationVoicePtr, SourceChannels, DestinationChannels, pLevelMatrix, OperationSet);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetOutputMatrix(ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, ref float pLevelMatrix, uint OperationSet)
+        public readonly int SetOutputMatrix(ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] in float pLevelMatrix, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -799,18 +406,7 @@ namespace Silk.NET.XAudio
             {
                 fixed (float* pLevelMatrixPtr = &pLevelMatrix)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, uint, int>)LpVtbl[16])(@this, pDestinationVoicePtr, SourceChannels, DestinationChannels, pLevelMatrixPtr, OperationSet);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, uint, int>)LpVtbl[16])(@this, pDestinationVoicePtr, SourceChannels, DestinationChannels, pLevelMatrixPtr, OperationSet);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, uint, int>)LpVtbl[16])(@this, pDestinationVoicePtr, SourceChannels, DestinationChannels, pLevelMatrixPtr, OperationSet);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, uint, int>)@this->LpVtbl[16])(@this, pDestinationVoicePtr, SourceChannels, DestinationChannels, pLevelMatrixPtr, OperationSet);
                 }
             }
             return ret;
@@ -820,18 +416,7 @@ namespace Silk.NET.XAudio
         public readonly unsafe void GetOutputMatrix(IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, float* pLevelMatrix)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, void>)LpVtbl[17])(@this, pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrix);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, void>)LpVtbl[17])(@this, pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrix);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, void>)LpVtbl[17])(@this, pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrix);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, void>)@this->LpVtbl[17])(@this, pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrix);
         }
 
         /// <summary>To be documented.</summary>
@@ -840,18 +425,7 @@ namespace Silk.NET.XAudio
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* pLevelMatrixPtr = &pLevelMatrix)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, void>)LpVtbl[17])(@this, pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrixPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, void>)LpVtbl[17])(@this, pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrixPtr);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, void>)LpVtbl[17])(@this, pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrixPtr);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, void>)@this->LpVtbl[17])(@this, pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrixPtr);
             }
         }
 
@@ -861,18 +435,7 @@ namespace Silk.NET.XAudio
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (IXAudio2Voice* pDestinationVoicePtr = &pDestinationVoice)
             {
-            #if NET5_0_OR_GREATER
-                ((delegate* unmanaged<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, void>)LpVtbl[17])(@this, pDestinationVoicePtr, SourceChannels, DestinationChannels, pLevelMatrix);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, void>)LpVtbl[17])(@this, pDestinationVoicePtr, SourceChannels, DestinationChannels, pLevelMatrix);
-                }
-                else
-                {
-                    ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, void>)LpVtbl[17])(@this, pDestinationVoicePtr, SourceChannels, DestinationChannels, pLevelMatrix);
-                }
-            #endif
+                ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, void>)@this->LpVtbl[17])(@this, pDestinationVoicePtr, SourceChannels, DestinationChannels, pLevelMatrix);
             }
         }
 
@@ -884,18 +447,7 @@ namespace Silk.NET.XAudio
             {
                 fixed (float* pLevelMatrixPtr = &pLevelMatrix)
                 {
-            #if NET5_0_OR_GREATER
-                    ((delegate* unmanaged<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, void>)LpVtbl[17])(@this, pDestinationVoicePtr, SourceChannels, DestinationChannels, pLevelMatrixPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, void>)LpVtbl[17])(@this, pDestinationVoicePtr, SourceChannels, DestinationChannels, pLevelMatrixPtr);
-                    }
-                    else
-                    {
-                        ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, void>)LpVtbl[17])(@this, pDestinationVoicePtr, SourceChannels, DestinationChannels, pLevelMatrixPtr);
-                    }
-            #endif
+                    ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, void>)@this->LpVtbl[17])(@this, pDestinationVoicePtr, SourceChannels, DestinationChannels, pLevelMatrixPtr);
                 }
             }
         }
@@ -904,7 +456,71 @@ namespace Silk.NET.XAudio
         public readonly void DestroyVoice()
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, void>)LpVtbl[18])(@this);
+            ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, void>)@this->LpVtbl[18])(@this);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetOutputFilterParameters<TI0>(ComPtr<TI0> pDestinationVoice, [Flow(FlowDirection.In)] FilterParameters* pParameters, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
+        {
+            var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetOutputFilterParameters((IXAudio2Voice*) pDestinationVoice.Handle, pParameters, OperationSet);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetOutputFilterParameters<TI0>(ComPtr<TI0> pDestinationVoice, [Flow(FlowDirection.In)] in FilterParameters pParameters, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
+        {
+            var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetOutputFilterParameters((IXAudio2Voice*) pDestinationVoice.Handle, in pParameters, OperationSet);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetOutputFilterParameters<TI0>(ComPtr<TI0> pDestinationVoice, FilterParameters* pParameters) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
+        {
+            var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetOutputFilterParameters((IXAudio2Voice*) pDestinationVoice.Handle, pParameters);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetOutputFilterParameters<TI0>(ComPtr<TI0> pDestinationVoice, ref FilterParameters pParameters) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
+        {
+            var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetOutputFilterParameters((IXAudio2Voice*) pDestinationVoice.Handle, ref pParameters);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetOutputMatrix<TI0>(ComPtr<TI0> pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] float* pLevelMatrix, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
+        {
+            var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetOutputMatrix((IXAudio2Voice*) pDestinationVoice.Handle, SourceChannels, DestinationChannels, pLevelMatrix, OperationSet);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetOutputMatrix<TI0>(ComPtr<TI0> pDestinationVoice, uint SourceChannels, uint DestinationChannels, [Flow(FlowDirection.In)] in float pLevelMatrix, uint OperationSet) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
+        {
+            var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetOutputMatrix((IXAudio2Voice*) pDestinationVoice.Handle, SourceChannels, DestinationChannels, in pLevelMatrix, OperationSet);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe void GetOutputMatrix<TI0>(ComPtr<TI0> pDestinationVoice, uint SourceChannels, uint DestinationChannels, float* pLevelMatrix) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
+        {
+            var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetOutputMatrix((IXAudio2Voice*) pDestinationVoice.Handle, SourceChannels, DestinationChannels, pLevelMatrix);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void GetOutputMatrix<TI0>(ComPtr<TI0> pDestinationVoice, uint SourceChannels, uint DestinationChannels, ref float pLevelMatrix) where TI0 : unmanaged, IComVtbl<IXAudio2Voice>, IComVtbl<TI0>
+        {
+            var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            @this->GetOutputMatrix((IXAudio2Voice*) pDestinationVoice.Handle, SourceChannels, DestinationChannels, ref pLevelMatrix);
         }
 
     }

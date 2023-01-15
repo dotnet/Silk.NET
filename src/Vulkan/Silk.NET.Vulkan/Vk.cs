@@ -47,6 +47,7 @@ namespace Silk.NET.Vulkan
         public static Version32 Version10 => new Version32(1, 0, 0);
         public static Version32 Version11 => new Version32(1, 1, 0);
         public static Version32 Version12 => new Version32(1, 2, 0);
+        public static Version32 Version13 => new Version32(1, 3, 0);
 
         public static Version32 MakeVersion
             (uint major, uint minor, uint patch = 0) => new Version32(major, minor, patch);

@@ -26,7 +26,7 @@ namespace Silk.NET.Windowing
 
         private static bool _initializedFirstPartyPlatforms = false;
 
-        internal static string DefaultWindowClass { get; }
+        public static string DefaultWindowClass { get; }
 
         private static string PlatformsStr
         {
@@ -49,11 +49,18 @@ namespace Silk.NET.Windowing
 
         static Window()
         {
-            var defaultWindowClassName = Process.GetCurrentProcess().MainModule?.ModuleName;
-            if (defaultWindowClassName is not null)
+            try
             {
-                DefaultWindowClass = Path.GetFileNameWithoutExtension(defaultWindowClassName);
-                return;
+                var defaultWindowClassName = Process.GetCurrentProcess().MainModule?.ModuleName;
+                if (defaultWindowClassName is not null)
+                {
+                    DefaultWindowClass = Path.GetFileNameWithoutExtension(defaultWindowClassName);
+                    return;
+                }
+            }
+            catch
+            {
+                // System.Diagnostics.Process is not supported on the WASI-SDK
             }
 
             DefaultWindowClass = Assembly.GetEntryAssembly()?.GetName()?.Name ?? FallbackWindowClass;

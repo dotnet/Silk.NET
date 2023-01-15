@@ -13,6 +13,8 @@ namespace Silk.NET.DXVA
     [NativeName("Name", "_DXVA_DestinationFlags")]
     public enum DestinationFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "DXVA_DestinationFlagMask")]
         DestinationFlagMask = 0xF,
         [NativeName("Name", "DXVA_DestinationFlag_Background_Changed")]

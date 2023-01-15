@@ -23,16 +23,15 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoEncodeInfoKhr,
             void* pNext = null,
-            VideoEncodeFlagsKHR? flags = null,
+            uint? flags = null,
             uint? qualityLevel = null,
-            Extent2D? codedExtent = null,
             Buffer? dstBitstreamBuffer = null,
             ulong? dstBitstreamBufferOffset = null,
             ulong? dstBitstreamBufferMaxRange = null,
-            VideoPictureResourceKHR? srcPictureResource = null,
-            VideoReferenceSlotKHR* pSetupReferenceSlot = null,
+            VideoPictureResourceInfoKHR? srcPictureResource = null,
+            VideoReferenceSlotInfoKHR* pSetupReferenceSlot = null,
             uint? referenceSlotCount = null,
-            VideoReferenceSlotKHR* pReferenceSlots = null,
+            VideoReferenceSlotInfoKHR* pReferenceSlots = null,
             uint? precedingExternallyEncodedBytes = null
         ) : this()
         {
@@ -54,11 +53,6 @@ namespace Silk.NET.Vulkan
             if (qualityLevel is not null)
             {
                 QualityLevel = qualityLevel.Value;
-            }
-
-            if (codedExtent is not null)
-            {
-                CodedExtent = codedExtent.Value;
             }
 
             if (dstBitstreamBuffer is not null)
@@ -116,17 +110,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkVideoEncodeFlagsKHR")]
         [NativeName("Type.Name", "VkVideoEncodeFlagsKHR")]
         [NativeName("Name", "flags")]
-        public VideoEncodeFlagsKHR Flags;
+        public uint Flags;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "qualityLevel")]
         public uint QualityLevel;
-/// <summary></summary>
-        [NativeName("Type", "VkExtent2D")]
-        [NativeName("Type.Name", "VkExtent2D")]
-        [NativeName("Name", "codedExtent")]
-        public Extent2D CodedExtent;
 /// <summary></summary>
         [NativeName("Type", "VkBuffer")]
         [NativeName("Type.Name", "VkBuffer")]
@@ -143,25 +132,25 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "dstBitstreamBufferMaxRange")]
         public ulong DstBitstreamBufferMaxRange;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoPictureResourceKHR")]
-        [NativeName("Type.Name", "VkVideoPictureResourceKHR")]
+        [NativeName("Type", "VkVideoPictureResourceInfoKHR")]
+        [NativeName("Type.Name", "VkVideoPictureResourceInfoKHR")]
         [NativeName("Name", "srcPictureResource")]
-        public VideoPictureResourceKHR SrcPictureResource;
+        public VideoPictureResourceInfoKHR SrcPictureResource;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoReferenceSlotKHR*")]
-        [NativeName("Type.Name", "VkVideoReferenceSlotKHR")]
+        [NativeName("Type", "VkVideoReferenceSlotInfoKHR*")]
+        [NativeName("Type.Name", "VkVideoReferenceSlotInfoKHR")]
         [NativeName("Name", "pSetupReferenceSlot")]
-        public VideoReferenceSlotKHR* PSetupReferenceSlot;
+        public VideoReferenceSlotInfoKHR* PSetupReferenceSlot;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "referenceSlotCount")]
         public uint ReferenceSlotCount;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoReferenceSlotKHR*")]
-        [NativeName("Type.Name", "VkVideoReferenceSlotKHR")]
+        [NativeName("Type", "VkVideoReferenceSlotInfoKHR*")]
+        [NativeName("Type.Name", "VkVideoReferenceSlotInfoKHR")]
         [NativeName("Name", "pReferenceSlots")]
-        public VideoReferenceSlotKHR* PReferenceSlots;
+        public VideoReferenceSlotInfoKHR* PReferenceSlots;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]

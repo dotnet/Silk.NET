@@ -34,6 +34,22 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 1. Make your commits in small, incremental steps with clear descriptions.
 1. Tag a maintainer when you're done and ask for a review!
 
+## Working with our large solution
+
+The Silk.NET solution is **very large**. As such, to generate a solution that only has the projects you care about for your contribution, use the following command:
+`nuke sln --projects project1 project2...`. `<projects>` can be substitued for:
+- A name of an individual project. The Silk.NET prefix can be omitted provided there is no matching subfolder.
+- A name of a subfolder in the repo root, `src/`, or `examples/CSharp`
+
+Example: `nuke sln --projects opengl silk.net.vulkan core.win32extras "opengl tutorials" build`. This:
+- matches `opengl` to `src/OpenGL`
+- matches `silk.net.vulkan` to `src/Vulkan/Silk.NET.Vulkan`
+- matches `core.win32extras` to `src/Core/Silk.NET.Core.Win32Extras`
+- matches `"opengl tutorials"` to `examples/CSharp/OpenGL Tutorials`
+- matches `build` to `build/`
+
+The generated solution is: `Silk.NET.gen.sln`
+
 ## "Help wanted" & "Good first issue"
 If the core team are unable to champion an issue, they will mark it with a "help wanted" label. This indicates that any external contributor may pick up on this issue and implement it as part of a contribution. However, some "help wanted" issues may require intermediate knowledge of the codebase, area, and/or ecosystem; or may have uncertainty surrounding implementation details (if this is the case talk to us in the Discord or in a discussion issue). Because of this, we also mark some issues with the label "good first issue" which indicates that an issue is straightforward, and is a good place to start if you're interested in contributing but new to the codebase.
 

@@ -11,7 +11,6 @@ using System.Linq;
 using System.Xml.Linq;
 using Humanizer;
 using Microsoft.CodeAnalysis.CSharp;
-using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
@@ -113,7 +112,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 ))
                         )
                     )
-                    .ToDictionary();
+                    .ToDictionary(x => x.y, x => x.Item2);
 
                 Debug.Assert(removals != null, $"{nameof(removals) != null}");
 
@@ -740,7 +739,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             ))
                     )
                 )
-                .ToDictionary();
+                .ToDictionary(x => x.y, x => x.Item2);
 
             var revivals = new Dictionary<string, Version>();
             foreach (var api in apis)

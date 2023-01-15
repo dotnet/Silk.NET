@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan.Video
         (
             uint? idrFlag = null,
             uint? isReferenceFlag = null,
-            uint? longTermReferenceFlag = null
+            uint? usedForLongTermReference = null
         ) : this()
         {
             if (idrFlag is not null)
@@ -36,9 +36,9 @@ namespace Silk.NET.Vulkan.Video
                 IsReferenceFlag = isReferenceFlag.Value;
             }
 
-            if (longTermReferenceFlag is not null)
+            if (usedForLongTermReference is not null)
             {
-                LongTermReferenceFlag = longTermReferenceFlag.Value;
+                UsedForLongTermReference = usedForLongTermReference.Value;
             }
         }
 
@@ -61,7 +61,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
         }
 
-        public uint LongTermReferenceFlag
+        public uint UsedForLongTermReference
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 2) & 0x1u);

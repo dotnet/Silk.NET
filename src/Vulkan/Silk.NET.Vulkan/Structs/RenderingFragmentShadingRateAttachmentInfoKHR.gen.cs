@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderingFragmentShadingRateAttachmentInfoKHR")]
-    public unsafe partial struct RenderingFragmentShadingRateAttachmentInfoKHR : IExtendsChain<RenderingInfoKHR>
+    public unsafe partial struct RenderingFragmentShadingRateAttachmentInfoKHR : IExtendsChain<RenderingInfo>, IExtendsChain<RenderingInfoKHR>
     {
         public RenderingFragmentShadingRateAttachmentInfoKHR
         (

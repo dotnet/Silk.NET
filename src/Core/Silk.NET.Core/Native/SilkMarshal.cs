@@ -155,7 +155,7 @@ namespace Silk.NET.Core.Native
             => encoding switch
             {
                 NativeStringEncoding.BStr => -1,
-                NativeStringEncoding.LPStr => ((input?.Length ?? 0) + 1) * Marshal.SystemMaxDBCSCharSize,
+                NativeStringEncoding.LPStr => ((input?.Length ?? 0) + 1) * Marshal.SystemMaxDBCSCharSize + 1,
                 NativeStringEncoding.LPTStr => (input is null ? 0 : Encoding.UTF8.GetMaxByteCount(input.Length)) + 1,
                 NativeStringEncoding.LPUTF8Str => (input is null ? 0 : Encoding.UTF8.GetMaxByteCount(input.Length)) + 1,
                 NativeStringEncoding.LPWStr => ((input?.Length ?? 0) + 1) * 2,
@@ -218,7 +218,8 @@ namespace Silk.NET.Core.Native
                     {
                         fixed (byte* bytes = span)
                         {
-                            Buffer.MemoryCopy(firstChar, bytes, span.Length, input.Length + 1);
+                            Buffer.MemoryCopy(firstChar, bytes, span.Length, input.Length * 2);
+                            ((char*)bytes)[input.Length] = default;
                         }
                     }
 

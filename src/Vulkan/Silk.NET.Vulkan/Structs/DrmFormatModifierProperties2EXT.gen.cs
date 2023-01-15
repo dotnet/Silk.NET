@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             ulong? drmFormatModifier = null,
             uint? drmFormatModifierPlaneCount = null,
-            FormatFeatureFlags2KHR? drmFormatModifierTilingFeatures = null
+            FormatFeatureFlags2? drmFormatModifierTilingFeatures = null
         ) : this()
         {
             if (drmFormatModifier is not null)
@@ -53,9 +53,9 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "drmFormatModifierPlaneCount")]
         public uint DrmFormatModifierPlaneCount;
 /// <summary></summary>
-        [NativeName("Type", "VkFormatFeatureFlags2KHR")]
-        [NativeName("Type.Name", "VkFormatFeatureFlags2KHR")]
+        [NativeName("Type", "VkFormatFeatureFlags2")]
+        [NativeName("Type.Name", "VkFormatFeatureFlags2")]
         [NativeName("Name", "drmFormatModifierTilingFeatures")]
-        public FormatFeatureFlags2KHR DrmFormatModifierTilingFeatures;
+        public FormatFeatureFlags2 DrmFormatModifierTilingFeatures;
     }
 }

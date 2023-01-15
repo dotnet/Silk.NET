@@ -176,6 +176,9 @@ namespace Silk.NET.OpenGL.Extensions.NV
         [NativeApi(EntryPoint = "glGetCommandHeaderNV", Convention = CallingConvention.Winapi)]
         public partial uint GetCommandHeader([Flow(FlowDirection.In)] NV tokenID, [Flow(FlowDirection.In)] uint size);
 
+        [NativeApi(EntryPoint = "glGetCommandHeaderNV", Convention = CallingConvention.Winapi)]
+        public partial uint GetCommandHeader([Flow(FlowDirection.In)] CommandOpcodesNV tokenID, [Flow(FlowDirection.In)] uint size);
+
         [NativeApi(EntryPoint = "glGetStageIndexNV", Convention = CallingConvention.Winapi)]
         public partial ushort GetStageIndex([Flow(FlowDirection.In)] NV shadertype);
 
@@ -375,6 +378,20 @@ namespace Silk.NET.OpenGL.Extensions.NV
         {
             // ImplicitCountSpanOverloader
             ListDrawCommandsStatesClient(list, segment, in indirects, in sizes.GetPinnableReference(), in states.GetPinnableReference(), in fbos.GetPinnableReference(), (uint) fbos.Length);
+        }
+
+        public unsafe uint CreateCommandLists([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            CreateCommandLists(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe uint CreateStates([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            CreateStates(n, out uint silkRet);
+            return silkRet;
         }
 
         public NVCommandList(INativeContext ctx)

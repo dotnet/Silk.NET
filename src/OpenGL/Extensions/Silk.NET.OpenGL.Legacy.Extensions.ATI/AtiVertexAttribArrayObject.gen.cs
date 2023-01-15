@@ -56,6 +56,20 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         [NativeApi(EntryPoint = "glVertexAttribArrayObjectATI", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
 
+        public unsafe float GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ATI pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexAttribArrayObject(index, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexAttribArrayObject(index, pname, out float silkRet);
+            return silkRet;
+        }
+
         public AtiVertexAttribArrayObject(INativeContext ctx)
             : base(ctx)
         {

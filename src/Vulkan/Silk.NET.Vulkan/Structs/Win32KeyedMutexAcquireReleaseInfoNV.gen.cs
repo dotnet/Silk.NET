@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkWin32KeyedMutexAcquireReleaseInfoNV")]
-    public unsafe partial struct Win32KeyedMutexAcquireReleaseInfoNV : IExtendsChain<SubmitInfo>, IExtendsChain<SubmitInfo2KHR>
+    public unsafe partial struct Win32KeyedMutexAcquireReleaseInfoNV : IExtendsChain<SubmitInfo>, IExtendsChain<SubmitInfo2>, IExtendsChain<SubmitInfo2KHR>
     {
         public Win32KeyedMutexAcquireReleaseInfoNV
         (

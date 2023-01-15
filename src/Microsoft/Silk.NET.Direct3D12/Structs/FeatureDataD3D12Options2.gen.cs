@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options2
         (
-            int? depthBoundsTestSupported = null,
+            Silk.NET.Core.Bool32? depthBoundsTestSupported = null,
             ProgrammableSamplePositionsTier? programmableSamplePositionsTier = null
         ) : this()
         {
@@ -40,7 +40,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "DepthBoundsTestSupported")]
-        public int DepthBoundsTestSupported;
+        public Silk.NET.Core.Bool32 DepthBoundsTestSupported;
 
         [NativeName("Type", "D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER")]
         [NativeName("Type.Name", "D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER")]

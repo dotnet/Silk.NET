@@ -4,6 +4,27 @@
 [submodule "build/submodules/Vulkan-Headers"]
 	path = build/submodules/Vulkan-Headers
 	url = https://github.com/KhronosGroup/Vulkan-Headers
+[submodule "build/submodules/SwiftShader"]
+	path = build/submodules/SwiftShader
+	url = https://github.com/google/swiftshader
+[submodule "build/submodules/ANGLE"]
+	path = build/submodules/ANGLE
+	url = https://chromium.googlesource.com/angle/angle
+[submodule "build/submodules/Vulkan-Loader"]
+	path = build/submodules/Vulkan-Loader
+	url = https://github.com/KhronosGroup/Vulkan-Loader
 [submodule "build/submodules/GLFW"]
 	path = build/submodules/GLFW
 	url = https://github.com/glfw/glfw.git
+[submodule "build/submodules/Assimp"]
+	path = build/submodules/Assimp
+	url = https://github.com/assimp/assimp
+[submodule "build/submodules/webgpu-headers"]
+	path = build/submodules/webgpu-headers
+	url = https://github.com/webgpu-native/webgpu-headers/
+[submodule "build/submodules/wgpu-native"]
+	path = build/submodules/wgpu-native
+	url = https://github.com/gfx-rs/wgpu-native
+[submodule "build/submodules/dawn"]
+	path = build/submodules/dawn
+	url = https://github.com/Beyley/dawn

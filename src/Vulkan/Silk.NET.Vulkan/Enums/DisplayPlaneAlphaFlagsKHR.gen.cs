@@ -13,13 +13,27 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkDisplayPlaneAlphaFlagsKHR")]
     public enum DisplayPlaneAlphaFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"OpaqueBitKhr\"")]
         [NativeName("Name", "VK_DISPLAY_PLANE_ALPHA_OPAQUE_BIT_KHR")]
         DisplayPlaneAlphaOpaqueBitKhr = 1,
+        [Obsolete("Deprecated in favour of \"GlobalBitKhr\"")]
         [NativeName("Name", "VK_DISPLAY_PLANE_ALPHA_GLOBAL_BIT_KHR")]
         DisplayPlaneAlphaGlobalBitKhr = 2,
+        [Obsolete("Deprecated in favour of \"PerPixelBitKhr\"")]
         [NativeName("Name", "VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_BIT_KHR")]
         DisplayPlaneAlphaPerPixelBitKhr = 4,
+        [Obsolete("Deprecated in favour of \"PerPixelPremultipliedBitKhr\"")]
         [NativeName("Name", "VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_PREMULTIPLIED_BIT_KHR")]
         DisplayPlaneAlphaPerPixelPremultipliedBitKhr = 8,
+        [NativeName("Name", "VK_DISPLAY_PLANE_ALPHA_OPAQUE_BIT_KHR")]
+        OpaqueBitKhr = 1,
+        [NativeName("Name", "VK_DISPLAY_PLANE_ALPHA_GLOBAL_BIT_KHR")]
+        GlobalBitKhr = 2,
+        [NativeName("Name", "VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_BIT_KHR")]
+        PerPixelBitKhr = 4,
+        [NativeName("Name", "VK_DISPLAY_PLANE_ALPHA_PER_PIXEL_PREMULTIPLIED_BIT_KHR")]
+        PerPixelPremultipliedBitKhr = 8,
     }
 }

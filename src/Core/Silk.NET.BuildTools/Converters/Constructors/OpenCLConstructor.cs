@@ -14,6 +14,18 @@ namespace Silk.NET.BuildTools.Converters.Constructors
     /// </summary>
     public class OpenCLConstructor : IConstructor
     {
+        internal const string UngroupedDeprecationMessage = "\"The \\\"ungrouped\\\" enums ({0}) are deprecated in " +
+                                                            "favour of the \\\"grouped\\\" enums ({1}). Not only is " +
+                                                            "this akin to how the original specification represents " +
+                                                            "enums, it also ensures that the size of the enum is " +
+                                                            "correct which is a guarantee the \\\"ungrouped\\\" " +
+                                                            "enums do not provide. As such, we have made every "+
+                                                            "attempt to prevent functions known to use these "+
+                                                            "ungrouped enums problematically from compiling; but "+
+                                                            "regardless of whether usage of these deprecated enums "+
+                                                            "compiles please use the other enums to ensure that all "+
+                                                            "functions will work as intended. \"";
+        
         /// <inheritdoc />
         public void WriteFunctions(Profile profile, IEnumerable<Function> functions, BindTask task)
         {
@@ -101,18 +113,90 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                 );
             }
 
-            var mergedEnums = new Dictionary<string, Enum>();
-            var gl = profile.Projects["Core"].Classes[0].ClassName.ToUpper().CheckMemberName(task.FunctionPrefix);
-            mergedEnums.Add
-            (
-                $"{gl}Enum",
-                new Enum
-                {
-                    Name = $"{gl}Enum", ExtensionName = "Core", Attributes = new List<Attribute>(),
-                    Tokens = new List<Token>(), NativeName = "GLenum",
-                }
-            );
             
+            // BACKWARDS COMPATIBILITY LOGIC: Why is this its own specialized logic? Because originally I was going to
+            // go the "break everything" route and eradicate CLEnum entirely, but then I realised that'd be pretty
+            // irresponsible for a minor release despite us being technically wrong. For the trivial cases, we can just
+            // make a shim. So here we write a deprecated CLEnum, and the OpenCLBackwardsCompatibilityOverloader will
+            // generate deprecated overloads using that CLEnum. Anyways I deleted all the code before reaching that
+            // conclusion so it's possible I've just rewritten the code that was already here that does the same thing.
+            void WriteBackCompatEnum(string prefix, IEnumerable<Token> tokens)
+            {
+                var name = prefix == "Core" ? "CLEnum" : prefix;
+                var @enum = profile.Projects[prefix].Enums.FirstOrDefault(x => x.Name == name);
+                if (@enum is null)
+                {
+                    @enum = new Enum
+                    {
+                        Attributes = new List<Attribute>
+                        {
+                            new()
+                            {
+                                Name = "Obsolete",
+                                Arguments = new List<string>
+                                {
+                                    string.Format
+                                    (
+                                        UngroupedDeprecationMessage,
+                                        "CLEnum, KHR, etc...",
+                                        "ErrorCodes, DeviceType, etc..."
+                                    )
+                                }
+                            }
+                        },
+                        ExtensionName = prefix,
+                        Name = name,
+                        NativeName = "CLenum"
+                    };
+
+                    profile.Projects[prefix].Enums.Add(@enum);
+                }
+
+                @enum.Tokens.AddRange
+                (
+                    tokens.SelectMany
+                    (
+                        x => Enumerable.Repeat(x, 1)
+                            .Concat
+                            (
+                                // BACKWARDS COMPATIBILITY NOTE: The names were made more friendly in 2.16 at the
+                                // reader-level. This is great, but if we want to minimize breakage we should bring back
+                                // the original name (if different).
+                                Enumerable.Repeat
+                                (
+                                    new Token
+                                    {
+                                        Name = Naming.Translate(TrimName(x.NativeName, task), task.FunctionPrefix),
+                                        Attributes = x.Attributes, Doc = x.Doc, Value = x.Value,
+                                        NativeName = x.NativeName
+                                    }, 1
+                                )
+                            )
+                            .DistinctBy(y => y.Name)
+                    )
+                );
+
+            }
+
+            void CheckPrefix(string prefix)
+            {
+                if (!profile.Projects.ContainsKey(prefix))
+                {
+                    profile.Projects.Add
+                    (
+                        prefix,
+                        new Project
+                        {
+                            IsRoot = prefix == "Core",
+                            Namespace = prefix == "Core"
+                                ? string.Empty
+                                : $".{prefix.CheckMemberName(task.FunctionPrefix)}",
+                            Classes = new List<Class> { new Class { ClassName = task.ConverterOpts.ClassName } }
+                        }
+                    );
+                }
+            }
+
             // first, we need to categorise the enums into "Core", or their vendor (i.e. "NV", "SGI", "KHR" etc)
             foreach (var @enum in enums)
             {
@@ -124,60 +208,90 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                 switch (@enum.ExtensionName)
                 {
                     case "Core":
-                        mergedEnums[$"{gl}Enum"].Tokens.AddRange(@enum.Tokens);
+                    {
+                        WriteBackCompatEnum("Core", @enum.Tokens);
                         break;
+                    }
                     case "Core (Grouped)":
+                    {
                         @enum.ExtensionName = "Core";
                         profile.Projects["Core"].Enums.Add(@enum);
-                        break;
+                        goto case "Core"; // write the back compat enum
+                    }
                     default:
                     {
                         var prefix = FormatCategory(@enum.ExtensionName);
-                        if (!mergedEnums.ContainsKey(prefix))
+                        CheckPrefix(prefix);
+                        if(@enum.Name == "Globals")
                         {
-                            mergedEnums.Add
-                            (
-                                prefix,
-                                new Enum
-                                {
-                                    Name = prefix.CheckMemberName(task.FunctionPrefix), ExtensionName = prefix,
-                                    NativeName = "GLenum"
-                                }
-                            );
+                            profile.Projects[prefix]
+                                .Classes[0]
+                                .Constants.AddRange
+                                (
+                                    @enum.Tokens.Select
+                                    (
+                                        x => new Constant
+                                        {
+                                            Name = x.Name, NativeName = x.NativeName,
+                                            ExtensionName = @enum.ExtensionName, Type = @enum.EnumBaseType,
+                                            Value = x.Value
+                                        }
+                                    )
+                                );
                         }
-                        mergedEnums[prefix].Tokens.AddRange(@enum.Tokens);
+                        else
+                        {
+                            profile.Projects[prefix].Enums.Add(@enum);
+                        }
+
+                        WriteBackCompatEnum(prefix, @enum.Tokens);
                         break;
                     }
                 }
             }
             
-            // now that we've categorised them, lets add them into their appropriate projects.
-            foreach (var (_, @enum) in mergedEnums)
+            // BACKWARDS COMPATIBILITY NOTE: In 2.16 the enums were shuffled (for the better), and _KHR enums no longer
+            // necessarily live in the KHR namespace (instead living in their strong-typed group). To minimize breakage,
+            // we now go through all of strong enums and attempt to put them back into their original place. This could
+            // result in the deprecated enums having more tokens than they did originally, but who cares they're not
+            // meant to be used anymore anyway.
+            var allSuffixes = profile.Projects
+                .SelectMany(x => Enumerable.Repeat(x.Key, 1).Concat(x.Value.Enums.Select(y => y.ExtensionName)))
+                .Where(x => !string.IsNullOrWhiteSpace(x))
+                .Select(FormatCategory)
+                .Distinct();
+            foreach (var suffix in allSuffixes)
             {
-                if (!profile.Projects.ContainsKey(@enum.ExtensionName))
-                {
-                    profile.Projects.Add
+                var tokens = profile.Projects.Values.SelectMany
                     (
-                        @enum.ExtensionName,
-                        new Project
-                        {
-                            IsRoot = @enum.ExtensionName == "Core",
-                            Namespace = @enum.ExtensionName == "Core"
-                                ? string.Empty
-                                : $".{@enum.ExtensionName.CheckMemberName(task.FunctionPrefix)}",
-                            Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
-                        }
-                    );
-                }
+                        x => x.Enums.SelectMany
+                        (
+                            y => y.Tokens.Where
+                            (
+                                z => suffix == "Core" && !profile.Projects.Keys.Any
+                                (
+                                    extSuffix => z.NativeName.EndsWith($"_{extSuffix}")
+                                ) || suffix != "Core" && z.NativeName.EndsWith($"_{suffix}")
+                            )
+                        )
+                    )
+                    .ToList(); // <-- see "The Lazy Leopard and the List" at https://bit.ly/3MmLkGi;
 
-                profile.Projects[@enum.ExtensionName].Enums.Add(@enum);
+                if (tokens.Count > 0)
+                {
+                    WriteBackCompatEnum(suffix, tokens);
+                }
             }
         }
         
         /// <inheritdoc />
         public void WriteStructs(Profile profile, IEnumerable<Struct> structs, BindTask task)
         {
-            profile.Projects["Core"].Structs.AddRange(structs);
+            foreach (var @struct in structs)
+            {
+                var prefix = FormatCategory(@struct.ExtensionName);
+                profile.Projects[prefix].Structs.Add(@struct);
+            }
         }
 
         /// <inheritdoc />

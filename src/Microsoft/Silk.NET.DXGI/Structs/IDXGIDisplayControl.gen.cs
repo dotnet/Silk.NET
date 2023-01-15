@@ -18,9 +18,12 @@ namespace Silk.NET.DXGI
 {
     [Guid("ea9dbf1a-c88e-4486-854a-98aa0138f30c")]
     [NativeName("Name", "IDXGIDisplayControl")]
-    public unsafe partial struct IDXGIDisplayControl
+    public unsafe partial struct IDXGIDisplayControl : IComVtbl<IDXGIDisplayControl>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("ea9dbf1a-c88e-4486-854a-98aa0138f30c");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIDisplayControl val)
             => Unsafe.As<IDXGIDisplayControl, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,18 +49,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDisplayControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<IDXGIDisplayControl*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIDisplayControl*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -68,18 +60,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGIDisplayControl*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIDisplayControl*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -91,18 +72,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<IDXGIDisplayControl*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIDisplayControl*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -116,18 +86,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<IDXGIDisplayControl*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<IDXGIDisplayControl*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -138,7 +97,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDisplayControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -147,35 +106,42 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDisplayControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int IsStereoEnabled()
+        public readonly Silk.NET.Core.Bool32 IsStereoEnabled()
         {
             var @this = (IDXGIDisplayControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, int>)LpVtbl[3])(@this);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, Silk.NET.Core.Bool32>)@this->LpVtbl[3])(@this);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetStereoEnabled(int enabled)
+        public readonly void SetStereoEnabled(Silk.NET.Core.Bool32 enabled)
         {
             var @this = (IDXGIDisplayControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            #if NET5_0_OR_GREATER
-            ((delegate* unmanaged<IDXGIDisplayControl*, int, void>)LpVtbl[4])(@this, enabled);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, int, void>)LpVtbl[4])(@this, enabled);
-            }
-            else
-            {
-                ((delegate* unmanaged[Cdecl]<IDXGIDisplayControl*, int, void>)LpVtbl[4])(@this, enabled);
-            }
-            #endif
+            ((delegate* unmanaged[Stdcall]<IDXGIDisplayControl*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[4])(@this, enabled);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGIDisplayControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGIDisplayControl*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

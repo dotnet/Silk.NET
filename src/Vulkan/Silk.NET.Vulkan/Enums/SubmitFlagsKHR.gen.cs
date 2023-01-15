@@ -13,7 +13,17 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkSubmitFlagsKHR")]
     public enum SubmitFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"Bit\"")]
+        [NativeName("Name", "VK_SUBMIT_PROTECTED_BIT")]
+        SubmitProtectedBit = 1,
+        [Obsolete("Deprecated in favour of \"BitKhr\"")]
         [NativeName("Name", "VK_SUBMIT_PROTECTED_BIT_KHR")]
         SubmitProtectedBitKhr = 1,
+        [NativeName("Name", "VK_SUBMIT_PROTECTED_BIT")]
+        Bit = 1,
+        [NativeName("Name", "VK_SUBMIT_PROTECTED_BIT_KHR")]
+        BitKhr = 1,
     }
 }

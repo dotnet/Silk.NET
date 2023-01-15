@@ -68,6 +68,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             GenQueryResourceTag((uint) tagIds.Length, out tagIds.GetPinnableReference());
         }
 
+        public unsafe int GenQueryResourceTag([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenQueryResourceTag(n, out int silkRet);
+            return silkRet;
+        }
+
         public NVQueryResourceTag(INativeContext ctx)
             : base(ctx)
         {

@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D12
 {
     [Guid("c64226a8-9201-46af-b4cc-53fb9ff7414f")]
     [NativeName("Name", "ID3D12PipelineLibrary")]
-    public unsafe partial struct ID3D12PipelineLibrary
+    public unsafe partial struct ID3D12PipelineLibrary : IComVtbl<ID3D12PipelineLibrary>, IComVtbl<ID3D12DeviceChild>, IComVtbl<ID3D12Object>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("c64226a8-9201-46af-b4cc-53fb9ff7414f");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator ID3D12DeviceChild(ID3D12PipelineLibrary val)
             => Unsafe.As<ID3D12PipelineLibrary, ID3D12DeviceChild>(ref val);
@@ -52,18 +55,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -74,18 +66,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -97,18 +78,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -122,18 +92,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -144,7 +103,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -153,7 +112,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -162,18 +121,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pData);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pData);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pData);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSize, pData);
             return ret;
         }
 
@@ -184,18 +132,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
             }
             return ret;
         }
@@ -207,18 +144,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pData);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pData);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pData);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSizePtr, pData);
             }
             return ret;
         }
@@ -232,18 +158,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void* pDataPtr = &pData)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guid, pDataSizePtr, pDataPtr);
                 }
             }
             return ret;
@@ -256,18 +171,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pData);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pData);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pData);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pData);
             }
             return ret;
         }
@@ -281,18 +185,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void* pDataPtr = &pData)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSize, pDataPtr);
                 }
             }
             return ret;
@@ -307,18 +200,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pData);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pData);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pData);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSizePtr, pData);
                 }
             }
             return ret;
@@ -335,18 +217,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (void* pDataPtr = &pData)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)@this->LpVtbl[3])(@this, guidPtr, pDataSizePtr, pDataPtr);
                     }
                 }
             }
@@ -354,73 +225,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pData);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pData);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pData);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pData);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pDataPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pDataPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pDataPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guid, DataSize, pDataPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pData);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pData);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pData);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pData);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -428,18 +266,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void* pDataPtr = &pData)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, uint, void*, int>)@this->LpVtbl[4])(@this, guidPtr, DataSize, pDataPtr);
                 }
             }
             return ret;
@@ -450,18 +277,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pData);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pData);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pData);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[5])(@this, guid, pData);
             return ret;
         }
 
@@ -472,18 +288,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pDataPtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pDataPtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pDataPtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[5])(@this, guid, pDataPtr);
             }
             return ret;
         }
@@ -495,18 +300,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pData);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pData);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pData);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[5])(@this, guidPtr, pData);
             }
             return ret;
         }
@@ -520,84 +314,40 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pDataPtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pDataPtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pDataPtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)@this->LpVtbl[5])(@this, guidPtr, pDataPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetName(char* Name)
+        public readonly unsafe int SetName([Flow(FlowDirection.In)] char* Name)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, int>)LpVtbl[6])(@this, Name);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, int>)LpVtbl[6])(@this, Name);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, int>)LpVtbl[6])(@this, Name);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, int>)@this->LpVtbl[6])(@this, Name);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetName(ref char Name)
+        public readonly int SetName([Flow(FlowDirection.In)] in char Name)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* NamePtr = &Name)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, int>)LpVtbl[6])(@this, NamePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, int>)LpVtbl[6])(@this, NamePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, int>)LpVtbl[6])(@this, NamePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, int>)@this->LpVtbl[6])(@this, NamePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+        public readonly int SetName([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var NamePtr = (byte*) SilkMarshal.StringToPtr(Name, NativeStringEncoding.LPWStr);
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, byte*, int>)LpVtbl[6])(@this, NamePtr);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, int>)LpVtbl[6])(@this, NamePtr);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, int>)LpVtbl[6])(@this, NamePtr);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, int>)@this->LpVtbl[6])(@this, NamePtr);
             SilkMarshal.Free((nint)NamePtr);
             return ret;
         }
@@ -607,18 +357,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevice);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevice);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevice);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riid, ppvDevice);
             return ret;
         }
 
@@ -629,18 +368,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void** ppvDevicePtr = &ppvDevice)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevicePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevicePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevicePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riid, ppvDevicePtr);
             }
             return ret;
         }
@@ -652,18 +380,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevice);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevice);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevice);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riidPtr, ppvDevice);
             }
             return ret;
         }
@@ -677,91 +394,47 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppvDevicePtr = &ppvDevice)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, Guid*, void**, int>)@this->LpVtbl[7])(@this, riidPtr, ppvDevicePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StorePipeline(char* pName, ID3D12PipelineState* pPipeline)
+        public readonly unsafe int StorePipeline([Flow(FlowDirection.In)] char* pName, ID3D12PipelineState* pPipeline)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pName, pPipeline);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pName, pPipeline);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pName, pPipeline);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)@this->LpVtbl[8])(@this, pName, pPipeline);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StorePipeline(char* pName, ref ID3D12PipelineState pPipeline)
+        public readonly unsafe int StorePipeline([Flow(FlowDirection.In)] char* pName, ref ID3D12PipelineState pPipeline)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ID3D12PipelineState* pPipelinePtr = &pPipeline)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pName, pPipelinePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pName, pPipelinePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pName, pPipelinePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)@this->LpVtbl[8])(@this, pName, pPipelinePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StorePipeline(ref char pName, ID3D12PipelineState* pPipeline)
+        public readonly unsafe int StorePipeline([Flow(FlowDirection.In)] in char pName, ID3D12PipelineState* pPipeline)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* pNamePtr = &pName)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pNamePtr, pPipeline);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pNamePtr, pPipeline);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pNamePtr, pPipeline);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)@this->LpVtbl[8])(@this, pNamePtr, pPipeline);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int StorePipeline(ref char pName, ref ID3D12PipelineState pPipeline)
+        public readonly int StorePipeline([Flow(FlowDirection.In)] in char pName, ref ID3D12PipelineState pPipeline)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -769,138 +442,72 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ID3D12PipelineState* pPipelinePtr = &pPipeline)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pNamePtr, pPipelinePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pNamePtr, pPipelinePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pNamePtr, pPipelinePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)@this->LpVtbl[8])(@this, pNamePtr, pPipelinePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int StorePipeline([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ID3D12PipelineState* pPipeline)
+        public readonly unsafe int StorePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ID3D12PipelineState* pPipeline)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, byte*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pNamePtr, pPipeline);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pNamePtr, pPipeline);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pNamePtr, pPipeline);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ID3D12PipelineState*, int>)@this->LpVtbl[8])(@this, pNamePtr, pPipeline);
             SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int StorePipeline([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref ID3D12PipelineState pPipeline)
+        public readonly int StorePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref ID3D12PipelineState pPipeline)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (ID3D12PipelineState* pPipelinePtr = &pPipeline)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, byte*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pNamePtr, pPipelinePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pNamePtr, pPipelinePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pNamePtr, pPipelinePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ID3D12PipelineState*, int>)@this->LpVtbl[8])(@this, pNamePtr, pPipelinePtr);
             }
             SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(char* pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDesc, riid, ppPipelineState);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDesc, riid, ppPipelineState);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDesc, riid, ppPipelineState);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDesc, riid, ppPipelineState);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(char* pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDesc, riid, ppPipelineStatePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDesc, riid, ppPipelineStatePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDesc, riid, ppPipelineStatePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDesc, riid, ppPipelineStatePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(char* pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDesc, riidPtr, ppPipelineState);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDesc, riidPtr, ppPipelineState);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDesc, riidPtr, ppPipelineState);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDesc, riidPtr, ppPipelineState);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(char* pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -908,48 +515,26 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDesc, riidPtr, ppPipelineStatePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDesc, riidPtr, ppPipelineStatePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDesc, riidPtr, ppPipelineStatePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDesc, riidPtr, ppPipelineStatePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(char* pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDescPtr, riid, ppPipelineState);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDescPtr, riid, ppPipelineState);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDescPtr, riid, ppPipelineState);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDescPtr, riid, ppPipelineState);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(char* pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -957,25 +542,14 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDescPtr, riid, ppPipelineStatePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDescPtr, riid, ppPipelineStatePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDescPtr, riid, ppPipelineStatePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDescPtr, riid, ppPipelineStatePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(char* pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -983,25 +557,14 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDescPtr, riidPtr, ppPipelineState);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDescPtr, riidPtr, ppPipelineState);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDescPtr, riidPtr, ppPipelineState);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDescPtr, riidPtr, ppPipelineState);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(char* pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1011,18 +574,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (void** ppPipelineStatePtr = &ppPipelineState)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDescPtr, riidPtr, ppPipelineStatePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDescPtr, riidPtr, ppPipelineStatePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDescPtr, riidPtr, ppPipelineStatePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pName, pDescPtr, riidPtr, ppPipelineStatePtr);
                     }
                 }
             }
@@ -1030,30 +582,19 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(ref char pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* pNamePtr = &pName)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineState);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineState);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineState);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineState);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(ref char pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1061,25 +602,14 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(ref char pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1087,25 +617,14 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(ref char pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1115,18 +634,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (void** ppPipelineStatePtr = &ppPipelineState)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
                     }
                 }
             }
@@ -1134,7 +642,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(ref char pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1142,25 +650,14 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(ref char pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1170,18 +667,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (void** ppPipelineStatePtr = &ppPipelineState)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
                     }
                 }
             }
@@ -1189,7 +675,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(ref char pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1199,18 +685,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (Guid* riidPtr = &riid)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
                     }
                 }
             }
@@ -1218,7 +693,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline(ref char pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1230,18 +705,7 @@ namespace Silk.NET.Direct3D12
                     {
                         fixed (void** ppPipelineStatePtr = &ppPipelineState)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
                         }
                     }
                 }
@@ -1250,79 +714,46 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineState);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineState);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineState);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineState);
             SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
             }
             SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
             }
             SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1331,18 +762,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
                 }
             }
             SilkMarshal.Free((nint)pNamePtr);
@@ -1350,32 +770,21 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
             }
             SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1384,18 +793,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
                 }
             }
             SilkMarshal.Free((nint)pNamePtr);
@@ -1403,7 +801,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1412,18 +810,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
                 }
             }
             SilkMarshal.Free((nint)pNamePtr);
@@ -1431,7 +818,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadGraphicsPipeline([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadGraphicsPipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1442,18 +829,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (void** ppPipelineStatePtr = &ppPipelineState)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
                     }
                 }
             }
@@ -1462,73 +838,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(char* pName, ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDesc, riid, ppPipelineState);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDesc, riid, ppPipelineState);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDesc, riid, ppPipelineState);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDesc, riid, ppPipelineState);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(char* pName, ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDesc, riid, ppPipelineStatePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDesc, riid, ppPipelineStatePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDesc, riid, ppPipelineStatePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDesc, riid, ppPipelineStatePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(char* pName, ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDesc, riidPtr, ppPipelineState);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDesc, riidPtr, ppPipelineState);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDesc, riidPtr, ppPipelineState);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDesc, riidPtr, ppPipelineState);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(char* pName, ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1536,48 +879,26 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDesc, riidPtr, ppPipelineStatePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDesc, riidPtr, ppPipelineStatePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDesc, riidPtr, ppPipelineStatePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDesc, riidPtr, ppPipelineStatePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(char* pName, ref ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDescPtr, riid, ppPipelineState);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDescPtr, riid, ppPipelineState);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDescPtr, riid, ppPipelineState);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDescPtr, riid, ppPipelineState);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(char* pName, ref ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1585,25 +906,14 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDescPtr, riid, ppPipelineStatePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDescPtr, riid, ppPipelineStatePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDescPtr, riid, ppPipelineStatePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDescPtr, riid, ppPipelineStatePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(char* pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1611,25 +921,14 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDescPtr, riidPtr, ppPipelineState);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDescPtr, riidPtr, ppPipelineState);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDescPtr, riidPtr, ppPipelineState);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDescPtr, riidPtr, ppPipelineState);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(char* pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1639,18 +938,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (void** ppPipelineStatePtr = &ppPipelineState)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDescPtr, riidPtr, ppPipelineStatePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDescPtr, riidPtr, ppPipelineStatePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDescPtr, riidPtr, ppPipelineStatePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pName, pDescPtr, riidPtr, ppPipelineStatePtr);
                     }
                 }
             }
@@ -1658,30 +946,19 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(ref char pName, ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (char* pNamePtr = &pName)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineState);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineState);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineState);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineState);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(ref char pName, ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1689,25 +966,14 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(ref char pName, ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1715,25 +981,14 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(ref char pName, ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1743,18 +998,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (void** ppPipelineStatePtr = &ppPipelineState)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
                     }
                 }
             }
@@ -1762,7 +1006,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(ref char pName, ref ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1770,25 +1014,14 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(ref char pName, ref ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1798,18 +1031,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (void** ppPipelineStatePtr = &ppPipelineState)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
                     }
                 }
             }
@@ -1817,7 +1039,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(ref char pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1827,18 +1049,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (Guid* riidPtr = &riid)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
                     }
                 }
             }
@@ -1846,7 +1057,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline(ref char pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1858,18 +1069,7 @@ namespace Silk.NET.Direct3D12
                     {
                         fixed (void** ppPipelineStatePtr = &ppPipelineState)
                         {
-            #if NET5_0_OR_GREATER
-                            ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
-            #else
-                            if (SilkMarshal.IsWinapiStdcall)
-                            {
-                                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
-                            }
-                            else
-                            {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
-                            }
-            #endif
+                            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
                         }
                     }
                 }
@@ -1878,79 +1078,46 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineState);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineState);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineState);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineState);
             SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
             }
             SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (Guid* riidPtr = &riid)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
             }
             SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1959,18 +1126,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
                 }
             }
             SilkMarshal.Free((nint)pNamePtr);
@@ -1978,32 +1134,21 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pNamePtr = (byte*) SilkMarshal.StringToPtr(pName, NativeStringEncoding.LPWStr);
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
             }
             SilkMarshal.Free((nint)pNamePtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2012,18 +1157,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
                 }
             }
             SilkMarshal.Free((nint)pNamePtr);
@@ -2031,7 +1165,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2040,18 +1174,7 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-            #if NET5_0_OR_GREATER
-                    ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
-            #else
-                    if (SilkMarshal.IsWinapiStdcall)
-                    {
-                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
-                    }
-                    else
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
-                    }
-            #endif
+                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
                 }
             }
             SilkMarshal.Free((nint)pNamePtr);
@@ -2059,7 +1182,7 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LoadComputePipeline([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
+        public readonly unsafe int LoadComputePipeline([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2070,18 +1193,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (void** ppPipelineStatePtr = &ppPipelineState)
                     {
-            #if NET5_0_OR_GREATER
-                        ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
-            #else
-                        if (SilkMarshal.IsWinapiStdcall)
-                        {
-                            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
-                        }
-                        else
-                        {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
-                        }
-            #endif
+                        ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)@this->LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineStatePtr);
                     }
                 }
             }
@@ -2094,7 +1206,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             nuint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nuint>)LpVtbl[11])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nuint>)@this->LpVtbl[11])(@this);
             return ret;
         }
 
@@ -2103,18 +1215,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            #if NET5_0_OR_GREATER
-            ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, void*, nuint, int>)LpVtbl[12])(@this, pData, DataSizeInBytes);
-            #else
-            if (SilkMarshal.IsWinapiStdcall)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, void*, nuint, int>)LpVtbl[12])(@this, pData, DataSizeInBytes);
-            }
-            else
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, void*, nuint, int>)LpVtbl[12])(@this, pData, DataSizeInBytes);
-            }
-            #endif
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, void*, nuint, int>)@this->LpVtbl[12])(@this, pData, DataSizeInBytes);
             return ret;
         }
 
@@ -2125,20 +1226,301 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-            #if NET5_0_OR_GREATER
-                ret = ((delegate* unmanaged<ID3D12PipelineLibrary*, void*, nuint, int>)LpVtbl[12])(@this, pDataPtr, DataSizeInBytes);
-            #else
-                if (SilkMarshal.IsWinapiStdcall)
-                {
-                    ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, void*, nuint, int>)LpVtbl[12])(@this, pDataPtr, DataSizeInBytes);
-                }
-                else
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, void*, nuint, int>)LpVtbl[12])(@this, pDataPtr, DataSizeInBytes);
-                }
-            #endif
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, void*, nuint, int>)@this->LpVtbl[12])(@this, pDataPtr, DataSizeInBytes);
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int SetPrivateDataInterface<TI0>(Guid* guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int SetPrivateDataInterface<TI0>(ref Guid guid, [Flow(FlowDirection.In)] ComPtr<TI0> pData) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->SetPrivateDataInterface(ref guid, (Silk.NET.Core.Native.IUnknown*) pData.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDevice<TI0>(out ComPtr<TI0> ppvDevice) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvDevice = default;
+            return @this->GetDevice(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvDevice.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int StorePipeline<TI0>([Flow(FlowDirection.In)] char* pName, ComPtr<TI0> pPipeline) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StorePipeline(pName, (ID3D12PipelineState*) pPipeline.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int StorePipeline<TI0>([Flow(FlowDirection.In)] in char pName, ComPtr<TI0> pPipeline) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StorePipeline(in pName, (ID3D12PipelineState*) pPipeline.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int StorePipeline<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, ComPtr<TI0> pPipeline) where TI0 : unmanaged, IComVtbl<ID3D12PipelineState>, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->StorePipeline(pName, (ID3D12PipelineState*) pPipeline.Handle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppPipelineState = default;
+            return @this->LoadGraphicsPipeline(pName, pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppPipelineState = default;
+            return @this->LoadGraphicsPipeline(pName, in pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppPipelineState = default;
+            return @this->LoadGraphicsPipeline(in pName, pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppPipelineState = default;
+            return @this->LoadGraphicsPipeline(in pName, in pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppPipelineState = default;
+            return @this->LoadGraphicsPipeline(pName, pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppPipelineState = default;
+            return @this->LoadGraphicsPipeline(pName, in pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LoadComputePipeline<TI0>([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppPipelineState = default;
+            return @this->LoadComputePipeline(pName, pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LoadComputePipeline<TI0>([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppPipelineState = default;
+            return @this->LoadComputePipeline(pName, in pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LoadComputePipeline<TI0>([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppPipelineState = default;
+            return @this->LoadComputePipeline(in pName, pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int LoadComputePipeline<TI0>([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppPipelineState = default;
+            return @this->LoadComputePipeline(in pName, in pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int LoadComputePipeline<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppPipelineState = default;
+            return @this->LoadComputePipeline(pName, pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int LoadComputePipeline<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc, out ComPtr<TI0> ppPipelineState) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppPipelineState = default;
+            return @this->LoadComputePipeline(pName, in pDesc, SilkMarshal.GuidPtrOf<TI0>(), (void**) ppPipelineState.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> GetDevice<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->GetDevice(out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->LoadGraphicsPipeline(pName, pDesc, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->LoadGraphicsPipeline(pName, in pDesc, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->LoadGraphicsPipeline(in pName, pDesc, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->LoadGraphicsPipeline(in pName, in pDesc, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ComPtr<TI0> LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] GraphicsPipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->LoadGraphicsPipeline(pName, pDesc, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> LoadGraphicsPipeline<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in GraphicsPipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->LoadGraphicsPipeline(pName, in pDesc, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ComPtr<TI0> LoadComputePipeline<TI0>([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->LoadComputePipeline(pName, pDesc, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ComPtr<TI0> LoadComputePipeline<TI0>([Flow(FlowDirection.In)] char* pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->LoadComputePipeline(pName, in pDesc, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ComPtr<TI0> LoadComputePipeline<TI0>([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->LoadComputePipeline(in pName, pDesc, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> LoadComputePipeline<TI0>([Flow(FlowDirection.In)] in char pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->LoadComputePipeline(in pName, in pDesc, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe ComPtr<TI0> LoadComputePipeline<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] ComputePipelineStateDesc* pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->LoadComputePipeline(pName, pDesc, out ComPtr<TI0> silkRet));
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> LoadComputePipeline<TI0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string pName, [Flow(FlowDirection.In)] in ComputePipelineStateDesc pDesc) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->LoadComputePipeline(pName, in pDesc, out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

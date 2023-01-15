@@ -22,6 +22,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
             thisApi.SetFragmentShaderConstant(dst, in value.GetPinnableReference());
         }
 
+        public static unsafe void SetFragmentShaderConstant(this AtiFragmentShader thisApi, [Flow(FlowDirection.In)] FragmentShaderConATI dst, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.SetFragmentShaderConstant(dst, in value.GetPinnableReference());
+        }
+
     }
 }
 

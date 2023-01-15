@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Win32Extras
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_evntrace_L926_C5")]
+    [NativeName("Name", "__AnonymousRecord_evntrace_L927_C5")]
     public unsafe partial struct EventInstanceHeaderUnion2
     {
         public EventInstanceHeaderUnion2
@@ -45,8 +45,8 @@ namespace Silk.NET.Core.Win32Extras
         public uint Version;
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (unnamed struct at D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h:928:9)")]
-        [NativeName("Type.Name", "struct (unnamed struct at D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h:928:9)")]
+        [NativeName("Type", "struct (unnamed struct at D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\evntrace.h:929:9)")]
+        [NativeName("Type.Name", "struct (unnamed struct at D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\evntrace.h:929:9)")]
         [NativeName("Name", "Class")]
         public EventInstanceHeaderUnion2Class Class;
     }

@@ -27,10 +27,10 @@ namespace Silk.NET.Assimp
         public unsafe string AsString => Encoding.UTF8.GetString((byte*) Unsafe.AsPointer(ref Data[0]), (int) Length);
         public static implicit operator string(AssimpString val) => val.ToString();
         public static implicit operator AssimpString(string val) => new AssimpString(val);
-        public static bool operator ==(AssimpString left, AssimpString right) => left.Equals(right);
-        public static bool operator !=(AssimpString left, AssimpString right) => left.Equals(right);
-        public static bool operator ==(AssimpString left, string right) => left.Equals(right);
-        public static bool operator !=(AssimpString left, string right) => left.Equals(right);
+        public static bool operator ==(AssimpString left, AssimpString right) => left.AsString.Equals(right.AsString);
+        public static bool operator !=(AssimpString left, AssimpString right) => !left.AsString.Equals(right.AsString);
+        public static bool operator ==(AssimpString left, string right) => left.AsString.Equals(right);
+        public static bool operator !=(AssimpString left, string right) => !left.AsString.Equals(right);
         public bool Equals(AssimpString other) => other.AsString == AsString;
         public bool Equals(string other) => other == AsString;
         public override string ToString() => AsString;

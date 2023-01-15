@@ -17,19 +17,20 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDependencyInfoKHR")]
+    [NativeName("AliasOf", "VkDependencyInfo")]
     public unsafe partial struct DependencyInfoKHR : IChainable
     {
         public DependencyInfoKHR
         (
-            StructureType? sType = StructureType.DependencyInfoKhr,
+            StructureType? sType = StructureType.DependencyInfo,
             void* pNext = null,
             DependencyFlags? dependencyFlags = null,
             uint? memoryBarrierCount = null,
-            MemoryBarrier2KHR* pMemoryBarriers = null,
+            MemoryBarrier2* pMemoryBarriers = null,
             uint? bufferMemoryBarrierCount = null,
-            BufferMemoryBarrier2KHR* pBufferMemoryBarriers = null,
+            BufferMemoryBarrier2* pBufferMemoryBarriers = null,
             uint? imageMemoryBarrierCount = null,
-            ImageMemoryBarrier2KHR* pImageMemoryBarriers = null
+            ImageMemoryBarrier2* pImageMemoryBarriers = null
         ) : this()
         {
             if (sType is not null)
@@ -99,35 +100,35 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "memoryBarrierCount")]
         public uint MemoryBarrierCount;
 /// <summary></summary>
-        [NativeName("Type", "VkMemoryBarrier2KHR*")]
-        [NativeName("Type.Name", "VkMemoryBarrier2KHR")]
+        [NativeName("Type", "VkMemoryBarrier2*")]
+        [NativeName("Type.Name", "VkMemoryBarrier2")]
         [NativeName("Name", "pMemoryBarriers")]
-        public MemoryBarrier2KHR* PMemoryBarriers;
+        public MemoryBarrier2* PMemoryBarriers;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "bufferMemoryBarrierCount")]
         public uint BufferMemoryBarrierCount;
 /// <summary></summary>
-        [NativeName("Type", "VkBufferMemoryBarrier2KHR*")]
-        [NativeName("Type.Name", "VkBufferMemoryBarrier2KHR")]
+        [NativeName("Type", "VkBufferMemoryBarrier2*")]
+        [NativeName("Type.Name", "VkBufferMemoryBarrier2")]
         [NativeName("Name", "pBufferMemoryBarriers")]
-        public BufferMemoryBarrier2KHR* PBufferMemoryBarriers;
+        public BufferMemoryBarrier2* PBufferMemoryBarriers;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "imageMemoryBarrierCount")]
         public uint ImageMemoryBarrierCount;
 /// <summary></summary>
-        [NativeName("Type", "VkImageMemoryBarrier2KHR*")]
-        [NativeName("Type.Name", "VkImageMemoryBarrier2KHR")]
+        [NativeName("Type", "VkImageMemoryBarrier2*")]
+        [NativeName("Type.Name", "VkImageMemoryBarrier2")]
         [NativeName("Name", "pImageMemoryBarriers")]
-        public ImageMemoryBarrier2KHR* PImageMemoryBarriers;
+        public ImageMemoryBarrier2* PImageMemoryBarriers;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.DependencyInfoKhr;
+            return SType = StructureType.DependencyInfo;
         }
 
         /// <inheritdoc />

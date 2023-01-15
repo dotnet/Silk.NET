@@ -13,5 +13,7 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkPrivateDataSlotCreateFlagsEXT")]
     public enum PrivateDataSlotCreateFlagsEXT : int
     {
+        [NativeName("Name", "")]
+        None = 0,
     }
 }

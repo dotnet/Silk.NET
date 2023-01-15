@@ -47,8 +47,8 @@ namespace Silk.NET.DXVA
         [NativeName("Name", "NumGuids")]
         public uint NumGuids;
         
-        [NativeName("Type", "GUID [32]")]
-        [NativeName("Type.Name", "GUID [32]")]
+        [NativeName("Type", "GUID[32]")]
+        [NativeName("Type.Name", "GUID[32]")]
         [NativeName("Name", "Guids")]
         public GuidsBuffer Guids;
 

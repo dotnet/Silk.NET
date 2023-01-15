@@ -21,16 +21,25 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoH265VideoParameterSet
         (
+            StdVideoH265VpsFlags? flags = null,
             byte? vpsVideoParameterSetId = null,
             byte? vpsMaxSubLayersMinus1 = null,
+            byte? reserved1 = null,
+            byte? reserved2 = null,
             uint? vpsNumUnitsInTick = null,
             uint? vpsTimeScale = null,
             uint? vpsNumTicksPocDiffOneMinus1 = null,
+            uint? reserved3 = null,
             StdVideoH265DecPicBufMgr* pDecPicBufMgr = null,
             StdVideoH265HrdParameters* pHrdParameters = null,
-            StdVideoH265VpsFlags? flags = null
+            StdVideoH265ProfileTierLevel* pProfileTierLevel = null
         ) : this()
         {
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
             if (vpsVideoParameterSetId is not null)
             {
                 VpsVideoParameterSetId = vpsVideoParameterSetId.Value;
@@ -39,6 +48,16 @@ namespace Silk.NET.Vulkan.Video
             if (vpsMaxSubLayersMinus1 is not null)
             {
                 VpsMaxSubLayersMinus1 = vpsMaxSubLayersMinus1.Value;
+            }
+
+            if (reserved1 is not null)
+            {
+                Reserved1 = reserved1.Value;
+            }
+
+            if (reserved2 is not null)
+            {
+                Reserved2 = reserved2.Value;
             }
 
             if (vpsNumUnitsInTick is not null)
@@ -56,6 +75,11 @@ namespace Silk.NET.Vulkan.Video
                 VpsNumTicksPocDiffOneMinus1 = vpsNumTicksPocDiffOneMinus1.Value;
             }
 
+            if (reserved3 is not null)
+            {
+                Reserved3 = reserved3.Value;
+            }
+
             if (pDecPicBufMgr is not null)
             {
                 PDecPicBufMgr = pDecPicBufMgr;
@@ -66,12 +90,17 @@ namespace Silk.NET.Vulkan.Video
                 PHrdParameters = pHrdParameters;
             }
 
-            if (flags is not null)
+            if (pProfileTierLevel is not null)
             {
-                Flags = flags.Value;
+                PProfileTierLevel = pProfileTierLevel;
             }
         }
 
+
+        [NativeName("Type", "StdVideoH265VpsFlags")]
+        [NativeName("Type.Name", "StdVideoH265VpsFlags")]
+        [NativeName("Name", "flags")]
+        public StdVideoH265VpsFlags Flags;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
@@ -82,6 +111,16 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "vps_max_sub_layers_minus1")]
         public byte VpsMaxSubLayersMinus1;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "reserved1")]
+        public byte Reserved1;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "reserved2")]
+        public byte Reserved2;
 
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -98,19 +137,24 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "vps_num_ticks_poc_diff_one_minus1")]
         public uint VpsNumTicksPocDiffOneMinus1;
 
-        [NativeName("Type", "StdVideoH265DecPicBufMgr *")]
-        [NativeName("Type.Name", "StdVideoH265DecPicBufMgr *")]
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "reserved3")]
+        public uint Reserved3;
+
+        [NativeName("Type", "const StdVideoH265DecPicBufMgr *")]
+        [NativeName("Type.Name", "const StdVideoH265DecPicBufMgr *")]
         [NativeName("Name", "pDecPicBufMgr")]
         public StdVideoH265DecPicBufMgr* PDecPicBufMgr;
 
-        [NativeName("Type", "StdVideoH265HrdParameters *")]
-        [NativeName("Type.Name", "StdVideoH265HrdParameters *")]
+        [NativeName("Type", "const StdVideoH265HrdParameters *")]
+        [NativeName("Type.Name", "const StdVideoH265HrdParameters *")]
         [NativeName("Name", "pHrdParameters")]
         public StdVideoH265HrdParameters* PHrdParameters;
 
-        [NativeName("Type", "StdVideoH265VpsFlags")]
-        [NativeName("Type.Name", "StdVideoH265VpsFlags")]
-        [NativeName("Name", "flags")]
-        public StdVideoH265VpsFlags Flags;
+        [NativeName("Type", "const StdVideoH265ProfileTierLevel *")]
+        [NativeName("Type.Name", "const StdVideoH265ProfileTierLevel *")]
+        [NativeName("Name", "pProfileTierLevel")]
+        public StdVideoH265ProfileTierLevel* PProfileTierLevel;
     }
 }

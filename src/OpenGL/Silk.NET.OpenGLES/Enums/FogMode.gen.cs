@@ -12,8 +12,10 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "FogMode")]
     public enum FogMode : int
     {
+        [System.Obsolete]
         [NativeName("Name", "GL_EXP")]
         Exp = 0x800,
+        [System.Obsolete]
         [NativeName("Name", "GL_EXP2")]
         Exp2 = 0x801,
         [NativeName("Name", "GL_LINEAR")]

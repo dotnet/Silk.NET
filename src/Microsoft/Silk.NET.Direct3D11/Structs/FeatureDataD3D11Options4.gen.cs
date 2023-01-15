@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D11Options4
         (
-            int? extendedNV12SharedTextureSupported = null
+            Silk.NET.Core.Bool32? extendedNV12SharedTextureSupported = null
         ) : this()
         {
             if (extendedNV12SharedTextureSupported is not null)
@@ -34,6 +34,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ExtendedNV12SharedTextureSupported")]
-        public int ExtendedNV12SharedTextureSupported;
+        public Silk.NET.Core.Bool32 ExtendedNV12SharedTextureSupported;
     }
 }

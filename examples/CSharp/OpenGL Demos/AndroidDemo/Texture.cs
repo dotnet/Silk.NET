@@ -18,29 +18,36 @@ namespace AndroidDemo
 
         public unsafe Texture(GL gl, string path)
         {
-            //Loading an image using imagesharp.
-            Image<Rgba32> img = (Image<Rgba32>) Image.Load(FileManager.OpenStream(path));
+            _gl = gl;
 
-            fixed (void* data = &MemoryMarshal.GetReference(img.GetPixelRowSpan(0)))
+            _handle = _gl.GenTexture();
+            Bind();
+
+            //Loading an image using imagesharp.
+            using (var img = Image.Load<Rgba32>(FileManager.OpenStream(path)))
             {
-                //Loading the actual image.
-                Load(gl, data, (uint) img.Width, (uint) img.Height);
+                //Reserve enough memory from the gpu for the whole image
+                gl.TexImage2D(TextureTarget.Texture2D, 0, InternalFormat.Rgba8, (uint) img.Width, (uint) img.Height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, null);
+
+                img.ProcessPixelRows(accessor =>
+                {
+                    //ImageSharp 2 does not store images in contiguous memory by default, so we must send the image row by row
+                    for (int y = 0; y < accessor.Height; y++)
+                    {
+                        fixed (void* data = accessor.GetRowSpan(y))
+                        {
+                            //Loading the actual image.
+                            gl.TexSubImage2D(TextureTarget.Texture2D, 0, 0, y, (uint) accessor.Width, 1, PixelFormat.Rgba, PixelType.UnsignedByte, data);
+                        }
+                    }
+                });
             }
 
-            //Deleting the img from imagesharp.
-            img.Dispose();
+            SetParameters();
+
         }
 
         public unsafe Texture(GL gl, Span<byte> data, uint width, uint height)
-        {
-            //We want the ability to create a texture using data generated from code aswell.
-            fixed (void* d = &data[0])
-            {
-                Load(gl, d, width, height);
-            }
-        }
-
-        private unsafe void Load(GL gl, void* data, uint width, uint height)
         {
             //Saving the gl instance.
             _gl = gl;
@@ -49,14 +56,22 @@ namespace AndroidDemo
             _handle = _gl.GenTexture();
             Bind();
 
-            //Setting the data of a texture.
-            _gl.TexImage2D(TextureTarget.Texture2D, 0, (int) InternalFormat.Rgba, width, height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, data);
+            //We want the ability to create a texture using data generated from code aswell.
+            fixed (void* d = &data[0])
+            {
+                //Setting the data of a texture.
+                _gl.TexImage2D(TextureTarget.Texture2D, 0, (int) InternalFormat.Rgba, width, height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, d);
+                SetParameters();
+            }
+        }
+
+        private void SetParameters()
+        {
             //Setting some texture perameters so the texture behaves as expected.
-            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (int) GLEnum.Repeat);
-            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (int) GLEnum.Repeat);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (int) GLEnum.ClampToEdge);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (int) GLEnum.ClampToEdge);
             _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int) GLEnum.Linear);
             _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int) GLEnum.Linear);
-
             //Generating mipmaps.
             _gl.GenerateMipmap(TextureTarget.Texture2D);
         }

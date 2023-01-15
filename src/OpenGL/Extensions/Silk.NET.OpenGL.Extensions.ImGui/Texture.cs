@@ -3,12 +3,16 @@ using System;
 using Silk.NET.OpenGLES;
 #elif GL
 using Silk.NET.OpenGL;
+#elif LEGACY
+using Silk.NET.OpenGL.Legacy;
 #endif
 
 #if GL
 namespace Silk.NET.OpenGL.Extensions.ImGui
 #elif GLES
 namespace Silk.NET.OpenGLES.Extensions.ImGui
+#elif LEGACY
+namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
 #endif
 {
     public enum TextureCoordinate
@@ -45,7 +49,7 @@ namespace Silk.NET.OpenGLES.Extensions.ImGui
             GlTexture = _gl.GenTexture();
             Bind();
 
-            #if GLES
+            #if GLES || LEGACY
             PixelFormat pxFormat = PixelFormat.Rgba;
             #elif GL
             PixelFormat pxFormat = PixelFormat.Bgra;

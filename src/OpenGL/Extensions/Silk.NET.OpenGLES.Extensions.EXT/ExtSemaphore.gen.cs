@@ -505,6 +505,41 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             return ret;
         }
 
+        public unsafe uint GenSemaphores([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenSemaphores(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe ulong GetSemaphoreParameter([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetSemaphoreParameter(semaphore, pname, out ulong silkRet);
+            return silkRet;
+        }
+
+        public unsafe ulong GetSemaphoreParameter([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] SemaphoreParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetSemaphoreParameter(semaphore, pname, out ulong silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetUnsignedByte([Flow(FlowDirection.In)] GetPName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetUnsignedByte(pname, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetUnsignedByte([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetUnsignedByte(target, index, out byte silkRet);
+            return silkRet;
+        }
+
         public ExtSemaphore(INativeContext ctx)
             : base(ctx)
         {

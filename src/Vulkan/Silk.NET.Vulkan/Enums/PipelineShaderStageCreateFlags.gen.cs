@@ -13,13 +13,32 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkPipelineShaderStageCreateFlags")]
     public enum PipelineShaderStageCreateFlags : int
     {
-        [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_RESERVED_2_BIT_NV")]
-        PipelineShaderStageCreateReserved2BitNV = 4,
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"AllowVaryingSubgroupSizeBitExt\"")]
         [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT_EXT")]
         PipelineShaderStageCreateAllowVaryingSubgroupSizeBitExt = 1,
+        [Obsolete("Deprecated in favour of \"RequireFullSubgroupsBitExt\"")]
         [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_REQUIRE_FULL_SUBGROUPS_BIT_EXT")]
         PipelineShaderStageCreateRequireFullSubgroupsBitExt = 2,
+        [Obsolete("Deprecated in favour of \"Reserved3BitKhr\"")]
         [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_RESERVED_3_BIT_KHR")]
         PipelineShaderStageCreateReserved3BitKhr = 8,
+        [Obsolete("Deprecated in favour of \"AllowVaryingSubgroupSizeBit\"")]
+        [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT")]
+        PipelineShaderStageCreateAllowVaryingSubgroupSizeBit = 1,
+        [Obsolete("Deprecated in favour of \"RequireFullSubgroupsBit\"")]
+        [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_REQUIRE_FULL_SUBGROUPS_BIT")]
+        PipelineShaderStageCreateRequireFullSubgroupsBit = 2,
+        [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT_EXT")]
+        AllowVaryingSubgroupSizeBitExt = 1,
+        [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_REQUIRE_FULL_SUBGROUPS_BIT_EXT")]
+        RequireFullSubgroupsBitExt = 2,
+        [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_RESERVED_3_BIT_KHR")]
+        Reserved3BitKhr = 8,
+        [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_ALLOW_VARYING_SUBGROUP_SIZE_BIT")]
+        AllowVaryingSubgroupSizeBit = 1,
+        [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_REQUIRE_FULL_SUBGROUPS_BIT")]
+        RequireFullSubgroupsBit = 2,
     }
 }

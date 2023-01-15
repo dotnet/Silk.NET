@@ -16,11 +16,12 @@ using Nuke.Common.CI.GitHubActions;
 using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
 using Nuke.Common.Tooling;
+using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Utilities;
 using Octokit;
-using Octokit.Internal;
 using static Nuke.Common.IO.FileSystemTasks;
 using static Nuke.Common.Tooling.ProcessTasks;
+using static Nuke.Common.Tools.DotNet.DotNetTasks;
 
 partial class Build
 {
@@ -32,6 +33,10 @@ partial class Build
     ///   - Microsoft VisualStudio     https://nuke.build/visualstudio
     ///   - Microsoft VSCode           https://nuke.build/vscode
     public static int Main() => Execute<Build>(x => x.Compile);
+
+    [Parameter("Outputs build warnings instead of keeping the MSBuild logging quiet with just errors.")]
+    bool Warnings;
+    
     static int IndexOfOrThrow(string x, char y)
     {
         var idx = x.IndexOf(y);
@@ -121,7 +126,7 @@ partial class Build
     );
 
     async Task AddOrUpdatePrComment(string type, string file, bool editOnly = false, params KeyValuePair<string, string>[] subs)
-    {;
+    {
         var githubToken = EnvironmentInfo.GetVariable<string>("GITHUB_TOKEN");
         if (string.IsNullOrWhiteSpace(githubToken))
         {
@@ -129,7 +134,7 @@ partial class Build
             return;
         }
         
-        var @ref = GitHubActions.Instance.GitHubRef;
+        var @ref = GitHubActions.Instance?.Ref;
         if (string.IsNullOrWhiteSpace(@ref))
         {
             Logger.Info("Not running in GitHub Actions, skipping writing a comment.");
@@ -152,7 +157,7 @@ partial class Build
         var github = new GitHubClient
         (
             new ProductHeaderValue("Silk.NET-CI"),
-            new InMemoryCredentialStore(new Credentials(githubToken))
+            new Octokit.Internal.InMemoryCredentialStore(new Credentials(githubToken))
         );
 
         var existingComment = (await github.Issue.Comment.GetAllForIssue("dotnet", "Silk.NET", pr))
@@ -171,7 +176,7 @@ partial class Build
             commentText = commentText.Replace($"{{{key}}}", value);
         }
         
-        commentText = commentText.Replace("{actionsRun}", GitHubActions.Instance.GitHubRunNumber)
+        commentText = commentText.Replace("{actionsRun}", GitHubActions.Instance?.RunNumber.ToString())
             .Replace("{typeId}", type);
 
         if (existingComment is not null)
@@ -184,5 +189,33 @@ partial class Build
             Logger.Info("Added a comment to the PR.");
             await github.Issue.Comment.Create("dotnet", "Silk.NET", pr, commentText);
         }
+    }
+
+    IReadOnlyCollection<Output> ErrorsOnly<T>(Configure<T> settings) where T : ToolSettings, new()
+    {
+        var toolSettings = settings(new T());
+        var arguments = toolSettings.GetProcessArguments();
+
+        var finalArgs = arguments.RenderForExecution();
+        if (!Warnings)
+        {
+            finalArgs += " /clp:ErrorsOnly";
+        }
+
+        using var proc = StartProcess
+        (
+            toolSettings.ProcessToolPath,
+            finalArgs,
+            toolSettings.ProcessWorkingDirectory,
+            toolSettings.ProcessEnvironmentVariables,
+            toolSettings.ProcessExecutionTimeout,
+            toolSettings.ProcessLogOutput,
+            toolSettings.ProcessLogInvocation,
+            toolSettings.ProcessCustomLogger,
+            arguments.FilterSecrets
+        );
+
+        proc.AssertZeroExitCode();
+        return proc.Output;
     }
 }

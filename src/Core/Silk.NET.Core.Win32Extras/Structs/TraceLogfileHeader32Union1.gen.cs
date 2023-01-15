@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Win32Extras
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_evntrace_L1075_C5")]
+    [NativeName("Name", "__AnonymousRecord_evntrace_L1076_C5")]
     public unsafe partial struct TraceLogfileHeader32Union1
     {
         public TraceLogfileHeader32Union1
@@ -45,8 +45,8 @@ namespace Silk.NET.Core.Win32Extras
         public uint Version;
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (unnamed struct at D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h:1077:9)")]
-        [NativeName("Type.Name", "struct (unnamed struct at D:/Windows Kits/10/Include/10.0.22000.0/shared\\evntrace.h:1077:9)")]
+        [NativeName("Type", "struct (unnamed struct at D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\evntrace.h:1078:9)")]
+        [NativeName("Type.Name", "struct (unnamed struct at D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\evntrace.h:1078:9)")]
         [NativeName("Name", "VersionDetail")]
         public TraceLogfileHeader32Union1VersionDetail VersionDetail;
     }

@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.QueueFamilyCheckpointProperties2NV,
             void* pNext = null,
-            PipelineStageFlags2KHR? checkpointExecutionStageMask = null
+            PipelineStageFlags2? checkpointExecutionStageMask = null
         ) : this()
         {
             if (sType is not null)
@@ -53,10 +53,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkPipelineStageFlags2KHR")]
-        [NativeName("Type.Name", "VkPipelineStageFlags2KHR")]
+        [NativeName("Type", "VkPipelineStageFlags2")]
+        [NativeName("Type.Name", "VkPipelineStageFlags2")]
         [NativeName("Name", "checkpointExecutionStageMask")]
-        public PipelineStageFlags2KHR CheckpointExecutionStageMask;
+        public PipelineStageFlags2 CheckpointExecutionStageMask;
 
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()

@@ -14,6 +14,7 @@ namespace Silk.NET.OpenGL.Legacy
     {
         [NativeName("Name", "GL_LINEAR_MIPMAP_LINEAR")]
         LinearMipmapLinear = 0x2703,
+        [System.Obsolete]
         [NativeName("Name", "GL_CLAMP")]
         Clamp = 0x2900,
         [NativeName("Name", "GL_REPEAT")]

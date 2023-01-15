@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D12
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d12video_L6145_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d12video_L6805_C5")]
     public unsafe partial struct VideoEncoderSequenceGopStructureUnion
     {
         public VideoEncoderSequenceGopStructureUnion

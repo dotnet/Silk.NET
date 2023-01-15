@@ -442,6 +442,58 @@ namespace Silk.NET.Vulkan.Extensions.KHR
             return WriteAccelerationStructuresProperties(device, (uint) pAccelerationStructures.Length, in pAccelerationStructures.GetPinnableReference(), queryType, (nuint) (pData.Length * Unsafe.SizeOf<T0>()), ref pData.GetPinnableReference(), stride);
         }
 
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
+        public unsafe AccelerationStructureBuildSizesInfoKHR GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] uint* pMaxPrimitiveCounts)
+        {
+            // NonKhrReturnTypeOverloader
+            GetAccelerationStructureBuildSizes(device, buildType, pBuildInfo, pMaxPrimitiveCounts, out AccelerationStructureBuildSizesInfoKHR silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
+        public unsafe AccelerationStructureBuildSizesInfoKHR GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] in uint pMaxPrimitiveCounts)
+        {
+            // NonKhrReturnTypeOverloader
+            GetAccelerationStructureBuildSizes(device, buildType, pBuildInfo, in pMaxPrimitiveCounts, out AccelerationStructureBuildSizesInfoKHR silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
+        public unsafe AccelerationStructureBuildSizesInfoKHR GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] uint* pMaxPrimitiveCounts)
+        {
+            // NonKhrReturnTypeOverloader
+            GetAccelerationStructureBuildSizes(device, buildType, in pBuildInfo, pMaxPrimitiveCounts, out AccelerationStructureBuildSizesInfoKHR silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
+        public unsafe AccelerationStructureBuildSizesInfoKHR GetAccelerationStructureBuildSizes([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureBuildGeometryInfoKHR pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] in uint pMaxPrimitiveCounts)
+        {
+            // NonKhrReturnTypeOverloader
+            GetAccelerationStructureBuildSizes(device, buildType, in pBuildInfo, in pMaxPrimitiveCounts, out AccelerationStructureBuildSizesInfoKHR silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe AccelerationStructureCompatibilityKHR GetDeviceAccelerationStructureCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureVersionInfoKHR* pVersionInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDeviceAccelerationStructureCompatibility(device, pVersionInfo, out AccelerationStructureCompatibilityKHR silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe AccelerationStructureCompatibilityKHR GetDeviceAccelerationStructureCompatibility([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureVersionInfoKHR pVersionInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDeviceAccelerationStructureCompatibility(device, in pVersionInfo, out AccelerationStructureCompatibilityKHR silkRet);
+            return silkRet;
+        }
+
         public KhrAccelerationStructure(INativeContext ctx)
             : base(ctx)
         {

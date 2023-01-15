@@ -12,10 +12,12 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "LightEnvModeSGIX")]
     public enum LightEnvModeSGIX : int
     {
+        [System.Obsolete]
         [NativeName("Name", "GL_ADD")]
         Add = 0x104,
         [NativeName("Name", "GL_REPLACE")]
         Replace = 0x1E01,
+        [System.Obsolete]
         [NativeName("Name", "GL_MODULATE")]
         Modulate = 0x2100,
     }

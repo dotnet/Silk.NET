@@ -13,7 +13,12 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrOverlayMainSessionFlagsEXTX")]
     public enum OverlayMainSessionFlagsEXTX : long
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"EnabledCompositionLayerInfoDepthBitExtx\"")]
         [NativeName("Name", "XR_OVERLAY_MAIN_SESSION_ENABLED_COMPOSITION_LAYER_INFO_DEPTH_BIT_EXTX")]
         OverlayMainSessionEnabledCompositionLayerInfoDepthBitExtx = 1,
+        [NativeName("Name", "XR_OVERLAY_MAIN_SESSION_ENABLED_COMPOSITION_LAYER_INFO_DEPTH_BIT_EXTX")]
+        EnabledCompositionLayerInfoDepthBitExtx = 1,
     }
 }

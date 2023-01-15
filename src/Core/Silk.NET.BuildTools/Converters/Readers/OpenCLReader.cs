@@ -31,99 +31,19 @@ namespace Silk.NET.BuildTools.Converters.Readers
     /// </summary>
     public class OpenCLReader : IReader
     {
-        private static readonly Dictionary<string, string> Constants = new Dictionary<string, string>
+        private static readonly Dictionary<string, (string value, string type)> Constants = new Dictionary<string, (string, string)>
         {
-            // Constants
-            {"int_CL_CHAR_BIT", "8"},
-            {"int_CL_SCHAR_MAX", "127"},
-            {"int_CL_SCHAR_MIN", "-127 - 1"},
-            {"int_CL_CHAR_MAX", "127"},
-            {"int_CL_CHAR_MIN", "-127 - 1"},
-            {"int_CL_UCHAR_MAX", "255"},
-            {"short_CL_SHRT_MAX", "32767"},
-            {"short_CL_SHRT_MIN", "-32767 - 1"},
-            {"ushort_CL_USHRT_MAX", "65535"},
-            {"int_CL_INT_MAX", "2147483647"},
-            {"int_CL_INT_MIN", "-2147483647 - 1"},
-            {"uint_CL_UINT_MAX", "0xffffffffU"},
-            {"long_CL_LONG_MAX", "0x7FFFFFFFFFFFFFFFL"},
-            {"long_CL_LONG_MIN", "-0x7FFFFFFFFFFFFFFFL - 1L"},
-            {"ulong_CL_ULONG_MAX", "0xFFFFFFFFFFFFFFFFUL"},
-            {"float_CL_FLT_DIG", "6"},
-            {"float_CL_FLT_MANT_DIG", "24"},
-            {"float_CL_FLT_MAX_10_EXP", "+38"},
-            {"float_CL_FLT_MAX_EXP", "+128"},
-            {"float_CL_FLT_MIN_10_EXP", "-37"},
-            {"float_CL_FLT_MIN_EXP", "-125"},
-            {"float_CL_FLT_RADIX", "2"},
-            {"float_CL_FLT_MAX", "340282346638528859811704183484516925440.0f"},
-            {"float_CL_FLT_MIN", "1.175494350822287507969e-38f"},
-            {"float_CL_FLT_EPSILON", "1.1920928955078125e-7f"},
-            {"short_CL_HALF_DIG", "3"},
-            {"short_CL_HALF_MANT_DIG", "11"},
-            {"short_CL_HALF_MAX_10_EXP", "+4"},
-            {"short_CL_HALF_MAX_EXP", "+16"},
-            {"short_CL_HALF_MIN_10_EXP", "-4"},
-            {"short_CL_HALF_MIN_EXP", "-13"},
-            {"short_CL_HALF_RADIX", "2"},
-            {"short_CL_HALF_MAX", "unchecked((short)65504.0f)"},
-            {"short_CL_HALF_MIN", "unchecked((short)6.103515625e-05f)"},
-            {"short_CL_HALF_EPSILON", "unchecked((short)9.765625e-04f)"},
-            {"double_CL_DBL_DIG", "15"},
-            {"double_CL_DBL_MANT_DIG", "53"},
-            {"double_CL_DBL_MAX_10_EXP", "+308"},
-            {"double_CL_DBL_MAX_EXP", "+1024"},
-            {"double_CL_DBL_MIN_10_EXP", "-307"},
-            {"double_CL_DBL_MIN_EXP", "-1021"},
-            {"double_CL_DBL_RADIX", "2"},
-            {"double_CL_DBL_MAX", "1.7976931348623158e+308"},
-            {"double_CL_DBL_MIN", "2.225073858507201383090e-308"},
-            {"double_CL_DBL_EPSILON", "2.220446049250313080847e-16"},
-            {"double_CL_M_E", "2.7182818284590452354"},
-            {"double_CL_M_LOG2E", "1.4426950408889634074"},
-            {"double_CL_M_LOG10E", "0.43429448190325182765"},
-            {"double_CL_M_LN2", "0.69314718055994530942"},
-            {"double_CL_M_LN10", "2.30258509299404568402"},
-            {"double_CL_M_PI", "3.14159265358979323846"},
-            {"double_CL_M_PI_2", "1.57079632679489661923"},
-            {"double_CL_M_PI_4", "0.78539816339744830962"},
-            {"double_CL_M_1_PI", "0.31830988618379067154"},
-            {"double_CL_M_2_PI", "0.63661977236758134308"},
-            {"double_CL_M_2_SQRTPI", "1.12837916709551257390"},
-            {"double_CL_M_SQRT2", "1.41421356237309504880"},
-            {"double_CL_M_SQRT1_2", "0.70710678118654752440"},
-            {"float_CL_M_E_F", "2.718281828f"},
-            {"float_CL_M_LOG2E_F", "1.442695041f"},
-            {"float_CL_M_LOG10E_F", "0.434294482f"},
-            {"float_CL_M_LN2_F", "0.693147181f"},
-            {"float_CL_M_LN10_F", "2.302585093f"},
-            {"float_CL_M_PI_F", "3.141592654f"},
-            {"float_CL_M_PI_2_F", "1.570796327f"},
-            {"float_CL_M_PI_4_F", "0.785398163f"},
-            {"float_CL_M_1_PI_F", "0.318309886f"},
-            {"float_CL_M_2_PI_F", "0.636619772f"},
-            {"float_CL_M_2_SQRTPI_F", "1.128379167f"},
-            {"float_CL_M_SQRT2_F", "1.414213562f"},
-            {"float_CL_M_SQRT1_2_F", "0.707106781f"},
-            {"float_CL_NAN", "float.NaN"},
-            {"float_CL_HUGE_VALF", "(float) 1e50"},
-            {"double_CL_HUGE_VAL", "double.PositiveInfinity"},
-            {"float_CL_MAXFLOAT", "float.MaxValue"},
-            {"float_CL_INFINITY", "float.PositiveInfinity"},
-            
-            // MiscNumbers
-            {"int_CL_PROPERTIES_LIST_END_EXT", "0"},
-            {"int_CL_PARTITION_BY_COUNTS_LIST_END_EXT", "0"},
-            {"int_CL_DEVICE_PARTITION_BY_COUNTS_LIST_END", "0x0"},
-            {"int_CL_PARTITION_BY_NAMES_LIST_END_EXT", "0 - 1"},
-            {"int_CL_PARTITION_BY_NAMES_LIST_END_INTEL", "-1"},
-            
-            // Versioning
-            {"int_CL_VERSION_MAJOR_BITS", "10"},
-            {"int_CL_VERSION_MINOR_BITS", "10"},
-            {"int_CL_VERSION_PATCH_BITS", "12"},
-            {"int_CL_NAME_VERSION_MAX_NAME_SIZE", "64"},
-            
+            {"CL_NAN", ("float.NaN", "float")},
+            {"CL_HUGE_VALF", ("float.PositiveInfinity", "float")},
+            {"CL_HUGE_VAL", ("double.PositiveInfinity", "double")},
+            {"CL_MAXFLOAT", ("float.MaxValue", "float")},
+            {"CL_INFINITY", ("float.PositiveInfinity", "float")},
+            {"CL_IMPORT_MEMORY_WHOLE_ALLOCATION_ARM", ("ulong.MaxValue", "ulong")},
+            {"CL_PARTITION_BY_COUNTS_LIST_END_EXT", ("0", "uint")},
+            {"CL_PARTITION_BY_NAMES_LIST_END_EXT", ("ulong.MaxValue", "ulong")},
+            {"CL_PARTITION_BY_NAMES_LIST_END_INTEL", ("ulong.MaxValue", "ulong")},
+            {"CL_PROPERTIES_LIST_END_EXT", ("0", "uint")},
+
         };
         
         /// <inheritdoc />
@@ -136,67 +56,96 @@ namespace Silk.NET.BuildTools.Converters.Readers
         public IEnumerable<Struct> ReadStructs(object obj, BindTask task)
         {
             var xd = (XDocument) obj;
-            
-            var rawStructs = xd.Element("registry")?.Element("types")?.Elements("type")
+
+            var registry = xd.Element("registry");
+
+            Debug.Assert(registry != null, nameof(registry) + " != null");
+
+            var rawStructs = registry.Elements("types")
+                .Elements("type")
                 .Where(type => type.HasCategoryAttribute("struct"))
                 .Select(StructureDefinition.CreateFromXml)
                 .ToArray();
-            
+
             var structs = ConvertStructs(rawStructs, task);
-            
-            foreach (var feature in xd.Element
-                    ("registry")
-                ?.Elements("feature")
-                .Attributes("api")
-                .Select(x => x.Value)
-                .RemoveDuplicates() ?? throw new InvalidDataException())
+
+            var apis = registry.Elements("feature").Concat
+            (
+                registry.Elements("extensions").Elements("extension")
+                ?? throw new InvalidDataException()
+            );
+            Debug.Assert(apis != null, nameof(apis) + " != null");
+
+            foreach (var api in apis)
             {
-                foreach (var (_, s) in structs)
+                foreach (var requirement in api.Elements("require"))
                 {
-                    yield return new Struct
+                    var apiName = requirement.Attribute("api")?.Value ??
+                                  api.Attribute("api")?.Value ??
+                                  api.Attribute("supported")?.Value ??
+                                  "opencl";
+                    var apiVersion = api.Attribute("number") != null
+                        ? Version.Parse(api.Attribute("number")?.Value ?? throw new InvalidDataException())
+                        : null;
+                    foreach (var s in requirement
+                        .Elements("type")
+                        .Attributes("name")
+                        .Select(x => Rename(x.Value, task))
+                        .Where(x => structs.ContainsKey(x))
+                        .Select(x => structs[x]))
                     {
-                        Attributes = s.Attributes,
-                        ExtensionName = "Core",
-                        Fields = s.Fields,
-                        Functions = s.Functions,
-                        Name = s.Name,
-                        NativeName = s.NativeName,
-                        ProfileName = feature,
-                        ProfileVersion = null
-                    };
+                        yield return new Struct
+                        {
+                            Attributes = s.Attributes,
+                            ExtensionName = api.Name == "feature"
+                                           ? "Core"
+                                           : ExtensionName(api.Attribute("name")?.Value, task),
+                            Fields = s.Fields,
+                            Functions = s.Functions,
+                            Name = s.Name,
+                            NativeName = s.NativeName,
+                            ProfileName = apiName,
+                            ProfileVersion = apiVersion,
+                        };
+                    }
                 }
             }
-            
-            task.TypeMaps.Add(structs.ToDictionary(x => x.Key, x => x.Value.Name));
+
+            task.TypeMaps.Add(structs.ToDictionary(x => x.Key.Renamed, x => x.Value.Name));
         }
 
-        private static Dictionary<string, Struct> ConvertStructs(IEnumerable<StructureDefinition> spec, BindTask task)
+        private static Dictionary<RenamedEntry, Struct> ConvertStructs(IEnumerable<StructureDefinition> spec, BindTask task)
         {
             var prefix = task.FunctionPrefix;
-            var ret = new Dictionary<string, Struct>();
+            var ret = new Dictionary<RenamedEntry, Struct>();
             foreach (var s in spec)
             {
+                var renamedStruct = Rename(s.Name, task);
                 ret.Add
                 (
-                    s.Name, new Struct
+                    renamedStruct, new Struct
                     {
                         Fields = s.Members.Select
                         (
-                            x => new Field
+                            x =>
                             {
-                                Count = string.IsNullOrEmpty(x.ElementCountSymbolic)
-                                    ? x.ElementCount != 1 ? new Count(x.ElementCount) : null
-                                    : new Count(x.ElementCountSymbolic, false),
-                                Name = Naming.Translate(TrimName(x.Name, task), prefix),
-                                Doc = $"/// <summary>{x.Comment}</summary>",
-                                NativeName = x.Name,
-                                NativeType = x.Type.ToString(),
-                                Type = ConvertType(x.Type)
-                            }.WithFixedFieldFixup09072020()
-                        )
+                                var renamedField = Rename(x.Name, task);
+                                var fieldType = ConvertType(x.Type, task);
+                                return new Field
+                                {
+                                    Count = string.IsNullOrEmpty(x.ElementCountSymbolic)
+                                                                    ? x.ElementCount != 1 ? new Count(x.ElementCount) : null
+                                                                    : new Count(x.ElementCountSymbolic, false),
+                                    Name = Naming.Translate(TrimName(renamedField.Renamed, task), prefix),
+                                    Doc = $"/// <summary>{x.Comment}</summary>",
+                                    NativeName = renamedField.Original,
+                                    NativeType = x.Type.ToString(),
+                                    Type = fieldType
+                                }.WithFixedFieldFixup09072020();
+                            })
                         .ToList(),
-                        Name = Naming.TranslateLite(TrimName(s.Name, task), prefix),
-                        NativeName = s.Name
+                        Name = Naming.TranslateLite(TrimName(renamedStruct.Renamed, task), prefix),
+                        NativeName = renamedStruct.Original
                     }
                 );
             }
@@ -204,14 +153,15 @@ namespace Silk.NET.BuildTools.Converters.Readers
             return ret;
         }
 
-        private static Type ConvertType(TypeSpec type)
+        private static Type ConvertType(TypeSpec type, BindTask task)
         {
+            var renamed = Rename(type.Name, task);
             return new Type
             {
                 ArrayDimensions = type.ArrayDimensions,
                 IndirectionLevels = type.PointerIndirection,
-                Name = type.Name,
-                OriginalName = type.Name
+                Name = renamed.Renamed,
+                OriginalName = renamed.Original
             };
         }
 
@@ -835,42 +785,222 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
             var registry = doc.Element("registry");
             Debug.Assert(registry != null, $"{nameof(registry)} != null");
-            
-            var allEnums = registry
-                .Elements("enums")
-                .Elements("enum")
-                .DistinctBy(x => x.Attribute("name")?.Value)
-                .Where
-                (
-                    x => x.Parent?.Attribute("name")?.Value != "Constants" &&
-                         x.Parent?.Attribute("name")?.Value != "MiscNumbers"
-                )
-                .ToDictionary
-                (
-                    x => x.Attribute("name")?.Value,
-                    x => FormatToken
-                    (
-                        x.Attribute("value")?.Value ?? (x.Attribute("bitpos") is null
-                            ? null
-                            : (1L << int.Parse(x.Attribute("bitpos")?.Value ?? throw new InvalidDataException())).ToString("X"))
-                    )
-                );
-            Debug.Assert(allEnums != null, nameof(allEnums) + " != null");
-            
+
+            string ProcessTypedef(XElement element)
+            {
+                if (element.Value.Contains('*'))
+                {
+                    if (element.Value.StartsWith("typedef struct") || element.Element("type")?.Value == "void")
+                    {
+                        return "intptr_t";
+                    }
+
+                    throw new InvalidDataException("Unable to process a typedef");
+                }
+
+                return element.Element("type")?.Value;
+            }
+
+            var typemap = registry
+                .Elements("types")
+                .Elements("type")
+                .Where(x => x.Attribute("category")?.Value == "define" && x.Value.StartsWith("typedef"))
+                .Select(x => (x.Element("name").Value, ProcessTypedef(x)))
+                .Where(x => x.Item2 != null)
+                .ToDictionary(x => x.Item1, x => x.Item2);
+
+            var nulls = typemap.Where(x => x.Value == null).ToArray();
+
+            task.TypeMaps.Add(typemap);
+
             var apis = registry.Elements("feature").Concat
             (
                 registry.Elements("extensions").Elements("extension")
                 ?? throw new InvalidDataException()
             );
             Debug.Assert(apis != null, nameof(apis) + " != null");
-            
-            var removals = registry
-                .Elements("feature")
-                .Elements("remove")
+
+            var ulongEnums = new HashSet<string>(registry
+                .Elements("types")
+                .Elements("type")
+                .Where(e => e.Elements("type").SingleOrDefault()?.Value == "cl_bitfield" ||
+                            e.Elements("type").SingleOrDefault()?.Value == "cl_properties" ||
+                            e.Elements("type").SingleOrDefault()?.Value == "cl_ulong"
+                      )
+                .Select(e => Rename(e.Element("name").Value, task).Renamed));
+
+            var nintEnums = new HashSet<string>(registry
+                .Elements("types")
+                .Elements("type")
+                .Where(e => e.Elements("type").SingleOrDefault()?.Value == "intptr_t")
+                .Select(e => Rename(e.Element("name").Value, task).Renamed));
+
+            var flagEnums = new HashSet<string>(registry
+                .Elements("enums")
+                .Where(e => e.Attribute("type")?.Value == "bitmask")
+                .Select(e => Rename(e.Attribute("name").Value, task).Renamed)
+                .Concat(registry
+                .Elements("types")
+                .Elements("type")
+                .Where(e => e.Elements("type").SingleOrDefault()?.Value == "cl_bitfield")
+                .Select(e => Rename(e.Element("name").Value, task).Renamed)));
+
+            var enumEntries = new Dictionary<RenamedEntry, HashSet<RenamedEntry>>();
+            var enumTypes = new Dictionary<RenamedEntry, HashSet<RenamedEntry>>();
+
+            void AddEntry(RenamedEntry key, RenamedEntry value, Dictionary<RenamedEntry, HashSet<RenamedEntry>> dict)
+            {
+                if (dict.TryGetValue(key, out var list))
+                {
+                    list.Add(value);
+                }
+                else
+                {
+                    dict.Add(key, new HashSet<RenamedEntry> { value });
+                }
+            }
+
+            var constants = new HashSet<RenamedEntry>(registry
+                .Elements("enums")
+                .Where(x => x.Attribute("name").Value.StartsWith("Constants") || 
+                            x.Attribute("name").Value == "MiscNumbers")
                 .Elements("enum")
-                .Attributes("name")
-                .Select(x => x.Value)
-                .ToList();
+                .Select(x => Rename(x.Attribute("name").Value, task))
+                .Concat(Constants.Keys.Select(c => Rename(c, task))));
+
+            // Mark enums based on "enums" tags
+            var enumsPass1 = registry
+                .Elements("enums")
+                .Elements("enum")
+                .Where
+                (
+                    x => !x.Parent.Attribute("name").Value.StartsWith("Constants") &&
+                         !x.Parent.Attribute("name").Value.StartsWith("enums") && // these are unnamed
+                         x.Parent.Attribute("name").Value != "MiscNumbers" &&     // these are constants
+                         x.Parent.Attribute("name").Value != "cl_device_info"     // bug in XML spec - see https://github.com/KhronosGroup/OpenCL-Docs/pull/779
+                )
+                .ToDictionary
+                (
+                    x => Rename(x.Attribute("name").Value, task),
+                    x =>
+                    {
+                        var type = Rename(x.Parent.Attribute("name").Value, task);
+                        string newName = "";
+                        var typeStr = type.Renamed;
+                        if (typeStr.StartsWith("ErrorCodes"))
+                        {
+                            return new RenamedEntry(type.Original, "ErrorCodes");
+                        }
+                        if (typeStr.EndsWith(".flags"))
+                        {
+                            newName = typeStr.Substring(0, typeStr.Length - ".flags".Length);
+                            flagEnums.Add(newName);
+                            return new RenamedEntry(type.Original, newName);
+                        }
+                        newName = typeStr.Replace('.', '_');
+                        if (flagEnums.Contains(typeStr))
+                        {
+                            flagEnums.Add(newName);
+                        }
+                        return new RenamedEntry(type.Original, newName);
+                    }
+                );
+
+            // Mark enums based on "require" tags
+            apis.Elements("require")
+                .Elements("enum").ForEach(x =>
+                {
+                    var name = Rename(x.Attribute("name").Value, task);
+
+                    if (constants.Contains(name)) return;
+
+                    var type = Rename(x.Parent.Attribute("comment")?.Value, task);
+
+                    var typeStr = type?.Renamed;
+
+                    if (typeStr == null || typeStr.Contains(' '))
+                    {
+                        if (enumsPass1.TryGetValue(name, out var pass1type))
+                        {
+                            type = pass1type;
+                        }
+                        else if (typeStr != null)
+                        {
+                            if (typeStr == "Error codes") type = new RenamedEntry(type.Original, "ErrorCodes");
+                            else if (typeStr?.StartsWith("OpenCL ") ?? false && typeStr.Contains("deprecated"))
+                            {
+                                // Core spec deprecation notices
+                                var typeNameStart = typeStr.IndexOf(' ', "OpenCL ".Length) + 1;
+                                var typeNameEnd = typeStr.IndexOf(' ', typeNameStart + 1);
+                                type = new RenamedEntry(type.Original, typeStr.Substring(typeNameStart, typeNameEnd - typeNameStart));
+                            }
+                            else if (typeStr?.StartsWith("cl_uint ") ?? false) type = new RenamedEntry(type.Original, typeStr.Substring("cl_uint ".Length)); // QCOM extensions
+                            else type = null;
+                        }
+                    }
+
+                    if(type != null)
+                    {
+                        AddEntry(type, name, enumEntries);
+                        AddEntry(name, type, enumTypes);
+                    }
+                });
+
+            // Add empty enums that are defined in spec but have no members (yet)
+            registry
+                .Elements("types")
+                .Elements("type")
+                .Where(e => e.Elements("type").SingleOrDefault()?.Value == "cl_bitfield" ||
+                            e.Elements("type").SingleOrDefault()?.Value == "cl_properties"
+                      )
+                .Select(e => Rename(e.Element("name").Value, task))
+                .Where(x => !enumEntries.ContainsKey(x))
+                .ForEach(x => enumEntries.Add(x, new HashSet<RenamedEntry>()));
+
+            // Read actual enum values
+            var enumValues = registry
+                .Elements("enums")
+                .Elements("enum")
+                .Where
+                (
+                    x => !x.Parent.Attribute("name").Value.StartsWith("Constants") &&
+                          x.Parent.Attribute("name").Value != "MiscNumbers"
+                )
+                .ToDictionary
+                (
+                    x => Rename(x.Attribute("name").Value, task).Renamed,
+                    x => FormatToken
+                            (x.Attribute("value")?.Value ?? (x.Attribute("bitpos") is null
+                                ? null
+                                : (1L << int.Parse(x.Attribute("bitpos")?.Value ?? throw new InvalidDataException())).ToString("X")))
+                );
+            Debug.Assert(enumValues != null, nameof(enumValues) + " != null");
+
+            var removals =
+                registry
+                .Elements("feature")
+                .Elements("require")
+                .Where(x => x.Attribute("comment")?.Value.Contains("deprecated") ?? false)
+                .Elements("enum")
+                .ToDictionary(x => x.Attribute("name").Value, x => GetDeprecatedIn(x.Parent.Attribute("comment").Value));
+
+            List<Attribute> GetTokenAttributes(string name)
+            {
+                if (!removals.TryGetValue(name, out var version))
+                {
+                    return new List<Attribute>();
+                }
+
+                return new List<Attribute>
+                {
+                    new Attribute
+                    {
+                        Arguments = new List<string>
+                        {$"\"Deprecated in version {version}\""},
+                        Name = "System.Obsolete"
+                    }
+                };
+            }
             
             foreach (var api in apis)
             {
@@ -883,65 +1013,247 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     var apiVersion = api.Attribute("number") != null
                         ? Version.Parse(api.Attribute("number")?.Value ?? throw new InvalidDataException())
                         : null;
-                    var tokens = requirement.Elements("enum")
+                    var tokens = requirement
+                        .Elements("enum")
                         .Attributes("name")
-                        .Where(x => !Constants.ContainsKey(x.Value) && allEnums.ContainsKey(x.Value))
+                        .Select(x => Rename(x.Value, task))
+                        .Where(x => !constants.Contains(x))
                         .Select
                         (
                             token => new Token
                             {
-                                Attributes = removals.Contains(token.Value)
-                                    ? new List<Attribute>
-                                    {
-                                        new Attribute
-                                        {
-                                            Arguments = new List<string>
-                                                {$"\"Deprecated in version {apiVersion?.ToString(2)}\""},
-                                            Name = "System.Obsolete"
-                                        }
-                                    }
-                                    : new List<Attribute>(),
+                                Attributes = GetTokenAttributes(token.Renamed),
                                 Doc = string.Empty,
-                                Name = Naming.Translate(TrimName(token.Value, task), task.FunctionPrefix),
-                                NativeName = token.Value,
-                                Value = allEnums.ContainsKey
-                                    (token.Value)
-                                    ? allEnums[token.Value]
-                                    : FormatToken(Constants[token.Value].ToString())
+                                Name = Naming.Translate(TrimName(token.Renamed, task), task.FunctionPrefix),
+                                NativeName = token.Original,
+                                Value = enumValues[token.Renamed]
                             }
-                        )
-                        .ToList();
-                    foreach (var name in apiName.Split('|'))
-                    {
-                        var ret = new Enum
-                        {
-                            Attributes = new List<Attribute>(),
-                            ExtensionName = api.Name == "feature"
-                                ? "Core"
-                                : ExtensionName(api.Attribute("name")?.Value, task),
-                            Name = Naming.Translate(TrimName(api.Attribute("name")?.Value, task), task.FunctionPrefix),
-                            NativeName = api.Attribute("name")?.Value,
-                            ProfileName = name,
-                            ProfileVersion = apiVersion,
-                            Tokens = tokens
-                        };
+                        ).ToList();
 
-                        yield return ret;
-                    }
+                    Debug.Assert(!apiName.Contains('|'));
+
+                    var ret = new Enum
+                    {
+                        Attributes = new List<Attribute>(),
+                        ExtensionName = api.Name == "feature"
+                                           ? "Core"
+                                           : ExtensionName(api.Attribute("name")?.Value, task),
+                        Name = "Globals",
+                        NativeName = api.Attribute("name")?.Value,
+                        ProfileName = apiName,
+                        ProfileVersion = apiVersion,
+                        Tokens = tokens
+                    };
+
+                    yield return ret;
                 }
             }
+
+            List<Attribute> GetEnumAttributes(string name)
+            {
+                if (!flagEnums.Contains(name))
+                {
+                    return new List<Attribute>();
+                }
+
+                return new List<Attribute>
+                {
+                    new Attribute
+                    {
+                        Name = "System.Flags"
+                    }
+                };
+            }
+
+            var coreEnums = new HashSet<RenamedEntry>(registry
+                .Elements("feature")
+                .Elements("require")
+                .Elements("enum")
+                .Attributes("name")
+                .Select(x => Rename(x.Value, task))
+                .Where(x => !constants.Contains(x))
+                .SelectMany(name => enumTypes[name])
+                .Concat(registry
+                .Elements("feature")
+                .Elements("require")
+                .Elements("type")
+                .Attributes("name")
+                .Select(x => Rename(x.Value, task))
+                ));
+
+            var enumExtensionsByType = registry
+                .Elements("extensions")
+                .Elements("extension")
+                .Select(e => (e, ExtensionName(e.Attribute("name")?.Value, task)))
+                .SelectMany(e => e.Item1
+                    .Elements("require")
+                    .Elements("type")
+                    .Attributes("name")
+                    .Select(x => Rename(x.Value, task))
+                    .Where(x => enumEntries.ContainsKey(x))
+                    .Where(x => !coreEnums.Contains(x))
+                    .Select(type => (type, e.Item2)))
+                .ToList();
+
+            var enumExtensionsInferred = registry
+                .Elements("extensions")
+                .Elements("extension")
+                .Select(e => (e, ExtensionName(e.Attribute("name")?.Value, task)))
+                .SelectMany(e => e.Item1
+                    .Elements("require")
+                    .Elements("enum")
+                    .Attributes("name")
+                    .Select(x => Rename(x.Value, task))
+                    .Where(x => !constants.Contains(x))
+                    .Where(x => enumTypes.ContainsKey(x))
+                    .SelectMany(x => enumTypes[x])
+                    .Where(x => !coreEnums.Contains(x))
+                    .Distinct()
+                    .Select(type => (type, e.Item2)))
+                .ToList();
+
+            var enumExtensions = new Dictionary<RenamedEntry, RenamedEntry>();
+
+            foreach (var enumExt in enumExtensionsByType.Concat(enumExtensionsInferred))
+            {
+                enumExtensions.TryAdd(enumExt.Item1, Rename(enumExt.Item2, task));
+            }
+
+            var enumTypemap = new Dictionary<string, string>();
+
+            foreach (var group in enumEntries)
+            {
+                var tokens = group.Value.Select(name =>
+                {
+                    var value = enumValues[name.Renamed];
+                    return new Token
+                    {
+                        Attributes = GetTokenAttributes(name.Renamed),
+                        Doc = string.Empty,
+                        Name = Naming.Translate(TrimName(name.Renamed, task), task.FunctionPrefix),
+                        NativeName = name.Original,
+                        Value = value
+                    };
+                }).ToList();
+
+                string baseName = "";
+                string rawName = "";
+                if (enumExtensions.TryGetValue(group.Key, out var extName))
+                {
+                    baseName = extName.Renamed.Substring(0, extName.Renamed.IndexOf('_'));
+                    var groupNoTag = group.Key.Renamed.Replace($"_{baseName}", "", StringComparison.OrdinalIgnoreCase);
+                    rawName = groupNoTag;
+
+                    if (tokens.Count == 0 && enumEntries.ContainsKey(new RenamedEntry(group.Key.Original, groupNoTag)))
+                    {
+                        continue;
+                    }
+                }
+                else
+                {
+                    extName = new RenamedEntry("Core (Grouped)", "Core (Grouped)");
+                    rawName = group.Key.Renamed;
+                    baseName = "CLEnum";
+                }
+
+                var groupName = Naming.Translate(TrimName(rawName, task), task.FunctionPrefix);
+                var is64bit = ulongEnums.Contains(group.Key.Renamed);
+                var isNint = nintEnums.Contains(group.Key.Renamed);
+
+                RenameTokens(tokens, group.Key.Renamed, baseName, task);
+
+                // Allow intptr_t based enums to fall through to the nint base type
+                if (!isNint)
+                {
+                    enumTypemap[group.Key.Original] = groupName;
+                    enumTypemap[group.Key.Renamed] = groupName;
+                }
+
+                foreach (var (apiName, apiVersion) in registry
+                    .Elements("feature")
+                    .Select(x => (x.Attribute("api")?.Value, x.Attribute("number")?.Value))
+                    .Distinct())
+                {
+                    var ret = new Enum
+                    {
+                        Name = groupName,
+                        NativeName = group.Key.Original,
+                        Attributes = GetEnumAttributes(group.Key.Renamed),
+                        ExtensionName = extName.Renamed,
+                        ProfileName = apiName,
+                        ProfileVersion = Version.Parse(apiVersion),
+                        Tokens = tokens,
+                        EnumBaseType = (is64bit || isNint) ? new Type { Name = "ulong" } : new Type { Name = "int" }
+                    };
+            
+                    yield return ret;
+                }
+            }
+
+            task.TypeMaps.Add(enumTypemap);
         }
-        
+
+        private void RenameTokens(List<Token> list, string groupName, string extTag, BindTask task)
+        {
+            if (list.Count == 0) return;
+
+            var prefix = "";
+            if (list.Count == 1)
+            {
+                prefix = Utilities.FindCommonPrefix(new List<string> { Rename(list[0].NativeName, task).Renamed, groupName }, true, false);
+            }
+            else
+            {
+                prefix = Utilities.FindCommonPrefix(list.Select(x => Rename(x.NativeName, task).Renamed).ToList(), false, false);
+            }
+
+            string suffix = "";
+            if (extTag != "")
+            {
+                suffix = $"_{extTag}";
+            }
+
+            string TrimTag(string name)
+            {
+                if (suffix.Length == 0)
+                {
+                    return name;
+                }
+                if (name.EndsWith(suffix, StringComparison.OrdinalIgnoreCase))
+                {
+                    return name.Substring(0, name.Length - suffix.Length);
+                }
+                return name;
+            }
+
+            foreach (var token in list)
+            {
+                token.Name = Naming.Translate(TrimTag(Rename(token.NativeName, task).Renamed.Substring(prefix.Length)), task.FunctionPrefix);
+            }
+        }
+
+        private static RenamedEntry Rename(string origName, BindTask task)
+        {
+            if (origName == null)
+            {
+                return null;
+            }
+
+            if (task.RenamedNativeNames.TryGetValue(origName, out var renamed))
+            {
+                return new RenamedEntry(origName, renamed);
+            }
+            return new RenamedEntry(origName, origName);
+        }
+
+        private string GetDeprecatedIn(string msg)
+        {
+            return msg.Substring(msg.LastIndexOf(' ') + 1);
+        }
+
         private static string ExtensionName(string ext, BindTask task)
         {
-            switch (ext)
-            {
-                // spec inconsistency
-                case "cl_device_partition_property_ext":
-                    return "EXT_device_partition_property";
-                case "ck_khr_mipmap_image":
-                    return "KHR_mipmap_image";
-            }
+            ext = Rename(ext, task).Renamed;
 
             var trimmedExt = TrimName(ext, task);
             var splitTrimmed = trimmedExt.Split('_');
@@ -952,61 +1264,89 @@ namespace Silk.NET.BuildTools.Converters.Readers
         /// <inheritdoc />
         public IEnumerable<Constant> ReadConstants(object obj, BindTask task)
         {
-            return Constants.Select
+            var doc = obj as XDocument;
+            Debug.Assert(doc != null, $"{nameof(doc)} != null");
+
+            var registry = doc.Element("registry");
+            Debug.Assert(registry != null, $"{nameof(registry)} != null");
+
+            var constants = new List<(RenamedEntry, string)>(registry
+                .Elements("enums")
+                .Where(x => x.Attribute("name").Value.StartsWith("Constants") || 
+                            x.Attribute("name").Value == "MiscNumbers")
+                .Elements("enum")
+                .Select(x => (Rename(x.Attribute("name").Value, task), x.Attribute("value").Value)));
+
+            return constants.Select
             (
-                x => new Constant
+                x =>
                 {
-                    Name = Naming.Translate(TrimName(GetName(x.Key, out var type), task), task.FunctionPrefix),
-                    NativeName = GetName(x.Key, out _),
-                    Type = new Type {Name = type}, Value = x.Value.ToString()
-                }
-            );
+                    var type = GetConstType(x.Item1.Renamed);
+                    var value = GetConstValue(x.Item1.Renamed, x.Item2, type);
+                    if (Constants.TryGetValue(x.Item1.Renamed, out var t))
+                    {
+                        value = t.value;
+                        type = t.type;
+                    }
+
+                    return new Constant
+                    {
+                        Name = Naming.Translate(TrimName(x.Item1.Renamed, task), task.FunctionPrefix),
+                        NativeName = x.Item1.Original,
+                        Type = new Type { Name = type },
+                        Value = value
+                    };
+                });
         }
 
-        private static string GetName(string xKey, out string type)
+        private string GetConstValue(string name, string origValue, string type)
         {
-            var split = xKey.Split('_');
-            type = split[0];
-            return string.Join("_", new ArraySegment<string>(split, 1, split.Length - 1));
+            if (name.StartsWith("CL_HALF")) return origValue;
+
+            if (name.EndsWith("_MIN")) return $"{type}.MinValue";
+            if (name.EndsWith("_MAX")) return $"{type}.MaxValue";
+
+            return origValue;
+        }
+
+        private string GetConstType(string name)
+        {
+            if (name.StartsWith("CL_CHAR")) return "sbyte";
+            if (name.StartsWith("CL_UCHAR")) return "byte";
+            if (name.StartsWith("CL_SCHAR")) return "sbyte";
+            if (name.StartsWith("CL_SHRT")) return "short";
+            if (name.StartsWith("CL_USHRT")) return "ushort";
+            if (name.StartsWith("CL_USHRT")) return "ushort";
+            if (name.StartsWith("CL_UINT")) return "uint";
+            if (name.StartsWith("CL_INT")) return "int";
+            if (name.StartsWith("CL_ULONG")) return "ulong";
+            if (name.StartsWith("CL_LONG")) return "long";
+            if (name.StartsWith("CL_HALF")) return "float";
+            if (name.StartsWith("CL_FLT")) return "float";
+            if (name.StartsWith("CL_DBL")) return "double";
+            if (name.StartsWith("CL_M") && name.EndsWith("_F")) return "float";
+            if (name.StartsWith("CL_M")) return "double";
+            return "int";
         }
 
         private static string FormatToken(string token)
         {
-            switch (token)
+            if (token == null) return null;
+
+            token = token switch
             {
-                case null:
-                    return null;
-                case "SIZE_MAX":
-                    // TODO stop treating OpenCL constants as enums
-                    return unchecked((int)18446744073709551615).ToString();
-                case "CL_TRUE":
-                    return 1.ToString();
-                case "CL_FALSE":
-                    return 0.ToString();
-                case "(0x1 << 24)":
-                    return (0x1 << 24).ToString();
-                case "(0x2 << 24)":
-                    return (0x2 << 24).ToString();
-                case "(0x3 << 24)":
-                    return (0x3 << 24).ToString();
-                case "(0x55 << 24)":
-                    return (0x55 << 24).ToString();
-                case "(0xAA << 24)":
-                    return (0xAA << 24).ToString();
-                case "(0xFF << 24)":
-                    return (0xFF << 24).ToString();
-                case "(0x1 << 26)":
-                    return (0x1 << 26).ToString();
-                case "(0x2 << 26)":
-                    return (0x2 << 26).ToString();
-                case "(0x1 << 28)":
-                    return (0x1 << 28).ToString();
-                case "(0x2 << 28)":
-                    return (0x2 << 28).ToString();
-                case "(0x1 << 30)":
-                    return (0x1 << 30).ToString();
-                case "(0x2 << 30)":
-                    return (0x2 << 30).ToString();
+                "CL_TRUE" => "1",
+                "CL_FALSE" => "0",
+                _ => token,
+            };
+
+            if (token.Contains("<<"))
+            {
+                token = token.Trim('(', ')');
+                var idx = token.IndexOf("<<");
+                var val1 = ulong.Parse(token.Substring(2, idx - 2), NumberStyles.HexNumber | NumberStyles.AllowTrailingWhite);
+                var val2 = int.Parse(token.Substring(idx + 2), NumberStyles.AllowLeadingWhite);
+                return $"0x{(val1 << val2):X}";
             }
 
             var tokenHex = token.StartsWith("0x") ? token.Substring(2) : token;
@@ -1025,14 +1365,29 @@ namespace Silk.NET.BuildTools.Converters.Readers
             }
 
             var valueString = $"0x{value:X}";
-            var needsCasting = value > int.MaxValue || value < 0;
-            if (needsCasting)
-            {
-                Console.WriteLine($"Warning: casting overflowing enum value {token} from 64-bit to 32-bit.");
-                valueString = $"unchecked((int){valueString})";
-            }
 
             return valueString;
+        }
+
+        sealed record RenamedEntry(string Original, string Renamed)
+        {
+            public bool Equals(RenamedEntry other)
+            {
+                return string.Equals(Renamed, other?.Renamed);
+            }
+
+            public override int GetHashCode()
+            {
+                return Renamed.GetHashCode();
+            }
+
+            public override string ToString()
+            {
+                if (string.Equals(Original, Renamed))
+                    return Renamed;
+
+                return $"{Renamed} (renamed from {Original})";
+            }
         }
     }
 }

@@ -106,7 +106,7 @@ namespace Silk.NET.BuildTools.Overloading
                     sb.Append("return ");
                 }
                 
-                sb.Append("thisApi." + original.Name);
+                sb.Append((original.InvocationPrefix ?? "thisApi.") + original.Name);
                 sb.Append("(");
                 sb.Append(string.Join(", ", invocationParameters));
                 sb.Append(");");

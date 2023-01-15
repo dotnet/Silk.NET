@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferImageCopy2KHR")]
+    [NativeName("AliasOf", "VkBufferImageCopy2")]
     public unsafe partial struct BufferImageCopy2KHR : IChainStart
     {
         public BufferImageCopy2KHR
         (
-            StructureType? sType = StructureType.BufferImageCopy2Khr,
+            StructureType? sType = StructureType.BufferImageCopy2,
             void* pNext = null,
             ulong? bufferOffset = null,
             uint? bufferRowLength = null,
@@ -116,7 +117,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.BufferImageCopy2Khr;
+            return SType = StructureType.BufferImageCopy2;
         }
 
         /// <inheritdoc />
@@ -134,7 +135,7 @@ namespace Silk.NET.Vulkan
         public static unsafe ref BufferImageCopy2KHR Chain(
             out BufferImageCopy2KHR capture)
         {
-            capture = new BufferImageCopy2KHR(StructureType.BufferImageCopy2Khr);
+            capture = new BufferImageCopy2KHR(StructureType.BufferImageCopy2);
             return ref capture;
         }
     }

@@ -80,6 +80,22 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         [NativeApi(EntryPoint = "vkReleaseProfilingLockKHR", Convention = CallingConvention.Winapi)]
         public partial void ReleaseProfilingLock([Count(Count = 0)] Device device);
 
+        /// <summary>To be documented.</summary>
+        public unsafe uint GetPhysicalDeviceQueueFamilyPerformanceQueryPasses([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] QueryPoolPerformanceCreateInfoKHR* pPerformanceQueryCreateInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceQueueFamilyPerformanceQueryPasses(physicalDevice, pPerformanceQueryCreateInfo, out uint silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe uint GetPhysicalDeviceQueueFamilyPerformanceQueryPasses([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in QueryPoolPerformanceCreateInfoKHR pPerformanceQueryCreateInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceQueueFamilyPerformanceQueryPasses(physicalDevice, in pPerformanceQueryCreateInfo, out uint silkRet);
+            return silkRet;
+        }
+
         public KhrPerformanceQuery(INativeContext ctx)
             : base(ctx)
         {

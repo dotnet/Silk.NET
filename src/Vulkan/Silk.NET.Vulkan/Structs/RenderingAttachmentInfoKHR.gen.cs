@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderingAttachmentInfoKHR")]
+    [NativeName("AliasOf", "VkRenderingAttachmentInfo")]
     public unsafe partial struct RenderingAttachmentInfoKHR : IChainable
     {
         public RenderingAttachmentInfoKHR
         (
-            StructureType? sType = StructureType.RenderingAttachmentInfoKhr,
+            StructureType? sType = StructureType.RenderingAttachmentInfo,
             void* pNext = null,
             ImageView? imageView = null,
             ImageLayout? imageLayout = null,
@@ -138,7 +139,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.RenderingAttachmentInfoKhr;
+            return SType = StructureType.RenderingAttachmentInfo;
         }
 
         /// <inheritdoc />

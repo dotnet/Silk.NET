@@ -14,13 +14,27 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_TouchDeviceType")]
     public enum TouchDeviceType : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"Invalid\"")]
         [NativeName("Name", "SDL_TOUCH_DEVICE_INVALID")]
         TouchDeviceInvalid = unchecked((int) 0xFFFFFFFFFFFFFFFF),
+        [Obsolete("Deprecated in favour of \"Direct\"")]
         [NativeName("Name", "SDL_TOUCH_DEVICE_DIRECT")]
         TouchDeviceDirect = 0x0,
+        [Obsolete("Deprecated in favour of \"IndirectAbsolute\"")]
         [NativeName("Name", "SDL_TOUCH_DEVICE_INDIRECT_ABSOLUTE")]
         TouchDeviceIndirectAbsolute = 0x1,
+        [Obsolete("Deprecated in favour of \"IndirectRelative\"")]
         [NativeName("Name", "SDL_TOUCH_DEVICE_INDIRECT_RELATIVE")]
         TouchDeviceIndirectRelative = 0x2,
+        [NativeName("Name", "SDL_TOUCH_DEVICE_INVALID")]
+        Invalid = unchecked((int) 0xFFFFFFFFFFFFFFFF),
+        [NativeName("Name", "SDL_TOUCH_DEVICE_DIRECT")]
+        Direct = 0x0,
+        [NativeName("Name", "SDL_TOUCH_DEVICE_INDIRECT_ABSOLUTE")]
+        IndirectAbsolute = 0x1,
+        [NativeName("Name", "SDL_TOUCH_DEVICE_INDIRECT_RELATIVE")]
+        IndirectRelative = 0x2,
     }
 }

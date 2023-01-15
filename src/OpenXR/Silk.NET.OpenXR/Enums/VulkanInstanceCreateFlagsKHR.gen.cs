@@ -13,5 +13,7 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrVulkanInstanceCreateFlagsKHR")]
     public enum VulkanInstanceCreateFlagsKHR : long
     {
+        [NativeName("Name", "")]
+        None = 0,
     }
 }

@@ -2,9 +2,6 @@ using Silk.NET.OpenGL;
 using System;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
-using System.Runtime.InteropServices;
-using SixLabors.ImageSharp.Advanced;
-using SixLabors.ImageSharp.Processing;
 
 namespace Tutorial
 {
@@ -15,36 +12,52 @@ namespace Tutorial
 
         public unsafe Texture(GL gl, string path)
         {
-            Image<Rgba32> img = (Image<Rgba32>) Image.Load(path);
-            
-            fixed (void* data = &MemoryMarshal.GetReference(img.GetPixelRowSpan(0)))
+            _gl = gl;
+
+            _handle = _gl.GenTexture();
+            Bind();
+
+            using (var img = Image.Load<Rgba32>(path))
             {
-                Load(gl, data, (uint) img.Width, (uint) img.Height);
+                gl.TexImage2D(TextureTarget.Texture2D, 0, InternalFormat.Rgba8, (uint) img.Width, (uint) img.Height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, null);
+
+                img.ProcessPixelRows(accessor =>
+                {
+                    for (int y = 0; y < accessor.Height; y++)
+                    {
+                        fixed (void* data = accessor.GetRowSpan(y))
+                        {
+                            gl.TexSubImage2D(TextureTarget.Texture2D, 0, 0, y, (uint) accessor.Width, 1, PixelFormat.Rgba, PixelType.UnsignedByte, data);
+                        }
+                    }
+                });
             }
 
-            img.Dispose();
+            SetParameters();
         }
 
         public unsafe Texture(GL gl, Span<byte> data, uint width, uint height)
-        {
-            fixed (void* d = &data[0])
-            {
-                Load(gl, d, width, height);
-            }
-        }
-
-        private unsafe void Load(GL gl, void* data, uint width, uint height)
         {
             _gl = gl;
 
             _handle = _gl.GenTexture();
             Bind();
 
-            _gl.TexImage2D(TextureTarget.Texture2D, 0, (int) InternalFormat.Rgba, width, height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, data);
+            fixed (void* d = &data[0])
+            {
+                _gl.TexImage2D(TextureTarget.Texture2D, 0, (int) InternalFormat.Rgba, width, height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, d);
+                SetParameters();
+            }
+        }
+
+        private void SetParameters()
+        {
             _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (int) GLEnum.ClampToEdge);
             _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (int) GLEnum.ClampToEdge);
-            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int) GLEnum.Linear);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int) GLEnum.LinearMipmapLinear);
             _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int) GLEnum.Linear);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureBaseLevel, 0);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMaxLevel, 8);
             _gl.GenerateMipmap(TextureTarget.Texture2D);
         }
 

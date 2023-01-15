@@ -53,8 +53,8 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Name", "Flags")]
         public uint Flags;
 
-        [NativeName("Type", "union (unnamed union at D:/Windows Kits/10/Include/10.0.22000.0/um\\minwinbase.h:268:5)")]
-        [NativeName("Type.Name", "union (unnamed union at D:/Windows Kits/10/Include/10.0.22000.0/um\\minwinbase.h:268:5)")]
+        [NativeName("Type", "union (unnamed union at D:\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\minwinbase.h:273:5)")]
+        [NativeName("Type.Name", "union (unnamed union at D:\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\minwinbase.h:273:5)")]
         [NativeName("Name", "Reason")]
         public ReasonContextReason Reason;
     }

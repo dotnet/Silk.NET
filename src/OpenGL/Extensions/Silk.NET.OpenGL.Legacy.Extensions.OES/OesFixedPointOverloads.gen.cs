@@ -52,7 +52,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
             thisApi.ConvolutionParameterx(target, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ConvolutionParameterx(this OesFixedPoint thisApi, [Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void ConvolutionParameterx(this OesFixedPoint thisApi, [Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.ConvolutionParameterx(target, pname, in @params.GetPinnableReference());
@@ -64,7 +64,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
             thisApi.ConvolutionParameterx(target, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ConvolutionParameterx(this OesFixedPoint thisApi, [Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void ConvolutionParameterx(this OesFixedPoint thisApi, [Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.ConvolutionParameterx(target, pname, in @params.GetPinnableReference());
@@ -376,13 +376,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
             thisApi.Materialx(face, pname, in param.GetPinnableReference());
         }
 
-        public static unsafe void Materialx(this OesFixedPoint thisApi, [Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> param)
+        public static unsafe void Materialx(this OesFixedPoint thisApi, [Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> param)
         {
             // SpanOverloader
             thisApi.Materialx(face, pname, in param.GetPinnableReference());
         }
 
-        public static unsafe void Materialx(this OesFixedPoint thisApi, [Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> param)
+        public static unsafe void Materialx(this OesFixedPoint thisApi, [Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> param)
         {
             // SpanOverloader
             thisApi.Materialx(face, pname, in param.GetPinnableReference());

@@ -12,9 +12,15 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_HIT_KIND")]
     public enum HitKind : int
     {
+        [Obsolete("Deprecated in favour of \"FrontFace\"")]
         [NativeName("Name", "D3D12_HIT_KIND_TRIANGLE_FRONT_FACE")]
         HitKindTriangleFrontFace = 0xFE,
+        [Obsolete("Deprecated in favour of \"BackFace\"")]
         [NativeName("Name", "D3D12_HIT_KIND_TRIANGLE_BACK_FACE")]
         HitKindTriangleBackFace = 0xFF,
+        [NativeName("Name", "D3D12_HIT_KIND_TRIANGLE_FRONT_FACE")]
+        FrontFace = 0xFE,
+        [NativeName("Name", "D3D12_HIT_KIND_TRIANGLE_BACK_FACE")]
+        BackFace = 0xFF,
     }
 }

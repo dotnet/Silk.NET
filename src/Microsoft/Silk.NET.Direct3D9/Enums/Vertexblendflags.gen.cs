@@ -13,6 +13,8 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "_D3DVERTEXBLENDFLAGS")]
     public enum Vertexblendflags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "D3DVBF_DISABLE")]
         VbfDisable = 0x0,
         [NativeName("Name", "D3DVBF_1WEIGHTS")]

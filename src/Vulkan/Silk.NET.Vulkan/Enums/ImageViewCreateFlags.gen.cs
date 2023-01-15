@@ -13,9 +13,27 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkImageViewCreateFlags")]
     public enum ImageViewCreateFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"FragmentDensityMapDynamicBitExt\"")]
         [NativeName("Name", "VK_IMAGE_VIEW_CREATE_FRAGMENT_DENSITY_MAP_DYNAMIC_BIT_EXT")]
         ImageViewCreateFragmentDensityMapDynamicBitExt = 1,
+        [Obsolete("Deprecated in favour of \"DescriptorBufferCaptureReplayBitExt\"")]
+        [NativeName("Name", "VK_IMAGE_VIEW_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
+        ImageViewCreateDescriptorBufferCaptureReplayBitExt = 4,
+        [Obsolete("Deprecated in favour of \"FragmentDensityMapDeferredBitExt\"")]
         [NativeName("Name", "VK_IMAGE_VIEW_CREATE_FRAGMENT_DENSITY_MAP_DEFERRED_BIT_EXT")]
         ImageViewCreateFragmentDensityMapDeferredBitExt = 2,
+        [Obsolete("Deprecated in favour of \"Reserved3BitExt\"")]
+        [NativeName("Name", "VK_IMAGE_VIEW_CREATE_RESERVED_3_BIT_EXT")]
+        ImageViewCreateReserved3BitExt = 8,
+        [NativeName("Name", "VK_IMAGE_VIEW_CREATE_FRAGMENT_DENSITY_MAP_DYNAMIC_BIT_EXT")]
+        FragmentDensityMapDynamicBitExt = 1,
+        [NativeName("Name", "VK_IMAGE_VIEW_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
+        DescriptorBufferCaptureReplayBitExt = 4,
+        [NativeName("Name", "VK_IMAGE_VIEW_CREATE_FRAGMENT_DENSITY_MAP_DEFERRED_BIT_EXT")]
+        FragmentDensityMapDeferredBitExt = 2,
+        [NativeName("Name", "VK_IMAGE_VIEW_CREATE_RESERVED_3_BIT_EXT")]
+        Reserved3BitExt = 8,
     }
 }

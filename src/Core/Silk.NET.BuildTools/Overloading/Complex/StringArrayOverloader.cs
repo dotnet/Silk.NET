@@ -52,7 +52,7 @@ namespace Silk.NET.BuildTools.Overloading
 
             sb.AppendLine
             (
-                $"{function.Name}" +
+                $"{function.InvocationPrefix}{function.Name}" +
                 "(" + string.Join
                 (
                     ", ",

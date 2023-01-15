@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common.Functions;
 using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
@@ -22,11 +21,11 @@ namespace Silk.NET.BuildTools.Common
         /// </summary>
         /// <param name="map">The typemap/dictionary to use.</param>
         /// <param name="functions">The functions to map.</param>
-        public static void Map(Dictionary<string, string> map, IEnumerable<Function> functions)
+        public static void Map(Dictionary<string, string> map, IEnumerable<Function> functions, bool mapNative)
         {
             foreach (var function in functions)
             {
-                Map(map, function);
+                Map(map, function, mapNative);
             }
         }
 
@@ -36,12 +35,12 @@ namespace Silk.NET.BuildTools.Common
         /// <param name="maps">The map to use.</param>
         /// <param name="og">The type to map.</param>
         /// <returns>The mapped type.</returns>
-        public static Type MapOne(IEnumerable<Dictionary<string, string>> maps, Type og)
+        public static Type MapOne(IEnumerable<Dictionary<string, string>> maps, Type og, bool mapNative, string ogN = null)
         {
             var type = og;
             foreach (var map in maps)
             {
-                type = MapOne(map, type);
+                type = MapOne(map, type, mapNative, ogN);
             }
 
             return type;
@@ -53,28 +52,66 @@ namespace Silk.NET.BuildTools.Common
         /// <param name="map">The map to use.</param>
         /// <param name="og">The type to map.</param>
         /// <returns>The mapped type.</returns>
-        public static Type MapOne(Dictionary<string, string> map, Type og)
+        public static Type MapOne(Dictionary<string, string> map, Type og, bool mapNative, string ogN = null)
         {
             var type = og;
-            if (map.ContainsKey(type.ToString()))
+            if (map.TryGetValue(type.ToString(), out var mapped))
             {
                 type = ParseTypeSignature
                 (
-                    map[type.ToString()], type.OriginalName, type.OriginalGroup
+                    mapped, type.OriginalName, type.OriginalGroup
                 );
             }
-            else if (map.ContainsKey(type.Name))
+            else if (map.TryGetValue(type.Name, out mapped))
             {
-                type.Name = map[type.Name];
+                type.Name = mapped;
+            }
+            else if (mapNative && ogN != null && map.TryGetValue(ogN, out mapped)) 
+            {
+                type.Name = mapped;
             }
 
             if (og.FunctionPointerSignature is not null)
             {
                 type.FunctionPointerSignature = og.FunctionPointerSignature;
-                Map(map, type.FunctionPointerSignature);
+                Map(map, type.FunctionPointerSignature, mapNative);
             }
 
             return type;
+        }
+
+        /// <summary>
+        /// Merges several typemaps into one, recursively
+        /// </summary>
+        /// <param name="typeMaps">Maps to merge</param>
+        /// <returns>Marged map</returns>
+        internal static Dictionary<string, string> MergeMaps(List<Dictionary<string, string>> typeMaps)
+        {
+            var result = new Dictionary<string, string>(typeMaps.Sum(t => t.Count));
+
+            foreach (var map in typeMaps)
+            {
+                foreach (var kv in map)
+                {
+                    result[kv.Key] = kv.Value;
+                }
+            }
+
+            foreach (var kv in result)
+            {
+                var value = kv.Value;
+                while (result.TryGetValue(value, out var value2))
+                {
+                    if(string.Equals(value, value2))
+                    {
+                        break;
+                    }
+                    value = value2;
+                }
+                result[kv.Key] = value;
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -82,13 +119,13 @@ namespace Silk.NET.BuildTools.Common
         /// </summary>
         /// <param name="map">The typemap/dictionary to use.</param>
         /// <param name="structs">The functions to map.</param>
-        public static void Map(Dictionary<string, string> map, IEnumerable<Struct> structs)
+        public static void Map(Dictionary<string, string> map, IEnumerable<Struct> structs, bool mapNative)
         {
             foreach (var @struct in structs)
             {
                 foreach (var field in @struct.Fields)
                 {
-                    field.Type = MapOne(map, field.Type);
+                    field.Type = MapOne(map, field.Type, mapNative, field.NativeType);
                 }
 
                 for (var i = 0; i < @struct.ComBases.Count; i++)
@@ -101,12 +138,12 @@ namespace Silk.NET.BuildTools.Common
 
                 foreach (var function in @struct.Vtbl)
                 {
-                    Map(map, function);
+                    Map(map, function, mapNative);
                 }
 
                 foreach (var function in @struct.Functions)
                 {
-                    Map(map, function.Signature);
+                    Map(map, function.Signature, mapNative);
                 }
             }
         }
@@ -116,21 +153,21 @@ namespace Silk.NET.BuildTools.Common
         /// </summary>
         /// <param name="map">The typemap/dictionary to use.</param>
         /// <param name="constants">The constants to map.</param>
-        public static void Map(Dictionary<string, string> map, IEnumerable<Constant> constants)
+        public static void Map(Dictionary<string, string> map, IEnumerable<Constant> constants, bool mapNative)
         {
             foreach (var constant in constants)
             {
-                constant.Type = MapOne(map, constant.Type);
+                constant.Type = MapOne(map, constant.Type, mapNative, constant.Type.OriginalName);
             }
         }
 
-        public static void Map(Dictionary<string, string> map, Function function)
+        public static void Map(Dictionary<string, string> map, Function function, bool mapNative)
         {
-            function.ReturnType = MapOne(map, function.ReturnType);
+            function.ReturnType = MapOne(map, function.ReturnType, mapNative, function.ReturnType.OriginalName);
 
             foreach (var parameter in function.Parameters)
             {
-                parameter.Type = MapOne(map, parameter.Type);
+                parameter.Type = MapOne(map, parameter.Type, mapNative, parameter.Type.OriginalName);
             }
         }
 
@@ -142,38 +179,44 @@ namespace Silk.NET.BuildTools.Common
         {
             foreach (var project in profile.Projects.Values)
             {
+                var glEnum = project.Enums.FirstOrDefault(x => x.NativeName == "GLenum" && x.Tokens.Any())?.Name ??
+                             profile.Projects["Core"].Enums.FirstOrDefault(x => x.NativeName == "GLenum")?.Name;
+
+                if(glEnum == null)
+                {
+                    continue;
+                }
+
                 foreach (var @interface in project.Classes.SelectMany(x => x.NativeApis.Values))
                 {
                     foreach (var function in @interface.Functions)
                     {
                         foreach (var parameter in function.Parameters)
                         {
-                            if (parameter.Type.OriginalName == "GLenum" || parameter.Type.Name == "CLenum" ||
-                                parameter.Type.Name == "EGLenum")
+                            if (parameter.Type.OriginalName == "GLenum" || parameter.Type.Name == "EGLenum")
                             {
-                                parameter.Type.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
+                                parameter.Type.Name = glEnum;
                             }
 
                             foreach (var genericType in parameter.Type.GenericTypes)
                             {
-                                if (genericType.OriginalName == "GLenum" || genericType.Name == "CLenum")
+                                if (genericType.OriginalName == "GLenum")
                                 {
-                                    genericType.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
+                                    genericType.Name = glEnum;
                                 }
                             }
                         }
 
-                        if (function.ReturnType.OriginalName == "GLenum" || function.ReturnType.Name == "CLenum" ||
-                            function.ReturnType.Name == "EGLenum")
+                        if (function.ReturnType.OriginalName == "GLenum" || function.ReturnType.Name == "EGLenum")
                         {
-                            function.ReturnType.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
+                            function.ReturnType.Name = glEnum;
                         }
 
                         foreach (var genericType in function.ReturnType.GenericTypes)
                         {
                             if (genericType.OriginalName == "GLenum" || genericType.Name == "CLenum")
                             {
-                                genericType.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
+                                genericType.Name = glEnum;
                             }
                         }
                     }
@@ -189,7 +232,7 @@ namespace Silk.NET.BuildTools.Common
             => project.Structs.DistinctBy(x => x.NativeName)
                 .ToDictionary(x => x.NativeName, x => x.Name)
                 .Concat(project.Enums.ToDictionary(x => x.NativeName, x => x.Name))
-                .ToDictionary();
+                .ToDictionary(x => x.Key, x => x.Value);
 
         private static Type ParseTypeSignature(string type, string original = null, string group = null)
         {

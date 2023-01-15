@@ -21,16 +21,16 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     {
         public const string ExtensionName = "KHR_create_command_queue";
         [NativeApi(EntryPoint = "clCreateCommandQueueWithPropertiesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint CreateCommandQueueWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] KHR* properties, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial nint CreateCommandQueueWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateCommandQueueWithPropertiesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint CreateCommandQueueWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] KHR* properties, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial nint CreateCommandQueueWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateCommandQueueWithPropertiesKHR", Convention = CallingConvention.Winapi)]
-        public unsafe partial nint CreateCommandQueueWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] in KHR properties, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial nint CreateCommandQueueWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateCommandQueueWithPropertiesKHR", Convention = CallingConvention.Winapi)]
-        public partial nint CreateCommandQueueWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] in KHR properties, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public partial nint CreateCommandQueueWithProperties([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         public KhrCreateCommandQueue(INativeContext ctx)
             : base(ctx)

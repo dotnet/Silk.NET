@@ -14,6 +14,8 @@ namespace Silk.NET.SDL
     [NativeName("Name", "SDL_PackedLayout")]
     public enum PackedLayout : int
     {
+        [NativeName("Name", "")]
+        None = 0,
         [NativeName("Name", "SDL_PACKEDLAYOUT_NONE")]
         PackedlayoutNone = 0x0,
         [NativeName("Name", "SDL_PACKEDLAYOUT_332")]

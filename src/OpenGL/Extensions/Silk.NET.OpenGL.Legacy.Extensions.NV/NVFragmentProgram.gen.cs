@@ -110,6 +110,27 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(FlowDirection.In)] in double v);
 
+        public unsafe float GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramNamedParameter(id, len, name, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] in byte name)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramNamedParameter(id, len, in name, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramNamedParameter(id, len, name, out float silkRet);
+            return silkRet;
+        }
+
         public NVFragmentProgram(INativeContext ctx)
             : base(ctx)
         {

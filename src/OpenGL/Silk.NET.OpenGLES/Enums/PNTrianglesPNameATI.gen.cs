@@ -12,11 +12,20 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "PNTrianglesPNameATI")]
     public enum PNTrianglesPNameATI : int
     {
+        [Obsolete("Deprecated in favour of \"PointModeAti\"")]
         [NativeName("Name", "GL_PN_TRIANGLES_POINT_MODE_ATI")]
         PNTrianglesPointModeAti = 0x87F2,
+        [Obsolete("Deprecated in favour of \"NormalModeAti\"")]
         [NativeName("Name", "GL_PN_TRIANGLES_NORMAL_MODE_ATI")]
         PNTrianglesNormalModeAti = 0x87F3,
+        [Obsolete("Deprecated in favour of \"TesselationLevelAti\"")]
         [NativeName("Name", "GL_PN_TRIANGLES_TESSELATION_LEVEL_ATI")]
         PNTrianglesTesselationLevelAti = 0x87F4,
+        [NativeName("Name", "GL_PN_TRIANGLES_POINT_MODE_ATI")]
+        PointModeAti = 0x87F2,
+        [NativeName("Name", "GL_PN_TRIANGLES_NORMAL_MODE_ATI")]
+        NormalModeAti = 0x87F3,
+        [NativeName("Name", "GL_PN_TRIANGLES_TESSELATION_LEVEL_ATI")]
+        TesselationLevelAti = 0x87F4,
     }
 }

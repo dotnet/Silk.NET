@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageCopy2KHR")]
+    [NativeName("AliasOf", "VkImageCopy2")]
     public unsafe partial struct ImageCopy2KHR : IChainable
     {
         public ImageCopy2KHR
         (
-            StructureType? sType = StructureType.ImageCopy2Khr,
+            StructureType? sType = StructureType.ImageCopy2,
             void* pNext = null,
             ImageSubresourceLayers? srcSubresource = null,
             Offset3D? srcOffset = null,
@@ -105,7 +106,7 @@ namespace Silk.NET.Vulkan
         /// <inheritdoc />
         StructureType IStructuredType.StructureType()
         {
-            return SType = StructureType.ImageCopy2Khr;
+            return SType = StructureType.ImageCopy2;
         }
 
         /// <inheritdoc />

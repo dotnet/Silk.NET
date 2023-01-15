@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D12
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d12_L2693_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d12_L2747_C5")]
     public unsafe partial struct ClearValueUnion
     {
         public ClearValueUnion
@@ -32,8 +32,8 @@ namespace Silk.NET.Direct3D12
         }
 
         [FieldOffset(0)]
-        [NativeName("Type", "FLOAT [4]")]
-        [NativeName("Type.Name", "FLOAT [4]")]
+        [NativeName("Type", "FLOAT[4]")]
+        [NativeName("Type.Name", "FLOAT[4]")]
         [NativeName("Name", "Color")]
         public fixed float Color[4];
 

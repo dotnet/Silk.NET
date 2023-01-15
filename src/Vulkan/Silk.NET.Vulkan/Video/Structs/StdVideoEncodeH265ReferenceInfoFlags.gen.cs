@@ -21,25 +21,25 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoEncodeH265ReferenceInfoFlags
         (
-            uint? isLongTerm = null,
-            uint? isUsedFlag = null
+            uint? usedForLongTermReference = null,
+            uint? unusedForReference = null
         ) : this()
         {
-            if (isLongTerm is not null)
+            if (usedForLongTermReference is not null)
             {
-                IsLongTerm = isLongTerm.Value;
+                UsedForLongTermReference = usedForLongTermReference.Value;
             }
 
-            if (isUsedFlag is not null)
+            if (unusedForReference is not null)
             {
-                IsUsedFlag = isUsedFlag.Value;
+                UnusedForReference = unusedForReference.Value;
             }
         }
 
 
         private uint _bitfield1;
 
-        public uint IsLongTerm
+        public uint UsedForLongTermReference
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)(_bitfield1 & 0x1u);
@@ -47,7 +47,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
         }
 
-        public uint IsUsedFlag
+        public uint UnusedForReference
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 1) & 0x1u);

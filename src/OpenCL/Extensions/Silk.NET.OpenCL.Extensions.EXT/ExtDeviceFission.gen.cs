@@ -21,26 +21,58 @@ namespace Silk.NET.OpenCL.Extensions.EXT
     {
         public const string ExtensionName = "EXT_device_fission";
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
+        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] DevicePartitionProperty* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
+
+        [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
+        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] DevicePartitionProperty* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
+
+        [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
+        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] DevicePartitionProperty* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
+
+        [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
+        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] DevicePartitionProperty* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
+
+        [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
+        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in DevicePartitionProperty properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
+
+        [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
+        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in DevicePartitionProperty properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
+
+        [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
+        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in DevicePartitionProperty properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
+
+        [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
+        public partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in DevicePartitionProperty properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
+
+        [Obsolete("The \"ungrouped\" enums (EXT) are deprecated in favour of the \"grouped\" enums (DevicePartitionProperty). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
+        [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
 
+        [Obsolete("The \"ungrouped\" enums (EXT) are deprecated in favour of the \"grouped\" enums (DevicePartitionProperty). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
 
+        [Obsolete("The \"ungrouped\" enums (EXT) are deprecated in favour of the \"grouped\" enums (DevicePartitionProperty). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
 
+        [Obsolete("The \"ungrouped\" enums (EXT) are deprecated in favour of the \"grouped\" enums (DevicePartitionProperty). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
 
+        [Obsolete("The \"ungrouped\" enums (EXT) are deprecated in favour of the \"grouped\" enums (DevicePartitionProperty). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
 
+        [Obsolete("The \"ungrouped\" enums (EXT) are deprecated in favour of the \"grouped\" enums (DevicePartitionProperty). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] nint* out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
 
+        [Obsolete("The \"ungrouped\" enums (EXT) are deprecated in favour of the \"grouped\" enums (DevicePartitionProperty). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
 
+        [Obsolete("The \"ungrouped\" enums (EXT) are deprecated in favour of the \"grouped\" enums (DevicePartitionProperty). Not only is this akin to how the original specification represents enums, it also ensures that the size of the enum is correct which is a guarantee the \"ungrouped\" enums do not provide. As such, we have made every attempt to prevent functions known to use these ungrouped enums problematically from compiling; but regardless of whether usage of these deprecated enums compiles please use the other enums to ensure that all functions will work as intended. ", true)]
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT", Convention = CallingConvention.Winapi)]
         public partial int CreateSubDevices([Flow(FlowDirection.In)] nint in_device, [Flow(FlowDirection.In)] in ulong properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out nint out_devices, [Flow(FlowDirection.Out)] out uint num_devices);
 

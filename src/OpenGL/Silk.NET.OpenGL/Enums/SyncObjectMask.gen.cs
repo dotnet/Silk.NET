@@ -12,9 +12,15 @@ namespace Silk.NET.OpenGL
     [NativeName("Name", "SyncObjectMask")]
     public enum SyncObjectMask : int
     {
+        [Obsolete("Deprecated in favour of \"Bit\"")]
         [NativeName("Name", "GL_SYNC_FLUSH_COMMANDS_BIT")]
         SyncFlushCommandsBit = 0x1,
+        [Obsolete("Deprecated in favour of \"BitApple\"")]
         [NativeName("Name", "GL_SYNC_FLUSH_COMMANDS_BIT_APPLE")]
         SyncFlushCommandsBitApple = 0x1,
+        [NativeName("Name", "GL_SYNC_FLUSH_COMMANDS_BIT")]
+        Bit = 0x1,
+        [NativeName("Name", "GL_SYNC_FLUSH_COMMANDS_BIT_APPLE")]
+        BitApple = 0x1,
     }
 }

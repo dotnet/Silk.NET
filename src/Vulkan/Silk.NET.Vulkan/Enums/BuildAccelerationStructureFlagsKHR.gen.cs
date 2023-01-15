@@ -13,17 +13,62 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkBuildAccelerationStructureFlagsKHR")]
     public enum BuildAccelerationStructureFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"AllowUpdateBitKhr\"")]
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_KHR")]
         BuildAccelerationStructureAllowUpdateBitKhr = 1,
+        [Obsolete("Deprecated in favour of \"AllowCompactionBitKhr\"")]
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_KHR")]
         BuildAccelerationStructureAllowCompactionBitKhr = 2,
+        [Obsolete("Deprecated in favour of \"PreferFastTraceBitKhr\"")]
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_TRACE_BIT_KHR")]
         BuildAccelerationStructurePreferFastTraceBitKhr = 4,
+        [Obsolete("Deprecated in favour of \"PreferFastBuildBitKhr\"")]
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_BUILD_BIT_KHR")]
         BuildAccelerationStructurePreferFastBuildBitKhr = 8,
+        [Obsolete("Deprecated in favour of \"LowMemoryBitKhr\"")]
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_LOW_MEMORY_BIT_KHR")]
         BuildAccelerationStructureLowMemoryBitKhr = 16,
+        [Obsolete("Deprecated in favour of \"MotionBitNV\"")]
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_MOTION_BIT_NV")]
         BuildAccelerationStructureMotionBitNV = 32,
+        [Obsolete("Deprecated in favour of \"AllowOpacityMicromapUpdateExt\"")]
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_UPDATE_EXT")]
+        BuildAccelerationStructureAllowOpacityMicromapUpdateExt = 64,
+        [Obsolete("Deprecated in favour of \"AllowDisableOpacityMicromapsExt\"")]
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISABLE_OPACITY_MICROMAPS_EXT")]
+        BuildAccelerationStructureAllowDisableOpacityMicromapsExt = 128,
+        [Obsolete("Deprecated in favour of \"AllowOpacityMicromapDataUpdateExt\"")]
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_DATA_UPDATE_EXT")]
+        BuildAccelerationStructureAllowOpacityMicromapDataUpdateExt = 256,
+        [Obsolete("Deprecated in favour of \"ReservedBit9NV\"")]
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_RESERVED_BIT_9_NV")]
+        BuildAccelerationStructureReservedBit9NV = 512,
+        [Obsolete("Deprecated in favour of \"ReservedBit10NV\"")]
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_RESERVED_BIT_10_NV")]
+        BuildAccelerationStructureReservedBit10NV = 1024,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_KHR")]
+        AllowUpdateBitKhr = 1,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_KHR")]
+        AllowCompactionBitKhr = 2,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_TRACE_BIT_KHR")]
+        PreferFastTraceBitKhr = 4,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_BUILD_BIT_KHR")]
+        PreferFastBuildBitKhr = 8,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_LOW_MEMORY_BIT_KHR")]
+        LowMemoryBitKhr = 16,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_MOTION_BIT_NV")]
+        MotionBitNV = 32,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_UPDATE_EXT")]
+        AllowOpacityMicromapUpdateExt = 64,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_DISABLE_OPACITY_MICROMAPS_EXT")]
+        AllowDisableOpacityMicromapsExt = 128,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_OPACITY_MICROMAP_DATA_UPDATE_EXT")]
+        AllowOpacityMicromapDataUpdateExt = 256,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_RESERVED_BIT_9_NV")]
+        ReservedBit9NV = 512,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_RESERVED_BIT_10_NV")]
+        ReservedBit10NV = 1024,
     }
 }

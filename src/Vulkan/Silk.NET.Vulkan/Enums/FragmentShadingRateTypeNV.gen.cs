@@ -12,9 +12,15 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkFragmentShadingRateTypeNV")]
     public enum FragmentShadingRateTypeNV : int
     {
+        [Obsolete("Deprecated in favour of \"FragmentSizeNV\"")]
         [NativeName("Name", "VK_FRAGMENT_SHADING_RATE_TYPE_FRAGMENT_SIZE_NV")]
         FragmentShadingRateTypeFragmentSizeNV = 0,
+        [Obsolete("Deprecated in favour of \"EnumsNV\"")]
         [NativeName("Name", "VK_FRAGMENT_SHADING_RATE_TYPE_ENUMS_NV")]
         FragmentShadingRateTypeEnumsNV = 1,
+        [NativeName("Name", "VK_FRAGMENT_SHADING_RATE_TYPE_FRAGMENT_SIZE_NV")]
+        FragmentSizeNV = 0,
+        [NativeName("Name", "VK_FRAGMENT_SHADING_RATE_TYPE_ENUMS_NV")]
+        EnumsNV = 1,
     }
 }

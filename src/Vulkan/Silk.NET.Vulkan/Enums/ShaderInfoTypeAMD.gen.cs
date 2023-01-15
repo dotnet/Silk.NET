@@ -12,11 +12,20 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkShaderInfoTypeAMD")]
     public enum ShaderInfoTypeAMD : int
     {
+        [Obsolete("Deprecated in favour of \"StatisticsAmd\"")]
         [NativeName("Name", "VK_SHADER_INFO_TYPE_STATISTICS_AMD")]
         ShaderInfoTypeStatisticsAmd = 0,
+        [Obsolete("Deprecated in favour of \"BinaryAmd\"")]
         [NativeName("Name", "VK_SHADER_INFO_TYPE_BINARY_AMD")]
         ShaderInfoTypeBinaryAmd = 1,
+        [Obsolete("Deprecated in favour of \"DisassemblyAmd\"")]
         [NativeName("Name", "VK_SHADER_INFO_TYPE_DISASSEMBLY_AMD")]
         ShaderInfoTypeDisassemblyAmd = 2,
+        [NativeName("Name", "VK_SHADER_INFO_TYPE_STATISTICS_AMD")]
+        StatisticsAmd = 0,
+        [NativeName("Name", "VK_SHADER_INFO_TYPE_BINARY_AMD")]
+        BinaryAmd = 1,
+        [NativeName("Name", "VK_SHADER_INFO_TYPE_DISASSEMBLY_AMD")]
+        DisassemblyAmd = 2,
     }
 }

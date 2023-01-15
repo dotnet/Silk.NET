@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDebugUtilsObjectNameInfoEXT")]
-    public unsafe partial struct DebugUtilsObjectNameInfoEXT : IChainable
+    public unsafe partial struct DebugUtilsObjectNameInfoEXT : IExtendsChain<PipelineShaderStageCreateInfo>
     {
         public DebugUtilsObjectNameInfoEXT
         (

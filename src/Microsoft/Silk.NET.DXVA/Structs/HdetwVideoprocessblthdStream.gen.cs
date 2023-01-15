@@ -23,8 +23,8 @@ namespace Silk.NET.DXVA
         (
             ulong? pObject = null,
             ulong? pInputSurface = null,
-            Silk.NET.Maths.Rectangle<int>? sourceRect = null,
-            Silk.NET.Maths.Rectangle<int>? destinationRect = null,
+            Silk.NET.Maths.Box2D<int>? sourceRect = null,
+            Silk.NET.Maths.Box2D<int>? destinationRect = null,
             Silk.NET.Direct3D9.Format? inputFormat = null,
             HDFrameFormat? frameFormat = null,
             uint? colorSpace = null,
@@ -110,12 +110,12 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "SourceRect")]
-        public Silk.NET.Maths.Rectangle<int> SourceRect;
+        public Silk.NET.Maths.Box2D<int> SourceRect;
 
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "DestinationRect")]
-        public Silk.NET.Maths.Rectangle<int> DestinationRect;
+        public Silk.NET.Maths.Box2D<int> DestinationRect;
 
         [NativeName("Type", "D3DFORMAT")]
         [NativeName("Type.Name", "D3DFORMAT")]

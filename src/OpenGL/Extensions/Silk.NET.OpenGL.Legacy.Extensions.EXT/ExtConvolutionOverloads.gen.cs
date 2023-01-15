@@ -214,7 +214,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.ConvolutionParameter(target, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ConvolutionParameter(this ExtConvolution thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void ConvolutionParameter(this ExtConvolution thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.ConvolutionParameter(target, pname, in @params.GetPinnableReference());
@@ -226,7 +226,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.ConvolutionParameter(target, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ConvolutionParameter(this ExtConvolution thisApi, [Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        public static unsafe void ConvolutionParameter(this ExtConvolution thisApi, [Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
         {
             // SpanOverloader
             thisApi.ConvolutionParameter(target, pname, in @params.GetPinnableReference());
@@ -238,7 +238,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.ConvolutionParameter(target, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ConvolutionParameter(this ExtConvolution thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void ConvolutionParameter(this ExtConvolution thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.ConvolutionParameter(target, pname, in @params.GetPinnableReference());
@@ -250,7 +250,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.ConvolutionParameter(target, pname, in @params.GetPinnableReference());
         }
 
-        public static unsafe void ConvolutionParameter(this ExtConvolution thisApi, [Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        public static unsafe void ConvolutionParameter(this ExtConvolution thisApi, [Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
         {
             // SpanOverloader
             thisApi.ConvolutionParameter(target, pname, in @params.GetPinnableReference());
@@ -310,7 +310,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.GetConvolutionParameter(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetConvolutionParameter(this ExtConvolution thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetConvolutionParameter(this ExtConvolution thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetConvolutionParameter(target, pname, out @params.GetPinnableReference());
@@ -322,7 +322,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.GetConvolutionParameter(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetConvolutionParameter(this ExtConvolution thisApi, [Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetConvolutionParameter(this ExtConvolution thisApi, [Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetConvolutionParameter(target, pname, out @params.GetPinnableReference());
@@ -334,7 +334,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.GetConvolutionParameter(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetConvolutionParameter(this ExtConvolution thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetConvolutionParameter(this ExtConvolution thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetConvolutionParameter(target, pname, out @params.GetPinnableReference());
@@ -346,7 +346,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.GetConvolutionParameter(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetConvolutionParameter(this ExtConvolution thisApi, [Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+        public static unsafe void GetConvolutionParameter(this ExtConvolution thisApi, [Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
         {
             // SpanOverloader
             thisApi.GetConvolutionParameter(target, pname, out @params.GetPinnableReference());

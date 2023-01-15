@@ -34,6 +34,39 @@ namespace Silk.NET.XAudio
         [NativeName("Type", "")]
         [NativeName("Name", "XAUDIO2D_DLL")]
         public const string DDll = unchecked((string) "xaudio2_9d.dll");
+        [NativeName("Type", "int")]
+        [NativeName("Name", "MIDL_ANYSIZE_ARRAY")]
+        public const int MidlAnysizeArray = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDCLNT_STREAMFLAGS_CROSSPROCESS")]
+        public const int AudclntStreamflagsCrossprocess = unchecked((int) 0x10000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDCLNT_STREAMFLAGS_LOOPBACK")]
+        public const int AudclntStreamflagsLoopback = unchecked((int) 0x20000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDCLNT_STREAMFLAGS_EVENTCALLBACK")]
+        public const int AudclntStreamflagsEventcallback = unchecked((int) 0x40000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDCLNT_STREAMFLAGS_NOPERSIST")]
+        public const int AudclntStreamflagsNopersist = unchecked((int) 0x80000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDCLNT_STREAMFLAGS_RATEADJUST")]
+        public const int AudclntStreamflagsRateadjust = unchecked((int) 0x100000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDCLNT_STREAMFLAGS_SRC_DEFAULT_QUALITY")]
+        public const int AudclntStreamflagsSrcDefaultQuality = unchecked((int) 0x8000000);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "AUDCLNT_STREAMFLAGS_AUTOCONVERTPCM")]
+        public const uint AudclntStreamflagsAutoconvertpcm = unchecked((uint) 0xFFFFFFFF80000000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDCLNT_SESSIONFLAGS_EXPIREWHENUNOWNED")]
+        public const int AudclntSessionflagsExpirewhenunowned = unchecked((int) 0x10000000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDCLNT_SESSIONFLAGS_DISPLAY_HIDE")]
+        public const int AudclntSessionflagsDisplayHide = unchecked((int) 0x20000000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "AUDCLNT_SESSIONFLAGS_DISPLAY_HIDEWHENEXPIRED")]
+        public const int AudclntSessionflagsDisplayHidewhenexpired = unchecked((int) 0x40000000);
         [NativeName("Type", "unsigned int")]
         [NativeName("Name", "XAUDIO2_MAX_BUFFER_BYTES")]
         public const uint MaxBufferBytes = unchecked((uint) 0xFFFFFFFF80000000);
@@ -261,14 +294,22 @@ namespace Silk.NET.XAudio
         public const int LogStreaming = unchecked((int) 0x1000);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1273, Column 16 in D:/Windows Kits/10/Include/10.0.22000.0/um\\xaudio2.h")]
-        [NativeApi(EntryPoint = "XAudio2CreateWithVersionInfo", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 1273, Column 16 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\xaudio2.h")]
+        [NativeApi(EntryPoint = "XAudio2CreateWithVersionInfo", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateWithVersionInfo(IXAudio2** ppXAudio2, uint Flags, uint XAudio2Processor, uint ntddiVersion);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1273, Column 16 in D:/Windows Kits/10/Include/10.0.22000.0/um\\xaudio2.h")]
-        [NativeApi(EntryPoint = "XAudio2CreateWithVersionInfo", Convention = CallingConvention.Winapi)]
+        [NativeName("Src", "Line 1273, Column 16 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\xaudio2.h")]
+        [NativeApi(EntryPoint = "XAudio2CreateWithVersionInfo", Convention = CallingConvention.StdCall)]
         public unsafe partial int CreateWithVersionInfo(ref IXAudio2* ppXAudio2, uint Flags, uint XAudio2Processor, uint ntddiVersion);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 1273, Column 16 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\um\\xaudio2.h")]
+        public unsafe int CreateWithVersionInfo<TI0>(ref ComPtr<TI0> ppXAudio2, uint Flags, uint XAudio2Processor, uint ntddiVersion) where TI0 : unmanaged, IComVtbl<IXAudio2>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return CreateWithVersionInfo((IXAudio2**) ppXAudio2.GetAddressOf(), Flags, XAudio2Processor, ntddiVersion);
+        }
 
 
         public XAudio(INativeContext ctx)
