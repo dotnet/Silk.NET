@@ -4,7 +4,7 @@
       For more information what this is see https://github.com/NuGet/Home/wiki/Centrally-managing-NuGet-package-versions
       -->
     <PropertyGroup>
-        <MsExtensionNugetVersion>6.0.0</MsExtensionNugetVersion>
+        <MsExtensionNugetVersion>7.0.0</MsExtensionNugetVersion>
         <RoslynPackageVersion>4.4.0</RoslynPackageVersion>
     </PropertyGroup>
     <ItemGroup>
@@ -19,7 +19,7 @@
         <PackageVersion Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="$(RoslynPackageVersion)"/>
         <PackageVersion Include="System.CommandLine" Version="2.0.0-beta4.22272.1"/>
         <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
-        <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0"/>
+        <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0"/>
         <PackageVersion Include="Nuke.Common" Version="6.0.1"/>
         <PackageVersion Include="Ultz.Bcl.Half" Version="1.0.0"/>
         <PackageVersion Include="Microsoft.Bcl.HashCode" Version="1.1.1"/>
