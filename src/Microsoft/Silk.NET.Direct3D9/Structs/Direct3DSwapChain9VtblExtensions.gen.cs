@@ -85,107 +85,107 @@ public unsafe static class Direct3DSwapChain9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, Silk.NET.Maths.Rectangle<int>* pSourceRect, Silk.NET.Maths.Rectangle<int>* pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3DSwapChain9*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[3])(@this, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegion, dwFlags);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DSwapChain9*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[3])(@this, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegion, dwFlags);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, Silk.NET.Maths.Rectangle<int>* pSourceRect, Silk.NET.Maths.Rectangle<int>* pDestRect, nint hDestWindowOverride, ref RGNData pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] in RGNData pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (RGNData* pDirtyRegionPtr = &pDirtyRegion)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSwapChain9*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[3])(@this, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegionPtr, dwFlags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSwapChain9*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[3])(@this, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegionPtr, dwFlags);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, Silk.NET.Maths.Rectangle<int>* pSourceRect, ref Silk.NET.Maths.Rectangle<int> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Silk.NET.Maths.Rectangle<int>* pDestRectPtr = &pDestRect)
+        fixed (Silk.NET.Maths.Box2D<int>* pDestRectPtr = &pDestRect)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSwapChain9*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[3])(@this, pSourceRect, pDestRectPtr, hDestWindowOverride, pDirtyRegion, dwFlags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSwapChain9*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[3])(@this, pSourceRect, pDestRectPtr, hDestWindowOverride, pDirtyRegion, dwFlags);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, Silk.NET.Maths.Rectangle<int>* pSourceRect, ref Silk.NET.Maths.Rectangle<int> pDestRect, nint hDestWindowOverride, ref RGNData pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] in RGNData pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Silk.NET.Maths.Rectangle<int>* pDestRectPtr = &pDestRect)
-        {
-            fixed (RGNData* pDirtyRegionPtr = &pDirtyRegion)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DSwapChain9*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[3])(@this, pSourceRect, pDestRectPtr, hDestWindowOverride, pDirtyRegionPtr, dwFlags);
-            }
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, ref Silk.NET.Maths.Rectangle<int> pSourceRect, Silk.NET.Maths.Rectangle<int>* pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Silk.NET.Maths.Rectangle<int>* pSourceRectPtr = &pSourceRect)
-        {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSwapChain9*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[3])(@this, pSourceRectPtr, pDestRect, hDestWindowOverride, pDirtyRegion, dwFlags);
-        }
-        return ret;
-    }
-
-    /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, ref Silk.NET.Maths.Rectangle<int> pSourceRect, Silk.NET.Maths.Rectangle<int>* pDestRect, nint hDestWindowOverride, ref RGNData pDirtyRegion, uint dwFlags)
-    {
-        var @this = thisVtbl.Handle;
-        int ret = default;
-        fixed (Silk.NET.Maths.Rectangle<int>* pSourceRectPtr = &pSourceRect)
+        fixed (Silk.NET.Maths.Box2D<int>* pDestRectPtr = &pDestRect)
         {
             fixed (RGNData* pDirtyRegionPtr = &pDirtyRegion)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DSwapChain9*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[3])(@this, pSourceRectPtr, pDestRect, hDestWindowOverride, pDirtyRegionPtr, dwFlags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DSwapChain9*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[3])(@this, pSourceRect, pDestRectPtr, hDestWindowOverride, pDirtyRegionPtr, dwFlags);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, ref Silk.NET.Maths.Rectangle<int> pSourceRect, ref Silk.NET.Maths.Rectangle<int> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Silk.NET.Maths.Rectangle<int>* pSourceRectPtr = &pSourceRect)
+        fixed (Silk.NET.Maths.Box2D<int>* pSourceRectPtr = &pSourceRect)
         {
-            fixed (Silk.NET.Maths.Rectangle<int>* pDestRectPtr = &pDestRect)
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSwapChain9*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[3])(@this, pSourceRectPtr, pDestRect, hDestWindowOverride, pDirtyRegion, dwFlags);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] in RGNData pDirtyRegion, uint dwFlags)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Silk.NET.Maths.Box2D<int>* pSourceRectPtr = &pSourceRect)
+        {
+            fixed (RGNData* pDirtyRegionPtr = &pDirtyRegion)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DSwapChain9*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[3])(@this, pSourceRectPtr, pDestRectPtr, hDestWindowOverride, pDirtyRegion, dwFlags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DSwapChain9*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[3])(@this, pSourceRectPtr, pDestRect, hDestWindowOverride, pDirtyRegionPtr, dwFlags);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, ref Silk.NET.Maths.Rectangle<int> pSourceRect, ref Silk.NET.Maths.Rectangle<int> pDestRect, nint hDestWindowOverride, ref RGNData pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (Silk.NET.Maths.Rectangle<int>* pSourceRectPtr = &pSourceRect)
+        fixed (Silk.NET.Maths.Box2D<int>* pSourceRectPtr = &pSourceRect)
         {
-            fixed (Silk.NET.Maths.Rectangle<int>* pDestRectPtr = &pDestRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pDestRectPtr = &pDestRect)
+            {
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DSwapChain9*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[3])(@this, pSourceRectPtr, pDestRectPtr, hDestWindowOverride, pDirtyRegion, dwFlags);
+            }
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public static int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pSourceRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] in RGNData pDirtyRegion, uint dwFlags)
+    {
+        var @this = thisVtbl.Handle;
+        int ret = default;
+        fixed (Silk.NET.Maths.Box2D<int>* pSourceRectPtr = &pSourceRect)
+        {
+            fixed (Silk.NET.Maths.Box2D<int>* pDestRectPtr = &pDestRect)
             {
                 fixed (RGNData* pDirtyRegionPtr = &pDirtyRegion)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DSwapChain9*, Silk.NET.Maths.Rectangle<int>*, Silk.NET.Maths.Rectangle<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[3])(@this, pSourceRectPtr, pDestRectPtr, hDestWindowOverride, pDirtyRegionPtr, dwFlags);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DSwapChain9*, Silk.NET.Maths.Box2D<int>*, Silk.NET.Maths.Box2D<int>*, nint, RGNData*, uint, int>)@this->LpVtbl[3])(@this, pSourceRectPtr, pDestRectPtr, hDestWindowOverride, pDirtyRegionPtr, dwFlags);
                 }
             }
         }
@@ -344,59 +344,59 @@ public unsafe static class Direct3DSwapChain9VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, Silk.NET.Maths.Rectangle<int>* pSourceRect, Silk.NET.Maths.Rectangle<int>* pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Present(pSourceRect, pDestRect, hDestWindowOverride, ref pDirtyRegion.GetPinnableReference(), dwFlags);
+        return @this->Present(pSourceRect, pDestRect, hDestWindowOverride, in pDirtyRegion.GetPinnableReference(), dwFlags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, Silk.NET.Maths.Rectangle<int>* pSourceRect, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Present(pSourceRect, ref pDestRect.GetPinnableReference(), hDestWindowOverride, pDirtyRegion, dwFlags);
+        return @this->Present(pSourceRect, in pDestRect.GetPinnableReference(), hDestWindowOverride, pDirtyRegion, dwFlags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, Silk.NET.Maths.Rectangle<int>* pSourceRect, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pSourceRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Present(pSourceRect, ref pDestRect.GetPinnableReference(), hDestWindowOverride, ref pDirtyRegion.GetPinnableReference(), dwFlags);
+        return @this->Present(pSourceRect, in pDestRect.GetPinnableReference(), hDestWindowOverride, in pDirtyRegion.GetPinnableReference(), dwFlags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Silk.NET.Maths.Rectangle<int>* pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Present(ref pSourceRect.GetPinnableReference(), pDestRect, hDestWindowOverride, pDirtyRegion, dwFlags);
+        return @this->Present(in pSourceRect.GetPinnableReference(), pDestRect, hDestWindowOverride, pDirtyRegion, dwFlags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Silk.NET.Maths.Rectangle<int>* pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Present(ref pSourceRect.GetPinnableReference(), pDestRect, hDestWindowOverride, ref pDirtyRegion.GetPinnableReference(), dwFlags);
+        return @this->Present(in pSourceRect.GetPinnableReference(), pDestRect, hDestWindowOverride, in pDirtyRegion.GetPinnableReference(), dwFlags);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion, uint dwFlags)
+    public static unsafe int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] RGNData* pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Present(ref pSourceRect.GetPinnableReference(), ref pDestRect.GetPinnableReference(), hDestWindowOverride, pDirtyRegion, dwFlags);
+        return @this->Present(in pSourceRect.GetPinnableReference(), in pDestRect.GetPinnableReference(), hDestWindowOverride, pDirtyRegion, dwFlags);
     }
 
     /// <summary>To be documented.</summary>
-    public static int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, Span<Silk.NET.Maths.Rectangle<int>> pSourceRect, Span<Silk.NET.Maths.Rectangle<int>> pDestRect, nint hDestWindowOverride, Span<RGNData> pDirtyRegion, uint dwFlags)
+    public static int Present(this ComPtr<IDirect3DSwapChain9> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pSourceRect, [Flow(FlowDirection.In)] ReadOnlySpan<Silk.NET.Maths.Box2D<int>> pDestRect, nint hDestWindowOverride, [Flow(FlowDirection.In)] ReadOnlySpan<RGNData> pDirtyRegion, uint dwFlags)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Present(ref pSourceRect.GetPinnableReference(), ref pDestRect.GetPinnableReference(), hDestWindowOverride, ref pDirtyRegion.GetPinnableReference(), dwFlags);
+        return @this->Present(in pSourceRect.GetPinnableReference(), in pDestRect.GetPinnableReference(), hDestWindowOverride, in pDirtyRegion.GetPinnableReference(), dwFlags);
     }
 
     /// <summary>To be documented.</summary>

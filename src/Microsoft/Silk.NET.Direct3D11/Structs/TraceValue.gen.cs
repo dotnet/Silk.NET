@@ -30,8 +30,8 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        [NativeName("Type", "UINT [4]")]
-        [NativeName("Type.Name", "UINT [4]")]
+        [NativeName("Type", "UINT[4]")]
+        [NativeName("Type.Name", "UINT[4]")]
         [NativeName("Name", "Bits")]
         public fixed uint Bits[4];
 

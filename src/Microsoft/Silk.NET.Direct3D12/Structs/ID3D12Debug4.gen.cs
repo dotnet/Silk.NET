@@ -124,17 +124,17 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetEnableGPUBasedValidation(int Enable)
+        public readonly void SetEnableGPUBasedValidation(Silk.NET.Core.Bool32 Enable)
         {
             var @this = (ID3D12Debug4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12Debug4*, int, void>)@this->LpVtbl[4])(@this, Enable);
+            ((delegate* unmanaged[Stdcall]<ID3D12Debug4*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[4])(@this, Enable);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetEnableSynchronizedCommandQueueValidation(int Enable)
+        public readonly void SetEnableSynchronizedCommandQueueValidation(Silk.NET.Core.Bool32 Enable)
         {
             var @this = (ID3D12Debug4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<ID3D12Debug4*, int, void>)@this->LpVtbl[5])(@this, Enable);
+            ((delegate* unmanaged[Stdcall]<ID3D12Debug4*, Silk.NET.Core.Bool32, void>)@this->LpVtbl[5])(@this, Enable);
         }
 
         /// <summary>To be documented.</summary>

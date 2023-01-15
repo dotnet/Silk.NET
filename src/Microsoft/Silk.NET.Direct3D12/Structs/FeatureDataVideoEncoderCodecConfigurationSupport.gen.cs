@@ -24,7 +24,7 @@ namespace Silk.NET.Direct3D12
             uint? nodeIndex = null,
             VideoEncoderCodec? codec = null,
             VideoEncoderProfileDesc? profile = null,
-            int? isSupported = null,
+            Silk.NET.Core.Bool32? isSupported = null,
             VideoEncoderCodecConfigurationSupport? codecSupportLimits = null
         ) : this()
         {
@@ -73,7 +73,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "IsSupported")]
-        public int IsSupported;
+        public Silk.NET.Core.Bool32 IsSupported;
 
         [NativeName("Type", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT")]
         [NativeName("Type.Name", "D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT")]

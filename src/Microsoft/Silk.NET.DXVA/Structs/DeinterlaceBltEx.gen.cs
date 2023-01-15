@@ -23,7 +23,7 @@ namespace Silk.NET.DXVA
         (
             uint? size = null,
             AYUVsample2? backgroundColor = null,
-            Silk.NET.Maths.Rectangle<int>? rcTarget = null,
+            Silk.NET.Maths.Box2D<int>? rcTarget = null,
             long? rtTarget = null,
             uint? numSourceSurfaces = null,
             float? alpha = null,
@@ -86,7 +86,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "rcTarget")]
-        public Silk.NET.Maths.Rectangle<int> RcTarget;
+        public Silk.NET.Maths.Box2D<int> RcTarget;
 
         [NativeName("Type", "REFERENCE_TIME")]
         [NativeName("Type.Name", "REFERENCE_TIME")]
@@ -103,8 +103,8 @@ namespace Silk.NET.DXVA
         [NativeName("Name", "Alpha")]
         public float Alpha;
         
-        [NativeName("Type", "DXVA_VideoSample2 [32]")]
-        [NativeName("Type.Name", "DXVA_VideoSample2 [32]")]
+        [NativeName("Type", "DXVA_VideoSample2[32]")]
+        [NativeName("Type.Name", "DXVA_VideoSample2[32]")]
         [NativeName("Name", "Source")]
         public SourceBuffer Source;
 

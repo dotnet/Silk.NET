@@ -197,6 +197,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glTransformFeedbackVaryingsEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in byte* varyings, [Flow(FlowDirection.In)] EXT bufferMode);
 
+        [NativeApi(EntryPoint = "glTransformFeedbackVaryingsEXT", Convention = CallingConvention.Winapi)]
+        public unsafe partial void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** varyings, [Flow(FlowDirection.In)] TransformFeedbackBufferMode bufferMode);
+
+        [NativeApi(EntryPoint = "glTransformFeedbackVaryingsEXT", Convention = CallingConvention.Winapi)]
+        public unsafe partial void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in byte* varyings, [Flow(FlowDirection.In)] TransformFeedbackBufferMode bufferMode);
+
         public unsafe void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] EXT* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // ImplicitCountSpanOverloader
@@ -390,6 +396,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         }
 
         public unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] varyingsSa, [Flow(FlowDirection.In)] EXT bufferMode)
+        {
+            // StringArrayOverloader
+            var varyings = (byte**) SilkMarshal.StringArrayToPtr(varyingsSa);
+            TransformFeedbackVaryings(program, count, varyings, bufferMode);
+            SilkMarshal.CopyPtrToStringArray((nint) varyings, varyingsSa);
+            SilkMarshal.Free((nint) varyings);
+        }
+
+        public unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] varyingsSa, [Flow(FlowDirection.In)] TransformFeedbackBufferMode bufferMode)
         {
             // StringArrayOverloader
             var varyings = (byte**) SilkMarshal.StringArrayToPtr(varyingsSa);

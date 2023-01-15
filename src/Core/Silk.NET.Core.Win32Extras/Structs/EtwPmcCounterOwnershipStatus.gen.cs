@@ -47,8 +47,8 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Name", "NumberOfCounters")]
         public uint NumberOfCounters;
         
-        [NativeName("Type", "ETW_PMC_COUNTER_OWNER [1]")]
-        [NativeName("Type.Name", "ETW_PMC_COUNTER_OWNER [1]")]
+        [NativeName("Type", "ETW_PMC_COUNTER_OWNER[1]")]
+        [NativeName("Type.Name", "ETW_PMC_COUNTER_OWNER[1]")]
         [NativeName("Name", "CounterOwners")]
         public CounterOwnersBuffer CounterOwners;
 

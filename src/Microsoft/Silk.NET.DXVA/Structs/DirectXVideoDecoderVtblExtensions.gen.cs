@@ -760,7 +760,7 @@ public unsafe static class DirectXVideoDecoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int Execute(this ComPtr<IDirectXVideoDecoder> thisVtbl, DXVA2DecodeExecuteParams* pExecuteParams)
+    public static unsafe int Execute(this ComPtr<IDirectXVideoDecoder> thisVtbl, [Flow(FlowDirection.In)] DXVA2DecodeExecuteParams* pExecuteParams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -769,7 +769,7 @@ public unsafe static class DirectXVideoDecoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Execute(this ComPtr<IDirectXVideoDecoder> thisVtbl, ref DXVA2DecodeExecuteParams pExecuteParams)
+    public static int Execute(this ComPtr<IDirectXVideoDecoder> thisVtbl, [Flow(FlowDirection.In)] in DXVA2DecodeExecuteParams pExecuteParams)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -1094,11 +1094,11 @@ public unsafe static class DirectXVideoDecoderVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int Execute(this ComPtr<IDirectXVideoDecoder> thisVtbl, Span<DXVA2DecodeExecuteParams> pExecuteParams)
+    public static int Execute(this ComPtr<IDirectXVideoDecoder> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<DXVA2DecodeExecuteParams> pExecuteParams)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->Execute(ref pExecuteParams.GetPinnableReference());
+        return @this->Execute(in pExecuteParams.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

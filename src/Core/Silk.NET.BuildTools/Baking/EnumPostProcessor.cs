@@ -91,47 +91,53 @@ public static class EnumPostProcessor
 
             if (prefix.Length > 0)
             {
-                @enum.Tokens.AddRange
+                var newEnums = @enum.Tokens.Select
                 (
-                    @enum.Tokens.Select
-                        (
-                            x =>
-                            {
-                                var newName = Naming.Translate(x.NativeName[prefix.Length..], task.FunctionPrefix);
-                                if (newName == x.Name)
-                                {
-                                    return null;
-                                }
+                    x =>
+                    {
+                        var newName = Naming.Translate(x.NativeName[prefix.Length..], task.FunctionPrefix);
+                        if (newName == x.Name)
+                        {
+                            return null;
+                        }
 
-                                var attrs = x.Attributes.ToList();
-                                if (!x.Attributes.Any(y => y.Name is "Obsolete" or "System.Obsolete"))
+                        var attrs = x.Attributes.ToList();
+                        if (!x.Attributes.Any(y => y.Name is "Obsolete" or "System.Obsolete"))
+                        {
+                            x.Attributes.Add
+                            (
+                                new Attribute
                                 {
-                                    x.Attributes.Add
-                                    (
-                                        new Attribute
-                                        {
-                                            Name = "Obsolete",
-                                            Arguments = new List<string>
-                                            {
-                                                $"\"Deprecated in favour of \\\"{newName}\\\"\""
-                                            }
-                                        }
-                                    );
+                                    Name = "Obsolete",
+                                    Arguments = new List<string>
+                                    {
+                                        $"\"Deprecated in favour of \\\"{newName}\\\"\""
+                                    }
                                 }
+                            );
+                        }
 
-                                return new Token
-                                {
-                                    Attributes = attrs,
-                                    Doc = x.Doc,
-                                    Name = newName,
-                                    NativeName = x.NativeName,
-                                    Value = x.Value
-                                };
-                            }
-                        )
-                        .Where(x => x is not null)
-                        .ToList()
-                );
+                        return new Token
+                        {
+                            Attributes = attrs,
+                            Doc = x.Doc,
+                            Name = newName,
+                            NativeName = x.NativeName,
+                            Value = x.Value
+                        };
+                    }
+                )
+                .Where(x => x is not null)
+                .ToList();
+
+                if (task.Controls.Contains("no-obsolete-enum")) 
+                {
+                    @enum.Tokens = newEnums;
+                }
+                else 
+                {
+                    @enum.Tokens.AddRange(newEnums);
+                }
             }
         }
     }

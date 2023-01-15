@@ -193,7 +193,7 @@ public unsafe static class D3D12DescriptorHeapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12DescriptorHeap> thisVtbl, Guid* guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12DescriptorHeap> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class D3D12DescriptorHeapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12DescriptorHeap> thisVtbl, Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12DescriptorHeap> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -214,7 +214,7 @@ public unsafe static class D3D12DescriptorHeapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12DescriptorHeap> thisVtbl, ref Guid guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12DescriptorHeap> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class D3D12DescriptorHeapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12DescriptorHeap> thisVtbl, ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12DescriptorHeap> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -289,7 +289,7 @@ public unsafe static class D3D12DescriptorHeapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetName(this ComPtr<ID3D12DescriptorHeap> thisVtbl, char* Name)
+    public static unsafe int SetName(this ComPtr<ID3D12DescriptorHeap> thisVtbl, [Flow(FlowDirection.In)] char* Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -298,7 +298,7 @@ public unsafe static class D3D12DescriptorHeapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12DescriptorHeap> thisVtbl, ref char Name)
+    public static int SetName(this ComPtr<ID3D12DescriptorHeap> thisVtbl, [Flow(FlowDirection.In)] in char Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -310,7 +310,7 @@ public unsafe static class D3D12DescriptorHeapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12DescriptorHeap> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+    public static int SetName(this ComPtr<ID3D12DescriptorHeap> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -372,27 +372,33 @@ public unsafe static class D3D12DescriptorHeapVtblExtensions
     public static DescriptorHeapDesc GetDesc(this ComPtr<ID3D12DescriptorHeap> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        DescriptorHeapDesc ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12DescriptorHeap*, DescriptorHeapDesc>)@this->LpVtbl[8])(@this);
-        return ret;
+        DescriptorHeapDesc silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        DescriptorHeapDesc* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12DescriptorHeap*, DescriptorHeapDesc*, DescriptorHeapDesc*>)@this->LpVtbl[8])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>
     public static CpuDescriptorHandle GetCPUDescriptorHandleForHeapStart(this ComPtr<ID3D12DescriptorHeap> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        CpuDescriptorHandle ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12DescriptorHeap*, CpuDescriptorHandle>)@this->LpVtbl[9])(@this);
-        return ret;
+        CpuDescriptorHandle silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        CpuDescriptorHandle* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12DescriptorHeap*, CpuDescriptorHandle*, CpuDescriptorHandle*>)@this->LpVtbl[9])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>
     public static GpuDescriptorHandle GetGPUDescriptorHandleForHeapStart(this ComPtr<ID3D12DescriptorHeap> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        GpuDescriptorHandle ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12DescriptorHeap*, GpuDescriptorHandle>)@this->LpVtbl[10])(@this);
-        return ret;
+        GpuDescriptorHandle silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        GpuDescriptorHandle* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12DescriptorHeap*, GpuDescriptorHandle*, GpuDescriptorHandle*>)@this->LpVtbl[10])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>
@@ -477,15 +483,15 @@ public unsafe static class D3D12DescriptorHeapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12DescriptorHeap> thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12DescriptorHeap> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(guid, DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(guid, DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12DescriptorHeap> thisVtbl, Span<Guid> guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12DescriptorHeap> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -493,11 +499,11 @@ public unsafe static class D3D12DescriptorHeapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12DescriptorHeap> thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12DescriptorHeap> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -541,11 +547,11 @@ public unsafe static class D3D12DescriptorHeapVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12DescriptorHeap> thisVtbl, Span<char> Name)
+    public static int SetName(this ComPtr<ID3D12DescriptorHeap> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetName(ref Name.GetPinnableReference());
+        return @this->SetName(in Name.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

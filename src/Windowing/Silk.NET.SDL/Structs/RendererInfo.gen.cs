@@ -69,8 +69,8 @@ namespace Silk.NET.SDL
         [NativeName("Type.Name", "Uint32")]
         [NativeName("Name", "num_texture_formats")]
         public uint NumTextureFormats;
-        [NativeName("Type", "Uint32 [16]")]
-        [NativeName("Type.Name", "Uint32 [16]")]
+        [NativeName("Type", "Uint32[16]")]
+        [NativeName("Type.Name", "Uint32[16]")]
         [NativeName("Name", "texture_formats")]
         public fixed uint TextureFormats[16];
 

@@ -60,21 +60,39 @@ namespace Silk.NET.BuildTools.Bind
 
             project.WriteProjectFile(folder, profile, task);
 
+            Project coreProject = profile.Projects["Core"];
+
             project.Structs.ForEach
             (
-                x => x.WriteStruct
-                (
-                    GetFileName(x.Name, ".gen.cs", folder, ProfileWriter.StructsSubfolder), profile, project, task
-                )
-            );
+                x =>
+                {
+                    if (!task.Task.Controls.Contains("allow-redefinitions") && (coreProject != project &&
+                        coreProject.Structs.Any(y => y.NativeName == x.NativeName)))
+                    {
+                        return;
+                    }
+
+                    x.WriteStruct
+                    (
+                        GetFileName(x.Name, ".gen.cs", folder, ProfileWriter.StructsSubfolder), profile, project, task
+                    );
+                });
 
             project.Enums.ForEach
             (
-                x => x.WriteEnum
-                (
-                    GetFileName(x.Name, ".gen.cs", folder, ProfileWriter.EnumsSubfolder), profile, project, task
-                )
-            );
+                x =>
+                {
+                    if (!task.Task.Controls.Contains("allow-redefinitions") && (coreProject != project &&
+                        coreProject.Enums.Any(y => y.NativeName == x.NativeName)))
+                    {
+                        return;
+                    }
+
+                    x.WriteEnum
+                    (
+                        GetFileName(x.Name, ".gen.cs", folder, ProfileWriter.EnumsSubfolder), profile, project, task
+                    );
+                });
 
             project.WriteMixedModeClasses(profile, folder, task);
         }
@@ -101,7 +119,7 @@ namespace Silk.NET.BuildTools.Bind
             csproj.WriteLine
                 ("    <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0</TargetFrameworks>");
             csproj.WriteLine("    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>");
-            csproj.WriteLine("    <LangVersion>preview</LangVersion>");
+            csproj.WriteLine("    <LangVersion>10</LangVersion>");
             csproj.WriteLine("  </PropertyGroup>");
             csproj.WriteLine();
             csproj.WriteLine("  <ItemGroup>");

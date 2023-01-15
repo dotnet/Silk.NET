@@ -18,7 +18,7 @@ namespace Silk.NET.DXGI
 {
     [Guid("8a6bb301-7e7e-41f4-a8e0-5b32f7f99b18")]
     [NativeName("Name", "IDXGIOutput3")]
-    public unsafe partial struct IDXGIOutput3 : IComVtbl<IDXGIOutput3>, IComVtbl<IDXGIOutput2>, IComVtbl<IDXGIOutput1>, IComVtbl<IDXGIOutput>, IComVtbl<IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
+    public unsafe partial struct IDXGIOutput3 : IComVtbl<IDXGIOutput3>, IComVtbl<IDXGIOutput2>, IComVtbl<IDXGIOutput1>, IComVtbl<IDXGIOutput>, IComVtbl<Silk.NET.DXGI.IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("8a6bb301-7e7e-41f4-a8e0-5b32f7f99b18");
 
@@ -34,8 +34,8 @@ namespace Silk.NET.DXGI
         public static implicit operator IDXGIOutput(IDXGIOutput3 val)
             => Unsafe.As<IDXGIOutput3, IDXGIOutput>(ref val);
 
-        public static implicit operator IDXGIObject(IDXGIOutput3 val)
-            => Unsafe.As<IDXGIOutput3, IDXGIObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIObject(IDXGIOutput3 val)
+            => Unsafe.As<IDXGIOutput3, Silk.NET.DXGI.IDXGIObject>(ref val);
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIOutput3 val)
             => Unsafe.As<IDXGIOutput3, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -123,7 +123,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(Guid* Name, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(Guid* Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -132,7 +132,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -144,7 +144,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(ref Guid Name, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -156,7 +156,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -444,7 +444,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode(ModeDesc* pModeToMatch, ModeDesc* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
+        public readonly unsafe int FindClosestMatchingMode([Flow(FlowDirection.In)] ModeDesc* pModeToMatch, ModeDesc* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -453,7 +453,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode(ModeDesc* pModeToMatch, ModeDesc* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
+        public readonly unsafe int FindClosestMatchingMode([Flow(FlowDirection.In)] ModeDesc* pModeToMatch, ModeDesc* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -465,7 +465,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode(ModeDesc* pModeToMatch, ref ModeDesc pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
+        public readonly unsafe int FindClosestMatchingMode([Flow(FlowDirection.In)] ModeDesc* pModeToMatch, ref ModeDesc pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -477,7 +477,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode(ModeDesc* pModeToMatch, ref ModeDesc pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
+        public readonly unsafe int FindClosestMatchingMode([Flow(FlowDirection.In)] ModeDesc* pModeToMatch, ref ModeDesc pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -492,7 +492,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode(ref ModeDesc pModeToMatch, ModeDesc* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
+        public readonly unsafe int FindClosestMatchingMode([Flow(FlowDirection.In)] in ModeDesc pModeToMatch, ModeDesc* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -504,7 +504,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode(ref ModeDesc pModeToMatch, ModeDesc* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
+        public readonly unsafe int FindClosestMatchingMode([Flow(FlowDirection.In)] in ModeDesc pModeToMatch, ModeDesc* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -519,7 +519,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode(ref ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
+        public readonly unsafe int FindClosestMatchingMode([Flow(FlowDirection.In)] in ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -534,7 +534,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int FindClosestMatchingMode(ref ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
+        public readonly int FindClosestMatchingMode([Flow(FlowDirection.In)] in ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -561,22 +561,22 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int TakeOwnership(Silk.NET.Core.Native.IUnknown* pDevice, int Exclusive)
+        public readonly unsafe int TakeOwnership(Silk.NET.Core.Native.IUnknown* pDevice, Silk.NET.Core.Bool32 Exclusive)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput3*, Silk.NET.Core.Native.IUnknown*, int, int>)@this->LpVtbl[11])(@this, pDevice, Exclusive);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput3*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[11])(@this, pDevice, Exclusive);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int TakeOwnership(ref Silk.NET.Core.Native.IUnknown pDevice, int Exclusive)
+        public readonly int TakeOwnership(ref Silk.NET.Core.Native.IUnknown pDevice, Silk.NET.Core.Bool32 Exclusive)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput3*, Silk.NET.Core.Native.IUnknown*, int, int>)@this->LpVtbl[11])(@this, pDevicePtr, Exclusive);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput3*, Silk.NET.Core.Native.IUnknown*, Silk.NET.Core.Bool32, int>)@this->LpVtbl[11])(@this, pDevicePtr, Exclusive);
             }
             return ret;
         }
@@ -610,7 +610,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetGammaControl(GammaControl* pArray)
+        public readonly unsafe int SetGammaControl([Flow(FlowDirection.In)] GammaControl* pArray)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -619,7 +619,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetGammaControl(ref GammaControl pArray)
+        public readonly int SetGammaControl([Flow(FlowDirection.In)] in GammaControl pArray)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -652,43 +652,43 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetDisplaySurface(IDXGISurface* pScanoutSurface)
+        public readonly unsafe int SetDisplaySurface(Silk.NET.DXGI.IDXGISurface* pScanoutSurface)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput3*, IDXGISurface*, int>)@this->LpVtbl[16])(@this, pScanoutSurface);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput3*, Silk.NET.DXGI.IDXGISurface*, int>)@this->LpVtbl[16])(@this, pScanoutSurface);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetDisplaySurface(ref IDXGISurface pScanoutSurface)
+        public readonly int SetDisplaySurface(ref Silk.NET.DXGI.IDXGISurface pScanoutSurface)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDXGISurface* pScanoutSurfacePtr = &pScanoutSurface)
+            fixed (Silk.NET.DXGI.IDXGISurface* pScanoutSurfacePtr = &pScanoutSurface)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput3*, IDXGISurface*, int>)@this->LpVtbl[16])(@this, pScanoutSurfacePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput3*, Silk.NET.DXGI.IDXGISurface*, int>)@this->LpVtbl[16])(@this, pScanoutSurfacePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDisplaySurfaceData(IDXGISurface* pDestination)
+        public readonly unsafe int GetDisplaySurfaceData(Silk.NET.DXGI.IDXGISurface* pDestination)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput3*, IDXGISurface*, int>)@this->LpVtbl[17])(@this, pDestination);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput3*, Silk.NET.DXGI.IDXGISurface*, int>)@this->LpVtbl[17])(@this, pDestination);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetDisplaySurfaceData(ref IDXGISurface pDestination)
+        public readonly int GetDisplaySurfaceData(ref Silk.NET.DXGI.IDXGISurface pDestination)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (IDXGISurface* pDestinationPtr = &pDestination)
+            fixed (Silk.NET.DXGI.IDXGISurface* pDestinationPtr = &pDestination)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput3*, IDXGISurface*, int>)@this->LpVtbl[17])(@this, pDestinationPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput3*, Silk.NET.DXGI.IDXGISurface*, int>)@this->LpVtbl[17])(@this, pDestinationPtr);
             }
             return ret;
         }
@@ -763,7 +763,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode1(ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
+        public readonly unsafe int FindClosestMatchingMode1([Flow(FlowDirection.In)] ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -772,7 +772,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode1(ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
+        public readonly unsafe int FindClosestMatchingMode1([Flow(FlowDirection.In)] ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -784,7 +784,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode1(ModeDesc1* pModeToMatch, ref ModeDesc1 pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
+        public readonly unsafe int FindClosestMatchingMode1([Flow(FlowDirection.In)] ModeDesc1* pModeToMatch, ref ModeDesc1 pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -796,7 +796,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode1(ModeDesc1* pModeToMatch, ref ModeDesc1 pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
+        public readonly unsafe int FindClosestMatchingMode1([Flow(FlowDirection.In)] ModeDesc1* pModeToMatch, ref ModeDesc1 pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -811,7 +811,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode1(ref ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
+        public readonly unsafe int FindClosestMatchingMode1([Flow(FlowDirection.In)] in ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -823,7 +823,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode1(ref ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
+        public readonly unsafe int FindClosestMatchingMode1([Flow(FlowDirection.In)] in ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -838,7 +838,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode1(ref ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
+        public readonly unsafe int FindClosestMatchingMode1([Flow(FlowDirection.In)] in ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, Silk.NET.Core.Native.IUnknown* pConcernedDevice)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -853,7 +853,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int FindClosestMatchingMode1(ref ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
+        public readonly int FindClosestMatchingMode1([Flow(FlowDirection.In)] in ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, ref Silk.NET.Core.Native.IUnknown pConcernedDevice)
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -940,11 +940,11 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SupportsOverlays()
+        public readonly Silk.NET.Core.Bool32 SupportsOverlays()
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput3*, int>)@this->LpVtbl[23])(@this);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput3*, Silk.NET.Core.Bool32>)@this->LpVtbl[23])(@this);
             return ret;
         }
 
@@ -1031,7 +1031,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode<TI0>(ModeDesc* pModeToMatch, ModeDesc* pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int FindClosestMatchingMode<TI0>([Flow(FlowDirection.In)] ModeDesc* pModeToMatch, ModeDesc* pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1039,7 +1039,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode<TI0>(ModeDesc* pModeToMatch, ref ModeDesc pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int FindClosestMatchingMode<TI0>([Flow(FlowDirection.In)] ModeDesc* pModeToMatch, ref ModeDesc pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1047,23 +1047,23 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode<TI0>(ref ModeDesc pModeToMatch, ModeDesc* pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int FindClosestMatchingMode<TI0>([Flow(FlowDirection.In)] in ModeDesc pModeToMatch, ModeDesc* pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->FindClosestMatchingMode(ref pModeToMatch, pClosestMatch, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle);
+            return @this->FindClosestMatchingMode(in pModeToMatch, pClosestMatch, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int FindClosestMatchingMode<TI0>(ref ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly int FindClosestMatchingMode<TI0>([Flow(FlowDirection.In)] in ModeDesc pModeToMatch, ref ModeDesc pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->FindClosestMatchingMode(ref pModeToMatch, ref pClosestMatch, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle);
+            return @this->FindClosestMatchingMode(in pModeToMatch, ref pClosestMatch, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int TakeOwnership<TI0>(ComPtr<TI0> pDevice, int Exclusive) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly int TakeOwnership<TI0>(ComPtr<TI0> pDevice, Silk.NET.Core.Bool32 Exclusive) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1071,23 +1071,23 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetDisplaySurface<TI0>(ComPtr<TI0> pScanoutSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
+        public readonly int SetDisplaySurface<TI0>(ComPtr<TI0> pScanoutSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->SetDisplaySurface((IDXGISurface*) pScanoutSurface.Handle);
+            return @this->SetDisplaySurface((Silk.NET.DXGI.IDXGISurface*) pScanoutSurface.Handle);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetDisplaySurfaceData<TI0>(ComPtr<TI0> pDestination) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
+        public readonly int GetDisplaySurfaceData<TI0>(ComPtr<TI0> pDestination) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->GetDisplaySurfaceData((IDXGISurface*) pDestination.Handle);
+            return @this->GetDisplaySurfaceData((Silk.NET.DXGI.IDXGISurface*) pDestination.Handle);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode1<TI0>(ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int FindClosestMatchingMode1<TI0>([Flow(FlowDirection.In)] ModeDesc1* pModeToMatch, ModeDesc1* pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1095,7 +1095,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode1<TI0>(ModeDesc1* pModeToMatch, ref ModeDesc1 pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int FindClosestMatchingMode1<TI0>([Flow(FlowDirection.In)] ModeDesc1* pModeToMatch, ref ModeDesc1 pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
@@ -1103,19 +1103,19 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int FindClosestMatchingMode1<TI0>(ref ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly unsafe int FindClosestMatchingMode1<TI0>([Flow(FlowDirection.In)] in ModeDesc1 pModeToMatch, ModeDesc1* pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->FindClosestMatchingMode1(ref pModeToMatch, pClosestMatch, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle);
+            return @this->FindClosestMatchingMode1(in pModeToMatch, pClosestMatch, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int FindClosestMatchingMode1<TI0>(ref ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+        public readonly int FindClosestMatchingMode1<TI0>([Flow(FlowDirection.In)] in ModeDesc1 pModeToMatch, ref ModeDesc1 pClosestMatch, ComPtr<TI0> pConcernedDevice) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
         {
             var @this = (IDXGIOutput3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader
-            return @this->FindClosestMatchingMode1(ref pModeToMatch, ref pClosestMatch, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle);
+            return @this->FindClosestMatchingMode1(in pModeToMatch, ref pClosestMatch, (Silk.NET.Core.Native.IUnknown*) pConcernedDevice.Handle);
         }
 
         /// <summary>To be documented.</summary>

@@ -21,8 +21,8 @@ namespace Silk.NET.Direct3D12
     {
         public VideoProcessTransform
         (
-            Silk.NET.Maths.Rectangle<int>? sourceRectangle = null,
-            Silk.NET.Maths.Rectangle<int>? destinationRectangle = null,
+            Silk.NET.Maths.Box2D<int>? sourceRectangle = null,
+            Silk.NET.Maths.Box2D<int>? destinationRectangle = null,
             VideoProcessOrientation? orientation = null
         ) : this()
         {
@@ -46,12 +46,12 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "D3D12_RECT")]
         [NativeName("Type.Name", "D3D12_RECT")]
         [NativeName("Name", "SourceRectangle")]
-        public Silk.NET.Maths.Rectangle<int> SourceRectangle;
+        public Silk.NET.Maths.Box2D<int> SourceRectangle;
 
         [NativeName("Type", "D3D12_RECT")]
         [NativeName("Type.Name", "D3D12_RECT")]
         [NativeName("Name", "DestinationRectangle")]
-        public Silk.NET.Maths.Rectangle<int> DestinationRectangle;
+        public Silk.NET.Maths.Box2D<int> DestinationRectangle;
 
         [NativeName("Type", "D3D12_VIDEO_PROCESS_ORIENTATION")]
         [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_ORIENTATION")]

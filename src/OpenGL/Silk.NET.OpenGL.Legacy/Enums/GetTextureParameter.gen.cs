@@ -126,6 +126,28 @@ namespace Silk.NET.OpenGL.Legacy
         TextureMaxClampTSgix = 0x836A,
         [NativeName("Name", "GL_TEXTURE_MAX_CLAMP_R_SGIX")]
         TextureMaxClampRSgix = 0x836B,
+        [System.Obsolete]
+        [NativeName("Name", "GL_NORMAL_MAP")]
+        NormalMap = 0x8511,
+        [NativeName("Name", "GL_NORMAL_MAP_ARB")]
+        NormalMapArb = 0x8511,
+        [NativeName("Name", "GL_NORMAL_MAP_EXT")]
+        NormalMapExt = 0x8511,
+        [NativeName("Name", "GL_NORMAL_MAP_NV")]
+        NormalMapNV = 0x8511,
+        [NativeName("Name", "GL_NORMAL_MAP_OES")]
+        NormalMapOes = 0x8511,
+        [System.Obsolete]
+        [NativeName("Name", "GL_REFLECTION_MAP")]
+        ReflectionMap = 0x8512,
+        [NativeName("Name", "GL_REFLECTION_MAP_ARB")]
+        ReflectionMapArb = 0x8512,
+        [NativeName("Name", "GL_REFLECTION_MAP_EXT")]
+        ReflectionMapExt = 0x8512,
+        [NativeName("Name", "GL_REFLECTION_MAP_NV")]
+        ReflectionMapNV = 0x8512,
+        [NativeName("Name", "GL_REFLECTION_MAP_OES")]
+        ReflectionMapOes = 0x8512,
         [NativeName("Name", "GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM")]
         TextureUnnormalizedCoordinatesArm = 0x8F6A,
         [NativeName("Name", "GL_SURFACE_COMPRESSION_EXT")]

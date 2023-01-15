@@ -28,5 +28,9 @@ namespace Silk.NET.OpenCL
         WorkgroupBatchSizeArm = 0x41E5,
         [NativeName("Name", "CL_KERNEL_EXEC_INFO_WORKGROUP_BATCH_SIZE_MODIFIER_ARM")]
         WorkgroupBatchSizeModifierArm = 0x41E6,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_WARP_COUNT_LIMIT_ARM")]
+        WarpCountLimitArm = 0x41E8,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_COMPUTE_UNIT_MAX_QUEUED_BATCHES_ARM")]
+        ComputeUnitMaxQueuedBatchesArm = 0x41F1,
     }
 }

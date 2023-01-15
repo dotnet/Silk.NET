@@ -85,20 +85,20 @@ public unsafe static class D3D11SwitchToRefVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetUseRef(this ComPtr<ID3D11SwitchToRef> thisVtbl, int UseRef)
+    public static Silk.NET.Core.Bool32 SetUseRef(this ComPtr<ID3D11SwitchToRef> thisVtbl, Silk.NET.Core.Bool32 UseRef)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D11SwitchToRef*, int, int>)@this->LpVtbl[3])(@this, UseRef);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D11SwitchToRef*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32>)@this->LpVtbl[3])(@this, UseRef);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetUseRef(this ComPtr<ID3D11SwitchToRef> thisVtbl)
+    public static Silk.NET.Core.Bool32 GetUseRef(this ComPtr<ID3D11SwitchToRef> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D11SwitchToRef*, int>)@this->LpVtbl[4])(@this);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D11SwitchToRef*, Silk.NET.Core.Bool32>)@this->LpVtbl[4])(@this);
         return ret;
     }
 

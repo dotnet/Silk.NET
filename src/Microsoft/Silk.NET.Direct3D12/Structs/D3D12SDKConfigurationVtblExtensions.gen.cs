@@ -85,7 +85,7 @@ public unsafe static class D3D12SDKConfigurationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetSDKVersion(this ComPtr<ID3D12SDKConfiguration> thisVtbl, uint SDKVersion, byte* SDKPath)
+    public static unsafe int SetSDKVersion(this ComPtr<ID3D12SDKConfiguration> thisVtbl, uint SDKVersion, [Flow(FlowDirection.In)] byte* SDKPath)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -94,7 +94,7 @@ public unsafe static class D3D12SDKConfigurationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSDKVersion(this ComPtr<ID3D12SDKConfiguration> thisVtbl, uint SDKVersion, ref byte SDKPath)
+    public static int SetSDKVersion(this ComPtr<ID3D12SDKConfiguration> thisVtbl, uint SDKVersion, [Flow(FlowDirection.In)] in byte SDKPath)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -106,7 +106,7 @@ public unsafe static class D3D12SDKConfigurationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSDKVersion(this ComPtr<ID3D12SDKConfiguration> thisVtbl, uint SDKVersion, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string SDKPath)
+    public static int SetSDKVersion(this ComPtr<ID3D12SDKConfiguration> thisVtbl, uint SDKVersion, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string SDKPath)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -142,11 +142,11 @@ public unsafe static class D3D12SDKConfigurationVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetSDKVersion(this ComPtr<ID3D12SDKConfiguration> thisVtbl, uint SDKVersion, Span<byte> SDKPath)
+    public static int SetSDKVersion(this ComPtr<ID3D12SDKConfiguration> thisVtbl, uint SDKVersion, [Flow(FlowDirection.In)] ReadOnlySpan<byte> SDKPath)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetSDKVersion(SDKVersion, ref SDKPath.GetPinnableReference());
+        return @this->SetSDKVersion(SDKVersion, in SDKPath.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

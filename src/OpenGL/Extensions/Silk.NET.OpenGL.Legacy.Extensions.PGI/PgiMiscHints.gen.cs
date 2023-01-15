@@ -24,7 +24,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.PGI
         public partial void Hint([Flow(FlowDirection.In)] PGI target, [Flow(FlowDirection.In)] int mode);
 
         [NativeApi(EntryPoint = "glHintPGI", Convention = CallingConvention.Winapi)]
+        public partial void Hint([Flow(FlowDirection.In)] PGI target, [Flow(FlowDirection.In)] VertexHintsMaskPGI mode);
+
+        [NativeApi(EntryPoint = "glHintPGI", Convention = CallingConvention.Winapi)]
         public partial void Hint([Flow(FlowDirection.In)] HintTargetPGI target, [Flow(FlowDirection.In)] int mode);
+
+        [NativeApi(EntryPoint = "glHintPGI", Convention = CallingConvention.Winapi)]
+        public partial void Hint([Flow(FlowDirection.In)] HintTargetPGI target, [Flow(FlowDirection.In)] VertexHintsMaskPGI mode);
 
         public PgiMiscHints(INativeContext ctx)
             : base(ctx)

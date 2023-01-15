@@ -20,8 +20,8 @@ namespace Silk.NET.Direct3D9
     public unsafe partial struct DevinfoResourcemanager
     {
         
-        [NativeName("Type", "D3DRESOURCESTATS [8]")]
-        [NativeName("Type.Name", "D3DRESOURCESTATS [8]")]
+        [NativeName("Type", "D3DRESOURCESTATS[8]")]
+        [NativeName("Type.Name", "D3DRESOURCESTATS[8]")]
         [NativeName("Name", "stats")]
         public StatsBuffer Stats;
 

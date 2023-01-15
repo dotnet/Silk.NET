@@ -51,9 +51,9 @@ namespace Silk.NET.Direct3D12
             ulong? requiredFeatureFlags = null,
             byte* name = null,
             int? functionParameterCount = null,
-            int? hasReturn = null,
-            int? has10Level9VertexShader = null,
-            int? has10Level9PixelShader = null
+            Silk.NET.Core.Bool32? hasReturn = null,
+            Silk.NET.Core.Bool32? has10Level9VertexShader = null,
+            Silk.NET.Core.Bool32? has10Level9PixelShader = null
         ) : this()
         {
             if (version is not null)
@@ -376,16 +376,16 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "HasReturn")]
-        public int HasReturn;
+        public Silk.NET.Core.Bool32 HasReturn;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Has10Level9VertexShader")]
-        public int Has10Level9VertexShader;
+        public Silk.NET.Core.Bool32 Has10Level9VertexShader;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Has10Level9PixelShader")]
-        public int Has10Level9PixelShader;
+        public Silk.NET.Core.Bool32 Has10Level9PixelShader;
     }
 }

@@ -27,10 +27,10 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         public partial void PolygonMode([Flow(FlowDirection.In)] NV face, [Flow(FlowDirection.In)] PolygonMode mode);
 
         [NativeApi(EntryPoint = "glPolygonModeNV", Convention = CallingConvention.Winapi)]
-        public partial void PolygonMode([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] NV mode);
+        public partial void PolygonMode([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] NV mode);
 
         [NativeApi(EntryPoint = "glPolygonModeNV", Convention = CallingConvention.Winapi)]
-        public partial void PolygonMode([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] PolygonMode mode);
+        public partial void PolygonMode([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] PolygonMode mode);
 
         public NVPolygonMode(INativeContext ctx)
             : base(ctx)

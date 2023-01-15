@@ -178,6 +178,8 @@ namespace Silk.NET.OpenGL
         SampleShading = 0x8C36,
         [NativeName("Name", "GL_RASTERIZER_DISCARD")]
         RasterizerDiscard = 0x8C89,
+        [NativeName("Name", "GL_TEXTURE_GEN_STR_OES")]
+        TextureGenStrOes = 0x8D60,
         [NativeName("Name", "GL_PRIMITIVE_RESTART_FIXED_INDEX")]
         PrimitiveRestartFixedIndex = 0x8D69,
         [NativeName("Name", "GL_FRAMEBUFFER_SRGB")]
@@ -192,6 +194,8 @@ namespace Silk.NET.OpenGL
         DebugOutput = 0x92E0,
         [NativeName("Name", "GL_SHADING_RATE_IMAGE_PER_PRIMITIVE_NV")]
         ShadingRateImagePerPrimitiveNV = 0x95B1,
+        [NativeName("Name", "GL_FRAMEBUFFER_FETCH_NONCOHERENT_QCOM")]
+        FramebufferFetchNoncoherentQCom = 0x96A2,
         [NativeName("Name", "GL_SHADING_RATE_PRESERVE_ASPECT_RATIO_QCOM")]
         ShadingRatePreserveAspectRatioQCom = 0x96A5,
     }

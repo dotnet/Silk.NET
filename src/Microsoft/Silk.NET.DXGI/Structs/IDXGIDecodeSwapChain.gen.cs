@@ -120,43 +120,43 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSourceRect(Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe int SetSourceRect([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[4])(@this, pRect);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[4])(@this, pRect);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetSourceRect(ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly int SetSourceRect([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[4])(@this, pRectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[4])(@this, pRectPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetTargetRect(Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe int SetTargetRect([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[5])(@this, pRect);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, pRect);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetTargetRect(ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly int SetTargetRect([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[5])(@this, pRectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[5])(@this, pRectPtr);
             }
             return ret;
         }
@@ -171,43 +171,43 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSourceRect(Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe int GetSourceRect(Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[7])(@this, pRect);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[7])(@this, pRect);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetSourceRect(ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly int GetSourceRect(ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[7])(@this, pRectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[7])(@this, pRectPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTargetRect(Silk.NET.Maths.Rectangle<int>* pRect)
+        public readonly unsafe int GetTargetRect(Silk.NET.Maths.Box2D<int>* pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[8])(@this, pRect);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[8])(@this, pRect);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetTargetRect(ref Silk.NET.Maths.Rectangle<int> pRect)
+        public readonly int GetTargetRect(ref Silk.NET.Maths.Box2D<int> pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)@this->LpVtbl[8])(@this, pRectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[8])(@this, pRectPtr);
             }
             return ret;
         }

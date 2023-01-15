@@ -120,7 +120,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BindConstantBufferByName(byte* pName, uint uDstSlot, uint cbDstOffset)
+        public readonly unsafe int BindConstantBufferByName([Flow(FlowDirection.In)] byte* pName, uint uDstSlot, uint cbDstOffset)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -129,7 +129,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int BindConstantBufferByName(ref byte pName, uint uDstSlot, uint cbDstOffset)
+        public readonly int BindConstantBufferByName([Flow(FlowDirection.In)] in byte pName, uint uDstSlot, uint cbDstOffset)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -141,7 +141,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int BindConstantBufferByName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint cbDstOffset)
+        public readonly int BindConstantBufferByName([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint cbDstOffset)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -161,7 +161,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BindResourceByName(byte* pName, uint uDstSlot, uint uCount)
+        public readonly unsafe int BindResourceByName([Flow(FlowDirection.In)] byte* pName, uint uDstSlot, uint uCount)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -170,7 +170,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int BindResourceByName(ref byte pName, uint uDstSlot, uint uCount)
+        public readonly int BindResourceByName([Flow(FlowDirection.In)] in byte pName, uint uDstSlot, uint uCount)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -182,7 +182,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int BindResourceByName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint uCount)
+        public readonly int BindResourceByName([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint uCount)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -202,7 +202,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BindSamplerByName(byte* pName, uint uDstSlot, uint uCount)
+        public readonly unsafe int BindSamplerByName([Flow(FlowDirection.In)] byte* pName, uint uDstSlot, uint uCount)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -211,7 +211,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int BindSamplerByName(ref byte pName, uint uDstSlot, uint uCount)
+        public readonly int BindSamplerByName([Flow(FlowDirection.In)] in byte pName, uint uDstSlot, uint uCount)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -223,7 +223,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int BindSamplerByName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint uCount)
+        public readonly int BindSamplerByName([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint uCount)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -243,7 +243,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BindUnorderedAccessViewByName(byte* pName, uint uDstSlot, uint uCount)
+        public readonly unsafe int BindUnorderedAccessViewByName([Flow(FlowDirection.In)] byte* pName, uint uDstSlot, uint uCount)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -252,7 +252,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int BindUnorderedAccessViewByName(ref byte pName, uint uDstSlot, uint uCount)
+        public readonly int BindUnorderedAccessViewByName([Flow(FlowDirection.In)] in byte pName, uint uDstSlot, uint uCount)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -264,7 +264,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int BindUnorderedAccessViewByName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint uCount)
+        public readonly int BindUnorderedAccessViewByName([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pName, uint uDstSlot, uint uCount)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -284,7 +284,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int BindResourceAsUnorderedAccessViewByName(byte* pSrvName, uint uDstUavSlot, uint uCount)
+        public readonly unsafe int BindResourceAsUnorderedAccessViewByName([Flow(FlowDirection.In)] byte* pSrvName, uint uDstUavSlot, uint uCount)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -293,7 +293,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int BindResourceAsUnorderedAccessViewByName(ref byte pSrvName, uint uDstUavSlot, uint uCount)
+        public readonly int BindResourceAsUnorderedAccessViewByName([Flow(FlowDirection.In)] in byte pSrvName, uint uDstUavSlot, uint uCount)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -305,7 +305,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int BindResourceAsUnorderedAccessViewByName([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrvName, uint uDstUavSlot, uint uCount)
+        public readonly int BindResourceAsUnorderedAccessViewByName([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pSrvName, uint uDstUavSlot, uint uCount)
         {
             var @this = (ID3D11ModuleInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

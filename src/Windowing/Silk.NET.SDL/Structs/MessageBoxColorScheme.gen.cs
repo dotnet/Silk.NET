@@ -21,8 +21,8 @@ namespace Silk.NET.SDL
     public unsafe partial struct MessageBoxColorScheme
     {
         
-        [NativeName("Type", "SDL_MessageBoxColor [5]")]
-        [NativeName("Type.Name", "SDL_MessageBoxColor [5]")]
+        [NativeName("Type", "SDL_MessageBoxColor[5]")]
+        [NativeName("Type.Name", "SDL_MessageBoxColor[5]")]
         [NativeName("Name", "colors")]
         public ColorsBuffer Colors;
 

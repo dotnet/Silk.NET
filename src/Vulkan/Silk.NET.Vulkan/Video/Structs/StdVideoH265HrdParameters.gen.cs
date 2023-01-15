@@ -30,7 +30,9 @@ namespace Silk.NET.Vulkan.Video
             byte? cpbSizeDuScale = null,
             byte? initialCpbRemovalDelayLengthMinus1 = null,
             byte? auCpbRemovalDelayLengthMinus1 = null,
-            byte? dpbOutputDelayLengthMinus1 = null
+            byte? dpbOutputDelayLengthMinus1 = null,
+            StdVideoH265SubLayerHrdParameters* pSubLayerHrdParametersNal = null,
+            StdVideoH265SubLayerHrdParameters* pSubLayerHrdParametersVcl = null
         ) : this()
         {
             if (flags is not null)
@@ -81,6 +83,16 @@ namespace Silk.NET.Vulkan.Video
             if (dpbOutputDelayLengthMinus1 is not null)
             {
                 DpbOutputDelayLengthMinus1 = dpbOutputDelayLengthMinus1.Value;
+            }
+
+            if (pSubLayerHrdParametersNal is not null)
+            {
+                PSubLayerHrdParametersNal = pSubLayerHrdParametersNal;
+            }
+
+            if (pSubLayerHrdParametersVcl is not null)
+            {
+                PSubLayerHrdParametersVcl = pSubLayerHrdParametersVcl;
             }
         }
 
@@ -134,77 +146,27 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "dpb_output_delay_length_minus1")]
         public byte DpbOutputDelayLengthMinus1;
-        [NativeName("Type", "uint8_t [7]")]
-        [NativeName("Type.Name", "uint8_t [7]")]
+        [NativeName("Type", "uint8_t[7]")]
+        [NativeName("Type.Name", "uint8_t[7]")]
         [NativeName("Name", "cpb_cnt_minus1")]
         public fixed byte CpbCntMinus1[7];
-        [NativeName("Type", "uint16_t [7]")]
-        [NativeName("Type.Name", "uint16_t [7]")]
+        [NativeName("Type", "uint16_t[7]")]
+        [NativeName("Type.Name", "uint16_t[7]")]
         [NativeName("Name", "elemental_duration_in_tc_minus1")]
         public fixed ushort ElementalDurationInTcMinus1[7];
-        
-        [NativeName("Type", "const StdVideoH265SubLayerHrdParameters *[7]")]
-        [NativeName("Type.Name", "const StdVideoH265SubLayerHrdParameters *[7]")]
+        [NativeName("Type", "uint16_t[3]")]
+        [NativeName("Type.Name", "uint16_t[3]")]
+        [NativeName("Name", "reserved")]
+        public fixed ushort Reserved[3];
+
+        [NativeName("Type", "const StdVideoH265SubLayerHrdParameters *")]
+        [NativeName("Type.Name", "const StdVideoH265SubLayerHrdParameters *")]
         [NativeName("Name", "pSubLayerHrdParametersNal")]
-        public PSubLayerHrdParametersNalBuffer PSubLayerHrdParametersNal;
+        public StdVideoH265SubLayerHrdParameters* PSubLayerHrdParametersNal;
 
-        public struct PSubLayerHrdParametersNalBuffer
-        {
-            public StdVideoH265SubLayerHrdParameters* Element0;
-            public StdVideoH265SubLayerHrdParameters* Element1;
-            public StdVideoH265SubLayerHrdParameters* Element2;
-            public StdVideoH265SubLayerHrdParameters* Element3;
-            public StdVideoH265SubLayerHrdParameters* Element4;
-            public StdVideoH265SubLayerHrdParameters* Element5;
-            public StdVideoH265SubLayerHrdParameters* Element6;
-            public ref StdVideoH265SubLayerHrdParameters* this[int index]
-            {
-                get
-                {
-                    if (index > 6 || index < 0)
-                    {
-                        throw new ArgumentOutOfRangeException(nameof(index));
-                    }
-
-                    fixed (StdVideoH265SubLayerHrdParameters** ptr = &Element0)
-                    {
-                        return ref ptr[index];
-                    }
-                }
-            }
-        }
-
-        
-        [NativeName("Type", "const StdVideoH265SubLayerHrdParameters *[7]")]
-        [NativeName("Type.Name", "const StdVideoH265SubLayerHrdParameters *[7]")]
+        [NativeName("Type", "const StdVideoH265SubLayerHrdParameters *")]
+        [NativeName("Type.Name", "const StdVideoH265SubLayerHrdParameters *")]
         [NativeName("Name", "pSubLayerHrdParametersVcl")]
-        public PSubLayerHrdParametersVclBuffer PSubLayerHrdParametersVcl;
-
-        public struct PSubLayerHrdParametersVclBuffer
-        {
-            public StdVideoH265SubLayerHrdParameters* Element0;
-            public StdVideoH265SubLayerHrdParameters* Element1;
-            public StdVideoH265SubLayerHrdParameters* Element2;
-            public StdVideoH265SubLayerHrdParameters* Element3;
-            public StdVideoH265SubLayerHrdParameters* Element4;
-            public StdVideoH265SubLayerHrdParameters* Element5;
-            public StdVideoH265SubLayerHrdParameters* Element6;
-            public ref StdVideoH265SubLayerHrdParameters* this[int index]
-            {
-                get
-                {
-                    if (index > 6 || index < 0)
-                    {
-                        throw new ArgumentOutOfRangeException(nameof(index));
-                    }
-
-                    fixed (StdVideoH265SubLayerHrdParameters** ptr = &Element0)
-                    {
-                        return ref ptr[index];
-                    }
-                }
-            }
-        }
-
+        public StdVideoH265SubLayerHrdParameters* PSubLayerHrdParametersVcl;
     }
 }

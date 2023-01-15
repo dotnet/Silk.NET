@@ -24,8 +24,8 @@ namespace Silk.NET.DXVA
             uint? size = null,
             uint? reserved = null,
             long? rtTarget = null,
-            Silk.NET.Maths.Rectangle<int>? dstRect = null,
-            Silk.NET.Maths.Rectangle<int>? srcRect = null,
+            Silk.NET.Maths.Box2D<int>? dstRect = null,
+            Silk.NET.Maths.Box2D<int>? srcRect = null,
             uint? numSourceSurfaces = null,
             float? alpha = null
         ) : this()
@@ -85,12 +85,12 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "DstRect")]
-        public Silk.NET.Maths.Rectangle<int> DstRect;
+        public Silk.NET.Maths.Box2D<int> DstRect;
 
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "SrcRect")]
-        public Silk.NET.Maths.Rectangle<int> SrcRect;
+        public Silk.NET.Maths.Box2D<int> SrcRect;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
@@ -102,8 +102,8 @@ namespace Silk.NET.DXVA
         [NativeName("Name", "Alpha")]
         public float Alpha;
         
-        [NativeName("Type", "DXVA_VideoSample [32]")]
-        [NativeName("Type.Name", "DXVA_VideoSample [32]")]
+        [NativeName("Type", "DXVA_VideoSample[32]")]
+        [NativeName("Type.Name", "DXVA_VideoSample[32]")]
         [NativeName("Name", "Source")]
         public SourceBuffer Source;
 

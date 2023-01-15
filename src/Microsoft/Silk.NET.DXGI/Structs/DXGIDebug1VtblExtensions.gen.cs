@@ -108,11 +108,11 @@ public unsafe static class DXGIDebug1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int IsLeakTrackingEnabledForThread(this ComPtr<IDXGIDebug1> thisVtbl)
+    public static Silk.NET.Core.Bool32 IsLeakTrackingEnabledForThread(this ComPtr<IDXGIDebug1> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIDebug1*, int>)@this->LpVtbl[6])(@this);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIDebug1*, Silk.NET.Core.Bool32>)@this->LpVtbl[6])(@this);
         return ret;
     }
 

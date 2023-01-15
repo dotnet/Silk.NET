@@ -24,5 +24,7 @@ namespace Silk.NET.OpenCL
         FamilyIntel = 0x418C,
         [NativeName("Name", "CL_QUEUE_INDEX_INTEL")]
         IndexIntel = 0x418D,
+        [NativeName("Name", "CL_QUEUE_JOB_SLOT_ARM")]
+        JobSlotArm = 0x41E1,
     }
 }

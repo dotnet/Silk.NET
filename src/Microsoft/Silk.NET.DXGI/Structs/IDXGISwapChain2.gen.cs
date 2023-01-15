@@ -18,7 +18,7 @@ namespace Silk.NET.DXGI
 {
     [Guid("a8be2ac4-199f-4946-b331-79599fb98de7")]
     [NativeName("Name", "IDXGISwapChain2")]
-    public unsafe partial struct IDXGISwapChain2 : IComVtbl<IDXGISwapChain2>, IComVtbl<IDXGISwapChain1>, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<IDXGIDeviceSubObject>, IComVtbl<IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
+    public unsafe partial struct IDXGISwapChain2 : IComVtbl<IDXGISwapChain2>, IComVtbl<IDXGISwapChain1>, IComVtbl<Silk.NET.DXGI.IDXGISwapChain>, IComVtbl<Silk.NET.DXGI.IDXGIDeviceSubObject>, IComVtbl<Silk.NET.DXGI.IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("a8be2ac4-199f-4946-b331-79599fb98de7");
 
@@ -31,11 +31,11 @@ namespace Silk.NET.DXGI
         public static implicit operator Silk.NET.DXGI.IDXGISwapChain(IDXGISwapChain2 val)
             => Unsafe.As<IDXGISwapChain2, Silk.NET.DXGI.IDXGISwapChain>(ref val);
 
-        public static implicit operator IDXGIDeviceSubObject(IDXGISwapChain2 val)
-            => Unsafe.As<IDXGISwapChain2, IDXGIDeviceSubObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIDeviceSubObject(IDXGISwapChain2 val)
+            => Unsafe.As<IDXGISwapChain2, Silk.NET.DXGI.IDXGIDeviceSubObject>(ref val);
 
-        public static implicit operator IDXGIObject(IDXGISwapChain2 val)
-            => Unsafe.As<IDXGISwapChain2, IDXGIObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIObject(IDXGISwapChain2 val)
+            => Unsafe.As<IDXGISwapChain2, Silk.NET.DXGI.IDXGIObject>(ref val);
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGISwapChain2 val)
             => Unsafe.As<IDXGISwapChain2, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -123,7 +123,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(Guid* Name, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(Guid* Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -132,7 +132,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -144,7 +144,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(ref Guid Name, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -156,7 +156,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -480,22 +480,22 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetFullscreenState(int Fullscreen, IDXGIOutput* pTarget)
+        public readonly unsafe int SetFullscreenState(Silk.NET.Core.Bool32 Fullscreen, IDXGIOutput* pTarget)
         {
             var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain2*, int, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTarget);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain2*, Silk.NET.Core.Bool32, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTarget);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetFullscreenState(int Fullscreen, ref IDXGIOutput pTarget)
+        public readonly int SetFullscreenState(Silk.NET.Core.Bool32 Fullscreen, ref IDXGIOutput pTarget)
         {
             var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDXGIOutput* pTargetPtr = &pTarget)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain2*, int, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTargetPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain2*, Silk.NET.Core.Bool32, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTargetPtr);
             }
             return ret;
         }
@@ -579,7 +579,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ResizeTarget(ModeDesc* pNewTargetParameters)
+        public readonly unsafe int ResizeTarget([Flow(FlowDirection.In)] ModeDesc* pNewTargetParameters)
         {
             var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -588,7 +588,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ResizeTarget(ref ModeDesc pNewTargetParameters)
+        public readonly int ResizeTarget([Flow(FlowDirection.In)] in ModeDesc pNewTargetParameters)
         {
             var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -774,7 +774,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Present1(uint SyncInterval, uint PresentFlags, PresentParameters* pPresentParameters)
+        public readonly unsafe int Present1(uint SyncInterval, uint PresentFlags, [Flow(FlowDirection.In)] PresentParameters* pPresentParameters)
         {
             var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -783,7 +783,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Present1(uint SyncInterval, uint PresentFlags, ref PresentParameters pPresentParameters)
+        public readonly int Present1(uint SyncInterval, uint PresentFlags, [Flow(FlowDirection.In)] in PresentParameters pPresentParameters)
         {
             var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -795,11 +795,11 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int IsTemporaryMonoSupported()
+        public readonly Silk.NET.Core.Bool32 IsTemporaryMonoSupported()
         {
             var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain2*, int>)@this->LpVtbl[23])(@this);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain2*, Silk.NET.Core.Bool32>)@this->LpVtbl[23])(@this);
             return ret;
         }
 
@@ -825,7 +825,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetBackgroundColor(D3Dcolorvalue* pColor)
+        public readonly unsafe int SetBackgroundColor([Flow(FlowDirection.In)] D3Dcolorvalue* pColor)
         {
             var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -834,7 +834,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBackgroundColor(ref D3Dcolorvalue pColor)
+        public readonly int SetBackgroundColor([Flow(FlowDirection.In)] in D3Dcolorvalue pColor)
         {
             var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -993,7 +993,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetMatrixTransform(Matrix3X2F* pMatrix)
+        public readonly unsafe int SetMatrixTransform([Flow(FlowDirection.In)] Matrix3X2F* pMatrix)
         {
             var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1002,7 +1002,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetMatrixTransform(ref Matrix3X2F pMatrix)
+        public readonly int SetMatrixTransform([Flow(FlowDirection.In)] in Matrix3X2F pMatrix)
         {
             var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -1087,7 +1087,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetFullscreenState<TI0>(int Fullscreen, ComPtr<TI0> pTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
+        public readonly int SetFullscreenState<TI0>(Silk.NET.Core.Bool32 Fullscreen, ComPtr<TI0> pTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
         {
             var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

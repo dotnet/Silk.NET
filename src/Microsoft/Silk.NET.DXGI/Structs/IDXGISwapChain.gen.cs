@@ -18,18 +18,18 @@ namespace Silk.NET.DXGI
 {
     [Guid("310d36a0-d2e7-4c0a-aa04-6a9d23b8886a")]
     [NativeName("Name", "IDXGISwapChain")]
-    public unsafe partial struct IDXGISwapChain : IComVtbl<IDXGISwapChain>, IComVtbl<IDXGIDeviceSubObject>, IComVtbl<IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
+    public unsafe partial struct IDXGISwapChain : IComVtbl<IDXGISwapChain>, IComVtbl<Silk.NET.DXGI.IDXGIDeviceSubObject>, IComVtbl<Silk.NET.DXGI.IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("310d36a0-d2e7-4c0a-aa04-6a9d23b8886a");
 
         void*** IComVtbl.AsVtblPtr()
             => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
-        public static implicit operator IDXGIDeviceSubObject(IDXGISwapChain val)
-            => Unsafe.As<IDXGISwapChain, IDXGIDeviceSubObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIDeviceSubObject(IDXGISwapChain val)
+            => Unsafe.As<IDXGISwapChain, Silk.NET.DXGI.IDXGIDeviceSubObject>(ref val);
 
-        public static implicit operator IDXGIObject(IDXGISwapChain val)
-            => Unsafe.As<IDXGISwapChain, IDXGIObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIObject(IDXGISwapChain val)
+            => Unsafe.As<IDXGISwapChain, Silk.NET.DXGI.IDXGIObject>(ref val);
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGISwapChain val)
             => Unsafe.As<IDXGISwapChain, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -117,7 +117,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(Guid* Name, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(Guid* Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (IDXGISwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -126,7 +126,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGISwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -138,7 +138,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(ref Guid Name, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (IDXGISwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -150,7 +150,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGISwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -474,22 +474,22 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetFullscreenState(int Fullscreen, IDXGIOutput* pTarget)
+        public readonly unsafe int SetFullscreenState(Silk.NET.Core.Bool32 Fullscreen, IDXGIOutput* pTarget)
         {
             var @this = (IDXGISwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain*, int, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTarget);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain*, Silk.NET.Core.Bool32, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTarget);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetFullscreenState(int Fullscreen, ref IDXGIOutput pTarget)
+        public readonly int SetFullscreenState(Silk.NET.Core.Bool32 Fullscreen, ref IDXGIOutput pTarget)
         {
             var @this = (IDXGISwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDXGIOutput* pTargetPtr = &pTarget)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain*, int, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTargetPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain*, Silk.NET.Core.Bool32, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTargetPtr);
             }
             return ret;
         }
@@ -573,7 +573,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int ResizeTarget(ModeDesc* pNewTargetParameters)
+        public readonly unsafe int ResizeTarget([Flow(FlowDirection.In)] ModeDesc* pNewTargetParameters)
         {
             var @this = (IDXGISwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -582,7 +582,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ResizeTarget(ref ModeDesc pNewTargetParameters)
+        public readonly int ResizeTarget([Flow(FlowDirection.In)] in ModeDesc pNewTargetParameters)
         {
             var @this = (IDXGISwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -709,7 +709,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetFullscreenState<TI0>(int Fullscreen, ComPtr<TI0> pTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
+        public readonly int SetFullscreenState<TI0>(Silk.NET.Core.Bool32 Fullscreen, ComPtr<TI0> pTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
         {
             var @this = (IDXGISwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             // ComPtrOverloader

@@ -85,7 +85,7 @@ public unsafe static class DXGISwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDXGISwapChain> thisVtbl, Guid* Name, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<IDXGISwapChain> thisVtbl, Guid* Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -94,7 +94,7 @@ public unsafe static class DXGISwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGISwapChain> thisVtbl, Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGISwapChain> thisVtbl, Guid* Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -106,7 +106,7 @@ public unsafe static class DXGISwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDXGISwapChain> thisVtbl, ref Guid Name, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<IDXGISwapChain> thisVtbl, ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DXGISwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDXGISwapChain> thisVtbl, ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDXGISwapChain> thisVtbl, ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -442,22 +442,22 @@ public unsafe static class DXGISwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetFullscreenState(this ComPtr<IDXGISwapChain> thisVtbl, int Fullscreen, IDXGIOutput* pTarget)
+    public static unsafe int SetFullscreenState(this ComPtr<IDXGISwapChain> thisVtbl, Silk.NET.Core.Bool32 Fullscreen, IDXGIOutput* pTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain*, int, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTarget);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain*, Silk.NET.Core.Bool32, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTarget);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetFullscreenState(this ComPtr<IDXGISwapChain> thisVtbl, int Fullscreen, ref IDXGIOutput pTarget)
+    public static int SetFullscreenState(this ComPtr<IDXGISwapChain> thisVtbl, Silk.NET.Core.Bool32 Fullscreen, ref IDXGIOutput pTarget)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (IDXGIOutput* pTargetPtr = &pTarget)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain*, int, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTargetPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGISwapChain*, Silk.NET.Core.Bool32, IDXGIOutput*, int>)@this->LpVtbl[10])(@this, Fullscreen, pTargetPtr);
         }
         return ret;
     }
@@ -541,7 +541,7 @@ public unsafe static class DXGISwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int ResizeTarget(this ComPtr<IDXGISwapChain> thisVtbl, ModeDesc* pNewTargetParameters)
+    public static unsafe int ResizeTarget(this ComPtr<IDXGISwapChain> thisVtbl, [Flow(FlowDirection.In)] ModeDesc* pNewTargetParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -550,7 +550,7 @@ public unsafe static class DXGISwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ResizeTarget(this ComPtr<IDXGISwapChain> thisVtbl, ref ModeDesc pNewTargetParameters)
+    public static int ResizeTarget(this ComPtr<IDXGISwapChain> thisVtbl, [Flow(FlowDirection.In)] in ModeDesc pNewTargetParameters)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -650,15 +650,15 @@ public unsafe static class DXGISwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGISwapChain> thisVtbl, Guid* Name, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGISwapChain> thisVtbl, Guid* Name, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(Name, DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(Name, DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDXGISwapChain> thisVtbl, Span<Guid> Name, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<IDXGISwapChain> thisVtbl, Span<Guid> Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -666,11 +666,11 @@ public unsafe static class DXGISwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDXGISwapChain> thisVtbl, Span<Guid> Name, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDXGISwapChain> thisVtbl, Span<Guid> Name, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -845,7 +845,7 @@ public unsafe static class DXGISwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetFullscreenState<TI0>(this ComPtr<IDXGISwapChain> thisVtbl, int Fullscreen, ComPtr<TI0> pTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
+    public static int SetFullscreenState<TI0>(this ComPtr<IDXGISwapChain> thisVtbl, Silk.NET.Core.Bool32 Fullscreen, ComPtr<TI0> pTarget) where TI0 : unmanaged, IComVtbl<IDXGIOutput>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -853,7 +853,7 @@ public unsafe static class DXGISwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetFullscreenState(this ComPtr<IDXGISwapChain> thisVtbl, int Fullscreen, Span<IDXGIOutput> pTarget)
+    public static int SetFullscreenState(this ComPtr<IDXGISwapChain> thisVtbl, Silk.NET.Core.Bool32 Fullscreen, Span<IDXGIOutput> pTarget)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -901,11 +901,11 @@ public unsafe static class DXGISwapChainVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int ResizeTarget(this ComPtr<IDXGISwapChain> thisVtbl, Span<ModeDesc> pNewTargetParameters)
+    public static int ResizeTarget(this ComPtr<IDXGISwapChain> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<ModeDesc> pNewTargetParameters)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->ResizeTarget(ref pNewTargetParameters.GetPinnableReference());
+        return @this->ResizeTarget(in pNewTargetParameters.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

@@ -22,6 +22,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
             thisApi.ReplacementCode(in code.GetPinnableReference());
         }
 
+        public static unsafe void ReplacementCode(this SunTriangleList thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> code)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCode(in code.GetPinnableReference());
+        }
+
         public static unsafe void ReplacementCode(this SunTriangleList thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ushort> code)
         {
             // SpanOverloader

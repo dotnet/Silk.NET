@@ -25,8 +25,8 @@ namespace Silk.NET.DXVA
             long? end = null,
             DXVA2ExtendedFormat? sampleFormat = null,
             Silk.NET.Direct3D9.IDirect3DSurface9* srcSurface = null,
-            Silk.NET.Maths.Rectangle<int>? srcRect = null,
-            Silk.NET.Maths.Rectangle<int>? dstRect = null,
+            Silk.NET.Maths.Box2D<int>? srcRect = null,
+            Silk.NET.Maths.Box2D<int>? dstRect = null,
             DXVA2Fixed32? planarAlpha = null,
             uint? sampleData = null
         ) : this()
@@ -96,15 +96,15 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "SrcRect")]
-        public Silk.NET.Maths.Rectangle<int> SrcRect;
+        public Silk.NET.Maths.Box2D<int> SrcRect;
 
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "DstRect")]
-        public Silk.NET.Maths.Rectangle<int> DstRect;
+        public Silk.NET.Maths.Box2D<int> DstRect;
         
-        [NativeName("Type", "DXVA2_AYUVSample8 [16]")]
-        [NativeName("Type.Name", "DXVA2_AYUVSample8 [16]")]
+        [NativeName("Type", "DXVA2_AYUVSample8[16]")]
+        [NativeName("Type.Name", "DXVA2_AYUVSample8[16]")]
         [NativeName("Name", "Pal")]
         public PalBuffer Pal;
 

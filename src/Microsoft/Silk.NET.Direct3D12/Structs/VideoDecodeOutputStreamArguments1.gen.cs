@@ -58,8 +58,8 @@ namespace Silk.NET.Direct3D12
         [NativeName("Name", "ConversionArguments")]
         public VideoDecodeConversionArguments1 ConversionArguments;
         
-        [NativeName("Type", "D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM [4]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM [4]")]
+        [NativeName("Type", "D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM[4]")]
+        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM[4]")]
         [NativeName("Name", "Histograms")]
         public HistogramsBuffer Histograms;
 

@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D9ShadowSupport
         (
-            int? supportsDepthAsTextureWithLessEqualComparisonFilter = null
+            Silk.NET.Core.Bool32? supportsDepthAsTextureWithLessEqualComparisonFilter = null
         ) : this()
         {
             if (supportsDepthAsTextureWithLessEqualComparisonFilter is not null)
@@ -34,6 +34,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "SupportsDepthAsTextureWithLessEqualComparisonFilter")]
-        public int SupportsDepthAsTextureWithLessEqualComparisonFilter;
+        public Silk.NET.Core.Bool32 SupportsDepthAsTextureWithLessEqualComparisonFilter;
     }
 }

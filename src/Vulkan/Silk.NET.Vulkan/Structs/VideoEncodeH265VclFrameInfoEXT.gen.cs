@@ -23,9 +23,9 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoEncodeH265VclFrameInfoExt,
             void* pNext = null,
-            VideoEncodeH265ReferenceListsEXT* pReferenceFinalLists = null,
+            VideoEncodeH265ReferenceListsInfoEXT* pReferenceFinalLists = null,
             uint? naluSliceSegmentEntryCount = null,
-            VideoEncodeH265NaluSliceSegmentEXT* pNaluSliceSegmentEntries = null,
+            VideoEncodeH265NaluSliceSegmentInfoEXT* pNaluSliceSegmentEntries = null,
             Video.StdVideoEncodeH265PictureInfo* pCurrentPictureInfo = null
         ) : this()
         {
@@ -71,20 +71,20 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH265ReferenceListsEXT*")]
-        [NativeName("Type.Name", "VkVideoEncodeH265ReferenceListsEXT")]
+        [NativeName("Type", "VkVideoEncodeH265ReferenceListsInfoEXT*")]
+        [NativeName("Type.Name", "VkVideoEncodeH265ReferenceListsInfoEXT")]
         [NativeName("Name", "pReferenceFinalLists")]
-        public VideoEncodeH265ReferenceListsEXT* PReferenceFinalLists;
+        public VideoEncodeH265ReferenceListsInfoEXT* PReferenceFinalLists;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "naluSliceSegmentEntryCount")]
         public uint NaluSliceSegmentEntryCount;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH265NaluSliceSegmentEXT*")]
-        [NativeName("Type.Name", "VkVideoEncodeH265NaluSliceSegmentEXT")]
+        [NativeName("Type", "VkVideoEncodeH265NaluSliceSegmentInfoEXT*")]
+        [NativeName("Type.Name", "VkVideoEncodeH265NaluSliceSegmentInfoEXT")]
         [NativeName("Name", "pNaluSliceSegmentEntries")]
-        public VideoEncodeH265NaluSliceSegmentEXT* PNaluSliceSegmentEntries;
+        public VideoEncodeH265NaluSliceSegmentInfoEXT* PNaluSliceSegmentEntries;
 /// <summary></summary>
         [NativeName("Type", "StdVideoEncodeH265PictureInfo*")]
         [NativeName("Type.Name", "StdVideoEncodeH265PictureInfo")]

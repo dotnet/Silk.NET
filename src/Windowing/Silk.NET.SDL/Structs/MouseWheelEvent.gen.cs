@@ -27,7 +27,11 @@ namespace Silk.NET.SDL
             uint? which = null,
             int? x = null,
             int? y = null,
-            uint? direction = null
+            uint? direction = null,
+            float? preciseX = null,
+            float? preciseY = null,
+            int? mouseX = null,
+            int? mouseY = null
         ) : this()
         {
             if (type is not null)
@@ -63,6 +67,26 @@ namespace Silk.NET.SDL
             if (direction is not null)
             {
                 Direction = direction.Value;
+            }
+
+            if (preciseX is not null)
+            {
+                PreciseX = preciseX.Value;
+            }
+
+            if (preciseY is not null)
+            {
+                PreciseY = preciseY.Value;
+            }
+
+            if (mouseX is not null)
+            {
+                MouseX = mouseX.Value;
+            }
+
+            if (mouseY is not null)
+            {
+                MouseY = mouseY.Value;
             }
         }
 
@@ -101,5 +125,25 @@ namespace Silk.NET.SDL
         [NativeName("Type.Name", "Uint32")]
         [NativeName("Name", "direction")]
         public uint Direction;
+
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "preciseX")]
+        public float PreciseX;
+
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "preciseY")]
+        public float PreciseY;
+
+        [NativeName("Type", "Sint32")]
+        [NativeName("Type.Name", "Sint32")]
+        [NativeName("Name", "mouseX")]
+        public int MouseX;
+
+        [NativeName("Type", "Sint32")]
+        [NativeName("Type.Name", "Sint32")]
+        [NativeName("Name", "mouseY")]
+        public int MouseY;
     }
 }

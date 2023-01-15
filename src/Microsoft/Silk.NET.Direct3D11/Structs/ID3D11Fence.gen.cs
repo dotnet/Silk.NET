@@ -239,7 +239,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -248,7 +248,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -260,7 +260,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -272,7 +272,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -335,7 +335,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, char* lpName, void** pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [Flow(FlowDirection.In)] char* lpName, void** pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -344,7 +344,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, char* lpName, ref void* pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [Flow(FlowDirection.In)] char* lpName, ref void* pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -356,7 +356,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, ref char lpName, void** pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [Flow(FlowDirection.In)] in char lpName, void** pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -368,7 +368,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, ref char lpName, ref void* pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [Flow(FlowDirection.In)] in char lpName, ref void* pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -383,7 +383,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, void** pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, void** pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -394,7 +394,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, ref void* pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, ref void* pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -408,7 +408,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, char* lpName, void** pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [Flow(FlowDirection.In)] char* lpName, void** pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -420,7 +420,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, char* lpName, ref void* pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [Flow(FlowDirection.In)] char* lpName, ref void* pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -435,7 +435,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, ref char lpName, void** pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [Flow(FlowDirection.In)] in char lpName, void** pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -450,7 +450,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, ref char lpName, ref void* pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [Flow(FlowDirection.In)] in char lpName, ref void* pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -468,7 +468,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, void** pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, void** pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -482,7 +482,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, ref void* pHandle)
+        public readonly unsafe int CreateSharedHandle([Flow(FlowDirection.In)] in Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string lpName, ref void* pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

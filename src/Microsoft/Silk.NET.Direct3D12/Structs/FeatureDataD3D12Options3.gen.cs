@@ -21,11 +21,11 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options3
         (
-            int? copyQueueTimestampQueriesSupported = null,
-            int? castingFullyTypedFormatSupported = null,
+            Silk.NET.Core.Bool32? copyQueueTimestampQueriesSupported = null,
+            Silk.NET.Core.Bool32? castingFullyTypedFormatSupported = null,
             CommandListSupportFlags? writeBufferImmediateSupportFlags = null,
             ViewInstancingTier? viewInstancingTier = null,
-            int? barycentricsSupported = null
+            Silk.NET.Core.Bool32? barycentricsSupported = null
         ) : this()
         {
             if (copyQueueTimestampQueriesSupported is not null)
@@ -58,12 +58,12 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "CopyQueueTimestampQueriesSupported")]
-        public int CopyQueueTimestampQueriesSupported;
+        public Silk.NET.Core.Bool32 CopyQueueTimestampQueriesSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "CastingFullyTypedFormatSupported")]
-        public int CastingFullyTypedFormatSupported;
+        public Silk.NET.Core.Bool32 CastingFullyTypedFormatSupported;
 
         [NativeName("Type", "D3D12_COMMAND_LIST_SUPPORT_FLAGS")]
         [NativeName("Type.Name", "D3D12_COMMAND_LIST_SUPPORT_FLAGS")]
@@ -78,6 +78,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "BarycentricsSupported")]
-        public int BarycentricsSupported;
+        public Silk.NET.Core.Bool32 BarycentricsSupported;
     }
 }

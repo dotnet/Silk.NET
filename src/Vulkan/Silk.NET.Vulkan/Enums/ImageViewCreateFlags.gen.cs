@@ -18,9 +18,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"FragmentDensityMapDynamicBitExt\"")]
         [NativeName("Name", "VK_IMAGE_VIEW_CREATE_FRAGMENT_DENSITY_MAP_DYNAMIC_BIT_EXT")]
         ImageViewCreateFragmentDensityMapDynamicBitExt = 1,
-        [Obsolete("Deprecated in favour of \"Reserved2BitAmd\"")]
-        [NativeName("Name", "VK_IMAGE_VIEW_CREATE_RESERVED_2_BIT_AMD")]
-        ImageViewCreateReserved2BitAmd = 4,
+        [Obsolete("Deprecated in favour of \"DescriptorBufferCaptureReplayBitExt\"")]
+        [NativeName("Name", "VK_IMAGE_VIEW_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
+        ImageViewCreateDescriptorBufferCaptureReplayBitExt = 4,
         [Obsolete("Deprecated in favour of \"FragmentDensityMapDeferredBitExt\"")]
         [NativeName("Name", "VK_IMAGE_VIEW_CREATE_FRAGMENT_DENSITY_MAP_DEFERRED_BIT_EXT")]
         ImageViewCreateFragmentDensityMapDeferredBitExt = 2,
@@ -29,8 +29,8 @@ namespace Silk.NET.Vulkan
         ImageViewCreateReserved3BitExt = 8,
         [NativeName("Name", "VK_IMAGE_VIEW_CREATE_FRAGMENT_DENSITY_MAP_DYNAMIC_BIT_EXT")]
         FragmentDensityMapDynamicBitExt = 1,
-        [NativeName("Name", "VK_IMAGE_VIEW_CREATE_RESERVED_2_BIT_AMD")]
-        Reserved2BitAmd = 4,
+        [NativeName("Name", "VK_IMAGE_VIEW_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
+        DescriptorBufferCaptureReplayBitExt = 4,
         [NativeName("Name", "VK_IMAGE_VIEW_CREATE_FRAGMENT_DENSITY_MAP_DEFERRED_BIT_EXT")]
         FragmentDensityMapDeferredBitExt = 2,
         [NativeName("Name", "VK_IMAGE_VIEW_CREATE_RESERVED_3_BIT_EXT")]

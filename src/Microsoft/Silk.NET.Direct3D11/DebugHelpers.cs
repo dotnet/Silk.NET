@@ -14,10 +14,13 @@ public static unsafe class DebugHelpers
     public static Task SetInfoQueueCallback<T>
     (
         this ComPtr<T> devicePtr,
-        Action<Message> callback!!,
+        Action<Message> callback,
         CancellationToken cancellationToken = default
     ) where T : unmanaged, IComVtbl<ID3D11Device>, IComVtbl<T>
     {
+        if(callback == null)
+            throw new NullReferenceException("Callback cannot be null!");
+
         var infoQueue = ((ID3D11Device*) devicePtr.AsVtblPtr())->QueryInterface<ID3D11InfoQueue>();
         return Task.Run
         (

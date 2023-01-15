@@ -24,11 +24,15 @@ namespace Silk.NET.Vulkan.Video
             StdVideoH265VpsFlags? flags = null,
             byte? vpsVideoParameterSetId = null,
             byte? vpsMaxSubLayersMinus1 = null,
+            byte? reserved1 = null,
+            byte? reserved2 = null,
             uint? vpsNumUnitsInTick = null,
             uint? vpsTimeScale = null,
             uint? vpsNumTicksPocDiffOneMinus1 = null,
+            uint? reserved3 = null,
             StdVideoH265DecPicBufMgr* pDecPicBufMgr = null,
-            StdVideoH265HrdParameters* pHrdParameters = null
+            StdVideoH265HrdParameters* pHrdParameters = null,
+            StdVideoH265ProfileTierLevel* pProfileTierLevel = null
         ) : this()
         {
             if (flags is not null)
@@ -46,6 +50,16 @@ namespace Silk.NET.Vulkan.Video
                 VpsMaxSubLayersMinus1 = vpsMaxSubLayersMinus1.Value;
             }
 
+            if (reserved1 is not null)
+            {
+                Reserved1 = reserved1.Value;
+            }
+
+            if (reserved2 is not null)
+            {
+                Reserved2 = reserved2.Value;
+            }
+
             if (vpsNumUnitsInTick is not null)
             {
                 VpsNumUnitsInTick = vpsNumUnitsInTick.Value;
@@ -61,6 +75,11 @@ namespace Silk.NET.Vulkan.Video
                 VpsNumTicksPocDiffOneMinus1 = vpsNumTicksPocDiffOneMinus1.Value;
             }
 
+            if (reserved3 is not null)
+            {
+                Reserved3 = reserved3.Value;
+            }
+
             if (pDecPicBufMgr is not null)
             {
                 PDecPicBufMgr = pDecPicBufMgr;
@@ -69,6 +88,11 @@ namespace Silk.NET.Vulkan.Video
             if (pHrdParameters is not null)
             {
                 PHrdParameters = pHrdParameters;
+            }
+
+            if (pProfileTierLevel is not null)
+            {
+                PProfileTierLevel = pProfileTierLevel;
             }
         }
 
@@ -88,6 +112,16 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "vps_max_sub_layers_minus1")]
         public byte VpsMaxSubLayersMinus1;
 
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "reserved1")]
+        public byte Reserved1;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "reserved2")]
+        public byte Reserved2;
+
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "vps_num_units_in_tick")]
@@ -103,6 +137,11 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "vps_num_ticks_poc_diff_one_minus1")]
         public uint VpsNumTicksPocDiffOneMinus1;
 
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "reserved3")]
+        public uint Reserved3;
+
         [NativeName("Type", "const StdVideoH265DecPicBufMgr *")]
         [NativeName("Type.Name", "const StdVideoH265DecPicBufMgr *")]
         [NativeName("Name", "pDecPicBufMgr")]
@@ -112,5 +151,10 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "const StdVideoH265HrdParameters *")]
         [NativeName("Name", "pHrdParameters")]
         public StdVideoH265HrdParameters* PHrdParameters;
+
+        [NativeName("Type", "const StdVideoH265ProfileTierLevel *")]
+        [NativeName("Type.Name", "const StdVideoH265ProfileTierLevel *")]
+        [NativeName("Name", "pProfileTierLevel")]
+        public StdVideoH265ProfileTierLevel* PProfileTierLevel;
     }
 }

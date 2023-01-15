@@ -761,6 +761,10 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         ThreadLocalExecEnableIntel = unchecked((int) 0x80000000),
         [NativeName("Name", "CL_QUEUE_THREAD_LOCAL_EXEC_ENABLE_INTEL")]
         QueueThreadLocalExecEnableIntel = unchecked((int) 0x80000000),
+        [NativeName("Name", "CL_QUEUE_NO_SYNC_OPERATIONS_INTEL")]
+        NoSyncOperationsIntel = 0x20000000,
+        [NativeName("Name", "CL_QUEUE_NO_SYNC_OPERATIONS_INTEL")]
+        QueueNoSyncOperationsIntel = 0x20000000,
         [NativeName("Name", "CL_COMMAND_ACQUIRE_VA_API_MEDIA_SURFACES_INTEL")]
         AcquireVAApiMediaSurfacesIntel = 0x409A,
         [NativeName("Name", "CL_COMMAND_ACQUIRE_VA_API_MEDIA_SURFACES_INTEL")]
@@ -989,6 +993,10 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         DX9SharedHandleIntel = 0x4074,
         [NativeName("Name", "CL_MEM_DX9_SHARED_HANDLE_INTEL")]
         MemDX9SharedHandleIntel = 0x4074,
+        [NativeName("Name", "CL_MEM_LOCALLY_UNCACHED_RESOURCE_INTEL")]
+        MemLocallyUncachedResourceIntel = 0x4218,
+        [NativeName("Name", "CL_MEM_DEVICE_ID_INTEL")]
+        MemDeviceIDIntel = 0x4219,
         [NativeName("Name", "CL_QUEUE_FAMILY_INTEL")]
         FamilyIntel = 0x418C,
         [NativeName("Name", "CL_QUEUE_FAMILY_INTEL")]

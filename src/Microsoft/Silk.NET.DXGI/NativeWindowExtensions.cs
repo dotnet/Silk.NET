@@ -20,23 +20,23 @@ namespace Silk.NET.DXGI
             IDXGISwapChain1** ppSwapChain
         )
         {
-            if (window.Win32.HasValue)
-            {
-                return factory->CreateSwapChainForHwnd
-                    (pDevice, window.Win32.Value.Hwnd, pDesc, pFullscreenDesc, pRestrictToOutput, ppSwapChain);
-            }
-
             if (window.WinRT.HasValue)
             {
                 return factory->CreateSwapChainForCoreWindow
                     (pDevice, (IUnknown*) window.WinRT.Value, pDesc, pRestrictToOutput, ppSwapChain);
+            }
+                    
+            if (window.DXHandle.HasValue) 
+            {
+                return factory->CreateSwapChainForHwnd
+                    (pDevice, window.DXHandle.Value, pDesc, pFullscreenDesc, pRestrictToOutput, ppSwapChain); 
             }
 
             Throw();
             return -1;
 
             static void Throw() => throw new InvalidOperationException
-                ("The given window is neither a Win32 window nor a WinRT CoreWindow");
+                ("The given window has neither a valid DXHandle nor a valid WinRT CoreWindow.");
         }
 
         public static unsafe int CreateDxgiSwapchain

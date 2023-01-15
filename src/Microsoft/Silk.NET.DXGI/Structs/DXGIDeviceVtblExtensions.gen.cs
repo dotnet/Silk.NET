@@ -85,7 +85,7 @@ public unsafe static class DXGIDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDXGIDevice> thisVtbl, Guid* Name, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<IDXGIDevice> thisVtbl, Guid* Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -94,7 +94,7 @@ public unsafe static class DXGIDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIDevice> thisVtbl, Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIDevice> thisVtbl, Guid* Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -106,7 +106,7 @@ public unsafe static class DXGIDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDXGIDevice> thisVtbl, ref Guid Name, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<IDXGIDevice> thisVtbl, ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -118,7 +118,7 @@ public unsafe static class DXGIDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDXGIDevice> thisVtbl, ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDXGIDevice> thisVtbl, ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -358,82 +358,82 @@ public unsafe static class DXGIDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, IDXGISurface** ppSurface)
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, [Flow(FlowDirection.In)] SharedResource* pSharedResource, Silk.NET.DXGI.IDXGISurface** ppSurface)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResource, ppSurface);
+        ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResource, ppSurface);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref IDXGISurface* ppSurface)
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, [Flow(FlowDirection.In)] SharedResource* pSharedResource, ref Silk.NET.DXGI.IDXGISurface* ppSurface)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        fixed (IDXGISurface** ppSurfacePtr = &ppSurface)
+        fixed (Silk.NET.DXGI.IDXGISurface** ppSurfacePtr = &ppSurface)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResource, ppSurfacePtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResource, ppSurfacePtr);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, IDXGISurface** ppSurface)
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, [Flow(FlowDirection.In)] in SharedResource pSharedResource, Silk.NET.DXGI.IDXGISurface** ppSurface)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (SharedResource* pSharedResourcePtr = &pSharedResource)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResourcePtr, ppSurface);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResourcePtr, ppSurface);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref IDXGISurface* ppSurface)
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, [Flow(FlowDirection.In)] in SharedResource pSharedResource, ref Silk.NET.DXGI.IDXGISurface* ppSurface)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (SharedResource* pSharedResourcePtr = &pSharedResource)
         {
-            fixed (IDXGISurface** ppSurfacePtr = &ppSurface)
+            fixed (Silk.NET.DXGI.IDXGISurface** ppSurfacePtr = &ppSurface)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResourcePtr, ppSurfacePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDesc, NumSurfaces, Usage, pSharedResourcePtr, ppSurfacePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, IDXGISurface** ppSurface)
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] in SurfaceDesc pDesc, uint NumSurfaces, uint Usage, [Flow(FlowDirection.In)] SharedResource* pSharedResource, Silk.NET.DXGI.IDXGISurface** ppSurface)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (SurfaceDesc* pDescPtr = &pDesc)
         {
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResource, ppSurface);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResource, ppSurface);
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref IDXGISurface* ppSurface)
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] in SurfaceDesc pDesc, uint NumSurfaces, uint Usage, [Flow(FlowDirection.In)] SharedResource* pSharedResource, ref Silk.NET.DXGI.IDXGISurface* ppSurface)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (SurfaceDesc* pDescPtr = &pDesc)
         {
-            fixed (IDXGISurface** ppSurfacePtr = &ppSurface)
+            fixed (Silk.NET.DXGI.IDXGISurface** ppSurfacePtr = &ppSurface)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResource, ppSurfacePtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResource, ppSurfacePtr);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, IDXGISurface** ppSurface)
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] in SurfaceDesc pDesc, uint NumSurfaces, uint Usage, [Flow(FlowDirection.In)] in SharedResource pSharedResource, Silk.NET.DXGI.IDXGISurface** ppSurface)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -441,14 +441,14 @@ public unsafe static class DXGIDeviceVtblExtensions
         {
             fixed (SharedResource* pSharedResourcePtr = &pSharedResource)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResourcePtr, ppSurface);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResourcePtr, ppSurface);
             }
         }
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref IDXGISurface* ppSurface)
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] in SurfaceDesc pDesc, uint NumSurfaces, uint Usage, [Flow(FlowDirection.In)] in SharedResource pSharedResource, ref Silk.NET.DXGI.IDXGISurface* ppSurface)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -456,9 +456,9 @@ public unsafe static class DXGIDeviceVtblExtensions
         {
             fixed (SharedResource* pSharedResourcePtr = &pSharedResource)
             {
-                fixed (IDXGISurface** ppSurfacePtr = &ppSurface)
+                fixed (Silk.NET.DXGI.IDXGISurface** ppSurfacePtr = &ppSurface)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResourcePtr, ppSurfacePtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice*, SurfaceDesc*, uint, uint, SharedResource*, Silk.NET.DXGI.IDXGISurface**, int>)@this->LpVtbl[8])(@this, pDescPtr, NumSurfaces, Usage, pSharedResourcePtr, ppSurfacePtr);
                 }
             }
         }
@@ -466,7 +466,7 @@ public unsafe static class DXGIDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryResourceResidency(this ComPtr<IDXGIDevice> thisVtbl, Silk.NET.Core.Native.IUnknown** ppResources, Residency* pResidencyStatus, uint NumResources)
+    public static unsafe int QueryResourceResidency(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown** ppResources, Residency* pResidencyStatus, uint NumResources)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -475,7 +475,7 @@ public unsafe static class DXGIDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryResourceResidency(this ComPtr<IDXGIDevice> thisVtbl, Silk.NET.Core.Native.IUnknown** ppResources, ref Residency pResidencyStatus, uint NumResources)
+    public static unsafe int QueryResourceResidency(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown** ppResources, ref Residency pResidencyStatus, uint NumResources)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -487,7 +487,7 @@ public unsafe static class DXGIDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryResourceResidency(this ComPtr<IDXGIDevice> thisVtbl, ref Silk.NET.Core.Native.IUnknown* ppResources, Residency* pResidencyStatus, uint NumResources)
+    public static unsafe int QueryResourceResidency(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown* ppResources, Residency* pResidencyStatus, uint NumResources)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -499,7 +499,7 @@ public unsafe static class DXGIDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryResourceResidency(this ComPtr<IDXGIDevice> thisVtbl, ref Silk.NET.Core.Native.IUnknown* ppResources, ref Residency pResidencyStatus, uint NumResources)
+    public static unsafe int QueryResourceResidency(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown* ppResources, ref Residency pResidencyStatus, uint NumResources)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -569,15 +569,15 @@ public unsafe static class DXGIDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIDevice> thisVtbl, Guid* Name, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<IDXGIDevice> thisVtbl, Guid* Name, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(Name, DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(Name, DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<IDXGIDevice> thisVtbl, Span<Guid> Name, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<IDXGIDevice> thisVtbl, Span<Guid> Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -585,11 +585,11 @@ public unsafe static class DXGIDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<IDXGIDevice> thisVtbl, Span<Guid> Name, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<IDXGIDevice> thisVtbl, Span<Guid> Name, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(ref Name.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -722,87 +722,87 @@ public unsafe static class DXGIDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TI0>(this ComPtr<IDXGIDevice> thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
+    public static unsafe int CreateSurface<TI0>(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, [Flow(FlowDirection.In)] SharedResource* pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateSurface(pDesc, NumSurfaces, Usage, pSharedResource, (IDXGISurface**) ppSurface.GetAddressOf());
+        return @this->CreateSurface(pDesc, NumSurfaces, Usage, pSharedResource, (Silk.NET.DXGI.IDXGISurface**) ppSurface.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, Span<SharedResource> pSharedResource, IDXGISurface** ppSurface)
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, [Flow(FlowDirection.In)] ReadOnlySpan<SharedResource> pSharedResource, Silk.NET.DXGI.IDXGISurface** ppSurface)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSurface(pDesc, NumSurfaces, Usage, ref pSharedResource.GetPinnableReference(), ppSurface);
+        return @this->CreateSurface(pDesc, NumSurfaces, Usage, in pSharedResource.GetPinnableReference(), ppSurface);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TI0>(this ComPtr<IDXGIDevice> thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
+    public static unsafe int CreateSurface<TI0>(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, [Flow(FlowDirection.In)] in SharedResource pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateSurface(pDesc, NumSurfaces, Usage, ref pSharedResource, (IDXGISurface**) ppSurface.GetAddressOf());
+        return @this->CreateSurface(pDesc, NumSurfaces, Usage, in pSharedResource, (Silk.NET.DXGI.IDXGISurface**) ppSurface.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, Span<SharedResource> pSharedResource, ref IDXGISurface* ppSurface)
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] SurfaceDesc* pDesc, uint NumSurfaces, uint Usage, [Flow(FlowDirection.In)] ReadOnlySpan<SharedResource> pSharedResource, ref Silk.NET.DXGI.IDXGISurface* ppSurface)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSurface(pDesc, NumSurfaces, Usage, ref pSharedResource.GetPinnableReference(), ref ppSurface);
+        return @this->CreateSurface(pDesc, NumSurfaces, Usage, in pSharedResource.GetPinnableReference(), ref ppSurface);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, Span<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, IDXGISurface** ppSurface)
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, [Flow(FlowDirection.In)] SharedResource* pSharedResource, Silk.NET.DXGI.IDXGISurface** ppSurface)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSurface(ref pDesc.GetPinnableReference(), NumSurfaces, Usage, pSharedResource, ppSurface);
+        return @this->CreateSurface(in pDesc.GetPinnableReference(), NumSurfaces, Usage, pSharedResource, ppSurface);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface<TI0>(this ComPtr<IDXGIDevice> thisVtbl, ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
+    public static unsafe int CreateSurface<TI0>(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] in SurfaceDesc pDesc, uint NumSurfaces, uint Usage, [Flow(FlowDirection.In)] SharedResource* pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateSurface(ref pDesc, NumSurfaces, Usage, pSharedResource, (IDXGISurface**) ppSurface.GetAddressOf());
+        return @this->CreateSurface(in pDesc, NumSurfaces, Usage, pSharedResource, (Silk.NET.DXGI.IDXGISurface**) ppSurface.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, Span<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, SharedResource* pSharedResource, ref IDXGISurface* ppSurface)
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, [Flow(FlowDirection.In)] SharedResource* pSharedResource, ref Silk.NET.DXGI.IDXGISurface* ppSurface)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSurface(ref pDesc.GetPinnableReference(), NumSurfaces, Usage, pSharedResource, ref ppSurface);
+        return @this->CreateSurface(in pDesc.GetPinnableReference(), NumSurfaces, Usage, pSharedResource, ref ppSurface);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, Span<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, Span<SharedResource> pSharedResource, IDXGISurface** ppSurface)
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, [Flow(FlowDirection.In)] ReadOnlySpan<SharedResource> pSharedResource, Silk.NET.DXGI.IDXGISurface** ppSurface)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSurface(ref pDesc.GetPinnableReference(), NumSurfaces, Usage, ref pSharedResource.GetPinnableReference(), ppSurface);
+        return @this->CreateSurface(in pDesc.GetPinnableReference(), NumSurfaces, Usage, in pSharedResource.GetPinnableReference(), ppSurface);
     }
 
     /// <summary>To be documented.</summary>
-    public static int CreateSurface<TI0>(this ComPtr<IDXGIDevice> thisVtbl, ref SurfaceDesc pDesc, uint NumSurfaces, uint Usage, ref SharedResource pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<IDXGISurface>, IComVtbl<TI0>
+    public static int CreateSurface<TI0>(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] in SurfaceDesc pDesc, uint NumSurfaces, uint Usage, [Flow(FlowDirection.In)] in SharedResource pSharedResource, ref ComPtr<TI0> ppSurface) where TI0 : unmanaged, IComVtbl<Silk.NET.DXGI.IDXGISurface>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
-        return @this->CreateSurface(ref pDesc, NumSurfaces, Usage, ref pSharedResource, (IDXGISurface**) ppSurface.GetAddressOf());
+        return @this->CreateSurface(in pDesc, NumSurfaces, Usage, in pSharedResource, (Silk.NET.DXGI.IDXGISurface**) ppSurface.GetAddressOf());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, Span<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, Span<SharedResource> pSharedResource, ref IDXGISurface* ppSurface)
+    public static unsafe int CreateSurface(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<SurfaceDesc> pDesc, uint NumSurfaces, uint Usage, [Flow(FlowDirection.In)] ReadOnlySpan<SharedResource> pSharedResource, ref Silk.NET.DXGI.IDXGISurface* ppSurface)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->CreateSurface(ref pDesc.GetPinnableReference(), NumSurfaces, Usage, ref pSharedResource.GetPinnableReference(), ref ppSurface);
+        return @this->CreateSurface(in pDesc.GetPinnableReference(), NumSurfaces, Usage, in pSharedResource.GetPinnableReference(), ref ppSurface);
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryResourceResidency<TI0>(this ComPtr<IDXGIDevice> thisVtbl, ref ComPtr<TI0> ppResources, Residency* pResidencyStatus, uint NumResources) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static unsafe int QueryResourceResidency<TI0>(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppResources, Residency* pResidencyStatus, uint NumResources) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -810,7 +810,7 @@ public unsafe static class DXGIDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryResourceResidency(this ComPtr<IDXGIDevice> thisVtbl, Silk.NET.Core.Native.IUnknown** ppResources, Span<Residency> pResidencyStatus, uint NumResources)
+    public static unsafe int QueryResourceResidency(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown** ppResources, Span<Residency> pResidencyStatus, uint NumResources)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -818,7 +818,7 @@ public unsafe static class DXGIDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int QueryResourceResidency<TI0>(this ComPtr<IDXGIDevice> thisVtbl, ref ComPtr<TI0> ppResources, ref Residency pResidencyStatus, uint NumResources) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
+    public static int QueryResourceResidency<TI0>(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] ref ComPtr<TI0> ppResources, ref Residency pResidencyStatus, uint NumResources) where TI0 : unmanaged, IComVtbl<Silk.NET.Core.Native.IUnknown>, IComVtbl<TI0>
     {
         var @this = thisVtbl.Handle;
         // ComPtrOverloader
@@ -826,11 +826,11 @@ public unsafe static class DXGIDeviceVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int QueryResourceResidency(this ComPtr<IDXGIDevice> thisVtbl, ref Silk.NET.Core.Native.IUnknown* ppResources, Span<Residency> pResidencyStatus, uint NumResources)
+    public static unsafe int QueryResourceResidency(this ComPtr<IDXGIDevice> thisVtbl, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown* ppResources, Span<Residency> pResidencyStatus, uint NumResources)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->QueryResourceResidency(ref ppResources, ref pResidencyStatus.GetPinnableReference(), NumResources);
+        return @this->QueryResourceResidency(in ppResources, ref pResidencyStatus.GetPinnableReference(), NumResources);
     }
 
     /// <summary>To be documented.</summary>

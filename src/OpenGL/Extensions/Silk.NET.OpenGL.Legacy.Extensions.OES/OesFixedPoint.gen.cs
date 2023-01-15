@@ -84,13 +84,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
         public partial void ConvolutionParameterx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glConvolutionParameterxOES", Convention = CallingConvention.Winapi)]
-        public partial void ConvolutionParameterx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Flow(FlowDirection.In)] int param);
+        public partial void ConvolutionParameterx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glConvolutionParameterxOES", Convention = CallingConvention.Winapi)]
         public partial void ConvolutionParameterx([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] OES pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glConvolutionParameterxOES", Convention = CallingConvention.Winapi)]
-        public partial void ConvolutionParameterx([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Flow(FlowDirection.In)] int param);
+        public partial void ConvolutionParameterx([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glConvolutionParameterxvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void ConvolutionParameterx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
@@ -99,10 +99,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
         public partial void ConvolutionParameterx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterxvOES", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ConvolutionParameterx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void ConvolutionParameterx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterxvOES", Convention = CallingConvention.Winapi)]
-        public partial void ConvolutionParameterx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void ConvolutionParameterx([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterxvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void ConvolutionParameterx([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
@@ -111,10 +111,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
         public partial void ConvolutionParameterx([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterxvOES", Convention = CallingConvention.Winapi)]
-        public unsafe partial void ConvolutionParameterx([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void ConvolutionParameterx([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glConvolutionParameterxvOES", Convention = CallingConvention.Winapi)]
-        public partial void ConvolutionParameterx([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameterEXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+        public partial void ConvolutionParameterx([Flow(FlowDirection.In)] ConvolutionTargetEXT target, [Flow(FlowDirection.In)] ConvolutionParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glDepthRangexOES", Convention = CallingConvention.Winapi)]
         public partial void DepthRangex([Flow(FlowDirection.In)] int n, [Flow(FlowDirection.In)] int f);
@@ -273,10 +273,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
         public partial void GetMaterialx([Flow(FlowDirection.In)] OES face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glGetMaterialxOES", Convention = CallingConvention.Winapi)]
-        public partial void GetMaterialx([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] OES pname, [Flow(FlowDirection.In)] int param);
+        public partial void GetMaterialx([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] OES pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glGetMaterialxOES", Convention = CallingConvention.Winapi)]
-        public partial void GetMaterialx([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] int param);
+        public partial void GetMaterialx([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glGetPixelMapxv", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPixelMapx([Flow(FlowDirection.In)] OES map, [Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] int* values);
@@ -489,10 +489,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
         public partial void Materialx([Flow(FlowDirection.In)] OES face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glMaterialxOES", Convention = CallingConvention.Winapi)]
-        public partial void Materialx([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] OES pname, [Flow(FlowDirection.In)] int param);
+        public partial void Materialx([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] OES pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glMaterialxOES", Convention = CallingConvention.Winapi)]
-        public partial void Materialx([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] int param);
+        public partial void Materialx([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glMaterialxvOES", Convention = CallingConvention.Winapi)]
         public unsafe partial void Materialx([Flow(FlowDirection.In)] OES face, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
@@ -507,16 +507,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
         public partial void Materialx([Flow(FlowDirection.In)] OES face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int param);
 
         [NativeApi(EntryPoint = "glMaterialxvOES", Convention = CallingConvention.Winapi)]
-        public unsafe partial void Materialx([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+        public unsafe partial void Materialx([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
 
         [NativeApi(EntryPoint = "glMaterialxvOES", Convention = CallingConvention.Winapi)]
-        public partial void Materialx([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int param);
+        public partial void Materialx([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int param);
 
         [NativeApi(EntryPoint = "glMaterialxvOES", Convention = CallingConvention.Winapi)]
-        public unsafe partial void Materialx([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+        public unsafe partial void Materialx([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
 
         [NativeApi(EntryPoint = "glMaterialxvOES", Convention = CallingConvention.Winapi)]
-        public partial void Materialx([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int param);
+        public partial void Materialx([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int param);
 
         [NativeApi(EntryPoint = "glMultiTexCoord1xOES", Convention = CallingConvention.Winapi)]
         public partial void MultiTexCoord1x([Flow(FlowDirection.In)] OES texture, [Flow(FlowDirection.In)] int s);

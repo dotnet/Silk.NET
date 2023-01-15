@@ -18,7 +18,7 @@ namespace Silk.NET.DXGI
 {
     [Guid("0aa1ae0a-fa0e-4b84-8644-e05ff8e5acb5")]
     [NativeName("Name", "IDXGIAdapter2")]
-    public unsafe partial struct IDXGIAdapter2 : IComVtbl<IDXGIAdapter2>, IComVtbl<IDXGIAdapter1>, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
+    public unsafe partial struct IDXGIAdapter2 : IComVtbl<IDXGIAdapter2>, IComVtbl<IDXGIAdapter1>, IComVtbl<Silk.NET.DXGI.IDXGIAdapter>, IComVtbl<Silk.NET.DXGI.IDXGIObject>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("0aa1ae0a-fa0e-4b84-8644-e05ff8e5acb5");
 
@@ -31,8 +31,8 @@ namespace Silk.NET.DXGI
         public static implicit operator Silk.NET.DXGI.IDXGIAdapter(IDXGIAdapter2 val)
             => Unsafe.As<IDXGIAdapter2, Silk.NET.DXGI.IDXGIAdapter>(ref val);
 
-        public static implicit operator IDXGIObject(IDXGIAdapter2 val)
-            => Unsafe.As<IDXGIAdapter2, IDXGIObject>(ref val);
+        public static implicit operator Silk.NET.DXGI.IDXGIObject(IDXGIAdapter2 val)
+            => Unsafe.As<IDXGIAdapter2, Silk.NET.DXGI.IDXGIObject>(ref val);
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIAdapter2 val)
             => Unsafe.As<IDXGIAdapter2, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -120,7 +120,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(Guid* Name, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(Guid* Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (IDXGIAdapter2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -129,7 +129,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIAdapter2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -141,7 +141,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(ref Guid Name, uint DataSize, void* pData)
+        public readonly unsafe int SetPrivateData(ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] void* pData)
         {
             var @this = (IDXGIAdapter2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -153,7 +153,7 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIAdapter2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;

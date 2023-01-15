@@ -26,7 +26,7 @@ namespace Silk.NET.Direct3D12
             VideoEncoderProfileDesc? profile = null,
             Silk.NET.DXGI.Format? inputFormat = null,
             VideoEncoderPictureResolutionDesc? pictureTargetResolution = null,
-            int? isSupported = null,
+            Silk.NET.Core.Bool32? isSupported = null,
             uint? compressedBitstreamBufferAccessAlignment = null,
             uint? encoderMetadataBufferAccessAlignment = null,
             uint? maxEncoderOutputMetadataBufferSize = null
@@ -107,7 +107,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "IsSupported")]
-        public int IsSupported;
+        public Silk.NET.Core.Bool32 IsSupported;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

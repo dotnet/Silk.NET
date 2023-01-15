@@ -21,11 +21,11 @@ namespace Silk.NET.Direct3D12
     {
         public FeatureDataD3D12Options6
         (
-            int? additionalShadingRatesSupported = null,
-            int? perPrimitiveShadingRateSupportedWithViewportIndexing = null,
+            Silk.NET.Core.Bool32? additionalShadingRatesSupported = null,
+            Silk.NET.Core.Bool32? perPrimitiveShadingRateSupportedWithViewportIndexing = null,
             VariableShadingRateTier? variableShadingRateTier = null,
             uint? shadingRateImageTileSize = null,
-            int? backgroundProcessingSupported = null
+            Silk.NET.Core.Bool32? backgroundProcessingSupported = null
         ) : this()
         {
             if (additionalShadingRatesSupported is not null)
@@ -58,12 +58,12 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "AdditionalShadingRatesSupported")]
-        public int AdditionalShadingRatesSupported;
+        public Silk.NET.Core.Bool32 AdditionalShadingRatesSupported;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "PerPrimitiveShadingRateSupportedWithViewportIndexing")]
-        public int PerPrimitiveShadingRateSupportedWithViewportIndexing;
+        public Silk.NET.Core.Bool32 PerPrimitiveShadingRateSupportedWithViewportIndexing;
 
         [NativeName("Type", "D3D12_VARIABLE_SHADING_RATE_TIER")]
         [NativeName("Type.Name", "D3D12_VARIABLE_SHADING_RATE_TIER")]
@@ -78,6 +78,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "BackgroundProcessingSupported")]
-        public int BackgroundProcessingSupported;
+        public Silk.NET.Core.Bool32 BackgroundProcessingSupported;
     }
 }

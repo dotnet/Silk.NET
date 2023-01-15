@@ -470,7 +470,7 @@ namespace Silk.NET.BuildTools.Bind
                     }
                 }
 
-                foreach (var attr in function.Signature.Attributes)
+                foreach (var attr in function.Signature.GetAttributes())
                 {
                     sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                 }
@@ -609,7 +609,7 @@ namespace Silk.NET.BuildTools.Bind
                         }
                     }
 
-                    foreach (var attr in helper.Signature.Attributes)
+                    foreach (var attr in helper.Signature.GetAttributes())
                     {
                         vt.WriteLine($"    [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                     }
@@ -730,7 +730,8 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine();
             sw.WriteLine("#pragma warning disable 1591");
             sw.WriteLine();
-            sw.WriteLine($"namespace {state.Task.Namespace}{coreProject.Namespace}");
+            var ns = project.IsRoot ? state.Task.Namespace : state.Task.ExtensionsNamespace;
+            sw.WriteLine($"namespace {ns}{project.Namespace}");
             sw.WriteLine("{");
             sw.WriteLine($"    public unsafe readonly struct {pfnName} : IDisposable");
             sw.WriteLine("    {");

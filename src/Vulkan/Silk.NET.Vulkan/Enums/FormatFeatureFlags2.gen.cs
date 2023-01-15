@@ -222,18 +222,15 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"Reserved39BitExt\"")]
         [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_39_BIT_EXT")]
         FormatFeature2Reserved39BitExt = 549755813888,
-        [Obsolete("Deprecated in favour of \"Reserved40BitNV\"")]
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_40_BIT_NV")]
-        FormatFeature2Reserved40BitNV = 1099511627776,
-        [Obsolete("Deprecated in favour of \"Reserved41BitNV\"")]
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_41_BIT_NV")]
-        FormatFeature2Reserved41BitNV = 2199023255552,
-        [Obsolete("Deprecated in favour of \"Reserved42BitNV\"")]
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_42_BIT_NV")]
-        FormatFeature2Reserved42BitNV = 4398046511104,
-        [Obsolete("Deprecated in favour of \"Reserved43BitNV\"")]
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_43_BIT_NV")]
-        FormatFeature2Reserved43BitNV = 8796093022208,
+        [Obsolete("Deprecated in favour of \"OpticalFlowImageBitNV\"")]
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_OPTICAL_FLOW_IMAGE_BIT_NV")]
+        FormatFeature2OpticalFlowImageBitNV = 1099511627776,
+        [Obsolete("Deprecated in favour of \"OpticalFlowVectorBitNV\"")]
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_OPTICAL_FLOW_VECTOR_BIT_NV")]
+        FormatFeature2OpticalFlowVectorBitNV = 2199023255552,
+        [Obsolete("Deprecated in favour of \"OpticalFlowCostBitNV\"")]
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_OPTICAL_FLOW_COST_BIT_NV")]
+        FormatFeature2OpticalFlowCostBitNV = 4398046511104,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_SAMPLED_IMAGE_BIT")]
         SampledImageBit = 1,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_SAMPLED_IMAGE_BIT_KHR")]
@@ -372,13 +369,11 @@ namespace Silk.NET.Vulkan
         BoxFilterSampledBitQCom = 137438953472,
         [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_39_BIT_EXT")]
         Reserved39BitExt = 549755813888,
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_40_BIT_NV")]
-        Reserved40BitNV = 1099511627776,
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_41_BIT_NV")]
-        Reserved41BitNV = 2199023255552,
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_42_BIT_NV")]
-        Reserved42BitNV = 4398046511104,
-        [NativeName("Name", "VK_FORMAT_FEATURE_2_RESERVED_43_BIT_NV")]
-        Reserved43BitNV = 8796093022208,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_OPTICAL_FLOW_IMAGE_BIT_NV")]
+        OpticalFlowImageBitNV = 1099511627776,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_OPTICAL_FLOW_VECTOR_BIT_NV")]
+        OpticalFlowVectorBitNV = 2199023255552,
+        [NativeName("Name", "VK_FORMAT_FEATURE_2_OPTICAL_FLOW_COST_BIT_NV")]
+        OpticalFlowCostBitNV = 4398046511104,
     }
 }

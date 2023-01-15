@@ -187,11 +187,11 @@ public unsafe static class Direct3D9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckDeviceType(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, Devtype DevType, Format AdapterFormat, Format BackBufferFormat, int bWindowed)
+    public static int CheckDeviceType(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, Devtype DevType, Format AdapterFormat, Format BackBufferFormat, Silk.NET.Core.Bool32 bWindowed)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Format, Format, int, int>)@this->LpVtbl[9])(@this, Adapter, DevType, AdapterFormat, BackBufferFormat, bWindowed);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Format, Format, Silk.NET.Core.Bool32, int>)@this->LpVtbl[9])(@this, Adapter, DevType, AdapterFormat, BackBufferFormat, bWindowed);
         return ret;
     }
 
@@ -205,22 +205,22 @@ public unsafe static class Direct3D9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int CheckDeviceMultiSampleType(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, Devtype DeviceType, Format SurfaceFormat, int Windowed, MultisampleType MultiSampleType, uint* pQualityLevels)
+    public static unsafe int CheckDeviceMultiSampleType(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, Devtype DeviceType, Format SurfaceFormat, Silk.NET.Core.Bool32 Windowed, MultisampleType MultiSampleType, uint* pQualityLevels)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
-        ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Format, int, MultisampleType, uint*, int>)@this->LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevels);
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Format, Silk.NET.Core.Bool32, MultisampleType, uint*, int>)@this->LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevels);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckDeviceMultiSampleType(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, Devtype DeviceType, Format SurfaceFormat, int Windowed, MultisampleType MultiSampleType, ref uint pQualityLevels)
+    public static int CheckDeviceMultiSampleType(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, Devtype DeviceType, Format SurfaceFormat, Silk.NET.Core.Bool32 Windowed, MultisampleType MultiSampleType, ref uint pQualityLevels)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
         fixed (uint* pQualityLevelsPtr = &pQualityLevels)
         {
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Format, int, MultisampleType, uint*, int>)@this->LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevelsPtr);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9Ex*, uint, Devtype, Format, Silk.NET.Core.Bool32, MultisampleType, uint*, int>)@this->LpVtbl[11])(@this, Adapter, DeviceType, SurfaceFormat, Windowed, MultiSampleType, pQualityLevelsPtr);
         }
         return ret;
     }
@@ -322,7 +322,7 @@ public unsafe static class Direct3D9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe uint GetAdapterModeCountEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, Displaymodefilter* pFilter)
+    public static unsafe uint GetAdapterModeCountEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, [Flow(FlowDirection.In)] Displaymodefilter* pFilter)
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
@@ -331,7 +331,7 @@ public unsafe static class Direct3D9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint GetAdapterModeCountEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, ref Displaymodefilter pFilter)
+    public static uint GetAdapterModeCountEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, [Flow(FlowDirection.In)] in Displaymodefilter pFilter)
     {
         var @this = thisVtbl.Handle;
         uint ret = default;
@@ -343,7 +343,7 @@ public unsafe static class Direct3D9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int EnumAdapterModesEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, Displaymodefilter* pFilter, uint Mode, Displaymodeex* pMode)
+    public static unsafe int EnumAdapterModesEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, [Flow(FlowDirection.In)] Displaymodefilter* pFilter, uint Mode, Displaymodeex* pMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -352,7 +352,7 @@ public unsafe static class Direct3D9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int EnumAdapterModesEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, Displaymodefilter* pFilter, uint Mode, ref Displaymodeex pMode)
+    public static unsafe int EnumAdapterModesEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, [Flow(FlowDirection.In)] Displaymodefilter* pFilter, uint Mode, ref Displaymodeex pMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -364,7 +364,7 @@ public unsafe static class Direct3D9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int EnumAdapterModesEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, ref Displaymodefilter pFilter, uint Mode, Displaymodeex* pMode)
+    public static unsafe int EnumAdapterModesEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, [Flow(FlowDirection.In)] in Displaymodefilter pFilter, uint Mode, Displaymodeex* pMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -376,7 +376,7 @@ public unsafe static class Direct3D9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int EnumAdapterModesEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, ref Displaymodefilter pFilter, uint Mode, ref Displaymodeex pMode)
+    public static int EnumAdapterModesEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, [Flow(FlowDirection.In)] in Displaymodefilter pFilter, uint Mode, ref Displaymodeex pMode)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -625,7 +625,7 @@ public unsafe static class Direct3D9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int CheckDeviceMultiSampleType(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, Devtype DeviceType, Format SurfaceFormat, int Windowed, MultisampleType MultiSampleType, Span<uint> pQualityLevels)
+    public static int CheckDeviceMultiSampleType(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, Devtype DeviceType, Format SurfaceFormat, Silk.NET.Core.Bool32 Windowed, MultisampleType MultiSampleType, Span<uint> pQualityLevels)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -673,15 +673,15 @@ public unsafe static class Direct3D9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static uint GetAdapterModeCountEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, Span<Displaymodefilter> pFilter)
+    public static uint GetAdapterModeCountEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, [Flow(FlowDirection.In)] ReadOnlySpan<Displaymodefilter> pFilter)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetAdapterModeCountEx(Adapter, ref pFilter.GetPinnableReference());
+        return @this->GetAdapterModeCountEx(Adapter, in pFilter.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int EnumAdapterModesEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, Displaymodefilter* pFilter, uint Mode, Span<Displaymodeex> pMode)
+    public static unsafe int EnumAdapterModesEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, [Flow(FlowDirection.In)] Displaymodefilter* pFilter, uint Mode, Span<Displaymodeex> pMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -689,19 +689,19 @@ public unsafe static class Direct3D9ExVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int EnumAdapterModesEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, Span<Displaymodefilter> pFilter, uint Mode, Displaymodeex* pMode)
+    public static unsafe int EnumAdapterModesEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, [Flow(FlowDirection.In)] ReadOnlySpan<Displaymodefilter> pFilter, uint Mode, Displaymodeex* pMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->EnumAdapterModesEx(Adapter, ref pFilter.GetPinnableReference(), Mode, pMode);
+        return @this->EnumAdapterModesEx(Adapter, in pFilter.GetPinnableReference(), Mode, pMode);
     }
 
     /// <summary>To be documented.</summary>
-    public static int EnumAdapterModesEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, Span<Displaymodefilter> pFilter, uint Mode, Span<Displaymodeex> pMode)
+    public static int EnumAdapterModesEx(this ComPtr<IDirect3D9Ex> thisVtbl, uint Adapter, [Flow(FlowDirection.In)] ReadOnlySpan<Displaymodefilter> pFilter, uint Mode, Span<Displaymodeex> pMode)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->EnumAdapterModesEx(Adapter, ref pFilter.GetPinnableReference(), Mode, ref pMode.GetPinnableReference());
+        return @this->EnumAdapterModesEx(Adapter, in pFilter.GetPinnableReference(), Mode, ref pMode.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

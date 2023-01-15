@@ -99,20 +99,20 @@ public unsafe static class D3D11MultithreadVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetMultithreadProtected(this ComPtr<ID3D11Multithread> thisVtbl, int bMTProtect)
+    public static Silk.NET.Core.Bool32 SetMultithreadProtected(this ComPtr<ID3D11Multithread> thisVtbl, Silk.NET.Core.Bool32 bMTProtect)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, int, int>)@this->LpVtbl[5])(@this, bMTProtect);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, Silk.NET.Core.Bool32, Silk.NET.Core.Bool32>)@this->LpVtbl[5])(@this, bMTProtect);
         return ret;
     }
 
     /// <summary>To be documented.</summary>
-    public static int GetMultithreadProtected(this ComPtr<ID3D11Multithread> thisVtbl)
+    public static Silk.NET.Core.Bool32 GetMultithreadProtected(this ComPtr<ID3D11Multithread> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        int ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, int>)@this->LpVtbl[6])(@this);
+        Silk.NET.Core.Bool32 ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, Silk.NET.Core.Bool32>)@this->LpVtbl[6])(@this);
         return ret;
     }
 

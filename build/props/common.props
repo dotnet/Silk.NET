@@ -9,34 +9,35 @@
     <!-- Core properties -->
     <PropertyGroup>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <LangVersion>preview</LangVersion>
+        <LangVersion>10</LangVersion>
         <Authors>.NET Foundation and Contributors</Authors>
         <PackageReleaseNotes>
-            Silk.NET Summer 2022 Update 1
+            Silk.NET Winter 2022 Update 1
 
-            - Massive project-wide bindings overhaul, making our bindings easier to use and higher quality than before.
-            - Added grouped OpenCL enums. (thanks @Alexx999)
-            - Added support for creation of contexts with versions prior to OpenGL 3.2. (thanks @Beyley)
-            - Added support for multiple ImGuiControllers. (thanks @Beyley)
-            - Added support for single-file mode. (thanks @kant2002)
-            - Added shorter names in enums used in bindings.
-            - Added AspectRatioEstimate API to VideoMode. (thanks @ohtrobinson)
-            - Update to latest OpenGL specifications
-            - Update to OpenXR 1.0.24
-            - Update to Vulkan 1.3.223
-            - Improved ImGuiController disposal. (thanks @Beyley)
-            - Fixed incorrect OpenCL functions. This is breaking, but if you were using these functions your code didn't work anyway. (thanks @Alexx999)
-            - Fixed IsVisible not being respected in some cases. (thanks @paralaxsd)
-            - Fixed window close events not being respected on the SDL backend. (thanks @paralaxsd)
-
-            This update may result in your projects having a lot of deprecation warnings. We believe this update contains much-needed improvements to both Silk.NET and code consuming it, but we appeciate migrating to this version may take time.
+            - Added zero-cost extension methods for ComPtrs, making our DirectX bindings easier to use and higher quality than ever before.
+            - Added WebGPU bindings for Emscripten, Dawn, and WGPU.
+            - Added Direct2D bindings. (massive thank you to @curin)
+            - Added an explicit check against calling Reset on a window while within the render loop of said window.
+            - Added support for OpenAL disconnect extension. (thanks @okaniku)
+            - Added TopMost in Silk.NET Windowing (thanks @MarioGK)
+            - Improved support for WASM and AOT in the Silk.NET loader.
+            - Improved Silk.NET.Maths generic specialization codegen.
+            - Improved support for DXVK, including a new DXHandle property in INativeWindow for getting Linux HWND equivalents.
+            - Updated to SDL 2.24.
+            - Updated to Vulkan 1.3.233.
+            - Updated to DirectStorage 1.1.0.
+            - Updated to OpenXR 1.0.25.
+            - Updated to latest OpenCL specifications.
+            - Updated to latest OpenGL specifications.
+            - Fixed XInput GetApi not being implemented. (thanks @ohtorobinson)
+            - Fixed TransparentBuffer not being applied correctly without specifying a PreferredBitDepth. (thanks @MarioGK)
         </PackageReleaseNotes>
         <PackageTags Condition="'$(PackageTags)' == ''">OpenCL;OpenGL;OpenAL;OpenGLES;GLES;Vulkan;Assimp;DirectX;GLFW;SDL;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;ElgarTK;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;macOS;Linux;Android;Bindings;OSX;Wrapper;Native</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageOutputPath>$(MSBuildThisFileDirectory)/../output_packages</PackageOutputPath>
         <RepositoryUrl>https://github.com/dotnet/Silk.NET</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
-        <VersionPrefix>2.16</VersionPrefix>
+        <VersionPrefix>2.17</VersionPrefix>
         <VersionSuffix Condition="'$(VersionSuffix)' == ''"></VersionSuffix>
         <Description Condition="'$(Description)' == ''">
             Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX.

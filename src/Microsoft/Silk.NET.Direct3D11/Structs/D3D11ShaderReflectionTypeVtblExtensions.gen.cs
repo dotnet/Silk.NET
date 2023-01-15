@@ -49,7 +49,7 @@ public unsafe static class D3D11ShaderReflectionTypeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, byte* Name)
+    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, [Flow(FlowDirection.In)] byte* Name)
     {
         var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionType* ret = default;
@@ -58,7 +58,7 @@ public unsafe static class D3D11ShaderReflectionTypeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, ref byte Name)
+    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, [Flow(FlowDirection.In)] in byte Name)
     {
         var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionType* ret = default;
@@ -70,7 +70,7 @@ public unsafe static class D3D11ShaderReflectionTypeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name)
+    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string Name)
     {
         var @this = thisVtbl.Handle;
         ID3D11ShaderReflectionType* ret = default;
@@ -207,11 +207,11 @@ public unsafe static class D3D11ShaderReflectionTypeVtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, Span<byte> Name)
+    public static unsafe ID3D11ShaderReflectionType* GetMemberTypeByName(this ComPtr<ID3D11ShaderReflectionType> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<byte> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->GetMemberTypeByName(ref Name.GetPinnableReference());
+        return @this->GetMemberTypeByName(in Name.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

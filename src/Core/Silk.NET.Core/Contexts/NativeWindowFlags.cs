@@ -21,6 +21,7 @@ namespace Silk.NET.Core.Contexts
         Android = 1 << 16,
         Vivante = 1 << 17,
         OS2 = 1 << 18,
-        Haiku = 1 << 19
+        Haiku = 1 << 19,
+        EGL = 1 << 20,
     }
 }

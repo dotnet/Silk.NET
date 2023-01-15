@@ -227,8 +227,8 @@ namespace Silk.NET.Assimp
             }
         }
 
-        [NativeName("Type", "unsigned int [8]")]
-        [NativeName("Type.Name", "unsigned int [8]")]
+        [NativeName("Type", "unsigned int[8]")]
+        [NativeName("Type.Name", "unsigned int[8]")]
         [NativeName("Name", "mNumUVComponents")]
         public fixed uint MNumUVComponents[8];
 

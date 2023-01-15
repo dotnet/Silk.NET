@@ -193,7 +193,7 @@ public unsafe static class D3D12VideoProcessor1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoProcessor1> thisVtbl, Guid* guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoProcessor1> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -202,7 +202,7 @@ public unsafe static class D3D12VideoProcessor1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessor1> thisVtbl, Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessor1> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -214,7 +214,7 @@ public unsafe static class D3D12VideoProcessor1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoProcessor1> thisVtbl, ref Guid guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoProcessor1> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -226,7 +226,7 @@ public unsafe static class D3D12VideoProcessor1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessor1> thisVtbl, ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessor1> thisVtbl, ref Guid guid, uint DataSize, [Flow(FlowDirection.In)] in T0 pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -289,7 +289,7 @@ public unsafe static class D3D12VideoProcessor1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetName(this ComPtr<ID3D12VideoProcessor1> thisVtbl, char* Name)
+    public static unsafe int SetName(this ComPtr<ID3D12VideoProcessor1> thisVtbl, [Flow(FlowDirection.In)] char* Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -298,7 +298,7 @@ public unsafe static class D3D12VideoProcessor1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12VideoProcessor1> thisVtbl, ref char Name)
+    public static int SetName(this ComPtr<ID3D12VideoProcessor1> thisVtbl, [Flow(FlowDirection.In)] in char Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -310,7 +310,7 @@ public unsafe static class D3D12VideoProcessor1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12VideoProcessor1> thisVtbl, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
+    public static int SetName(this ComPtr<ID3D12VideoProcessor1> thisVtbl, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string Name)
     {
         var @this = thisVtbl.Handle;
         int ret = default;
@@ -411,9 +411,11 @@ public unsafe static class D3D12VideoProcessor1VtblExtensions
     public static VideoProcessOutputStreamDesc GetOutputStreamDesc(this ComPtr<ID3D12VideoProcessor1> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        VideoProcessOutputStreamDesc ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessor1*, VideoProcessOutputStreamDesc>)@this->LpVtbl[11])(@this);
-        return ret;
+        VideoProcessOutputStreamDesc silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        VideoProcessOutputStreamDesc* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoProcessor1*, VideoProcessOutputStreamDesc*, VideoProcessOutputStreamDesc*>)@this->LpVtbl[11])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>
@@ -546,15 +548,15 @@ public unsafe static class D3D12VideoProcessor1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessor1> thisVtbl, Guid* guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static unsafe int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessor1> thisVtbl, Guid* guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(guid, DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(guid, DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
-    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoProcessor1> thisVtbl, Span<Guid> guid, uint DataSize, void* pData)
+    public static unsafe int SetPrivateData(this ComPtr<ID3D12VideoProcessor1> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] void* pData)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
@@ -562,11 +564,11 @@ public unsafe static class D3D12VideoProcessor1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessor1> thisVtbl, Span<Guid> guid, uint DataSize, Span<T0> pData) where T0 : unmanaged
+    public static int SetPrivateData<T0>(this ComPtr<ID3D12VideoProcessor1> thisVtbl, Span<Guid> guid, uint DataSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> pData) where T0 : unmanaged
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, ref pData.GetPinnableReference());
+        return @this->SetPrivateData(ref guid.GetPinnableReference(), DataSize, in pData.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>
@@ -610,11 +612,11 @@ public unsafe static class D3D12VideoProcessor1VtblExtensions
     }
 
     /// <summary>To be documented.</summary>
-    public static int SetName(this ComPtr<ID3D12VideoProcessor1> thisVtbl, Span<char> Name)
+    public static int SetName(this ComPtr<ID3D12VideoProcessor1> thisVtbl, [Flow(FlowDirection.In)] ReadOnlySpan<char> Name)
     {
         var @this = thisVtbl.Handle;
         // SpanOverloader
-        return @this->SetName(ref Name.GetPinnableReference());
+        return @this->SetName(in Name.GetPinnableReference());
     }
 
     /// <summary>To be documented.</summary>

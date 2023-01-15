@@ -24,7 +24,7 @@ namespace Silk.NET.Direct3D12
             uint? nodeIndex = null,
             VideoEncoderCodec? codec = null,
             uint? resolutionRatiosCount = null,
-            int? isSupported = null,
+            Silk.NET.Core.Bool32? isSupported = null,
             VideoEncoderPictureResolutionDesc? minResolutionSupported = null,
             VideoEncoderPictureResolutionDesc? maxResolutionSupported = null,
             uint? resolutionWidthMultipleRequirement = null,
@@ -97,7 +97,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "IsSupported")]
-        public int IsSupported;
+        public Silk.NET.Core.Bool32 IsSupported;
 
         [NativeName("Type", "D3D12_VIDEO_ENCODER_PICTURE_RESOLUTION_DESC")]
         [NativeName("Type.Name", "D3D12_VIDEO_ENCODER_PICTURE_RESOLUTION_DESC")]

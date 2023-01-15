@@ -23,12 +23,12 @@ namespace Silk.NET.DXVA
         (
             ulong? pObject = null,
             ulong? pOutputSurface = null,
-            Silk.NET.Maths.Rectangle<int>? targetRect = null,
+            Silk.NET.Maths.Box2D<int>? targetRect = null,
             Silk.NET.Direct3D9.Format? outputFormat = null,
             uint? colorSpace = null,
             uint? outputFrame = null,
             uint? streamCount = null,
-            int? enter = null
+            Silk.NET.Core.Bool32? enter = null
         ) : this()
         {
             if (pObject is not null)
@@ -86,7 +86,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "TargetRect")]
-        public Silk.NET.Maths.Rectangle<int> TargetRect;
+        public Silk.NET.Maths.Box2D<int> TargetRect;
 
         [NativeName("Type", "D3DFORMAT")]
         [NativeName("Type.Name", "D3DFORMAT")]
@@ -111,6 +111,6 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Enter")]
-        public int Enter;
+        public Silk.NET.Core.Bool32 Enter;
     }
 }

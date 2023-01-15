@@ -42,10 +42,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial uint BindMaterialParameter([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] MaterialParameter value);
 
         [NativeApi(EntryPoint = "glBindMaterialParameterEXT", Convention = CallingConvention.Winapi)]
-        public partial uint BindMaterialParameter([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] EXT value);
+        public partial uint BindMaterialParameter([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] EXT value);
 
         [NativeApi(EntryPoint = "glBindMaterialParameterEXT", Convention = CallingConvention.Winapi)]
-        public partial uint BindMaterialParameter([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter value);
+        public partial uint BindMaterialParameter([Flow(FlowDirection.In)] TriangleFace face, [Flow(FlowDirection.In)] MaterialParameter value);
 
         [NativeApi(EntryPoint = "glBindParameterEXT", Convention = CallingConvention.Winapi)]
         public partial uint BindParameter([Flow(FlowDirection.In)] EXT value);
