@@ -96,7 +96,7 @@ namespace Tutorial
         private static unsafe void OnRender(double deltaTime)
         {
             Gl.Enable(EnableCap.DepthTest);
-            Gl.Clear((uint) (ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit));
+            Gl.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
             Texture.Bind();
             Shader.Use();
@@ -121,14 +121,17 @@ namespace Tutorial
                 Shader.SetUniform("uView", view);
                 Shader.SetUniform("uProjection", projection);
 
-                Gl.DrawArrays(GLEnum.Triangles, 0, (uint)mesh.Vertices.Length);
+                Gl.DrawArrays(PrimitiveType.Triangles, 0, (uint)mesh.Vertices.Length);
             }
         }
 
         private static unsafe void OnMouseMove(IMouse mouse, Vector2 position)
         {
             var lookSensitivity = 0.1f;
-            if (LastMousePosition == default) { LastMousePosition = position; }
+            if (LastMousePosition == default)
+            {
+                LastMousePosition = position;
+            }
             else
             {
                 var xOffset = (position.X - LastMousePosition.X) * lookSensitivity;

@@ -4,13 +4,9 @@
 using Silk.NET.Assimp;
 using Silk.NET.OpenGL;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using AssimpMesh = Silk.NET.Assimp.Mesh;
 
 namespace Tutorial
@@ -31,23 +27,19 @@ namespace Tutorial
         public string Directory { get; protected set; } = string.Empty;
         public List<Mesh> Meshes { get; protected set; } = new List<Mesh>();
         
-        private void LoadModel(string path)
+        private unsafe void LoadModel(string path)
         {
+            var scene = _assimp.ImportFile(path, (uint)PostProcessSteps.Triangulate);
 
-            unsafe
+            if (scene == null || scene->MFlags == Silk.NET.Assimp.Assimp.SceneFlagsIncomplete || scene->MRootNode == null)
             {
-                var scene = _assimp.ImportFile(path, (uint) PostProcessSteps.Triangulate);
-
-                if (scene == null || scene->MFlags == Silk.NET.Assimp.Assimp.SceneFlagsIncomplete || scene->MRootNode == null)
-                {
-                    var error = _assimp.GetErrorStringS();
-                    throw new Exception(error);
-                }
-
-                Directory = path;
-
-                ProcessNode(scene->MRootNode, scene);
+                var error = _assimp.GetErrorStringS();
+                throw new Exception(error);
             }
+
+            Directory = path;
+
+            ProcessNode(scene->MRootNode, scene);
         }
 
         private unsafe void ProcessNode(Node* node, Scene* scene)
