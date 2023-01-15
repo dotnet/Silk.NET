@@ -5,10 +5,10 @@
       -->
     <PropertyGroup>
         <MsExtensionNugetVersion>7.0.0</MsExtensionNugetVersion>
-        <RoslynPackageVersion>4.2.0</RoslynPackageVersion>
+        <RoslynPackageVersion>4.4.0</RoslynPackageVersion>
     </PropertyGroup>
     <ItemGroup>
-        <PackageVersion Include="BenchmarkDotNet" Version="0.13.1"/>
+        <PackageVersion Include="BenchmarkDotNet" Version="0.13.3"/>
         <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="$(RoslynPackageVersion)"/>
         <PackageVersion Include="System.Text.Json" Version="6.0.5"/>
         <PackageVersion Include="ClangSharp.PInvokeGenerator" Version="14.0.0-rc1"/>
@@ -29,14 +29,14 @@
         <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="$(MsExtensionNugetVersion)"/>
         <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="$(MsExtensionNugetVersion)"/>
         <PackageVersion Include="Microsoft.Extensions.Options" Version="$(MsExtensionNugetVersion)"/>
-        <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.3.0"/>
+        <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.4.1"/>
         <PackageVersion Include="xunit" Version="2.4.2"/>
         <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.5"/>
         <PackageVersion Include="Statiq.Core" Version="1.0.0-beta.48"/>
         <PackageVersion Include="HtmlAgilityPack" Version="1.11.43"/>
         <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.3.1"/>
-        <PackageVersion Include="Statiq.App" Version="1.0.0-beta.62"/>
-        <PackageVersion Include="Statiq.Feeds" Version="1.0.0-beta.48"/>
+        <PackageVersion Include="Statiq.App" Version="1.0.0-beta.65"/>
+        <PackageVersion Include="Statiq.Feeds" Version="1.0.0-beta.65"/>
         <PackageVersion Include="Statiq.Markdown" Version="1.0.0-beta.62"/>
         <PackageVersion Include="Statiq.Razor" Version="1.0.0-beta.48"/>
         <PackageVersion Include="Statiq.Yaml" Version="1.0.0-beta.62"/>
@@ -51,6 +51,6 @@
         <PackageVersion Include="Microsoft.Extensions.Logging" Version="$(MsExtensionNugetVersion)" />
         <PackageVersion Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="$(MsExtensionNugetVersion)" />
         <PackageVersion Include="Bogus" Version="34.0.2" />
-        <PackageVersion Include="coverlet.collector" Version="3.1.2" />
+        <PackageVersion Include="coverlet.collector" Version="3.2.0" />
     </ItemGroup>
 </Project>
