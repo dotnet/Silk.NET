@@ -1,3 +1,6 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -63,14 +66,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
         public ImGuiController(GL gl, IView view, IInputContext input, ImGuiFontConfig imGuiFontConfig) : this(gl, view, input, imGuiFontConfig, null)
         {
         }
-        
+
         /// <summary>
         /// Constructs a new ImGuiController with an onConfigureIO Action.
         /// </summary>
         public ImGuiController(GL gl, IView view, IInputContext input, Action onConfigureIO) : this(gl, view, input, null, onConfigureIO)
         {
         }
-        
+
         /// <summary>
         /// Constructs a new ImGuiController with font configuration and onConfigure Action.
         /// </summary>
@@ -81,7 +84,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             var io = ImGuiNET.ImGui.GetIO();
             if (imGuiFontConfig is not null)
             {
-                io.Fonts.AddFontFromFileTTF(imGuiFontConfig.Value.FontPath, imGuiFontConfig.Value.FontSize);
+                var glyphRange = imGuiFontConfig.Value.GetGlyphRange?.Invoke(io) ?? default(IntPtr);
+
+                io.Fonts.AddFontFromFileTTF(imGuiFontConfig.Value.FontPath, imGuiFontConfig.Value.FontSize, null, glyphRange);
             }
 
             onConfigureIO?.Invoke();
@@ -98,7 +103,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
 
         public void MakeCurrent()
         {
-            ImGuiNET.ImGui.SetCurrentContext(this.Context);
+            ImGuiNET.ImGui.SetCurrentContext(Context);
         }
 
         private void Init(GL gl, IView view, IInputContext input)
@@ -146,16 +151,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             {
                 var oldCtx = ImGuiNET.ImGui.GetCurrentContext();
 
-                if (oldCtx != this.Context)
+                if (oldCtx != Context)
                 {
-                    ImGuiNET.ImGui.SetCurrentContext(this.Context);
+                    ImGuiNET.ImGui.SetCurrentContext(Context);
                 }
-                
+
                 _frameBegun = false;
                 ImGuiNET.ImGui.Render();
                 RenderImDrawData(ImGuiNET.ImGui.GetDrawData());
-                
-                if (oldCtx != this.Context)
+
+                if (oldCtx != Context)
                 {
                     ImGuiNET.ImGui.SetCurrentContext(oldCtx);
                 }
@@ -169,11 +174,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
         {
             var oldCtx = ImGuiNET.ImGui.GetCurrentContext();
 
-            if (oldCtx != this.Context)
+            if (oldCtx != Context)
             {
-                ImGuiNET.ImGui.SetCurrentContext(this.Context);
+                ImGuiNET.ImGui.SetCurrentContext(Context);
             }
-            
+
             if (_frameBegun)
             {
                 ImGuiNET.ImGui.Render();
@@ -184,8 +189,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
 
             _frameBegun = true;
             ImGuiNET.ImGui.NewFrame();
-            
-            if (oldCtx != this.Context)
+
+            if (oldCtx != Context)
             {
                 ImGuiNET.ImGui.SetCurrentContext(oldCtx);
             }
@@ -209,7 +214,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             io.DeltaTime = deltaSeconds; // DeltaTime is in seconds.
         }
 
-        private static Key[]  keyEnumArr = (Key[]) Enum.GetValues(typeof(Key));
+        private static Key[] keyEnumArr = (Key[]) Enum.GetValues(typeof(Key));
         private void UpdateImGuiInput()
         {
             var io = ImGuiNET.ImGui.GetIO();
@@ -289,10 +294,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             _gl.Disable(GLEnum.DepthTest);
             _gl.Disable(GLEnum.StencilTest);
             _gl.Enable(GLEnum.ScissorTest);
-            #if !GLES && !LEGACY
+#if !GLES && !LEGACY
             _gl.Disable(GLEnum.PrimitiveRestart);
             _gl.PolygonMode(GLEnum.FrontAndBack, GLEnum.Fill);
-            #endif
+#endif
 
             float L = drawDataPtr.DisplayPos.X;
             float R = drawDataPtr.DisplayPos.X + drawDataPtr.DisplaySize.X;
@@ -350,11 +355,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             _gl.GetInteger(GLEnum.ArrayBufferBinding, out int lastArrayBuffer);
             _gl.GetInteger(GLEnum.VertexArrayBinding, out int lastVertexArrayObject);
 
-            #if !GLES
+#if !GLES
             Span<int> lastPolygonMode = stackalloc int[2];
             _gl.GetInteger(GLEnum.PolygonMode, lastPolygonMode);
-            #endif
-    
+#endif
+
             Span<int> lastScissorBox = stackalloc int[4];
             _gl.GetInteger(GLEnum.ScissorBox, lastScissorBox);
 
@@ -373,10 +378,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             bool lastEnableStencilTest = _gl.IsEnabled(GLEnum.StencilTest);
             bool lastEnableScissorTest = _gl.IsEnabled(GLEnum.ScissorTest);
 
-            #if !GLES && !LEGACY
+#if !GLES && !LEGACY
             bool lastEnablePrimitiveRestart = _gl.IsEnabled(GLEnum.PrimitiveRestart);
-            #endif
-            
+#endif
+
             SetupRenderState(drawDataPtr, framebufferWidth, framebufferHeight);
 
             // Will project scissor/clipping rectangles into framebuffer space
@@ -429,7 +434,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             }
 
             // Destroy the temporary VAO
-            _gl.DeleteVertexArray(_vertexArrayObject); 
+            _gl.DeleteVertexArray(_vertexArrayObject);
             _vertexArrayObject = 0;
 
             // Restore modified GL state
@@ -489,8 +494,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             {
                 _gl.Disable(GLEnum.ScissorTest);
             }
-            
-            #if !GLES && !LEGACY
+
+#if !GLES && !LEGACY
             if (lastEnablePrimitiveRestart)
             {
                 _gl.Enable(GLEnum.PrimitiveRestart);
@@ -501,8 +506,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             }
 
             _gl.PolygonMode(GLEnum.FrontAndBack, (GLEnum) lastPolygonMode[0]);
-            #endif
-            
+#endif
+
             _gl.Scissor(lastScissorBox[0], lastScissorBox[1], (uint) lastScissorBox[2], (uint) lastScissorBox[3]);
         }
 
@@ -515,7 +520,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             _gl.GetInteger(GLEnum.VertexArrayBinding, out int lastVertexArray);
 
             string vertexSource =
-        #if GLES
+#if GLES
                 @"#version 300 es
         precision highp float;
             
@@ -531,7 +536,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             Frag_Color = Color;
             gl_Position = ProjMtx * vec4(Position.xy,0.0,1.0);
         }";
-        #elif GL
+#elif GL
                 @"#version 330
         layout (location = 0) in vec2 Position;
         layout (location = 1) in vec2 UV;
@@ -545,7 +550,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             Frag_Color = Color;
             gl_Position = ProjMtx * vec4(Position.xy,0,1);
         }";
-        #elif LEGACY
+#elif LEGACY
                 @"#version 110
         attribute vec2 Position;
         attribute vec2 UV;
@@ -562,11 +567,11 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
             Frag_Color = Color;
             gl_Position = ProjMtx * vec4(Position.xy,0,1);
         }";
-        #endif
+#endif
 
 
-            string fragmentSource = 
-        #if GLES
+            string fragmentSource =
+#if GLES
                 @"#version 300 es
         precision highp float;
         
@@ -578,7 +583,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
         {
             Out_Color = Frag_Color * texture(Texture, Frag_UV.st);
         }";
-        #elif GL
+#elif GL
                 @"#version 330
         in vec2 Frag_UV;
         in vec4 Frag_Color;
@@ -588,7 +593,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
         {
             Out_Color = Frag_Color * texture(Texture, Frag_UV.st);
         }";
-        #elif LEGACY
+#elif LEGACY
                 @"#version 110
         varying vec2 Frag_UV;
         varying vec4 Frag_Color;
@@ -599,7 +604,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
         {
             gl_FragColor = Frag_Color * texture2D(Texture, Frag_UV.st);
         }";
-        #endif
+#endif
 
             _shader = new Shader(_gl, vertexSource, fragmentSource);
 
@@ -634,7 +639,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
 
             // Upload texture to graphics system
             _gl.GetInteger(GLEnum.TextureBinding2D, out int lastTexture);
-         
+
             _fontTexture = new Texture(_gl, width, height, pixels);
             _fontTexture.Bind();
             _fontTexture.SetMagFilter(TextureMagFilter.Linear);
@@ -661,8 +666,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ImGui
 
             _fontTexture.Dispose();
             _shader.Dispose();
-            
-            ImGuiNET.ImGui.DestroyContext(this.Context);
+
+            ImGuiNET.ImGui.DestroyContext(Context);
         }
     }
 }
