@@ -15,7 +15,7 @@ on:
       - 'documentation/**'
 jobs:
   Build:
-    runs-on: self-hosted
+    runs-on: ${{ github.repository == 'dotnet/Silk.NET' && 'windows-quick' || 'windows-latest' }}
     steps:
     - uses: actions/checkout@v2
       with:
@@ -68,7 +68,7 @@ jobs:
         if-no-files-found: warn
         retention-days: 1
     - name: Sign Packages
-      if: ${{ github.repository == 'dotnet/Silk.NET' }}
+      if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
       run: .\build.cmd SignPackages --sign-username "${{ secrets.SIGN_USERNAME }}" --sign-password "${{ secrets.SIGN_PASSWORD }}"
     - name: Push to Azure Experimental Feed
       if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request' }}
@@ -77,7 +77,7 @@ jobs:
       if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request' }}
       run: .\build.cmd PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://nuget.pkg.github.com/dotnet/index.json --nuget-api-key ${{ secrets.GITHUB_TOKEN }}
     - name: Upload Signed Artifacts to Actions
-      if: ${{ github.repository == 'dotnet/Silk.NET' }}
+      if: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') }}
       uses: actions/upload-artifact@v2.2.4
       with:
         name: signed_nupkgs
