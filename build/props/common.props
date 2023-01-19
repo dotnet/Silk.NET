@@ -95,7 +95,7 @@
                 .Replace('&lt;div&gt;', '').Replace('&lt;/div&gt;', '')
                 .Replace('&lt;a&gt;', '').Replace('&lt;/a&gt;', ''))
             </SilkReadme>
-            <SilkReadmePath>$(IntermediateOutputPath)README.md</SilkReadmePath>
+            <SilkReadmePath>$(IntermediateOutputPath)$(TargetFramework)/README.md</SilkReadmePath>
         </PropertyGroup>
         <PropertyGroup Condition="'$(SilkDescription)' != ''">
             <Description>$(SilkDescription) $(Description)</Description>
