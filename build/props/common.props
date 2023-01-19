@@ -122,7 +122,7 @@
     </Target>
     <!-- Public API Analyzer -->
     <ItemGroup Condition="'$(SilkPublicApiExempt)' != 'true'">
-        <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.3" PrivateAssets="All" />
+        <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.4" PrivateAssets="All" />
     </ItemGroup>
     <ItemGroup Condition="'$(SilkPublicApiExempt)' != 'true' and '$(TargetFramework)' != ''">
         <AdditionalFiles Include="PublicAPI/$(TargetFramework)/PublicAPI.Shipped.txt" />
