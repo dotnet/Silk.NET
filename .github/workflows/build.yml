@@ -14,10 +14,14 @@ on:
       - 'documentation/**'
 jobs:
   Build:
+    # This will:
+    # - use windows-quick (self-hosted only) for release tags on this repo
+    # - use windows-2022 (self-hosted or GitHub-hosted depending on what's available) for development in this repo
+    # - use windows-latest (GitHub-hosted only) in all other cases (i.e. community contributions)
     # Note: the reason we use windows-2022 instead of windows-latest is so that both the self-hosted runner
     # (which has the windows-2022 label but NOT the windows-latest label) and the GitHub hosted runner are
     # treated as candidates. We will never have a windows-latest self-hosted runner even if it is the latest. 
-    runs-on: ${{ github.repository == 'dotnet/Silk.NET' && 'windows-2022' || 'windows-latest' }}
+    runs-on: ${{ github.repository == 'dotnet/Silk.NET' && startsWith(github.ref, 'refs/tags/') && 'windows-quick' || github.repository == 'dotnet/Silk.NET' && 'windows-2022' || 'windows-latest' }}
     steps:
     - uses: actions/checkout@v2
       with:
