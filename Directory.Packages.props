@@ -44,7 +44,7 @@
         <PackageVersion Include="Moq" Version="4.17.2"/>
         <PackageVersion Include="System.Collections.Immutable" Version="6.0.0"/>
         <PackageVersion Include="libclang" Version="14.0.0"/>
-        <PackageVersion Include="libClangSharp" Version="14.0.0-beta1"/>
+        <PackageVersion Include="libClangSharp" Version="15.0.0"/>
         <PackageVersion Include="Verify.Xunit" Version="17.9.0" />
         <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="$(MsExtensionNugetVersion)" />
         <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(MsExtensionNugetVersion)" />
