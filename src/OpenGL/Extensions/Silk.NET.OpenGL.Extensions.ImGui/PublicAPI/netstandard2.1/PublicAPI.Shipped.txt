@@ -15,4 +15,3 @@ Silk.NET.OpenGL.Extensions.ImGui.TextureCoordinate.T = 10243 -> Silk.NET.OpenGL.
 ~Silk.NET.OpenGL.Extensions.ImGui.ImGuiController.ImGuiController(Silk.NET.OpenGL.GL gl, Silk.NET.Windowing.IView view, Silk.NET.Input.IInputContext input, Silk.NET.OpenGL.Extensions.ImGui.ImGuiFontConfig? imGuiFontConfig = null, System.Action onConfigureIO = null) -> void
 ~Silk.NET.OpenGL.Extensions.ImGui.ImGuiController.ImGuiController(Silk.NET.OpenGL.GL gl, Silk.NET.Windowing.IView view, Silk.NET.Input.IInputContext input, System.Action onConfigureIO) -> void
 ~Silk.NET.OpenGL.Extensions.ImGui.ImGuiFontConfig.FontPath.get -> string
-~Silk.NET.OpenGL.Extensions.ImGui.ImGuiFontConfig.ImGuiFontConfig(string fontPath, int fontSize) -> void
