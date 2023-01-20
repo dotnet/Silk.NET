@@ -298,6 +298,7 @@ partial class Build
                             .AssertZeroExitCode();
                         InheritedShell(build, GLFWPath)
                             .AssertZeroExitCode();
+                        
                         CopyAll(@out.GlobFiles("src/Release/glfw3.dll"), runtimes / "win-x64" / "native");
 
                         EnsureCleanDirectory(@out);
@@ -308,6 +309,15 @@ partial class Build
                             .AssertZeroExitCode();
 
                         CopyAll(@out.GlobFiles("src/Release/glfw3.dll"), runtimes / "win-x86" / "native");
+                        
+                        EnsureCleanDirectory(@out);
+                        
+                        InheritedShell($"{prepare} -A arm64", GLFWPath)
+                            .AssertZeroExitCode();
+                        InheritedShell(build, GLFWPath)
+                            .AssertZeroExitCode();
+
+                        CopyAll(@out.GlobFiles("src/Release/glfw3.dll"), runtimes / "win-arm64" / "native");
                     }
                     else if (OperatingSystem.IsLinux())
                     {
@@ -345,40 +355,40 @@ partial class Build
     Target VulkanLoader => CommonTarget
     (
         x => x.Before(Compile)
-            .After(Clean)
-            .Executes
-            (
-                () =>
-                {
-                    var @out = VulkanLoaderPath / "build";
-                    EnsureCleanDirectory(@out);
-                    var abi = OperatingSystem.IsWindows() ? " -DCMAKE_GENERATOR_PLATFORM=Win32" : string.Empty;
-                    InheritedShell
-                        (
-                            $"cmake -S. -Bbuild -DUPDATE_DEPS=On -DCMAKE_BUILD_TYPE=Release{abi}",
-                            VulkanLoaderPath
-                        )
-                        .AssertZeroExitCode();
-                    InheritedShell($"cmake --build build --config Release{JobsArg}", VulkanLoaderPath)
-                        .AssertZeroExitCode();
-                    var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vulkan.Loader.Native" / "runtimes";
-                    if (OperatingSystem.IsWindows())
-                    {
-                        CopyAll(@out.GlobFiles("loader/Release/vulkan-1.dll"), runtimes / "win-x64" / "native");
-                        CopyAll(@out.GlobFiles("loader/Release/vulkan-1.dll"), runtimes / "win-x86" / "native");
-                    }
-                    else
-                    {
-                        CopyAll
-                        (
-                            @out.GlobFiles("loader/libvulkan.so", "loader/libvulkan.dylib"),
-                            runtimes / (OperatingSystem.IsMacOS() ? "osx-x64" : "linux-x64") / "native"
-                        );
-                    }
+              .After(Clean)
+              .Executes
+               (
+                   () =>
+                   {
+                       var @out = VulkanLoaderPath / "build";
+                       EnsureCleanDirectory(@out);
+                       var abi = OperatingSystem.IsWindows() ? " -DCMAKE_GENERATOR_PLATFORM=Win32" : string.Empty;
+                       InheritedShell
+                           (
+                               $"cmake -S. -Bbuild -DUPDATE_DEPS=On -DCMAKE_BUILD_TYPE=Release{abi}",
+                               VulkanLoaderPath
+                           )
+                          .AssertZeroExitCode();
+                       InheritedShell($"cmake --build build --config Release{JobsArg}", VulkanLoaderPath)
+                          .AssertZeroExitCode();
+                       var runtimes = RootDirectory / "src" / "Native" / "Silk.NET.Vulkan.Loader.Native" / "runtimes";
+                       if (OperatingSystem.IsWindows())
+                       {
+                           CopyAll(@out.GlobFiles("loader/Release/vulkan-1.dll"), runtimes / "win-x64" / "native");
+                           CopyAll(@out.GlobFiles("loader/Release/vulkan-1.dll"), runtimes / "win-x86" / "native");
+                       }
+                       else
+                       {
+                           CopyAll
+                           (
+                               @out.GlobFiles("loader/libvulkan.so", "loader/libvulkan.dylib"),
+                               runtimes / (OperatingSystem.IsMacOS() ? "osx-x64" : "linux-x64") / "native"
+                           );
+                       }
 
-                    PrUpdatedNativeBinary("Vulkan Loader");
-                }
-            )
+                       PrUpdatedNativeBinary("Vulkan Loader");
+                   }
+               )
     );
     
     AbsolutePath DxvkPath => RootDirectory / "build" / "submodules" / "dxvk";
