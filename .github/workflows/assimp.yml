@@ -43,10 +43,12 @@ jobs:
         run: |
           echo running extras
           ${{ matrix.env.extras }}
-      - name: Setup .NET 6.0
+      - name: Setup .NET 6.0 and .NET 7.0
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 6.0.201
+          dotnet-version: |
+            6.0.201
+            7.0.2
       - name: Build Assimp
         run: ${{ matrix.env.nuke_invoke }} assimp
         env:
