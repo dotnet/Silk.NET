@@ -33,7 +33,7 @@ partial class Build
 
     static string JobsArg => string.IsNullOrWhiteSpace(GitHubActions.Instance?.Job)
         ? $" -j{Environment.ProcessorCount}"
-        : string.Empty; 
+        : string.Empty;
 
     string AndroidHome
     {
