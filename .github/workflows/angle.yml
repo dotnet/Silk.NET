@@ -57,7 +57,7 @@ jobs:
         with:
           dotnet-version: |
             6.0.201
-            7.0.2
+            7.0.*
       - name: Build ANGLE
         run: ${{ matrix.env.nuke_invoke }} Angle
         env:
