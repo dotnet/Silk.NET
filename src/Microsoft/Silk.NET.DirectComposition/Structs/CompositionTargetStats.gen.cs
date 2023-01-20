@@ -17,15 +17,15 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.DirectComposition
 {
     [NativeName("Name", "tagCOMPOSITION_TARGET_STATS")]
-    public unsafe partial struct TagCOMPOSITIONTARGETSTATS
+    public unsafe partial struct CompositionTargetStats
     {
-        public TagCOMPOSITIONTARGETSTATS
+        public CompositionTargetStats
         (
             uint? outstandingPresents = null,
             ulong? presentTime = null,
             ulong? vblankDuration = null,
-            TagCOMPOSITIONSTATS? presentedStats = null,
-            TagCOMPOSITIONSTATS? completedStats = null
+            CompositionStats? presentedStats = null,
+            CompositionStats? completedStats = null
         ) : this()
         {
             if (outstandingPresents is not null)
@@ -73,11 +73,11 @@ namespace Silk.NET.DirectComposition
         [NativeName("Type", "COMPOSITION_STATS")]
         [NativeName("Type.Name", "COMPOSITION_STATS")]
         [NativeName("Name", "presentedStats")]
-        public TagCOMPOSITIONSTATS PresentedStats;
+        public CompositionStats PresentedStats;
 
         [NativeName("Type", "COMPOSITION_STATS")]
         [NativeName("Type.Name", "COMPOSITION_STATS")]
         [NativeName("Name", "completedStats")]
-        public TagCOMPOSITIONSTATS CompletedStats;
+        public CompositionStats CompletedStats;
     }
 }
