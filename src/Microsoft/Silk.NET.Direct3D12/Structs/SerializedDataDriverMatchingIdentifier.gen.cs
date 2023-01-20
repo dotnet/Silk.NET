@@ -35,8 +35,8 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "GUID")]
         [NativeName("Name", "DriverOpaqueGUID")]
         public Guid DriverOpaqueGUID;
-        [NativeName("Type", "BYTE [16]")]
-        [NativeName("Type.Name", "BYTE [16]")]
+        [NativeName("Type", "BYTE[16]")]
+        [NativeName("Type.Name", "BYTE[16]")]
         [NativeName("Name", "DriverOpaqueVersioningData")]
         public fixed byte DriverOpaqueVersioningData[16];
     }

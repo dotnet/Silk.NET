@@ -145,12 +145,12 @@ namespace Silk.NET.DXVA
         [NativeName("Type.Name", "ULONG")]
         [NativeName("Name", "AspectRatioData3")]
         public uint AspectRatioData3;
-        [NativeName("Type", "ULONG [4]")]
-        [NativeName("Type.Name", "ULONG [4]")]
+        [NativeName("Type", "ULONG[4]")]
+        [NativeName("Type.Name", "ULONG[4]")]
         [NativeName("Name", "ExtendedInfoValidMask")]
         public fixed uint ExtendedInfoValidMask[4];
-        [NativeName("Type", "ULONG [4]")]
-        [NativeName("Type.Name", "ULONG [4]")]
+        [NativeName("Type", "ULONG[4]")]
+        [NativeName("Type.Name", "ULONG[4]")]
         [NativeName("Name", "ExtendedInfoData")]
         public fixed uint ExtendedInfoData[4];
     }

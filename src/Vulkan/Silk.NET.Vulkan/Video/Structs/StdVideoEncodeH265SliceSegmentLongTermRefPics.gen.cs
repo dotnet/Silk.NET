@@ -52,12 +52,12 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "num_long_term_pics")]
         public byte NumLongTermPics;
-        [NativeName("Type", "uint8_t [32]")]
-        [NativeName("Type.Name", "uint8_t [32]")]
+        [NativeName("Type", "uint8_t[32]")]
+        [NativeName("Type.Name", "uint8_t[32]")]
         [NativeName("Name", "lt_idx_sps")]
         public fixed byte LtIdxSps[32];
-        [NativeName("Type", "uint8_t [16]")]
-        [NativeName("Type.Name", "uint8_t [16]")]
+        [NativeName("Type", "uint8_t[16]")]
+        [NativeName("Type.Name", "uint8_t[16]")]
         [NativeName("Name", "poc_lsb_lt")]
         public fixed byte PocLsbLt[16];
 
@@ -65,12 +65,12 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint16_t")]
         [NativeName("Name", "used_by_curr_pic_lt_flag")]
         public ushort UsedByCurrPicLtFlag;
-        [NativeName("Type", "uint8_t [48]")]
-        [NativeName("Type.Name", "uint8_t [48]")]
+        [NativeName("Type", "uint8_t[48]")]
+        [NativeName("Type.Name", "uint8_t[48]")]
         [NativeName("Name", "delta_poc_msb_present_flag")]
         public fixed byte DeltaPocMsbPresentFlag[48];
-        [NativeName("Type", "uint8_t [48]")]
-        [NativeName("Type.Name", "uint8_t [48]")]
+        [NativeName("Type", "uint8_t[48]")]
+        [NativeName("Type.Name", "uint8_t[48]")]
         [NativeName("Name", "delta_poc_msb_cycle_lt")]
         public fixed byte DeltaPocMsbCycleLt[48];
     }

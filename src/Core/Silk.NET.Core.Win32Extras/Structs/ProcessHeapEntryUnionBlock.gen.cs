@@ -35,8 +35,8 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "hMem")]
         public void* HMem;
-        [NativeName("Type", "DWORD [3]")]
-        [NativeName("Type.Name", "DWORD [3]")]
+        [NativeName("Type", "DWORD[3]")]
+        [NativeName("Type.Name", "DWORD[3]")]
         [NativeName("Name", "dwReserved")]
         public fixed uint DwReserved[3];
     }

@@ -35,8 +35,8 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "used_by_curr_pic_lt_sps_flag")]
         public uint UsedByCurrPicLtSpsFlag;
-        [NativeName("Type", "uint32_t [32]")]
-        [NativeName("Type.Name", "uint32_t [32]")]
+        [NativeName("Type", "uint32_t[32]")]
+        [NativeName("Type.Name", "uint32_t[32]")]
         [NativeName("Name", "lt_ref_pic_poc_lsb_sps")]
         public fixed uint LtRefPicPocLsbSps[32];
     }

@@ -131,10 +131,10 @@ namespace Silk.NET.BuildTools.Common.Functions
 
             GetDeclarationString(sb, @unsafe, partial, accessibility, @static, @delegate, returnType);
 
-            sb.Append("(");
+            sb.Append('(');
             if (Parameters.Count > 0)
             {
-                var parameterDeclarations = Parameters.Select((param) => { return GetDeclarationString(param, appendAttributes); }).ToList();
+                var parameterDeclarations = Parameters.Select(param => GetDeclarationString(param, appendAttributes)).ToList();
                 for (var index = 0; index < parameterDeclarations.Count; index++)
                 {
                     if (index != 0)
@@ -147,11 +147,11 @@ namespace Silk.NET.BuildTools.Common.Functions
                 }
             }
 
-            sb.Append(")");
+            sb.Append(')');
 
             if (GenericTypeParameters.Count != 0)
             {
-                sb.Append(" ");
+                sb.Append(' ');
                 for (var index = 0; index < GenericTypeParameters.Count; index++)
                 {
                     var p = GenericTypeParameters[index];
@@ -162,14 +162,14 @@ namespace Silk.NET.BuildTools.Common.Functions
                     sb.Append($"where {p.Name} : {constraints}");
                     if (index != GenericTypeParameters.Count - 1)
                     {
-                        sb.Append(" ");
+                        sb.Append(' ');
                     }
                 }
             }
 
             if (semicolon)
             {
-                sb.Append(";");
+                sb.Append(';');
             }
 
             return sb.ToString();
@@ -275,7 +275,12 @@ namespace Silk.NET.BuildTools.Common.Functions
                         break;
                 }
 
-                attributes.AddRange(parameter.Attributes.Select(x => x.Name + "(" + string.Join(", ", x.Arguments) + ")"));
+                attributes.AddRange
+                (
+                    parameter.Attributes
+                        .Where(x => x.Name != "BuildToolsIntrinsic")
+                        .Select(x => x.Name + "(" + string.Join(", ", x.Arguments) + ")")
+                );
 
                 if (attributes.Count != 0)
                 {
@@ -362,5 +367,11 @@ namespace Silk.NET.BuildTools.Common.Functions
             var paramTypes = string.Join(", ", Parameters.Select(x => x.Type).Concat(new[] {ReturnType}));
             return $"delegate* unmanaged{convention}<{paramTypes}>";
         }
+
+        /// <summary>
+        /// Gets all attributes that are actual attributes and not BuildTools intrinsics.
+        /// </summary>
+        /// <returns>Attributes.</returns>
+        public IEnumerable<Attribute> GetAttributes() => Attributes.Where(x => x.Name != "BuildToolsIntrinsic");
     }
 }

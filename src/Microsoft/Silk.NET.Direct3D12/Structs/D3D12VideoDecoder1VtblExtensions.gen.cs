@@ -372,9 +372,11 @@ public unsafe static class D3D12VideoDecoder1VtblExtensions
     public static VideoDecoderDesc GetDesc(this ComPtr<ID3D12VideoDecoder1> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        VideoDecoderDesc ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDecoder1*, VideoDecoderDesc>)@this->LpVtbl[8])(@this);
-        return ret;
+        VideoDecoderDesc silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        VideoDecoderDesc* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoDecoder1*, VideoDecoderDesc*, VideoDecoderDesc*>)@this->LpVtbl[8])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>

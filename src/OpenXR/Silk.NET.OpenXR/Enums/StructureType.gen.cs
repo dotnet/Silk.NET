@@ -717,6 +717,33 @@ namespace Silk.NET.OpenXR
         [Obsolete("Deprecated in favour of \"PerformanceMetricsCounterMeta\"")]
         [NativeName("Name", "XR_TYPE_PERFORMANCE_METRICS_COUNTER_META")]
         TypePerformanceMetricsCounterMeta = 1000232002,
+        [Obsolete("Deprecated in favour of \"SystemHeadsetIDPropertiesMeta\"")]
+        [NativeName("Name", "XR_TYPE_SYSTEM_HEADSET_ID_PROPERTIES_META")]
+        TypeSystemHeadsetIDPropertiesMeta = 1000245000,
+        [Obsolete("Deprecated in favour of \"PassthroughCreateInfoHtc\"")]
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_CREATE_INFO_HTC")]
+        TypePassthroughCreateInfoHtc = 1000317001,
+        [Obsolete("Deprecated in favour of \"PassthroughColorHtc\"")]
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_COLOR_HTC")]
+        TypePassthroughColorHtc = 1000317002,
+        [Obsolete("Deprecated in favour of \"PassthroughMeshTransformInfoHtc\"")]
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_MESH_TRANSFORM_INFO_HTC")]
+        TypePassthroughMeshTransformInfoHtc = 1000317003,
+        [Obsolete("Deprecated in favour of \"CompositionLayerPassthroughHtc\"")]
+        [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_PASSTHROUGH_HTC")]
+        TypeCompositionLayerPassthroughHtc = 1000317004,
+        [Obsolete("Deprecated in favour of \"FoveationApplyInfoHtc\"")]
+        [NativeName("Name", "XR_TYPE_FOVEATION_APPLY_INFO_HTC")]
+        TypeFoveationApplyInfoHtc = 1000318000,
+        [Obsolete("Deprecated in favour of \"FoveationDynamicModeInfoHtc\"")]
+        [NativeName("Name", "XR_TYPE_FOVEATION_DYNAMIC_MODE_INFO_HTC")]
+        TypeFoveationDynamicModeInfoHtc = 1000318001,
+        [Obsolete("Deprecated in favour of \"FoveationCustomModeInfoHtc\"")]
+        [NativeName("Name", "XR_TYPE_FOVEATION_CUSTOM_MODE_INFO_HTC")]
+        TypeFoveationCustomModeInfoHtc = 1000318002,
+        [Obsolete("Deprecated in favour of \"ActiveActionSetPrioritiesExt\"")]
+        [NativeName("Name", "XR_TYPE_ACTIVE_ACTION_SET_PRIORITIES_EXT")]
+        TypeActiveActionSetPrioritiesExt = 1000373000,
         [NativeName("Name", "XR_TYPE_UNKNOWN")]
         Unknown = 0,
         [NativeName("Name", "XR_TYPE_API_LAYER_PROPERTIES")]
@@ -1187,5 +1214,23 @@ namespace Silk.NET.OpenXR
         PerformanceMetricsStateMeta = 1000232001,
         [NativeName("Name", "XR_TYPE_PERFORMANCE_METRICS_COUNTER_META")]
         PerformanceMetricsCounterMeta = 1000232002,
+        [NativeName("Name", "XR_TYPE_SYSTEM_HEADSET_ID_PROPERTIES_META")]
+        SystemHeadsetIDPropertiesMeta = 1000245000,
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_CREATE_INFO_HTC")]
+        PassthroughCreateInfoHtc = 1000317001,
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_COLOR_HTC")]
+        PassthroughColorHtc = 1000317002,
+        [NativeName("Name", "XR_TYPE_PASSTHROUGH_MESH_TRANSFORM_INFO_HTC")]
+        PassthroughMeshTransformInfoHtc = 1000317003,
+        [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_PASSTHROUGH_HTC")]
+        CompositionLayerPassthroughHtc = 1000317004,
+        [NativeName("Name", "XR_TYPE_FOVEATION_APPLY_INFO_HTC")]
+        FoveationApplyInfoHtc = 1000318000,
+        [NativeName("Name", "XR_TYPE_FOVEATION_DYNAMIC_MODE_INFO_HTC")]
+        FoveationDynamicModeInfoHtc = 1000318001,
+        [NativeName("Name", "XR_TYPE_FOVEATION_CUSTOM_MODE_INFO_HTC")]
+        FoveationCustomModeInfoHtc = 1000318002,
+        [NativeName("Name", "XR_TYPE_ACTIVE_ACTION_SET_PRIORITIES_EXT")]
+        ActiveActionSetPrioritiesExt = 1000373000,
     }
 }

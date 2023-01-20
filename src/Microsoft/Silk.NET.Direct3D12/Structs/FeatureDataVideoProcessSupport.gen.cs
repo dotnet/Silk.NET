@@ -179,8 +179,8 @@ namespace Silk.NET.Direct3D12
         [NativeName("Name", "FilterSupport")]
         public VideoProcessFilterFlags FilterSupport;
         
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
+        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE[32]")]
+        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE[32]")]
         [NativeName("Name", "FilterRangeSupport")]
         public FilterRangeSupportBuffer FilterRangeSupport;
 

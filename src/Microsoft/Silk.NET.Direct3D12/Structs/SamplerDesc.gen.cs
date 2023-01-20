@@ -113,8 +113,8 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "D3D12_COMPARISON_FUNC")]
         [NativeName("Name", "ComparisonFunc")]
         public ComparisonFunc ComparisonFunc;
-        [NativeName("Type", "FLOAT [4]")]
-        [NativeName("Type.Name", "FLOAT [4]")]
+        [NativeName("Type", "FLOAT[4]")]
+        [NativeName("Type.Name", "FLOAT[4]")]
         [NativeName("Name", "BorderColor")]
         public fixed float BorderColor[4];
 

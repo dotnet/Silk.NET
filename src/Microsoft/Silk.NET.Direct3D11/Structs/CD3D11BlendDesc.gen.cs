@@ -47,8 +47,8 @@ namespace Silk.NET.Direct3D11
         [NativeName("Name", "IndependentBlendEnable")]
         public Silk.NET.Core.Bool32 IndependentBlendEnable;
         
-        [NativeName("Type", "D3D11_RENDER_TARGET_BLEND_DESC [8]")]
-        [NativeName("Type.Name", "D3D11_RENDER_TARGET_BLEND_DESC [8]")]
+        [NativeName("Type", "D3D11_RENDER_TARGET_BLEND_DESC[8]")]
+        [NativeName("Type.Name", "D3D11_RENDER_TARGET_BLEND_DESC[8]")]
         [NativeName("Name", "RenderTarget")]
         public RenderTargetBuffer RenderTarget;
 

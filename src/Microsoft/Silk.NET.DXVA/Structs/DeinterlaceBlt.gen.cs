@@ -102,8 +102,8 @@ namespace Silk.NET.DXVA
         [NativeName("Name", "Alpha")]
         public float Alpha;
         
-        [NativeName("Type", "DXVA_VideoSample [32]")]
-        [NativeName("Type.Name", "DXVA_VideoSample [32]")]
+        [NativeName("Type", "DXVA_VideoSample[32]")]
+        [NativeName("Type.Name", "DXVA_VideoSample[32]")]
         [NativeName("Name", "Source")]
         public SourceBuffer Source;
 

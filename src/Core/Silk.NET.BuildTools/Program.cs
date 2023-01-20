@@ -59,13 +59,14 @@ namespace Silk.NET.BuildTools
                     // picked up in Generator.cs
                     continue;
                 }
-                else if (arg.StartsWith("--"))
+
+                if (arg.StartsWith("--"))
                 {
                     Console.WriteLine($"Control descriptor \"{arg}\" will be applied to every job herein.");
                     extraCtrls.Add(arg[2..]);
                     continue;
                 }
-                
+
                 var jobSw = Stopwatch.StartNew();
                 var abs = Path.GetFullPath(arg);
                 Environment.CurrentDirectory = Path.GetDirectoryName

@@ -183,18 +183,22 @@ public unsafe static class D2D1RadialGradientBrushVtblExtensions
     public static Silk.NET.Maths.Vector2D<float> GetCenter(this ComPtr<ID2D1RadialGradientBrush> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        Silk.NET.Maths.Vector2D<float> ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1RadialGradientBrush*, Silk.NET.Maths.Vector2D<float>>)@this->LpVtbl[12])(@this);
-        return ret;
+        Silk.NET.Maths.Vector2D<float> silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        Silk.NET.Maths.Vector2D<float>* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1RadialGradientBrush*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*>)@this->LpVtbl[12])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>
     public static Silk.NET.Maths.Vector2D<float> GetGradientOriginOffset(this ComPtr<ID2D1RadialGradientBrush> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        Silk.NET.Maths.Vector2D<float> ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1RadialGradientBrush*, Silk.NET.Maths.Vector2D<float>>)@this->LpVtbl[13])(@this);
-        return ret;
+        Silk.NET.Maths.Vector2D<float> silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        Silk.NET.Maths.Vector2D<float>* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1RadialGradientBrush*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*>)@this->LpVtbl[13])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>

@@ -372,9 +372,11 @@ public unsafe static class D3D12VideoExtensionCommandVtblExtensions
     public static VideoExtensionCommandDesc GetDesc(this ComPtr<ID3D12VideoExtensionCommand> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        VideoExtensionCommandDesc ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoExtensionCommand*, VideoExtensionCommandDesc>)@this->LpVtbl[8])(@this);
-        return ret;
+        VideoExtensionCommandDesc silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        VideoExtensionCommandDesc* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12VideoExtensionCommand*, VideoExtensionCommandDesc*, VideoExtensionCommandDesc*>)@this->LpVtbl[8])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>

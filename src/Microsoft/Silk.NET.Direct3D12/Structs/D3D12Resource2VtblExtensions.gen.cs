@@ -437,9 +437,11 @@ public unsafe static class D3D12Resource2VtblExtensions
     public static ResourceDesc GetDesc(this ComPtr<ID3D12Resource2> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        ResourceDesc ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, ResourceDesc>)@this->LpVtbl[10])(@this);
-        return ret;
+        ResourceDesc silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        ResourceDesc* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, ResourceDesc*, ResourceDesc*>)@this->LpVtbl[10])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>
@@ -647,9 +649,11 @@ public unsafe static class D3D12Resource2VtblExtensions
     public static ResourceDesc1 GetDesc1(this ComPtr<ID3D12Resource2> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        ResourceDesc1 ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, ResourceDesc1>)@this->LpVtbl[16])(@this);
-        return ret;
+        ResourceDesc1 silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        ResourceDesc1* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Resource2*, ResourceDesc1*, ResourceDesc1*>)@this->LpVtbl[16])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>

@@ -105,9 +105,11 @@ public unsafe static class D2D1LayerVtblExtensions
     public static Silk.NET.Maths.Vector2D<float> GetSize(this ComPtr<ID2D1Layer> thisVtbl)
     {
         var @this = thisVtbl.Handle;
-        Silk.NET.Maths.Vector2D<float> ret = default;
-        ret = ((delegate* unmanaged[Stdcall]<ID2D1Layer*, Silk.NET.Maths.Vector2D<float>>)@this->LpVtbl[4])(@this);
-        return ret;
+        Silk.NET.Maths.Vector2D<float> silkDotNetReturnFixupResult;
+        var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
+        Silk.NET.Maths.Vector2D<float>* ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID2D1Layer*, Silk.NET.Maths.Vector2D<float>*, Silk.NET.Maths.Vector2D<float>*>)@this->LpVtbl[4])(@this, pSilkDotNetReturnFixupResult);
+        return *ret;
     }
 
     /// <summary>To be documented.</summary>

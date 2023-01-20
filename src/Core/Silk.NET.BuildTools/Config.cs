@@ -14,7 +14,7 @@ namespace Silk.NET.BuildTools
         [JsonProperty("tasks")] public BindTask[] Tasks { get; set; }
     }
 
-    public struct BindTask
+    public class BindTask
     {
         // TODO the dishwasher
         [JsonProperty("profileName")] public string Name { get; set; }
@@ -36,11 +36,12 @@ namespace Silk.NET.BuildTools
         [JsonProperty("overloadExclusions")] public Dictionary<string, string[]>? OverloaderExclusions { get; set; }
         [JsonProperty("extensionsNamespace")] public string ExtensionsNamespace { get; set; }
         [JsonProperty("nameContainer")] public NameContainer NameContainer { get; set; }
-        [JsonProperty("typeMaps")] public List<Dictionary<string, string>> TypeMaps { get; set; }
+
+        [JsonProperty("typeMaps")] public List<Dictionary<string, string>> TypeMaps { get; set; } = new();
         // TODO the following 2 properties are only implemented in Clang. implement on ConvertConstruct?
-        [JsonProperty("exclude")] public List<string> ExcludedNativeNames { get; set; }
-        [JsonProperty("rename")] public Dictionary<string, string> RenamedNativeNames { get; set; }
-        [JsonProperty("copy")] public Dictionary<string, string> CopyFiles { get; set; }
+        [JsonProperty("exclude")] public List<string> ExcludedNativeNames { get; set; } = new();
+        [JsonProperty("rename")] public Dictionary<string, string> RenamedNativeNames { get; set; } = new();
+        [JsonProperty("copy")] public Dictionary<string, string> CopyFiles { get; set; } = new();
 
         public void InjectTypeMap(Dictionary<string, string> map)
             => TypeMaps.Insert

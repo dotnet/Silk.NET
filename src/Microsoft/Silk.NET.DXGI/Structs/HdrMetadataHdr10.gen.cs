@@ -48,20 +48,20 @@ namespace Silk.NET.DXGI
             }
         }
 
-        [NativeName("Type", "UINT16 [2]")]
-        [NativeName("Type.Name", "UINT16 [2]")]
+        [NativeName("Type", "UINT16[2]")]
+        [NativeName("Type.Name", "UINT16[2]")]
         [NativeName("Name", "RedPrimary")]
         public fixed ushort RedPrimary[2];
-        [NativeName("Type", "UINT16 [2]")]
-        [NativeName("Type.Name", "UINT16 [2]")]
+        [NativeName("Type", "UINT16[2]")]
+        [NativeName("Type.Name", "UINT16[2]")]
         [NativeName("Name", "GreenPrimary")]
         public fixed ushort GreenPrimary[2];
-        [NativeName("Type", "UINT16 [2]")]
-        [NativeName("Type.Name", "UINT16 [2]")]
+        [NativeName("Type", "UINT16[2]")]
+        [NativeName("Type.Name", "UINT16[2]")]
         [NativeName("Name", "BluePrimary")]
         public fixed ushort BluePrimary[2];
-        [NativeName("Type", "UINT16 [2]")]
-        [NativeName("Type.Name", "UINT16 [2]")]
+        [NativeName("Type", "UINT16[2]")]
+        [NativeName("Type.Name", "UINT16[2]")]
         [NativeName("Name", "WhitePoint")]
         public fixed ushort WhitePoint[2];
 
