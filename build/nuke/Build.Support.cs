@@ -110,7 +110,21 @@ partial class Build
         }
     }
 
-    Target Prerequisites => _ => _.Executes(GenerateSolution);
+    Target Prerequisites => _ => _.Executes
+    (
+        () =>
+        {
+            try
+            {
+                DotNet("dotnet nuget remove source \"Silk-PushPackages\"");
+            }
+            catch
+            {
+                // probably hasn't existed yet, don't care.
+            }
+            GenerateSolution();
+        }
+    );
 
     AbsolutePath SourceDirectory => RootDirectory / "src";
     
