@@ -558,6 +558,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Direct3D11.Extensions.D3D11On12", "src\Microsoft\Extensions\Silk.NET.Direct3D11.Extensions.D3D11On12\Silk.NET.Direct3D11.Extensions.D3D11On12.csproj", "{82626916-C5F3-46E7-B0EC-1D38191450C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.DirectComposition", "src\Microsoft\Silk.NET.DirectComposition\Silk.NET.DirectComposition.csproj", "{8773396C-5EDF-498C-97D7-1D2728CB969B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3375,6 +3377,18 @@ Global
 		{82626916-C5F3-46E7-B0EC-1D38191450C7}.Release|x64.Build.0 = Release|Any CPU
 		{82626916-C5F3-46E7-B0EC-1D38191450C7}.Release|x86.ActiveCfg = Release|Any CPU
 		{82626916-C5F3-46E7-B0EC-1D38191450C7}.Release|x86.Build.0 = Release|Any CPU
+		{8773396C-5EDF-498C-97D7-1D2728CB969B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8773396C-5EDF-498C-97D7-1D2728CB969B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8773396C-5EDF-498C-97D7-1D2728CB969B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8773396C-5EDF-498C-97D7-1D2728CB969B}.Debug|x64.Build.0 = Debug|Any CPU
+		{8773396C-5EDF-498C-97D7-1D2728CB969B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8773396C-5EDF-498C-97D7-1D2728CB969B}.Debug|x86.Build.0 = Debug|Any CPU
+		{8773396C-5EDF-498C-97D7-1D2728CB969B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8773396C-5EDF-498C-97D7-1D2728CB969B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8773396C-5EDF-498C-97D7-1D2728CB969B}.Release|x64.ActiveCfg = Release|Any CPU
+		{8773396C-5EDF-498C-97D7-1D2728CB969B}.Release|x64.Build.0 = Release|Any CPU
+		{8773396C-5EDF-498C-97D7-1D2728CB969B}.Release|x86.ActiveCfg = Release|Any CPU
+		{8773396C-5EDF-498C-97D7-1D2728CB969B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -3646,6 +3660,7 @@ Global
 		{FB16A3D6-8401-4421-AD6A-DFC85FD2DCC7} = {49BC383A-D7E6-4013-93C7-371479B984CC}
 		{58FECE86-7530-4E6F-BA61-512BE44DEA83} = {F2CF5D32-4B41-425E-B229-8FFC48F88063}
 		{82626916-C5F3-46E7-B0EC-1D38191450C7} = {58FECE86-7530-4E6F-BA61-512BE44DEA83}
+		{8773396C-5EDF-498C-97D7-1D2728CB969B} = {F2CF5D32-4B41-425E-B229-8FFC48F88063}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5273D7F-3334-48DF-94E3-41AE6816CD4D}
