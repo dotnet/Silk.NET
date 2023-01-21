@@ -17,6 +17,8 @@ namespace Silk.NET.OpenGLES
         Add = 0x104,
         [NativeName("Name", "GL_BLEND")]
         Blend = 0xBE2,
+        [NativeName("Name", "GL_REPLACE")]
+        Replace = 0x1E01,
         [System.Obsolete]
         [NativeName("Name", "GL_MODULATE")]
         Modulate = 0x2100,
@@ -27,5 +29,8 @@ namespace Silk.NET.OpenGLES
         ReplaceExt = 0x8062,
         [NativeName("Name", "GL_TEXTURE_ENV_BIAS_SGIX")]
         TextureEnvBiasSgix = 0x80BE,
+        [System.Obsolete]
+        [NativeName("Name", "GL_COMBINE")]
+        Combine = 0x8570,
     }
 }

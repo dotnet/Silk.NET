@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D10XHardwareOptions
         (
-            int? computeShadersPlusRawAndStructuredBuffersViaShader4X = null
+            Silk.NET.Core.Bool32? computeShadersPlusRawAndStructuredBuffersViaShader4X = null
         ) : this()
         {
             if (computeShadersPlusRawAndStructuredBuffersViaShader4X is not null)
@@ -34,6 +34,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "ComputeShaders_Plus_RawAndStructuredBuffers_Via_Shader_4_x")]
-        public int ComputeShadersPlusRawAndStructuredBuffersViaShader4X;
+        public Silk.NET.Core.Bool32 ComputeShadersPlusRawAndStructuredBuffersViaShader4X;
     }
 }

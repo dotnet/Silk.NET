@@ -19,10 +19,10 @@ namespace Silk.NET.Core.Win32Extras
     public unsafe readonly struct PfnPetwBufferCallback : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<EtwBufferHeader*, uint, EtwBufferCallbackInformation*, void*, int> Handle => (delegate* unmanaged[Cdecl]<EtwBufferHeader*, uint, EtwBufferCallbackInformation*, void*, int>) _handle;
+        public delegate* unmanaged[Cdecl]<EtwBufferHeader*, uint, EtwBufferCallbackInformation*, void*, Silk.NET.Core.Bool32> Handle => (delegate* unmanaged[Cdecl]<EtwBufferHeader*, uint, EtwBufferCallbackInformation*, void*, Silk.NET.Core.Bool32>) _handle;
         public PfnPetwBufferCallback
         (
-            delegate* unmanaged[Cdecl]<EtwBufferHeader*, uint, EtwBufferCallbackInformation*, void*, int> ptr
+            delegate* unmanaged[Cdecl]<EtwBufferHeader*, uint, EtwBufferCallbackInformation*, void*, Silk.NET.Core.Bool32> ptr
         ) => _handle = ptr;
 
         public PfnPetwBufferCallback
@@ -35,7 +35,7 @@ namespace Silk.NET.Core.Win32Extras
 
         public static implicit operator nint(PfnPetwBufferCallback pfn) => (nint) pfn.Handle;
         public static explicit operator PfnPetwBufferCallback(nint pfn)
-            => new PfnPetwBufferCallback((delegate* unmanaged[Cdecl]<EtwBufferHeader*, uint, EtwBufferCallbackInformation*, void*, int>) pfn);
+            => new PfnPetwBufferCallback((delegate* unmanaged[Cdecl]<EtwBufferHeader*, uint, EtwBufferCallbackInformation*, void*, Silk.NET.Core.Bool32>) pfn);
 
         public static implicit operator PfnPetwBufferCallback(PetwBufferCallback proc)
             => new PfnPetwBufferCallback(proc);
@@ -43,11 +43,11 @@ namespace Silk.NET.Core.Win32Extras
         public static explicit operator PetwBufferCallback(PfnPetwBufferCallback pfn)
             => SilkMarshal.PtrToDelegate<PetwBufferCallback>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<EtwBufferHeader*, uint, EtwBufferCallbackInformation*, void*, int>(PfnPetwBufferCallback pfn) => pfn.Handle;
-        public static implicit operator PfnPetwBufferCallback(delegate* unmanaged[Cdecl]<EtwBufferHeader*, uint, EtwBufferCallbackInformation*, void*, int> ptr) => new PfnPetwBufferCallback(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<EtwBufferHeader*, uint, EtwBufferCallbackInformation*, void*, Silk.NET.Core.Bool32>(PfnPetwBufferCallback pfn) => pfn.Handle;
+        public static implicit operator PfnPetwBufferCallback(delegate* unmanaged[Cdecl]<EtwBufferHeader*, uint, EtwBufferCallbackInformation*, void*, Silk.NET.Core.Bool32> ptr) => new PfnPetwBufferCallback(ptr);
     }
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate int PetwBufferCallback(EtwBufferHeader* arg0, uint arg1, EtwBufferCallbackInformation* arg2, void* arg3);
+    public unsafe delegate Silk.NET.Core.Bool32 PetwBufferCallback(EtwBufferHeader* arg0, uint arg1, EtwBufferCallbackInformation* arg2, void* arg3);
 }
 

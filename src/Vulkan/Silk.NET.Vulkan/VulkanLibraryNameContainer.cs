@@ -14,7 +14,7 @@ namespace Silk.NET.Vulkan
         public override string Linux => "libvulkan.so.1";
 
         /// <inheritdoc />
-        public override string MacOS => "libMoltenVK.dylib";
+        public override string MacOS => "libvulkan.dylib";
 
         /// <inheritdoc />
         public override string Android => "libvulkan.so";

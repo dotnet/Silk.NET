@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -32,13 +32,21 @@ namespace Silk.NET.BuildTools.Overloading
             new StringOverloader()
         };
 
-        public static IComplexFunctionOverloader[] FunctionOverloaders { get; } =
+        public static IComplexFunctionOverloader[][] FunctionOverloaders { get; } =
         {
-            new ReturnTypeOverloader(),
-            new ArrayParameterOverloader(),
-            new StringArrayOverloader(),
-            new SpanOverloader(),
-            new ImplicitCountSpanOverloader()
+            new IComplexFunctionOverloader[]
+            {
+                new ReturnTypeOverloader(),
+                new ArrayParameterOverloader(),
+                new StringArrayOverloader(),
+                new SpanOverloader(),
+                new ImplicitCountSpanOverloader(),
+                new ComPtrOverloader()
+            },
+            new IComplexFunctionOverloader[]
+            {
+                new NonKhrReturnTypeOverloader()
+            }
         };
 
         private static IEnumerable<T> Filter<T>
@@ -59,13 +67,7 @@ namespace Silk.NET.BuildTools.Overloading
             Dictionary<string, string[]>? overloadExcludedFunctions
         )
         {
-            var enumerable = functions;
-            foreach (var overloaders in ParameterOverloaders)
-            {
-                enumerable = Get(enumerable, overloaders);
-            }
-
-            foreach (var overload in enumerable)
+            foreach (var overload in ParameterOverloaders.Aggregate(functions, Get))
             {
                 foreach (var final in SimpleReturnOverloader.GetWithOverloads
                     (overload, profile, ReturnOverloaders.Filter(overload, overloadExcludedFunctions)))
@@ -91,20 +93,39 @@ namespace Silk.NET.BuildTools.Overloading
         (
             IEnumerable<Function> allFunctions,
             Project core,
-            Dictionary<string, string[]>? overloadExcludedFunctions
+            Dictionary<string, string[]>? overloadExcludedFunctions,
+            bool fastCheck = false
         )
         {
-            return Get().RemoveDuplicates(CheckDuplicate);
+            var ret = allFunctions.Select(x => ((ImplementedFunction?)null, x)).ToList();
+            foreach (var pipe in FunctionOverloaders)
+            {
+                ret.AddRange(Get(ret.Select(x => x.x), pipe).ToList().Select(x => (x, x.Signature)));
+            }
+
+            var selector = ret.Where(pair => pair.Item1 is not null)
+                .Select(x => x.Item1);
+            
+            return fastCheck
+                ? selector.RemoveDuplicatesFast(CheckDuplicate, GetSignature)
+                : selector.RemoveDuplicates(CheckDuplicate);
 
             static bool CheckDuplicate(ImplementedFunction left, ImplementedFunction right)
                 => left.Signature.Equals(right.Signature);
 
-            IEnumerable<ImplementedFunction> Get()
+            static string GetSignature(ImplementedFunction func)
+                => func.Signature.ToString(null, returnType: false, appendAttributes: false);
+
+            IEnumerable<ImplementedFunction> Get
+            (
+                IEnumerable<Function> functions,
+                IComplexFunctionOverloader[] overloaders
+            )
             {
-                foreach (var function in allFunctions)
+                foreach (var function in functions)
                 {
                     foreach (var overload in ComplexFunctionOverloader.GetOverloads
-                        (function, core, FunctionOverloaders.Filter(function, overloadExcludedFunctions)))
+                                 (function, core, overloaders.Filter(function, overloadExcludedFunctions)))
                     {
                         yield return overload;
                     }

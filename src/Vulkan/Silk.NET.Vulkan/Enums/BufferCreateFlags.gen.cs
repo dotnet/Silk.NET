@@ -30,9 +30,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"DeviceAddressCaptureReplayBitKhr\"")]
         [NativeName("Name", "VK_BUFFER_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT_KHR")]
         BufferCreateDeviceAddressCaptureReplayBitKhr = 16,
-        [Obsolete("Deprecated in favour of \"Reserved5BitAmd\"")]
-        [NativeName("Name", "VK_BUFFER_CREATE_RESERVED_5_BIT_AMD")]
-        BufferCreateReserved5BitAmd = 32,
+        [Obsolete("Deprecated in favour of \"DescriptorBufferCaptureReplayBitExt\"")]
+        [NativeName("Name", "VK_BUFFER_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
+        BufferCreateDescriptorBufferCaptureReplayBitExt = 32,
         [Obsolete("Deprecated in favour of \"ProtectedBit\"")]
         [NativeName("Name", "VK_BUFFER_CREATE_PROTECTED_BIT")]
         BufferCreateProtectedBit = 8,
@@ -49,8 +49,8 @@ namespace Silk.NET.Vulkan
         DeviceAddressCaptureReplayBitExt = 16,
         [NativeName("Name", "VK_BUFFER_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT_KHR")]
         DeviceAddressCaptureReplayBitKhr = 16,
-        [NativeName("Name", "VK_BUFFER_CREATE_RESERVED_5_BIT_AMD")]
-        Reserved5BitAmd = 32,
+        [NativeName("Name", "VK_BUFFER_CREATE_DESCRIPTOR_BUFFER_CAPTURE_REPLAY_BIT_EXT")]
+        DescriptorBufferCaptureReplayBitExt = 32,
         [NativeName("Name", "VK_BUFFER_CREATE_PROTECTED_BIT")]
         ProtectedBit = 8,
         [NativeName("Name", "VK_BUFFER_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT")]

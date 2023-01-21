@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D9
 {
     [Guid("85c31227-3de5-4f00-9b3a-f11ac38c18b5")]
     [NativeName("Name", "IDirect3DTexture9")]
-    public unsafe partial struct IDirect3DTexture9
+    public unsafe partial struct IDirect3DTexture9 : IComVtbl<IDirect3DTexture9>, IComVtbl<IDirect3DBaseTexture9>, IComVtbl<IDirect3DResource9>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("85c31227-3de5-4f00-9b3a-f11ac38c18b5");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator IDirect3DBaseTexture9(IDirect3DTexture9 val)
             => Unsafe.As<IDirect3DTexture9, IDirect3DBaseTexture9>(ref val);
@@ -52,7 +55,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -63,7 +66,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -75,7 +78,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -89,7 +92,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -100,7 +103,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -109,7 +112,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -118,7 +121,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevice);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, IDirect3DDevice9**, int>)@this->LpVtbl[3])(@this, ppDevice);
             return ret;
         }
 
@@ -129,46 +132,46 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (IDirect3DDevice9** ppDevicePtr = &ppDevice)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevicePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, IDirect3DDevice9**, int>)@this->LpVtbl[3])(@this, ppDevicePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(Guid* refguid, void* pData, uint SizeOfData, uint Flags)
+        public readonly unsafe int SetPrivateData(Guid* refguid, [Flow(FlowDirection.In)] void* pData, uint SizeOfData, uint Flags)
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguid, pData, SizeOfData, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint, uint, int>)@this->LpVtbl[4])(@this, refguid, pData, SizeOfData, Flags);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData<T0>(Guid* refguid, ref T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+        public readonly unsafe int SetPrivateData<T0>(Guid* refguid, [Flow(FlowDirection.In)] in T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguid, pDataPtr, SizeOfData, Flags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint, uint, int>)@this->LpVtbl[4])(@this, refguid, pDataPtr, SizeOfData, Flags);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetPrivateData(ref Guid refguid, void* pData, uint SizeOfData, uint Flags)
+        public readonly unsafe int SetPrivateData(ref Guid refguid, [Flow(FlowDirection.In)] void* pData, uint SizeOfData, uint Flags)
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* refguidPtr = &refguid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguidPtr, pData, SizeOfData, Flags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint, uint, int>)@this->LpVtbl[4])(@this, refguidPtr, pData, SizeOfData, Flags);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetPrivateData<T0>(ref Guid refguid, ref T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
+        public readonly int SetPrivateData<T0>(ref Guid refguid, [Flow(FlowDirection.In)] in T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -176,7 +179,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint, uint, int>)LpVtbl[4])(@this, refguidPtr, pDataPtr, SizeOfData, Flags);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint, uint, int>)@this->LpVtbl[4])(@this, refguidPtr, pDataPtr, SizeOfData, Flags);
                 }
             }
             return ret;
@@ -187,7 +190,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pData, pSizeOfData);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint*, int>)@this->LpVtbl[5])(@this, refguid, pData, pSizeOfData);
             return ret;
         }
 
@@ -198,7 +201,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (uint* pSizeOfDataPtr = &pSizeOfData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pData, pSizeOfDataPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint*, int>)@this->LpVtbl[5])(@this, refguid, pData, pSizeOfDataPtr);
             }
             return ret;
         }
@@ -210,7 +213,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pDataPtr, pSizeOfData);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint*, int>)@this->LpVtbl[5])(@this, refguid, pDataPtr, pSizeOfData);
             }
             return ret;
         }
@@ -224,7 +227,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (uint* pSizeOfDataPtr = &pSizeOfData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguid, pDataPtr, pSizeOfDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint*, int>)@this->LpVtbl[5])(@this, refguid, pDataPtr, pSizeOfDataPtr);
                 }
             }
             return ret;
@@ -237,7 +240,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Guid* refguidPtr = &refguid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pData, pSizeOfData);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint*, int>)@this->LpVtbl[5])(@this, refguidPtr, pData, pSizeOfData);
             }
             return ret;
         }
@@ -251,7 +254,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (uint* pSizeOfDataPtr = &pSizeOfData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pData, pSizeOfDataPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint*, int>)@this->LpVtbl[5])(@this, refguidPtr, pData, pSizeOfDataPtr);
                 }
             }
             return ret;
@@ -266,7 +269,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void* pDataPtr = &pData)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pDataPtr, pSizeOfData);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint*, int>)@this->LpVtbl[5])(@this, refguidPtr, pDataPtr, pSizeOfData);
                 }
             }
             return ret;
@@ -283,7 +286,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (uint* pSizeOfDataPtr = &pSizeOfData)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint*, int>)LpVtbl[5])(@this, refguidPtr, pDataPtr, pSizeOfDataPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, void*, uint*, int>)@this->LpVtbl[5])(@this, refguidPtr, pDataPtr, pSizeOfDataPtr);
                     }
                 }
             }
@@ -295,7 +298,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, int>)LpVtbl[6])(@this, refguid);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, int>)@this->LpVtbl[6])(@this, refguid);
             return ret;
         }
 
@@ -306,7 +309,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Guid* refguidPtr = &refguid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, int>)LpVtbl[6])(@this, refguidPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Guid*, int>)@this->LpVtbl[6])(@this, refguidPtr);
             }
             return ret;
         }
@@ -316,7 +319,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, uint>)LpVtbl[7])(@this, PriorityNew);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, uint>)@this->LpVtbl[7])(@this, PriorityNew);
             return ret;
         }
 
@@ -325,7 +328,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint>)LpVtbl[8])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint>)@this->LpVtbl[8])(@this);
             return ret;
         }
 
@@ -333,7 +336,7 @@ namespace Silk.NET.Direct3D9
         public readonly void PreLoad()
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, void>)LpVtbl[9])(@this);
+            ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, void>)@this->LpVtbl[9])(@this);
         }
 
         /// <summary>To be documented.</summary>
@@ -341,7 +344,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             Resourcetype ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Resourcetype>)LpVtbl[10])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Resourcetype>)@this->LpVtbl[10])(@this);
             return ret;
         }
 
@@ -350,7 +353,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, uint>)LpVtbl[11])(@this, LODNew);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, uint>)@this->LpVtbl[11])(@this, LODNew);
             return ret;
         }
 
@@ -359,7 +362,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint>)LpVtbl[12])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint>)@this->LpVtbl[12])(@this);
             return ret;
         }
 
@@ -368,7 +371,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint>)LpVtbl[13])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint>)@this->LpVtbl[13])(@this);
             return ret;
         }
 
@@ -377,7 +380,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Texturefiltertype, int>)LpVtbl[14])(@this, FilterType);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Texturefiltertype, int>)@this->LpVtbl[14])(@this, FilterType);
             return ret;
         }
 
@@ -386,7 +389,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             Texturefiltertype ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Texturefiltertype>)LpVtbl[15])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Texturefiltertype>)@this->LpVtbl[15])(@this);
             return ret;
         }
 
@@ -394,7 +397,7 @@ namespace Silk.NET.Direct3D9
         public readonly void GenerateMipSubLevels()
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, void>)LpVtbl[16])(@this);
+            ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, void>)@this->LpVtbl[16])(@this);
         }
 
         /// <summary>To be documented.</summary>
@@ -402,7 +405,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, SurfaceDesc*, int>)LpVtbl[17])(@this, Level, pDesc);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, SurfaceDesc*, int>)@this->LpVtbl[17])(@this, Level, pDesc);
             return ret;
         }
 
@@ -413,7 +416,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (SurfaceDesc* pDescPtr = &pDesc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, SurfaceDesc*, int>)LpVtbl[17])(@this, Level, pDescPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, SurfaceDesc*, int>)@this->LpVtbl[17])(@this, Level, pDescPtr);
             }
             return ret;
         }
@@ -423,7 +426,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, IDirect3DSurface9**, int>)LpVtbl[18])(@this, Level, ppSurfaceLevel);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, IDirect3DSurface9**, int>)@this->LpVtbl[18])(@this, Level, ppSurfaceLevel);
             return ret;
         }
 
@@ -434,54 +437,54 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (IDirect3DSurface9** ppSurfaceLevelPtr = &ppSurfaceLevel)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, IDirect3DSurface9**, int>)LpVtbl[18])(@this, Level, ppSurfaceLevelPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, IDirect3DSurface9**, int>)@this->LpVtbl[18])(@this, Level, ppSurfaceLevelPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LockRect(uint Level, LockedRect* pLockedRect, Silk.NET.Maths.Rectangle<int>* pRect, uint Flags)
+        public readonly unsafe int LockRect(uint Level, LockedRect* pLockedRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint Flags)
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, Level, pLockedRect, pRect, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[19])(@this, Level, pLockedRect, pRect, Flags);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LockRect(uint Level, LockedRect* pLockedRect, ref Silk.NET.Maths.Rectangle<int> pRect, uint Flags)
+        public readonly unsafe int LockRect(uint Level, LockedRect* pLockedRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint Flags)
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, Level, pLockedRect, pRectPtr, Flags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[19])(@this, Level, pLockedRect, pRectPtr, Flags);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LockRect(uint Level, ref LockedRect pLockedRect, Silk.NET.Maths.Rectangle<int>* pRect, uint Flags)
+        public readonly unsafe int LockRect(uint Level, ref LockedRect pLockedRect, [Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pRect, uint Flags)
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (LockedRect* pLockedRectPtr = &pLockedRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, Level, pLockedRectPtr, pRect, Flags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[19])(@this, Level, pLockedRectPtr, pRect, Flags);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LockRect(uint Level, ref LockedRect pLockedRect, ref Silk.NET.Maths.Rectangle<int> pRect, uint Flags)
+        public readonly int LockRect(uint Level, ref LockedRect pLockedRect, [Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pRect, uint Flags)
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (LockedRect* pLockedRectPtr = &pLockedRect)
             {
-                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Box2D<int>* pRectPtr = &pRect)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, Level, pLockedRectPtr, pRectPtr, Flags);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, LockedRect*, Silk.NET.Maths.Box2D<int>*, uint, int>)@this->LpVtbl[19])(@this, Level, pLockedRectPtr, pRectPtr, Flags);
                 }
             }
             return ret;
@@ -492,29 +495,63 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, int>)LpVtbl[20])(@this, Level);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, uint, int>)@this->LpVtbl[20])(@this, Level);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddDirtyRect(Silk.NET.Maths.Rectangle<int>* pDirtyRect)
+        public readonly unsafe int AddDirtyRect([Flow(FlowDirection.In)] Silk.NET.Maths.Box2D<int>* pDirtyRect)
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[21])(@this, pDirtyRect);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[21])(@this, pDirtyRect);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddDirtyRect(ref Silk.NET.Maths.Rectangle<int> pDirtyRect)
+        public readonly int AddDirtyRect([Flow(FlowDirection.In)] in Silk.NET.Maths.Box2D<int> pDirtyRect)
         {
             var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<int>* pDirtyRectPtr = &pDirtyRect)
+            fixed (Silk.NET.Maths.Box2D<int>* pDirtyRectPtr = &pDirtyRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[21])(@this, pDirtyRectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DTexture9*, Silk.NET.Maths.Box2D<int>*, int>)@this->LpVtbl[21])(@this, pDirtyRectPtr);
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetDevice<TI0>(ref ComPtr<TI0> ppDevice) where TI0 : unmanaged, IComVtbl<IDirect3DDevice9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetDevice((IDirect3DDevice9**) ppDevice.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int GetSurfaceLevel<TI0>(uint Level, ref ComPtr<TI0> ppSurfaceLevel) where TI0 : unmanaged, IComVtbl<IDirect3DSurface9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->GetSurfaceLevel(Level, (IDirect3DSurface9**) ppSurfaceLevel.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

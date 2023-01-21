@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataD3D11Options3
         (
-            int? vPAndRTArrayIndexFromAnyShaderFeedingRasterizer = null
+            Silk.NET.Core.Bool32? vPAndRTArrayIndexFromAnyShaderFeedingRasterizer = null
         ) : this()
         {
             if (vPAndRTArrayIndexFromAnyShaderFeedingRasterizer is not null)
@@ -34,6 +34,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "VPAndRTArrayIndexFromAnyShaderFeedingRasterizer")]
-        public int VPAndRTArrayIndexFromAnyShaderFeedingRasterizer;
+        public Silk.NET.Core.Bool32 VPAndRTArrayIndexFromAnyShaderFeedingRasterizer;
     }
 }

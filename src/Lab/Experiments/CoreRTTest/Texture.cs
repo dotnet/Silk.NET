@@ -17,7 +17,10 @@ namespace Tutorial
             Image<Rgba32> img = (Image<Rgba32>)Image.Load(path);
             img.Mutate(x => x.Flip(FlipMode.Vertical));
 
-            fixed (void* data = &MemoryMarshal.GetReference(img.GetPixelRowSpan(0)))
+            Rgba32[] arr = new Rgba32[img.Width * img.Height];
+            img.CopyPixelDataTo(arr);
+            
+            fixed (void* data = arr)
             {
                 Load(gl, data, (uint)img.Width, (uint)img.Height);
             }

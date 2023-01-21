@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -17,15 +17,39 @@ namespace Silk.NET.BuildTools.Cpp
 {
     public static class ComVtblProcessor
     {
-        public static IEnumerable<ImplementedFunction> GetHelperFunctions(Struct @struct, Profile profile)
+        public static IEnumerable<ImplementedFunction> GetHelperFunctions
+        (
+            Struct @struct,
+            Profile profile,
+            bool thisInScope = false,
+            string vtbl = "LpVtbl"
+        )
         {
             var sb = new StringBuilder();
-            foreach (var vtblFunction in GetWithVariants(@struct.Vtbl, profile))
+            var all = GetWithVariants(@struct.Vtbl, profile).ToList();
+            foreach (var vtblFunction in all)
             {
                 sb.Clear();
-                Implement(sb, vtblFunction.New, @struct, vtblFunction.Original.VtblIndex);
+                Implement(sb, vtblFunction.New, @struct, vtblFunction.Original.VtblIndex, false, thisInScope);
                 vtblFunction.New.IsReadOnly = true;
+                vtblFunction.New.InvocationPrefix = "@this->";
                 yield return new ImplementedFunction(vtblFunction.New, sb, vtblFunction.Original);
+            }
+
+            foreach (var complex in Overloader.GetOverloads(all.Select(x => x.New), profile.Projects["Core"], null))
+            {
+                if (!thisInScope)
+                {
+                    complex.Body = Enumerable.Repeat
+                    (
+                        $"var @this = ({@struct.Name}*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));",
+                        1
+                    )
+                    .Concat(complex.Body)
+                    .ToArray();
+                }
+            
+                yield return complex;
             }
         }
 
@@ -72,7 +96,15 @@ namespace Silk.NET.BuildTools.Cpp
             }
         }
 
-        public static void Implement(StringBuilder sb, Function function, Struct parent, int index, bool retDeref = false)
+        public static void Implement
+        (
+            StringBuilder sb,
+            Function function,
+            Struct parent,
+            int index,
+            bool retDeref = false,
+            bool thisInScope = false
+        )
         {
             if (function.Attributes.IsBuildToolsIntrinsic(out var args) && args[0] == "$CPPRETFIXUP")
             {
@@ -95,13 +127,15 @@ namespace Silk.NET.BuildTools.Cpp
                             }
                         ).ToArray()
                     ).Build();
-                Implement(sb, fixedUpFunction, parent, index, true);
-                function.Attributes.RemoveAll(x => x.Name == "BuildToolsIntrinsic");
+                Implement(sb, fixedUpFunction, parent, index, true, thisInScope);
                 return;
             }
             
             var ind = "";
-            sb.AppendLine($"var @this = ({parent.Name}*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));");
+            if (!thisInScope)
+            {
+                sb.AppendLine($"var @this = ({parent.Name}*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));");
+            }
 
             var epilogue = new List<Action>();
             var parameterInvocations = new List<(Type Type, string Parameter)>
@@ -117,16 +151,19 @@ namespace Silk.NET.BuildTools.Cpp
             for (var i = 0; i < function.Parameters.Count; i++)
             {
                 var parameter = function.Parameters[i];
+
+                string name = Utilities.CSharpKeywords.Contains(parameter.Name) ? $"@{parameter.Name}" : parameter.Name;
+
                 if (parameter.Type.Name == "string")
                 {
                     var nativeStringEncoding = parameter.Type.MapNativeString();
-                    sb.Append($"var {parameter.Name}Ptr = (byte*) SilkMarshal.StringToPtr({parameter.Name}, ");
+                    sb.Append($"var {parameter.Name}Ptr = (byte*) SilkMarshal.StringToPtr({name}, ");
                     sb.AppendLine($"{nativeStringEncoding});");
                     if (parameter.Type.IsIn || parameter.Type.IsByRef)
                     {
                         sb.AppendLine($"var {parameter.Name}Pp = &{parameter.Name}Ptr;");
                         parameterInvocations.Add
-                            ((new Type {Name = "byte", IndirectionLevels = 2}, $"{parameter.Name}Pp"));
+                            ((new Type {Name = "byte", IndirectionLevels = 2}, $"{name}Pp"));
                     }
                     else if (parameter.Type.IsOut)
                     {
@@ -149,7 +186,7 @@ namespace Silk.NET.BuildTools.Cpp
                         {
                             if (parameter.Type.IsByRef)
                             {
-                                sb.Append($"{parameter.Name} = SilkMarshal.PtrToString(*{parameter.Name}Pp, ");
+                                sb.Append($"{name} = SilkMarshal.PtrToString(*{parameter.Name}Pp, ");
                                 sb.AppendLine($"{nativeStringEncoding});");
                             }
 
@@ -168,7 +205,7 @@ namespace Silk.NET.BuildTools.Cpp
                         .Build();
                     sb.AppendLine
                     (
-                        ind + $"fixed ({noRef} {parameter.Name}Ptr = &{parameter.Name})"
+                        ind + $"fixed ({noRef} {parameter.Name}Ptr = &{name})"
                     );
                     sb.AppendLine(ind + "{");
                     parameterInvocations.Add((noRef, $"{parameter.Name}Ptr"));
@@ -184,7 +221,7 @@ namespace Silk.NET.BuildTools.Cpp
                 }
                 else
                 {
-                    parameterInvocations.Add((parameter.Type, parameter.Name));
+                    parameterInvocations.Add((parameter.Type, name));
                 }
             }
 
@@ -206,7 +243,7 @@ namespace Silk.NET.BuildTools.Cpp
 
             fnPtrSig += function.ReturnType;
             var fnPtrPre = function.ReturnType.ToString() != "void" ? $"{ind}ret = " : ind;
-            var fnPtrInv = $"LpVtbl[{index}])({string.Join(", ", parameterInvocations.Select(x => x.Parameter))});";
+            var fnPtrInv = $"@this->LpVtbl[{index}])({string.Join(", ", parameterInvocations.Select(x => x.Parameter))});";
             if (conv == string.Empty)
             {
                 sb.AppendLine("#if NET5_0_OR_GREATER");

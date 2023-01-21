@@ -23,9 +23,9 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoEncodeH264VclFrameInfoExt,
             void* pNext = null,
-            VideoEncodeH264ReferenceListsEXT* pReferenceFinalLists = null,
+            VideoEncodeH264ReferenceListsInfoEXT* pReferenceFinalLists = null,
             uint? naluSliceEntryCount = null,
-            VideoEncodeH264NaluSliceEXT* pNaluSliceEntries = null,
+            VideoEncodeH264NaluSliceInfoEXT* pNaluSliceEntries = null,
             Video.StdVideoEncodeH264PictureInfo* pCurrentPictureInfo = null
         ) : this()
         {
@@ -71,20 +71,20 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264ReferenceListsEXT*")]
-        [NativeName("Type.Name", "VkVideoEncodeH264ReferenceListsEXT")]
+        [NativeName("Type", "VkVideoEncodeH264ReferenceListsInfoEXT*")]
+        [NativeName("Type.Name", "VkVideoEncodeH264ReferenceListsInfoEXT")]
         [NativeName("Name", "pReferenceFinalLists")]
-        public VideoEncodeH264ReferenceListsEXT* PReferenceFinalLists;
+        public VideoEncodeH264ReferenceListsInfoEXT* PReferenceFinalLists;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "naluSliceEntryCount")]
         public uint NaluSliceEntryCount;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264NaluSliceEXT*")]
-        [NativeName("Type.Name", "VkVideoEncodeH264NaluSliceEXT")]
+        [NativeName("Type", "VkVideoEncodeH264NaluSliceInfoEXT*")]
+        [NativeName("Type.Name", "VkVideoEncodeH264NaluSliceInfoEXT")]
         [NativeName("Name", "pNaluSliceEntries")]
-        public VideoEncodeH264NaluSliceEXT* PNaluSliceEntries;
+        public VideoEncodeH264NaluSliceInfoEXT* PNaluSliceEntries;
 /// <summary></summary>
         [NativeName("Type", "StdVideoEncodeH264PictureInfo*")]
         [NativeName("Type.Name", "StdVideoEncodeH264PictureInfo")]

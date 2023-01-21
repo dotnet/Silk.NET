@@ -22,7 +22,7 @@ namespace Silk.NET.Direct3D12
         public FeatureDataCrossNode
         (
             CrossNodeSharingTier? sharingTier = null,
-            int? atomicShaderInstructions = null
+            Silk.NET.Core.Bool32? atomicShaderInstructions = null
         ) : this()
         {
             if (sharingTier is not null)
@@ -45,6 +45,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "AtomicShaderInstructions")]
-        public int AtomicShaderInstructions;
+        public Silk.NET.Core.Bool32 AtomicShaderInstructions;
     }
 }

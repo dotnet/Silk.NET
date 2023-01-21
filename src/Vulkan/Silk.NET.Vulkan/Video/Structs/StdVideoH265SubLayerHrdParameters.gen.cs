@@ -30,20 +30,20 @@ namespace Silk.NET.Vulkan.Video
             }
         }
 
-        [NativeName("Type", "uint32_t [32]")]
-        [NativeName("Type.Name", "uint32_t [32]")]
+        [NativeName("Type", "uint32_t[32]")]
+        [NativeName("Type.Name", "uint32_t[32]")]
         [NativeName("Name", "bit_rate_value_minus1")]
         public fixed uint BitRateValueMinus1[32];
-        [NativeName("Type", "uint32_t [32]")]
-        [NativeName("Type.Name", "uint32_t [32]")]
+        [NativeName("Type", "uint32_t[32]")]
+        [NativeName("Type.Name", "uint32_t[32]")]
         [NativeName("Name", "cpb_size_value_minus1")]
         public fixed uint CpbSizeValueMinus1[32];
-        [NativeName("Type", "uint32_t [32]")]
-        [NativeName("Type.Name", "uint32_t [32]")]
+        [NativeName("Type", "uint32_t[32]")]
+        [NativeName("Type.Name", "uint32_t[32]")]
         [NativeName("Name", "cpb_size_du_value_minus1")]
         public fixed uint CpbSizeDuValueMinus1[32];
-        [NativeName("Type", "uint32_t [32]")]
-        [NativeName("Type.Name", "uint32_t [32]")]
+        [NativeName("Type", "uint32_t[32]")]
+        [NativeName("Type.Name", "uint32_t[32]")]
         [NativeName("Name", "bit_rate_du_value_minus1")]
         public fixed uint BitRateDuValueMinus1[32];
 

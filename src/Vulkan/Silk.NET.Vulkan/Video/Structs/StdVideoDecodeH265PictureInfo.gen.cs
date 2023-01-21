@@ -25,10 +25,10 @@ namespace Silk.NET.Vulkan.Video
             byte? spsVideoParameterSetId = null,
             byte? ppsSeqParameterSetId = null,
             byte? ppsPicParameterSetId = null,
-            byte? numShortTermRefPicSets = null,
+            byte? numDeltaPocsOfRefRpsIdx = null,
             int? picOrderCntVal = null,
             ushort? numBitsForSTRefPicSetInSlice = null,
-            byte? numDeltaPocsOfRefRpsIdx = null
+            ushort? reserved = null
         ) : this()
         {
             if (flags is not null)
@@ -51,9 +51,9 @@ namespace Silk.NET.Vulkan.Video
                 PpsPicParameterSetId = ppsPicParameterSetId.Value;
             }
 
-            if (numShortTermRefPicSets is not null)
+            if (numDeltaPocsOfRefRpsIdx is not null)
             {
-                NumShortTermRefPicSets = numShortTermRefPicSets.Value;
+                NumDeltaPocsOfRefRpsIdx = numDeltaPocsOfRefRpsIdx.Value;
             }
 
             if (picOrderCntVal is not null)
@@ -66,9 +66,9 @@ namespace Silk.NET.Vulkan.Video
                 NumBitsForSTRefPicSetInSlice = numBitsForSTRefPicSetInSlice.Value;
             }
 
-            if (numDeltaPocsOfRefRpsIdx is not null)
+            if (reserved is not null)
             {
-                NumDeltaPocsOfRefRpsIdx = numDeltaPocsOfRefRpsIdx.Value;
+                Reserved = reserved.Value;
             }
         }
 
@@ -95,8 +95,8 @@ namespace Silk.NET.Vulkan.Video
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "num_short_term_ref_pic_sets")]
-        public byte NumShortTermRefPicSets;
+        [NativeName("Name", "NumDeltaPocsOfRefRpsIdx")]
+        public byte NumDeltaPocsOfRefRpsIdx;
 
         [NativeName("Type", "int32_t")]
         [NativeName("Type.Name", "int32_t")]
@@ -108,20 +108,20 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "NumBitsForSTRefPicSetInSlice")]
         public ushort NumBitsForSTRefPicSetInSlice;
 
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "NumDeltaPocsOfRefRpsIdx")]
-        public byte NumDeltaPocsOfRefRpsIdx;
-        [NativeName("Type", "uint8_t [8]")]
-        [NativeName("Type.Name", "uint8_t [8]")]
+        [NativeName("Type", "uint16_t")]
+        [NativeName("Type.Name", "uint16_t")]
+        [NativeName("Name", "reserved")]
+        public ushort Reserved;
+        [NativeName("Type", "uint8_t[8]")]
+        [NativeName("Type.Name", "uint8_t[8]")]
         [NativeName("Name", "RefPicSetStCurrBefore")]
         public fixed byte RefPicSetStCurrBefore[8];
-        [NativeName("Type", "uint8_t [8]")]
-        [NativeName("Type.Name", "uint8_t [8]")]
+        [NativeName("Type", "uint8_t[8]")]
+        [NativeName("Type.Name", "uint8_t[8]")]
         [NativeName("Name", "RefPicSetStCurrAfter")]
         public fixed byte RefPicSetStCurrAfter[8];
-        [NativeName("Type", "uint8_t [8]")]
-        [NativeName("Type.Name", "uint8_t [8]")]
+        [NativeName("Type", "uint8_t[8]")]
+        [NativeName("Type.Name", "uint8_t[8]")]
         [NativeName("Name", "RefPicSetLtCurr")]
         public fixed byte RefPicSetLtCurr[8];
     }

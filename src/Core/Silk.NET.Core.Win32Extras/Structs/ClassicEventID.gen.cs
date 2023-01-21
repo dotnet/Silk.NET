@@ -46,8 +46,8 @@ namespace Silk.NET.Core.Win32Extras
         [NativeName("Type.Name", "UCHAR")]
         [NativeName("Name", "Type")]
         public byte Type;
-        [NativeName("Type", "UCHAR [7]")]
-        [NativeName("Type.Name", "UCHAR [7]")]
+        [NativeName("Type", "UCHAR[7]")]
+        [NativeName("Type.Name", "UCHAR[7]")]
         [NativeName("Name", "Reserved")]
         public fixed byte Reserved[7];
     }

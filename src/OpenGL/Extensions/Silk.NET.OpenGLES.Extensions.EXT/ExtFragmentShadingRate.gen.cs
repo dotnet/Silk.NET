@@ -98,6 +98,20 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             GetFragmentShadingRates(samples, (uint) shadingRates.Length, out count, out shadingRates.GetPinnableReference());
         }
 
+        public unsafe EXT GetFragmentShadingRates([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] uint* count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFragmentShadingRates(samples, maxCount, count, out EXT silkRet);
+            return silkRet;
+        }
+
+        public unsafe EXT GetFragmentShadingRates([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] out uint count)
+        {
+            // NonKhrReturnTypeOverloader
+            GetFragmentShadingRates(samples, maxCount, out count, out EXT silkRet);
+            return silkRet;
+        }
+
         public ExtFragmentShadingRate(INativeContext ctx)
             : base(ctx)
         {

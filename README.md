@@ -18,7 +18,7 @@
 ![Silk.NET Logo](https://raw.githubusercontent.com/dotnet/Silk.NET/main/documentation/readme/silkdotnet_v3_horizontal_96.svg)
 End include in NuGet readme. -->
 
-Silk.NET is your one-stop-shop for high-speed .NET multimedia, graphics, and compute; providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX.
+Silk.NET is your one-stop-shop for high-speed .NET multimedia, graphics, and compute; providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, WebGPU, and DirectX.
 
 Use Silk.NET to spruce up applications with cross-platform 3D graphics, audio, compute and haptics!
 
@@ -28,7 +28,7 @@ Silk.NET works on any .NET Standard 2.0 compliant platform, including .NET 6.0, 
 <br />
 <div>
 <!-- Begin exclude from NuGet readme. -->
-<a href="https://dotnetfoundation.org" align="right"><img src="https://dotnetfoundation.org/img/logo_v4.svg" alt=".NET Foundation" class="logo-footer" width="72" align="left">
+<a href="https://dotnetfoundation.org" align="right"><img src="https://github.com/dotnet-foundation/swag/blob/main/logo/dotnetfoundation_v4.svg" alt=".NET Foundation" class="logo-footer" width="72" align="left">
 <!-- End exclude from NuGet readme. -->
 <!-- Begin include in NuGet readme.
 ![.NET Foundation](https://raw.githubusercontent.com/dotnet/Silk.NET/main/documentation/readme/dotnetfoundation_v4_horizontal_64.svg)
@@ -45,15 +45,19 @@ Proud to be an official project under the benevolent [.NET Foundation](https://d
 <h1 align="center">Features</h1>
 
 ### Performance
+
 Having poured lots of hours into examining generated C# code and its JIT assembly, you can count on us to deliver blazing fast bindings with negligible overhead induced by Silk.NET!
 
 ### Up-to-date
+
 With an efficient bindings regeneration mechanism, we are committed to ensuring our bindings reflect the latest specifications with frequent updates generated straight from the upstream sources.
 
 ### High-level utilities
+
 In addition to providing high-speed, direct, and transparent bindings, we provide high-level utilities and wrappers to maximise productivity in common workloads such as platform-agnostic abstractions around Windowing and Input, bringing your apps to a vast number of platforms without changing a single line!
 
 ### Good-to-go
+
 Silk.NET caters for anything you could need in swift development of multimedia, graphics, compute applications. Silk.NET is an all-in-one solution, complete with Graphics, Compute, Audio, Input, and Windowing.
 
 <!-- Begin exclude from NuGet readme. -->
@@ -63,6 +67,7 @@ Silk.NET caters for anything you could need in swift development of multimedia, 
 We currently have the following maintainers:
 - [Kai Jellinghaus](https://github.com/HurricanKai) [<img src="https://about.twitter.com/etc/designs/about2-twitter/public/img/favicon.ico" alt="Follow Kai on Twitter" width="16" />](https://twitter.com/intent/follow?screen_name=KJellinghaus)
 - [Thomas Mizrahi](https://github.com/ThomasMiz)
+- [Beyley Thomas](https://github.com/Beyley)
 
 In addition, the Silk.NET working group help drive larger user-facing changes providing key consultation from the perspective of dedicated users and professionals.
 

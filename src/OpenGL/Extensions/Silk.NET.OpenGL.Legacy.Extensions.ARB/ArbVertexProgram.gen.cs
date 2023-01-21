@@ -557,6 +557,125 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             ProgramString(target, format, (uint) (@string.Length * Unsafe.SizeOf<T0>()), in @string.GetPinnableReference());
         }
 
+        public unsafe uint GenProgram([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenProgram(n, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetProgram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgram(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetProgram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ProgramPropertyARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgram(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetProgram([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgram(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetProgram([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ProgramPropertyARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgram(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe double GetProgramEnvParameter([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramEnvParameter(target, index, out double silkRet);
+            return silkRet;
+        }
+
+        public unsafe double GetProgramEnvParameter([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramEnvParameter(target, index, out double silkRet);
+            return silkRet;
+        }
+
+        public unsafe double GetProgramLocalParameter([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramLocalParameter(target, index, out double silkRet);
+            return silkRet;
+        }
+
+        public unsafe double GetProgramLocalParameter([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramLocalParameter(target, index, out double silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetProgramString<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB pname) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramString(target, pname, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetProgramString<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ProgramStringProperty pname) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramString(target, pname, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetProgramString<T0>([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ARB pname) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramString(target, pname, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetProgramString<T0>([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ProgramStringProperty pname) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramString(target, pname, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe double GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexAttrib(index, pname, out double silkRet);
+            return silkRet;
+        }
+
+        public unsafe double GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexAttrib(index, pname, out double silkRet);
+            return silkRet;
+        }
+
+        public unsafe void* GetVertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexAttribPointer(index, pname, out void* silkRet);
+            return silkRet;
+        }
+
+        public unsafe void* GetVertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerPropertyARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexAttribPointer(index, pname, out void* silkRet);
+            return silkRet;
+        }
+
         public ArbVertexProgram(INativeContext ctx)
             : base(ctx)
         {

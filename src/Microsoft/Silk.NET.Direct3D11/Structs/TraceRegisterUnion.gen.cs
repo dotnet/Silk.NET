@@ -38,8 +38,8 @@ namespace Silk.NET.Direct3D11
         [NativeName("Name", "Index1D")]
         public ushort Index1D;
         [FieldOffset(0)]
-        [NativeName("Type", "UINT16 [2]")]
-        [NativeName("Type.Name", "UINT16 [2]")]
+        [NativeName("Type", "UINT16[2]")]
+        [NativeName("Type.Name", "UINT16[2]")]
         [NativeName("Name", "Index2D")]
         public fixed ushort Index2D[2];
     }

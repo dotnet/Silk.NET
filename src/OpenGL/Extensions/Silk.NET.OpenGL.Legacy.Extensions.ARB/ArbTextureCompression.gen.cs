@@ -320,6 +320,20 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, (uint) (data.Length * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
         }
 
+        public unsafe T0 GetCompressedTexImage<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int level) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetCompressedTexImage(target, level, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetCompressedTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetCompressedTexImage(target, level, out T0 silkRet);
+            return silkRet;
+        }
+
         public ArbTextureCompression(INativeContext ctx)
             : base(ctx)
         {

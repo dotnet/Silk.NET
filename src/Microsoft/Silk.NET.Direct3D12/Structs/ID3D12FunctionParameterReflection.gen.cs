@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D12
 {
     [Guid("ec25f42d-7006-4f2b-b33e-02cc3375733f")]
     [NativeName("Name", "ID3D12FunctionParameterReflection")]
-    public unsafe partial struct ID3D12FunctionParameterReflection
+    public unsafe partial struct ID3D12FunctionParameterReflection : IComVtbl<ID3D12FunctionParameterReflection>
     {
         public static readonly Guid Guid = new("ec25f42d-7006-4f2b-b33e-02cc3375733f");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public ID3D12FunctionParameterReflection
         (
@@ -43,7 +46,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12FunctionParameterReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12FunctionParameterReflection*, ParameterDesc*, int>)LpVtbl[0])(@this, pDesc);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12FunctionParameterReflection*, ParameterDesc*, int>)@this->LpVtbl[0])(@this, pDesc);
             return ret;
         }
 
@@ -54,7 +57,7 @@ namespace Silk.NET.Direct3D12
             int ret = default;
             fixed (ParameterDesc* pDescPtr = &pDesc)
             {
-                ret = ((delegate* unmanaged[Stdcall]<ID3D12FunctionParameterReflection*, ParameterDesc*, int>)LpVtbl[0])(@this, pDescPtr);
+                ret = ((delegate* unmanaged[Stdcall]<ID3D12FunctionParameterReflection*, ParameterDesc*, int>)@this->LpVtbl[0])(@this, pDescPtr);
             }
             return ret;
         }

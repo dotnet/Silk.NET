@@ -50,6 +50,20 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glQueryCounter", Convention = CallingConvention.Winapi)]
         public partial void QueryCounter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryCounterTarget target);
 
+        public unsafe long GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQueryObject(id, pname, out long silkRet);
+            return silkRet;
+        }
+
+        public unsafe long GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetQueryObject(id, pname, out long silkRet);
+            return silkRet;
+        }
+
         public ArbTimerQuery(INativeContext ctx)
             : base(ctx)
         {

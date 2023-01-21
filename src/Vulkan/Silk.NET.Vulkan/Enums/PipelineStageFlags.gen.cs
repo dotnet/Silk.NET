@@ -103,6 +103,12 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"NoneKhr\"")]
         [NativeName("Name", "VK_PIPELINE_STAGE_NONE_KHR")]
         PipelineStageNoneKhr = 0,
+        [Obsolete("Deprecated in favour of \"TaskShaderBitExt\"")]
+        [NativeName("Name", "VK_PIPELINE_STAGE_TASK_SHADER_BIT_EXT")]
+        PipelineStageTaskShaderBitExt = 524288,
+        [Obsolete("Deprecated in favour of \"MeshShaderBitExt\"")]
+        [NativeName("Name", "VK_PIPELINE_STAGE_MESH_SHADER_BIT_EXT")]
+        PipelineStageMeshShaderBitExt = 1048576,
         [Obsolete("Deprecated in favour of \"None\"")]
         [NativeName("Name", "VK_PIPELINE_STAGE_NONE")]
         PipelineStageNone = 0,
@@ -166,6 +172,10 @@ namespace Silk.NET.Vulkan
         CommandPreprocessBitNV = 131072,
         [NativeName("Name", "VK_PIPELINE_STAGE_NONE_KHR")]
         NoneKhr = 0,
+        [NativeName("Name", "VK_PIPELINE_STAGE_TASK_SHADER_BIT_EXT")]
+        TaskShaderBitExt = 524288,
+        [NativeName("Name", "VK_PIPELINE_STAGE_MESH_SHADER_BIT_EXT")]
+        MeshShaderBitExt = 1048576,
         [NativeName("Name", "VK_PIPELINE_STAGE_NONE")]
         None = 0,
     }

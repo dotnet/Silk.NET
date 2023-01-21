@@ -21,7 +21,7 @@ namespace Silk.NET.DXVA
     {
         public HDStreamData
         (
-            int? enable = null,
+            Silk.NET.Core.Bool32? enable = null,
             uint? outputIndex = null,
             uint? inputFrameOrField = null,
             uint? pastFrames = null,
@@ -76,7 +76,7 @@ namespace Silk.NET.DXVA
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Enable")]
-        public int Enable;
+        public Silk.NET.Core.Bool32 Enable;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

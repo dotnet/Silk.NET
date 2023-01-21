@@ -86,6 +86,20 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glVideoCaptureStreamParameterdvNV", Convention = CallingConvention.Winapi)]
         public partial void VideoCaptureStreamParameter([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in double @params);
 
+        public unsafe int GetVideoCapture([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVideoCapture(video_capture_slot, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetVideoCaptureStream([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVideoCaptureStream(video_capture_slot, stream, pname, out int silkRet);
+            return silkRet;
+        }
+
         public NVVideoCapture(INativeContext ctx)
             : base(ctx)
         {

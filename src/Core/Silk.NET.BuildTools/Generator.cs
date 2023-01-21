@@ -41,57 +41,31 @@ namespace Silk.NET.BuildTools
         {
             var tasks = new Task[config.Tasks.Length];
 
-            for (var i = 0; i < 10; i++)
-            {
-                try
-                {
-                    var dirsToCheckThrough = config.Tasks
-                        .Where(x => ShouldBind(x.Controls))
-                        .Select(x => x.OutputOpts.Folder)
-                        .Distinct();
-                    foreach (var s in dirsToCheckThrough)
-                    {
-                        foreach (var file in Directory.GetFiles(s, "*.gen.cs", SearchOption.AllDirectories))
-                        {
-                            File.Delete(file);
-                        }
-                    }
-
-                    break;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine
-                    (
-                        (i + 1).Ordinalize() +
-                        $" attempt to remove generated files failed with " +
-                        $"{ex.GetType().Name}: {ex.Message}"
-                    );
-
-                    Thread.Sleep(1000);
-                }
-            }
-
+            var parallel = !Environment.GetCommandLineArgs().Contains("--no-parallel", StringComparer.OrdinalIgnoreCase);
             for (var i = 0; i < config.Tasks.Length; i++)
             {
                 var i1 = i;
                 if (TestMode)
                 {
-                    RunTaskUnguarded(config.Tasks[i1]);
+                    RunTaskUnguarded(config.Tasks[i1], config);
+                }
+                else if (!parallel)
+                {
+                    RunTaskGuarded(config.Tasks[i1], config);
                 }
                 else
                 {
-                    tasks[i] = Task.Run(() => RunTaskGuarded(config.Tasks[i1]));
+                    tasks[i] = Task.Run(() => RunTaskGuarded(config.Tasks[i1], config));
                 }
             }
 
-            if (!TestMode)
+            if (!TestMode && parallel)
             {
                 Task.WaitAll(tasks);
             }
         }
 
-        public static void RunTaskGuarded(BindTask task)
+        public static void RunTaskGuarded(BindTask task, Config config)
         {
             Stopwatch sw = null;
             if (!(Program.ConsoleWriter.Instance is null))
@@ -102,10 +76,13 @@ namespace Silk.NET.BuildTools
 
             try
             {
-                RunTask(task, sw);
+                RunTask(task, config, sw);
             }
             catch (Exception ex)
             {
+                if(Debugger.IsAttached)
+                    throw;
+
                 Console.Error.WriteLine($"Unhandled exception when running BuildTools for {task.Name}: {ex}");
                 if (sw is not null)
                 {
@@ -122,7 +99,7 @@ namespace Silk.NET.BuildTools
             }
         }
 
-        public static void RunTaskUnguarded(BindTask task)
+        public static void RunTaskUnguarded(BindTask task, Config config)
         {
             Stopwatch sw = null;
             if (!(Program.ConsoleWriter.Instance is null))
@@ -131,7 +108,7 @@ namespace Silk.NET.BuildTools
                 sw = Stopwatch.StartNew();
             }
 
-            RunTask(task, sw);
+            RunTask(task, config, sw);
 
             if (sw is not null)
             {
@@ -140,9 +117,9 @@ namespace Silk.NET.BuildTools
             }
         }
 
-        public static void RunTask(BindTask task) => RunTask(task, null);
+        public static void RunTask(BindTask task, Config config) => RunTask(task, config, null);
 
-        private static void RunTask(BindTask task, Stopwatch? sw)
+        private static void RunTask(BindTask task, Config config, Stopwatch? sw)
         { 
             foreach (var (glob, dest) in task.CopyFiles ?? Enumerable.Empty<KeyValuePair<string, string>>())
             {
@@ -317,7 +294,7 @@ namespace Silk.NET.BuildTools
 
             if (ShouldBind(task.Controls))
             {
-                profile.Flush(task);
+                profile.Flush(task, config);
             }
 
             sw?.Stop();

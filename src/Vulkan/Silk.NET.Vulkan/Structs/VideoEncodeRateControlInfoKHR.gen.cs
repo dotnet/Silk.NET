@@ -17,13 +17,13 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeRateControlInfoKHR")]
-    public unsafe partial struct VideoEncodeRateControlInfoKHR : IChainStart, IExtendsChain<VideoCodingControlInfoKHR>
+    public unsafe partial struct VideoEncodeRateControlInfoKHR : IExtendsChain<VideoCodingControlInfoKHR>
     {
         public VideoEncodeRateControlInfoKHR
         (
             StructureType? sType = StructureType.VideoEncodeRateControlInfoKhr,
             void* pNext = null,
-            VideoEncodeRateControlFlagsKHR? flags = null,
+            uint? flags = null,
             VideoEncodeRateControlModeFlagsKHR? rateControlMode = null,
             byte? layerCount = null,
             VideoEncodeRateControlLayerInfoKHR* pLayerConfigs = null
@@ -74,7 +74,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkVideoEncodeRateControlFlagsKHR")]
         [NativeName("Type.Name", "VkVideoEncodeRateControlFlagsKHR")]
         [NativeName("Name", "flags")]
-        public VideoEncodeRateControlFlagsKHR Flags;
+        public uint Flags;
 /// <summary></summary>
         [NativeName("Type", "VkVideoEncodeRateControlModeFlagBitsKHR")]
         [NativeName("Type.Name", "VkVideoEncodeRateControlModeFlagBitsKHR")]
@@ -102,18 +102,6 @@ namespace Silk.NET.Vulkan
         {
             get => (BaseInStructure*) PNext;
             set => PNext = value;
-        }
-
-        /// <summary>
-        /// Convenience method to start a chain.
-        /// </summary>
-        /// <param name="capture">The newly created chain root</param>
-        /// <returns>A reference to the newly created chain.</returns>
-        public static unsafe ref VideoEncodeRateControlInfoKHR Chain(
-            out VideoEncodeRateControlInfoKHR capture)
-        {
-            capture = new VideoEncodeRateControlInfoKHR(StructureType.VideoEncodeRateControlInfoKhr);
-            return ref capture;
         }
     }
 }

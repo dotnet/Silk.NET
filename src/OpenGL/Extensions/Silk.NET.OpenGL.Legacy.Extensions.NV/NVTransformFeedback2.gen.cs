@@ -104,6 +104,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             GenTransformFeedbacks((uint) ids.Length, out ids.GetPinnableReference());
         }
 
+        public unsafe uint GenTransformFeedbacks([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenTransformFeedbacks(n, out uint silkRet);
+            return silkRet;
+        }
+
         public NVTransformFeedback2(INativeContext ctx)
             : base(ctx)
         {

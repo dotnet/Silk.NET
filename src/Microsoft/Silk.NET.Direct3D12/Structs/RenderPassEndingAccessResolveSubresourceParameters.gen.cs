@@ -25,7 +25,7 @@ namespace Silk.NET.Direct3D12
             uint? dstSubresource = null,
             uint? dstX = null,
             uint? dstY = null,
-            Silk.NET.Maths.Rectangle<int>? srcRect = null
+            Silk.NET.Maths.Box2D<int>? srcRect = null
         ) : this()
         {
             if (srcSubresource is not null)
@@ -78,6 +78,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "D3D12_RECT")]
         [NativeName("Type.Name", "D3D12_RECT")]
         [NativeName("Name", "SrcRect")]
-        public Silk.NET.Maths.Rectangle<int> SrcRect;
+        public Silk.NET.Maths.Box2D<int> SrcRect;
     }
 }

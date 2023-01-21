@@ -64,6 +64,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
             return ret;
         }
 
+        public unsafe float GetDetailTexFunc([Flow(FlowDirection.In)] TextureTarget target)
+        {
+            // NonKhrReturnTypeOverloader
+            GetDetailTexFunc(target, out float silkRet);
+            return silkRet;
+        }
+
         public SgisDetailTexture(INativeContext ctx)
             : base(ctx)
         {

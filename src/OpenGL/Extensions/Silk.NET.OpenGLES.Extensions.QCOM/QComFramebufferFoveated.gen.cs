@@ -29,6 +29,13 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         [NativeApi(EntryPoint = "glFramebufferFoveationParametersQCOM", Convention = CallingConvention.Winapi)]
         public partial void FramebufferFoveationParameters([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint layer, [Flow(FlowDirection.In)] uint focalPoint, [Flow(FlowDirection.In)] float focalX, [Flow(FlowDirection.In)] float focalY, [Flow(FlowDirection.In)] float gainX, [Flow(FlowDirection.In)] float gainY, [Flow(FlowDirection.In)] float foveaArea);
 
+        public unsafe uint FramebufferFoveationConfig([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numLayers, [Flow(FlowDirection.In)] uint focalPointsPerLayer, [Flow(FlowDirection.In)] uint requestedFeatures)
+        {
+            // NonKhrReturnTypeOverloader
+            FramebufferFoveationConfig(framebuffer, numLayers, focalPointsPerLayer, requestedFeatures, out uint silkRet);
+            return silkRet;
+        }
+
         public QComFramebufferFoveated(INativeContext ctx)
             : base(ctx)
         {

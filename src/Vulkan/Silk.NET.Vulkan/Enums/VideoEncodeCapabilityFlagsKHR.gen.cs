@@ -15,14 +15,9 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Name", "")]
         None = 0,
-        [Obsolete("Deprecated in favour of \"DefaultKhr\"")]
-        [NativeName("Name", "VK_VIDEO_ENCODE_CAPABILITY_DEFAULT_KHR")]
-        VideoEncodeCapabilityDefaultKhr = 0,
         [Obsolete("Deprecated in favour of \"PrecedingExternallyEncodedBytesBitKhr\"")]
         [NativeName("Name", "VK_VIDEO_ENCODE_CAPABILITY_PRECEDING_EXTERNALLY_ENCODED_BYTES_BIT_KHR")]
         VideoEncodeCapabilityPrecedingExternallyEncodedBytesBitKhr = 1,
-        [NativeName("Name", "VK_VIDEO_ENCODE_CAPABILITY_DEFAULT_KHR")]
-        DefaultKhr = 0,
         [NativeName("Name", "VK_VIDEO_ENCODE_CAPABILITY_PRECEDING_EXTERNALLY_ENCODED_BYTES_BIT_KHR")]
         PrecedingExternallyEncodedBytesBitKhr = 1,
     }

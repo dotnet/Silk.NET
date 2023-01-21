@@ -167,6 +167,24 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV", Convention = CallingConvention.Winapi)]
         public partial void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int locations, [Flow(FlowDirection.In)] NV bufferMode);
 
+        [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV", Convention = CallingConvention.Winapi)]
+        public unsafe partial void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* locations, [Flow(FlowDirection.In)] TransformFeedbackBufferMode bufferMode);
+
+        [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV", Convention = CallingConvention.Winapi)]
+        public partial void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int locations, [Flow(FlowDirection.In)] TransformFeedbackBufferMode bufferMode);
+
+        [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV", Convention = CallingConvention.Winapi)]
+        public unsafe partial void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] TransformFeedbackTokenNV* locations, [Flow(FlowDirection.In)] NV bufferMode);
+
+        [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV", Convention = CallingConvention.Winapi)]
+        public partial void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in TransformFeedbackTokenNV locations, [Flow(FlowDirection.In)] NV bufferMode);
+
+        [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV", Convention = CallingConvention.Winapi)]
+        public unsafe partial void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] TransformFeedbackTokenNV* locations, [Flow(FlowDirection.In)] TransformFeedbackBufferMode bufferMode);
+
+        [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV", Convention = CallingConvention.Winapi)]
+        public partial void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in TransformFeedbackTokenNV locations, [Flow(FlowDirection.In)] TransformFeedbackBufferMode bufferMode);
+
         public unsafe void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
         {
             // ImplicitCountSpanOverloader
@@ -285,6 +303,87 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         {
             // ImplicitCountSpanOverloader
             TransformFeedbackVaryings(program, (uint) locations.Length, in locations.GetPinnableReference(), bufferMode);
+        }
+
+        public unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> locations, [Flow(FlowDirection.In)] TransformFeedbackBufferMode bufferMode)
+        {
+            // ImplicitCountSpanOverloader
+            TransformFeedbackVaryings(program, (uint) locations.Length, in locations.GetPinnableReference(), bufferMode);
+        }
+
+        public unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<TransformFeedbackTokenNV> locations, [Flow(FlowDirection.In)] NV bufferMode)
+        {
+            // ImplicitCountSpanOverloader
+            TransformFeedbackVaryings(program, (uint) locations.Length, in locations.GetPinnableReference(), bufferMode);
+        }
+
+        public unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<TransformFeedbackTokenNV> locations, [Flow(FlowDirection.In)] TransformFeedbackBufferMode bufferMode)
+        {
+            // ImplicitCountSpanOverloader
+            TransformFeedbackVaryings(program, (uint) locations.Length, in locations.GetPinnableReference(), bufferMode);
+        }
+
+        public unsafe byte GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveVarying(program, index, bufSize, length, size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveVarying(program, index, bufSize, length, size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveVarying(program, index, bufSize, length, out size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveVarying(program, index, bufSize, length, out size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveVarying(program, index, bufSize, out length, size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveVarying(program, index, bufSize, out length, size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveVarying(program, index, bufSize, out length, out size, type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type)
+        {
+            // NonKhrReturnTypeOverloader
+            GetActiveVarying(program, index, bufSize, out length, out size, out type, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetTransformFeedbackVarying(program, index, out int silkRet);
+            return silkRet;
         }
 
         public NVTransformFeedback(INativeContext ctx)

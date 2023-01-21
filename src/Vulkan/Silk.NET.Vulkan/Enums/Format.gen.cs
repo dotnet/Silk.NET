@@ -566,6 +566,8 @@ namespace Silk.NET.Vulkan
         A4R4G4B4UnormPack16Ext = 1000340000,
         [NativeName("Name", "VK_FORMAT_A4B4G4R4_UNORM_PACK16_EXT")]
         A4B4G4R4UnormPack16Ext = 1000340001,
+        [NativeName("Name", "VK_FORMAT_R16G16_S10_5_NV")]
+        R16G16S105NV = 1000464000,
         [NativeName("Name", "VK_FORMAT_G8B8G8R8_422_UNORM")]
         G8B8G8R8422Unorm = 1000156000,
         [NativeName("Name", "VK_FORMAT_B8G8R8G8_422_UNORM")]

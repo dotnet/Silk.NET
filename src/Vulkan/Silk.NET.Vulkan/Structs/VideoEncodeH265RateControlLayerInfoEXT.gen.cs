@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoEncodeH265RateControlLayerInfoEXT")]
-    public unsafe partial struct VideoEncodeH265RateControlLayerInfoEXT : IExtendsChain<VideoEncodeRateControlLayerInfoKHR>
+    public unsafe partial struct VideoEncodeH265RateControlLayerInfoEXT : IExtendsChain<VideoCodingControlInfoKHR>, IExtendsChain<VideoEncodeRateControlLayerInfoKHR>
     {
         public VideoEncodeH265RateControlLayerInfoEXT
         (

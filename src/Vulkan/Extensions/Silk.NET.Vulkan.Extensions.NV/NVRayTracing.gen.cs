@@ -232,6 +232,24 @@ namespace Silk.NET.Vulkan.Extensions.NV
             return GetRayTracingShaderGroupHandles(device, pipeline, firstGroup, groupCount, (nuint) (pData.Length * Unsafe.SizeOf<T0>()), ref pData.GetPinnableReference());
         }
 
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
+        public unsafe MemoryRequirements2KHR GetAccelerationStructureMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureMemoryRequirementsInfoNV* pInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetAccelerationStructureMemoryRequirements(device, pInfo, out MemoryRequirements2KHR silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
+        public unsafe MemoryRequirements2KHR GetAccelerationStructureMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in AccelerationStructureMemoryRequirementsInfoNV pInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetAccelerationStructureMemoryRequirements(device, in pInfo, out MemoryRequirements2KHR silkRet);
+            return silkRet;
+        }
+
         public NVRayTracing(INativeContext ctx)
             : base(ctx)
         {

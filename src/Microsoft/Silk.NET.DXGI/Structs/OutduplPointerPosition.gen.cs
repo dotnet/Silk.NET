@@ -22,7 +22,7 @@ namespace Silk.NET.DXGI
         public OutduplPointerPosition
         (
             Silk.NET.Maths.Vector2D<int>? position = null,
-            int? visible = null
+            Silk.NET.Core.Bool32? visible = null
         ) : this()
         {
             if (position is not null)
@@ -45,6 +45,6 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Visible")]
-        public int Visible;
+        public Silk.NET.Core.Bool32 Visible;
     }
 }

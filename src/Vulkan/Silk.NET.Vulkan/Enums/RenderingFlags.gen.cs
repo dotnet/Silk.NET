@@ -33,9 +33,9 @@ namespace Silk.NET.Vulkan
         [Obsolete("Deprecated in favour of \"ResumingBitKhr\"")]
         [NativeName("Name", "VK_RENDERING_RESUMING_BIT_KHR")]
         RenderingResumingBitKhr = 4,
-        [Obsolete("Deprecated in favour of \"Reserved3BitExt\"")]
-        [NativeName("Name", "VK_RENDERING_RESERVED_3_BIT_EXT")]
-        RenderingReserved3BitExt = 8,
+        [Obsolete("Deprecated in favour of \"EnableLegacyDitheringBitExt\"")]
+        [NativeName("Name", "VK_RENDERING_ENABLE_LEGACY_DITHERING_BIT_EXT")]
+        RenderingEnableLegacyDitheringBitExt = 8,
         [NativeName("Name", "VK_RENDERING_CONTENTS_SECONDARY_COMMAND_BUFFERS_BIT")]
         ContentsSecondaryCommandBuffersBit = 1,
         [NativeName("Name", "VK_RENDERING_CONTENTS_SECONDARY_COMMAND_BUFFERS_BIT_KHR")]
@@ -48,7 +48,7 @@ namespace Silk.NET.Vulkan
         ResumingBit = 4,
         [NativeName("Name", "VK_RENDERING_RESUMING_BIT_KHR")]
         ResumingBitKhr = 4,
-        [NativeName("Name", "VK_RENDERING_RESERVED_3_BIT_EXT")]
-        Reserved3BitExt = 8,
+        [NativeName("Name", "VK_RENDERING_ENABLE_LEGACY_DITHERING_BIT_EXT")]
+        EnableLegacyDitheringBitExt = 8,
     }
 }

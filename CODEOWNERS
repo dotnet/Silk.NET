@@ -18,7 +18,10 @@
 /src/Vulkan/**/*.cs                 @HurricanKai
 
 # OpenGL
-/src/OpenGL/**/*.cs                 @ThomasMiz
+/src/OpenGL/**/*.cs                 @ThomasMiz @Beyley
+
+# WebGPU
+/src/WebGPU/**/*.cs                 @Beyley
 
 # BuildTools
 #/src/Core/Silk.NET.BuildTools       @Perksey

@@ -43,12 +43,13 @@ namespace Silk.NET.Maths
         /// <returns>The converted value</returns>
         [MethodImpl(MaxOpt)]
         public static TTo As<TFrom, TTo>(TFrom val) where TFrom : notnull where TTo : notnull
-        {
-            // On CoreCLR, we should use the 2nd (faster) path which is exactly the same logic but rejigged a bit as to
-            // not hit RyuJIT's inlining restrictions. On Mono, this code actually causes invalid assembly to be
-            // produced so we have preserved the old (theoretically slower, but we think that Mono is able to
-            // specialize it correctly anyway unlike RyuJIT) 1st path.
+        {   
+            // We rejigged this code a bit to be a bit more strategic about its specialization branch as to not
+            // exceed RyuJIT's inlining/codegen budgets. In doing this, Mono apparently started producing invalid
+            // arm assembly, so we now maintain two paths: one for Mono, and one for CoreCLR. The CoreCLR one should
+            // really be preferred.
 #ifdef ANDROID || IOS
+
             return FromHalfToHalf(val);
             
 

@@ -18,9 +18,12 @@ namespace Silk.NET.Direct3D9
 {
     [Guid("26dc4561-a1ee-4ae7-96da-118a36c0ec95")]
     [NativeName("Name", "IDirect3DDevice9Video")]
-    public unsafe partial struct IDirect3DDevice9Video
+    public unsafe partial struct IDirect3DDevice9Video : IComVtbl<IDirect3DDevice9Video>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("26dc4561-a1ee-4ae7-96da-118a36c0ec95");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDirect3DDevice9Video val)
             => Unsafe.As<IDirect3DDevice9Video, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,7 +49,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -57,7 +60,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -69,7 +72,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -83,7 +86,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -94,7 +97,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -103,45 +106,45 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetContentProtectionCaps(Guid* pCryptoType, Guid* pDecodeProfile, Contentprotectioncaps* pCaps)
+        public readonly unsafe int GetContentProtectionCaps([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecodeProfile, Contentprotectioncaps* pCaps)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, Contentprotectioncaps*, int>)LpVtbl[3])(@this, pCryptoType, pDecodeProfile, pCaps);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, Contentprotectioncaps*, int>)@this->LpVtbl[3])(@this, pCryptoType, pDecodeProfile, pCaps);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetContentProtectionCaps(Guid* pCryptoType, Guid* pDecodeProfile, ref Contentprotectioncaps pCaps)
+        public readonly unsafe int GetContentProtectionCaps([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecodeProfile, ref Contentprotectioncaps pCaps)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Contentprotectioncaps* pCapsPtr = &pCaps)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, Contentprotectioncaps*, int>)LpVtbl[3])(@this, pCryptoType, pDecodeProfile, pCapsPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, Contentprotectioncaps*, int>)@this->LpVtbl[3])(@this, pCryptoType, pDecodeProfile, pCapsPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetContentProtectionCaps(Guid* pCryptoType, ref Guid pDecodeProfile, Contentprotectioncaps* pCaps)
+        public readonly unsafe int GetContentProtectionCaps([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecodeProfile, Contentprotectioncaps* pCaps)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pDecodeProfilePtr = &pDecodeProfile)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, Contentprotectioncaps*, int>)LpVtbl[3])(@this, pCryptoType, pDecodeProfilePtr, pCaps);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, Contentprotectioncaps*, int>)@this->LpVtbl[3])(@this, pCryptoType, pDecodeProfilePtr, pCaps);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetContentProtectionCaps(Guid* pCryptoType, ref Guid pDecodeProfile, ref Contentprotectioncaps pCaps)
+        public readonly unsafe int GetContentProtectionCaps([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecodeProfile, ref Contentprotectioncaps pCaps)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -149,26 +152,26 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (Contentprotectioncaps* pCapsPtr = &pCaps)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, Contentprotectioncaps*, int>)LpVtbl[3])(@this, pCryptoType, pDecodeProfilePtr, pCapsPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, Contentprotectioncaps*, int>)@this->LpVtbl[3])(@this, pCryptoType, pDecodeProfilePtr, pCapsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetContentProtectionCaps(ref Guid pCryptoType, Guid* pDecodeProfile, Contentprotectioncaps* pCaps)
+        public readonly unsafe int GetContentProtectionCaps([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecodeProfile, Contentprotectioncaps* pCaps)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pCryptoTypePtr = &pCryptoType)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, Contentprotectioncaps*, int>)LpVtbl[3])(@this, pCryptoTypePtr, pDecodeProfile, pCaps);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, Contentprotectioncaps*, int>)@this->LpVtbl[3])(@this, pCryptoTypePtr, pDecodeProfile, pCaps);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetContentProtectionCaps(ref Guid pCryptoType, Guid* pDecodeProfile, ref Contentprotectioncaps pCaps)
+        public readonly unsafe int GetContentProtectionCaps([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecodeProfile, ref Contentprotectioncaps pCaps)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -176,14 +179,14 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (Contentprotectioncaps* pCapsPtr = &pCaps)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, Contentprotectioncaps*, int>)LpVtbl[3])(@this, pCryptoTypePtr, pDecodeProfile, pCapsPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, Contentprotectioncaps*, int>)@this->LpVtbl[3])(@this, pCryptoTypePtr, pDecodeProfile, pCapsPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetContentProtectionCaps(ref Guid pCryptoType, ref Guid pDecodeProfile, Contentprotectioncaps* pCaps)
+        public readonly unsafe int GetContentProtectionCaps([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecodeProfile, Contentprotectioncaps* pCaps)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -191,14 +194,14 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (Guid* pDecodeProfilePtr = &pDecodeProfile)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, Contentprotectioncaps*, int>)LpVtbl[3])(@this, pCryptoTypePtr, pDecodeProfilePtr, pCaps);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, Contentprotectioncaps*, int>)@this->LpVtbl[3])(@this, pCryptoTypePtr, pDecodeProfilePtr, pCaps);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetContentProtectionCaps(ref Guid pCryptoType, ref Guid pDecodeProfile, ref Contentprotectioncaps pCaps)
+        public readonly int GetContentProtectionCaps([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecodeProfile, ref Contentprotectioncaps pCaps)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -208,7 +211,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (Contentprotectioncaps* pCapsPtr = &pCaps)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, Contentprotectioncaps*, int>)LpVtbl[3])(@this, pCryptoTypePtr, pDecodeProfilePtr, pCapsPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, Contentprotectioncaps*, int>)@this->LpVtbl[3])(@this, pCryptoTypePtr, pDecodeProfilePtr, pCapsPtr);
                     }
                 }
             }
@@ -220,7 +223,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Authenticatedchanneltype, IDirect3DAuthenticatedChannel9**, void**, int>)LpVtbl[4])(@this, ChannelType, ppAuthenticatedChannel, pChannelHandle);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Authenticatedchanneltype, IDirect3DAuthenticatedChannel9**, void**, int>)@this->LpVtbl[4])(@this, ChannelType, ppAuthenticatedChannel, pChannelHandle);
             return ret;
         }
 
@@ -231,7 +234,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (void** pChannelHandlePtr = &pChannelHandle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Authenticatedchanneltype, IDirect3DAuthenticatedChannel9**, void**, int>)LpVtbl[4])(@this, ChannelType, ppAuthenticatedChannel, pChannelHandlePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Authenticatedchanneltype, IDirect3DAuthenticatedChannel9**, void**, int>)@this->LpVtbl[4])(@this, ChannelType, ppAuthenticatedChannel, pChannelHandlePtr);
             }
             return ret;
         }
@@ -243,7 +246,7 @@ namespace Silk.NET.Direct3D9
             int ret = default;
             fixed (IDirect3DAuthenticatedChannel9** ppAuthenticatedChannelPtr = &ppAuthenticatedChannel)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Authenticatedchanneltype, IDirect3DAuthenticatedChannel9**, void**, int>)LpVtbl[4])(@this, ChannelType, ppAuthenticatedChannelPtr, pChannelHandle);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Authenticatedchanneltype, IDirect3DAuthenticatedChannel9**, void**, int>)@this->LpVtbl[4])(@this, ChannelType, ppAuthenticatedChannelPtr, pChannelHandle);
             }
             return ret;
         }
@@ -257,47 +260,47 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void** pChannelHandlePtr = &pChannelHandle)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Authenticatedchanneltype, IDirect3DAuthenticatedChannel9**, void**, int>)LpVtbl[4])(@this, ChannelType, ppAuthenticatedChannelPtr, pChannelHandlePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Authenticatedchanneltype, IDirect3DAuthenticatedChannel9**, void**, int>)@this->LpVtbl[4])(@this, ChannelType, ppAuthenticatedChannelPtr, pChannelHandlePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(Guid* pCryptoType, Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)LpVtbl[5])(@this, pCryptoType, pDecodeProfile, ppCryptoSession, pCryptoHandle);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)@this->LpVtbl[5])(@this, pCryptoType, pDecodeProfile, ppCryptoSession, pCryptoHandle);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(Guid* pCryptoType, Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void** pCryptoHandlePtr = &pCryptoHandle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)LpVtbl[5])(@this, pCryptoType, pDecodeProfile, ppCryptoSession, pCryptoHandlePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)@this->LpVtbl[5])(@this, pCryptoType, pDecodeProfile, ppCryptoSession, pCryptoHandlePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(Guid* pCryptoType, Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (IDirect3DCryptoSession9** ppCryptoSessionPtr = &ppCryptoSession)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)LpVtbl[5])(@this, pCryptoType, pDecodeProfile, ppCryptoSessionPtr, pCryptoHandle);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)@this->LpVtbl[5])(@this, pCryptoType, pDecodeProfile, ppCryptoSessionPtr, pCryptoHandle);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(Guid* pCryptoType, Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -305,26 +308,26 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void** pCryptoHandlePtr = &pCryptoHandle)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)LpVtbl[5])(@this, pCryptoType, pDecodeProfile, ppCryptoSessionPtr, pCryptoHandlePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)@this->LpVtbl[5])(@this, pCryptoType, pDecodeProfile, ppCryptoSessionPtr, pCryptoHandlePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(Guid* pCryptoType, ref Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pDecodeProfilePtr = &pDecodeProfile)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)LpVtbl[5])(@this, pCryptoType, pDecodeProfilePtr, ppCryptoSession, pCryptoHandle);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)@this->LpVtbl[5])(@this, pCryptoType, pDecodeProfilePtr, ppCryptoSession, pCryptoHandle);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(Guid* pCryptoType, ref Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -332,14 +335,14 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void** pCryptoHandlePtr = &pCryptoHandle)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)LpVtbl[5])(@this, pCryptoType, pDecodeProfilePtr, ppCryptoSession, pCryptoHandlePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)@this->LpVtbl[5])(@this, pCryptoType, pDecodeProfilePtr, ppCryptoSession, pCryptoHandlePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(Guid* pCryptoType, ref Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -347,14 +350,14 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (IDirect3DCryptoSession9** ppCryptoSessionPtr = &ppCryptoSession)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)LpVtbl[5])(@this, pCryptoType, pDecodeProfilePtr, ppCryptoSessionPtr, pCryptoHandle);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)@this->LpVtbl[5])(@this, pCryptoType, pDecodeProfilePtr, ppCryptoSessionPtr, pCryptoHandle);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(Guid* pCryptoType, ref Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -364,7 +367,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (void** pCryptoHandlePtr = &pCryptoHandle)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)LpVtbl[5])(@this, pCryptoType, pDecodeProfilePtr, ppCryptoSessionPtr, pCryptoHandlePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)@this->LpVtbl[5])(@this, pCryptoType, pDecodeProfilePtr, ppCryptoSessionPtr, pCryptoHandlePtr);
                     }
                 }
             }
@@ -372,19 +375,19 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(ref Guid pCryptoType, Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* pCryptoTypePtr = &pCryptoType)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)LpVtbl[5])(@this, pCryptoTypePtr, pDecodeProfile, ppCryptoSession, pCryptoHandle);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)@this->LpVtbl[5])(@this, pCryptoTypePtr, pDecodeProfile, ppCryptoSession, pCryptoHandle);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(ref Guid pCryptoType, Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -392,14 +395,14 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (void** pCryptoHandlePtr = &pCryptoHandle)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)LpVtbl[5])(@this, pCryptoTypePtr, pDecodeProfile, ppCryptoSession, pCryptoHandlePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)@this->LpVtbl[5])(@this, pCryptoTypePtr, pDecodeProfile, ppCryptoSession, pCryptoHandlePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(ref Guid pCryptoType, Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -407,14 +410,14 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (IDirect3DCryptoSession9** ppCryptoSessionPtr = &ppCryptoSession)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)LpVtbl[5])(@this, pCryptoTypePtr, pDecodeProfile, ppCryptoSessionPtr, pCryptoHandle);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)@this->LpVtbl[5])(@this, pCryptoTypePtr, pDecodeProfile, ppCryptoSessionPtr, pCryptoHandle);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(ref Guid pCryptoType, Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] Guid* pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -424,7 +427,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (void** pCryptoHandlePtr = &pCryptoHandle)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)LpVtbl[5])(@this, pCryptoTypePtr, pDecodeProfile, ppCryptoSessionPtr, pCryptoHandlePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)@this->LpVtbl[5])(@this, pCryptoTypePtr, pDecodeProfile, ppCryptoSessionPtr, pCryptoHandlePtr);
                     }
                 }
             }
@@ -432,7 +435,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(ref Guid pCryptoType, ref Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, void** pCryptoHandle)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -440,14 +443,14 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (Guid* pDecodeProfilePtr = &pDecodeProfile)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)LpVtbl[5])(@this, pCryptoTypePtr, pDecodeProfilePtr, ppCryptoSession, pCryptoHandle);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)@this->LpVtbl[5])(@this, pCryptoTypePtr, pDecodeProfilePtr, ppCryptoSession, pCryptoHandle);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(ref Guid pCryptoType, ref Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecodeProfile, IDirect3DCryptoSession9** ppCryptoSession, ref void* pCryptoHandle)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -457,7 +460,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (void** pCryptoHandlePtr = &pCryptoHandle)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)LpVtbl[5])(@this, pCryptoTypePtr, pDecodeProfilePtr, ppCryptoSession, pCryptoHandlePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)@this->LpVtbl[5])(@this, pCryptoTypePtr, pDecodeProfilePtr, ppCryptoSession, pCryptoHandlePtr);
                     }
                 }
             }
@@ -465,7 +468,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(ref Guid pCryptoType, ref Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, void** pCryptoHandle)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -475,7 +478,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (IDirect3DCryptoSession9** ppCryptoSessionPtr = &ppCryptoSession)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)LpVtbl[5])(@this, pCryptoTypePtr, pDecodeProfilePtr, ppCryptoSessionPtr, pCryptoHandle);
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)@this->LpVtbl[5])(@this, pCryptoTypePtr, pDecodeProfilePtr, ppCryptoSessionPtr, pCryptoHandle);
                     }
                 }
             }
@@ -483,7 +486,7 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateCryptoSession(ref Guid pCryptoType, ref Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
+        public readonly unsafe int CreateCryptoSession([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecodeProfile, ref IDirect3DCryptoSession9* ppCryptoSession, ref void* pCryptoHandle)
         {
             var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -495,12 +498,110 @@ namespace Silk.NET.Direct3D9
                     {
                         fixed (void** pCryptoHandlePtr = &pCryptoHandle)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)LpVtbl[5])(@this, pCryptoTypePtr, pDecodeProfilePtr, ppCryptoSessionPtr, pCryptoHandlePtr);
+                            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9Video*, Guid*, Guid*, IDirect3DCryptoSession9**, void**, int>)@this->LpVtbl[5])(@this, pCryptoTypePtr, pDecodeProfilePtr, ppCryptoSessionPtr, pCryptoHandlePtr);
                         }
                     }
                 }
             }
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateAuthenticatedChannel<TI0>(Authenticatedchanneltype ChannelType, ref ComPtr<TI0> ppAuthenticatedChannel, void** pChannelHandle) where TI0 : unmanaged, IComVtbl<IDirect3DAuthenticatedChannel9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateAuthenticatedChannel(ChannelType, (IDirect3DAuthenticatedChannel9**) ppAuthenticatedChannel.GetAddressOf(), pChannelHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateAuthenticatedChannel<TI0>(Authenticatedchanneltype ChannelType, ref ComPtr<TI0> ppAuthenticatedChannel, ref void* pChannelHandle) where TI0 : unmanaged, IComVtbl<IDirect3DAuthenticatedChannel9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateAuthenticatedChannel(ChannelType, (IDirect3DAuthenticatedChannel9**) ppAuthenticatedChannel.GetAddressOf(), ref pChannelHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>([Flow(FlowDirection.In)] Guid* pCryptoType, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(pCryptoType, SilkMarshal.GuidPtrOf<TI0>(), (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), pCryptoHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>([Flow(FlowDirection.In)] Guid* pCryptoType, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(pCryptoType, SilkMarshal.GuidPtrOf<TI0>(), (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), ref pCryptoHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(pCryptoType, in pDecodeProfile, (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), pCryptoHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>([Flow(FlowDirection.In)] Guid* pCryptoType, [Flow(FlowDirection.In)] in Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(pCryptoType, in pDecodeProfile, (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), ref pCryptoHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>([Flow(FlowDirection.In)] in Guid pCryptoType, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(in pCryptoType, SilkMarshal.GuidPtrOf<TI0>(), (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), pCryptoHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>([Flow(FlowDirection.In)] in Guid pCryptoType, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(in pCryptoType, SilkMarshal.GuidPtrOf<TI0>(), (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), ref pCryptoHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, void** pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(in pCryptoType, in pDecodeProfile, (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), pCryptoHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly unsafe int CreateCryptoSession<TI0>([Flow(FlowDirection.In)] in Guid pCryptoType, [Flow(FlowDirection.In)] in Guid pDecodeProfile, ref ComPtr<TI0> ppCryptoSession, ref void* pCryptoHandle) where TI0 : unmanaged, IComVtbl<IDirect3DCryptoSession9>, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            return @this->CreateCryptoSession(in pCryptoType, in pDecodeProfile, (IDirect3DCryptoSession9**) ppCryptoSession.GetAddressOf(), ref pCryptoHandle);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDirect3DDevice9Video*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

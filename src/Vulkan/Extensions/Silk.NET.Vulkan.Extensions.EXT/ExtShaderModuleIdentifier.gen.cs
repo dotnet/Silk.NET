@@ -47,6 +47,33 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         [NativeApi(EntryPoint = "vkGetShaderModuleIdentifierEXT", Convention = CallingConvention.Winapi)]
         public partial void GetShaderModuleIdentifier([Count(Count = 0)] Device device, [Count(Count = 0)] ShaderModule shaderModule, [Count(Count = 0), Flow(FlowDirection.Out)] out ShaderModuleIdentifierEXT pIdentifier);
 
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pIdentifier = new(StructureType.ShaderModuleIdentifierExt);")]
+        public unsafe ShaderModuleIdentifierEXT GetShaderModuleCreateInfoIdentifier([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetShaderModuleCreateInfoIdentifier(device, pCreateInfo, out ShaderModuleIdentifierEXT silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pIdentifier = new(StructureType.ShaderModuleIdentifierExt);")]
+        public unsafe ShaderModuleIdentifierEXT GetShaderModuleCreateInfoIdentifier([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ShaderModuleCreateInfo pCreateInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetShaderModuleCreateInfoIdentifier(device, in pCreateInfo, out ShaderModuleIdentifierEXT silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pIdentifier = new(StructureType.ShaderModuleIdentifierExt);")]
+        public unsafe ShaderModuleIdentifierEXT GetShaderModuleIdentifier([Count(Count = 0)] Device device, [Count(Count = 0)] ShaderModule shaderModule)
+        {
+            // NonKhrReturnTypeOverloader
+            GetShaderModuleIdentifier(device, shaderModule, out ShaderModuleIdentifierEXT silkRet);
+            return silkRet;
+        }
+
         public ExtShaderModuleIdentifier(INativeContext ctx)
             : base(ctx)
         {

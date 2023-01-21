@@ -18,9 +18,12 @@ namespace Silk.NET.DXGI
 {
     [Guid("d67441c7-672a-476f-9e82-cd55b44949ce")]
     [NativeName("Name", "IDXGIInfoQueue")]
-    public unsafe partial struct IDXGIInfoQueue
+    public unsafe partial struct IDXGIInfoQueue : IComVtbl<IDXGIInfoQueue>, IComVtbl<Silk.NET.Core.Native.IUnknown>
     {
         public static readonly Guid Guid = new("d67441c7-672a-476f-9e82-cd55b44949ce");
+
+        void*** IComVtbl.AsVtblPtr()
+            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDXGIInfoQueue val)
             => Unsafe.As<IDXGIInfoQueue, Silk.NET.Core.Native.IUnknown>(ref val);
@@ -46,7 +49,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
 
@@ -57,7 +60,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riid, ppvObjectPtr);
             }
             return ret;
         }
@@ -69,7 +72,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObject);
             }
             return ret;
         }
@@ -83,7 +86,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid*, void**, int>)@this->LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
                 }
             }
             return ret;
@@ -94,7 +97,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, uint>)@this->LpVtbl[1])(@this);
             return ret;
         }
 
@@ -103,7 +106,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, uint>)@this->LpVtbl[2])(@this);
             return ret;
         }
 
@@ -112,7 +115,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong, int>)LpVtbl[3])(@this, Producer, MessageCountLimit);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong, int>)@this->LpVtbl[3])(@this, Producer, MessageCountLimit);
             return ret;
         }
 
@@ -120,7 +123,7 @@ namespace Silk.NET.DXGI
         public readonly void ClearStoredMessages(Guid Producer)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)LpVtbl[4])(@this, Producer);
+            ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)@this->LpVtbl[4])(@this, Producer);
         }
 
         /// <summary>To be documented.</summary>
@@ -128,7 +131,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessage, pMessageByteLength);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)@this->LpVtbl[5])(@this, Producer, MessageIndex, pMessage, pMessageByteLength);
             return ret;
         }
 
@@ -139,7 +142,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (nuint* pMessageByteLengthPtr = &pMessageByteLength)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessage, pMessageByteLengthPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)@this->LpVtbl[5])(@this, Producer, MessageIndex, pMessage, pMessageByteLengthPtr);
             }
             return ret;
         }
@@ -151,7 +154,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (InfoQueueMessage* pMessagePtr = &pMessage)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessagePtr, pMessageByteLength);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)@this->LpVtbl[5])(@this, Producer, MessageIndex, pMessagePtr, pMessageByteLength);
             }
             return ret;
         }
@@ -165,7 +168,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (nuint* pMessageByteLengthPtr = &pMessageByteLength)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)LpVtbl[5])(@this, Producer, MessageIndex, pMessagePtr, pMessageByteLengthPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong, InfoQueueMessage*, nuint*, int>)@this->LpVtbl[5])(@this, Producer, MessageIndex, pMessagePtr, pMessageByteLengthPtr);
                 }
             }
             return ret;
@@ -176,7 +179,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[6])(@this, Producer);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)@this->LpVtbl[6])(@this, Producer);
             return ret;
         }
 
@@ -185,7 +188,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[7])(@this, Producer);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)@this->LpVtbl[7])(@this, Producer);
             return ret;
         }
 
@@ -194,7 +197,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[8])(@this, Producer);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)@this->LpVtbl[8])(@this, Producer);
             return ret;
         }
 
@@ -203,7 +206,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[9])(@this, Producer);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)@this->LpVtbl[9])(@this, Producer);
             return ret;
         }
 
@@ -212,7 +215,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[10])(@this, Producer);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)@this->LpVtbl[10])(@this, Producer);
             return ret;
         }
 
@@ -221,7 +224,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)LpVtbl[11])(@this, Producer);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, ulong>)@this->LpVtbl[11])(@this, Producer);
             return ret;
         }
 
@@ -230,7 +233,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[12])(@this, Producer, pFilter);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)@this->LpVtbl[12])(@this, Producer, pFilter);
             return ret;
         }
 
@@ -241,7 +244,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[12])(@this, Producer, pFilterPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)@this->LpVtbl[12])(@this, Producer, pFilterPtr);
             }
             return ret;
         }
@@ -251,7 +254,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilter, pFilterByteLength);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)@this->LpVtbl[13])(@this, Producer, pFilter, pFilterByteLength);
             return ret;
         }
 
@@ -262,7 +265,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (nuint* pFilterByteLengthPtr = &pFilterByteLength)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilter, pFilterByteLengthPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)@this->LpVtbl[13])(@this, Producer, pFilter, pFilterByteLengthPtr);
             }
             return ret;
         }
@@ -274,7 +277,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilterPtr, pFilterByteLength);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)@this->LpVtbl[13])(@this, Producer, pFilterPtr, pFilterByteLength);
             }
             return ret;
         }
@@ -288,7 +291,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (nuint* pFilterByteLengthPtr = &pFilterByteLength)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, Producer, pFilterPtr, pFilterByteLengthPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)@this->LpVtbl[13])(@this, Producer, pFilterPtr, pFilterByteLengthPtr);
                 }
             }
             return ret;
@@ -298,7 +301,7 @@ namespace Silk.NET.DXGI
         public readonly void ClearStorageFilter(Guid Producer)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)LpVtbl[14])(@this, Producer);
+            ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)@this->LpVtbl[14])(@this, Producer);
         }
 
         /// <summary>To be documented.</summary>
@@ -306,7 +309,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)LpVtbl[15])(@this, Producer);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)@this->LpVtbl[15])(@this, Producer);
             return ret;
         }
 
@@ -315,7 +318,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)LpVtbl[16])(@this, Producer);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)@this->LpVtbl[16])(@this, Producer);
             return ret;
         }
 
@@ -324,7 +327,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)LpVtbl[17])(@this, Producer);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)@this->LpVtbl[17])(@this, Producer);
             return ret;
         }
 
@@ -333,7 +336,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[18])(@this, Producer, pFilter);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)@this->LpVtbl[18])(@this, Producer, pFilter);
             return ret;
         }
 
@@ -344,7 +347,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[18])(@this, Producer, pFilterPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)@this->LpVtbl[18])(@this, Producer, pFilterPtr);
             }
             return ret;
         }
@@ -353,7 +356,7 @@ namespace Silk.NET.DXGI
         public readonly void PopStorageFilter(Guid Producer)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)LpVtbl[19])(@this, Producer);
+            ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)@this->LpVtbl[19])(@this, Producer);
         }
 
         /// <summary>To be documented.</summary>
@@ -361,7 +364,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, uint>)LpVtbl[20])(@this, Producer);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, uint>)@this->LpVtbl[20])(@this, Producer);
             return ret;
         }
 
@@ -370,7 +373,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[21])(@this, Producer, pFilter);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)@this->LpVtbl[21])(@this, Producer, pFilter);
             return ret;
         }
 
@@ -381,7 +384,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[21])(@this, Producer, pFilterPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)@this->LpVtbl[21])(@this, Producer, pFilterPtr);
             }
             return ret;
         }
@@ -391,7 +394,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilter, pFilterByteLength);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)@this->LpVtbl[22])(@this, Producer, pFilter, pFilterByteLength);
             return ret;
         }
 
@@ -402,7 +405,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (nuint* pFilterByteLengthPtr = &pFilterByteLength)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilter, pFilterByteLengthPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)@this->LpVtbl[22])(@this, Producer, pFilter, pFilterByteLengthPtr);
             }
             return ret;
         }
@@ -414,7 +417,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilterPtr, pFilterByteLength);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)@this->LpVtbl[22])(@this, Producer, pFilterPtr, pFilterByteLength);
             }
             return ret;
         }
@@ -428,7 +431,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (nuint* pFilterByteLengthPtr = &pFilterByteLength)
                 {
-                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)LpVtbl[22])(@this, Producer, pFilterPtr, pFilterByteLengthPtr);
+                    ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, nuint*, int>)@this->LpVtbl[22])(@this, Producer, pFilterPtr, pFilterByteLengthPtr);
                 }
             }
             return ret;
@@ -438,7 +441,7 @@ namespace Silk.NET.DXGI
         public readonly void ClearRetrievalFilter(Guid Producer)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)LpVtbl[23])(@this, Producer);
+            ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)@this->LpVtbl[23])(@this, Producer);
         }
 
         /// <summary>To be documented.</summary>
@@ -446,7 +449,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)LpVtbl[24])(@this, Producer);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)@this->LpVtbl[24])(@this, Producer);
             return ret;
         }
 
@@ -455,7 +458,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)LpVtbl[25])(@this, Producer);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)@this->LpVtbl[25])(@this, Producer);
             return ret;
         }
 
@@ -464,7 +467,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)LpVtbl[26])(@this, Producer);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)@this->LpVtbl[26])(@this, Producer);
             return ret;
         }
 
@@ -473,7 +476,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[27])(@this, Producer, pFilter);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)@this->LpVtbl[27])(@this, Producer, pFilter);
             return ret;
         }
 
@@ -484,7 +487,7 @@ namespace Silk.NET.DXGI
             int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)LpVtbl[27])(@this, Producer, pFilterPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueFilter*, int>)@this->LpVtbl[27])(@this, Producer, pFilterPtr);
             }
             return ret;
         }
@@ -493,7 +496,7 @@ namespace Silk.NET.DXGI
         public readonly void PopRetrievalFilter(Guid Producer)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)LpVtbl[28])(@this, Producer);
+            ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, void>)@this->LpVtbl[28])(@this, Producer);
         }
 
         /// <summary>To be documented.</summary>
@@ -501,142 +504,160 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, uint>)LpVtbl[29])(@this, Producer);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, uint>)@this->LpVtbl[29])(@this, Producer);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddMessage(Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, byte* pDescription)
+        public readonly unsafe int AddMessage(Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(FlowDirection.In)] byte* pDescription)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescription);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)@this->LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescription);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddMessage(Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, ref byte pDescription)
-        {
-            var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (byte* pDescriptionPtr = &pDescription)
-            {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescriptionPtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int AddMessage(Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
-        {
-            var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            var pDescriptionPtr = (byte*) SilkMarshal.StringToPtr(pDescription, NativeStringEncoding.LPStr);
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescriptionPtr);
-            SilkMarshal.Free((nint)pDescriptionPtr);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int AddApplicationMessage(InfoQueueMessageSeverity Severity, byte* pDescription)
-        {
-            var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)LpVtbl[31])(@this, Severity, pDescription);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int AddApplicationMessage(InfoQueueMessageSeverity Severity, ref byte pDescription)
+        public readonly int AddMessage(Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(FlowDirection.In)] in byte pDescription)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (byte* pDescriptionPtr = &pDescription)
             {
-                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)LpVtbl[31])(@this, Severity, pDescriptionPtr);
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)@this->LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescriptionPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddApplicationMessage(InfoQueueMessageSeverity Severity, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
+        public readonly int AddMessage(Guid Producer, InfoQueueMessageCategory Category, InfoQueueMessageSeverity Severity, int ID, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             var pDescriptionPtr = (byte*) SilkMarshal.StringToPtr(pDescription, NativeStringEncoding.LPStr);
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)LpVtbl[31])(@this, Severity, pDescriptionPtr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)@this->LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescriptionPtr);
             SilkMarshal.Free((nint)pDescriptionPtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBreakOnCategory(Guid Producer, InfoQueueMessageCategory Category, int bEnable)
+        public readonly unsafe int AddApplicationMessage(InfoQueueMessageSeverity Severity, [Flow(FlowDirection.In)] byte* pDescription)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, int, int>)LpVtbl[32])(@this, Producer, Category, bEnable);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)@this->LpVtbl[31])(@this, Severity, pDescription);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBreakOnSeverity(Guid Producer, InfoQueueMessageSeverity Severity, int bEnable)
+        public readonly int AddApplicationMessage(InfoQueueMessageSeverity Severity, [Flow(FlowDirection.In)] in byte pDescription)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, int, int>)LpVtbl[33])(@this, Producer, Severity, bEnable);
+            fixed (byte* pDescriptionPtr = &pDescription)
+            {
+                ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)@this->LpVtbl[31])(@this, Severity, pDescriptionPtr);
+            }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetBreakOnID(Guid Producer, int ID, int bEnable)
+        public readonly int AddApplicationMessage(InfoQueueMessageSeverity Severity, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPStr)] string pDescription)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, int, int>)LpVtbl[34])(@this, Producer, ID, bEnable);
+            var pDescriptionPtr = (byte*) SilkMarshal.StringToPtr(pDescription, NativeStringEncoding.LPStr);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)@this->LpVtbl[31])(@this, Severity, pDescriptionPtr);
+            SilkMarshal.Free((nint)pDescriptionPtr);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetBreakOnCategory(Guid Producer, InfoQueueMessageCategory Category)
+        public readonly int SetBreakOnCategory(Guid Producer, InfoQueueMessageCategory Category, Silk.NET.Core.Bool32 bEnable)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, int>)LpVtbl[35])(@this, Producer, Category);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, Silk.NET.Core.Bool32, int>)@this->LpVtbl[32])(@this, Producer, Category, bEnable);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetBreakOnSeverity(Guid Producer, InfoQueueMessageSeverity Severity)
+        public readonly int SetBreakOnSeverity(Guid Producer, InfoQueueMessageSeverity Severity, Silk.NET.Core.Bool32 bEnable)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, int>)LpVtbl[36])(@this, Producer, Severity);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, Silk.NET.Core.Bool32, int>)@this->LpVtbl[33])(@this, Producer, Severity, bEnable);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetBreakOnID(Guid Producer, int ID)
+        public readonly int SetBreakOnID(Guid Producer, int ID, Silk.NET.Core.Bool32 bEnable)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, int>)LpVtbl[37])(@this, Producer, ID);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, Silk.NET.Core.Bool32, int>)@this->LpVtbl[34])(@this, Producer, ID, bEnable);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void SetMuteDebugOutput(Guid Producer, int bMute)
+        public readonly Silk.NET.Core.Bool32 GetBreakOnCategory(Guid Producer, InfoQueueMessageCategory Category)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, void>)LpVtbl[38])(@this, Producer, bMute);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, Silk.NET.Core.Bool32>)@this->LpVtbl[35])(@this, Producer, Category);
+            return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetMuteDebugOutput(Guid Producer)
+        public readonly Silk.NET.Core.Bool32 GetBreakOnSeverity(Guid Producer, InfoQueueMessageSeverity Severity)
         {
             var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int>)LpVtbl[39])(@this, Producer);
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, InfoQueueMessageSeverity, Silk.NET.Core.Bool32>)@this->LpVtbl[36])(@this, Producer, Severity);
             return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly Silk.NET.Core.Bool32 GetBreakOnID(Guid Producer, int ID)
+        {
+            var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, int, Silk.NET.Core.Bool32>)@this->LpVtbl[37])(@this, Producer, ID);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly void SetMuteDebugOutput(Guid Producer, Silk.NET.Core.Bool32 bMute)
+        {
+            var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, Silk.NET.Core.Bool32, void>)@this->LpVtbl[38])(@this, Producer, bMute);
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly Silk.NET.Core.Bool32 GetMuteDebugOutput(Guid Producer)
+        {
+            var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            Silk.NET.Core.Bool32 ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIInfoQueue*, Guid, Silk.NET.Core.Bool32>)@this->LpVtbl[39])(@this, Producer);
+            return ret;
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly int QueryInterface<TI0>(out ComPtr<TI0> ppvObject) where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // ComPtrOverloader
+            ppvObject = default;
+            return @this->QueryInterface(SilkMarshal.GuidPtrOf<TI0>(), (void**) ppvObject.GetAddressOf());
+        }
+
+        /// <summary>To be documented.</summary>
+        public readonly ComPtr<TI0> QueryInterface<TI0>() where TI0 : unmanaged, IComVtbl<TI0>
+        {
+            var @this = (IDXGIInfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+            // NonKhrReturnTypeOverloader
+            SilkMarshal.ThrowHResult(@this->QueryInterface(out ComPtr<TI0> silkRet));
+            return silkRet;
         }
 
     }

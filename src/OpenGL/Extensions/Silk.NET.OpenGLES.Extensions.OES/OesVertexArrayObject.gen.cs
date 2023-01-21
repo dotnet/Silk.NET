@@ -89,6 +89,13 @@ namespace Silk.NET.OpenGLES.Extensions.OES
             GenVertexArrays((uint) arrays.Length, out arrays.GetPinnableReference());
         }
 
+        public unsafe uint GenVertexArrays([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenVertexArrays(n, out uint silkRet);
+            return silkRet;
+        }
+
         public OesVertexArrayObject(INativeContext ctx)
             : base(ctx)
         {

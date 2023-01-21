@@ -25,5 +25,7 @@ namespace Silk.NET.OpenCL
         OnDeviceDefault = 0x8,
         [NativeName("Name", "CL_QUEUE_THREAD_LOCAL_EXEC_ENABLE_INTEL")]
         ThreadLocalExecEnableIntel = 0x80000000,
+        [NativeName("Name", "CL_QUEUE_NO_SYNC_OPERATIONS_INTEL")]
+        NoSyncOperationsIntel = 0x20000000,
     }
 }

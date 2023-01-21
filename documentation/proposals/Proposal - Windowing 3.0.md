@@ -800,7 +800,7 @@ namespace Silk.NET.Windowing
         /// Sets the window icon to default on the given window.
         /// </summary>
         /// <param name="window">The window.</param>
-        public static void SetDefaultIcon(this IDesktopWindow window);
+        public static void SetDefaultIcon(this IDesktopSurface window);
 
         /// <summary>
         /// Sets a single window icon on the given window.

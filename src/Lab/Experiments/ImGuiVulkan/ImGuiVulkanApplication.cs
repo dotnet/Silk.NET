@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -75,8 +76,8 @@ namespace ImGuiVulkan
 		private KhrSwapchain _vkSwapchain;
 		private ExtDebugUtils _debugUtils;
 		private string[] _validationLayers = { "VK_LAYER_KHRONOS_validation" };
-		private string[] _instanceExtensions = { ExtDebugUtils.ExtensionName };
-		private string[] _deviceExtensions = { KhrSwapchain.ExtensionName };
+        private List<string> _instanceExtensions = new () { ExtDebugUtils.ExtensionName };
+		private List<string> _deviceExtensions = new () { KhrSwapchain.ExtensionName };
 
 		private void InitWindow()
 		{
@@ -319,13 +320,21 @@ namespace ImGuiVulkan
 		private unsafe void CreateInstance()
 		{
 			_vk = Vk.GetApi();
-
+            
+            var isMacOs = RuntimeInformation.IsOSPlatform(OSPlatform.OSX); 
+            
+            if (isMacOs)
+            {
+                _instanceExtensions.Add("VK_KHR_portability_enumeration");
+                _deviceExtensions.Add("VK_KHR_portability_subset");
+            }
+            
 			if (EnableValidationLayers && !CheckValidationLayerSupport())
 			{
 				throw new NotSupportedException("Validation layers requested, but not available!");
 			}
 
-			var appInfo = new ApplicationInfo
+            var appInfo = new ApplicationInfo
 			{
 				SType = StructureType.ApplicationInfo,
 				PApplicationName = (byte*)Marshal.StringToHGlobalAnsi("Hello Triangle"),
@@ -340,22 +349,27 @@ namespace ImGuiVulkan
 				SType = StructureType.InstanceCreateInfo,
 				PApplicationInfo = &appInfo
 			};
-
+            
+            if (isMacOs)
+            {
+                createInfo.Flags = InstanceCreateFlags.EnumeratePortabilityBitKhr;
+            }
+            
 			var extensions = _window.VkSurface!.GetRequiredExtensions(out var extCount);
 			// TODO Review that this count doesn't realistically exceed 1k (recommended max for stackalloc)
 			// Should probably be allocated on heap anyway as this isn't super performance critical.
-			var newExtensions = stackalloc byte*[(int)(extCount + _instanceExtensions.Length)];
+			var newExtensions = stackalloc byte*[(int)(extCount + _instanceExtensions.Count)];
 			for (var i = 0; i < extCount; i++)
 			{
 				newExtensions[i] = extensions[i];
 			}
 
-			for (var i = 0; i < _instanceExtensions.Length; i++)
+			for (var i = 0; i < _instanceExtensions.Count; i++)
 			{
 				newExtensions[extCount + i] = (byte*)SilkMarshal.StringToPtr(_instanceExtensions[i]);
 			}
 
-			extCount += (uint)_instanceExtensions.Length;
+			extCount += (uint)_instanceExtensions.Count;
 			createInfo.EnabledExtensionCount = extCount;
 			createInfo.PpEnabledExtensionNames = newExtensions;
 
@@ -615,7 +629,7 @@ namespace ImGuiVulkan
 			createInfo.QueueCreateInfoCount = (uint)uniqueQueueFamilies.Length;
 			createInfo.PQueueCreateInfos = queueCreateInfos;
 			createInfo.PEnabledFeatures = &deviceFeatures;
-			createInfo.EnabledExtensionCount = (uint)_deviceExtensions.Length;
+			createInfo.EnabledExtensionCount = (uint)_deviceExtensions.Count;
 
 			var enabledExtensionNames = SilkMarshal.StringArrayToPtr(_deviceExtensions);
 			createInfo.PpEnabledExtensionNames = (byte**)enabledExtensionNames;

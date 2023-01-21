@@ -42,7 +42,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         public partial void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glSpriteParameteriSGIX", Convention = CallingConvention.Winapi)]
+        public partial void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] SpriteModeSGIX param);
+
+        [NativeApi(EntryPoint = "glSpriteParameteriSGIX", Convention = CallingConvention.Winapi)]
         public partial void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Flow(FlowDirection.In)] int param);
+
+        [NativeApi(EntryPoint = "glSpriteParameteriSGIX", Convention = CallingConvention.Winapi)]
+        public partial void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Flow(FlowDirection.In)] SpriteModeSGIX param);
 
         [NativeApi(EntryPoint = "glSpriteParameterivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
@@ -51,10 +57,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         public partial void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
         [NativeApi(EntryPoint = "glSpriteParameterivSGIX", Convention = CallingConvention.Winapi)]
+        public unsafe partial void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] SpriteModeSGIX* @params);
+
+        [NativeApi(EntryPoint = "glSpriteParameterivSGIX", Convention = CallingConvention.Winapi)]
+        public partial void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in SpriteModeSGIX @params);
+
+        [NativeApi(EntryPoint = "glSpriteParameterivSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glSpriteParameterivSGIX", Convention = CallingConvention.Winapi)]
         public partial void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
+
+        [NativeApi(EntryPoint = "glSpriteParameterivSGIX", Convention = CallingConvention.Winapi)]
+        public unsafe partial void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] SpriteModeSGIX* @params);
+
+        [NativeApi(EntryPoint = "glSpriteParameterivSGIX", Convention = CallingConvention.Winapi)]
+        public partial void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in SpriteModeSGIX @params);
 
         public SgixSprite(INativeContext ctx)
             : base(ctx)

@@ -122,6 +122,20 @@ namespace Silk.NET.OpenGL.Extensions.NV
         [NativeApi(EntryPoint = "glVertexAttribLFormatNV", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribLFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribLType type, [Flow(FlowDirection.In)] uint stride);
 
+        public unsafe long GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexAttribL(index, pname, out long silkRet);
+            return silkRet;
+        }
+
+        public unsafe long GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexAttribL(index, pname, out long silkRet);
+            return silkRet;
+        }
+
         public NVVertexAttribInteger64bit(INativeContext ctx)
             : base(ctx)
         {

@@ -80,6 +80,20 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         [NativeApi(EntryPoint = "glListParameterivSGIX", Convention = CallingConvention.Winapi)]
         public partial void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in int @params);
 
+        public unsafe float GetListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetListParameter(list, pname, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetListParameter(list, pname, out float silkRet);
+            return silkRet;
+        }
+
         public SgixListPriority(INativeContext ctx)
             : base(ctx)
         {

@@ -233,6 +233,27 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             Uniform4(location, (uint) value.Length, in value.GetPinnableReference());
         }
 
+        public unsafe uint GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location)
+        {
+            // NonKhrReturnTypeOverloader
+            GetUniform(program, location, out uint silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexAttribI(index, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetVertexAttribI(index, pname, out int silkRet);
+            return silkRet;
+        }
+
         public ExtGpuShader4(INativeContext ctx)
             : base(ctx)
         {

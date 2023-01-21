@@ -199,6 +199,10 @@ namespace Silk.NET.OpenCL
         ThreadLocalExecEnableIntel = unchecked((int) 0x80000000),
         [NativeName("Name", "CL_QUEUE_THREAD_LOCAL_EXEC_ENABLE_INTEL")]
         QueueThreadLocalExecEnableIntel = unchecked((int) 0x80000000),
+        [NativeName("Name", "CL_QUEUE_NO_SYNC_OPERATIONS_INTEL")]
+        NoSyncOperationsIntel = 0x20000000,
+        [NativeName("Name", "CL_QUEUE_NO_SYNC_OPERATIONS_INTEL")]
+        QueueNoSyncOperationsIntel = 0x20000000,
         [NativeName("Name", "CL_COMMAND_NDRANGE_KERNEL")]
         NdrangeKernel = 0x11F0,
         [NativeName("Name", "CL_COMMAND_NDRANGE_KERNEL")]
@@ -1322,6 +1326,10 @@ namespace Silk.NET.OpenCL
         SupportedRegisterAllocationsArm = 0x41EB,
         [NativeName("Name", "CL_DEVICE_SUPPORTED_REGISTER_ALLOCATIONS_ARM")]
         DeviceSupportedRegisterAllocationsArm = 0x41EB,
+        [NativeName("Name", "CL_DEVICE_MAX_WARP_COUNT_ARM")]
+        MaxWarpCountArm = 0x41EA,
+        [NativeName("Name", "CL_DEVICE_MAX_WARP_COUNT_ARM")]
+        DeviceMaxWarpCountArm = 0x41EA,
         [NativeName("Name", "CL_DEVICE_CXX_FOR_OPENCL_NUMERIC_VERSION_EXT")]
         CxxForOpenclNumericVersionExt = 0x4230,
         [NativeName("Name", "CL_DEVICE_CXX_FOR_OPENCL_NUMERIC_VERSION_EXT")]
@@ -1434,6 +1442,14 @@ namespace Silk.NET.OpenCL
         HalfFPAtomicCapabilitiesExt = 0x4233,
         [NativeName("Name", "CL_DEVICE_HALF_FP_ATOMIC_CAPABILITIES_EXT")]
         DeviceHalfFPAtomicCapabilitiesExt = 0x4233,
+        [NativeName("Name", "CL_DEVICE_JOB_SLOTS_ARM")]
+        JobSlotsArm = 0x41E0,
+        [NativeName("Name", "CL_DEVICE_JOB_SLOTS_ARM")]
+        DeviceJobSlotsArm = 0x41E0,
+        [NativeName("Name", "CL_DEVICE_MUTABLE_DISPATCH_CAPABILITIES_KHR")]
+        MutableDispatchCapabilitiesKhr = 0x12B0,
+        [NativeName("Name", "CL_DEVICE_MUTABLE_DISPATCH_CAPABILITIES_KHR")]
+        DeviceMutableDispatchCapabilitiesKhr = 0x12B0,
         [NativeName("Name", "CL_LOCAL")]
         Local = 0x1,
         [NativeName("Name", "CL_GLOBAL")]
@@ -1696,6 +1712,8 @@ namespace Silk.NET.OpenCL
         InvalidSyncPointWaitListKhr = unchecked((int) 0xFFFFFFFFFFFFFB8D),
         [NativeName("Name", "CL_INCOMPATIBLE_COMMAND_QUEUE_KHR")]
         IncompatibleCommandQueueKhr = unchecked((int) 0xFFFFFFFFFFFFFB8C),
+        [NativeName("Name", "CL_INVALID_MUTABLE_COMMAND_KHR")]
+        InvalidMutableCommandKhr = unchecked((int) 0xFFFFFFFFFFFFFB8B),
         [NativeName("Name", "CL_EVENT_COMMAND_QUEUE")]
         CommandQueue = 0x11D0,
         [NativeName("Name", "CL_EVENT_COMMAND_QUEUE")]
@@ -1992,6 +2010,14 @@ namespace Silk.NET.OpenCL
         WorkgroupBatchSizeModifierArm = 0x41E6,
         [NativeName("Name", "CL_KERNEL_EXEC_INFO_WORKGROUP_BATCH_SIZE_MODIFIER_ARM")]
         KernelExecInfoWorkgroupBatchSizeModifierArm = 0x41E6,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_WARP_COUNT_LIMIT_ARM")]
+        WarpCountLimitArm = 0x41E8,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_WARP_COUNT_LIMIT_ARM")]
+        KernelExecInfoWarpCountLimitArm = 0x41E8,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_COMPUTE_UNIT_MAX_QUEUED_BATCHES_ARM")]
+        ComputeUnitMaxQueuedBatchesArm = 0x41F1,
+        [NativeName("Name", "CL_KERNEL_EXEC_INFO_COMPUTE_UNIT_MAX_QUEUED_BATCHES_ARM")]
+        KernelExecInfoComputeUnitMaxQueuedBatchesArm = 0x41F1,
         [NativeName("Name", "CL_KERNEL_FUNCTION_NAME")]
         FunctionName = 0x1190,
         [NativeName("Name", "CL_KERNEL_NUM_ARGS")]
@@ -2002,6 +2028,8 @@ namespace Silk.NET.OpenCL
         Attributes = 0x1195,
         [NativeName("Name", "CL_KERNEL_ATTRIBUTES")]
         KernelAttributes = 0x1195,
+        [NativeName("Name", "CL_KERNEL_MAX_WARP_COUNT_ARM")]
+        KernelMaxWarpCountArm = 0x41E9,
         [NativeName("Name", "CL_KERNEL_MAX_NUM_SUB_GROUPS")]
         KernelMaxNumSubGroups = 0x11B9,
         [NativeName("Name", "CL_KERNEL_COMPILE_NUM_SUB_GROUPS")]
@@ -2206,6 +2234,10 @@ namespace Silk.NET.OpenCL
         MemAllocFlagsImg = 0x40D7,
         [NativeName("Name", "CL_DEVICE_HANDLE_LIST_KHR")]
         DeviceHandleListKhr = 0x2051,
+        [NativeName("Name", "CL_MEM_LOCALLY_UNCACHED_RESOURCE_INTEL")]
+        MemLocallyUncachedResourceIntel = 0x4218,
+        [NativeName("Name", "CL_MEM_DEVICE_ID_INTEL")]
+        MemDeviceIDIntel = 0x4219,
         [NativeName("Name", "CL_PIPE_PACKET_SIZE")]
         PacketSize = 0x1120,
         [NativeName("Name", "CL_PIPE_PACKET_SIZE")]
@@ -2338,6 +2370,10 @@ namespace Silk.NET.OpenCL
         IndexIntel = 0x418D,
         [NativeName("Name", "CL_QUEUE_INDEX_INTEL")]
         QueueIndexIntel = 0x418D,
+        [NativeName("Name", "CL_QUEUE_JOB_SLOT_ARM")]
+        JobSlotArm = 0x41E1,
+        [NativeName("Name", "CL_QUEUE_JOB_SLOT_ARM")]
+        QueueJobSlotArm = 0x41E1,
         [NativeName("Name", "CL_SAMPLER_NORMALIZED_COORDS")]
         NormalizedCoords = 0x1152,
         [NativeName("Name", "CL_SAMPLER_ADDRESSING_MODE")]

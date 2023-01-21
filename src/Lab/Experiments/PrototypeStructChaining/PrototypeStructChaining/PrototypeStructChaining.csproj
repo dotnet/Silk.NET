@@ -11,7 +11,7 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
         <PackageReference Include="Microsoft.DotNet.PlatformAbstractions" Version="3.1.6" />
-        <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="7.0.0" />
         <ProjectReference Include="..\..\..\..\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
         <PackageReference Include="System.Memory" Version="4.5.5" />
         <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />

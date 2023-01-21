@@ -26,5 +26,7 @@ namespace Silk.NET.OpenCL.Extensions.EXT
         MaxDepth = 0x12B5,
         [NativeName("Name", "CL_IMAGE_REQUIREMENTS_MAX_ARRAY_SIZE_EXT")]
         MaxArraySize = 0x12B6,
+        [NativeName("Name", "CL_IMAGE_REQUIREMENTS_SLICE_PITCH_ALIGNMENT_EXT")]
+        SlicePitchAlignment = 0x1291,
     }
 }

@@ -184,6 +184,48 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
             thisApi.ReplacementCodeuiColor3fVertex3(in rc.GetPinnableReference(), in c.GetPinnableReference(), in v.GetPinnableReference());
         }
 
+        public static unsafe void ReplacementCodeuiColor3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 3), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor3fVertex3(rc, c, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiColor3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor3fVertex3(rc, in c.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiColor3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor3fVertex3(rc, in c.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiColor3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 3), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor3fVertex3(in rc.GetPinnableReference(), c, v);
+        }
+
+        public static unsafe void ReplacementCodeuiColor3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 3), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor3fVertex3(in rc.GetPinnableReference(), c, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiColor3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor3fVertex3(in rc.GetPinnableReference(), in c.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiColor3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor3fVertex3(in rc.GetPinnableReference(), in c.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
         public static unsafe void ReplacementCodeuiColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] uint* rc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
@@ -274,6 +316,96 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
             thisApi.ReplacementCodeuiColor4fNormal3fVertex3(in rc.GetPinnableReference(), in c.GetPinnableReference(), in n.GetPinnableReference(), in v.GetPinnableReference());
         }
 
+        public static unsafe void ReplacementCodeuiColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4fNormal3fVertex3(rc, c, n, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4fNormal3fVertex3(rc, c, in n.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4fNormal3fVertex3(rc, c, in n.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4fNormal3fVertex3(rc, in c.GetPinnableReference(), n, v);
+        }
+
+        public static unsafe void ReplacementCodeuiColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4fNormal3fVertex3(rc, in c.GetPinnableReference(), n, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4fNormal3fVertex3(rc, in c.GetPinnableReference(), in n.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4fNormal3fVertex3(rc, in c.GetPinnableReference(), in n.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4fNormal3fVertex3(in rc.GetPinnableReference(), c, n, v);
+        }
+
+        public static unsafe void ReplacementCodeuiColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4fNormal3fVertex3(in rc.GetPinnableReference(), c, n, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4fNormal3fVertex3(in rc.GetPinnableReference(), c, in n.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4fNormal3fVertex3(in rc.GetPinnableReference(), c, in n.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4fNormal3fVertex3(in rc.GetPinnableReference(), in c.GetPinnableReference(), n, v);
+        }
+
+        public static unsafe void ReplacementCodeuiColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4fNormal3fVertex3(in rc.GetPinnableReference(), in c.GetPinnableReference(), n, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4fNormal3fVertex3(in rc.GetPinnableReference(), in c.GetPinnableReference(), in n.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4fNormal3fVertex3(in rc.GetPinnableReference(), in c.GetPinnableReference(), in n.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
         public static unsafe void ReplacementCodeuiColor4ubVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] uint* rc, [Count(Count = 4), Flow(FlowDirection.In)] byte* c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
@@ -334,6 +466,66 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
             thisApi.ReplacementCodeuiColor4ubVertex3(in rc.GetPinnableReference(), c, in v.GetPinnableReference());
         }
 
+        public static unsafe void ReplacementCodeuiColor4ubVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 4), Flow(FlowDirection.In)] byte* c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4ubVertex3(rc, c, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiColor4ubVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<byte> c, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4ubVertex3(rc, in c.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiColor4ubVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<byte> c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4ubVertex3(rc, in c.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiColor4ubVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4ubVertex3(rc, c, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiColor4ubVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 4), Flow(FlowDirection.In)] byte* c, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4ubVertex3(in rc.GetPinnableReference(), c, v);
+        }
+
+        public static unsafe void ReplacementCodeuiColor4ubVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 4), Flow(FlowDirection.In)] byte* c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4ubVertex3(in rc.GetPinnableReference(), c, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiColor4ubVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<byte> c, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4ubVertex3(in rc.GetPinnableReference(), in c.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiColor4ubVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<byte> c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4ubVertex3(in rc.GetPinnableReference(), in c.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiColor4ubVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string c, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4ubVertex3(in rc.GetPinnableReference(), c, v);
+        }
+
+        public static unsafe void ReplacementCodeuiColor4ubVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiColor4ubVertex3(in rc.GetPinnableReference(), c, in v.GetPinnableReference());
+        }
+
         public static unsafe void ReplacementCodeuiNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] uint* rc, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
@@ -371,6 +563,48 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         }
 
         public static unsafe void ReplacementCodeuiNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> rc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiNormal3fVertex3(in rc.GetPinnableReference(), in n.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiNormal3fVertex3(rc, n, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiNormal3fVertex3(rc, in n.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiNormal3fVertex3(rc, in n.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiNormal3fVertex3(in rc.GetPinnableReference(), n, v);
+        }
+
+        public static unsafe void ReplacementCodeuiNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiNormal3fVertex3(in rc.GetPinnableReference(), n, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiNormal3fVertex3(in rc.GetPinnableReference(), in n.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.ReplacementCodeuiNormal3fVertex3(in rc.GetPinnableReference(), in n.GetPinnableReference(), in v.GetPinnableReference());
@@ -562,6 +796,192 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
             thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(in rc.GetPinnableReference(), in tc.GetPinnableReference(), in c.GetPinnableReference(), in n.GetPinnableReference(), in v.GetPinnableReference());
         }
 
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(rc, tc, c, n, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(rc, tc, c, in n.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(rc, tc, c, in n.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(rc, tc, in c.GetPinnableReference(), n, v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(rc, tc, in c.GetPinnableReference(), n, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(rc, tc, in c.GetPinnableReference(), in n.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(rc, tc, in c.GetPinnableReference(), in n.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(rc, in tc.GetPinnableReference(), c, n, v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(rc, in tc.GetPinnableReference(), c, n, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(rc, in tc.GetPinnableReference(), c, in n.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(rc, in tc.GetPinnableReference(), c, in n.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(rc, in tc.GetPinnableReference(), in c.GetPinnableReference(), n, v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(rc, in tc.GetPinnableReference(), in c.GetPinnableReference(), n, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(rc, in tc.GetPinnableReference(), in c.GetPinnableReference(), in n.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(rc, in tc.GetPinnableReference(), in c.GetPinnableReference(), in n.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(in rc.GetPinnableReference(), tc, c, n, v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(in rc.GetPinnableReference(), tc, c, n, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(in rc.GetPinnableReference(), tc, c, in n.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(in rc.GetPinnableReference(), tc, c, in n.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(in rc.GetPinnableReference(), tc, in c.GetPinnableReference(), n, v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(in rc.GetPinnableReference(), tc, in c.GetPinnableReference(), n, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(in rc.GetPinnableReference(), tc, in c.GetPinnableReference(), in n.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(in rc.GetPinnableReference(), tc, in c.GetPinnableReference(), in n.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(in rc.GetPinnableReference(), in tc.GetPinnableReference(), c, n, v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(in rc.GetPinnableReference(), in tc.GetPinnableReference(), c, n, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(in rc.GetPinnableReference(), in tc.GetPinnableReference(), c, in n.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 4), Flow(FlowDirection.In)] float* c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(in rc.GetPinnableReference(), in tc.GetPinnableReference(), c, in n.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(in rc.GetPinnableReference(), in tc.GetPinnableReference(), in c.GetPinnableReference(), n, v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(in rc.GetPinnableReference(), in tc.GetPinnableReference(), in c.GetPinnableReference(), n, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(in rc.GetPinnableReference(), in tc.GetPinnableReference(), in c.GetPinnableReference(), in n.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> c, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fColor4fNormal3fVertex3(in rc.GetPinnableReference(), in tc.GetPinnableReference(), in c.GetPinnableReference(), in n.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
         public static unsafe void ReplacementCodeuiTexCoord2fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] uint* rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
@@ -652,6 +1072,96 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
             thisApi.ReplacementCodeuiTexCoord2fNormal3fVertex3(in rc.GetPinnableReference(), in tc.GetPinnableReference(), in n.GetPinnableReference(), in v.GetPinnableReference());
         }
 
+        public static unsafe void ReplacementCodeuiTexCoord2fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fNormal3fVertex3(rc, tc, n, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fNormal3fVertex3(rc, tc, in n.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fNormal3fVertex3(rc, tc, in n.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fNormal3fVertex3(rc, in tc.GetPinnableReference(), n, v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fNormal3fVertex3(rc, in tc.GetPinnableReference(), n, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fNormal3fVertex3(rc, in tc.GetPinnableReference(), in n.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fNormal3fVertex3(rc, in tc.GetPinnableReference(), in n.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fNormal3fVertex3(in rc.GetPinnableReference(), tc, n, v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fNormal3fVertex3(in rc.GetPinnableReference(), tc, n, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fNormal3fVertex3(in rc.GetPinnableReference(), tc, in n.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fNormal3fVertex3(in rc.GetPinnableReference(), tc, in n.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fNormal3fVertex3(in rc.GetPinnableReference(), in tc.GetPinnableReference(), n, v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 3), Flow(FlowDirection.In)] float* n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fNormal3fVertex3(in rc.GetPinnableReference(), in tc.GetPinnableReference(), n, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fNormal3fVertex3(in rc.GetPinnableReference(), in tc.GetPinnableReference(), in n.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fNormal3fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> n, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fNormal3fVertex3(in rc.GetPinnableReference(), in tc.GetPinnableReference(), in n.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
         public static unsafe void ReplacementCodeuiTexCoord2fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] uint* rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
@@ -694,6 +1204,48 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
             thisApi.ReplacementCodeuiTexCoord2fVertex3(in rc.GetPinnableReference(), in tc.GetPinnableReference(), in v.GetPinnableReference());
         }
 
+        public static unsafe void ReplacementCodeuiTexCoord2fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fVertex3(rc, tc, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fVertex3(rc, in tc.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fVertex3(rc, in tc.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fVertex3(in rc.GetPinnableReference(), tc, v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] float* tc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fVertex3(in rc.GetPinnableReference(), tc, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fVertex3(in rc.GetPinnableReference(), in tc.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiTexCoord2fVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> tc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiTexCoord2fVertex3(in rc.GetPinnableReference(), in tc.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
         public static unsafe void ReplacementCodeuiVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] uint* rc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
@@ -707,6 +1259,24 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         }
 
         public static unsafe void ReplacementCodeuiVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> rc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiVertex3(in rc.GetPinnableReference(), in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] TriangleListSUN* rc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiVertex3(rc, in v.GetPinnableReference());
+        }
+
+        public static unsafe void ReplacementCodeuiVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+        {
+            // SpanOverloader
+            thisApi.ReplacementCodeuiVertex3(in rc.GetPinnableReference(), v);
+        }
+
+        public static unsafe void ReplacementCodeuiVertex3(this SunVertex thisApi, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<TriangleListSUN> rc, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.ReplacementCodeuiVertex3(in rc.GetPinnableReference(), in v.GetPinnableReference());

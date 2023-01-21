@@ -236,6 +236,34 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             ProgramLocalParametersI4(target, index, (uint) @params.Length, in @params.GetPinnableReference());
         }
 
+        public unsafe int GetProgramEnvParameterI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramEnvParameterI(target, index, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetProgramEnvParameterI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramEnvParameterI(target, index, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetProgramLocalParameterI([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramLocalParameterI(target, index, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetProgramLocalParameterI([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramLocalParameterI(target, index, out int silkRet);
+            return silkRet;
+        }
+
         public NVGpuProgram4(INativeContext ctx)
             : base(ctx)
         {

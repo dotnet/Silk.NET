@@ -8,7 +8,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "glcore",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "gl",
                 "constructor": "gl",
@@ -78,7 +78,8 @@
                     "$include.glTypeMap": "build/gl_typemap.json"
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         },
@@ -90,7 +91,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "gl",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "gl",
                 "constructor": "gl",
@@ -160,7 +161,8 @@
                     "$include.glTypeMap": "build/gl_typemap.json"
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         },
@@ -172,7 +174,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "gles2",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "gl",
                 "constructor": "gl",
@@ -242,7 +244,8 @@
                     "$include.glTypeMap": "build/gl_typemap.json"
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         },
@@ -254,7 +257,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "cl",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "cl",
                 "constructor": "cl",
@@ -270,7 +273,7 @@
                 "CL_DRIVER_UUID_KHR": "CL_DEVICE_DRIVER_UUID_KHR",
                 
                 "CL_PRINTF_CALLBACK_ARM": "CL_CONTEXT_PRINTF_CALLBACK_ARM",
-                "CL_PRINTF_BUFFERSIZE_ARM": "CL_CONTEXT_PRINTF_BUFFERSIZE_ARM",
+                "CL_PRINTF_BUFFERSIZE_ARM": "CL_CONTEXT_PRINTF_BUFFERSIZE_ARM"
             },
             "bakery": {
                 "profileNames": [
@@ -314,10 +317,11 @@
                 },
                 {
                     "cl_icd_dispatch": "void",
-                    "cl_svm_mem_flags": "cl_mem_flags",
+                    "cl_svm_mem_flags": "cl_mem_flags"
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         },
@@ -329,7 +333,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "vulkan",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "vk",
                 "constructor": "vk",
@@ -390,6 +394,8 @@
                     "PFN_vkDebugReportCallbackEXT": "PfnDebugReportCallbackEXT",
                     "PFN_vkDebugUtilsMessengerCallbackEXT": "PfnDebugUtilsMessengerCallbackEXT",
                     "PFN_vkDeviceMemoryReportCallbackEXT": "PfnDeviceMemoryReportCallbackEXT",
+                    "PFN_vkGetInstanceProcAddr": "PfnVoidFunction",
+                    "PFN_vkGetInstanceProcAddrLUNARG": "PfnVoidFunction",
                     "char": "byte",
                     "Window": "nint",
                     "VkAabbPositionsKHR": "Silk.NET.Maths.Box3D<float>",
@@ -418,10 +424,13 @@
                     "StdVideoEncodeH264RefMemMgmtCtrlOperations": "Video.StdVideoEncodeH264RefMemMgmtCtrlOperations",
                     "StdVideoEncodeH264ReferenceInfo": "Video.StdVideoEncodeH264ReferenceInfo",
                     "StdVideoH264Level": "Video.StdVideoH264Level",
-                    "StdVideoH265Level": "Video.StdVideoH265Level"
+                    "StdVideoH265Level": "Video.StdVideoH265Level",
+                    "StdVideoH264LevelIdc": "Video.StdVideoH264LevelIdc",
+                    "StdVideoH265LevelIdc": "Video.StdVideoH265LevelIdc"
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         },
@@ -606,7 +615,7 @@
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "openxr",
-            "controlDescriptors": [],
+            "controlDescriptors": ["allow-redefinitions"],
             "converter": {
                 "reader": "vk",
                 "constructor": "vk",
@@ -662,6 +671,7 @@
                     "VkDevice": "Silk.NET.Core.Native.VkHandle",
                     "_comment_0": "Dunno, should we give vkGetInstanceProcAddr its own pfn & delegate?",
                     "PFN_vkGetInstanceProcAddr": "PfnVoidFunction",
+                    "PFN_vkGetInstanceProcAddrLUNARG": "PfnVoidFunction",
                     "VkInstanceCreateInfo*": "void*",
                     "VkAllocationCallbacks*": "void*",
                     "VkDeviceCreateInfo*": "void*",
@@ -695,7 +705,8 @@
                     "VkImageUsageFlags": "uint"
                 },
                 {
-                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         },
@@ -746,11 +757,12 @@
                 "ID3D11Device",
                 "SDL_main",
                 "SDL_SysWMmsg",
-                "SDL_Rect"
+                "SDL_Rect",
+                "ID3D12Device"
             ],
             "rename": {
-                "__AnonymousEnum_SDL_shape_L80_C9": "WindowShapeModeVal",
-                "__AnonymousEnum_SDL_stdinc_L167_C9": "SdlBool",
+                "__AnonymousEnum_SDL_shape_L85_C9": "WindowShapeModeVal",
+                "SDL_bool": "SdlBool",
                 "_comment_0": "Remove this in 3.0, use native names",
                 "__AnonymousRecord_SDL_gamecontroller_L87_C5": "GameControllerBindValue",
                 "__AnonymousRecord_SDL_gamecontroller_L91_C9": "GameControllerHatValue",
@@ -811,7 +823,8 @@
                     "SDL_SysWMmsg": "SysWMMsg",
                     "SDL_Rect": "Silk.NET.Maths.Rectangle<int>",
                     "SDL_bool": "SdlBool",
-                    "ID3D11Device": "Silk.NET.Core.Native.IUnknown"
+                    "ID3D11Device": "Silk.NET.Core.Native.IUnknown",
+                    "ID3D12Device": "Silk.NET.Core.Native.IUnknown"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -830,7 +843,8 @@
                 "convert-windows-only",
                 "no-csproj",
                 "no-extra-dir",
-                "no-name-container"
+                "no-name-container",
+                "typemap-native"
             ],
             "prefix": "",
             "clang": {
@@ -847,12 +861,14 @@
                     "-Ibuild/include"
                 ],
                 "traverse": [
+					
                 ],
                 "classes": {
                     "d3dcommon.h": "[Core]D3DCommon"
                 }
             },
             "exclude": [
+				
             ],
             "rename": {
                 "_D3D_CBUFFER_TYPE": "D3DCBufferType",
@@ -860,7 +876,8 @@
             },
             "bakery": {
                 "profileNames": [
-                    "d3dcommon"
+                    "d3dcommon",
+					"silk.net.core.native.dcommon"
                 ]
             },
             "output": {
@@ -888,7 +905,8 @@
             "cacheKey": "win32extras",
             "controlDescriptors": [
                 "convert-windows-only",
-                "no-name-container"
+                "no-name-container",
+                "typemap-native"
             ],
             "prefix": "",
             "clang": {
@@ -905,12 +923,15 @@
                     "-Ibuild/include"
                 ],
                 "traverse": [
+                    "$windowsSdkDir/Include/$windowsSdkVersion/shared/rpcdcep.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/shared/WTypesbase.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/shared/evntrace.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/minwinbase.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/timezoneapi.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/winnt.h",
                     "$windowsSdkDir/Include/$windowsSdkVersion/um/handleapi.h",
-                    "$windowsSdkDir/Include/$windowsSdkVersion/um/fileapi.h"
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/fileapi.h",
+                    "$windowsSdkDir/Include/$windowsSdkVersion/um/objidlbase.h"
                 ],
                 "classes": {
                     "win32extras.h": "[Core]Windows"
@@ -943,7 +964,8 @@
                     "_TIME_ZONE_INFORMATION": "TimeZoneInformation",
                     "_WNODE_HEADER": "WnodeHeader",
                     "_EXCEPTION_RECORD": "ExceptionRecord",
-                    "_FILE_SEGMENT_ELEMENT": "FileSegmentElement"
+                    "_FILE_SEGMENT_ELEMENT": "FileSegmentElement",
+					"_RPC_MESSAGE": "RPCMessage"
                 },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
@@ -967,7 +989,8 @@
             "cacheDir": "build/cache",
             "cacheKey": "dxgi",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "typemap-native"
             ],
             "converter": {},
             "prefix": "DXGI",
@@ -997,7 +1020,12 @@
                     "dxgi1_6.h": "[Core]DXGI",
                     "dxgidebug.h": "[Core]DXGI",
                     "dxgiformat.h": "[Core]DXGI"
-                }
+                },
+                "comRefs": [
+                    "Silk.NET.Core.Native.ID3D10Blob",
+                    "Silk.NET.Core.Native.ID3DDestructionNotifier",
+                    "Silk.NET.Core.Native.ID3DInclude"
+                ]
             },
             "exclude": [
             ],
@@ -1048,7 +1076,8 @@
             "cacheDir": "build/cache",
             "cacheKey": "dxva",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "typemap-native"
             ],
             "converter": {},
             "prefix": "DXVA",
@@ -1129,6 +1158,132 @@
                 }
             ]
         },
+		{
+            "profileName": "D2D",
+            "sources": [
+				"build/include/silk.net.direct2d.dcommon.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_1.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_2.h",
+				"build/include/silk.net.direct2d.d2d1effects.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effectauthor.h",
+				"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1svg.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_3.h",
+				"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effectauthor_1.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "d2d",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "typemap-native"
+            ],
+            "converter": {},
+            "prefix": "D2D1_",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/include"
+                ],
+                "traverse": [
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/dcommon.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects_1.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effects_2.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1helper.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_1helper.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_2helper.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1_3helper.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2d1effecthelpers.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/d2dbasetypes.h",
+					"$windowsSdkDir/Include/$windowsSdkVersion/um/D2DErr.h"
+                ],
+                "classes": {
+					"silk.net.direct2d.dcommon.h": "[Core]D2D",
+                    "d2d1.h": "[Core]D2D",
+                    "d2d1_1.h": "[Core]D2D",
+                    "d2d1_2.h": "[Core]D2D",
+					"silk.net.direct2d.d2d1effects.h": "[Core]D2D",
+                    "d2d1effectauthor.h": "[Core]D2D",
+                    "d2d1svg.h": "[Core]D2D",
+					"d2d1_3.h": "[Core]D2D",
+					"d2d1effectauthor_1.h": "[Core]D2D"
+                }
+            },
+            "exclude": [
+				"D2D_VECTOR_2F",
+				"D2D_VECTOR_3F",
+				"D2D_VECTOR_4F",
+				"D2D_POINT_2U",
+				"D2D_POINT_2F",
+				"D2D_POINT_2L",
+				"D2D_RECT_F",
+				"D2D_RECT_U",
+				"D2D_RECT_L",
+				"D2D_SIZE_F",
+				"D2D_SIZE_U",
+				"D2D_MATRIX_3X2_F",
+				"D2D_MATRIX_4X3_F",
+				"D2D_MATRIX_4X4_F",
+				"D2D_MATRIX_5X4_F",
+				"D2D1_POINT_2U",
+				"D2D1_POINT_2F",
+				"D2D1_POINT_2L",
+				"D2D1_RECT_F",
+				"D2D1_RECT_U",
+				"D2D1_RECT_L",
+				"D2D1_SIZE_F",
+				"D2D1_SIZE_U",
+				"D2D1GetGradientMeshInteriorPointsFromCoonsPatch"
+            ],
+            "rename": {
+				
+            },
+            "bakery": {
+                "profileNames": [
+					"silk.net.direct2d.dcommon",
+                    "d2d1",
+                    "d2d1_1",
+                    "d2d1_2",
+					"silk.net.direct2d.d2d1effects",
+                    "d2d1effectauthor",
+					"d2d1svg",
+                    "d2d1_3",
+					"d2d1effectauthor_1"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Microsoft",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Direct2D",
+            "extensionsNamespace": "Silk.NET.Direct2D.Extensions",
+            "nameContainer": {
+                "linux-x64": "libd2d1.so",
+                "win-x64": "d2d1.dll",
+                "win-x86": "d2d1.dll",
+                "osx-x64": "libd2d1.dylib",
+                "android": "libd2d1.so",
+                "iOS": "__Internal",
+                "className": "D2DLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "$include.dxTypemap": "build/dx_typemap.json",
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
         {
             "profileName": "D3D11",
             "sources": [
@@ -1139,13 +1294,15 @@
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11_4.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11shader.h",
                 "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11shadertracing.h",
-                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11sdklayers.h"
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11sdklayers.h",
+                "$windowsSdkDir/Include/$windowsSdkVersion/um/d3d11on12.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
             "cacheKey": "d3d11",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "typemap-native"
             ],
             "converter": {},
             "prefix": "D3D11",
@@ -1172,8 +1329,16 @@
                     "d3d11_4.h": "[Core]D3D11",
                     "d3d11shader.h": "[Core]D3D11",
                     "d3d11shadertracing.h": "[Core]D3D11",
-                    "d3d11sdklayers.h": "[Core]D3D11"
-                }
+                    "d3d11sdklayers.h": "[Core]D3D11",
+                    "d3d11on12.h": "[D3D11On12:D3D11]D3D11On12"
+                },
+                "comRefs": [
+                    "Silk.NET.DXGI.IDXGIAdapter",
+                    "Silk.NET.DXGI.IDXGISwapChain",
+                    "Silk.NET.Core.Native.ID3D10Blob",
+                    "Silk.NET.Core.Native.ID3DDestructionNotifier",
+                    "Silk.NET.Core.Native.ID3DInclude"
+                ]
             },
             "exclude": [
                 "ID3D10Blob"
@@ -1190,7 +1355,8 @@
                     "d3d11_4",
                     "d3d11shader",
                     "d3d11shadertracing",
-                    "d3d11sdklayers"
+                    "d3d11sdklayers",
+                    "d3d11on12"
                 ]
             },
             "output": {
@@ -1213,7 +1379,10 @@
             "typeMaps": [
                 {
                     "D3D11_AUTHENTICATED_PROTECTION_FLAGS::__MIDL___MIDL_itf_d3d11_0000_0034_0001": "MIDLMIDLItfD3d11000000340001",
-                    "ID3D10Blob": "Silk.NET.Core.Native.ID3D10Blob"
+                    "ID3D10Blob": "Silk.NET.Core.Native.ID3D10Blob",
+                    "D3D12_RESOURCE_STATES": "Silk.NET.Direct3D12.ResourceStates",
+                    "ID3D12Fence": "Silk.NET.Direct3D12.ID3D12Fence",
+                    "ID3D12CommandQueue": "Silk.NET.Direct3D12.ID3D12CommandQueue"
                 },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
@@ -1233,7 +1402,8 @@
             "cacheDir": "build/cache",
             "cacheKey": "d3d12",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "typemap-native"
             ],
             "converter": {},
             "prefix": "D3D12",
@@ -1257,7 +1427,14 @@
                     "d3d12shader.h": "[Core]D3D12",
                     "d3d12video.h": "[Core]D3D12",
                     "d3d12sdklayers.h": "[Core]D3D12"
-                }
+                },
+                "comRefs": [
+                    "Silk.NET.DXGI.IDXGIAdapter",
+                    "Silk.NET.DXGI.IDXGISwapChain",
+                    "Silk.NET.Core.Native.ID3D10Blob",
+                    "Silk.NET.Core.Native.ID3DDestructionNotifier",
+                    "Silk.NET.Core.Native.ID3DInclude"
+                ]
             },
             "exclude": [
                 "D3D12_RAYTRACING_AABB"
@@ -1306,7 +1483,8 @@
             "cacheDir": "build/cache",
             "cacheKey": "d3d9",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "typemap-native"
             ],
             "converter": {},
             "prefix": "D3D",
@@ -1332,7 +1510,14 @@
                 ],
                 "classes": {
                     "D3D9.h": "[Core]D3D9"
-                }
+                },
+                "comRefs": [
+                    "Silk.NET.DXGI.IDXGIAdapter",
+                    "Silk.NET.DXGI.IDXGISwapChain",
+                    "Silk.NET.Core.Native.ID3D10Blob",
+                    "Silk.NET.Core.Native.ID3DDestructionNotifier",
+                    "Silk.NET.Core.Native.ID3DInclude"
+                ]
             },
             "exclude": [
                 "__AnonymousRecord_d3d9types_L93_C9",
@@ -1385,7 +1570,10 @@
             "cacheKey": "dxc",
             "controlDescriptors": [
                 "convert-windows-only",
-                "no-csproj"
+                "no-csproj",
+                "typemap-native",
+                "COMMENT: the below is needed because D3DCompiler and Dxc are in the same project and will fight eachother otherwise",
+                "keep-unknown-gen-files"
             ],
             "prefix": "Dxc",
             "clang": {
@@ -1406,7 +1594,14 @@
                 ],
                 "classes": {
                     "DXC.h": "[Core]DXC"
-                }
+                },
+                "comRefs": [
+                    "Silk.NET.DXGI.IDXGIAdapter",
+                    "Silk.NET.DXGI.IDXGISwapChain",
+                    "Silk.NET.Core.Native.ID3D10Blob",
+                    "Silk.NET.Core.Native.ID3DDestructionNotifier",
+                    "Silk.NET.Core.Native.ID3DInclude"
+                ]
             },
             "exclude": [
             ],
@@ -1453,7 +1648,10 @@
             "cacheDir": "build/cache",
             "cacheKey": "d3dcompiler",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "COMMENT: the below is needed because D3DCompiler and Dxc are in the same project and will fight eachother otherwise",
+                "keep-unknown-gen-files",
+                "typemap-native"
             ],
             "prefix": "D3D",
             "clang": {
@@ -1473,7 +1671,14 @@
                 ],
                 "classes": {
                     "d3dcompiler.h": "[Core]D3DCompiler"
-                }
+                },
+                "comRefs": [
+                    "Silk.NET.DXGI.IDXGIAdapter",
+                    "Silk.NET.DXGI.IDXGISwapChain",
+                    "Silk.NET.Core.Native.ID3D10Blob",
+                    "Silk.NET.Core.Native.ID3DDestructionNotifier",
+                    "Silk.NET.Core.Native.ID3DInclude"
+                ]
             },
             "exclude": [
             ],
@@ -1523,7 +1728,8 @@
             "cacheDir": "build/cache",
             "cacheKey": "dstorage",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "typemap-native"
             ],
             "prefix": "DStorage",
             "clang": {
@@ -1617,7 +1823,8 @@
             "controlDescriptors": [
                 "convert-windows-only",
                 "NOTE we'll handle the loading ourselves as it's a bit quirky here",
-                "no-name-container"
+                "no-name-container",
+                "typemap-native"
             ],
             "prefix": "XAudio2",
             "clang": {
@@ -1683,7 +1890,8 @@
             "cacheDir": "build/cache",
             "cacheKey": "xinput",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "typemap-native"
             ],
             "prefix": "XInput",
             "clang": {
@@ -1744,7 +1952,8 @@
                 "convert-windows-only",
                 "Currently disabled due to bakery bugs.",
                 "no-convert",
-                "no-bind"
+                "no-bind",
+                "typemap-native"
             ],
             "converter": {},
             "prefix": "D2D1",
@@ -1814,6 +2023,161 @@
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
                     "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "webgpu",
+            "sources": [
+                "build/submodules/webgpu-headers/webgpu.h",
+                "build/submodules/wgpu-native/ffi/wgpu.h",
+                "build/submodules/dawn/out/Debug/gen/include/dawn/dawn-webgpu.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "webgpu",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "no-obsolete-enum",
+                "typemap-native"
+            ],
+            "converter": {},
+            "prefix": "wgpu",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m64",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-I$windowsSdkIncludes",
+                    "-Ibuild/submodules/wgpu-native/ffi"
+                ],
+                "traverse": [
+                    "build/submodules/webgpu-headers/*.h",
+                    "build/submodules/wgpu-native/*.h"
+                ],
+                "classes": {
+                    "webgpu.h": "[Core]WebGPU",
+                    "wgpu.h": "[WGPU:WebGPU]Wgpu",
+                    "dawn-webgpu.h": "[Dawn:WebGPU]Dawn"
+                }
+            },
+            "exclude": [
+                
+            ],
+            "rename": {
+                "WGPUComputePipelineImpl": "ComputePipeline",
+                "WGPUAdapterImpl": "Adapter",
+                "WGPUBindGroupImpl": "BindGroup",
+                "WGPUBindGroupLayoutImpl": "BindGroupLayout",
+                "WGPUBufferImpl": "Buffer",
+                "WGPUCommandBufferImpl": "CommandBuffer",
+                "WGPUCommandEncoderImpl": "CommandEncoder",
+                "WGPUComputePassEncoderImpl": "ComputePassEncoder",
+                "WGPUDeviceImpl": "Device",
+                "WGPUInstanceImpl": "Instance",
+                "WGPUPipelineLayoutImpl": "PipelineLayout",
+                "WGPUQuerySetImpl": "QuerySet",
+                "WGPUQueueImpl": "Queue",
+                "WGPURenderBundleEncoderImpl": "RenderBundleEncoder",
+                "WGPURenderBundleImpl": "RenderBundle",
+                "WGPURenderPassEncoderImpl": "RenderPassEncoder",
+                "WGPURenderPipelineImpl": "RenderPipeline",
+                "WGPUSamplerImpl": "Sampler",
+                "WGPUShaderModuleImpl": "ShaderModule",
+                "WGPUSurfaceImpl": "Surface",
+                "WGPUSwapChainImpl": "SwapChain",
+                "WGPUTextureImpl": "Texture",
+                "WGPUTextureViewImpl": "TextureView"
+            },
+            "bakery": {
+                "profileNames": [
+                    "webgpu",
+                    "wgpu",
+                    "dawn-webgpu"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/WebGPU",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.WebGPU",
+            "extensionsNamespace": "Silk.NET.WebGPU.Extensions",
+            "nameContainer": {
+                "linux-x64": "libwgpu.so",
+                "win-x64": "libwgpu.dll",
+                "win-x86": "libwgpu.dll",
+                "osx-x64": "libwgpu.dylib",
+                "android": "libwgpu.so",
+                "className": "WebGPULibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "WGPUColorWriteMaskFlags": "Silk.NET.WebGPU.ColorWriteMask",
+                    "WGPUBufferUsageFlags": "Silk.NET.WebGPU.BufferUsage",
+                    "WGPUMapModeFlags": "Silk.NET.WebGPU.MapMode",
+                    "WGPUShaderStageFlags": "Silk.NET.WebGPU.ShaderStage",
+                    "WGPUTextureUsageFlags": "Silk.NET.WebGPU.TextureUsage"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "WGL",
+            "sources": [
+                "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/wgl.xml"
+            ],
+            "mode": "ConvertConstruct",
+            "cacheDir": "build/cache",
+            "cacheKey": "wgl",
+            "controlDescriptors": ["allow-redefinitions"],
+            "converter": {
+                "reader": "gl",
+                "constructor": "gl",
+                "className": "WGL"
+            },
+            "prefix": "wgl",
+            "clang": {},
+            "bakery": {
+                "profileNames": [
+                    "wgl"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/OpenGL",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.WGL",
+            "extensionsNamespace": "Silk.NET.WGL.Extensions",
+            "typeMaps": [
+                {
+                    "$include.glTypeMap": "build/gl_typemap.json",
+                    "LPGLYPHMETRICSFLOAT": "GlyphMetricsFloat*",
+                    "PIXELFORMATDESCRIPTOR": "PixelFormatDescriptor",
+                    "LAYERPLANEDESCRIPTOR": "LayerPlaneDescriptor",
+                    "HENHMETAFILE": "nint",
+                    "unsignedlong": "uint",
+                    "HPVIDEODEV": "nint",
+                    "HVIDEOOUTPUTDEVICENV": "nint",
+                    "HVIDEOINPUTDEVICENV": "nint",
+                    "INT": "int",
+                    "HGPUNV": "nint",
+                    "PGPU_DEVICE": "GpuDevice*",
+                    "unsignedint": "uint"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json",
+                    "$include.khronosTypeMap": "build/khronos_typemap.json"
                 }
             ]
         }

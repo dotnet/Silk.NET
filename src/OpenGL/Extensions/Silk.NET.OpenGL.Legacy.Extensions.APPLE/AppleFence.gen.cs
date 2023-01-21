@@ -83,6 +83,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
             GenFences((uint) fences.Length, out fences.GetPinnableReference());
         }
 
+        public unsafe uint GenFences([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenFences(n, out uint silkRet);
+            return silkRet;
+        }
+
         public AppleFence(INativeContext ctx)
             : base(ctx)
         {

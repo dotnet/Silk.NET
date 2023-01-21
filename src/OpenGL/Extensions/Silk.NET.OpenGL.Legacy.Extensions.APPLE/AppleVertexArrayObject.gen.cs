@@ -89,6 +89,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
             GenVertexArrays((uint) arrays.Length, out arrays.GetPinnableReference());
         }
 
+        public unsafe uint GenVertexArrays([Flow(FlowDirection.In)] uint n)
+        {
+            // NonKhrReturnTypeOverloader
+            GenVertexArrays(n, out uint silkRet);
+            return silkRet;
+        }
+
         public AppleVertexArrayObject(INativeContext ctx)
             : base(ctx)
         {

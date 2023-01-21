@@ -310,302 +310,302 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, byte* pFormatId, byte* pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] byte* pFormatId, [Flow(FlowDirection.In)] byte* pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, byte* pFormatId, ref byte pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] byte* pFormatId, [Flow(FlowDirection.In)] in byte pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, byte* pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] byte* pFormatId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, ref byte pFormatId, byte* pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] in byte pFormatId, [Flow(FlowDirection.In)] byte* pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, ref byte pFormatId, ref byte pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] in byte pFormatId, [Flow(FlowDirection.In)] in byte pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, ref byte pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] in byte pFormatId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, byte* pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(FlowDirection.In)] byte* pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, ref byte pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(FlowDirection.In)] in byte pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, byte* pFormatId, byte* pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] byte* pFormatId, [Flow(FlowDirection.In)] byte* pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, byte* pFormatId, ref byte pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] byte* pFormatId, [Flow(FlowDirection.In)] in byte pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, byte* pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] byte* pFormatId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, ref byte pFormatId, byte* pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] in byte pFormatId, [Flow(FlowDirection.In)] byte* pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, ref byte pFormatId, ref byte pFileName, uint pPreprocessing);
+        public partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] in byte pFormatId, [Flow(FlowDirection.In)] in byte pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, ref byte pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
+        public partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] in byte pFormatId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, byte* pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(FlowDirection.In)] byte* pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, ref byte pFileName, uint pPreprocessing);
+        public partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(FlowDirection.In)] in byte pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 164, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportScene")]
-        public partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
+        public partial Return ExportScene([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, byte* pFormatId, byte* pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] byte* pFormatId, [Flow(FlowDirection.In)] byte* pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, byte* pFormatId, byte* pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] byte* pFormatId, [Flow(FlowDirection.In)] byte* pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, byte* pFormatId, ref byte pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] byte* pFormatId, [Flow(FlowDirection.In)] in byte pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, byte* pFormatId, ref byte pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] byte* pFormatId, [Flow(FlowDirection.In)] in byte pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, byte* pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] byte* pFormatId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, byte* pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] byte* pFormatId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, ref byte pFormatId, byte* pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] in byte pFormatId, [Flow(FlowDirection.In)] byte* pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, ref byte pFormatId, byte* pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] in byte pFormatId, [Flow(FlowDirection.In)] byte* pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, ref byte pFormatId, ref byte pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] in byte pFormatId, [Flow(FlowDirection.In)] in byte pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, ref byte pFormatId, ref byte pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] in byte pFormatId, [Flow(FlowDirection.In)] in byte pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, ref byte pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] in byte pFormatId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, ref byte pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] in byte pFormatId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, byte* pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(FlowDirection.In)] byte* pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, byte* pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(FlowDirection.In)] byte* pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, ref byte pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(FlowDirection.In)] in byte pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, ref byte pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(FlowDirection.In)] in byte pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, byte* pFormatId, byte* pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] byte* pFormatId, [Flow(FlowDirection.In)] byte* pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, byte* pFormatId, byte* pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] byte* pFormatId, [Flow(FlowDirection.In)] byte* pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, byte* pFormatId, ref byte pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] byte* pFormatId, [Flow(FlowDirection.In)] in byte pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, byte* pFormatId, ref byte pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] byte* pFormatId, [Flow(FlowDirection.In)] in byte pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, byte* pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] byte* pFormatId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, byte* pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] byte* pFormatId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, ref byte pFormatId, byte* pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] in byte pFormatId, [Flow(FlowDirection.In)] byte* pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, ref byte pFormatId, byte* pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] in byte pFormatId, [Flow(FlowDirection.In)] byte* pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, ref byte pFormatId, ref byte pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] in byte pFormatId, [Flow(FlowDirection.In)] in byte pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, ref byte pFormatId, ref byte pFileName, ref FileIO pIO, uint pPreprocessing);
+        public partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] in byte pFormatId, [Flow(FlowDirection.In)] in byte pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, ref byte pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] in byte pFormatId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, ref byte pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
+        public partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] in byte pFormatId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, byte* pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(FlowDirection.In)] byte* pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, byte* pFileName, ref FileIO pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(FlowDirection.In)] byte* pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, ref byte pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(FlowDirection.In)] in byte pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, ref byte pFileName, ref FileIO pIO, uint pPreprocessing);
+        public partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(FlowDirection.In)] in byte pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 21 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
+        public partial Return ExportSceneEx([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFileName, ref FileIO pIO, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 258, Column 45 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneToBlob")]
-        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(FlowDirection.In)] Scene* pScene, byte* pFormatId, uint pPreprocessing);
+        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] byte* pFormatId, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 258, Column 45 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneToBlob")]
-        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(FlowDirection.In)] Scene* pScene, ref byte pFormatId, uint pPreprocessing);
+        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In)] in byte pFormatId, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 258, Column 45 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneToBlob")]
-        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(FlowDirection.In)] Scene* pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, uint pPreprocessing);
+        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(FlowDirection.In)] Scene* pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 258, Column 45 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneToBlob")]
-        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(FlowDirection.In)] in Scene pScene, byte* pFormatId, uint pPreprocessing);
+        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] byte* pFormatId, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 258, Column 45 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneToBlob")]
-        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(FlowDirection.In)] in Scene pScene, ref byte pFormatId, uint pPreprocessing);
+        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In)] in byte pFormatId, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 258, Column 45 in build/submodules/Assimp/include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiExportSceneToBlob")]
-        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(FlowDirection.In)] in Scene pScene, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, uint pPreprocessing);
+        public unsafe partial ExportDataBlob* ExportSceneToBlob([Flow(FlowDirection.In)] in Scene pScene, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFormatId, uint pPreprocessing);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 266, Column 17 in build/submodules/Assimp/include\\assimp/cexport.h")]
@@ -620,257 +620,257 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 148, Column 43 in build/submodules/Assimp/include\\assimp/importerdesc.h")]
         [NativeApi(EntryPoint = "aiGetImporterDesc")]
-        public unsafe partial ImporterDesc* GetImporterDesc(byte* extension);
+        public unsafe partial ImporterDesc* GetImporterDesc([Flow(FlowDirection.In)] byte* extension);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 148, Column 43 in build/submodules/Assimp/include\\assimp/importerdesc.h")]
         [NativeApi(EntryPoint = "aiGetImporterDesc")]
-        public unsafe partial ImporterDesc* GetImporterDesc(ref byte extension);
+        public unsafe partial ImporterDesc* GetImporterDesc([Flow(FlowDirection.In)] in byte extension);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 148, Column 43 in build/submodules/Assimp/include\\assimp/importerdesc.h")]
         [NativeApi(EntryPoint = "aiGetImporterDesc")]
-        public unsafe partial ImporterDesc* GetImporterDesc([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string extension);
+        public unsafe partial ImporterDesc* GetImporterDesc([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string extension);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 117, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFile")]
-        public unsafe partial Scene* ImportFile(byte* pFile, uint pFlags);
+        public unsafe partial Scene* ImportFile([Flow(FlowDirection.In)] byte* pFile, uint pFlags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 117, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFile")]
-        public unsafe partial Scene* ImportFile(ref byte pFile, uint pFlags);
+        public unsafe partial Scene* ImportFile([Flow(FlowDirection.In)] in byte pFile, uint pFlags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 117, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFile")]
-        public unsafe partial Scene* ImportFile([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags);
+        public unsafe partial Scene* ImportFile([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 142, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileEx")]
-        public unsafe partial Scene* ImportFileEx(byte* pFile, uint pFlags, FileIO* pFS);
+        public unsafe partial Scene* ImportFileEx([Flow(FlowDirection.In)] byte* pFile, uint pFlags, FileIO* pFS);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 142, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileEx")]
-        public unsafe partial Scene* ImportFileEx(byte* pFile, uint pFlags, ref FileIO pFS);
+        public unsafe partial Scene* ImportFileEx([Flow(FlowDirection.In)] byte* pFile, uint pFlags, ref FileIO pFS);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 142, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileEx")]
-        public unsafe partial Scene* ImportFileEx(ref byte pFile, uint pFlags, FileIO* pFS);
+        public unsafe partial Scene* ImportFileEx([Flow(FlowDirection.In)] in byte pFile, uint pFlags, FileIO* pFS);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 142, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileEx")]
-        public unsafe partial Scene* ImportFileEx(ref byte pFile, uint pFlags, ref FileIO pFS);
+        public unsafe partial Scene* ImportFileEx([Flow(FlowDirection.In)] in byte pFile, uint pFlags, ref FileIO pFS);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 142, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileEx")]
-        public unsafe partial Scene* ImportFileEx([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, FileIO* pFS);
+        public unsafe partial Scene* ImportFileEx([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, FileIO* pFS);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 142, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileEx")]
-        public unsafe partial Scene* ImportFileEx([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, ref FileIO pFS);
+        public unsafe partial Scene* ImportFileEx([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, ref FileIO pFS);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties(byte* pFile, uint pFlags, FileIO* pFS, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(FlowDirection.In)] byte* pFile, uint pFlags, FileIO* pFS, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties(byte* pFile, uint pFlags, FileIO* pFS, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(FlowDirection.In)] byte* pFile, uint pFlags, FileIO* pFS, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties(byte* pFile, uint pFlags, ref FileIO pFS, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(FlowDirection.In)] byte* pFile, uint pFlags, ref FileIO pFS, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties(byte* pFile, uint pFlags, ref FileIO pFS, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(FlowDirection.In)] byte* pFile, uint pFlags, ref FileIO pFS, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties(ref byte pFile, uint pFlags, FileIO* pFS, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(FlowDirection.In)] in byte pFile, uint pFlags, FileIO* pFS, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties(ref byte pFile, uint pFlags, FileIO* pFS, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(FlowDirection.In)] in byte pFile, uint pFlags, FileIO* pFS, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties(ref byte pFile, uint pFlags, ref FileIO pFS, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(FlowDirection.In)] in byte pFile, uint pFlags, ref FileIO pFS, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties(ref byte pFile, uint pFlags, ref FileIO pFS, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(FlowDirection.In)] in byte pFile, uint pFlags, ref FileIO pFS, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, FileIO* pFS, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, FileIO* pFS, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, FileIO* pFS, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, FileIO* pFS, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, ref FileIO pFS, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, ref FileIO pFS, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 163, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public unsafe partial Scene* ImportFileExWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, ref FileIO pFS, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileExWithProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pFile, uint pFlags, ref FileIO pFS, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public unsafe partial Scene* ImportFileFromMemory(byte* pBuffer, uint pLength, uint pFlags, byte* pHint);
+        public unsafe partial Scene* ImportFileFromMemory([Flow(FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In)] byte* pHint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public unsafe partial Scene* ImportFileFromMemory(byte* pBuffer, uint pLength, uint pFlags, ref byte pHint);
+        public unsafe partial Scene* ImportFileFromMemory([Flow(FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In)] in byte pHint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public unsafe partial Scene* ImportFileFromMemory(byte* pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint);
+        public unsafe partial Scene* ImportFileFromMemory([Flow(FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public unsafe partial Scene* ImportFileFromMemory(ref byte pBuffer, uint pLength, uint pFlags, byte* pHint);
+        public unsafe partial Scene* ImportFileFromMemory([Flow(FlowDirection.In)] in byte pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In)] byte* pHint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public unsafe partial Scene* ImportFileFromMemory(ref byte pBuffer, uint pLength, uint pFlags, ref byte pHint);
+        public unsafe partial Scene* ImportFileFromMemory([Flow(FlowDirection.In)] in byte pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In)] in byte pHint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public unsafe partial Scene* ImportFileFromMemory(ref byte pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint);
+        public unsafe partial Scene* ImportFileFromMemory([Flow(FlowDirection.In)] in byte pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public unsafe partial Scene* ImportFileFromMemory([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, byte* pHint);
+        public unsafe partial Scene* ImportFileFromMemory([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In)] byte* pHint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public unsafe partial Scene* ImportFileFromMemory([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, ref byte pHint);
+        public unsafe partial Scene* ImportFileFromMemory([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In)] in byte pHint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public unsafe partial Scene* ImportFileFromMemory([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint);
+        public unsafe partial Scene* ImportFileFromMemory([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(byte* pBuffer, uint pLength, uint pFlags, byte* pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In)] byte* pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(byte* pBuffer, uint pLength, uint pFlags, byte* pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In)] byte* pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(byte* pBuffer, uint pLength, uint pFlags, ref byte pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In)] in byte pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(byte* pBuffer, uint pLength, uint pFlags, ref byte pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In)] in byte pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(byte* pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(byte* pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(FlowDirection.In)] byte* pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(ref byte pBuffer, uint pLength, uint pFlags, byte* pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(FlowDirection.In)] in byte pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In)] byte* pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(ref byte pBuffer, uint pLength, uint pFlags, byte* pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(FlowDirection.In)] in byte pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In)] byte* pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(ref byte pBuffer, uint pLength, uint pFlags, ref byte pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(FlowDirection.In)] in byte pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In)] in byte pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(ref byte pBuffer, uint pLength, uint pFlags, ref byte pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(FlowDirection.In)] in byte pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In)] in byte pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(ref byte pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(FlowDirection.In)] in byte pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties(ref byte pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(FlowDirection.In)] in byte pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, byte* pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In)] byte* pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, byte* pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In)] byte* pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, ref byte pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In)] in byte pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, ref byte pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In)] in byte pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] PropertyStore* pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 234, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public unsafe partial Scene* ImportFileFromMemoryWithProperties([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pBuffer, uint pLength, uint pFlags, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pHint, [Flow(FlowDirection.In)] in PropertyStore pProps);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 256, Column 36 in build/submodules/Assimp/include\\assimp/cimport.h")]
@@ -885,17 +885,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 280, Column 33 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiGetPredefinedLogStream")]
-        public unsafe partial LogStream GetPredefinedLogStream(DefaultLogStream pStreams, byte* file);
+        public unsafe partial LogStream GetPredefinedLogStream(DefaultLogStream pStreams, [Flow(FlowDirection.In)] byte* file);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 280, Column 33 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiGetPredefinedLogStream")]
-        public partial LogStream GetPredefinedLogStream(DefaultLogStream pStreams, ref byte file);
+        public partial LogStream GetPredefinedLogStream(DefaultLogStream pStreams, [Flow(FlowDirection.In)] in byte file);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 280, Column 33 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiGetPredefinedLogStream")]
-        public partial LogStream GetPredefinedLogStream(DefaultLogStream pStreams, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string file);
+        public partial LogStream GetPredefinedLogStream(DefaultLogStream pStreams, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string file);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 294, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
@@ -951,17 +951,17 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 353, Column 19 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiIsExtensionSupported")]
-        public unsafe partial int IsExtensionSupported(byte* szExtension);
+        public unsafe partial int IsExtensionSupported([Flow(FlowDirection.In)] byte* szExtension);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 353, Column 19 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiIsExtensionSupported")]
-        public partial int IsExtensionSupported(ref byte szExtension);
+        public partial int IsExtensionSupported([Flow(FlowDirection.In)] in byte szExtension);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 353, Column 19 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiIsExtensionSupported")]
-        public partial int IsExtensionSupported([UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szExtension);
+        public partial int IsExtensionSupported([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szExtension);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 364, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
@@ -1011,282 +1011,282 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 402, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyInteger")]
-        public unsafe partial void SetImportPropertyInteger(PropertyStore* store, byte* szName, int value);
+        public unsafe partial void SetImportPropertyInteger(PropertyStore* store, [Flow(FlowDirection.In)] byte* szName, int value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 402, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyInteger")]
-        public unsafe partial void SetImportPropertyInteger(PropertyStore* store, ref byte szName, int value);
+        public unsafe partial void SetImportPropertyInteger(PropertyStore* store, [Flow(FlowDirection.In)] in byte szName, int value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 402, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyInteger")]
-        public unsafe partial void SetImportPropertyInteger(PropertyStore* store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, int value);
+        public unsafe partial void SetImportPropertyInteger(PropertyStore* store, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, int value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 402, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyInteger")]
-        public unsafe partial void SetImportPropertyInteger(ref PropertyStore store, byte* szName, int value);
+        public unsafe partial void SetImportPropertyInteger(ref PropertyStore store, [Flow(FlowDirection.In)] byte* szName, int value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 402, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyInteger")]
-        public partial void SetImportPropertyInteger(ref PropertyStore store, ref byte szName, int value);
+        public partial void SetImportPropertyInteger(ref PropertyStore store, [Flow(FlowDirection.In)] in byte szName, int value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 402, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyInteger")]
-        public partial void SetImportPropertyInteger(ref PropertyStore store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, int value);
+        public partial void SetImportPropertyInteger(ref PropertyStore store, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, int value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 419, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyFloat")]
-        public unsafe partial void SetImportPropertyFloat(PropertyStore* store, byte* szName, float value);
+        public unsafe partial void SetImportPropertyFloat(PropertyStore* store, [Flow(FlowDirection.In)] byte* szName, float value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 419, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyFloat")]
-        public unsafe partial void SetImportPropertyFloat(PropertyStore* store, ref byte szName, float value);
+        public unsafe partial void SetImportPropertyFloat(PropertyStore* store, [Flow(FlowDirection.In)] in byte szName, float value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 419, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyFloat")]
-        public unsafe partial void SetImportPropertyFloat(PropertyStore* store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, float value);
+        public unsafe partial void SetImportPropertyFloat(PropertyStore* store, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, float value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 419, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyFloat")]
-        public unsafe partial void SetImportPropertyFloat(ref PropertyStore store, byte* szName, float value);
+        public unsafe partial void SetImportPropertyFloat(ref PropertyStore store, [Flow(FlowDirection.In)] byte* szName, float value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 419, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyFloat")]
-        public partial void SetImportPropertyFloat(ref PropertyStore store, ref byte szName, float value);
+        public partial void SetImportPropertyFloat(ref PropertyStore store, [Flow(FlowDirection.In)] in byte szName, float value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 419, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyFloat")]
-        public partial void SetImportPropertyFloat(ref PropertyStore store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, float value);
+        public partial void SetImportPropertyFloat(ref PropertyStore store, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, float value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public unsafe partial void SetImportPropertyString(PropertyStore* store, byte* szName, [Flow(FlowDirection.In)] AssimpString* st);
+        public unsafe partial void SetImportPropertyString(PropertyStore* store, [Flow(FlowDirection.In)] byte* szName, [Flow(FlowDirection.In)] AssimpString* st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public unsafe partial void SetImportPropertyString(PropertyStore* store, byte* szName, [Flow(FlowDirection.In)] in AssimpString st);
+        public unsafe partial void SetImportPropertyString(PropertyStore* store, [Flow(FlowDirection.In)] byte* szName, [Flow(FlowDirection.In)] in AssimpString st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public unsafe partial void SetImportPropertyString(PropertyStore* store, ref byte szName, [Flow(FlowDirection.In)] AssimpString* st);
+        public unsafe partial void SetImportPropertyString(PropertyStore* store, [Flow(FlowDirection.In)] in byte szName, [Flow(FlowDirection.In)] AssimpString* st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public unsafe partial void SetImportPropertyString(PropertyStore* store, ref byte szName, [Flow(FlowDirection.In)] in AssimpString st);
+        public unsafe partial void SetImportPropertyString(PropertyStore* store, [Flow(FlowDirection.In)] in byte szName, [Flow(FlowDirection.In)] in AssimpString st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public unsafe partial void SetImportPropertyString(PropertyStore* store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(FlowDirection.In)] AssimpString* st);
+        public unsafe partial void SetImportPropertyString(PropertyStore* store, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(FlowDirection.In)] AssimpString* st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public unsafe partial void SetImportPropertyString(PropertyStore* store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(FlowDirection.In)] in AssimpString st);
+        public unsafe partial void SetImportPropertyString(PropertyStore* store, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(FlowDirection.In)] in AssimpString st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public unsafe partial void SetImportPropertyString(ref PropertyStore store, byte* szName, [Flow(FlowDirection.In)] AssimpString* st);
+        public unsafe partial void SetImportPropertyString(ref PropertyStore store, [Flow(FlowDirection.In)] byte* szName, [Flow(FlowDirection.In)] AssimpString* st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public unsafe partial void SetImportPropertyString(ref PropertyStore store, byte* szName, [Flow(FlowDirection.In)] in AssimpString st);
+        public unsafe partial void SetImportPropertyString(ref PropertyStore store, [Flow(FlowDirection.In)] byte* szName, [Flow(FlowDirection.In)] in AssimpString st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public unsafe partial void SetImportPropertyString(ref PropertyStore store, ref byte szName, [Flow(FlowDirection.In)] AssimpString* st);
+        public unsafe partial void SetImportPropertyString(ref PropertyStore store, [Flow(FlowDirection.In)] in byte szName, [Flow(FlowDirection.In)] AssimpString* st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public partial void SetImportPropertyString(ref PropertyStore store, ref byte szName, [Flow(FlowDirection.In)] in AssimpString st);
+        public partial void SetImportPropertyString(ref PropertyStore store, [Flow(FlowDirection.In)] in byte szName, [Flow(FlowDirection.In)] in AssimpString st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public unsafe partial void SetImportPropertyString(ref PropertyStore store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(FlowDirection.In)] AssimpString* st);
+        public unsafe partial void SetImportPropertyString(ref PropertyStore store, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(FlowDirection.In)] AssimpString* st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 436, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public partial void SetImportPropertyString(ref PropertyStore store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(FlowDirection.In)] in AssimpString st);
+        public partial void SetImportPropertyString(ref PropertyStore store, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(FlowDirection.In)] in AssimpString st);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, byte* szName, System.Numerics.Matrix4x4* mat);
+        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, [Flow(FlowDirection.In)] byte* szName, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, byte* szName, ref System.Numerics.Matrix4x4 mat);
+        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, [Flow(FlowDirection.In)] byte* szName, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, ref byte szName, System.Numerics.Matrix4x4* mat);
+        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, [Flow(FlowDirection.In)] in byte szName, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, ref byte szName, ref System.Numerics.Matrix4x4 mat);
+        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, [Flow(FlowDirection.In)] in byte szName, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, System.Numerics.Matrix4x4* mat);
+        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, ref System.Numerics.Matrix4x4 mat);
+        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public unsafe partial void SetImportPropertyMatrix(ref PropertyStore store, byte* szName, System.Numerics.Matrix4x4* mat);
+        public unsafe partial void SetImportPropertyMatrix(ref PropertyStore store, [Flow(FlowDirection.In)] byte* szName, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public unsafe partial void SetImportPropertyMatrix(ref PropertyStore store, byte* szName, ref System.Numerics.Matrix4x4 mat);
+        public unsafe partial void SetImportPropertyMatrix(ref PropertyStore store, [Flow(FlowDirection.In)] byte* szName, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public unsafe partial void SetImportPropertyMatrix(ref PropertyStore store, ref byte szName, System.Numerics.Matrix4x4* mat);
+        public unsafe partial void SetImportPropertyMatrix(ref PropertyStore store, [Flow(FlowDirection.In)] in byte szName, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public partial void SetImportPropertyMatrix(ref PropertyStore store, ref byte szName, ref System.Numerics.Matrix4x4 mat);
+        public partial void SetImportPropertyMatrix(ref PropertyStore store, [Flow(FlowDirection.In)] in byte szName, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public unsafe partial void SetImportPropertyMatrix(ref PropertyStore store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, System.Numerics.Matrix4x4* mat);
+        public unsafe partial void SetImportPropertyMatrix(ref PropertyStore store, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 453, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public partial void SetImportPropertyMatrix(ref PropertyStore store, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, ref System.Numerics.Matrix4x4 mat);
+        public partial void SetImportPropertyMatrix(ref PropertyStore store, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string szName, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 464, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiCreateQuaternionFromMatrix")]
-        public unsafe partial void CreateQuaternionFromMatrix(AssimpQuaternion* quat, Silk.NET.Maths.Matrix3X3<float>* mat);
+        public unsafe partial void CreateQuaternionFromMatrix(AssimpQuaternion* quat, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 464, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiCreateQuaternionFromMatrix")]
-        public unsafe partial void CreateQuaternionFromMatrix(AssimpQuaternion* quat, ref Silk.NET.Maths.Matrix3X3<float> mat);
+        public unsafe partial void CreateQuaternionFromMatrix(AssimpQuaternion* quat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 464, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiCreateQuaternionFromMatrix")]
-        public unsafe partial void CreateQuaternionFromMatrix(ref AssimpQuaternion quat, Silk.NET.Maths.Matrix3X3<float>* mat);
+        public unsafe partial void CreateQuaternionFromMatrix(ref AssimpQuaternion quat, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 464, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiCreateQuaternionFromMatrix")]
-        public partial void CreateQuaternionFromMatrix(ref AssimpQuaternion quat, ref Silk.NET.Maths.Matrix3X3<float> mat);
+        public partial void CreateQuaternionFromMatrix(ref AssimpQuaternion quat, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void DecomposeMatrix([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void DecomposeMatrix([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
+        public unsafe partial void DecomposeMatrix([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void DecomposeMatrix([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void DecomposeMatrix([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void DecomposeMatrix([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
+        public unsafe partial void DecomposeMatrix([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void DecomposeMatrix([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void DecomposeMatrix([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void DecomposeMatrix([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
+        public unsafe partial void DecomposeMatrix([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void DecomposeMatrix([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void DecomposeMatrix([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void DecomposeMatrix([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public unsafe partial void DecomposeMatrix(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
+        public unsafe partial void DecomposeMatrix([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 478, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public partial void DecomposeMatrix(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
+        public partial void DecomposeMatrix([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 488, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
@@ -1311,82 +1311,82 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 503, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiTransformVecByMatrix3")]
-        public unsafe partial void TransformVecByMatrix3(System.Numerics.Vector3* vec, Silk.NET.Maths.Matrix3X3<float>* mat);
+        public unsafe partial void TransformVecByMatrix3(System.Numerics.Vector3* vec, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 503, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiTransformVecByMatrix3")]
-        public unsafe partial void TransformVecByMatrix3(System.Numerics.Vector3* vec, ref Silk.NET.Maths.Matrix3X3<float> mat);
+        public unsafe partial void TransformVecByMatrix3(System.Numerics.Vector3* vec, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 503, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiTransformVecByMatrix3")]
-        public unsafe partial void TransformVecByMatrix3(ref System.Numerics.Vector3 vec, Silk.NET.Maths.Matrix3X3<float>* mat);
+        public unsafe partial void TransformVecByMatrix3(ref System.Numerics.Vector3 vec, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 503, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiTransformVecByMatrix3")]
-        public partial void TransformVecByMatrix3(ref System.Numerics.Vector3 vec, ref Silk.NET.Maths.Matrix3X3<float> mat);
+        public partial void TransformVecByMatrix3(ref System.Numerics.Vector3 vec, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 512, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiTransformVecByMatrix4")]
-        public unsafe partial void TransformVecByMatrix4(System.Numerics.Vector3* vec, System.Numerics.Matrix4x4* mat);
+        public unsafe partial void TransformVecByMatrix4(System.Numerics.Vector3* vec, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 512, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiTransformVecByMatrix4")]
-        public unsafe partial void TransformVecByMatrix4(System.Numerics.Vector3* vec, ref System.Numerics.Matrix4x4 mat);
+        public unsafe partial void TransformVecByMatrix4(System.Numerics.Vector3* vec, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 512, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiTransformVecByMatrix4")]
-        public unsafe partial void TransformVecByMatrix4(ref System.Numerics.Vector3 vec, System.Numerics.Matrix4x4* mat);
+        public unsafe partial void TransformVecByMatrix4(ref System.Numerics.Vector3 vec, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 512, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiTransformVecByMatrix4")]
-        public partial void TransformVecByMatrix4(ref System.Numerics.Vector3 vec, ref System.Numerics.Matrix4x4 mat);
+        public partial void TransformVecByMatrix4(ref System.Numerics.Vector3 vec, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 521, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMultiplyMatrix4")]
-        public unsafe partial void MultiplyMatrix4(System.Numerics.Matrix4x4* dst, System.Numerics.Matrix4x4* src);
+        public unsafe partial void MultiplyMatrix4(System.Numerics.Matrix4x4* dst, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 521, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMultiplyMatrix4")]
-        public unsafe partial void MultiplyMatrix4(System.Numerics.Matrix4x4* dst, ref System.Numerics.Matrix4x4 src);
+        public unsafe partial void MultiplyMatrix4(System.Numerics.Matrix4x4* dst, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 521, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMultiplyMatrix4")]
-        public unsafe partial void MultiplyMatrix4(ref System.Numerics.Matrix4x4 dst, System.Numerics.Matrix4x4* src);
+        public unsafe partial void MultiplyMatrix4(ref System.Numerics.Matrix4x4 dst, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 521, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMultiplyMatrix4")]
-        public partial void MultiplyMatrix4(ref System.Numerics.Matrix4x4 dst, ref System.Numerics.Matrix4x4 src);
+        public partial void MultiplyMatrix4(ref System.Numerics.Matrix4x4 dst, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 530, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMultiplyMatrix3")]
-        public unsafe partial void MultiplyMatrix3(Silk.NET.Maths.Matrix3X3<float>* dst, Silk.NET.Maths.Matrix3X3<float>* src);
+        public unsafe partial void MultiplyMatrix3(Silk.NET.Maths.Matrix3X3<float>* dst, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 530, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMultiplyMatrix3")]
-        public unsafe partial void MultiplyMatrix3(Silk.NET.Maths.Matrix3X3<float>* dst, ref Silk.NET.Maths.Matrix3X3<float> src);
+        public unsafe partial void MultiplyMatrix3(Silk.NET.Maths.Matrix3X3<float>* dst, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 530, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMultiplyMatrix3")]
-        public unsafe partial void MultiplyMatrix3(ref Silk.NET.Maths.Matrix3X3<float> dst, Silk.NET.Maths.Matrix3X3<float>* src);
+        public unsafe partial void MultiplyMatrix3(ref Silk.NET.Maths.Matrix3X3<float> dst, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 530, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMultiplyMatrix3")]
-        public partial void MultiplyMatrix3(ref Silk.NET.Maths.Matrix3X3<float> dst, ref Silk.NET.Maths.Matrix3X3<float> src);
+        public partial void MultiplyMatrix3(ref Silk.NET.Maths.Matrix3X3<float> dst, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 538, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
@@ -1421,82 +1421,82 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 570, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2AreEqual")]
-        public unsafe partial int Vector2AreEqual(System.Numerics.Vector2* a, System.Numerics.Vector2* b);
+        public unsafe partial int Vector2AreEqual([Flow(FlowDirection.In)] System.Numerics.Vector2* a, [Flow(FlowDirection.In)] System.Numerics.Vector2* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 570, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2AreEqual")]
-        public unsafe partial int Vector2AreEqual(System.Numerics.Vector2* a, ref System.Numerics.Vector2 b);
+        public unsafe partial int Vector2AreEqual([Flow(FlowDirection.In)] System.Numerics.Vector2* a, [Flow(FlowDirection.In)] in System.Numerics.Vector2 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 570, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2AreEqual")]
-        public unsafe partial int Vector2AreEqual(ref System.Numerics.Vector2 a, System.Numerics.Vector2* b);
+        public unsafe partial int Vector2AreEqual([Flow(FlowDirection.In)] in System.Numerics.Vector2 a, [Flow(FlowDirection.In)] System.Numerics.Vector2* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 570, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2AreEqual")]
-        public partial int Vector2AreEqual(ref System.Numerics.Vector2 a, ref System.Numerics.Vector2 b);
+        public partial int Vector2AreEqual([Flow(FlowDirection.In)] in System.Numerics.Vector2 a, [Flow(FlowDirection.In)] in System.Numerics.Vector2 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 582, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2AreEqualEpsilon")]
-        public unsafe partial int Vector2AreEqualEpsilon(System.Numerics.Vector2* a, System.Numerics.Vector2* b, float epsilon);
+        public unsafe partial int Vector2AreEqualEpsilon([Flow(FlowDirection.In)] System.Numerics.Vector2* a, [Flow(FlowDirection.In)] System.Numerics.Vector2* b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 582, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2AreEqualEpsilon")]
-        public unsafe partial int Vector2AreEqualEpsilon(System.Numerics.Vector2* a, ref System.Numerics.Vector2 b, float epsilon);
+        public unsafe partial int Vector2AreEqualEpsilon([Flow(FlowDirection.In)] System.Numerics.Vector2* a, [Flow(FlowDirection.In)] in System.Numerics.Vector2 b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 582, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2AreEqualEpsilon")]
-        public unsafe partial int Vector2AreEqualEpsilon(ref System.Numerics.Vector2 a, System.Numerics.Vector2* b, float epsilon);
+        public unsafe partial int Vector2AreEqualEpsilon([Flow(FlowDirection.In)] in System.Numerics.Vector2 a, [Flow(FlowDirection.In)] System.Numerics.Vector2* b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 582, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2AreEqualEpsilon")]
-        public partial int Vector2AreEqualEpsilon(ref System.Numerics.Vector2 a, ref System.Numerics.Vector2 b, float epsilon);
+        public partial int Vector2AreEqualEpsilon([Flow(FlowDirection.In)] in System.Numerics.Vector2 a, [Flow(FlowDirection.In)] in System.Numerics.Vector2 b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 592, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2Add")]
-        public unsafe partial void Vector2Add(System.Numerics.Vector2* dst, System.Numerics.Vector2* src);
+        public unsafe partial void Vector2Add(System.Numerics.Vector2* dst, [Flow(FlowDirection.In)] System.Numerics.Vector2* src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 592, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2Add")]
-        public unsafe partial void Vector2Add(System.Numerics.Vector2* dst, ref System.Numerics.Vector2 src);
+        public unsafe partial void Vector2Add(System.Numerics.Vector2* dst, [Flow(FlowDirection.In)] in System.Numerics.Vector2 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 592, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2Add")]
-        public unsafe partial void Vector2Add(ref System.Numerics.Vector2 dst, System.Numerics.Vector2* src);
+        public unsafe partial void Vector2Add(ref System.Numerics.Vector2 dst, [Flow(FlowDirection.In)] System.Numerics.Vector2* src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 592, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2Add")]
-        public partial void Vector2Add(ref System.Numerics.Vector2 dst, ref System.Numerics.Vector2 src);
+        public partial void Vector2Add(ref System.Numerics.Vector2 dst, [Flow(FlowDirection.In)] in System.Numerics.Vector2 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 601, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2Subtract")]
-        public unsafe partial void Vector2Subtract(System.Numerics.Vector2* dst, System.Numerics.Vector2* src);
+        public unsafe partial void Vector2Subtract(System.Numerics.Vector2* dst, [Flow(FlowDirection.In)] System.Numerics.Vector2* src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 601, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2Subtract")]
-        public unsafe partial void Vector2Subtract(System.Numerics.Vector2* dst, ref System.Numerics.Vector2 src);
+        public unsafe partial void Vector2Subtract(System.Numerics.Vector2* dst, [Flow(FlowDirection.In)] in System.Numerics.Vector2 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 601, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2Subtract")]
-        public unsafe partial void Vector2Subtract(ref System.Numerics.Vector2 dst, System.Numerics.Vector2* src);
+        public unsafe partial void Vector2Subtract(ref System.Numerics.Vector2 dst, [Flow(FlowDirection.In)] System.Numerics.Vector2* src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 601, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2Subtract")]
-        public partial void Vector2Subtract(ref System.Numerics.Vector2 dst, ref System.Numerics.Vector2 src);
+        public partial void Vector2Subtract(ref System.Numerics.Vector2 dst, [Flow(FlowDirection.In)] in System.Numerics.Vector2 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 610, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
@@ -1511,22 +1511,22 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 620, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2SymMul")]
-        public unsafe partial void Vector2SymMul(System.Numerics.Vector2* dst, System.Numerics.Vector2* other);
+        public unsafe partial void Vector2SymMul(System.Numerics.Vector2* dst, [Flow(FlowDirection.In)] System.Numerics.Vector2* other);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 620, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2SymMul")]
-        public unsafe partial void Vector2SymMul(System.Numerics.Vector2* dst, ref System.Numerics.Vector2 other);
+        public unsafe partial void Vector2SymMul(System.Numerics.Vector2* dst, [Flow(FlowDirection.In)] in System.Numerics.Vector2 other);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 620, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2SymMul")]
-        public unsafe partial void Vector2SymMul(ref System.Numerics.Vector2 dst, System.Numerics.Vector2* other);
+        public unsafe partial void Vector2SymMul(ref System.Numerics.Vector2 dst, [Flow(FlowDirection.In)] System.Numerics.Vector2* other);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 620, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2SymMul")]
-        public partial void Vector2SymMul(ref System.Numerics.Vector2 dst, ref System.Numerics.Vector2 other);
+        public partial void Vector2SymMul(ref System.Numerics.Vector2 dst, [Flow(FlowDirection.In)] in System.Numerics.Vector2 other);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 629, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
@@ -1561,22 +1561,22 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 647, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2Length")]
-        public unsafe partial float Vector2Length(System.Numerics.Vector2* v);
+        public unsafe partial float Vector2Length([Flow(FlowDirection.In)] System.Numerics.Vector2* v);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 647, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2Length")]
-        public partial float Vector2Length(ref System.Numerics.Vector2 v);
+        public partial float Vector2Length([Flow(FlowDirection.In)] in System.Numerics.Vector2 v);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2SquareLength")]
-        public unsafe partial float Vector2SquareLength(System.Numerics.Vector2* v);
+        public unsafe partial float Vector2SquareLength([Flow(FlowDirection.In)] System.Numerics.Vector2* v);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 654, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2SquareLength")]
-        public partial float Vector2SquareLength(ref System.Numerics.Vector2 v);
+        public partial float Vector2SquareLength([Flow(FlowDirection.In)] in System.Numerics.Vector2 v);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 661, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
@@ -1591,22 +1591,22 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 670, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2DotProduct")]
-        public unsafe partial float Vector2DotProduct(System.Numerics.Vector2* a, System.Numerics.Vector2* b);
+        public unsafe partial float Vector2DotProduct([Flow(FlowDirection.In)] System.Numerics.Vector2* a, [Flow(FlowDirection.In)] System.Numerics.Vector2* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 670, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2DotProduct")]
-        public unsafe partial float Vector2DotProduct(System.Numerics.Vector2* a, ref System.Numerics.Vector2 b);
+        public unsafe partial float Vector2DotProduct([Flow(FlowDirection.In)] System.Numerics.Vector2* a, [Flow(FlowDirection.In)] in System.Numerics.Vector2 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 670, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2DotProduct")]
-        public unsafe partial float Vector2DotProduct(ref System.Numerics.Vector2 a, System.Numerics.Vector2* b);
+        public unsafe partial float Vector2DotProduct([Flow(FlowDirection.In)] in System.Numerics.Vector2 a, [Flow(FlowDirection.In)] System.Numerics.Vector2* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 670, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector2DotProduct")]
-        public partial float Vector2DotProduct(ref System.Numerics.Vector2 a, ref System.Numerics.Vector2 b);
+        public partial float Vector2DotProduct([Flow(FlowDirection.In)] in System.Numerics.Vector2 a, [Flow(FlowDirection.In)] in System.Numerics.Vector2 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 678, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
@@ -1621,102 +1621,102 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 688, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3AreEqual")]
-        public unsafe partial int Vector3AreEqual(System.Numerics.Vector3* a, System.Numerics.Vector3* b);
+        public unsafe partial int Vector3AreEqual([Flow(FlowDirection.In)] System.Numerics.Vector3* a, [Flow(FlowDirection.In)] System.Numerics.Vector3* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 688, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3AreEqual")]
-        public unsafe partial int Vector3AreEqual(System.Numerics.Vector3* a, ref System.Numerics.Vector3 b);
+        public unsafe partial int Vector3AreEqual([Flow(FlowDirection.In)] System.Numerics.Vector3* a, [Flow(FlowDirection.In)] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 688, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3AreEqual")]
-        public unsafe partial int Vector3AreEqual(ref System.Numerics.Vector3 a, System.Numerics.Vector3* b);
+        public unsafe partial int Vector3AreEqual([Flow(FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(FlowDirection.In)] System.Numerics.Vector3* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 688, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3AreEqual")]
-        public partial int Vector3AreEqual(ref System.Numerics.Vector3 a, ref System.Numerics.Vector3 b);
+        public partial int Vector3AreEqual([Flow(FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(FlowDirection.In)] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 700, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3AreEqualEpsilon")]
-        public unsafe partial int Vector3AreEqualEpsilon(System.Numerics.Vector3* a, System.Numerics.Vector3* b, float epsilon);
+        public unsafe partial int Vector3AreEqualEpsilon([Flow(FlowDirection.In)] System.Numerics.Vector3* a, [Flow(FlowDirection.In)] System.Numerics.Vector3* b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 700, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3AreEqualEpsilon")]
-        public unsafe partial int Vector3AreEqualEpsilon(System.Numerics.Vector3* a, ref System.Numerics.Vector3 b, float epsilon);
+        public unsafe partial int Vector3AreEqualEpsilon([Flow(FlowDirection.In)] System.Numerics.Vector3* a, [Flow(FlowDirection.In)] in System.Numerics.Vector3 b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 700, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3AreEqualEpsilon")]
-        public unsafe partial int Vector3AreEqualEpsilon(ref System.Numerics.Vector3 a, System.Numerics.Vector3* b, float epsilon);
+        public unsafe partial int Vector3AreEqualEpsilon([Flow(FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(FlowDirection.In)] System.Numerics.Vector3* b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 700, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3AreEqualEpsilon")]
-        public partial int Vector3AreEqualEpsilon(ref System.Numerics.Vector3 a, ref System.Numerics.Vector3 b, float epsilon);
+        public partial int Vector3AreEqualEpsilon([Flow(FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(FlowDirection.In)] in System.Numerics.Vector3 b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 713, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3LessThan")]
-        public unsafe partial int Vector3LessThan(System.Numerics.Vector3* a, System.Numerics.Vector3* b);
+        public unsafe partial int Vector3LessThan([Flow(FlowDirection.In)] System.Numerics.Vector3* a, [Flow(FlowDirection.In)] System.Numerics.Vector3* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 713, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3LessThan")]
-        public unsafe partial int Vector3LessThan(System.Numerics.Vector3* a, ref System.Numerics.Vector3 b);
+        public unsafe partial int Vector3LessThan([Flow(FlowDirection.In)] System.Numerics.Vector3* a, [Flow(FlowDirection.In)] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 713, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3LessThan")]
-        public unsafe partial int Vector3LessThan(ref System.Numerics.Vector3 a, System.Numerics.Vector3* b);
+        public unsafe partial int Vector3LessThan([Flow(FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(FlowDirection.In)] System.Numerics.Vector3* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 713, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3LessThan")]
-        public partial int Vector3LessThan(ref System.Numerics.Vector3 a, ref System.Numerics.Vector3 b);
+        public partial int Vector3LessThan([Flow(FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(FlowDirection.In)] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 722, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3Add")]
-        public unsafe partial void Vector3Add(System.Numerics.Vector3* dst, System.Numerics.Vector3* src);
+        public unsafe partial void Vector3Add(System.Numerics.Vector3* dst, [Flow(FlowDirection.In)] System.Numerics.Vector3* src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 722, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3Add")]
-        public unsafe partial void Vector3Add(System.Numerics.Vector3* dst, ref System.Numerics.Vector3 src);
+        public unsafe partial void Vector3Add(System.Numerics.Vector3* dst, [Flow(FlowDirection.In)] in System.Numerics.Vector3 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 722, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3Add")]
-        public unsafe partial void Vector3Add(ref System.Numerics.Vector3 dst, System.Numerics.Vector3* src);
+        public unsafe partial void Vector3Add(ref System.Numerics.Vector3 dst, [Flow(FlowDirection.In)] System.Numerics.Vector3* src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 722, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3Add")]
-        public partial void Vector3Add(ref System.Numerics.Vector3 dst, ref System.Numerics.Vector3 src);
+        public partial void Vector3Add(ref System.Numerics.Vector3 dst, [Flow(FlowDirection.In)] in System.Numerics.Vector3 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 731, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3Subtract")]
-        public unsafe partial void Vector3Subtract(System.Numerics.Vector3* dst, System.Numerics.Vector3* src);
+        public unsafe partial void Vector3Subtract(System.Numerics.Vector3* dst, [Flow(FlowDirection.In)] System.Numerics.Vector3* src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 731, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3Subtract")]
-        public unsafe partial void Vector3Subtract(System.Numerics.Vector3* dst, ref System.Numerics.Vector3 src);
+        public unsafe partial void Vector3Subtract(System.Numerics.Vector3* dst, [Flow(FlowDirection.In)] in System.Numerics.Vector3 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 731, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3Subtract")]
-        public unsafe partial void Vector3Subtract(ref System.Numerics.Vector3 dst, System.Numerics.Vector3* src);
+        public unsafe partial void Vector3Subtract(ref System.Numerics.Vector3 dst, [Flow(FlowDirection.In)] System.Numerics.Vector3* src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 731, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3Subtract")]
-        public partial void Vector3Subtract(ref System.Numerics.Vector3 dst, ref System.Numerics.Vector3 src);
+        public partial void Vector3Subtract(ref System.Numerics.Vector3 dst, [Flow(FlowDirection.In)] in System.Numerics.Vector3 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 740, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
@@ -1731,22 +1731,22 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 750, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3SymMul")]
-        public unsafe partial void Vector3SymMul(System.Numerics.Vector3* dst, System.Numerics.Vector3* other);
+        public unsafe partial void Vector3SymMul(System.Numerics.Vector3* dst, [Flow(FlowDirection.In)] System.Numerics.Vector3* other);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 750, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3SymMul")]
-        public unsafe partial void Vector3SymMul(System.Numerics.Vector3* dst, ref System.Numerics.Vector3 other);
+        public unsafe partial void Vector3SymMul(System.Numerics.Vector3* dst, [Flow(FlowDirection.In)] in System.Numerics.Vector3 other);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 750, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3SymMul")]
-        public unsafe partial void Vector3SymMul(ref System.Numerics.Vector3 dst, System.Numerics.Vector3* other);
+        public unsafe partial void Vector3SymMul(ref System.Numerics.Vector3 dst, [Flow(FlowDirection.In)] System.Numerics.Vector3* other);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 750, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3SymMul")]
-        public partial void Vector3SymMul(ref System.Numerics.Vector3 dst, ref System.Numerics.Vector3 other);
+        public partial void Vector3SymMul(ref System.Numerics.Vector3 dst, [Flow(FlowDirection.In)] in System.Numerics.Vector3 other);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 759, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
@@ -1781,22 +1781,22 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 777, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3Length")]
-        public unsafe partial float Vector3Length(System.Numerics.Vector3* v);
+        public unsafe partial float Vector3Length([Flow(FlowDirection.In)] System.Numerics.Vector3* v);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 777, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3Length")]
-        public partial float Vector3Length(ref System.Numerics.Vector3 v);
+        public partial float Vector3Length([Flow(FlowDirection.In)] in System.Numerics.Vector3 v);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 784, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3SquareLength")]
-        public unsafe partial float Vector3SquareLength(System.Numerics.Vector3* v);
+        public unsafe partial float Vector3SquareLength([Flow(FlowDirection.In)] System.Numerics.Vector3* v);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 784, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3SquareLength")]
-        public partial float Vector3SquareLength(ref System.Numerics.Vector3 v);
+        public partial float Vector3SquareLength([Flow(FlowDirection.In)] in System.Numerics.Vector3 v);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 791, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
@@ -1811,62 +1811,62 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 800, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3DotProduct")]
-        public unsafe partial float Vector3DotProduct(System.Numerics.Vector3* a, System.Numerics.Vector3* b);
+        public unsafe partial float Vector3DotProduct([Flow(FlowDirection.In)] System.Numerics.Vector3* a, [Flow(FlowDirection.In)] System.Numerics.Vector3* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 800, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3DotProduct")]
-        public unsafe partial float Vector3DotProduct(System.Numerics.Vector3* a, ref System.Numerics.Vector3 b);
+        public unsafe partial float Vector3DotProduct([Flow(FlowDirection.In)] System.Numerics.Vector3* a, [Flow(FlowDirection.In)] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 800, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3DotProduct")]
-        public unsafe partial float Vector3DotProduct(ref System.Numerics.Vector3 a, System.Numerics.Vector3* b);
+        public unsafe partial float Vector3DotProduct([Flow(FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(FlowDirection.In)] System.Numerics.Vector3* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 800, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3DotProduct")]
-        public partial float Vector3DotProduct(ref System.Numerics.Vector3 a, ref System.Numerics.Vector3 b);
+        public partial float Vector3DotProduct([Flow(FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(FlowDirection.In)] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 811, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3CrossProduct")]
-        public unsafe partial void Vector3CrossProduct(System.Numerics.Vector3* dst, System.Numerics.Vector3* a, System.Numerics.Vector3* b);
+        public unsafe partial void Vector3CrossProduct(System.Numerics.Vector3* dst, [Flow(FlowDirection.In)] System.Numerics.Vector3* a, [Flow(FlowDirection.In)] System.Numerics.Vector3* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 811, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3CrossProduct")]
-        public unsafe partial void Vector3CrossProduct(System.Numerics.Vector3* dst, System.Numerics.Vector3* a, ref System.Numerics.Vector3 b);
+        public unsafe partial void Vector3CrossProduct(System.Numerics.Vector3* dst, [Flow(FlowDirection.In)] System.Numerics.Vector3* a, [Flow(FlowDirection.In)] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 811, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3CrossProduct")]
-        public unsafe partial void Vector3CrossProduct(System.Numerics.Vector3* dst, ref System.Numerics.Vector3 a, System.Numerics.Vector3* b);
+        public unsafe partial void Vector3CrossProduct(System.Numerics.Vector3* dst, [Flow(FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(FlowDirection.In)] System.Numerics.Vector3* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 811, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3CrossProduct")]
-        public unsafe partial void Vector3CrossProduct(System.Numerics.Vector3* dst, ref System.Numerics.Vector3 a, ref System.Numerics.Vector3 b);
+        public unsafe partial void Vector3CrossProduct(System.Numerics.Vector3* dst, [Flow(FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(FlowDirection.In)] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 811, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3CrossProduct")]
-        public unsafe partial void Vector3CrossProduct(ref System.Numerics.Vector3 dst, System.Numerics.Vector3* a, System.Numerics.Vector3* b);
+        public unsafe partial void Vector3CrossProduct(ref System.Numerics.Vector3 dst, [Flow(FlowDirection.In)] System.Numerics.Vector3* a, [Flow(FlowDirection.In)] System.Numerics.Vector3* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 811, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3CrossProduct")]
-        public unsafe partial void Vector3CrossProduct(ref System.Numerics.Vector3 dst, System.Numerics.Vector3* a, ref System.Numerics.Vector3 b);
+        public unsafe partial void Vector3CrossProduct(ref System.Numerics.Vector3 dst, [Flow(FlowDirection.In)] System.Numerics.Vector3* a, [Flow(FlowDirection.In)] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 811, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3CrossProduct")]
-        public unsafe partial void Vector3CrossProduct(ref System.Numerics.Vector3 dst, ref System.Numerics.Vector3 a, System.Numerics.Vector3* b);
+        public unsafe partial void Vector3CrossProduct(ref System.Numerics.Vector3 dst, [Flow(FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(FlowDirection.In)] System.Numerics.Vector3* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 811, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3CrossProduct")]
-        public partial void Vector3CrossProduct(ref System.Numerics.Vector3 dst, ref System.Numerics.Vector3 a, ref System.Numerics.Vector3 b);
+        public partial void Vector3CrossProduct(ref System.Numerics.Vector3 dst, [Flow(FlowDirection.In)] in System.Numerics.Vector3 a, [Flow(FlowDirection.In)] in System.Numerics.Vector3 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 820, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
@@ -1891,102 +1891,102 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 835, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3RotateByQuaternion")]
-        public unsafe partial void Vector3RotateByQuaternion(System.Numerics.Vector3* v, AssimpQuaternion* q);
+        public unsafe partial void Vector3RotateByQuaternion(System.Numerics.Vector3* v, [Flow(FlowDirection.In)] AssimpQuaternion* q);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 835, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3RotateByQuaternion")]
-        public unsafe partial void Vector3RotateByQuaternion(System.Numerics.Vector3* v, ref AssimpQuaternion q);
+        public unsafe partial void Vector3RotateByQuaternion(System.Numerics.Vector3* v, [Flow(FlowDirection.In)] in AssimpQuaternion q);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 835, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3RotateByQuaternion")]
-        public unsafe partial void Vector3RotateByQuaternion(ref System.Numerics.Vector3 v, AssimpQuaternion* q);
+        public unsafe partial void Vector3RotateByQuaternion(ref System.Numerics.Vector3 v, [Flow(FlowDirection.In)] AssimpQuaternion* q);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 835, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiVector3RotateByQuaternion")]
-        public partial void Vector3RotateByQuaternion(ref System.Numerics.Vector3 v, ref AssimpQuaternion q);
+        public partial void Vector3RotateByQuaternion(ref System.Numerics.Vector3 v, [Flow(FlowDirection.In)] in AssimpQuaternion q);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 844, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromMatrix4")]
-        public unsafe partial void Matrix3FromMatrix4(Silk.NET.Maths.Matrix3X3<float>* dst, System.Numerics.Matrix4x4* mat);
+        public unsafe partial void Matrix3FromMatrix4(Silk.NET.Maths.Matrix3X3<float>* dst, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 844, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromMatrix4")]
-        public unsafe partial void Matrix3FromMatrix4(Silk.NET.Maths.Matrix3X3<float>* dst, ref System.Numerics.Matrix4x4 mat);
+        public unsafe partial void Matrix3FromMatrix4(Silk.NET.Maths.Matrix3X3<float>* dst, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 844, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromMatrix4")]
-        public unsafe partial void Matrix3FromMatrix4(ref Silk.NET.Maths.Matrix3X3<float> dst, System.Numerics.Matrix4x4* mat);
+        public unsafe partial void Matrix3FromMatrix4(ref Silk.NET.Maths.Matrix3X3<float> dst, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 844, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromMatrix4")]
-        public partial void Matrix3FromMatrix4(ref Silk.NET.Maths.Matrix3X3<float> dst, ref System.Numerics.Matrix4x4 mat);
+        public partial void Matrix3FromMatrix4(ref Silk.NET.Maths.Matrix3X3<float> dst, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 853, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromQuaternion")]
-        public unsafe partial void Matrix3FromQuaternion(Silk.NET.Maths.Matrix3X3<float>* mat, AssimpQuaternion* q);
+        public unsafe partial void Matrix3FromQuaternion(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(FlowDirection.In)] AssimpQuaternion* q);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 853, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromQuaternion")]
-        public unsafe partial void Matrix3FromQuaternion(Silk.NET.Maths.Matrix3X3<float>* mat, ref AssimpQuaternion q);
+        public unsafe partial void Matrix3FromQuaternion(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(FlowDirection.In)] in AssimpQuaternion q);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 853, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromQuaternion")]
-        public unsafe partial void Matrix3FromQuaternion(ref Silk.NET.Maths.Matrix3X3<float> mat, AssimpQuaternion* q);
+        public unsafe partial void Matrix3FromQuaternion(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(FlowDirection.In)] AssimpQuaternion* q);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 853, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromQuaternion")]
-        public partial void Matrix3FromQuaternion(ref Silk.NET.Maths.Matrix3X3<float> mat, ref AssimpQuaternion q);
+        public partial void Matrix3FromQuaternion(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(FlowDirection.In)] in AssimpQuaternion q);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 864, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3AreEqual")]
-        public unsafe partial int Matrix3AreEqual(Silk.NET.Maths.Matrix3X3<float>* a, Silk.NET.Maths.Matrix3X3<float>* b);
+        public unsafe partial int Matrix3AreEqual([Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* a, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 864, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3AreEqual")]
-        public unsafe partial int Matrix3AreEqual(Silk.NET.Maths.Matrix3X3<float>* a, ref Silk.NET.Maths.Matrix3X3<float> b);
+        public unsafe partial int Matrix3AreEqual([Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* a, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 864, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3AreEqual")]
-        public unsafe partial int Matrix3AreEqual(ref Silk.NET.Maths.Matrix3X3<float> a, Silk.NET.Maths.Matrix3X3<float>* b);
+        public unsafe partial int Matrix3AreEqual([Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> a, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 864, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3AreEqual")]
-        public partial int Matrix3AreEqual(ref Silk.NET.Maths.Matrix3X3<float> a, ref Silk.NET.Maths.Matrix3X3<float> b);
+        public partial int Matrix3AreEqual([Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> a, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 876, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3AreEqualEpsilon")]
-        public unsafe partial int Matrix3AreEqualEpsilon(Silk.NET.Maths.Matrix3X3<float>* a, Silk.NET.Maths.Matrix3X3<float>* b, float epsilon);
+        public unsafe partial int Matrix3AreEqualEpsilon([Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* a, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 876, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3AreEqualEpsilon")]
-        public unsafe partial int Matrix3AreEqualEpsilon(Silk.NET.Maths.Matrix3X3<float>* a, ref Silk.NET.Maths.Matrix3X3<float> b, float epsilon);
+        public unsafe partial int Matrix3AreEqualEpsilon([Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* a, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 876, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3AreEqualEpsilon")]
-        public unsafe partial int Matrix3AreEqualEpsilon(ref Silk.NET.Maths.Matrix3X3<float> a, Silk.NET.Maths.Matrix3X3<float>* b, float epsilon);
+        public unsafe partial int Matrix3AreEqualEpsilon([Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> a, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 876, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3AreEqualEpsilon")]
-        public partial int Matrix3AreEqualEpsilon(ref Silk.NET.Maths.Matrix3X3<float> a, ref Silk.NET.Maths.Matrix3X3<float> b, float epsilon);
+        public partial int Matrix3AreEqualEpsilon([Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> a, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 885, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
@@ -2001,12 +2001,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 892, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3Determinant")]
-        public unsafe partial float Matrix3Determinant(Silk.NET.Maths.Matrix3X3<float>* mat);
+        public unsafe partial float Matrix3Determinant([Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 892, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3Determinant")]
-        public partial float Matrix3Determinant(ref Silk.NET.Maths.Matrix3X3<float> mat);
+        public partial float Matrix3Determinant([Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 900, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
@@ -2021,242 +2021,242 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 910, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromRotationAroundAxis")]
-        public unsafe partial void Matrix3FromRotationAroundAxis(Silk.NET.Maths.Matrix3X3<float>* mat, System.Numerics.Vector3* axis, float angle);
+        public unsafe partial void Matrix3FromRotationAroundAxis(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* axis, float angle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 910, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromRotationAroundAxis")]
-        public unsafe partial void Matrix3FromRotationAroundAxis(Silk.NET.Maths.Matrix3X3<float>* mat, ref System.Numerics.Vector3 axis, float angle);
+        public unsafe partial void Matrix3FromRotationAroundAxis(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 axis, float angle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 910, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromRotationAroundAxis")]
-        public unsafe partial void Matrix3FromRotationAroundAxis(ref Silk.NET.Maths.Matrix3X3<float> mat, System.Numerics.Vector3* axis, float angle);
+        public unsafe partial void Matrix3FromRotationAroundAxis(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* axis, float angle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 910, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromRotationAroundAxis")]
-        public partial void Matrix3FromRotationAroundAxis(ref Silk.NET.Maths.Matrix3X3<float> mat, ref System.Numerics.Vector3 axis, float angle);
+        public partial void Matrix3FromRotationAroundAxis(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 axis, float angle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 920, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3Translation")]
-        public unsafe partial void Matrix3Translation(Silk.NET.Maths.Matrix3X3<float>* mat, System.Numerics.Vector2* translation);
+        public unsafe partial void Matrix3Translation(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(FlowDirection.In)] System.Numerics.Vector2* translation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 920, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3Translation")]
-        public unsafe partial void Matrix3Translation(Silk.NET.Maths.Matrix3X3<float>* mat, ref System.Numerics.Vector2 translation);
+        public unsafe partial void Matrix3Translation(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(FlowDirection.In)] in System.Numerics.Vector2 translation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 920, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3Translation")]
-        public unsafe partial void Matrix3Translation(ref Silk.NET.Maths.Matrix3X3<float> mat, System.Numerics.Vector2* translation);
+        public unsafe partial void Matrix3Translation(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(FlowDirection.In)] System.Numerics.Vector2* translation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 920, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3Translation")]
-        public partial void Matrix3Translation(ref Silk.NET.Maths.Matrix3X3<float> mat, ref System.Numerics.Vector2 translation);
+        public partial void Matrix3Translation(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(FlowDirection.In)] in System.Numerics.Vector2 translation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 930, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromTo")]
-        public unsafe partial void Matrix3FromTo(Silk.NET.Maths.Matrix3X3<float>* mat, System.Numerics.Vector3* from, System.Numerics.Vector3* to);
+        public unsafe partial void Matrix3FromTo(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* from, [Flow(FlowDirection.In)] System.Numerics.Vector3* to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 930, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromTo")]
-        public unsafe partial void Matrix3FromTo(Silk.NET.Maths.Matrix3X3<float>* mat, System.Numerics.Vector3* from, ref System.Numerics.Vector3 to);
+        public unsafe partial void Matrix3FromTo(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* from, [Flow(FlowDirection.In)] in System.Numerics.Vector3 to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 930, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromTo")]
-        public unsafe partial void Matrix3FromTo(Silk.NET.Maths.Matrix3X3<float>* mat, ref System.Numerics.Vector3 from, System.Numerics.Vector3* to);
+        public unsafe partial void Matrix3FromTo(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 from, [Flow(FlowDirection.In)] System.Numerics.Vector3* to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 930, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromTo")]
-        public unsafe partial void Matrix3FromTo(Silk.NET.Maths.Matrix3X3<float>* mat, ref System.Numerics.Vector3 from, ref System.Numerics.Vector3 to);
+        public unsafe partial void Matrix3FromTo(Silk.NET.Maths.Matrix3X3<float>* mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 from, [Flow(FlowDirection.In)] in System.Numerics.Vector3 to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 930, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromTo")]
-        public unsafe partial void Matrix3FromTo(ref Silk.NET.Maths.Matrix3X3<float> mat, System.Numerics.Vector3* from, System.Numerics.Vector3* to);
+        public unsafe partial void Matrix3FromTo(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* from, [Flow(FlowDirection.In)] System.Numerics.Vector3* to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 930, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromTo")]
-        public unsafe partial void Matrix3FromTo(ref Silk.NET.Maths.Matrix3X3<float> mat, System.Numerics.Vector3* from, ref System.Numerics.Vector3 to);
+        public unsafe partial void Matrix3FromTo(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* from, [Flow(FlowDirection.In)] in System.Numerics.Vector3 to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 930, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromTo")]
-        public unsafe partial void Matrix3FromTo(ref Silk.NET.Maths.Matrix3X3<float> mat, ref System.Numerics.Vector3 from, System.Numerics.Vector3* to);
+        public unsafe partial void Matrix3FromTo(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 from, [Flow(FlowDirection.In)] System.Numerics.Vector3* to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 930, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix3FromTo")]
-        public partial void Matrix3FromTo(ref Silk.NET.Maths.Matrix3X3<float> mat, ref System.Numerics.Vector3 from, ref System.Numerics.Vector3 to);
+        public partial void Matrix3FromTo(ref Silk.NET.Maths.Matrix3X3<float> mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 from, [Flow(FlowDirection.In)] in System.Numerics.Vector3 to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 940, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromMatrix3")]
-        public unsafe partial void Matrix4FromMatrix3(System.Numerics.Matrix4x4* dst, Silk.NET.Maths.Matrix3X3<float>* mat);
+        public unsafe partial void Matrix4FromMatrix3(System.Numerics.Matrix4x4* dst, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 940, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromMatrix3")]
-        public unsafe partial void Matrix4FromMatrix3(System.Numerics.Matrix4x4* dst, ref Silk.NET.Maths.Matrix3X3<float> mat);
+        public unsafe partial void Matrix4FromMatrix3(System.Numerics.Matrix4x4* dst, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 940, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromMatrix3")]
-        public unsafe partial void Matrix4FromMatrix3(ref System.Numerics.Matrix4x4 dst, Silk.NET.Maths.Matrix3X3<float>* mat);
+        public unsafe partial void Matrix4FromMatrix3(ref System.Numerics.Matrix4x4 dst, [Flow(FlowDirection.In)] Silk.NET.Maths.Matrix3X3<float>* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 940, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromMatrix3")]
-        public partial void Matrix4FromMatrix3(ref System.Numerics.Matrix4x4 dst, ref Silk.NET.Maths.Matrix3X3<float> mat);
+        public partial void Matrix4FromMatrix3(ref System.Numerics.Matrix4x4 dst, [Flow(FlowDirection.In)] in Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(FlowDirection.In)] AssimpQuaternion* rotation, [Flow(FlowDirection.In)] System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(FlowDirection.In)] AssimpQuaternion* rotation, [Flow(FlowDirection.In)] in System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(FlowDirection.In)] in AssimpQuaternion rotation, [Flow(FlowDirection.In)] System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(FlowDirection.In)] in AssimpQuaternion rotation, [Flow(FlowDirection.In)] in System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 scaling, [Flow(FlowDirection.In)] AssimpQuaternion* rotation, [Flow(FlowDirection.In)] System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 scaling, [Flow(FlowDirection.In)] AssimpQuaternion* rotation, [Flow(FlowDirection.In)] in System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 scaling, [Flow(FlowDirection.In)] in AssimpQuaternion rotation, [Flow(FlowDirection.In)] System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(System.Numerics.Matrix4x4* mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 scaling, [Flow(FlowDirection.In)] in AssimpQuaternion rotation, [Flow(FlowDirection.In)] in System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(FlowDirection.In)] AssimpQuaternion* rotation, [Flow(FlowDirection.In)] System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(FlowDirection.In)] AssimpQuaternion* rotation, [Flow(FlowDirection.In)] in System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(FlowDirection.In)] in AssimpQuaternion rotation, [Flow(FlowDirection.In)] System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* scaling, [Flow(FlowDirection.In)] in AssimpQuaternion rotation, [Flow(FlowDirection.In)] in System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 scaling, [Flow(FlowDirection.In)] AssimpQuaternion* rotation, [Flow(FlowDirection.In)] System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 scaling, [Flow(FlowDirection.In)] AssimpQuaternion* rotation, [Flow(FlowDirection.In)] in System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 scaling, [Flow(FlowDirection.In)] in AssimpQuaternion rotation, [Flow(FlowDirection.In)] System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 951, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromScalingQuaternionPosition")]
-        public partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
+        public partial void Matrix4FromScalingQuaternionPosition(ref System.Numerics.Matrix4x4 mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 scaling, [Flow(FlowDirection.In)] in AssimpQuaternion rotation, [Flow(FlowDirection.In)] in System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 962, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Add")]
-        public unsafe partial void Matrix4Add(System.Numerics.Matrix4x4* dst, System.Numerics.Matrix4x4* src);
+        public unsafe partial void Matrix4Add(System.Numerics.Matrix4x4* dst, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 962, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Add")]
-        public unsafe partial void Matrix4Add(System.Numerics.Matrix4x4* dst, ref System.Numerics.Matrix4x4 src);
+        public unsafe partial void Matrix4Add(System.Numerics.Matrix4x4* dst, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 962, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Add")]
-        public unsafe partial void Matrix4Add(ref System.Numerics.Matrix4x4 dst, System.Numerics.Matrix4x4* src);
+        public unsafe partial void Matrix4Add(ref System.Numerics.Matrix4x4 dst, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 962, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Add")]
-        public partial void Matrix4Add(ref System.Numerics.Matrix4x4 dst, ref System.Numerics.Matrix4x4 src);
+        public partial void Matrix4Add(ref System.Numerics.Matrix4x4 dst, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 src);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 973, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4AreEqual")]
-        public unsafe partial int Matrix4AreEqual(System.Numerics.Matrix4x4* a, System.Numerics.Matrix4x4* b);
+        public unsafe partial int Matrix4AreEqual([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* a, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 973, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4AreEqual")]
-        public unsafe partial int Matrix4AreEqual(System.Numerics.Matrix4x4* a, ref System.Numerics.Matrix4x4 b);
+        public unsafe partial int Matrix4AreEqual([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* a, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 973, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4AreEqual")]
-        public unsafe partial int Matrix4AreEqual(ref System.Numerics.Matrix4x4 a, System.Numerics.Matrix4x4* b);
+        public unsafe partial int Matrix4AreEqual([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 a, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 973, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4AreEqual")]
-        public partial int Matrix4AreEqual(ref System.Numerics.Matrix4x4 a, ref System.Numerics.Matrix4x4 b);
+        public partial int Matrix4AreEqual([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 a, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 985, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4AreEqualEpsilon")]
-        public unsafe partial int Matrix4AreEqualEpsilon(System.Numerics.Matrix4x4* a, System.Numerics.Matrix4x4* b, float epsilon);
+        public unsafe partial int Matrix4AreEqualEpsilon([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* a, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 985, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4AreEqualEpsilon")]
-        public unsafe partial int Matrix4AreEqualEpsilon(System.Numerics.Matrix4x4* a, ref System.Numerics.Matrix4x4 b, float epsilon);
+        public unsafe partial int Matrix4AreEqualEpsilon([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* a, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 985, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4AreEqualEpsilon")]
-        public unsafe partial int Matrix4AreEqualEpsilon(ref System.Numerics.Matrix4x4 a, System.Numerics.Matrix4x4* b, float epsilon);
+        public unsafe partial int Matrix4AreEqualEpsilon([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 a, [Flow(FlowDirection.In)] System.Numerics.Matrix4x4* b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 985, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4AreEqualEpsilon")]
-        public partial int Matrix4AreEqualEpsilon(ref System.Numerics.Matrix4x4 a, ref System.Numerics.Matrix4x4 b, float epsilon);
+        public partial int Matrix4AreEqualEpsilon([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 a, [Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 994, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
@@ -2271,302 +2271,302 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1002, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Determinant")]
-        public unsafe partial float Matrix4Determinant(System.Numerics.Matrix4x4* mat);
+        public unsafe partial float Matrix4Determinant([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1002, Column 18 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Determinant")]
-        public partial float Matrix4Determinant(ref System.Numerics.Matrix4x4 mat);
+        public partial float Matrix4Determinant([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1011, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4IsIdentity")]
-        public unsafe partial int Matrix4IsIdentity(System.Numerics.Matrix4x4* mat);
+        public unsafe partial int Matrix4IsIdentity([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1011, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4IsIdentity")]
-        public partial int Matrix4IsIdentity(ref System.Numerics.Matrix4x4 mat);
+        public partial int Matrix4IsIdentity([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1023, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingEulerAnglesPosition")]
-        public partial void Matrix4DecomposeIntoScalingEulerAnglesPosition(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 rotation, ref System.Numerics.Vector3 position);
+        public partial void Matrix4DecomposeIntoScalingEulerAnglesPosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, float* angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, float* angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, float* angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, float* angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, ref float angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, ref float angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, ref float angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, ref float angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, float* angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, float* angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, float* angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, float* angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, ref float angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, ref float angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, ref float angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, ref float angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, float* angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, float* angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, float* angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, float* angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, ref float angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, ref float angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, ref float angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, ref float angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, float* angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, float* angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, float* angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, float* angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, ref float angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, ref float angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, ref float angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, ref float angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, float* angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, float* angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, float* angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, float* angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, ref float angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, ref float angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, ref float angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, System.Numerics.Vector3* axis, ref float angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, float* angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, float* angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, float* angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, float* angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, ref float angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, ref float angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, ref float angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling, ref System.Numerics.Vector3 axis, ref float angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, float* angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, float* angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, float* angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, float* angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, ref float angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, ref float angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, ref float angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, System.Numerics.Vector3* axis, ref float angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, float* angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, float* angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, float* angle, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, float* angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, ref float angle, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, ref float angle, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1040, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeIntoScalingAxisAnglePosition")]
-        public partial void Matrix4DecomposeIntoScalingAxisAnglePosition(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, ref float angle, ref System.Numerics.Vector3 position);
+        public partial void Matrix4DecomposeIntoScalingAxisAnglePosition([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling, ref System.Numerics.Vector3 axis, ref float angle, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1055, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeNoScaling")]
-        public unsafe partial void Matrix4DecomposeNoScaling(System.Numerics.Matrix4x4* mat, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeNoScaling([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1055, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeNoScaling")]
-        public unsafe partial void Matrix4DecomposeNoScaling(System.Numerics.Matrix4x4* mat, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeNoScaling([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1055, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeNoScaling")]
-        public unsafe partial void Matrix4DecomposeNoScaling(System.Numerics.Matrix4x4* mat, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeNoScaling([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1055, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeNoScaling")]
-        public unsafe partial void Matrix4DecomposeNoScaling(System.Numerics.Matrix4x4* mat, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeNoScaling([Flow(FlowDirection.In)] System.Numerics.Matrix4x4* mat, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1055, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeNoScaling")]
-        public unsafe partial void Matrix4DecomposeNoScaling(ref System.Numerics.Matrix4x4 mat, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeNoScaling([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, AssimpQuaternion* rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1055, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeNoScaling")]
-        public unsafe partial void Matrix4DecomposeNoScaling(ref System.Numerics.Matrix4x4 mat, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
+        public unsafe partial void Matrix4DecomposeNoScaling([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, AssimpQuaternion* rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1055, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeNoScaling")]
-        public unsafe partial void Matrix4DecomposeNoScaling(ref System.Numerics.Matrix4x4 mat, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
+        public unsafe partial void Matrix4DecomposeNoScaling([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref AssimpQuaternion rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1055, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4DecomposeNoScaling")]
-        public partial void Matrix4DecomposeNoScaling(ref System.Numerics.Matrix4x4 mat, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
+        public partial void Matrix4DecomposeNoScaling([Flow(FlowDirection.In)] in System.Numerics.Matrix4x4 mat, ref AssimpQuaternion rotation, ref System.Numerics.Vector3 position);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1067, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
@@ -2611,102 +2611,102 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1104, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromRotationAroundAxis")]
-        public unsafe partial void Matrix4FromRotationAroundAxis(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* axis, float angle);
+        public unsafe partial void Matrix4FromRotationAroundAxis(System.Numerics.Matrix4x4* mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* axis, float angle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1104, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromRotationAroundAxis")]
-        public unsafe partial void Matrix4FromRotationAroundAxis(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 axis, float angle);
+        public unsafe partial void Matrix4FromRotationAroundAxis(System.Numerics.Matrix4x4* mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 axis, float angle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1104, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromRotationAroundAxis")]
-        public unsafe partial void Matrix4FromRotationAroundAxis(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* axis, float angle);
+        public unsafe partial void Matrix4FromRotationAroundAxis(ref System.Numerics.Matrix4x4 mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* axis, float angle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1104, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromRotationAroundAxis")]
-        public partial void Matrix4FromRotationAroundAxis(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 axis, float angle);
+        public partial void Matrix4FromRotationAroundAxis(ref System.Numerics.Matrix4x4 mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 axis, float angle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1114, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Translation")]
-        public unsafe partial void Matrix4Translation(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* translation);
+        public unsafe partial void Matrix4Translation(System.Numerics.Matrix4x4* mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* translation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1114, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Translation")]
-        public unsafe partial void Matrix4Translation(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 translation);
+        public unsafe partial void Matrix4Translation(System.Numerics.Matrix4x4* mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 translation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1114, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Translation")]
-        public unsafe partial void Matrix4Translation(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* translation);
+        public unsafe partial void Matrix4Translation(ref System.Numerics.Matrix4x4 mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* translation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1114, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Translation")]
-        public partial void Matrix4Translation(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 translation);
+        public partial void Matrix4Translation(ref System.Numerics.Matrix4x4 mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 translation);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1123, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Scaling")]
-        public unsafe partial void Matrix4Scaling(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling);
+        public unsafe partial void Matrix4Scaling(System.Numerics.Matrix4x4* mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* scaling);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1123, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Scaling")]
-        public unsafe partial void Matrix4Scaling(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 scaling);
+        public unsafe partial void Matrix4Scaling(System.Numerics.Matrix4x4* mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 scaling);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1123, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Scaling")]
-        public unsafe partial void Matrix4Scaling(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* scaling);
+        public unsafe partial void Matrix4Scaling(ref System.Numerics.Matrix4x4 mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* scaling);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1123, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4Scaling")]
-        public partial void Matrix4Scaling(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 scaling);
+        public partial void Matrix4Scaling(ref System.Numerics.Matrix4x4 mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 scaling);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1133, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromTo")]
-        public unsafe partial void Matrix4FromTo(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* from, System.Numerics.Vector3* to);
+        public unsafe partial void Matrix4FromTo(System.Numerics.Matrix4x4* mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* from, [Flow(FlowDirection.In)] System.Numerics.Vector3* to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1133, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromTo")]
-        public unsafe partial void Matrix4FromTo(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* from, ref System.Numerics.Vector3 to);
+        public unsafe partial void Matrix4FromTo(System.Numerics.Matrix4x4* mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* from, [Flow(FlowDirection.In)] in System.Numerics.Vector3 to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1133, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromTo")]
-        public unsafe partial void Matrix4FromTo(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 from, System.Numerics.Vector3* to);
+        public unsafe partial void Matrix4FromTo(System.Numerics.Matrix4x4* mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 from, [Flow(FlowDirection.In)] System.Numerics.Vector3* to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1133, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromTo")]
-        public unsafe partial void Matrix4FromTo(System.Numerics.Matrix4x4* mat, ref System.Numerics.Vector3 from, ref System.Numerics.Vector3 to);
+        public unsafe partial void Matrix4FromTo(System.Numerics.Matrix4x4* mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 from, [Flow(FlowDirection.In)] in System.Numerics.Vector3 to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1133, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromTo")]
-        public unsafe partial void Matrix4FromTo(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* from, System.Numerics.Vector3* to);
+        public unsafe partial void Matrix4FromTo(ref System.Numerics.Matrix4x4 mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* from, [Flow(FlowDirection.In)] System.Numerics.Vector3* to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1133, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromTo")]
-        public unsafe partial void Matrix4FromTo(ref System.Numerics.Matrix4x4 mat, System.Numerics.Vector3* from, ref System.Numerics.Vector3 to);
+        public unsafe partial void Matrix4FromTo(ref System.Numerics.Matrix4x4 mat, [Flow(FlowDirection.In)] System.Numerics.Vector3* from, [Flow(FlowDirection.In)] in System.Numerics.Vector3 to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1133, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromTo")]
-        public unsafe partial void Matrix4FromTo(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 from, System.Numerics.Vector3* to);
+        public unsafe partial void Matrix4FromTo(ref System.Numerics.Matrix4x4 mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 from, [Flow(FlowDirection.In)] System.Numerics.Vector3* to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1133, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMatrix4FromTo")]
-        public partial void Matrix4FromTo(ref System.Numerics.Matrix4x4 mat, ref System.Numerics.Vector3 from, ref System.Numerics.Vector3 to);
+        public partial void Matrix4FromTo(ref System.Numerics.Matrix4x4 mat, [Flow(FlowDirection.In)] in System.Numerics.Vector3 from, [Flow(FlowDirection.In)] in System.Numerics.Vector3 to);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1145, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
@@ -2721,82 +2721,82 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1155, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionFromAxisAngle")]
-        public unsafe partial void QuaternionFromAxisAngle(AssimpQuaternion* q, System.Numerics.Vector3* axis, float angle);
+        public unsafe partial void QuaternionFromAxisAngle(AssimpQuaternion* q, [Flow(FlowDirection.In)] System.Numerics.Vector3* axis, float angle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1155, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionFromAxisAngle")]
-        public unsafe partial void QuaternionFromAxisAngle(AssimpQuaternion* q, ref System.Numerics.Vector3 axis, float angle);
+        public unsafe partial void QuaternionFromAxisAngle(AssimpQuaternion* q, [Flow(FlowDirection.In)] in System.Numerics.Vector3 axis, float angle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1155, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionFromAxisAngle")]
-        public unsafe partial void QuaternionFromAxisAngle(ref AssimpQuaternion q, System.Numerics.Vector3* axis, float angle);
+        public unsafe partial void QuaternionFromAxisAngle(ref AssimpQuaternion q, [Flow(FlowDirection.In)] System.Numerics.Vector3* axis, float angle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1155, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionFromAxisAngle")]
-        public partial void QuaternionFromAxisAngle(ref AssimpQuaternion q, ref System.Numerics.Vector3 axis, float angle);
+        public partial void QuaternionFromAxisAngle(ref AssimpQuaternion q, [Flow(FlowDirection.In)] in System.Numerics.Vector3 axis, float angle);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1166, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionFromNormalizedQuaternion")]
-        public unsafe partial void QuaternionFromNormalizedQuaternion(AssimpQuaternion* q, System.Numerics.Vector3* normalized);
+        public unsafe partial void QuaternionFromNormalizedQuaternion(AssimpQuaternion* q, [Flow(FlowDirection.In)] System.Numerics.Vector3* normalized);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1166, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionFromNormalizedQuaternion")]
-        public unsafe partial void QuaternionFromNormalizedQuaternion(AssimpQuaternion* q, ref System.Numerics.Vector3 normalized);
+        public unsafe partial void QuaternionFromNormalizedQuaternion(AssimpQuaternion* q, [Flow(FlowDirection.In)] in System.Numerics.Vector3 normalized);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1166, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionFromNormalizedQuaternion")]
-        public unsafe partial void QuaternionFromNormalizedQuaternion(ref AssimpQuaternion q, System.Numerics.Vector3* normalized);
+        public unsafe partial void QuaternionFromNormalizedQuaternion(ref AssimpQuaternion q, [Flow(FlowDirection.In)] System.Numerics.Vector3* normalized);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1166, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionFromNormalizedQuaternion")]
-        public partial void QuaternionFromNormalizedQuaternion(ref AssimpQuaternion q, ref System.Numerics.Vector3 normalized);
+        public partial void QuaternionFromNormalizedQuaternion(ref AssimpQuaternion q, [Flow(FlowDirection.In)] in System.Numerics.Vector3 normalized);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1177, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionAreEqual")]
-        public unsafe partial int QuaternionAreEqual(AssimpQuaternion* a, AssimpQuaternion* b);
+        public unsafe partial int QuaternionAreEqual([Flow(FlowDirection.In)] AssimpQuaternion* a, [Flow(FlowDirection.In)] AssimpQuaternion* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1177, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionAreEqual")]
-        public unsafe partial int QuaternionAreEqual(AssimpQuaternion* a, ref AssimpQuaternion b);
+        public unsafe partial int QuaternionAreEqual([Flow(FlowDirection.In)] AssimpQuaternion* a, [Flow(FlowDirection.In)] in AssimpQuaternion b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1177, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionAreEqual")]
-        public unsafe partial int QuaternionAreEqual(ref AssimpQuaternion a, AssimpQuaternion* b);
+        public unsafe partial int QuaternionAreEqual([Flow(FlowDirection.In)] in AssimpQuaternion a, [Flow(FlowDirection.In)] AssimpQuaternion* b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1177, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionAreEqual")]
-        public partial int QuaternionAreEqual(ref AssimpQuaternion a, ref AssimpQuaternion b);
+        public partial int QuaternionAreEqual([Flow(FlowDirection.In)] in AssimpQuaternion a, [Flow(FlowDirection.In)] in AssimpQuaternion b);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1189, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionAreEqualEpsilon")]
-        public unsafe partial int QuaternionAreEqualEpsilon(AssimpQuaternion* a, AssimpQuaternion* b, float epsilon);
+        public unsafe partial int QuaternionAreEqualEpsilon([Flow(FlowDirection.In)] AssimpQuaternion* a, [Flow(FlowDirection.In)] AssimpQuaternion* b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1189, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionAreEqualEpsilon")]
-        public unsafe partial int QuaternionAreEqualEpsilon(AssimpQuaternion* a, ref AssimpQuaternion b, float epsilon);
+        public unsafe partial int QuaternionAreEqualEpsilon([Flow(FlowDirection.In)] AssimpQuaternion* a, [Flow(FlowDirection.In)] in AssimpQuaternion b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1189, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionAreEqualEpsilon")]
-        public unsafe partial int QuaternionAreEqualEpsilon(ref AssimpQuaternion a, AssimpQuaternion* b, float epsilon);
+        public unsafe partial int QuaternionAreEqualEpsilon([Flow(FlowDirection.In)] in AssimpQuaternion a, [Flow(FlowDirection.In)] AssimpQuaternion* b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1189, Column 16 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionAreEqualEpsilon")]
-        public partial int QuaternionAreEqualEpsilon(ref AssimpQuaternion a, ref AssimpQuaternion b, float epsilon);
+        public partial int QuaternionAreEqualEpsilon([Flow(FlowDirection.In)] in AssimpQuaternion a, [Flow(FlowDirection.In)] in AssimpQuaternion b, float epsilon);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1198, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
@@ -2821,553 +2821,553 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1214, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionMultiply")]
-        public unsafe partial void QuaternionMultiply(AssimpQuaternion* dst, AssimpQuaternion* q);
+        public unsafe partial void QuaternionMultiply(AssimpQuaternion* dst, [Flow(FlowDirection.In)] AssimpQuaternion* q);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1214, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionMultiply")]
-        public unsafe partial void QuaternionMultiply(AssimpQuaternion* dst, ref AssimpQuaternion q);
+        public unsafe partial void QuaternionMultiply(AssimpQuaternion* dst, [Flow(FlowDirection.In)] in AssimpQuaternion q);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1214, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionMultiply")]
-        public unsafe partial void QuaternionMultiply(ref AssimpQuaternion dst, AssimpQuaternion* q);
+        public unsafe partial void QuaternionMultiply(ref AssimpQuaternion dst, [Flow(FlowDirection.In)] AssimpQuaternion* q);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1214, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionMultiply")]
-        public partial void QuaternionMultiply(ref AssimpQuaternion dst, ref AssimpQuaternion q);
+        public partial void QuaternionMultiply(ref AssimpQuaternion dst, [Flow(FlowDirection.In)] in AssimpQuaternion q);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1225, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionInterpolate")]
-        public unsafe partial void QuaternionInterpolate(AssimpQuaternion* dst, AssimpQuaternion* start, AssimpQuaternion* end, float factor);
+        public unsafe partial void QuaternionInterpolate(AssimpQuaternion* dst, [Flow(FlowDirection.In)] AssimpQuaternion* start, [Flow(FlowDirection.In)] AssimpQuaternion* end, float factor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1225, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionInterpolate")]
-        public unsafe partial void QuaternionInterpolate(AssimpQuaternion* dst, AssimpQuaternion* start, ref AssimpQuaternion end, float factor);
+        public unsafe partial void QuaternionInterpolate(AssimpQuaternion* dst, [Flow(FlowDirection.In)] AssimpQuaternion* start, [Flow(FlowDirection.In)] in AssimpQuaternion end, float factor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1225, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionInterpolate")]
-        public unsafe partial void QuaternionInterpolate(AssimpQuaternion* dst, ref AssimpQuaternion start, AssimpQuaternion* end, float factor);
+        public unsafe partial void QuaternionInterpolate(AssimpQuaternion* dst, [Flow(FlowDirection.In)] in AssimpQuaternion start, [Flow(FlowDirection.In)] AssimpQuaternion* end, float factor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1225, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionInterpolate")]
-        public unsafe partial void QuaternionInterpolate(AssimpQuaternion* dst, ref AssimpQuaternion start, ref AssimpQuaternion end, float factor);
+        public unsafe partial void QuaternionInterpolate(AssimpQuaternion* dst, [Flow(FlowDirection.In)] in AssimpQuaternion start, [Flow(FlowDirection.In)] in AssimpQuaternion end, float factor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1225, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionInterpolate")]
-        public unsafe partial void QuaternionInterpolate(ref AssimpQuaternion dst, AssimpQuaternion* start, AssimpQuaternion* end, float factor);
+        public unsafe partial void QuaternionInterpolate(ref AssimpQuaternion dst, [Flow(FlowDirection.In)] AssimpQuaternion* start, [Flow(FlowDirection.In)] AssimpQuaternion* end, float factor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1225, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionInterpolate")]
-        public unsafe partial void QuaternionInterpolate(ref AssimpQuaternion dst, AssimpQuaternion* start, ref AssimpQuaternion end, float factor);
+        public unsafe partial void QuaternionInterpolate(ref AssimpQuaternion dst, [Flow(FlowDirection.In)] AssimpQuaternion* start, [Flow(FlowDirection.In)] in AssimpQuaternion end, float factor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1225, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionInterpolate")]
-        public unsafe partial void QuaternionInterpolate(ref AssimpQuaternion dst, ref AssimpQuaternion start, AssimpQuaternion* end, float factor);
+        public unsafe partial void QuaternionInterpolate(ref AssimpQuaternion dst, [Flow(FlowDirection.In)] in AssimpQuaternion start, [Flow(FlowDirection.In)] AssimpQuaternion* end, float factor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1225, Column 17 in build/submodules/Assimp/include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiQuaternionInterpolate")]
-        public partial void QuaternionInterpolate(ref AssimpQuaternion dst, ref AssimpQuaternion start, ref AssimpQuaternion end, float factor);
+        public partial void QuaternionInterpolate(ref AssimpQuaternion dst, [Flow(FlowDirection.In)] in AssimpQuaternion start, [Flow(FlowDirection.In)] in AssimpQuaternion end, float factor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 338, Column 24 in build/submodules/Assimp/include\\assimp/material.h")]
-        [NativeApi(EntryPoint = "TextureTypeToString")]
+        [NativeApi(EntryPoint = "aiTextureTypeToString")]
         public unsafe partial byte* TextureTypeToString(TextureType @in);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 338, Column 24 in build/submodules/Assimp/include\\assimp/material.h")]
         [return: UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)]
-        [NativeApi(EntryPoint = "TextureTypeToString")]
+        [NativeApi(EntryPoint = "aiTextureTypeToString")]
         public partial string TextureTypeToStringS(TextureType @in);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, [Flow(FlowDirection.In)] MaterialProperty** pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, [Flow(FlowDirection.In)] MaterialProperty** pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, [Flow(FlowDirection.In)] in MaterialProperty* pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, [Flow(FlowDirection.In)] in MaterialProperty* pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, [Flow(FlowDirection.In)] MaterialProperty** pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, [Flow(FlowDirection.In)] MaterialProperty** pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, [Flow(FlowDirection.In)] in MaterialProperty* pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, [Flow(FlowDirection.In)] in MaterialProperty* pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(FlowDirection.In)] MaterialProperty** pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(FlowDirection.In)] MaterialProperty** pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(FlowDirection.In)] in MaterialProperty* pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(FlowDirection.In)] in MaterialProperty* pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, [Flow(FlowDirection.In)] MaterialProperty** pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, [Flow(FlowDirection.In)] MaterialProperty** pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, [Flow(FlowDirection.In)] in MaterialProperty* pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, [Flow(FlowDirection.In)] in MaterialProperty* pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, [Flow(FlowDirection.In)] MaterialProperty** pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, [Flow(FlowDirection.In)] MaterialProperty** pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, [Flow(FlowDirection.In)] in MaterialProperty* pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, [Flow(FlowDirection.In)] in MaterialProperty* pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(FlowDirection.In)] MaterialProperty** pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(FlowDirection.In)] MaterialProperty** pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1477, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(FlowDirection.In)] in MaterialProperty* pPropOut);
+        public unsafe partial Return GetMaterialProperty([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, [Flow(FlowDirection.In)] in MaterialProperty* pPropOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, float* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, float* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, float* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, float* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, ref float pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, ref float pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, ref float pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, ref float pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, float* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, float* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, float* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, float* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, ref float pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, ref float pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, ref float pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, ref float pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref float pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref float pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref float pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref float pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, float* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, float* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, float* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, float* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, ref float pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, ref float pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, ref float pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, ref float pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, float* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, float* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, float* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, float* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, ref float pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, ref float pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, ref float pOut, ref uint pMax);
+        public partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, ref float pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, float* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref float pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref float pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1510, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref float pOut, ref uint pMax);
+        public partial Return GetMaterialFloatArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref float pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, int* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, int* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, int* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, int* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, ref int pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, ref int pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, ref int pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, ref int pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, int* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, int* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, int* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, int* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, ref int pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, ref int pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, ref int pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, ref int pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref int pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref int pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref int pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref int pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, int* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, int* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, int* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, int* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, ref int pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, ref int pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, ref int pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, ref int pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, int* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, int* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, int* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, int* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, ref int pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, ref int pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, ref int pOut, ref uint pMax);
+        public partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, ref int pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, ref uint pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, int* pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref int pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref int pOut, uint* pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1550, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref int pOut, ref uint pMax);
+        public partial Return GetMaterialIntegerArray([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref int pOut, ref uint pMax);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, System.Numerics.Vector4* pOut);
+        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, System.Numerics.Vector4* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
+        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, System.Numerics.Vector4* pOut);
+        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, System.Numerics.Vector4* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
+        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, System.Numerics.Vector4* pOut);
+        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, System.Numerics.Vector4* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
+        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, System.Numerics.Vector4* pOut);
+        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, System.Numerics.Vector4* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
+        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, System.Numerics.Vector4* pOut);
+        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, System.Numerics.Vector4* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public partial Return GetMaterialColor([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
+        public partial Return GetMaterialColor([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, System.Numerics.Vector4* pOut);
+        public unsafe partial Return GetMaterialColor([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, System.Numerics.Vector4* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1575, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public partial Return GetMaterialColor([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
+        public partial Return GetMaterialColor([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref System.Numerics.Vector4 pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, UVTransform* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, ref UVTransform pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, ref UVTransform pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, UVTransform* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, ref UVTransform pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, ref UVTransform pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, UVTransform* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref UVTransform pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref UVTransform pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, UVTransform* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, ref UVTransform pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, ref UVTransform pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, UVTransform* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, ref UVTransform pOut);
+        public partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, ref UVTransform pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, UVTransform* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1586, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref UVTransform pOut);
+        public partial Return GetMaterialUVTransform([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref UVTransform pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, AssimpString* pOut);
+        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, AssimpString* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] Material* pMat, byte* pKey, uint type, uint index, ref AssimpString pOut);
+        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, ref AssimpString pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, AssimpString* pOut);
+        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, AssimpString* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] Material* pMat, ref byte pKey, uint type, uint index, ref AssimpString pOut);
+        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, ref AssimpString pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, AssimpString* pOut);
+        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, AssimpString* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] Material* pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref AssimpString pOut);
+        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] Material* pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref AssimpString pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, AssimpString* pOut);
+        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, AssimpString* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] in Material pMat, byte* pKey, uint type, uint index, ref AssimpString pOut);
+        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] byte* pKey, uint type, uint index, ref AssimpString pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, AssimpString* pOut);
+        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, AssimpString* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public partial Return GetMaterialString([Flow(FlowDirection.In)] in Material pMat, ref byte pKey, uint type, uint index, ref AssimpString pOut);
+        public partial Return GetMaterialString([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In)] in byte pKey, uint type, uint index, ref AssimpString pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, AssimpString* pOut);
+        public unsafe partial Return GetMaterialString([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, AssimpString* pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1597, Column 28 in build/submodules/Assimp/include\\assimp/material.h")]
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public partial Return GetMaterialString([Flow(FlowDirection.In)] in Material pMat, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref AssimpString pOut);
+        public partial Return GetMaterialString([Flow(FlowDirection.In)] in Material pMat, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pKey, uint type, uint index, ref AssimpString pOut);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1610, Column 25 in build/submodules/Assimp/include\\assimp/material.h")]

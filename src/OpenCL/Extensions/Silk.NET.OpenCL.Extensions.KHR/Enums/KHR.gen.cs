@@ -17,6 +17,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         SimultaneousUse = 0x1,
         [NativeName("Name", "CL_COMMAND_BUFFER_SIMULTANEOUS_USE_KHR")]
         CommandBufferSimultaneousUseKhr = 0x1,
+        [NativeName("Name", "CL_COMMAND_BUFFER_MUTABLE_KHR")]
+        Mutable = 0x2,
+        [NativeName("Name", "CL_COMMAND_BUFFER_MUTABLE_KHR")]
+        CommandBufferMutableKhr = 0x2,
         [NativeName("Name", "CL_COMMAND_BUFFER_QUEUES_KHR")]
         Queues = 0x1294,
         [NativeName("Name", "CL_COMMAND_BUFFER_QUEUES_KHR")]
@@ -57,6 +61,14 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         Invalid = 0x3,
         [NativeName("Name", "CL_COMMAND_BUFFER_STATE_INVALID_KHR")]
         CommandBufferStateInvalidKhr = 0x3,
+        [NativeName("Name", "CL_STRUCTURE_TYPE_MUTABLE_BASE_CONFIG_KHR")]
+        BaseConfig = 0x0,
+        [NativeName("Name", "CL_STRUCTURE_TYPE_MUTABLE_BASE_CONFIG_KHR")]
+        StructureTypeMutableBaseConfigKhr = 0x0,
+        [NativeName("Name", "CL_STRUCTURE_TYPE_MUTABLE_DISPATCH_CONFIG_KHR")]
+        DispatchConfig = 0x1,
+        [NativeName("Name", "CL_STRUCTURE_TYPE_MUTABLE_DISPATCH_CONFIG_KHR")]
+        StructureTypeMutableDispatchConfigKhr = 0x1,
         [NativeName("Name", "CL_PREFERRED_DEVICES_FOR_D3D10_KHR")]
         PreferredDevicesForD3D10 = 0x4012,
         [NativeName("Name", "CL_PREFERRED_DEVICES_FOR_D3D10_KHR")]
@@ -107,6 +119,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         Packed = 0x1,
         [NativeName("Name", "CL_DEVICE_INTEGER_DOT_PRODUCT_INPUT_4x8BIT_PACKED_KHR")]
         DeviceIntegerDotProductInput4x8BitPackedKhr = 0x1,
+        [NativeName("Name", "CL_DEVICE_TERMINATE_CAPABILITY_CONTEXT_KHR")]
+        Context = 0x1,
+        [NativeName("Name", "CL_DEVICE_TERMINATE_CAPABILITY_CONTEXT_KHR")]
+        DeviceTerminateCapabilityContextKhr = 0x1,
         [NativeName("Name", "CL_EGL_YUV_PLANE_INTEL")]
         YuvPlaneIntel = 0x4107,
         [NativeName("Name", "CL_EGL_YUV_PLANE_INTEL")]
@@ -229,6 +245,66 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         Dxva = 0x2022,
         [NativeName("Name", "CL_ADAPTER_DXVA_KHR")]
         AdapterDxvaKhr = 0x2022,
+        [NativeName("Name", "CL_MUTABLE_COMMAND_COMMAND_QUEUE_KHR")]
+        CommandCommandQueue = 0x12A0,
+        [NativeName("Name", "CL_MUTABLE_COMMAND_COMMAND_QUEUE_KHR")]
+        MutableCommandCommandQueueKhr = 0x12A0,
+        [NativeName("Name", "CL_MUTABLE_COMMAND_COMMAND_BUFFER_KHR")]
+        CommandCommandBuffer = 0x12A1,
+        [NativeName("Name", "CL_MUTABLE_COMMAND_COMMAND_BUFFER_KHR")]
+        MutableCommandCommandBufferKhr = 0x12A1,
+        [NativeName("Name", "CL_MUTABLE_COMMAND_COMMAND_TYPE_KHR")]
+        CommandCommandType = 0x12AD,
+        [NativeName("Name", "CL_MUTABLE_COMMAND_COMMAND_TYPE_KHR")]
+        MutableCommandCommandTypeKhr = 0x12AD,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_PROPERTIES_ARRAY_KHR")]
+        DispatchPropertiesArray = 0x12A2,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_PROPERTIES_ARRAY_KHR")]
+        MutableDispatchPropertiesArrayKhr = 0x12A2,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_KERNEL_KHR")]
+        DispatchKernel = 0x12A3,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_KERNEL_KHR")]
+        MutableDispatchKernelKhr = 0x12A3,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_DIMENSIONS_KHR")]
+        DispatchDimensions = 0x12A4,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_DIMENSIONS_KHR")]
+        MutableDispatchDimensionsKhr = 0x12A4,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_GLOBAL_WORK_OFFSET_KHR")]
+        DispatchGlobalWorkOffset = 0x12A5,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_GLOBAL_WORK_OFFSET_KHR")]
+        MutableDispatchGlobalWorkOffsetKhr = 0x12A5,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_GLOBAL_WORK_SIZE_KHR")]
+        DispatchGlobalWorkSize = 0x12A6,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_GLOBAL_WORK_SIZE_KHR")]
+        MutableDispatchGlobalWorkSizeKhr = 0x12A6,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_LOCAL_WORK_SIZE_KHR")]
+        DispatchLocalWorkSize = 0x12A7,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_LOCAL_WORK_SIZE_KHR")]
+        MutableDispatchLocalWorkSizeKhr = 0x12A7,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_GLOBAL_OFFSET_KHR")]
+        GlobalOffset = 0x1,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_GLOBAL_OFFSET_KHR")]
+        MutableDispatchGlobalOffsetKhr = 0x1,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_GLOBAL_SIZE_KHR")]
+        GlobalSize = 0x2,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_GLOBAL_SIZE_KHR")]
+        MutableDispatchGlobalSizeKhr = 0x2,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_LOCAL_SIZE_KHR")]
+        LocalSize = 0x4,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_LOCAL_SIZE_KHR")]
+        MutableDispatchLocalSizeKhr = 0x4,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_ARGUMENTS_KHR")]
+        Arguments = 0x8,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_ARGUMENTS_KHR")]
+        MutableDispatchArgumentsKhr = 0x8,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_EXEC_INFO_KHR")]
+        ExecInfo = 0x10,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_EXEC_INFO_KHR")]
+        MutableDispatchExecInfoKhr = 0x10,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_UPDATABLE_FIELDS_KHR")]
+        MutableDispatchUpdatableFields = 0x12B1,
+        [NativeName("Name", "CL_MUTABLE_DISPATCH_UPDATABLE_FIELDS_KHR")]
+        MutableDispatchUpdatableFieldsKhr = 0x12B1,
         [NativeName("Name", "CL_QUEUE_PRIORITY_HIGH_KHR")]
         High = 0x1,
         [NativeName("Name", "CL_QUEUE_PRIORITY_HIGH_KHR")]
@@ -247,8 +323,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         QueueThrottleMedKhr = 0x2,
         [NativeName("Name", "CL_QUEUE_THROTTLE_LOW_KHR")]
         QueueThrottleLowKhr = 0x4,
-        [NativeName("Name", "CL_SEMAPHORE_CONTEXT_KHR")]
-        Context = 0x2039,
         [NativeName("Name", "CL_SEMAPHORE_CONTEXT_KHR")]
         SemaphoreContextKhr = 0x2039,
         [NativeName("Name", "CL_SEMAPHORE_REFERENCE_COUNT_KHR")]
@@ -435,6 +509,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         CommandBufferRequiredQueuePropertiesKhr = 0x12AA,
         [NativeName("Name", "CL_DEVICE_COMMAND_BUFFER_REQUIRED_QUEUE_PROPERTIES_KHR")]
         DeviceCommandBufferRequiredQueuePropertiesKhr = 0x12AA,
+        [NativeName("Name", "CL_DEVICE_MUTABLE_DISPATCH_CAPABILITIES_KHR")]
+        MutableDispatchCapabilitiesKhr = 0x12B0,
+        [NativeName("Name", "CL_DEVICE_MUTABLE_DISPATCH_CAPABILITIES_KHR")]
+        DeviceMutableDispatchCapabilitiesKhr = 0x12B0,
         [NativeName("Name", "CL_INVALID_D3D10_DEVICE_KHR")]
         InvalidD3D10DeviceKhr = unchecked((int) 0xFFFFFFFFFFFFFC16),
         [NativeName("Name", "CL_INVALID_D3D10_RESOURCE_KHR")]
@@ -477,6 +555,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         InvalidSyncPointWaitListKhr = unchecked((int) 0xFFFFFFFFFFFFFB8D),
         [NativeName("Name", "CL_INCOMPATIBLE_COMMAND_QUEUE_KHR")]
         IncompatibleCommandQueueKhr = unchecked((int) 0xFFFFFFFFFFFFFB8C),
+        [NativeName("Name", "CL_INVALID_MUTABLE_COMMAND_KHR")]
+        InvalidMutableCommandKhr = unchecked((int) 0xFFFFFFFFFFFFFB8B),
         [NativeName("Name", "CL_IMAGE_D3D10_SUBRESOURCE_KHR")]
         D3D10SubresourceKhr = 0x4016,
         [NativeName("Name", "CL_IMAGE_D3D10_SUBRESOURCE_KHR")]

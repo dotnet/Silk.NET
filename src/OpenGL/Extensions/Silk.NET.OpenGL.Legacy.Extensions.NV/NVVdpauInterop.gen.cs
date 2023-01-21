@@ -140,6 +140,20 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             VdpauunmapSurfaces((uint) surfaces.Length, in surfaces.GetPinnableReference());
         }
 
+        public unsafe int VdpaugetSurface([Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] uint* length)
+        {
+            // NonKhrReturnTypeOverloader
+            VdpaugetSurface(surface, pname, count, length, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int VdpaugetSurface([Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] out uint length)
+        {
+            // NonKhrReturnTypeOverloader
+            VdpaugetSurface(surface, pname, count, out length, out int silkRet);
+            return silkRet;
+        }
+
         public NVVdpauInterop(INativeContext ctx)
             : base(ctx)
         {
