@@ -98,7 +98,7 @@ namespace Silk.NET.Maths
             // exceed RyuJIT's inlining/codegen budgets. In doing this, Mono apparently started producing invalid
             // arm assembly, so we now maintain two paths: one for Mono, and one for CoreCLR. The CoreCLR one should
             // really be preferred.
-#ifdef ANDROID || IOS
+#if ANDROID || IOS
 
             return FromHalfToHalf(val);
             
