@@ -93,7 +93,13 @@ namespace Silk.NET.Maths
         /// <returns>The converted value</returns>
         [MethodImpl(MaxOpt)]
         public static TTo As<TFrom, TTo>(TFrom val) where TFrom : notnull where TTo : notnull
-        {
+        {   
+            // We rejigged this code a bit to be a bit more strategic about its specialization branch as to not
+            // exceed RyuJIT's inlining/codegen budgets. In doing this, Mono apparently started producing invalid
+            // arm assembly, so we now maintain two paths: one for Mono, and one for CoreCLR. The CoreCLR one should
+            // really be preferred.
+#if ANDROID || IOS
+
             return FromHalfToHalf(val);
             
 <# for (var i = 0; i < len; i++) { #>
@@ -131,6 +137,42 @@ if (intermediateCasts.TryGetValue($"{types[i]}_{types[j]}", out var res))
             }    
 <# } #>
 <# } #>
+#else
+<# for (var i = 0; i < len; i++) { #>
+            if (typeof(TFrom) == typeof(<#= types[i] #>))
+            {
+                return From<#= typesFullNames[i] #>((<#= types[i] #>) (object) val);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static TTo From<#= typesFullNames[i] #>(<#= types[i] #> val)
+            {
+<# for (var j = 0; j < len; j++) {  
+#>
+                if (typeof(TTo) == typeof(<#= types[j] #>))
+                {
+<# 
+var intermediateType = "";
+if (intermediateCasts.TryGetValue($"{types[i]}_{types[j]}", out var res))
+    intermediateType = $" ({res})";
+
+#>
+<# if (types[i] == "Complex") { #>
+                    return (TTo) (object) (<#= types[j] #>)<#= intermediateType #> val.Real;
+<# } else { #>
+                    return (TTo) (object) (<#= types[j] #>)<#= intermediateType #> val;
+<# } #>
+                }
+<# } #>
+
+                ThrowUnsupportedType();
+                return default!;
+            }
+
+<# } #>
+            ThrowUnsupportedType();
+            return default!;
+#endif
         }
     }
 }
