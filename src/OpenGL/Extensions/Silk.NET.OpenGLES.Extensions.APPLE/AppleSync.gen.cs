@@ -94,6 +94,14 @@ namespace Silk.NET.OpenGLES.Extensions.APPLE
             return ret;
         }
 
+        public unsafe long GetInteger64([Flow(FlowDirection.In)] GetPName pname)
+        {
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInteger64(pname, &ret);
+            return ret;
+        }
+
         public unsafe void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
         {
             // ImplicitCountSpanOverloader
@@ -116,13 +124,6 @@ namespace Silk.NET.OpenGLES.Extensions.APPLE
         {
             // ImplicitCountSpanOverloader
             GetSync(sync, pname, (uint) values.Length, out length, out values.GetPinnableReference());
-        }
-
-        public unsafe long GetInteger64([Flow(FlowDirection.In)] GetPName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetInteger64(pname, out long silkRet);
-            return silkRet;
         }
 
         public unsafe int GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] uint* length)

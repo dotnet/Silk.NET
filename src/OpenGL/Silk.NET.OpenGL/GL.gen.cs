@@ -11919,6 +11919,15 @@ namespace Silk.NET.OpenGL
             CreateProgramPipelines((uint) pipelines.Length, out pipelines.GetPinnableReference());
         }
 
+        public unsafe uint CreateQuery([Flow(FlowDirection.In)] GLEnum target)
+        {
+            const uint n = 1;
+            // ReturnTypeOverloader
+            uint ret = default;
+            CreateQueries(target, n, &ret);
+            return ret;
+        }
+
         public unsafe void CreateQueries([Flow(FlowDirection.In)] GLEnum target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
         {
             // ImplicitCountSpanOverloader
@@ -11929,6 +11938,15 @@ namespace Silk.NET.OpenGL
         {
             // ImplicitCountSpanOverloader
             CreateQueries(target, (uint) ids.Length, out ids.GetPinnableReference());
+        }
+
+        public unsafe uint CreateQuery([Flow(FlowDirection.In)] QueryTarget target)
+        {
+            const uint n = 1;
+            // ReturnTypeOverloader
+            uint ret = default;
+            CreateQueries(target, n, &ret);
+            return ret;
         }
 
         public unsafe void CreateQueries([Flow(FlowDirection.In)] QueryTarget target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
@@ -11985,6 +12003,15 @@ namespace Silk.NET.OpenGL
             CreateSamplers((uint) samplers.Length, out samplers.GetPinnableReference());
         }
 
+        public unsafe uint CreateTexture([Flow(FlowDirection.In)] GLEnum target)
+        {
+            const uint n = 1;
+            // ReturnTypeOverloader
+            uint ret = default;
+            CreateTextures(target, n, &ret);
+            return ret;
+        }
+
         public unsafe void CreateTextures([Flow(FlowDirection.In)] GLEnum target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
         {
             // ImplicitCountSpanOverloader
@@ -11995,6 +12022,15 @@ namespace Silk.NET.OpenGL
         {
             // ImplicitCountSpanOverloader
             CreateTextures(target, (uint) textures.Length, out textures.GetPinnableReference());
+        }
+
+        public unsafe uint CreateTexture([Flow(FlowDirection.In)] TextureTarget target)
+        {
+            const uint n = 1;
+            // ReturnTypeOverloader
+            uint ret = default;
+            CreateTextures(target, n, &ret);
+            return ret;
         }
 
         public unsafe void CreateTextures([Flow(FlowDirection.In)] TextureTarget target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
@@ -12724,6 +12760,15 @@ namespace Silk.NET.OpenGL
         {
             // ImplicitCountSpanOverloader
             GetnTexImage(target, level, format, type, (uint) (pixels.Length * Unsafe.SizeOf<T0>()), out pixels.GetPinnableReference());
+        }
+
+        public unsafe double GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location)
+        {
+            const uint bufSize = 1;
+            // ReturnTypeOverloader
+            double ret = default;
+            GetnUniform(program, location, bufSize, &ret);
+            return ret;
         }
 
         public unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> @params)
@@ -17964,10 +18009,28 @@ namespace Silk.NET.OpenGL
             return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
         }
 
+        public unsafe long GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
+        }
+
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<long> @params)
         {
             // ImplicitCountSpanOverloader
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
+        }
+
+        public unsafe long GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
         }
 
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<long> @params)
@@ -17976,10 +18039,28 @@ namespace Silk.NET.OpenGL
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
         }
 
+        public unsafe long GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
+        }
+
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<long> @params)
         {
             // ImplicitCountSpanOverloader
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
+        }
+
+        public unsafe long GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
         }
 
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<long> @params)
@@ -17988,10 +18069,28 @@ namespace Silk.NET.OpenGL
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
         }
 
+        public unsafe long GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
+        }
+
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<long> @params)
         {
             // ImplicitCountSpanOverloader
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
+        }
+
+        public unsafe long GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
         }
 
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<long> @params)
@@ -18000,10 +18099,28 @@ namespace Silk.NET.OpenGL
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
         }
 
+        public unsafe long GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
+        }
+
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<long> @params)
         {
             // ImplicitCountSpanOverloader
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
+        }
+
+        public unsafe long GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
         }
 
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<long> @params)
@@ -18109,6 +18226,14 @@ namespace Silk.NET.OpenGL
         }
 
         public unsafe void* GetPointer([Flow(FlowDirection.In)] GLEnum pname)
+        {
+            // ReturnTypeOverloader
+            void* ret = default;
+            GetPointer(pname, &ret);
+            return ret;
+        }
+
+        public unsafe void* GetPointer([Flow(FlowDirection.In)] GetPointervPName pname)
         {
             // ReturnTypeOverloader
             void* ret = default;
@@ -19268,6 +19393,14 @@ namespace Silk.NET.OpenGL
         }
 
         public unsafe long GetInteger64([Flow(FlowDirection.In)] GLEnum pname)
+        {
+            // ReturnTypeOverloader
+            long ret = default;
+            GetInteger64(pname, &ret);
+            return ret;
+        }
+
+        public unsafe long GetInteger64([Flow(FlowDirection.In)] GetPName pname)
         {
             // ReturnTypeOverloader
             long ret = default;
@@ -20963,7 +21096,23 @@ namespace Silk.NET.OpenGL
             return ret;
         }
 
+        public unsafe bool GetBoolean([Flow(FlowDirection.In)] GetPName pname)
+        {
+            // ReturnTypeOverloader
+            bool ret = default;
+            GetBoolean(pname, &ret);
+            return ret;
+        }
+
         public unsafe double GetDouble([Flow(FlowDirection.In)] GLEnum pname)
+        {
+            // ReturnTypeOverloader
+            double ret = default;
+            GetDouble(pname, &ret);
+            return ret;
+        }
+
+        public unsafe double GetDouble([Flow(FlowDirection.In)] GetPName pname)
         {
             // ReturnTypeOverloader
             double ret = default;
@@ -20979,7 +21128,23 @@ namespace Silk.NET.OpenGL
             return ret;
         }
 
+        public unsafe float GetFloat([Flow(FlowDirection.In)] GetPName pname)
+        {
+            // ReturnTypeOverloader
+            float ret = default;
+            GetFloat(pname, &ret);
+            return ret;
+        }
+
         public unsafe int GetInteger([Flow(FlowDirection.In)] GLEnum pname)
+        {
+            // ReturnTypeOverloader
+            int ret = default;
+            GetInteger(pname, &ret);
+            return ret;
+        }
+
+        public unsafe int GetInteger([Flow(FlowDirection.In)] GetPName pname)
         {
             // ReturnTypeOverloader
             int ret = default;
@@ -22205,13 +22370,6 @@ namespace Silk.NET.OpenGL
             return silkRet;
         }
 
-        public unsafe void* GetPointer([Flow(FlowDirection.In)] GetPointervPName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetPointer(pname, out void* silkRet);
-            return silkRet;
-        }
-
         public unsafe int GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] GLEnum pname)
         {
             // NonKhrReturnTypeOverloader
@@ -22804,13 +22962,6 @@ namespace Silk.NET.OpenGL
         {
             // NonKhrReturnTypeOverloader
             GetBufferParameter(target, pname, out long silkRet);
-            return silkRet;
-        }
-
-        public unsafe long GetInteger64([Flow(FlowDirection.In)] GetPName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetInteger64(pname, out long silkRet);
             return silkRet;
         }
 
@@ -23679,34 +23830,6 @@ namespace Silk.NET.OpenGL
         {
             // NonKhrReturnTypeOverloader
             GenTextures(n, out uint silkRet);
-            return silkRet;
-        }
-
-        public unsafe bool GetBoolean([Flow(FlowDirection.In)] GetPName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetBoolean(pname, out bool silkRet);
-            return silkRet;
-        }
-
-        public unsafe double GetDouble([Flow(FlowDirection.In)] GetPName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetDouble(pname, out double silkRet);
-            return silkRet;
-        }
-
-        public unsafe float GetFloat([Flow(FlowDirection.In)] GetPName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetFloat(pname, out float silkRet);
-            return silkRet;
-        }
-
-        public unsafe int GetInteger([Flow(FlowDirection.In)] GetPName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetInteger(pname, out int silkRet);
             return silkRet;
         }
 

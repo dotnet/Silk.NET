@@ -7404,6 +7404,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
             return ret;
         }
 
+        [System.Obsolete("Deprecated in version ")]
+        public unsafe void* GetPointer([Flow(FlowDirection.In)] GetPointervPName pname)
+        {
+            // ReturnTypeOverloader
+            void* ret = default;
+            GetPointer(pname, &ret);
+            return ret;
+        }
+
         public unsafe byte GetObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length)
         {
             // NonKhrReturnTypeOverloader
@@ -7457,14 +7466,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         {
             // NonKhrReturnTypeOverloader
             GetObjectPtrLabel(in ptr, bufSize, out length, out byte silkRet);
-            return silkRet;
-        }
-
-        [System.Obsolete("Deprecated in version ")]
-        public unsafe void* GetPointer([Flow(FlowDirection.In)] GetPointervPName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetPointer(pname, out void* silkRet);
             return silkRet;
         }
 

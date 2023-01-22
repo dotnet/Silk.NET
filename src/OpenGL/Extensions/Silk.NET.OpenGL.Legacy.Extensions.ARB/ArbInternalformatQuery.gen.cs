@@ -68,10 +68,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glGetInternalformativ", Convention = CallingConvention.Winapi)]
         public partial void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int @params);
 
+        public unsafe int GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] ARB pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            int ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
+        }
+
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] ARB pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
         {
             // ImplicitCountSpanOverloader
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
+        }
+
+        public unsafe int GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            int ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
         }
 
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
@@ -80,10 +98,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
         }
 
+        public unsafe int GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] ARB pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            int ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
+        }
+
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] ARB pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
         {
             // ImplicitCountSpanOverloader
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
+        }
+
+        public unsafe int GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            int ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
         }
 
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
@@ -92,10 +128,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
         }
 
+        public unsafe int GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] ARB pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            int ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
+        }
+
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] ARB pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
         {
             // ImplicitCountSpanOverloader
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
+        }
+
+        public unsafe int GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            int ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
         }
 
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
@@ -104,10 +158,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
         }
 
+        public unsafe int GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] ARB pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            int ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
+        }
+
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] ARB pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
         {
             // ImplicitCountSpanOverloader
             GetInternalformat(target, internalformat, pname, (uint) @params.Length, out @params.GetPinnableReference());
+        }
+
+        public unsafe int GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname)
+        {
+            const uint count = 1;
+            // ReturnTypeOverloader
+            int ret = default;
+            GetInternalformat(target, internalformat, pname, count, &ret);
+            return ret;
         }
 
         public unsafe void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)

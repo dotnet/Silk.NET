@@ -93,9 +93,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 
         public unsafe void* GetPointer([Flow(FlowDirection.In)] GetPointervPName pname)
         {
-            // NonKhrReturnTypeOverloader
-            GetPointer(pname, out void* silkRet);
-            return silkRet;
+            // ReturnTypeOverloader
+            void* ret = default;
+            GetPointer(pname, &ret);
+            return ret;
         }
 
         public ExtVertexArray(INativeContext ctx)

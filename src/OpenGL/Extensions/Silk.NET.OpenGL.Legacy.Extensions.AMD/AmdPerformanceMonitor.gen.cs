@@ -173,6 +173,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
             GetPerfMonitorCounterData(monitor, pname, (uint) data.Length, out data.GetPinnableReference(), out bytesWritten);
         }
 
+        public unsafe uint GetPerfMonitorCounter([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] int* numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] int* maxActiveCounters)
+        {
+            const uint counterSize = 1;
+            // ReturnTypeOverloader
+            uint ret = default;
+            GetPerfMonitorCounters(group, numCounters, maxActiveCounters, counterSize, &ret);
+            return ret;
+        }
+
         public unsafe void GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] int* numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] int* maxActiveCounters, [Count(Parameter = "counterSize"), Flow(FlowDirection.Out)] Span<uint> counters)
         {
             // ImplicitCountSpanOverloader
@@ -219,6 +228,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         {
             // ImplicitCountSpanOverloader
             GetPerfMonitorCounterString(group, counter, (uint) counterString.Length, out length, out counterString.GetPinnableReference());
+        }
+
+        public unsafe uint GetPerfMonitorGroup([Count(Count = 1), Flow(FlowDirection.Out)] int* numGroups)
+        {
+            const uint groupsSize = 1;
+            // ReturnTypeOverloader
+            uint ret = default;
+            GetPerfMonitorGroups(numGroups, groupsSize, &ret);
+            return ret;
         }
 
         public unsafe void GetPerfMonitorGroups([Count(Count = 1), Flow(FlowDirection.Out)] int* numGroups, [Count(Parameter = "groupsSize"), Flow(FlowDirection.Out)] Span<uint> groups)

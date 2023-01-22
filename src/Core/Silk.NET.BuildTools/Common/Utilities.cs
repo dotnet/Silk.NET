@@ -7,6 +7,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using ClangSharp;
 using ClangSharp.Interop;
 
 using Silk.NET.BuildTools.Common.Functions;
@@ -137,25 +138,48 @@ namespace Silk.NET.BuildTools.Common
         /// This uses .ToString() to sort faster through the duplicate entries
         /// </summary>
         /// <param name="enumerable">The enumerable to process.</param>
+        /// <param name="getSignature">A function that returns a trivially hashable signature for the item.</param>
+        /// <param name="postDuplicate">
+        /// A function that is executed when a duplicate is found; with the current proposed non-duplicate items, the
+        /// items the discovered duplicate was checked against, and the duplicate.
+        /// </param>
         /// <typeparam name="T">The type contained within this enumerable.</typeparam>
         /// <returns>An enumerable with no duplicates.</returns>
-        public static IEnumerable<T> RemoveDuplicatesFast<T>(this IEnumerable<T> enumerable, Func<T, string> GetSignature)
+        public static IEnumerable<T> RemoveDuplicatesFast<T>
+        (
+            this IEnumerable<T> enumerable,
+            Func<T, string> getSignature,
+            Action<List<T>, List<T>, T>? postDuplicate = null  
+        )
         {
             // note: this is required because ApiProfile.GetCategories() returns duplicates.
             var ret = new List<T>();
             var checker = new Dictionary<string, List<T>>();
             foreach (var item in enumerable)
             {
-                var signature = GetSignature(item);
+                // get a signature description (basically the parameter types)
+                var signature = getSignature(item);
+                
+                // if we've seen these parameters before for this function.
                 if (checker.ContainsKey(signature))
                 {
-                    if (checker[signature].Any(x => x.Equals(item))) continue;
+                    // if we've seen this signature before, continue and do not add.
+                    if (checker[signature].Any(x => x.Equals(item)))
+                    {
+                        postDuplicate?.Invoke(ret, checker[signature], item);
+                        continue;
+                    }
+                    
+                    // otherwise, register this function for duplicate checking.
                     checker[signature].Add(item);
                 }
                 else
                 {
+                    // else, register this signature for duplicate checking.
                     checker.Add(signature, new List<T>() { item });
                 }
+                
+                // not a duplicate!
                 ret.Add(item);
             }
 
@@ -586,5 +610,16 @@ namespace Silk.NET.BuildTools.Common
         /// <returns>The edited string.</returns>
         public static string RemoveTempNames(this string s)
             => Generator.TempFolders.Aggregate(s, (now, tmp) => now.Replace(tmp, "<...>"));
+
+        /// <summary>
+        /// Gets the content for the NativeName Src attribute for this decl. 
+        /// </summary>
+        /// <param name="decl">The decl.</param>
+        /// <returns>The content for the NativeName attribute.</returns>
+        public static string ToNativeName(this Decl decl)
+        {
+            decl.Location.GetSpellingLocation(out var file, out var line, out var column, out _);
+            return $"Line {line}, Column {column} in {Path.GetFileName(file.Name.ToString())}";
+        }
     }
 }

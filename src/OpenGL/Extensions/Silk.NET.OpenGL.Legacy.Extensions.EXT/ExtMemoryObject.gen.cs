@@ -250,6 +250,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             return ret;
         }
 
+        public unsafe byte GetUnsignedByte([Flow(FlowDirection.In)] GetPName pname)
+        {
+            // ReturnTypeOverloader
+            byte ret = default;
+            GetUnsignedByte(pname, &ret);
+            return ret;
+        }
+
         public unsafe uint CreateMemoryObjects([Flow(FlowDirection.In)] uint n)
         {
             // NonKhrReturnTypeOverloader
@@ -268,13 +276,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         {
             // NonKhrReturnTypeOverloader
             GetMemoryObjectParameter(memoryObject, pname, out int silkRet);
-            return silkRet;
-        }
-
-        public unsafe byte GetUnsignedByte([Flow(FlowDirection.In)] GetPName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetUnsignedByte(pname, out byte silkRet);
             return silkRet;
         }
 

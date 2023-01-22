@@ -922,10 +922,36 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
             return ret;
         }
 
+        public unsafe int GetFixed([Flow(FlowDirection.In)] GetPName pname)
+        {
+            // ReturnTypeOverloader
+            int ret = default;
+            GetFixed(pname, &ret);
+            return ret;
+        }
+
+        public unsafe int GetPixelMapx([Flow(FlowDirection.In)] OES map)
+        {
+            const int size = 1;
+            // ReturnTypeOverloader
+            int ret = default;
+            GetPixelMapx(map, size, &ret);
+            return ret;
+        }
+
         public unsafe void GetPixelMapx([Flow(FlowDirection.In)] OES map, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<int> values)
         {
             // ImplicitCountSpanOverloader
             GetPixelMapx(map, (int) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe int GetPixelMapx([Flow(FlowDirection.In)] PixelMap map)
+        {
+            const int size = 1;
+            // ReturnTypeOverloader
+            int ret = default;
+            GetPixelMapx(map, size, &ret);
+            return ret;
         }
 
         public unsafe void GetPixelMapx([Flow(FlowDirection.In)] PixelMap map, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<int> values)
@@ -1000,13 +1026,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
         {
             // NonKhrReturnTypeOverloader
             GetConvolutionParameterx(target, pname, out int silkRet);
-            return silkRet;
-        }
-
-        public unsafe int GetFixed([Flow(FlowDirection.In)] GetPName pname)
-        {
-            // NonKhrReturnTypeOverloader
-            GetFixed(pname, out int silkRet);
             return silkRet;
         }
 

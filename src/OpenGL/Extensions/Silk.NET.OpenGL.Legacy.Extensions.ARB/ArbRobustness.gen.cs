@@ -932,10 +932,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
+        public unsafe double GetnMap([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB query)
+        {
+            const uint bufSize = 1;
+            // ReturnTypeOverloader
+            double ret = default;
+            GetnMap(target, query, bufSize, &ret);
+            return ret;
+        }
+
         public unsafe void GetnMap([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
         {
             // ImplicitCountSpanOverloader
             GetnMap(target, query, (uint) v.Length, out v.GetPinnableReference());
+        }
+
+        public unsafe double GetnMap([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] MapQuery query)
+        {
+            const uint bufSize = 1;
+            // ReturnTypeOverloader
+            double ret = default;
+            GetnMap(target, query, bufSize, &ret);
+            return ret;
         }
 
         public unsafe void GetnMap([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] MapQuery query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
@@ -944,10 +962,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             GetnMap(target, query, (uint) v.Length, out v.GetPinnableReference());
         }
 
+        public unsafe double GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] ARB query)
+        {
+            const uint bufSize = 1;
+            // ReturnTypeOverloader
+            double ret = default;
+            GetnMap(target, query, bufSize, &ret);
+            return ret;
+        }
+
         public unsafe void GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] ARB query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
         {
             // ImplicitCountSpanOverloader
             GetnMap(target, query, (uint) v.Length, out v.GetPinnableReference());
+        }
+
+        public unsafe double GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] MapQuery query)
+        {
+            const uint bufSize = 1;
+            // ReturnTypeOverloader
+            double ret = default;
+            GetnMap(target, query, bufSize, &ret);
+            return ret;
         }
 
         public unsafe void GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] MapQuery query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
@@ -1100,10 +1136,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
         }
 
+        public unsafe float GetnPixelMap([Flow(FlowDirection.In)] ARB map)
+        {
+            const uint bufSize = 1;
+            // ReturnTypeOverloader
+            float ret = default;
+            GetnPixelMap(map, bufSize, &ret);
+            return ret;
+        }
+
         public unsafe void GetnPixelMap([Flow(FlowDirection.In)] ARB map, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> values)
         {
             // ImplicitCountSpanOverloader
             GetnPixelMap(map, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe float GetnPixelMap([Flow(FlowDirection.In)] PixelMap map)
+        {
+            const uint bufSize = 1;
+            // ReturnTypeOverloader
+            float ret = default;
+            GetnPixelMap(map, bufSize, &ret);
+            return ret;
         }
 
         public unsafe void GetnPixelMap([Flow(FlowDirection.In)] PixelMap map, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> values)
@@ -1491,6 +1545,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         {
             // ImplicitCountSpanOverloader
             GetnTexImage(target, level, format, type, (uint) (img.Length * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
+        }
+
+        public unsafe float GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location)
+        {
+            const uint bufSize = 1;
+            // ReturnTypeOverloader
+            float ret = default;
+            GetnUniform(program, location, bufSize, &ret);
+            return ret;
         }
 
         public unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> @params)

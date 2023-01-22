@@ -1151,6 +1151,15 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             CreateProgramPipelines((uint) pipelines.Length, out pipelines.GetPinnableReference());
         }
 
+        public unsafe uint CreateQuery([Flow(FlowDirection.In)] ARB target)
+        {
+            const uint n = 1;
+            // ReturnTypeOverloader
+            uint ret = default;
+            CreateQueries(target, n, &ret);
+            return ret;
+        }
+
         public unsafe void CreateQueries([Flow(FlowDirection.In)] ARB target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
         {
             // ImplicitCountSpanOverloader
@@ -1161,6 +1170,15 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         {
             // ImplicitCountSpanOverloader
             CreateQueries(target, (uint) ids.Length, out ids.GetPinnableReference());
+        }
+
+        public unsafe uint CreateQuery([Flow(FlowDirection.In)] QueryTarget target)
+        {
+            const uint n = 1;
+            // ReturnTypeOverloader
+            uint ret = default;
+            CreateQueries(target, n, &ret);
+            return ret;
         }
 
         public unsafe void CreateQueries([Flow(FlowDirection.In)] QueryTarget target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
@@ -1217,6 +1235,15 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             CreateSamplers((uint) samplers.Length, out samplers.GetPinnableReference());
         }
 
+        public unsafe uint CreateTexture([Flow(FlowDirection.In)] ARB target)
+        {
+            const uint n = 1;
+            // ReturnTypeOverloader
+            uint ret = default;
+            CreateTextures(target, n, &ret);
+            return ret;
+        }
+
         public unsafe void CreateTextures([Flow(FlowDirection.In)] ARB target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
         {
             // ImplicitCountSpanOverloader
@@ -1227,6 +1254,15 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         {
             // ImplicitCountSpanOverloader
             CreateTextures(target, (uint) textures.Length, out textures.GetPinnableReference());
+        }
+
+        public unsafe uint CreateTexture([Flow(FlowDirection.In)] TextureTarget target)
+        {
+            const uint n = 1;
+            // ReturnTypeOverloader
+            uint ret = default;
+            CreateTextures(target, n, &ret);
+            return ret;
         }
 
         public unsafe void CreateTextures([Flow(FlowDirection.In)] TextureTarget target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
