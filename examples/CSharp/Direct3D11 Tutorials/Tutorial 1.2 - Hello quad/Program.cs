@@ -112,8 +112,11 @@ window.Dispose();
 
 unsafe void OnLoad()
 {
-    dxgi = DXGI.GetApi(window);
-    d3d11 = D3D11.GetApi(window);
+    //Whether or not to force use of DXVK on platforms where native DirectX implementations are available
+    const bool forceDxvk = false;
+
+    dxgi = DXGI.GetApi(window, forceDxvk);
+    d3d11 = D3D11.GetApi(window, forceDxvk);
     compiler = D3DCompiler.GetApi();
     
     // Set-up input context.
