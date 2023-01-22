@@ -21,11 +21,12 @@ jobs:
     - name: Checkout Website Branch
       run: |
         git fetch --all
-        git checkout ci/github-pages
         git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
         git config --local user.name "The Silk.NET Automaton"
-        git merge --allow-unrelated-histories -X theirs main
-        git pull --recurse-submodules
+        git merge --allow-unrelated-histories -s ours origin/ci/github-pages
+        git checkout ci/github-pages
+        git reset --hard main
+        git submodule init
     - name: Run Statiq
       run: dotnet run -c Release --project src/Website/Silk.NET.Statiq/Silk.NET.Statiq.csproj -- -l debug --nocache
     - name: Push to Website Branch
