@@ -44,6 +44,18 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
+        /// <summary>
+        /// Detaches the handle encapsulated by this ComPtr such that its lifetime is no longer controlled by the
+        /// ComPtr.
+        /// </summary>
+        /// <returns>The encapsulated handle.</returns>
+        public T* Detach()
+        {
+            var h = Handle;
+            Handle = null;
+            return h;
+        }
+
         // 1. get a ref for this, which is a readonly ref when within a readonly function
         // 2. interpret that ref as a reference to a T. it's actually a ref to a T* (well actually it's a ComPtr<T>),
         //    but let's roll with it as it's as good as we're gonna get without having pointers as generic type
