@@ -9,7 +9,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        submodules: 'true'
         token: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
     - name: Setup .NET 5.0
       uses: actions/setup-dotnet@v1
@@ -26,6 +25,7 @@ jobs:
         git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
         git config --local user.name "The Silk.NET Automaton"
         git merge --allow-unrelated-histories -X theirs main
+        git pull --recurse-submodules
     - name: Run Statiq
       run: dotnet run -c Release --project src/Website/Silk.NET.Statiq/Silk.NET.Statiq.csproj -- -l debug --nocache
     - name: Push to Website Branch
