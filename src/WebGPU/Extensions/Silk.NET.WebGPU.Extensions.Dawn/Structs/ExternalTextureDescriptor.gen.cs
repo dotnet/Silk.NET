@@ -25,12 +25,15 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
             byte* label = null,
             TextureView* plane0 = null,
             TextureView* plane1 = null,
-            Extent2D? visibleRect = null,
+            Origin2D? visibleOrigin = null,
+            Extent2D? visibleSize = null,
             bool? doYuvToRgbConversionOnly = null,
             float* yuvToRgbConversionMatrix = null,
             float* srcTransferFunctionParameters = null,
             float* dstTransferFunctionParameters = null,
-            float* gamutConversionMatrix = null
+            float* gamutConversionMatrix = null,
+            bool? flipY = null,
+            ExternalTextureRotation? rotation = null
         ) : this()
         {
             if (nextInChain is not null)
@@ -53,9 +56,14 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
                 Plane1 = plane1;
             }
 
-            if (visibleRect is not null)
+            if (visibleOrigin is not null)
             {
-                VisibleRect = visibleRect.Value;
+                VisibleOrigin = visibleOrigin.Value;
+            }
+
+            if (visibleSize is not null)
+            {
+                VisibleSize = visibleSize.Value;
             }
 
             if (doYuvToRgbConversionOnly is not null)
@@ -82,6 +90,16 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
             {
                 GamutConversionMatrix = gamutConversionMatrix;
             }
+
+            if (flipY is not null)
+            {
+                FlipY = flipY.Value;
+            }
+
+            if (rotation is not null)
+            {
+                Rotation = rotation.Value;
+            }
         }
 
 
@@ -105,10 +123,15 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Name", "plane1")]
         public TextureView* Plane1;
 
+        [NativeName("Type", "WGPUOrigin2D")]
+        [NativeName("Type.Name", "WGPUOrigin2D")]
+        [NativeName("Name", "visibleOrigin")]
+        public Origin2D VisibleOrigin;
+
         [NativeName("Type", "WGPUExtent2D")]
         [NativeName("Type.Name", "WGPUExtent2D")]
-        [NativeName("Name", "visibleRect")]
-        public Extent2D VisibleRect;
+        [NativeName("Name", "visibleSize")]
+        public Extent2D VisibleSize;
 
         [NativeName("Type", "bool")]
         [NativeName("Type.Name", "bool")]
@@ -134,5 +157,15 @@ namespace Silk.NET.WebGPU.Extensions.Dawn
         [NativeName("Type.Name", "const float *")]
         [NativeName("Name", "gamutConversionMatrix")]
         public float* GamutConversionMatrix;
+
+        [NativeName("Type", "bool")]
+        [NativeName("Type.Name", "bool")]
+        [NativeName("Name", "flipY")]
+        public bool FlipY;
+
+        [NativeName("Type", "WGPUExternalTextureRotation")]
+        [NativeName("Type.Name", "WGPUExternalTextureRotation")]
+        [NativeName("Name", "rotation")]
+        public ExternalTextureRotation Rotation;
     }
 }

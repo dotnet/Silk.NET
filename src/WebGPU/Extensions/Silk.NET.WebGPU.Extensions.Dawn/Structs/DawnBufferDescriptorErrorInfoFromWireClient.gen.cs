@@ -14,15 +14,15 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.WebGPU.Extensions.WGPU
+namespace Silk.NET.WebGPU.Extensions.Dawn
 {
-    [NativeName("Name", "WGPURequiredLimitsExtras")]
-    public unsafe partial struct RequiredLimitsExtras
+    [NativeName("Name", "WGPUDawnBufferDescriptorErrorInfoFromWireClient")]
+    public unsafe partial struct DawnBufferDescriptorErrorInfoFromWireClient
     {
-        public RequiredLimitsExtras
+        public DawnBufferDescriptorErrorInfoFromWireClient
         (
             ChainedStruct? chain = null,
-            uint? maxPushConstantSize = null
+            bool? outOfMemory = null
         ) : this()
         {
             if (chain is not null)
@@ -30,9 +30,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
                 Chain = chain.Value;
             }
 
-            if (maxPushConstantSize is not null)
+            if (outOfMemory is not null)
             {
-                MaxPushConstantSize = maxPushConstantSize.Value;
+                OutOfMemory = outOfMemory.Value;
             }
         }
 
@@ -42,9 +42,9 @@ namespace Silk.NET.WebGPU.Extensions.WGPU
         [NativeName("Name", "chain")]
         public ChainedStruct Chain;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxPushConstantSize")]
-        public uint MaxPushConstantSize;
+        [NativeName("Type", "bool")]
+        [NativeName("Type.Name", "bool")]
+        [NativeName("Name", "outOfMemory")]
+        public bool OutOfMemory;
     }
 }
