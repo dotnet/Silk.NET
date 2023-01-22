@@ -43,7 +43,13 @@ namespace Silk.NET.Maths
         /// <returns>The converted value</returns>
         [MethodImpl(MaxOpt)]
         public static TTo As<TFrom, TTo>(TFrom val) where TFrom : notnull where TTo : notnull
-        {
+        {   
+            // We rejigged this code a bit to be a bit more strategic about its specialization branch as to not
+            // exceed RyuJIT's inlining/codegen budgets. In doing this, Mono apparently started producing invalid
+            // arm assembly, so we now maintain two paths: one for Mono, and one for CoreCLR. The CoreCLR one should
+            // really be preferred.
+#if ANDROID || IOS
+
             return FromHalfToHalf(val);
             
 
@@ -2203,6 +2209,976 @@ namespace Silk.NET.Maths
                 ThrowUnsupportedType();
                 return default!;
             }    
+#else
+            if (typeof(TFrom) == typeof(Half))
+            {
+                return FromHalf((Half) (object) val);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static TTo FromHalf(Half val)
+            {
+                if (typeof(TTo) == typeof(Half))
+                {
+                    return (TTo) (object) (Half) val;
+                }
+                if (typeof(TTo) == typeof(float))
+                {
+                    return (TTo) (object) (float) val;
+                }
+                if (typeof(TTo) == typeof(double))
+                {
+                    return (TTo) (object) (double) val;
+                }
+                if (typeof(TTo) == typeof(decimal))
+                {
+                    return (TTo) (object) (decimal) (float) val;
+                }
+                if (typeof(TTo) == typeof(sbyte))
+                {
+                    return (TTo) (object) (sbyte) val;
+                }
+                if (typeof(TTo) == typeof(byte))
+                {
+                    return (TTo) (object) (byte) val;
+                }
+                if (typeof(TTo) == typeof(short))
+                {
+                    return (TTo) (object) (short) val;
+                }
+                if (typeof(TTo) == typeof(ushort))
+                {
+                    return (TTo) (object) (ushort) val;
+                }
+                if (typeof(TTo) == typeof(int))
+                {
+                    return (TTo) (object) (int) val;
+                }
+                if (typeof(TTo) == typeof(uint))
+                {
+                    return (TTo) (object) (uint) val;
+                }
+                if (typeof(TTo) == typeof(long))
+                {
+                    return (TTo) (object) (long) val;
+                }
+                if (typeof(TTo) == typeof(ulong))
+                {
+                    return (TTo) (object) (ulong) val;
+                }
+                if (typeof(TTo) == typeof(Complex))
+                {
+                    return (TTo) (object) (Complex) (float) val;
+                }
+                if (typeof(TTo) == typeof(BigInteger))
+                {
+                    return (TTo) (object) (BigInteger) (float) val;
+                }
+
+                ThrowUnsupportedType();
+                return default!;
+            }
+
+            if (typeof(TFrom) == typeof(float))
+            {
+                return FromFloat((float) (object) val);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static TTo FromFloat(float val)
+            {
+                if (typeof(TTo) == typeof(Half))
+                {
+                    return (TTo) (object) (Half) val;
+                }
+                if (typeof(TTo) == typeof(float))
+                {
+                    return (TTo) (object) (float) val;
+                }
+                if (typeof(TTo) == typeof(double))
+                {
+                    return (TTo) (object) (double) val;
+                }
+                if (typeof(TTo) == typeof(decimal))
+                {
+                    return (TTo) (object) (decimal) val;
+                }
+                if (typeof(TTo) == typeof(sbyte))
+                {
+                    return (TTo) (object) (sbyte) val;
+                }
+                if (typeof(TTo) == typeof(byte))
+                {
+                    return (TTo) (object) (byte) val;
+                }
+                if (typeof(TTo) == typeof(short))
+                {
+                    return (TTo) (object) (short) val;
+                }
+                if (typeof(TTo) == typeof(ushort))
+                {
+                    return (TTo) (object) (ushort) val;
+                }
+                if (typeof(TTo) == typeof(int))
+                {
+                    return (TTo) (object) (int) val;
+                }
+                if (typeof(TTo) == typeof(uint))
+                {
+                    return (TTo) (object) (uint) val;
+                }
+                if (typeof(TTo) == typeof(long))
+                {
+                    return (TTo) (object) (long) val;
+                }
+                if (typeof(TTo) == typeof(ulong))
+                {
+                    return (TTo) (object) (ulong) val;
+                }
+                if (typeof(TTo) == typeof(Complex))
+                {
+                    return (TTo) (object) (Complex) val;
+                }
+                if (typeof(TTo) == typeof(BigInteger))
+                {
+                    return (TTo) (object) (BigInteger) val;
+                }
+
+                ThrowUnsupportedType();
+                return default!;
+            }
+
+            if (typeof(TFrom) == typeof(double))
+            {
+                return FromDouble((double) (object) val);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static TTo FromDouble(double val)
+            {
+                if (typeof(TTo) == typeof(Half))
+                {
+                    return (TTo) (object) (Half) val;
+                }
+                if (typeof(TTo) == typeof(float))
+                {
+                    return (TTo) (object) (float) val;
+                }
+                if (typeof(TTo) == typeof(double))
+                {
+                    return (TTo) (object) (double) val;
+                }
+                if (typeof(TTo) == typeof(decimal))
+                {
+                    return (TTo) (object) (decimal) val;
+                }
+                if (typeof(TTo) == typeof(sbyte))
+                {
+                    return (TTo) (object) (sbyte) val;
+                }
+                if (typeof(TTo) == typeof(byte))
+                {
+                    return (TTo) (object) (byte) val;
+                }
+                if (typeof(TTo) == typeof(short))
+                {
+                    return (TTo) (object) (short) val;
+                }
+                if (typeof(TTo) == typeof(ushort))
+                {
+                    return (TTo) (object) (ushort) val;
+                }
+                if (typeof(TTo) == typeof(int))
+                {
+                    return (TTo) (object) (int) val;
+                }
+                if (typeof(TTo) == typeof(uint))
+                {
+                    return (TTo) (object) (uint) val;
+                }
+                if (typeof(TTo) == typeof(long))
+                {
+                    return (TTo) (object) (long) val;
+                }
+                if (typeof(TTo) == typeof(ulong))
+                {
+                    return (TTo) (object) (ulong) val;
+                }
+                if (typeof(TTo) == typeof(Complex))
+                {
+                    return (TTo) (object) (Complex) val;
+                }
+                if (typeof(TTo) == typeof(BigInteger))
+                {
+                    return (TTo) (object) (BigInteger) val;
+                }
+
+                ThrowUnsupportedType();
+                return default!;
+            }
+
+            if (typeof(TFrom) == typeof(decimal))
+            {
+                return FromDecimal((decimal) (object) val);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static TTo FromDecimal(decimal val)
+            {
+                if (typeof(TTo) == typeof(Half))
+                {
+                    return (TTo) (object) (Half) (double) val;
+                }
+                if (typeof(TTo) == typeof(float))
+                {
+                    return (TTo) (object) (float) val;
+                }
+                if (typeof(TTo) == typeof(double))
+                {
+                    return (TTo) (object) (double) val;
+                }
+                if (typeof(TTo) == typeof(decimal))
+                {
+                    return (TTo) (object) (decimal) val;
+                }
+                if (typeof(TTo) == typeof(sbyte))
+                {
+                    return (TTo) (object) (sbyte) val;
+                }
+                if (typeof(TTo) == typeof(byte))
+                {
+                    return (TTo) (object) (byte) val;
+                }
+                if (typeof(TTo) == typeof(short))
+                {
+                    return (TTo) (object) (short) val;
+                }
+                if (typeof(TTo) == typeof(ushort))
+                {
+                    return (TTo) (object) (ushort) val;
+                }
+                if (typeof(TTo) == typeof(int))
+                {
+                    return (TTo) (object) (int) val;
+                }
+                if (typeof(TTo) == typeof(uint))
+                {
+                    return (TTo) (object) (uint) val;
+                }
+                if (typeof(TTo) == typeof(long))
+                {
+                    return (TTo) (object) (long) val;
+                }
+                if (typeof(TTo) == typeof(ulong))
+                {
+                    return (TTo) (object) (ulong) val;
+                }
+                if (typeof(TTo) == typeof(Complex))
+                {
+                    return (TTo) (object) (Complex) val;
+                }
+                if (typeof(TTo) == typeof(BigInteger))
+                {
+                    return (TTo) (object) (BigInteger) val;
+                }
+
+                ThrowUnsupportedType();
+                return default!;
+            }
+
+            if (typeof(TFrom) == typeof(sbyte))
+            {
+                return FromSByte((sbyte) (object) val);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static TTo FromSByte(sbyte val)
+            {
+                if (typeof(TTo) == typeof(Half))
+                {
+                    return (TTo) (object) (Half) val;
+                }
+                if (typeof(TTo) == typeof(float))
+                {
+                    return (TTo) (object) (float) val;
+                }
+                if (typeof(TTo) == typeof(double))
+                {
+                    return (TTo) (object) (double) val;
+                }
+                if (typeof(TTo) == typeof(decimal))
+                {
+                    return (TTo) (object) (decimal) val;
+                }
+                if (typeof(TTo) == typeof(sbyte))
+                {
+                    return (TTo) (object) (sbyte) val;
+                }
+                if (typeof(TTo) == typeof(byte))
+                {
+                    return (TTo) (object) (byte) val;
+                }
+                if (typeof(TTo) == typeof(short))
+                {
+                    return (TTo) (object) (short) val;
+                }
+                if (typeof(TTo) == typeof(ushort))
+                {
+                    return (TTo) (object) (ushort) val;
+                }
+                if (typeof(TTo) == typeof(int))
+                {
+                    return (TTo) (object) (int) val;
+                }
+                if (typeof(TTo) == typeof(uint))
+                {
+                    return (TTo) (object) (uint) val;
+                }
+                if (typeof(TTo) == typeof(long))
+                {
+                    return (TTo) (object) (long) val;
+                }
+                if (typeof(TTo) == typeof(ulong))
+                {
+                    return (TTo) (object) (ulong) val;
+                }
+                if (typeof(TTo) == typeof(Complex))
+                {
+                    return (TTo) (object) (Complex) val;
+                }
+                if (typeof(TTo) == typeof(BigInteger))
+                {
+                    return (TTo) (object) (BigInteger) val;
+                }
+
+                ThrowUnsupportedType();
+                return default!;
+            }
+
+            if (typeof(TFrom) == typeof(byte))
+            {
+                return FromByte((byte) (object) val);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static TTo FromByte(byte val)
+            {
+                if (typeof(TTo) == typeof(Half))
+                {
+                    return (TTo) (object) (Half) val;
+                }
+                if (typeof(TTo) == typeof(float))
+                {
+                    return (TTo) (object) (float) val;
+                }
+                if (typeof(TTo) == typeof(double))
+                {
+                    return (TTo) (object) (double) val;
+                }
+                if (typeof(TTo) == typeof(decimal))
+                {
+                    return (TTo) (object) (decimal) val;
+                }
+                if (typeof(TTo) == typeof(sbyte))
+                {
+                    return (TTo) (object) (sbyte) val;
+                }
+                if (typeof(TTo) == typeof(byte))
+                {
+                    return (TTo) (object) (byte) val;
+                }
+                if (typeof(TTo) == typeof(short))
+                {
+                    return (TTo) (object) (short) val;
+                }
+                if (typeof(TTo) == typeof(ushort))
+                {
+                    return (TTo) (object) (ushort) val;
+                }
+                if (typeof(TTo) == typeof(int))
+                {
+                    return (TTo) (object) (int) val;
+                }
+                if (typeof(TTo) == typeof(uint))
+                {
+                    return (TTo) (object) (uint) val;
+                }
+                if (typeof(TTo) == typeof(long))
+                {
+                    return (TTo) (object) (long) val;
+                }
+                if (typeof(TTo) == typeof(ulong))
+                {
+                    return (TTo) (object) (ulong) val;
+                }
+                if (typeof(TTo) == typeof(Complex))
+                {
+                    return (TTo) (object) (Complex) val;
+                }
+                if (typeof(TTo) == typeof(BigInteger))
+                {
+                    return (TTo) (object) (BigInteger) val;
+                }
+
+                ThrowUnsupportedType();
+                return default!;
+            }
+
+            if (typeof(TFrom) == typeof(short))
+            {
+                return FromShort((short) (object) val);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static TTo FromShort(short val)
+            {
+                if (typeof(TTo) == typeof(Half))
+                {
+                    return (TTo) (object) (Half) val;
+                }
+                if (typeof(TTo) == typeof(float))
+                {
+                    return (TTo) (object) (float) val;
+                }
+                if (typeof(TTo) == typeof(double))
+                {
+                    return (TTo) (object) (double) val;
+                }
+                if (typeof(TTo) == typeof(decimal))
+                {
+                    return (TTo) (object) (decimal) val;
+                }
+                if (typeof(TTo) == typeof(sbyte))
+                {
+                    return (TTo) (object) (sbyte) val;
+                }
+                if (typeof(TTo) == typeof(byte))
+                {
+                    return (TTo) (object) (byte) val;
+                }
+                if (typeof(TTo) == typeof(short))
+                {
+                    return (TTo) (object) (short) val;
+                }
+                if (typeof(TTo) == typeof(ushort))
+                {
+                    return (TTo) (object) (ushort) val;
+                }
+                if (typeof(TTo) == typeof(int))
+                {
+                    return (TTo) (object) (int) val;
+                }
+                if (typeof(TTo) == typeof(uint))
+                {
+                    return (TTo) (object) (uint) val;
+                }
+                if (typeof(TTo) == typeof(long))
+                {
+                    return (TTo) (object) (long) val;
+                }
+                if (typeof(TTo) == typeof(ulong))
+                {
+                    return (TTo) (object) (ulong) val;
+                }
+                if (typeof(TTo) == typeof(Complex))
+                {
+                    return (TTo) (object) (Complex) val;
+                }
+                if (typeof(TTo) == typeof(BigInteger))
+                {
+                    return (TTo) (object) (BigInteger) val;
+                }
+
+                ThrowUnsupportedType();
+                return default!;
+            }
+
+            if (typeof(TFrom) == typeof(ushort))
+            {
+                return FromUShort((ushort) (object) val);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static TTo FromUShort(ushort val)
+            {
+                if (typeof(TTo) == typeof(Half))
+                {
+                    return (TTo) (object) (Half) val;
+                }
+                if (typeof(TTo) == typeof(float))
+                {
+                    return (TTo) (object) (float) val;
+                }
+                if (typeof(TTo) == typeof(double))
+                {
+                    return (TTo) (object) (double) val;
+                }
+                if (typeof(TTo) == typeof(decimal))
+                {
+                    return (TTo) (object) (decimal) val;
+                }
+                if (typeof(TTo) == typeof(sbyte))
+                {
+                    return (TTo) (object) (sbyte) val;
+                }
+                if (typeof(TTo) == typeof(byte))
+                {
+                    return (TTo) (object) (byte) val;
+                }
+                if (typeof(TTo) == typeof(short))
+                {
+                    return (TTo) (object) (short) val;
+                }
+                if (typeof(TTo) == typeof(ushort))
+                {
+                    return (TTo) (object) (ushort) val;
+                }
+                if (typeof(TTo) == typeof(int))
+                {
+                    return (TTo) (object) (int) val;
+                }
+                if (typeof(TTo) == typeof(uint))
+                {
+                    return (TTo) (object) (uint) val;
+                }
+                if (typeof(TTo) == typeof(long))
+                {
+                    return (TTo) (object) (long) val;
+                }
+                if (typeof(TTo) == typeof(ulong))
+                {
+                    return (TTo) (object) (ulong) val;
+                }
+                if (typeof(TTo) == typeof(Complex))
+                {
+                    return (TTo) (object) (Complex) val;
+                }
+                if (typeof(TTo) == typeof(BigInteger))
+                {
+                    return (TTo) (object) (BigInteger) val;
+                }
+
+                ThrowUnsupportedType();
+                return default!;
+            }
+
+            if (typeof(TFrom) == typeof(int))
+            {
+                return FromInt((int) (object) val);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static TTo FromInt(int val)
+            {
+                if (typeof(TTo) == typeof(Half))
+                {
+                    return (TTo) (object) (Half) val;
+                }
+                if (typeof(TTo) == typeof(float))
+                {
+                    return (TTo) (object) (float) val;
+                }
+                if (typeof(TTo) == typeof(double))
+                {
+                    return (TTo) (object) (double) val;
+                }
+                if (typeof(TTo) == typeof(decimal))
+                {
+                    return (TTo) (object) (decimal) val;
+                }
+                if (typeof(TTo) == typeof(sbyte))
+                {
+                    return (TTo) (object) (sbyte) val;
+                }
+                if (typeof(TTo) == typeof(byte))
+                {
+                    return (TTo) (object) (byte) val;
+                }
+                if (typeof(TTo) == typeof(short))
+                {
+                    return (TTo) (object) (short) val;
+                }
+                if (typeof(TTo) == typeof(ushort))
+                {
+                    return (TTo) (object) (ushort) val;
+                }
+                if (typeof(TTo) == typeof(int))
+                {
+                    return (TTo) (object) (int) val;
+                }
+                if (typeof(TTo) == typeof(uint))
+                {
+                    return (TTo) (object) (uint) val;
+                }
+                if (typeof(TTo) == typeof(long))
+                {
+                    return (TTo) (object) (long) val;
+                }
+                if (typeof(TTo) == typeof(ulong))
+                {
+                    return (TTo) (object) (ulong) val;
+                }
+                if (typeof(TTo) == typeof(Complex))
+                {
+                    return (TTo) (object) (Complex) val;
+                }
+                if (typeof(TTo) == typeof(BigInteger))
+                {
+                    return (TTo) (object) (BigInteger) val;
+                }
+
+                ThrowUnsupportedType();
+                return default!;
+            }
+
+            if (typeof(TFrom) == typeof(uint))
+            {
+                return FromUInt((uint) (object) val);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static TTo FromUInt(uint val)
+            {
+                if (typeof(TTo) == typeof(Half))
+                {
+                    return (TTo) (object) (Half) val;
+                }
+                if (typeof(TTo) == typeof(float))
+                {
+                    return (TTo) (object) (float) val;
+                }
+                if (typeof(TTo) == typeof(double))
+                {
+                    return (TTo) (object) (double) val;
+                }
+                if (typeof(TTo) == typeof(decimal))
+                {
+                    return (TTo) (object) (decimal) val;
+                }
+                if (typeof(TTo) == typeof(sbyte))
+                {
+                    return (TTo) (object) (sbyte) val;
+                }
+                if (typeof(TTo) == typeof(byte))
+                {
+                    return (TTo) (object) (byte) val;
+                }
+                if (typeof(TTo) == typeof(short))
+                {
+                    return (TTo) (object) (short) val;
+                }
+                if (typeof(TTo) == typeof(ushort))
+                {
+                    return (TTo) (object) (ushort) val;
+                }
+                if (typeof(TTo) == typeof(int))
+                {
+                    return (TTo) (object) (int) val;
+                }
+                if (typeof(TTo) == typeof(uint))
+                {
+                    return (TTo) (object) (uint) val;
+                }
+                if (typeof(TTo) == typeof(long))
+                {
+                    return (TTo) (object) (long) val;
+                }
+                if (typeof(TTo) == typeof(ulong))
+                {
+                    return (TTo) (object) (ulong) val;
+                }
+                if (typeof(TTo) == typeof(Complex))
+                {
+                    return (TTo) (object) (Complex) val;
+                }
+                if (typeof(TTo) == typeof(BigInteger))
+                {
+                    return (TTo) (object) (BigInteger) val;
+                }
+
+                ThrowUnsupportedType();
+                return default!;
+            }
+
+            if (typeof(TFrom) == typeof(long))
+            {
+                return FromLong((long) (object) val);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static TTo FromLong(long val)
+            {
+                if (typeof(TTo) == typeof(Half))
+                {
+                    return (TTo) (object) (Half) val;
+                }
+                if (typeof(TTo) == typeof(float))
+                {
+                    return (TTo) (object) (float) val;
+                }
+                if (typeof(TTo) == typeof(double))
+                {
+                    return (TTo) (object) (double) val;
+                }
+                if (typeof(TTo) == typeof(decimal))
+                {
+                    return (TTo) (object) (decimal) val;
+                }
+                if (typeof(TTo) == typeof(sbyte))
+                {
+                    return (TTo) (object) (sbyte) val;
+                }
+                if (typeof(TTo) == typeof(byte))
+                {
+                    return (TTo) (object) (byte) val;
+                }
+                if (typeof(TTo) == typeof(short))
+                {
+                    return (TTo) (object) (short) val;
+                }
+                if (typeof(TTo) == typeof(ushort))
+                {
+                    return (TTo) (object) (ushort) val;
+                }
+                if (typeof(TTo) == typeof(int))
+                {
+                    return (TTo) (object) (int) val;
+                }
+                if (typeof(TTo) == typeof(uint))
+                {
+                    return (TTo) (object) (uint) val;
+                }
+                if (typeof(TTo) == typeof(long))
+                {
+                    return (TTo) (object) (long) val;
+                }
+                if (typeof(TTo) == typeof(ulong))
+                {
+                    return (TTo) (object) (ulong) val;
+                }
+                if (typeof(TTo) == typeof(Complex))
+                {
+                    return (TTo) (object) (Complex) val;
+                }
+                if (typeof(TTo) == typeof(BigInteger))
+                {
+                    return (TTo) (object) (BigInteger) val;
+                }
+
+                ThrowUnsupportedType();
+                return default!;
+            }
+
+            if (typeof(TFrom) == typeof(ulong))
+            {
+                return FromULong((ulong) (object) val);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static TTo FromULong(ulong val)
+            {
+                if (typeof(TTo) == typeof(Half))
+                {
+                    return (TTo) (object) (Half) val;
+                }
+                if (typeof(TTo) == typeof(float))
+                {
+                    return (TTo) (object) (float) val;
+                }
+                if (typeof(TTo) == typeof(double))
+                {
+                    return (TTo) (object) (double) val;
+                }
+                if (typeof(TTo) == typeof(decimal))
+                {
+                    return (TTo) (object) (decimal) val;
+                }
+                if (typeof(TTo) == typeof(sbyte))
+                {
+                    return (TTo) (object) (sbyte) val;
+                }
+                if (typeof(TTo) == typeof(byte))
+                {
+                    return (TTo) (object) (byte) val;
+                }
+                if (typeof(TTo) == typeof(short))
+                {
+                    return (TTo) (object) (short) val;
+                }
+                if (typeof(TTo) == typeof(ushort))
+                {
+                    return (TTo) (object) (ushort) val;
+                }
+                if (typeof(TTo) == typeof(int))
+                {
+                    return (TTo) (object) (int) val;
+                }
+                if (typeof(TTo) == typeof(uint))
+                {
+                    return (TTo) (object) (uint) val;
+                }
+                if (typeof(TTo) == typeof(long))
+                {
+                    return (TTo) (object) (long) val;
+                }
+                if (typeof(TTo) == typeof(ulong))
+                {
+                    return (TTo) (object) (ulong) val;
+                }
+                if (typeof(TTo) == typeof(Complex))
+                {
+                    return (TTo) (object) (Complex) val;
+                }
+                if (typeof(TTo) == typeof(BigInteger))
+                {
+                    return (TTo) (object) (BigInteger) val;
+                }
+
+                ThrowUnsupportedType();
+                return default!;
+            }
+
+            if (typeof(TFrom) == typeof(Complex))
+            {
+                return FromComplex((Complex) (object) val);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static TTo FromComplex(Complex val)
+            {
+                if (typeof(TTo) == typeof(Half))
+                {
+                    return (TTo) (object) (Half) (double) val.Real;
+                }
+                if (typeof(TTo) == typeof(float))
+                {
+                    return (TTo) (object) (float) val.Real;
+                }
+                if (typeof(TTo) == typeof(double))
+                {
+                    return (TTo) (object) (double) val.Real;
+                }
+                if (typeof(TTo) == typeof(decimal))
+                {
+                    return (TTo) (object) (decimal) val.Real;
+                }
+                if (typeof(TTo) == typeof(sbyte))
+                {
+                    return (TTo) (object) (sbyte) val.Real;
+                }
+                if (typeof(TTo) == typeof(byte))
+                {
+                    return (TTo) (object) (byte) val.Real;
+                }
+                if (typeof(TTo) == typeof(short))
+                {
+                    return (TTo) (object) (short) val.Real;
+                }
+                if (typeof(TTo) == typeof(ushort))
+                {
+                    return (TTo) (object) (ushort) val.Real;
+                }
+                if (typeof(TTo) == typeof(int))
+                {
+                    return (TTo) (object) (int) val.Real;
+                }
+                if (typeof(TTo) == typeof(uint))
+                {
+                    return (TTo) (object) (uint) val.Real;
+                }
+                if (typeof(TTo) == typeof(long))
+                {
+                    return (TTo) (object) (long) val.Real;
+                }
+                if (typeof(TTo) == typeof(ulong))
+                {
+                    return (TTo) (object) (ulong) val.Real;
+                }
+                if (typeof(TTo) == typeof(Complex))
+                {
+                    return (TTo) (object) (Complex) val.Real;
+                }
+                if (typeof(TTo) == typeof(BigInteger))
+                {
+                    return (TTo) (object) (BigInteger) val.Real;
+                }
+
+                ThrowUnsupportedType();
+                return default!;
+            }
+
+            if (typeof(TFrom) == typeof(BigInteger))
+            {
+                return FromBigInteger((BigInteger) (object) val);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static TTo FromBigInteger(BigInteger val)
+            {
+                if (typeof(TTo) == typeof(Half))
+                {
+                    return (TTo) (object) (Half) (double) val;
+                }
+                if (typeof(TTo) == typeof(float))
+                {
+                    return (TTo) (object) (float) val;
+                }
+                if (typeof(TTo) == typeof(double))
+                {
+                    return (TTo) (object) (double) val;
+                }
+                if (typeof(TTo) == typeof(decimal))
+                {
+                    return (TTo) (object) (decimal) val;
+                }
+                if (typeof(TTo) == typeof(sbyte))
+                {
+                    return (TTo) (object) (sbyte) val;
+                }
+                if (typeof(TTo) == typeof(byte))
+                {
+                    return (TTo) (object) (byte) val;
+                }
+                if (typeof(TTo) == typeof(short))
+                {
+                    return (TTo) (object) (short) val;
+                }
+                if (typeof(TTo) == typeof(ushort))
+                {
+                    return (TTo) (object) (ushort) val;
+                }
+                if (typeof(TTo) == typeof(int))
+                {
+                    return (TTo) (object) (int) val;
+                }
+                if (typeof(TTo) == typeof(uint))
+                {
+                    return (TTo) (object) (uint) val;
+                }
+                if (typeof(TTo) == typeof(long))
+                {
+                    return (TTo) (object) (long) val;
+                }
+                if (typeof(TTo) == typeof(ulong))
+                {
+                    return (TTo) (object) (ulong) val;
+                }
+                if (typeof(TTo) == typeof(Complex))
+                {
+                    return (TTo) (object) (Complex) val;
+                }
+                if (typeof(TTo) == typeof(BigInteger))
+                {
+                    return (TTo) (object) (BigInteger) val;
+                }
+
+                ThrowUnsupportedType();
+                return default!;
+            }
+
+            ThrowUnsupportedType();
+            return default!;
+#endif
         }
     }
 }
