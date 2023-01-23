@@ -9,13 +9,21 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkGeometryFlagsKHR")]
     public enum GeometryFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"OpaqueBitKhr\"")]
         [NativeName("Name", "VK_GEOMETRY_OPAQUE_BIT_KHR")]
         GeometryOpaqueBitKhr = 1,
+        [Obsolete("Deprecated in favour of \"NoDuplicateAnyHitInvocationBitKhr\"")]
         [NativeName("Name", "VK_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT_KHR")]
         GeometryNoDuplicateAnyHitInvocationBitKhr = 2,
+        [NativeName("Name", "VK_GEOMETRY_OPAQUE_BIT_KHR")]
+        OpaqueBitKhr = 1,
+        [NativeName("Name", "VK_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT_KHR")]
+        NoDuplicateAnyHitInvocationBitKhr = 2,
     }
 }

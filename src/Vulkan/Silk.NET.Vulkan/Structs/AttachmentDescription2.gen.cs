@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAttachmentDescription2")]
-    public unsafe partial struct AttachmentDescription2
+    [NativeName("Aliases", "VkAttachmentDescription2KHR")]
+    public unsafe partial struct AttachmentDescription2 : IChainStart
     {
         public AttachmentDescription2
         (
@@ -145,5 +146,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageLayout")]
         [NativeName("Name", "finalLayout")]
         public ImageLayout FinalLayout;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.AttachmentDescription2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref AttachmentDescription2 Chain(
+            out AttachmentDescription2 capture)
+        {
+            capture = new AttachmentDescription2(StructureType.AttachmentDescription2);
+            return ref capture;
+        }
     }
 }

@@ -157,6 +157,401 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        public static unsafe void CmdBeginRendering(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<RenderingInfo> pRenderingInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdBeginRendering(commandBuffer, in pRenderingInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindVertexBuffers2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pStrides)
+        {
+            // SpanOverloader
+            thisApi.CmdBindVertexBuffers2(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes, in pStrides.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindVertexBuffers2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides)
+        {
+            // SpanOverloader
+            thisApi.CmdBindVertexBuffers2(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, in pSizes.GetPinnableReference(), pStrides);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindVertexBuffers2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pStrides)
+        {
+            // SpanOverloader
+            thisApi.CmdBindVertexBuffers2(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, in pSizes.GetPinnableReference(), in pStrides.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindVertexBuffers2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides)
+        {
+            // SpanOverloader
+            thisApi.CmdBindVertexBuffers2(commandBuffer, firstBinding, bindingCount, pBuffers, in pOffsets.GetPinnableReference(), pSizes, pStrides);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindVertexBuffers2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pStrides)
+        {
+            // SpanOverloader
+            thisApi.CmdBindVertexBuffers2(commandBuffer, firstBinding, bindingCount, pBuffers, in pOffsets.GetPinnableReference(), pSizes, in pStrides.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindVertexBuffers2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides)
+        {
+            // SpanOverloader
+            thisApi.CmdBindVertexBuffers2(commandBuffer, firstBinding, bindingCount, pBuffers, in pOffsets.GetPinnableReference(), in pSizes.GetPinnableReference(), pStrides);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindVertexBuffers2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pStrides)
+        {
+            // SpanOverloader
+            thisApi.CmdBindVertexBuffers2(commandBuffer, firstBinding, bindingCount, pBuffers, in pOffsets.GetPinnableReference(), in pSizes.GetPinnableReference(), in pStrides.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindVertexBuffers2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides)
+        {
+            // SpanOverloader
+            thisApi.CmdBindVertexBuffers2(commandBuffer, firstBinding, bindingCount, in pBuffers.GetPinnableReference(), pOffsets, pSizes, pStrides);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindVertexBuffers2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pStrides)
+        {
+            // SpanOverloader
+            thisApi.CmdBindVertexBuffers2(commandBuffer, firstBinding, bindingCount, in pBuffers.GetPinnableReference(), pOffsets, pSizes, in pStrides.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindVertexBuffers2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides)
+        {
+            // SpanOverloader
+            thisApi.CmdBindVertexBuffers2(commandBuffer, firstBinding, bindingCount, in pBuffers.GetPinnableReference(), pOffsets, in pSizes.GetPinnableReference(), pStrides);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindVertexBuffers2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pStrides)
+        {
+            // SpanOverloader
+            thisApi.CmdBindVertexBuffers2(commandBuffer, firstBinding, bindingCount, in pBuffers.GetPinnableReference(), pOffsets, in pSizes.GetPinnableReference(), in pStrides.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindVertexBuffers2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides)
+        {
+            // SpanOverloader
+            thisApi.CmdBindVertexBuffers2(commandBuffer, firstBinding, bindingCount, in pBuffers.GetPinnableReference(), in pOffsets.GetPinnableReference(), pSizes, pStrides);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindVertexBuffers2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pStrides)
+        {
+            // SpanOverloader
+            thisApi.CmdBindVertexBuffers2(commandBuffer, firstBinding, bindingCount, in pBuffers.GetPinnableReference(), in pOffsets.GetPinnableReference(), pSizes, in pStrides.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindVertexBuffers2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides)
+        {
+            // SpanOverloader
+            thisApi.CmdBindVertexBuffers2(commandBuffer, firstBinding, bindingCount, in pBuffers.GetPinnableReference(), in pOffsets.GetPinnableReference(), in pSizes.GetPinnableReference(), pStrides);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBindVertexBuffers2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pStrides)
+        {
+            // SpanOverloader
+            thisApi.CmdBindVertexBuffers2(commandBuffer, firstBinding, bindingCount, in pBuffers.GetPinnableReference(), in pOffsets.GetPinnableReference(), in pSizes.GetPinnableReference(), in pStrides.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdBlitImage2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BlitImageInfo2> pBlitImageInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdBlitImage2(commandBuffer, in pBlitImageInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdCopyBuffer2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<CopyBufferInfo2> pCopyBufferInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdCopyBuffer2(commandBuffer, in pCopyBufferInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdCopyBufferToImage2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<CopyBufferToImageInfo2> pCopyBufferToImageInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdCopyBufferToImage2(commandBuffer, in pCopyBufferToImageInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdCopyImage2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<CopyImageInfo2> pCopyImageInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdCopyImage2(commandBuffer, in pCopyImageInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdCopyImageToBuffer2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<CopyImageToBufferInfo2> pCopyImageToBufferInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdCopyImageToBuffer2(commandBuffer, in pCopyImageToBufferInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdPipelineBarrier2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DependencyInfo> pDependencyInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdPipelineBarrier2(commandBuffer, in pDependencyInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdResolveImage2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ResolveImageInfo2> pResolveImageInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdResolveImage2(commandBuffer, in pResolveImageInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetEvent2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DependencyInfo> pDependencyInfo)
+        {
+            // SpanOverloader
+            thisApi.CmdSetEvent2(commandBuffer, @event, in pDependencyInfo.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetScissorWithCount(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint scissorCount, [Count(Parameter = "scissorCount"), Flow(FlowDirection.In)] ReadOnlySpan<Rect2D> pScissors)
+        {
+            // SpanOverloader
+            thisApi.CmdSetScissorWithCount(commandBuffer, scissorCount, in pScissors.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetViewportWithCount(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] ReadOnlySpan<Viewport> pViewports)
+        {
+            // SpanOverloader
+            thisApi.CmdSetViewportWithCount(commandBuffer, viewportCount, in pViewports.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] Event* pEvents, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] ReadOnlySpan<DependencyInfo> pDependencyInfos)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents2(commandBuffer, eventCount, pEvents, in pDependencyInfos.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] DependencyInfo* pDependencyInfos)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents2(commandBuffer, eventCount, in pEvents.GetPinnableReference(), pDependencyInfos);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdWaitEvents2(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] ReadOnlySpan<DependencyInfo> pDependencyInfos)
+        {
+            // SpanOverloader
+            thisApi.CmdWaitEvents2(commandBuffer, eventCount, in pEvents.GetPinnableReference(), in pDependencyInfos.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePrivateDataSlot(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PrivateDataSlotCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<PrivateDataSlot> pPrivateDataSlot)
+        {
+            // SpanOverloader
+            return thisApi.CreatePrivateDataSlot(device, pCreateInfo, pAllocator, out pPrivateDataSlot.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePrivateDataSlot(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PrivateDataSlotCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PrivateDataSlot* pPrivateDataSlot)
+        {
+            // SpanOverloader
+            return thisApi.CreatePrivateDataSlot(device, pCreateInfo, in pAllocator.GetPinnableReference(), pPrivateDataSlot);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePrivateDataSlot(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PrivateDataSlotCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<PrivateDataSlot> pPrivateDataSlot)
+        {
+            // SpanOverloader
+            return thisApi.CreatePrivateDataSlot(device, pCreateInfo, in pAllocator.GetPinnableReference(), out pPrivateDataSlot.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePrivateDataSlot(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PrivateDataSlotCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PrivateDataSlot* pPrivateDataSlot)
+        {
+            // SpanOverloader
+            return thisApi.CreatePrivateDataSlot(device, in pCreateInfo.GetPinnableReference(), pAllocator, pPrivateDataSlot);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePrivateDataSlot(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PrivateDataSlotCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<PrivateDataSlot> pPrivateDataSlot)
+        {
+            // SpanOverloader
+            return thisApi.CreatePrivateDataSlot(device, in pCreateInfo.GetPinnableReference(), pAllocator, out pPrivateDataSlot.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePrivateDataSlot(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PrivateDataSlotCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PrivateDataSlot* pPrivateDataSlot)
+        {
+            // SpanOverloader
+            return thisApi.CreatePrivateDataSlot(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pPrivateDataSlot);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result CreatePrivateDataSlot(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PrivateDataSlotCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<PrivateDataSlot> pPrivateDataSlot)
+        {
+            // SpanOverloader
+            return thisApi.CreatePrivateDataSlot(device, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pPrivateDataSlot.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void DestroyPrivateDataSlot(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PrivateDataSlot privateDataSlot, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
+        {
+            // SpanOverloader
+            thisApi.DestroyPrivateDataSlot(device, privateDataSlot, in pAllocator.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
+        public static unsafe void GetDeviceBufferMemoryRequirements(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceBufferMemoryRequirements* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
+        {
+            // SpanOverloader
+            thisApi.GetDeviceBufferMemoryRequirements(device, pInfo, out pMemoryRequirements.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetDeviceBufferMemoryRequirements(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceBufferMemoryRequirements> pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements)
+        {
+            // SpanOverloader
+            thisApi.GetDeviceBufferMemoryRequirements(device, in pInfo.GetPinnableReference(), pMemoryRequirements);
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
+        public static unsafe void GetDeviceBufferMemoryRequirements(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceBufferMemoryRequirements> pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
+        {
+            // SpanOverloader
+            thisApi.GetDeviceBufferMemoryRequirements(device, in pInfo.GetPinnableReference(), out pMemoryRequirements.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
+        public static unsafe void GetDeviceImageMemoryRequirements(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
+        {
+            // SpanOverloader
+            thisApi.GetDeviceImageMemoryRequirements(device, pInfo, out pMemoryRequirements.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetDeviceImageMemoryRequirements(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceImageMemoryRequirements> pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements)
+        {
+            // SpanOverloader
+            thisApi.GetDeviceImageMemoryRequirements(device, in pInfo.GetPinnableReference(), pMemoryRequirements);
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
+        public static unsafe void GetDeviceImageMemoryRequirements(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceImageMemoryRequirements> pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
+        {
+            // SpanOverloader
+            thisApi.GetDeviceImageMemoryRequirements(device, in pInfo.GetPinnableReference(), out pMemoryRequirements.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
+        public static unsafe void GetDeviceImageSparseMemoryRequirements(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
+        {
+            // SpanOverloader
+            thisApi.GetDeviceImageSparseMemoryRequirements(device, pInfo, pSparseMemoryRequirementCount, out pSparseMemoryRequirements.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetDeviceImageSparseMemoryRequirements(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0)] Span<uint> pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements)
+        {
+            // SpanOverloader
+            thisApi.GetDeviceImageSparseMemoryRequirements(device, pInfo, ref pSparseMemoryRequirementCount.GetPinnableReference(), pSparseMemoryRequirements);
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
+        public static unsafe void GetDeviceImageSparseMemoryRequirements(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceImageMemoryRequirements* pInfo, [Count(Count = 0)] Span<uint> pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
+        {
+            // SpanOverloader
+            thisApi.GetDeviceImageSparseMemoryRequirements(device, pInfo, ref pSparseMemoryRequirementCount.GetPinnableReference(), out pSparseMemoryRequirements.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetDeviceImageSparseMemoryRequirements(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceImageMemoryRequirements> pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements)
+        {
+            // SpanOverloader
+            thisApi.GetDeviceImageSparseMemoryRequirements(device, in pInfo.GetPinnableReference(), pSparseMemoryRequirementCount, pSparseMemoryRequirements);
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
+        public static unsafe void GetDeviceImageSparseMemoryRequirements(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceImageMemoryRequirements> pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
+        {
+            // SpanOverloader
+            thisApi.GetDeviceImageSparseMemoryRequirements(device, in pInfo.GetPinnableReference(), pSparseMemoryRequirementCount, out pSparseMemoryRequirements.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetDeviceImageSparseMemoryRequirements(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceImageMemoryRequirements> pInfo, [Count(Count = 0)] Span<uint> pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements)
+        {
+            // SpanOverloader
+            thisApi.GetDeviceImageSparseMemoryRequirements(device, in pInfo.GetPinnableReference(), ref pSparseMemoryRequirementCount.GetPinnableReference(), pSparseMemoryRequirements);
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
+        public static unsafe void GetDeviceImageSparseMemoryRequirements(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceImageMemoryRequirements> pInfo, [Count(Count = 0)] Span<uint> pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
+        {
+            // SpanOverloader
+            thisApi.GetDeviceImageSparseMemoryRequirements(device, in pInfo.GetPinnableReference(), ref pSparseMemoryRequirementCount.GetPinnableReference(), out pSparseMemoryRequirements.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pToolProperties = new(StructureType.PhysicalDeviceToolProperties);")]
+        public static unsafe Result GetPhysicalDeviceToolProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] Span<PhysicalDeviceToolProperties> pToolProperties)
+        {
+            // SpanOverloader
+            return thisApi.GetPhysicalDeviceToolProperties(physicalDevice, pToolCount, out pToolProperties.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result GetPhysicalDeviceToolProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] PhysicalDeviceToolProperties* pToolProperties)
+        {
+            // SpanOverloader
+            return thisApi.GetPhysicalDeviceToolProperties(physicalDevice, ref pToolCount.GetPinnableReference(), pToolProperties);
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pToolProperties = new(StructureType.PhysicalDeviceToolProperties);")]
+        public static unsafe Result GetPhysicalDeviceToolProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pToolCount, [Count(Parameter = "pToolCount"), Flow(FlowDirection.Out)] Span<PhysicalDeviceToolProperties> pToolProperties)
+        {
+            // SpanOverloader
+            return thisApi.GetPhysicalDeviceToolProperties(physicalDevice, ref pToolCount.GetPinnableReference(), out pToolProperties.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void GetPrivateData(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ObjectType objectType, [Count(Count = 0)] ulong objectHandle, [Count(Count = 0)] PrivateDataSlot privateDataSlot, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ulong> pData)
+        {
+            // SpanOverloader
+            thisApi.GetPrivateData(device, objectType, objectHandle, privateDataSlot, out pData.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result QueueSubmit2(this Vk thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] uint submitCount, [Count(Parameter = "submitCount"), Flow(FlowDirection.In)] ReadOnlySpan<SubmitInfo2> pSubmits, [Count(Count = 0)] Fence fence)
+        {
+            // SpanOverloader
+            return thisApi.QueueSubmit2(queue, submitCount, in pSubmits.GetPinnableReference(), fence);
+        }
+
+        /// <summary>To be documented.</summary>
         public static unsafe Result BindBufferMemory2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Parameter = "bindInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<BindBufferMemoryInfo> pBindInfos)
         {
             // SpanOverloader
@@ -311,6 +706,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
         public static unsafe void GetBufferMemoryRequirements2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferMemoryRequirementsInfo2* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
         {
             // SpanOverloader
@@ -325,6 +721,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
         public static unsafe void GetBufferMemoryRequirements2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BufferMemoryRequirementsInfo2> pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
         {
             // SpanOverloader
@@ -332,6 +729,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
         public static unsafe void GetDescriptorSetLayoutSupport(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DescriptorSetLayoutSupport> pSupport)
         {
             // SpanOverloader
@@ -346,6 +744,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSupport = new(StructureType.DescriptorSetLayoutSupport);")]
         public static unsafe void GetDescriptorSetLayoutSupport(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DescriptorSetLayoutCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DescriptorSetLayoutSupport> pSupport)
         {
             // SpanOverloader
@@ -381,6 +780,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
         public static unsafe void GetImageMemoryRequirements2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageMemoryRequirementsInfo2* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
         {
             // SpanOverloader
@@ -395,6 +795,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
         public static unsafe void GetImageMemoryRequirements2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImageMemoryRequirementsInfo2> pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
         {
             // SpanOverloader
@@ -402,6 +803,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
         public static unsafe void GetImageSparseMemoryRequirements2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageSparseMemoryRequirementsInfo2* pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
         {
             // SpanOverloader
@@ -416,6 +818,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
         public static unsafe void GetImageSparseMemoryRequirements2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageSparseMemoryRequirementsInfo2* pInfo, [Count(Count = 0)] Span<uint> pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
         {
             // SpanOverloader
@@ -430,6 +833,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
         public static unsafe void GetImageSparseMemoryRequirements2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImageSparseMemoryRequirementsInfo2> pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
         {
             // SpanOverloader
@@ -444,6 +848,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
         public static unsafe void GetImageSparseMemoryRequirements2(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImageSparseMemoryRequirementsInfo2> pInfo, [Count(Count = 0)] Span<uint> pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
         {
             // SpanOverloader
@@ -451,6 +856,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalBufferProperties = new(StructureType.ExternalBufferProperties);")]
         public static unsafe void GetPhysicalDeviceExternalBufferProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalBufferInfo* pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalBufferProperties> pExternalBufferProperties)
         {
             // SpanOverloader
@@ -465,6 +871,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalBufferProperties = new(StructureType.ExternalBufferProperties);")]
         public static unsafe void GetPhysicalDeviceExternalBufferProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalBufferInfo> pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalBufferProperties> pExternalBufferProperties)
         {
             // SpanOverloader
@@ -472,6 +879,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalFenceProperties = new(StructureType.ExternalFenceProperties);")]
         public static unsafe void GetPhysicalDeviceExternalFenceProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalFenceInfo* pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalFenceProperties> pExternalFenceProperties)
         {
             // SpanOverloader
@@ -486,6 +894,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalFenceProperties = new(StructureType.ExternalFenceProperties);")]
         public static unsafe void GetPhysicalDeviceExternalFenceProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalFenceInfo> pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalFenceProperties> pExternalFenceProperties)
         {
             // SpanOverloader
@@ -493,6 +902,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalSemaphoreProperties = new(StructureType.ExternalSemaphoreProperties);")]
         public static unsafe void GetPhysicalDeviceExternalSemaphoreProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalSemaphoreInfo* pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalSemaphoreProperties> pExternalSemaphoreProperties)
         {
             // SpanOverloader
@@ -507,6 +917,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalSemaphoreProperties = new(StructureType.ExternalSemaphoreProperties);")]
         public static unsafe void GetPhysicalDeviceExternalSemaphoreProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalSemaphoreInfo> pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalSemaphoreProperties> pExternalSemaphoreProperties)
         {
             // SpanOverloader
@@ -514,6 +925,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pFeatures = new(StructureType.PhysicalDeviceFeatures2);")]
         public static unsafe void GetPhysicalDeviceFeatures2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] Span<PhysicalDeviceFeatures2> pFeatures)
         {
             // SpanOverloader
@@ -521,6 +933,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pFormatProperties = new(StructureType.FormatProperties2);")]
         public static unsafe void GetPhysicalDeviceFormatProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0), Flow(FlowDirection.Out)] Span<FormatProperties2> pFormatProperties)
         {
             // SpanOverloader
@@ -528,6 +941,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pImageFormatProperties = new(StructureType.ImageFormatProperties2);")]
         public static unsafe Result GetPhysicalDeviceImageFormatProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceImageFormatInfo2* pImageFormatInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ImageFormatProperties2> pImageFormatProperties)
         {
             // SpanOverloader
@@ -542,6 +956,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pImageFormatProperties = new(StructureType.ImageFormatProperties2);")]
         public static unsafe Result GetPhysicalDeviceImageFormatProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceImageFormatInfo2> pImageFormatInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ImageFormatProperties2> pImageFormatProperties)
         {
             // SpanOverloader
@@ -549,6 +964,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryProperties = new(StructureType.PhysicalDeviceMemoryProperties2);")]
         public static unsafe void GetPhysicalDeviceMemoryProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] Span<PhysicalDeviceMemoryProperties2> pMemoryProperties)
         {
             // SpanOverloader
@@ -556,6 +972,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.PhysicalDeviceProperties2);")]
         public static unsafe void GetPhysicalDeviceProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] Span<PhysicalDeviceProperties2> pProperties)
         {
             // SpanOverloader
@@ -563,6 +980,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pQueueFamilyProperties = new(StructureType.QueueFamilyProperties2);")]
         public static unsafe void GetPhysicalDeviceQueueFamilyProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pQueueFamilyPropertyCount, [Count(Parameter = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] Span<QueueFamilyProperties2> pQueueFamilyProperties)
         {
             // SpanOverloader
@@ -577,6 +995,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pQueueFamilyProperties = new(StructureType.QueueFamilyProperties2);")]
         public static unsafe void GetPhysicalDeviceQueueFamilyProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pQueueFamilyPropertyCount, [Count(Parameter = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] Span<QueueFamilyProperties2> pQueueFamilyProperties)
         {
             // SpanOverloader
@@ -584,6 +1003,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
         public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
         {
             // SpanOverloader
@@ -598,6 +1018,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
         public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
         {
             // SpanOverloader
@@ -612,6 +1033,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
         public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSparseImageFormatInfo2> pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
         {
             // SpanOverloader
@@ -626,6 +1048,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
         public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSparseImageFormatInfo2> pFormatInfo, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
         {
             // SpanOverloader
@@ -2320,21 +2743,21 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateDeviceExtensionProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Flow(FlowDirection.In)] string pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] Span<ExtensionProperties> pProperties)
+        public static unsafe Result EnumerateDeviceExtensionProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] Span<ExtensionProperties> pProperties)
         {
             // SpanOverloader
             return thisApi.EnumerateDeviceExtensionProperties(physicalDevice, pLayerName, pPropertyCount, ref pProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateDeviceExtensionProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Flow(FlowDirection.In)] string pLayerName, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties)
+        public static unsafe Result EnumerateDeviceExtensionProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties)
         {
             // SpanOverloader
             return thisApi.EnumerateDeviceExtensionProperties(physicalDevice, pLayerName, ref pPropertyCount.GetPinnableReference(), pProperties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateDeviceExtensionProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Flow(FlowDirection.In)] string pLayerName, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount")] Span<ExtensionProperties> pProperties)
+        public static unsafe Result EnumerateDeviceExtensionProperties(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount")] Span<ExtensionProperties> pProperties)
         {
             // SpanOverloader
             return thisApi.EnumerateDeviceExtensionProperties(physicalDevice, pLayerName, ref pPropertyCount.GetPinnableReference(), ref pProperties.GetPinnableReference());
@@ -2411,21 +2834,21 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this Vk thisApi, [Flow(FlowDirection.In)] string pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] Span<ExtensionProperties> pProperties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this Vk thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount")] Span<ExtensionProperties> pProperties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(pLayerName, pPropertyCount, ref pProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this Vk thisApi, [Flow(FlowDirection.In)] string pLayerName, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this Vk thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount")] ExtensionProperties* pProperties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(pLayerName, ref pPropertyCount.GetPinnableReference(), pProperties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this Vk thisApi, [Flow(FlowDirection.In)] string pLayerName, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount")] Span<ExtensionProperties> pProperties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this Vk thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pLayerName, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount")] Span<ExtensionProperties> pProperties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(pLayerName, ref pPropertyCount.GetPinnableReference(), ref pProperties.GetPinnableReference());

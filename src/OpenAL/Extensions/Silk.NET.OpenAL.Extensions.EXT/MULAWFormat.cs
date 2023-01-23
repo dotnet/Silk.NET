@@ -15,7 +15,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     public partial class MULAWFormat : FormatExtensionBase<MULAWBufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected MULAWFormat(INativeContext ctx)
+        public MULAWFormat(INativeContext ctx)
             : base(ctx)
         {
         }

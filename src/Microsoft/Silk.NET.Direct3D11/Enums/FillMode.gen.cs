@@ -9,12 +9,21 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D11
 {
+    [Flags]
     [NativeName("Name", "D3D11_FILL_MODE")]
     public enum FillMode : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"Wireframe\"")]
         [NativeName("Name", "D3D11_FILL_WIREFRAME")]
         FillWireframe = 0x2,
+        [Obsolete("Deprecated in favour of \"Solid\"")]
         [NativeName("Name", "D3D11_FILL_SOLID")]
         FillSolid = 0x3,
+        [NativeName("Name", "D3D11_FILL_WIREFRAME")]
+        Wireframe = 0x2,
+        [NativeName("Name", "D3D11_FILL_SOLID")]
+        Solid = 0x3,
     }
 }

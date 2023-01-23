@@ -20,34 +20,34 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public unsafe partial class ArbShaderImageLoadStore : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_shader_image_load_store";
-        [NativeApi(EntryPoint = "glBindImageTexture")]
+        [NativeApi(EntryPoint = "glBindImageTexture", Convention = CallingConvention.Winapi)]
         public partial void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] ARB access, [Flow(FlowDirection.In)] ARB format);
 
-        [NativeApi(EntryPoint = "glBindImageTexture")]
+        [NativeApi(EntryPoint = "glBindImageTexture", Convention = CallingConvention.Winapi)]
         public partial void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] ARB access, [Flow(FlowDirection.In)] InternalFormat format);
 
-        [NativeApi(EntryPoint = "glBindImageTexture")]
+        [NativeApi(EntryPoint = "glBindImageTexture", Convention = CallingConvention.Winapi)]
         public partial void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] BufferAccessARB access, [Flow(FlowDirection.In)] ARB format);
 
-        [NativeApi(EntryPoint = "glBindImageTexture")]
+        [NativeApi(EntryPoint = "glBindImageTexture", Convention = CallingConvention.Winapi)]
         public partial void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] BufferAccessARB access, [Flow(FlowDirection.In)] InternalFormat format);
 
-        [NativeApi(EntryPoint = "glBindImageTexture")]
+        [NativeApi(EntryPoint = "glBindImageTexture", Convention = CallingConvention.Winapi)]
         public partial void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] ARB access, [Flow(FlowDirection.In)] ARB format);
 
-        [NativeApi(EntryPoint = "glBindImageTexture")]
+        [NativeApi(EntryPoint = "glBindImageTexture", Convention = CallingConvention.Winapi)]
         public partial void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] ARB access, [Flow(FlowDirection.In)] InternalFormat format);
 
-        [NativeApi(EntryPoint = "glBindImageTexture")]
+        [NativeApi(EntryPoint = "glBindImageTexture", Convention = CallingConvention.Winapi)]
         public partial void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] BufferAccessARB access, [Flow(FlowDirection.In)] ARB format);
 
-        [NativeApi(EntryPoint = "glBindImageTexture")]
+        [NativeApi(EntryPoint = "glBindImageTexture", Convention = CallingConvention.Winapi)]
         public partial void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] BufferAccessARB access, [Flow(FlowDirection.In)] InternalFormat format);
 
-        [NativeApi(EntryPoint = "glMemoryBarrier")]
+        [NativeApi(EntryPoint = "glMemoryBarrier", Convention = CallingConvention.Winapi)]
         public partial void MemoryBarrier([Flow(FlowDirection.In)] uint barriers);
 
-        [NativeApi(EntryPoint = "glMemoryBarrier")]
+        [NativeApi(EntryPoint = "glMemoryBarrier", Convention = CallingConvention.Winapi)]
         public partial void MemoryBarrier([Flow(FlowDirection.In)] MemoryBarrierMask barriers);
 
         public ArbShaderImageLoadStore(INativeContext ctx)

@@ -9,24 +9,51 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D11
 {
+    [Flags]
     [NativeName("Name", "D3D11_STENCIL_OP")]
     public enum StencilOp : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"Keep\"")]
         [NativeName("Name", "D3D11_STENCIL_OP_KEEP")]
         StencilOpKeep = 0x1,
+        [Obsolete("Deprecated in favour of \"Zero\"")]
         [NativeName("Name", "D3D11_STENCIL_OP_ZERO")]
         StencilOpZero = 0x2,
+        [Obsolete("Deprecated in favour of \"Replace\"")]
         [NativeName("Name", "D3D11_STENCIL_OP_REPLACE")]
         StencilOpReplace = 0x3,
+        [Obsolete("Deprecated in favour of \"IncrSat\"")]
         [NativeName("Name", "D3D11_STENCIL_OP_INCR_SAT")]
         StencilOpIncrSat = 0x4,
+        [Obsolete("Deprecated in favour of \"DecrSat\"")]
         [NativeName("Name", "D3D11_STENCIL_OP_DECR_SAT")]
         StencilOpDecrSat = 0x5,
+        [Obsolete("Deprecated in favour of \"Invert\"")]
         [NativeName("Name", "D3D11_STENCIL_OP_INVERT")]
         StencilOpInvert = 0x6,
+        [Obsolete("Deprecated in favour of \"Incr\"")]
         [NativeName("Name", "D3D11_STENCIL_OP_INCR")]
         StencilOpIncr = 0x7,
+        [Obsolete("Deprecated in favour of \"Decr\"")]
         [NativeName("Name", "D3D11_STENCIL_OP_DECR")]
         StencilOpDecr = 0x8,
+        [NativeName("Name", "D3D11_STENCIL_OP_KEEP")]
+        Keep = 0x1,
+        [NativeName("Name", "D3D11_STENCIL_OP_ZERO")]
+        Zero = 0x2,
+        [NativeName("Name", "D3D11_STENCIL_OP_REPLACE")]
+        Replace = 0x3,
+        [NativeName("Name", "D3D11_STENCIL_OP_INCR_SAT")]
+        IncrSat = 0x4,
+        [NativeName("Name", "D3D11_STENCIL_OP_DECR_SAT")]
+        DecrSat = 0x5,
+        [NativeName("Name", "D3D11_STENCIL_OP_INVERT")]
+        Invert = 0x6,
+        [NativeName("Name", "D3D11_STENCIL_OP_INCR")]
+        Incr = 0x7,
+        [NativeName("Name", "D3D11_STENCIL_OP_DECR")]
+        Decr = 0x8,
     }
 }

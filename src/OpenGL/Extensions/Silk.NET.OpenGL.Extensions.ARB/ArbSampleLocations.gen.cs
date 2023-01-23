@@ -20,25 +20,25 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public unsafe partial class ArbSampleLocations : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_sample_locations";
-        [NativeApi(EntryPoint = "glEvaluateDepthValuesARB")]
+        [NativeApi(EntryPoint = "glEvaluateDepthValuesARB", Convention = CallingConvention.Winapi)]
         public partial void EvaluateDepthValues();
 
-        [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvARB")]
+        [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void FramebufferSampleLocations([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v);
 
-        [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvARB")]
+        [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvARB", Convention = CallingConvention.Winapi)]
         public partial void FramebufferSampleLocations([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] in float v);
 
-        [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvARB")]
+        [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void FramebufferSampleLocations([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v);
 
-        [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvARB")]
+        [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvARB", Convention = CallingConvention.Winapi)]
         public partial void FramebufferSampleLocations([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] in float v);
 
-        [NativeApi(EntryPoint = "glNamedFramebufferSampleLocationsfvARB")]
+        [NativeApi(EntryPoint = "glNamedFramebufferSampleLocationsfvARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void NamedFramebufferSampleLocations([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v);
 
-        [NativeApi(EntryPoint = "glNamedFramebufferSampleLocationsfvARB")]
+        [NativeApi(EntryPoint = "glNamedFramebufferSampleLocationsfvARB", Convention = CallingConvention.Winapi)]
         public partial void NamedFramebufferSampleLocations([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] in float v);
 
         public ArbSampleLocations(INativeContext ctx)

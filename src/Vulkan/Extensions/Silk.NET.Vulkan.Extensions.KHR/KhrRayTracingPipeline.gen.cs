@@ -21,187 +21,187 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_ray_tracing_pipeline";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetRayTracingPipelineStackSizeKHR")]
+        [NativeApi(EntryPoint = "vkCmdSetRayTracingPipelineStackSizeKHR", Convention = CallingConvention.Winapi)]
         public partial void CmdSetRayTracingPipelineStackSize([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint pipelineStackSize);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRays([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [Count(Count = 0)] uint width, [Count(Count = 0)] uint height, [Count(Count = 0)] uint depth);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRays([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pCallableShaderBindingTable, [Count(Count = 0)] uint width, [Count(Count = 0)] uint height, [Count(Count = 0)] uint depth);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRays([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [Count(Count = 0)] uint width, [Count(Count = 0)] uint height, [Count(Count = 0)] uint depth);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRays([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pCallableShaderBindingTable, [Count(Count = 0)] uint width, [Count(Count = 0)] uint height, [Count(Count = 0)] uint depth);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRays([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [Count(Count = 0)] uint width, [Count(Count = 0)] uint height, [Count(Count = 0)] uint depth);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRays([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pCallableShaderBindingTable, [Count(Count = 0)] uint width, [Count(Count = 0)] uint height, [Count(Count = 0)] uint depth);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRays([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [Count(Count = 0)] uint width, [Count(Count = 0)] uint height, [Count(Count = 0)] uint depth);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRays([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pCallableShaderBindingTable, [Count(Count = 0)] uint width, [Count(Count = 0)] uint height, [Count(Count = 0)] uint depth);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRays([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [Count(Count = 0)] uint width, [Count(Count = 0)] uint height, [Count(Count = 0)] uint depth);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRays([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pCallableShaderBindingTable, [Count(Count = 0)] uint width, [Count(Count = 0)] uint height, [Count(Count = 0)] uint depth);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRays([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [Count(Count = 0)] uint width, [Count(Count = 0)] uint height, [Count(Count = 0)] uint depth);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRays([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pCallableShaderBindingTable, [Count(Count = 0)] uint width, [Count(Count = 0)] uint height, [Count(Count = 0)] uint depth);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRays([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [Count(Count = 0)] uint width, [Count(Count = 0)] uint height, [Count(Count = 0)] uint depth);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRays([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pCallableShaderBindingTable, [Count(Count = 0)] uint width, [Count(Count = 0)] uint height, [Count(Count = 0)] uint depth);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRays([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [Count(Count = 0)] uint width, [Count(Count = 0)] uint height, [Count(Count = 0)] uint depth);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysKHR", Convention = CallingConvention.Winapi)]
         public partial void CmdTraceRays([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pCallableShaderBindingTable, [Count(Count = 0)] uint width, [Count(Count = 0)] uint height, [Count(Count = 0)] uint depth);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRaysIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [Count(Count = 0)] ulong indirectDeviceAddress);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRaysIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pCallableShaderBindingTable, [Count(Count = 0)] ulong indirectDeviceAddress);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRaysIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [Count(Count = 0)] ulong indirectDeviceAddress);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRaysIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pCallableShaderBindingTable, [Count(Count = 0)] ulong indirectDeviceAddress);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRaysIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [Count(Count = 0)] ulong indirectDeviceAddress);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRaysIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pCallableShaderBindingTable, [Count(Count = 0)] ulong indirectDeviceAddress);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRaysIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [Count(Count = 0)] ulong indirectDeviceAddress);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRaysIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pCallableShaderBindingTable, [Count(Count = 0)] ulong indirectDeviceAddress);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRaysIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [Count(Count = 0)] ulong indirectDeviceAddress);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRaysIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pCallableShaderBindingTable, [Count(Count = 0)] ulong indirectDeviceAddress);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRaysIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [Count(Count = 0)] ulong indirectDeviceAddress);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRaysIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pCallableShaderBindingTable, [Count(Count = 0)] ulong indirectDeviceAddress);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRaysIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [Count(Count = 0)] ulong indirectDeviceAddress);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRaysIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pCallableShaderBindingTable, [Count(Count = 0)] ulong indirectDeviceAddress);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdTraceRaysIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] StridedDeviceAddressRegionKHR* pCallableShaderBindingTable, [Count(Count = 0)] ulong indirectDeviceAddress);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR")]
+        [NativeApi(EntryPoint = "vkCmdTraceRaysIndirectKHR", Convention = CallingConvention.Winapi)]
         public partial void CmdTraceRaysIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pRaygenShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pMissShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pHitShaderBindingTable, [Count(Count = 0), Flow(FlowDirection.In)] in StridedDeviceAddressRegionKHR pCallableShaderBindingTable, [Count(Count = 0)] ulong indirectDeviceAddress);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRayTracingPipelinesKHR")]
+        [NativeApi(EntryPoint = "vkCreateRayTracingPipelinesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRayTracingPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] RayTracingPipelineCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRayTracingPipelinesKHR")]
+        [NativeApi(EntryPoint = "vkCreateRayTracingPipelinesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRayTracingPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] RayTracingPipelineCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] out Pipeline pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRayTracingPipelinesKHR")]
+        [NativeApi(EntryPoint = "vkCreateRayTracingPipelinesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRayTracingPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] RayTracingPipelineCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRayTracingPipelinesKHR")]
+        [NativeApi(EntryPoint = "vkCreateRayTracingPipelinesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRayTracingPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] RayTracingPipelineCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] out Pipeline pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRayTracingPipelinesKHR")]
+        [NativeApi(EntryPoint = "vkCreateRayTracingPipelinesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRayTracingPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] in RayTracingPipelineCreateInfoKHR pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRayTracingPipelinesKHR")]
+        [NativeApi(EntryPoint = "vkCreateRayTracingPipelinesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRayTracingPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] in RayTracingPipelineCreateInfoKHR pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] out Pipeline pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRayTracingPipelinesKHR")]
+        [NativeApi(EntryPoint = "vkCreateRayTracingPipelinesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateRayTracingPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] in RayTracingPipelineCreateInfoKHR pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateRayTracingPipelinesKHR")]
+        [NativeApi(EntryPoint = "vkCreateRayTracingPipelinesKHR", Convention = CallingConvention.Winapi)]
         public partial Result CreateRayTracingPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] in RayTracingPipelineCreateInfoKHR pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] out Pipeline pPipelines);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetRayTracingCaptureReplayShaderGroupHandlesKHR")]
+        [NativeApi(EntryPoint = "vkGetRayTracingCaptureReplayShaderGroupHandlesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetRayTracingCaptureReplayShaderGroupHandles([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetRayTracingCaptureReplayShaderGroupHandlesKHR")]
+        [NativeApi(EntryPoint = "vkGetRayTracingCaptureReplayShaderGroupHandlesKHR", Convention = CallingConvention.Winapi)]
         public partial Result GetRayTracingCaptureReplayShaderGroupHandles<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetRayTracingShaderGroupHandlesKHR")]
+        [NativeApi(EntryPoint = "vkGetRayTracingShaderGroupHandlesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetRayTracingShaderGroupHandles([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetRayTracingShaderGroupHandlesKHR")]
+        [NativeApi(EntryPoint = "vkGetRayTracingShaderGroupHandlesKHR", Convention = CallingConvention.Winapi)]
         public partial Result GetRayTracingShaderGroupHandles<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetRayTracingShaderGroupStackSizeKHR")]
+        [NativeApi(EntryPoint = "vkGetRayTracingShaderGroupStackSizeKHR", Convention = CallingConvention.Winapi)]
         public partial ulong GetRayTracingShaderGroupStackSize([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint group, [Count(Count = 0)] ShaderGroupShaderKHR groupShader);
 
         /// <summary>To be documented.</summary>

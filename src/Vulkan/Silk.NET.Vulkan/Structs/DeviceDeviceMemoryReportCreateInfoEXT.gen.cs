@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceDeviceMemoryReportCreateInfoEXT")]
-    public unsafe partial struct DeviceDeviceMemoryReportCreateInfoEXT
+    public unsafe partial struct DeviceDeviceMemoryReportCreateInfoEXT : IExtendsChain<DeviceCreateInfo>
     {
         public DeviceDeviceMemoryReportCreateInfoEXT
         (
@@ -79,5 +79,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "void")]
         [NativeName("Name", "pUserData")]
         public void* PUserData;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DeviceDeviceMemoryReportCreateInfoExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

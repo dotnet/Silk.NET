@@ -20,197 +20,281 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtPalettedTexture : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_paletted_texture";
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTable([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void ColorTable<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 table) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTable([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void ColorTable<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 table) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTable([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void ColorTable<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 table) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTable([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void ColorTable<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 table) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTable([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] InternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void ColorTable<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] InternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 table) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTable([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] InternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void ColorTable<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] InternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 table) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTable([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] InternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void ColorTable<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] InternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 table) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTable([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] InternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void ColorTable<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] InternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 table) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void ColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 table) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void ColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 table) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void ColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 table) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void ColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] EXT internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 table) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] InternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void ColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] InternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 table) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] InternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void ColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] InternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 table) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] InternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void ColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] InternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 table) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] InternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
 
-        [NativeApi(EntryPoint = "glColorTableEXT")]
+        [NativeApi(EntryPoint = "glColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void ColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] InternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] in T0 table) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glGetColorTableEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetColorTable([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* data);
 
-        [NativeApi(EntryPoint = "glGetColorTableEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void GetColorTable<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glGetColorTableEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetColorTable([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* data);
 
-        [NativeApi(EntryPoint = "glGetColorTableEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void GetColorTable<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glGetColorTableEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetColorTable([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* data);
 
-        [NativeApi(EntryPoint = "glGetColorTableEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void GetColorTable<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glGetColorTableEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetColorTable([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* data);
 
-        [NativeApi(EntryPoint = "glGetColorTableEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void GetColorTable<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glGetColorTableEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* data);
 
-        [NativeApi(EntryPoint = "glGetColorTableEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void GetColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glGetColorTableEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* data);
 
-        [NativeApi(EntryPoint = "glGetColorTableEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void GetColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glGetColorTableEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* data);
 
-        [NativeApi(EntryPoint = "glGetColorTableEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void GetColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glGetColorTableEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* data);
 
-        [NativeApi(EntryPoint = "glGetColorTableEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableEXT", Convention = CallingConvention.Winapi)]
         public partial void GetColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glGetColorTableParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetColorTableParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableParameterivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetColorTableParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetColorTableParameterivEXT")]
-        public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [NativeApi(EntryPoint = "glGetColorTableParameterivEXT", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetColorTableParameterivEXT")]
-        public partial void GetColorTableParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [NativeApi(EntryPoint = "glGetColorTableParameterivEXT", Convention = CallingConvention.Winapi)]
+        public partial void GetColorTableParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetColorTableParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableParameterivEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetColorTableParameterivEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableParameterivEXT", Convention = CallingConvention.Winapi)]
         public partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetColorTableParameterivEXT")]
-        public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [NativeApi(EntryPoint = "glGetColorTableParameterivEXT", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetColorTableParameterivEXT")]
-        public partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [NativeApi(EntryPoint = "glGetColorTableParameterivEXT", Convention = CallingConvention.Winapi)]
+        public partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetColorTableParameterfvEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableParameterfvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetColorTableParameterfvEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableParameterfvEXT", Convention = CallingConvention.Winapi)]
         public partial void GetColorTableParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetColorTableParameterfvEXT")]
-        public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [NativeApi(EntryPoint = "glGetColorTableParameterfvEXT", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetColorTableParameterfvEXT")]
-        public partial void GetColorTableParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [NativeApi(EntryPoint = "glGetColorTableParameterfvEXT", Convention = CallingConvention.Winapi)]
+        public partial void GetColorTableParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetColorTableParameterfvEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableParameterfvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetColorTableParameterfvEXT")]
+        [NativeApi(EntryPoint = "glGetColorTableParameterfvEXT", Convention = CallingConvention.Winapi)]
         public partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetColorTableParameterfvEXT")]
-        public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [NativeApi(EntryPoint = "glGetColorTableParameterfvEXT", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetColorTableParameterfvEXT")]
-        public partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [NativeApi(EntryPoint = "glGetColorTableParameterfvEXT", Convention = CallingConvention.Winapi)]
+        public partial void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] ColorTableParameterPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+
+        public unsafe T0 GetColorTable<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTable(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetColorTable<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTable(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetColorTable<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTable(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetColorTable<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTable(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTable(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTable(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTable(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 GetColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTable(target, format, type, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetColorTableParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTableParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetColorTableParameter([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] ColorTableParameterPName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTableParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] EXT pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTableParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] ColorTableParameterPName pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetColorTableParameter(target, pname, out int silkRet);
+            return silkRet;
+        }
 
         public ExtPalettedTexture(INativeContext ctx)
             : base(ctx)

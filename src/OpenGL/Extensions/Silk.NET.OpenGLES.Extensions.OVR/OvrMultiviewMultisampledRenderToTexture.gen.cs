@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGLES.Extensions.OVR
     public unsafe partial class OvrMultiviewMultisampledRenderToTexture : NativeExtension<GL>
     {
         public const string ExtensionName = "OVR_multiview_multisampled_render_to_texture";
-        [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR")]
+        [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureMultisampleMultiview([Flow(FlowDirection.In)] OVR target, [Flow(FlowDirection.In)] OVR attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR")]
+        [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureMultisampleMultiview([Flow(FlowDirection.In)] OVR target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR")]
+        [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureMultisampleMultiview([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] OVR attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
 
-        [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR")]
+        [NativeApi(EntryPoint = "glFramebufferTextureMultisampleMultiviewOVR", Convention = CallingConvention.Winapi)]
         public partial void FramebufferTextureMultisampleMultiview([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
 
         public OvrMultiviewMultisampledRenderToTexture(INativeContext ctx)

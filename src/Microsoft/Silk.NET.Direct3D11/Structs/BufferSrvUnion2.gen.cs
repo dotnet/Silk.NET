@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D11
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d11_L3298_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d11_L3401_C5")]
     public unsafe partial struct BufferSrvUnion2
     {
         public BufferSrvUnion2

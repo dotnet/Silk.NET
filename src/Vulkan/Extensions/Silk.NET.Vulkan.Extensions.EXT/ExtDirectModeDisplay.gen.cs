@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         public const string ExtensionName = "VK_EXT_direct_mode_display";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkReleaseDisplayEXT")]
+        [NativeApi(EntryPoint = "vkReleaseDisplayEXT", Convention = CallingConvention.Winapi)]
         public partial Result ReleaseDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display);
 
         public ExtDirectModeDisplay(INativeContext ctx)

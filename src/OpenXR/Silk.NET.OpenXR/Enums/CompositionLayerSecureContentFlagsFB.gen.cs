@@ -9,13 +9,21 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.OpenXR
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "XrCompositionLayerSecureContentFlagsFB")]
     public enum CompositionLayerSecureContentFlagsFB : long
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"ExcludeLayerBitFB\"")]
         [NativeName("Name", "XR_COMPOSITION_LAYER_SECURE_CONTENT_EXCLUDE_LAYER_BIT_FB")]
         CompositionLayerSecureContentExcludeLayerBitFB = 1,
+        [Obsolete("Deprecated in favour of \"ReplaceLayerBitFB\"")]
         [NativeName("Name", "XR_COMPOSITION_LAYER_SECURE_CONTENT_REPLACE_LAYER_BIT_FB")]
         CompositionLayerSecureContentReplaceLayerBitFB = 2,
+        [NativeName("Name", "XR_COMPOSITION_LAYER_SECURE_CONTENT_EXCLUDE_LAYER_BIT_FB")]
+        ExcludeLayerBitFB = 1,
+        [NativeName("Name", "XR_COMPOSITION_LAYER_SECURE_CONTENT_REPLACE_LAYER_BIT_FB")]
+        ReplaceLayerBitFB = 2,
     }
 }

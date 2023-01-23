@@ -34,18 +34,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.MatrixIndex(size, in indices.GetPinnableReference());
         }
 
-        public static unsafe void MatrixIndexPointer<T0>(this ArbMatrixPalette thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.MatrixIndexPointer(size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void MatrixIndexPointer<T0>(this ArbMatrixPalette thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] MatrixIndexPointerTypeARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.MatrixIndexPointer(size, type, stride, in pointer.GetPinnableReference());
-        }
-
     }
 }
 

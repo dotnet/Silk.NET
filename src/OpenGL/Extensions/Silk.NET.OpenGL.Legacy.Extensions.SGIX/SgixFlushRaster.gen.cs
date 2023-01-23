@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
     public unsafe partial class SgixFlushRaster : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_flush_raster";
-        [NativeApi(EntryPoint = "glFlushRasterSGIX")]
+        [NativeApi(EntryPoint = "glFlushRasterSGIX", Convention = CallingConvention.Winapi)]
         public partial void FlushRaster();
 
         public SgixFlushRaster(INativeContext ctx)

@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     public unsafe partial class ExtDrawTransformFeedback : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_draw_transform_feedback";
-        [NativeApi(EntryPoint = "glDrawTransformFeedbackEXT")]
+        [NativeApi(EntryPoint = "glDrawTransformFeedbackEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawTransformFeedback([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint id);
 
-        [NativeApi(EntryPoint = "glDrawTransformFeedbackEXT")]
+        [NativeApi(EntryPoint = "glDrawTransformFeedbackEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawTransformFeedback([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id);
 
-        [NativeApi(EntryPoint = "glDrawTransformFeedbackInstancedEXT")]
+        [NativeApi(EntryPoint = "glDrawTransformFeedbackInstancedEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
 
-        [NativeApi(EntryPoint = "glDrawTransformFeedbackInstancedEXT")]
+        [NativeApi(EntryPoint = "glDrawTransformFeedbackInstancedEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
 
         public ExtDrawTransformFeedback(INativeContext ctx)

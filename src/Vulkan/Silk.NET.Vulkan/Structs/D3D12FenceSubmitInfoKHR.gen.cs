@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkD3D12FenceSubmitInfoKHR")]
-    public unsafe partial struct D3D12FenceSubmitInfoKHR
+    public unsafe partial struct D3D12FenceSubmitInfoKHR : IExtendsChain<SubmitInfo>
     {
         public D3D12FenceSubmitInfoKHR
         (
@@ -90,5 +90,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint64_t")]
         [NativeName("Name", "pSignalSemaphoreValues")]
         public ulong* PSignalSemaphoreValues;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.D3D12FenceSubmitInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

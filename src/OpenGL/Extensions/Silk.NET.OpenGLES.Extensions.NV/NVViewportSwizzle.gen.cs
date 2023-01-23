@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     public unsafe partial class NVViewportSwizzle : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_viewport_swizzle";
-        [NativeApi(EntryPoint = "glViewportSwizzleNV")]
+        [NativeApi(EntryPoint = "glViewportSwizzleNV", Convention = CallingConvention.Winapi)]
         public partial void ViewportSwizzle([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV swizzlex, [Flow(FlowDirection.In)] NV swizzley, [Flow(FlowDirection.In)] NV swizzlez, [Flow(FlowDirection.In)] NV swizzlew);
 
         public NVViewportSwizzle(INativeContext ctx)

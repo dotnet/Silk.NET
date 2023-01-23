@@ -2,7 +2,12 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Numerics;
 using System.Runtime.CompilerServices;
+
+// casting into non-nullable, unboxing from nullable  
+#pragma warning disable 8600
+#pragma warning disable 8605
 
 namespace Silk.NET.Maths
 {
@@ -15,7 +20,7 @@ namespace Silk.NET.Maths
         /// <typeparam name="T">The type of <paramref name="x"/>.</typeparam>
         /// <returns>The reciprocal of the given number.</returns>
         [MethodImpl(MaxOpt)]
-        public static T Reciprocal<T>(T x) where T : unmanaged
+        public static T Reciprocal<T>(T x) where T : notnull
         {
             if (typeof(T) == typeof(Half))
             {
@@ -128,7 +133,9 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(ulong))
                 {
+
                     return (T) (object) (((ulong) 1) / (ulong) (object) x);
+
                 }
 
                 return Long(x);
@@ -142,8 +149,36 @@ namespace Silk.NET.Maths
                     return (T) (object) (((long) 1) / (long) (object) x);
                 }
 
+                return BigInteger(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T BigInteger(T x)
+            {
+                if (typeof(T) == typeof(BigInteger))
+                {
+                    return (T)(object)(1 / (BigInteger)(object)x);
+                }
+
+                return Complex(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Complex(T x)
+            {
+                if (typeof(T) == typeof(Complex))
+                {
+                    return (T)(object)(1 / (Complex)(object)x);
+                }
+
+                return Other(x);
+            }
+
+            [MethodImpl(MaxOpt)]
+            static T Other(T _)
+            {
                 ThrowUnsupportedType();
-                return default;
+                return default!;
             }
         }
     }

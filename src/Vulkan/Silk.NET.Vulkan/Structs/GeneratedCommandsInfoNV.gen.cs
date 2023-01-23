@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkGeneratedCommandsInfoNV")]
-    public unsafe partial struct GeneratedCommandsInfoNV
+    public unsafe partial struct GeneratedCommandsInfoNV : IChainable
     {
         public GeneratedCommandsInfoNV
         (
@@ -189,5 +189,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceSize")]
         [NativeName("Name", "sequencesIndexOffset")]
         public ulong SequencesIndexOffset;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.GeneratedCommandsInfoNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

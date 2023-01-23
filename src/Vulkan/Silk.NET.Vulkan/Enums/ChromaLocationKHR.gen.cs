@@ -12,9 +12,15 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkChromaLocationKHR")]
     public enum ChromaLocationKHR : int
     {
+        [Obsolete("Deprecated in favour of \"CositedEven\"")]
         [NativeName("Name", "VK_CHROMA_LOCATION_COSITED_EVEN")]
         ChromaLocationCositedEven = 0,
+        [Obsolete("Deprecated in favour of \"Midpoint\"")]
         [NativeName("Name", "VK_CHROMA_LOCATION_MIDPOINT")]
         ChromaLocationMidpoint = 1,
+        [NativeName("Name", "VK_CHROMA_LOCATION_COSITED_EVEN")]
+        CositedEven = 0,
+        [NativeName("Name", "VK_CHROMA_LOCATION_MIDPOINT")]
+        Midpoint = 1,
     }
 }

@@ -21,19 +21,19 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_push_descriptor";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPushDescriptorSetKHR")]
+        [NativeApi(EntryPoint = "vkCmdPushDescriptorSetKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdPushDescriptorSet([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] uint descriptorWriteCount, [Count(Parameter = "descriptorWriteCount"), Flow(FlowDirection.In)] WriteDescriptorSet* pDescriptorWrites);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPushDescriptorSetKHR")]
+        [NativeApi(EntryPoint = "vkCmdPushDescriptorSetKHR", Convention = CallingConvention.Winapi)]
         public partial void CmdPushDescriptorSet([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] uint descriptorWriteCount, [Count(Parameter = "descriptorWriteCount"), Flow(FlowDirection.In)] in WriteDescriptorSet pDescriptorWrites);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPushDescriptorSetWithTemplateKHR")]
+        [NativeApi(EntryPoint = "vkCmdPushDescriptorSetWithTemplateKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdPushDescriptorSetWithTemplate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] void* pData);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdPushDescriptorSetWithTemplateKHR")]
+        [NativeApi(EntryPoint = "vkCmdPushDescriptorSetWithTemplateKHR", Convention = CallingConvention.Winapi)]
         public partial void CmdPushDescriptorSetWithTemplate<T0>([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>

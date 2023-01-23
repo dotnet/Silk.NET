@@ -179,8 +179,8 @@ namespace Silk.NET.Direct3D12
         [NativeName("Name", "FilterSupport")]
         public VideoProcessFilterFlags FilterSupport;
         
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE [32]")]
+        [NativeName("Type", "D3D12_VIDEO_PROCESS_FILTER_RANGE[32]")]
+        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_FILTER_RANGE[32]")]
         [NativeName("Name", "FilterRangeSupport")]
         public FilterRangeSupportBuffer FilterRangeSupport;
 
@@ -234,7 +234,7 @@ namespace Silk.NET.Direct3D12
                 }
             }
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
             public Span<VideoProcessFilterRange> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 32);
 #endif

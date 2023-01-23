@@ -9,14 +9,26 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.DXGI
 {
+    [Flags]
     [NativeName("Name", "_DXGI_RECLAIM_RESOURCE_RESULTS")]
     public enum ReclaimResourceResults : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"OK\"")]
         [NativeName("Name", "DXGI_RECLAIM_RESOURCE_RESULT_OK")]
         ReclaimResourceResultOK = 0x0,
+        [Obsolete("Deprecated in favour of \"Discarded\"")]
         [NativeName("Name", "DXGI_RECLAIM_RESOURCE_RESULT_DISCARDED")]
         ReclaimResourceResultDiscarded = 0x1,
+        [Obsolete("Deprecated in favour of \"NotCommitted\"")]
         [NativeName("Name", "DXGI_RECLAIM_RESOURCE_RESULT_NOT_COMMITTED")]
         ReclaimResourceResultNotCommitted = 0x2,
+        [NativeName("Name", "DXGI_RECLAIM_RESOURCE_RESULT_OK")]
+        OK = 0x0,
+        [NativeName("Name", "DXGI_RECLAIM_RESOURCE_RESULT_DISCARDED")]
+        Discarded = 0x1,
+        [NativeName("Name", "DXGI_RECLAIM_RESOURCE_RESULT_NOT_COMMITTED")]
+        NotCommitted = 0x2,
     }
 }

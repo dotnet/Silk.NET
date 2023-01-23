@@ -26,11 +26,12 @@ namespace Silk.NET.Windowing.Internals
         protected ViewOptions _optionsCache;
 
         // Game loop fields
+        private readonly Stopwatch _lifetimeStopwatch = new Stopwatch();
         private readonly Stopwatch _renderStopwatch = new Stopwatch();
         private readonly Stopwatch _updateStopwatch = new Stopwatch();
-        private readonly Stopwatch _lifetimeStopwatch = new Stopwatch();
         private double _renderPeriod;
         private double _updatePeriod;
+        private bool _inRenderLoop;
 
         // Invocations
         private readonly ArrayPool<object> _returnArrayPool = ArrayPool<object>.Create();
@@ -83,6 +84,7 @@ namespace Silk.NET.Windowing.Internals
         public event Action? Load;
         public event Action<double>? Update;
         public event Action<double>? Render;
+        internal event Action? ProcessEvents;
 
         // Lifetime controls
         public void Initialize()
@@ -108,6 +110,11 @@ namespace Silk.NET.Windowing.Internals
 
         public void Reset()
         {
+            if (_inRenderLoop)
+            {
+                throw new InvalidOperationException("You cannot call `Reset` inside of the render loop!");
+            }
+            
             if (!IsInitialized)
             {
                 return;
@@ -135,7 +142,17 @@ namespace Silk.NET.Windowing.Internals
             set => _updatePeriod = value <= double.Epsilon ? 0 : 1 / value;
         }
 
-        public bool ShouldSwapAutomatically => _optionsCache.ShouldSwapAutomatically /* TODO set? */;
+        public bool IsContextControlDisabled
+        {
+            get => _optionsCache.IsContextControlDisabled;
+            set => _optionsCache.IsContextControlDisabled = value;
+        }
+
+        public bool ShouldSwapAutomatically
+        {
+            get => _optionsCache.ShouldSwapAutomatically;
+            set => _optionsCache.ShouldSwapAutomatically = value;
+        }
 
         // Cache controls for derived classes
         protected VideoMode CachedVideoMode
@@ -155,16 +172,18 @@ namespace Silk.NET.Windowing.Internals
 
         public void DoRender()
         {
+            _inRenderLoop = true;
+
             DoInvokes();
             var delta = _renderStopwatch.Elapsed.TotalSeconds;
             if ((delta >= _renderPeriod) || VSync)
             {
-                if (!(GLContext is null) && !GLContext.IsCurrent)
+                if (!IsContextControlDisabled && !(GLContext is null) && !GLContext.IsCurrent)
                 {
                     GLContext.MakeCurrent();
                 }
 
-                if (_swapIntervalChanged)
+                if (!IsContextControlDisabled && _swapIntervalChanged)
                 {
                     GLContext?.SwapInterval(VSync ? 1 : 0);
                     _swapIntervalChanged = false;
@@ -174,25 +193,29 @@ namespace Silk.NET.Windowing.Internals
                 _renderStopwatch.Restart();
                 Render?.Invoke(delta);
 
-                if (ShouldSwapAutomatically)
+                if (!IsContextControlDisabled && ShouldSwapAutomatically)
                 {
                     GLContext?.SwapBuffers();
                 }
             }
+            
+            _inRenderLoop = false;
         }
 
         public void DoUpdate()
         {
+            _inRenderLoop = true;
             var delta = _updateStopwatch.Elapsed.TotalSeconds;
             if (delta >= _updatePeriod)
             {
                 _updateStopwatch.Restart();
                 Update?.Invoke(delta);
             }
+            _inRenderLoop = false;
         }
 
         // Misc properties
-        protected bool IsInitialized { get; set; }
+        public bool IsInitialized { get; protected set; }
         public INativeWindow? Native { get; private set; }
         public Vector2D<int> Size => IsInitialized ? CoreSize : default;
         public nint Handle => IsInitialized ? CoreHandle : 0;
@@ -202,6 +225,7 @@ namespace Silk.NET.Windowing.Internals
         public int? PreferredDepthBufferBits => _optionsCache.PreferredDepthBufferBits;
         public int? PreferredStencilBufferBits => _optionsCache.PreferredStencilBufferBits;
         public Vector4D<int>? PreferredBitDepth => _optionsCache.PreferredBitDepth;
+        public int? Samples => _optionsCache.Samples;
 
         public bool VSync
         {
@@ -260,6 +284,14 @@ namespace Silk.NET.Windowing.Internals
         }
 
         // Misc implementations
+        void IView.DoEvents()
+        {
+            _inRenderLoop = true;
+            DoEvents();
+            ProcessEvents?.Invoke();
+            _inRenderLoop = false;
+        }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512)]
         public Vector2D<int> PointToFramebuffer(Vector2D<int> point)
         {
@@ -272,6 +304,8 @@ namespace Silk.NET.Windowing.Internals
                 Unsafe.As<int, Vector2D<int>>(ref framebufferSizeElements[0]) = FramebufferSize;
                 var framebufferSize = new Vector<int>(framebufferSizeElements);
                 Span<int> sizeElements = stackalloc int[Vector<int>.Count];
+                // HACK: Avoid divide by zero errors
+                sizeElements[2..].Fill(1);
                 Unsafe.As<int, Vector2D<int>>(ref sizeElements[0]) = Size;
                 var size = new Vector<int>(sizeElements);
                 Span<int> pointElements = stackalloc int[Vector<int>.Count];
@@ -284,6 +318,11 @@ namespace Silk.NET.Windowing.Internals
                 Unsafe.As<int, Vector2D<int>>(ref a[0]) = FramebufferSize;
                 Unsafe.As<int, Vector2D<int>>(ref a[c]) = Size;
                 Unsafe.As<int, Vector2D<int>>(ref a[c * 2]) = point;
+
+                // HACK: Avoid divide by zero errors
+                for (var i = c + 2; i < c * 2; i++)
+                    a[i] = 1;
+
                 var framebufferSize = new Vector<int>(a, 0);
                 var size = new Vector<int>(a, c);
                 var thePoint = new Vector<int>(a, c * 2);
@@ -300,7 +339,7 @@ namespace Silk.NET.Windowing.Internals
                 Y = point.Y * (fSize.Y / aSize.Y)
             };
         }
-        
+
         public virtual void Dispose()
         {
             Reset();

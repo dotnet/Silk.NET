@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineFragmentShadingRateEnumStateCreateInfoNV")]
-    public unsafe partial struct PipelineFragmentShadingRateEnumStateCreateInfoNV
+    public unsafe partial struct PipelineFragmentShadingRateEnumStateCreateInfoNV : IExtendsChain<GraphicsPipelineCreateInfo>
     {
         public PipelineFragmentShadingRateEnumStateCreateInfoNV
         (
@@ -94,11 +94,24 @@ namespace Silk.NET.Vulkan
                 }
             }
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
             public Span<FragmentShadingRateCombinerOpKHR> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 2);
 #endif
         }
 
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineFragmentShadingRateEnumStateCreateInfoNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

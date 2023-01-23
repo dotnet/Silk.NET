@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     public unsafe partial class NVCopyBuffer : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_copy_buffer";
-        [NativeApi(EntryPoint = "glCopyBufferSubDataNV")]
+        [NativeApi(EntryPoint = "glCopyBufferSubDataNV", Convention = CallingConvention.Winapi)]
         public partial void CopyBufferSubData([Flow(FlowDirection.In)] NV readTarget, [Flow(FlowDirection.In)] NV writeTarget, [Flow(FlowDirection.In)] nint readOffset, [Flow(FlowDirection.In)] nint writeOffset, [Flow(FlowDirection.In)] nuint size);
 
-        [NativeApi(EntryPoint = "glCopyBufferSubDataNV")]
+        [NativeApi(EntryPoint = "glCopyBufferSubDataNV", Convention = CallingConvention.Winapi)]
         public partial void CopyBufferSubData([Flow(FlowDirection.In)] NV readTarget, [Flow(FlowDirection.In)] CopyBufferSubDataTarget writeTarget, [Flow(FlowDirection.In)] nint readOffset, [Flow(FlowDirection.In)] nint writeOffset, [Flow(FlowDirection.In)] nuint size);
 
-        [NativeApi(EntryPoint = "glCopyBufferSubDataNV")]
+        [NativeApi(EntryPoint = "glCopyBufferSubDataNV", Convention = CallingConvention.Winapi)]
         public partial void CopyBufferSubData([Flow(FlowDirection.In)] CopyBufferSubDataTarget readTarget, [Flow(FlowDirection.In)] NV writeTarget, [Flow(FlowDirection.In)] nint readOffset, [Flow(FlowDirection.In)] nint writeOffset, [Flow(FlowDirection.In)] nuint size);
 
-        [NativeApi(EntryPoint = "glCopyBufferSubDataNV")]
+        [NativeApi(EntryPoint = "glCopyBufferSubDataNV", Convention = CallingConvention.Winapi)]
         public partial void CopyBufferSubData([Flow(FlowDirection.In)] CopyBufferSubDataTarget readTarget, [Flow(FlowDirection.In)] CopyBufferSubDataTarget writeTarget, [Flow(FlowDirection.In)] nint readOffset, [Flow(FlowDirection.In)] nint writeOffset, [Flow(FlowDirection.In)] nuint size);
 
         public NVCopyBuffer(INativeContext ctx)

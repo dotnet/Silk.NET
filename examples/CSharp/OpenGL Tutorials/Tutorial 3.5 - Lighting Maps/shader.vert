@@ -18,7 +18,7 @@ void main()
     //We want to know the fragment's position in World space, so we multiply ONLY by uModel and not uView or uProjection
     fPos = vec3(uModel * vec4(vPos, 1.0));
     //The Normal needs to be in World space too, but needs to account for Scaling of the object
-    fNormal = mat3(transpose(inverse(uModel))) * vPos;
+    fNormal = mat3(transpose(inverse(uModel))) * vNormal;
     //Pass the texture coordinates straight through to the fragment shader
     fTexCoords = vTexCoords;
 }

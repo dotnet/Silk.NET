@@ -20,7 +20,7 @@ namespace Silk.NET.SilkTouch
         public static string GetCallingConvention(this CallingConvention convention)
             => convention switch
             {
-                // CallingConvention.Winapi => "", netstandard2.0 doesn't allow this
+                CallingConvention.Winapi => string.Empty,
                 CallingConvention.Cdecl => "Cdecl",
                 CallingConvention.ThisCall => "Thiscall",
                 CallingConvention.StdCall => "Stdcall",

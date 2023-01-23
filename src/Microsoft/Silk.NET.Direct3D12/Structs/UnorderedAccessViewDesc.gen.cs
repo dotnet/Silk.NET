@@ -90,14 +90,14 @@ namespace Silk.NET.Direct3D12
         public UavDimension ViewDimension;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3180_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3346_C5")]
         [NativeName("Name", "anonymous1")]
         public UnorderedAccessViewDescUnion Anonymous;
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref BufferUav Buffer
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Buffer;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Buffer;
         }
 #else
         public BufferUav Buffer
@@ -107,11 +107,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref Tex1DUav Texture1D
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture1D;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Texture1D;
         }
 #else
         public Tex1DUav Texture1D
@@ -121,11 +121,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref Tex1DArrayUav Texture1DArray
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture1DArray;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Texture1DArray;
         }
 #else
         public Tex1DArrayUav Texture1DArray
@@ -135,11 +135,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref Tex2DUav Texture2D
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture2D;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Texture2D;
         }
 #else
         public Tex2DUav Texture2D
@@ -149,11 +149,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref Tex2DArrayUav Texture2DArray
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture2DArray;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Texture2DArray;
         }
 #else
         public Tex2DArrayUav Texture2DArray
@@ -163,11 +163,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref Tex3DUav Texture3D
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture3D;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Texture3D;
         }
 #else
         public Tex3DUav Texture3D

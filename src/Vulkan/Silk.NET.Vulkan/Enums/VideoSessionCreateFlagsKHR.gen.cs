@@ -9,13 +9,16 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkVideoSessionCreateFlagsKHR")]
     public enum VideoSessionCreateFlagsKHR : int
     {
-        [NativeName("Name", "VK_VIDEO_SESSION_CREATE_DEFAULT_KHR")]
-        VideoSessionCreateDefaultKhr = 0,
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"ProtectedContentBitKhr\"")]
         [NativeName("Name", "VK_VIDEO_SESSION_CREATE_PROTECTED_CONTENT_BIT_KHR")]
         VideoSessionCreateProtectedContentBitKhr = 1,
+        [NativeName("Name", "VK_VIDEO_SESSION_CREATE_PROTECTED_CONTENT_BIT_KHR")]
+        ProtectedContentBitKhr = 1,
     }
 }

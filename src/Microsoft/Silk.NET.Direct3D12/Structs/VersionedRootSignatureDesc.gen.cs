@@ -55,14 +55,14 @@ namespace Silk.NET.Direct3D12
         public D3DRootSignatureVersion Version;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3580_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3748_C5")]
         [NativeName("Name", "anonymous1")]
         public VersionedRootSignatureDescUnion Anonymous;
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref RootSignatureDesc Desc10
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Desc10;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Desc10;
         }
 #else
         public RootSignatureDesc Desc10
@@ -72,11 +72,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref RootSignatureDesc1 Desc11
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Desc11;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Desc11;
         }
 #else
         public RootSignatureDesc1 Desc11

@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -27,10 +27,11 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="file">The file to write to.</param>
         /// <param name="profile">The subsystem containing this enum.</param>
         /// <param name="project">The project containing this enum.</param>
+        /// <param name="task">The bind state.</param>
         public static void WriteStruct
             (this Struct @struct, string file, Profile profile, Project project, BindState task)
         {
-            if (@struct.Attributes.IsBuildToolsIntrinsic(out var args))
+            if (@struct.Attributes.IsBuildToolsIntrinsic(out var args) && args.FirstOrDefault() == "$PFN")
             {
                 WriteBuildToolsIntrinsic(@struct, file, profile, project, task, args);
                 return;
@@ -46,28 +47,145 @@ namespace Silk.NET.BuildTools.Bind
             var ns = project.IsRoot ? task.Task.Namespace : task.Task.ExtensionsNamespace;
             sw.WriteLine($"namespace {ns}{project.Namespace}");
             sw.WriteLine("{");
-            string guid = null;
+            static bool IsChar(Type type) => type.Name == "char" || type.GenericTypes.Any(IsChar);
+            var needsCharSetFixup = @struct.Fields.Any(x => IsChar(x.Type));
+            string structuredType = null;
+            var isChainable = false;
+            // Which chain this struct extends
+            IReadOnlyList<string> chainExtensions = null;
+            // Which chain extend the current struct
+            IReadOnlyList<string> chainExtenderss = null;
+            IReadOnlyList<string> aliases = null;
+            string aliasOf = null;
+
             foreach (var attr in @struct.Attributes)
             {
                 if (attr.Name == "BuildToolsIntrinsic")
                 {
+                    if (attr.Arguments.Count > 0)
+                    {
+                        switch (attr.Arguments[0])
+                        {
+                            case "$VKSTRUCTUREDTYPE":
+                            {
+                                structuredType = attr.Arguments.Count > 1 ? attr.Arguments[1] : null;
+                                break;
+                            }
+                            case "$VKCHAINABLE":
+                            {
+                                isChainable = true;
+                                break;
+                            }
+                            case "$VKEXTENDSCHAIN":
+                            {
+                                chainExtensions = attr.Arguments.Count > 1 ? attr.Arguments.Skip(1).ToArray() : null;
+                                break;
+                            }
+                            case "$VKCHAINSTART":
+                            {
+                                chainExtenderss = attr.Arguments.Count > 1 ? attr.Arguments.Skip(1).ToArray() : null;
+                                break;
+                            }
+                            case "$VKALIASOF":
+                            {
+                                aliasOf = attr.Arguments.Count > 1 ? attr.Arguments[1] : null;
+                                break;
+                            }
+                            case "$VKALIASES":
+                            {
+                                aliases = attr.Arguments.Count > 1 ? attr.Arguments.Skip(1).ToArray() : null;
+                                break;
+                            }
+                            default:
+                            {
+                                Console.WriteLine
+                                (
+                                    $"Unexpected build intrinsic attribute '{attr.Arguments[0]}' on '{@struct.Name}' struct!"
+                                );
+                                break;
+                            }
+                        }
+                    }
+
                     continue;
                 }
 
-                if (guid is null && attr.Name == "Guid")
+                if (attr.Name == "StructLayout" && needsCharSetFixup)
                 {
-                    guid = string.Join(", ", attr.Arguments);
+                    attr.Arguments.Add("CharSet = CharSet.Unicode");
+                    needsCharSetFixup = false;
                 }
 
                 sw.WriteLine($"    {attr}");
             }
 
-            sw.WriteLine($"    [NativeName(\"Name\", \"{@struct.NativeName}\")]");
-            sw.WriteLine($"    public unsafe partial struct {@struct.Name}");
-            sw.WriteLine("    {");
-            if (guid is not null)
+            if (@struct.Uuid is not null)
             {
-                sw.WriteLine($"        public static readonly Guid Guid = new({guid});");
+                sw.WriteLine($"    [Guid(\"{@struct.Uuid.Value}\")]");
+            }
+
+            // Build interface list
+            var interfaces = new List<string>();
+            if (chainExtenderss?.Any() == true)
+            {
+                interfaces.Add("IChainStart");
+            }
+
+            if (@struct.Vtbl?.Count > 0)
+            {
+                interfaces.Add($"IComVtbl<{@struct.Name}>");
+                interfaces.AddRange(@struct.ComBases.Distinct().Select(x => $"IComVtbl<{x}>"));
+            }
+
+            interfaces.AddRange
+            (
+                chainExtensions?.Select(e => $"IExtendsChain<{e}>") ??
+                Enumerable.Empty<string>()
+            );
+            if (!interfaces.Any())
+            {
+                // We only need to add these interfaces if a descendant not already added above.
+                if (isChainable)
+                {
+                    interfaces.Add("IChainable");
+                }
+                else if (structuredType is not null)
+                {
+                    interfaces.Add("IStructuredType");
+                }
+            }
+
+            if (needsCharSetFixup)
+            {
+                sw.WriteLine("    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]");
+            }
+
+            sw.WriteLine($"    [NativeName(\"Name\", \"{@struct.NativeName}\")]");
+            if (!string.IsNullOrWhiteSpace(aliasOf))
+            {
+                sw.WriteLine($"    [NativeName(\"AliasOf\", \"{aliasOf}\")]");
+            }
+
+            if (aliases is not null)
+            {
+                sw.WriteLine($"    [NativeName(\"Aliases\", \"{string.Join(", ", aliases)}\")]");
+            }
+
+            sw.WriteLine
+            (
+                $"    public unsafe partial struct {@struct.Name}{(interfaces.Any() ? " : " + string.Join(", ", interfaces) : string.Empty)}"
+            );
+            sw.WriteLine("    {");
+            if (@struct.Uuid is not null)
+            {
+                sw.WriteLine($"        public static readonly Guid Guid = new(\"{@struct.Uuid.Value}\");");
+                sw.WriteLine();
+            }
+
+            if (@struct.Vtbl?.Count > 0)
+            {
+                sw.WriteLine("        void*** IComVtbl.AsVtblPtr()");
+                sw.WriteLine("            => (void***) Unsafe.AsPointer(ref Unsafe.AsRef(in this));");
                 sw.WriteLine();
             }
 
@@ -95,7 +213,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine("        {");
                     // yes i know this is unsafe and that there's a good reason why struct members can't return themselves
                     // by reference, but this should work well enough.
-                    sw.WriteLine("#if NETSTANDARD2_1 || NET5_0 || NETCOREAPP3_1");
+                    sw.WriteLine("#if NETSTANDARD2_1 || NET5_0 || NETCOREAPP3_1 || NET5_0_OR_GREATER");
                     sw.WriteLine($"            return ref Unsafe.As<{@struct.Name}, {comBase}>");
                     sw.WriteLine($"            (");
                     sw.WriteLine($"                ref MemoryMarshal.GetReference");
@@ -195,11 +313,14 @@ namespace Silk.NET.BuildTools.Bind
             {
                 if (structField.Attributes.IsBuildToolsIntrinsic(out var intrinsic) && intrinsic[0] == "$FUSEFLD")
                 {
-                    WriteFusedField(structField, intrinsic, sw);
+                    WriteFusedField(@struct, project, structField, intrinsic, sw);
                 }
                 else if (structField.NumBits is not null)
                 {
-                    WriteBitfield(structField, ref bitfieldIdx, ref bitfieldPsz, ref bitfieldRbs, ref bitfieldLbt, sw, profile);
+                    WriteBitfield
+                    (
+                        structField, ref bitfieldIdx, ref bitfieldPsz, ref bitfieldRbs, ref bitfieldLbt, sw, profile
+                    );
                 }
                 else if (!(structField.Count is null))
                 {
@@ -255,7 +376,7 @@ namespace Silk.NET.BuildTools.Bind
                         if (!typeFixup09072020.IsPointer)
                         {
                             sw.WriteLine();
-                            sw.WriteLine("#if NETSTANDARD2_1");
+                            sw.WriteLine("#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER");
                             sw.WriteLine($"            public Span<{typeFixup09072020}> AsSpan()");
                             sw.WriteLine($"                => MemoryMarshal.CreateSpan(ref Element0, {count});");
                             sw.WriteLine("#endif");
@@ -332,8 +453,14 @@ namespace Silk.NET.BuildTools.Bind
             }
 
             foreach (var function in @struct.Functions.Concat
-                (ComVtblProcessor.GetHelperFunctions(@struct, profile.Projects["Core"])))
+                         (ComVtblProcessor.GetHelperFunctions(@struct, profile)))
             {
+                if (function.Signature.Kind == SignatureKind.PotentiallyConflictingOverload)
+                {
+                    // implement it as an extension method, which is done later.
+                    continue;
+                }
+                
                 using (var sr = new StringReader(function.Signature.Doc))
                 {
                     string line;
@@ -343,13 +470,13 @@ namespace Silk.NET.BuildTools.Bind
                     }
                 }
 
-                foreach (var attr in function.Signature.Attributes)
+                foreach (var attr in function.Signature.GetAttributes())
                 {
                     sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                 }
 
                 using (var sr = new StringReader
-                    (function.Signature.ToString(null, accessibility: true, semicolon: false)))
+                           (function.Signature.ToString(null, accessibility: true, semicolon: false)))
                 {
                     string line;
                     while ((line = sr.ReadLine()) != null)
@@ -368,10 +495,188 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine();
             }
 
+            if (structuredType is not null)
+            {
+                sw.WriteLine
+                (
+                    @"
+        /// <inheritdoc />"
+                );
+                if (structuredType.Length < 1)
+                {
+                    sw.WriteLine("        /// <remarks>Note, there is no fixed value for this type.</remarks>");
+                }
+
+                sw.Write
+                (
+                    @"        StructureType IStructuredType.StructureType()
+        {
+            return SType"
+                );
+                if (structuredType.Length > 0)
+                {
+                    sw.Write(" = ");
+                    sw.Write(structuredType);
+                }
+
+                sw.WriteLine
+                (
+                    @";
+        }"
+                );
+
+
+                if (isChainable)
+                {
+                    // Correct for none void* or BaseInStructure* PNext
+                    var pNextType = @struct.Fields.FirstOrDefault(f => f.Name == "PNext")?.Type.Name ?? "void";
+                    string getCast, setCast;
+                    switch (pNextType)
+                    {
+                        case "void":
+                            getCast = "(BaseInStructure*) ";
+                            setCast = "";
+                            break;
+                        case "BaseInStructure":
+                            getCast = setCast = "";
+                            break;
+                        default:
+                            getCast = "(BaseInStructure*) ";
+                            setCast = $"({pNextType}*) ";
+                            break;
+                            
+                    }
+                    sw.WriteLine
+                    (
+                        @$"
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {{
+            get => {getCast}PNext;
+            set => PNext = {setCast}value;
+        }}"
+                    );
+                }
+
+                if (chainExtenderss?.Any() == true && structuredType.Length > 0)
+                {
+                    sw.WriteLine
+                    (
+                        @$"
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name=""capture"">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref {@struct.Name} Chain(
+            out {@struct.Name} capture)
+        {{
+            capture = new {@struct.Name}({structuredType});
+            return ref capture;
+        }}"
+                    );
+                }
+            }
+
             sw.WriteLine("    }");
             sw.WriteLine("}");
             sw.Flush();
             sw.Dispose();
+            if (@struct.Vtbl?.Count > 0)
+            {
+                var className = @struct.Name.StartsWith('I')
+                    ? $"{@struct.Name[1..]}VtblExtensions"
+                    : $"{@struct.Name}VtblExtensions";
+                using var vt = new StreamWriter(Path.Combine(Path.GetDirectoryName(file), $"{className}.gen.cs"));
+                vt.WriteLine(task.LicenseText());
+                vt.WriteLine();
+                vt.WriteCoreUsings();
+                vt.WriteLine();
+                vt.WriteLine("#pragma warning disable 1591");
+                vt.WriteLine();
+                vt.WriteLine($"namespace {ns}{project.Namespace};");
+                vt.WriteLine();
+                vt.WriteLine($"public unsafe static class {className}");
+                vt.WriteLine("{");
+                foreach (var helper in ComVtblProcessor.GetHelperFunctions(@struct, profile, true))
+                {
+                    using (var sr = new StringReader(helper.Signature.Doc))
+                    {
+                        string line;
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            vt.WriteLine($"    {line}");
+                        }
+                    }
+
+                    foreach (var attr in helper.Signature.GetAttributes())
+                    {
+                        vt.WriteLine($"    [{attr.Name}({string.Join(", ", attr.Arguments)})]");
+                    }
+
+                    // This is the important bit! Turn our signature into an extension method signature!
+                    var sig = new FunctionSignatureBuilder(helper.Signature)
+                        // TODO ideally we'd use IComVtbl, but we need to use generics for it to be zero cost which
+                        // TODO isn't easy to use extension methods for today. we could use the interface directly, but
+                        // TODO that doesn't get specialized and thus incurs a virtual call (not zero cost!)
+                        // .WithGenericTypeParameters
+                        // (
+                        //     helper.Signature.GenericTypeParameters.Concat
+                        //         (
+                        //             Enumerable.Repeat
+                        //                 (new GenericTypeParameter("TThis", new[] { $"IComVtbl<{@struct.Name}>" }), 1)
+                        //         )
+                        //         .ToList()
+                        // )
+                        .WithParameters
+                        (
+                            Enumerable.Repeat
+                                (
+                                    new Parameter
+                                    {
+                                        Type = new Type
+                                        {
+                                            IsThis = true,
+                                            // Name = "TThis",
+                                            // IsGenericTypeParameterReference = true
+                                            Name = "ComPtr",
+                                            GenericTypes = new List<Type> { new() { Name = @struct.Name } }
+                                        },
+                                        Name = "thisVtbl"
+                                    }, 1
+                                )
+                                .Concat(helper.Signature.Parameters)
+                                .ToList()
+                        )
+                        .Build();
+
+                    sig.IsReadOnly = false;
+                    using (var sr = new StringReader
+                               (sig.ToString(null, accessibility: true, semicolon: false, @static: true)))
+                    {
+                        string line;
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            vt.WriteLine($"    {line}");
+                        }
+                    }
+
+                    vt.WriteLine("    {");
+                    // vt.WriteLine($"        var @this = ({@struct.Name}*) thisVtbl.AsVtblPtr();");
+                    vt.WriteLine("        var @this = thisVtbl.Handle;");
+                    
+                    foreach (var line in helper.Body)
+                    {
+                        vt.WriteLine($"        {line}");
+                    }
+
+                    vt.WriteLine("    }");
+                    vt.WriteLine();
+                }
+
+                vt.WriteLine("}");
+                vt.Flush();
+            }
         }
 
         public static void WriteBuildToolsIntrinsic
@@ -380,7 +685,9 @@ namespace Silk.NET.BuildTools.Bind
             if (args[0] == "$PFN")
             {
                 WriteFunctionPointerWrapper
-                    (@struct, file, profile, project, task, args[1], args[2], Enum.Parse<CallingConvention>(args[3]));
+                (
+                    @struct, file, profile, project, task, args[1], args[2], Enum.Parse<CallingConvention>(args[3])
+                );
             }
             else
             {
@@ -423,7 +730,8 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine();
             sw.WriteLine("#pragma warning disable 1591");
             sw.WriteLine();
-            sw.WriteLine($"namespace {state.Task.Namespace}{coreProject.Namespace}");
+            var ns = project.IsRoot ? state.Task.Namespace : state.Task.ExtensionsNamespace;
+            sw.WriteLine($"namespace {ns}{project.Namespace}");
             sw.WriteLine("{");
             sw.WriteLine($"    public unsafe readonly struct {pfnName} : IDisposable");
             sw.WriteLine("    {");
@@ -453,7 +761,8 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine($"            => SilkMarshal.PtrToDelegate<{delegateName}>(pfn);");
             sw.WriteLine();
             sw.WriteLine($"        public static implicit operator {fnPtrSig}({pfnName} pfn) => pfn.Handle;");
-            sw.WriteLine($"        public static implicit operator {pfnName}({fnPtrSig} ptr) => new {pfnName}(ptr);");
+            sw.WriteLine
+                ($"        public static implicit operator {pfnName}({fnPtrSig} ptr) => new {pfnName}(ptr);");
             sw.WriteLine("    }");
             sw.WriteLine();
             // type.FunctionPointerSignature.Name = delegateName;
@@ -461,7 +770,10 @@ namespace Silk.NET.BuildTools.Bind
             // type.Name = type.FunctionPointerSignature.NativeName;
             // type.IndirectionLevels--;
             using (var sr = new StringReader
-                (type.FunctionPointerSignature.ToString(null, @delegate: true, semicolon: true, accessibility: true)))
+                   (
+                       type.FunctionPointerSignature.ToString
+                           (null, @delegate: true, semicolon: true, accessibility: true)
+                   ))
             {
                 string line;
                 while ((line = sr.ReadLine()) != null)
@@ -475,22 +787,55 @@ namespace Silk.NET.BuildTools.Bind
             sw.Flush();
         }
 
-        public static void WriteFusedField(Field field, List<string> args, StreamWriter sw)
+        public static void WriteFusedField
+            (Struct @struct, Project p, Field field, List<string> args, StreamWriter sw)
         {
-            sw.WriteLine("#if NETSTANDARD2_1");
-            sw.WriteLine($"        public ref {field.Type} {field.Name}");
-            sw.WriteLine("        {");
-            sw.WriteLine("            [MethodImpl((MethodImplOptions) 768)]");
-            sw.WriteLine($"            get => ref {args[1]}.{args[2]};");
-            sw.WriteLine("        }");
-            sw.WriteLine("#else");
+            var temporaryValue = IsTemporaryValue(p, @struct, args);
+            if (!temporaryValue)
+            {
+                sw.WriteLine("#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER");
+                sw.WriteLine($"        public ref {field.Type} {field.Name}");
+                sw.WriteLine("        {");
+                sw.WriteLine("            [MethodImpl((MethodImplOptions) 768)]");
+                sw.WriteLine($"            get => ref MemoryMarshal.CreateSpan(ref {args[1]}, 1)[0].{args[2]};");
+                sw.WriteLine("        }");
+                sw.WriteLine("#else");
+            }
+
             sw.WriteLine($"        public {field.Type} {field.Name}");
             sw.WriteLine("        {");
             sw.WriteLine($"            get => {args[1]}.{args[2]};");
             sw.WriteLine($"            set => {args[1]}.{args[2]} = value;");
             sw.WriteLine("        }");
-            sw.WriteLine("#endif");
+            if (!temporaryValue)
+            {
+                sw.WriteLine("#endif");
+            }
+
             sw.WriteLine();
+
+            static bool IsTemporaryValue(Project p, Struct @struct, List<string> args)
+            {
+                // ReSharper disable AccessToModifiedClosure
+                var fusingStruct = p.Structs.First
+                    (x => x.Name == @struct.Fields.First(y => y.Name == args[1]).Type.Name);
+                var fusingFieldInst = fusingStruct.Fields.First(x => x.Name == args[2]);
+                if (fusingFieldInst.NumBits is not null)
+                {
+                    return true;
+                }
+
+                // ReSharper restore AccessToModifiedClosure
+                if (fusingFieldInst.Attributes.IsBuildToolsIntrinsic(out args))
+                {
+                    if (args[0] == "$FUSEFLD")
+                    {
+                        return IsTemporaryValue(p, fusingStruct, args);
+                    }
+                }
+
+                return false;
+            }
         }
 
         public static void WriteBitfield
@@ -563,7 +908,8 @@ namespace Silk.NET.BuildTools.Bind
             }
 
             var bitfieldOffset = currentSize * 8 - remainingBits;
-            var bitwidthHexStringBacking = ((1 << fieldDecl.NumBits.Value) - 1).ToString("X") + typeNameBacking switch
+            var bitwidthHexStringBacking = ((1 << fieldDecl.NumBits.Value) - 1).ToString
+                ("X") + typeNameBacking switch
             {
                 "byte" => string.Empty,
                 "sbyte" => string.Empty,

@@ -17,6 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrGetPhysicalDeviceProperties2Overloads
     {
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pFeatures = new(StructureType.PhysicalDeviceFeatures2);")]
         public static unsafe void GetPhysicalDeviceFeatures2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] Span<PhysicalDeviceFeatures2> pFeatures)
         {
             // SpanOverloader
@@ -24,6 +25,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pFormatProperties = new(StructureType.FormatProperties2);")]
         public static unsafe void GetPhysicalDeviceFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0), Flow(FlowDirection.Out)] Span<FormatProperties2> pFormatProperties)
         {
             // SpanOverloader
@@ -31,6 +33,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pImageFormatProperties = new(StructureType.ImageFormatProperties2);")]
         public static unsafe Result GetPhysicalDeviceImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceImageFormatInfo2* pImageFormatInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ImageFormatProperties2> pImageFormatProperties)
         {
             // SpanOverloader
@@ -45,6 +48,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pImageFormatProperties = new(StructureType.ImageFormatProperties2);")]
         public static unsafe Result GetPhysicalDeviceImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceImageFormatInfo2> pImageFormatInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ImageFormatProperties2> pImageFormatProperties)
         {
             // SpanOverloader
@@ -52,6 +56,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryProperties = new(StructureType.PhysicalDeviceMemoryProperties2);")]
         public static unsafe void GetPhysicalDeviceMemoryProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] Span<PhysicalDeviceMemoryProperties2> pMemoryProperties)
         {
             // SpanOverloader
@@ -59,6 +64,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.PhysicalDeviceProperties2);")]
         public static unsafe void GetPhysicalDeviceProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] Span<PhysicalDeviceProperties2> pProperties)
         {
             // SpanOverloader
@@ -66,6 +72,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pQueueFamilyProperties = new(StructureType.QueueFamilyProperties2);")]
         public static unsafe void GetPhysicalDeviceQueueFamilyProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pQueueFamilyPropertyCount, [Count(Parameter = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] Span<QueueFamilyProperties2> pQueueFamilyProperties)
         {
             // SpanOverloader
@@ -80,6 +87,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pQueueFamilyProperties = new(StructureType.QueueFamilyProperties2);")]
         public static unsafe void GetPhysicalDeviceQueueFamilyProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pQueueFamilyPropertyCount, [Count(Parameter = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] Span<QueueFamilyProperties2> pQueueFamilyProperties)
         {
             // SpanOverloader
@@ -87,6 +95,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
         public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
         {
             // SpanOverloader
@@ -101,6 +110,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
         public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
         {
             // SpanOverloader
@@ -115,6 +125,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
         public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSparseImageFormatInfo2> pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
         {
             // SpanOverloader
@@ -129,6 +140,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pProperties = new(StructureType.SparseImageFormatProperties2);")]
         public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSparseImageFormatInfo2> pFormatInfo, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
         {
             // SpanOverloader

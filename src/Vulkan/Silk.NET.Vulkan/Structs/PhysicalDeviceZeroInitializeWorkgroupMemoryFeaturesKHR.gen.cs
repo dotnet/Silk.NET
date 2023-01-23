@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR")]
-    public unsafe partial struct PhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR
+    [NativeName("AliasOf", "VkPhysicalDeviceZeroInitializeWorkgroupMemoryFeatures")]
+    public unsafe partial struct PhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKHR
         (
-            StructureType? sType = StructureType.PhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKhr,
+            StructureType? sType = StructureType.PhysicalDeviceZeroInitializeWorkgroupMemoryFeatures,
             void* pNext = null,
             Bool32? shaderZeroInitializeWorkgroupMemory = null
         ) : this()
@@ -57,5 +58,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "shaderZeroInitializeWorkgroupMemory")]
         public Bool32 ShaderZeroInitializeWorkgroupMemory;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceZeroInitializeWorkgroupMemoryFeatures;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

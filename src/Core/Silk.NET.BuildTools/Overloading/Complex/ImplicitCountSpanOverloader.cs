@@ -73,7 +73,8 @@ namespace Silk.NET.BuildTools.Overloading
                                 Name = "ReadOnlySpan",
                                 GenericTypes = new List<Type>
                                     {new TypeSignatureBuilder(parameter.Type).WithIsIn(false).Build()},
-                                IsGenericTypeParameterReference = parameter.Type.IsGenericTypeParameterReference
+                                IsGenericTypeParameterReference = parameter.Type.IsGenericTypeParameterReference,
+                                OriginalName = parameter.Type.OriginalName
                             }
                         )
                         .Build();
@@ -90,7 +91,8 @@ namespace Silk.NET.BuildTools.Overloading
                                 Name = "Span",
                                 GenericTypes = new List<Type>
                                     {new TypeSignatureBuilder(parameter.Type).WithIsOut(false).Build()},
-                                IsGenericTypeParameterReference = parameter.Type.IsGenericTypeParameterReference
+                                IsGenericTypeParameterReference = parameter.Type.IsGenericTypeParameterReference,
+                                OriginalName = parameter.Type.OriginalName
                             }
                         )
                         .Build();
@@ -107,7 +109,8 @@ namespace Silk.NET.BuildTools.Overloading
                                 Name = "Span",
                                 GenericTypes = new List<Type>
                                     {new TypeSignatureBuilder(parameter.Type).WithByRef(false).Build()},
-                                IsGenericTypeParameterReference = parameter.Type.IsGenericTypeParameterReference
+                                IsGenericTypeParameterReference = parameter.Type.IsGenericTypeParameterReference,
+                                OriginalName = parameter.Type.OriginalName
                             }
                         )
                         .Build();
@@ -152,7 +155,8 @@ namespace Silk.NET.BuildTools.Overloading
                 {
                     sb.Append("return ");
                 }
-                
+
+                sb.Append(original.InvocationPrefix);
                 sb.Append(original.Name);
                 sb.Append('(');
                 sb.Append(string.Join(", ", invocationParameters));

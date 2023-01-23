@@ -47,8 +47,8 @@ namespace Silk.NET.DXGI
         [NativeName("Name", "Offset")]
         public Rgb Offset;
         
-        [NativeName("Type", "DXGI_RGB [1025]")]
-        [NativeName("Type.Name", "DXGI_RGB [1025]")]
+        [NativeName("Type", "DXGI_RGB[1025]")]
+        [NativeName("Type.Name", "DXGI_RGB[1025]")]
         [NativeName("Name", "GammaCurve")]
         public GammaCurveBuffer GammaCurve;
 
@@ -1095,7 +1095,7 @@ namespace Silk.NET.DXGI
                 }
             }
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
             public Span<Rgb> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 1025);
 #endif

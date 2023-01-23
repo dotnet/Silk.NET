@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.GREMEDY
     public unsafe partial class GremedyFrameTerminator : NativeExtension<GL>
     {
         public const string ExtensionName = "GREMEDY_frame_terminator";
-        [NativeApi(EntryPoint = "glFrameTerminatorGREMEDY")]
+        [NativeApi(EntryPoint = "glFrameTerminatorGREMEDY", Convention = CallingConvention.Winapi)]
         public partial void FrameTerminator();
 
         public GremedyFrameTerminator(INativeContext ctx)

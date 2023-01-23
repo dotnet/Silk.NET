@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceRobustness2PropertiesEXT")]
-    public unsafe partial struct PhysicalDeviceRobustness2PropertiesEXT
+    public unsafe partial struct PhysicalDeviceRobustness2PropertiesEXT : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceRobustness2PropertiesEXT
         (
@@ -68,5 +68,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceSize")]
         [NativeName("Name", "robustUniformBufferAccessSizeAlignment")]
         public ulong RobustUniformBufferAccessSizeAlignment;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceRobustness2PropertiesExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

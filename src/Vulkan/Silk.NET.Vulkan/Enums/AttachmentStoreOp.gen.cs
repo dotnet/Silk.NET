@@ -16,9 +16,13 @@ namespace Silk.NET.Vulkan
         Store = 0,
         [NativeName("Name", "VK_ATTACHMENT_STORE_OP_DONT_CARE")]
         DontCare = 1,
+        [NativeName("Name", "VK_ATTACHMENT_STORE_OP_NONE_KHR")]
+        NoneKhr = 1000301000,
         [NativeName("Name", "VK_ATTACHMENT_STORE_OP_NONE_QCOM")]
         NoneQCom = 1000301000,
         [NativeName("Name", "VK_ATTACHMENT_STORE_OP_NONE_EXT")]
         NoneExt = 1000301000,
+        [NativeName("Name", "VK_ATTACHMENT_STORE_OP_NONE")]
+        None = 1000301000,
     }
 }

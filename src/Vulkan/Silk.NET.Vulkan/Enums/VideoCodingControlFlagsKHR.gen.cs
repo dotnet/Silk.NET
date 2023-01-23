@@ -9,13 +9,26 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkVideoCodingControlFlagsKHR")]
     public enum VideoCodingControlFlagsKHR : int
     {
-        [NativeName("Name", "VK_VIDEO_CODING_CONTROL_DEFAULT_KHR")]
-        VideoCodingControlDefaultKhr = 0,
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"ResetBitKhr\"")]
         [NativeName("Name", "VK_VIDEO_CODING_CONTROL_RESET_BIT_KHR")]
         VideoCodingControlResetBitKhr = 1,
+        [Obsolete("Deprecated in favour of \"EncodeRateControlBitKhr\"")]
+        [NativeName("Name", "VK_VIDEO_CODING_CONTROL_ENCODE_RATE_CONTROL_BIT_KHR")]
+        VideoCodingControlEncodeRateControlBitKhr = 2,
+        [Obsolete("Deprecated in favour of \"EncodeRateControlLayerBitKhr\"")]
+        [NativeName("Name", "VK_VIDEO_CODING_CONTROL_ENCODE_RATE_CONTROL_LAYER_BIT_KHR")]
+        VideoCodingControlEncodeRateControlLayerBitKhr = 4,
+        [NativeName("Name", "VK_VIDEO_CODING_CONTROL_RESET_BIT_KHR")]
+        ResetBitKhr = 1,
+        [NativeName("Name", "VK_VIDEO_CODING_CONTROL_ENCODE_RATE_CONTROL_BIT_KHR")]
+        EncodeRateControlBitKhr = 2,
+        [NativeName("Name", "VK_VIDEO_CODING_CONTROL_ENCODE_RATE_CONTROL_LAYER_BIT_KHR")]
+        EncodeRateControlLayerBitKhr = 4,
     }
 }

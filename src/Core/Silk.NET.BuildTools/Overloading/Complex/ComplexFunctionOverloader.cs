@@ -25,7 +25,7 @@ namespace Silk.NET.BuildTools.Overloading
         (
             Function original,
             Project core,
-            params IComplexFunctionOverloader[] overloaders
+            IEnumerable<IComplexFunctionOverloader> overloaders
         )
         {
             foreach (var overloader in overloaders)

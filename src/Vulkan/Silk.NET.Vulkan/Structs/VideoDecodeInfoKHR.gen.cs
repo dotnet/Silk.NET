@@ -17,22 +17,20 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoDecodeInfoKHR")]
-    public unsafe partial struct VideoDecodeInfoKHR
+    public unsafe partial struct VideoDecodeInfoKHR : IChainStart
     {
         public VideoDecodeInfoKHR
         (
             StructureType? sType = StructureType.VideoDecodeInfoKhr,
             void* pNext = null,
-            VideoDecodeFlagsKHR? flags = null,
-            Offset2D? codedOffset = null,
-            Extent2D? codedExtent = null,
+            uint? flags = null,
             Buffer? srcBuffer = null,
             ulong? srcBufferOffset = null,
             ulong? srcBufferRange = null,
-            VideoPictureResourceKHR? dstPictureResource = null,
-            VideoReferenceSlotKHR* pSetupReferenceSlot = null,
+            VideoPictureResourceInfoKHR? dstPictureResource = null,
+            VideoReferenceSlotInfoKHR* pSetupReferenceSlot = null,
             uint? referenceSlotCount = null,
-            VideoReferenceSlotKHR* pReferenceSlots = null
+            VideoReferenceSlotInfoKHR* pReferenceSlots = null
         ) : this()
         {
             if (sType is not null)
@@ -48,16 +46,6 @@ namespace Silk.NET.Vulkan
             if (flags is not null)
             {
                 Flags = flags.Value;
-            }
-
-            if (codedOffset is not null)
-            {
-                CodedOffset = codedOffset.Value;
-            }
-
-            if (codedExtent is not null)
-            {
-                CodedExtent = codedExtent.Value;
             }
 
             if (srcBuffer is not null)
@@ -110,17 +98,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkVideoDecodeFlagsKHR")]
         [NativeName("Type.Name", "VkVideoDecodeFlagsKHR")]
         [NativeName("Name", "flags")]
-        public VideoDecodeFlagsKHR Flags;
-/// <summary></summary>
-        [NativeName("Type", "VkOffset2D")]
-        [NativeName("Type.Name", "VkOffset2D")]
-        [NativeName("Name", "codedOffset")]
-        public Offset2D CodedOffset;
-/// <summary></summary>
-        [NativeName("Type", "VkExtent2D")]
-        [NativeName("Type.Name", "VkExtent2D")]
-        [NativeName("Name", "codedExtent")]
-        public Extent2D CodedExtent;
+        public uint Flags;
 /// <summary></summary>
         [NativeName("Type", "VkBuffer")]
         [NativeName("Type.Name", "VkBuffer")]
@@ -137,24 +115,49 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "srcBufferRange")]
         public ulong SrcBufferRange;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoPictureResourceKHR")]
-        [NativeName("Type.Name", "VkVideoPictureResourceKHR")]
+        [NativeName("Type", "VkVideoPictureResourceInfoKHR")]
+        [NativeName("Type.Name", "VkVideoPictureResourceInfoKHR")]
         [NativeName("Name", "dstPictureResource")]
-        public VideoPictureResourceKHR DstPictureResource;
+        public VideoPictureResourceInfoKHR DstPictureResource;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoReferenceSlotKHR*")]
-        [NativeName("Type.Name", "VkVideoReferenceSlotKHR")]
+        [NativeName("Type", "VkVideoReferenceSlotInfoKHR*")]
+        [NativeName("Type.Name", "VkVideoReferenceSlotInfoKHR")]
         [NativeName("Name", "pSetupReferenceSlot")]
-        public VideoReferenceSlotKHR* PSetupReferenceSlot;
+        public VideoReferenceSlotInfoKHR* PSetupReferenceSlot;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "referenceSlotCount")]
         public uint ReferenceSlotCount;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoReferenceSlotKHR*")]
-        [NativeName("Type.Name", "VkVideoReferenceSlotKHR")]
+        [NativeName("Type", "VkVideoReferenceSlotInfoKHR*")]
+        [NativeName("Type.Name", "VkVideoReferenceSlotInfoKHR")]
         [NativeName("Name", "pReferenceSlots")]
-        public VideoReferenceSlotKHR* PReferenceSlots;
+        public VideoReferenceSlotInfoKHR* PReferenceSlots;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoDecodeInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref VideoDecodeInfoKHR Chain(
+            out VideoDecodeInfoKHR capture)
+        {
+            capture = new VideoDecodeInfoKHR(StructureType.VideoDecodeInfoKhr);
+            return ref capture;
+        }
     }
 }

@@ -952,7 +952,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.PathCommands(path, numCommands, in commands.GetPinnableReference(), numCoords, coordType, in coords.GetPinnableReference());
         }
 
-        public static unsafe void PathCommands<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint numCommands, [Flow(FlowDirection.In)] string commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
+        public static unsafe void PathCommands<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint numCommands, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.PathCommands(path, numCommands, commands, numCoords, coordType, in coords.GetPinnableReference());
@@ -976,7 +976,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.PathCommands(path, numCommands, in commands.GetPinnableReference(), numCoords, coordType, in coords.GetPinnableReference());
         }
 
-        public static unsafe void PathCommands<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint numCommands, [Flow(FlowDirection.In)] string commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
+        public static unsafe void PathCommands<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint numCommands, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.PathCommands(path, numCommands, commands, numCoords, coordType, in coords.GetPinnableReference());
@@ -1444,7 +1444,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, in commands.GetPinnableReference(), numCoords, coordType, in coords.GetPinnableReference());
         }
 
-        public static unsafe void PathSubCommands<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint commandStart, [Flow(FlowDirection.In)] uint commandsToDelete, [Flow(FlowDirection.In)] uint numCommands, [Flow(FlowDirection.In)] string commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
+        public static unsafe void PathSubCommands<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint commandStart, [Flow(FlowDirection.In)] uint commandsToDelete, [Flow(FlowDirection.In)] uint numCommands, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, commands, numCoords, coordType, in coords.GetPinnableReference());
@@ -1468,7 +1468,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, in commands.GetPinnableReference(), numCoords, coordType, in coords.GetPinnableReference());
         }
 
-        public static unsafe void PathSubCommands<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint commandStart, [Flow(FlowDirection.In)] uint commandsToDelete, [Flow(FlowDirection.In)] uint numCommands, [Flow(FlowDirection.In)] string commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
+        public static unsafe void PathSubCommands<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint commandStart, [Flow(FlowDirection.In)] uint commandsToDelete, [Flow(FlowDirection.In)] uint numCommands, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] ReadOnlySpan<T0> coords) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.PathSubCommands(path, commandStart, commandsToDelete, numCommands, commands, numCoords, coordType, in coords.GetPinnableReference());

@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbColorBufferFloat : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_color_buffer_float";
-        [NativeApi(EntryPoint = "glClampColorARB")]
+        [NativeApi(EntryPoint = "glClampColorARB", Convention = CallingConvention.Winapi)]
         public partial void ClampColor([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB clamp);
 
-        [NativeApi(EntryPoint = "glClampColorARB")]
+        [NativeApi(EntryPoint = "glClampColorARB", Convention = CallingConvention.Winapi)]
         public partial void ClampColor([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ClampColorModeARB clamp);
 
-        [NativeApi(EntryPoint = "glClampColorARB")]
+        [NativeApi(EntryPoint = "glClampColorARB", Convention = CallingConvention.Winapi)]
         public partial void ClampColor([Flow(FlowDirection.In)] ClampColorTargetARB target, [Flow(FlowDirection.In)] ARB clamp);
 
-        [NativeApi(EntryPoint = "glClampColorARB")]
+        [NativeApi(EntryPoint = "glClampColorARB", Convention = CallingConvention.Winapi)]
         public partial void ClampColor([Flow(FlowDirection.In)] ClampColorTargetARB target, [Flow(FlowDirection.In)] ClampColorModeARB clamp);
 
         public ArbColorBufferFloat(INativeContext ctx)

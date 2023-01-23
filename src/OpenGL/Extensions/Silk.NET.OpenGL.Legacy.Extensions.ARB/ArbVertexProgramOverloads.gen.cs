@@ -382,30 +382,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.VertexAttrib4N(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribPointer<T0>(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribPointer(index, size, type, normalized, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribPointer<T0>(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribPointer(index, size, type, normalized, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribPointer<T0>(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribPointer(index, size, type, normalized, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribPointer<T0>(this ArbVertexProgram thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribPointer(index, size, type, normalized, stride, in pointer.GetPinnableReference());
-        }
-
     }
 }
 

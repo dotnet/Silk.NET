@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D12
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d12_L17477_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d12_L18956_C5")]
     public unsafe partial struct RenderPassEndingAccessUnion
     {
         public RenderPassEndingAccessUnion

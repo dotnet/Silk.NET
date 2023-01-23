@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceImageFormatInfo2KHR")]
-    public unsafe partial struct PhysicalDeviceImageFormatInfo2KHR
+    [NativeName("AliasOf", "VkPhysicalDeviceImageFormatInfo2")]
+    public unsafe partial struct PhysicalDeviceImageFormatInfo2KHR : IChainStart
     {
         public PhysicalDeviceImageFormatInfo2KHR
         (
@@ -101,5 +102,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkImageCreateFlags")]
         [NativeName("Name", "flags")]
         public ImageCreateFlags Flags;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceImageFormatInfo2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref PhysicalDeviceImageFormatInfo2KHR Chain(
+            out PhysicalDeviceImageFormatInfo2KHR capture)
+        {
+            capture = new PhysicalDeviceImageFormatInfo2KHR(StructureType.PhysicalDeviceImageFormatInfo2);
+            return ref capture;
+        }
     }
 }

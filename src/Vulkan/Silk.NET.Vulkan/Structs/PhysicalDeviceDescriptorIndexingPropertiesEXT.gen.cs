@@ -17,7 +17,8 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceDescriptorIndexingPropertiesEXT")]
-    public unsafe partial struct PhysicalDeviceDescriptorIndexingPropertiesEXT
+    [NativeName("AliasOf", "VkPhysicalDeviceDescriptorIndexingProperties")]
+    public unsafe partial struct PhysicalDeviceDescriptorIndexingPropertiesEXT : IExtendsChain<PhysicalDeviceProperties2>, IExtendsChain<PhysicalDeviceProperties2KHR>
     {
         public PhysicalDeviceDescriptorIndexingPropertiesEXT
         (
@@ -299,5 +300,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxDescriptorSetUpdateAfterBindInputAttachments")]
         public uint MaxDescriptorSetUpdateAfterBindInputAttachments;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceDescriptorIndexingProperties;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

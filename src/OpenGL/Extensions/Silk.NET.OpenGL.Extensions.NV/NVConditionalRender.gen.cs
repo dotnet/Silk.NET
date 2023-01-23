@@ -20,13 +20,13 @@ namespace Silk.NET.OpenGL.Extensions.NV
     public unsafe partial class NVConditionalRender : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_conditional_render";
-        [NativeApi(EntryPoint = "glBeginConditionalRenderNV")]
+        [NativeApi(EntryPoint = "glBeginConditionalRenderNV", Convention = CallingConvention.Winapi)]
         public partial void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV mode);
 
-        [NativeApi(EntryPoint = "glBeginConditionalRenderNV")]
+        [NativeApi(EntryPoint = "glBeginConditionalRenderNV", Convention = CallingConvention.Winapi)]
         public partial void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ConditionalRenderMode mode);
 
-        [NativeApi(EntryPoint = "glEndConditionalRenderNV")]
+        [NativeApi(EntryPoint = "glEndConditionalRenderNV", Convention = CallingConvention.Winapi)]
         public partial void EndConditionalRender();
 
         public NVConditionalRender(INativeContext ctx)

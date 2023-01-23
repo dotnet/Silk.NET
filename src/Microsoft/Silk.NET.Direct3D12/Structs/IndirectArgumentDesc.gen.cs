@@ -73,14 +73,14 @@ namespace Silk.NET.Direct3D12
         public IndirectArgumentType Type;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3951_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L4148_C5")]
         [NativeName("Name", "anonymous1")]
         public IndirectArgumentDescUnion Anonymous;
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref IndirectArgumentDescUnionVertexBuffer VertexBuffer
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.VertexBuffer;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].VertexBuffer;
         }
 #else
         public IndirectArgumentDescUnionVertexBuffer VertexBuffer
@@ -90,11 +90,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref IndirectArgumentDescUnionConstant Constant
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Constant;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].Constant;
         }
 #else
         public IndirectArgumentDescUnionConstant Constant
@@ -104,11 +104,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref IndirectArgumentDescUnionConstantBufferView ConstantBufferView
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.ConstantBufferView;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].ConstantBufferView;
         }
 #else
         public IndirectArgumentDescUnionConstantBufferView ConstantBufferView
@@ -118,11 +118,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref IndirectArgumentDescUnionShaderResourceView ShaderResourceView
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.ShaderResourceView;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].ShaderResourceView;
         }
 #else
         public IndirectArgumentDescUnionShaderResourceView ShaderResourceView
@@ -132,11 +132,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref IndirectArgumentDescUnionUnorderedAccessView UnorderedAccessView
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.UnorderedAccessView;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].UnorderedAccessView;
         }
 #else
         public IndirectArgumentDescUnionUnorderedAccessView UnorderedAccessView

@@ -45,6 +45,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pDeviceGroupPresentCapabilities = new(StructureType.DeviceGroupPresentCapabilitiesKhr);")]
         public static unsafe Result GetDeviceGroupPresentCapabilities(this KhrDeviceGroup thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.Out)] Span<DeviceGroupPresentCapabilitiesKHR> pDeviceGroupPresentCapabilities)
         {
             // SpanOverloader

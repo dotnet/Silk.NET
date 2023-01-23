@@ -16,6 +16,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.DXGI
 {
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     [NativeName("Name", "DXGI_ADAPTER_DESC3")]
     public unsafe partial struct AdapterDesc3
     {
@@ -90,8 +91,8 @@ namespace Silk.NET.DXGI
             }
         }
 
-        [NativeName("Type", "WCHAR [128]")]
-        [NativeName("Type.Name", "WCHAR [128]")]
+        [NativeName("Type", "WCHAR[128]")]
+        [NativeName("Type.Name", "WCHAR[128]")]
         [NativeName("Name", "Description")]
         public fixed char Description[128];
 

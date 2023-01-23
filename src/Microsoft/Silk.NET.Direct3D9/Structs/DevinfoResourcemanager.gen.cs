@@ -20,8 +20,8 @@ namespace Silk.NET.Direct3D9
     public unsafe partial struct DevinfoResourcemanager
     {
         
-        [NativeName("Type", "D3DRESOURCESTATS [8]")]
-        [NativeName("Type.Name", "D3DRESOURCESTATS [8]")]
+        [NativeName("Type", "D3DRESOURCESTATS[8]")]
+        [NativeName("Type.Name", "D3DRESOURCESTATS[8]")]
         [NativeName("Name", "stats")]
         public StatsBuffer Stats;
 
@@ -51,7 +51,7 @@ namespace Silk.NET.Direct3D9
                 }
             }
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
             public Span<Resourcestats> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 8);
 #endif

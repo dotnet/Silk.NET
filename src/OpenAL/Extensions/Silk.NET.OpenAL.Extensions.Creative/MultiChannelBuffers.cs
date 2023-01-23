@@ -10,12 +10,12 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// <summary>
     /// Exposes the multi-channel buffers extension by Creative Labs.
     /// </summary>
-    [Extension("AL_EXT_EFX")]
+    [Extension("AL_EXT_MCFORMATS")]
     [NativeApi(Prefix = "al")]
     public partial class MultiChannelBuffers : FormatExtensionBase<MultiChannelBufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected MultiChannelBuffers(INativeContext ctx)
+        public MultiChannelBuffers(INativeContext ctx)
             : base(ctx)
         {
         }

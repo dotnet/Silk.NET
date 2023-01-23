@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
     public unsafe partial class AtiDrawBuffers : NativeExtension<GL>
     {
         public const string ExtensionName = "ATI_draw_buffers";
-        [NativeApi(EntryPoint = "glDrawBuffersATI")]
+        [NativeApi(EntryPoint = "glDrawBuffersATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ATI* bufs);
 
-        [NativeApi(EntryPoint = "glDrawBuffersATI")]
+        [NativeApi(EntryPoint = "glDrawBuffersATI", Convention = CallingConvention.Winapi)]
         public partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in ATI bufs);
 
-        [NativeApi(EntryPoint = "glDrawBuffersATI")]
+        [NativeApi(EntryPoint = "glDrawBuffersATI", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] DrawBufferMode* bufs);
 
-        [NativeApi(EntryPoint = "glDrawBuffersATI")]
+        [NativeApi(EntryPoint = "glDrawBuffersATI", Convention = CallingConvention.Winapi)]
         public partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in DrawBufferMode bufs);
 
         public unsafe void DrawBuffers([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<ATI> bufs)

@@ -66,14 +66,14 @@ namespace Silk.NET.Direct3D12
         public TextureCopyType Type;
 
         [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L2788_C5")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L2954_C5")]
         [NativeName("Name", "anonymous1")]
         public TextureCopyLocationUnion Anonymous;
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref PlacedSubresourceFootprint PlacedFootprint
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.PlacedFootprint;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].PlacedFootprint;
         }
 #else
         public PlacedSubresourceFootprint PlacedFootprint
@@ -83,11 +83,11 @@ namespace Silk.NET.Direct3D12
         }
 #endif
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
         public ref uint SubresourceIndex
         {
             [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.SubresourceIndex;
+            get => ref MemoryMarshal.CreateSpan(ref Anonymous, 1)[0].SubresourceIndex;
         }
 #else
         public uint SubresourceIndex

@@ -20,37 +20,37 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     public unsafe partial class ExtInstancedArrays : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_instanced_arrays";
-        [NativeApi(EntryPoint = "glDrawArraysInstancedEXT")]
+        [NativeApi(EntryPoint = "glDrawArraysInstancedEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawArraysInstanced([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] int start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glDrawArraysInstancedEXT")]
+        [NativeApi(EntryPoint = "glDrawArraysInstancedEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawArraysInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstanced([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawElementsInstanced<T0>([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstanced([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawElementsInstanced<T0>([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawElementsInstanced<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DrawElementsInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint primcount);
 
-        [NativeApi(EntryPoint = "glDrawElementsInstancedEXT")]
+        [NativeApi(EntryPoint = "glDrawElementsInstancedEXT", Convention = CallingConvention.Winapi)]
         public partial void DrawElementsInstanced<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] in T0 indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glVertexAttribDivisorEXT")]
+        [NativeApi(EntryPoint = "glVertexAttribDivisorEXT", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribDivisor([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint divisor);
 
         public ExtInstancedArrays(INativeContext ctx)

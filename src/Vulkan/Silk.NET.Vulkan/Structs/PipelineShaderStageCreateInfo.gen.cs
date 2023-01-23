@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineShaderStageCreateInfo")]
-    public unsafe partial struct PipelineShaderStageCreateInfo
+    public unsafe partial struct PipelineShaderStageCreateInfo : IChainStart
     {
         public PipelineShaderStageCreateInfo
         (
@@ -101,5 +101,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSpecializationInfo")]
         [NativeName("Name", "pSpecializationInfo")]
         public SpecializationInfo* PSpecializationInfo;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PipelineShaderStageCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref PipelineShaderStageCreateInfo Chain(
+            out PipelineShaderStageCreateInfo capture)
+        {
+            capture = new PipelineShaderStageCreateInfo(StructureType.PipelineShaderStageCreateInfo);
+            return ref capture;
+        }
     }
 }

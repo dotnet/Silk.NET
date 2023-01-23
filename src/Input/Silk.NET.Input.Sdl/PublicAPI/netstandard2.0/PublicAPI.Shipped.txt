@@ -1,0 +1,3 @@
+#nullable enable
+Silk.NET.Input.Sdl.SdlInput
+static Silk.NET.Input.Sdl.SdlInput.RegisterPlatform() -> void

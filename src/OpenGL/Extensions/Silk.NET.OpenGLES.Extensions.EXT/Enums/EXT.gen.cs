@@ -256,6 +256,64 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         OneMinusConstantAlpha = 0x8004,
         [NativeName("Name", "GL_SRC_ALPHA_SATURATE")]
         SrcAlphaSaturate = 0x308,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_EXT")]
+        SurfaceCompressionExt = 0x96C0,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_NONE_EXT")]
+        SurfaceCompressionFixedRateNoneExt = 0x96C1,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_DEFAULT_EXT")]
+        SurfaceCompressionFixedRateDefaultExt = 0x96C2,
+        [NativeName("Name", "GL_SHADING_RATE_1X1_PIXELS_EXT")]
+        ShadingRate1X1PixelsExt = 0x96A6,
+        [NativeName("Name", "GL_SHADING_RATE_1X2_PIXELS_EXT")]
+        ShadingRate1X2PixelsExt = 0x96A7,
+        [NativeName("Name", "GL_SHADING_RATE_2X1_PIXELS_EXT")]
+        ShadingRate2X1PixelsExt = 0x96A8,
+        [NativeName("Name", "GL_SHADING_RATE_2X2_PIXELS_EXT")]
+        ShadingRate2X2PixelsExt = 0x96A9,
+        [NativeName("Name", "GL_SHADING_RATE_1X4_PIXELS_EXT")]
+        ShadingRate1X4PixelsExt = 0x96AA,
+        [NativeName("Name", "GL_SHADING_RATE_4X1_PIXELS_EXT")]
+        ShadingRate4X1PixelsExt = 0x96AB,
+        [NativeName("Name", "GL_SHADING_RATE_4X2_PIXELS_EXT")]
+        ShadingRate4X2PixelsExt = 0x96AC,
+        [NativeName("Name", "GL_SHADING_RATE_2X4_PIXELS_EXT")]
+        ShadingRate2X4PixelsExt = 0x96AD,
+        [NativeName("Name", "GL_SHADING_RATE_4X4_PIXELS_EXT")]
+        ShadingRate4X4PixelsExt = 0x96AE,
+        [NativeName("Name", "GL_SHADING_RATE_EXT")]
+        ShadingRateExt = 0x96D0,
+        [NativeName("Name", "GL_SHADING_RATE_ATTACHMENT_EXT")]
+        ShadingRateAttachmentExt = 0x96D1,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_COMBINER_OP_KEEP_EXT")]
+        FragmentShadingRateCombinerOpKeepExt = 0x96D2,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_COMBINER_OP_REPLACE_EXT")]
+        FragmentShadingRateCombinerOpReplaceExt = 0x96D3,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MIN_EXT")]
+        FragmentShadingRateCombinerOpMinExt = 0x96D4,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MAX_EXT")]
+        FragmentShadingRateCombinerOpMaxExt = 0x96D5,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_COMBINER_OP_MUL_EXT")]
+        FragmentShadingRateCombinerOpMulExt = 0x96D6,
+        [NativeName("Name", "GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT")]
+        MinFragmentShadingRateAttachmentTexelWidthExt = 0x96D7,
+        [NativeName("Name", "GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT")]
+        MaxFragmentShadingRateAttachmentTexelWidthExt = 0x96D8,
+        [NativeName("Name", "GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT")]
+        MinFragmentShadingRateAttachmentTexelHeightExt = 0x96D9,
+        [NativeName("Name", "GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT")]
+        MaxFragmentShadingRateAttachmentTexelHeightExt = 0x96DA,
+        [NativeName("Name", "GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_ASPECT_RATIO_EXT")]
+        MaxFragmentShadingRateAttachmentTexelAspectRatioExt = 0x96DB,
+        [NativeName("Name", "GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_LAYERS_EXT")]
+        MaxFragmentShadingRateAttachmentLayersExt = 0x96DC,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_SUPPORTED_EXT")]
+        FragmentShadingRateWithShaderDepthStencilWritesSupportedExt = 0x96DD,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_SUPPORTED_EXT")]
+        FragmentShadingRateWithSampleMaskSupportedExt = 0x96DE,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_ATTACHMENT_WITH_DEFAULT_FRAMEBUFFER_SUPPORTED_EXT")]
+        FragmentShadingRateAttachmentWithDefaultFramebufferSupportedExt = 0x96DF,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINERS_SUPPORTED_EXT")]
+        FragmentShadingRateNonTrivialCombinersSupportedExt = 0x8F6F,
         [NativeName("Name", "GL_GEOMETRY_SHADER_EXT")]
         GeometryShaderExt = 0x8DD9,
         [NativeName("Name", "GL_GEOMETRY_SHADER_BIT_EXT")]
@@ -824,6 +882,32 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         R32fExt = 0x822E,
         [NativeName("Name", "GL_RG32F_EXT")]
         RG32fExt = 0x8230,
+        [NativeName("Name", "GL_NUM_SURFACE_COMPRESSION_FIXED_RATES_EXT")]
+        NumSurfaceCompressionFixedRatesExt = 0x8F6E,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_1BPC_EXT")]
+        SurfaceCompressionFixedRate1BpcExt = 0x96C4,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_2BPC_EXT")]
+        SurfaceCompressionFixedRate2BpcExt = 0x96C5,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_3BPC_EXT")]
+        SurfaceCompressionFixedRate3BpcExt = 0x96C6,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_4BPC_EXT")]
+        SurfaceCompressionFixedRate4BpcExt = 0x96C7,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_5BPC_EXT")]
+        SurfaceCompressionFixedRate5BpcExt = 0x96C8,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_6BPC_EXT")]
+        SurfaceCompressionFixedRate6BpcExt = 0x96C9,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_7BPC_EXT")]
+        SurfaceCompressionFixedRate7BpcExt = 0x96CA,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_8BPC_EXT")]
+        SurfaceCompressionFixedRate8BpcExt = 0x96CB,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_9BPC_EXT")]
+        SurfaceCompressionFixedRate9BpcExt = 0x96CC,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_10BPC_EXT")]
+        SurfaceCompressionFixedRate10BpcExt = 0x96CD,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_11BPC_EXT")]
+        SurfaceCompressionFixedRate11BpcExt = 0x96CE,
+        [NativeName("Name", "GL_SURFACE_COMPRESSION_FIXED_RATE_12BPC_EXT")]
+        SurfaceCompressionFixedRate12BpcExt = 0x96CF,
         [NativeName("Name", "GL_UNSIGNED_INT_2_10_10_10_REV_EXT")]
         UnsignedInt2101010RevExt = 0x8368,
         [NativeName("Name", "GL_TEXTURE_VIEW_MIN_LEVEL_EXT")]

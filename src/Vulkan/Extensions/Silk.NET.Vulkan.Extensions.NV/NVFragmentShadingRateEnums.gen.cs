@@ -21,11 +21,11 @@ namespace Silk.NET.Vulkan.Extensions.NV
     {
         public const string ExtensionName = "VK_NV_fragment_shading_rate_enums";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateEnumNV")]
+        [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateEnumNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetFragmentShadingRateEnum([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] FragmentShadingRateNV shadingRate, [Count(Count = 2), Flow(FlowDirection.In)] FragmentShadingRateCombinerOpKHR* combinerOps);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateEnumNV")]
+        [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateEnumNV", Convention = CallingConvention.Winapi)]
         public partial void CmdSetFragmentShadingRateEnum([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] FragmentShadingRateNV shadingRate, [Count(Count = 2), Flow(FlowDirection.In)] in FragmentShadingRateCombinerOpKHR combinerOps);
 
         public NVFragmentShadingRateEnums(INativeContext ctx)

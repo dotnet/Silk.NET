@@ -75,7 +75,7 @@ namespace Silk.NET.Windowing.Sdl
         };
 
         public bool IsApplicable => _isApplicable.Value;
-        public event Action<IEnumerable<Event>>? EventReceived;
+        public event Action<List<Event>>? EventReceived;
 
         public IView GetView(ViewOptions? opts = null)
         {

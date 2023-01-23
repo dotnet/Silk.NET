@@ -25,61 +25,75 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "VK_INCOMPLETE")]
         Incomplete = 5,
         [NativeName("Name", "VK_ERROR_OUT_OF_HOST_MEMORY")]
-        ErrorOutOfHostMemory = -1,
+        ErrorOutOfHostMemory = unchecked((int) -1),
         [NativeName("Name", "VK_ERROR_OUT_OF_DEVICE_MEMORY")]
-        ErrorOutOfDeviceMemory = -2,
+        ErrorOutOfDeviceMemory = unchecked((int) -2),
         [NativeName("Name", "VK_ERROR_INITIALIZATION_FAILED")]
-        ErrorInitializationFailed = -3,
+        ErrorInitializationFailed = unchecked((int) -3),
         [NativeName("Name", "VK_ERROR_DEVICE_LOST")]
-        ErrorDeviceLost = -4,
+        ErrorDeviceLost = unchecked((int) -4),
         [NativeName("Name", "VK_ERROR_MEMORY_MAP_FAILED")]
-        ErrorMemoryMapFailed = -5,
+        ErrorMemoryMapFailed = unchecked((int) -5),
         [NativeName("Name", "VK_ERROR_LAYER_NOT_PRESENT")]
-        ErrorLayerNotPresent = -6,
+        ErrorLayerNotPresent = unchecked((int) -6),
         [NativeName("Name", "VK_ERROR_EXTENSION_NOT_PRESENT")]
-        ErrorExtensionNotPresent = -7,
+        ErrorExtensionNotPresent = unchecked((int) -7),
         [NativeName("Name", "VK_ERROR_FEATURE_NOT_PRESENT")]
-        ErrorFeatureNotPresent = -8,
+        ErrorFeatureNotPresent = unchecked((int) -8),
         [NativeName("Name", "VK_ERROR_INCOMPATIBLE_DRIVER")]
-        ErrorIncompatibleDriver = -9,
+        ErrorIncompatibleDriver = unchecked((int) -9),
         [NativeName("Name", "VK_ERROR_TOO_MANY_OBJECTS")]
-        ErrorTooManyObjects = -10,
+        ErrorTooManyObjects = unchecked((int) -10),
         [NativeName("Name", "VK_ERROR_FORMAT_NOT_SUPPORTED")]
-        ErrorFormatNotSupported = -11,
+        ErrorFormatNotSupported = unchecked((int) -11),
         [NativeName("Name", "VK_ERROR_FRAGMENTED_POOL")]
-        ErrorFragmentedPool = -12,
+        ErrorFragmentedPool = unchecked((int) -12),
         [NativeName("Name", "VK_ERROR_UNKNOWN")]
-        ErrorUnknown = -13,
+        ErrorUnknown = unchecked((int) -13),
         [NativeName("Name", "VK_ERROR_SURFACE_LOST_KHR")]
-        ErrorSurfaceLostKhr = -1000000000,
+        ErrorSurfaceLostKhr = unchecked((int) -1000000000),
         [NativeName("Name", "VK_ERROR_NATIVE_WINDOW_IN_USE_KHR")]
-        ErrorNativeWindowInUseKhr = -1000000001,
+        ErrorNativeWindowInUseKhr = unchecked((int) -1000000001),
         [NativeName("Name", "VK_SUBOPTIMAL_KHR")]
         SuboptimalKhr = 1000001003,
         [NativeName("Name", "VK_ERROR_OUT_OF_DATE_KHR")]
-        ErrorOutOfDateKhr = -1000001004,
+        ErrorOutOfDateKhr = unchecked((int) -1000001004),
         [NativeName("Name", "VK_ERROR_INCOMPATIBLE_DISPLAY_KHR")]
-        ErrorIncompatibleDisplayKhr = -1000003001,
+        ErrorIncompatibleDisplayKhr = unchecked((int) -1000003001),
         [NativeName("Name", "VK_ERROR_VALIDATION_FAILED_EXT")]
-        ErrorValidationFailedExt = -1000011001,
+        ErrorValidationFailedExt = unchecked((int) -1000011001),
         [NativeName("Name", "VK_ERROR_INVALID_SHADER_NV")]
-        ErrorInvalidShaderNV = -1000012000,
+        ErrorInvalidShaderNV = unchecked((int) -1000012000),
+        [NativeName("Name", "VK_ERROR_IMAGE_USAGE_NOT_SUPPORTED_KHR")]
+        ErrorImageUsageNotSupportedKhr = unchecked((int) -1000023000),
+        [NativeName("Name", "VK_ERROR_VIDEO_PICTURE_LAYOUT_NOT_SUPPORTED_KHR")]
+        ErrorVideoPictureLayoutNotSupportedKhr = unchecked((int) -1000023001),
+        [NativeName("Name", "VK_ERROR_VIDEO_PROFILE_OPERATION_NOT_SUPPORTED_KHR")]
+        ErrorVideoProfileOperationNotSupportedKhr = unchecked((int) -1000023002),
+        [NativeName("Name", "VK_ERROR_VIDEO_PROFILE_FORMAT_NOT_SUPPORTED_KHR")]
+        ErrorVideoProfileFormatNotSupportedKhr = unchecked((int) -1000023003),
+        [NativeName("Name", "VK_ERROR_VIDEO_PROFILE_CODEC_NOT_SUPPORTED_KHR")]
+        ErrorVideoProfileCodecNotSupportedKhr = unchecked((int) -1000023004),
+        [NativeName("Name", "VK_ERROR_VIDEO_STD_VERSION_NOT_SUPPORTED_KHR")]
+        ErrorVideoStdVersionNotSupportedKhr = unchecked((int) -1000023005),
         [NativeName("Name", "VK_ERROR_OUT_OF_POOL_MEMORY_KHR")]
-        ErrorOutOfPoolMemoryKhr = -1000069000,
+        ErrorOutOfPoolMemoryKhr = unchecked((int) -1000069000),
         [NativeName("Name", "VK_ERROR_INVALID_EXTERNAL_HANDLE_KHR")]
-        ErrorInvalidExternalHandleKhr = -1000072003,
+        ErrorInvalidExternalHandleKhr = unchecked((int) -1000072003),
         [NativeName("Name", "VK_ERROR_INVALID_DRM_FORMAT_MODIFIER_PLANE_LAYOUT_EXT")]
-        ErrorInvalidDrmFormatModifierPlaneLayoutExt = -1000158000,
+        ErrorInvalidDrmFormatModifierPlaneLayoutExt = unchecked((int) -1000158000),
         [NativeName("Name", "VK_ERROR_FRAGMENTATION_EXT")]
-        ErrorFragmentationExt = -1000161000,
+        ErrorFragmentationExt = unchecked((int) -1000161000),
         [NativeName("Name", "VK_ERROR_NOT_PERMITTED_EXT")]
-        ErrorNotPermittedExt = -1000174001,
+        ErrorNotPermittedExt = unchecked((int) -1000174001),
+        [NativeName("Name", "VK_ERROR_NOT_PERMITTED_KHR")]
+        ErrorNotPermittedKhr = unchecked((int) -1000174001),
         [NativeName("Name", "VK_ERROR_INVALID_DEVICE_ADDRESS_EXT")]
-        ErrorInvalidDeviceAddressExt = -1000257000,
+        ErrorInvalidDeviceAddressExt = unchecked((int) -1000257000),
         [NativeName("Name", "VK_ERROR_FULL_SCREEN_EXCLUSIVE_MODE_LOST_EXT")]
-        ErrorFullScreenExclusiveModeLostExt = -1000255000,
+        ErrorFullScreenExclusiveModeLostExt = unchecked((int) -1000255000),
         [NativeName("Name", "VK_ERROR_INVALID_OPAQUE_CAPTURE_ADDRESS_KHR")]
-        ErrorInvalidOpaqueCaptureAddressKhr = -1000257000,
+        ErrorInvalidOpaqueCaptureAddressKhr = unchecked((int) -1000257000),
         [NativeName("Name", "VK_THREAD_IDLE_KHR")]
         ThreadIdleKhr = 1000268000,
         [NativeName("Name", "VK_THREAD_DONE_KHR")]
@@ -92,13 +106,17 @@ namespace Silk.NET.Vulkan
         PipelineCompileRequiredExt = 1000297000,
         [NativeName("Name", "VK_ERROR_PIPELINE_COMPILE_REQUIRED_EXT")]
         ErrorPipelineCompileRequiredExt = 1000297000,
+        [NativeName("Name", "VK_ERROR_COMPRESSION_EXHAUSTED_EXT")]
+        ErrorCompressionExhaustedExt = unchecked((int) -1000338000),
         [NativeName("Name", "VK_ERROR_OUT_OF_POOL_MEMORY")]
-        ErrorOutOfPoolMemory = -1000069000,
+        ErrorOutOfPoolMemory = unchecked((int) -1000069000),
         [NativeName("Name", "VK_ERROR_INVALID_EXTERNAL_HANDLE")]
-        ErrorInvalidExternalHandle = -1000072003,
+        ErrorInvalidExternalHandle = unchecked((int) -1000072003),
         [NativeName("Name", "VK_ERROR_FRAGMENTATION")]
-        ErrorFragmentation = -1000161000,
+        ErrorFragmentation = unchecked((int) -1000161000),
         [NativeName("Name", "VK_ERROR_INVALID_OPAQUE_CAPTURE_ADDRESS")]
-        ErrorInvalidOpaqueCaptureAddress = -1000257000,
+        ErrorInvalidOpaqueCaptureAddress = unchecked((int) -1000257000),
+        [NativeName("Name", "VK_PIPELINE_COMPILE_REQUIRED")]
+        PipelineCompileRequired = 1000297000,
     }
 }

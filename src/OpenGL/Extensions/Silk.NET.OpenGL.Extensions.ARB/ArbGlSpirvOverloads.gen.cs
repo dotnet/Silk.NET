@@ -58,19 +58,19 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             thisApi.SpecializeShader(shader, in pEntryPoint.GetPinnableReference(), numSpecializationConstants, in pConstantIndex.GetPinnableReference(), in pConstantValue.GetPinnableReference());
         }
 
-        public static unsafe void SpecializeShader(this ArbGlSpirv thisApi, [Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] string pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] uint* pConstantIndex, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pConstantValue)
+        public static unsafe void SpecializeShader(this ArbGlSpirv thisApi, [Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] uint* pConstantIndex, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pConstantValue)
         {
             // SpanOverloader
             thisApi.SpecializeShader(shader, pEntryPoint, numSpecializationConstants, pConstantIndex, in pConstantValue.GetPinnableReference());
         }
 
-        public static unsafe void SpecializeShader(this ArbGlSpirv thisApi, [Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] string pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pConstantIndex, [Flow(FlowDirection.In)] uint* pConstantValue)
+        public static unsafe void SpecializeShader(this ArbGlSpirv thisApi, [Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pConstantIndex, [Flow(FlowDirection.In)] uint* pConstantValue)
         {
             // SpanOverloader
             thisApi.SpecializeShader(shader, pEntryPoint, numSpecializationConstants, in pConstantIndex.GetPinnableReference(), pConstantValue);
         }
 
-        public static unsafe void SpecializeShader(this ArbGlSpirv thisApi, [Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] string pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pConstantIndex, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pConstantValue)
+        public static unsafe void SpecializeShader(this ArbGlSpirv thisApi, [Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pConstantIndex, [Flow(FlowDirection.In)] ReadOnlySpan<uint> pConstantValue)
         {
             // SpanOverloader
             thisApi.SpecializeShader(shader, pEntryPoint, numSpecializationConstants, in pConstantIndex.GetPinnableReference(), in pConstantValue.GetPinnableReference());

@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     public unsafe partial class ExtEglImageStorage : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_EGL_image_storage";
-        [NativeApi(EntryPoint = "glEGLImageTargetTexStorageEXT")]
+        [NativeApi(EntryPoint = "glEGLImageTargetTexStorageEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void EglimageTargetTexStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] int* attrib_list);
 
-        [NativeApi(EntryPoint = "glEGLImageTargetTexStorageEXT")]
+        [NativeApi(EntryPoint = "glEGLImageTargetTexStorageEXT", Convention = CallingConvention.Winapi)]
         public partial void EglimageTargetTexStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in int attrib_list);
 
-        [NativeApi(EntryPoint = "glEGLImageTargetTextureStorageEXT")]
+        [NativeApi(EntryPoint = "glEGLImageTargetTextureStorageEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void EglimageTargetTextureStorage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] int* attrib_list);
 
-        [NativeApi(EntryPoint = "glEGLImageTargetTextureStorageEXT")]
+        [NativeApi(EntryPoint = "glEGLImageTargetTextureStorageEXT", Convention = CallingConvention.Winapi)]
         public partial void EglimageTargetTextureStorage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] in int attrib_list);
 
         public ExtEglImageStorage(INativeContext ctx)

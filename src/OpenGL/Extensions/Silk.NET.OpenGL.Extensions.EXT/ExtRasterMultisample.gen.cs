@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGL.Extensions.EXT
     public unsafe partial class ExtRasterMultisample : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_raster_multisample";
-        [NativeApi(EntryPoint = "glRasterSamplesEXT")]
+        [NativeApi(EntryPoint = "glRasterSamplesEXT", Convention = CallingConvention.Winapi)]
         public partial void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
-        [NativeApi(EntryPoint = "glRasterSamplesEXT")]
+        [NativeApi(EntryPoint = "glRasterSamplesEXT", Convention = CallingConvention.Winapi)]
         public partial void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
 
         public ExtRasterMultisample(INativeContext ctx)

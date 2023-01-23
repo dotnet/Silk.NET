@@ -21,31 +21,31 @@ namespace Silk.NET.OpenXR.Extensions.FB
     {
         public const string ExtensionName = "XR_FB_display_refresh_rate";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateDisplayRefreshRatesFB")]
+        [NativeApi(EntryPoint = "xrEnumerateDisplayRefreshRatesFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint displayRefreshRateCapacityInput, [Count(Count = 0)] uint* displayRefreshRateCountOutput, [Count(Parameter = "displayRefreshRateCapacityInput")] float* displayRefreshRates);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateDisplayRefreshRatesFB")]
+        [NativeApi(EntryPoint = "xrEnumerateDisplayRefreshRatesFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint displayRefreshRateCapacityInput, [Count(Count = 0)] uint* displayRefreshRateCountOutput, [Count(Parameter = "displayRefreshRateCapacityInput")] ref float displayRefreshRates);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateDisplayRefreshRatesFB")]
+        [NativeApi(EntryPoint = "xrEnumerateDisplayRefreshRatesFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint displayRefreshRateCapacityInput, [Count(Count = 0)] ref uint displayRefreshRateCountOutput, [Count(Parameter = "displayRefreshRateCapacityInput")] float* displayRefreshRates);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrEnumerateDisplayRefreshRatesFB")]
+        [NativeApi(EntryPoint = "xrEnumerateDisplayRefreshRatesFB", Convention = CallingConvention.Winapi)]
         public partial Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint displayRefreshRateCapacityInput, [Count(Count = 0)] ref uint displayRefreshRateCountOutput, [Count(Parameter = "displayRefreshRateCapacityInput")] ref float displayRefreshRates);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetDisplayRefreshRateFB")]
+        [NativeApi(EntryPoint = "xrGetDisplayRefreshRateFB", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetDisplayRefreshRateFB([Count(Count = 0)] Session session, [Count(Count = 0)] float* displayRefreshRate);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetDisplayRefreshRateFB")]
+        [NativeApi(EntryPoint = "xrGetDisplayRefreshRateFB", Convention = CallingConvention.Winapi)]
         public partial Result GetDisplayRefreshRateFB([Count(Count = 0)] Session session, [Count(Count = 0)] ref float displayRefreshRate);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrRequestDisplayRefreshRateFB")]
+        [NativeApi(EntryPoint = "xrRequestDisplayRefreshRateFB", Convention = CallingConvention.Winapi)]
         public partial Result RequestDisplayRefreshRateFB([Count(Count = 0)] Session session, [Count(Count = 0)] float displayRefreshRate);
 
         /// <summary>To be documented.</summary>

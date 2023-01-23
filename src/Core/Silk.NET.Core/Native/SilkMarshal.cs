@@ -29,7 +29,7 @@ namespace Silk.NET.Core.Native
 
         static SilkMarshal()
         {
-#if NET5_0
+#if NET5_0_OR_GREATER
             IsWinapiStdcall = OperatingSystem.IsWindows();
 #else
             IsWinapiStdcall = RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
@@ -134,7 +134,7 @@ namespace Silk.NET.Core.Native
                 return BStrToMemory(Marshal.StringToBSTR(input), input.Length);
             }
             
-            var memory = GlobalMemory.Allocate(GetMaxSizeOf(input));
+            var memory = GlobalMemory.Allocate(GetMaxSizeOf(input, encoding));
             StringIntoSpan(input, memory.AsSpan<byte>(), encoding);
             return memory;
         }
@@ -155,7 +155,7 @@ namespace Silk.NET.Core.Native
             => encoding switch
             {
                 NativeStringEncoding.BStr => -1,
-                NativeStringEncoding.LPStr => ((input?.Length ?? 0) + 1) * Marshal.SystemMaxDBCSCharSize,
+                NativeStringEncoding.LPStr => ((input?.Length ?? 0) + 1) * Marshal.SystemMaxDBCSCharSize + 1,
                 NativeStringEncoding.LPTStr => (input is null ? 0 : Encoding.UTF8.GetMaxByteCount(input.Length)) + 1,
                 NativeStringEncoding.LPUTF8Str => (input is null ? 0 : Encoding.UTF8.GetMaxByteCount(input.Length)) + 1,
                 NativeStringEncoding.LPWStr => ((input?.Length ?? 0) + 1) * 2,
@@ -218,7 +218,8 @@ namespace Silk.NET.Core.Native
                     {
                         fixed (byte* bytes = span)
                         {
-                            Buffer.MemoryCopy(firstChar, bytes, span.Length, input.Length + 1);
+                            Buffer.MemoryCopy(firstChar, bytes, span.Length, input.Length * 2);
+                            ((char*)bytes)[input.Length] = default;
                         }
                     }
 
@@ -526,6 +527,11 @@ namespace Silk.NET.Core.Native
         {
             var span = new Span<byte>((void*) ptr, int.MaxValue);
             span = span.Slice(0, span.IndexOf(default(byte)));
+            if (span.Length == 0)
+            {
+                return string.Empty;
+            }
+
             fixed (byte* bytes = span)
             {
                 return Encoding.UTF8.GetString(bytes, span.Length);
@@ -786,7 +792,7 @@ namespace Silk.NET.Core.Native
 
             private static Guid* CreateRiid()
             {
-#if NET5_0
+#if NET5_0_OR_GREATER
                 var p = (Guid*) RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(T), sizeof(Guid));
 #else
                 var p = (Guid*) Allocate(sizeof(Guid));
@@ -862,10 +868,10 @@ namespace Silk.NET.Core.Native
         }
 
         [MethodImpl((MethodImplOptions) 768)]
-#if !NET5_0
-        public static unsafe ref T NullRef<T>() => ref Unsafe.AsRef<T>((void*) 0);
-#else
+#if NET5_0_OR_GREATER
         public static ref T NullRef<T>() => ref Unsafe.NullRef<T>();
+#else
+        public static unsafe ref T NullRef<T>() => ref Unsafe.AsRef<T>((void*) 0);
 #endif
     }
 }

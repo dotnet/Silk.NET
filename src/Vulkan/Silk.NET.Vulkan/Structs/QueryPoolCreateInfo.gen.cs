@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueryPoolCreateInfo")]
-    public unsafe partial struct QueryPoolCreateInfo
+    public unsafe partial struct QueryPoolCreateInfo : IChainStart
     {
         public QueryPoolCreateInfo
         (
@@ -90,5 +90,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkQueryPipelineStatisticFlags")]
         [NativeName("Name", "pipelineStatistics")]
         public QueryPipelineStatisticFlags PipelineStatistics;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.QueryPoolCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref QueryPoolCreateInfo Chain(
+            out QueryPoolCreateInfo capture)
+        {
+            capture = new QueryPoolCreateInfo(StructureType.QueryPoolCreateInfo);
+            return ref capture;
+        }
     }
 }

@@ -1,7 +1,7 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using JetBrains.Annotations;
+
 using Silk.NET.BuildTools.Common.Functions;
 
 namespace Silk.NET.BuildTools.Common.Builders
@@ -13,19 +13,19 @@ namespace Silk.NET.BuildTools.Common.Builders
     /// </summary>
     public class ParameterSignatureBuilder
     {
-        [CanBeNull] private Count _newCount;
+        private Count? _newCount;
 
         private FlowDirection _newFlow;
 
-        [NotNull] private string _newName;
+        private string _newName;
 
-        [NotNull] private Type _newType;
+        private Type _newType;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ParameterSignatureBuilder" /> class.
         /// </summary>
         /// <param name="parameterSignature">The signature.</param>
-        public ParameterSignatureBuilder([NotNull] Parameter parameterSignature)
+        public ParameterSignatureBuilder(Parameter parameterSignature)
         {
             _newName = parameterSignature.Name;
             _newType = parameterSignature.Type;
@@ -38,8 +38,7 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newName">The new name.</param>
         /// <returns>The builder, with the change applied.</returns>
-        [NotNull]
-        public ParameterSignatureBuilder WithName([NotNull] string newName)
+        public ParameterSignatureBuilder WithName(string newName)
         {
             _newName = newName;
             return this;
@@ -50,8 +49,7 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newType">The new type.</param>
         /// <returns>The builder, with the change applied.</returns>
-        [NotNull]
-        public ParameterSignatureBuilder WithType([NotNull] Type newType)
+        public ParameterSignatureBuilder WithType(Type newType)
         {
             _newType = newType;
             return this;
@@ -62,7 +60,6 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newFlow">The new flow.</param>
         /// <returns>The builder, with the change applied.</returns>
-        [NotNull]
         public ParameterSignatureBuilder WithFlow(FlowDirection newFlow)
         {
             _newFlow = newFlow;
@@ -74,8 +71,7 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newCount">The new count.</param>
         /// <returns>The builder, with the change applied.</returns>
-        [NotNull]
-        public ParameterSignatureBuilder WithCount([CanBeNull] Count newCount)
+        public ParameterSignatureBuilder WithCount(Count? newCount)
         {
             _newCount = newCount;
             return this;
@@ -85,7 +81,6 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// Builds the final instance.
         /// </summary>
         /// <returns>The instance.</returns>
-        [NotNull]
         public Parameter Build()
         {
             return new Parameter

@@ -34,6 +34,7 @@ namespace Silk.NET.SDL
                 {
                     Kind |= NativeWindowFlags.Win32;
                     Win32 = (info.Info.Win.Hwnd, info.Info.Win.HDC, info.Info.Win.HInstance);
+                    DXHandle = info.Info.Win.Hwnd;
                     break;
                 }
                 case SysWMType.X11:
@@ -82,6 +83,8 @@ namespace Silk.NET.SDL
                     break;
                 }
             }
+
+            DXHandle ??= (nint)window;
         }
 
         public NativeWindowFlags Kind { get; }
@@ -95,5 +98,7 @@ namespace Silk.NET.SDL
         public (nint Window, nint Surface)? Android { get; }
         public nint? Glfw { get; }
         public nint? Sdl { get; }
+        public nint? DXHandle { get; }
+        public (nint? Display, nint? Surface)? EGL { get; }
     }
 }

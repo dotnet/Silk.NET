@@ -38,6 +38,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pFragmentShadingRates = new(StructureType.PhysicalDeviceFragmentShadingRateKhr);")]
         public static unsafe Result GetPhysicalDeviceFragmentShadingRates(this KhrFragmentShadingRate thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pFragmentShadingRateCount, [Count(Parameter = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] Span<PhysicalDeviceFragmentShadingRateKHR> pFragmentShadingRates)
         {
             // SpanOverloader
@@ -52,6 +53,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pFragmentShadingRates = new(StructureType.PhysicalDeviceFragmentShadingRateKhr);")]
         public static unsafe Result GetPhysicalDeviceFragmentShadingRates(this KhrFragmentShadingRate thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pFragmentShadingRateCount, [Count(Parameter = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] Span<PhysicalDeviceFragmentShadingRateKHR> pFragmentShadingRates)
         {
             // SpanOverloader

@@ -152,8 +152,8 @@ namespace Silk.NET.SDL
         [NativeName("Type.Name", "Uint8")]
         [NativeName("Name", "BytesPerPixel")]
         public byte BytesPerPixel;
-        [NativeName("Type", "Uint8 [2]")]
-        [NativeName("Type.Name", "Uint8 [2]")]
+        [NativeName("Type", "Uint8[2]")]
+        [NativeName("Type.Name", "Uint8[2]")]
         [NativeName("Name", "padding")]
         public fixed byte Padding[2];
 

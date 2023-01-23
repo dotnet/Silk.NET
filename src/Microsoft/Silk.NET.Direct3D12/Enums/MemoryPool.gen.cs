@@ -9,14 +9,26 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Direct3D12
 {
+    [Flags]
     [NativeName("Name", "D3D12_MEMORY_POOL")]
     public enum MemoryPool : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"Unknown\"")]
         [NativeName("Name", "D3D12_MEMORY_POOL_UNKNOWN")]
         MemoryPoolUnknown = 0x0,
+        [Obsolete("Deprecated in favour of \"L0\"")]
         [NativeName("Name", "D3D12_MEMORY_POOL_L0")]
         MemoryPoolL0 = 0x1,
+        [Obsolete("Deprecated in favour of \"L1\"")]
         [NativeName("Name", "D3D12_MEMORY_POOL_L1")]
         MemoryPoolL1 = 0x2,
+        [NativeName("Name", "D3D12_MEMORY_POOL_UNKNOWN")]
+        Unknown = 0x0,
+        [NativeName("Name", "D3D12_MEMORY_POOL_L0")]
+        L0 = 0x1,
+        [NativeName("Name", "D3D12_MEMORY_POOL_L1")]
+        L1 = 0x2,
     }
 }

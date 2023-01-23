@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
     public unsafe partial class IntelFramebufferCmaa : NativeExtension<GL>
     {
         public const string ExtensionName = "INTEL_framebuffer_CMAA";
-        [NativeApi(EntryPoint = "glApplyFramebufferAttachmentCMAAINTEL")]
+        [NativeApi(EntryPoint = "glApplyFramebufferAttachmentCMAAINTEL", Convention = CallingConvention.Winapi)]
         public partial void ApplyFramebufferAttachmentCmaa();
 
         public IntelFramebufferCmaa(INativeContext ctx)

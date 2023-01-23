@@ -30,7 +30,7 @@ namespace Silk.NET.BuildTools.Overloading
                         (
                             new Type
                             {
-                                Name = "string", ArrayDimensions = 1
+                                Name = "string", ArrayDimensions = 1, OriginalName = parameter.Type.OriginalName
                             }
                         )
                         .WithName(parameter.Name + "Sa")
@@ -52,7 +52,7 @@ namespace Silk.NET.BuildTools.Overloading
 
             sb.AppendLine
             (
-                $"{function.Name}" +
+                $"{function.InvocationPrefix}{function.Name}" +
                 "(" + string.Join
                 (
                     ", ",

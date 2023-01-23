@@ -21,11 +21,11 @@ namespace Silk.NET.OpenXR.Extensions.KHR
     {
         public const string ExtensionName = "XR_KHR_D3D11_enable";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetD3D11GraphicsRequirementsKHR")]
+        [NativeApi(EntryPoint = "xrGetD3D11GraphicsRequirementsKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetD3D11GraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] GraphicsRequirementsD3D11KHR* graphicsRequirements);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetD3D11GraphicsRequirementsKHR")]
+        [NativeApi(EntryPoint = "xrGetD3D11GraphicsRequirementsKHR", Convention = CallingConvention.Winapi)]
         public partial Result GetD3D11GraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ref GraphicsRequirementsD3D11KHR graphicsRequirements);
 
         public KhrD3D11Enable(INativeContext ctx)

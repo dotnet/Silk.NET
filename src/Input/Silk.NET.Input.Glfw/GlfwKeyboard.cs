@@ -22,6 +22,11 @@ namespace Silk.NET.Input.Glfw
         public int Index { get; } = 0;
         public bool IsConnected { get; } = true;
         public IReadOnlyList<Key> SupportedKeys { get; } = _keys;
+        public unsafe string ClipboardText
+        {
+            get => GlfwProvider.GLFW.Value.GetClipboardString(_handle);
+            set => GlfwProvider.GLFW.Value.SetClipboardString(_handle, value);
+        }
 
         public unsafe bool IsKeyPressed
             (Key key) => GlfwProvider.GLFW.Value.GetKey(_handle, ConvertKey(key)) == (int) InputAction.Press;
@@ -182,7 +187,7 @@ namespace Silk.NET.Input.Glfw
             Keys.AltRight => Key.AltRight,
             Keys.SuperRight => Key.SuperRight,
             Keys.Menu => Key.Menu,
-            _ => throw new ArgumentOutOfRangeException()
+            _ => Key.Unknown
         };
 
         private static Keys ConvertKey(Key keys) => keys switch
@@ -308,7 +313,7 @@ namespace Silk.NET.Input.Glfw
             Key.AltRight => Keys.AltRight,
             Key.SuperRight => Keys.SuperRight,
             Key.Menu => Keys.Menu,
-            _ => throw new ArgumentOutOfRangeException()
+            _ => Keys.Unknown
         };
     }
 }

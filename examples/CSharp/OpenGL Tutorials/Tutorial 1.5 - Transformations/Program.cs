@@ -1,7 +1,6 @@
 using Silk.NET.Input;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
-using System.Drawing;
 using System.Numerics;
 using Silk.NET.Maths;
 
@@ -23,10 +22,10 @@ namespace Tutorial
         private static readonly float[] Vertices =
         {
             //X    Y      Z     U   V
-             0.5f,  0.5f, 0.0f, 1f, 1f,
-             0.5f, -0.5f, 0.0f, 1f, 0f,
-            -0.5f, -0.5f, 0.0f, 0f, 0f,
-            -0.5f,  0.5f, 0.5f, 0f, 1f
+             0.5f,  0.5f, 0.0f, 1f, 0f,
+             0.5f, -0.5f, 0.0f, 1f, 1f,
+            -0.5f, -0.5f, 0.0f, 0f, 1f,
+            -0.5f,  0.5f, 0.5f, 0f, 0f
         };
 
         private static readonly uint[] Indices =

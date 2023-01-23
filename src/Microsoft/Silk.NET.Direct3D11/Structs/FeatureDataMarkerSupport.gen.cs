@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D11
     {
         public FeatureDataMarkerSupport
         (
-            int? profile = null
+            Silk.NET.Core.Bool32? profile = null
         ) : this()
         {
             if (profile is not null)
@@ -34,6 +34,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]
         [NativeName("Name", "Profile")]
-        public int Profile;
+        public Silk.NET.Core.Bool32 Profile;
     }
 }

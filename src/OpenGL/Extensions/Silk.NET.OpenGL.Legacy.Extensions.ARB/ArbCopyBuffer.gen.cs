@@ -20,16 +20,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbCopyBuffer : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_copy_buffer";
-        [NativeApi(EntryPoint = "glCopyBufferSubData")]
+        [NativeApi(EntryPoint = "glCopyBufferSubData", Convention = CallingConvention.Winapi)]
         public partial void CopyBufferSubData([Flow(FlowDirection.In)] ARB readTarget, [Flow(FlowDirection.In)] ARB writeTarget, [Flow(FlowDirection.In)] nint readOffset, [Flow(FlowDirection.In)] nint writeOffset, [Flow(FlowDirection.In)] nuint size);
 
-        [NativeApi(EntryPoint = "glCopyBufferSubData")]
+        [NativeApi(EntryPoint = "glCopyBufferSubData", Convention = CallingConvention.Winapi)]
         public partial void CopyBufferSubData([Flow(FlowDirection.In)] ARB readTarget, [Flow(FlowDirection.In)] CopyBufferSubDataTarget writeTarget, [Flow(FlowDirection.In)] nint readOffset, [Flow(FlowDirection.In)] nint writeOffset, [Flow(FlowDirection.In)] nuint size);
 
-        [NativeApi(EntryPoint = "glCopyBufferSubData")]
+        [NativeApi(EntryPoint = "glCopyBufferSubData", Convention = CallingConvention.Winapi)]
         public partial void CopyBufferSubData([Flow(FlowDirection.In)] CopyBufferSubDataTarget readTarget, [Flow(FlowDirection.In)] ARB writeTarget, [Flow(FlowDirection.In)] nint readOffset, [Flow(FlowDirection.In)] nint writeOffset, [Flow(FlowDirection.In)] nuint size);
 
-        [NativeApi(EntryPoint = "glCopyBufferSubData")]
+        [NativeApi(EntryPoint = "glCopyBufferSubData", Convention = CallingConvention.Winapi)]
         public partial void CopyBufferSubData([Flow(FlowDirection.In)] CopyBufferSubDataTarget readTarget, [Flow(FlowDirection.In)] CopyBufferSubDataTarget writeTarget, [Flow(FlowDirection.In)] nint readOffset, [Flow(FlowDirection.In)] nint writeOffset, [Flow(FlowDirection.In)] nuint size);
 
         public ArbCopyBuffer(INativeContext ctx)

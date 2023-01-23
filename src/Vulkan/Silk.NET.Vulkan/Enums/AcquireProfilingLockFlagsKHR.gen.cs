@@ -9,9 +9,11 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkAcquireProfilingLockFlagsKHR")]
     public enum AcquireProfilingLockFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
     }
 }

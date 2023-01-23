@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Silk.NET.BuildTools.Common
@@ -25,19 +26,41 @@ namespace Silk.NET.BuildTools.Common
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append($"[{Name}(");
+            sb.Append($"[{Name}");
             for (var index = 0; index < Arguments.Count; index++)
             {
+                if (index == 0)
+                {
+                    sb.Append('(');
+                }
+            
                 var argument = Arguments[index];
                 sb.Append(argument);
                 if (index != Arguments.Count - 1)
                 {
                     sb.Append(", ");
                 }
+                else
+                {
+                    sb.Append(')');
+                }
             }
 
-            sb.Append(")]");
+            sb.Append(']');
             return sb.ToString();
+        }
+
+        /// <summary>
+        /// Clones this attribute.
+        /// </summary>
+        /// <returns>A copy.</returns>
+        public Attribute Clone()
+        {
+            return new Attribute
+            {
+                Name = Name,
+                Arguments = Arguments.ToList()
+            };
         }
     }
 }

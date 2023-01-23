@@ -46,18 +46,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.Binormal3(in v.GetPinnableReference());
         }
 
-        public static unsafe void BinormalPointer<T0>(this ExtCoordinateFrame thisApi, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.BinormalPointer(type, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void BinormalPointer<T0>(this ExtCoordinateFrame thisApi, [Flow(FlowDirection.In)] BinormalPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.BinormalPointer(type, stride, in pointer.GetPinnableReference());
-        }
-
         public static unsafe void Tangent3(this ExtCoordinateFrame thisApi, [Count(Count = 3), Flow(FlowDirection.In)] ReadOnlySpan<sbyte> v)
         {
             // SpanOverloader
@@ -86,18 +74,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         {
             // SpanOverloader
             thisApi.Tangent3(in v.GetPinnableReference());
-        }
-
-        public static unsafe void TangentPointer<T0>(this ExtCoordinateFrame thisApi, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.TangentPointer(type, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void TangentPointer<T0>(this ExtCoordinateFrame thisApi, [Flow(FlowDirection.In)] TangentPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.TangentPointer(type, stride, in pointer.GetPinnableReference());
         }
 
     }

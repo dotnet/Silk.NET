@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D11
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d11shadertracing_L226_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d11shadertracing_L234_C5")]
     public unsafe partial struct TraceRegisterUnion
     {
         public TraceRegisterUnion
@@ -38,8 +38,8 @@ namespace Silk.NET.Direct3D11
         [NativeName("Name", "Index1D")]
         public ushort Index1D;
         [FieldOffset(0)]
-        [NativeName("Type", "UINT16 [2]")]
-        [NativeName("Type.Name", "UINT16 [2]")]
+        [NativeName("Type", "UINT16[2]")]
+        [NativeName("Type.Name", "UINT16[2]")]
         [NativeName("Name", "Index2D")]
         public fixed ushort Index2D[2];
     }

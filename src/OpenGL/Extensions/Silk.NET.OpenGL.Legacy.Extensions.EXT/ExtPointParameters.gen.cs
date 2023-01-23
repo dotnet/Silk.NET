@@ -20,22 +20,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtPointParameters : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_point_parameters";
-        [NativeApi(EntryPoint = "glPointParameterfEXT")]
+        [NativeApi(EntryPoint = "glPointParameterfEXT", Convention = CallingConvention.Winapi)]
         public partial void PointParameter([Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] float param);
 
-        [NativeApi(EntryPoint = "glPointParameterfEXT")]
+        [NativeApi(EntryPoint = "glPointParameterfEXT", Convention = CallingConvention.Winapi)]
         public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Flow(FlowDirection.In)] float param);
 
-        [NativeApi(EntryPoint = "glPointParameterfvEXT")]
+        [NativeApi(EntryPoint = "glPointParameterfvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void PointParameter([Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glPointParameterfvEXT")]
+        [NativeApi(EntryPoint = "glPointParameterfvEXT", Convention = CallingConvention.Winapi)]
         public partial void PointParameter([Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
-        [NativeApi(EntryPoint = "glPointParameterfvEXT")]
+        [NativeApi(EntryPoint = "glPointParameterfvEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        [NativeApi(EntryPoint = "glPointParameterfvEXT")]
+        [NativeApi(EntryPoint = "glPointParameterfvEXT", Convention = CallingConvention.Winapi)]
         public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] in float @params);
 
         public ExtPointParameters(INativeContext ctx)

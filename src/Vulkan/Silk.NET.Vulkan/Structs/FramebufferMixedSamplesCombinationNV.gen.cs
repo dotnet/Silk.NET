@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFramebufferMixedSamplesCombinationNV")]
-    public unsafe partial struct FramebufferMixedSamplesCombinationNV
+    public unsafe partial struct FramebufferMixedSamplesCombinationNV : IChainable
     {
         public FramebufferMixedSamplesCombinationNV
         (
@@ -90,5 +90,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSampleCountFlags")]
         [NativeName("Name", "colorSamples")]
         public SampleCountFlags ColorSamples;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.FramebufferMixedSamplesCombinationNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

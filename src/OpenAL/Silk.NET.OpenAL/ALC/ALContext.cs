@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
@@ -19,7 +20,7 @@ namespace Silk.NET.OpenAL
         private SearchPathContainer? _searchPaths;
 
         /// <inheritdoc cref="NativeLibraryBase" />
-        protected ALContext(INativeContext ctx)
+        public ALContext(INativeContext ctx)
             : base(ctx)
         {
         }
@@ -111,11 +112,28 @@ namespace Silk.NET.OpenAL
         }
 
         /// <summary>
+        /// Attempts to load the given extension.
+        /// </summary>
+        /// <typeparam name="T">The extension type.</typeparam>
+        /// <param name="device">The device the context is on.</param>
+        /// <param name="ext">The extension to check for.</param>
+        /// <returns>Whether the extension is available.</returns>
+        public unsafe bool TryGetExtension<T>(Device* device, out T ext) where T : NativeExtension<ALContext>
+            => !((ext = IsExtensionPresent(device, ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
+                ? (T) Activator.CreateInstance(typeof(T), Context)
+                : null) is null);
+
+        /// <summary>
         /// Gets an instance of the API of an extension to the API.
         /// </summary>
         /// <typeparam name="TContextExtension">The extension type.</typeparam>
         /// <param name="device">The device the context is on.</param>
         /// <returns>The extension.</returns>
+        [Obsolete
+        (
+            "This method has been deprecated and will be removed in Silk.NET 3.0. " +
+            "Please use TryGetExtension instead."
+        )]
         public unsafe TContextExtension GetExtension<TContextExtension>(Device* device)
             where TContextExtension : ContextExtensionBase
         {

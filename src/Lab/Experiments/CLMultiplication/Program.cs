@@ -25,7 +25,7 @@ namespace CLMultiplication
             nint platform;
             nint device;
             var props = stackalloc nint[3];
-            props[0] = (nint) CLEnum.ContextPlatform;
+            props[0] = (nint) ContextProperties.Platform;
             props[0] = 0;
             props[0] = 0;
             nint ctx;
@@ -57,14 +57,14 @@ namespace CLMultiplication
             /* Setup OpenCL environment. */
             err = cl.GetPlatformIDs(1, &platform, null);
             AssertZero(err);
-            err = cl.GetDeviceIDs(platform, CLEnum.DeviceTypeGpu, 1, &device, null);
+            err = cl.GetDeviceIDs(platform, DeviceType.Gpu, 1, &device, null);
             AssertZero(err);
 
             props[1] = platform;
             ctx = cl.CreateContext(props, 1, &device, NotifyFunc, null, &err);
             AssertZero(err);
 
-            queue = cl.CreateCommandQueue(ctx, device, 0, &err);
+            queue = cl.CreateCommandQueue(ctx, device, CommandQueueProperties.None, &err);
             AssertZero(err);
             program = cl.CreateProgramWithSource(ctx, (uint) kernelCode.Length, kernelCode, null, &err);
             AssertZero(err);
@@ -76,10 +76,10 @@ namespace CLMultiplication
             catch (Exception ex)
             {
                 var logsize = UIntPtr.Zero;
-                cl.GetProgramBuildInfo(program, device, (uint) CLEnum.ProgramBuildLog, 0, null, &logsize);
+                cl.GetProgramBuildInfo(program, device, ProgramBuildInfo.BuildLog, 0, null, &logsize);
                 var log = Marshal.AllocHGlobal((nint) logsize.ToPointer());
                 cl.GetProgramBuildInfo
-                    (program, device, (uint) CLEnum.ProgramBuildLog, logsize, log.ToPointer(), (nuint*) null);
+                    (program, device, ProgramBuildInfo.BuildLog, logsize, log.ToPointer(), (nuint*) null);
                 throw new Exception(Marshal.PtrToStringAnsi(log), ex);
             }
 
@@ -87,7 +87,7 @@ namespace CLMultiplication
             AssertZero(err);
 
             // initialize buffer with data
-            dA = cl.CreateBuffer(ctx, CLEnum.MemReadWrite, (nuint) (n * sizeof(int)), null, &err);
+            dA = cl.CreateBuffer(ctx, MemFlags.ReadWrite, (nuint) (n * sizeof(int)), null, &err);
             AssertZero(err);
 
             err = cl.EnqueueWriteBuffer
@@ -133,7 +133,7 @@ namespace CLMultiplication
         {
             if (i != 0)
             {
-                throw new Exception($"Error code is not zero: {(CLEnum) i}");
+                throw new Exception($"Error code is not zero: {(ErrorCodes) i}");
             }
         }
 

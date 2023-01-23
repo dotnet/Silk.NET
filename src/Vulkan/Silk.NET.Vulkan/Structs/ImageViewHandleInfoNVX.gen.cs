@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageViewHandleInfoNVX")]
-    public unsafe partial struct ImageViewHandleInfoNVX
+    public unsafe partial struct ImageViewHandleInfoNVX : IChainable
     {
         public ImageViewHandleInfoNVX
         (
@@ -79,5 +79,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkSampler")]
         [NativeName("Name", "sampler")]
         public Sampler Sampler;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImageViewHandleInfoNvx;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

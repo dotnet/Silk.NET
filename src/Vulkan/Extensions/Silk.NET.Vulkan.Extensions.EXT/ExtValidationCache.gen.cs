@@ -21,67 +21,67 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         public const string ExtensionName = "VK_EXT_validation_cache";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateValidationCacheEXT")]
+        [NativeApi(EntryPoint = "vkCreateValidationCacheEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateValidationCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ValidationCacheCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ValidationCacheEXT* pValidationCache);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateValidationCacheEXT")]
+        [NativeApi(EntryPoint = "vkCreateValidationCacheEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateValidationCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ValidationCacheCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out ValidationCacheEXT pValidationCache);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateValidationCacheEXT")]
+        [NativeApi(EntryPoint = "vkCreateValidationCacheEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateValidationCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ValidationCacheCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ValidationCacheEXT* pValidationCache);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateValidationCacheEXT")]
+        [NativeApi(EntryPoint = "vkCreateValidationCacheEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateValidationCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ValidationCacheCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out ValidationCacheEXT pValidationCache);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateValidationCacheEXT")]
+        [NativeApi(EntryPoint = "vkCreateValidationCacheEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateValidationCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ValidationCacheCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ValidationCacheEXT* pValidationCache);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateValidationCacheEXT")]
+        [NativeApi(EntryPoint = "vkCreateValidationCacheEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateValidationCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ValidationCacheCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out ValidationCacheEXT pValidationCache);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateValidationCacheEXT")]
+        [NativeApi(EntryPoint = "vkCreateValidationCacheEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateValidationCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ValidationCacheCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ValidationCacheEXT* pValidationCache);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateValidationCacheEXT")]
+        [NativeApi(EntryPoint = "vkCreateValidationCacheEXT", Convention = CallingConvention.Winapi)]
         public partial Result CreateValidationCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ValidationCacheCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out ValidationCacheEXT pValidationCache);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyValidationCacheEXT")]
+        [NativeApi(EntryPoint = "vkDestroyValidationCacheEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyValidationCache([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyValidationCacheEXT")]
+        [NativeApi(EntryPoint = "vkDestroyValidationCacheEXT", Convention = CallingConvention.Winapi)]
         public partial void DestroyValidationCache([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetValidationCacheDataEXT")]
+        [NativeApi(EntryPoint = "vkGetValidationCacheDataEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetValidationCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] void* pData);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetValidationCacheDataEXT")]
+        [NativeApi(EntryPoint = "vkGetValidationCacheDataEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetValidationCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetValidationCacheDataEXT")]
+        [NativeApi(EntryPoint = "vkGetValidationCacheDataEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetValidationCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] void* pData);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetValidationCacheDataEXT")]
+        [NativeApi(EntryPoint = "vkGetValidationCacheDataEXT", Convention = CallingConvention.Winapi)]
         public partial Result GetValidationCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkMergeValidationCachesEXT")]
+        [NativeApi(EntryPoint = "vkMergeValidationCachesEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial Result MergeValidationCaches([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Parameter = "srcCacheCount"), Flow(FlowDirection.In)] ValidationCacheEXT* pSrcCaches);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkMergeValidationCachesEXT")]
+        [NativeApi(EntryPoint = "vkMergeValidationCachesEXT", Convention = CallingConvention.Winapi)]
         public partial Result MergeValidationCaches([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Parameter = "srcCacheCount"), Flow(FlowDirection.In)] in ValidationCacheEXT pSrcCaches);
 
         /// <summary>To be documented.</summary>

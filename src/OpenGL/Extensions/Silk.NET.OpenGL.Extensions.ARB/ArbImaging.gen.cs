@@ -20,13 +20,13 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public unsafe partial class ArbImaging : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_imaging";
-        [NativeApi(EntryPoint = "glBlendColor")]
+        [NativeApi(EntryPoint = "glBlendColor", Convention = CallingConvention.Winapi)]
         public partial void BlendColor([Flow(FlowDirection.In)] float red, [Flow(FlowDirection.In)] float green, [Flow(FlowDirection.In)] float blue, [Flow(FlowDirection.In)] float alpha);
 
-        [NativeApi(EntryPoint = "glBlendEquation")]
+        [NativeApi(EntryPoint = "glBlendEquation", Convention = CallingConvention.Winapi)]
         public partial void BlendEquation([Flow(FlowDirection.In)] ARB mode);
 
-        [NativeApi(EntryPoint = "glBlendEquation")]
+        [NativeApi(EntryPoint = "glBlendEquation", Convention = CallingConvention.Winapi)]
         public partial void BlendEquation([Flow(FlowDirection.In)] BlendEquationModeEXT mode);
 
         public ArbImaging(INativeContext ctx)

@@ -20,113 +20,239 @@ namespace Silk.NET.OpenCL.Extensions.APPLE
     public unsafe partial class AppleContextLoggingFunctions : NativeExtension<CL>
     {
         public const string ExtensionName = "APPLE_ContextLoggingFunctions";
-        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToStderr([Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data);
 
-        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToStderr<T0>([Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToStderr<T0>([Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToStderr<T0, T1>([Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T1 user_data) where T0 : unmanaged where T1 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToStderr([Flow(FlowDirection.In)] in byte errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data);
 
-        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToStderr<T0>([Flow(FlowDirection.In)] in byte errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToStderr<T0>([Flow(FlowDirection.In)] in byte errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE", Convention = CallingConvention.Winapi)]
         public partial void LogMessagesToStderr<T0, T1>([Flow(FlowDirection.In)] in byte errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T1 user_data) where T0 : unmanaged where T1 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE")]
-        public unsafe partial void LogMessagesToStderr([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data);
+        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE", Convention = CallingConvention.Winapi)]
+        public unsafe partial void LogMessagesToStderr([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data);
 
-        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE")]
-        public unsafe partial void LogMessagesToStderr<T0>([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE", Convention = CallingConvention.Winapi)]
+        public unsafe partial void LogMessagesToStderr<T0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE")]
-        public unsafe partial void LogMessagesToStderr<T0>([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged;
+        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE", Convention = CallingConvention.Winapi)]
+        public unsafe partial void LogMessagesToStderr<T0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE")]
-        public partial void LogMessagesToStderr<T0, T1>([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T1 user_data) where T0 : unmanaged where T1 : unmanaged;
+        [NativeApi(EntryPoint = "clLogMessagesToStderrAPPLE", Convention = CallingConvention.Winapi)]
+        public partial void LogMessagesToStderr<T0, T1>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T1 user_data) where T0 : unmanaged where T1 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToStdout([Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data);
 
-        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToStdout<T0>([Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToStdout<T0>([Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToStdout<T0, T1>([Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T1 user_data) where T0 : unmanaged where T1 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToStdout([Flow(FlowDirection.In)] in byte errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data);
 
-        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToStdout<T0>([Flow(FlowDirection.In)] in byte errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToStdout<T0>([Flow(FlowDirection.In)] in byte errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE", Convention = CallingConvention.Winapi)]
         public partial void LogMessagesToStdout<T0, T1>([Flow(FlowDirection.In)] in byte errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T1 user_data) where T0 : unmanaged where T1 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE")]
-        public unsafe partial void LogMessagesToStdout([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data);
+        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE", Convention = CallingConvention.Winapi)]
+        public unsafe partial void LogMessagesToStdout([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data);
 
-        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE")]
-        public unsafe partial void LogMessagesToStdout<T0>([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE", Convention = CallingConvention.Winapi)]
+        public unsafe partial void LogMessagesToStdout<T0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE")]
-        public unsafe partial void LogMessagesToStdout<T0>([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged;
+        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE", Convention = CallingConvention.Winapi)]
+        public unsafe partial void LogMessagesToStdout<T0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE")]
-        public partial void LogMessagesToStdout<T0, T1>([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T1 user_data) where T0 : unmanaged where T1 : unmanaged;
+        [NativeApi(EntryPoint = "clLogMessagesToStdoutAPPLE", Convention = CallingConvention.Winapi)]
+        public partial void LogMessagesToStdout<T0, T1>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T1 user_data) where T0 : unmanaged where T1 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToSystemLog([Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data);
 
-        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToSystemLog<T0>([Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToSystemLog<T0>([Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToSystemLog<T0, T1>([Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T1 user_data) where T0 : unmanaged where T1 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToSystemLog([Flow(FlowDirection.In)] in byte errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data);
 
-        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToSystemLog<T0>([Flow(FlowDirection.In)] in byte errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE", Convention = CallingConvention.Winapi)]
         public unsafe partial void LogMessagesToSystemLog<T0>([Flow(FlowDirection.In)] in byte errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE")]
+        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE", Convention = CallingConvention.Winapi)]
         public partial void LogMessagesToSystemLog<T0, T1>([Flow(FlowDirection.In)] in byte errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T1 user_data) where T0 : unmanaged where T1 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE")]
-        public unsafe partial void LogMessagesToSystemLog([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data);
+        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE", Convention = CallingConvention.Winapi)]
+        public unsafe partial void LogMessagesToSystemLog([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data);
 
-        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE")]
-        public unsafe partial void LogMessagesToSystemLog<T0>([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
+        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE", Convention = CallingConvention.Winapi)]
+        public unsafe partial void LogMessagesToSystemLog<T0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T0 user_data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE")]
-        public unsafe partial void LogMessagesToSystemLog<T0>([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged;
+        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE", Convention = CallingConvention.Winapi)]
+        public unsafe partial void LogMessagesToSystemLog<T0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] void* user_data) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE")]
-        public partial void LogMessagesToSystemLog<T0, T1>([Flow(FlowDirection.In)] string errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T1 user_data) where T0 : unmanaged where T1 : unmanaged;
+        [NativeApi(EntryPoint = "clLogMessagesToSystemLogAPPLE", Convention = CallingConvention.Winapi)]
+        public partial void LogMessagesToSystemLog<T0, T1>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb, [Flow(FlowDirection.Out)] out T1 user_data) where T0 : unmanaged where T1 : unmanaged;
+
+        public unsafe T0 LogMessagesToStderr<T0>([Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            LogMessagesToStderr(errstr, private_info, cb, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 LogMessagesToStderr<T0, T1>([Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            LogMessagesToStderr(errstr, in private_info, cb, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 LogMessagesToStderr<T0>([Flow(FlowDirection.In)] in byte errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            LogMessagesToStderr(in errstr, private_info, cb, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 LogMessagesToStderr<T0, T1>([Flow(FlowDirection.In)] in byte errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            LogMessagesToStderr(in errstr, in private_info, cb, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 LogMessagesToStderr<T0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            LogMessagesToStderr(errstr, private_info, cb, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 LogMessagesToStderr<T0, T1>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            LogMessagesToStderr(errstr, in private_info, cb, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 LogMessagesToStdout<T0>([Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            LogMessagesToStdout(errstr, private_info, cb, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 LogMessagesToStdout<T0, T1>([Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            LogMessagesToStdout(errstr, in private_info, cb, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 LogMessagesToStdout<T0>([Flow(FlowDirection.In)] in byte errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            LogMessagesToStdout(in errstr, private_info, cb, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 LogMessagesToStdout<T0, T1>([Flow(FlowDirection.In)] in byte errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            LogMessagesToStdout(in errstr, in private_info, cb, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 LogMessagesToStdout<T0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            LogMessagesToStdout(errstr, private_info, cb, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 LogMessagesToStdout<T0, T1>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            LogMessagesToStdout(errstr, in private_info, cb, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 LogMessagesToSystemLog<T0>([Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            LogMessagesToSystemLog(errstr, private_info, cb, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 LogMessagesToSystemLog<T0, T1>([Flow(FlowDirection.In)] byte* errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            LogMessagesToSystemLog(errstr, in private_info, cb, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 LogMessagesToSystemLog<T0>([Flow(FlowDirection.In)] in byte errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            LogMessagesToSystemLog(in errstr, private_info, cb, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 LogMessagesToSystemLog<T0, T1>([Flow(FlowDirection.In)] in byte errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            LogMessagesToSystemLog(in errstr, in private_info, cb, out T1 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 LogMessagesToSystemLog<T0>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] void* private_info, [Flow(FlowDirection.In)] nuint cb) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            LogMessagesToSystemLog(errstr, private_info, cb, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T1 LogMessagesToSystemLog<T0, T1>([Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string errstr, [Flow(FlowDirection.In)] in T0 private_info, [Flow(FlowDirection.In)] nuint cb) where T0 : unmanaged where T1 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            LogMessagesToSystemLog(errstr, in private_info, cb, out T1 silkRet);
+            return silkRet;
+        }
 
         public AppleContextLoggingFunctions(INativeContext ctx)
             : base(ctx)

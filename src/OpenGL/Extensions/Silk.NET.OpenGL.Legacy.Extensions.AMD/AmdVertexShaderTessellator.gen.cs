@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
     public unsafe partial class AmdVertexShaderTessellator : NativeExtension<GL>
     {
         public const string ExtensionName = "AMD_vertex_shader_tessellator";
-        [NativeApi(EntryPoint = "glTessellationFactorAMD")]
+        [NativeApi(EntryPoint = "glTessellationFactorAMD", Convention = CallingConvention.Winapi)]
         public partial void TessellationFactor([Flow(FlowDirection.In)] float factor);
 
-        [NativeApi(EntryPoint = "glTessellationModeAMD")]
+        [NativeApi(EntryPoint = "glTessellationModeAMD", Convention = CallingConvention.Winapi)]
         public partial void TessellationMode([Flow(FlowDirection.In)] AMD mode);
 
         public AmdVertexShaderTessellator(INativeContext ctx)

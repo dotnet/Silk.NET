@@ -16,6 +16,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.XInput
 {
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     [NativeName("Name", "_XINPUT_KEYSTROKE")]
     public unsafe partial struct Keystroke
     {

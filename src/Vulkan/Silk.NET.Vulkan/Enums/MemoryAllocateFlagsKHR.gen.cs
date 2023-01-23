@@ -9,11 +9,16 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkMemoryAllocateFlagsKHR")]
     public enum MemoryAllocateFlagsKHR : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"DeviceMaskBit\"")]
         [NativeName("Name", "VK_MEMORY_ALLOCATE_DEVICE_MASK_BIT")]
         MemoryAllocateDeviceMaskBit = 1,
+        [NativeName("Name", "VK_MEMORY_ALLOCATE_DEVICE_MASK_BIT")]
+        DeviceMaskBit = 1,
     }
 }

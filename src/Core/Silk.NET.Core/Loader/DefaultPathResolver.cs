@@ -3,12 +3,15 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using Microsoft.Extensions.DependencyModel;
 using RuntimeEnvironment = Microsoft.DotNet.PlatformAbstractions.RuntimeEnvironment;
+
+#nullable enable
 
 namespace Silk.NET.Core.Loader
 {
@@ -21,37 +24,155 @@ namespace Silk.NET.Core.Loader
     public class DefaultPathResolver : PathResolver
     {
         /// <summary>
+        /// Creates a path resolver pre-loaded with the default <see cref="Resolvers"/>, which are the following in the
+        /// given order:
+        /// - <see cref="PassthroughResolver" />
+        /// - <see cref="LinuxVersioningResolver" />
+        /// - <see cref="MacVersioningResolver" />
+        /// - <see cref="BaseDirectoryResolver" />
+        /// - <see cref="MainModuleDirectoryResolver" />
+        /// - <see cref="RuntimesFolderResolver" />
+        /// - <see cref="NativePackageResolver" />
+        /// </summary>
+        public DefaultPathResolver() => Resolvers = new()
+        {
+            PassthroughResolver,
+            LinuxVersioningResolver,
+            MacVersioningResolver,
+            BaseDirectoryResolver,
+            MainModuleDirectoryResolver,
+            RuntimesFolderResolver,
+            NativePackageResolver
+        };
+
+        /// <summary>
+        /// A list of resolvers to use to obtain paths. 
+        /// </summary>
+        public List<Func<string, IEnumerable<string>>> Resolvers { get; set; }
+
+        /// <summary>
+        /// A resolver that returns the given name with no modifications. Note that this resolver is intrinsically
+        /// meaningful in that always operates on the originally passed name, rather than what's currently in the
+        /// candidate list (as this would be pointless).
+        /// </summary>
+        public static readonly Func<string, IEnumerable<string>> PassthroughResolver = name
+            => Enumerable.Repeat(name, 1);
+
+        /// <summary>
+        /// A resolver that returns a path to a file in <see cref="AppContext.BaseDirectory"/> with the given name.
+        /// </summary>
+        public static readonly Func<string, IEnumerable<string>> BaseDirectoryResolver = name
+            // check that name doesn't have a directory name, we only want raw filenames so that the Path.Combine
+            // doesn't blow up.
+            => string.IsNullOrEmpty(AppContext.BaseDirectory) && string.IsNullOrWhiteSpace(Path.GetDirectoryName(name))
+                ? Enumerable.Empty<string>()
+                : Enumerable.Repeat(Path.Combine(AppContext.BaseDirectory, name), 1);
+
+        /// <summary>
+        /// A resolver that returns a path to a file in <see cref="Process.MainModule"/>'s
+        /// <see cref="ProcessModule.FileName"/> directory with the given name.
+        /// </summary>
+        public static readonly Func<string, IEnumerable<string>> MainModuleDirectoryResolver = name =>
+        {
+            try
+            {
+                var mainModFname = Process.GetCurrentProcess().MainModule?.FileName;
+                // check that name doesn't have a directory name, we only want raw filenames so that the Path.Combine
+                // doesn't blow up.
+                if (!string.IsNullOrWhiteSpace(Path.GetDirectoryName(name)) && mainModFname is not null)
+                {
+                    mainModFname = Path.GetDirectoryName(mainModFname);
+                    if (mainModFname is not null)
+                    {
+                        return Enumerable.Repeat(Path.Combine(mainModFname, name), 1);
+                    }
+                }
+            }
+            catch
+            {
+                // System.Diagnostics.Process is not supported on the WASI-SDK
+            }
+
+            return Enumerable.Empty<string>();
+        };
+
+        /// <summary>
+        /// A resolver that, given an absolute or relative path, searches for a "runtimes" folder in the directory
+        /// represented by the given name for a file matching the given path's file name in one of the applicable
+        /// RID-specific runtimes folders applicable to the current dependency context. 
+        /// </summary>
+        public static readonly Func<string, IEnumerable<string>> RuntimesFolderResolver = name =>
+        {
+            var dirName = Path.GetDirectoryName(name);
+            var fileName = Path.GetFileName(name);
+            return string.IsNullOrWhiteSpace(dirName) ||
+                   string.IsNullOrWhiteSpace(fileName) ||
+                   !TryLocateNativeAssetInRuntimesFolder(fileName, dirName, out var result) ||
+                   result is null 
+                ? Enumerable.Empty<string>()
+                : Enumerable.Repeat(result, 1);
+        };
+
+        /// <summary>
+        /// A resolver that returns less version-specific Linux shared object names. That is, given a string of
+        /// "libglfw.so.3.3.6", this resolver will return "libglfw.so.3.3", "libglfw.so.3", and "libglfw.so" (in that
+        /// order).
+        /// </summary>
+        public static readonly Func<string, IEnumerable<string>> LinuxVersioningResolver = GetLinuxPossibilities;
+        
+        /// <summary>
+        /// A resolver that returns less version-specific macOS dynamic library names. That is, given a string of
+        /// "libglfw.3.3.6.dylib", this resolver will return "libglfw.3.3.dylib", "libglfw.3.dylib", and "libglfw.dylib"
+        /// (in that order).
+        /// </summary>
+        public static readonly Func<string, IEnumerable<string>> MacVersioningResolver = GetMacPossibilities;
+
+        /// <summary>
+        /// A resolver that searches the restored NuGet packages for the current executable for a file matching the
+        /// given file name in one of the applicable RID-specific runtimes folders applicable to the current dependency
+        /// context. 
+        /// </summary>
+        public static readonly Func<string, IEnumerable<string>> NativePackageResolver = name =>
+            string.IsNullOrWhiteSpace(Path.GetDirectoryName(name)) &&
+            TryLocateNativeAssetFromDeps(name, out var appLocalNativePath, out var depsResolvedPath) &&
+            appLocalNativePath is not null &&
+            depsResolvedPath is not null
+                ? new[] { appLocalNativePath, depsResolvedPath }
+                : Enumerable.Empty<string>();
+
+        /// <summary>
         ///     Returns an enumerator which yields possible library load targets, in priority order.
         /// </summary>
         /// <param name="name">The name of the library to load.</param>
         /// <returns>An enumerator yielding load targets.</returns>
         public override IEnumerable<string> EnumeratePossibleLibraryLoadTargets(string name)
-            => CoreEnumeratePossibleLibraryLoadTargets(name);
-
-        private IEnumerable<string> CoreEnumeratePossibleLibraryLoadTargets(string name, bool noLinuxTraverse = false)
         {
-            yield return name;
-            if (!string.IsNullOrEmpty(AppContext.BaseDirectory))
+            var candidates = new List<string>();
+            foreach (var resolver in Resolvers)
             {
-                yield return Path.Combine(AppContext.BaseDirectory, name);
-            }
-
-            if (TryLocateNativeAssetFromDeps(name, out var appLocalNativePath, out var depsResolvedPath))
-            {
-                yield return appLocalNativePath;
-                yield return depsResolvedPath;
-            }
-
-            if (!noLinuxTraverse)
-            {
-                foreach (var linuxName in GetLinuxPossibilities(name))
+                try
                 {
-                    foreach (var possibleLoadTarget in CoreEnumeratePossibleLibraryLoadTargets(linuxName, true))
+                    if (candidates.Count == 0 || resolver == PassthroughResolver)
                     {
-                        yield return possibleLoadTarget;
+                        candidates.AddRange(resolver.Invoke(name));
+                    }
+                    else
+                    {
+                        for (var i = 0; i < candidates.Count; i++)
+                        {
+                            var oldCnt = candidates.Count;
+                            candidates.InsertRange(i + 1, resolver.Invoke(candidates[i]));
+                            i += candidates.Count - oldCnt;
+                        }
                     }
                 }
+                catch
+                {
+                    // Skip failed resolver, to account for unexpected environment. Like NativeAOT for example.
+                }
             }
+
+            return candidates.Distinct();
         }
 
         private static IEnumerable<string> GetLinuxPossibilities(string name)
@@ -61,21 +182,38 @@ namespace Silk.NET.Core.Loader
             if (indexOfSo != -1)
             {
                 // for libglfw.so.3.3 this should return:
-                // libglfw.so
-                // libglfw.so.3
                 // libglfw.so.3.3
-                for (var i = indexOfSo; i < nameSplit.Length; i++)
+                // libglfw.so.3
+                // libglfw.so
+                for (var i = nameSplit.Length - 1; i >= indexOfSo; i--)
                 {
                     yield return string.Join(".", nameSplit, 0, i + 1);
                 }
             }
         }
+        
+        private static IEnumerable<string> GetMacPossibilities(string name)
+        {
+            var nameSplit = name.Split('.');
+            var indexOfDylib = Array.LastIndexOf(nameSplit, "dylib");
+            if (indexOfDylib != -1)
+            {
+                // for libglfw.3.3.dylib this should return:
+                // libglfw.3.3.dylib
+                // libglfw.3.dylib
+                // libglfw.dylib
+                for (var i = indexOfDylib - 1; i >= 0; i--)
+                {
+                    yield return $"{string.Join(".", nameSplit, 0, i + 1)}.dylib";
+                }
+            }
+        }
 
-        private bool TryLocateNativeAssetFromDeps
+        private static bool TryLocateNativeAssetFromDeps
         (
             string name,
-            out string appLocalNativePath,
-            out string depsResolvedPath
+            out string? appLocalNativePath,
+            out string? depsResolvedPath
         )
         {
             try
@@ -85,25 +223,29 @@ namespace Silk.NET.Core.Loader
                 if (defaultContext is null && !(entAsm is null))
                 {
                     var json = new DependencyContextJsonReader();
+                    var dir = Path.GetDirectoryName(entAsm.Location);
+                    if (dir is not null)
+                    {
+                        defaultContext ??= json.Read
+                        (
+                            File.OpenRead
+                            (
+                                Path.Combine
+                                (
+                                    dir,
+                                    entAsm.GetName().Name + ".deps.json"
+                                )
+                            )
+                        );
+                    }
+                    
                     defaultContext ??= json.Read
                     (
                         File.OpenRead
                         (
-                            Path.Combine
-                            (
-                                Path.GetDirectoryName(entAsm.Location),
-                                entAsm.GetName().Name + ".deps.json"
-                            )
+                            Path.Combine(AppContext.BaseDirectory, entAsm.GetName().Name + ".deps.json")
                         )
                     );
-                    defaultContext ??=
-                        json.Read
-                        (
-                            File.OpenRead
-                            (
-                                Path.Combine(AppContext.BaseDirectory, entAsm.GetName().Name + ".deps.json")
-                            )
-                        );
                 }
 
                 if (defaultContext == null)
@@ -114,19 +256,7 @@ namespace Silk.NET.Core.Loader
                 }
 
                 var currentRid = RuntimeEnvironment.GetRuntimeIdentifier();
-                var allRiDs = new List<string>();
-                allRiDs.Add(currentRid);
-                if (!AddFallbacks(allRiDs, currentRid, defaultContext.RuntimeGraph))
-                {
-                    var guessedFallbackRid = GuessFallbackRid(currentRid);
-                    if (guessedFallbackRid != null)
-                    {
-                        allRiDs.Add(guessedFallbackRid);
-                        AddFallbacks(allRiDs, guessedFallbackRid, defaultContext.RuntimeGraph);
-                    }
-                }
-
-                foreach (var rid in allRiDs)
+                foreach (var rid in GetAllRuntimeIds(currentRid, defaultContext))
                     foreach (var runtimeLib in defaultContext.RuntimeLibraries)
                         foreach (var nativeAsset in runtimeLib.GetRuntimeNativeAssets(defaultContext, rid))
                         {
@@ -156,7 +286,7 @@ namespace Silk.NET.Core.Loader
                 depsResolvedPath = null;
                 return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 appLocalNativePath = null;
                 depsResolvedPath = null;
@@ -164,22 +294,72 @@ namespace Silk.NET.Core.Loader
             }
         }
 
-        private string GuessFallbackRid(string actualRuntimeIdentifier)
+        private static bool TryLocateNativeAssetInRuntimesFolder(string name, string baseFolder, out string? result)
+        {
+            static bool Check(string name, string ridFolder, out string? result)
+            {
+                var theoreticalFName = Path.Combine(ridFolder, name);
+                if (File.Exists(theoreticalFName))
+                {
+                    result = theoreticalFName;
+                    return true;
+                }
+
+                result = null;
+                return false;
+            }
+
+            foreach (var rid in GetAllRuntimeIds(RuntimeEnvironment.GetRuntimeIdentifier(), DependencyContext.Default))
+            {
+                if (Check(name, Path.Combine(baseFolder, "runtimes", rid, "native"), out result))
+                {
+                    return true;
+                }
+            }
+
+            result = null;
+            return false;
+        }
+
+        // from: https://github.com/dotnet/runtime/blob/main/src/libraries/Microsoft.NETCore.Platforms/src/runtime.json
+        private static readonly string[] _linuxRiDs =
+        {
+            "alpine", "android", "arch", "centos", "debian", "exherbo", "fedora", "freebsd", "gentoo", "linux",
+            "opensuse", "rhel", "sles", "tizen"
+        };
+
+        private static string? GuessFallbackRid(string actualRuntimeIdentifier)
         {
             if (actualRuntimeIdentifier == "osx.10.13-x64")
             {
                 return "osx.10.12-x64";
             }
 
-            if (actualRuntimeIdentifier.StartsWith("osx"))
+            var split = actualRuntimeIdentifier.Split('-');
+            if (split[0] != "osx" && split[0].StartsWith("osx"))
             {
-                return "osx-x64";
+                return $"osx-{string.Join("-", split.Skip(1))}".TrimEnd('-');
+            }
+
+            if (split[0] == "osx" && split.Length > 1)
+            {
+                return "osx"; // fat binaries are fairly commonplace
+            }
+
+            if (split[0] != "win" && split[0].StartsWith("win"))
+            {
+                return $"win-{string.Join("-", split.Skip(1))}".TrimEnd('-');
+            }
+
+            if (split[0] != "linux" && _linuxRiDs.Any(x => split[0].StartsWith(x)))
+            {
+                return $"linux-{string.Join("-", split.Skip(1))}".TrimEnd('-');
             }
 
             return null;
         }
 
-        private bool AddFallbacks(List<string> fallbacks, string rid, IReadOnlyList<RuntimeFallbacks> allFallbacks)
+        private static bool AddFallbacks(List<string> fallbacks, string? rid, IReadOnlyList<RuntimeFallbacks> allFallbacks)
         {
             foreach (var fb in allFallbacks)
             {
@@ -190,23 +370,55 @@ namespace Silk.NET.Core.Loader
                 }
             }
 
+            while (rid is not null)
+            {
+                if (!fallbacks.Contains(rid))
+                {
+                    fallbacks.Add(rid);
+                }
+
+                rid = GuessFallbackRid(rid);
+            }
+
             return false;
         }
 
-        private string GetNugetPackagesRootDirectory()
+        private static string GetNugetPackagesRootDirectory()
         {
             // TODO: Handle alternative package directories, if they are configured.
             return Path.Combine(GetUserDirectory(), ".nuget", "packages");
         }
 
-        private string GetUserDirectory()
+        private static string GetUserDirectory()
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                return Environment.GetEnvironmentVariable("USERPROFILE");
+                return Environment.GetEnvironmentVariable("USERPROFILE")!;
             }
 
-            return Environment.GetEnvironmentVariable("HOME");
+            return Environment.GetEnvironmentVariable("HOME")!;
+        }
+
+        private static List<string> GetAllRuntimeIds(string currentRid, DependencyContext? ctx)
+        {
+            var allRiDs = new List<string>();
+
+            // prevent null reference exception on net6.0-android where DependencyContext.Default is null
+            if (ctx is not null)
+            {
+                allRiDs.Add(currentRid);
+                if (!AddFallbacks(allRiDs, currentRid, ctx.RuntimeGraph))
+                {
+                    var guessedFallbackRid = GuessFallbackRid(currentRid);
+                    if (guessedFallbackRid != null)
+                    {
+                        allRiDs.Add(guessedFallbackRid);
+                        AddFallbacks(allRiDs, guessedFallbackRid, ctx.RuntimeGraph);
+                    }
+                }
+            }
+
+            return allRiDs;
         }
     }
 }

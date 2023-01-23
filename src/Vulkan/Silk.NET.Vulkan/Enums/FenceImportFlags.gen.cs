@@ -9,11 +9,16 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkFenceImportFlags")]
     public enum FenceImportFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"TemporaryBit\"")]
         [NativeName("Name", "VK_FENCE_IMPORT_TEMPORARY_BIT")]
         FenceImportTemporaryBit = 1,
+        [NativeName("Name", "VK_FENCE_IMPORT_TEMPORARY_BIT")]
+        TemporaryBit = 1,
     }
 }

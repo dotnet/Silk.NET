@@ -17,6 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrGetMemoryRequirements2Overloads
     {
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
         public static unsafe void GetBufferMemoryRequirements2(this KhrGetMemoryRequirements2 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferMemoryRequirementsInfo2* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
         {
             // SpanOverloader
@@ -31,6 +32,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
         public static unsafe void GetBufferMemoryRequirements2(this KhrGetMemoryRequirements2 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BufferMemoryRequirementsInfo2> pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
         {
             // SpanOverloader
@@ -38,6 +40,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
         public static unsafe void GetImageMemoryRequirements2(this KhrGetMemoryRequirements2 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageMemoryRequirementsInfo2* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
         {
             // SpanOverloader
@@ -52,6 +55,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pMemoryRequirements = new(StructureType.MemoryRequirements2);")]
         public static unsafe void GetImageMemoryRequirements2(this KhrGetMemoryRequirements2 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImageMemoryRequirementsInfo2> pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<MemoryRequirements2> pMemoryRequirements)
         {
             // SpanOverloader
@@ -59,6 +63,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
         public static unsafe void GetImageSparseMemoryRequirements2(this KhrGetMemoryRequirements2 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageSparseMemoryRequirementsInfo2* pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
         {
             // SpanOverloader
@@ -73,6 +78,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
         public static unsafe void GetImageSparseMemoryRequirements2(this KhrGetMemoryRequirements2 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageSparseMemoryRequirementsInfo2* pInfo, [Count(Count = 0)] Span<uint> pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
         {
             // SpanOverloader
@@ -87,6 +93,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
         public static unsafe void GetImageSparseMemoryRequirements2(this KhrGetMemoryRequirements2 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImageSparseMemoryRequirementsInfo2> pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
         {
             // SpanOverloader
@@ -101,6 +108,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSparseMemoryRequirements = new(StructureType.SparseImageMemoryRequirements2);")]
         public static unsafe void GetImageSparseMemoryRequirements2(this KhrGetMemoryRequirements2 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImageSparseMemoryRequirementsInfo2> pInfo, [Count(Count = 0)] Span<uint> pSparseMemoryRequirementCount, [Count(Parameter = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] Span<SparseImageMemoryRequirements2> pSparseMemoryRequirements)
         {
             // SpanOverloader

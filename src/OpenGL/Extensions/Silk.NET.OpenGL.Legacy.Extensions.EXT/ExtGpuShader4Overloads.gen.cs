@@ -154,18 +154,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.VertexAttribI4(index, in v.GetPinnableReference());
         }
 
-        public static unsafe void VertexAttribIPointer<T0>(this ExtGpuShader4 thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribIPointer(index, size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void VertexAttribIPointer<T0>(this ExtGpuShader4 thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribIType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexAttribIPointer(index, size, type, stride, in pointer.GetPinnableReference());
-        }
-
     }
 }
 

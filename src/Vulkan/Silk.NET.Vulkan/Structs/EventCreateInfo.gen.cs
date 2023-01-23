@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkEventCreateInfo")]
-    public unsafe partial struct EventCreateInfo
+    public unsafe partial struct EventCreateInfo : IChainStart
     {
         public EventCreateInfo
         (
@@ -57,5 +57,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkEventCreateFlags")]
         [NativeName("Name", "flags")]
         public EventCreateFlags Flags;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.EventCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref EventCreateInfo Chain(
+            out EventCreateInfo capture)
+        {
+            capture = new EventCreateInfo(StructureType.EventCreateInfo);
+            return ref capture;
+        }
     }
 }

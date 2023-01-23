@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVideoSessionCreateInfoKHR")]
-    public unsafe partial struct VideoSessionCreateInfoKHR
+    public unsafe partial struct VideoSessionCreateInfoKHR : IChainable
     {
         public VideoSessionCreateInfoKHR
         (
@@ -25,12 +25,13 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             uint? queueFamilyIndex = null,
             VideoSessionCreateFlagsKHR? flags = null,
-            VideoProfileKHR* pVideoProfile = null,
+            VideoProfileInfoKHR* pVideoProfile = null,
             Format? pictureFormat = null,
             Extent2D? maxCodedExtent = null,
-            Format? referencePicturesFormat = null,
-            uint? maxReferencePicturesSlotsCount = null,
-            uint? maxReferencePicturesActiveCount = null
+            Format? referencePictureFormat = null,
+            uint? maxDpbSlots = null,
+            uint? maxActiveReferencePictures = null,
+            ExtensionProperties* pStdHeaderVersion = null
         ) : this()
         {
             if (sType is not null)
@@ -68,19 +69,24 @@ namespace Silk.NET.Vulkan
                 MaxCodedExtent = maxCodedExtent.Value;
             }
 
-            if (referencePicturesFormat is not null)
+            if (referencePictureFormat is not null)
             {
-                ReferencePicturesFormat = referencePicturesFormat.Value;
+                ReferencePictureFormat = referencePictureFormat.Value;
             }
 
-            if (maxReferencePicturesSlotsCount is not null)
+            if (maxDpbSlots is not null)
             {
-                MaxReferencePicturesSlotsCount = maxReferencePicturesSlotsCount.Value;
+                MaxDpbSlots = maxDpbSlots.Value;
             }
 
-            if (maxReferencePicturesActiveCount is not null)
+            if (maxActiveReferencePictures is not null)
             {
-                MaxReferencePicturesActiveCount = maxReferencePicturesActiveCount.Value;
+                MaxActiveReferencePictures = maxActiveReferencePictures.Value;
+            }
+
+            if (pStdHeaderVersion is not null)
+            {
+                PStdHeaderVersion = pStdHeaderVersion;
             }
         }
 
@@ -105,10 +111,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "flags")]
         public VideoSessionCreateFlagsKHR Flags;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoProfileKHR*")]
-        [NativeName("Type.Name", "VkVideoProfileKHR")]
+        [NativeName("Type", "VkVideoProfileInfoKHR*")]
+        [NativeName("Type.Name", "VkVideoProfileInfoKHR")]
         [NativeName("Name", "pVideoProfile")]
-        public VideoProfileKHR* PVideoProfile;
+        public VideoProfileInfoKHR* PVideoProfile;
 /// <summary></summary>
         [NativeName("Type", "VkFormat")]
         [NativeName("Type.Name", "VkFormat")]
@@ -122,17 +128,35 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "VkFormat")]
         [NativeName("Type.Name", "VkFormat")]
-        [NativeName("Name", "referencePicturesFormat")]
-        public Format ReferencePicturesFormat;
+        [NativeName("Name", "referencePictureFormat")]
+        public Format ReferencePictureFormat;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxReferencePicturesSlotsCount")]
-        public uint MaxReferencePicturesSlotsCount;
+        [NativeName("Name", "maxDpbSlots")]
+        public uint MaxDpbSlots;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxReferencePicturesActiveCount")]
-        public uint MaxReferencePicturesActiveCount;
+        [NativeName("Name", "maxActiveReferencePictures")]
+        public uint MaxActiveReferencePictures;
+/// <summary></summary>
+        [NativeName("Type", "VkExtensionProperties*")]
+        [NativeName("Type.Name", "VkExtensionProperties")]
+        [NativeName("Name", "pStdHeaderVersion")]
+        public ExtensionProperties* PStdHeaderVersion;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.VideoSessionCreateInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

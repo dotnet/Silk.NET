@@ -4852,7 +4852,7 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
             thisApi.ObjectPtrLabel(in ptr.GetPinnableReference(), length, in label.GetPinnableReference());
         }
 
-        public static unsafe void ObjectPtrLabel<T0>(this KhrDebug thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label) where T0 : unmanaged
+        public static unsafe void ObjectPtrLabel<T0>(this KhrDebug thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string label) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ObjectPtrLabel(in ptr.GetPinnableReference(), length, label);

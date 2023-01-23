@@ -34,7 +34,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.GetProgramNamedParameter(id, len, in name.GetPinnableReference(), out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetProgramNamedParameter(this NVFragmentProgram thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params)
+        public static unsafe void GetProgramNamedParameter(this NVFragmentProgram thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params)
         {
             // SpanOverloader
             thisApi.GetProgramNamedParameter(id, len, name, out @params.GetPinnableReference());
@@ -58,7 +58,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.GetProgramNamedParameter(id, len, in name.GetPinnableReference(), out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetProgramNamedParameter(this NVFragmentProgram thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params)
+        public static unsafe void GetProgramNamedParameter(this NVFragmentProgram thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params)
         {
             // SpanOverloader
             thisApi.GetProgramNamedParameter(id, len, name, out @params.GetPinnableReference());
@@ -88,7 +88,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.ProgramNamedParameter4(id, len, in name.GetPinnableReference(), in v.GetPinnableReference());
         }
 
-        public static unsafe void ProgramNamedParameter4(this NVFragmentProgram thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        public static unsafe void ProgramNamedParameter4(this NVFragmentProgram thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
         {
             // SpanOverloader
             thisApi.ProgramNamedParameter4(id, len, name, in v.GetPinnableReference());
@@ -118,7 +118,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             thisApi.ProgramNamedParameter4(id, len, in name.GetPinnableReference(), in v.GetPinnableReference());
         }
 
-        public static unsafe void ProgramNamedParameter4(this NVFragmentProgram thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        public static unsafe void ProgramNamedParameter4(this NVFragmentProgram thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // SpanOverloader
             thisApi.ProgramNamedParameter4(id, len, name, in v.GetPinnableReference());

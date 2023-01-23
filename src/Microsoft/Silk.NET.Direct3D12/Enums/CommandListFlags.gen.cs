@@ -12,7 +12,10 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "D3D12_COMMAND_LIST_FLAGS")]
     public enum CommandListFlags : int
     {
+        [Obsolete("Deprecated in favour of \"None\"")]
         [NativeName("Name", "D3D12_COMMAND_LIST_FLAG_NONE")]
         CommandListFlagNone = 0x0,
+        [NativeName("Name", "D3D12_COMMAND_LIST_FLAG_NONE")]
+        None = 0x0,
     }
 }

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using JetBrains.Annotations;
+
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.Overloading;
 
@@ -15,7 +15,7 @@ namespace Silk.NET.BuildTools.Common.Functions
     /// <summary>
     /// Represents a C# function.
     /// </summary>
-    public class Function : IEquatable<Function>
+    public class Function : IEquatable<Function>, IProfileConstituent
     {
         /// <summary>
         /// Gets or sets the name of this function.
@@ -40,15 +40,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets or sets the parameters of the function.
         /// </summary>
-        [NotNull]
-        [ItemNotNull]
         public List<Parameter> Parameters { get; set; } = new List<Parameter>();
 
         /// <summary>
         /// Gets or sets the categories in which this function falls under.
         /// </summary>
-        [NotNull]
-        [ItemNotNull]
         [JsonIgnore]
         public List<string> Categories { get; set; } = new List<string>();
         
@@ -61,8 +57,6 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets or sets the generic type parameters of the function.
         /// </summary>
-        [NotNull]
-        [ItemNotNull]
         public List<GenericTypeParameter> GenericTypeParameters { get; set; } =
             new List<GenericTypeParameter>();
 
@@ -84,7 +78,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets or sets the calling convention of this function.
         /// </summary>
-        public CallingConvention Convention { get; set; } = CallingConvention.Cdecl;
+        public CallingConvention Convention { get; set; } = CallingConvention.Winapi;
 
         /// <summary>
         /// The accessibility modifier to add to this function's declaration.
@@ -107,6 +101,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// </summary>
         public bool IsReadOnly { get; set; }
 
+        /// <summary>
+        /// Prefix to invocations of this function e.g. "@this->". May be null.
+        /// </summary>
+        public string? InvocationPrefix { get; set; }
+
         /// <inheritdoc />
         public override string ToString()
         {
@@ -119,7 +118,9 @@ namespace Silk.NET.BuildTools.Common.Functions
             bool accessibility = false,
             bool @static = false,
             bool semicolon = true,
-            bool @delegate = false)
+            bool @delegate = false,
+            bool returnType = true,
+            bool appendAttributes = true)
         {
             var sb = new StringBuilder();
 
@@ -128,12 +129,12 @@ namespace Silk.NET.BuildTools.Common.Functions
                 sb.AppendLine($"[UnmanagedFunctionPointer(CallingConvention.{Convention})]");
             }
 
-            GetDeclarationString(sb, @unsafe, partial, accessibility, @static, @delegate);
+            GetDeclarationString(sb, @unsafe, partial, accessibility, @static, @delegate, returnType);
 
-            sb.Append("(");
+            sb.Append('(');
             if (Parameters.Count > 0)
             {
-                var parameterDeclarations = Parameters.Select(GetDeclarationString).ToList();
+                var parameterDeclarations = Parameters.Select(param => GetDeclarationString(param, appendAttributes)).ToList();
                 for (var index = 0; index < parameterDeclarations.Count; index++)
                 {
                     if (index != 0)
@@ -146,11 +147,11 @@ namespace Silk.NET.BuildTools.Common.Functions
                 }
             }
 
-            sb.Append(")");
+            sb.Append(')');
 
             if (GenericTypeParameters.Count != 0)
             {
-                sb.Append(" ");
+                sb.Append(' ');
                 for (var index = 0; index < GenericTypeParameters.Count; index++)
                 {
                     var p = GenericTypeParameters[index];
@@ -161,14 +162,14 @@ namespace Silk.NET.BuildTools.Common.Functions
                     sb.Append($"where {p.Name} : {constraints}");
                     if (index != GenericTypeParameters.Count - 1)
                     {
-                        sb.Append(" ");
+                        sb.Append(' ');
                     }
                 }
             }
 
             if (semicolon)
             {
-                sb.Append(";");
+                sb.Append(';');
             }
 
             return sb.ToString();
@@ -179,7 +180,8 @@ namespace Silk.NET.BuildTools.Common.Functions
             bool partial = false,
             bool accessibility = false,
             bool @static = false,
-            bool @delegate = false)
+            bool @delegate = false,
+            bool returnType = true)
         {
             if (accessibility)
             {
@@ -219,8 +221,11 @@ namespace Silk.NET.BuildTools.Common.Functions
                 sb.Append("delegate ");
             }
 
-            sb.Append(ReturnType);
-            sb.Append(" ");
+            if (returnType)
+            {
+                sb.Append(ReturnType);
+                sb.Append(" ");
+            }
 
             sb.Append(Name);
             if (GenericTypeParameters.Count != 0)
@@ -233,49 +238,56 @@ namespace Silk.NET.BuildTools.Common.Functions
             }
         }
 
-        [NotNull]
-        private static string GetDeclarationString([NotNull] Parameter parameter)
+        private static string GetDeclarationString(Parameter parameter, bool appendAttributes = true)
         {
             var sb = new StringBuilder();
 
-            var attributes = new List<string>();
-
-            if (!(parameter.Count is null))
+            if (appendAttributes)
             {
-                if (parameter.Count.IsStatic)
-                {
-                    attributes.Add($"Count(Count = {parameter.Count.StaticCount})");
-                }
-                else if (parameter.Count.IsComputed)
-                {
-                    var parameterList = string.Join(", ", parameter.Count.ComputedFromNames);
-                    attributes.Add($"Count(Computed = \"{parameterList}\")");
-                }
-                else if (parameter.Count.IsReference)
-                {
-                    // ReSharper disable once PossibleNullReferenceException
-                    attributes.Add($"Count(Parameter = \"{parameter.Count.ValueReference}\")");
-                }
-            }
+                var attributes = new List<string>();
 
-            // ReSharper disable once SwitchStatementMissingSomeCases
-            switch (parameter.Flow)
-            {
-                case FlowDirection.In:
-                    attributes.Add("Flow(FlowDirection.In)");
-                    break;
-                case FlowDirection.Out:
-                    attributes.Add("Flow(FlowDirection.Out)");
-                    break;
-            }
+                if (!(parameter.Count is null))
+                {
+                    if (parameter.Count.IsStatic)
+                    {
+                        attributes.Add($"Count(Count = {parameter.Count.StaticCount})");
+                    }
+                    else if (parameter.Count.IsComputed)
+                    {
+                        var parameterList = string.Join(", ", parameter.Count.ComputedFromNames).Replace("\\", "\\\\");
+                        attributes.Add($"Count(Computed = \"{parameterList}\")");
+                    }
+                    else if (parameter.Count.IsReference)
+                    {
+                        // ReSharper disable once PossibleNullReferenceException
+                        attributes.Add($"Count(Parameter = \"{parameter.Count.ValueReference}\")");
+                    }
+                }
 
-            attributes.AddRange(parameter.Attributes.Select(x => x.Name + "(" + string.Join(", ", x.Arguments) + ")"));
+                // ReSharper disable once SwitchStatementMissingSomeCases
+                switch (parameter.Flow)
+                {
+                    case FlowDirection.In:
+                        attributes.Add("Flow(FlowDirection.In)");
+                        break;
+                    case FlowDirection.Out:
+                        attributes.Add("Flow(FlowDirection.Out)");
+                        break;
+                }
 
-            if (attributes.Count != 0)
-            {
-                sb.Append("[");
-                sb.Append(string.Join(", ", attributes));
-                sb.Append("] ");
+                attributes.AddRange
+                (
+                    parameter.Attributes
+                        .Where(x => x.Name != "BuildToolsIntrinsic")
+                        .Select(x => x.Name + "(" + string.Join(", ", x.Arguments) + ")")
+                );
+
+                if (attributes.Count != 0)
+                {
+                    sb.Append("[");
+                    sb.Append(string.Join(", ", attributes));
+                    sb.Append("] ");
+                }
             }
 
             sb.Append(parameter.Type);
@@ -355,5 +367,11 @@ namespace Silk.NET.BuildTools.Common.Functions
             var paramTypes = string.Join(", ", Parameters.Select(x => x.Type).Concat(new[] {ReturnType}));
             return $"delegate* unmanaged{convention}<{paramTypes}>";
         }
+
+        /// <summary>
+        /// Gets all attributes that are actual attributes and not BuildTools intrinsics.
+        /// </summary>
+        /// <returns>Attributes.</returns>
+        public IEnumerable<Attribute> GetAttributes() => Attributes.Where(x => x.Name != "BuildToolsIntrinsic");
     }
 }

@@ -130,8 +130,8 @@ namespace Silk.NET.SDL
         [NativeName("Name", "len_ratio")]
         public double LenRatio;
         
-        [NativeName("Type", "SDL_AudioFilter [10]")]
-        [NativeName("Type.Name", "SDL_AudioFilter [10]")]
+        [NativeName("Type", "SDL_AudioFilter[10]")]
+        [NativeName("Type.Name", "SDL_AudioFilter[10]")]
         [NativeName("Name", "filters")]
         public FiltersBuffer Filters;
 
@@ -163,7 +163,7 @@ namespace Silk.NET.SDL
                 }
             }
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
             public Span<PfnAudioFilter> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 10);
 #endif

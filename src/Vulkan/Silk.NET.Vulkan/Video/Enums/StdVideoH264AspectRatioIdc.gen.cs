@@ -12,43 +12,105 @@ namespace Silk.NET.Vulkan.Video
     [NativeName("Name", "StdVideoH264AspectRatioIdc")]
     public enum StdVideoH264AspectRatioIdc : int
     {
-        [NativeName("Name", "std_video_h264_aspect_ratio_idc_unspecified")]
+        [Obsolete("Deprecated in favour of \"IdcUnspecified\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_UNSPECIFIED")]
         StdVideoH264AspectRatioIdcUnspecified = 0x0,
-        [NativeName("Name", "std_video_h264_aspect_ratio_idc_square")]
+        [Obsolete("Deprecated in favour of \"IdcSquare\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_SQUARE")]
         StdVideoH264AspectRatioIdcSquare = 0x1,
-        [NativeName("Name", "std_video_h264_aspect_ratio_idc_12_11")]
+        [Obsolete("Deprecated in favour of \"Idc1211\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_12_11")]
         StdVideoH264AspectRatioIdc1211 = 0x2,
-        [NativeName("Name", "std_video_h264_aspect_ratio_idc_10_11")]
+        [Obsolete("Deprecated in favour of \"Idc1011\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_10_11")]
         StdVideoH264AspectRatioIdc1011 = 0x3,
-        [NativeName("Name", "std_video_h264_aspect_ratio_idc_16_11")]
+        [Obsolete("Deprecated in favour of \"Idc1611\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_16_11")]
         StdVideoH264AspectRatioIdc1611 = 0x4,
-        [NativeName("Name", "std_video_h264_aspect_ratio_idc_40_33")]
+        [Obsolete("Deprecated in favour of \"Idc4033\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_40_33")]
         StdVideoH264AspectRatioIdc4033 = 0x5,
-        [NativeName("Name", "std_video_h264_aspect_ratio_idc_24_11")]
+        [Obsolete("Deprecated in favour of \"Idc2411\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_24_11")]
         StdVideoH264AspectRatioIdc2411 = 0x6,
-        [NativeName("Name", "std_video_h264_aspect_ratio_idc_20_11")]
+        [Obsolete("Deprecated in favour of \"Idc2011\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_20_11")]
         StdVideoH264AspectRatioIdc2011 = 0x7,
-        [NativeName("Name", "std_video_h264_aspect_ratio_idc_32_11")]
+        [Obsolete("Deprecated in favour of \"Idc3211\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_32_11")]
         StdVideoH264AspectRatioIdc3211 = 0x8,
-        [NativeName("Name", "std_video_h264_aspect_ratio_idc_80_33")]
+        [Obsolete("Deprecated in favour of \"Idc8033\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_80_33")]
         StdVideoH264AspectRatioIdc8033 = 0x9,
-        [NativeName("Name", "std_video_h264_aspect_ratio_idc_18_11")]
+        [Obsolete("Deprecated in favour of \"Idc1811\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_18_11")]
         StdVideoH264AspectRatioIdc1811 = 0xA,
-        [NativeName("Name", "std_video_h264_aspect_ratio_idc_15_11")]
+        [Obsolete("Deprecated in favour of \"Idc1511\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_15_11")]
         StdVideoH264AspectRatioIdc1511 = 0xB,
-        [NativeName("Name", "std_video_h264_aspect_ratio_idc_64_33")]
+        [Obsolete("Deprecated in favour of \"Idc6433\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_64_33")]
         StdVideoH264AspectRatioIdc6433 = 0xC,
-        [NativeName("Name", "std_video_h264_aspect_ratio_idc_160_99")]
+        [Obsolete("Deprecated in favour of \"Idc16099\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_160_99")]
         StdVideoH264AspectRatioIdc16099 = 0xD,
-        [NativeName("Name", "std_video_h264_aspect_ratio_idc_4_3")]
+        [Obsolete("Deprecated in favour of \"Idc43\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_4_3")]
         StdVideoH264AspectRatioIdc43 = 0xE,
-        [NativeName("Name", "std_video_h264_aspect_ratio_idc_3_2")]
+        [Obsolete("Deprecated in favour of \"Idc32\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_3_2")]
         StdVideoH264AspectRatioIdc32 = 0xF,
-        [NativeName("Name", "std_video_h264_aspect_ratio_idc_2_1")]
+        [Obsolete("Deprecated in favour of \"Idc21\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_2_1")]
         StdVideoH264AspectRatioIdc21 = 0x10,
-        [NativeName("Name", "std_video_h264_aspect_ratio_idc_extended_sar")]
+        [Obsolete("Deprecated in favour of \"IdcExtendedSar\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_EXTENDED_SAR")]
         StdVideoH264AspectRatioIdcExtendedSar = 0xFF,
-        [NativeName("Name", "std_video_h264_aspect_ratio_idc_invalid")]
+        [Obsolete("Deprecated in favour of \"IdcInvalid\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_INVALID")]
         StdVideoH264AspectRatioIdcInvalid = 0x7FFFFFFF,
+        [Obsolete("Deprecated in favour of \"IdcMaxEnum\"")]
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_MAX_ENUM")]
+        StdVideoH264AspectRatioIdcMaxEnum = 0x7FFFFFFF,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_UNSPECIFIED")]
+        IdcUnspecified = 0x0,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_SQUARE")]
+        IdcSquare = 0x1,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_12_11")]
+        Idc1211 = 0x2,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_10_11")]
+        Idc1011 = 0x3,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_16_11")]
+        Idc1611 = 0x4,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_40_33")]
+        Idc4033 = 0x5,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_24_11")]
+        Idc2411 = 0x6,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_20_11")]
+        Idc2011 = 0x7,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_32_11")]
+        Idc3211 = 0x8,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_80_33")]
+        Idc8033 = 0x9,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_18_11")]
+        Idc1811 = 0xA,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_15_11")]
+        Idc1511 = 0xB,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_64_33")]
+        Idc6433 = 0xC,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_160_99")]
+        Idc16099 = 0xD,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_4_3")]
+        Idc43 = 0xE,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_3_2")]
+        Idc32 = 0xF,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_2_1")]
+        Idc21 = 0x10,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_EXTENDED_SAR")]
+        IdcExtendedSar = 0xFF,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_INVALID")]
+        IdcInvalid = 0x7FFFFFFF,
+        [NativeName("Name", "STD_VIDEO_H264_ASPECT_RATIO_IDC_MAX_ENUM")]
+        IdcMaxEnum = 0x7FFFFFFF,
     }
 }

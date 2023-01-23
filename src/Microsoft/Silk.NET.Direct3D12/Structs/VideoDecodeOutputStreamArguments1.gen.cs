@@ -58,8 +58,8 @@ namespace Silk.NET.Direct3D12
         [NativeName("Name", "ConversionArguments")]
         public VideoDecodeConversionArguments1 ConversionArguments;
         
-        [NativeName("Type", "D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM [4]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM [4]")]
+        [NativeName("Type", "D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM[4]")]
+        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM[4]")]
         [NativeName("Name", "Histograms")]
         public HistogramsBuffer Histograms;
 
@@ -85,7 +85,7 @@ namespace Silk.NET.Direct3D12
                 }
             }
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
             public Span<VideoDecodeOutputHistogram> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 4);
 #endif

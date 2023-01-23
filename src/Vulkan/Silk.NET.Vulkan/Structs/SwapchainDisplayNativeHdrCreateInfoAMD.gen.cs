@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSwapchainDisplayNativeHdrCreateInfoAMD")]
-    public unsafe partial struct SwapchainDisplayNativeHdrCreateInfoAMD
+    public unsafe partial struct SwapchainDisplayNativeHdrCreateInfoAMD : IExtendsChain<SwapchainCreateInfoKHR>
     {
         public SwapchainDisplayNativeHdrCreateInfoAMD
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "localDimmingEnable")]
         public Bool32 LocalDimmingEnable;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SwapchainDisplayNativeHdrCreateInfoAmd;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

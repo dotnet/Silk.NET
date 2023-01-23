@@ -21,11 +21,11 @@ namespace Silk.NET.Vulkan.Extensions.NV
     {
         public const string ExtensionName = "VK_NV_scissor_exclusive";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetExclusiveScissorNV")]
+        [NativeApi(EntryPoint = "vkCmdSetExclusiveScissorNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetExclusiveScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstExclusiveScissor, [Count(Count = 0)] uint exclusiveScissorCount, [Count(Parameter = "exclusiveScissorCount"), Flow(FlowDirection.In)] Rect2D* pExclusiveScissors);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetExclusiveScissorNV")]
+        [NativeApi(EntryPoint = "vkCmdSetExclusiveScissorNV", Convention = CallingConvention.Winapi)]
         public partial void CmdSetExclusiveScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstExclusiveScissor, [Count(Count = 0)] uint exclusiveScissorCount, [Count(Parameter = "exclusiveScissorCount"), Flow(FlowDirection.In)] in Rect2D pExclusiveScissors);
 
         /// <summary>To be documented.</summary>

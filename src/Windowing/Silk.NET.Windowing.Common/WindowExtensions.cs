@@ -110,7 +110,7 @@ namespace Silk.NET.Windowing
 #if NETSTANDARD2_1
             (System.Runtime.InteropServices.MemoryMarshal.CreateReadOnlySpan(ref icon, 1));
 #else
-            (new[] {icon});
+            (new[] { icon });
 #endif
     }
 }

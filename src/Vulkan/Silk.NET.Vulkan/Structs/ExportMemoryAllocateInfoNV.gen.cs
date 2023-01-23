@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExportMemoryAllocateInfoNV")]
-    public unsafe partial struct ExportMemoryAllocateInfoNV
+    public unsafe partial struct ExportMemoryAllocateInfoNV : IExtendsChain<MemoryAllocateInfo>
     {
         public ExportMemoryAllocateInfoNV
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlagsNV")]
         [NativeName("Name", "handleTypes")]
         public ExternalMemoryHandleTypeFlagsNV HandleTypes;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ExportMemoryAllocateInfoNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

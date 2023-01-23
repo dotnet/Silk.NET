@@ -16,6 +16,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D12
 {
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     [NativeName("Name", "D3D12_SUBOBJECT_TO_EXPORTS_ASSOCIATION")]
     public unsafe partial struct SubobjectToExportsAssociation
     {

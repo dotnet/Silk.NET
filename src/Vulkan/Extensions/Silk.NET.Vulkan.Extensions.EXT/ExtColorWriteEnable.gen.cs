@@ -21,11 +21,11 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         public const string ExtensionName = "VK_EXT_color_write_enable";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetColorWriteEnableEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetColorWriteEnableEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetColorWriteEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(FlowDirection.In)] Bool32* pColorWriteEnables);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetColorWriteEnableEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetColorWriteEnableEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetColorWriteEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Parameter = "attachmentCount"), Flow(FlowDirection.In)] in Bool32 pColorWriteEnables);
 
         /// <summary>To be documented.</summary>

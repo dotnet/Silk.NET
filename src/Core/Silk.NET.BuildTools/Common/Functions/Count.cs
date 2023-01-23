@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using JetBrains.Annotations;
+
 using Newtonsoft.Json;
 
 namespace Silk.NET.BuildTools.Common.Functions
@@ -44,7 +44,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Initializes a new instance of the <see cref="Count" /> class.
         /// </summary>
         /// <param name="computedFrom">The parameters the count is computed from.</param>
-        public Count([NotNull] IReadOnlyList<string> computedFrom)
+        public Count(IReadOnlyList<string> computedFrom)
         {
             ComputedFromNames = computedFrom.ToList();
         }
@@ -54,7 +54,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// </summary>
         /// <param name="value">The parameter the count is taken from.</param>
         /// <param name="isValueReference">Whether the value given is a reference to a parameter or a constant.</param>
-        public Count([CanBeNull] string value, bool isValueReference = true)
+        public Count(string? value, bool isValueReference = true)
         {
             if (isValueReference)
             {
@@ -104,8 +104,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets or sets the parameter that the count is taken from.
         /// </summary>
-        [CanBeNull]
-        public string ValueReference { get; set; }
+        public string? ValueReference { get; set; }
 
         /// <summary>
         /// Gets or sets the function that the parameter in question is part of.
@@ -116,8 +115,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets the parameters that the count is computed from.
         /// </summary>
-        [NotNull]
-        [JsonIgnore]
+                [JsonIgnore]
         public IReadOnlyList<Parameter> ComputedFrom => ComputedFromNames.Select
             (
                 x => FunctionReference.Parameters.FirstOrDefault(y => y.Name == x)

@@ -146,6 +146,8 @@ namespace Silk.NET.OpenGL
         ViewCompatibilityClass = 0x82B6,
         [NativeName("Name", "GL_TEXTURE_COMPRESSED")]
         TextureCompressed = 0x86A1,
+        [NativeName("Name", "GL_NUM_SURFACE_COMPRESSION_FIXED_RATES_EXT")]
+        NumSurfaceCompressionFixedRatesExt = 0x8F6E,
         [NativeName("Name", "GL_IMAGE_FORMAT_COMPATIBILITY_TYPE")]
         ImageFormatCompatibilityType = 0x90C7,
         [NativeName("Name", "GL_CLEAR_TEXTURE")]

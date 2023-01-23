@@ -2,30 +2,35 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <RootNamespace>Silk.NET.BuildTools</RootNamespace>
         <GenerateDocumentationFile>false</GenerateDocumentationFile>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <SilkPublicApiExempt>true</SilkPublicApiExempt>
 
         <!-- Workaround for issue https://github.com/microsoft/ClangSharp/issues/129 -->
         <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == '' AND '$(PackAsTool)' != 'true'">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="CommandLineParser" Version="2.8.0" />
-      <PackageReference Include="HtmlAgilityPack" Version="1.11.24" />
+      <PackageReference Include="CommandLineParser" Version="2.9.1" />
+      <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
       <PackageReference Include="Humanizer.Core" Version="2.8.26" />
-      <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" />
-      <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.8.0-3.final" />
-      <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="3.1.8" />
+      <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.11.0" />
+      <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="7.0.0" />
+      <PackageReference Include="Microsoft.VisualStudio.Setup.Configuration.Interop" Version="3.4.2244" />
       <PackageReference Include="morelinq" Version="3.3.2" />
-      <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-      <PackageReference Include="Ultz.Private.ClangSharp" Version="2021.1.31-nightly" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+      <PackageReference Include="ClangSharp" Version="15.0.2" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Pipeline" />
       <Compile Include="..\Silk.NET.Core\Attributes\InjectAttribute.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Cpp\VisualStudioVarPrint.bat" />
+      <EmbeddedResource Include="Cpp\VisualStudioVarPrint.bat" />
     </ItemGroup>
 
     <Import Project="..\..\..\build\props\common.props" />

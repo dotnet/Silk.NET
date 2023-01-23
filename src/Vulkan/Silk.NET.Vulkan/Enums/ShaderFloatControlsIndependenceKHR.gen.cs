@@ -12,11 +12,20 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkShaderFloatControlsIndependenceKHR")]
     public enum ShaderFloatControlsIndependenceKHR : int
     {
+        [Obsolete("Deprecated in favour of \"Independence32BitOnly\"")]
         [NativeName("Name", "VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_32_BIT_ONLY")]
         ShaderFloatControlsIndependence32BitOnly = 0,
+        [Obsolete("Deprecated in favour of \"IndependenceAll\"")]
         [NativeName("Name", "VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_ALL")]
         ShaderFloatControlsIndependenceAll = 1,
+        [Obsolete("Deprecated in favour of \"IndependenceNone\"")]
         [NativeName("Name", "VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_NONE")]
         ShaderFloatControlsIndependenceNone = 2,
+        [NativeName("Name", "VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_32_BIT_ONLY")]
+        Independence32BitOnly = 0,
+        [NativeName("Name", "VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_ALL")]
+        IndependenceAll = 1,
+        [NativeName("Name", "VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_NONE")]
+        IndependenceNone = 2,
     }
 }

@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using JetBrains.Annotations;
+
 using Silk.NET.BuildTools.Common.Trimmers;
 
 namespace Silk.NET.BuildTools.Common
@@ -30,8 +30,6 @@ namespace Silk.NET.BuildTools.Common
         /// <param name="trimDataType">Whether or not the data type should be trimmed.</param>
         /// <returns>The name variations, ordered by length, starting with the longest.</returns>
         // ReSharper restore CommentTypo
-        [NotNull]
-        [ItemNotNull]
         public static IEnumerable<string> GetNameVariations
             (string functionEntrypoint, string prefix, bool trimExtensionName = true, bool trimDataType = true)
         {

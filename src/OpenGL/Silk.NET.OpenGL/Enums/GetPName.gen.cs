@@ -168,8 +168,12 @@ namespace Silk.NET.OpenGL
         BlendColor = 0x8005,
         [NativeName("Name", "GL_BLEND_COLOR_EXT")]
         BlendColorExt = 0x8005,
+        [NativeName("Name", "GL_BLEND_EQUATION")]
+        BlendEquation = 0x8009,
         [NativeName("Name", "GL_BLEND_EQUATION_EXT")]
         BlendEquationExt = 0x8009,
+        [NativeName("Name", "GL_BLEND_EQUATION_OES")]
+        BlendEquationOes = 0x8009,
         [NativeName("Name", "GL_BLEND_EQUATION_RGB")]
         BlendEquationRgb = 0x8009,
         [NativeName("Name", "GL_PACK_CMYK_HINT_EXT")]
@@ -326,16 +330,32 @@ namespace Silk.NET.OpenGL
         MaxElementsVertices = 0x80E8,
         [NativeName("Name", "GL_MAX_ELEMENTS_INDICES")]
         MaxElementsIndices = 0x80E9,
+        [NativeName("Name", "GL_POINT_SIZE_MIN_ARB")]
+        PointSizeMinArb = 0x8126,
+        [NativeName("Name", "GL_POINT_SIZE_MIN_EXT")]
+        PointSizeMinExt = 0x8126,
         [NativeName("Name", "GL_POINT_SIZE_MIN_SGIS")]
         PointSizeMinSgis = 0x8126,
+        [NativeName("Name", "GL_POINT_SIZE_MAX_ARB")]
+        PointSizeMaxArb = 0x8127,
+        [NativeName("Name", "GL_POINT_SIZE_MAX_EXT")]
+        PointSizeMaxExt = 0x8127,
         [NativeName("Name", "GL_POINT_SIZE_MAX_SGIS")]
         PointSizeMaxSgis = 0x8127,
         [NativeName("Name", "GL_POINT_FADE_THRESHOLD_SIZE")]
         PointFadeThresholdSize = 0x8128,
+        [NativeName("Name", "GL_POINT_FADE_THRESHOLD_SIZE_ARB")]
+        PointFadeThresholdSizeArb = 0x8128,
+        [NativeName("Name", "GL_POINT_FADE_THRESHOLD_SIZE_EXT")]
+        PointFadeThresholdSizeExt = 0x8128,
         [NativeName("Name", "GL_POINT_FADE_THRESHOLD_SIZE_SGIS")]
         PointFadeThresholdSizeSgis = 0x8128,
+        [NativeName("Name", "GL_DISTANCE_ATTENUATION_EXT")]
+        DistanceAttenuationExt = 0x8129,
         [NativeName("Name", "GL_DISTANCE_ATTENUATION_SGIS")]
         DistanceAttenuationSgis = 0x8129,
+        [NativeName("Name", "GL_POINT_DISTANCE_ATTENUATION_ARB")]
+        PointDistanceAttenuationArb = 0x8129,
         [NativeName("Name", "GL_FOG_FUNC_POINTS_SGIS")]
         FogFuncPointsSgis = 0x812B,
         [NativeName("Name", "GL_MAX_FOG_FUNC_POINTS_SGIS")]
@@ -526,14 +546,30 @@ namespace Silk.NET.OpenGL
         TextureCompressionHint = 0x84EF,
         [NativeName("Name", "GL_TEXTURE_BINDING_RECTANGLE")]
         TextureBindingRectangle = 0x84F6,
+        [NativeName("Name", "GL_TEXTURE_BINDING_RECTANGLE_ARB")]
+        TextureBindingRectangleArb = 0x84F6,
+        [NativeName("Name", "GL_TEXTURE_BINDING_RECTANGLE_NV")]
+        TextureBindingRectangleNV = 0x84F6,
         [NativeName("Name", "GL_MAX_RECTANGLE_TEXTURE_SIZE")]
         MaxRectangleTextureSize = 0x84F8,
         [NativeName("Name", "GL_MAX_TEXTURE_LOD_BIAS")]
         MaxTextureLodBias = 0x84FD,
         [NativeName("Name", "GL_TEXTURE_BINDING_CUBE_MAP")]
         TextureBindingCubeMap = 0x8514,
+        [NativeName("Name", "GL_TEXTURE_BINDING_CUBE_MAP_ARB")]
+        TextureBindingCubeMapArb = 0x8514,
+        [NativeName("Name", "GL_TEXTURE_BINDING_CUBE_MAP_EXT")]
+        TextureBindingCubeMapExt = 0x8514,
+        [NativeName("Name", "GL_TEXTURE_BINDING_CUBE_MAP_OES")]
+        TextureBindingCubeMapOes = 0x8514,
         [NativeName("Name", "GL_MAX_CUBE_MAP_TEXTURE_SIZE")]
         MaxCubeMapTextureSize = 0x851C,
+        [NativeName("Name", "GL_MAX_CUBE_MAP_TEXTURE_SIZE_ARB")]
+        MaxCubeMapTextureSizeArb = 0x851C,
+        [NativeName("Name", "GL_MAX_CUBE_MAP_TEXTURE_SIZE_EXT")]
+        MaxCubeMapTextureSizeExt = 0x851C,
+        [NativeName("Name", "GL_MAX_CUBE_MAP_TEXTURE_SIZE_OES")]
+        MaxCubeMapTextureSizeOes = 0x851C,
         [NativeName("Name", "GL_PACK_SUBSAMPLE_RATE_SGIX")]
         PackSubsampleRateSgix = 0x85A0,
         [NativeName("Name", "GL_UNPACK_SUBSAMPLE_RATE_SGIX")]
@@ -584,6 +620,8 @@ namespace Silk.NET.OpenGL
         MaxProgramTexelOffset = 0x8905,
         [NativeName("Name", "GL_SAMPLER_BINDING")]
         SamplerBinding = 0x8919,
+        [NativeName("Name", "GL_FRAGMENT_SHADER_ATI")]
+        FragmentShaderAti = 0x8920,
         [NativeName("Name", "GL_UNIFORM_BUFFER_BINDING")]
         UniformBufferBinding = 0x8A28,
         [NativeName("Name", "GL_UNIFORM_BUFFER_START")]
@@ -662,6 +700,14 @@ namespace Silk.NET.OpenGL
         RenderbufferBinding = 0x8CA7,
         [NativeName("Name", "GL_READ_FRAMEBUFFER_BINDING")]
         ReadFramebufferBinding = 0x8CAA,
+        [NativeName("Name", "GL_MAX_COLOR_ATTACHMENTS")]
+        MaxColorAttachments = 0x8CDF,
+        [NativeName("Name", "GL_MAX_COLOR_ATTACHMENTS_EXT")]
+        MaxColorAttachmentsExt = 0x8CDF,
+        [NativeName("Name", "GL_MAX_COLOR_ATTACHMENTS_NV")]
+        MaxColorAttachmentsNV = 0x8CDF,
+        [NativeName("Name", "GL_TEXTURE_GEN_STR_OES")]
+        TextureGenStrOes = 0x8D60,
         [NativeName("Name", "GL_MAX_ELEMENT_INDEX")]
         MaxElementIndex = 0x8D6B,
         [NativeName("Name", "GL_MAX_GEOMETRY_UNIFORM_COMPONENTS")]
@@ -680,6 +726,8 @@ namespace Silk.NET.OpenGL
         MaxFragmentUniformVectors = 0x8DFD,
         [NativeName("Name", "GL_TIMESTAMP")]
         Timestamp = 0x8E28,
+        [NativeName("Name", "GL_TIMESTAMP_EXT")]
+        TimestampExt = 0x8E28,
         [NativeName("Name", "GL_PROVOKING_VERTEX")]
         ProvokingVertex = 0x8E4F,
         [NativeName("Name", "GL_MAX_SAMPLE_MASK_WORDS")]
@@ -688,6 +736,12 @@ namespace Silk.NET.OpenGL
         MaxTessControlUniformBlocks = 0x8E89,
         [NativeName("Name", "GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS")]
         MaxTessEvaluationUniformBlocks = 0x8E8A,
+        [NativeName("Name", "GL_FETCH_PER_SAMPLE_ARM")]
+        FetchPerSampleArm = 0x8F65,
+        [NativeName("Name", "GL_FRAGMENT_SHADER_FRAMEBUFFER_FETCH_MRT_ARM")]
+        FragmentShaderFramebufferFetchMrtArm = 0x8F66,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINERS_SUPPORTED_EXT")]
+        FragmentShadingRateNonTrivialCombinersSupportedExt = 0x8F6F,
         [NativeName("Name", "GL_PRIMITIVE_RESTART_INDEX")]
         PrimitiveRestartIndex = 0x8F9E,
         [NativeName("Name", "GL_MIN_MAP_BUFFER_ALIGNMENT")]
@@ -788,7 +842,29 @@ namespace Silk.NET.OpenGL
         ShadingRateImagePaletteCountNV = 0x95B2,
         [NativeName("Name", "GL_MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_NV")]
         MaxTimelineSemaphoreValueDifferenceNV = 0x95B6,
+        [NativeName("Name", "GL_FRAMEBUFFER_FETCH_NONCOHERENT_QCOM")]
+        FramebufferFetchNoncoherentQCom = 0x96A2,
         [NativeName("Name", "GL_SHADING_RATE_QCOM")]
         ShadingRateQCom = 0x96A4,
+        [NativeName("Name", "GL_SHADING_RATE_EXT")]
+        ShadingRateExt = 0x96D0,
+        [NativeName("Name", "GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT")]
+        MinFragmentShadingRateAttachmentTexelWidthExt = 0x96D7,
+        [NativeName("Name", "GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_WIDTH_EXT")]
+        MaxFragmentShadingRateAttachmentTexelWidthExt = 0x96D8,
+        [NativeName("Name", "GL_MIN_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT")]
+        MinFragmentShadingRateAttachmentTexelHeightExt = 0x96D9,
+        [NativeName("Name", "GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_HEIGHT_EXT")]
+        MaxFragmentShadingRateAttachmentTexelHeightExt = 0x96DA,
+        [NativeName("Name", "GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_TEXEL_ASPECT_RATIO_EXT")]
+        MaxFragmentShadingRateAttachmentTexelAspectRatioExt = 0x96DB,
+        [NativeName("Name", "GL_MAX_FRAGMENT_SHADING_RATE_ATTACHMENT_LAYERS_EXT")]
+        MaxFragmentShadingRateAttachmentLayersExt = 0x96DC,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_WITH_SHADER_DEPTH_STENCIL_WRITES_SUPPORTED_EXT")]
+        FragmentShadingRateWithShaderDepthStencilWritesSupportedExt = 0x96DD,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_WITH_SAMPLE_MASK_SUPPORTED_EXT")]
+        FragmentShadingRateWithSampleMaskSupportedExt = 0x96DE,
+        [NativeName("Name", "GL_FRAGMENT_SHADING_RATE_ATTACHMENT_WITH_DEFAULT_FRAMEBUFFER_SUPPORTED_EXT")]
+        FragmentShadingRateAttachmentWithDefaultFramebufferSupportedExt = 0x96DF,
     }
 }

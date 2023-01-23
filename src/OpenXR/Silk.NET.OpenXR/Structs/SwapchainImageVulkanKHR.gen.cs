@@ -17,6 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenXR
 {
     [NativeName("Name", "XrSwapchainImageVulkanKHR")]
+    [NativeName("Aliases", "XrSwapchainImageVulkan2KHR")]
     public unsafe partial struct SwapchainImageVulkanKHR
     {
         public SwapchainImageVulkanKHR

@@ -31,12 +31,11 @@ namespace Silk.NET.Vulkan.Video
             uint? mbAdaptiveFrameFieldFlag = null,
             uint? frameMbsOnlyFlag = null,
             uint? deltaPicOrderAlwaysZeroFlag = null,
-            uint? residualColourTransformFlag = null,
+            uint? separateColourPlaneFlag = null,
             uint? gapsInFrameNumValueAllowedFlag = null,
-            uint? firstPictureAfterSeekFlag = null,
             uint? qpprimeYZeroTransformBypassFlag = null,
             uint? frameCroppingFlag = null,
-            uint? scalingMatrixPresentFlag = null,
+            uint? seqScalingMatrixPresentFlag = null,
             uint? vuiParametersPresentFlag = null
         ) : this()
         {
@@ -90,19 +89,14 @@ namespace Silk.NET.Vulkan.Video
                 DeltaPicOrderAlwaysZeroFlag = deltaPicOrderAlwaysZeroFlag.Value;
             }
 
-            if (residualColourTransformFlag is not null)
+            if (separateColourPlaneFlag is not null)
             {
-                ResidualColourTransformFlag = residualColourTransformFlag.Value;
+                SeparateColourPlaneFlag = separateColourPlaneFlag.Value;
             }
 
             if (gapsInFrameNumValueAllowedFlag is not null)
             {
                 GapsInFrameNumValueAllowedFlag = gapsInFrameNumValueAllowedFlag.Value;
-            }
-
-            if (firstPictureAfterSeekFlag is not null)
-            {
-                FirstPictureAfterSeekFlag = firstPictureAfterSeekFlag.Value;
             }
 
             if (qpprimeYZeroTransformBypassFlag is not null)
@@ -115,9 +109,9 @@ namespace Silk.NET.Vulkan.Video
                 FrameCroppingFlag = frameCroppingFlag.Value;
             }
 
-            if (scalingMatrixPresentFlag is not null)
+            if (seqScalingMatrixPresentFlag is not null)
             {
-                ScalingMatrixPresentFlag = scalingMatrixPresentFlag.Value;
+                SeqScalingMatrixPresentFlag = seqScalingMatrixPresentFlag.Value;
             }
 
             if (vuiParametersPresentFlag is not null)
@@ -209,7 +203,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 9)) | (uint)(((uint)(value) & 0x1u) << 9));
         }
 
-        public uint ResidualColourTransformFlag
+        public uint SeparateColourPlaneFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 10) & 0x1u);
@@ -225,7 +219,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 11)) | (uint)(((uint)(value) & 0x1u) << 11));
         }
 
-        public uint FirstPictureAfterSeekFlag
+        public uint QpprimeYZeroTransformBypassFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 12) & 0x1u);
@@ -233,7 +227,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 12)) | (uint)(((uint)(value) & 0x1u) << 12));
         }
 
-        public uint QpprimeYZeroTransformBypassFlag
+        public uint FrameCroppingFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 13) & 0x1u);
@@ -241,7 +235,7 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 13)) | (uint)(((uint)(value) & 0x1u) << 13));
         }
 
-        public uint FrameCroppingFlag
+        public uint SeqScalingMatrixPresentFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 14) & 0x1u);
@@ -249,20 +243,12 @@ namespace Silk.NET.Vulkan.Video
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 14)) | (uint)(((uint)(value) & 0x1u) << 14));
         }
 
-        public uint ScalingMatrixPresentFlag
+        public uint VuiParametersPresentFlag
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 15) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 15)) | (uint)(((uint)(value) & 0x1u) << 15));
-        }
-
-        public uint VuiParametersPresentFlag
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 16) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 16)) | (uint)(((uint)(value) & 0x1u) << 16));
         }
     }
 }

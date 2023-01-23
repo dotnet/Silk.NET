@@ -20,134 +20,134 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public unsafe partial class ArbShadingLanguageInclude : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_shading_language_include";
-        [NativeApi(EntryPoint = "glCompileShaderIncludeARB")]
+        [NativeApi(EntryPoint = "glCompileShaderIncludeARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** path, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length);
 
-        [NativeApi(EntryPoint = "glCompileShaderIncludeARB")]
+        [NativeApi(EntryPoint = "glCompileShaderIncludeARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** path, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int length);
 
-        [NativeApi(EntryPoint = "glCompileShaderIncludeARB")]
+        [NativeApi(EntryPoint = "glCompileShaderIncludeARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in byte* path, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length);
 
-        [NativeApi(EntryPoint = "glCompileShaderIncludeARB")]
+        [NativeApi(EntryPoint = "glCompileShaderIncludeARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in byte* path, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int length);
 
-        [NativeApi(EntryPoint = "glDeleteNamedStringARB")]
+        [NativeApi(EntryPoint = "glDeleteNamedStringARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void DeleteNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name);
 
-        [NativeApi(EntryPoint = "glDeleteNamedStringARB")]
+        [NativeApi(EntryPoint = "glDeleteNamedStringARB", Convention = CallingConvention.Winapi)]
         public partial void DeleteNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name);
 
-        [NativeApi(EntryPoint = "glDeleteNamedStringARB")]
-        public partial void DeleteNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name);
+        [NativeApi(EntryPoint = "glDeleteNamedStringARB", Convention = CallingConvention.Winapi)]
+        public partial void DeleteNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        [NativeApi(EntryPoint = "glGetNamedStringARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* @string);
 
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        [NativeApi(EntryPoint = "glGetNamedStringARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte @string);
 
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
-        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string @string);
+        [NativeApi(EntryPoint = "glGetNamedStringARB", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string @string);
 
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        [NativeApi(EntryPoint = "glGetNamedStringARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* @string);
 
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        [NativeApi(EntryPoint = "glGetNamedStringARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte @string);
 
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
-        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string @string);
+        [NativeApi(EntryPoint = "glGetNamedStringARB", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string @string);
 
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        [NativeApi(EntryPoint = "glGetNamedStringARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* @string);
 
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        [NativeApi(EntryPoint = "glGetNamedStringARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte @string);
 
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
-        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string @string);
+        [NativeApi(EntryPoint = "glGetNamedStringARB", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string @string);
 
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        [NativeApi(EntryPoint = "glGetNamedStringARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* @string);
 
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        [NativeApi(EntryPoint = "glGetNamedStringARB", Convention = CallingConvention.Winapi)]
         public partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte @string);
 
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
-        public partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string @string);
+        [NativeApi(EntryPoint = "glGetNamedStringARB", Convention = CallingConvention.Winapi)]
+        public partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string @string);
 
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
-        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* @string);
+        [NativeApi(EntryPoint = "glGetNamedStringARB", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* @string);
 
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
-        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte @string);
+        [NativeApi(EntryPoint = "glGetNamedStringARB", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte @string);
 
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
-        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string @string);
+        [NativeApi(EntryPoint = "glGetNamedStringARB", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string @string);
 
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
-        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* @string);
+        [NativeApi(EntryPoint = "glGetNamedStringARB", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* @string);
 
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
-        public partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte @string);
+        [NativeApi(EntryPoint = "glGetNamedStringARB", Convention = CallingConvention.Winapi)]
+        public partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte @string);
 
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
-        public partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string @string);
+        [NativeApi(EntryPoint = "glGetNamedStringARB", Convention = CallingConvention.Winapi)]
+        public partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] out string @string);
 
-        [NativeApi(EntryPoint = "glGetNamedStringivARB")]
+        [NativeApi(EntryPoint = "glGetNamedStringivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetNamedStringivARB")]
+        [NativeApi(EntryPoint = "glGetNamedStringivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetNamedStringivARB")]
+        [NativeApi(EntryPoint = "glGetNamedStringivARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetNamedStringivARB")]
+        [NativeApi(EntryPoint = "glGetNamedStringivARB", Convention = CallingConvention.Winapi)]
         public partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glGetNamedStringivARB")]
-        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [NativeApi(EntryPoint = "glGetNamedStringivARB", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        [NativeApi(EntryPoint = "glGetNamedStringivARB")]
-        public partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [NativeApi(EntryPoint = "glGetNamedStringivARB", Convention = CallingConvention.Winapi)]
+        public partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        [NativeApi(EntryPoint = "glIsNamedStringARB")]
+        [NativeApi(EntryPoint = "glIsNamedStringARB", Convention = CallingConvention.Winapi)]
         public unsafe partial bool IsNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name);
 
-        [NativeApi(EntryPoint = "glIsNamedStringARB")]
+        [NativeApi(EntryPoint = "glIsNamedStringARB", Convention = CallingConvention.Winapi)]
         public partial bool IsNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name);
 
-        [NativeApi(EntryPoint = "glIsNamedStringARB")]
-        public partial bool IsNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name);
+        [NativeApi(EntryPoint = "glIsNamedStringARB", Convention = CallingConvention.Winapi)]
+        public partial bool IsNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name);
 
-        [NativeApi(EntryPoint = "glNamedStringARB")]
+        [NativeApi(EntryPoint = "glNamedStringARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] byte* @string);
 
-        [NativeApi(EntryPoint = "glNamedStringARB")]
+        [NativeApi(EntryPoint = "glNamedStringARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] in byte @string);
 
-        [NativeApi(EntryPoint = "glNamedStringARB")]
-        public unsafe partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] int stringlen, [Flow(FlowDirection.In)] string @string);
+        [NativeApi(EntryPoint = "glNamedStringARB", Convention = CallingConvention.Winapi)]
+        public unsafe partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] int stringlen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string);
 
-        [NativeApi(EntryPoint = "glNamedStringARB")]
+        [NativeApi(EntryPoint = "glNamedStringARB", Convention = CallingConvention.Winapi)]
         public unsafe partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] byte* @string);
 
-        [NativeApi(EntryPoint = "glNamedStringARB")]
+        [NativeApi(EntryPoint = "glNamedStringARB", Convention = CallingConvention.Winapi)]
         public partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] in byte @string);
 
-        [NativeApi(EntryPoint = "glNamedStringARB")]
-        public partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] int stringlen, [Flow(FlowDirection.In)] string @string);
+        [NativeApi(EntryPoint = "glNamedStringARB", Convention = CallingConvention.Winapi)]
+        public partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] int stringlen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string);
 
-        [NativeApi(EntryPoint = "glNamedStringARB")]
-        public unsafe partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] byte* @string);
+        [NativeApi(EntryPoint = "glNamedStringARB", Convention = CallingConvention.Winapi)]
+        public unsafe partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] byte* @string);
 
-        [NativeApi(EntryPoint = "glNamedStringARB")]
-        public partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] in byte @string);
+        [NativeApi(EntryPoint = "glNamedStringARB", Convention = CallingConvention.Winapi)]
+        public partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] in byte @string);
 
-        [NativeApi(EntryPoint = "glNamedStringARB")]
-        public partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] int stringlen, [Flow(FlowDirection.In)] string @string);
+        [NativeApi(EntryPoint = "glNamedStringARB", Convention = CallingConvention.Winapi)]
+        public partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] int stringlen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string);
 
         public unsafe void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] pathSa, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length)
         {
@@ -251,25 +251,25 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             GetNamedString((int) name.Length, in name.GetPinnableReference(), (uint) @string.Length, out stringlen, out @string.GetPinnableReference());
         }
 
-        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> @string)
+        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> @string)
         {
             // ImplicitCountSpanOverloader
             GetNamedString(namelen, name, (uint) @string.Length, stringlen, out @string.GetPinnableReference());
         }
 
-        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> @string)
+        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> @string)
         {
             // ImplicitCountSpanOverloader
             GetNamedString(namelen, name, (uint) @string.Length, stringlen, out @string.GetPinnableReference());
         }
 
-        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> @string)
+        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> @string)
         {
             // ImplicitCountSpanOverloader
             GetNamedString(namelen, name, (uint) @string.Length, out stringlen, out @string.GetPinnableReference());
         }
 
-        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> @string)
+        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> @string)
         {
             // ImplicitCountSpanOverloader
             GetNamedString(namelen, name, (uint) @string.Length, out stringlen, out @string.GetPinnableReference());
@@ -311,16 +311,86 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             NamedString(type, (int) name.Length, in name.GetPinnableReference(), (int) @string.Length, in @string.GetPinnableReference());
         }
 
-        public unsafe void NamedString([Flow(FlowDirection.In)] ARB type, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(FlowDirection.In)] int stringlen, [Flow(FlowDirection.In)] string @string)
+        public unsafe void NamedString([Flow(FlowDirection.In)] ARB type, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(FlowDirection.In)] int stringlen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string @string)
         {
             // ImplicitCountSpanOverloader
             NamedString(type, (int) name.Length, in name.GetPinnableReference(), stringlen, @string);
         }
 
-        public unsafe void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> @string)
+        public unsafe void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> @string)
         {
             // ImplicitCountSpanOverloader
             NamedString(type, namelen, name, (int) @string.Length, in @string.GetPinnableReference());
+        }
+
+        public unsafe byte GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(namelen, name, bufSize, stringlen, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(namelen, name, bufSize, out stringlen, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(namelen, in name, bufSize, stringlen, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(namelen, in name, bufSize, out stringlen, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(namelen, name, bufSize, stringlen, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe byte GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(namelen, name, bufSize, out stringlen, out byte silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(namelen, name, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(namelen, in name, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(namelen, name, pname, out int silkRet);
+            return silkRet;
+        }
+
+        public unsafe int GetNamedString([Count(Parameter = "namelen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(FlowDirection.In)] ARB pname)
+        {
+            // NonKhrReturnTypeOverloader
+            GetNamedString(name, pname, out int silkRet);
+            return silkRet;
         }
 
         public ArbShadingLanguageInclude(INativeContext ctx)

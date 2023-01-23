@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
     public unsafe partial class QComShadingRate : NativeExtension<GL>
     {
         public const string ExtensionName = "QCOM_shading_rate";
-        [NativeApi(EntryPoint = "glShadingRateQCOM")]
+        [NativeApi(EntryPoint = "glShadingRateQCOM", Convention = CallingConvention.Winapi)]
         public partial void ShadingRate([Flow(FlowDirection.In)] QCOM rate);
 
-        [NativeApi(EntryPoint = "glShadingRateQCOM")]
+        [NativeApi(EntryPoint = "glShadingRateQCOM", Convention = CallingConvention.Winapi)]
         public partial void ShadingRate([Flow(FlowDirection.In)] ShadingRateQCOM rate);
 
         public QComShadingRate(INativeContext ctx)

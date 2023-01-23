@@ -20,28 +20,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
     public unsafe partial class SgixAsync : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_async";
-        [NativeApi(EntryPoint = "glAsyncMarkerSGIX")]
+        [NativeApi(EntryPoint = "glAsyncMarkerSGIX", Convention = CallingConvention.Winapi)]
         public partial void AsyncMarker([Flow(FlowDirection.In)] uint marker);
 
-        [NativeApi(EntryPoint = "glDeleteAsyncMarkersSGIX")]
+        [NativeApi(EntryPoint = "glDeleteAsyncMarkersSGIX", Convention = CallingConvention.Winapi)]
         public partial void DeleteAsyncMarkers([Flow(FlowDirection.In)] uint marker, [Flow(FlowDirection.In)] uint range);
 
-        [NativeApi(EntryPoint = "glFinishAsyncSGIX")]
+        [NativeApi(EntryPoint = "glFinishAsyncSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial int FinishAsync([Count(Count = 1), Flow(FlowDirection.Out)] uint* markerp);
 
-        [NativeApi(EntryPoint = "glFinishAsyncSGIX")]
+        [NativeApi(EntryPoint = "glFinishAsyncSGIX", Convention = CallingConvention.Winapi)]
         public partial int FinishAsync([Count(Count = 1), Flow(FlowDirection.Out)] out uint markerp);
 
-        [NativeApi(EntryPoint = "glGenAsyncMarkersSGIX")]
+        [NativeApi(EntryPoint = "glGenAsyncMarkersSGIX", Convention = CallingConvention.Winapi)]
         public partial uint GenAsyncMarkers([Flow(FlowDirection.In)] uint range);
 
-        [NativeApi(EntryPoint = "glIsAsyncMarkerSGIX")]
+        [NativeApi(EntryPoint = "glIsAsyncMarkerSGIX", Convention = CallingConvention.Winapi)]
         public partial bool IsAsyncMarker([Flow(FlowDirection.In)] uint marker);
 
-        [NativeApi(EntryPoint = "glPollAsyncSGIX")]
+        [NativeApi(EntryPoint = "glPollAsyncSGIX", Convention = CallingConvention.Winapi)]
         public unsafe partial int PollAsync([Count(Count = 1), Flow(FlowDirection.Out)] uint* markerp);
 
-        [NativeApi(EntryPoint = "glPollAsyncSGIX")]
+        [NativeApi(EntryPoint = "glPollAsyncSGIX", Convention = CallingConvention.Winapi)]
         public partial int PollAsync([Count(Count = 1), Flow(FlowDirection.Out)] out uint markerp);
 
         public SgixAsync(INativeContext ctx)

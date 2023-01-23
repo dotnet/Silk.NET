@@ -7,6 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Update="Chain.g.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Chain.g.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Chain.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Chain.g.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <Import Project="..\..\..\build\props\bindings.props" />

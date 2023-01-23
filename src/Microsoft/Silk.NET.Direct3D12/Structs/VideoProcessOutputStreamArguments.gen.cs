@@ -21,7 +21,7 @@ namespace Silk.NET.Direct3D12
     {
         public VideoProcessOutputStreamArguments
         (
-            Silk.NET.Maths.Rectangle<int>? targetRectangle = null
+            Silk.NET.Maths.Box2D<int>? targetRectangle = null
         ) : this()
         {
             if (targetRectangle is not null)
@@ -31,8 +31,8 @@ namespace Silk.NET.Direct3D12
         }
 
         
-        [NativeName("Type", "D3D12_VIDEO_PROCESS_OUTPUT_STREAM [2]")]
-        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_OUTPUT_STREAM [2]")]
+        [NativeName("Type", "D3D12_VIDEO_PROCESS_OUTPUT_STREAM[2]")]
+        [NativeName("Type.Name", "D3D12_VIDEO_PROCESS_OUTPUT_STREAM[2]")]
         [NativeName("Name", "OutputStream")]
         public OutputStreamBuffer OutputStream;
 
@@ -56,7 +56,7 @@ namespace Silk.NET.Direct3D12
                 }
             }
 
-#if NETSTANDARD2_1
+#if NETSTANDARD2_1 || NETCOREAPP3_1 || NET5_0 || NET5_0_OR_GREATER
             public Span<VideoProcessOutputStream> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 2);
 #endif
@@ -66,6 +66,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "D3D12_RECT")]
         [NativeName("Type.Name", "D3D12_RECT")]
         [NativeName("Name", "TargetRectangle")]
-        public Silk.NET.Maths.Rectangle<int> TargetRectangle;
+        public Silk.NET.Maths.Box2D<int> TargetRectangle;
     }
 }

@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureCreateInfoNV")]
-    public unsafe partial struct AccelerationStructureCreateInfoNV
+    public unsafe partial struct AccelerationStructureCreateInfoNV : IChainStart
     {
         public AccelerationStructureCreateInfoNV
         (
@@ -68,5 +68,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkAccelerationStructureInfoNV")]
         [NativeName("Name", "info")]
         public AccelerationStructureInfoNV Info;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.AccelerationStructureCreateInfoNV;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref AccelerationStructureCreateInfoNV Chain(
+            out AccelerationStructureCreateInfoNV capture)
+        {
+            capture = new AccelerationStructureCreateInfoNV(StructureType.AccelerationStructureCreateInfoNV);
+            return ref capture;
+        }
     }
 }

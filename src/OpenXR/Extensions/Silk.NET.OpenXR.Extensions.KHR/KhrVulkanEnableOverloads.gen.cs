@@ -38,7 +38,7 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetVulkanDeviceExtension(this KhrVulkanEnable thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, string buffer)
+        public static unsafe Result GetVulkanDeviceExtension(this KhrVulkanEnable thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer)
         {
             // SpanOverloader
             return thisApi.GetVulkanDeviceExtension(instance, systemId, bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), buffer);
@@ -80,7 +80,7 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetVulkanInstanceExtension(this KhrVulkanEnable thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, string buffer)
+        public static unsafe Result GetVulkanInstanceExtension(this KhrVulkanEnable thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer)
         {
             // SpanOverloader
             return thisApi.GetVulkanInstanceExtension(instance, systemId, bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), buffer);

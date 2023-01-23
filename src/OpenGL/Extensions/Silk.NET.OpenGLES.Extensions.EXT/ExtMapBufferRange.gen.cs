@@ -20,22 +20,22 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     public unsafe partial class ExtMapBufferRange : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_map_buffer_range";
-        [NativeApi(EntryPoint = "glFlushMappedBufferRangeEXT")]
+        [NativeApi(EntryPoint = "glFlushMappedBufferRangeEXT", Convention = CallingConvention.Winapi)]
         public partial void FlushMappedBufferRange([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint length);
 
-        [NativeApi(EntryPoint = "glFlushMappedBufferRangeEXT")]
+        [NativeApi(EntryPoint = "glFlushMappedBufferRangeEXT", Convention = CallingConvention.Winapi)]
         public partial void FlushMappedBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint length);
 
-        [NativeApi(EntryPoint = "glMapBufferRangeEXT")]
+        [NativeApi(EntryPoint = "glMapBufferRangeEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.In)] uint access);
 
-        [NativeApi(EntryPoint = "glMapBufferRangeEXT")]
+        [NativeApi(EntryPoint = "glMapBufferRangeEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.In)] MapBufferAccessMask access);
 
-        [NativeApi(EntryPoint = "glMapBufferRangeEXT")]
+        [NativeApi(EntryPoint = "glMapBufferRangeEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.In)] uint access);
 
-        [NativeApi(EntryPoint = "glMapBufferRangeEXT")]
+        [NativeApi(EntryPoint = "glMapBufferRangeEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.In)] MapBufferAccessMask access);
 
         public ExtMapBufferRange(INativeContext ctx)

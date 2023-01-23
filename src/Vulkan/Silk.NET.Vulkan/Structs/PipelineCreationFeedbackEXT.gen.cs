@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineCreationFeedbackEXT")]
+    [NativeName("AliasOf", "VkPipelineCreationFeedback")]
     public unsafe partial struct PipelineCreationFeedbackEXT
     {
         public PipelineCreationFeedbackEXT
         (
-            PipelineCreationFeedbackFlagsEXT? flags = null,
+            PipelineCreationFeedbackFlags? flags = null,
             ulong? duration = null
         ) : this()
         {
@@ -37,10 +38,10 @@ namespace Silk.NET.Vulkan
         }
 
 /// <summary></summary>
-        [NativeName("Type", "VkPipelineCreationFeedbackFlagsEXT")]
-        [NativeName("Type.Name", "VkPipelineCreationFeedbackFlagsEXT")]
+        [NativeName("Type", "VkPipelineCreationFeedbackFlags")]
+        [NativeName("Type.Name", "VkPipelineCreationFeedbackFlags")]
         [NativeName("Name", "flags")]
-        public PipelineCreationFeedbackFlagsEXT Flags;
+        public PipelineCreationFeedbackFlags Flags;
 /// <summary></summary>
         [NativeName("Type", "uint64_t")]
         [NativeName("Type.Name", "uint64_t")]

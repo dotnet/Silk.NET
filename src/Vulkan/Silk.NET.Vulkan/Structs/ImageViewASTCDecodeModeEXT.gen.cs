@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageViewASTCDecodeModeEXT")]
-    public unsafe partial struct ImageViewASTCDecodeModeEXT
+    public unsafe partial struct ImageViewASTCDecodeModeEXT : IExtendsChain<ImageViewCreateInfo>
     {
         public ImageViewASTCDecodeModeEXT
         (
@@ -57,5 +57,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkFormat")]
         [NativeName("Name", "decodeMode")]
         public Format DecodeMode;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ImageViewAstcDecodeModeExt;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

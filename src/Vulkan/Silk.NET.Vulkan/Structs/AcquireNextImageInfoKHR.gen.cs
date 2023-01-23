@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAcquireNextImageInfoKHR")]
-    public unsafe partial struct AcquireNextImageInfoKHR
+    public unsafe partial struct AcquireNextImageInfoKHR : IChainable
     {
         public AcquireNextImageInfoKHR
         (
@@ -101,5 +101,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "deviceMask")]
         public uint DeviceMask;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.AcquireNextImageInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

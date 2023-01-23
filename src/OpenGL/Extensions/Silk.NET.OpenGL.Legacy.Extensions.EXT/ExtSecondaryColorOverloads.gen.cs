@@ -64,18 +64,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.SecondaryColor3(in v.GetPinnableReference());
         }
 
-        public static unsafe void SecondaryColorPointer<T0>(this ExtSecondaryColor thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.SecondaryColorPointer(size, type, stride, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void SecondaryColorPointer<T0>(this ExtSecondaryColor thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.SecondaryColorPointer(size, type, stride, in pointer.GetPinnableReference());
-        }
-
     }
 }
 

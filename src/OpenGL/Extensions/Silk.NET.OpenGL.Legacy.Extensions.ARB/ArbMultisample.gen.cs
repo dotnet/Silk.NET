@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public unsafe partial class ArbMultisample : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_multisample";
-        [NativeApi(EntryPoint = "glSampleCoverageARB")]
+        [NativeApi(EntryPoint = "glSampleCoverageARB", Convention = CallingConvention.Winapi)]
         public partial void SampleCoverage([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
 
-        [NativeApi(EntryPoint = "glSampleCoverageARB")]
+        [NativeApi(EntryPoint = "glSampleCoverageARB", Convention = CallingConvention.Winapi)]
         public partial void SampleCoverage([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] Boolean invert);
 
         public ArbMultisample(INativeContext ctx)

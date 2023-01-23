@@ -21,15 +21,15 @@ namespace Silk.NET.Vulkan.Extensions.NV
     {
         public const string ExtensionName = "VK_NV_acquire_winrt_display";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAcquireWinrtDisplayNV")]
+        [NativeApi(EntryPoint = "vkAcquireWinrtDisplayNV", Convention = CallingConvention.Winapi)]
         public partial Result AcquireWinrtDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetWinrtDisplayNV")]
+        [NativeApi(EntryPoint = "vkGetWinrtDisplayNV", Convention = CallingConvention.Winapi)]
         public unsafe partial Result GetWinrtDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint deviceRelativeId, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayKHR* pDisplay);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetWinrtDisplayNV")]
+        [NativeApi(EntryPoint = "vkGetWinrtDisplayNV", Convention = CallingConvention.Winapi)]
         public partial Result GetWinrtDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint deviceRelativeId, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayKHR pDisplay);
 
         public NVAcquireWinrtDisplay(INativeContext ctx)

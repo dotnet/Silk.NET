@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_present_wait";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkWaitForPresentKHR")]
+        [NativeApi(EntryPoint = "vkWaitForPresentKHR", Convention = CallingConvention.Winapi)]
         public partial Result WaitForPresent([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] ulong presentId, [Count(Count = 0)] ulong timeout);
 
         public KhrPresentWait(INativeContext ctx)

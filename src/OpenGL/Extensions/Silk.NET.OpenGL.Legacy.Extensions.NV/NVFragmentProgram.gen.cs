@@ -20,95 +20,116 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public unsafe partial class NVFragmentProgram : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_fragment_program";
-        [NativeApi(EntryPoint = "glGetProgramNamedParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetProgramNamedParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetProgramNamedParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetProgramNamedParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Count(Count = 4), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetProgramNamedParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetProgramNamedParameterfvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] in byte name, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetProgramNamedParameterfvNV")]
+        [NativeApi(EntryPoint = "glGetProgramNamedParameterfvNV", Convention = CallingConvention.Winapi)]
         public partial void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] in byte name, [Count(Count = 4), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetProgramNamedParameterfvNV")]
-        public unsafe partial void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
+        [NativeApi(EntryPoint = "glGetProgramNamedParameterfvNV", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
 
-        [NativeApi(EntryPoint = "glGetProgramNamedParameterfvNV")]
-        public partial void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] out float @params);
+        [NativeApi(EntryPoint = "glGetProgramNamedParameterfvNV", Convention = CallingConvention.Winapi)]
+        public partial void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] out float @params);
 
-        [NativeApi(EntryPoint = "glGetProgramNamedParameterdvNV")]
+        [NativeApi(EntryPoint = "glGetProgramNamedParameterdvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
 
-        [NativeApi(EntryPoint = "glGetProgramNamedParameterdvNV")]
+        [NativeApi(EntryPoint = "glGetProgramNamedParameterdvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Count(Count = 4), Flow(FlowDirection.Out)] out double @params);
 
-        [NativeApi(EntryPoint = "glGetProgramNamedParameterdvNV")]
+        [NativeApi(EntryPoint = "glGetProgramNamedParameterdvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] in byte name, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
 
-        [NativeApi(EntryPoint = "glGetProgramNamedParameterdvNV")]
+        [NativeApi(EntryPoint = "glGetProgramNamedParameterdvNV", Convention = CallingConvention.Winapi)]
         public partial void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] in byte name, [Count(Count = 4), Flow(FlowDirection.Out)] out double @params);
 
-        [NativeApi(EntryPoint = "glGetProgramNamedParameterdvNV")]
-        public unsafe partial void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
+        [NativeApi(EntryPoint = "glGetProgramNamedParameterdvNV", Convention = CallingConvention.Winapi)]
+        public unsafe partial void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
 
-        [NativeApi(EntryPoint = "glGetProgramNamedParameterdvNV")]
-        public partial void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] out double @params);
+        [NativeApi(EntryPoint = "glGetProgramNamedParameterdvNV", Convention = CallingConvention.Winapi)]
+        public partial void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] out double @params);
 
-        [NativeApi(EntryPoint = "glProgramNamedParameter4fNV")]
+        [NativeApi(EntryPoint = "glProgramNamedParameter4fNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w);
 
-        [NativeApi(EntryPoint = "glProgramNamedParameter4fNV")]
+        [NativeApi(EntryPoint = "glProgramNamedParameter4fNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w);
 
-        [NativeApi(EntryPoint = "glProgramNamedParameter4fNV")]
-        public partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w);
+        [NativeApi(EntryPoint = "glProgramNamedParameter4fNV", Convention = CallingConvention.Winapi)]
+        public partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w);
 
-        [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV")]
+        [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
-        [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV")]
+        [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Count(Count = 4), Flow(FlowDirection.In)] in float v);
 
-        [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV")]
+        [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] in byte name, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
-        [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV")]
+        [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] in byte name, [Count(Count = 4), Flow(FlowDirection.In)] in float v);
 
-        [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV")]
-        public unsafe partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV", Convention = CallingConvention.Winapi)]
+        public unsafe partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
-        [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV")]
-        public partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.In)] in float v);
+        [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV", Convention = CallingConvention.Winapi)]
+        public partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(FlowDirection.In)] in float v);
 
-        [NativeApi(EntryPoint = "glProgramNamedParameter4dNV")]
+        [NativeApi(EntryPoint = "glProgramNamedParameter4dNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w);
 
-        [NativeApi(EntryPoint = "glProgramNamedParameter4dNV")]
+        [NativeApi(EntryPoint = "glProgramNamedParameter4dNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w);
 
-        [NativeApi(EntryPoint = "glProgramNamedParameter4dNV")]
-        public partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w);
+        [NativeApi(EntryPoint = "glProgramNamedParameter4dNV", Convention = CallingConvention.Winapi)]
+        public partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w);
 
-        [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV")]
+        [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
-        [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV")]
+        [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Count(Count = 4), Flow(FlowDirection.In)] in double v);
 
-        [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV")]
+        [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV", Convention = CallingConvention.Winapi)]
         public unsafe partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] in byte name, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
-        [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV")]
+        [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV", Convention = CallingConvention.Winapi)]
         public partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] in byte name, [Count(Count = 4), Flow(FlowDirection.In)] in double v);
 
-        [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV")]
-        public unsafe partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
+        [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV", Convention = CallingConvention.Winapi)]
+        public unsafe partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
-        [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV")]
-        public partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.In)] in double v);
+        [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV", Convention = CallingConvention.Winapi)]
+        public partial void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 4), Flow(FlowDirection.In)] in double v);
+
+        public unsafe float GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramNamedParameter(id, len, name, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] in byte name)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramNamedParameter(id, len, in name, out float silkRet);
+            return silkRet;
+        }
+
+        public unsafe float GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name)
+        {
+            // NonKhrReturnTypeOverloader
+            GetProgramNamedParameter(id, len, name, out float silkRet);
+            return silkRet;
+        }
 
         public NVFragmentProgram(INativeContext ctx)
             : base(ctx)

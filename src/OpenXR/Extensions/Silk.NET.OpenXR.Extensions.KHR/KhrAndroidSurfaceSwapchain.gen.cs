@@ -21,35 +21,35 @@ namespace Silk.NET.OpenXR.Extensions.KHR
     {
         public const string ExtensionName = "XR_KHR_android_surface_swapchain";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR")]
+        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSwapchainAndroidSurface([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfo* info, [Count(Count = 0)] Swapchain* swapchain, [Count(Count = 0)] nint* surface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR")]
+        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSwapchainAndroidSurface([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfo* info, [Count(Count = 0)] Swapchain* swapchain, [Count(Count = 0)] ref nint surface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR")]
+        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSwapchainAndroidSurface([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfo* info, [Count(Count = 0)] ref Swapchain swapchain, [Count(Count = 0)] nint* surface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR")]
+        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSwapchainAndroidSurface([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfo* info, [Count(Count = 0)] ref Swapchain swapchain, [Count(Count = 0)] ref nint surface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR")]
+        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSwapchainAndroidSurface([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainCreateInfo info, [Count(Count = 0)] Swapchain* swapchain, [Count(Count = 0)] nint* surface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR")]
+        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSwapchainAndroidSurface([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainCreateInfo info, [Count(Count = 0)] Swapchain* swapchain, [Count(Count = 0)] ref nint surface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR")]
+        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateSwapchainAndroidSurface([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainCreateInfo info, [Count(Count = 0)] ref Swapchain swapchain, [Count(Count = 0)] nint* surface);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR")]
+        [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR", Convention = CallingConvention.Winapi)]
         public partial Result CreateSwapchainAndroidSurface([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainCreateInfo info, [Count(Count = 0)] ref Swapchain swapchain, [Count(Count = 0)] ref nint surface);
 
         public KhrAndroidSurfaceSwapchain(INativeContext ctx)

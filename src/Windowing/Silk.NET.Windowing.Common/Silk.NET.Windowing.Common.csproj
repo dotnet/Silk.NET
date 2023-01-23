@@ -15,6 +15,12 @@
         <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
             <_Parameter1>Silk.NET.Windowing.Sdl</_Parameter1>
         </AssemblyAttribute>
+        <!-- I couldn't decide whether we wanted to trust the users with the power to hook into DoEvents (and do stuff
+            pre-update, as I feel like that'd just be an arms race) so I made the ProcessEvents event internal for
+            now -->
+        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+            <_Parameter1>Silk.NET.Input.Common</_Parameter1>
+        </AssemblyAttribute>
     </ItemGroup>
 
     <ItemGroup>

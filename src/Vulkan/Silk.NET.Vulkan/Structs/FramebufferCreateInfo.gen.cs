@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFramebufferCreateInfo")]
-    public unsafe partial struct FramebufferCreateInfo
+    public unsafe partial struct FramebufferCreateInfo : IChainStart
     {
         public FramebufferCreateInfo
         (
@@ -123,5 +123,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "layers")]
         public uint Layers;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.FramebufferCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref FramebufferCreateInfo Chain(
+            out FramebufferCreateInfo capture)
+        {
+            capture = new FramebufferCreateInfo(StructureType.FramebufferCreateInfo);
+            return ref capture;
+        }
     }
 }

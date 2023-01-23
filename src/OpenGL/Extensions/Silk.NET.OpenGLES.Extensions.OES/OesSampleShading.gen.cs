@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGLES.Extensions.OES
     public unsafe partial class OesSampleShading : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_sample_shading";
-        [NativeApi(EntryPoint = "glMinSampleShadingOES")]
+        [NativeApi(EntryPoint = "glMinSampleShadingOES", Convention = CallingConvention.Winapi)]
         public partial void MinSampleShading([Flow(FlowDirection.In)] float value);
 
         public OesSampleShading(INativeContext ctx)

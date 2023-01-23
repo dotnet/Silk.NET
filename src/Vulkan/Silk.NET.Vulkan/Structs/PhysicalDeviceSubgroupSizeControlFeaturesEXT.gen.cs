@@ -17,11 +17,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSubgroupSizeControlFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceSubgroupSizeControlFeaturesEXT
+    [NativeName("AliasOf", "VkPhysicalDeviceSubgroupSizeControlFeatures")]
+    public unsafe partial struct PhysicalDeviceSubgroupSizeControlFeaturesEXT : IExtendsChain<PhysicalDeviceFeatures2>, IExtendsChain<PhysicalDeviceFeatures2KHR>, IExtendsChain<DeviceCreateInfo>
     {
         public PhysicalDeviceSubgroupSizeControlFeaturesEXT
         (
-            StructureType? sType = StructureType.PhysicalDeviceSubgroupSizeControlFeaturesExt,
+            StructureType? sType = StructureType.PhysicalDeviceSubgroupSizeControlFeatures,
             void* pNext = null,
             Bool32? subgroupSizeControl = null,
             Bool32? computeFullSubgroups = null
@@ -68,5 +69,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkBool32")]
         [NativeName("Name", "computeFullSubgroups")]
         public Bool32 ComputeFullSubgroups;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.PhysicalDeviceSubgroupSizeControlFeatures;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

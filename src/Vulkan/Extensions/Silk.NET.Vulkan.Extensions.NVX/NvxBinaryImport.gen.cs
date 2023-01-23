@@ -21,91 +21,91 @@ namespace Silk.NET.Vulkan.Extensions.NVX
     {
         public const string ExtensionName = "VK_NVX_binary_import";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCuLaunchKernelNVX")]
+        [NativeApi(EntryPoint = "vkCmdCuLaunchKernelNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdCuLaunchKernel([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CuLaunchInfoNVX* pLaunchInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdCuLaunchKernelNVX")]
+        [NativeApi(EntryPoint = "vkCmdCuLaunchKernelNVX", Convention = CallingConvention.Winapi)]
         public partial void CmdCuLaunchKernel([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in CuLaunchInfoNVX pLaunchInfo);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCuFunctionNVX")]
+        [NativeApi(EntryPoint = "vkCreateCuFunctionNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCuFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CuFunctionCreateInfoNVX* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] CuFunctionNVX* pFunction);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCuFunctionNVX")]
+        [NativeApi(EntryPoint = "vkCreateCuFunctionNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCuFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CuFunctionCreateInfoNVX* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out CuFunctionNVX pFunction);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCuFunctionNVX")]
+        [NativeApi(EntryPoint = "vkCreateCuFunctionNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCuFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CuFunctionCreateInfoNVX* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] CuFunctionNVX* pFunction);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCuFunctionNVX")]
+        [NativeApi(EntryPoint = "vkCreateCuFunctionNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCuFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CuFunctionCreateInfoNVX* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out CuFunctionNVX pFunction);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCuFunctionNVX")]
+        [NativeApi(EntryPoint = "vkCreateCuFunctionNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCuFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in CuFunctionCreateInfoNVX pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] CuFunctionNVX* pFunction);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCuFunctionNVX")]
+        [NativeApi(EntryPoint = "vkCreateCuFunctionNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCuFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in CuFunctionCreateInfoNVX pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out CuFunctionNVX pFunction);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCuFunctionNVX")]
+        [NativeApi(EntryPoint = "vkCreateCuFunctionNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCuFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in CuFunctionCreateInfoNVX pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] CuFunctionNVX* pFunction);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCuFunctionNVX")]
+        [NativeApi(EntryPoint = "vkCreateCuFunctionNVX", Convention = CallingConvention.Winapi)]
         public partial Result CreateCuFunction([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in CuFunctionCreateInfoNVX pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out CuFunctionNVX pFunction);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCuModuleNVX")]
+        [NativeApi(EntryPoint = "vkCreateCuModuleNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCuModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CuModuleCreateInfoNVX* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] CuModuleNVX* pModule);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCuModuleNVX")]
+        [NativeApi(EntryPoint = "vkCreateCuModuleNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCuModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CuModuleCreateInfoNVX* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out CuModuleNVX pModule);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCuModuleNVX")]
+        [NativeApi(EntryPoint = "vkCreateCuModuleNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCuModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CuModuleCreateInfoNVX* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] CuModuleNVX* pModule);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCuModuleNVX")]
+        [NativeApi(EntryPoint = "vkCreateCuModuleNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCuModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CuModuleCreateInfoNVX* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out CuModuleNVX pModule);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCuModuleNVX")]
+        [NativeApi(EntryPoint = "vkCreateCuModuleNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCuModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in CuModuleCreateInfoNVX pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] CuModuleNVX* pModule);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCuModuleNVX")]
+        [NativeApi(EntryPoint = "vkCreateCuModuleNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCuModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in CuModuleCreateInfoNVX pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out CuModuleNVX pModule);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCuModuleNVX")]
+        [NativeApi(EntryPoint = "vkCreateCuModuleNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial Result CreateCuModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in CuModuleCreateInfoNVX pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] CuModuleNVX* pModule);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCreateCuModuleNVX")]
+        [NativeApi(EntryPoint = "vkCreateCuModuleNVX", Convention = CallingConvention.Winapi)]
         public partial Result CreateCuModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in CuModuleCreateInfoNVX pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out CuModuleNVX pModule);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyCuFunctionNVX")]
+        [NativeApi(EntryPoint = "vkDestroyCuFunctionNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyCuFunction([Count(Count = 0)] Device device, [Count(Count = 0)] CuFunctionNVX function, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyCuFunctionNVX")]
+        [NativeApi(EntryPoint = "vkDestroyCuFunctionNVX", Convention = CallingConvention.Winapi)]
         public partial void DestroyCuFunction([Count(Count = 0)] Device device, [Count(Count = 0)] CuFunctionNVX function, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyCuModuleNVX")]
+        [NativeApi(EntryPoint = "vkDestroyCuModuleNVX", Convention = CallingConvention.Winapi)]
         public unsafe partial void DestroyCuModule([Count(Count = 0)] Device device, [Count(Count = 0)] CuModuleNVX module, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkDestroyCuModuleNVX")]
+        [NativeApi(EntryPoint = "vkDestroyCuModuleNVX", Convention = CallingConvention.Winapi)]
         public partial void DestroyCuModule([Count(Count = 0)] Device device, [Count(Count = 0)] CuModuleNVX module, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator);
 
         public NvxBinaryImport(INativeContext ctx)

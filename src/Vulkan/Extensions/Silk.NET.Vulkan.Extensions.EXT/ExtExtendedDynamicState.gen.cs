@@ -21,119 +21,119 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     {
         public const string ExtensionName = "VK_EXT_extended_dynamic_state";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pStrides);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pStrides);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pStrides);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pStrides);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pStrides);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pStrides);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pStrides);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pStrides);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT")]
+        [NativeApi(EntryPoint = "vkCmdBindVertexBuffers2EXT", Convention = CallingConvention.Winapi)]
         public partial void CmdBindVertexBuffers2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in Buffer pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pSizes, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] in ulong pStrides);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetCullModeEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetCullModeEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetCullMode([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CullModeFlags cullMode);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetDepthBoundsTestEnableEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetDepthBoundsTestEnableEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetDepthBoundsTestEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 depthBoundsTestEnable);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetDepthCompareOpEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetDepthCompareOpEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetDepthCompareOp([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CompareOp depthCompareOp);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetDepthTestEnableEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetDepthTestEnableEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetDepthTestEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 depthTestEnable);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetDepthWriteEnableEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetDepthWriteEnableEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetDepthWriteEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 depthWriteEnable);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetFrontFaceEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetFrontFaceEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetFrontFace([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] FrontFace frontFace);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetPrimitiveTopologyEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetPrimitiveTopologyEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetPrimitiveTopology([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PrimitiveTopology primitiveTopology);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetScissorWithCountEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetScissorWithCountEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetScissorWithCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint scissorCount, [Count(Parameter = "scissorCount"), Flow(FlowDirection.In)] Rect2D* pScissors);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetScissorWithCountEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetScissorWithCountEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetScissorWithCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint scissorCount, [Count(Parameter = "scissorCount"), Flow(FlowDirection.In)] in Rect2D pScissors);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetStencilOpEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetStencilOpEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetStencilOp([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] StencilFaceFlags faceMask, [Count(Count = 0)] StencilOp failOp, [Count(Count = 0)] StencilOp passOp, [Count(Count = 0)] StencilOp depthFailOp, [Count(Count = 0)] CompareOp compareOp);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetStencilTestEnableEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetStencilTestEnableEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetStencilTestEnable([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 stencilTestEnable);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetViewportWithCountEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetViewportWithCountEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void CmdSetViewportWithCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] Viewport* pViewports);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetViewportWithCountEXT")]
+        [NativeApi(EntryPoint = "vkCmdSetViewportWithCountEXT", Convention = CallingConvention.Winapi)]
         public partial void CmdSetViewportWithCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint viewportCount, [Count(Parameter = "viewportCount"), Flow(FlowDirection.In)] in Viewport pViewports);
 
         /// <summary>To be documented.</summary>

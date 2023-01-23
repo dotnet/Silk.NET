@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <SilkSourceLinkExempt>true</SilkSourceLinkExempt>
+    <SilkNativePackage>true</SilkNativePackage>
   </PropertyGroup>
 
   <Import Project="..\..\..\build\props\common.props" />
@@ -9,7 +9,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net4.6.1</TargetFrameworks>
     <PackageId>Ultz.Native.Assimp</PackageId> <!-- TODO change this in 3.0 -->
-    <PackageVersion>5.0.1.3</PackageVersion>
+    <PackageVersion>5.2.5</PackageVersion>
     <Authors>.NET Foundation and Contributors</Authors>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>

@@ -23,6 +23,8 @@ namespace Silk.NET.Assimp
         (
             AssimpString? mName = null,
             uint? mNumWeights = null,
+            Node* mArmature = null,
+            Node* mNode = null,
             VertexWeight* mWeights = null,
             System.Numerics.Matrix4x4? mOffsetMatrix = null
         ) : this()
@@ -35,6 +37,16 @@ namespace Silk.NET.Assimp
             if (mNumWeights is not null)
             {
                 MNumWeights = mNumWeights.Value;
+            }
+
+            if (mArmature is not null)
+            {
+                MArmature = mArmature;
+            }
+
+            if (mNode is not null)
+            {
+                MNode = mNode;
             }
 
             if (mWeights is not null)
@@ -58,6 +70,16 @@ namespace Silk.NET.Assimp
         [NativeName("Type.Name", "unsigned int")]
         [NativeName("Name", "mNumWeights")]
         public uint MNumWeights;
+
+        [NativeName("Type", "aiNode *")]
+        [NativeName("Type.Name", "aiNode *")]
+        [NativeName("Name", "mArmature")]
+        public Node* MArmature;
+
+        [NativeName("Type", "aiNode *")]
+        [NativeName("Type.Name", "aiNode *")]
+        [NativeName("Name", "mNode")]
+        public Node* MNode;
 
         [NativeName("Type", "aiVertexWeight *")]
         [NativeName("Type.Name", "aiVertexWeight *")]

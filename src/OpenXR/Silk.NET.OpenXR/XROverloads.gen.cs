@@ -377,21 +377,21 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Flow(FlowDirection.In)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(layerName, propertyCapacityInput, propertyCountOutput, ref properties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Flow(FlowDirection.In)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(layerName, propertyCapacityInput, ref propertyCountOutput.GetPinnableReference(), properties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Flow(FlowDirection.In)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(layerName, propertyCapacityInput, ref propertyCountOutput.GetPinnableReference(), ref properties.GetPinnableReference());
@@ -615,7 +615,7 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, string buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, getInfo, bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), buffer);
@@ -636,7 +636,7 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, string buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, in getInfo.GetPinnableReference(), bufferCapacityInput, bufferCountOutput, buffer);
@@ -657,7 +657,7 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, string buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, in getInfo.GetPinnableReference(), bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), buffer);
@@ -685,7 +685,7 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInstanceProcAddr(this XR thisApi, [Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string name, [Count(Count = 0)] Span<PfnVoidFunction> function)
+        public static unsafe Result GetInstanceProcAddr(this XR thisApi, [Count(Count = 0)] Instance instance, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string name, [Count(Count = 0)] Span<PfnVoidFunction> function)
         {
             // SpanOverloader
             return thisApi.GetInstanceProcAddr(instance, name, ref function.GetPinnableReference());
@@ -874,7 +874,7 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result PathToString(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, string buffer)
+        public static unsafe Result PathToString(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string buffer)
         {
             // SpanOverloader
             return thisApi.PathToString(instance, path, bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), buffer);
@@ -930,7 +930,7 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result StringToPath(this XR thisApi, [Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string pathString, [Count(Count = 0)] Span<ulong> path)
+        public static unsafe Result StringToPath(this XR thisApi, [Count(Count = 0)] Instance instance, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPUTF8Str)] string pathString, [Count(Count = 0)] Span<ulong> path)
         {
             // SpanOverloader
             return thisApi.StringToPath(instance, pathString, ref path.GetPinnableReference());

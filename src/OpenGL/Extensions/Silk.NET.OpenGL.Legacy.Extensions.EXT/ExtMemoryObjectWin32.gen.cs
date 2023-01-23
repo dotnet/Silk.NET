@@ -20,29 +20,43 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public unsafe partial class ExtMemoryObjectWin32 : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_memory_object_win32";
-        [NativeApi(EntryPoint = "glImportMemoryWin32HandleEXT")]
+        [NativeApi(EntryPoint = "glImportMemoryWin32HandleEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ImportMemoryWin32Handle([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.Out)] void* handle);
 
-        [NativeApi(EntryPoint = "glImportMemoryWin32HandleEXT")]
+        [NativeApi(EntryPoint = "glImportMemoryWin32HandleEXT", Convention = CallingConvention.Winapi)]
         public partial void ImportMemoryWin32Handle<T0>([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.Out)] out T0 handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glImportMemoryWin32HandleEXT")]
+        [NativeApi(EntryPoint = "glImportMemoryWin32HandleEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ImportMemoryWin32Handle([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.Out)] void* handle);
 
-        [NativeApi(EntryPoint = "glImportMemoryWin32HandleEXT")]
+        [NativeApi(EntryPoint = "glImportMemoryWin32HandleEXT", Convention = CallingConvention.Winapi)]
         public partial void ImportMemoryWin32Handle<T0>([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.Out)] out T0 handle) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glImportMemoryWin32NameEXT")]
+        [NativeApi(EntryPoint = "glImportMemoryWin32NameEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ImportMemoryWin32Name([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.In)] void* name);
 
-        [NativeApi(EntryPoint = "glImportMemoryWin32NameEXT")]
+        [NativeApi(EntryPoint = "glImportMemoryWin32NameEXT", Convention = CallingConvention.Winapi)]
         public partial void ImportMemoryWin32Name<T0>([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.In)] in T0 name) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glImportMemoryWin32NameEXT")]
+        [NativeApi(EntryPoint = "glImportMemoryWin32NameEXT", Convention = CallingConvention.Winapi)]
         public unsafe partial void ImportMemoryWin32Name([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.In)] void* name);
 
-        [NativeApi(EntryPoint = "glImportMemoryWin32NameEXT")]
+        [NativeApi(EntryPoint = "glImportMemoryWin32NameEXT", Convention = CallingConvention.Winapi)]
         public partial void ImportMemoryWin32Name<T0>([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.In)] in T0 name) where T0 : unmanaged;
+
+        public unsafe T0 ImportMemoryWin32Handle<T0>([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] EXT handleType) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ImportMemoryWin32Handle(memory, size, handleType, out T0 silkRet);
+            return silkRet;
+        }
+
+        public unsafe T0 ImportMemoryWin32Handle<T0>([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] ExternalHandleType handleType) where T0 : unmanaged
+        {
+            // NonKhrReturnTypeOverloader
+            ImportMemoryWin32Handle(memory, size, handleType, out T0 silkRet);
+            return silkRet;
+        }
 
         public ExtMemoryObjectWin32(INativeContext ctx)
             : base(ctx)

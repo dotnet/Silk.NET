@@ -27,6 +27,11 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                 foreach (var rawCategory in function.Categories)
                 {
                     var category = FormatCategory(rawCategory);
+                    if (category == "RESERVED")
+                    {
+                        continue;
+                    }
+
                     var preCategory = $"{task.FunctionPrefix.ToUpper()}_{rawCategory}";
                     // check that the root project exists
                     if (!profile.Projects.ContainsKey("Core"))
@@ -118,6 +123,10 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                 }
 
                 var category = FormatCategory(@struct.ExtensionName);
+                if (category == "RESERVED")
+                {
+                    continue;
+                }
                 
                 // check that the root project exists
                 if (!profile.Projects.ContainsKey("Core"))
@@ -165,6 +174,10 @@ namespace Silk.NET.BuildTools.Converters.Constructors
             foreach (var constant in constants)
             {
                 var category = constant.ExtensionName == "Core" ? "Core" : FormatCategory(constant.ExtensionName);
+                if (category == "RESERVED")
+                {
+                    continue;
+                }
                 
                 // check that the root project exists
                 if (!profile.Projects.ContainsKey("Core"))

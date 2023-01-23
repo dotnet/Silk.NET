@@ -20,6 +20,12 @@ namespace Silk.NET.Direct3D9
         [NativeName("Name", "DIRECT3D_VERSION")]
         public const int Direct3DVersion = unchecked((int) 0x900);
         [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_SDK_VERSION")]
+        public const int SdkVersion = unchecked((int) 0x20);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D9b_SDK_VERSION")]
+        public const int D3D9bSdkVersion = unchecked((int) 0x1F);
+        [NativeName("Type", "int")]
         [NativeName("Name", "D3DMAXUSERCLIPPLANES")]
         public const int Maxuserclipplanes = unchecked((int) 0x20);
         [NativeName("Type", "long")]
@@ -1282,15 +1288,39 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "long")]
         [NativeName("Name", "D3DCREATE_ADAPTERGROUP_DEVICE")]
         public const int CreateAdaptergroupDevice = unchecked((int) 0x200);
+        [NativeName("Type", "long")]
+        [NativeName("Name", "D3DCREATE_DISABLE_DRIVER_MANAGEMENT_EX")]
+        public const int CreateDisableDriverManagementEX = unchecked((int) 0x400);
+        [NativeName("Type", "long")]
+        [NativeName("Name", "D3DCREATE_NOWINDOWCHANGES")]
+        public const int CreateNowindowchanges = unchecked((int) 0x800);
+        [NativeName("Type", "long")]
+        [NativeName("Name", "D3DCREATE_DISABLE_PSGP_THREADING")]
+        public const int CreateDisablePsgpThreading = unchecked((int) 0x2000);
+        [NativeName("Type", "long")]
+        [NativeName("Name", "D3DCREATE_ENABLE_PRESENTSTATS")]
+        public const int CreateEnablePresentstats = unchecked((int) 0x4000);
+        [NativeName("Type", "long")]
+        [NativeName("Name", "D3DCREATE_DISABLE_PRINTSCREEN")]
+        public const int CreateDisablePrintscreen = unchecked((int) 0x8000);
+        [NativeName("Type", "long")]
+        [NativeName("Name", "D3DCREATE_SCREENSAVER")]
+        public const int CreateScreensaver = unchecked((int) 0x10000000);
         [NativeName("Type", "int")]
         [NativeName("Name", "D3DADAPTER_DEFAULT")]
         public const int AdapterDefault = unchecked((int) 0x0);
+        [NativeName("Type", "long")]
+        [NativeName("Name", "D3DENUM_WHQL_LEVEL")]
+        public const int EnumWhqlLevel = unchecked((int) 0x2);
         [NativeName("Type", "long")]
         [NativeName("Name", "D3DENUM_NO_DRIVERVERSION")]
         public const int EnumNoDriverversion = unchecked((int) 0x4);
         [NativeName("Type", "long")]
         [NativeName("Name", "D3DPRESENT_BACK_BUFFERS_MAX")]
         public const int PresentBackBuffersMax = unchecked((int) 0x3);
+        [NativeName("Type", "long")]
+        [NativeName("Name", "D3DPRESENT_BACK_BUFFERS_MAX_EX")]
+        public const int PresentBackBuffersMaxEX = unchecked((int) 0x1E);
         [NativeName("Type", "long")]
         [NativeName("Name", "D3DSGR_NO_CALIBRATION")]
         public const int SgrNoCalibration = unchecked((int) 0x0);
@@ -1306,14 +1336,118 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "long")]
         [NativeName("Name", "D3DPRESENT_LINEAR_CONTENT")]
         public const int PresentLinearContent = unchecked((int) 0x2);
+        [NativeName("Type", "long")]
+        [NativeName("Name", "D3DPRESENT_DONOTFLIP")]
+        public const int PresentDonotflip = unchecked((int) 0x4);
+        [NativeName("Type", "long")]
+        [NativeName("Name", "D3DPRESENT_FLIPRESTART")]
+        public const int PresentFliprestart = unchecked((int) 0x8);
+        [NativeName("Type", "long")]
+        [NativeName("Name", "D3DPRESENT_VIDEO_RESTRICT_TO_MONITOR")]
+        public const int PresentVideoRestrictToMonitor = unchecked((int) 0x10);
+        [NativeName("Type", "long")]
+        [NativeName("Name", "D3DPRESENT_UPDATEOVERLAYONLY")]
+        public const int PresentUpdateoverlayonly = unchecked((int) 0x20);
+        [NativeName("Type", "long")]
+        [NativeName("Name", "D3DPRESENT_HIDEOVERLAY")]
+        public const int PresentHideoverlay = unchecked((int) 0x40);
+        [NativeName("Type", "long")]
+        [NativeName("Name", "D3DPRESENT_UPDATECOLORKEY")]
+        public const int PresentUpdatecolorkey = unchecked((int) 0x80);
+        [NativeName("Type", "long")]
+        [NativeName("Name", "D3DPRESENT_FORCEIMMEDIATE")]
+        public const int PresentForceimmediate = unchecked((int) 0x100);
         [NativeName("Type", "int")]
         [NativeName("Name", "_FACD3D")]
         public const int Facd3D = unchecked((int) 0x876);
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 220, Column 21 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um\\d3d9helper.h")]
+        [NativeName("Src", "Line 309, Column 21 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
         [NativeApi(EntryPoint = "Direct3DCreate9")]
         public unsafe partial IDirect3D9* Direct3DCreate9(uint SDKVersion);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 315, Column 12 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
+        [NativeApi(EntryPoint = "D3DPERF_BeginEvent")]
+        public unsafe partial int PERFBeginEvent(uint col, [Flow(FlowDirection.In)] char* wszName);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 315, Column 12 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
+        [NativeApi(EntryPoint = "D3DPERF_BeginEvent")]
+        public partial int PERFBeginEvent(uint col, [Flow(FlowDirection.In)] in char wszName);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 315, Column 12 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
+        [NativeApi(EntryPoint = "D3DPERF_BeginEvent")]
+        public partial int PERFBeginEvent(uint col, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wszName);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 316, Column 12 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
+        [NativeApi(EntryPoint = "D3DPERF_EndEvent")]
+        public partial int PERFEndEvent();
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 317, Column 13 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
+        [NativeApi(EntryPoint = "D3DPERF_SetMarker")]
+        public unsafe partial void PERFSetMarker(uint col, [Flow(FlowDirection.In)] char* wszName);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 317, Column 13 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
+        [NativeApi(EntryPoint = "D3DPERF_SetMarker")]
+        public partial void PERFSetMarker(uint col, [Flow(FlowDirection.In)] in char wszName);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 317, Column 13 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
+        [NativeApi(EntryPoint = "D3DPERF_SetMarker")]
+        public partial void PERFSetMarker(uint col, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wszName);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 318, Column 13 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
+        [NativeApi(EntryPoint = "D3DPERF_SetRegion")]
+        public unsafe partial void PERFSetRegion(uint col, [Flow(FlowDirection.In)] char* wszName);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 318, Column 13 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
+        [NativeApi(EntryPoint = "D3DPERF_SetRegion")]
+        public partial void PERFSetRegion(uint col, [Flow(FlowDirection.In)] in char wszName);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 318, Column 13 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
+        [NativeApi(EntryPoint = "D3DPERF_SetRegion")]
+        public partial void PERFSetRegion(uint col, [Flow(FlowDirection.In), UnmanagedType(Silk.NET.Core.Native.UnmanagedType.LPWStr)] string wszName);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 319, Column 13 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
+        [NativeApi(EntryPoint = "D3DPERF_QueryRepeatFrame")]
+        public partial Silk.NET.Core.Bool32 PERFQueryRepeatFrame();
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 321, Column 13 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
+        [NativeApi(EntryPoint = "D3DPERF_SetOptions")]
+        public partial void PERFSetOptions(uint dwOptions);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 322, Column 14 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
+        [NativeApi(EntryPoint = "D3DPERF_GetStatus")]
+        public partial uint PERFGetStatus();
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2030, Column 16 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
+        [NativeApi(EntryPoint = "Direct3DCreate9Ex")]
+        public unsafe partial int Direct3DCreate9Ex(uint SDKVersion, IDirect3D9Ex** arg1);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2030, Column 16 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
+        [NativeApi(EntryPoint = "Direct3DCreate9Ex")]
+        public unsafe partial int Direct3DCreate9Ex(uint SDKVersion, ref IDirect3D9Ex* arg1);
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 2030, Column 16 in D:\\Windows Kits\\10\\Include\\10.0.22621.0\\shared\\d3d9.h")]
+        public unsafe int Direct3DCreate9Ex<TI0>(uint SDKVersion, ref ComPtr<TI0> arg1) where TI0 : unmanaged, IComVtbl<IDirect3D9Ex>, IComVtbl<TI0>
+        {
+            // ComPtrOverloader
+            return Direct3DCreate9Ex(SDKVersion, (IDirect3D9Ex**) arg1.GetAddressOf());
+        }
 
 
         public D3D9(INativeContext ctx)

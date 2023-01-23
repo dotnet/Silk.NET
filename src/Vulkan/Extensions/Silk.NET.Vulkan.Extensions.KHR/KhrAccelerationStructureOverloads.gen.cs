@@ -248,6 +248,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
         public static unsafe void GetAccelerationStructureBuildSizes(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] uint* pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] Span<AccelerationStructureBuildSizesInfoKHR> pSizeInfo)
         {
             // SpanOverloader
@@ -262,6 +263,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
         public static unsafe void GetAccelerationStructureBuildSizes(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] Span<AccelerationStructureBuildSizesInfoKHR> pSizeInfo)
         {
             // SpanOverloader
@@ -276,6 +278,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
         public static unsafe void GetAccelerationStructureBuildSizes(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] uint* pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] Span<AccelerationStructureBuildSizesInfoKHR> pSizeInfo)
         {
             // SpanOverloader
@@ -290,6 +293,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pSizeInfo = new(StructureType.AccelerationStructureBuildSizesInfoKhr);")]
         public static unsafe void GetAccelerationStructureBuildSizes(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureBuildTypeKHR buildType, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pBuildInfo, [Count(Computed = "pBuildInfo->geometryCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pMaxPrimitiveCounts, [Count(Count = 0), Flow(FlowDirection.Out)] Span<AccelerationStructureBuildSizesInfoKHR> pSizeInfo)
         {
             // SpanOverloader

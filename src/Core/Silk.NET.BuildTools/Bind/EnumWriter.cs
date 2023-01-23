@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.IO;
@@ -41,6 +41,10 @@ namespace Silk.NET.BuildTools.Bind
             for (var index = 0; index < @enum.Tokens.Count; index++)
             {
                 var token = @enum.Tokens[index];
+                foreach (var attr in token.Attributes)
+                {
+                    sw.WriteLine($"        {attr}");
+                }
                 sw.WriteLine($"        [NativeName(\"Name\", \"{token.NativeName}\")]");
                 sw.Write($"        {token.Name} = {MakeUnchecked(token.Value, @enum.EnumBaseType)}");
                 sw.WriteLine($"{(index != @enum.Tokens.Count ? "," : string.Empty)}");
@@ -56,14 +60,14 @@ namespace Silk.NET.BuildTools.Bind
             ? value
             : enumBaseType.Name switch
             {
-                "sbyte" => Utilities.ParseSbyte(value) is null ? $"unchecked((sbyte) {value})" : value,
-                "byte" => Utilities.ParseByte(value) is null ? $"unchecked((byte) {value})" : value,
-                "short" => Utilities.ParseShort(value) is null ? $"unchecked((short) {value})" : value,
-                "ushort" => Utilities.ParseUshort(value) is null ? $"unchecked((ushort) {value})" : value,
-                "int" => Utilities.ParseInt(value) is null ? $"unchecked((int) {value})" : value,
-                "uint" => Utilities.ParseUint(value) is null ? $"unchecked((uint) {value})" : value,
-                "long" => Utilities.ParseLong(value) is null ? $"unchecked((long) {value})" : value,
-                "ulong" => Utilities.ParseUlong(value) is null ? $"unchecked((ulong) {value})" : value,
+                "sbyte" =>  Utilities.ParseSbyte(value) >= 0         ? value : $"unchecked((sbyte) {value})",
+                "byte" =>   Utilities.ParseByte(value) is not null   ? value : $"unchecked((byte) {value})",
+                "short" =>  Utilities.ParseShort(value) >= 0         ? value : $"unchecked((short) {value})",
+                "ushort" => Utilities.ParseUshort(value) is not null ? value : $"unchecked((ushort) {value})",
+                "int" =>    Utilities.ParseInt(value) >= 0           ? value : $"unchecked((int) {value})",
+                "uint" =>   Utilities.ParseUint(value) is not null   ? value : $"unchecked((uint) {value})",
+                "long" =>   Utilities.ParseLong(value) >= 0          ? value : $"unchecked((long) {value})",
+                "ulong" =>  Utilities.ParseUlong(value) is not null  ? value : $"unchecked((ulong) {value})",
                 _ => value
             };
     }

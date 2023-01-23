@@ -28,7 +28,8 @@ namespace Silk.NET.Assimp
             float? mHorizontalFOV = null,
             float? mClipPlaneNear = null,
             float? mClipPlaneFar = null,
-            float? mAspect = null
+            float? mAspect = null,
+            float? mOrthographicWidth = null
         ) : this()
         {
             if (mName is not null)
@@ -69,6 +70,11 @@ namespace Silk.NET.Assimp
             if (mAspect is not null)
             {
                 MAspect = mAspect.Value;
+            }
+
+            if (mOrthographicWidth is not null)
+            {
+                MOrthographicWidth = mOrthographicWidth.Value;
             }
         }
 
@@ -112,5 +118,10 @@ namespace Silk.NET.Assimp
         [NativeName("Type.Name", "float")]
         [NativeName("Name", "mAspect")]
         public float MAspect;
+
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "mOrthographicWidth")]
+        public float MOrthographicWidth;
     }
 }

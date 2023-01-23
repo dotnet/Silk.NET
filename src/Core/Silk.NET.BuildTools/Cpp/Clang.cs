@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Text;
 using ClangSharp;
@@ -46,6 +47,12 @@ namespace Silk.NET.BuildTools.Cpp
             "ULONGLONG",
             "LONG_PTR"
         };
+
+        public static bool IsProbablyABitmask(Enum @enum)
+            => @enum.Tokens.Count > 1 && // there is more than one token
+               // at least approx 50% of the tokens have only one bit set
+               @enum.Tokens.Count(x => BitOperations.PopCount(ulong.Parse(x.Value[2..], NumberStyles.HexNumber)) == 1)
+               >= MathF.Floor(@enum.Tokens.Count / 2f);
 
         public static bool ShouldVisit(Cursor cursor, BindTask task, bool nullTolerant = false)
         {
@@ -98,35 +105,20 @@ namespace Silk.NET.BuildTools.Cpp
                     return false;
                 }
 
-                return traversals.Contains(Path.GetFullPath(path).Replace("\\", "/"));
+                return traversals.Contains(Path.GetFullPath(path).Replace("\\", "/").ToLower());
             }
         }
 
         public static unsafe Profile GenerateProfile(string fileName, Stream input, BindTask task)
         {
+            Console.WriteLine($"clangsharp {typeof(Attr).Assembly.GetName().Version} for {clang.getClangVersion()}");
             var profile = new Profile
             {
                 Name = Path.GetFileNameWithoutExtension(fileName)
             };
 
-            var matcher = new Matcher();
-            matcher.AddIncludePatterns
-            (
-                task.ClangOpts.Traverse.Select(x => x.ToLower().Replace('\\', '/'))
-                    .Where(x => !x.StartsWith("!"))
-            );
-            matcher.AddExcludePatterns
-            (
-                task.ClangOpts.Traverse.Select(x => x.ToLower().Replace('\\', '/'))
-                    .Where(x => x.StartsWith("!"))
-                    .Select(x => x.Substring(1))
-            );
-
-            var traversals = matcher.GetResultsInFullPath(Environment.CurrentDirectory)
-                .Concat(task.ClangOpts.Traverse.Where(x => File.Exists(x)))
-                .Select(x => Path.GetFullPath(x).ToLower().Replace('\\', '/'))
-                .Distinct()
-                .ToArray();
+            var traversals = Generator.Glob(task.ClangOpts.Traverse).ToArray();
+            task.ClangOpts = task.ClangOpts with { Traverse = traversals };
 
             Console.WriteLine("Loading input header...");
             using var ms = new MemoryStream();
@@ -150,7 +142,8 @@ namespace Silk.NET.BuildTools.Cpp
                 CXTranslationUnit_Flags
                     .CXTranslationUnit_VisitImplicitAttributes; // Implicit attributes should be visited
             translationFlags |= CXTranslationUnit_Flags.CXTranslationUnit_DetailedPreprocessingRecord;
-            ReadOnlySpan<CXUnsavedFile> unsavedFiles = stackalloc CXUnsavedFile[] {CXUnsavedFile.Create(fileName, str)};
+            ReadOnlySpan<CXUnsavedFile> unsavedFiles = stackalloc CXUnsavedFile[]
+                { CXUnsavedFile.Create(fileName, str) };
             var cxTranslationUnit = CXTranslationUnit.Parse
                 (index, fileName, task.ClangOpts.ClangArgs, unsavedFiles, translationFlags);
             using var originalTranslationUnit = TranslationUnit.GetOrCreate(cxTranslationUnit);
@@ -203,23 +196,61 @@ namespace Silk.NET.BuildTools.Cpp
             var pfns = new Dictionary<string, Struct>();
 
             Console.WriteLine("Visting declarations...");
-            VisitDecls(translationUnitDecl.Decls);
+            VisitDecls(DeclsOf(translationUnitDecl, translationUnitDecl));
             // ReSharper restore BitwiseOperatorOnEnumWithoutFlags
-
             Console.WriteLine("Creating finished profile...");
             var destInfo = task.ClangOpts.ClassMappings[fileName];
             var indexOfOpenSqBracket = destInfo.IndexOf('[');
             var indexOfCloseSqBracket = destInfo.LastIndexOf(']');
-            var projectName = destInfo.Substring
-                (indexOfOpenSqBracket + 1, indexOfCloseSqBracket - indexOfOpenSqBracket - 1);
-            var className = destInfo.Substring(indexOfCloseSqBracket + 1);
+            var projectNameSplit = destInfo.Substring
+                (indexOfOpenSqBracket + 1, indexOfCloseSqBracket - indexOfOpenSqBracket - 1).Split(':');
+
+            if (projectNameSplit.Length == 0) 
+            {
+                throw new ArgumentException("Missing project name!");
+            }
+
+            if (projectNameSplit.Length > 2)
+            {
+                throw new ArgumentException("Too many splits in the project name!");
+            }
+
+            var projectName = projectNameSplit[0];
+
+            var nativeApiSetName = destInfo.Substring(indexOfCloseSqBracket + 1);
+            if (projectName != "Core" && projectNameSplit.Length <= 1)
+            {
+                throw new InvalidOperationException("The core class name must be provided for extension projects. Example: \"[ProjectName:CoreClassName]ExtensionClassName\"");
+            }
+            
+            var className = projectNameSplit.Length > 1
+                ? projectNameSplit[1]
+                : nativeApiSetName;
             var project = profile.Projects[projectName] = new Project
-                {IsRoot = projectName == "Core", Namespace = task.Namespace};
+            {
+                IsRoot = projectName == "Core",
+                Namespace = projectName == "Core"
+                        ? string.Empty
+                        : $".{projectName}",
+                ComRefs = task.ClangOpts.ComRefs ?? new HashSet<string>(),
+            };
+
+            if (projectName != "Core")
+            {
+                // we need a core project even if we're not using it
+                profile.Projects["Core"] = new()
+                {
+                    IsRoot = true,
+                    Namespace = task.Namespace,
+                    ComRefs = task.ClangOpts.ComRefs ?? new HashSet<string>()
+                };
+            }
+
             var @class = new Class
             {
                 ClassName = className,
                 Constants = constants,
-                NativeApis = {[fileName] = new NativeApiSet {Name = "I" + className, Functions = functions}}
+                NativeApis = { [fileName] = new NativeApiSet { Name = "I" + nativeApiSetName, Functions = functions } }
             };
             project.Structs = structs;
             project.Enums = enums;
@@ -228,11 +259,14 @@ namespace Silk.NET.BuildTools.Cpp
             Console.WriteLine("Mapping C# names...");
             var variedNameMap = TypeMapper.CreateVariedNameMap(project);
             task.InjectTypeMap(variedNameMap);
+
+            bool mapNative = task.Controls.Contains("typemap-native");
+            
             foreach (var map in task.TypeMaps)
             {
-                TypeMapper.Map(map, project.Structs);
-                TypeMapper.Map(map, @class.NativeApis[fileName].Functions);
-                TypeMapper.Map(map, @class.Constants);
+                TypeMapper.Map(map, project.Structs, mapNative);
+                TypeMapper.Map(map, @class.NativeApis[fileName].Functions, mapNative);
+                TypeMapper.Map(map, @class.Constants, mapNative);
             }
 
             Console.WriteLine("Applying postprocessing...");
@@ -276,7 +310,7 @@ namespace Silk.NET.BuildTools.Cpp
                             Name = "Pfn" + name,
                             NativeName = "Pfn" + GetFunctionPointerWrapperName(type),
                             Fields = type.FunctionPointerSignature.Parameters.Select
-                                    ((x, i) => new Field {Name = $"Arg{i}", NativeName = $"arg{i}", Type = x.Type})
+                                    ((x, i) => new Field { Name = $"Arg{i}", NativeName = $"arg{i}", Type = x.Type })
                                 .Concat
                                 (
                                     new[]
@@ -371,6 +405,11 @@ namespace Silk.NET.BuildTools.Cpp
                     else
                     {
                         decl.Location.GetFileLocation(out CXFile file, out _, out _, out _);
+                        if (string.IsNullOrWhiteSpace(file.Name.ToString()))
+                        {
+                            continue;
+                        }
+
                         if (!traversals.Contains(Path.GetFullPath(file.Name.ToString()).ToLower().Replace('\\', '/')))
                         {
                             // It is not uncommon for some declarations to be done using macros, which are themselves
@@ -379,7 +418,7 @@ namespace Silk.NET.BuildTools.Cpp
 
                             decl.Location.GetExpansionLocation(out CXFile expansionFile, out _, out _, out _);
                             if (!traversals.Contains
-                                (Path.GetFullPath(file.Name.ToString()).ToLower().Replace('\\', '/')))
+                                    (Path.GetFullPath(file.Name.ToString()).ToLower().Replace('\\', '/')))
                             {
                                 continue;
                             }
@@ -484,7 +523,7 @@ namespace Silk.NET.BuildTools.Cpp
 
                 var uuidAttr = uuidAttrs.First();
                 var uuidAttrText = GetSourceRangeContents(recordDecl.TranslationUnit.Handle, uuidAttr.Extent);
-                var uuidText = uuidAttrText.Split(new char[] {'"'}, StringSplitOptions.RemoveEmptyEntries)[1];
+                var uuidText = uuidAttrText.Split(new char[] { '"' }, StringSplitOptions.RemoveEmptyEntries)[1];
 
                 if (!Guid.TryParse(uuidText, out uuid))
                 {
@@ -508,32 +547,59 @@ namespace Silk.NET.BuildTools.Cpp
                     return;
                 }
 
+                static void RenameAnonymousSuchThatItHasAnActuallySaneName
+                (
+                    in BindTask task,
+                    IProfileConstituent constituent,
+                    string original,
+                    string suggested,
+                    string declName
+                )
+                {
+                    var renamed = false;
+                    if (task.RenamedNativeNames.TryGetValue(suggested, out var renamedName) ||
+                        task.RenamedNativeNames.TryGetValue(declName, out renamedName))
+                    {
+                        task.RenamedNativeNames[original] = suggested = renamedName;
+                        renamed = true;
+                    }
+                    else if (task.RenamedNativeNames.TryAdd(original, suggested))
+                    {
+                        renamed = true;
+                    }
+
+                    if (renamed)
+                    {
+                        constituent.Attributes.Add
+                        (
+                            new Attribute
+                            {
+                                Arguments = new List<string> { "\"AnonymousName\"", $"\"{original}\"" },
+                                Name = "NativeName"
+                            }
+                        );
+                        constituent.Name = suggested;
+                        constituent.NativeName = declName;
+                    }
+                }
+
                 if (decl is EnumDecl)
                 {
                     var enumSpec = enums.FirstOrDefault(x => x.NativeName == anonName);
                     var name = Naming.TranslateLite(Naming.TrimName(tdDecl.Name, task), task.FunctionPrefix);
-                    if (task.RenamedNativeNames.TryAdd(anonName, name) && !(enumSpec is null))
+                    if (enumSpec is not null)
                     {
-                        enumSpec.Attributes.Add
-                        (
-                            new Attribute
-                            {
-                                Arguments = new List<string> {"\"AnonymousName\"", $"\"{anonName}\""},
-                                Name = "NativeName"
-                            }
-                        );
-                        enumSpec.Name = name;
-                        enumSpec.NativeName = tdDecl.Name;
+                        RenameAnonymousSuchThatItHasAnActuallySaneName(in task, enumSpec, anonName, name, tdDecl.Name);
                     }
                 }
                 else if (decl is RecordDecl)
                 {
                     var structSpec = structs.FirstOrDefault(x => x.NativeName == anonName);
                     var name = Naming.TranslateLite(Naming.TrimName(tdDecl.Name, task), task.FunctionPrefix);
-                    if (task.RenamedNativeNames.TryAdd(anonName, name) && !(structSpec is null))
+                    if (structSpec is not null)
                     {
-                        structSpec.Name = name;
-                        structSpec.NativeName = tdDecl.Name;
+                        RenameAnonymousSuchThatItHasAnActuallySaneName
+                            (in task, structSpec, anonName, name, tdDecl.Name);
                     }
                 }
             }
@@ -614,7 +680,7 @@ namespace Silk.NET.BuildTools.Cpp
                 FlowDirection ignoreFlow = default;
                 success = true;
                 count = null;
-                Type ret = new Type {Name = "void", IndirectionLevels = 1};
+                Type ret = new Type { Name = "void", IndirectionLevels = 1 };
 
                 if (type is ArrayType arrayType)
                 {
@@ -641,32 +707,32 @@ namespace Silk.NET.BuildTools.Cpp
                     {
                         case CXTypeKind.CXType_Void:
                         {
-                            ret = new Type {Name = "void"};
+                            ret = new Type { Name = "void" };
                             break;
                         }
 
                         case CXTypeKind.CXType_Bool:
                         {
-                            ret = new Type {Name = "bool"};
+                            ret = new Type { Name = "bool" };
                             break;
                         }
 
                         case CXTypeKind.CXType_Char_U:
                         case CXTypeKind.CXType_UChar:
                         {
-                            ret = new Type {Name = "byte"};
+                            ret = new Type { Name = "byte" };
                             break;
                         }
 
                         case CXTypeKind.CXType_UShort:
                         {
-                            ret = new Type {Name = "ushort"};
+                            ret = new Type { Name = "ushort" };
                             break;
                         }
 
                         case CXTypeKind.CXType_UInt:
                         {
-                            ret = new Type {Name = "uint"};
+                            ret = new Type { Name = "uint" };
                             break;
                         }
 
@@ -677,32 +743,32 @@ namespace Silk.NET.BuildTools.Cpp
 
                         case CXTypeKind.CXType_ULongLong:
                         {
-                            ret = new Type {Name = "ulong"};
+                            ret = new Type { Name = "ulong" };
                             break;
                         }
 
                         case CXTypeKind.CXType_Char_S:
                         case CXTypeKind.CXType_SChar:
                         {
-                            ret = new Type {Name = "byte"};
+                            ret = new Type { Name = "byte" };
                             break;
                         }
 
                         case CXTypeKind.CXType_WChar:
                         {
-                            ret = new Type {Name = "char"};
+                            ret = new Type { Name = "char" };
                             break;
                         }
 
                         case CXTypeKind.CXType_Short:
                         {
-                            ret = new Type {Name = "short"};
+                            ret = new Type { Name = "short" };
                             break;
                         }
 
                         case CXTypeKind.CXType_Int:
                         {
-                            ret = new Type {Name = "int"};
+                            ret = new Type { Name = "int" };
                             break;
                         }
 
@@ -713,19 +779,19 @@ namespace Silk.NET.BuildTools.Cpp
 
                         case CXTypeKind.CXType_LongLong:
                         {
-                            ret = new Type {Name = "long"};
+                            ret = new Type { Name = "long" };
                             break;
                         }
 
                         case CXTypeKind.CXType_Float:
                         {
-                            ret = new Type {Name = "float"};
+                            ret = new Type { Name = "float" };
                             break;
                         }
 
                         case CXTypeKind.CXType_Double:
                         {
-                            ret = new Type {Name = "double"};
+                            ret = new Type { Name = "double" };
                             break;
                         }
 
@@ -752,7 +818,7 @@ namespace Silk.NET.BuildTools.Cpp
                     }
                     else
                     {
-                        ret = new Type {Name = elaboratedType.NamedType.AsString};
+                        ret = new Type { Name = elaboratedType.NamedType.AsString };
                     }
                 }
                 else if (type is FunctionType functionType)
@@ -784,11 +850,16 @@ namespace Silk.NET.BuildTools.Cpp
                     }
                     else
                     {
-                        ret = new Type {Name = "nint"};
+                        ret = new Type { Name = "nint" };
                     }
                 }
                 else if (type is PointerType pointerType)
                 {
+                    if (pointerType.Handle.IsConstQualified || (pointerType.PointeeType.Handle.IsConstQualified && !pointerType.PointeeType.IsPointerType))
+                    {
+                        flow = FlowDirection.In;
+                    }
+
                     ret = GetType(pointerType.PointeeType, out _, ref flow, out _);
                     ret.IndirectionLevels++;
                 }
@@ -801,7 +872,7 @@ namespace Silk.NET.BuildTools.Cpp
                 {
                     if (tagType.Decl.Handle.IsAnonymous)
                     {
-                        ret = new Type {Name = GetAnonymousName(tagType.Decl, tagType.KindSpelling)};
+                        ret = new Type { Name = GetAnonymousName(tagType.Decl, tagType.KindSpelling) };
                     }
                     else if (tagType.Handle.IsConstQualified)
                     {
@@ -814,7 +885,7 @@ namespace Silk.NET.BuildTools.Cpp
                     }
                     else
                     {
-                        ret = new Type {Name = tagType.Decl.Name};
+                        ret = new Type { Name = tagType.Decl.Name };
                     }
                 }
                 else if (type is TypedefType typedefType)
@@ -823,16 +894,16 @@ namespace Silk.NET.BuildTools.Cpp
                     // can be treated correctly. Otherwise, they will resolve to a particular
                     // platform size, based on whatever parameters were passed into clang.
                     if (task.ExcludedNativeNames.Contains(typedefType.Decl.Name) || _primitives.Contains
-                        (typedefType.Decl.Name))
+                            (typedefType.Decl.Name))
                     {
-                        ret = new Type {Name = typedefType.Decl.Name};
+                        ret = new Type { Name = typedefType.Decl.Name };
                     }
                     else
                     {
                         ret = GetType(typedefType.Decl.UnderlyingType, out _, ref flow, out var getTypeSuccess);
                         if (!getTypeSuccess)
                         {
-                            ret = new Type {Name = typedefType.Decl.Name};
+                            ret = new Type { Name = typedefType.Decl.Name };
                         }
                         else if (ret.FunctionPointerSignature is not null)
                         {
@@ -879,14 +950,28 @@ namespace Silk.NET.BuildTools.Cpp
                 for (var i = 0; i < recordDecl.Decls.Count; i++)
                 {
                     var decl = recordDecl.Decls[i];
+                    if (i == 0 && recordDecl.SourceRange.Start == decl.SourceRange.Start)
+                    {
+                        continue; // why is this even a thing oml
+                    }
+
                     switch (decl)
                     {
                         case FieldDecl field:
                         {
+                            if (string.IsNullOrWhiteSpace(field.Name))
+                            {
+                                // anonymous, we will have handled the RecordDecl already
+                                continue;
+                            }
+
                             yield return new Field
                             {
                                 Name = Naming.TranslateLite
-                                    (Naming.TrimName(field.Name, task), task.FunctionPrefix),
+                                (
+                                    Naming.TrimName(field.Name, task),
+                                    task.FunctionPrefix
+                                ),
                                 NativeName = field.Name,
                                 Type = GetType(field.Type, out var count, ref _f, out _),
                                 NativeType = field.Type.AsString.Replace("\\", "\\\\"), Count = count,
@@ -896,7 +981,7 @@ namespace Silk.NET.BuildTools.Cpp
                                         new Attribute
                                         {
                                             Name = "FieldOffset",
-                                            Arguments = new List<string> {field.Handle.OffsetOfField.ToString()}
+                                            Arguments = new List<string> { field.Handle.OffsetOfField.ToString() }
                                         }
                                     }
                                     : new List<Attribute>(),
@@ -912,14 +997,27 @@ namespace Silk.NET.BuildTools.Cpp
                                 ? "Anonymous"
                                 : $"Anonymous{nestedRecordFieldCount}";
                             var nestedName = GetAnonymousName(nestedRecordDecl, "Record");
+                            
+                            var parent = recordDecl;
+                            var typeSuffix = "";
+                            if (string.IsNullOrWhiteSpace(recordDecl.Name))
+                            {
+                                typeSuffix = recordDecl.CursorKindSpelling.Remove(recordDecl.CursorKindSpelling.Length - 4);
+                                parent = parent.Parent as RecordDecl;
+                                while (string.IsNullOrWhiteSpace(parent.Name))
+                                {
+                                    typeSuffix = parent.CursorKindSpelling.Remove(parent.CursorKindSpelling.Length - 4) + typeSuffix;
+                                    parent = parent.Parent as RecordDecl;
+                                }
+                            }
                             var nestedNameMapped = remappedNativeName ?? Naming.TranslateVariable
-                                (Naming.TrimName(recordDecl.Name, task), task.FunctionPrefix);
+                                (Naming.TrimName(parent.Name + typeSuffix, task), task.FunctionPrefix);
                             var ret = new Field
                             {
                                 Name = Naming.TranslateLite
                                     (Naming.TrimName(name, task), task.FunctionPrefix),
                                 NativeName = $"anonymous{nestedRecordFieldCount}",
-                                Type = new Type {Name = nestedName, OriginalName = nestedName},
+                                Type = new Type { Name = nestedName, OriginalName = nestedName },
                                 NativeType = nestedRecordDecl.Spelling.Replace("\\", "\\\\"),
                                 Attributes = recordDecl.IsUnion
                                     ? new List<Attribute>
@@ -927,7 +1025,7 @@ namespace Silk.NET.BuildTools.Cpp
                                         new Attribute
                                         {
                                             Name = "FieldOffset",
-                                            Arguments = new List<string> {"0"}
+                                            Arguments = new List<string> { "0" }
                                         }
                                     }
                                     : new List<Attribute>()
@@ -939,13 +1037,14 @@ namespace Silk.NET.BuildTools.Cpp
                                 {
                                     Name = "BuildToolsIntrinsic",
                                     Arguments = new List<string>
-                                        {"$FUSECPP", nestedName}
+                                        { "$FUSECPP", nestedName }
                                 }
                             );
 
                             var renameNestedName = !task.RenamedNativeNames.ContainsKey(nestedName);
                             if (renameNestedName)
                             {
+                                // no user-defined name, make our own guess.
                                 if (firstNestedRecordField is null)
                                 {
                                     firstNestedRecordField = ret;
@@ -973,8 +1072,11 @@ namespace Silk.NET.BuildTools.Cpp
                             {
                                 if (recordDecl.Decls[j] is FieldDecl nestedFieldDecl)
                                 {
-                                    if (GetType(nestedFieldDecl.Type, out _, ref _f, out _).Name == ret.Type.Name)
+                                    if (GetType(nestedFieldDecl.Type, out _, ref _f, out _).Name == ret.Type.Name &&
+                                        !string.IsNullOrWhiteSpace(nestedFieldDecl.Name))
                                     {
+                                        // if there's field decl (with a name!) for this nested structure, don't make a
+                                        // field automatically as we'll do that next when we visit the FieldDecl
                                         skip = true;
                                         if (renameNestedName)
                                         {
@@ -1088,29 +1190,33 @@ namespace Silk.NET.BuildTools.Cpp
 
                         string name = null;
                         task.RenamedNativeNames.TryGetValue(nativeName, out name);
-                        enums.Add
-                        (
-                            new Enum
-                            {
-                                Name = name ?? Naming.TranslateVariable
-                                    (Naming.TrimName(nativeName, task), task.FunctionPrefix),
-                                NativeName = nativeName,
-                                ClangMetadata = new[] {enumDecl.Location.ToString()},
-                                Tokens = enumDecl.Enumerators.Where
-                                        (x => !(task.ExcludedNativeNames?.Contains(x.Name) ?? false))
-                                    .Select
-                                    (
-                                        x => new Token
-                                        {
-                                            Name = Naming.Translate(Naming.TrimName(x.Name, task), task.FunctionPrefix),
-                                            NativeName = x.Name,
-                                            Value = "0x" + x.InitVal.ToString("X")
-                                        }
-                                    )
-                                    .ToList(),
-                                EnumBaseType = GetType(enumDecl.IntegerType, out _, ref _f, out _)
-                            }
-                        );
+                        var @enum = new Enum
+                        {
+                            Name = name ?? Naming.TranslateVariable
+                                (Naming.TrimName(nativeName, task), task.FunctionPrefix),
+                            NativeName = nativeName,
+                            ClangMetadata = new[] { enumDecl.Location.ToString() },
+                            Tokens = enumDecl.Enumerators.Where
+                                    (x => !(task.ExcludedNativeNames?.Contains(x.Name) ?? false))
+                                .Select
+                                (
+                                    x => new Token
+                                    {
+                                        Name = Naming.Translate(Naming.TrimName(x.Name, task), task.FunctionPrefix),
+                                        NativeName = x.Name,
+                                        Value = "0x" + x.InitVal.ToString("X")
+                                    }
+                                )
+                                .ToList(),
+                            EnumBaseType = GetType(enumDecl.IntegerType, out _, ref _f, out _)
+                        };
+
+                        if (IsProbablyABitmask(@enum))
+                        {
+                            @enum.Attributes.Add(new() { Name = "Flags" });
+                        }
+                        
+                        enums.Add(@enum);
                         break;
                     }
 
@@ -1136,16 +1242,29 @@ namespace Silk.NET.BuildTools.Cpp
                                 Console.WriteLine("Preferring new definition as the existing one is opaque.");
                                 structs.Remove(existing);
                             }
+                            else if (existing.Fields.FirstOrDefault()?.Name == "LpVtbl" && !existing.Functions.Any())
+                            {
+                                Console.WriteLine("Preferring new definition as the existing one has no functions.");
+                                structs.Remove(existing);
+                            }
                             else
                             {
-                                Console.WriteLine("Skipping...");
+                                Console.WriteLine("Preferring existing definition.");
                                 break;
                             }
                         }
 
-                        if (task.ExcludedNativeNames?.Contains(nativeName) ?? false)
+                        if (task.ExcludedNativeNames is not null)
                         {
-                            break;
+                            var declaration = recordDecl;
+                            while (declaration is not null && string.IsNullOrEmpty(declaration.Name))
+                                declaration = declaration.Parent as RecordDecl;
+
+                            var excludedName = declaration is null ? nativeName : declaration.Name;
+                            if (task.ExcludedNativeNames?.Contains(excludedName) ?? false)
+                            {
+                                break;
+                            }
                         }
 
                         string name = null;
@@ -1162,7 +1281,7 @@ namespace Silk.NET.BuildTools.Cpp
                             var structLayoutAttr = new Attribute
                             {
                                 Name = "StructLayout",
-                                Arguments = new List<string> {"LayoutKind.Explicit"}
+                                Arguments = new List<string> { "LayoutKind.Explicit" }
                             };
 
                             if (alignment < maxAlignm)
@@ -1179,14 +1298,9 @@ namespace Silk.NET.BuildTools.Cpp
                                 new Attribute
                                 {
                                     Name = "StructLayout",
-                                    Arguments = new List<string> {"LayoutKind.Sequential", $"Pack = {alignment}"}
+                                    Arguments = new List<string> { "LayoutKind.Sequential", $"Pack = {alignment}" }
                                 }
                             );
-                        }
-
-                        if (TryGetUuid(recordDecl, out var uuid))
-                        {
-                            attrs.Add(new Attribute {Name = "Guid", Arguments = new List<string> {$"\"{uuid}\""}});
                         }
 
                         Struct @struct;
@@ -1197,9 +1311,10 @@ namespace Silk.NET.BuildTools.Cpp
                                 Name = name ?? Naming.TranslateVariable
                                     (Naming.TrimName(nativeName, task), task.FunctionPrefix),
                                 NativeName = nativeName,
-                                ClangMetadata = new[] {recordDecl.Location.ToString()},
+                                ClangMetadata = new[] { recordDecl.Location.ToString() },
                                 Fields = ConvertAll(recordDecl, name).ToList(),
-                                Attributes = attrs
+                                Attributes = attrs,
+                                Uuid = TryGetUuid(recordDecl, out var uuid) ? uuid : null
                             }
                         );
 
@@ -1307,7 +1422,7 @@ namespace Silk.NET.BuildTools.Cpp
                                         Arguments = new List<string>
                                         {
                                             "\"Src\"",
-                                            $"\"{functionDecl.Location}\"".Replace("\\", "\\\\")
+                                            $"\"{functionDecl.Location}\"".Replace("\\", "\\\\").RemoveTempNames()
                                         }
                                     }
                                 }
@@ -1380,9 +1495,9 @@ namespace Silk.NET.BuildTools.Cpp
                                 (
                                     new()
                                     {
-                                        Name = name, Type = new() {Name = "string"}, ExtensionName = "Core",
+                                        Name = name, Type = new() { Name = "string" }, ExtensionName = "Core",
                                         NativeName = nativeName,
-                                        Value = $"\"{stringLiteral.String}\""
+                                        Value = $"\"{stringLiteral.String.Replace("\\", "\\\\").Replace("\n", "\\n")}\""
                                     }
                                 );
                                 break;
@@ -1428,7 +1543,7 @@ namespace Silk.NET.BuildTools.Cpp
                         {
                             var previousContext = context.Last.Previous;
 
-                            while ((previousContext.Value is ParenExpr) || (previousContext.Value is ImplicitCastExpr))
+                            while (previousContext.Value is ParenExpr or ImplicitCastExpr)
                             {
                                 previousContext = previousContext.Previous;
                             }
@@ -1575,7 +1690,22 @@ namespace Silk.NET.BuildTools.Cpp
 
                 if (decl is IDeclContext declContext)
                 {
-                    VisitDecls(declContext.Decls);
+                    VisitDecls(DeclsOf(decl, declContext));
+                }
+            }
+
+            static IEnumerable<Decl> DeclsOf(Decl parent, IDeclContext ctx)
+            {
+                var i = -1;
+                foreach (var child in ctx.Decls)
+                {
+                    i++;
+                    if (i == 0 && child.SourceRange.Start == parent.SourceRange.Start)
+                    {
+                        continue;
+                    }
+
+                    yield return child;
                 }
             }
 
@@ -1689,13 +1819,13 @@ namespace Silk.NET.BuildTools.Cpp
 
                 if (NeedsReturnFixup(cxxMethodDecl))
                 {
-                    fun.Attributes.Add(new(){Name = "BuildToolsIntrinsic", Arguments = new (){"$CPPRETFIXUP"}});
+                    fun.Attributes.Add(new() { Name = "BuildToolsIntrinsic", Arguments = new() { "$CPPRETFIXUP" } });
                 }
 
                 @struct.Vtbl.Add(fun);
                 vtblIndex += 1;
             }
-            
+
             bool NeedsReturnFixup(CXXMethodDecl cxxMethodDecl)
             {
                 Debug.Assert(cxxMethodDecl != null);
@@ -1778,7 +1908,7 @@ namespace Silk.NET.BuildTools.Cpp
                 (
                     new Field
                     {
-                        Name = "LpVtbl", Type = new Type {Name = "void", IndirectionLevels = 2}, NativeName = "lpVtbl"
+                        Name = "LpVtbl", Type = new Type { Name = "void", IndirectionLevels = 2 }, NativeName = "lpVtbl"
                     }
                 );
                 OutputVtblHelperMethods(cxxRecordDecl, ref i, @struct);
@@ -1853,8 +1983,8 @@ namespace Silk.NET.BuildTools.Cpp
                 //case CXCallingConv.CXCallingConv_Unexposed: break;
                 default:
                 {
-                    Console.WriteLine($"Warning: Unsupported calling convention {conv}. Defaulting to Cdecl.");
-                    return CallingConvention.Cdecl;
+                    Console.WriteLine($"Warning: Unsupported calling convention {conv}. Defaulting to Winapi.");
+                    return CallingConvention.Winapi;
                 }
             }
         }

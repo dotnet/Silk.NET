@@ -9,11 +9,16 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Vulkan
 {
-    [Flags()]
+    [Flags]
     [NativeName("Name", "VkSemaphoreImportFlags")]
     public enum SemaphoreImportFlags : int
     {
+        [NativeName("Name", "")]
+        None = 0,
+        [Obsolete("Deprecated in favour of \"TemporaryBit\"")]
         [NativeName("Name", "VK_SEMAPHORE_IMPORT_TEMPORARY_BIT")]
         SemaphoreImportTemporaryBit = 1,
+        [NativeName("Name", "VK_SEMAPHORE_IMPORT_TEMPORARY_BIT")]
+        TemporaryBit = 1,
     }
 }

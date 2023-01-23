@@ -23,7 +23,8 @@ namespace Silk.NET.SDL
         (
             uint? type = null,
             uint? timestamp = null,
-            int? which = null
+            int? which = null,
+            ulong? timestampUs = null
         ) : this()
         {
             if (type is not null)
@@ -39,6 +40,11 @@ namespace Silk.NET.SDL
             if (which is not null)
             {
                 Which = which.Value;
+            }
+
+            if (timestampUs is not null)
+            {
+                TimestampUs = timestampUs.Value;
             }
         }
 
@@ -57,9 +63,14 @@ namespace Silk.NET.SDL
         [NativeName("Type.Name", "Sint32")]
         [NativeName("Name", "which")]
         public int Which;
-        [NativeName("Type", "float [6]")]
-        [NativeName("Type.Name", "float [6]")]
+        [NativeName("Type", "float[6]")]
+        [NativeName("Type.Name", "float[6]")]
         [NativeName("Name", "data")]
         public fixed float Data[6];
+
+        [NativeName("Type", "Uint64")]
+        [NativeName("Type.Name", "Uint64")]
+        [NativeName("Name", "timestamp_us")]
+        public ulong TimestampUs;
     }
 }

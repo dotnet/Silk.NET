@@ -16,6 +16,7 @@ namespace Silk.NET.OpenGL.Legacy
         UnsignedShort = 0x1403,
         [NativeName("Name", "GL_UNSIGNED_INT")]
         UnsignedInt = 0x1405,
+        [System.Obsolete]
         [NativeName("Name", "GL_COLOR_INDEX")]
         ColorIndex = 0x1900,
         [NativeName("Name", "GL_STENCIL_INDEX")]
@@ -36,8 +37,10 @@ namespace Silk.NET.OpenGL.Legacy
         Rgb = 0x1907,
         [NativeName("Name", "GL_RGBA")]
         Rgba = 0x1908,
+        [System.Obsolete]
         [NativeName("Name", "GL_LUMINANCE")]
         Luminance = 0x1909,
+        [System.Obsolete]
         [NativeName("Name", "GL_LUMINANCE_ALPHA")]
         LuminanceAlpha = 0x190A,
         [NativeName("Name", "GL_ABGR_EXT")]
@@ -48,8 +51,14 @@ namespace Silk.NET.OpenGL.Legacy
         CmykaExt = 0x800D,
         [NativeName("Name", "GL_BGR")]
         Bgr = 0x80E0,
+        [NativeName("Name", "GL_BGR_EXT")]
+        BgrExt = 0x80E0,
         [NativeName("Name", "GL_BGRA")]
         Bgra = 0x80E1,
+        [NativeName("Name", "GL_BGRA_EXT")]
+        BgraExt = 0x80E1,
+        [NativeName("Name", "GL_BGRA_IMG")]
+        BgraImg = 0x80E1,
         [NativeName("Name", "GL_YCRCB_422_SGIX")]
         Ycrcb422Sgix = 0x81BB,
         [NativeName("Name", "GL_YCRCB_444_SGIX")]

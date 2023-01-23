@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceGroupPresentCapabilitiesKHR")]
-    public unsafe partial struct DeviceGroupPresentCapabilitiesKHR
+    public unsafe partial struct DeviceGroupPresentCapabilitiesKHR : IChainable
     {
         public DeviceGroupPresentCapabilitiesKHR
         (
@@ -62,5 +62,18 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceGroupPresentModeFlagsKHR")]
         [NativeName("Name", "modes")]
         public DeviceGroupPresentModeFlagsKHR Modes;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DeviceGroupPresentCapabilitiesKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

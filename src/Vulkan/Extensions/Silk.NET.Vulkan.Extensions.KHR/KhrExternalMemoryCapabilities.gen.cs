@@ -21,20 +21,40 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     {
         public const string ExtensionName = "VK_KHR_external_memory_capabilities";
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferPropertiesKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferPropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceExternalBufferProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalBufferInfo* pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalBufferProperties* pExternalBufferProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferPropertiesKHR")]
+        [Inject(SilkTouchStage.Begin, "pExternalBufferProperties = new(StructureType.ExternalBufferProperties);")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferPropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceExternalBufferProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalBufferInfo* pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalBufferProperties pExternalBufferProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferPropertiesKHR")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferPropertiesKHR", Convention = CallingConvention.Winapi)]
         public unsafe partial void GetPhysicalDeviceExternalBufferProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceExternalBufferInfo pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalBufferProperties* pExternalBufferProperties);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferPropertiesKHR")]
+        [Inject(SilkTouchStage.Begin, "pExternalBufferProperties = new(StructureType.ExternalBufferProperties);")]
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferPropertiesKHR", Convention = CallingConvention.Winapi)]
         public partial void GetPhysicalDeviceExternalBufferProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceExternalBufferInfo pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalBufferProperties pExternalBufferProperties);
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalBufferProperties = new(StructureType.ExternalBufferProperties);")]
+        public unsafe ExternalBufferProperties GetPhysicalDeviceExternalBufferProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalBufferInfo* pExternalBufferInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceExternalBufferProperties(physicalDevice, pExternalBufferInfo, out ExternalBufferProperties silkRet);
+            return silkRet;
+        }
+
+        /// <summary>To be documented.</summary>
+        [Inject(SilkTouchStage.Begin, "pExternalBufferProperties = new(StructureType.ExternalBufferProperties);")]
+        public unsafe ExternalBufferProperties GetPhysicalDeviceExternalBufferProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in PhysicalDeviceExternalBufferInfo pExternalBufferInfo)
+        {
+            // NonKhrReturnTypeOverloader
+            GetPhysicalDeviceExternalBufferProperties(physicalDevice, in pExternalBufferInfo, out ExternalBufferProperties silkRet);
+            return silkRet;
+        }
 
         public KhrExternalMemoryCapabilities(INativeContext ctx)
             : base(ctx)

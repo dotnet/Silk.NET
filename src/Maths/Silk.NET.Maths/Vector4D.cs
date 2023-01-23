@@ -1,3 +1,6 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
@@ -54,13 +57,13 @@ namespace Silk.NET.Maths
         /// <param name="value">The element to fill the vector with.</param>
         public Vector4D(T value) => (X, Y, Z, W) = (value, value, value, value);
 
-        /// <summary>Constructs a Vector4D from the given Vector2D and a Z and W component.</summary>
+        /// <summary>Constructs a <see cref="Vector4D{T}"/> from the given <see cref="Vector2D{T}"/> and a Z and W component.</summary>
         /// <param name="value">The vector to use as the X and Y components.</param>
         /// <param name="z">The Z component.</param>
         /// <param name="w">The W component.</param>
         public Vector4D(Vector2D<T> value, T z, T w) => (X, Y, Z, W) = (value.X, value.Y, z, w);
 
-        /// <summary>Constructs a Vector4D from the given Vector3D and a W component.</summary>
+        /// <summary>Constructs a <see cref="Vector4D{T}"/> from the given <see cref="Vector3D{T}"/> and a W component.</summary>
         /// <param name="value">The vector to use as the X, Y, and Z components.</param>
         /// <param name="w">The W component.</param>
         public Vector4D(Vector3D<T> value, T w) => (X, Y, Z, W) = (value.X, value.Y, value.Z, w);
@@ -211,13 +214,13 @@ namespace Silk.NET.Maths
             array[index + 3] = W;
         }
 
-        /// <summary>Returns a boolean indicating whether the given Vector4D is equal to this Vector4D instance.</summary>
-        /// <param name="other">The Vector4D to compare this instance to.</param>
-        /// <returns>True if the other Vector4D is equal to this instance; False otherwise.</returns>
+        /// <summary>Returns a boolean indicating whether the given <see cref="Vector4D{T}"/> is equal to this <see cref="Vector4D{T}"/> instance.</summary>
+        /// <param name="other">The <see cref="Vector4D{T}"/> to compare this instance to.</param>
+        /// <returns>True if the other <see cref="Vector4D{T}"/> is equal to this instance; False otherwise.</returns>
         public readonly bool Equals(Vector4D<T> other)
             => this == other;
 
-        /// <summary>Returns a boolean indicating whether the given Object is equal to this Vector4D instance.</summary>
+        /// <summary>Returns a boolean indicating whether the given Object is equal to this <see cref="Vector4D{T}"/> instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
         /// <returns>True if the Object is equal to this Vector4D; False otherwise.</returns>
         [MethodImpl((MethodImplOptions) 768)]
@@ -245,14 +248,14 @@ namespace Silk.NET.Maths
             get => Vector4D.Dot(this, this);
         }
 
-        /// <summary>Returns a String representing this Vector4D instance.</summary>
+        /// <summary>Returns a String representing this <see cref="Vector4D{T}"/> instance.</summary>
         /// <returns>The string representation.</returns>
         public override readonly string ToString()
         {
             return ToString("G", CultureInfo.CurrentCulture);
         }
 
-        /// <summary>Returns a String representing this Vector4D instance, using the specified format to format individual elements.</summary>
+        /// <summary>Returns a String representing this <see cref="Vector4D{T}"/> instance, using the specified format to format individual elements.</summary>
         /// <param name="format">The format of individual elements.</param>
         /// <returns>The string representation.</returns>
         public readonly string ToString(string? format)
@@ -260,7 +263,7 @@ namespace Silk.NET.Maths
             return ToString(format, CultureInfo.CurrentCulture);
         }
 
-        /// <summary>Returns a String representing this Vector4D instance, using the specified format to format individual elements
+        /// <summary>Returns a String representing this <see cref="Vector4D{T}"/> instance, using the specified format to format individual elements
         /// and the given IFormatProvider.</summary>
         /// <param name="format">The format of individual elements.</param>
         /// <param name="formatProvider">The format provider to use when formatting elements.</param>

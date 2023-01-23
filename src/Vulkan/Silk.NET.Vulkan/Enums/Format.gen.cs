@@ -566,6 +566,8 @@ namespace Silk.NET.Vulkan
         A4R4G4B4UnormPack16Ext = 1000340000,
         [NativeName("Name", "VK_FORMAT_A4B4G4R4_UNORM_PACK16_EXT")]
         A4B4G4R4UnormPack16Ext = 1000340001,
+        [NativeName("Name", "VK_FORMAT_R16G16_S10_5_NV")]
+        R16G16S105NV = 1000464000,
         [NativeName("Name", "VK_FORMAT_G8B8G8R8_422_UNORM")]
         G8B8G8R8422Unorm = 1000156000,
         [NativeName("Name", "VK_FORMAT_B8G8R8G8_422_UNORM")]
@@ -634,5 +636,45 @@ namespace Silk.NET.Vulkan
         G16B16R162Plane422Unorm = 1000156032,
         [NativeName("Name", "VK_FORMAT_G16_B16_R16_3PLANE_444_UNORM")]
         G16B16R163Plane444Unorm = 1000156033,
+        [NativeName("Name", "VK_FORMAT_G8_B8R8_2PLANE_444_UNORM")]
+        G8B8R82Plane444Unorm = 1000330000,
+        [NativeName("Name", "VK_FORMAT_G10X6_B10X6R10X6_2PLANE_444_UNORM_3PACK16")]
+        G10X6B10X6R10X62Plane444Unorm3Pack16 = 1000330001,
+        [NativeName("Name", "VK_FORMAT_G12X4_B12X4R12X4_2PLANE_444_UNORM_3PACK16")]
+        G12X4B12X4R12X42Plane444Unorm3Pack16 = 1000330002,
+        [NativeName("Name", "VK_FORMAT_G16_B16R16_2PLANE_444_UNORM")]
+        G16B16R162Plane444Unorm = 1000330003,
+        [NativeName("Name", "VK_FORMAT_A4R4G4B4_UNORM_PACK16")]
+        A4R4G4B4UnormPack16 = 1000340000,
+        [NativeName("Name", "VK_FORMAT_A4B4G4R4_UNORM_PACK16")]
+        A4B4G4R4UnormPack16 = 1000340001,
+        [NativeName("Name", "VK_FORMAT_ASTC_4x4_SFLOAT_BLOCK")]
+        Astc4x4SfloatBlock = 1000066000,
+        [NativeName("Name", "VK_FORMAT_ASTC_5x4_SFLOAT_BLOCK")]
+        Astc5x4SfloatBlock = 1000066001,
+        [NativeName("Name", "VK_FORMAT_ASTC_5x5_SFLOAT_BLOCK")]
+        Astc5x5SfloatBlock = 1000066002,
+        [NativeName("Name", "VK_FORMAT_ASTC_6x5_SFLOAT_BLOCK")]
+        Astc6x5SfloatBlock = 1000066003,
+        [NativeName("Name", "VK_FORMAT_ASTC_6x6_SFLOAT_BLOCK")]
+        Astc6x6SfloatBlock = 1000066004,
+        [NativeName("Name", "VK_FORMAT_ASTC_8x5_SFLOAT_BLOCK")]
+        Astc8x5SfloatBlock = 1000066005,
+        [NativeName("Name", "VK_FORMAT_ASTC_8x6_SFLOAT_BLOCK")]
+        Astc8x6SfloatBlock = 1000066006,
+        [NativeName("Name", "VK_FORMAT_ASTC_8x8_SFLOAT_BLOCK")]
+        Astc8x8SfloatBlock = 1000066007,
+        [NativeName("Name", "VK_FORMAT_ASTC_10x5_SFLOAT_BLOCK")]
+        Astc10x5SfloatBlock = 1000066008,
+        [NativeName("Name", "VK_FORMAT_ASTC_10x6_SFLOAT_BLOCK")]
+        Astc10x6SfloatBlock = 1000066009,
+        [NativeName("Name", "VK_FORMAT_ASTC_10x8_SFLOAT_BLOCK")]
+        Astc10x8SfloatBlock = 1000066010,
+        [NativeName("Name", "VK_FORMAT_ASTC_10x10_SFLOAT_BLOCK")]
+        Astc10x10SfloatBlock = 1000066011,
+        [NativeName("Name", "VK_FORMAT_ASTC_12x10_SFLOAT_BLOCK")]
+        Astc12x10SfloatBlock = 1000066012,
+        [NativeName("Name", "VK_FORMAT_ASTC_12x12_SFLOAT_BLOCK")]
+        Astc12x12SfloatBlock = 1000066013,
     }
 }

@@ -20,40 +20,40 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
     public unsafe partial class AmdMultiDrawIndirect : NativeExtension<GL>
     {
         public const string ExtensionName = "AMD_multi_draw_indirect";
-        [NativeApi(EntryPoint = "glMultiDrawArraysIndirectAMD")]
+        [NativeApi(EntryPoint = "glMultiDrawArraysIndirectAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawArraysIndirect([Flow(FlowDirection.In)] AMD mode, [Count(Computed = "primcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] uint stride);
 
-        [NativeApi(EntryPoint = "glMultiDrawArraysIndirectAMD")]
+        [NativeApi(EntryPoint = "glMultiDrawArraysIndirectAMD", Convention = CallingConvention.Winapi)]
         public partial void MultiDrawArraysIndirect<T0>([Flow(FlowDirection.In)] AMD mode, [Count(Computed = "primcount, stride"), Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glMultiDrawArraysIndirectAMD")]
+        [NativeApi(EntryPoint = "glMultiDrawArraysIndirectAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawArraysIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "primcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] uint stride);
 
-        [NativeApi(EntryPoint = "glMultiDrawArraysIndirectAMD")]
+        [NativeApi(EntryPoint = "glMultiDrawArraysIndirectAMD", Convention = CallingConvention.Winapi)]
         public partial void MultiDrawArraysIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "primcount, stride"), Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectAMD")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElementsIndirect([Flow(FlowDirection.In)] AMD mode, [Flow(FlowDirection.In)] AMD type, [Count(Computed = "primcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] uint stride);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectAMD")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectAMD", Convention = CallingConvention.Winapi)]
         public partial void MultiDrawElementsIndirect<T0>([Flow(FlowDirection.In)] AMD mode, [Flow(FlowDirection.In)] AMD type, [Count(Computed = "primcount, stride"), Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectAMD")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElementsIndirect([Flow(FlowDirection.In)] AMD mode, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "primcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] uint stride);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectAMD")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectAMD", Convention = CallingConvention.Winapi)]
         public partial void MultiDrawElementsIndirect<T0>([Flow(FlowDirection.In)] AMD mode, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "primcount, stride"), Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectAMD")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElementsIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] AMD type, [Count(Computed = "primcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] uint stride);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectAMD")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectAMD", Convention = CallingConvention.Winapi)]
         public partial void MultiDrawElementsIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] AMD type, [Count(Computed = "primcount, stride"), Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectAMD")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectAMD", Convention = CallingConvention.Winapi)]
         public unsafe partial void MultiDrawElementsIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "primcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] uint stride);
 
-        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectAMD")]
+        [NativeApi(EntryPoint = "glMultiDrawElementsIndirectAMD", Convention = CallingConvention.Winapi)]
         public partial void MultiDrawElementsIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "primcount, stride"), Flow(FlowDirection.In)] in T0 indirect, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
 
         public AmdMultiDrawIndirect(INativeContext ctx)

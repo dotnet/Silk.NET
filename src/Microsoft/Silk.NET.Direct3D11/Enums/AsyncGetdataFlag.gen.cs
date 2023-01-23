@@ -12,7 +12,10 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "D3D11_ASYNC_GETDATA_FLAG")]
     public enum AsyncGetdataFlag : int
     {
+        [Obsolete("Deprecated in favour of \"Donotflush\"")]
         [NativeName("Name", "D3D11_ASYNC_GETDATA_DONOTFLUSH")]
         AsyncGetdataDonotflush = 0x1,
+        [NativeName("Name", "D3D11_ASYNC_GETDATA_DONOTFLUSH")]
+        Donotflush = 0x1,
     }
 }

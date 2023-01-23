@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGLES.Extensions.OES
     public unsafe partial class OesEglImage : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_EGL_image";
-        [NativeApi(EntryPoint = "glEGLImageTargetRenderbufferStorageOES")]
+        [NativeApi(EntryPoint = "glEGLImageTargetRenderbufferStorageOES", Convention = CallingConvention.Winapi)]
         public partial void EglimageTargetRenderbufferStorage([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] nint image);
 
-        [NativeApi(EntryPoint = "glEGLImageTargetTexture2DOES")]
+        [NativeApi(EntryPoint = "glEGLImageTargetTexture2DOES", Convention = CallingConvention.Winapi)]
         public partial void EglimageTargetTexture2D([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] nint image);
 
         public OesEglImage(INativeContext ctx)

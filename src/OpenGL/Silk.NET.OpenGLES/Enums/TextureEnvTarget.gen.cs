@@ -12,7 +12,14 @@ namespace Silk.NET.OpenGLES
     [NativeName("Name", "TextureEnvTarget")]
     public enum TextureEnvTarget : int
     {
+        [System.Obsolete]
         [NativeName("Name", "GL_TEXTURE_ENV")]
         TextureEnv = 0x2300,
+        [System.Obsolete]
+        [NativeName("Name", "GL_TEXTURE_FILTER_CONTROL")]
+        TextureFilterControl = 0x8500,
+        [System.Obsolete]
+        [NativeName("Name", "GL_POINT_SPRITE")]
+        PointSprite = 0x8861,
     }
 }

@@ -11,12 +11,12 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// <summary>
     /// Exposes the functions of the Effects Extension.
     /// </summary>
-    [Extension("AL_EXT_EFX")]
+    [Extension("ALC_EXT_EFX")] // the ALC_ prefix is misleading
     [NativeApi(Prefix = "al")]
     public partial class EffectExtension : NativeExtension<AL>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected EffectExtension(INativeContext ctx)
+        public EffectExtension(INativeContext ctx)
             : base(ctx)
         {
         }

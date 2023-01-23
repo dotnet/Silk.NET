@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
     public unsafe partial class QComFrameExtrapolation : NativeExtension<GL>
     {
         public const string ExtensionName = "QCOM_frame_extrapolation";
-        [NativeApi(EntryPoint = "glExtrapolateTex2DQCOM")]
+        [NativeApi(EntryPoint = "glExtrapolateTex2DQCOM", Convention = CallingConvention.Winapi)]
         public partial void ExtrapolateTex2D([Flow(FlowDirection.In)] uint src1, [Flow(FlowDirection.In)] uint src2, [Flow(FlowDirection.In)] uint output, [Flow(FlowDirection.In)] float scaleFactor);
 
         public QComFrameExtrapolation(INativeContext ctx)

@@ -17,19 +17,20 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubmitInfo2KHR")]
-    public unsafe partial struct SubmitInfo2KHR
+    [NativeName("AliasOf", "VkSubmitInfo2")]
+    public unsafe partial struct SubmitInfo2KHR : IChainStart
     {
         public SubmitInfo2KHR
         (
-            StructureType? sType = StructureType.SubmitInfo2Khr,
+            StructureType? sType = StructureType.SubmitInfo2,
             void* pNext = null,
-            SubmitFlagsKHR? flags = null,
+            SubmitFlags? flags = null,
             uint? waitSemaphoreInfoCount = null,
-            SemaphoreSubmitInfoKHR* pWaitSemaphoreInfos = null,
+            SemaphoreSubmitInfo* pWaitSemaphoreInfos = null,
             uint? commandBufferInfoCount = null,
-            CommandBufferSubmitInfoKHR* pCommandBufferInfos = null,
+            CommandBufferSubmitInfo* pCommandBufferInfos = null,
             uint? signalSemaphoreInfoCount = null,
-            SemaphoreSubmitInfoKHR* pSignalSemaphoreInfos = null
+            SemaphoreSubmitInfo* pSignalSemaphoreInfos = null
         ) : this()
         {
             if (sType is not null)
@@ -89,39 +90,64 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkSubmitFlagsKHR")]
-        [NativeName("Type.Name", "VkSubmitFlagsKHR")]
+        [NativeName("Type", "VkSubmitFlags")]
+        [NativeName("Type.Name", "VkSubmitFlags")]
         [NativeName("Name", "flags")]
-        public SubmitFlagsKHR Flags;
+        public SubmitFlags Flags;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "waitSemaphoreInfoCount")]
         public uint WaitSemaphoreInfoCount;
 /// <summary></summary>
-        [NativeName("Type", "VkSemaphoreSubmitInfoKHR*")]
-        [NativeName("Type.Name", "VkSemaphoreSubmitInfoKHR")]
+        [NativeName("Type", "VkSemaphoreSubmitInfo*")]
+        [NativeName("Type.Name", "VkSemaphoreSubmitInfo")]
         [NativeName("Name", "pWaitSemaphoreInfos")]
-        public SemaphoreSubmitInfoKHR* PWaitSemaphoreInfos;
+        public SemaphoreSubmitInfo* PWaitSemaphoreInfos;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "commandBufferInfoCount")]
         public uint CommandBufferInfoCount;
 /// <summary></summary>
-        [NativeName("Type", "VkCommandBufferSubmitInfoKHR*")]
-        [NativeName("Type.Name", "VkCommandBufferSubmitInfoKHR")]
+        [NativeName("Type", "VkCommandBufferSubmitInfo*")]
+        [NativeName("Type.Name", "VkCommandBufferSubmitInfo")]
         [NativeName("Name", "pCommandBufferInfos")]
-        public CommandBufferSubmitInfoKHR* PCommandBufferInfos;
+        public CommandBufferSubmitInfo* PCommandBufferInfos;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "signalSemaphoreInfoCount")]
         public uint SignalSemaphoreInfoCount;
 /// <summary></summary>
-        [NativeName("Type", "VkSemaphoreSubmitInfoKHR*")]
-        [NativeName("Type.Name", "VkSemaphoreSubmitInfoKHR")]
+        [NativeName("Type", "VkSemaphoreSubmitInfo*")]
+        [NativeName("Type.Name", "VkSemaphoreSubmitInfo")]
         [NativeName("Name", "pSignalSemaphoreInfos")]
-        public SemaphoreSubmitInfoKHR* PSignalSemaphoreInfos;
+        public SemaphoreSubmitInfo* PSignalSemaphoreInfos;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.SubmitInfo2;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref SubmitInfo2KHR Chain(
+            out SubmitInfo2KHR capture)
+        {
+            capture = new SubmitInfo2KHR(StructureType.SubmitInfo2);
+            return ref capture;
+        }
     }
 }

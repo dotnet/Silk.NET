@@ -21,24 +21,29 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoDecodeH265PictureInfo
         (
-            byte? vpsVideoParameterSetId = null,
-            byte? spsSeqParameterSetId = null,
+            StdVideoDecodeH265PictureInfoFlags? flags = null,
+            byte? spsVideoParameterSetId = null,
+            byte? ppsSeqParameterSetId = null,
             byte? ppsPicParameterSetId = null,
-            byte? numShortTermRefPicSets = null,
+            byte? numDeltaPocsOfRefRpsIdx = null,
             int? picOrderCntVal = null,
             ushort? numBitsForSTRefPicSetInSlice = null,
-            byte? numDeltaPocsOfRefRpsIdx = null,
-            StdVideoDecodeH265PictureInfoFlags? flags = null
+            ushort? reserved = null
         ) : this()
         {
-            if (vpsVideoParameterSetId is not null)
+            if (flags is not null)
             {
-                VpsVideoParameterSetId = vpsVideoParameterSetId.Value;
+                Flags = flags.Value;
             }
 
-            if (spsSeqParameterSetId is not null)
+            if (spsVideoParameterSetId is not null)
             {
-                SpsSeqParameterSetId = spsSeqParameterSetId.Value;
+                SpsVideoParameterSetId = spsVideoParameterSetId.Value;
+            }
+
+            if (ppsSeqParameterSetId is not null)
+            {
+                PpsSeqParameterSetId = ppsSeqParameterSetId.Value;
             }
 
             if (ppsPicParameterSetId is not null)
@@ -46,9 +51,9 @@ namespace Silk.NET.Vulkan.Video
                 PpsPicParameterSetId = ppsPicParameterSetId.Value;
             }
 
-            if (numShortTermRefPicSets is not null)
+            if (numDeltaPocsOfRefRpsIdx is not null)
             {
-                NumShortTermRefPicSets = numShortTermRefPicSets.Value;
+                NumDeltaPocsOfRefRpsIdx = numDeltaPocsOfRefRpsIdx.Value;
             }
 
             if (picOrderCntVal is not null)
@@ -61,27 +66,27 @@ namespace Silk.NET.Vulkan.Video
                 NumBitsForSTRefPicSetInSlice = numBitsForSTRefPicSetInSlice.Value;
             }
 
-            if (numDeltaPocsOfRefRpsIdx is not null)
+            if (reserved is not null)
             {
-                NumDeltaPocsOfRefRpsIdx = numDeltaPocsOfRefRpsIdx.Value;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
+                Reserved = reserved.Value;
             }
         }
 
 
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "vps_video_parameter_set_id")]
-        public byte VpsVideoParameterSetId;
+        [NativeName("Type", "StdVideoDecodeH265PictureInfoFlags")]
+        [NativeName("Type.Name", "StdVideoDecodeH265PictureInfoFlags")]
+        [NativeName("Name", "flags")]
+        public StdVideoDecodeH265PictureInfoFlags Flags;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "sps_seq_parameter_set_id")]
-        public byte SpsSeqParameterSetId;
+        [NativeName("Name", "sps_video_parameter_set_id")]
+        public byte SpsVideoParameterSetId;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "pps_seq_parameter_set_id")]
+        public byte PpsSeqParameterSetId;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
@@ -90,8 +95,8 @@ namespace Silk.NET.Vulkan.Video
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "num_short_term_ref_pic_sets")]
-        public byte NumShortTermRefPicSets;
+        [NativeName("Name", "NumDeltaPocsOfRefRpsIdx")]
+        public byte NumDeltaPocsOfRefRpsIdx;
 
         [NativeName("Type", "int32_t")]
         [NativeName("Type.Name", "int32_t")]
@@ -103,26 +108,21 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "NumBitsForSTRefPicSetInSlice")]
         public ushort NumBitsForSTRefPicSetInSlice;
 
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "NumDeltaPocsOfRefRpsIdx")]
-        public byte NumDeltaPocsOfRefRpsIdx;
-        [NativeName("Type", "uint8_t [8]")]
-        [NativeName("Type.Name", "uint8_t [8]")]
+        [NativeName("Type", "uint16_t")]
+        [NativeName("Type.Name", "uint16_t")]
+        [NativeName("Name", "reserved")]
+        public ushort Reserved;
+        [NativeName("Type", "uint8_t[8]")]
+        [NativeName("Type.Name", "uint8_t[8]")]
         [NativeName("Name", "RefPicSetStCurrBefore")]
         public fixed byte RefPicSetStCurrBefore[8];
-        [NativeName("Type", "uint8_t [8]")]
-        [NativeName("Type.Name", "uint8_t [8]")]
+        [NativeName("Type", "uint8_t[8]")]
+        [NativeName("Type.Name", "uint8_t[8]")]
         [NativeName("Name", "RefPicSetStCurrAfter")]
         public fixed byte RefPicSetStCurrAfter[8];
-        [NativeName("Type", "uint8_t [8]")]
-        [NativeName("Type.Name", "uint8_t [8]")]
+        [NativeName("Type", "uint8_t[8]")]
+        [NativeName("Type.Name", "uint8_t[8]")]
         [NativeName("Name", "RefPicSetLtCurr")]
         public fixed byte RefPicSetLtCurr[8];
-
-        [NativeName("Type", "StdVideoDecodeH265PictureInfoFlags")]
-        [NativeName("Type.Name", "StdVideoDecodeH265PictureInfoFlags")]
-        [NativeName("Name", "flags")]
-        public StdVideoDecodeH265PictureInfoFlags Flags;
     }
 }

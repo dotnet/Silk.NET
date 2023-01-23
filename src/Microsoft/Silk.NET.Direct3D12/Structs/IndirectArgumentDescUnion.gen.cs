@@ -17,7 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Direct3D12
 {
     [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d12_L3951_C5")]
+    [NativeName("Name", "__AnonymousRecord_d3d12_L4148_C5")]
     public unsafe partial struct IndirectArgumentDescUnion
     {
         public IndirectArgumentDescUnion
@@ -57,32 +57,32 @@ namespace Silk.NET.Direct3D12
 
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (anonymous struct at d3d12.h:3953:9)")]
-        [NativeName("Type.Name", "struct (anonymous struct at d3d12.h:3953:9)")]
+        [NativeName("Type", "struct (unnamed struct at d3d12.h:4150:9)")]
+        [NativeName("Type.Name", "struct (unnamed struct at d3d12.h:4150:9)")]
         [NativeName("Name", "VertexBuffer")]
         public IndirectArgumentDescUnionVertexBuffer VertexBuffer;
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (anonymous struct at d3d12.h:3957:9)")]
-        [NativeName("Type.Name", "struct (anonymous struct at d3d12.h:3957:9)")]
+        [NativeName("Type", "struct (unnamed struct at d3d12.h:4154:9)")]
+        [NativeName("Type.Name", "struct (unnamed struct at d3d12.h:4154:9)")]
         [NativeName("Name", "Constant")]
         public IndirectArgumentDescUnionConstant Constant;
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (anonymous struct at d3d12.h:3963:9)")]
-        [NativeName("Type.Name", "struct (anonymous struct at d3d12.h:3963:9)")]
+        [NativeName("Type", "struct (unnamed struct at d3d12.h:4160:9)")]
+        [NativeName("Type.Name", "struct (unnamed struct at d3d12.h:4160:9)")]
         [NativeName("Name", "ConstantBufferView")]
         public IndirectArgumentDescUnionConstantBufferView ConstantBufferView;
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (anonymous struct at d3d12.h:3967:9)")]
-        [NativeName("Type.Name", "struct (anonymous struct at d3d12.h:3967:9)")]
+        [NativeName("Type", "struct (unnamed struct at d3d12.h:4164:9)")]
+        [NativeName("Type.Name", "struct (unnamed struct at d3d12.h:4164:9)")]
         [NativeName("Name", "ShaderResourceView")]
         public IndirectArgumentDescUnionShaderResourceView ShaderResourceView;
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (anonymous struct at d3d12.h:3971:9)")]
-        [NativeName("Type.Name", "struct (anonymous struct at d3d12.h:3971:9)")]
+        [NativeName("Type", "struct (unnamed struct at d3d12.h:4168:9)")]
+        [NativeName("Type.Name", "struct (unnamed struct at d3d12.h:4168:9)")]
         [NativeName("Name", "UnorderedAccessView")]
         public IndirectArgumentDescUnionUnorderedAccessView UnorderedAccessView;
     }

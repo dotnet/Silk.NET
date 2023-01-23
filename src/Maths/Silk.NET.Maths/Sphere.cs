@@ -1,3 +1,6 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+
 using System;
 using System.Runtime.Serialization;
 
@@ -31,6 +34,18 @@ namespace Silk.NET.Maths
         {
             Center = center;
             Radius = radius;
+        }
+
+        /// <summary>
+        /// Constructs a sphere from components of a center and a <paramref name="radius"/>
+        /// </summary>
+        /// <param name="centerX">The X component of the center.</param>
+        /// <param name="centerY">The Y component of the center.</param>
+        /// <param name="centerZ">The Z component of the center.</param>
+        /// <param name="radius">The radius.</param>
+        public Sphere(T centerX, T centerY, T centerZ, T radius)
+            : this(new Vector3D<T>(centerX, centerY, centerZ), radius)
+        {
         }
 
         /// <summary>

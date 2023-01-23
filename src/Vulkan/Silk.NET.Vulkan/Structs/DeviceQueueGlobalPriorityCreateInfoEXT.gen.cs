@@ -17,13 +17,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceQueueGlobalPriorityCreateInfoEXT")]
-    public unsafe partial struct DeviceQueueGlobalPriorityCreateInfoEXT
+    [NativeName("AliasOf", "VkDeviceQueueGlobalPriorityCreateInfoKHR")]
+    public unsafe partial struct DeviceQueueGlobalPriorityCreateInfoEXT : IExtendsChain<DeviceQueueCreateInfo>
     {
         public DeviceQueueGlobalPriorityCreateInfoEXT
         (
-            StructureType? sType = StructureType.DeviceQueueGlobalPriorityCreateInfoExt,
+            StructureType? sType = StructureType.DeviceQueueGlobalPriorityCreateInfoKhr,
             void* pNext = null,
-            QueueGlobalPriorityEXT? globalPriority = null
+            QueueGlobalPriorityKHR? globalPriority = null
         ) : this()
         {
             if (sType is not null)
@@ -53,9 +54,22 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkQueueGlobalPriorityEXT")]
-        [NativeName("Type.Name", "VkQueueGlobalPriorityEXT")]
+        [NativeName("Type", "VkQueueGlobalPriorityKHR")]
+        [NativeName("Type.Name", "VkQueueGlobalPriorityKHR")]
         [NativeName("Name", "globalPriority")]
-        public QueueGlobalPriorityEXT GlobalPriority;
+        public QueueGlobalPriorityKHR GlobalPriority;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.DeviceQueueGlobalPriorityCreateInfoKhr;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
     }
 }

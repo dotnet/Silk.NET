@@ -17,6 +17,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalMemoryProperties")]
+    [NativeName("Aliases", "VkExternalMemoryPropertiesKHR")]
     public unsafe partial struct ExternalMemoryProperties
     {
         public ExternalMemoryProperties

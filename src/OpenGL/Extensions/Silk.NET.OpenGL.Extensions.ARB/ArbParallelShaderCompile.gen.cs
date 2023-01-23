@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public unsafe partial class ArbParallelShaderCompile : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_parallel_shader_compile";
-        [NativeApi(EntryPoint = "glMaxShaderCompilerThreadsARB")]
+        [NativeApi(EntryPoint = "glMaxShaderCompilerThreadsARB", Convention = CallingConvention.Winapi)]
         public partial void MaxShaderCompilerThreads([Flow(FlowDirection.In)] uint count);
 
         public ArbParallelShaderCompile(INativeContext ctx)

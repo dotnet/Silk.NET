@@ -17,13 +17,13 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkShaderModuleCreateInfo")]
-    public unsafe partial struct ShaderModuleCreateInfo
+    public unsafe partial struct ShaderModuleCreateInfo : IChainStart, IExtendsChain<PipelineShaderStageCreateInfo>
     {
         public ShaderModuleCreateInfo
         (
             StructureType? sType = StructureType.ShaderModuleCreateInfo,
             void* pNext = null,
-            ShaderModuleCreateFlags? flags = null,
+            uint? flags = null,
             nuint? codeSize = null,
             uint* pCode = null
         ) : this()
@@ -68,7 +68,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkShaderModuleCreateFlags")]
         [NativeName("Type.Name", "VkShaderModuleCreateFlags")]
         [NativeName("Name", "flags")]
-        public ShaderModuleCreateFlags Flags;
+        public uint Flags;
 /// <summary></summary>
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
@@ -79,5 +79,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "pCode")]
         public uint* PCode;
+
+        /// <inheritdoc />
+        StructureType IStructuredType.StructureType()
+        {
+            return SType = StructureType.ShaderModuleCreateInfo;
+        }
+
+        /// <inheritdoc />
+        unsafe BaseInStructure* IChainable.PNext
+        {
+            get => (BaseInStructure*) PNext;
+            set => PNext = value;
+        }
+
+        /// <summary>
+        /// Convenience method to start a chain.
+        /// </summary>
+        /// <param name="capture">The newly created chain root</param>
+        /// <returns>A reference to the newly created chain.</returns>
+        public static unsafe ref ShaderModuleCreateInfo Chain(
+            out ShaderModuleCreateInfo capture)
+        {
+            capture = new ShaderModuleCreateInfo(StructureType.ShaderModuleCreateInfo);
+            return ref capture;
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
     public unsafe partial class AmdInterleavedElements : NativeExtension<GL>
     {
         public const string ExtensionName = "AMD_interleaved_elements";
-        [NativeApi(EntryPoint = "glVertexAttribParameteriAMD")]
+        [NativeApi(EntryPoint = "glVertexAttribParameteriAMD", Convention = CallingConvention.Winapi)]
         public partial void VertexAttribParameter([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] int param);
 
         public AmdInterleavedElements(INativeContext ctx)

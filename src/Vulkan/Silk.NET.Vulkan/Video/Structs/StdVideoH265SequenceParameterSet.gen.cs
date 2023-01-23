@@ -21,18 +21,16 @@ namespace Silk.NET.Vulkan.Video
     {
         public StdVideoH265SequenceParameterSet
         (
-            StdVideoH265ProfileIdc? profileIdc = null,
-            StdVideoH265Level? levelIdc = null,
+            StdVideoH265SpsFlags? flags = null,
+            StdVideoH265ChromaFormatIdc? chromaFormatIdc = null,
             uint? picWidthInLumaSamples = null,
             uint? picHeightInLumaSamples = null,
             byte? spsVideoParameterSetId = null,
             byte? spsMaxSubLayersMinus1 = null,
             byte? spsSeqParameterSetId = null,
-            byte? chromaFormatIdc = null,
             byte? bitDepthLumaMinus8 = null,
             byte? bitDepthChromaMinus8 = null,
             byte? log2MaxPicOrderCntLsbMinus4 = null,
-            byte? spsMaxDecPicBufferingMinus1 = null,
             byte? log2MinLumaCodingBlockSizeMinus3 = null,
             byte? log2DiffMaxMinLumaCodingBlockSize = null,
             byte? log2MinLumaTransformBlockSizeMinus2 = null,
@@ -45,29 +43,33 @@ namespace Silk.NET.Vulkan.Video
             byte? pcmSampleBitDepthChromaMinus1 = null,
             byte? log2MinPcmLumaCodingBlockSizeMinus3 = null,
             byte? log2DiffMaxMinPcmLumaCodingBlockSize = null,
+            byte? reserved1 = null,
+            byte? reserved2 = null,
+            byte? paletteMaxSize = null,
+            byte? deltaPaletteMaxPredictorSize = null,
+            byte? motionVectorResolutionControlIdc = null,
+            byte? spsNumPalettePredictorInitializersMinus1 = null,
             uint? confWinLeftOffset = null,
             uint? confWinRightOffset = null,
             uint? confWinTopOffset = null,
             uint? confWinBottomOffset = null,
+            StdVideoH265ProfileTierLevel* pProfileTierLevel = null,
             StdVideoH265DecPicBufMgr* pDecPicBufMgr = null,
-            StdVideoH265SpsFlags? flags = null,
             StdVideoH265ScalingLists* pScalingLists = null,
+            StdVideoH265ShortTermRefPicSet* pShortTermRefPicSet = null,
+            StdVideoH265LongTermRefPicsSps* pLongTermRefPicsSps = null,
             StdVideoH265SequenceParameterSetVui* pSequenceParameterSetVui = null,
-            byte? paletteMaxSize = null,
-            byte? deltaPaletteMaxPredictorSize = null,
-            byte? motionVectorResolutionControlIdc = null,
-            byte? spsNumPalettePredictorInitializerMinus1 = null,
             StdVideoH265PredictorPaletteEntries* pPredictorPaletteEntries = null
         ) : this()
         {
-            if (profileIdc is not null)
+            if (flags is not null)
             {
-                ProfileIdc = profileIdc.Value;
+                Flags = flags.Value;
             }
 
-            if (levelIdc is not null)
+            if (chromaFormatIdc is not null)
             {
-                LevelIdc = levelIdc.Value;
+                ChromaFormatIdc = chromaFormatIdc.Value;
             }
 
             if (picWidthInLumaSamples is not null)
@@ -95,11 +97,6 @@ namespace Silk.NET.Vulkan.Video
                 SpsSeqParameterSetId = spsSeqParameterSetId.Value;
             }
 
-            if (chromaFormatIdc is not null)
-            {
-                ChromaFormatIdc = chromaFormatIdc.Value;
-            }
-
             if (bitDepthLumaMinus8 is not null)
             {
                 BitDepthLumaMinus8 = bitDepthLumaMinus8.Value;
@@ -113,11 +110,6 @@ namespace Silk.NET.Vulkan.Video
             if (log2MaxPicOrderCntLsbMinus4 is not null)
             {
                 Log2MaxPicOrderCntLsbMinus4 = log2MaxPicOrderCntLsbMinus4.Value;
-            }
-
-            if (spsMaxDecPicBufferingMinus1 is not null)
-            {
-                SpsMaxDecPicBufferingMinus1 = spsMaxDecPicBufferingMinus1.Value;
             }
 
             if (log2MinLumaCodingBlockSizeMinus3 is not null)
@@ -180,6 +172,36 @@ namespace Silk.NET.Vulkan.Video
                 Log2DiffMaxMinPcmLumaCodingBlockSize = log2DiffMaxMinPcmLumaCodingBlockSize.Value;
             }
 
+            if (reserved1 is not null)
+            {
+                Reserved1 = reserved1.Value;
+            }
+
+            if (reserved2 is not null)
+            {
+                Reserved2 = reserved2.Value;
+            }
+
+            if (paletteMaxSize is not null)
+            {
+                PaletteMaxSize = paletteMaxSize.Value;
+            }
+
+            if (deltaPaletteMaxPredictorSize is not null)
+            {
+                DeltaPaletteMaxPredictorSize = deltaPaletteMaxPredictorSize.Value;
+            }
+
+            if (motionVectorResolutionControlIdc is not null)
+            {
+                MotionVectorResolutionControlIdc = motionVectorResolutionControlIdc.Value;
+            }
+
+            if (spsNumPalettePredictorInitializersMinus1 is not null)
+            {
+                SpsNumPalettePredictorInitializersMinus1 = spsNumPalettePredictorInitializersMinus1.Value;
+            }
+
             if (confWinLeftOffset is not null)
             {
                 ConfWinLeftOffset = confWinLeftOffset.Value;
@@ -200,14 +222,14 @@ namespace Silk.NET.Vulkan.Video
                 ConfWinBottomOffset = confWinBottomOffset.Value;
             }
 
+            if (pProfileTierLevel is not null)
+            {
+                PProfileTierLevel = pProfileTierLevel;
+            }
+
             if (pDecPicBufMgr is not null)
             {
                 PDecPicBufMgr = pDecPicBufMgr;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
             }
 
             if (pScalingLists is not null)
@@ -215,29 +237,19 @@ namespace Silk.NET.Vulkan.Video
                 PScalingLists = pScalingLists;
             }
 
+            if (pShortTermRefPicSet is not null)
+            {
+                PShortTermRefPicSet = pShortTermRefPicSet;
+            }
+
+            if (pLongTermRefPicsSps is not null)
+            {
+                PLongTermRefPicsSps = pLongTermRefPicsSps;
+            }
+
             if (pSequenceParameterSetVui is not null)
             {
                 PSequenceParameterSetVui = pSequenceParameterSetVui;
-            }
-
-            if (paletteMaxSize is not null)
-            {
-                PaletteMaxSize = paletteMaxSize.Value;
-            }
-
-            if (deltaPaletteMaxPredictorSize is not null)
-            {
-                DeltaPaletteMaxPredictorSize = deltaPaletteMaxPredictorSize.Value;
-            }
-
-            if (motionVectorResolutionControlIdc is not null)
-            {
-                MotionVectorResolutionControlIdc = motionVectorResolutionControlIdc.Value;
-            }
-
-            if (spsNumPalettePredictorInitializerMinus1 is not null)
-            {
-                SpsNumPalettePredictorInitializerMinus1 = spsNumPalettePredictorInitializerMinus1.Value;
             }
 
             if (pPredictorPaletteEntries is not null)
@@ -247,15 +259,15 @@ namespace Silk.NET.Vulkan.Video
         }
 
 
-        [NativeName("Type", "StdVideoH265ProfileIdc")]
-        [NativeName("Type.Name", "StdVideoH265ProfileIdc")]
-        [NativeName("Name", "profile_idc")]
-        public StdVideoH265ProfileIdc ProfileIdc;
+        [NativeName("Type", "StdVideoH265SpsFlags")]
+        [NativeName("Type.Name", "StdVideoH265SpsFlags")]
+        [NativeName("Name", "flags")]
+        public StdVideoH265SpsFlags Flags;
 
-        [NativeName("Type", "StdVideoH265Level")]
-        [NativeName("Type.Name", "StdVideoH265Level")]
-        [NativeName("Name", "level_idc")]
-        public StdVideoH265Level LevelIdc;
+        [NativeName("Type", "StdVideoH265ChromaFormatIdc")]
+        [NativeName("Type.Name", "StdVideoH265ChromaFormatIdc")]
+        [NativeName("Name", "chroma_format_idc")]
+        public StdVideoH265ChromaFormatIdc ChromaFormatIdc;
 
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -284,11 +296,6 @@ namespace Silk.NET.Vulkan.Video
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "chroma_format_idc")]
-        public byte ChromaFormatIdc;
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "bit_depth_luma_minus8")]
         public byte BitDepthLumaMinus8;
 
@@ -301,11 +308,6 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "log2_max_pic_order_cnt_lsb_minus4")]
         public byte Log2MaxPicOrderCntLsbMinus4;
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "sps_max_dec_pic_buffering_minus1")]
-        public byte SpsMaxDecPicBufferingMinus1;
 
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
@@ -367,6 +369,36 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "log2_diff_max_min_pcm_luma_coding_block_size")]
         public byte Log2DiffMaxMinPcmLumaCodingBlockSize;
 
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "reserved1")]
+        public byte Reserved1;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "reserved2")]
+        public byte Reserved2;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "palette_max_size")]
+        public byte PaletteMaxSize;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "delta_palette_max_predictor_size")]
+        public byte DeltaPaletteMaxPredictorSize;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "motion_vector_resolution_control_idc")]
+        public byte MotionVectorResolutionControlIdc;
+
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "sps_num_palette_predictor_initializers_minus1")]
+        public byte SpsNumPalettePredictorInitializersMinus1;
+
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "conf_win_left_offset")]
@@ -387,48 +419,38 @@ namespace Silk.NET.Vulkan.Video
         [NativeName("Name", "conf_win_bottom_offset")]
         public uint ConfWinBottomOffset;
 
-        [NativeName("Type", "StdVideoH265DecPicBufMgr *")]
-        [NativeName("Type.Name", "StdVideoH265DecPicBufMgr *")]
+        [NativeName("Type", "const StdVideoH265ProfileTierLevel *")]
+        [NativeName("Type.Name", "const StdVideoH265ProfileTierLevel *")]
+        [NativeName("Name", "pProfileTierLevel")]
+        public StdVideoH265ProfileTierLevel* PProfileTierLevel;
+
+        [NativeName("Type", "const StdVideoH265DecPicBufMgr *")]
+        [NativeName("Type.Name", "const StdVideoH265DecPicBufMgr *")]
         [NativeName("Name", "pDecPicBufMgr")]
         public StdVideoH265DecPicBufMgr* PDecPicBufMgr;
 
-        [NativeName("Type", "StdVideoH265SpsFlags")]
-        [NativeName("Type.Name", "StdVideoH265SpsFlags")]
-        [NativeName("Name", "flags")]
-        public StdVideoH265SpsFlags Flags;
-
-        [NativeName("Type", "StdVideoH265ScalingLists *")]
-        [NativeName("Type.Name", "StdVideoH265ScalingLists *")]
+        [NativeName("Type", "const StdVideoH265ScalingLists *")]
+        [NativeName("Type.Name", "const StdVideoH265ScalingLists *")]
         [NativeName("Name", "pScalingLists")]
         public StdVideoH265ScalingLists* PScalingLists;
 
-        [NativeName("Type", "StdVideoH265SequenceParameterSetVui *")]
-        [NativeName("Type.Name", "StdVideoH265SequenceParameterSetVui *")]
+        [NativeName("Type", "const StdVideoH265ShortTermRefPicSet *")]
+        [NativeName("Type.Name", "const StdVideoH265ShortTermRefPicSet *")]
+        [NativeName("Name", "pShortTermRefPicSet")]
+        public StdVideoH265ShortTermRefPicSet* PShortTermRefPicSet;
+
+        [NativeName("Type", "const StdVideoH265LongTermRefPicsSps *")]
+        [NativeName("Type.Name", "const StdVideoH265LongTermRefPicsSps *")]
+        [NativeName("Name", "pLongTermRefPicsSps")]
+        public StdVideoH265LongTermRefPicsSps* PLongTermRefPicsSps;
+
+        [NativeName("Type", "const StdVideoH265SequenceParameterSetVui *")]
+        [NativeName("Type.Name", "const StdVideoH265SequenceParameterSetVui *")]
         [NativeName("Name", "pSequenceParameterSetVui")]
         public StdVideoH265SequenceParameterSetVui* PSequenceParameterSetVui;
 
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "palette_max_size")]
-        public byte PaletteMaxSize;
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "delta_palette_max_predictor_size")]
-        public byte DeltaPaletteMaxPredictorSize;
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "motion_vector_resolution_control_idc")]
-        public byte MotionVectorResolutionControlIdc;
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "sps_num_palette_predictor_initializer_minus1")]
-        public byte SpsNumPalettePredictorInitializerMinus1;
-
-        [NativeName("Type", "StdVideoH265PredictorPaletteEntries *")]
-        [NativeName("Type.Name", "StdVideoH265PredictorPaletteEntries *")]
+        [NativeName("Type", "const StdVideoH265PredictorPaletteEntries *")]
+        [NativeName("Type.Name", "const StdVideoH265PredictorPaletteEntries *")]
         [NativeName("Name", "pPredictorPaletteEntries")]
         public StdVideoH265PredictorPaletteEntries* PPredictorPaletteEntries;
     }

@@ -1298,6 +1298,42 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         SR8Ext = 0x8FBD,
         [NativeName("Name", "GL_SRG8_EXT")]
         Srg8Ext = 0x8FBE,
+        [NativeName("Name", "GL_TEXTURE_IMMUTABLE_FORMAT_EXT")]
+        TextureImmutableFormatExt = 0x912F,
+        [NativeName("Name", "GL_RGBA32F_EXT")]
+        Rgba32fExt = 0x8814,
+        [NativeName("Name", "GL_RGB32F_EXT")]
+        Rgb32fExt = 0x8815,
+        [NativeName("Name", "GL_ALPHA32F_EXT")]
+        Alpha32fExt = 0x8816,
+        [NativeName("Name", "GL_LUMINANCE32F_EXT")]
+        Luminance32fExt = 0x8818,
+        [NativeName("Name", "GL_LUMINANCE_ALPHA32F_EXT")]
+        LuminanceAlpha32fExt = 0x8819,
+        [NativeName("Name", "GL_RGBA16F_EXT")]
+        Rgba16fExt = 0x881A,
+        [NativeName("Name", "GL_RGB16F_EXT")]
+        Rgb16fExt = 0x881B,
+        [NativeName("Name", "GL_ALPHA16F_EXT")]
+        Alpha16fExt = 0x881C,
+        [NativeName("Name", "GL_LUMINANCE16F_EXT")]
+        Luminance16fExt = 0x881E,
+        [NativeName("Name", "GL_LUMINANCE_ALPHA16F_EXT")]
+        LuminanceAlpha16fExt = 0x881F,
+        [NativeName("Name", "GL_BGRA8_EXT")]
+        Bgra8Ext = 0x93A1,
+        [NativeName("Name", "GL_R8_EXT")]
+        R8Ext = 0x8229,
+        [NativeName("Name", "GL_RG8_EXT")]
+        RG8Ext = 0x822B,
+        [NativeName("Name", "GL_R32F_EXT")]
+        R32fExt = 0x822E,
+        [NativeName("Name", "GL_RG32F_EXT")]
+        RG32fExt = 0x8230,
+        [NativeName("Name", "GL_R16F_EXT")]
+        R16fExt = 0x822D,
+        [NativeName("Name", "GL_RG16F_EXT")]
+        RG16fExt = 0x822F,
         [NativeName("Name", "GL_TEXTURE_SWIZZLE_R_EXT")]
         TextureSwizzleRExt = 0x8E42,
         [NativeName("Name", "GL_TEXTURE_SWIZZLE_G_EXT")]
